@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FocusFlow - End Task Paralysis. Start Doing.</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #0f172a;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 100%;
+            max-width: 960px;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+        header, section, footer {
+            width: 100%;
+            padding: 60px 0;
+            text-align: center;
+        }
+        header {
+            padding-top: 80px;
+            padding-bottom: 80px;
+        }
+        h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+            color: #e2e8f0;
+        }
+        .subheadline {
+            font-size: 1.25rem;
+            max-width: 600px;
+            margin: 0 auto 2rem auto;
+            color: #cbd5e1;
+        }
+        .cta-button {
+            background-color: #6366f1;
+            color: #ffffff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #4f46e5;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .feature {
+            background-color: #1e293b;
+            padding: 30px;
+            border-radius: 12px;
+            width: 30%;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .feature h3 {
+            font-size: 1.5rem;
+            color: #6366f1;
+            margin-bottom: 15px;
+        }
+        .testimonial {
+            background-color: #1e293b;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 700px;
+            margin: 0 auto;
+            border-left: 5px solid #6366f1;
+        }
+        .testimonial p {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .testimonial span {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+            color: #cbd5e1;
+        }
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid #334155;
+            margin-top: 60px;
+        }
+        footer p {
+            margin: 0;
+            color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            .features {
+                flex-direction: column;
+                align-items: center;
+            }
+            .feature {
+                width: 80%;
+                max-width: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>End Task Paralysis. Start Doing.</h1>
+            <p class="subheadline">FocusFlow uses AI to break overwhelming tasks into 25-minute focused sprints.</p>
+            <a href="#" class="cta-button">Try Free for 14 Days</a>
+        </header>
+
+        <section id="features">
+            <h2>How It Works</h2>
+            <div class="features">
+                <div class="feature">
+                    <h3>AI Task Breakdown</h3>
+                    <p>Input any large project, and our AI will instantly generate a clear, step-by-step plan of focused tasks.</p>
+                </div>
+                <div class="feature">
+                    <h3>Focus Timer</h3>
+                    <p>A built-in Pomodoro-style timer keeps you on track for each 25-minute sprint, minimizing distractions.</p>
+                </div>
+                <div class="feature">
+                    <h3>Progress Tracking</h3>
+                    <p>Visualize your accomplishments and stay motivated with simple, satisfying progress reports.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonial">
+            <h2>What People Are Saying</h2>
+            <div class="testimonial">
+                <p>"FocusFlow turned my 47-tab chaos into a clear action plan."</p>
+                <span>- Sarah K, Product Manager</span>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 FocusFlow. All rights reserved.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
