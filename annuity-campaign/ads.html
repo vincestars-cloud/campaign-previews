@@ -1,0 +1,2476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annuity Ad Review -- 25 Ads | 5 Angles | ScalingSOS</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ── RESET & BASE ─────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,sans-serif;
+  background:#F0F2F5;
+  color:#1C1E21;
+  font-size:16px;
+  line-height:1.5;
+  padding-bottom:80px;
+}
+
+/* ── STICKY HEADER ────────────────────────────────────────── */
+.top-bar{
+  position:sticky;top:0;z-index:100;
+  background:#fff;
+  border-bottom:1px solid #ddd;
+  padding:10px 16px;
+  box-shadow:0 2px 8px rgba(0,0,0,0.08);
+}
+.top-bar-inner{
+  max-width:960px;margin:0 auto;
+}
+.top-bar h1{
+  font-family:'Playfair Display',serif;
+  font-size:18px;font-weight:700;
+  margin-bottom:4px;
+  color:#1C1E21;
+}
+.top-bar .campaign-meta{
+  font-size:12px;color:#65676B;margin-bottom:8px;
+}
+.top-bar .campaign-meta span{margin-right:12px;}
+.nav-row{
+  display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px;
+}
+.nav-pill{
+  border:none;color:#fff;font-size:12px;font-weight:600;
+  padding:5px 12px;border-radius:16px;cursor:pointer;
+  transition:opacity 0.2s,transform 0.15s;
+}
+.nav-pill:hover{opacity:0.85;transform:translateY(-1px)}
+.stats-row{
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:12px;color:#65676B;
+}
+.stat-badge{
+  background:#E4E6EB;padding:3px 8px;border-radius:10px;font-weight:500;
+}
+.review-counter{
+  font-weight:600;
+}
+.review-counter .ct-approved{color:#22A559}
+.review-counter .ct-changes{color:#F5A623}
+.review-counter .ct-rejected{color:#C1121F}
+.view-toggle{
+  margin-left:auto;display:flex;gap:4px;
+}
+.view-toggle button{
+  background:#E4E6EB;border:none;padding:4px 10px;border-radius:6px;cursor:pointer;font-size:12px;font-weight:500;
+}
+.view-toggle button.active{background:#1877F2;color:#fff}
+
+/* ── MATRIX ───────────────────────────────────────────────── */
+.matrix-section{
+  max-width:960px;margin:20px auto;padding:0 16px;
+}
+.matrix-section h2{
+  font-family:'Playfair Display',serif;font-size:20px;margin-bottom:12px;
+}
+.matrix-table{
+  width:100%;border-collapse:collapse;font-size:13px;
+  background:#fff;border-radius:10px;overflow:hidden;
+  box-shadow:0 1px 4px rgba(0,0,0,0.08);
+}
+.matrix-table th,.matrix-table td{
+  padding:8px 10px;text-align:center;border:1px solid #E4E6EB;
+}
+.matrix-table thead th{
+  background:#F7F8FA;font-weight:600;font-size:11px;text-transform:uppercase;letter-spacing:0.5px;color:#65676B;
+}
+.matrix-table tbody th{
+  text-align:left;font-weight:600;font-size:12px;white-space:nowrap;
+}
+.matrix-cell{
+  display:inline-block;padding:4px 12px;border-radius:6px;
+  border:2px solid;text-decoration:none;color:#1C1E21;
+  font-weight:600;font-size:13px;transition:all 0.15s;
+}
+.matrix-cell:hover{
+  transform:scale(1.08);box-shadow:0 2px 8px rgba(0,0,0,0.12);
+}
+@media(max-width:600px){
+  .matrix-table{font-size:11px}
+  .matrix-table th,.matrix-table td{padding:5px 4px}
+  .matrix-table tbody th{font-size:10px}
+  .matrix-cell{padding:3px 6px;font-size:11px}
+}
+
+/* ── ANGLE SECTIONS ───────────────────────────────────────── */
+.angle-section{
+  max-width:960px;margin:24px auto;
+}
+.angle-header{
+  color:#fff;padding:16px 20px;border-radius:12px 12px 0 0;
+  cursor:pointer;display:flex;align-items:center;justify-content:space-between;
+  user-select:none;
+}
+.angle-header-content{flex:1}
+.angle-number{
+  font-size:11px;text-transform:uppercase;letter-spacing:2px;opacity:0.8;
+}
+.angle-header h2{
+  font-family:'Playfair Display',serif;font-size:24px;margin:4px 0;
+}
+.angle-subtitle{
+  font-style:italic;opacity:0.9;font-size:14px;
+}
+.angle-chevron{
+  font-size:20px;transition:transform 0.3s;
+}
+.angle-chevron.collapsed{transform:rotate(-90deg)}
+.angle-body{
+  background:#fff;border-radius:0 0 12px 12px;
+  border:1px solid #E4E6EB;border-top:none;
+  padding:16px;
+}
+.angle-brief,.angle-awareness{
+  font-size:14px;color:#65676B;margin-bottom:12px;line-height:1.6;
+}
+.angle-awareness{margin-bottom:16px}
+.ads-container{
+  display:flex;flex-direction:column;gap:20px;
+}
+.ads-container.grid-view{
+  flex-direction:row;flex-wrap:wrap;
+}
+.ads-container.grid-view .ad-card{
+  width:calc(50% - 10px);
+}
+@media(max-width:768px){
+  .ads-container.grid-view .ad-card{width:100%}
+  .angle-header h2{font-size:20px}
+}
+
+/* ── CONSENSUS BOX ────────────────────────────────────────── */
+.consensus-box{
+  background:#F7F8FA;border-radius:8px;padding:16px;margin-top:20px;
+}
+.consensus-box h3{
+  font-size:14px;text-transform:uppercase;letter-spacing:1px;color:#65676B;margin-bottom:12px;
+}
+.consensus-item{
+  font-size:13px;line-height:1.6;margin-bottom:10px;color:#1C1E21;
+}
+.consensus-item:last-child{margin-bottom:0}
+
+/* ── AD CARD (Meta mockup) ────────────────────────────────── */
+.ad-card{
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 1px 3px rgba(0,0,0,0.1);
+  overflow:hidden;
+  border:1px solid #E4E6EB;
+  transition:box-shadow 0.2s;
+}
+.ad-card:hover{box-shadow:0 3px 12px rgba(0,0,0,0.12)}
+.ad-card.review-approved{border-left:4px solid #22A559}
+.ad-card.review-changes{border-left:4px solid #F5A623}
+.ad-card.review-rejected{border-left:4px solid #C1121F}
+
+/* FB Header */
+.fb-header{
+  display:flex;align-items:center;padding:12px 16px;gap:10px;
+}
+.fb-avatar{
+  width:40px;height:40px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.fb-page-info{display:flex;flex-direction:column;flex:1}
+.fb-page-name{font-weight:600;font-size:14px;color:#1C1E21}
+.fb-sponsored{font-size:12px;color:#65676B}
+.fb-dots{color:#65676B;font-size:18px;letter-spacing:2px;cursor:default}
+
+/* Primary Text */
+.primary-text{
+  padding:0 16px 12px;font-size:15px;line-height:1.55;color:#1C1E21;
+}
+.primary-text p{margin-bottom:8px}
+.primary-text p:last-child{margin-bottom:0}
+.primary-text .ad-quote{
+  color:#1C1E21;font-style:italic;
+  border-left:3px solid #c9a84c;
+  padding-left:12px;margin:8px 0;
+}
+.see-more,.see-less{
+  color:#1877F2;cursor:pointer;font-weight:500;
+  display:inline;
+}
+.see-more:hover,.see-less:hover{text-decoration:underline}
+
+/* Creative Area */
+.creative-area{
+  margin:0 16px 12px;
+  background:linear-gradient(135deg,#0a0a0a 0%,#1a1a2a 50%,#0a0a0a 100%);
+  border-radius:8px;padding:16px;color:#fff;
+}
+.creative-badges{
+  display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;
+}
+.format-badge{
+  background:rgba(255,255,255,0.15);color:#fff;
+  padding:4px 10px;border-radius:12px;font-size:12px;font-weight:500;
+  backdrop-filter:blur(4px);
+}
+.awareness-badge{
+  padding:4px 10px;border-radius:12px;font-size:11px;font-weight:600;
+  text-transform:uppercase;letter-spacing:0.5px;
+}
+.creative-concept{margin-bottom:12px}
+.creative-concept h4,.creative-palette h4{
+  font-size:11px;text-transform:uppercase;letter-spacing:1px;
+  color:#c9a84c;margin-bottom:6px;
+}
+.creative-concept p{font-size:13px;line-height:1.5;color:rgba(255,255,255,0.85)}
+.palette-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.swatch{
+  width:28px;height:28px;border-radius:50%;
+  border:2px solid rgba(255,255,255,0.2);
+  display:inline-block;cursor:help;
+  transition:transform 0.15s;
+}
+.swatch:hover{transform:scale(1.2)}
+.ai-prompt-toggle{
+  cursor:pointer;font-size:12px;font-weight:500;
+  color:#c9a84c;padding:6px 0;
+  display:flex;align-items:center;gap:6px;
+}
+.ai-prompt-toggle:hover{text-decoration:underline}
+.prompt-arrow{
+  font-size:10px;transition:transform 0.2s;display:inline-block;
+}
+.prompt-arrow.open{transform:rotate(90deg)}
+.ai-prompt-content{
+  margin-top:8px;
+}
+.ai-prompt-content code{
+  display:block;font-size:12px;line-height:1.5;
+  background:rgba(0,0,0,0.4);border-radius:6px;padding:10px;
+  color:rgba(255,255,255,0.75);white-space:pre-wrap;word-break:break-word;
+  font-family:'SF Mono','Fira Code',monospace;
+}
+
+/* Ad Footer (Headline + CTA) */
+.ad-footer{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:12px 16px;border-top:1px solid #E4E6EB;gap:12px;
+}
+.ad-footer-text{flex:1;min-width:0}
+.ad-headline{
+  font-weight:700;font-size:15px;color:#1C1E21;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.ad-description{
+  font-size:13px;color:#65676B;margin-top:2px;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+}
+.cta-button{
+  background:#1877F2;color:#fff;border:none;
+  padding:8px 16px;border-radius:6px;font-size:13px;font-weight:600;
+  cursor:default;white-space:nowrap;flex-shrink:0;
+}
+
+/* UTM */
+.utm-line{
+  padding:6px 16px 8px;
+}
+.utm-line code{
+  font-size:10px;color:#65676B;
+  font-family:'SF Mono','Fira Code',monospace;
+  word-break:break-all;
+}
+
+/* Review Buttons */
+.review-buttons{
+  display:flex;gap:8px;padding:8px 16px 14px;
+}
+.review-btn{
+  flex:1;padding:8px 0;border-radius:8px;border:2px solid;
+  font-size:13px;font-weight:600;cursor:pointer;
+  transition:all 0.15s;background:transparent;
+}
+.review-btn.approve{border-color:#22A559;color:#22A559}
+.review-btn.approve:hover,.review-btn.approve.active{background:#22A559;color:#fff}
+.review-btn.changes{border-color:#F5A623;color:#F5A623}
+.review-btn.changes:hover,.review-btn.changes.active{background:#F5A623;color:#fff}
+.review-btn.reject{border-color:#C1121F;color:#C1121F}
+.review-btn.reject:hover,.review-btn.reject.active{background:#C1121F;color:#fff}
+
+/* ── UTILITIES ────────────────────────────────────────────── */
+@media(max-width:600px){
+  .ad-footer{flex-direction:column;align-items:stretch}
+  .cta-button{text-align:center}
+  .ad-headline{white-space:normal}
+  .ad-description{white-space:normal}
+  .angle-section{margin:16px 8px}
+  .matrix-section{padding:0 8px}
+}
+</style>
+</head>
+<body>
+
+<!-- ── STICKY HEADER ──────────────────────────────────────── -->
+<div class="top-bar">
+<div class="top-bar-inner">
+  <h1>Annuity Retirement Income Campaign</h1>
+  <div class="campaign-meta">
+    <span>Pre-retirees 55-75</span>
+    <span>Meta (Facebook/Instagram)</span>
+    <span>Feb 28, 2026</span>
+  </div>
+  <div class="nav-row">
+    <button class="nav-pill" style="background:#C1121F" onclick="scrollToAngle(1)">Pain-Agitation</button><button class="nav-pill" style="background:#C9A84C" onclick="scrollToAngle(2)">Aspirational</button><button class="nav-pill" style="background:#7209B7" onclick="scrollToAngle(3)">Contrarian</button><button class="nav-pill" style="background:#0077B6" onclick="scrollToAngle(4)">Social Proof</button><button class="nav-pill" style="background:#FF006E" onclick="scrollToAngle(5)">Couples</button>
+  </div>
+  <div class="stats-row">
+    <span class="stat-badge">25 Ads</span>
+    <span class="stat-badge">5 Angles</span>
+    <span class="stat-badge">3 Awareness Levels</span>
+    <span class="stat-badge">12 Static | 9 Video | 3 UGC | 1 Carousel</span>
+    <span class="review-counter" id="review-counter"></span>
+    <div class="view-toggle">
+      <button class="active" id="btn-card" onclick="setView('card')">Card</button>
+      <button id="btn-grid" onclick="setView('grid')">Grid</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ── MATRIX ─────────────────────────────────────────────── -->
+<div class="matrix-section">
+  <h2>5 x 5 Matrix Overview</h2>
+  
+    <table class="matrix-table">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Question Hook</th>
+                <th>Bold Claim</th>
+                <th>Story Hook</th>
+                <th>Pattern Interrupt</th>
+                <th>Direct Call-Out</th>
+            </tr>
+        </thead>
+        <tbody><tr>
+            <th style="color:#C1121F">Angle 1: Pain-Agitation</th>
+            <td><a href="#ad-1-1" class="matrix-cell" style="border-color:#C1121F" onclick="scrollToAd('1-1')">1-1</a></td><td><a href="#ad-1-2" class="matrix-cell" style="border-color:#C1121F" onclick="scrollToAd('1-2')">1-2</a></td><td><a href="#ad-1-3" class="matrix-cell" style="border-color:#C1121F" onclick="scrollToAd('1-3')">1-3</a></td><td><a href="#ad-1-4" class="matrix-cell" style="border-color:#C1121F" onclick="scrollToAd('1-4')">1-4</a></td><td><a href="#ad-1-5" class="matrix-cell" style="border-color:#C1121F" onclick="scrollToAd('1-5')">1-5</a></td>
+        </tr><tr>
+            <th style="color:#C9A84C">Angle 2: Aspirational</th>
+            <td><a href="#ad-2-1" class="matrix-cell" style="border-color:#C9A84C" onclick="scrollToAd('2-1')">2-1</a></td><td><a href="#ad-2-2" class="matrix-cell" style="border-color:#C9A84C" onclick="scrollToAd('2-2')">2-2</a></td><td><a href="#ad-2-3" class="matrix-cell" style="border-color:#C9A84C" onclick="scrollToAd('2-3')">2-3</a></td><td><a href="#ad-2-4" class="matrix-cell" style="border-color:#C9A84C" onclick="scrollToAd('2-4')">2-4</a></td><td><a href="#ad-2-5" class="matrix-cell" style="border-color:#C9A84C" onclick="scrollToAd('2-5')">2-5</a></td>
+        </tr><tr>
+            <th style="color:#7209B7">Angle 3: Contrarian</th>
+            <td><a href="#ad-3-1" class="matrix-cell" style="border-color:#7209B7" onclick="scrollToAd('3-1')">3-1</a></td><td><a href="#ad-3-2" class="matrix-cell" style="border-color:#7209B7" onclick="scrollToAd('3-2')">3-2</a></td><td><a href="#ad-3-3" class="matrix-cell" style="border-color:#7209B7" onclick="scrollToAd('3-3')">3-3</a></td><td><a href="#ad-3-4" class="matrix-cell" style="border-color:#7209B7" onclick="scrollToAd('3-4')">3-4</a></td><td><a href="#ad-3-5" class="matrix-cell" style="border-color:#7209B7" onclick="scrollToAd('3-5')">3-5</a></td>
+        </tr><tr>
+            <th style="color:#0077B6">Angle 4: Social Proof</th>
+            <td><a href="#ad-4-1" class="matrix-cell" style="border-color:#0077B6" onclick="scrollToAd('4-1')">4-1</a></td><td><a href="#ad-4-2" class="matrix-cell" style="border-color:#0077B6" onclick="scrollToAd('4-2')">4-2</a></td><td><a href="#ad-4-3" class="matrix-cell" style="border-color:#0077B6" onclick="scrollToAd('4-3')">4-3</a></td><td><a href="#ad-4-4" class="matrix-cell" style="border-color:#0077B6" onclick="scrollToAd('4-4')">4-4</a></td><td><a href="#ad-4-5" class="matrix-cell" style="border-color:#0077B6" onclick="scrollToAd('4-5')">4-5</a></td>
+        </tr><tr>
+            <th style="color:#FF006E">Angle 5: Couples</th>
+            <td><a href="#ad-5-1" class="matrix-cell" style="border-color:#FF006E" onclick="scrollToAd('5-1')">5-1</a></td><td><a href="#ad-5-2" class="matrix-cell" style="border-color:#FF006E" onclick="scrollToAd('5-2')">5-2</a></td><td><a href="#ad-5-3" class="matrix-cell" style="border-color:#FF006E" onclick="scrollToAd('5-3')">5-3</a></td><td><a href="#ad-5-4" class="matrix-cell" style="border-color:#FF006E" onclick="scrollToAd('5-4')">5-4</a></td><td><a href="#ad-5-5" class="matrix-cell" style="border-color:#FF006E" onclick="scrollToAd('5-5')">5-5</a></td>
+        </tr></tbody>
+    </table>
+</div>
+
+<!-- ── ANGLE SECTIONS ─────────────────────────────────────── -->
+
+    <section class="angle-section" id="angle-1">
+        <div class="angle-header" style="background:#C1121F" onclick="toggleAngle(1)">
+            <div class="angle-header-content">
+                <span class="angle-number">ANGLE 1</span>
+                <h2>Pain-Agitation</h2>
+                <p class="angle-subtitle">&ldquo;The Market Crash Nightmare&rdquo;</p>
+            </div>
+            <span class="angle-chevron" id="ac_1">&#9660;</span>
+        </div>
+        <div class="angle-body" id="ab_1">
+            <div class="angle-brief">
+                <strong>Angle Brief:</strong> Lead with the problem. The obsessive portfolio-checking. The sleepless nights. The sequence-of-returns risk that could wipe out a decade of savings in 18 months. Salt the wound with 2008/2020 memories. Make the reader feel the dread they already carry -- then offer the exit.
+            </div>
+            <div class="angle-awareness">
+                <strong>Default Awareness:</strong> Problem-Aware (they know they're scared; they don't yet know what fixes it)
+            </div>
+            <div class="ads-container" id="ads_1">
+                
+    <div class="ad-card" id="ad-1-1" data-ad-id="1-1">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#C1121F">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_1_1">
+            <div class="primary-short" id="ps_1_1">
+                <p>How many times did you check your portfolio today?</p>
+                <span class="see-more" onclick="togglePrimary('1_1')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_1_1" style="display:none">
+                <p>How many times did you check your portfolio today?</p>
+<p>Be honest. Was it 3 times? 5 times? One man admitted he checks his Schwab account &quot;at least 5 times a day.&quot; Every single day. For years.</p>
+<p>That knot in your stomach every time the market dips 2%... the mental math at 3am... the retirement calculator you've run 47 times hoping for a different answer -- that's not retirement planning. That's financial anxiety running your life.</p>
+<p>Here's what nobody tells you: there's a way to cover your basic monthly expenses with guaranteed income that arrives whether the market is up, down, or sideways. No more checking. No more calculating. No more dread.</p>
+<p>See how much guaranteed monthly income your savings could generate -- in 60 seconds.</p>
+                <span class="see-less" onclick="togglePrimary('1_1')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F5BC; Static Image 1080x1080</span>
+                <span class="awareness-badge" style="background:#C1121F;color:#fff">Problem-Aware (TOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Close-up of a man's hand gripping a smartphone in bed, the screen casting a harsh blue glow on his face in an otherwise pitch-dark room. The phone screen shows a stock portfolio app with red downward arrows. Bedside clock reads 3:17 AM.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#0a0a0a" title="Near-black (#0a0a0a)"></span><span class="swatch" style="background:#4a90d9" title="Phone blue (#4a90d9)"></span><span class="swatch" style="background:#c9a84c" title="Gold accent (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White text (#ffffff)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('1_1')">
+                <span class="prompt-arrow" id="pa_1_1">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_1_1" style="display:none">
+                <code>Photorealistic close-up of a 60-year-old man lying in bed at night, illuminated only by the blue glow of a smartphone he's holding above his face. His expression is tense and worried, jaw clenched. Dark bedroom, wife sleeping beside him facing away. Bedside digital clock showing 3:17 AM. Cinematic lighting, shallow depth of field.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">Stop Checking. Start Living.</div>
+                <div class="ad-description">Your free income estimate awaits</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_pain&amp;utm_content=question_hook_checking&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_1_1">
+            <button class="review-btn approve" onclick="setReview('1-1','approved')" id="rv_approve_1_1">Approve</button>
+            <button class="review-btn changes" onclick="setReview('1-1','changes')" id="rv_changes_1_1">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('1-1','rejected')" id="rv_reject_1_1">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-1-2" data-ad-id="1-2">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#C1121F">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_1_2">
+            <div class="primary-short" id="ps_1_2">
+                <p>73% of pre-retirees say &quot;running out of money&quot; is their #1 fear -- ahead of death itself.</p>
+                <span class="see-more" onclick="togglePrimary('1_2')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_1_2" style="display:none">
+                <p>73% of pre-retirees say &quot;running out of money&quot; is their #1 fear -- ahead of death itself.</p>
+<p>And it's not irrational. A 40% market crash in the first 2 years of retirement can permanently destroy a withdrawal strategy that looked bulletproof on paper. It's called sequence-of-returns risk, and it's ended more retirements than bad spending habits ever will.</p>
+<p>One retiree put it bluntly: &quot;If an economic meltdown caused me to lose a large chunk of my retirement assets, I would be forced to relive the trials and tribulations of my working career.&quot;</p>
+<p>Forced back to work at 67. Not because you spent too much -- because the market crashed at the wrong time.</p>
+<p>There is a way to take sequence risk completely off the table. Exposed retirement savings become protected guaranteed income -- a monthly amount that arrives for life, regardless of what the market does.</p>
+<p>Get your personalized guaranteed income estimate. It takes 60 seconds.</p>
+                <span class="see-less" onclick="togglePrimary('1_2')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F3AC; Video 15s 1080x1920</span>
+                <span class="awareness-badge" style="background:#C1121F;color:#fff">Problem-Aware (TOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Opens on &quot;73%&quot; in massive gold type on black. Then context line fades in. Cut to: slow dolly shot of an empty office hallway at 6 AM with a 60+ person walking toward camera with briefcase.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#000000" title="Pure black (#000000)"></span><span class="swatch" style="background:#1a1e2a" title="Cold grey-blue (#1a1e2a)"></span><span class="swatch" style="background:#c9a84c" title="Gold (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White (#ffffff)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('1_2')">
+                <span class="prompt-arrow" id="pa_1_2">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_1_2" style="display:none">
+                <code>Cinematic slow dolly forward through an empty corporate office hallway at early morning. Fluorescent overhead lights casting cold blue-white light. A single 62-year-old man walks toward camera from far end, briefcase in hand. Desaturated, institutional, slightly ominous. 4K cinematic, 24fps, 15 seconds.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">Your Savings Have a Vulnerability</div>
+                <div class="ad-description">Sequence risk is real. Fix it.</div>
+            </div>
+            <button class="cta-button">Get Offer</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_pain&amp;utm_content=bold_claim_sequence_risk&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_1_2">
+            <button class="review-btn approve" onclick="setReview('1-2','approved')" id="rv_approve_1_2">Approve</button>
+            <button class="review-btn changes" onclick="setReview('1-2','changes')" id="rv_changes_1_2">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('1-2','rejected')" id="rv_reject_1_2">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-1-3" data-ad-id="1-3">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#C1121F">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_1_3">
+            <div class="primary-short" id="ps_1_3">
+                <p>He wakes up at 5:30am. Not because he wants to -- because his mind won't stop.</p>
+                <span class="see-more" onclick="togglePrimary('1_3')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_1_3" style="display:none">
+                <p>He wakes up at 5:30am. Not because he wants to -- because his mind won't stop.</p>
+<p>First thing: check the futures. Red. His chest tightens. He opens the retirement calculator again. Runs the numbers. Again. The same numbers he ran last night before bed.</p>
+<p>He drives to a job he stopped loving 6 years ago. During lunch, he checks his 401k. Down another 0.4%. He does the math on what that means for his withdrawal rate.</p>
+<p>His wife asks at dinner: &quot;When are we going to retire?&quot;</p>
+<p>He says what he always says: &quot;Maybe next year.&quot;</p>
+<p>He's been saying &quot;another 2-3 years&quot; for the past 5 years. He's 61 now. And the number is never enough. It's never going to be enough -- because the fear isn't about the number. It's about the uncertainty.</p>
+<p>What if there was a way to turn your savings into a guaranteed monthly income you literally cannot outlive?</p>
+<p>See what your number looks like. Free. 60 seconds.</p>
+                <span class="see-less" onclick="togglePrimary('1_3')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F3AC; Video 45s 1080x1920</span>
+                <span class="awareness-badge" style="background:#C1121F;color:#fff">Problem-Aware (TOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Documentary-style mini-narrative. Alarm clock at 5:30 AM. Man sitting on bed edge in dark. Kitchen table with laptop and retirement calculator. Wife enters: &quot;When can we retire?&quot; He says &quot;Maybe next year.&quot;</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#0d1117" title="Pre-dawn blue (#0d1117)"></span><span class="swatch" style="background:#2a1f0a" title="Kitchen amber (#2a1f0a)"></span><span class="swatch" style="background:#c9a84c" title="Gold accent (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White text (#ffffff)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('1_3')">
+                <span class="prompt-arrow" id="pa_1_3">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_1_3" style="display:none">
+                <code>Medium shot of a 61-year-old man sitting on the edge of his bed in pre-dawn darkness, rubbing his face. Blue-grey window light behind him. Documentary style, handheld, intimate. Then kitchen scene with wife's hand on his shoulder.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">&quot;Maybe Next Year&quot; -- for 5 Years</div>
+                <div class="ad-description">Break the cycle today</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_pain&amp;utm_content=story_hook_day_in_life&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_1_3">
+            <button class="review-btn approve" onclick="setReview('1-3','approved')" id="rv_approve_1_3">Approve</button>
+            <button class="review-btn changes" onclick="setReview('1-3','changes')" id="rv_changes_1_3">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('1-3','rejected')" id="rv_reject_1_3">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-1-4" data-ad-id="1-4">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#C1121F">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_1_4">
+            <div class="primary-short" id="ps_1_4">
+                <p>Your retirement calculator is lying to you.</p>
+                <span class="see-more" onclick="togglePrimary('1_4')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_1_4" style="display:none">
+                <p>Your retirement calculator is lying to you.</p>
+<p>It assumes average returns. But you don't retire into an average. You retire into a specific year -- and if that year is 2008, or 2020, or the next crash nobody sees coming, your &quot;safe&quot; 4% withdrawal rate fails catastrophically.</p>
+<p class="ad-quote">&quot;I knew a correction was coming... watching the market continue to be hit hard is still scary. Many had to go back to work.&quot;</p>
+<p>That's not a hypothetical. That's someone who watched it happen to their friends. Real people. Real savings. Gone.</p>
+<p>The retirement calculator doesn't model fear. It doesn't model panic-selling at the bottom. It doesn't model the 3am anxiety that makes you pull everything into cash -- which inflation then eats alive.</p>
+<p>What it also doesn't model: guaranteed income. A monthly amount that doesn't depend on returns, timing, or your emotional state at 5:30am.</p>
+<p>Find out what guaranteed income looks like for your situation.</p>
+                <span class="see-less" onclick="togglePrimary('1_4')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F5BC; Static Image 1080x1080</span>
+                <span class="awareness-badge" style="background:#C1121F;color:#fff">Problem-Aware (TOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>A retirement calculator interface on a laptop screen, but the screen has a single diagonal crack running across the display, distorting the green &quot;You're on track!&quot; projection line. Stormy grey sky through window behind.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#1a1a1a" title="Dark charcoal (#1a1a1a)"></span><span class="swatch" style="background:#2ecc71" title="Calculator green (#2ecc71)"></span><span class="swatch" style="background:#c9a84c" title="Gold accent (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White text (#ffffff)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('1_4')">
+                <span class="prompt-arrow" id="pa_1_4">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_1_4" style="display:none">
+                <code>Photorealistic overhead-angle shot of a laptop on a dark walnut desk showing a retirement calculator with green projection graphs. The laptop screen has a single dramatic diagonal crack. Moody lighting, stormy grey sky through blurred window. Editorial product photography style.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">The Calculator Can't Model Fear</div>
+                <div class="ad-description">But guaranteed income can fix it</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_pain&amp;utm_content=pattern_interrupt_calculator&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_1_4">
+            <button class="review-btn approve" onclick="setReview('1-4','approved')" id="rv_approve_1_4">Approve</button>
+            <button class="review-btn changes" onclick="setReview('1-4','changes')" id="rv_changes_1_4">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('1-4','rejected')" id="rv_reject_1_4">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-1-5" data-ad-id="1-5">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#C1121F">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_1_5">
+            <div class="primary-short" id="ps_1_5">
+                <p>To every 60-year-old still saying &quot;I'll work another 2-3 years&quot; --</p>
+                <span class="see-more" onclick="togglePrimary('1_5')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_1_5" style="display:none">
+                <p>To every 60-year-old still saying &quot;I'll work another 2-3 years&quot; --</p>
+<p>You said that 3 years ago. You'll say it again next year. The number will never feel like enough, because the problem was never the number. It's the uncertainty.</p>
+<p class="ad-quote">&quot;I can't control the fear, so I continue to work. I can't cross the chasm from saving my money to using that money.&quot;</p>
+<p>That quote has thousands of upvotes on retirement forums because it's the silent truth nobody talks about at dinner parties. You've done the saving. You've done the sacrificing. But the transition from accumulation to distribution is terrifying -- because suddenly every dollar you spend is a dollar that won't grow back.</p>
+<p>Unless it's guaranteed.</p>
+<p>Imagine a portion of your savings converted into a monthly deposit -- like a paycheck -- that arrives every single month for the rest of your life. Regardless of the market. Regardless of how long you live.</p>
+<p>That's not a fantasy. It's a financial product used by millions of retirees. And it might be the missing piece between you and the retirement you've earned.</p>
+<p>See your guaranteed monthly income estimate. Free. 60 seconds. No advisor call required.</p>
+                <span class="see-less" onclick="togglePrimary('1_5')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F3AC; UGC Video 30-45s 1080x1920</span>
+                <span class="awareness-badge" style="background:#C1121F;color:#fff">Problem-Aware (TOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>UGC-style: A 58-65 year old person speaking directly to camera at kitchen table. Natural lighting from window. No ring light. Personal touches in background -- family photos, bookshelf, coffee mug. Confessional, not performative.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#f5e6c8" title="Warm neutral (#f5e6c8)"></span><span class="swatch" style="background:#c9a84c" title="Gold emphasis (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White caption (#ffffff)"></span><span class="swatch" style="background:#000000" title="Black stroke (#000000)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('1_5')">
+                <span class="prompt-arrow" id="pa_1_5">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_1_5" style="display:none">
+                <code>UGC-style selfie video of a 62-year-old man at a kitchen table speaking directly to camera. Blue chambray shirt, salt-and-pepper hair. Natural window light. Family photos on wall behind. iPhone quality, slightly warm. Intimate, authentic, confessional tone.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">You've Saved Enough. You Know It.</div>
+                <div class="ad-description">The fear is the only thing left</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_pain&amp;utm_content=direct_callout_60yr&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_1_5">
+            <button class="review-btn approve" onclick="setReview('1-5','approved')" id="rv_approve_1_5">Approve</button>
+            <button class="review-btn changes" onclick="setReview('1-5','changes')" id="rv_changes_1_5">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('1-5','rejected')" id="rv_reject_1_5">Reject</button>
+        </div>
+    </div>
+            </div>
+            <div class="consensus-box" style="border-left: 4px solid #C1121F">
+                <h3>Consensus Check</h3>
+                <div class="consensus-item"><strong>Haynes:</strong> Five genuinely distinct hooks. The question hook hits the behavioral symptom (checking). The bold claim hits the intellectual fear (sequence risk). The story hook hits the emotional identity (day-in-the-life). The pattern interrupt challenges a trusted tool (calculator). The direct call-out names the audience and their stuckness. No overlap. Strong variation.</div><div class="consensus-item"><strong>Suby:</strong> The audience is called out explicitly in 1-5, behaviorally in 1-1, and situationally in 1-3. Problem agitation is heavy across all five -- real quotes, real scenarios, real consequences. The wound is salted thoroughly before any solution appears. The &quot;forced back to work&quot; fear is deployed in 1-2, which is the most visceral consequence for this demo.</div><div class="consensus-item"><strong>Hormozi:</strong> Offers are clear, not clever. &quot;See your guaranteed monthly income estimate -- free, 60 seconds, no advisor call.&quot; The value equation works: high perceived value (personalized income number), low effort (60 seconds), low risk (no call, no commitment), high certainty (it's a calculator, not a pitch). Nobody is being asked to &quot;learn about annuities.&quot; They're being asked to see their number.</div>
+            </div>
+        </div>
+    </section>
+    <section class="angle-section" id="angle-2">
+        <div class="angle-header" style="background:#C9A84C" onclick="toggleAngle(2)">
+            <div class="angle-header-content">
+                <span class="angle-number">ANGLE 2</span>
+                <h2>Aspirational</h2>
+                <p class="angle-subtitle">&ldquo;Your Guaranteed Paycheck for Life&rdquo;</p>
+            </div>
+            <span class="angle-chevron" id="ac_2">&#9660;</span>
+        </div>
+        <div class="angle-body" id="ab_2">
+            <div class="angle-brief">
+                <strong>Angle Brief:</strong> Lead with the dream. The monthly deposit that shows up like clockwork. The slow Tuesday morning with no alarm. The trip with the grandkids funded by money that can never run out. Reframe the annuity as a &quot;paycheck replacement&quot; -- the thing that lets you live the retirement you imagined during all those years of working.
+            </div>
+            <div class="angle-awareness">
+                <strong>Default Awareness:</strong> Solution-Aware (they know they want guaranteed income; they may not know the specific vehicle)
+            </div>
+            <div class="ads-container" id="ads_2">
+                
+    <div class="ad-card" id="ad-2-1" data-ad-id="2-1">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#C9A84C">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_2_1">
+            <div class="primary-short" id="ps_2_1">
+                <p>What would you do on a Tuesday morning if money wasn't the thing keeping you at your desk?</p>
+                <span class="see-more" onclick="togglePrimary('2_1')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_2_1" style="display:none">
+                <p>What would you do on a Tuesday morning if money wasn't the thing keeping you at your desk?</p>
+<p>Not &quot;if you won the lottery&quot; -- that's a fantasy. This is simpler: What if your basic expenses were covered? Every month. Automatically. For the rest of your life. Regardless of what the stock market does.</p>
+<p class="ad-quote">&quot;We decided to each purchase an annuity because the cash flow plus Social Security covers our monthly expenses. The remaining accounts are for the fun stuff -- like trips.&quot;</p>
+<p>That couple isn't rich. They just made one decision that took the pressure off everything else. The mortgage, the utilities, the groceries, the insurance -- all covered by guaranteed monthly income. Everything else in their portfolio? That's play money. Travel. Grandkids. Restaurants. The life they actually retired for.</p>
+<p>See how much guaranteed monthly income your savings could produce.</p>
+                <span class="see-less" onclick="togglePrimary('2_1')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F501; Carousel 5 cards 1080x1080</span>
+                <span class="awareness-badge" style="background:#0077B6;color:#fff">Solution-Aware (MOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Five-card carousel: Sun-drenched kitchen, couple at breakfast. Coffee cups on porch. Couple walking on tree-lined path. Split: bills with checkmark vs. farmers market. Looking through window at the couple inside.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#faf7f2" title="Warm white (#faf7f2)"></span><span class="swatch" style="background:#c9a84c" title="Gold accent (#c9a84c)"></span><span class="swatch" style="background:#1a1a1a" title="Deep charcoal (#1a1a1a)"></span><span class="swatch" style="background:#6b5b4b" title="Muted brown (#6b5b4b)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('2_1')">
+                <span class="prompt-arrow" id="pa_2_1">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_2_1" style="display:none">
+                <code>Editorial lifestyle photograph of a retired couple in their mid-60s at a bright kitchen island on a sunny Tuesday morning. She's reading a book, he's pouring coffee. Natural morning sunlight through sheer curtains. Kinfolk magazine style, warm film grain.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">What If Your Bills Paid Themselves?</div>
+                <div class="ad-description">See your guaranteed income now</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_aspire&amp;utm_content=question_hook_tuesday&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_2_1">
+            <button class="review-btn approve" onclick="setReview('2-1','approved')" id="rv_approve_2_1">Approve</button>
+            <button class="review-btn changes" onclick="setReview('2-1','changes')" id="rv_changes_2_1">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('2-1','rejected')" id="rv_reject_2_1">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-2-2" data-ad-id="2-2">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#C9A84C">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_2_2">
+            <div class="primary-short" id="ps_2_2">
+                <p>$650,000 in retirement savings can generate $4,200/month in guaranteed income for life.</p>
+                <span class="see-more" onclick="togglePrimary('2_2')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_2_2" style="display:none">
+                <p>$650,000 in retirement savings can generate $4,200/month in guaranteed income for life.</p>
+<p>Not projected. Not estimated. Not &quot;assuming 7% average returns.&quot; Guaranteed. Contractually. For as long as you live -- even if you live to 105.</p>
+<p>That $4,200 arrives on the same day every month. It doesn't care about the S&amp;P 500. It doesn't flinch during a correction. It doesn't require you to &quot;rebalance&quot; or &quot;stay the course&quot; or do anything at all.</p>
+<p>For many couples, that number plus Social Security covers every essential expense. Which means the rest of your portfolio -- your brokerage account, your remaining IRA -- becomes your &quot;fun money.&quot; Travel. Hobbies. Spoiling the grandkids. The stuff you actually retired for.</p>
+<p>No more withdrawal rate math. No more &quot;can I afford this dinner?&quot;</p>
+<p>Find out your specific guaranteed monthly income amount. It takes 60 seconds.</p>
+                <span class="see-less" onclick="togglePrimary('2_2')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F5BC; Static Image 1080x1080</span>
+                <span class="awareness-badge" style="background:#0077B6;color:#fff">Solution-Aware (MOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Stark, premium, number-forward design. &quot;$4,200/mo&quot; dominates the frame in massive gold typography on near-black background. Below: &quot;Guaranteed. For Life.&quot; The number IS the ad.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#0a0a0a" title="Near-black (#0a0a0a)"></span><span class="swatch" style="background:#c9a84c" title="Gold (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White (#ffffff)"></span><span class="swatch" style="background:#8a7a3c" title="Muted gold (#8a7a3c)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('2_2')">
+                <span class="prompt-arrow" id="pa_2_2">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_2_2" style="display:none">
+                <code>Abstract dark luxury background with subtle radial gradient from center (#111111) to edges (#0a0a0a). Very subtle gold particle dust barely visible. Think luxury watch advertisement background. 1080x1080.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">$4,200/Mo. Guaranteed. For Life.</div>
+                <div class="ad-description">See your personalized number</div>
+            </div>
+            <button class="cta-button">Get Offer</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_aspire&amp;utm_content=bold_claim_4200mo&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_2_2">
+            <button class="review-btn approve" onclick="setReview('2-2','approved')" id="rv_approve_2_2">Approve</button>
+            <button class="review-btn changes" onclick="setReview('2-2','changes')" id="rv_changes_2_2">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('2-2','rejected')" id="rv_reject_2_2">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-2-3" data-ad-id="2-3">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#C9A84C">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_2_3">
+            <div class="primary-short" id="ps_2_3">
+                <p>Last September, a 63-year-old teacher sat across from a fiduciary advisor and said five words she'd been afraid to say for a decade:</p>
+                <span class="see-more" onclick="togglePrimary('2_3')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_2_3" style="display:none">
+                <p>Last September, a 63-year-old teacher sat across from a fiduciary advisor and said five words she'd been afraid to say for a decade:</p>
+<p class="ad-quote">&quot;I want to stop working.&quot;</p>
+<p>Not &quot;I'm thinking about it.&quot; Not &quot;maybe in a few years.&quot; She said it like she meant it -- because for the first time, she could see the math working.</p>
+<p>Her advisor showed her how converting a portion of her $720K in savings into guaranteed lifetime income would produce $3,800/month. Combined with her pension and Social Security, every bill was covered. The remaining $280K stayed invested for growth -- that was her travel fund, her grandkid fund, her &quot;I earned this&quot; fund.</p>
+<p>She put in her notice three weeks later.</p>
+<p>Her first Monday of retirement, she made coffee at 7am, sat on her porch, and read an entire book. No alarm. No lesson plans. No Sunday-night dread.</p>
+<p>That's what a guaranteed paycheck for life actually feels like.</p>
+<p>See what yours looks like. 60 seconds. No obligation.</p>
+                <span class="see-less" onclick="togglePrimary('2_3')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F3AC; Video 45-60s 1080x1920</span>
+                <span class="awareness-badge" style="background:#0077B6;color:#fff">Solution-Aware (MOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Woman wakes naturally, no alarm. Sunlight through curtains. Makes coffee, sits on porch. Beautiful backyard with morning mist. Title card: $3,800/mo guaranteed. Close-up of her face, eyes closed, sun on skin.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#f5e6c8" title="Soft amber (#f5e6c8)"></span><span class="swatch" style="background:#c9a84c" title="Honey gold (#c9a84c)"></span><span class="swatch" style="background:#1a1a1a" title="Charcoal (#1a1a1a)"></span><span class="swatch" style="background:#ffffff" title="White (#ffffff)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('2_3')">
+                <span class="prompt-arrow" id="pa_2_3">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_2_3" style="display:none">
+                <code>Cinematic morning scene: A 63-year-old woman with short grey hair wakes up naturally in a bright bedroom. She stretches peacefully. Walks to kitchen, then back porch. Wide shot of modest beautiful backyard with morning mist. Kodak Portra 400 color grade. Terrence Malick style. 45 seconds.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">Her First Monday Without an Alarm</div>
+                <div class="ad-description">Your income estimate is free</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_aspire&amp;utm_content=story_hook_teacher&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_2_3">
+            <button class="review-btn approve" onclick="setReview('2-3','approved')" id="rv_approve_2_3">Approve</button>
+            <button class="review-btn changes" onclick="setReview('2-3','changes')" id="rv_changes_2_3">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('2-3','rejected')" id="rv_reject_2_3">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-2-4" data-ad-id="2-4">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#C9A84C">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_2_4">
+            <div class="primary-short" id="ps_2_4">
+                <p>The best retirement plan isn't a portfolio. It's a paycheck.</p>
+                <span class="see-more" onclick="togglePrimary('2_4')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_2_4" style="display:none">
+                <p>The best retirement plan isn't a portfolio. It's a paycheck.</p>
+<p>Think about it: for 30-40 years, you never worried about money on a daily basis. Not because you were rich -- because a paycheck showed up every two weeks. Automatically. Predictably. Reliably.</p>
+<p>Then you retire, and suddenly YOU are the paycheck. You have to decide how much to withdraw. When to withdraw it. From which account. And every withdrawal feels like you're eating your own savings.</p>
+<p>That's why retirees who convert a portion of their savings into guaranteed lifetime income report dramatically lower financial anxiety. They rebuilt the paycheck. The thing that made money invisible for 40 years -- they just... rebuilt it.</p>
+<p class="ad-quote">&quot;I KNEW that if I took the lump sum, I would be checking my portfolio every day. I picked the monthly payments.&quot;</p>
+<p>You don't need more money. You need the money you have to show up automatically, every month, forever.</p>
+<p>See your guaranteed monthly paycheck amount.</p>
+                <span class="see-less" onclick="togglePrimary('2_4')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F5BC; Static Image 1080x1080</span>
+                <span class="awareness-badge" style="background:#0077B6;color:#fff">Solution-Aware (MOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Split-screen: Left half shows vintage paycheck stub with warm golden tones. Right half shows modern bank notification: &quot;Monthly Guaranteed Income: $4,200.00 -- deposited.&quot; Gold divider between.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#f5e6c8" title="Aged paper (#f5e6c8)"></span><span class="swatch" style="background:#0f0f0f" title="Modern dark (#0f0f0f)"></span><span class="swatch" style="background:#c9a84c" title="Gold divider (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White text (#ffffff)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('2_4')">
+                <span class="prompt-arrow" id="pa_2_4">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_2_4" style="display:none">
+                <code>Left: Close-up of vintage paycheck stub on aged paper showing NET PAY amount. Warm, nostalgic. Right: Clean modern bank app notification showing monthly guaranteed deposit in gold text on dark screen. Premium, digital. Side by side composition.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">Rebuild the Paycheck. Retire in Peace.</div>
+                <div class="ad-description">Your free estimate takes 60 sec</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_aspire&amp;utm_content=pattern_interrupt_paycheck&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_2_4">
+            <button class="review-btn approve" onclick="setReview('2-4','approved')" id="rv_approve_2_4">Approve</button>
+            <button class="review-btn changes" onclick="setReview('2-4','changes')" id="rv_changes_2_4">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('2-4','rejected')" id="rv_reject_2_4">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-2-5" data-ad-id="2-5">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#C9A84C">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_2_5">
+            <div class="primary-short" id="ps_2_5">
+                <p>To every retired couple who budgets every restaurant dinner and feels guilty about a $14 glass of wine --</p>
+                <span class="see-more" onclick="togglePrimary('2_5')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_2_5" style="display:none">
+                <p>To every retired couple who budgets every restaurant dinner and feels guilty about a $14 glass of wine --</p>
+<p>You didn't save for 35 years to live like this.</p>
+<p>You saved so you could say yes. Yes to the trip. Yes to the restaurant. Yes to the grandkids' college fund. Yes to the thing you've been putting off since you were 40.</p>
+<p>But when every dollar comes from a portfolio that could drop 30% tomorrow, &quot;yes&quot; feels reckless. So you say &quot;maybe next month.&quot; And next month becomes next year. And next year becomes never.</p>
+<p>Here's the fix: cover your essentials -- mortgage, utilities, insurance, groceries -- with guaranteed monthly income that can never run out. Now your portfolio isn't your lifeline. It's your fun fund. And suddenly, the $14 glass of wine doesn't need a budget meeting.</p>
+<p class="ad-quote">&quot;The remaining accounts are for the fun stuff -- like trips.&quot;</p>
+<p>That's a real quote from a real couple who made this switch. They didn't get richer. They got freer.</p>
+<p>See what your guaranteed monthly income could look like.</p>
+                <span class="see-less" onclick="togglePrimary('2_5')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F3AC; UGC Video 30-45s 1080x1920</span>
+                <span class="awareness-badge" style="background:#0077B6;color:#fff">Solution-Aware (MOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>UGC-style: Retired couple on living room couch, speaking to camera like a FaceTime call. Wine glass on side table. She talks about budgeting every dinner. He adds: &quot;She'd look at the wine menu and order water.&quot; They laugh.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#f5e6c8" title="Warm amber (#f5e6c8)"></span><span class="swatch" style="background:#c9a84c" title="Gold punchline (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White caption (#ffffff)"></span><span class="swatch" style="background:#000000" title="Black stroke (#000000)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('2_5')">
+                <span class="prompt-arrow" id="pa_2_5">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_2_5" style="display:none">
+                <code>UGC-style video of retired couple in mid-60s on comfortable couch in living room. She has grey-blonde hair, reading glasses pushed up. He's in flannel. Warm lamp lighting, evening. Wine glass on side table. They laugh together. iPhone quality. 35 seconds.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">You Didn't Save 35 Years to Pinch Pennies</div>
+                <div class="ad-description">See your guaranteed income now</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_aspire&amp;utm_content=direct_callout_couples_wine&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_2_5">
+            <button class="review-btn approve" onclick="setReview('2-5','approved')" id="rv_approve_2_5">Approve</button>
+            <button class="review-btn changes" onclick="setReview('2-5','changes')" id="rv_changes_2_5">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('2-5','rejected')" id="rv_reject_2_5">Reject</button>
+        </div>
+    </div>
+            </div>
+            <div class="consensus-box" style="border-left: 4px solid #C9A84C">
+                <h3>Consensus Check</h3>
+                <div class="consensus-item"><strong>Haynes:</strong> Each hook opens a different door. 2-1 is imaginative (Tuesday morning). 2-2 is concrete and numerical ($4,200/mo). 2-3 is narrative (the teacher). 2-4 challenges a mental model (portfolio vs. paycheck). 2-5 calls out a specific emotional experience (guilt about spending). No two hooks could be confused for each other.</div><div class="consensus-item"><strong>Suby:</strong> The audience sees themselves in every ad. The teacher in 2-3. The guilty dinner couple in 2-5. The obsessive checker in 2-4. Agitation is lighter here than Angle 1 -- appropriate for aspirational -- but still present. 2-5 agitates the spending guilt hard before offering the reframe. The real quotes land because they sound like things the reader has literally said.</div><div class="consensus-item"><strong>Hormozi:</strong> The dream outcome is crystal clear in every ad: guaranteed monthly income covering essentials, freeing the rest for &quot;the fun stuff.&quot; The offer framing is consistent: free, 60 seconds, no obligation. 2-2 is the strongest direct-response ad in the set because it leads with the number. Specific beats vague. $4,200/mo guaranteed is an offer that does its own selling.</div>
+            </div>
+        </div>
+    </section>
+    <section class="angle-section" id="angle-3">
+        <div class="angle-header" style="background:#7209B7" onclick="toggleAngle(3)">
+            <div class="angle-header-content">
+                <span class="angle-number">ANGLE 3</span>
+                <h2>Contrarian</h2>
+                <p class="angle-subtitle">&ldquo;You've Won the Game. Stop Playing.&rdquo;</p>
+            </div>
+            <span class="angle-chevron" id="ac_3">&#9660;</span>
+        </div>
+        <div class="angle-body" id="ab_3">
+            <div class="angle-brief">
+                <strong>Angle Brief:</strong> Challenge the &quot;I need more growth&quot; mindset. The audience has been told for 40 years to maximize returns, stay in the market, compound compound compound. Now they're 62 with $800K and STILL acting like they need to beat the S&amp;P. The contrarian reframe: you're not an investor anymore. You're a retiree. You don't need more returns -- you need certainty.
+            </div>
+            <div class="angle-awareness">
+                <strong>Default Awareness:</strong> Solution-Aware to Product-Aware (these ads assume awareness of annuities and reframe them)
+            </div>
+            <div class="ads-container" id="ads_3">
+                
+    <div class="ad-card" id="ad-3-1" data-ad-id="3-1">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#7209B7">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_3_1">
+            <div class="primary-short" id="ps_3_1">
+                <p>Why are you still playing a game you've already won?</p>
+                <span class="see-more" onclick="togglePrimary('3_1')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_3_1" style="display:none">
+                <p>Why are you still playing a game you've already won?</p>
+<p>You spent 35 years accumulating. Saving. Investing. Watching the number grow. And it worked -- you have $500K, $800K, maybe over a million in retirement savings.</p>
+<p>You won.</p>
+<p>So why are you still waking up at 5:30am to check futures? Why are you still sweating over whether to rebalance into bonds? Why does a 3% dip ruin your entire week?</p>
+<p>Because nobody told you the game changed. Accumulation is over. You're in the distribution phase now -- and the rules are completely different. In this phase, a 30% crash isn't a &quot;buying opportunity.&quot; It's a catastrophe.</p>
+<p class="ad-quote">&quot;If you've won the game, it's okay to stop playing.&quot;</p>
+<p>A guaranteed income stream doesn't try to beat the market. It ignores the market entirely. It just pays you. Every month. For life.</p>
+<p>See what &quot;stopping the game&quot; looks like for your specific situation.</p>
+                <span class="see-less" onclick="togglePrimary('3_1')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F3AC; Video 15s 1080x1920</span>
+                <span class="awareness-badge" style="background:#5B4F8A;color:#fff">Solution/Product-Aware (MOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Chess board close-up: checkmate position. Hand tips the losing king in slow motion. Text: &quot;YOU WON.&quot; Then hand reaches back and starts resetting pieces. Text: &quot;So why are you still playing?&quot;</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#0a0a0a" title="Near-black (#0a0a0a)"></span><span class="swatch" style="background:#c9a84c" title="Gold text (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White impact (#ffffff)"></span><span class="swatch" style="background:#3a2a1a" title="Wood tones (#3a2a1a)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('3_1')">
+                <span class="prompt-arrow" id="pa_3_1">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_3_1" style="display:none">
+                <code>Extreme close-up of a luxury wooden chess board in checkmate position. Dramatic side lighting. A mature hand tips the losing king in slow motion. Shallow depth of field. David Fincher lighting style. 4K, 24fps.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">You Won. Now Protect the Win.</div>
+                <div class="ad-description">Free guaranteed income estimate</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_contrarian&amp;utm_content=question_hook_won_game&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_3_1">
+            <button class="review-btn approve" onclick="setReview('3-1','approved')" id="rv_approve_3_1">Approve</button>
+            <button class="review-btn changes" onclick="setReview('3-1','changes')" id="rv_changes_3_1">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('3-1','rejected')" id="rv_reject_3_1">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-3-2" data-ad-id="3-2">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#7209B7">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_3_2">
+            <div class="primary-short" id="ps_3_2">
+                <p>An annuity is not an investment. It's insurance.</p>
+                <span class="see-more" onclick="togglePrimary('3_2')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_3_2" style="display:none">
+                <p>An annuity is not an investment. It's insurance.</p>
+<p>And that one sentence will save you from the biggest mistake retirees make: treating their retirement savings like a growth portfolio when it's actually their life support system.</p>
+<p>You insure your house. You insure your car. You insure your health. But the $800K that has to feed you for 30 years? That you leave fully exposed to market crashes, inflation, and your own panic-selling instincts?</p>
+<p class="ad-quote">&quot;We insure our home and our cars against catastrophic losses. Why not our portfolio?&quot;</p>
+<p>When you reframe an annuity as insurance -- not an investment competing with index funds -- everything clicks. You're not giving up returns. You're buying certainty. The same way your homeowner's policy isn't &quot;giving up&quot; the value of your house.</p>
+<p>Nobody says &quot;I could get a better return than my fire insurance.&quot; That would be insane. But that's exactly what people say about annuities -- because they've been placed in the wrong mental category.</p>
+<p>Find out what insuring your retirement income looks like.</p>
+                <span class="see-less" onclick="togglePrimary('3_2')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F5BC; Static Image 1080x1080</span>
+                <span class="awareness-badge" style="background:#7209B7;color:#fff">Product-Aware (BOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Two-panel infographic. Top: house, car, medical cross icons with gold checkmarks -- &quot;INSURED.&quot; Bottom: nest egg icon with red X -- &quot;UNINSURED.&quot; Bloomberg/Economist visual style.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#111111" title="Dark charcoal (#111111)"></span><span class="swatch" style="background:#c9a84c" title="Gold checks (#c9a84c)"></span><span class="swatch" style="background:#c0392b" title="Muted red X (#c0392b)"></span><span class="swatch" style="background:#ffffff" title="White icons (#ffffff)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('3_2')">
+                <span class="prompt-arrow" id="pa_3_2">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_3_2" style="display:none">
+                <code>Minimal infographic-style illustration on dark charcoal background. Three white line-art icons (house, car, medical cross) with gold checkmarks. Below: nest egg icon with red X. Bloomberg/Economist data visualization style. Premium, minimal, editorial.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">It's Insurance, Not an Investment</div>
+                <div class="ad-description">Reframe changes everything</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_contrarian&amp;utm_content=bold_claim_insurance&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_3_2">
+            <button class="review-btn approve" onclick="setReview('3-2','approved')" id="rv_approve_3_2">Approve</button>
+            <button class="review-btn changes" onclick="setReview('3-2','changes')" id="rv_changes_3_2">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('3-2','rejected')" id="rv_reject_3_2">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-3-3" data-ad-id="3-3">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#7209B7">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_3_3">
+            <div class="primary-short" id="ps_3_3">
+                <p>A man on a retirement forum wrote: &quot;I KNEW that if I took the lump sum, I would be checking my portfolio every day. I picked the monthly payments.&quot;</p>
+                <span class="see-more" onclick="togglePrimary('3_3')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_3_3" style="display:none">
+                <p>A man on a retirement forum wrote: &quot;I KNEW that if I took the lump sum, I would be checking my portfolio every day. I picked the monthly payments.&quot;</p>
+<p>Read that again.</p>
+<p>He didn't pick monthly payments because the math was better. He picked them because he knew himself. He knew that a lump sum of $700K sitting in a brokerage account would turn him into an anxious wreck -- checking balances, second-guessing withdrawals, panic-selling during dips.</p>
+<p>He chose to remove himself from the equation.</p>
+<p>And that's the part nobody talks about in retirement planning: YOU are the biggest risk to your retirement. Not the market. Not inflation. Not fees. You. Your emotions. Your panic. Your inability to &quot;stay the course&quot; when your life savings drops $150K in a week.</p>
+<p>The guaranteed monthly payment doesn't just solve the math problem. It solves the YOU problem.</p>
+<p>See what removing yourself from the equation looks like.</p>
+                <span class="see-less" onclick="togglePrimary('3_3')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F5BC; Static Image 1080x1080</span>
+                <span class="awareness-badge" style="background:#7209B7;color:#fff">Product-Aware (BOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Premium quote card on dark textured background. Large gold quotation mark. The Reddit quote in white serif. Attribution: &quot;r/retirement, 847 upvotes.&quot; Gold divider, then headline.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#0f0f0f" title="Dark textured (#0f0f0f)"></span><span class="swatch" style="background:#c9a84c" title="Gold quotes (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White text (#ffffff)"></span><span class="swatch" style="background:#888888" title="Grey attribution (#888888)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('3_3')">
+                <span class="prompt-arrow" id="pa_3_3">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_3_3" style="display:none">
+                <code>Dark premium textured background -- near-black charcoal with very subtle linen paper grain texture. Rich, dark, editorial surface. Think luxury financial document background. 1080x1080.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">The Biggest Risk Is You. Fix That.</div>
+                <div class="ad-description">Guaranteed income, no decisions</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_contrarian&amp;utm_content=story_hook_lump_sum&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_3_3">
+            <button class="review-btn approve" onclick="setReview('3-3','approved')" id="rv_approve_3_3">Approve</button>
+            <button class="review-btn changes" onclick="setReview('3-3','changes')" id="rv_changes_3_3">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('3-3','rejected')" id="rv_reject_3_3">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-3-4" data-ad-id="3-4">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#7209B7">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_3_4">
+            <div class="primary-short" id="ps_3_4">
+                <p>Your financial advisor's biggest competitor isn't another advisor. It's your own panic button.</p>
+                <span class="see-more" onclick="togglePrimary('3_4')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_3_4" style="display:none">
+                <p>Your financial advisor's biggest competitor isn't another advisor. It's your own panic button.</p>
+<p>Every financial plan in history works perfectly -- on paper. The Monte Carlo simulation says 92% success rate. The bond allocation is textbook. The withdrawal schedule is pristine.</p>
+<p>Then the market drops 35%. And you do what every human being does: you panic. You sell at the bottom. You go to cash. You lock in losses that the &quot;plan&quot; never accounted for -- because the plan assumed you'd be rational. You're not. Neither am I. Neither is anyone.</p>
+<p class="ad-quote">&quot;I check the balances every day, and check my Schwab at least 5 times a day.&quot;</p>
+<p>That's not rational investing behavior. That's anxiety. And no asset allocation can fix anxiety.</p>
+<p>But removing the decision CAN. Guaranteed monthly income means there's nothing to check. Nothing to sell. Nothing to panic about. The money arrives whether the market is up 20% or down 40%.</p>
+<p>The best financial plan is one that doesn't need you to be brave.</p>
+                <span class="see-less" onclick="togglePrimary('3_4')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F3AC; Video 30-45s 1080x1920</span>
+                <span class="awareness-badge" style="background:#0077B6;color:#fff">Solution-Aware (MOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Opens on organized financial plan on mahogany desk. Then market crash news. Man reaches for phone, thumb hovers over SELL button. Cut to: same desk, papers scattered. Gold text: &quot;Plans Don't Fail. People Do.&quot;</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#3a1a0a" title="Mahogany (#3a1a0a)"></span><span class="swatch" style="background:#1a2040" title="Cold blue panic (#1a2040)"></span><span class="swatch" style="background:#c9a84c" title="Gold text (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White (#ffffff)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('3_4')">
+                <span class="prompt-arrow" id="pa_3_4">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_3_4" style="display:none">
+                <code>Scene 1: Overhead shot of beautifully organized financial plan on dark mahogany desk. Warm library lighting. Scene 2: Man watches TV showing red stock tickers. He picks up phone, thumb hovers over SELL button. Scene 3: Same desk but papers scattered. 30 seconds total.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">Plans Don't Fail. People Do.</div>
+                <div class="ad-description">Remove yourself from the risk</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_contrarian&amp;utm_content=pattern_interrupt_panic&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_3_4">
+            <button class="review-btn approve" onclick="setReview('3-4','approved')" id="rv_approve_3_4">Approve</button>
+            <button class="review-btn changes" onclick="setReview('3-4','changes')" id="rv_changes_3_4">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('3-4','rejected')" id="rv_reject_3_4">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-3-5" data-ad-id="3-5">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#7209B7">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_3_5">
+            <div class="primary-short" id="ps_3_5">
+                <p>To the Bogleheads who think annuities are a scam --</p>
+                <span class="see-more" onclick="togglePrimary('3_5')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_3_5" style="display:none">
+                <p>To the Bogleheads who think annuities are a scam --</p>
+<p>I get it. I used to think so too. The financial internet is full of people who say &quot;just do a 3-fund portfolio and withdraw 4%.&quot; And for accumulation? They're right. Index funds are king.</p>
+<p>But here's what the Reddit hivemind gets wrong: accumulation and distribution are not the same game.</p>
+<p>In accumulation, volatility is your friend. Time heals all dips. In distribution, volatility is a loaded gun. A 40% crash in year one of retirement doesn't recover -- because you're withdrawing from a shrinking base. It's called sequence-of-returns risk, and no amount of &quot;staying the course&quot; fixes it.</p>
+<p class="ad-quote">&quot;Annuities are not an investment. They are insurance.&quot;</p>
+<p>You don't compare your fire insurance to your index fund returns. They serve different purposes. An annuity doesn't replace your portfolio -- it protects the portion you literally cannot afford to lose.</p>
+<p>The smartest Bogleheads are quietly buying annuities for their income floor. They just don't post about it on Reddit.</p>
+<p>See if a partial annuity makes sense for your situation. Free analysis. No sales pitch.</p>
+                <span class="see-less" onclick="togglePrimary('3_5')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F5BC; Static Image 1080x1080</span>
+                <span class="awareness-badge" style="background:#7209B7;color:#fff">Product-Aware (BOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Struck-through &quot;Annuities are a scam.&quot; in red. Below: &quot;Annuities are insurance.&quot; in gold. Comparison lines: &quot;Index funds = accumulation. Annuities = distribution. Different game. Different tool.&quot;</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#0a0a0a" title="Dark charcoal (#0a0a0a)"></span><span class="swatch" style="background:#c0392b" title="Red strikethrough (#c0392b)"></span><span class="swatch" style="background:#c9a84c" title="Gold correction (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White text (#ffffff)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('3_5')">
+                <span class="prompt-arrow" id="pa_3_5">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_3_5" style="display:none">
+                <code>Dark charcoal textured background with subtle matte paper grain. Think dark-mode editorial page, academic journal in dark theme. Minimal, clean, premium. 1080x1080.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">Not a Scam. A Different Category.</div>
+                <div class="ad-description">Free, no-obligation analysis</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_contrarian&amp;utm_content=direct_callout_bogleheads&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_3_5">
+            <button class="review-btn approve" onclick="setReview('3-5','approved')" id="rv_approve_3_5">Approve</button>
+            <button class="review-btn changes" onclick="setReview('3-5','changes')" id="rv_changes_3_5">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('3-5','rejected')" id="rv_reject_3_5">Reject</button>
+        </div>
+    </div>
+            </div>
+            <div class="consensus-box" style="border-left: 4px solid #7209B7">
+                <h3>Consensus Check</h3>
+                <div class="consensus-item"><strong>Haynes:</strong> Five highly distinct entries into the contrarian reframe. 3-1 challenges the &quot;keep playing&quot; identity. 3-2 recategorizes the product entirely (insurance vs. investment). 3-3 confronts the reader with their own behavioral risk. 3-4 attacks the reliability of willpower-based plans. 3-5 speaks directly to the most hostile objector segment. Every hook opens a different objection.</div><div class="consensus-item"><strong>Suby:</strong> 3-5 is the boldest -- calling out Bogleheads by name and meeting them on their own turf. The agitation in this angle is intellectual rather than emotional, which matches the audience's self-image as analytical. The &quot;you are the risk&quot; thread through 3-3 and 3-4 is devastatingly effective because it's undeniable and they know it.</div><div class="consensus-item"><strong>Hormozi:</strong> The offer reframe in 3-2 is brilliant strategy: moving the product from &quot;investment&quot; (where it loses) to &quot;insurance&quot; (where it wins). The value equation in 3-5 is tuned for the skeptic: free analysis, no sales pitch, partial annuity framing (not all-or-nothing).</div>
+            </div>
+        </div>
+    </section>
+    <section class="angle-section" id="angle-4">
+        <div class="angle-header" style="background:#0077B6" onclick="toggleAngle(4)">
+            <div class="angle-header-content">
+                <span class="angle-number">ANGLE 4</span>
+                <h2>Social Proof</h2>
+                <p class="angle-subtitle">&ldquo;How Real Retirees Sleep at Night&rdquo;</p>
+            </div>
+            <span class="angle-chevron" id="ac_4">&#9660;</span>
+        </div>
+        <div class="angle-body" id="ab_4">
+            <div class="angle-brief">
+                <strong>Angle Brief:</strong> Lead with the voices of people who already did it. Real quotes from real retirees who bought annuities and went from anxious checkers to peaceful sleepers. This angle doesn't argue -- it shows. The reader sees themselves in the &quot;before&quot; and wants the &quot;after.&quot;
+            </div>
+            <div class="angle-awareness">
+                <strong>Default Awareness:</strong> Solution-Aware to Product-Aware (these readers know about annuities; they need proof they work in practice)
+            </div>
+            <div class="ads-container" id="ads_4">
+                
+    <div class="ad-card" id="ad-4-1" data-ad-id="4-1">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#0077B6">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_4_1">
+            <div class="primary-short" id="ps_4_1">
+                <p>Want to know what retirees who stopped worrying about money actually did differently?</p>
+                <span class="see-more" onclick="togglePrimary('4_1')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_4_1" style="display:none">
+                <p>Want to know what retirees who stopped worrying about money actually did differently?</p>
+<p>They didn't find a better stock pick. They didn't time the market perfectly. They didn't read one more book on asset allocation.</p>
+<p>They converted a portion of their savings into guaranteed lifetime income. That's it.</p>
+<p class="ad-quote">&quot;A stream of lifetime income that covers my wife and I gives me peace of mind of never running out of money.&quot;</p>
+<p class="ad-quote">&quot;We decided to each purchase an annuity because the cash flow plus Social Security covers our monthly expenses. The remaining accounts are for the fun stuff -- like trips.&quot;</p>
+<p class="ad-quote">&quot;I KNEW that if I took the lump sum, I would be checking my portfolio every day. I picked the monthly payments.&quot;</p>
+<p>These aren't financial advisors talking. These are regular retirees -- teachers, engineers, nurses -- who made one decision that changed the emotional texture of their entire retirement.</p>
+<p>See what that decision looks like for your savings. Free. 60 seconds.</p>
+                <span class="see-less" onclick="togglePrimary('4_1')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F3AC; Video 45-60s 1080x1920</span>
+                <span class="awareness-badge" style="background:#0077B6;color:#fff">Solution-Aware (MOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Testimonial montage: three retirees in their homes. 64yo teacher in sunlit living room. 68yo engineer in workshop. 62yo nurse on porch swing. Documentary interview style with B-roll of their lives.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#0a0a0a" title="Dark cards (#0a0a0a)"></span><span class="swatch" style="background:#c9a84c" title="Gold figures (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White text (#ffffff)"></span><span class="swatch" style="background:#f5e6c8" title="Warm tones (#f5e6c8)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('4_1')">
+                <span class="prompt-arrow" id="pa_4_1">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_4_1" style="display:none">
+                <code>Documentary interview: A 64-year-old Black woman with natural grey locs in a bright living room with houseplants. Wearing a cardigan. Speaks to someone off-camera. Natural window light. Documentary style.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">They Stopped Worrying. Here's How.</div>
+                <div class="ad-description">Real retirees. Real peace of mind.</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_proof&amp;utm_content=question_hook_retirees&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_4_1">
+            <button class="review-btn approve" onclick="setReview('4-1','approved')" id="rv_approve_4_1">Approve</button>
+            <button class="review-btn changes" onclick="setReview('4-1','changes')" id="rv_changes_4_1">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('4-1','rejected')" id="rv_reject_4_1">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-4-2" data-ad-id="4-2">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#0077B6">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_4_2">
+            <div class="primary-short" id="ps_4_2">
+                <p>Retirees with guaranteed income are 3x less likely to cut spending in a market downturn than those relying solely on portfolio withdrawals.</p>
+                <span class="see-more" onclick="togglePrimary('4_2')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_4_2" style="display:none">
+                <p>Retirees with guaranteed income are 3x less likely to cut spending in a market downturn than those relying solely on portfolio withdrawals.</p>
+<p>Why? Because when your essentials are covered by income that can't go down, a market crash becomes someone else's emergency.</p>
+<p>One retiree put it perfectly: &quot;Walking through our plans with a professional helped my SO see that we are in a good position.&quot;</p>
+<p>No more 3am math. No more second-guessing every purchase. No more &quot;what if the market crashes this year.&quot; The guaranteed income arrives on the 1st. The bills get paid. The rest is gravy.</p>
+<p>Another said: &quot;If you've won the game, it's okay to stop playing.&quot;</p>
+<p>That's the shift. From anxiety to certainty. From checking to living. From &quot;maybe next year&quot; to &quot;let's book the flights.&quot;</p>
+<p>Real people. Real decisions. Real peace.</p>
+<p>See what guaranteed income looks like for your situation.</p>
+                <span class="see-less" onclick="togglePrimary('4_2')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F5BC; Static Image 1080x1080</span>
+                <span class="awareness-badge" style="background:#5B4F8A;color:#fff">Solution/Product-Aware (MOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Data visualization: Two satisfaction scores side by side. &quot;8.4/10&quot; in gold (WITH guaranteed income) vs &quot;5.1/10&quot; in white (WITHOUT). Progress bars show the disparity. Dashboard aesthetic.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#0a0a0a" title="Dark bg (#0a0a0a)"></span><span class="swatch" style="background:#c9a84c" title="Gold score (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White score (#ffffff)"></span><span class="swatch" style="background:#444444" title="Grey bar (#444444)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('4_2')">
+                <span class="prompt-arrow" id="pa_4_2">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_4_2" style="display:none">
+                <code>Dark premium background with very subtle digital grid texture. Think dark-mode analytics dashboard. Barely perceptible geometric pattern. No objects. Premium dark surface. 1080x1080.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">The Market Crashed. They Didn't Notice.</div>
+                <div class="ad-description">Guaranteed income changes everything</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_proof&amp;utm_content=bold_claim_3x_spending&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_4_2">
+            <button class="review-btn approve" onclick="setReview('4-2','approved')" id="rv_approve_4_2">Approve</button>
+            <button class="review-btn changes" onclick="setReview('4-2','changes')" id="rv_changes_4_2">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('4-2','rejected')" id="rv_reject_4_2">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-4-3" data-ad-id="4-3">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#0077B6">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_4_3">
+            <div class="primary-short" id="ps_4_3">
+                <p>&quot;I asked 'are you a fiduciary?' She said yes. When I got there, I saw a plaque saying she was a broker.&quot;</p>
+                <span class="see-more" onclick="togglePrimary('4_3')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_4_3" style="display:none">
+                <p class="ad-quote">&quot;I asked 'are you a fiduciary?' She said yes. When I got there, I saw a plaque saying she was a broker.&quot;</p>
+<p>That's a real quote from someone who got burned. And if you've been in the retirement planning world for more than five minutes, you've heard a story like it. Maybe you've lived one.</p>
+<p class="ad-quote">&quot;I was paying about 3% a year. If you follow the 3% rule, that means he got the 3% I could safely take out -- with nothing left for me.&quot;</p>
+<p>The trust deficit in financial services is enormous. And it's earned. Too many advisors selling products they get commissions on, wrapped in complexity designed to confuse.</p>
+<p>So when someone says &quot;I finally found a fee-only fiduciary who showed me exactly what I was paying, exactly what I was getting, and exactly how much guaranteed income my savings would produce&quot; -- you listen. Because that person sounds like they found the thing you're still looking for.</p>
+<p>We are legally required to act in your best interest. Not our wallet's. Here's how to verify that for yourself -- and see your guaranteed income number at the same time.</p>
+                <span class="see-less" onclick="togglePrimary('4_3')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F3AC; UGC Video 45-60s 1080x1920</span>
+                <span class="awareness-badge" style="background:#7209B7;color:#fff">Product-Aware (BOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Day-in-the-life of Margaret, 64: walking dog, picking up grandkids, reviewing budget with husband on tablet, sunset porch with tea. Voiceover tells story of converting $300K to $2,100/mo guaranteed.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#f5e6c8" title="Warm suburban (#f5e6c8)"></span><span class="swatch" style="background:#c9a84c" title="Gold figures (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White captions (#ffffff)"></span><span class="swatch" style="background:#1a1a1a" title="Dark cards (#1a1a1a)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('4_3')">
+                <span class="prompt-arrow" id="pa_4_3">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_4_3" style="display:none">
+                <code>Day-in-the-life: 64-year-old woman with short silver hair walks golden retriever on suburban sidewalk. Morning sunlight, trees. Then picks up grandchildren from school. Then on porch swing at golden hour with tea. Documentary style. 45 seconds.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">They Got Burned. Then Found This.</div>
+                <div class="ad-description">Fee transparency. Your interests first.</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_proof&amp;utm_content=story_hook_fiduciary&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_4_3">
+            <button class="review-btn approve" onclick="setReview('4-3','approved')" id="rv_approve_4_3">Approve</button>
+            <button class="review-btn changes" onclick="setReview('4-3','changes')" id="rv_changes_4_3">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('4-3','rejected')" id="rv_reject_4_3">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-4-4" data-ad-id="4-4">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#0077B6">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_4_4">
+            <div class="primary-short" id="ps_4_4">
+                <p>The most upvoted comment on Reddit's biggest retirement forum -- 11,448 upvotes -- is someone warning about their financial advisor:</p>
+                <span class="see-more" onclick="togglePrimary('4_4')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_4_4" style="display:none">
+                <p>The most upvoted comment on Reddit's biggest retirement forum -- 11,448 upvotes -- is someone warning about their financial advisor:</p>
+<p class="ad-quote">&quot;She is an insurance salesperson. She makes money selling insurance. They make it confusing on purpose.&quot;</p>
+<p>11,448 people read that and thought: &quot;Yep. That's my experience too.&quot;</p>
+<p>And they're not wrong. The traditional annuity sales process is broken. High commissions. Complex riders. Confusing surrender schedules. It's designed to benefit the seller, not the buyer.</p>
+<p>But here's what those 11,448 upvoters might not know: fee-only fiduciary advisors also recommend annuities. The difference? They don't earn a commission on the sale. They have no incentive to push one product over another. They show you the math, and you decide.</p>
+<p>When a fiduciary recommends a guaranteed income stream -- without earning a dime from the insurance company -- it means something completely different.</p>
+<p>See what a fiduciary-recommended guaranteed income plan looks like for your savings. No commissions. No confusion.</p>
+                <span class="see-less" onclick="togglePrimary('4_4')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F5BC; Static Image 1080x1080</span>
+                <span class="awareness-badge" style="background:#7209B7;color:#fff">Product-Aware (BOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Reddit-style post: &quot;My husband and I are idiots. We've been bamboozled by a financial advisor.&quot; with 11.4K upvotes. Below: brand differentiation -- &quot;We're Not That Kind of Advisor.&quot; Fiduciary, fee-only, your interests first.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#1a1a1b" title="Reddit dark (#1a1a1b)"></span><span class="swatch" style="background:#c9a84c" title="Gold upvote (#c9a84c)"></span><span class="swatch" style="background:#0a0a0a" title="Brand dark (#0a0a0a)"></span><span class="swatch" style="background:#ffffff" title="White text (#ffffff)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('4_4')">
+                <span class="prompt-arrow" id="pa_4_4">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_4_4" style="display:none">
+                <code>Dark premium background with very subtle noise texture. No objects, no photos. Clean premium dark surface. 1080x1080.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">11,448 People Agreed. So Do We.</div>
+                <div class="ad-description">No commissions. No confusion.</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_proof&amp;utm_content=pattern_interrupt_reddit&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_4_4">
+            <button class="review-btn approve" onclick="setReview('4-4','approved')" id="rv_approve_4_4">Approve</button>
+            <button class="review-btn changes" onclick="setReview('4-4','changes')" id="rv_changes_4_4">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('4-4','rejected')" id="rv_reject_4_4">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-4-5" data-ad-id="4-5">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#0077B6">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_4_5">
+            <div class="primary-short" id="ps_4_5">
+                <p>To everyone who's been told &quot;annuities are a scam&quot; by someone who's never actually retired --</p>
+                <span class="see-more" onclick="togglePrimary('4_5')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_4_5" style="display:none">
+                <p>To everyone who's been told &quot;annuities are a scam&quot; by someone who's never actually retired --</p>
+<p>Ask someone who HAS retired. Someone who converted a portion of their savings at 65 and is now 73. Ask them if they regret it.</p>
+<p class="ad-quote">&quot;A stream of lifetime income that covers my wife and I gives me peace of mind of never running out of money.&quot;</p>
+<p class="ad-quote">&quot;I KNEW that if I took the lump sum, I would be checking my portfolio every day. I picked the monthly payments.&quot;</p>
+<p class="ad-quote">&quot;If you've won the game, it's okay to stop playing.&quot;</p>
+<p>These people aren't naive. They're not bad with money. Many of them are former engineers, accountants, teachers -- analytical people who ran the numbers and made a deliberate choice.</p>
+<p>The loudest voices against annuities are 30-year-olds on Reddit who are decades from retirement. The quietest voices -- the ones actually living the retirement -- chose guaranteed income. They just don't post about it, because they're too busy enjoying their Tuesday mornings.</p>
+<p>See what they saw. Get your guaranteed income estimate.</p>
+                <span class="see-less" onclick="togglePrimary('4_5')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F3AC; Video 30-45s 1080x1920</span>
+                <span class="awareness-badge" style="background:#7209B7;color:#fff">Product-Aware (BOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Phone screen showing brokerage app. Thumb scrolls nervously, then deliberately swipes app away. Phone placed face-down on counter. Person grabs car keys, heads out to sunny driveway. From confinement to freedom.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#1a2040" title="Phone cold (#1a2040)"></span><span class="swatch" style="background:#f5e6c8" title="Warm daylight (#f5e6c8)"></span><span class="swatch" style="background:#c9a84c" title="Gold text (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White (#ffffff)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('4_5')">
+                <span class="prompt-arrow" id="pa_4_5">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_4_5" style="display:none">
+                <code>Close-up of smartphone showing brokerage portfolio app. Thumb scrolls nervously then swipes to close. Phone placed face-down on kitchen counter. 63-year-old man picks up car keys and walks to sunny driveway. Emotional arc: confinement to freedom. 30 seconds.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">Ask Someone Who Actually Retired</div>
+                <div class="ad-description">Real retirees chose this</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_proof&amp;utm_content=direct_callout_scam_reframe&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_4_5">
+            <button class="review-btn approve" onclick="setReview('4-5','approved')" id="rv_approve_4_5">Approve</button>
+            <button class="review-btn changes" onclick="setReview('4-5','changes')" id="rv_changes_4_5">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('4-5','rejected')" id="rv_reject_4_5">Reject</button>
+        </div>
+    </div>
+            </div>
+            <div class="consensus-box" style="border-left: 4px solid #0077B6">
+                <h3>Consensus Check</h3>
+                <div class="consensus-item"><strong>Haynes:</strong> This angle does double duty: social proof AND trust-building. 4-3 and 4-4 directly address the &quot;#1 objection&quot; (annuities are a scam / advisors are commission-driven). 4-1 and 4-2 are pure proof-of-outcome. 4-5 reframes who the &quot;experts&quot; really are. Strong variety.</div><div class="consensus-item"><strong>Suby:</strong> The real quotes carry this angle. Every ad features verbatim language from the research -- not paraphrased, not softened. The &quot;11,448 upvotes&quot; detail in 4-4 is a specificity home run. The audience KNOWS that comment. They may have upvoted it themselves.</div><div class="consensus-item"><strong>Hormozi:</strong> 4-3 and 4-4 address the trust deficit head-on by leading with the objection and then offering the differentiator (fiduciary, fee-only, no commissions). This is &quot;objection inoculation.&quot; The offer stays clean: see your number, free, no obligation.</div>
+            </div>
+        </div>
+    </section>
+    <section class="angle-section" id="angle-5">
+        <div class="angle-header" style="background:#FF006E" onclick="toggleAngle(5)">
+            <div class="angle-header-content">
+                <span class="angle-number">ANGLE 5</span>
+                <h2>Couples</h2>
+                <p class="angle-subtitle">&ldquo;The Retirement Conversation You Need to Have&rdquo;</p>
+            </div>
+            <span class="angle-chevron" id="ac_5">&#9660;</span>
+        </div>
+        <div class="angle-body" id="ab_5">
+            <div class="angle-brief">
+                <strong>Angle Brief:</strong> The underserved mega-angle from the research. In the majority of retirement-hesitant households, one spouse wants to retire and the other is terrified. The wife is often the fearful one -- not because she's irrational, but because she's the one thinking about healthcare, longevity, and what happens if he dies first.
+            </div>
+            <div class="angle-awareness">
+                <strong>Default Awareness:</strong> Problem-Aware (they know there's a conflict; they don't know the solution)
+            </div>
+            <div class="ads-container" id="ads_5">
+                
+    <div class="ad-card" id="ad-5-1" data-ad-id="5-1">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#FF006E">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_5_1">
+            <div class="primary-short" id="ps_5_1">
+                <p>When was the last time you and your spouse sat down and had an honest conversation about retirement -- without someone changing the subject?</p>
+                <span class="see-more" onclick="togglePrimary('5_1')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_5_1" style="display:none">
+                <p>When was the last time you and your spouse sat down and had an honest conversation about retirement -- without someone changing the subject?</p>
+<p>Not &quot;we should really talk about this&quot; followed by nothing. An actual conversation. With numbers. And fears. And the things you're both too nervous to say out loud.</p>
+<p class="ad-quote">&quot;The prospect of my retirement was a genuine threat to my wife... a sea of pessimistic 'what if's' and unknowns. She just felt vulnerable.&quot;</p>
+<p>That man has over $5 million saved. His wife was still terrified. Because the fear isn't about the number -- it's about the uncertainty. And uncertainty is what happens when two people are too afraid to plan together.</p>
+<p>Here's what actually breaks the deadlock: a clear picture of guaranteed monthly income. Not &quot;projections.&quot; Not &quot;assuming 7% returns.&quot; A specific, contractual monthly amount that arrives for both of your lifetimes.</p>
+<p class="ad-quote">&quot;Walking through our plans with a professional helped my SO see that we are in a good position.&quot;</p>
+<p>Start the conversation with your number. Get your joint guaranteed income estimate.</p>
+                <span class="see-less" onclick="togglePrimary('5_1')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F3AC; Video 45-60s 1080x1920</span>
+                <span class="awareness-badge" style="background:#C1121F;color:#fff">Problem-Aware (TOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Split-screen: HE is excited about retirement, showing travel sites. SHE is worried, staring at spreadsheet. Same kitchen, different emotions. Split dissolves to show them at same table with visible tension.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#f5e6c8" title="Warm his side (#f5e6c8)"></span><span class="swatch" style="background:#c0d0e0" title="Cool her side (#c0d0e0)"></span><span class="swatch" style="background:#c9a84c" title="Gold text (#c9a84c)"></span><span class="swatch" style="background:#0a0a0a" title="Dark cards (#0a0a0a)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('5_1')">
+                <span class="prompt-arrow" id="pa_5_1">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_5_1" style="display:none">
+                <code>Split-screen: Left - 62-year-old man in bright kitchen, energetic, showing tablet with travel website. Right - 60-year-old woman at same table, chin on hand, worried, looking at laptop spreadsheets. Same kitchen, different emotional temperature.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">The Conversation You Keep Avoiding</div>
+                <div class="ad-description">Your joint income estimate is free</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_couples&amp;utm_content=question_hook_conversation&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_5_1">
+            <button class="review-btn approve" onclick="setReview('5-1','approved')" id="rv_approve_5_1">Approve</button>
+            <button class="review-btn changes" onclick="setReview('5-1','changes')" id="rv_changes_5_1">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('5-1','rejected')" id="rv_reject_5_1">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-5-2" data-ad-id="5-2">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#FF006E">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_5_2">
+            <div class="primary-short" id="ps_5_2">
+                <p>In 70% of married households, one spouse is ready to retire and the other is too afraid to let them.</p>
+                <span class="see-more" onclick="togglePrimary('5_2')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_5_2" style="display:none">
+                <p>In 70% of married households, one spouse is ready to retire and the other is too afraid to let them.</p>
+<p>It's the most common retirement impasse in America -- and nobody talks about it openly. Because how do you say to the person you love: &quot;Your fear is keeping us both trapped&quot;?</p>
+<p class="ad-quote">&quot;We decided on a date that we would both quit our jobs. Two weeks before, he said he couldn't do it. It just boiled down to fear.&quot;</p>
+<p>That couple had enough money. They had a plan. They had a date circled on the calendar. And fear -- not math -- killed it.</p>
+<p>The unlock is surprisingly simple: take the uncertainty out of the equation. When you can show your spouse a GUARANTEED monthly income amount -- contractual, for both lifetimes, regardless of the market -- the &quot;what if's&quot; lose their power.</p>
+<p class="ad-quote">&quot;Walking through our plans with a professional helped my SO see that we are in a good position.&quot;</p>
+<p>You don't need to convince your spouse. You need to show them the number.</p>
+<p>Get your joint guaranteed income estimate. Free. 60 seconds. Share it over dinner tonight.</p>
+                <span class="see-less" onclick="togglePrimary('5_2')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F5BC; Static Image 1080x1080</span>
+                <span class="awareness-badge" style="background:#C1121F;color:#fff">Problem-Aware (TOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>&quot;47%&quot; in massive gold type. Below: &quot;of couples disagree about when it's safe to retire. Even with over $1M saved.&quot; Two gold wedding rings slightly apart on dark surface. The gap between rings = the disagreement.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#0a0a0a" title="Near-black (#0a0a0a)"></span><span class="swatch" style="background:#c9a84c" title="Gold stat/rings (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White text (#ffffff)"></span><span class="swatch" style="background:#888888" title="Grey context (#888888)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('5_2')">
+                <span class="prompt-arrow" id="pa_5_2">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_5_2" style="display:none">
+                <code>Two simple gold wedding bands on a dark black matte surface, photographed from directly above. Rings positioned close but NOT touching -- visible gap between them. Dramatic side lighting. Luxury jewelry photography style. Premium, intimate.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">One of You Is Ready. Start Here.</div>
+                <div class="ad-description">Joint income estimate -- free</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_couples&amp;utm_content=bold_claim_70pct&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_5_2">
+            <button class="review-btn approve" onclick="setReview('5-2','approved')" id="rv_approve_5_2">Approve</button>
+            <button class="review-btn changes" onclick="setReview('5-2','changes')" id="rv_changes_5_2">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('5-2','rejected')" id="rv_reject_5_2">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-5-3" data-ad-id="5-3">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#FF006E">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_5_3">
+            <div class="primary-short" id="ps_5_3">
+                <p>They'd been married 34 years. Agreed on almost everything. Except this.</p>
+                <span class="see-more" onclick="togglePrimary('5_3')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_5_3" style="display:none">
+                <p>They'd been married 34 years. Agreed on almost everything. Except this.</p>
+<p>He was 63 and done. Burned out. Ready to fish, travel, spoil the grandkids. Their portfolio was $1.2M. Pension and Social Security covered $4,800/month. By every calculator on the internet, they were fine.</p>
+<p>She couldn't do it. Every time he brought up a retirement date, she'd go quiet. Then the questions would start: &quot;What about healthcare before Medicare?&quot; &quot;What if the market crashes?&quot; &quot;What if something happens to you and I'm alone?&quot;</p>
+<p>He called her fearful. She called him reckless. They stopped talking about it entirely.</p>
+<p>Then a fee-only advisor showed them something neither had considered: converting $400K into joint guaranteed income -- $2,600/month for BOTH their lifetimes. Whichever one survived, the income continued. Combined with their pension and Social Security, every essential expense was covered.</p>
+<p>She cried. Not from sadness -- from relief. The &quot;what if I'm alone&quot; fear that had paralyzed her for years just... dissolved.</p>
+<p>They retired eight weeks later.</p>
+<p>See what your joint guaranteed income would look like.</p>
+                <span class="see-less" onclick="togglePrimary('5_3')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F3AC; Video 45-60s 1080x1920</span>
+                <span class="awareness-badge" style="background:#C1121F;color:#fff">Problem-Aware (TOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Calendar with &quot;RETIREMENT DAY&quot; circled. Dinner scene where he says &quot;I can't do it.&quot; Her driving alone. Him at empty office desk. Then together at kitchen table with papers -- his hand on her shoulder. Resolution.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#f5e6c8" title="Warm kitchen (#f5e6c8)"></span><span class="swatch" style="background:#1a2040" title="Cold office (#1a2040)"></span><span class="swatch" style="background:#c9a84c" title="Gold climax text (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White subtitles (#ffffff)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('5_3')">
+                <span class="prompt-arrow" id="pa_5_3">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_5_3" style="display:none">
+                <code>Scene 1: Kitchen wall calendar with date circled in red. Woman's hand traces the circle. Scene 2: Couple at quiet dinner, he says he can't do it. Scene 3: She drives alone, processing. Scene 4: He alone at cold office desk. Scene 5: Both at kitchen table with papers, his hand on her shoulder. Warm resolution.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">She Cried. Then They Retired.</div>
+                <div class="ad-description">Joint lifetime income estimate</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_couples&amp;utm_content=story_hook_34years&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_5_3">
+            <button class="review-btn approve" onclick="setReview('5-3','approved')" id="rv_approve_5_3">Approve</button>
+            <button class="review-btn changes" onclick="setReview('5-3','changes')" id="rv_changes_5_3">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('5-3','rejected')" id="rv_reject_5_3">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-5-4" data-ad-id="5-4">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#FF006E">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_5_4">
+            <div class="primary-short" id="ps_5_4">
+                <p>The person blocking your retirement might be sleeping next to you.</p>
+                <span class="see-more" onclick="togglePrimary('5_4')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_5_4" style="display:none">
+                <p>The person blocking your retirement might be sleeping next to you.</p>
+<p>That sounds harsh. It's not meant to be. Because the &quot;blocker&quot; isn't being unreasonable -- they're being protective. They're the one who lies awake thinking about what happens if the market crashes, if healthcare costs spike, if one of you dies and the other is left alone with a dwindling portfolio.</p>
+<p class="ad-quote">&quot;Spousal fear handicapping retirement... we have a portfolio of over $5M, plus about $1M in home equity... She was VERY hesitant.&quot;</p>
+<p>$6 million. And she was STILL too afraid to retire. Because fear doesn't respond to spreadsheets. It responds to guarantees.</p>
+<p>When your spouse can see -- on paper, in black and white -- that $X will arrive every single month for the rest of BOTH your lives, no matter what happens in the market, something shifts. The &quot;what if's&quot; stop. The resistance softens. The calendar comes back out.</p>
+<p>You don't need a bigger portfolio. You need a plan your spouse can trust.</p>
+<p>Get your joint guaranteed income number. Share it tonight.</p>
+                <span class="see-less" onclick="togglePrimary('5_4')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F5BC; Static Image 1080x1080</span>
+                <span class="awareness-badge" style="background:#C1121F;color:#fff">Problem-Aware (TOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>&quot;$6,000,000.00&quot; in white monospace on dark background. Below: &quot;And she still couldn't retire.&quot; in gold italic. The cognitive dissonance IS the ad.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#0a0a0a" title="Dark terminal (#0a0a0a)"></span><span class="swatch" style="background:#ffffff" title="White balance (#ffffff)"></span><span class="swatch" style="background:#c9a84c" title="Gold italic (#c9a84c)"></span><span class="swatch" style="background:#888888" title="Grey context (#888888)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('5_4')">
+                <span class="prompt-arrow" id="pa_5_4">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_5_4" style="display:none">
+                <code>Dark premium background with very subtle digital interface texture -- barely perceptible horizontal scan lines suggesting a financial terminal. Ultra minimal, premium, dark. 1080x1080.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">$6M Wasn't Enough for Her. This Was.</div>
+                <div class="ad-description">The guarantee changes everything</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_couples&amp;utm_content=pattern_interrupt_blocker&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_5_4">
+            <button class="review-btn approve" onclick="setReview('5-4','approved')" id="rv_approve_5_4">Approve</button>
+            <button class="review-btn changes" onclick="setReview('5-4','changes')" id="rv_changes_5_4">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('5-4','rejected')" id="rv_reject_5_4">Reject</button>
+        </div>
+    </div>
+    <div class="ad-card" id="ad-5-5" data-ad-id="5-5">
+        <!-- FB Page Header -->
+        <div class="fb-header">
+            <div class="fb-avatar" style="background:#FF006E">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="white"><circle cx="10" cy="7" r="4"/><path d="M2 18c0-4.4 3.6-8 8-8s8 3.6 8 8" fill="white" opacity="0.8"/></svg>
+            </div>
+            <div class="fb-page-info">
+                <span class="fb-page-name">Annuity Retirement Income</span>
+                <span class="fb-sponsored">Sponsored</span>
+            </div>
+            <div class="fb-dots">&#8226;&#8226;&#8226;</div>
+        </div>
+
+        <!-- Primary Text -->
+        
+        <div class="primary-text" id="pt_5_5">
+            <div class="primary-short" id="ps_5_5">
+                <p>To every wife who's been called &quot;the worried one&quot; about retirement --</p>
+                <span class="see-more" onclick="togglePrimary('5_5')">... See more</span>
+            </div>
+            <div class="primary-full" id="pf_5_5" style="display:none">
+                <p>To every wife who's been called &quot;the worried one&quot; about retirement --</p>
+<p>You're not worried. You're thinking ahead. You're the one doing the math on 30 years of healthcare costs. You're the one who knows what happens to widows who outlive their savings. You're the one who watched your mother or your aunt struggle, and you swore it wouldn't be you.</p>
+<p>Your husband sees a number on a screen and says &quot;we're fine.&quot; You see a number on a screen and think: &quot;Fine for now. But what about year 15? Year 20? What if he goes first?&quot;</p>
+<p class="ad-quote">&quot;The prospect of my retirement was a genuine threat to my wife... a sea of pessimistic 'what if's' and unknowns. She just felt vulnerable.&quot;</p>
+<p>You're not the problem. You're the reason this needs to be done RIGHT.</p>
+<p>Here's what &quot;right&quot; looks like: guaranteed monthly income for BOTH lifetimes. If he goes first, the income continues for you. If you go first, it continues for him. The market can't touch it. The number doesn't change.</p>
+<p>Get your joint guaranteed income estimate and show it to him tonight. Let the numbers do the convincing.</p>
+                <span class="see-less" onclick="togglePrimary('5_5')">See less</span>
+            </div>
+        </div>
+
+        <!-- Creative Area -->
+        <div class="creative-area">
+            <div class="creative-badges">
+                <span class="format-badge">&#x1F5BC; Static Image 1080x1080</span>
+                <span class="awareness-badge" style="background:#C1121F;color:#fff">Problem-Aware (TOF)</span>
+            </div>
+            <div class="creative-concept">
+                <h4>Visual Concept</h4>
+                <p>Over-shoulder POV: looking down at kitchen table with financial documents, annotated with pen marks. Two coffee cups -- his half-empty and pushed aside, hers full. She's still examining. The viewer IS her.</p>
+            </div>
+            <div class="creative-palette">
+                <h4>Color Palette</h4>
+                <div class="palette-row"><span class="swatch" style="background:#f5e6c8" title="Warm wood (#f5e6c8)"></span><span class="swatch" style="background:#c9a84c" title="Gold headline (#c9a84c)"></span><span class="swatch" style="background:#ffffff" title="White text (#ffffff)"></span><span class="swatch" style="background:#1a1a1a" title="Dark overlay (#1a1a1a)"></span></div>
+            </div>
+            <div class="ai-prompt-toggle" onclick="togglePrompt('5_5')">
+                <span class="prompt-arrow" id="pa_5_5">&#9654;</span> AI Generation Prompt
+            </div>
+            <div class="ai-prompt-content" id="ap_5_5" style="display:none">
+                <code>Over-the-shoulder photograph: looking down at kitchen table with financial planning documents annotated in brown ink, laptop with calculator, two coffee cups (his half-empty pushed aside, hers full). Silver-grey hair at edge of frame. Warm pendant light. Documentary photography style.</code>
+            </div>
+        </div>
+
+        <!-- Headline / CTA -->
+        <div class="ad-footer">
+            <div class="ad-footer-text">
+                <div class="ad-headline">You're Not &quot;The Worried One.&quot; You're Right.</div>
+                <div class="ad-description">Joint lifetime income -- see yours</div>
+            </div>
+            <button class="cta-button">Learn More</button>
+        </div>
+
+        <!-- UTM -->
+        <div class="utm-line"><code>?utm_campaign=annuity_couples&amp;utm_content=direct_callout_wives&amp;utm_medium=paid_social&amp;utm_source=facebook</code></div>
+
+        <!-- Review Buttons -->
+        <div class="review-buttons" id="rb_5_5">
+            <button class="review-btn approve" onclick="setReview('5-5','approved')" id="rv_approve_5_5">Approve</button>
+            <button class="review-btn changes" onclick="setReview('5-5','changes')" id="rv_changes_5_5">Needs Changes</button>
+            <button class="review-btn reject" onclick="setReview('5-5','rejected')" id="rv_reject_5_5">Reject</button>
+        </div>
+    </div>
+            </div>
+            <div class="consensus-box" style="border-left: 4px solid #FF006E">
+                <h3>Consensus Check</h3>
+                <div class="consensus-item"><strong>Haynes:</strong> This is the breakout angle of the entire matrix. Most annuity advertising targets the individual. This targets the relationship dynamic -- which the research shows is the actual blocker. Five distinct entry points. Each could run independently as a campaign.</div><div class="consensus-item"><strong>Suby:</strong> 5-5 is the ad that could win the entire campaign. It calls out the audience (wives), validates their fear instead of dismissing it, and reframes them from &quot;the blocker&quot; to &quot;the reason it needs to be done right.&quot; That's empathy weaponized for conversion.</div><div class="consensus-item"><strong>Hormozi:</strong> The offer is identical across all five (joint guaranteed income estimate, free, 60 seconds) but the emotional wrapper is completely different each time. The value equation: high dream outcome (spousal alignment + retirement), low effort (60 seconds), low risk (free, no call), high certainty (guaranteed, contractual). Every box checked.</div>
+            </div>
+        </div>
+    </section>
+
+<!-- ── JAVASCRIPT ─────────────────────────────────────────── -->
+<script>
+// ── Review State ────────────────────────────────────────────
+let reviews = JSON.parse(localStorage.getItem('annuity_reviews') || '{}');
+
+function setReview(adId, status) {
+  const idx = adId.replace('-','_');
+  const card = document.getElementById('ad-' + adId);
+  // Toggle off if same status clicked again
+  if (reviews[adId] === status) {
+    delete reviews[adId];
+    card.className = 'ad-card';
+    document.getElementById('rv_approve_' + idx).classList.remove('active');
+    document.getElementById('rv_changes_' + idx).classList.remove('active');
+    document.getElementById('rv_reject_' + idx).classList.remove('active');
+  } else {
+    reviews[adId] = status;
+    card.className = 'ad-card review-' + status;
+    document.getElementById('rv_approve_' + idx).classList.toggle('active', status === 'approved');
+    document.getElementById('rv_changes_' + idx).classList.toggle('active', status === 'changes');
+    document.getElementById('rv_reject_' + idx).classList.toggle('active', status === 'rejected');
+  }
+  localStorage.setItem('annuity_reviews', JSON.stringify(reviews));
+  updateCounter();
+}
+
+function updateCounter() {
+  const vals = Object.values(reviews);
+  const a = vals.filter(v => v === 'approved').length;
+  const c = vals.filter(v => v === 'changes').length;
+  const r = vals.filter(v => v === 'rejected').length;
+  const el = document.getElementById('review-counter');
+  if (a + c + r === 0) {
+    el.innerHTML = '';
+  } else {
+    el.innerHTML = '<span class="ct-approved">' + a + ' approved</span> &middot; <span class="ct-changes">' + c + ' changes</span> &middot; <span class="ct-rejected">' + r + ' rejected</span>';
+  }
+}
+
+// Restore reviews on load
+function restoreReviews() {
+  for (const [adId, status] of Object.entries(reviews)) {
+    const idx = adId.replace('-','_');
+    const card = document.getElementById('ad-' + adId);
+    if (!card) continue;
+    card.className = 'ad-card review-' + status;
+    const btn = document.getElementById('rv_' + status.replace('changes','changes') + '_' + idx);
+    // map status to button id
+    let btnId;
+    if (status === 'approved') btnId = 'rv_approve_' + idx;
+    else if (status === 'changes') btnId = 'rv_changes_' + idx;
+    else btnId = 'rv_reject_' + idx;
+    const b = document.getElementById(btnId);
+    if (b) b.classList.add('active');
+  }
+  updateCounter();
+}
+
+// ── Toggles ─────────────────────────────────────────────────
+function togglePrimary(idx) {
+  const short = document.getElementById('ps_' + idx);
+  const full = document.getElementById('pf_' + idx);
+  if (full.style.display === 'none') {
+    short.style.display = 'none';
+    full.style.display = 'block';
+  } else {
+    short.style.display = 'block';
+    full.style.display = 'none';
+  }
+}
+
+function togglePrompt(idx) {
+  const el = document.getElementById('ap_' + idx);
+  const arrow = document.getElementById('pa_' + idx);
+  if (el.style.display === 'none') {
+    el.style.display = 'block';
+    arrow.classList.add('open');
+  } else {
+    el.style.display = 'none';
+    arrow.classList.remove('open');
+  }
+}
+
+function toggleAngle(num) {
+  const body = document.getElementById('ab_' + num);
+  const chevron = document.getElementById('ac_' + num);
+  if (body.style.display === 'none') {
+    body.style.display = 'block';
+    chevron.classList.remove('collapsed');
+  } else {
+    body.style.display = 'none';
+    chevron.classList.add('collapsed');
+  }
+}
+
+// ── Navigation ──────────────────────────────────────────────
+function scrollToAngle(num) {
+  document.getElementById('angle-' + num).scrollIntoView({behavior:'smooth',block:'start'});
+}
+function scrollToAd(id) {
+  const el = document.getElementById('ad-' + id);
+  // Make sure the parent angle is open
+  const angleNum = id.split('-')[0];
+  const body = document.getElementById('ab_' + angleNum);
+  if (body.style.display === 'none') {
+    body.style.display = 'block';
+    document.getElementById('ac_' + angleNum).classList.remove('collapsed');
+  }
+  setTimeout(() => el.scrollIntoView({behavior:'smooth',block:'center'}), 100);
+  el.style.boxShadow = '0 0 0 3px #1877F2';
+  setTimeout(() => el.style.boxShadow = '', 2000);
+}
+
+// ── View Toggle ─────────────────────────────────────────────
+function setView(mode) {
+  const containers = document.querySelectorAll('.ads-container');
+  const btnCard = document.getElementById('btn-card');
+  const btnGrid = document.getElementById('btn-grid');
+  if (mode === 'grid') {
+    containers.forEach(c => c.classList.add('grid-view'));
+    btnGrid.classList.add('active');
+    btnCard.classList.remove('active');
+  } else {
+    containers.forEach(c => c.classList.remove('grid-view'));
+    btnCard.classList.add('active');
+    btnGrid.classList.remove('active');
+  }
+  localStorage.setItem('annuity_view', mode);
+}
+
+// ── Init ────────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  restoreReviews();
+  const savedView = localStorage.getItem('annuity_view');
+  if (savedView) setView(savedView);
+});
+</script>
+</body>
+</html>
