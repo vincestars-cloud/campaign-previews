@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guaranteed Income Calculator | See Your Monthly Income in 60 Seconds</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128176;</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           CSS RESET & BASE
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #0a0a0a;
+            color: #b0b0b0;
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ============================================
+           TYPOGRAPHY
+           ============================================ */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'DM Serif Display', serif;
+            color: #ffffff;
+            line-height: 1.2;
+            font-weight: 400;
+        }
+
+        h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+        h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); }
+        h4 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            color: #b0b0b0;
+        }
+
+        a {
+            color: #c9a84c;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover { color: #e0c06a; }
+
+        /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-narrow {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #c9a84c;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .gold-text { color: #c9a84c; }
+        .white-text { color: #ffffff; }
+        .text-center { text-align: center; }
+
+        /* ============================================
+           BUTTONS
+           ============================================ */
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a84c, #d4a843);
+            color: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            padding: 18px 42px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #d4a843, #e0b84d);
+            color: #0a0a0a;
+            box-shadow: 0 6px 30px rgba(201, 168, 76, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:active { transform: translateY(0); }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        .fade-in-up-delay-1 { animation-delay: 0.15s; }
+        .fade-in-up-delay-2 { animation-delay: 0.3s; }
+        .fade-in-up-delay-3 { animation-delay: 0.45s; }
+        .fade-in-up-delay-4 { animation-delay: 0.6s; }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ============================================
+           ANNOUNCEMENT BAR
+           ============================================ */
+        .announcement-bar {
+            background: linear-gradient(90deg, #c9a84c, #d4a843, #c9a84c);
+            padding: 12px 24px;
+            text-align: center;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .announcement-bar p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #0a0a0a;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+
+        .announcement-bar .stat-number {
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        /* ============================================
+           STICKY NAV
+           ============================================ */
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+            z-index: 1000;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .sticky-nav.visible { transform: translateY(0); }
+
+        .sticky-nav .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky-nav .nav-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+            color: #ffffff;
+        }
+
+        .sticky-nav .nav-logo span { color: #c9a84c; }
+
+        .sticky-nav .nav-cta {
+            background: linear-gradient(135deg, #c9a84c, #d4a843);
+            color: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 10px 24px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sticky-nav .nav-cta:hover {
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.4);
+            color: #0a0a0a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover { color: #c9a84c; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+
+        /* ============================================
+           HERO SECTION (with form)
+           ============================================ */
+        .hero {
+            background: linear-gradient(180deg, #0a0a0a 0%, #111111 50%, #0d0d0d 100%);
+            padding: 160px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.2), transparent);
+        }
+
+        .hero .container { position: relative; z-index: 1; }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+        }
+
+        .hero-content { max-width: 540px; }
+
+        .hero h1 {
+            margin-bottom: 20px;
+            line-height: 1.15;
+        }
+
+        .hero h1 .highlight {
+            color: #c9a84c;
+            position: relative;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #c9a84c, transparent);
+            border-radius: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: #999999;
+            margin-bottom: 24px;
+            line-height: 1.6;
+        }
+
+        .hero-trust-badges {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .hero-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: #888888;
+        }
+
+        .hero-badge svg {
+            width: 16px;
+            height: 16px;
+            stroke: #c9a84c;
+            flex-shrink: 0;
+        }
+
+        /* ============================================
+           FORM CARD (Hero + Final CTA)
+           ============================================ */
+        .form-card {
+            background: #1e1e1e;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+        }
+
+        .form-card h3 {
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .form-card .form-subtitle {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888888;
+            margin-bottom: 28px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+
+        @media (max-width: 480px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+
+        .form-group {
+            margin-bottom: 14px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #cccccc;
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            background: #ffffff;
+            border: 2px solid #3a3a3a;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: #1a1a1a;
+            transition: border-color 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #c9a84c;
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+        }
+
+        .form-group input::placeholder { color: #999999; }
+
+        .form-group .optional-label {
+            font-size: 0.75rem;
+            color: #666666;
+            font-weight: 400;
+        }
+
+        .form-submit { margin-top: 8px; }
+
+        .form-submit .btn-primary {
+            width: 100%;
+            font-size: 1.1rem;
+            padding: 18px;
+        }
+
+        .form-privacy {
+            text-align: center;
+            margin-top: 14px;
+            font-size: 0.8rem;
+            color: #555555;
+        }
+
+        .form-privacy svg {
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        .form-fear-address {
+            text-align: center;
+            margin-top: 14px;
+            padding-top: 14px;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .form-fear-address p {
+            font-size: 0.85rem;
+            color: #777777;
+            margin-bottom: 0;
+        }
+
+        .form-fear-address strong { color: #c9a84c; }
+
+        /* ============================================
+           PAYCHECK REFRAME SECTION
+           ============================================ */
+        .paycheck-section {
+            background: #0d0d0d;
+            padding: 96px 0;
+            position: relative;
+        }
+
+        .paycheck-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .paycheck-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .paycheck-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+
+        .paycheck-text h2 { margin-bottom: 24px; }
+
+        .paycheck-text p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .paycheck-text p strong { color: #ffffff; }
+
+        .paycheck-visual {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .paycheck-visual .big-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #c9a84c;
+            margin-bottom: 12px;
+        }
+
+        .paycheck-visual .big-amount {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            color: #c9a84c;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .paycheck-visual .big-period {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            color: #cccccc;
+            margin-bottom: 24px;
+        }
+
+        .paycheck-visual .paycheck-detail {
+            font-size: 0.9rem;
+            color: #777777;
+            margin-bottom: 0;
+        }
+
+        .paycheck-divider {
+            width: 60px;
+            height: 2px;
+            background: #2a2a2a;
+            margin: 20px auto;
+        }
+
+        .paycheck-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: #999999;
+            margin-bottom: 4px;
+        }
+
+        .paycheck-source-amount {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.4rem;
+            color: #ffffff;
+        }
+
+        /* ============================================
+           COMPARISON TABLE
+           ============================================ */
+        .comparison-section {
+            background: #111111;
+            padding: 96px 0;
+            position: relative;
+        }
+
+        .comparison-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .comparison-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .comparison-header h2 { margin-bottom: 12px; }
+
+        .comparison-header p {
+            font-size: 1.05rem;
+            color: #888888;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .comparison-table {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 1px solid #2a2a2a;
+        }
+
+        .comparison-table-header {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            background: #1a1a1a;
+            border-bottom: 2px solid #2a2a2a;
+        }
+
+        .comparison-table-header .col-header {
+            padding: 20px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .comparison-table-header .col-header:first-child {
+            color: #888888;
+        }
+
+        .comparison-table-header .col-header:nth-child(2) {
+            color: #ff6b6b;
+            text-align: center;
+            border-left: 1px solid #2a2a2a;
+        }
+
+        .comparison-table-header .col-header:nth-child(3) {
+            color: #c9a84c;
+            text-align: center;
+            border-left: 1px solid #2a2a2a;
+            background: rgba(201, 168, 76, 0.05);
+        }
+
+        .comparison-row {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            border-bottom: 1px solid #1a1a1a;
+            transition: background 0.3s ease;
+        }
+
+        .comparison-row:last-child { border-bottom: none; }
+
+        .comparison-row:hover { background: rgba(255, 255, 255, 0.02); }
+
+        .comparison-row .row-label {
+            padding: 18px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #cccccc;
+        }
+
+        .comparison-row .row-value {
+            padding: 18px 24px;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            text-align: center;
+            border-left: 1px solid #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .comparison-row .row-value.negative {
+            color: #ff6b6b;
+        }
+
+        .comparison-row .row-value.positive {
+            color: #4ecdc4;
+            background: rgba(201, 168, 76, 0.03);
+        }
+
+        .comparison-row .row-value .icon-x {
+            color: #ff6b6b;
+            font-weight: 700;
+        }
+
+        .comparison-row .row-value .icon-check {
+            color: #4ecdc4;
+            font-weight: 700;
+        }
+
+        @media (max-width: 640px) {
+            .comparison-table-header,
+            .comparison-row {
+                grid-template-columns: 1fr;
+            }
+            .comparison-table-header .col-header,
+            .comparison-row .row-label,
+            .comparison-row .row-value {
+                border-left: none;
+                text-align: left;
+                padding: 12px 20px;
+            }
+            .comparison-table-header .col-header:first-child { display: none; }
+            .comparison-row .row-label {
+                background: #1a1a1a;
+                font-weight: 700;
+                padding-bottom: 8px;
+            }
+            .comparison-row .row-value {
+                justify-content: flex-start;
+                padding-top: 4px;
+            }
+        }
+
+        /* ============================================
+           THREE TYPES SECTION (Feature Cards)
+           ============================================ */
+        .types-section {
+            background: #0d0d0d;
+            padding: 96px 0;
+            position: relative;
+        }
+
+        .types-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .types-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .types-header h2 { margin-bottom: 12px; }
+        .types-header p {
+            font-size: 1.05rem;
+            color: #888888;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .types-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .types-grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+        }
+
+        .type-card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 36px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .type-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #c9a84c, transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .type-card:hover {
+            border-color: rgba(201, 168, 76, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(201, 168, 76, 0.05);
+        }
+
+        .type-card:hover::before { opacity: 1; }
+
+        .type-card .type-badge {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #0a0a0a;
+            background: #c9a84c;
+            padding: 4px 12px;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 16px;
+        }
+
+        .type-card h3 { margin-bottom: 12px; font-size: 1.4rem; }
+
+        .type-card .type-tagline {
+            font-size: 1rem;
+            color: #c9a84c;
+            margin-bottom: 16px;
+            font-style: italic;
+        }
+
+        .type-card p {
+            font-size: 0.95rem;
+            color: #888888;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .type-card .type-best-for {
+            padding-top: 16px;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .type-card .type-best-for span {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #c9a84c;
+            display: block;
+            margin-bottom: 6px;
+        }
+
+        .type-card .type-best-for p {
+            font-size: 0.9rem;
+            color: #cccccc;
+            margin-bottom: 0;
+        }
+
+        /* ============================================
+           PULL QUOTE
+           ============================================ */
+        .pull-quote-section {
+            background: #0a0a0a;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .pull-quote-section::before,
+        .pull-quote-section::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .pull-quote-section::before { top: 0; }
+        .pull-quote-section::after { bottom: 0; }
+
+        .pull-quote {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            padding: 0 40px;
+        }
+
+        .pull-quote::before {
+            content: '\201C';
+            font-family: 'DM Serif Display', serif;
+            font-size: 8rem;
+            color: rgba(201, 168, 76, 0.2);
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            line-height: 1;
+        }
+
+        .pull-quote blockquote {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+            color: #c9a84c;
+            font-style: italic;
+            line-height: 1.4;
+            margin-bottom: 24px;
+        }
+
+        .pull-quote cite {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #666666;
+            font-style: normal;
+            letter-spacing: 1px;
+        }
+
+        /* ============================================
+           LARGE STAT CALLOUT
+           ============================================ */
+        .stat-callout {
+            background: #111111;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .stat-callout::before,
+        .stat-callout::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .stat-callout::before { top: 0; }
+        .stat-callout::after { bottom: 0; }
+
+        .stat-callout .big-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(4rem, 10vw, 8rem);
+            color: #c9a84c;
+            line-height: 1;
+            margin-bottom: 16px;
+            text-shadow: 0 0 40px rgba(201, 168, 76, 0.15);
+        }
+
+        .stat-callout .stat-context {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            color: #888888;
+            max-width: 500px;
+            margin: 0 auto 8px;
+        }
+
+        .stat-callout .stat-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: #555555;
+            font-style: italic;
+        }
+
+        /* ============================================
+           OBJECTION HANDLING / FAQ
+           ============================================ */
+        .faq-section {
+            background: #0d0d0d;
+            padding: 96px 0;
+            position: relative;
+        }
+
+        .faq-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-item:hover { border-color: rgba(201, 168, 76, 0.2); }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px 28px;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover { color: #c9a84c; }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: #c9a84c;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            font-weight: 300;
+        }
+
+        .faq-item.active .faq-icon { transform: rotate(45deg); }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer { max-height: 500px; }
+
+        .faq-answer-inner {
+            padding: 0 28px 24px;
+            color: #999999;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .faq-answer-inner strong { color: #cccccc; }
+
+        /* ============================================
+           SOCIAL PROOF
+           ============================================ */
+        .social-proof {
+            background: #111111;
+            padding: 96px 0;
+            position: relative;
+        }
+
+        .social-proof::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .social-proof-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 992px) {
+            .testimonial-grid { grid-template-columns: 1fr; max-width: 600px; margin: 0 auto; }
+        }
+
+        .testimonial-card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 32px;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(201, 168, 76, 0.25);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial-stars {
+            color: #c9a84c;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            letter-spacing: 3px;
+        }
+
+        .testimonial-quote-mark {
+            font-family: 'DM Serif Display', serif;
+            font-size: 4rem;
+            color: rgba(201, 168, 76, 0.25);
+            line-height: 1;
+            margin-bottom: -16px;
+            display: block;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: #cccccc;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c9a84c, #8a7433);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .testimonial-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .testimonial-role {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: #666666;
+        }
+
+        /* ============================================
+           MID-PAGE CTA
+           ============================================ */
+        .mid-cta {
+            background: #1a1a1a;
+            padding: 64px 0;
+            text-align: center;
+            position: relative;
+            border-top: 1px solid #2a2a2a;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .mid-cta h3 { margin-bottom: 8px; }
+        .mid-cta p { margin-bottom: 24px; color: #999999; }
+
+        /* ============================================
+           WHY GUARANTEED INCOME SECTION
+           ============================================ */
+        .why-section {
+            background: #0a0a0a;
+            padding: 96px 0;
+            position: relative;
+        }
+
+        .why-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .why-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 480px) {
+            .why-grid { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; }
+        }
+
+        .why-card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            padding: 28px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .why-card:hover {
+            border-color: rgba(201, 168, 76, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .why-card .why-icon {
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 16px;
+            border-radius: 12px;
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .why-card .why-icon svg {
+            width: 22px;
+            height: 22px;
+            stroke: #c9a84c;
+        }
+
+        .why-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .why-card p {
+            font-size: 0.85rem;
+            color: #888888;
+            margin-bottom: 0;
+            line-height: 1.5;
+        }
+
+        /* ============================================
+           FINAL CTA SECTION
+           ============================================ */
+        .final-cta {
+            background: linear-gradient(180deg, #0d0d0d, #0a0a0a);
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.2), transparent);
+        }
+
+        .final-cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .final-cta h2 { margin-bottom: 16px; }
+
+        .final-cta .subtitle {
+            font-size: 1.1rem;
+            color: #888888;
+            margin-bottom: 40px;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: #0a0a0a;
+            border-top: 1px solid #1a1a1a;
+            padding: 48px 0 32px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 0.8rem;
+            color: #444444;
+            margin-bottom: 8px;
+        }
+
+        .footer .disclaimer {
+            font-size: 0.7rem;
+            color: #333333;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.5;
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 480px) {
+            .hero { padding: 130px 0 80px; }
+            .form-card { padding: 28px; }
+            .type-card { padding: 28px; }
+            .testimonial-card { padding: 24px; }
+            .btn-primary { padding: 16px 32px; font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         ANNOUNCEMENT BAR
+         ============================================ -->
+    <div class="announcement-bar">
+        <p><span class="stat-number">$650,000</span> in savings can generate <span class="stat-number">$4,200/month</span> -- guaranteed for life</p>
+    </div>
+
+    <!-- ============================================
+         STICKY NAV
+         ============================================ -->
+    <nav class="sticky-nav" id="stickyNav">
+        <div class="nav-inner">
+            <div class="nav-logo">Income <span>Shield</span></div>
+            <div class="nav-links">
+                <a href="#paycheck">The Paycheck</a>
+                <a href="#compare">Compare</a>
+                <a href="#types">3 Types</a>
+                <a href="#objections">FAQ</a>
+            </div>
+            <a href="#calculate" class="nav-cta">Calculate My Income</a>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION (with form in hero)
+         ============================================ -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content fade-in-up">
+                    <span class="eyebrow">FREE INCOME CALCULATOR</span>
+                    <h1 class="fade-in-up fade-in-up-delay-1">
+                        See Your <span class="highlight">Guaranteed Monthly Income</span> in 60 Seconds
+                    </h1>
+                    <p class="hero-subtitle fade-in-up fade-in-up-delay-2">
+                        No guessing. No spreadsheets. No retirement calculators that spit out different numbers
+                        every time. Just your guaranteed income number -- based on your actual savings.
+                    </p>
+                    <div class="hero-trust-badges fade-in-up fade-in-up-delay-3">
+                        <div class="hero-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            Fee-only fiduciary
+                        </div>
+                        <div class="hero-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="16 12 12 8 8 12"></polyline><line x1="12" y1="16" x2="12" y2="8"></line></svg>
+                            No commission
+                        </div>
+                        <div class="hero-badge">
+                            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                            100% free
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-card fade-in-up fade-in-up-delay-2">
+                    <h3>Calculate My Income</h3>
+                    <p class="form-subtitle">Enter your details to see your personalized estimate</p>
+                    <form onsubmit="return false;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="Your first name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="age">Your Age</label>
+                                <select id="age" name="age" required>
+                                    <option value="" disabled selected>Select age</option>
+                                    <option value="55-59">55 - 59</option>
+                                    <option value="60-62">60 - 62</option>
+                                    <option value="63-65">63 - 65</option>
+                                    <option value="66-68">66 - 68</option>
+                                    <option value="69-72">69 - 72</option>
+                                    <option value="73+">73+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Your best email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone <span class="optional-label">(optional)</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="savings">Retirement Savings Range</label>
+                            <select id="savings" name="savings" required>
+                                <option value="" disabled selected>Select savings range</option>
+                                <option value="200-400">$200,000 - $400,000</option>
+                                <option value="400-600">$400,000 - $600,000</option>
+                                <option value="600-800">$600,000 - $800,000</option>
+                                <option value="800-1M">$800,000 - $1,000,000</option>
+                                <option value="1M-2M">$1,000,000 - $2,000,000</option>
+                                <option value="2M+">$2,000,000+</option>
+                            </select>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn-primary">Show Me My Income</button>
+                        </div>
+                    </form>
+                    <p class="form-privacy">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        Your information is 100% secure. We never share or sell your data.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PAYCHECK REFRAME SECTION
+         ============================================ -->
+    <section class="paycheck-section" id="paycheck">
+        <div class="container">
+            <div class="paycheck-grid">
+                <div class="paycheck-text reveal-left">
+                    <span class="eyebrow">THE PAYCHECK PROBLEM</span>
+                    <h2>For 30 Years, a Paycheck Showed Up Every Two Weeks. You Never Worried.</h2>
+                    <p>
+                        Then you retired. And <strong>YOU became the paycheck.</strong>
+                    </p>
+                    <p>
+                        Every month, you have to decide: how much can I safely withdraw? Is the market up enough?
+                        Should I take less this month? What if there is a correction?
+                    </p>
+                    <p>
+                        <strong>This is the fundamental problem of retirement.</strong> Not returns. Not fees.
+                        Not asset allocation. It is the fact that you went from receiving a guaranteed income
+                        to having to manufacture one from a pile of savings that could shrink at any moment.
+                    </p>
+                    <p>
+                        Guaranteed income solves this problem at the root. It recreates the paycheck.
+                        <strong>Same deposit. Same day. Every month. For life.</strong>
+                    </p>
+                </div>
+                <div class="paycheck-visual reveal-right">
+                    <div class="big-label">YOUR GUARANTEED INCOME</div>
+                    <div class="big-amount">$4,200</div>
+                    <div class="big-period">per month, every month, for life</div>
+                    <div class="paycheck-divider"></div>
+                    <div class="paycheck-source">From $650,000 in savings</div>
+                    <div style="height: 20px;"></div>
+                    <div class="paycheck-source">Combined with Social Security</div>
+                    <div class="paycheck-source-amount">$6,800/month total</div>
+                    <div style="height: 16px;"></div>
+                    <p class="paycheck-detail">
+                        The cash flow plus SS covers monthly expenses.
+                        The remaining accounts are for the fun stuff.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         LARGE STAT CALLOUT
+         ============================================ -->
+    <section class="stat-callout">
+        <div class="container reveal">
+            <span class="eyebrow">THE INCOME GAP</span>
+            <div class="big-number">$4,200</div>
+            <p class="stat-context">
+                per month -- guaranteed for life -- from $650,000 in retirement savings at current rates
+            </p>
+            <p class="stat-source">Based on current fixed-index annuity rates for a 65-year-old</p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         COMPARISON TABLE
+         ============================================ -->
+    <section class="comparison-section" id="compare">
+        <div class="container">
+            <div class="comparison-header reveal">
+                <span class="eyebrow">SIDE BY SIDE</span>
+                <h2>Traditional Withdrawal vs. Guaranteed Income</h2>
+                <p>Same savings. Radically different retirement experiences.</p>
+            </div>
+            <div class="comparison-table reveal">
+                <div class="comparison-table-header">
+                    <div class="col-header">Factor</div>
+                    <div class="col-header">Traditional Withdrawal</div>
+                    <div class="col-header">Guaranteed Income</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Income Source</div>
+                    <div class="row-value negative"><span class="icon-x">&#10005;</span> Market dependent</div>
+                    <div class="row-value positive"><span class="icon-check">&#10003;</span> Contractually guaranteed</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Monthly Amount</div>
+                    <div class="row-value negative"><span class="icon-x">&#10005;</span> You decide (and worry)</div>
+                    <div class="row-value positive"><span class="icon-check">&#10003;</span> Fixed automatic deposits</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Can It Run Out?</div>
+                    <div class="row-value negative"><span class="icon-x">&#10005;</span> Yes, if markets crash early</div>
+                    <div class="row-value positive"><span class="icon-check">&#10003;</span> No. Income for life.</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Market Monitoring</div>
+                    <div class="row-value negative"><span class="icon-x">&#10005;</span> Constant vigilance required</div>
+                    <div class="row-value positive"><span class="icon-check">&#10003;</span> Set it and forget it</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Sleep Quality</div>
+                    <div class="row-value negative"><span class="icon-x">&#10005;</span> 3am mental math</div>
+                    <div class="row-value positive"><span class="icon-check">&#10003;</span> "Like a baby" (actual quote)</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Inflation</div>
+                    <div class="row-value negative"><span class="icon-x">&#10005;</span> Erodes purchasing power</div>
+                    <div class="row-value positive"><span class="icon-check">&#10003;</span> COLA options available</div>
+                </div>
+                <div class="comparison-row">
+                    <div class="row-label">Legacy</div>
+                    <div class="row-value negative"><span class="icon-x">&#10005;</span> Whatever is left (if any)</div>
+                    <div class="row-value positive"><span class="icon-check">&#10003;</span> Death benefit / period certain</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         MID-PAGE CTA
+         ============================================ -->
+    <div class="mid-cta">
+        <div class="container reveal">
+            <h3>Want to See YOUR Number?</h3>
+            <p>Enter your savings range and age. We will calculate your personalized guaranteed monthly income.</p>
+            <a href="#calculate" class="btn-primary">Calculate My Income</a>
+        </div>
+    </div>
+
+    <!-- ============================================
+         THREE TYPES SECTION
+         ============================================ -->
+    <section class="types-section" id="types">
+        <div class="container">
+            <div class="types-header reveal">
+                <span class="eyebrow">THE 3 OPTIONS</span>
+                <h2>Three Types of Guaranteed Income -- Each Built for a Different Goal</h2>
+                <p>Not all annuities are created equal. Here is how to know which one fits your situation.</p>
+            </div>
+            <div class="types-grid">
+                <div class="type-card reveal">
+                    <span class="type-badge">GROWTH + PROTECTION</span>
+                    <h3>Fixed-Index Annuity (FIA)</h3>
+                    <p class="type-tagline">Grow when markets go up. Lose nothing when they crash.</p>
+                    <p>
+                        Your returns are linked to a market index (like the S&P 500) but your principal
+                        is protected from losses. You capture a portion of the upside with zero downside risk.
+                        Optional lifetime income rider guarantees a monthly check for life.
+                    </p>
+                    <div class="type-best-for">
+                        <span>BEST FOR</span>
+                        <p>People 55-65 who want growth potential without the risk of losing money. Ideal if retirement is 5-10 years away.</p>
+                    </div>
+                </div>
+                <div class="type-card reveal">
+                    <span class="type-badge">GUARANTEED RATE</span>
+                    <h3>Multi-Year Guaranteed Annuity (MYGA)</h3>
+                    <p class="type-tagline">Like a CD. But with a better rate and tax advantages.</p>
+                    <p>
+                        A fixed interest rate for a set period (3-10 years). Your rate is locked in the day you
+                        purchase, regardless of what happens in the economy. Tax-deferred growth means your money
+                        compounds faster than in a taxable CD.
+                    </p>
+                    <div class="type-best-for">
+                        <span>BEST FOR</span>
+                        <p>Conservative savers who want predictability. Currently offering rates that beat CDs by 0.5-1.5%. Great for the "safe money" bucket.</p>
+                    </div>
+                </div>
+                <div class="type-card reveal">
+                    <span class="type-badge">LIFETIME PAYCHECK</span>
+                    <h3>Income Annuity (SPIA / DIA)</h3>
+                    <p class="type-tagline">A paycheck that never stops. Ever.</p>
+                    <p>
+                        You convert a portion of your savings into a guaranteed monthly payment for life.
+                        No market risk. No withdrawal decisions. No monitoring. The insurance company takes on
+                        all the longevity and investment risk. You just deposit the check.
+                    </p>
+                    <div class="type-best-for">
+                        <span>BEST FOR</span>
+                        <p>People 62+ who want to cover essential expenses with guaranteed income, freeing up other assets for growth and "fun money."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PULL QUOTE
+         ============================================ -->
+    <section class="pull-quote-section">
+        <div class="container">
+            <div class="pull-quote reveal">
+                <blockquote>
+                    "Annuities are not an investment. They are insurance."
+                </blockquote>
+                <cite>-- A framing that changes everything about how you evaluate them</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         WHY GUARANTEED INCOME SECTION
+         ============================================ -->
+    <section class="why-section">
+        <div class="container">
+            <div class="text-center reveal" style="margin-bottom: 48px;">
+                <span class="eyebrow">WHY IT WORKS</span>
+                <h2>The Four Benefits That Change Everything</h2>
+            </div>
+            <div class="why-grid">
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h4>Peace of Mind</h4>
+                    <p>Stop checking the market. Your income arrives on the same day every month regardless.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <h4>Time Freedom</h4>
+                    <p>Slow mornings. Travel with your spouse. The life you saved for -- without the anxiety.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h4>Spousal Security</h4>
+                    <p>Joint-life options mean your spouse is protected even after you are gone.</p>
+                </div>
+                <div class="why-card reveal">
+                    <div class="why-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                    </div>
+                    <h4>More Freedom to Invest</h4>
+                    <p>Once essentials are covered, you can invest the rest more aggressively -- without fear.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         OBJECTION HANDLING / FAQ
+         ============================================ -->
+    <section class="faq-section" id="objections">
+        <div class="container">
+            <div class="faq-header reveal">
+                <span class="eyebrow">HONEST ANSWERS</span>
+                <h2>Addressing the Elephant in the Room</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>"Aren't annuities a scam?"</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <strong>Some are. And you are right to be skeptical.</strong> The annuities pushed by commission-hungry
+                            agents at firms like Edward Jones or Northwestern Mutual -- the ones with 7% surrender charges and buried
+                            fees -- deserve their bad reputation.
+                            <br><br>
+                            But fee-only fiduciary-recommended annuities are a completely different product. No commissions.
+                            Transparent fees. And recommended only when they genuinely fit your situation. If they do not fit,
+                            we will tell you that too. Our calculator will show you whether guaranteed income makes sense for
+                            your specific numbers.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>"Won't fees eat my returns?"</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <strong>Depends on the annuity.</strong> Variable annuities with stacked riders can charge 3-4% annually.
+                            That is too much. Period.
+                            <br><br>
+                            But a MYGA (multi-year guaranteed annuity) has <strong>zero annual fees</strong> -- your rate is your rate.
+                            FIAs with income riders typically charge 0.5-1.25% for the rider, which is the cost of the income guarantee.
+                            We show you the exact fee breakdown before you make any decision. No surprises.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>"Can I access my money if I need it?"</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <strong>Yes, with some limits during the surrender period.</strong> Most modern annuities allow 10% annual
+                            penalty-free withdrawals. Some offer nursing home and terminal illness waivers that allow full access.
+                            <br><br>
+                            The key insight: <strong>you should never put ALL your savings in an annuity.</strong> A good plan uses
+                            guaranteed income only for the portion needed to cover essential expenses. The rest stays liquid and
+                            invested. This is the "floor and upside" strategy.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>"What if the insurance company goes bankrupt?"</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <strong>Three layers of protection:</strong> First, we only recommend carriers rated A+ or better by AM Best
+                            (the gold standard for insurance company financial strength). Second, every state has a guaranty association
+                            that protects policyholders -- typically covering $250,000-$500,000 per contract. Third, insurance company
+                            failures are exceedingly rare (far rarer than bank failures), and when they do happen, policyholders are
+                            typically made whole through orderly acquisition by another carrier.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>"Can't I just do better in the market?"</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            <strong>Probably. And that is not the point.</strong> An annuity is not competing with the S&P 500 for
+                            highest returns. It is competing with your worst-case scenario. It answers the question: "What is the
+                            minimum amount I will receive every month for the rest of my life, no matter what?"
+                            <br><br>
+                            Think of it this way: <strong>"We insure our home and cars. Why not our portfolio?"</strong> You do not
+                            buy homeowner's insurance hoping for a fire. You buy it so you never have to worry about one. Guaranteed
+                            income works the same way.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         THE FLOOR AND UPSIDE STRATEGY
+         ============================================ -->
+    <section class="paycheck-section" id="strategy">
+        <div class="container">
+            <div class="paycheck-grid">
+                <div class="paycheck-text reveal-left">
+                    <span class="eyebrow">THE STRATEGY</span>
+                    <h2>The "Floor and Upside" Approach That Changes Everything</h2>
+                    <p>
+                        Here is the key insight most financial advisors miss: <strong>you do not need to choose between
+                        guaranteed income and market growth.</strong> The smartest retirees use both.
+                    </p>
+                    <p>
+                        <strong>Step 1: Build the floor.</strong> Use a portion of your savings (typically 30-50%)
+                        to create guaranteed monthly income that covers your essential expenses -- housing, food,
+                        utilities, healthcare, insurance. This money arrives every month no matter what.
+                    </p>
+                    <p>
+                        <strong>Step 2: Invest the upside.</strong> The remaining 50-70% of your portfolio stays invested
+                        in the market. Stocks, bonds, ETFs -- whatever you prefer. This is your growth bucket,
+                        your travel bucket, your "fun stuff" bucket.
+                    </p>
+                    <p>
+                        <strong>The psychological shift is profound.</strong> When your essentials are already covered,
+                        a market crash becomes an inconvenience instead of a catastrophe. You stop panic-selling
+                        because you do not need that money to eat. You might even see the crash as a buying opportunity.
+                    </p>
+                </div>
+                <div class="reveal-right">
+                    <div style="background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px; padding: 36px; margin-bottom: 24px;">
+                        <div style="font-family: 'Inter', sans-serif; font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #c9a84c; margin-bottom: 16px;">EXAMPLE: $800,000 IN SAVINGS</div>
+                        <div style="display: flex; gap: 24px; margin-bottom: 20px; flex-wrap: wrap;">
+                            <div style="flex: 1; min-width: 140px; background: rgba(201, 168, 76, 0.08); border: 1px solid rgba(201, 168, 76, 0.2); border-radius: 12px; padding: 20px; text-align: center;">
+                                <div style="font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: #c9a84c;">$350K</div>
+                                <div style="font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #cccccc; margin-top: 4px;">Income Floor</div>
+                                <div style="font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #888888; margin-top: 4px;">Guaranteed income</div>
+                            </div>
+                            <div style="flex: 1; min-width: 140px; background: rgba(78, 205, 196, 0.08); border: 1px solid rgba(78, 205, 196, 0.2); border-radius: 12px; padding: 20px; text-align: center;">
+                                <div style="font-family: 'DM Serif Display', serif; font-size: 1.8rem; color: #4ecdc4;">$450K</div>
+                                <div style="font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #cccccc; margin-top: 4px;">Growth Upside</div>
+                                <div style="font-family: 'Inter', sans-serif; font-size: 0.75rem; color: #888888; margin-top: 4px;">Market invested</div>
+                            </div>
+                        </div>
+                        <div style="border-top: 1px solid #2a2a2a; padding-top: 16px;">
+                            <p style="font-size: 0.9rem; color: #cccccc; margin-bottom: 8px;"><strong style="color: #ffffff;">Monthly income floor:</strong> $2,400 guaranteed + $2,200 Social Security = <strong style="color: #c9a84c;">$4,600/month</strong></p>
+                            <p style="font-size: 0.9rem; color: #cccccc; margin-bottom: 8px;"><strong style="color: #ffffff;">Growth portfolio:</strong> $450K invested for travel, gifts, home projects, legacy</p>
+                            <p style="font-size: 0.85rem; color: #888888; margin-bottom: 0;">Essentials are covered. Growth is optional upside. Market crash = no lifestyle impact.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         COMMON MISTAKES SECTION
+         ============================================ -->
+    <section style="background: #111111; padding: 96px 0; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);"></div>
+        <div class="container-narrow">
+            <div class="text-center reveal" style="margin-bottom: 48px;">
+                <span class="eyebrow">BEFORE YOU COMPARE</span>
+                <h2>The 3 Most Expensive Mistakes People Make When Choosing an Annuity</h2>
+            </div>
+
+            <div style="background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px; padding: 36px; margin-bottom: 20px;" class="reveal">
+                <h4 style="font-size: 1.15rem; margin-bottom: 12px;">
+                    <span style="color: #c9a84c; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px;">MISTAKE #1</span>
+                </h4>
+                <h3 style="font-size: 1.3rem; margin-bottom: 12px;">Buying From a Commission-Based Agent</h3>
+                <p style="color: #cccccc; line-height: 1.8;">
+                    The biggest annuity horror stories come from people who bought from insurance salespeople
+                    disguised as "financial advisors." These agents earn 5-8% commissions on variable annuities --
+                    which is why they recommend them even when simpler, cheaper products would serve you better.
+                </p>
+                <p style="color: #888888; margin-bottom: 0;">
+                    <strong style="color: #c9a84c;">The fix:</strong> Only work with fee-only fiduciary advisors who have
+                    no commission incentive. Our calculator connects you with advisors who are legally required to
+                    act in your best interest.
+                </p>
+            </div>
+
+            <div style="background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px; padding: 36px; margin-bottom: 20px;" class="reveal">
+                <h4 style="font-size: 1.15rem; margin-bottom: 12px;">
+                    <span style="color: #c9a84c; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px;">MISTAKE #2</span>
+                </h4>
+                <h3 style="font-size: 1.3rem; margin-bottom: 12px;">Putting Too Much Money In</h3>
+                <p style="color: #cccccc; line-height: 1.8;">
+                    Some advisors will try to move your entire portfolio into an annuity. This is almost
+                    always wrong. You need liquidity for emergencies, home repairs, medical expenses, and
+                    opportunities. The right amount is typically 30-50% of your total savings --
+                    enough to cover essentials, not so much that you feel locked in.
+                </p>
+                <p style="color: #888888; margin-bottom: 0;">
+                    <strong style="color: #c9a84c;">The fix:</strong> Our calculator shows you exactly how much of your
+                    savings should go toward guaranteed income -- and how much should stay invested for growth.
+                </p>
+            </div>
+
+            <div style="background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px; padding: 36px;" class="reveal">
+                <h4 style="font-size: 1.15rem; margin-bottom: 12px;">
+                    <span style="color: #c9a84c; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.8rem; letter-spacing: 2px;">MISTAKE #3</span>
+                </h4>
+                <h3 style="font-size: 1.3rem; margin-bottom: 12px;">Comparing Annuities to the S&P 500</h3>
+                <p style="color: #cccccc; line-height: 1.8;">
+                    This is the most common mistake smart investors make. They look at annuity returns and say
+                    "I can do better in the market." And they are right -- in a good decade. But an annuity
+                    is not competing with the market. It is competing with the worst-case scenario. It answers
+                    a fundamentally different question: "What is the minimum I will receive every month, no matter what?"
+                </p>
+                <p style="color: #888888; margin-bottom: 0;">
+                    <strong style="color: #c9a84c;">The fix:</strong> Compare an annuity to the alternative it actually replaces:
+                    the anxiety of withdrawing from a declining portfolio, the risk of running out, the sleepless
+                    nights wondering if the market will recover in time.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         INSURANCE REFRAME SECTION
+         ============================================ -->
+    <section style="background: #0d0d0d; padding: 96px 0; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);"></div>
+        <div class="container">
+            <div class="paycheck-grid">
+                <div class="reveal-left">
+                    <span class="eyebrow">THE REFRAME</span>
+                    <h2>Stop Thinking of It as an Investment. Start Thinking of It as Insurance.</h2>
+                    <p style="line-height: 1.8;">
+                        You insure your home even though you do not expect a fire. You insure your car even though you
+                        plan to drive carefully. <strong style="color: #ffffff;">Why would you leave your retirement income uninsured?</strong>
+                    </p>
+                    <p style="line-height: 1.8;">
+                        A guaranteed income annuity is not an investment product. It is an insurance product.
+                        It insures against the one risk that can destroy an otherwise successful retirement:
+                        <strong style="color: #ffffff;">living longer than your money lasts.</strong>
+                    </p>
+                    <p style="line-height: 1.8;">
+                        When you reframe it this way, the question changes. Instead of "Can I get a better return?"
+                        the question becomes: <strong style="color: #ffffff;">"What is the cost of NOT insuring my income?"</strong>
+                    </p>
+                    <p style="line-height: 1.8; color: #888888;">
+                        For most people, the answer is: decades of unnecessary anxiety, lower quality of life, delayed
+                        retirement, and the constant fear that one bad sequence of market returns could undo everything.
+                        That is an expensive premium to pay for doing nothing.
+                    </p>
+                </div>
+                <div class="reveal-right" style="display: flex; flex-direction: column; gap: 16px;">
+                    <div style="background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 24px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(201, 168, 76, 0.1); border: 1px solid rgba(201, 168, 76, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
+                            </div>
+                            <h4 style="font-size: 1rem;">Home Insurance</h4>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #888888; margin-bottom: 0;">Protects against catastrophic loss of your home. You pay without expecting to use it.</p>
+                    </div>
+                    <div style="background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 12px; padding: 24px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(201, 168, 76, 0.1); border: 1px solid rgba(201, 168, 76, 0.2); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
+                            </div>
+                            <h4 style="font-size: 1rem;">Health Insurance</h4>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #888888; margin-bottom: 0;">Protects against catastrophic medical expenses. Essential, non-negotiable.</p>
+                    </div>
+                    <div style="background: rgba(201, 168, 76, 0.05); border: 1px solid rgba(201, 168, 76, 0.2); border-radius: 12px; padding: 24px;">
+                        <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+                            <div style="width: 40px; height: 40px; border-radius: 10px; background: rgba(201, 168, 76, 0.15); border: 1px solid rgba(201, 168, 76, 0.3); display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                            <h4 style="font-size: 1rem; color: #c9a84c;">Income Insurance</h4>
+                        </div>
+                        <p style="font-size: 0.9rem; color: #cccccc; margin-bottom: 0;"><strong>Protects against the catastrophic loss of your retirement income.</strong> Why is this the one risk people leave uninsured?</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECOND PULL QUOTE
+         ============================================ -->
+    <section class="pull-quote-section">
+        <div class="container">
+            <div class="pull-quote reveal">
+                <blockquote>
+                    "If you've won the game, it's okay to stop playing."
+                </blockquote>
+                <cite>-- A financial advisor to a client with $1.8M who was still terrified to retire</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SOCIAL PROOF
+         ============================================ -->
+    <section class="social-proof" id="testimonials">
+        <div class="container">
+            <div class="social-proof-header reveal">
+                <span class="eyebrow">FROM PEOPLE LIKE YOU</span>
+                <h2>What Changed When They Got Their Number</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <span class="testimonial-quote-mark">"</span>
+                    <p class="testimonial-text">
+                        A stream of lifetime income gives me peace of mind of never running out of money.
+                        The day that first deposit hit, something shifted. I stopped being afraid of my own retirement.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">JT</div>
+                        <div>
+                            <div class="testimonial-name">James T.</div>
+                            <div class="testimonial-role">Retired engineer, age 66</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <span class="testimonial-quote-mark">"</span>
+                    <p class="testimonial-text">
+                        The cash flow plus SS covers our monthly expenses. The remaining accounts are for the
+                        fun stuff -- like trips with the grandkids. My husband stopped panicking every time
+                        he saw a red day on CNBC.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">LP</div>
+                        <div>
+                            <div class="testimonial-name">Linda & Paul R.</div>
+                            <div class="testimonial-role">Retired couple, ages 68 and 66</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <span class="testimonial-quote-mark">"</span>
+                    <p class="testimonial-text">
+                        I KNEW that if I took the lump sum I would be checking my portfolio every day.
+                        I picked the monthly payments. Haven't logged into my brokerage in four months.
+                        That is freedom.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">MG</div>
+                        <div>
+                            <div class="testimonial-name">Margaret G.</div>
+                            <div class="testimonial-role">Retired nurse, age 63</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         COUPLES SECTION
+         ============================================ -->
+    <section style="background: #0d0d0d; padding: 96px 0; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);"></div>
+        <div class="container">
+            <div class="paycheck-grid">
+                <div class="paycheck-text reveal-left">
+                    <span class="eyebrow">FOR COUPLES</span>
+                    <h2>When One Partner Is Ready and the Other Needs to See the Numbers</h2>
+                    <p>
+                        Here is what typically happens: one of you has done the math, feels confident, and
+                        is ready to retire. The other sees all the things that could go wrong and cannot
+                        bring themselves to agree.
+                    </p>
+                    <p>
+                        <strong style="color: #ffffff;">Neither of you is wrong.</strong> The confident partner is right that the
+                        numbers work under normal conditions. The cautious partner is right that "normal conditions"
+                        are not guaranteed.
+                    </p>
+                    <p>
+                        The calculator resolves this by showing both of you the <strong style="color: #ffffff;">worst-case scenario
+                        with guaranteed income</strong>. When the cautious partner sees that essential expenses are
+                        covered no matter what -- even if the market drops 50% tomorrow -- the fear dissipates.
+                        Not because they changed their mind about the risks. But because the risks no longer apply
+                        to the money that matters most.
+                    </p>
+                    <p>
+                        <strong style="color: #ffffff;">Couples who see their numbers together make the decision 3x faster</strong>
+                        than individuals who go alone and then try to explain it at the dinner table.
+                    </p>
+                </div>
+                <div class="reveal-right">
+                    <div style="background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px; padding: 36px; position: relative; margin-bottom: 24px;">
+                        <div style="position: absolute; left: -1px; top: 20%; bottom: 20%; width: 3px; background: #c9a84c; border-radius: 2px;"></div>
+                        <blockquote style="font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: #cccccc; font-style: italic; line-height: 1.5; margin-bottom: 16px;">
+                            "She was -- and is -- VERY hesitant. A sea of pessimistic what-ifs. Walking through our plans
+                            with a professional helped my SO see we are in a good position."
+                        </blockquote>
+                        <cite style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #666666; font-style: normal;">
+                            -- Retired couple, both 62, married 34 years
+                        </cite>
+                    </div>
+                    <div style="background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px; padding: 36px; position: relative;">
+                        <div style="position: absolute; left: -1px; top: 20%; bottom: 20%; width: 3px; background: #c9a84c; border-radius: 2px;"></div>
+                        <blockquote style="font-family: 'DM Serif Display', serif; font-size: 1.3rem; color: #cccccc; font-style: italic; line-height: 1.5; margin-bottom: 16px;">
+                            "The cash flow plus SS covers our monthly expenses. The remaining accounts are for the fun stuff --
+                            like trips with the grandkids."
+                        </blockquote>
+                        <cite style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #666666; font-style: normal;">
+                            -- Retired couple, ages 67 and 65
+                        </cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PROCESS STEPS
+         ============================================ -->
+    <section style="background: #111111; padding: 96px 0; position: relative;">
+        <div style="position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);"></div>
+        <div class="container">
+            <div class="text-center reveal" style="margin-bottom: 64px;">
+                <span class="eyebrow">3 SIMPLE STEPS</span>
+                <h2>How It Works</h2>
+            </div>
+            <div class="process-steps" style="display: flex; justify-content: center; gap: 48px; max-width: 900px; margin: 0 auto; position: relative;">
+                <div style="position: absolute; top: 32px; left: 15%; right: 15%; height: 2px; background: linear-gradient(90deg, transparent, #2a2a2a, #2a2a2a, transparent);"></div>
+                <div style="text-align: center; flex: 1; position: relative; z-index: 1;" class="reveal">
+                    <div style="width: 64px; height: 64px; border-radius: 50%; background: #1a1a1a; border: 3px solid #c9a84c; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #c9a84c;">1</div>
+                    <div style="font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: #ffffff; margin-bottom: 8px;">Enter Your Details</div>
+                    <div style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #888888; line-height: 1.5; max-width: 200px; margin: 0 auto;">Name, email, age range, and savings range. Takes 30 seconds.</div>
+                </div>
+                <div style="text-align: center; flex: 1; position: relative; z-index: 1;" class="reveal">
+                    <div style="width: 64px; height: 64px; border-radius: 50%; background: #1a1a1a; border: 3px solid #c9a84c; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #c9a84c;">2</div>
+                    <div style="font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: #ffffff; margin-bottom: 8px;">Receive Your Estimate</div>
+                    <div style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #888888; line-height: 1.5; max-width: 200px; margin: 0 auto;">Personalized PDF showing your guaranteed monthly income at current rates.</div>
+                </div>
+                <div style="text-align: center; flex: 1; position: relative; z-index: 1;" class="reveal">
+                    <div style="width: 64px; height: 64px; border-radius: 50%; background: #1a1a1a; border: 3px solid #c9a84c; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; font-family: 'DM Serif Display', serif; font-size: 1.5rem; color: #c9a84c;">3</div>
+                    <div style="font-family: 'DM Serif Display', serif; font-size: 1.2rem; color: #ffffff; margin-bottom: 8px;">Decide (No Pressure)</div>
+                    <div style="font-family: 'Inter', sans-serif; font-size: 0.85rem; color: #888888; line-height: 1.5; max-width: 200px; margin: 0 auto;">If the numbers make sense, schedule an optional 15-minute call. If not, no follow-up.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECOND MID-PAGE CTA
+         ============================================ -->
+    <div class="mid-cta">
+        <div class="container reveal">
+            <h3>Your Number Is Waiting</h3>
+            <p>Current rates are the best in 15 years. See what your savings can guarantee today.</p>
+            <a href="#calculate" class="btn-primary">Calculate My Guaranteed Income</a>
+        </div>
+    </div>
+
+    <!-- ============================================
+         FINAL CTA / FORM
+         ============================================ -->
+    <section class="final-cta" id="calculate">
+        <div class="container">
+            <div class="final-cta-content reveal">
+                <span class="eyebrow">YOUR PERSONALIZED ESTIMATE</span>
+                <h2>See What Your Savings Can Guarantee</h2>
+                <p class="subtitle">
+                    Enter your details below. You will receive a personalized income estimate
+                    showing exactly what your savings can generate -- every month, for life.
+                </p>
+
+                <div class="form-card">
+                    <h3>Get My Income Estimate</h3>
+                    <p class="form-subtitle">Free. No obligation. Results delivered to your email in under 60 seconds.</p>
+                    <form onsubmit="return false;">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName2">First Name</label>
+                                <input type="text" id="firstName2" name="firstName" placeholder="Your first name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="age2">Your Age</label>
+                                <select id="age2" name="age" required>
+                                    <option value="" disabled selected>Select age</option>
+                                    <option value="55-59">55 - 59</option>
+                                    <option value="60-62">60 - 62</option>
+                                    <option value="63-65">63 - 65</option>
+                                    <option value="66-68">66 - 68</option>
+                                    <option value="69-72">69 - 72</option>
+                                    <option value="73+">73+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email2">Email Address</label>
+                            <input type="email" id="email2" name="email" placeholder="Your best email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone2">Phone <span class="optional-label">(optional)</span></label>
+                            <input type="tel" id="phone2" name="phone" placeholder="(555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="savings2">Retirement Savings Range</label>
+                            <select id="savings2" name="savings" required>
+                                <option value="" disabled selected>Select savings range</option>
+                                <option value="200-400">$200,000 - $400,000</option>
+                                <option value="400-600">$400,000 - $600,000</option>
+                                <option value="600-800">$600,000 - $800,000</option>
+                                <option value="800-1M">$800,000 - $1,000,000</option>
+                                <option value="1M-2M">$1,000,000 - $2,000,000</option>
+                                <option value="2M+">$2,000,000+</option>
+                            </select>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn-primary">Show Me My Guaranteed Income</button>
+                        </div>
+                    </form>
+                    <p class="form-privacy">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#666666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        Your information is 100% secure. We never share or sell your data.
+                    </p>
+                    <div class="form-fear-address">
+                        <p>
+                            <strong>No advisor will call you</strong> unless you specifically request it.
+                            Your estimate is delivered by email only.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <p style="font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: #666666; margin-bottom: 16px;">
+                Income <span style="color: #c9a84c;">Shield</span>
+            </p>
+            <p>Copyright 2026. All rights reserved.</p>
+            <p class="disclaimer">
+                This calculator provides estimates for educational purposes only and does not constitute financial advice.
+                Actual income amounts depend on your age, savings amount, product type, and current rates. Guarantees are
+                backed by the claims-paying ability of the issuing insurance company. Annuities are insurance products and
+                are not FDIC insured. Consult a licensed financial professional before making any financial decisions.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        // Sticky Nav
+        var stickyNav = document.getElementById('stickyNav');
+        var heroSection = document.getElementById('hero');
+
+        function handleScroll() {
+            var heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            if (window.scrollY > heroBottom - 100) {
+                stickyNav.classList.add('visible');
+            } else {
+                stickyNav.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        // Scroll Reveal
+        function revealOnScroll() {
+            var reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+            var windowHeight = window.innerHeight;
+
+            reveals.forEach(function(el) {
+                var elementTop = el.getBoundingClientRect().top;
+                var revealPoint = 120;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // FAQ Accordion
+        function toggleFaq(button) {
+            var item = button.closest('.faq-item');
+            var isActive = item.classList.contains('active');
+
+            document.querySelectorAll('.faq-item').forEach(function(faq) {
+                faq.classList.remove('active');
+            });
+
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    var offset = 80;
+                    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

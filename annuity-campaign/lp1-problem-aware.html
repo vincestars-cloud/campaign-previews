@@ -1,0 +1,2405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retirement Income Protection Guide | Free Download</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#128170;</text></svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ============================================
+           CSS RESET & BASE
+           ============================================ */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: #0a0a0a;
+            color: #b0b0b0;
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* ============================================
+           TYPOGRAPHY
+           ============================================ */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'DM Serif Display', serif;
+            color: #ffffff;
+            line-height: 1.2;
+            font-weight: 400;
+        }
+
+        h1 { font-size: clamp(2.2rem, 5vw, 3.8rem); }
+        h2 { font-size: clamp(1.8rem, 4vw, 3rem); }
+        h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); }
+        h4 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
+
+        p {
+            font-size: 1.05rem;
+            margin-bottom: 1.2rem;
+            color: #b0b0b0;
+        }
+
+        a {
+            color: #c9a84c;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #e0c06a;
+        }
+
+        /* ============================================
+           UTILITY CLASSES
+           ============================================ */
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-narrow {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #c9a84c;
+            margin-bottom: 16px;
+            display: inline-block;
+        }
+
+        .gold-text {
+            color: #c9a84c;
+        }
+
+        .white-text {
+            color: #ffffff;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .section-padding {
+            padding: 96px 0;
+        }
+
+        .section-padding-lg {
+            padding: 120px 0;
+        }
+
+        /* ============================================
+           BUTTONS
+           ============================================ */
+        .btn-primary {
+            display: inline-block;
+            background: linear-gradient(135deg, #c9a84c, #d4a843);
+            color: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 700;
+            padding: 18px 42px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.25);
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, #d4a843, #e0b84d);
+            color: #0a0a0a;
+            box-shadow: 0 6px 30px rgba(201, 168, 76, 0.45);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+
+        .btn-secondary {
+            display: inline-block;
+            background: transparent;
+            color: #c9a84c;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            padding: 16px 36px;
+            border-radius: 8px;
+            border: 2px solid #c9a84c;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(201, 168, 76, 0.1);
+            color: #c9a84c;
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.15);
+        }
+
+        /* ============================================
+           ANIMATIONS
+           ============================================ */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        @keyframes countUp {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .fade-in-up {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+
+        .fade-in-up-delay-1 { animation-delay: 0.2s; }
+        .fade-in-up-delay-2 { animation-delay: 0.4s; }
+        .fade-in-up-delay-3 { animation-delay: 0.6s; }
+        .fade-in-up-delay-4 { animation-delay: 0.8s; }
+
+        /* Scroll-triggered animations */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(40px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .reveal-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* ============================================
+           ANNOUNCEMENT BAR
+           ============================================ */
+        .announcement-bar {
+            background: linear-gradient(90deg, #c9a84c, #d4a843, #c9a84c);
+            padding: 12px 24px;
+            text-align: center;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .announcement-bar p {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: #0a0a0a;
+            margin: 0;
+            letter-spacing: 0.5px;
+        }
+
+        .announcement-bar .stat-number {
+            font-size: 1rem;
+            font-weight: 800;
+        }
+
+        /* ============================================
+           STICKY NAV
+           ============================================ */
+        .sticky-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.92);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(201, 168, 76, 0.15);
+            padding: 0;
+            z-index: 1000;
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+
+        .sticky-nav.visible {
+            transform: translateY(0);
+        }
+
+        .sticky-nav .nav-inner {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 14px 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .sticky-nav .nav-logo {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+            color: #ffffff;
+        }
+
+        .sticky-nav .nav-logo span {
+            color: #c9a84c;
+        }
+
+        .sticky-nav .nav-cta {
+            background: linear-gradient(135deg, #c9a84c, #d4a843);
+            color: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 10px 24px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .sticky-nav .nav-cta:hover {
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.4);
+            color: #0a0a0a;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #c9a84c;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+        }
+
+        /* ============================================
+           HERO SECTION
+           ============================================ */
+        .hero {
+            background: linear-gradient(180deg, #0a0a0a 0%, #111111 50%, #0d0d0d 100%);
+            padding: 160px 0 120px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at 50% 0%, rgba(201, 168, 76, 0.06) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.2), transparent);
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero h1 {
+            margin-bottom: 24px;
+            line-height: 1.15;
+        }
+
+        .hero h1 .highlight {
+            color: #c9a84c;
+            position: relative;
+        }
+
+        .hero h1 .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #c9a84c, transparent);
+            border-radius: 2px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            color: #999999;
+            margin-bottom: 12px;
+            line-height: 1.6;
+            max-width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-detail {
+            font-size: 1rem;
+            color: #777777;
+            margin-bottom: 40px;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta-group {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .hero-cta-group .btn-primary {
+            font-size: 1.15rem;
+            padding: 20px 48px;
+        }
+
+        .hero-micro {
+            font-size: 0.8rem;
+            color: #666666;
+            font-style: italic;
+        }
+
+        .hero-micro span {
+            color: #c9a84c;
+        }
+
+        /* ============================================
+           STATS BAR (in-page)
+           ============================================ */
+        .stats-bar {
+            background: #111111;
+            border-top: 1px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
+            padding: 48px 0;
+        }
+
+        .stats-bar .container {
+            display: flex;
+            justify-content: center;
+            gap: 64px;
+            flex-wrap: wrap;
+        }
+
+        .stat-block {
+            text-align: center;
+            min-width: 160px;
+        }
+
+        .stat-block .stat-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: #c9a84c;
+            line-height: 1;
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .stat-block .stat-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: #888888;
+            line-height: 1.4;
+            max-width: 180px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 768px) {
+            .stats-bar .container {
+                gap: 32px;
+            }
+            .stat-block {
+                min-width: 120px;
+            }
+        }
+
+        /* ============================================
+           PROBLEM AGITATION SECTION
+           ============================================ */
+        .problem-section {
+            background: #0d0d0d;
+            padding: 96px 0;
+            position: relative;
+        }
+
+        .problem-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .problem-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .problem-header h2 {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .problem-list {
+            max-width: 700px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .problem-list li {
+            font-size: 1.1rem;
+            color: #cccccc;
+            padding: 20px 0;
+            padding-left: 40px;
+            position: relative;
+            border-bottom: 1px solid #1a1a1a;
+            transition: all 0.3s ease;
+        }
+
+        .problem-list li:hover {
+            padding-left: 48px;
+            color: #ffffff;
+        }
+
+        .problem-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: rgba(201, 168, 76, 0.15);
+            border: 2px solid #c9a84c;
+        }
+
+        .problem-list li::after {
+            content: '';
+            position: absolute;
+            left: 7px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #c9a84c;
+        }
+
+        .problem-list li strong {
+            color: #ffffff;
+        }
+
+        .problem-list li:last-child {
+            border-bottom: none;
+        }
+
+        .problem-preface {
+            font-size: 1.15rem;
+            color: #999999;
+            text-align: center;
+            margin-bottom: 32px;
+            font-style: italic;
+        }
+
+        /* ============================================
+           THE REAL PROBLEM SECTION
+           ============================================ */
+        .real-problem {
+            background: #111111;
+            padding: 96px 0;
+            position: relative;
+        }
+
+        .real-problem::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .real-problem-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .real-problem-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .real-problem-text h2 {
+            margin-bottom: 24px;
+        }
+
+        .real-problem-text p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .real-problem-text p strong {
+            color: #ffffff;
+        }
+
+        .real-problem-visual {
+            background: #1a1a1a;
+            border-radius: 16px;
+            padding: 40px;
+            border: 1px solid #2a2a2a;
+            position: relative;
+        }
+
+        .real-problem-visual::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 20%;
+            right: 20%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+        }
+
+        .risk-scenario {
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .risk-scenario:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .risk-scenario .scenario-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #c9a84c;
+            margin-bottom: 8px;
+        }
+
+        .risk-scenario h4 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .risk-scenario p {
+            font-size: 0.95rem;
+            color: #888888;
+            margin-bottom: 0;
+        }
+
+        .risk-scenario .risk-result {
+            font-size: 1.1rem;
+            color: #ff6b6b;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .risk-scenario .risk-result.positive {
+            color: #4ecdc4;
+        }
+
+        /* ============================================
+           PULL QUOTE
+           ============================================ */
+        .pull-quote-section {
+            background: #0a0a0a;
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .pull-quote-section::before,
+        .pull-quote-section::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .pull-quote-section::before { top: 0; }
+        .pull-quote-section::after { bottom: 0; }
+
+        .pull-quote {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+            padding: 0 40px;
+        }
+
+        .pull-quote::before {
+            content: '\201C';
+            font-family: 'DM Serif Display', serif;
+            font-size: 8rem;
+            color: rgba(201, 168, 76, 0.2);
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            transform: translateX(-50%);
+            line-height: 1;
+        }
+
+        .pull-quote blockquote {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+            color: #c9a84c;
+            font-style: italic;
+            line-height: 1.4;
+            margin-bottom: 24px;
+        }
+
+        .pull-quote cite {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: #666666;
+            font-style: normal;
+            letter-spacing: 1px;
+        }
+
+        /* ============================================
+           FEATURE CARDS SECTION
+           ============================================ */
+        .features-section {
+            background: #0d0d0d;
+            padding: 96px 0;
+            position: relative;
+        }
+
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .features-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .features-header h2 {
+            margin-bottom: 16px;
+        }
+
+        .features-header p {
+            font-size: 1.1rem;
+            color: #888888;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .feature-card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 36px;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #c9a84c, transparent);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(201, 168, 76, 0.3);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3), 0 0 30px rgba(201, 168, 76, 0.05);
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 12px;
+            background: rgba(201, 168, 76, 0.1);
+            border: 1px solid rgba(201, 168, 76, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            color: #888888;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        .feature-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3rem;
+            color: rgba(201, 168, 76, 0.15);
+            position: absolute;
+            top: 16px;
+            right: 24px;
+            line-height: 1;
+        }
+
+        /* ============================================
+           SOCIAL PROOF SECTION
+           ============================================ */
+        .social-proof {
+            background: #111111;
+            padding: 96px 0;
+            position: relative;
+        }
+
+        .social-proof::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .social-proof-header {
+            text-align: center;
+            margin-bottom: 56px;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 992px) {
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+                max-width: 600px;
+                margin: 0 auto;
+            }
+        }
+
+        .testimonial-card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 32px;
+            position: relative;
+            transition: all 0.4s ease;
+        }
+
+        .testimonial-card:hover {
+            border-color: rgba(201, 168, 76, 0.25);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial-stars {
+            color: #c9a84c;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+            letter-spacing: 3px;
+        }
+
+        .testimonial-quote-mark {
+            font-family: 'DM Serif Display', serif;
+            font-size: 4rem;
+            color: rgba(201, 168, 76, 0.25);
+            line-height: 1;
+            margin-bottom: -16px;
+            display: block;
+        }
+
+        .testimonial-text {
+            font-size: 1rem;
+            color: #cccccc;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #c9a84c, #8a7433);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0a0a0a;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 1rem;
+        }
+
+        .testimonial-name {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .testimonial-role {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: #666666;
+        }
+
+        /* ============================================
+           PROCESS STEPS
+           ============================================ */
+        .process-section {
+            background: #0d0d0d;
+            padding: 96px 0;
+            position: relative;
+        }
+
+        .process-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .process-header {
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: center;
+            gap: 48px;
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 32px;
+            left: 15%;
+            right: 15%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #2a2a2a, #2a2a2a, transparent);
+        }
+
+        .process-step {
+            text-align: center;
+            flex: 1;
+            position: relative;
+            z-index: 1;
+        }
+
+        .step-circle {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            border: 3px solid #c9a84c;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            color: #c9a84c;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover .step-circle {
+            background: #c9a84c;
+            color: #0a0a0a;
+            box-shadow: 0 4px 20px rgba(201, 168, 76, 0.35);
+        }
+
+        .step-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.2rem;
+            color: #ffffff;
+            margin-bottom: 8px;
+        }
+
+        .step-desc {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: #888888;
+            line-height: 1.5;
+            max-width: 200px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 640px) {
+            .process-steps {
+                flex-direction: column;
+                gap: 32px;
+                align-items: center;
+            }
+            .process-steps::before {
+                display: none;
+            }
+        }
+
+        /* ============================================
+           FAQ SECTION
+           ============================================ */
+        .faq-section {
+            background: #111111;
+            padding: 96px 0;
+            position: relative;
+        }
+
+        .faq-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .faq-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .faq-list {
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: border-color 0.3s ease;
+        }
+
+        .faq-item:hover {
+            border-color: rgba(201, 168, 76, 0.2);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px 28px;
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.05rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: #c9a84c;
+        }
+
+        .faq-icon {
+            font-size: 1.5rem;
+            color: #c9a84c;
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+            font-weight: 300;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 400px;
+        }
+
+        .faq-answer-inner {
+            padding: 0 28px 24px;
+            color: #999999;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+
+        .faq-answer-inner strong {
+            color: #cccccc;
+        }
+
+        /* ============================================
+           FORM SECTION / FINAL CTA
+           ============================================ */
+        .final-cta {
+            background: linear-gradient(180deg, #0d0d0d, #0a0a0a);
+            padding: 120px 0;
+            position: relative;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.2), transparent);
+        }
+
+        .final-cta-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .final-cta h2 {
+            margin-bottom: 16px;
+        }
+
+        .final-cta .subtitle {
+            font-size: 1.1rem;
+            color: #888888;
+            margin-bottom: 40px;
+        }
+
+        .form-card {
+            background: #1e1e1e;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-card::before {
+            content: '';
+            position: absolute;
+            top: -1px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #c9a84c, transparent);
+        }
+
+        .form-card h3 {
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        .form-card .form-subtitle {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #888888;
+            margin-bottom: 32px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: #cccccc;
+            margin-bottom: 6px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            background: #ffffff;
+            border: 2px solid #3a3a3a;
+            border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: #1a1a1a;
+            transition: border-color 0.3s ease;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #c9a84c;
+            box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.15);
+        }
+
+        .form-group input::placeholder {
+            color: #999999;
+        }
+
+        .form-group .optional-label {
+            font-size: 0.75rem;
+            color: #666666;
+            font-weight: 400;
+        }
+
+        .form-submit {
+            width: 100%;
+            margin-top: 8px;
+        }
+
+        .form-submit .btn-primary {
+            width: 100%;
+            font-size: 1.1rem;
+            padding: 18px;
+        }
+
+        .form-privacy {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 0.8rem;
+            color: #555555;
+        }
+
+        .form-privacy svg {
+            width: 14px;
+            height: 14px;
+            vertical-align: middle;
+            margin-right: 4px;
+        }
+
+        .form-fear-address {
+            text-align: center;
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid #2a2a2a;
+        }
+
+        .form-fear-address p {
+            font-size: 0.85rem;
+            color: #777777;
+            margin-bottom: 0;
+        }
+
+        .form-fear-address strong {
+            color: #c9a84c;
+        }
+
+        /* ============================================
+           LARGE STAT CALLOUT
+           ============================================ */
+        .stat-callout {
+            background: #0a0a0a;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .stat-callout::before,
+        .stat-callout::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .stat-callout::before { top: 0; }
+        .stat-callout::after { bottom: 0; }
+
+        .stat-callout .big-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: clamp(4rem, 10vw, 8rem);
+            color: #c9a84c;
+            line-height: 1;
+            margin-bottom: 16px;
+            text-shadow: 0 0 40px rgba(201, 168, 76, 0.15);
+        }
+
+        .stat-callout .stat-context {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.2rem;
+            color: #888888;
+            max-width: 500px;
+            margin: 0 auto 8px;
+        }
+
+        .stat-callout .stat-source {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: #555555;
+            font-style: italic;
+        }
+
+        /* ============================================
+           MID-PAGE CTA
+           ============================================ */
+        .mid-cta {
+            background: #1a1a1a;
+            padding: 64px 0;
+            text-align: center;
+            position: relative;
+            border-top: 1px solid #2a2a2a;
+            border-bottom: 1px solid #2a2a2a;
+        }
+
+        .mid-cta h3 {
+            margin-bottom: 8px;
+        }
+
+        .mid-cta p {
+            margin-bottom: 24px;
+            color: #999999;
+        }
+
+        /* ============================================
+           COUPLES SECTION
+           ============================================ */
+        .couples-section {
+            background: #0d0d0d;
+            padding: 96px 0;
+            position: relative;
+        }
+
+        .couples-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.15), transparent);
+        }
+
+        .couples-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .couples-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+        }
+
+        .couples-text h2 {
+            margin-bottom: 20px;
+        }
+
+        .couples-text p {
+            line-height: 1.8;
+        }
+
+        .couples-quote-card {
+            background: #1a1a1a;
+            border: 1px solid #2a2a2a;
+            border-radius: 16px;
+            padding: 36px;
+            position: relative;
+        }
+
+        .couples-quote-card::before {
+            content: '';
+            position: absolute;
+            left: -1px;
+            top: 20%;
+            bottom: 20%;
+            width: 3px;
+            background: #c9a84c;
+            border-radius: 2px;
+        }
+
+        .couples-quote-card blockquote {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.3rem;
+            color: #cccccc;
+            font-style: italic;
+            line-height: 1.5;
+            margin-bottom: 16px;
+        }
+
+        .couples-quote-card cite {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: #666666;
+            font-style: normal;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        .footer {
+            background: #0a0a0a;
+            border-top: 1px solid #1a1a1a;
+            padding: 48px 0 32px;
+            text-align: center;
+        }
+
+        .footer p {
+            font-size: 0.8rem;
+            color: #444444;
+            margin-bottom: 8px;
+        }
+
+        .footer .disclaimer {
+            font-size: 0.7rem;
+            color: #333333;
+            max-width: 600px;
+            margin: 16px auto 0;
+            line-height: 1.5;
+        }
+
+        /* ============================================
+           RESPONSIVE ADJUSTMENTS
+           ============================================ */
+        @media (max-width: 480px) {
+            .hero {
+                padding: 130px 0 80px;
+            }
+
+            .section-padding {
+                padding: 64px 0;
+            }
+
+            .feature-card {
+                padding: 28px;
+            }
+
+            .form-card {
+                padding: 28px;
+            }
+
+            .testimonial-card {
+                padding: 24px;
+            }
+
+            .btn-primary {
+                padding: 16px 32px;
+                font-size: 1rem;
+            }
+
+            .hero-cta-group .btn-primary {
+                padding: 18px 36px;
+                font-size: 1.05rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ============================================
+         ANNOUNCEMENT BAR
+         ============================================ -->
+    <div class="announcement-bar">
+        <p><span class="stat-number">73%</span> of pre-retirees fear running out of money more than death itself</p>
+    </div>
+
+    <!-- ============================================
+         STICKY NAV
+         ============================================ -->
+    <nav class="sticky-nav" id="stickyNav">
+        <div class="nav-inner">
+            <div class="nav-logo">Retirement <span>Shield</span></div>
+            <div class="nav-links">
+                <a href="#problem">The Problem</a>
+                <a href="#guide">The Guide</a>
+                <a href="#testimonials">Stories</a>
+                <a href="#faq">FAQ</a>
+            </div>
+            <a href="#download" class="nav-cta">Download Free Guide</a>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION
+         ============================================ -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="eyebrow fade-in-up">FREE RETIREMENT INCOME GUIDE</span>
+                <h1 class="fade-in-up fade-in-up-delay-1">
+                    What If the Biggest Risk to Your Retirement...<br>
+                    <span class="highlight">Is You?</span>
+                </h1>
+                <p class="hero-subtitle fade-in-up fade-in-up-delay-2">
+                    The obsessive portfolio checking. The sleepless nights. The fear that one market crash
+                    could erase decades of discipline. There is a way to stop worrying and start living.
+                </p>
+                <p class="hero-detail fade-in-up fade-in-up-delay-2">
+                    Download the free Retirement Income Protection Guide and discover the strategy
+                    that turns your savings into a guaranteed paycheck for life.
+                </p>
+                <div class="hero-cta-group fade-in-up fade-in-up-delay-3">
+                    <a href="#download" class="btn-primary">Download the Free Guide</a>
+                    <p class="hero-micro">No cost. No obligation. <span>Instant PDF download.</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         STATS BAR
+         ============================================ -->
+    <div class="stats-bar">
+        <div class="container">
+            <div class="stat-block reveal">
+                <span class="stat-number">73%</span>
+                <span class="stat-label">of pre-retirees name "running out of money" as their top fear</span>
+            </div>
+            <div class="stat-block reveal">
+                <span class="stat-number">5x</span>
+                <span class="stat-label">average daily portfolio checks by anxious near-retirees</span>
+            </div>
+            <div class="stat-block reveal">
+                <span class="stat-number">47%</span>
+                <span class="stat-label">of couples disagree on when it is safe to retire</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================
+         PROBLEM AGITATION SECTION
+         ============================================ -->
+    <section class="problem-section" id="problem">
+        <div class="container-narrow">
+            <div class="problem-header reveal">
+                <span class="eyebrow">SOUND FAMILIAR?</span>
+                <h2>If You Have Tried Everything and Still Cannot Cross the Finish Line...</h2>
+            </div>
+            <p class="problem-preface reveal">You have done the hard part. You saved. You sacrificed. But now that retirement is within reach, the fear is louder than ever.</p>
+            <ul class="problem-list">
+                <li class="reveal">
+                    <strong>Checking your portfolio 5 times a day</strong> -- refreshing Schwab, Fidelity, or Vanguard like it is a slot machine, hoping the number went up, dreading the notification that it went down
+                </li>
+                <li class="reveal">
+                    <strong>Running the same retirement calculator</strong> over and over, tweaking the assumptions, hoping for a different number -- one that finally feels "enough"
+                </li>
+                <li class="reveal">
+                    <strong>Saying "maybe next year"</strong> for the past three years because no number ever feels safe enough to walk away from a paycheck
+                </li>
+                <li class="reveal">
+                    <strong>Lying awake at 3am doing mental math</strong> -- if inflation hits 6%, if the market drops 30%, if healthcare costs double, will I make it to 90?
+                </li>
+                <li class="reveal">
+                    <strong>Arguing with your spouse about "the number"</strong> -- one of you wants to pull the trigger, the other is paralyzed by a sea of pessimistic what-ifs
+                </li>
+                <li class="reveal">
+                    <strong>Watching friends retire</strong> while you keep grinding, not because you need to, but because you cannot control the fear long enough to stop
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PULL QUOTE #1
+         ============================================ -->
+    <section class="pull-quote-section">
+        <div class="container">
+            <div class="pull-quote reveal">
+                <blockquote>
+                    "I can't control the fear so I continue to work. I can't cross the chasm from saving to using that money."
+                </blockquote>
+                <cite>-- Pre-retiree, age 63, $1.2M saved</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         THE REAL PROBLEM SECTION
+         ============================================ -->
+    <section class="real-problem" id="risk">
+        <div class="container">
+            <div class="real-problem-grid">
+                <div class="real-problem-text reveal-left">
+                    <span class="eyebrow">THE HIDDEN RISK</span>
+                    <h2>Your Retirement Calculator Is Hiding Something From You</h2>
+                    <p>
+                        Most retirement calculators assume <strong>average market returns</strong>. They show you a smooth, upward line.
+                        But the market does not move in smooth, upward lines. It crashes. It recovers. It crashes again.
+                    </p>
+                    <p>
+                        The problem is not whether the market will recover. <strong>It always does.</strong> The problem is whether
+                        it will recover <strong>before you need the money</strong>.
+                    </p>
+                    <p>
+                        Financial planners call this <strong>"sequence-of-returns risk."</strong> In plain English: a market crash in the
+                        first few years of your retirement can permanently destroy your portfolio -- even if the market recovers later.
+                        Because you are withdrawing money while it is down.
+                    </p>
+                    <p>
+                        <strong>Your calculator does not show you this scenario.</strong> And it is the most common reason retirees run out of money.
+                    </p>
+                </div>
+                <div class="real-problem-visual reveal-right">
+                    <div class="risk-scenario">
+                        <div class="scenario-label">SCENARIO A: LUCKY TIMING</div>
+                        <h4>Market goes up first, then crashes</h4>
+                        <p>$800K portfolio, withdrawing $4,000/month</p>
+                        <p class="risk-result positive">Money lasts 32 years</p>
+                    </div>
+                    <div class="risk-scenario">
+                        <div class="scenario-label">SCENARIO B: UNLUCKY TIMING</div>
+                        <h4>Market crashes first, then recovers</h4>
+                        <p>Same $800K portfolio, same $4,000/month withdrawals</p>
+                        <p class="risk-result">Money runs out in 18 years</p>
+                    </div>
+                    <div class="risk-scenario">
+                        <div class="scenario-label">THE DIFFERENCE</div>
+                        <h4>Same returns. Same withdrawals. Same person.</h4>
+                        <p>The only difference? When the crash happens. And you cannot control that.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         LARGE STAT CALLOUT
+         ============================================ -->
+    <section class="stat-callout">
+        <div class="container reveal">
+            <span class="eyebrow">THE COST OF FEAR</span>
+            <div class="big-number">3 Years</div>
+            <p class="stat-context">
+                Average time pre-retirees delay retirement due to market anxiety -- even when their savings are sufficient
+            </p>
+            <p class="stat-source">Based on Employee Benefit Research Institute surveys</p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         MID-PAGE CTA
+         ============================================ -->
+    <div class="mid-cta">
+        <div class="container reveal">
+            <h3>Ready to Stop Guessing?</h3>
+            <p>The guide explains how to eliminate sequence-of-returns risk in 15 minutes of reading.</p>
+            <a href="#download" class="btn-primary">Download the Free Guide</a>
+        </div>
+    </div>
+
+    <!-- ============================================
+         COUPLES SECTION
+         ============================================ -->
+    <section class="couples-section" id="couples">
+        <div class="container">
+            <div class="couples-grid">
+                <div class="couples-text reveal-left">
+                    <span class="eyebrow">THE RETIREMENT DISAGREEMENT</span>
+                    <h2>When One of You Is Ready and the Other Is Terrified</h2>
+                    <p>
+                        It is one of the most common unspoken conflicts in marriages over 55. One partner has done the math and feels
+                        ready. The other cannot stop thinking about what could go wrong.
+                    </p>
+                    <p>
+                        <strong>Neither of you is wrong.</strong> The ready partner sees the numbers. The worried partner sees the risk.
+                        The problem is that you are both looking at the same incomplete picture.
+                    </p>
+                    <p>
+                        The guide includes a chapter specifically designed for couples: <strong>how to build a retirement plan that satisfies
+                        the optimist AND the pessimist</strong> -- by separating "must-have" income from "nice-to-have" growth.
+                    </p>
+                </div>
+                <div class="couples-quote-card reveal-right">
+                    <blockquote>
+                        "She was -- and is -- VERY hesitant. A sea of pessimistic what-ifs. Walking through our plans with a
+                        professional helped my SO see we are in a good position."
+                    </blockquote>
+                    <cite>-- Retired couple, both 62, married 34 years</cite>
+                    <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid #2a2a2a;">
+                        <blockquote style="font-size: 1.1rem;">
+                            "If you've won the game, it's okay to stop playing."
+                        </blockquote>
+                        <cite>-- Financial advisor to a client with $1.8M who was still terrified</cite>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         WHAT THE GUIDE COVERS (FEATURE CARDS)
+         ============================================ -->
+    <section class="features-section" id="guide">
+        <div class="container">
+            <div class="features-header reveal">
+                <span class="eyebrow">INSIDE THE GUIDE</span>
+                <h2>What You Will Learn in 15 Minutes</h2>
+                <p>Four critical insights your financial advisor has never explained this clearly.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <span class="feature-number">01</span>
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+                    </div>
+                    <h3>The Hidden Risk Your Calculator Does Not Show</h3>
+                    <p>
+                        Why sequence-of-returns risk is the most dangerous threat to your retirement -- and why
+                        your Monte Carlo simulation understates it. Explained with real numbers, no jargon.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <span class="feature-number">02</span>
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
+                    </div>
+                    <h3>The Psychology Trap Keeping You Working</h3>
+                    <p>
+                        The reason no number ever feels "enough" is not mathematical -- it is psychological.
+                        Learn the specific cognitive bias that keeps competent savers trapped at their desks.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <span class="feature-number">03</span>
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3>How Couples Resolve the Retirement Disagreement</h3>
+                    <p>
+                        The "floor and upside" framework that lets the cautious partner feel safe AND the
+                        adventurous partner feel free. Used by thousands of couples to finally get on the same page.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <span class="feature-number">04</span>
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3>The One Strategy That Eliminates Market Timing Risk</h3>
+                    <p>
+                        We insure our homes and our cars. This strategy insures your income. Discover how to create
+                        a guaranteed floor of income that arrives every month no matter what the market does.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PULL QUOTE #2
+         ============================================ -->
+    <section class="pull-quote-section">
+        <div class="container">
+            <div class="pull-quote reveal">
+                <blockquote>
+                    "We insure our home and cars. Why not our portfolio?"
+                </blockquote>
+                <cite>-- Retiree, age 66, after converting a portion of savings to guaranteed income</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SOCIAL PROOF
+         ============================================ -->
+    <section class="social-proof" id="testimonials">
+        <div class="container">
+            <div class="social-proof-header reveal">
+                <span class="eyebrow">REAL STORIES</span>
+                <h2>People Who Stopped Worrying and Started Living</h2>
+            </div>
+            <div class="testimonial-grid">
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <span class="testimonial-quote-mark">"</span>
+                    <p class="testimonial-text">
+                        I KNEW that if I took the lump sum I would be checking my portfolio every day.
+                        I picked the monthly payments. Best decision I ever made. I have not logged into
+                        my brokerage account in four months.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">RH</div>
+                        <div>
+                            <div class="testimonial-name">Robert H.</div>
+                            <div class="testimonial-role">Retired teacher, age 64</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <span class="testimonial-quote-mark">"</span>
+                    <p class="testimonial-text">
+                        The cash flow plus Social Security covers our monthly expenses. The remaining
+                        accounts are for the fun stuff -- like trips with the grandkids. I sleep like
+                        a baby now. My wife finally stopped worrying.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">DM</div>
+                        <div>
+                            <div class="testimonial-name">David & Maria P.</div>
+                            <div class="testimonial-role">Retired couple, ages 67 and 65</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card reveal">
+                    <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <span class="testimonial-quote-mark">"</span>
+                    <p class="testimonial-text">
+                        I checked my Schwab at least 5 times a day. After reading the guide, I realized
+                        the anxiety was not about money -- it was about not having a plan that could survive
+                        the worst case. Now I have that plan.
+                    </p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">SK</div>
+                        <div>
+                            <div class="testimonial-name">Susan K.</div>
+                            <div class="testimonial-role">Pre-retiree, age 61, nurse</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         PROCESS STEPS
+         ============================================ -->
+    <section class="process-section" id="process">
+        <div class="container">
+            <div class="process-header reveal">
+                <span class="eyebrow">3 SIMPLE STEPS</span>
+                <h2>How It Works</h2>
+            </div>
+            <div class="process-steps">
+                <div class="process-step reveal">
+                    <div class="step-circle">1</div>
+                    <div class="step-title">Download</div>
+                    <div class="step-desc">Enter your name and email. The guide arrives in your inbox in under 60 seconds.</div>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-circle">2</div>
+                    <div class="step-title">Read</div>
+                    <div class="step-desc">15-minute read. No jargon. Real scenarios with real numbers from real retirees.</div>
+                </div>
+                <div class="process-step reveal">
+                    <div class="step-circle">3</div>
+                    <div class="step-title">Decide</div>
+                    <div class="step-desc">If it resonates, schedule an optional free call to see your personalized numbers. No pressure, ever.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         WHO THIS GUIDE IS FOR
+         ============================================ -->
+    <section class="real-problem" id="who">
+        <div class="container">
+            <div class="real-problem-grid">
+                <div class="real-problem-text reveal-left">
+                    <span class="eyebrow">IS THIS FOR YOU?</span>
+                    <h2>This Guide Was Written for a Very Specific Person</h2>
+                    <p>
+                        You are not a financial novice. You have been saving and investing for decades.
+                        You probably have between <strong>$500,000 and $3,000,000</strong> in retirement savings.
+                        You have done the responsible thing your entire adult life.
+                    </p>
+                    <p>
+                        <strong>And yet, the closer you get to retirement, the more anxious you become.</strong>
+                        Not because you have not saved enough -- but because no amount of saving has made the
+                        fear go away.
+                    </p>
+                    <p>
+                        You have talked to financial advisors. Maybe they told you to "stay the course" or
+                        "diversify more." Maybe they showed you another Monte Carlo simulation with a 92%
+                        success rate. But 92% is not 100%. And at 3am, that 8% is all you can think about.
+                    </p>
+                    <p>
+                        <strong>The guide is for people who are tired of playing a game they have already won.</strong>
+                    </p>
+                </div>
+                <div class="real-problem-visual reveal-right">
+                    <div class="risk-scenario">
+                        <div class="scenario-label">YOU MIGHT BE THIS PERSON IF</div>
+                        <h4>You have saved diligently for 20-40 years</h4>
+                        <p>IRA, 401(k), brokerage accounts -- you did everything right</p>
+                    </div>
+                    <div class="risk-scenario">
+                        <div class="scenario-label">AND YET</div>
+                        <h4>No number feels "enough" to stop working</h4>
+                        <p>You keep moving the goalpost: first it was $500K, then $750K, then $1M</p>
+                    </div>
+                    <div class="risk-scenario">
+                        <div class="scenario-label">BECAUSE</div>
+                        <h4>The problem was never the number</h4>
+                        <p>The problem is that your money is exposed to a risk you cannot control -- and no amount of saving eliminates that risk. The guide explains what does.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FAILED SOLUTIONS SECTION
+         ============================================ -->
+    <section class="problem-section" id="failed">
+        <div class="container-narrow">
+            <div class="problem-header reveal">
+                <span class="eyebrow">THE 3 TRAPS</span>
+                <h2>Three Things You Have Probably Already Tried (And Why They Did Not Work)</h2>
+            </div>
+
+            <div style="background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px; padding: 36px; margin-bottom: 24px;" class="reveal">
+                <h3 style="margin-bottom: 16px; font-size: 1.3rem;">
+                    <span style="color: #c9a84c;">Trap #1:</span> The Commission-Based Advisor
+                </h3>
+                <p style="color: #cccccc; line-height: 1.8;">
+                    You sat down with someone from Edward Jones, Northwestern Mutual, or a similar firm.
+                    They ran your numbers through their software, recommended a portfolio, and told you
+                    everything would be fine. But something felt off.
+                </p>
+                <p style="color: #999999; line-height: 1.8;">
+                    <strong style="color: #ffffff;">What they did not tell you:</strong> Their recommendations
+                    are influenced by what pays them the highest commission. The products they suggest may be
+                    perfectly fine -- or they may be unnecessarily expensive versions of simpler alternatives.
+                    You have no way to know, because they are not required to disclose their compensation on
+                    every recommendation.
+                </p>
+                <p style="color: #888888; font-style: italic;">
+                    The guide explains the difference between commission-based advisors and fee-only
+                    fiduciaries -- and why it matters for your specific situation.
+                </p>
+            </div>
+
+            <div style="background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px; padding: 36px; margin-bottom: 24px;" class="reveal">
+                <h3 style="margin-bottom: 16px; font-size: 1.3rem;">
+                    <span style="color: #c9a84c;">Trap #2:</span> DIY Investing and the Panic Sell
+                </h3>
+                <p style="color: #cccccc; line-height: 1.8;">
+                    Maybe you decided to manage your own money. Vanguard index funds, a 60/40 split,
+                    rebalance once a year. Smart, disciplined, low-cost. You did everything right --
+                    until the market dropped 30% and you sold at the bottom.
+                </p>
+                <p style="color: #999999; line-height: 1.8;">
+                    <strong style="color: #ffffff;">Why this happens:</strong> When it is hypothetical money,
+                    you are rational. When it is the money that determines whether you eat or go back to
+                    work at 72, the reptilian brain takes over. The average investor underperforms the
+                    S&P 500 by nearly 4% annually because of behavioral mistakes -- buying high, selling
+                    low, and panicking at exactly the wrong moment.
+                </p>
+                <p style="color: #888888; font-style: italic;">
+                    The guide shows you how to remove the temptation to panic-sell by taking your
+                    essential expenses off the table entirely.
+                </p>
+            </div>
+
+            <div style="background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 16px; padding: 36px;" class="reveal">
+                <h3 style="margin-bottom: 16px; font-size: 1.3rem;">
+                    <span style="color: #c9a84c;">Trap #3:</span> The Cash and CD Safety Illusion
+                </h3>
+                <p style="color: #cccccc; line-height: 1.8;">
+                    When the market terrifies you, cash feels safe. CDs feel safe. Sitting on the
+                    sidelines feels safe. And for a year or two, it is. But then you notice that
+                    groceries cost 15% more. Healthcare premiums went up. Gas is higher. Your safe
+                    money is buying less every single month.
+                </p>
+                <p style="color: #999999; line-height: 1.8;">
+                    <strong style="color: #ffffff;">The invisible thief:</strong> At 4% inflation,
+                    your purchasing power is cut in half in 18 years. A retiree at 65 with $1M in
+                    cash will have the equivalent of $500K in buying power by 83. You avoided the
+                    market crash but lost the same amount of money -- just slowly enough that you
+                    did not notice until it was too late.
+                </p>
+                <p style="color: #888888; font-style: italic;">
+                    The guide explains how guaranteed income can include inflation-protection
+                    features that cash and CDs simply cannot match.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         SECOND PULL QUOTE
+         ============================================ -->
+    <section class="pull-quote-section">
+        <div class="container">
+            <div class="pull-quote reveal">
+                <blockquote>
+                    "I check my Schwab at least 5 times a day."
+                </blockquote>
+                <cite>-- Pre-retiree, age 61, describing a habit she knows is irrational but cannot stop</cite>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         WHAT RETIREMENT COULD LOOK LIKE
+         ============================================ -->
+    <section class="features-section">
+        <div class="container">
+            <div class="features-header reveal">
+                <span class="eyebrow">THE OTHER SIDE</span>
+                <h2>What Retirement Looks Like When the Fear Is Gone</h2>
+                <p>This is not fantasy. These are the real experiences of people who found the income floor.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card reveal">
+                    <span class="feature-number">&#9993;</span>
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                    </div>
+                    <h3>Slow Mornings</h3>
+                    <p>
+                        Coffee on the porch without checking your phone. No alarm clock. No market
+                        opening bell anxiety. The day stretches ahead of you with nothing that has
+                        to be done -- because the money is handled.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    </div>
+                    <h3>Travel Without Guilt</h3>
+                    <p>
+                        Booking the trip you have been putting off for years. Not because you suddenly
+                        have more money -- but because you know the essentials are covered and the travel
+                        budget is the travel budget. No mental math required.
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+                    </div>
+                    <h3>Spousal Harmony</h3>
+                    <p>
+                        The retirement argument is over. Not because someone won, but because both
+                        of you can point to a number on a statement and say: "This is guaranteed.
+                        This arrives every month. We are okay."
+                    </p>
+                </div>
+                <div class="feature-card reveal">
+                    <div class="feature-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#c9a84c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                    </div>
+                    <h3>Not a Burden</h3>
+                    <p>
+                        Your children will never have to worry about you. Your spouse will never
+                        be left vulnerable. The guaranteed income continues no matter what happens
+                        in the world. That is the deepest peace retirement can offer.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         LARGE STAT CALLOUT #2
+         ============================================ -->
+    <section class="stat-callout">
+        <div class="container reveal">
+            <span class="eyebrow">A GUARANTEED PAYCHECK</span>
+            <div class="big-number">$4,200</div>
+            <p class="stat-context">
+                per month -- guaranteed for life -- from $650,000 in savings at current rates. That is a paycheck
+                you never have to earn again.
+            </p>
+            <p class="stat-source">Based on current income annuity rates for a 65-year-old</p>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FAQ SECTION
+         ============================================ -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="faq-header reveal">
+                <span class="eyebrow">COMMON QUESTIONS</span>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Is this guide trying to sell me an annuity?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No. The guide explains a concept -- guaranteed income as insurance -- and how it works.
+                            It does not recommend a specific product. At the end, you will have the option to schedule
+                            a free conversation with a <strong>fee-only fiduciary advisor</strong> (not a salesperson)
+                            who can tell you whether this approach even makes sense for your situation. Many people it does not.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>I have heard annuities are a scam. Are they?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Some are. High-commission variable annuities sold by insurance salespeople in nice suits have
+                            rightly earned a bad reputation. But <strong>fee-only, no-commission annuities</strong> recommended
+                            by fiduciary advisors are a different product entirely. The guide explains the difference in plain
+                            English so you can spot the bad ones and understand the good ones.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>How is this different from my financial advisor's plan?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Most financial advisors build portfolios using the <strong>"total return" approach</strong> --
+                            meaning they grow your money and then withdraw from it. This works until the market crashes at the
+                            wrong time. The guide introduces the <strong>"income floor" approach</strong> -- guaranteeing your
+                            essential expenses are covered no matter what, then investing the rest for growth. It is not either/or.
+                            It is both.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>What if I do not have enough saved?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            The guide is not about a minimum number. It is about a <strong>strategy shift</strong> -- from
+                            hoping your money lasts to knowing it will. Whether you have $300K or $3M, the principles apply.
+                            The free call (if you choose to schedule one) will show you exactly what guaranteed income YOUR
+                            savings can produce.
+                        </div>
+                    </div>
+                </div>
+                <div class="faq-item reveal">
+                    <button class="faq-question" onclick="toggleFaq(this)">
+                        <span>Will I have to give up control of my money?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            No. The income-floor approach typically uses <strong>only a portion of your savings</strong> --
+                            enough to cover your essential monthly expenses. The rest stays invested and fully under your control.
+                            Many retirees find they actually feel MORE free to invest aggressively with the remainder, because
+                            their baseline is already covered.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FINAL CTA / DOWNLOAD FORM
+         ============================================ -->
+    <section class="final-cta" id="download">
+        <div class="container">
+            <div class="final-cta-content reveal">
+                <span class="eyebrow">FREE INSTANT DOWNLOAD</span>
+                <h2>Get Your Retirement Income Protection Guide</h2>
+                <p class="subtitle">
+                    15-minute read. No jargon. No sales pitch. Just the strategy that turns
+                    retirement anxiety into retirement confidence.
+                </p>
+
+                <div class="form-card">
+                    <h3>Download the Free Guide</h3>
+                    <p class="form-subtitle">Your guide will be delivered instantly to your email</p>
+                    <form onsubmit="return false;">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your best email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone <span class="optional-label">(optional)</span></label>
+                            <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567">
+                        </div>
+                        <div class="form-group">
+                            <label for="timeline">Retirement Timeline</label>
+                            <select id="timeline" name="timeline">
+                                <option value="" disabled selected>When are you planning to retire?</option>
+                                <option value="already">I am already retired</option>
+                                <option value="1-2">Within 1-2 years</option>
+                                <option value="3-5">Within 3-5 years</option>
+                                <option value="5+">5+ years from now</option>
+                                <option value="unsure">I am not sure yet</option>
+                            </select>
+                        </div>
+                        <div class="form-submit">
+                            <button type="submit" class="btn-primary">Send Me the Free Guide</button>
+                        </div>
+                    </form>
+                    <p class="form-privacy">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="#666666" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        Your information is 100% secure. We never share or sell your data.
+                    </p>
+                    <div class="form-fear-address">
+                        <p>
+                            <strong>No obligation.</strong> No follow-up calls unless you request one.
+                            Unsubscribe any time with one click.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="container">
+            <p style="font-family: 'DM Serif Display', serif; font-size: 1.1rem; color: #666666; margin-bottom: 16px;">
+                Retirement <span style="color: #c9a84c;">Shield</span>
+            </p>
+            <p>Copyright 2026. All rights reserved.</p>
+            <p class="disclaimer">
+                This guide is for educational purposes only and does not constitute financial advice.
+                Guarantees are backed by the claims-paying ability of the issuing insurance company.
+                Annuities are insurance products and are not FDIC insured. Consult a licensed financial
+                professional before making any financial decisions. Past performance is not indicative of
+                future results.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ============================================
+         JAVASCRIPT
+         ============================================ -->
+    <script>
+        // Sticky Nav
+        const stickyNav = document.getElementById('stickyNav');
+        const heroSection = document.getElementById('hero');
+
+        function handleScroll() {
+            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+            if (window.scrollY > heroBottom - 100) {
+                stickyNav.classList.add('visible');
+            } else {
+                stickyNav.classList.remove('visible');
+            }
+        }
+
+        window.addEventListener('scroll', handleScroll);
+
+        // Scroll Reveal
+        function revealOnScroll() {
+            const reveals = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+            const windowHeight = window.innerHeight;
+
+            reveals.forEach(function(el) {
+                const elementTop = el.getBoundingClientRect().top;
+                const revealPoint = 120;
+
+                if (elementTop < windowHeight - revealPoint) {
+                    el.classList.add('visible');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', revealOnScroll);
+        window.addEventListener('load', revealOnScroll);
+
+        // FAQ Accordion
+        function toggleFaq(button) {
+            const item = button.closest('.faq-item');
+            const isActive = item.classList.contains('active');
+
+            // Close all
+            document.querySelectorAll('.faq-item').forEach(function(faq) {
+                faq.classList.remove('active');
+            });
+
+            // Open clicked (if it wasn't already open)
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                var target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    var offset = 80;
+                    var targetPosition = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
