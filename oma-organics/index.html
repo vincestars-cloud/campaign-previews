@@ -1,0 +1,2846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oma Organics — Care Your Body Recognizes</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Outfit:wght@200;300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   DESIGN SYSTEM
+   ============================================================ */
+:root {
+  --gold: #9E8A4F;
+  --gold-soft: #BBA96A;
+  --gold-deep: #7A6B3D;
+  --gold-glow: rgba(158, 138, 79, 0.12);
+
+  --cream: #F9F6F1;
+  --warm: #F0EBE2;
+  --linen: #E8E1D5;
+  --white: #FFFFFF;
+
+  --black: #131210;
+  --ink: #262320;
+  --coal: #3B3733;
+  --stone: #6B6259;
+  --clay: #96897B;
+  --mist: #BDB5AA;
+  --fog: #D5CFC6;
+
+  --serif: 'Playfair Display', Georgia, serif;
+  --sans: 'Outfit', system-ui, sans-serif;
+
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.55, 0, 1, 0.45);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--sans);
+  color: var(--ink);
+  background: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+::selection { background: rgba(158, 138, 79, 0.18); }
+img { display: block; max-width: 100%; }
+
+.container { max-width: 1320px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 64px); }
+.container-narrow { max-width: 780px; margin: 0 auto; padding: 0 clamp(20px, 5vw, 64px); }
+
+/* ============================================================
+   ANNOUNCE
+   ============================================================ */
+.announce {
+  background: var(--gold);
+  color: var(--cream);
+  text-align: center;
+  padding: 11px 20px;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+.announce a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  font-weight: 400;
+}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(249, 246, 241, 0.88);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  transition: box-shadow 0.5s;
+}
+.nav.scrolled { box-shadow: 0 1px 48px rgba(19, 18, 16, 0.04); }
+
+.nav-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 56px);
+  height: 64px;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.nav-left, .nav-right { display: flex; align-items: center; }
+.nav-left { gap: clamp(16px, 2.5vw, 36px); }
+.nav-right { gap: clamp(12px, 2vw, 24px); justify-content: flex-end; }
+
+.nlink {
+  font-size: 0.72rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--stone);
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s;
+}
+.nlink::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 0.5px;
+  background: var(--gold);
+  transition: width 0.5s var(--ease);
+}
+.nlink:hover { color: var(--ink); }
+.nlink:hover::after { width: 100%; }
+.nlink-gold { color: var(--gold); }
+
+.logo-link { text-decoration: none; text-align: center; }
+.logo-main {
+  font-family: var(--serif);
+  font-size: 1.65rem;
+  font-weight: 400;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+.logo-sub {
+  font-family: var(--sans);
+  font-size: 0.48rem;
+  letter-spacing: 0.4em;
+  text-transform: uppercase;
+  color: var(--clay);
+  margin-top: 0px;
+}
+
+.nav-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--stone);
+  display: flex;
+  align-items: center;
+  padding: 4px;
+  transition: color 0.3s;
+}
+.nav-btn:hover { color: var(--gold); }
+.mob-btn { display: none; }
+
+/* ============================================================
+   DEMO TABS
+   ============================================================ */
+.tabs {
+  display: flex;
+  justify-content: center;
+  background: var(--warm);
+  border-bottom: 1px solid rgba(158,138,79,0.06);
+  overflow-x: auto;
+}
+.tab {
+  padding: 12px clamp(14px, 2.2vw, 28px);
+  font-size: 0.66rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--clay);
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: color 0.3s;
+  position: relative;
+  font-weight: 300;
+}
+.tab::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 1.5px;
+  background: var(--gold);
+  transition: width 0.4s var(--ease);
+}
+.tab:hover { color: var(--coal); }
+.tab.on { color: var(--gold-deep); font-weight: 400; }
+.tab.on::after { width: 40%; }
+
+/* ============================================================
+   PAGES
+   ============================================================ */
+.pg { display: none; }
+.pg.on { display: block; animation: pgIn 0.55s var(--ease); }
+@keyframes pgIn { from { opacity: 0; } to { opacity: 1; } }
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ============================================================
+   HERO — EDITORIAL / FULL BLEED
+   ============================================================ */
+.hero {
+  min-height: 100vh;
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.hero-atmo {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse at 60% 30%, rgba(187, 169, 106, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 20% 80%, rgba(158, 138, 79, 0.04) 0%, transparent 40%);
+}
+
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 256px;
+}
+
+.hero-layout {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(28px, 5vw, 72px);
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: clamp(40px, 6vw, 100px);
+  align-items: center;
+}
+
+.hero-copy {
+  animation: heroCopy 1.1s var(--ease) 0.15s both;
+}
+@keyframes heroCopy {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-kicker {
+  font-size: 0.65rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold-soft);
+  margin-bottom: 32px;
+  font-weight: 300;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.hero-kicker::before {
+  content: '';
+  width: 32px;
+  height: 0.5px;
+  background: var(--gold-soft);
+  opacity: 0.6;
+}
+
+.hero-h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.8rem, 5.2vw, 4.8rem);
+  font-weight: 400;
+  line-height: 1.06;
+  color: var(--cream);
+  margin-bottom: 32px;
+  letter-spacing: -0.015em;
+}
+.hero-h1 i {
+  font-style: italic;
+  color: var(--gold-soft);
+}
+
+.hero-body {
+  font-size: 1.02rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--mist);
+  max-width: 440px;
+  margin-bottom: 12px;
+}
+
+.hero-whisper {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--clay);
+  margin-bottom: 44px;
+  letter-spacing: 0.01em;
+}
+
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--sans);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.4s var(--ease);
+  position: relative;
+  overflow: hidden;
+  font-weight: 400;
+}
+
+.btn-g {
+  padding: 16px 38px;
+  background: var(--gold);
+  color: var(--cream);
+}
+.btn-g::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold-deep);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s var(--ease);
+}
+.btn-g:hover::before { transform: scaleX(1); }
+.btn-g span { position: relative; z-index: 1; }
+
+.btn-o {
+  padding: 16px 38px;
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(187,169,106,0.3);
+}
+.btn-o:hover { border-color: var(--gold-soft); color: var(--gold-soft); }
+
+.btn-dark {
+  padding: 16px 38px;
+  background: var(--gold);
+  color: var(--cream);
+}
+.btn-dark:hover { background: var(--gold-deep); }
+
+.btn-text {
+  padding: 0;
+  background: none;
+  color: var(--gold);
+  font-size: 0.72rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: none;
+  cursor: pointer;
+  transition: gap 0.4s var(--ease), color 0.3s;
+}
+.btn-text:hover { gap: 14px; color: var(--gold-deep); }
+
+/* Hero visual */
+.hero-vis {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: heroVis 1.3s var(--ease) 0.4s both;
+}
+@keyframes heroVis {
+  from { opacity: 0; transform: scale(0.94) translateY(20px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+.hero-prod-wrap {
+  position: relative;
+  width: 340px;
+  height: 460px;
+}
+.hero-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(158,138,79,0.1), transparent 70%);
+  filter: blur(48px);
+  animation: glowPulse 6s ease-in-out infinite;
+}
+@keyframes glowPulse {
+  0%,100% { opacity: 0.4; transform: translate(-50%,-50%) scale(1); }
+  50% { opacity: 0.75; transform: translate(-50%,-50%) scale(1.06); }
+}
+.hero-prod-img {
+  position: relative; z-index: 2;
+  width: 100%; height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 32px 64px rgba(0,0,0,0.35));
+}
+
+/* ============================================================
+   THE PAUSE
+   ============================================================ */
+.pause {
+  padding: clamp(100px, 14vw, 200px) 0;
+  text-align: center;
+}
+.pause h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.4;
+  max-width: 520px;
+  margin: 0 auto 28px;
+}
+.pause h2 i { font-style: italic; color: var(--gold); }
+.pause p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--stone);
+  max-width: 480px;
+  margin: 0 auto;
+}
+.pause-line {
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+  margin: 48px auto 0;
+  opacity: 0.4;
+}
+
+/* ============================================================
+   EXPERIENCE STRIP
+   ============================================================ */
+.exp-strip {
+  padding: clamp(48px, 7vw, 80px) 0;
+  background: var(--white);
+  border-top: 1px solid rgba(158,138,79,0.06);
+  border-bottom: 1px solid rgba(158,138,79,0.06);
+}
+.exp-strip-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.exp-strip-label {
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 300;
+  padding-bottom: 32px;
+  text-align: center;
+}
+.exp-strip-items {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.exp-strip-item {
+  padding: 24px 0;
+  border-bottom: 1px solid rgba(158,138,79,0.06);
+}
+.exp-strip-item:last-of-type { border-bottom: none; }
+.exp-strip-item p {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--coal);
+  line-height: 1.55;
+}
+.exp-strip-item .detail {
+  font-family: var(--sans);
+  font-style: normal;
+  font-size: 0.8rem;
+  font-weight: 300;
+  color: var(--clay);
+  margin-top: 6px;
+  line-height: 1.5;
+}
+.exp-strip-close {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--clay);
+  font-style: italic;
+  padding-top: 8px;
+}
+
+/* ============================================================
+   COLLECTIONS — CINEMATIC FULL-WIDTH BLOCKS
+   ============================================================ */
+.coll-block {
+  position: relative;
+  min-height: clamp(420px, 55vw, 620px);
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  cursor: pointer;
+}
+.coll-block-bg {
+  position: absolute;
+  inset: 0;
+  transition: transform 1.2s var(--ease);
+}
+.coll-block:hover .coll-block-bg { transform: scale(1.015); }
+
+.coll-bg-dark {
+  background:
+    radial-gradient(ellipse at 30% 60%, rgba(187,169,106,0.08) 0%, transparent 45%),
+    linear-gradient(135deg, #1A1815 0%, #242019 50%, #131210 100%);
+}
+.coll-bg-light {
+  background:
+    radial-gradient(ellipse at 70% 40%, rgba(158,138,79,0.06) 0%, transparent 40%),
+    linear-gradient(135deg, var(--warm) 0%, var(--linen) 50%, var(--warm) 100%);
+}
+.coll-bg-deep {
+  background:
+    radial-gradient(ellipse at 40% 70%, rgba(187,169,106,0.06) 0%, transparent 40%),
+    linear-gradient(150deg, #1E1B17 0%, #282420 40%, #151311 100%);
+}
+.coll-bg-soft {
+  background:
+    radial-gradient(ellipse at 60% 30%, rgba(158,138,79,0.05) 0%, transparent 40%),
+    linear-gradient(135deg, #F3EDE3 0%, #EAE3D7 50%, #F0EBE2 100%);
+}
+
+.coll-block-grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.025;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-size: 200px;
+}
+
+.coll-content {
+  position: relative;
+  z-index: 2;
+  padding: clamp(48px, 7vw, 96px) clamp(32px, 6vw, 100px);
+  max-width: 620px;
+}
+
+.coll-content-right {
+  margin-left: auto;
+  text-align: right;
+}
+
+.coll-kicker {
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+  font-weight: 300;
+}
+.coll-on-dark .coll-kicker { color: var(--gold-soft); }
+.coll-on-light .coll-kicker { color: var(--gold); }
+
+.coll-h {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.5vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 18px;
+  letter-spacing: -0.01em;
+}
+.coll-on-dark .coll-h { color: var(--cream); }
+.coll-on-light .coll-h { color: var(--ink); }
+.coll-h i { font-style: italic; color: var(--gold-soft); }
+
+.coll-p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.8;
+  margin-bottom: 14px;
+  max-width: 420px;
+}
+.coll-on-dark .coll-p { color: var(--mist); }
+.coll-on-light .coll-p { color: var(--stone); }
+
+.coll-sensory {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+.coll-on-dark .coll-sensory { color: var(--clay); }
+.coll-on-light .coll-sensory { color: var(--clay); }
+
+.coll-content-right .coll-p,
+.coll-content-right .coll-sensory { margin-left: auto; }
+
+.coll-on-dark .btn-text { color: var(--gold-soft); }
+.coll-on-dark .btn-text:hover { color: var(--cream); }
+
+/* product count badge */
+.coll-count {
+  display: inline-block;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border: 0.5px solid;
+  margin-bottom: 20px;
+}
+.coll-on-dark .coll-count { border-color: rgba(187,169,106,0.25); color: var(--clay); }
+.coll-on-light .coll-count { border-color: rgba(158,138,79,0.2); color: var(--clay); }
+
+/* collection product images */
+.coll-prod-img {
+  position: absolute;
+  z-index: 1;
+  height: 80%;
+  max-height: 480px;
+  top: 50%;
+  transform: translateY(-50%);
+  object-fit: contain;
+  opacity: 0.18;
+  filter: grayscale(0.2);
+  transition: opacity 0.8s var(--ease), filter 0.8s var(--ease);
+  pointer-events: none;
+}
+.coll-block:hover .coll-prod-img {
+  opacity: 0.28;
+  filter: grayscale(0);
+}
+.coll-prod-right { right: clamp(40px, 6vw, 100px); }
+.coll-prod-left { left: clamp(40px, 6vw, 100px); }
+
+.coll-on-dark .coll-prod-img { opacity: 0.12; }
+.coll-on-dark:hover .coll-prod-img { opacity: 0.22; }
+
+/* ============================================================
+   RITUAL
+   ============================================================ */
+.ritual {
+  padding: clamp(80px, 12vw, 160px) 0;
+  background: var(--black);
+  position: relative;
+  overflow: hidden;
+}
+.ritual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 100%, rgba(158,138,79,0.05), transparent 45%);
+}
+.ritual-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 820px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 0 clamp(20px, 4vw, 48px);
+}
+.ritual h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 400;
+  color: var(--cream);
+  margin-bottom: 64px;
+}
+.ritual-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+}
+.ritual-col {
+  padding: 0 clamp(16px, 2.5vw, 36px);
+  border-right: 1px solid rgba(158,138,79,0.08);
+}
+.ritual-col:last-child { border-right: none; }
+.ritual-col h4 {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--gold-soft);
+  margin-bottom: 14px;
+}
+.ritual-col p {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: var(--mist);
+  line-height: 1.65;
+}
+.ritual-foot {
+  margin-top: 64px;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--clay);
+}
+
+/* ============================================================
+   QUIZ CTA — ASYMMETRIC
+   ============================================================ */
+.quiz-cta-section {
+  padding: clamp(80px, 10vw, 140px) 0;
+}
+.quiz-cta-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+.qc-badge {
+  display: inline-block;
+  padding: 7px 18px;
+  background: var(--gold);
+  color: var(--cream);
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+.quiz-cta-grid h3 {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 400;
+  color: var(--ink);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.quiz-cta-grid h3 i { font-style: italic; color: var(--gold); }
+.quiz-cta-grid p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--stone);
+  line-height: 1.8;
+  margin-bottom: 28px;
+}
+.qc-vis {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.qc-vis img {
+  max-height: 380px;
+  filter: drop-shadow(0 24px 56px rgba(0,0,0,0.1));
+}
+
+/* ============================================================
+   FOUNDER — ASYMMETRIC OVERLAP
+   ============================================================ */
+.founder-section {
+  padding: clamp(80px, 12vw, 180px) 0;
+  background: var(--warm);
+}
+.founder-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: clamp(32px, 5vw, 80px);
+  align-items: center;
+}
+.founder-img-area {
+  position: relative;
+  aspect-ratio: 3/4;
+  background: linear-gradient(155deg, var(--linen), var(--cream));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.founder-placeholder .fn { font-family: var(--serif); font-style: italic; font-size: 2.6rem; color: var(--gold); }
+.founder-placeholder .ft { font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--clay); margin-top: 4px; }
+.founder-accent {
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 80px;
+  height: 80px;
+  border: 0.5px solid var(--gold);
+  opacity: 0.15;
+}
+
+.founder-copy .section-kicker {
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+  font-weight: 300;
+}
+.founder-copy h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 24px;
+  line-height: 1.25;
+}
+.founder-copy h2 i { font-style: italic; color: var(--gold); }
+.founder-copy p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.9;
+  color: var(--stone);
+  margin-bottom: 16px;
+}
+.founder-sig {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--gold);
+  margin-top: 28px;
+}
+
+/* ============================================================
+   TESTIMONIALS — EDITORIAL
+   ============================================================ */
+.test-section {
+  padding: clamp(60px, 9vw, 120px) 0;
+  background: var(--cream);
+}
+.test-row {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+}
+.test-item {
+  text-align: center;
+  padding: 0 clamp(12px, 2vw, 28px);
+  border-right: 1px solid rgba(158,138,79,0.07);
+}
+.test-item:last-child { border-right: none; }
+.test-item blockquote {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1.05rem;
+  color: var(--ink);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.final-cta {
+  padding: clamp(80px, 12vw, 160px) 0;
+  text-align: center;
+}
+.final-cta h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 12px;
+  line-height: 1.25;
+}
+.final-cta p {
+  font-size: 0.92rem;
+  font-weight: 300;
+  color: var(--stone);
+  margin-bottom: 36px;
+  font-style: italic;
+}
+.final-cta .btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+/* ============================================================
+   SHOP — COLLECTION-FIRST
+   ============================================================ */
+.shop-intro {
+  text-align: center;
+  padding: clamp(60px, 8vw, 100px) 0 clamp(32px, 4vw, 56px);
+}
+.shop-intro h1 {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 3.2vw, 2.8rem);
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.shop-intro p {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--stone);
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+/* Collection within shop */
+.shop-coll {
+  margin-bottom: clamp(48px, 6vw, 80px);
+}
+.shop-coll-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: clamp(24px, 3vw, 40px);
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(158,138,79,0.08);
+}
+.shop-coll-header h2 {
+  font-family: var(--serif);
+  font-size: clamp(1.4rem, 2.2vw, 1.8rem);
+  font-weight: 400;
+  color: var(--ink);
+}
+.shop-coll-header h2 i { font-style: italic; color: var(--gold); }
+.shop-coll-header .sub {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: var(--clay);
+  margin-top: 4px;
+}
+
+.p-row {
+  display: grid;
+  gap: clamp(16px, 2.5vw, 28px);
+}
+.p-row-3 { grid-template-columns: repeat(3, 1fr); }
+.p-row-4 { grid-template-columns: repeat(3, 1fr); }
+.p-row-2 { grid-template-columns: repeat(2, 1fr); max-width: 680px; }
+
+.pc { cursor: pointer; }
+.pc-img {
+  position: relative;
+  aspect-ratio: 3/4;
+  background: var(--white);
+  overflow: hidden;
+  margin-bottom: 14px;
+  border: 1px solid rgba(158,138,79,0.04);
+}
+.pc-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s var(--ease);
+}
+.pc:hover .pc-img img { transform: scale(1.03); }
+.pc-ph {
+  width: 100%; height: 100%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--clay);
+}
+.pc-badge {
+  position: absolute;
+  top: 12px; left: 12px;
+  padding: 4px 10px;
+  background: var(--gold);
+  color: var(--cream);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.pc-qv {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 13px;
+  background: rgba(19,18,16,0.88);
+  backdrop-filter: blur(6px);
+  text-align: center;
+  font-size: 0.66rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--cream);
+  transform: translateY(100%);
+  transition: transform 0.4s var(--ease);
+  font-weight: 300;
+}
+.pc:hover .pc-qv { transform: translateY(0); }
+
+.pc-name {
+  font-family: var(--serif);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 2px;
+}
+.pc-sub {
+  font-size: 0.78rem;
+  font-weight: 300;
+  color: var(--clay);
+  font-style: italic;
+  margin-bottom: 5px;
+}
+.pc-price { font-size: 0.84rem; color: var(--ink); font-weight: 400; }
+.pc-price .from { font-size: 0.72rem; color: var(--clay); font-weight: 300; }
+
+/* ============================================================
+   PRODUCT DETAIL — FULL PAGE FEEL
+   ============================================================ */
+.pd-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(19,18,16,0.5);
+  backdrop-filter: blur(12px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.pd-overlay.on { display: flex; }
+
+.pd-panel {
+  background: var(--cream);
+  max-width: 980px;
+  width: 100%;
+  max-height: 94vh;
+  overflow-y: auto;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  position: relative;
+}
+.pd-x {
+  position: absolute;
+  top: 16px; right: 20px;
+  background: none; border: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  color: var(--stone);
+  z-index: 5;
+  transition: color 0.3s;
+}
+.pd-x:hover { color: var(--ink); }
+
+.pd-left {
+  background: var(--linen);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 56px 40px;
+  min-height: 400px;
+}
+.pd-left img { max-height: 400px; object-fit: contain; }
+
+.pd-right {
+  padding: clamp(32px, 4vw, 56px) clamp(24px, 3vw, 44px);
+}
+.pd-kicker {
+  font-size: 0.62rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 10px;
+  font-weight: 300;
+}
+.pd-name {
+  font-family: var(--serif);
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.pd-tag {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--stone);
+  margin-bottom: 20px;
+}
+
+.pd-opening {
+  font-size: 0.92rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: var(--stone);
+  margin-bottom: 24px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(158,138,79,0.08);
+}
+
+.pd-block { margin-bottom: 20px; }
+.pd-block h4 {
+  font-family: var(--serif);
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--ink);
+  margin-bottom: 8px;
+}
+.pd-block p, .pd-block-item {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: var(--stone);
+  line-height: 1.65;
+}
+.pd-block-item {
+  padding: 3px 0 3px 14px;
+  position: relative;
+}
+.pd-block-item::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: 400;
+}
+
+.pd-divider { height: 1px; background: rgba(158,138,79,0.08); margin: 20px 0; }
+
+.sz-row {
+  display: flex;
+  gap: 7px;
+  margin-bottom: 18px;
+}
+.sz {
+  flex: 1;
+  padding: 11px 4px;
+  border: 1px solid rgba(158,138,79,0.18);
+  background: transparent;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.sz:hover, .sz.on {
+  border-color: var(--gold);
+  background: var(--gold);
+  color: var(--cream);
+}
+.sz .sv { display: block; font-size: 0.7rem; letter-spacing: 0.05em; }
+.sz .sp { display: block; font-size: 0.88rem; font-weight: 500; margin-top: 2px; }
+
+.btn-cart {
+  width: 100%;
+  padding: 16px;
+  background: var(--gold);
+  color: var(--cream);
+  border: none;
+  font-family: var(--sans);
+  font-size: 0.73rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: 400;
+}
+.btn-cart:hover { background: var(--gold-deep); }
+
+.pd-close-line {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.88rem;
+  color: var(--clay);
+  text-align: center;
+  margin-top: 16px;
+}
+
+/* ============================================================
+   EXPERIENCES
+   ============================================================ */
+.xp-hero {
+  text-align: center;
+  padding: clamp(80px, 10vw, 140px) 0 clamp(40px, 5vw, 64px);
+  background: var(--black);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.xp-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 50% 90%, rgba(158,138,79,0.06), transparent 45%);
+}
+.xp-hero > * { position: relative; z-index: 2; }
+.xp-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 400;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+.xp-hero h1 i { font-style: italic; color: var(--gold-soft); }
+.xp-hero p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--mist);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+.xp-body { padding: clamp(56px, 8vw, 100px) 0; }
+
+.xp-card {
+  background: var(--white);
+  border: 1px solid rgba(158,138,79,0.06);
+  padding: clamp(36px, 5vw, 64px);
+  max-width: 860px;
+  margin: 0 auto;
+}
+.xp-card h3 { font-family: var(--serif); font-size: 1.5rem; font-weight: 400; color: var(--ink); margin-bottom: 4px; }
+.xp-card .xp-tagline { font-family: var(--serif); font-style: italic; color: var(--gold); font-size: 0.95rem; margin-bottom: 24px; }
+.xp-card p { font-size: 0.9rem; font-weight: 300; line-height: 1.85; color: var(--stone); margin-bottom: 12px; }
+
+.xp-inc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; margin: 20px 0; }
+.xp-inc { display: flex; align-items: flex-start; gap: 8px; font-size: 0.85rem; font-weight: 300; color: var(--ink); line-height: 1.5; }
+.xp-inc .ck { color: var(--gold); flex-shrink: 0; }
+
+.xp-tiers { display: flex; gap: 16px; margin: 28px 0; flex-wrap: wrap; }
+.xp-tier { flex: 1; min-width: 180px; padding: 20px; border: 1px solid rgba(158,138,79,0.12); text-align: center; }
+.xp-tier-label { font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--clay); margin-bottom: 5px; }
+.xp-tier-price { font-family: var(--serif); font-size: 1.7rem; font-weight: 400; color: var(--ink); }
+.xp-tier-price span { font-size: 0.82rem; color: var(--clay); font-weight: 300; }
+.xp-tier-note { font-size: 0.72rem; color: var(--clay); margin-top: 2px; }
+
+.xp-pf { margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(158,138,79,0.08); }
+.xp-pf h4 { font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--ink); margin-bottom: 10px; }
+.xp-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.xp-tag { padding: 6px 14px; background: var(--cream); font-size: 0.74rem; color: var(--stone); border: 1px solid rgba(158,138,79,0.06); font-weight: 300; }
+
+/* ============================================================
+   STORY
+   ============================================================ */
+.story-top {
+  text-align: center;
+  padding: clamp(80px, 10vw, 140px) 0 clamp(32px, 4vw, 56px);
+}
+.story-top h1 { font-family: var(--serif); font-size: clamp(2rem, 3.2vw, 2.8rem); font-weight: 400; color: var(--ink); line-height: 1.2; }
+.story-top h1 i { font-style: italic; color: var(--gold); }
+.story-prose { max-width: 640px; margin: 0 auto; padding-bottom: 80px; }
+.story-prose p { font-size: 0.95rem; font-weight: 300; line-height: 1.95; color: var(--stone); margin-bottom: 20px; }
+.story-pq {
+  font-family: var(--serif);
+  font-size: 1.3rem;
+  font-style: italic;
+  color: var(--ink);
+  line-height: 1.5;
+  padding: 32px 0;
+  margin: 24px 0;
+  border-top: 1px solid rgba(158,138,79,0.1);
+  border-bottom: 1px solid rgba(158,138,79,0.1);
+  text-align: center;
+}
+.story-vals { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+.sval { padding: 24px; background: var(--white); border: 1px solid rgba(158,138,79,0.06); }
+.sval h4 { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; color: var(--ink); margin-bottom: 6px; }
+.sval p { font-size: 0.84rem; font-weight: 300; color: var(--stone); line-height: 1.65; margin-bottom: 0; }
+
+/* ============================================================
+   INGREDIENTS
+   ============================================================ */
+.ing-top { text-align: center; padding: clamp(60px, 8vw, 100px) 0; }
+.ing-top h1 { font-family: var(--serif); font-size: clamp(2rem, 3vw, 2.6rem); font-weight: 400; color: var(--ink); margin-bottom: 12px; }
+.ing-top p { font-size: 0.95rem; font-weight: 300; color: var(--stone); max-width: 480px; margin: 0 auto; line-height: 1.75; }
+.ing-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; padding-bottom: 80px; }
+.ig { padding: 22px; background: var(--white); border: 1px solid rgba(158,138,79,0.05); transition: border-color 0.3s; }
+.ig:hover { border-color: rgba(158,138,79,0.18); }
+.ig h4 { font-family: var(--serif); font-size: 1rem; font-weight: 500; color: var(--ink); margin-bottom: 2px; }
+.ig .lat { font-family: var(--serif); font-style: italic; font-size: 0.78rem; color: var(--gold); margin-bottom: 8px; }
+.ig p { font-size: 0.82rem; font-weight: 300; color: var(--stone); line-height: 1.6; }
+
+/* ============================================================
+   QUIZ — 5 STEPS
+   ============================================================ */
+.qz-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 3000;
+  background: rgba(19,18,16,0.6);
+  backdrop-filter: blur(14px);
+  align-items: center; justify-content: center;
+  padding: 20px;
+}
+.qz-overlay.on { display: flex; }
+
+.qz-box {
+  background: var(--cream);
+  max-width: 540px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 44px clamp(24px, 4vw, 44px);
+  position: relative;
+}
+.qz-x { position: absolute; top: 12px; right: 16px; background: none; border: none; font-size: 1.2rem; cursor: pointer; color: var(--stone); }
+
+.qz-top { text-align: center; margin-bottom: 28px; }
+.qz-badge {
+  display: inline-block; padding: 6px 16px;
+  background: var(--gold); color: var(--cream);
+  font-size: 0.6rem; letter-spacing: 0.18em;
+  text-transform: uppercase; margin-bottom: 14px;
+}
+.qz-top h2 { font-family: var(--serif); font-size: 1.6rem; font-weight: 400; color: var(--ink); margin-bottom: 5px; }
+.qz-top p { font-size: 0.86rem; font-weight: 300; color: var(--stone); }
+
+.qz-prog { display: flex; gap: 3px; margin-bottom: 24px; }
+.qz-bar { flex: 1; height: 2px; background: rgba(158,138,79,0.1); transition: background 0.4s; }
+.qz-bar.on { background: var(--gold); }
+
+.qs { display: none; }
+.qs.on { display: block; }
+
+.qs-q { font-family: var(--serif); font-size: 1.1rem; font-weight: 400; color: var(--ink); text-align: center; margin-bottom: 16px; }
+.qs-opts { display: grid; gap: 7px; margin-bottom: 24px; }
+.qs-o {
+  padding: 13px 16px;
+  border: 1px solid rgba(158,138,79,0.16);
+  background: var(--white);
+  cursor: pointer;
+  transition: all 0.25s;
+  font-size: 0.86rem;
+  color: var(--ink);
+  text-align: center;
+  font-weight: 300;
+}
+.qs-o:hover { border-color: var(--gold); background: rgba(158,138,79,0.03); }
+.qs-o.sel { border-color: var(--gold); background: var(--gold); color: var(--cream); }
+
+.qs-nav { display: flex; justify-content: space-between; align-items: center; }
+.qs-back { background: none; border: none; font-size: 0.78rem; color: var(--clay); cursor: pointer; }
+.qs-next {
+  padding: 13px 28px;
+  background: var(--gold); color: var(--cream); border: none;
+  font-size: 0.71rem; letter-spacing: 0.13em; text-transform: uppercase;
+  cursor: pointer; transition: background 0.3s; font-weight: 400;
+}
+.qs-next:hover { background: var(--gold-deep); }
+
+.qi {
+  width: 100%; padding: 13px 16px;
+  border: 1px solid rgba(158,138,79,0.18);
+  background: var(--white);
+  font-family: var(--sans); font-size: 0.88rem; color: var(--ink);
+  outline: none; margin-bottom: 8px; transition: border-color 0.3s;
+  font-weight: 300;
+}
+.qi:focus { border-color: var(--gold); }
+.qi::placeholder { color: var(--mist); }
+.qi-row { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 8px; }
+
+.qz-result { text-align: center; padding: 12px 0; }
+.qz-result h3 { font-family: var(--serif); font-size: 1.4rem; font-weight: 400; color: var(--ink); margin-bottom: 10px; }
+.qz-code {
+  display: inline-block; padding: 10px 28px;
+  background: var(--gold); color: var(--cream);
+  font-size: 0.92rem; letter-spacing: 0.16em; margin: 12px 0;
+}
+.qz-result p { font-size: 0.86rem; font-weight: 300; color: var(--stone); line-height: 1.6; }
+
+/* ============================================================
+   FLOATING CTA
+   ============================================================ */
+.float-btn {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  z-index: 900;
+  padding: 12px 24px;
+  background: var(--gold);
+  color: var(--cream);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 6px 24px rgba(158,138,79,0.28);
+  transition: all 0.35s var(--ease);
+  font-weight: 400;
+}
+.float-btn:hover { background: var(--gold-deep); box-shadow: 0 10px 36px rgba(158,138,79,0.42); transform: translateY(-2px); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.ft {
+  background: var(--black);
+  color: var(--cream);
+  padding: clamp(52px, 7vw, 88px) 0 32px;
+}
+.ft-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.4fr;
+  gap: clamp(20px, 3vw, 48px);
+  margin-bottom: 48px;
+}
+.ft-brand .ft-logo { font-family: var(--serif); font-size: 1.4rem; color: var(--gold); margin-bottom: 12px; }
+.ft-brand p { font-size: 0.84rem; font-weight: 300; color: var(--mist); line-height: 1.7; max-width: 280px; }
+.ft-col h4 { font-size: 0.63rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-soft); margin-bottom: 16px; font-weight: 400; }
+.ft-col a { display: block; font-size: 0.84rem; font-weight: 300; color: var(--mist); text-decoration: none; padding: 3px 0; transition: color 0.3s; }
+.ft-col a:hover { color: var(--cream); }
+.ft-nl p { font-size: 0.84rem; font-weight: 300; color: var(--mist); margin-bottom: 12px; line-height: 1.6; }
+.ft-nl-f { display: flex; }
+.ft-nl-i { flex: 1; padding: 12px 14px; background: rgba(255,255,255,0.04); border: 1px solid rgba(158,138,79,0.18); border-right: none; color: var(--cream); font-family: var(--sans); font-size: 0.82rem; outline: none; font-weight: 300; }
+.ft-nl-i::placeholder { color: var(--clay); }
+.ft-nl-b { padding: 12px 20px; background: var(--gold); border: 1px solid var(--gold); color: var(--cream); font-size: 0.64rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.3s; font-weight: 400; }
+.ft-nl-b:hover { background: var(--gold-deep); }
+.ft-bottom { display: flex; justify-content: space-between; align-items: center; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.04); }
+.ft-bottom p { font-size: 0.7rem; color: var(--clay); font-weight: 300; }
+.ft-bl { display: flex; gap: 16px; }
+.ft-bl a { font-size: 0.7rem; color: var(--clay); text-decoration: none; transition: color 0.3s; font-weight: 300; }
+.ft-bl a:hover { color: var(--cream); }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 960px) {
+  .hero-layout { grid-template-columns: 1fr; text-align: center; }
+  .hero-copy { order: 2; }
+  .hero-vis { order: 1; }
+  .hero-body { margin: 0 auto 12px; }
+  .hero-whisper { margin: 0 auto 44px; }
+  .hero-btns { justify-content: center; }
+  .hero-kicker { justify-content: center; }
+  .hero-kicker::before { display: none; }
+  .hero-prod-wrap { width: 240px; height: 340px; }
+  .coll-content { max-width: 100%; }
+  .coll-content-right { margin-left: 0; text-align: left; }
+  .coll-content-right .coll-p, .coll-content-right .coll-sensory { margin-left: 0; }
+  .exp-strip-inner { grid-template-columns: 1fr; gap: 24px; }
+  .exp-strip-items { grid-template-columns: 1fr; }
+  .quiz-cta-grid { grid-template-columns: 1fr; }
+  .founder-layout { grid-template-columns: 1fr; }
+  .test-row { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  .test-item { border-right: none; }
+  .p-row-3, .p-row-4 { grid-template-columns: repeat(2, 1fr); }
+  .coll-prod-img { display: none; }
+  .ritual-grid { grid-template-columns: 1fr; gap: 28px; }
+  .ritual-col { border-right: none; padding: 0; }
+  .ft-grid { grid-template-columns: repeat(2, 1fr); }
+  .pd-panel { grid-template-columns: 1fr; }
+  .xp-inc-grid { grid-template-columns: 1fr; }
+  .story-vals { grid-template-columns: 1fr; }
+  .nav-left { display: none; }
+  .mob-btn { display: flex; }
+}
+@media (max-width: 600px) {
+  .p-row-3, .p-row-4, .p-row-2 { grid-template-columns: 1fr; max-width: 380px; margin-left: auto; margin-right: auto; }
+  .hero { min-height: 85vh; }
+  .test-row { grid-template-columns: 1fr; }
+  .ft-grid { grid-template-columns: 1fr; }
+  .xp-tiers { flex-direction: column; }
+  .qi-row { grid-template-columns: 1fr; }
+  .ft-bottom { flex-direction: column; gap: 8px; text-align: center; }
+  .sz-row { flex-wrap: wrap; }
+}
+
+/* ============================================================
+   SHOP FILTERS
+   ============================================================ */
+.shop-filters {
+  display: flex; justify-content: center; gap: 7px;
+  flex-wrap: wrap; margin-bottom: clamp(28px, 4vw, 48px);
+}
+.sf-btn {
+  padding: 8px 20px; border: 1px solid rgba(158,138,79,0.18);
+  background: transparent; font-family: var(--sans);
+  font-size: 0.7rem; letter-spacing: 0.12em;
+  text-transform: uppercase; color: var(--stone);
+  cursor: pointer; transition: all 0.3s; font-weight: 300;
+}
+.sf-btn:hover { border-color: var(--gold); color: var(--gold); }
+.sf-btn.on { background: var(--gold); color: var(--cream); border-color: var(--gold); }
+
+/* Dynamic product grid */
+.dyn-grid { display: grid; gap: clamp(14px, 2vw, 22px); }
+.dyn-grid-3 { grid-template-columns: repeat(3, 1fr); }
+.dyn-grid-4 { grid-template-columns: repeat(4, 1fr); }
+
+/* ============================================================
+   CART
+   ============================================================ */
+.cart-badge-wrap { position: relative; }
+.cart-count {
+  position: absolute; top: -5px; right: -7px;
+  min-width: 16px; height: 16px; border-radius: 50%;
+  background: var(--gold); color: var(--cream);
+  font-size: 0.52rem; display: none;
+  align-items: center; justify-content: center;
+  font-weight: 500; padding: 0 3px;
+}
+.cart-count.show { display: flex; }
+
+.cart-overlay {
+  display: none; position: fixed; inset: 0; z-index: 2100;
+  background: rgba(19,18,16,0.4); backdrop-filter: blur(8px);
+}
+.cart-overlay.on { display: block; }
+.cart-drawer {
+  position: fixed; top: 0; right: 0; bottom: 0;
+  width: min(400px, 90vw); background: var(--cream);
+  z-index: 2200; transform: translateX(100%);
+  transition: transform 0.45s var(--ease);
+  display: flex; flex-direction: column;
+  box-shadow: -8px 0 40px rgba(19,18,16,0.06);
+}
+.cart-drawer.on { transform: translateX(0); }
+.cart-head {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 18px 22px; border-bottom: 1px solid rgba(158,138,79,0.06);
+}
+.cart-head h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; }
+.cart-x { background: none; border: none; font-size: 1.1rem; cursor: pointer; color: var(--clay); }
+.cart-body { flex: 1; overflow-y: auto; padding: 14px 22px; }
+.cart-empty { text-align: center; padding: 48px 0; color: var(--clay); font-size: 0.86rem; font-weight: 300; font-style: italic; }
+.ci {
+  display: grid; grid-template-columns: 52px 1fr auto; gap: 10px;
+  align-items: start; padding: 12px 0;
+  border-bottom: 1px solid rgba(158,138,79,0.05);
+}
+.ci-img { width: 52px; height: 52px; background: var(--white); overflow: hidden; }
+.ci-img img { width: 100%; height: 100%; object-fit: cover; }
+.ci-name { font-size: 0.82rem; font-weight: 400; }
+.ci-meta { font-size: 0.68rem; color: var(--clay); font-weight: 300; }
+.ci-right { text-align: right; }
+.ci-price { font-size: 0.84rem; font-weight: 400; }
+.ci-qty { display: flex; align-items: center; gap: 0; margin-top: 5px; }
+.ci-qty button {
+  width: 22px; height: 22px; border: 1px solid rgba(158,138,79,0.12);
+  background: transparent; cursor: pointer; font-size: 0.72rem;
+  color: var(--stone); display: flex; align-items: center; justify-content: center;
+}
+.ci-qty span {
+  width: 26px; height: 22px; border-top: 1px solid rgba(158,138,79,0.12);
+  border-bottom: 1px solid rgba(158,138,79,0.12);
+  display: flex; align-items: center; justify-content: center; font-size: 0.72rem;
+}
+.ci-rm { background: none; border: none; font-size: 0.62rem; color: var(--clay); cursor: pointer; text-decoration: underline; margin-top: 3px; }
+.ci-rm:hover { color: var(--gold); }
+.cart-foot { padding: 14px 22px; border-top: 1px solid rgba(158,138,79,0.08); }
+.cart-total { display: flex; justify-content: space-between; margin-bottom: 10px; }
+.cart-total span:first-child { font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--stone); }
+.cart-total span:last-child { font-size: 1.02rem; font-weight: 500; }
+.cart-co {
+  width: 100%; padding: 14px; background: var(--gold); color: var(--cream);
+  border: none; font-family: var(--sans); font-size: 0.68rem;
+  letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;
+  font-weight: 400; transition: background 0.3s;
+}
+.cart-co:hover { background: var(--gold-deep); }
+
+/* ============================================================
+   ENHANCED PRODUCT DETAIL
+   ============================================================ */
+.pd-price { font-size: 1.05rem; font-weight: 500; margin-bottom: 14px; }
+.pd-price .from { font-size: 0.76rem; color: var(--clay); font-weight: 300; }
+
+.pd-section-label {
+  font-size: 0.72rem; font-weight: 500; color: var(--ink);
+  margin-bottom: 8px; margin-top: 14px;
+}
+.pd-tabs { display: flex; gap: 0; margin: 14px 0 12px; }
+.pd-tab {
+  flex: 1; padding: 9px 6px; border: none; background: none;
+  border-bottom: 2px solid rgba(158,138,79,0.06);
+  font-family: var(--sans); font-size: 0.66rem;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--clay); cursor: pointer; transition: all 0.3s;
+  font-weight: 300; text-align: center;
+}
+.pd-tab:hover { color: var(--ink); }
+.pd-tab.on { border-bottom-color: var(--gold); color: var(--gold); font-weight: 400; }
+.pd-tab-body { display: none; }
+.pd-tab-body.on { display: block; animation: pdFade 0.3s ease; }
+@keyframes pdFade { from { opacity: 0; transform: translateY(4px); } to { opacity: 1; transform: none; } }
+
+.pd-ing-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 2px 10px;
+  max-height: 180px; overflow-y: auto; padding-right: 4px;
+}
+.pd-ing-item {
+  font-size: 0.76rem; font-weight: 300; color: var(--coal);
+  padding: 3px 0; display: flex; align-items: flex-start; gap: 5px;
+}
+.pd-ing-item::before { content: '·'; color: var(--gold); flex-shrink: 0; }
+.pd-ing-grid::-webkit-scrollbar { width: 2px; }
+.pd-ing-grid::-webkit-scrollbar-thumb { background: rgba(158,138,79,0.15); }
+
+.pd-pairs-label {
+  font-size: 0.62rem; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--gold); margin: 16px 0 8px; font-weight: 300;
+}
+.pd-pairs { display: flex; gap: 8px; flex-wrap: wrap; }
+.pd-pair {
+  display: flex; align-items: center;
+  background: var(--warm); flex: 1; min-width: 130px;
+  overflow: hidden;
+}
+.pd-pair-browse {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 10px; cursor: pointer; transition: background 0.2s;
+  flex: 1;
+}
+.pd-pair-browse:hover { background: rgba(158,138,79,0.08); }
+.pd-pair-img { width: 34px; height: 34px; background: var(--white); overflow: hidden; flex-shrink: 0; }
+.pd-pair-img img { width: 100%; height: 100%; object-fit: cover; }
+.pd-pair-name { font-size: 0.72rem; font-weight: 400; }
+.pd-pair-price { font-size: 0.64rem; color: var(--clay); font-weight: 300; }
+.pd-pair-cart {
+  padding: 0 12px; height: 100%; min-height: 48px;
+  background: var(--gold); color: var(--cream); border: none;
+  font-family: var(--sans); font-size: 0.58rem; letter-spacing: 0.06em;
+  text-transform: uppercase; cursor: pointer; transition: background 0.2s;
+  font-weight: 400; flex-shrink: 0; white-space: nowrap;
+}
+.pd-pair-cart:hover { background: var(--gold-deep); }
+
+.pd-qty-row { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+.pd-qty-label { font-size: 0.68rem; color: var(--clay); font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; }
+.qty-ctrl { display: flex; align-items: center; }
+.qty-btn {
+  width: 30px; height: 30px; border: 1px solid rgba(158,138,79,0.15);
+  background: transparent; cursor: pointer; font-size: 0.88rem;
+  color: var(--stone); display: flex; align-items: center; justify-content: center;
+}
+.qty-btn:hover { border-color: var(--gold); color: var(--gold); }
+.qty-val {
+  width: 36px; height: 30px; border-top: 1px solid rgba(158,138,79,0.15);
+  border-bottom: 1px solid rgba(158,138,79,0.15);
+  display: flex; align-items: center; justify-content: center; font-size: 0.84rem;
+}
+
+/* ============================================================
+   QUIZ RECOMMENDATIONS
+   ============================================================ */
+.qz-recs { display: grid; grid-template-columns: 1fr; gap: 8px; margin: 14px 0; }
+.qz-rec {
+  display: flex; align-items: center; gap: 10px;
+  padding: 10px; background: var(--warm); cursor: pointer;
+  transition: background 0.3s;
+}
+.qz-rec:hover { background: rgba(158,138,79,0.08); }
+.qz-rec-img { width: 44px; height: 44px; background: var(--white); overflow: hidden; flex-shrink: 0; }
+.qz-rec-img img { width: 100%; height: 100%; object-fit: cover; }
+.qz-rec-name { font-size: 0.78rem; font-weight: 400; }
+.qz-rec-why { font-size: 0.64rem; color: var(--clay); font-weight: 300; line-height: 1.3; }
+.qz-rec-price { font-size: 0.72rem; color: var(--gold); font-weight: 400; flex-shrink: 0; }
+
+@media (max-width: 768px) {
+  .dyn-grid-3, .dyn-grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .pd-ing-grid { grid-template-columns: 1fr; }
+  .pd-pairs { flex-direction: column; }
+}
+@media (max-width: 480px) {
+  .dyn-grid-3, .dyn-grid-4 { grid-template-columns: 1fr; max-width: 340px; margin: 0 auto; }
+}
+/* ============================================================
+   SEARCH OVERLAY
+   ============================================================ */
+.search-overlay {
+  display: none; position: fixed; inset: 0; z-index: 2300;
+  background: rgba(19,18,16,0.6); backdrop-filter: blur(12px);
+  justify-content: center; padding-top: 14vh;
+}
+.search-overlay.on { display: flex; }
+.search-box {
+  width: min(540px, 90vw); background: var(--cream);
+  padding: 28px; max-height: 70vh; display: flex; flex-direction: column;
+  box-shadow: 0 20px 60px rgba(19,18,16,0.12);
+}
+.search-input {
+  width: 100%; padding: 14px 16px; border: 1px solid rgba(158,138,79,0.15);
+  background: var(--white); font-family: var(--sans); font-size: 0.92rem;
+  font-weight: 300; color: var(--ink); outline: none;
+}
+.search-input:focus { border-color: var(--gold); }
+.search-input::placeholder { color: var(--mist); }
+.search-results {
+  flex: 1; overflow-y: auto; margin-top: 14px;
+}
+.sr-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 10px; cursor: pointer; transition: background 0.2s;
+}
+.sr-item:hover { background: var(--warm); }
+.sr-img { width: 44px; height: 44px; background: var(--white); overflow: hidden; flex-shrink: 0; }
+.sr-img img { width: 100%; height: 100%; object-fit: cover; }
+.sr-name { font-size: 0.84rem; font-weight: 400; }
+.sr-meta { font-size: 0.68rem; color: var(--clay); font-weight: 300; }
+.sr-price { margin-left: auto; font-size: 0.82rem; font-weight: 400; flex-shrink: 0; }
+.sr-empty { padding: 28px; text-align: center; color: var(--clay); font-size: 0.84rem; font-weight: 300; }
+
+/* Your Match floating tab */
+.match-tab {
+  display: none; position: fixed; bottom: 80px; right: 20px; z-index: 1800;
+  padding: 10px 20px; background: var(--ink); color: var(--gold-soft);
+  font-family: var(--sans); font-size: 0.68rem; letter-spacing: 0.12em;
+  text-transform: uppercase; border: none; cursor: pointer;
+  box-shadow: 0 4px 20px rgba(19,18,16,0.15); transition: all 0.3s;
+  font-weight: 400;
+}
+.match-tab.show { display: block; animation: slideUp 0.4s var(--ease); }
+.match-tab:hover { background: var(--coal); }
+@keyframes slideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
+
+/* Quiz rec add-to-cart button */
+.qz-rec-cart {
+  padding: 5px 10px; background: var(--gold); color: var(--cream);
+  border: none; font-family: var(--sans); font-size: 0.6rem;
+  letter-spacing: 0.08em; text-transform: uppercase; cursor: pointer;
+  flex-shrink: 0; transition: background 0.2s; font-weight: 400;
+}
+.qz-rec-cart:hover { background: var(--gold-deep); }
+
+/* ============================================================
+   FAQ & POLICY PAGES
+   ============================================================ */
+.policy-page { max-width: 720px; margin: 0 auto; padding: clamp(40px,6vw,80px) clamp(20px,5vw,64px); }
+.policy-page h1 { font-family: var(--serif); font-size: clamp(1.6rem,3vw,2.2rem); font-weight: 500; margin-bottom: 8px; }
+.policy-page .policy-sub { font-size: 0.78rem; color: var(--clay); font-weight: 300; margin-bottom: clamp(28px,4vw,48px); }
+.policy-page h3 { font-family: var(--serif); font-size: 1rem; font-weight: 500; margin: 28px 0 8px; color: var(--ink); }
+.policy-page p { font-size: 0.86rem; font-weight: 300; color: var(--coal); line-height: 1.7; margin-bottom: 12px; }
+.policy-page a { color: var(--gold); text-decoration: underline; }
+
+.faq-item { border-bottom: 1px solid rgba(158,138,79,0.08); }
+.faq-q {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 16px 0; cursor: pointer; gap: 12px;
+}
+.faq-q span { font-size: 0.88rem; font-weight: 400; color: var(--ink); flex: 1; }
+.faq-q .faq-icon {
+  font-size: 0.9rem; color: var(--gold); flex-shrink: 0;
+  transition: transform 0.3s; font-weight: 300;
+}
+.faq-item.open .faq-icon { transform: rotate(45deg); }
+.faq-a {
+  max-height: 0; overflow: hidden; transition: max-height 0.35s var(--ease);
+}
+.faq-item.open .faq-a { max-height: 400px; }
+.faq-a-inner {
+  padding: 0 0 16px; font-size: 0.82rem; font-weight: 300;
+  color: var(--stone); line-height: 1.7;
+}
+
+/* Contact form */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 12px; }
+.contact-input {
+  width: 100%; padding: 12px 14px; border: 1px solid rgba(158,138,79,0.12);
+  background: var(--white); font-family: var(--sans); font-size: 0.84rem;
+  font-weight: 300; color: var(--ink); outline: none;
+}
+.contact-input:focus { border-color: var(--gold); }
+textarea.contact-input { min-height: 120px; resize: vertical; }
+.contact-btn {
+  padding: 14px 32px; background: var(--gold); color: var(--cream);
+  border: none; font-family: var(--sans); font-size: 0.68rem;
+  letter-spacing: 0.14em; text-transform: uppercase; cursor: pointer;
+  font-weight: 400; transition: background 0.3s; margin-top: 4px;
+}
+.contact-btn:hover { background: var(--gold-deep); }
+.contact-info { margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(158,138,79,0.06); }
+.contact-info p { font-size: 0.82rem; }
+
+@media (max-width: 600px) { .contact-grid { grid-template-columns: 1fr; } }
+
+</style>
+</head>
+<body>
+
+<div class="announce">Oma means Good — and that's what you can always expect. <a onclick="openQuiz()">Find your match & save 20%</a></div>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <div class="nav-left">
+      <a class="nlink" href="#" onclick="go('shop')">Shop</a>
+      <a class="nlink" href="#" onclick="go('xp')">Experiences</a>
+      <a class="nlink" href="#" onclick="go('ing')">Ingredients</a>
+    </div>
+    <a href="#" class="logo-link" onclick="go('home')">
+      <div class="logo-main">OMA</div>
+      <div class="logo-sub">Organics</div>
+    </a>
+    <div class="nav-right">
+      <a class="nlink" href="#" onclick="go('story')">Our Story</a>
+      <a class="nlink nlink-gold" href="#" onclick="openQuiz()">Scent Quiz</a>
+      <button class="nav-btn" aria-label="Search" onclick="toggleSearch()"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
+      <button class="nav-btn cart-badge-wrap" aria-label="Cart" onclick="toggleCart()"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="cart-count" id="cartCount">0</span></button>
+      <button class="nav-btn mob-btn" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+    </div>
+  </div>
+</nav>
+
+<div class="tabs">
+  <button class="tab on" onclick="go('home')">Home</button>
+  <button class="tab" onclick="go('shop')">Shop</button>
+  <button class="tab" onclick="go('xp')">Experiences</button>
+  <button class="tab" onclick="go('ing')">Ingredients</button>
+  <button class="tab" onclick="go('story')">Our Story</button>
+</div>
+
+<!-- ===================== HOME ===================== -->
+<div class="pg on" id="pg-home">
+
+  <section class="hero">
+    <div class="hero-atmo"></div>
+    <div class="hero-grain"></div>
+    <div class="hero-layout">
+      <div class="hero-copy">
+        <div class="hero-kicker">Oma means "Good" in Igbo</div>
+        <h1 class="hero-h1">Your skin tells a story.<br>We made products that <i>listen.</i></h1>
+        <p class="hero-body">Hand-crafted body care and natural fragrance, made in small batches in Atlanta. Rooted in care, not correction. Formulated with intention, not aggression. Made to support the skin you're in, not punish it for surviving.</p>
+        <p class="hero-whisper">We don't substitute. We don't rush. We don't cut corners.</p>
+        <div class="hero-btns">
+          <a class="btn btn-g" href="#" onclick="go('shop')"><span>Shop</span></a>
+          <a class="btn btn-o" href="#" onclick="openQuiz()">Find Your Scent</a>
+        </div>
+      </div>
+      <div class="hero-vis">
+        <div class="hero-prod-wrap">
+          <div class="hero-glow"></div>
+          <img src="/mnt/user-data/uploads/Perfume_-_Solaire_model.webp" alt="Oma Organics — Good Scents" class="hero-prod-img">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pause reveal">
+    <div class="container">
+      <h2>Have you ever smelled something and suddenly you're <i>eight years old again?</i></h2>
+      <p>That's not just nostalgia — it's neuroscience. Your sense of smell is directly connected to the parts of your brain that handle memory and emotion. No detours. Straight to the heart of it. That's why we don't just make products. We craft scent experiences meant to be felt, remembered, and returned to.</p>
+      <div class="pause-line"></div>
+    </div>
+  </section>
+
+  <section class="exp-strip reveal">
+    <div class="container">
+      <div class="exp-strip-inner">
+        <div class="exp-strip-label">What happens<br>when you use it</div>
+        <div class="exp-strip-items">
+          <div class="exp-strip-item">
+            <p>Your skin feels fed, not coated</p>
+            <div class="detail">Botanical oils absorb fully — rich without being heavy, melting right in.</div>
+          </div>
+          <div class="exp-strip-item">
+            <p>Your scent settles into you instead of sitting on top</p>
+            <div class="detail">Natural fragrances evolve with your body chemistry throughout the day.</div>
+          </div>
+          <div class="exp-strip-item">
+            <p>Sometimes remembering isn't about trying harder — it's about breathing deeper</p>
+            <div class="detail">Scent reaches memory faster than words ever could.</div>
+          </div>
+          <div class="exp-strip-item">
+            <p>No matter what you order, you can always expect goodness</p>
+            <div class="detail">In the ingredients, in the intention, and in the experience.</div>
+          </div>
+          <div class="exp-strip-close">Nothing rushes. Nothing overwhelms.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CINEMATIC COLLECTION BLOCKS -->
+  <div class="coll-block reveal" onclick="go('shop')">
+    <div class="coll-block-bg coll-bg-dark"></div>
+    <div class="coll-block-grain"></div>
+    <img class="coll-prod-img coll-prod-right" src="/mnt/user-data/uploads/Perfume_-_Solaire.jpeg" alt="Solaire Perfume">
+    <div class="coll-content coll-on-dark">
+      <div class="coll-count">6 Fragrances</div>
+      <div class="coll-kicker">Good Scents</div>
+      <h3 class="coll-h">Fragrance that<br><i>stays close</i></h3>
+      <p class="coll-p">Your sense of smell is directly connected to the parts of your brain that handle memory and emotion — no detours, no small talk. That's why each of our six fragrances is crafted to be felt, not just worn. Utò opens warm and resinous. Ikuku lands fresh, like the first breath after rain. Mod holds clean linen and bergamot close to the skin.</p>
+      <div class="coll-sensory">Because sometimes remembering isn't about trying harder. It's about breathing deeper.</div>
+      <button class="btn btn-text" onclick="go('shop')">Explore Scents →</button>
+    </div>
+  </div>
+
+  <div class="coll-block reveal" onclick="go('shop')">
+    <div class="coll-block-bg coll-bg-light"></div>
+    <img class="coll-prod-img coll-prod-left" src="https://omaorganics.com/cdn/shop/files/607E8A89-57C9-4341-8F01-87BD432F18E5.png?v=1697304713" alt="Utò Body Oil">
+    <div class="coll-content coll-content-right coll-on-light">
+      <div class="coll-count">5 Products</div>
+      <div class="coll-kicker">Good Body</div>
+      <h3 class="coll-h">Care that<br><i>lingers</i></h3>
+      <p class="coll-p">Every product is made by hand, in small batches. When one piece of the process slows down, everything waits its turn — because we don't substitute, we don't rush, and we don't cut corners. Amalfi Sunrise wears like a Mediterranean morning. Sahel Body Crème is rich without being heavy — your skin feels fed, not coated.</p>
+      <div class="coll-sensory">If it sells out, it's because care takes time. It's always worth the wait.</div>
+      <button class="btn btn-text" onclick="go('shop')">Shop Bodycare →</button>
+    </div>
+  </div>
+
+  <div class="coll-block reveal" onclick="go('shop')">
+    <div class="coll-block-bg coll-bg-deep"></div>
+    <div class="coll-block-grain"></div>
+    <img class="coll-prod-img coll-prod-right" src="https://omaorganics.com/cdn/shop/files/IMG-6081.png?v=1732736815" alt="RESOLVE Face Oil">
+    <div class="coll-content coll-on-dark">
+      <div class="coll-count">2 Face Oils</div>
+      <div class="coll-kicker">Good Face</div>
+      <h3 class="coll-h">Clarity without<br><i>compromise</i></h3>
+      <p class="coll-p">Your skin responds to your life — the stress, the hormones, the years. These face oils were created with that understanding. Not born from trends or perfection, but from listening. RESOLVE calms breakouts with 18 botanicals including tea tree and CBD. GRACE defends with prickly pear seed oil and frankincense. Both absorb on contact.</p>
+      <div class="coll-sensory">Products rooted in care, not correction.</div>
+      <button class="btn btn-text" onclick="go('shop')">Shop Face →</button>
+    </div>
+  </div>
+
+  <div class="coll-block reveal" onclick="go('shop')">
+    <div class="coll-block-bg coll-bg-soft"></div>
+    <img class="coll-prod-img coll-prod-left" src="/mnt/user-data/uploads/Shower_Steamer_-_Amalfi_Sunrise.jpeg" alt="Amalfi Sunrise Shower Steamer">
+    <div class="coll-content coll-content-right coll-on-light">
+      <div class="coll-count">3 Rituals</div>
+      <div class="coll-kicker">Shower · Steam · Flame</div>
+      <h3 class="coll-h">Small moments<br>that <i>signal</i></h3>
+      <p class="coll-p">Shower gels that turn water into intention. The Amalfi Sunrise candle fills a room without effort — a single flame that says the day can begin, or the day can end. No performance. Just presence.</p>
+      <div class="coll-sensory">That's just how we do things at Oma.</div>
+      <button class="btn btn-text" onclick="go('shop')">Explore Rituals →</button>
+    </div>
+  </div>
+
+  <!-- RITUAL -->
+  <section class="ritual reveal">
+    <div class="ritual-inner">
+      <div style="font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px;font-weight:300;">The Ritual</div>
+      <h2>How it fits into your life</h2>
+      <div class="ritual-grid">
+        <div class="ritual-col"><h4>Morning</h4><p>Warm oil between your hands. Skin softens. You move on.</p></div>
+        <div class="ritual-col"><h4>Midday</h4><p>A familiar note rises gently. It's still there.</p></div>
+        <div class="ritual-col"><h4>Evening</h4><p>Care becomes a signal that the day can end.</p></div>
+      </div>
+      <div class="ritual-foot">That's just how we do things at Oma.</div>
+    </div>
+  </section>
+
+  <!-- QUIZ CTA -->
+  <section class="quiz-cta-section reveal">
+    <div class="container">
+      <div class="quiz-cta-grid">
+        <div>
+          <div class="qc-badge">20% Off Your First Order</div>
+          <h3>Not sure where to <i>start?</i></h3>
+          <p>Four quick questions. We'll match you with the products that feel right for your skin and your story — and give you 20% off to make the introduction.</p>
+          <a class="btn btn-dark" href="#" onclick="openQuiz()"><span>Take the Quiz</span></a>
+        </div>
+        <div class="qc-vis">
+          <img src="/mnt/user-data/uploads/Shower_Steamers_-_Trio.jpeg" alt="Oma Organics Collection">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOUNDER -->
+  <section class="founder-section reveal">
+    <div class="container">
+      <div class="founder-layout">
+        <div class="founder-img-area">
+          <div class="founder-placeholder"><div class="fn">Ijeoma</div><div class="ft">Founder</div></div>
+          <div class="founder-accent"></div>
+        </div>
+        <div class="founder-copy">
+          <div class="section-kicker">Made from Lived Experience</div>
+          <h2>When my son's skin couldn't find comfort anywhere, I <i>made it myself.</i></h2>
+          <p>He was having eczema flare-ups, and everything I found was too harsh, too synthetic, too far from what his body actually needed. So I started formulating — with plants, patience, and the belief that care should feel intuitive, not clinical. What began as a mother's instinct to protect her child became something larger.</p>
+          <p>I carried my own story too — burn scars from baking, sunspots from St. Martin, years of cystic acne. My skin had been responding to my life, and I finally understood: we don't need products that punish our skin for surviving. We need ones that listen.</p>
+          <div class="founder-sig">— Ijeoma Onu, Founder</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="test-section reveal">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:48px;">
+        <div style="font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);font-weight:300;">What People Notice</div>
+      </div>
+      <div class="test-row">
+        <div class="test-item"><blockquote>"My skin feels calm."</blockquote></div>
+        <div class="test-item"><blockquote>"It wears beautifully throughout the day."</blockquote></div>
+        <div class="test-item"><blockquote>"This feels considered."</blockquote></div>
+        <div class="test-item"><blockquote>"I didn't realize how much I needed this."</blockquote></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL -->
+  <section class="final-cta reveal">
+    <div class="container">
+      <h2>Your skin tells a story.<br>Let it be a <i>good</i> one.</h2>
+      <p>No matter what you choose — you can always expect goodness.</p>
+      <div class="btns">
+        <a class="btn btn-dark" href="#" onclick="go('shop')"><span>Shop Oma Organics</span></a>
+        <a class="btn btn-o" style="color:var(--ink);border-color:rgba(158,138,79,0.3);" href="#" onclick="openQuiz()">Begin a Ritual</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ===================== SHOP ===================== -->
+<div class="pg" id="pg-shop">
+  <div class="container">
+    <div class="shop-intro">
+      <h1>The Collection</h1>
+      <p>Choose what feels good — and stays that way.</p>
+    </div>
+    <div class="shop-filters" id="shopFilters">
+      <button class="sf-btn on" onclick="filterShop('all',this)">All</button>
+      <button class="sf-btn" onclick="filterShop('face',this)">Face Oils</button>
+      <button class="sf-btn" onclick="filterShop('body',this)">Body Oils</button>
+      <button class="sf-btn" onclick="filterShop('cleanser',this)">Shower Gels</button>
+      <button class="sf-btn" onclick="filterShop('candle',this)">Candles</button>
+      <button class="sf-btn" onclick="filterShop('steamer',this)">Steamers</button>
+      <button class="sf-btn" onclick="filterShop('perfume',this)">Perfumes</button>
+      <button class="sf-btn" id="matchFilter" style="display:none;background:var(--ink);color:var(--gold-soft);border-color:var(--ink);" onclick="filterShop('match',this)">✦ Your Match</button>
+    </div>
+
+    <div class="shop-coll reveal" data-cats="perfume">
+      <div class="shop-coll-header">
+        <div><h2>Good <i>Scents</i></h2><div class="sub">Fragrance that stays close</div></div>
+        <span style="font-size:0.72rem;color:var(--clay);font-weight:200;">7 fragrances</span>
+      </div>
+      <div class="p-row p-row-4">
+        <div class="pc" data-cat="perfume" onclick="openPD('p-uto')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/IMG-4036_2cd44982-1124-4d7f-867d-e89915f6efe7.jpg?v=1765903842" alt="UTÒ"><div class="pc-qv">Quick View</div></div><div class="pc-name">UTÒ</div><div class="pc-sub">Warm resin, soft wood, quiet amber</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+        <div class="pc" data-cat="perfume" onclick="openPD('p-ikuku')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/IMG-4036_5f7952e6-2a1c-4cb0-8aa2-8b6915274e5d.jpg?v=1765908161" alt="IKUKU"><div class="pc-qv">Quick View</div></div><div class="pc-name">IKUKU</div><div class="pc-sub">Petrichor, green leaf, cool mist</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+        <div class="pc" data-cat="perfume" onclick="openPD('p-ifuru')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/IMG-4036_71e61ae9-91c7-450a-8185-f3c89e4833bc.jpg?v=1765903825" alt="IFURU"><div class="pc-qv">Quick View</div></div><div class="pc-name">IFURU</div><div class="pc-sub">Jasmine bloom, soft musk, dusk</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+        <div class="pc" data-cat="perfume" onclick="openPD('p-ahihia')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/IMG-4036_25887174-a861-4640-b570-bad2a1f1d909.jpg?v=1765903795" alt="AHIHIA"><div class="pc-qv">Quick View</div></div><div class="pc-name">AHIHIA</div><div class="pc-sub">Crushed herb, wet earth, vetiver</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+        <div class="pc" data-cat="perfume" onclick="openPD('p-ubi')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/D2CEBD5C-6B68-437E-BB39-31E1500590B2.webp?v=1765903912" alt="UBI"><div class="pc-qv">Quick View</div></div><div class="pc-name">UBI</div><div class="pc-sub">Cedarwood, warm vanilla, skin</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+        <div class="pc" data-cat="perfume" onclick="openPD('p-mod')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/IMG-4036_5f7952e6-2a1c-4cb0-8aa2-8b6915274e5d.jpg?v=1765908161" alt="MOD"><div class="pc-qv">Quick View</div></div><div class="pc-name">MOD</div><div class="pc-sub">Clean linen, bergamot, white tea</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+        <div class="pc" data-cat="perfume" onclick="openPD('p-solaire')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/B60AF419-995B-43BE-B463-48E64F1E1AE4.png?v=1765903854" alt="SOLAIRE"><div class="pc-qv">Quick View</div></div><div class="pc-name">SOLAIRE</div><div class="pc-sub">Bright citrus, linden blossom, soft glow</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+      </div>
+    </div>
+
+    <div class="shop-coll reveal" data-cats="body">
+      <div class="shop-coll-header">
+        <div><h2>Good <i>Body</i></h2><div class="sub">Care that lingers</div></div>
+        <span style="font-size:0.72rem;color:var(--clay);font-weight:200;">5 products</span>
+      </div>
+      <div class="p-row p-row-3">
+        <div class="pc" data-cat="body" onclick="openPD('bo-as')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/607E8A89-57C9-4341-8F01-87BD432F18E5.png?v=1697304713" alt="AMALFI SUNRISE"><div class="pc-qv">Quick View</div></div><div class="pc-name">AMALFI SUNRISE</div><div class="pc-sub">Citrus, fig leaf, warm stone</div><div class="pc-price"><span class="from">From </span>$20</div></div>
+        <div class="pc" data-cat="body" onclick="openPD('bo-ig')"><div class="pc-img"><div class="pc-ph">Imperial Garden</div><div class="pc-qv">Quick View</div></div><div class="pc-name">IMPERIAL GARDEN</div><div class="pc-sub">Dark orchid, plum, velvet moss</div><div class="pc-price"><span class="from">From </span>$20</div></div>
+        <div class="pc" data-cat="body" onclick="openPD('bo-mod')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/368A09F3-4027-4AD4-AC0F-E06FE004DD1D.jpg?v=1700669808" alt="MOD"><div class="pc-qv">Quick View</div></div><div class="pc-name">MOD</div><div class="pc-sub">Clean, deliberate, weightless</div><div class="pc-price"><span class="from">From </span>$20</div></div>
+        <div class="pc" data-cat="body" onclick="openPD('bo-uto')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/607E8A89-57C9-4341-8F01-87BD432F18E5.png?v=1697304713" alt="UTÒ"><div class="pc-qv">Quick View</div></div><div class="pc-name">UTÒ</div><div class="pc-sub">Warm resin body oil</div><div class="pc-price"><span class="from">From </span>$20</div></div>
+        <div class="pc" data-cat="body" onclick="openPD('sahel')"><div class="pc-img"><div class="pc-ph">Sahel</div><div class="pc-badge">Restocking</div><div class="pc-qv">Quick View</div></div><div class="pc-name">SAHEL</div><div class="pc-sub">Softly sweet, warm, comforting — Utò scented body crème</div><div class="pc-price"><span class="from">From </span>$34</div></div>
+      </div>
+    </div>
+
+    <div class="shop-coll reveal" data-cats="face">
+      <div class="shop-coll-header">
+        <div><h2>Good <i>Face</i></h2><div class="sub">Clarity without compromise</div></div>
+        <span style="font-size:0.72rem;color:var(--clay);font-weight:200;">2 face oils</span>
+      </div>
+      <div class="p-row p-row-2">
+        <div class="pc" data-cat="face" onclick="openPD('fo-resolve')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/IMG-6081.png?v=1732736815" alt="RESOLVE"><div class="pc-qv">Quick View</div></div><div class="pc-name">RESOLVE</div><div class="pc-sub">Blemish correcting — tea tree, CBD, squalane</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+        <div class="pc" data-cat="face" onclick="openPD('fo-grace')"><div class="pc-img"><div class="pc-ph">Grace</div><div class="pc-qv">Quick View</div></div><div class="pc-name">GRACE</div><div class="pc-sub">Anti-aging — prickly pear, frankincense, marula</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+      </div>
+    </div>
+
+    <div class="shop-coll reveal" data-cats="cleanser,steamer,candle">
+      <div class="shop-coll-header">
+        <div><h2>Shower, Steam & <i>Flame</i></h2><div class="sub">Small moments that signal</div></div>
+        <span style="font-size:0.72rem;color:var(--clay);font-weight:200;">4 products</span>
+      </div>
+      <div class="p-row p-row-4">
+        <div class="pc" data-cat="cleanser" onclick="openPD('sg-as')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/EBA21183-25FA-4F1A-8FC7-2A09FC955168.jpg?v=1732734983" alt="AMALFI SUNRISE"><div class="pc-badge">Gel</div><div class="pc-qv">Quick View</div></div><div class="pc-name">AMALFI SUNRISE</div><div class="pc-sub">Shower gel</div><div class="pc-price">$10</div></div>
+        <div class="pc" data-cat="cleanser" onclick="openPD('sg-ed')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/99D43051-6C1A-4C61-9A9E-7CF09F26894C.jpg?v=1732735618" alt="EMERALD DREAM"><div class="pc-badge">Gel</div><div class="pc-qv">Quick View</div></div><div class="pc-name">EMERALD DREAM</div><div class="pc-sub">Shower gel</div><div class="pc-price">$10</div></div>
+        <div class="pc" data-cat="steamer" onclick="openPD('ss-ed')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/DDE4131E-8440-4DC4-9B17-16C3720CBA95.jpg?v=1764638388" alt="EMERALD DREAM STEAMER"><div class="pc-badge">Steamer</div><div class="pc-qv">Quick View</div></div><div class="pc-name">EMERALD DREAM</div><div class="pc-sub">Aromatherapy shower steamers</div><div class="pc-price">$36</div></div>
+        <div class="pc" data-cat="candle" onclick="openPD('candle-as')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/FullSizeRender_56e824fb-15f7-4353-99a7-7ba914be229c.jpg?v=1732732843" alt="AMALFI SUNRISE CANDLE"><div class="pc-badge">Candle</div><div class="pc-qv">Quick View</div></div><div class="pc-name">AMALFI SUNRISE</div><div class="pc-sub">Botanical candle</div><div class="pc-price">$38</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===================== EXPERIENCES ===================== -->
+<div class="pg" id="pg-xp">
+  <div class="xp-hero">
+    <div style="font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px;font-weight:300;">Private Experiences</div>
+    <h1>Scent Your <i>Soul</i></h1>
+    <p>Your sense of smell is directly connected to the parts of your brain that handle memory and emotion — no detours, straight to the heart of it. This is a hands-on perfume-making experience brought to your space. You don't just attend. You leave with a scent that's entirely yours.</p>
+    <div style="font-family:var(--serif);font-style:italic;font-size:0.95rem;color:var(--gold-soft);margin-top:14px;opacity:0.8;">A Scentful Truth</div>
+  </div>
+  <div class="xp-body">
+    <div class="container">
+      <div class="xp-card reveal">
+        <h3>The Signature Workshop</h3>
+        <div class="xp-tagline">You don't just attend. You leave with something that's yours.</div>
+        <p>Every guest walks away with a custom 10ml natural perfume they blended themselves — plus a personal Scent Reference Card that maps their preferences across fragrance families. It's not just a bottle. It's a skill. The next time you're shopping for fragrance, you'll know exactly what draws you in and why.</p>
+        <p>We bring the full experience to your space — your home, studio, rooftop, wherever feels right. Over 1.5 to 2 hours, you'll explore how scent interacts with your body chemistry, why the same fragrance smells different on everyone, and how to build balanced blends using premium essential oils and organic cane sugar alcohol.</p>
+        <p>If you've ever hesitated at a fragrance counter — unsure what suits you, worried about committing to the wrong bottle — this is where that uncertainty ends. You'll smell dozens of botanicals, learn what your skin does to different notes, and build something you already know you love before you ever spend on a full size. No guesswork. Just clarity you keep.</p>
+        <p>It's also the kind of evening that replaces the usual dinner reservation. Couples come in not knowing a base note from a top note and leave with competing signature scents and opinions about vetiver. Friends discover they have completely different fragrance instincts. The room smells incredible, the tea is warm, and nobody checks the time.</p>
+
+        <div style="font-size:0.68rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px;font-weight:300;">What every guest leaves with</div>
+        <div class="xp-inc-grid">
+          <div class="xp-inc"><span class="ck">✓</span> Your own custom 10ml natural perfume in a glass bottle</div>
+          <div class="xp-inc"><span class="ck">✓</span> Personal Scent Reference Card — your fragrance profile for future shopping</div>
+          <div class="xp-inc"><span class="ck">✓</span> Guided exploration of 5 fragrance families — floral, woody, citrus, gourmand, amber</div>
+          <div class="xp-inc"><span class="ck">✓</span> Understanding of how scent interacts with your unique body chemistry</div>
+          <div class="xp-inc"><span class="ck">✓</span> Full event styling — calming ambiance, music & aromatic tea</div>
+          <div class="xp-inc"><span class="ck">✓</span> 1.5 – 2 hours of hands-on immersion</div>
+        </div>
+        <div class="xp-tiers">
+          <div class="xp-tier"><div class="xp-tier-label">Intimate</div><div class="xp-tier-price">$175 <span>/ person</span></div><div class="xp-tier-note">2 – 5 guests</div></div>
+          <div class="xp-tier"><div class="xp-tier-label">Group</div><div class="xp-tier-price">$150 <span>/ person</span></div><div class="xp-tier-note">6 – 10 guests</div></div>
+          <div class="xp-tier"><div class="xp-tier-label">Private & Corporate</div><div class="xp-tier-price">Custom</div><div class="xp-tier-note">Large groups & specialized</div></div>
+        </div>
+        <p style="font-size:0.78rem;color:var(--clay);font-style:italic;">Flexible scheduling. Travel fees may apply outside metro Atlanta.</p>
+        <button class="btn btn-dark" style="margin-top:18px;"><span>Reserve Your Experience →</span></button>
+        <div class="xp-pf">
+          <h4>Perfect For</h4>
+          <div class="xp-tags">
+            <div class="xp-tag">Date Night</div><div class="xp-tag">Birthdays</div><div class="xp-tag">Bridal Showers</div><div class="xp-tag">Girls' Night</div><div class="xp-tag">Couples Night</div><div class="xp-tag">Fragrance Beginners</div><div class="xp-tag">Wellness Retreats</div><div class="xp-tag">Corporate Events</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== INGREDIENTS ===================== -->
+<div class="pg" id="pg-ing">
+  <div class="container">
+    <div class="ing-top">
+      <div style="font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:300;">Thoughtfully Formulated</div>
+      <h1>Our Ingredients</h1>
+      <p>Every ingredient is chosen with intention, not aggression. Nothing unnecessary. Nothing your skin has to resist. Because care should support the skin you're in — not punish it for surviving.</p>
+    </div>
+    <div class="ing-grid reveal" id="ingGrid"></div>
+  </div>
+</div>
+
+<!-- ===================== STORY ===================== -->
+<div class="pg" id="pg-story">
+  <div class="container">
+    <div class="story-top">
+      <div style="font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;font-weight:300;">Our Story</div>
+      <h1>If your skin tells a story too,<br>you're <i>not alone.</i></h1>
+    </div>
+    <div class="story-prose reveal">
+      <p>When my son started having eczema flare-ups, I searched everywhere for something I could trust on his skin. Something gentle. Something effective. Something honest. Everything I found was too harsh, too synthetic, or too far removed from what the body actually needs.</p>
+      <p>So I started making it myself. Through deep research, careful experimentation, and a profound respect for what plants can do that chemicals can't, I developed formulations that brought real relief to his skin. What began as a mother's instinct to protect her child became something much larger.</p>
+      <p>Because I carried my own story too. Burn marks from long nights as a baking entrepreneur — working ovens hotter than I should have trusted. Sunspots from lying on the beach in St. Martin, where I lived for three years. And acne scars — years of cystic acne and hormonal shifts, my body constantly trying to find balance.</p>
+      <p>For a long time I saw these marks as flaws. But eventually I understood something different. My skin was responding to my life. And in that understanding, I found a calling: create care that feels intuitive, for everyone.</p>
+      <div class="story-pq">"I make products that allow you to indulge in a truly authentic experience — a journey that is rooted in goodness and ideal for your well-being."</div>
+      <p>Oma Organics was created with that understanding. It wasn't born from trends. It wasn't born from perfection. It was born from listening — to my body, to my son's, to the stories written on our skin. Everything is made by hand, in small batches, right here in Atlanta. When one piece of the process slows down, everything waits its turn. We don't substitute. We don't rush. We don't cut corners.</p>
+      <p>Founded in 2020. "Oma" means "Good" in Igbo. Not louder. Not trend-driven. Not performative. Good means care that works with your body, scent that feels personal, products that earn their place. No matter what you order, no matter how it arrives — you can always expect goodness. In the ingredients, in the intention, and in the experience. That's just how we do things at Oma.</p>
+      <div class="story-vals">
+        <div class="sval"><h4>Handcrafted</h4><p>Every product made by hand in small batches. If it sells out, it's because care takes time.</p></div>
+        <div class="sval"><h4>Clean Ingredients</h4><p>No fillers. No shortcuts. Nothing your skin has to resist or adjust to.</p></div>
+        <div class="sval"><h4>Rooted in Heritage</h4><p>"Oma" means Good in Igbo. Our ingredients and intentions honor ancestral wisdom.</p></div>
+        <div class="sval"><h4>Scent as Wellness</h4><p>Your sense of smell connects directly to memory and emotion. We craft scent experiences meant to be felt.</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===================== FAQ ===================== -->
+<div class="pg" id="pg-faq">
+  <div class="policy-page">
+    <h1>Frequently Asked</h1>
+    <div class="policy-sub">Everything you might want to know.</div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What is Oma Organics?</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Oma Organics is a bodycare company that specializes in creating natural and organic non-comedogenic body oils, body balms, shower gels, soy wax candles with essential oil fragrance blends, and odor-eliminating room sprays. Our products are made with high-quality ingredients to provide nourishment and a luxurious experience for your body and home.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Are your products 100% natural and organic?</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes — we take pride in using only natural and organic ingredients in our body and skincare products. We prioritize sourcing high-quality, plant-based ingredients that are free from harmful chemicals, synthetic fragrances, and artificial preservatives. Our commitment to natural and organic formulations ensures that you can trust the purity and effectiveness of our products.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What is a non-comedogenic body oil?</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">A non-comedogenic body oil is an oil-based product that is specially formulated not to clog pores or cause acne breakouts. Oma Organics' non-comedogenic body oils are carefully crafted using lightweight and fast-absorbing oils that provide deep hydration without leaving a greasy residue. They are suitable for all skin types, including sensitive and acne-prone skin.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Can I use the body balms on my face?</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">While our body balms are designed primarily for body use, they can also be used on the face, especially for areas that need intensive moisturization. However, it's essential to keep in mind that everyone's skin is unique, and certain facial areas may have different sensitivities. We recommend patch testing before applying the body balm to your face to ensure compatibility with your skin.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Are your shower gels suitable for sensitive skin?</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Yes, our shower gels are formulated with gentle, plant-based cleansers and nourishing ingredients, making them suitable for sensitive skin. We avoid harsh sulfates and artificial fragrances that can irritate the skin. However, as with any new product, it's always a good idea to perform a patch test on a small area of your skin to ensure compatibility.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Are your body mists safe for daily use?</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">Absolutely! Our body mists are designed to provide a refreshing burst of fragrance for your body throughout the day. They are made with natural essential oils and botanical extracts, ensuring a delightful scent without the use of synthetic fragrances. Feel free to use them as often as desired, but discontinue use if any irritation occurs.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Do your soy wax candles emit harmful toxins when burned?</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">No. Our soy wax candles are crafted from 100% natural soy wax, which burns cleanly and does not emit harmful toxins or soot when properly used. We use natural wooden wicks and lead-free cotton wicks and essential oil and fragrance oil blends, ensuring a safe and healthy candle-burning experience for you and your environment.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Are your products cruelty-free and vegan?</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We are proud to say that all Oma Organics products are cruelty-free and vegan friendly. We do not test our products on animals, and we do not use animal-derived ingredients, with the exception of our cruelty free beeswax in our balms. Our commitment to ethical practices extends to every aspect of our brand, ensuring that our products are both effective and compassionate.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Can I use your products if I have allergies or sensitivities?</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">While we strive to create products that are gentle and suitable for a wide range of individuals, we understand that everyone's skin is unique, and allergies or sensitivities may vary. We recommend carefully reviewing the ingredient list of each product before use. If you have known allergies or sensitivities, we suggest performing a patch test on a small area of skin and monitoring for any adverse reactions. If you have specific concerns, it's always a good idea to consult with a healthcare professional.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Where can I purchase Oma Organics products?</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">You can purchase Oma Organics products directly from our official website at www.omaorganics.com. We offer a convenient online shopping experience, and our website provides detailed information about each product, including ingredients and usage directions. Additionally, we may have authorized retailers or stockists where our products are available.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>Do you offer international shipping?</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We currently only ship within the United States and hope to add international shipping to our site in the near future. Please watch our site for any updates to our shipping options.</div></div></div>
+    <div class="faq-item"><div class="faq-q" onclick="toggleFaq(this)"><span>What is your return and refund policy?</span><span class="faq-icon">+</span></div><div class="faq-a"><div class="faq-a-inner">We want you to be completely satisfied with your Oma Organics purchase. If you are not satisfied or if you receive a damaged or defective product, please contact our customer service within 14 days of receiving your order. We will be happy to assist you and provide options to resolve your issue. For detailed information on our return and refund policy, please refer to our Shipping & Returns page.</div></div></div>
+  </div>
+</div>
+
+<!-- ===================== SHIPPING & RETURNS ===================== -->
+<div class="pg" id="pg-shipping">
+  <div class="policy-page">
+    <h1>Shipping & Returns</h1>
+    <div class="policy-sub">We want every order to feel right.</div>
+
+    <h3>Shipping</h3>
+    <p>All orders ship from Atlanta, Georgia. We currently ship within the United States only. Orders are typically processed within 1-3 business days. Because everything is made in small batches, some items may take slightly longer during high-demand periods.</p>
+
+    <h3>Returns</h3>
+    <p>We have a 30-day return policy, which means you have 30 days after receiving your item to request a return. To be eligible for a return, your item must be in the same condition that you received it — unworn or unused, with tags, and in its original packaging. You'll also need the receipt or proof of purchase.</p>
+    <p>To start a return, you can contact us at <a href="mailto:omaskinfood@gmail.com">omaskinfood@gmail.com</a>. Please note that returns will need to be sent to our Atlanta address. If your return is accepted, we'll send you a return shipping label, as well as instructions on how and where to send your package.</p>
+
+    <h3>Damages & Issues</h3>
+    <p>Please inspect your order upon reception and contact us immediately if the item is defective, damaged, or if you receive the wrong item, so that we can evaluate the issue and make it right.</p>
+
+    <h3>Exceptions</h3>
+    <p>Certain types of items cannot be returned, like perishable goods, custom products, and personal care goods. We also do not accept returns for hazardous materials, flammable liquids, or gases. Please get in touch if you have questions about your specific item. We cannot accept returns on sale items or gift cards.</p>
+
+    <h3>Exchanges</h3>
+    <p>The fastest way to ensure you get what you want is to return the item you have, and once the return is accepted, make a separate purchase for the new item.</p>
+
+    <h3>Refunds</h3>
+    <p>We will notify you once we've received and inspected your return, and let you know if the refund was approved or not. If approved, you'll be automatically refunded on your original payment method within 10 business days. Please remember it can take some time for your bank or credit card company to process and post the refund. If more than 15 business days have passed since we've approved your return, please contact us at <a href="mailto:omaskinfood@gmail.com">omaskinfood@gmail.com</a>.</p>
+  </div>
+</div>
+
+<!-- ===================== PRIVACY ===================== -->
+<div class="pg" id="pg-privacy">
+  <div class="policy-page">
+    <h1>Privacy Policy</h1>
+    <div class="policy-sub">How we handle your information.</div>
+
+    <h3>What We Collect</h3>
+    <p>When you make a purchase or attempt to make a purchase, we collect your name, billing address, shipping address, payment information, email address, and phone number. When you browse our store, we automatically receive your computer's IP address to help us learn about your browser and operating system.</p>
+
+    <h3>How We Use Your Information</h3>
+    <p>We use the order information we collect to fulfill orders, process payments, arrange shipping, and provide you with order confirmations. We use your email address to communicate with you about your order, and — if you've opted in — to send you updates about new products, restocks, and Oma Organics news.</p>
+
+    <h3>Sharing Your Information</h3>
+    <p>We do not sell your personal information. We share your information only with service providers who help us operate our business — payment processors, shipping partners, and email platforms — and only to the extent necessary for them to perform their services.</p>
+
+    <h3>Your Rights</h3>
+    <p>You have the right to access, correct, or delete your personal information at any time. You can opt out of marketing communications by clicking the unsubscribe link in any email. If you are a European resident, you have additional rights under the GDPR including the right to data portability.</p>
+
+    <h3>Cookies</h3>
+    <p>We use cookies to remember your cart contents, understand how you use our site, and improve your experience. You can control cookies through your browser settings.</p>
+
+    <h3>Contact</h3>
+    <p>For questions about this privacy policy or your personal data, contact us at <a href="mailto:omaskinfood@gmail.com">omaskinfood@gmail.com</a>.</p>
+  </div>
+</div>
+
+<!-- ===================== CONTACT ===================== -->
+<div class="pg" id="pg-contact">
+  <div class="policy-page">
+    <h1>Get in Touch</h1>
+    <div class="policy-sub">Questions, wholesale inquiries, or just want to say hello.</div>
+
+    <div class="contact-grid">
+      <input class="contact-input" placeholder="First name">
+      <input class="contact-input" placeholder="Last name">
+    </div>
+    <input class="contact-input" placeholder="Email" style="margin-bottom:12px;">
+    <input class="contact-input" placeholder="Subject" style="margin-bottom:12px;">
+    <textarea class="contact-input" placeholder="Your message"></textarea>
+    <button class="contact-btn">Send Message</button>
+
+    <div class="contact-info">
+      <p><strong>Email:</strong> <a href="mailto:omaskinfood@gmail.com">omaskinfood@gmail.com</a></p>
+      <p><strong>Location:</strong> Atlanta, Georgia</p>
+      <p><strong>Hours:</strong> Mon – Fri, 10am – 6pm EST</p>
+      <p style="margin-top:16px;font-style:italic;">For experience bookings, please visit our <a href="#" onclick="go('xp')">Experiences</a> page.</p>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="ft">
+  <div class="container">
+    <div class="ft-grid">
+      <div class="ft-brand"><div class="ft-logo">OMA Organics</div><p>Oma means Good. Rooted in care, not correction. Handcrafted in Atlanta.</p></div>
+      <div class="ft-col"><h4>Shop</h4><a href="#" onclick="go('shop')">Good Scents</a><a href="#" onclick="go('shop')">Good Body</a><a href="#" onclick="go('shop')">Good Face</a><a href="#" onclick="go('shop')">Rituals</a></div>
+      <div class="ft-col"><h4>Explore</h4><a href="#" onclick="go('story')">Our Story</a><a href="#" onclick="go('ing')">Ingredients</a><a href="#" onclick="go('xp')">Experiences</a><a href="#" onclick="openQuiz()">Scent Quiz</a></div>
+      <div class="ft-col"><h4>Support</h4><a href="#" onclick="go('faq')">FAQ</a><a href="#" onclick="go('shipping')">Shipping & Returns</a><a href="#" onclick="go('contact')">Contact</a><a href="#" onclick="go('privacy')">Privacy Policy</a></div>
+      <div class="ft-nl"><h4 style="font-size:0.63rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px;font-weight:400;">Stay in the Good</h4><p>New scents, restocks, and Scentful Truths — delivered with care.</p><div class="ft-nl-f"><input class="ft-nl-i" placeholder="Your email"><button class="ft-nl-b">Join</button></div></div>
+    </div>
+    <div class="ft-bottom"><p>© 2026 Oma Organics</p><div class="ft-bl"><a href="#" onclick="go('privacy')">Privacy</a><a href="#" onclick="go('shipping')">Shipping</a><a href="#" onclick="go('contact')">Contact</a><a href="#" onclick="go('faq')">FAQ</a></div></div>
+  </div>
+</footer>
+
+<button class="float-btn" onclick="openQuiz()">✦ 20% Off — Find Your Match</button>
+<!-- SEARCH OVERLAY -->
+<div class="search-overlay" id="searchOverlay" onclick="if(event.target===this)closeSearch()">
+  <div class="search-box">
+    <input class="search-input" id="searchInput" placeholder="Search products..." oninput="doSearch(this.value)" autocomplete="off">
+    <div class="search-results" id="searchResults"><div class="sr-empty">Start typing to search the collection.</div></div>
+  </div>
+</div>
+
+<!-- YOUR MATCH inline in shop filters -->
+
+<!-- CART DRAWER -->
+<div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head"><h3>Your Cart</h3><button class="cart-x" onclick="closeCart()">✕</button></div>
+  <div class="cart-body" id="cartBody"><div class="cart-empty">Your cart is empty.<br>Good things are waiting.</div></div>
+  <div class="cart-foot"><div class="cart-total"><span>Subtotal</span><span id="cartTotal">$0</span></div><button class="cart-co">Checkout</button></div>
+</div>
+
+<!-- PRODUCT DETAIL -->
+<div class="pd-overlay" id="pdO">
+  <div class="pd-panel">
+    <button class="pd-x" onclick="closePD()">✕</button>
+    <div class="pd-left" id="pdImg"></div>
+    <div class="pd-right">
+      <div class="pd-kicker" id="pdKicker"></div>
+      <div class="pd-name" id="pdName"></div>
+      <div class="pd-tag" id="pdTag"></div>
+      <div class="pd-price" id="pdPrice"></div>
+
+      <!-- Tabs: Detail / Ingredients -->
+      <div class="pd-tabs">
+        <button class="pd-tab on" data-tab="detail" onclick="switchPdTab('detail')">Details</button>
+        <button class="pd-tab" data-tab="ingredients" onclick="switchPdTab('ingredients')">Ingredients</button>
+      </div>
+
+      <!-- Detail tab -->
+      <div class="pd-tab-body on" data-tab="detail">
+        <div class="pd-section-label">Why we made it</div>
+        <p class="pd-opening" id="pdWhy"></p>
+        <div class="pd-divider"></div>
+        <div class="pd-section-label">Who it's for</div>
+        <p class="pd-opening" id="pdWho"></p>
+        <div class="pd-divider"></div>
+        <div class="pd-section-label">How to use</div>
+        <p class="pd-opening" id="pdUse" style="font-style:italic;"></p>
+      </div>
+
+      <!-- Ingredients tab -->
+      <div class="pd-tab-body" data-tab="ingredients">
+        <div class="pd-ing-grid" id="pdIngredients"></div>
+      </div>
+
+      <div class="pd-divider"></div>
+
+      <!-- Sizes -->
+      <div class="sz-row" id="pdSizes"></div>
+
+      <!-- Quantity -->
+      <div class="pd-qty-row">
+        <div class="pd-qty-label">Qty</div>
+        <div class="qty-ctrl">
+          <button class="qty-btn" onclick="pdChangeQty(-1)">−</button>
+          <div class="qty-val" id="pdQtyVal">1</div>
+          <button class="qty-btn" onclick="pdChangeQty(1)">+</button>
+        </div>
+      </div>
+
+      <button class="btn-cart" onclick="pdAddToCart()">Add to Cart</button>
+
+      <!-- Pairs beautifully with -->
+      <div id="pdPairsWrap">
+        <div class="pd-pairs-label">Pairs beautifully with</div>
+        <div class="pd-pairs" id="pdPairs"></div>
+      </div>
+
+      <div class="pd-close-line">Rooted in care, not correction. Always.</div>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ — 5 STEPS (4 questions + email) -->
+<div class="qz-overlay" id="qzO">
+  <div class="qz-box">
+    <button class="qz-x" onclick="closeQuiz()">✕</button>
+    <div class="qz-top">
+      <div class="qz-badge">20% Off Your First Order</div>
+      <h2>Find Your Match</h2>
+      <p>Four questions. Your personalized recommendation.</p>
+    </div>
+    <div class="qz-prog" id="qzProg">
+      <div class="qz-bar on"></div><div class="qz-bar"></div><div class="qz-bar"></div><div class="qz-bar"></div><div class="qz-bar"></div>
+    </div>
+
+    <div class="qs on" data-s="1">
+      <div class="qs-q">How would you describe your skin?</div>
+      <div class="qs-opts">
+        <div class="qs-o" data-val="oily" onclick="pickO(this,'1')">Oily or breakout-prone</div>
+        <div class="qs-o" data-val="dry" onclick="pickO(this,'1')">Dry or sensitive</div>
+        <div class="qs-o" data-val="combo" onclick="pickO(this,'1')">Combination</div>
+        <div class="qs-o" data-val="mature" onclick="pickO(this,'1')">Mature — firmness & glow</div>
+      </div>
+    </div>
+
+    <div class="qs" data-s="2">
+      <div class="qs-q">What's your biggest concern right now?</div>
+      <div class="qs-opts">
+        <div class="qs-o" data-val="blemish" onclick="pickO(this,'2')">Blemishes & breakouts</div>
+        <div class="qs-o" data-val="dull" onclick="pickO(this,'2')">Dullness & uneven tone</div>
+        <div class="qs-o" data-val="aging" onclick="pickO(this,'2')">Fine lines & elasticity</div>
+        <div class="qs-o" data-val="dry" onclick="pickO(this,'2')">Dryness & irritation</div>
+      </div>
+    </div>
+
+    <div class="qs" data-s="3">
+      <div class="qs-q">Which scent draws you in?</div>
+      <div class="qs-opts">
+        <div class="qs-o" data-val="warm" onclick="pickO(this,'3')">Warm & earthy — amber, sandalwood</div>
+        <div class="qs-o" data-val="fresh" onclick="pickO(this,'3')">Fresh & botanical — citrus, green tea</div>
+        <div class="qs-o" data-val="floral" onclick="pickO(this,'3')">Rich & floral — rose, jasmine</div>
+        <div class="qs-o" data-val="clean" onclick="pickO(this,'3')">Clean & subtle — barely there</div>
+      </div>
+    </div>
+
+    <div class="qs" data-s="4">
+      <div class="qs-q">How do you feel about face oils?</div>
+      <div class="qs-opts">
+        <div class="qs-o" data-val="love" onclick="pickO(this,'4')">A staple — I love them</div>
+        <div class="qs-o" data-val="curious" onclick="pickO(this,'4')">Curious but haven't found the right one</div>
+        <div class="qs-o" data-val="nervous" onclick="pickO(this,'4')">Nervous — won't it break me out?</div>
+        <div class="qs-o" data-val="never" onclick="pickO(this,'4')">Never tried one</div>
+      </div>
+    </div>
+
+    <div class="qs" data-s="5" style="text-align:center;">
+      <div class="qs-q">Where should we send your match & 20% off?</div>
+      <div class="qi-row"><input class="qi" placeholder="First name"><input class="qi" placeholder="Last name"></div>
+      <input class="qi" placeholder="Your best email" style="margin-bottom:14px;">
+      <p style="font-size:0.72rem;color:var(--clay);font-weight:200;">We respect your inbox. Unsubscribe anytime.</p>
+    </div>
+
+    <div class="qs" data-s="done">
+      <div class="qz-result" style="text-align:center;">
+        <h3 style="font-family:var(--serif);font-size:1.2rem;margin-bottom:6px;">Your personalized matches ✦</h3>
+        <p style="font-size:0.82rem;color:var(--clay);font-weight:300;margin-bottom:14px;">Based on your answers, here's where we'd start:</p>
+        <div class="qz-recs" id="qzRecs"></div>
+        <div class="qz-code" style="display:inline-block;padding:10px 28px;background:var(--ink);color:var(--gold-soft);font-size:0.9rem;letter-spacing:0.18em;margin:10px 0;">MYMATCH20</div>
+        <p style="font-size:0.82rem;color:var(--clay);font-weight:300;">Use <strong>MYMATCH20</strong> at checkout for 20% off.</p>
+        <button class="btn btn-dark" style="margin-top:14px;" onclick="closeQuiz();go('shop');"><span>Shop Now</span></button>
+      </div>
+    </div>
+
+    <div class="qs-nav" id="qzNav" style="display:none;">
+      <button class="qs-back" onclick="qzBack()">← Back</button>
+      <button class="qs-next" onclick="qzNext()">Get My Results</button>
+    </div>
+  </div>
+</div>
+<script>
+// ===================== 16 PRODUCTS — from her actual Shopify catalog =====================
+const P = [
+  // PERFUMES (7)
+  {id:'p-uto',name:'UTÒ',collection:'Good Scents',cat:'perfume',sub:'Warm resin, soft wood, quiet amber',img:'https://omaorganics.com/cdn/shop/files/IMG-4036_2cd44982-1124-4d7f-867d-e89915f6efe7.jpg?v=1765903842',
+   why:'UTÒ was made for people who want a fragrance that feels like home — warm, grounding, and unmistakably theirs. The resin and amber settle into your skin and evolve throughout the day, becoming something that feels less like perfume and more like a part of you.',
+   who:'Anyone who gravitates toward warmth — campfires, old libraries, amber jewelry. If you like scents that feel rich without being heavy, this is yours.',
+   use:'Apply to pulse points — wrists, neck, behind ears. Let body heat do the work. Layers beautifully with UTÒ body oil.',
+   ingredients:['Cane Sugar Alcohol','Essential Oil Blend','Amber Resin','Sandalwood','Vanilla Extract','Cedarwood','Frankincense'],
+   sizes:[{s:'10ml',p:32},{s:'30ml',p:72}],pairs:['p-ikuku','bo-uto'],badge:null},
+  {id:'p-ikuku',name:'IKUKU',collection:'Good Scents',cat:'perfume',sub:'Petrichor, green leaf, cool mist',img:'https://omaorganics.com/cdn/shop/files/IMG-4036_5f7952e6-2a1c-4cb0-8aa2-8b6915274e5d.jpg?v=1765908161',
+   why:'IKUKU captures that exact moment after rain — when the air is clean and everything feels possible. Fresh without being clinical, cool without being cold. Named for the Igbo word for wind.',
+   who:'If you love the outdoors, fresh mornings, and scents that feel clean but never boring. The nature-lover\'s signature.',
+   use:'Apply to pulse points. Layers beautifully with UTÒ for depth.',
+   ingredients:['Cane Sugar Alcohol','Essential Oil Blend','Green Leaf Accord','Vetiver','Mint','Eucalyptus','Bergamot'],
+   sizes:[{s:'10ml',p:32},{s:'30ml',p:72}],pairs:['p-uto','sg-ed'],badge:null},
+  {id:'p-ifuru',name:'IFURU',collection:'Good Scents',cat:'perfume',sub:'Jasmine bloom, soft musk, dusk',img:'https://omaorganics.com/cdn/shop/files/IMG-4036_71e61ae9-91c7-450a-8185-f3c89e4833bc.jpg?v=1765903825',
+   why:'IFURU is evening in a bottle — when jasmine opens and the air turns warm. A scent for moments that deserve attention. Bold enough to make an entrance, soft enough to keep close.',
+   who:'The romantic. The one who dresses for themselves. If you love florals that aren\'t sweet — this is your statement.',
+   use:'Apply to pulse points, especially décolletage, for maximum bloom.',
+   ingredients:['Cane Sugar Alcohol','Essential Oil Blend','Jasmine Absolute','Musk','Rose','Ylang Ylang','Patchouli'],
+   sizes:[{s:'10ml',p:32},{s:'30ml',p:72}],pairs:['p-ahihia','bo-ig'],badge:null},
+  {id:'p-ahihia',name:'AHIHIA',collection:'Good Scents',cat:'perfume',sub:'Crushed herb, wet earth, vetiver',img:'https://omaorganics.com/cdn/shop/files/IMG-4036_25887174-a861-4640-b570-bad2a1f1d909.jpg?v=1765903795',
+   why:'AHIHIA is the scent of a garden after dark — deep green, earthy, and a little mysterious. Vetiver and herb on wet soil. For people who want depth, not decoration.',
+   who:'The herbalist. The grounded one. If you reach for vetiver, patchouli, or anything that smells like the earth — start here.',
+   use:'Apply to pulse points. Develops beautifully over 4-6 hours.',
+   ingredients:['Cane Sugar Alcohol','Essential Oil Blend','Vetiver','Patchouli','Herb Accord','Cedarwood','Black Pepper'],
+   sizes:[{s:'10ml',p:32},{s:'30ml',p:72}],pairs:['p-ifuru','ss-as'],badge:null},
+  {id:'p-ubi',name:'UBI',collection:'Good Scents',cat:'perfume',sub:'Cedarwood, warm vanilla, skin',img:'https://omaorganics.com/cdn/shop/files/D2CEBD5C-6B68-437E-BB39-31E1500590B2.webp?v=1765903912',
+   why:'UBI smells like you, but better. A skin scent — cedarwood and vanilla that merge with your chemistry until people can\'t tell where the perfume ends and you begin. The "what are you wearing?" collector.',
+   who:'The minimalist who still wants compliments. If you want to be discovered up close, not announced from across the room.',
+   use:'Apply generously to pulse points. This is meant to be found, not projected.',
+   ingredients:['Cane Sugar Alcohol','Essential Oil Blend','Cedarwood','Vanilla','Sandalwood','Musk','Coconut'],
+   sizes:[{s:'10ml',p:32},{s:'30ml',p:72}],pairs:['p-mod','sahel'],badge:null},
+  {id:'p-mod',name:'MOD',collection:'Good Scents',cat:'perfume',sub:'Clean linen, bergamot, white tea',img:'https://omaorganics.com/cdn/shop/files/IMG-4036_5f7952e6-2a1c-4cb0-8aa2-8b6915274e5d.jpg?v=1765908161',
+   why:'MOD is deliberately clean — not blank, not boring. Bergamot and white tea on fresh linen. For people who believe simplicity is a statement, not a limitation.',
+   who:'The minimalist. If you like your scent to feel like an extension of clean skin rather than a layer on top.',
+   use:'Apply to pulse points. Beautiful as an everyday signature.',
+   ingredients:['Cane Sugar Alcohol','Essential Oil Blend','Bergamot','White Tea','Linen Accord','Cedarwood'],
+   sizes:[{s:'10ml',p:32},{s:'30ml',p:72}],pairs:['p-ubi','bo-mod'],badge:null},
+  {id:'p-solaire',name:'SOLAIRE',collection:'Good Scents',cat:'perfume',sub:'Bright citrus, linden blossom, soft glow',img:'https://omaorganics.com/cdn/shop/files/B60AF419-995B-43BE-B463-48E64F1E1AE4.png?v=1765903854',
+   why:'A sunbeam in scent form. SOLAIRE is luminous and golden, inspired by citrus groves at dawn and blossoms blooming under soft sunlight. Yuzu and pomelo open bright, then settle into linden blossom and mimosa — a scent that feels like warmth on your skin.',
+   who:'The optimist. If you gravitate toward light, warmth, and energy — if your mood improves in sunlight — SOLAIRE was made for your mornings.',
+   use:'Apply to pulse points — wrists, neck, décolletage. Beautiful as a daytime signature. Layers with Amalfi Sunrise body oil.',
+   ingredients:['Cane Sugar Alcohol','Essential Oil Blend','Yuzu','Pomelo','Bergamot','Litsea Cubeba','Basil','Mandarin','Linden Blossom Absolute','Mimosa Absolute','Narcissus Absolute','Jasmine Absolute','Tiare Flower Extract','Sandalwood','Vanilla Absolute'],
+   sizes:[{s:'10ml',p:32},{s:'50ml',p:140}],pairs:['p-ikuku','bo-as'],badge:null},
+  // BODY OILS (4)
+  {id:'bo-as',name:'AMALFI SUNRISE',collection:'Good Body',cat:'body',sub:'Botanical body oil — citrus, fig leaf, warm stone',img:'https://omaorganics.com/cdn/shop/files/607E8A89-57C9-4341-8F01-87BD432F18E5.png?v=1697304713',
+   why:'Amalfi Sunrise wears like a Mediterranean morning — bright citrus and fig leaf settling into sun-warmed skin. A body oil that absorbs fully, leaving your skin soft and lightly scented all day.',
+   who:'For anyone who wants their body care to feel like a moment, not a chore. Bright, warm, energizing — this sets the tone.',
+   use:'Warm a few pumps between palms. Massage into damp skin after showering for best absorption.',
+   ingredients:['Squalane','Jojoba Oil','Grapeseed Oil','Marula Oil','Sweet Almond Oil','Vitamin E','Citrus Essential Oil Blend','Fig Leaf Extract'],
+   sizes:[{s:'2oz',p:20},{s:'4oz',p:36}],pairs:['sg-as','ss-as'],badge:null},
+  {id:'bo-ig',name:'IMPERIAL GARDEN',collection:'Good Body',cat:'body',sub:'Botanical body oil — dark orchid, plum, velvet moss',img:null,
+   why:'Imperial Garden is deep, lush, and unapologetically rich. Dark orchid and plum settle into velvety moss on the skin. For evenings when you want your body to feel like silk and smell like midnight.',
+   who:'The one who likes things luxurious. If your taste runs dark and rich, this body oil matches your energy.',
+   use:'Warm between palms. Apply to damp skin for maximum absorption. Layers beautifully with IFURU perfume.',
+   ingredients:['Squalane','Orchid Oil','Orchid Glycerite','Jojoba Oil','Marula Oil','Babassu Oil','Grapeseed Oil','Vitamin E','Plum Extract'],
+   sizes:[{s:'2oz',p:20},{s:'4oz',p:36}],pairs:['p-ifuru','p-ahihia'],badge:null},
+  {id:'bo-mod',name:'MOD',collection:'Good Body',cat:'body',sub:'Botanical body oil — clean, deliberate, weightless',img:'https://omaorganics.com/cdn/shop/files/368A09F3-4027-4AD4-AC0F-E06FE004DD1D.jpg?v=1700669808',
+   why:'MOD body oil is deliberately minimal — clean, light, and designed to let your skin breathe. No heavy fragrance, no residue, no performance. Just deeply soft skin and a whisper of bergamot.',
+   who:'For the minimalist. If you want nourishment without noise, MOD is your everyday body oil.',
+   use:'Apply to damp skin after shower. Absorbs in seconds. Pairs with MOD perfume.',
+   ingredients:['Squalane','Jojoba Oil','Meadowfoam Seed Oil','MCT Oil','Grapeseed Oil','Vitamin E','Bergamot','White Tea Extract'],
+   sizes:[{s:'2oz',p:20},{s:'4oz',p:36}],pairs:['p-mod','sg-as'],badge:null},
+  {id:'bo-uto',name:'UTÒ',collection:'Good Body',cat:'body',sub:'Botanical body oil — warm resin, amber, vanilla',img:'https://omaorganics.com/cdn/shop/files/607E8A89-57C9-4341-8F01-87BD432F18E5.png?v=1697304713',
+   why:'The body oil extension of our signature UTÒ fragrance. Warm amber and resin on deeply nourished skin — designed to layer with UTÒ perfume for a scent that envelops you and lasts all day.',
+   who:'UTÒ lovers. Anyone who wants their body care and fragrance to work together as one ritual.',
+   use:'Massage into damp skin. Layer with UTÒ perfume on pulse points for full effect.',
+   ingredients:['Squalane','Jojoba Oil','Marula Oil','Sweet Almond Oil','Babassu Oil','Grapeseed Oil','Vitamin E','Amber Resin','Sandalwood'],
+   sizes:[{s:'2oz',p:20},{s:'4oz',p:36}],pairs:['p-uto','sahel'],badge:null},
+  // BODY CRÈME (1)
+  {id:'sahel',name:'SAHEL',collection:'Good Body',cat:'body',sub:'Whole-Skin Treatment Crème — UTÒ scented',img:null,
+   why:'Sahel is a whole-skin treatment crème inspired by the quiet resilience of the desert. Rich, non-greasy texture that melts into skin — from face to feet. Built on desert date oil and enriched with mushroom extract to support hydration and barrier balance. Designed as a serum and moisturizer in one. Scented with UTÒ: softly sweet, warm, and comforting.',
+   who:'Everyone. Sahel is the product that converts people. Most brands formulate for the face and dilute for the body. Sahel was designed as whole-skin care from the beginning. One formula. Many rituals.',
+   use:'For Face: Warm a pea-sized amount and press gently into skin as your final step. For Body: Massage into damp skin after bathing. For Targeted Areas: Apply to elbows, knees, heels, or anywhere needing reinforcement.',
+   ingredients:['Aloe','Aqua','Glycerin','Cupuaçu Butter','Shea Butter','Babassu Oil','Baobab Seed Oil','Marula Oil','Green Tea Oil','Passionfruit Seed Oil','Grapeseed Oil','Kalahari Melon Seed Oil','Jojoba Oil','Prickly Pear Seed Oil','Daikon Seed Extract','Sea Algae Extract','Mushroom Extract','Hyaluronic Acid','Vitamin E','Fragrance (Natural)'],
+   sizes:[{s:'150ml',p:42},{s:'Refill Pod',p:34}],pairs:['bo-uto','p-uto'],badge:null},
+  // FACE OILS (2)
+  {id:'fo-resolve',name:'RESOLVE',collection:'Good Face',cat:'face',sub:'Blemish Correcting Face Oil',img:'https://omaorganics.com/cdn/shop/files/IMG-6081.png?v=1732736815',
+   why:'RESOLVE was born from the belief that problematic skin doesn\'t need punishment — it needs nourishment. This concentrated blend of 18 botanical ingredients works with your skin\'s natural biology to balance sebum, calm breakouts, and restore clarity from within. No stripping. No over-drying. Just skin finding its way back to balance.',
+   who:'For anyone navigating breakouts, uneven texture, or dull and tired complexion. If your skin has been through a lot and you\'re ready for care that actually listens — this is your reset.',
+   use:'Warm 2-3 drops between palms and massage gently onto dewy cleansed face or after serum, 1-2 times a day.',
+   ingredients:['Squalane','Prickly Pear Seed Oil','Marula Oil','Ximenia Oil','Borage Seed Oil','Licorice Root Extract','Green Tea Oil','Sacha Inchi Oil','Bladderwrack Extract','Daikon Seed Extract','Laurus Nobilis','Tea Tree Oil','Copaiba Oil','Lavender Oil','Frankincense','Lemon Oil','CBD','Tocopherol (Vitamin E)'],
+   sizes:[{s:'10ml',p:32},{s:'50ml',p:100},{s:'100ml',p:180}],pairs:['fo-grace','sahel'],badge:null},
+  {id:'fo-grace',name:'GRACE',collection:'Good Face',cat:'face',sub:'Anti-Aging Face Oil',img:null,
+   why:'GRACE is formulated to reduce the appearance of fine lines and create a youthful look. Our powerful blend of natural oils nourishes and moisturizes skin, leaving it feeling soft and supple. Prickly pear seed oil, sea buckthorn, marula, orchid, and cacay — some of the rarest oils on earth working together.',
+   who:'For mature skin, or anyone who wants prevention. If firmness, glow, and protection matter to you — GRACE delivers without any of the harshness of conventional anti-aging.',
+   use:'Apply after cleansing; after (Plump) serum. To drive product in further and help reduce puffiness, apply with our proprietary Gua Sha tool.',
+   ingredients:['Squalane','Pomegranate Seed Oil','Rosehip Oil','Sea Buckthorn Oil','Marula Oil','Orchid Oil','Cacay Oil','Pomegranate Seed Oil','Tocopherol (Vitamin E)'],
+   sizes:[{s:'10ml',p:32},{s:'50ml',p:100},{s:'100ml',p:180}],pairs:['fo-resolve','p-ubi'],badge:null},
+  // SHOWER GELS (2)
+  {id:'sg-as',name:'AMALFI SUNRISE',collection:'Shower, Steam & Flame',cat:'cleanser',sub:'Botanical Shower Gel — neroli, rosemary, peppermint, vanilla',img:'https://omaorganics.com/cdn/shop/files/EBA21183-25FA-4F1A-8FC7-2A09FC955168.jpg?v=1732734983',
+   why:'A refreshing and invigorating blend of citrus and herbal notes that gently cleanses and nourishes the skin, leaving you feeling revitalized and rejuvenated. Our natural shower gel is pH balanced, packed with plant botanicals, essential oils and luxurious plant extracts — naturally scented for a non-toxic, aromatherapeutic experience.',
+   who:'For anyone who wants their shower to feel intentional, not automatic. The opening neroli and citrus wake you up; the vanilla and rosemary ground you. Pairs beautifully with Amalfi Sunrise body oil.',
+   use:'Lather onto wet skin. Rinse. Follow with Amalfi Sunrise body oil for the full ritual.',
+   ingredients:['Potassium Cocoate','Potassium Oleate','Glycerine','Decyl Glucoside','Citric Acid','Cane Sugar Alcohol','Arnica','Chamomile','Neroli Essential Oil','Rosemary Essential Oil','Peppermint Essential Oil','Vanilla Extract'],
+   sizes:[{s:'8oz',p:10}],pairs:['bo-as','ss-as'],badge:'Gel'},
+  {id:'sg-ed',name:'EMERALD DREAM',collection:'Shower, Steam & Flame',cat:'cleanser',sub:'Botanical Shower Gel — eucalyptus, green tea, chamomile',img:'https://omaorganics.com/cdn/shop/files/99D43051-6C1A-4C61-9A9E-7CF09F26894C.jpg?v=1732735618',
+   why:'Cool, herbal, and grounding — Emerald Dream turns your shower into a forest. Eucalyptus, green tea, and chamomile for a clean that feels like a deep breath and a long exhale. pH balanced and plant-based.',
+   who:'The one who wants calm. If you shower to decompress, not just to clean — this gel was designed for your evening wind-down.',
+   use:'Lather onto wet skin. Breathe deeply. Rinse. Follow with Imperial Garden or MOD body oil.',
+   ingredients:['Potassium Cocoate','Potassium Oleate','Glycerine','Decyl Glucoside','Citric Acid','Green Tea Oil','Eucalyptus Essential Oil','Peppermint Essential Oil','Chamomile Extract'],
+   sizes:[{s:'8oz',p:10}],pairs:['bo-ig','ss-ed'],badge:'Gel'},
+  // SHOWER STEAMERS (1)
+  {id:'ss-ed',name:'EMERALD DREAM',collection:'Shower, Steam & Flame',cat:'steamer',sub:'Aromatherapy Shower Steamers — eucalyptus, lavender, sea minerals',img:'https://omaorganics.com/cdn/shop/files/DDE4131E-8440-4DC4-9B17-16C3720CBA95.jpg?v=1764638388',
+   why:'A restorative shower ritual that feels like stepping into cool forest air. Each steamer releases a refreshing herbal mist that clears your mind, supports deep breathing, and resets your mood. Organic eucalyptus for mental clarity, organic lavender to ease tension, and mineral-rich bladderwrack for grounding.',
+   who:'For anyone who showers to decompress. If you need a moment of calm — nighttime showers, stressful days, or just a reset — drop one in and breathe.',
+   use:'Place one steamer on the shower floor, away from direct water. Let the steam activate it. Breathe deeply. Each jar contains 7 steamers (280g total).',
+   ingredients:['Sodium Bicarbonate','Citric Acid','Kaolin Clay','Arrowroot','Organic Menthol Crystals','Organic Witch Hazel','Eucalyptus Essential Oil','Lavender Essential Oil','Bladderwrack Root'],
+   sizes:[{s:'280g (7 steamers)',p:36}],pairs:['sg-ed','bo-ig'],badge:'Steamer'},
+  // CANDLE (1)
+  {id:'candle-as',name:'AMALFI SUNRISE',collection:'Shower, Steam & Flame',cat:'candle',sub:'Botanical Candle — 100% soy wax, essential oils',img:'https://omaorganics.com/cdn/shop/files/FullSizeRender_56e824fb-15f7-4353-99a7-7ba914be229c.jpg?v=1732732843',
+   why:'Step into sunlit citrus groves with Amalfi Sunrise — a candle that captures the vibrant spirit of the Amalfi Coast. Bright, zesty top notes of bitter orange, citron, and bergamot burst like the first rays of dawn. At its heart, delicate neroli mingles with refreshing peppermint, creating a crisp floral-mint harmony. The scent gently settles into a warm, creamy base of vanilla-infused oil, rounded with rosemary, bringing balance and comfort.',
+   who:'For the home ritualist. Anyone who believes the right scent can change the energy of a room. All natural soy wax — renewable, biodegradable, and soot free. No toxic additives, phthalates, parabens, or dyes. Ever.',
+   use:'Trim wick to ¼". Burn 2-3 hours at a time. Keep away from drafts. Fragrance Notes: Top: Bitter Orange · Citron · Bergamot · Peppermint. Heart: Neroli. Base: Vanilla · Rosemary.',
+   ingredients:['Soy Wax','Cotton Wick','Bitter Orange Essential Oil','Citron Essential Oil','Bergamot Essential Oil','Peppermint Essential Oil','Neroli Essential Oil','Vanilla Extract','Rosemary Essential Oil'],
+   sizes:[{s:'8oz',p:38}],pairs:['sg-as','bo-as'],badge:'Candle'},
+];
+
+// ===================== FULL INGREDIENT DATABASE =====================
+const INGREDIENTS = [
+  {name:'Arnica',latin:'Arnica Montana Flower Extract',desc:'Known for its powerful anti-inflammatory properties, it aids in reducing swelling and healing of the skin.'},
+  {name:'Babassu Oil',latin:'Orbignya Oleifera Seed Oil',desc:'A fast-absorbing oil that deeply hydrates the skin without leaving a greasy residue.'},
+  {name:'Bamboo Extract',latin:'Bambusa Vulgaris Extract',desc:'A potent extract known for its ability to hydrate the skin and provide essential minerals.'},
+  {name:'Benzoyl Alcohol',latin:'',desc:'A safe and gentle preservative that prevents the growth of harmful bacteria in skincare products.'},
+  {name:'Bladderwrack Extract',latin:'Fucus Vesiculosus',desc:'Mineral-rich sea botanical that stimulates collagen production from within.'},
+  {name:'Borage Seed Oil',latin:'Borago Officinalis Seed Oil',desc:'GLA-rich oil that calms inflammation and rebuilds the skin barrier.'},
+  {name:'Butterfly Pea Flower',latin:'Clitoria Ternatea Flower Extract',desc:'A rejuvenating extract that helps improve skin elasticity and reduce signs of aging.'},
+  {name:'CBD',latin:'Cannabidiol',desc:'Calms reactive skin and supports the body\'s natural balance, soothing inflammation.'},
+  {name:'Cacay Oil',latin:'Caryodendron Orinocense Seed Oil',desc:'A powerful anti-aging oil from the Amazon, rich in vitamins A, E, and essential fatty acids.'},
+  {name:'Calendula',latin:'Calendula Officinalis Flower Extract',desc:'Known for its skin-soothing and anti-inflammatory properties, promoting healing and regeneration.'},
+  {name:'Cane Sugar Alcohol',latin:'Organic Ethanol',desc:'A plant-derived solvent for extracts and active ingredients, with preservative properties.'},
+  {name:'Cera Bellina',latin:'Polyglyceryl-3 Beeswax',desc:'A derivative of beeswax that adds a smooth, luxurious feel and helps emulsify oils and water.'},
+  {name:'Chamomile',latin:'Chamomilla Recutita Flower Extract',desc:'A calming extract that soothes skin irritations and promotes a healthy glow.'},
+  {name:'Citric Acid',latin:'',desc:'A natural pH adjuster that balances skincare products, making them safe and comfortable.'},
+  {name:'Copaiba Oil',latin:'Copaifera Officinalis',desc:'Amazonian anti-inflammatory that soothes while promoting clarity.'},
+  {name:'Cupuaçu Butter',latin:'Theobroma Grandiflorum Seed Butter',desc:'A rich, creamy butter that deeply moisturizes, promoting skin elasticity.'},
+  {name:'Daikon Seed Extract',latin:'Raphanus Sativus Seed Extract',desc:'A lightweight, silky extract that provides moisture and a smooth finish.'},
+  {name:'Decyl Glucoside',latin:'',desc:'A mild, plant-derived surfactant that gently cleanses without causing dryness.'},
+  {name:'Frankincense',latin:'Boswellia Sacra',desc:'Ancient resin that tightens, tones, and promotes cellular renewal.'},
+  {name:'Glycerine',latin:'Glycerin',desc:'A powerful humectant that attracts water to the skin, helping maintain moisture balance.'},
+  {name:'Grapeseed Oil',latin:'Vitis Vinifera Seed Oil',desc:'Rich in antioxidants that protect skin from damage while moisturizing and nourishing.'},
+  {name:'Green Tea Oil',latin:'Camellia Sinensis Leaf Extract',desc:'Polyphenol-packed antioxidant shield that protects from environmental stressors.'},
+  {name:'Guava Leaf',latin:'Psidium Guajava Leaf Extract',desc:'An antioxidant-rich extract that protects from environmental damage and promotes natural glow.'},
+  {name:'Jojoba Oil',latin:'Simmondsia Chinensis Seed Oil',desc:'A versatile, easily absorbed oil that hydrates and balances the skin.'},
+  {name:'Laurus Nobilis',latin:'Bay Laurel',desc:'Aromatic botanical with antimicrobial properties that support clear, healthy skin.'},
+  {name:'Lavender Oil',latin:'Lavandula Angustifolia Oil',desc:'Known for its calming scent and soothing properties, it helps calm the skin and the senses.'},
+  {name:'Lemon Oil',latin:'Citrus Limon',desc:'Brightening and clarifying, with natural antiseptic properties.'},
+  {name:'Licorice Root Extract',latin:'Glycyrrhiza Glabra Root Oil',desc:'Brightens naturally and evens tone, fading dark spots without chemical intervention.'},
+  {name:'MCT Oil',latin:'Caprylic/Capric Triglyceride',desc:'Deeply moisturizing oil from coconut. Lightweight, easily absorbed, leaves skin soft.'},
+  {name:'Marshmallow Root',latin:'Althaea Officinalis Root Extract',desc:'Known for its skin-soothing and moisturizing properties, it softens and hydrates.'},
+  {name:'Marula Oil',latin:'Sclerocarya Birrea Seed Oil',desc:'Antioxidant-rich oil that protects against environmental damage while deeply nourishing.'},
+  {name:'Meadowfoam Seed Oil',latin:'Limnanthes Alba Seed Oil',desc:'A lightweight oil that locks in moisture and delivers nutrients deep into the skin.'},
+  {name:'Milk Thistle',latin:'Silybum Marianum Seed Extract',desc:'Known for its detoxifying properties, offering antioxidant protection.'},
+  {name:'Neem',latin:'Azadirachta Indica Leaf Extract',desc:'A powerful antibacterial and anti-inflammatory ingredient that promotes healthy skin.'},
+  {name:'Nettle',latin:'Urtica Dioica Extract',desc:'A detoxifying extract that clarifies the skin and enhances its natural radiance.'},
+  {name:'Oat Extract',latin:'Avena Sativa Kernel Extract',desc:'Known for its soothing and calming properties, reducing skin irritation and redness.'},
+  {name:'Orchid Glycerite',latin:'Orchis Mascula Flower Extract',desc:'An infusion of orchid flowers in glycerin, with moisturizing and protective properties.'},
+  {name:'Orchid Oil',latin:'Orchis Mascula Extract',desc:'A luxurious oil known for its reparative and protective properties.'},
+  {name:'Passionfruit Seed Oil',latin:'Passiflora Edulis Seed Oil',desc:'A lightweight oil that moisturizes the skin while balancing oil production.'},
+  {name:'Pomegranate Seed Oil',latin:'Punica Granatum Seed Oil',desc:'A rejuvenating oil rich in antioxidants that helps fight skin aging.'},
+  {name:'Potassium Citrate',latin:'',desc:'A pH adjuster that ensures the product is at the optimal pH for skin health.'},
+  {name:'Potassium Cocoate',latin:'Organic',desc:'A mild, plant-based soap from coconut oil that gently cleanses without stripping.'},
+  {name:'Potassium Oleate',latin:'Organic',desc:'A gentle, plant-based soap from sunflower oil that provides a soft and smooth texture.'},
+  {name:'Prickly Pear Seed Oil',latin:'Opuntia Ficus-Indica Seed Oil',desc:'One of the rarest oils — rich in Vitamin E with deep hydrating power and anti-aging benefits.'},
+  {name:'Rooibos',latin:'Aspalathus Linearis Leaf Extract',desc:'A powerful antioxidant-rich extract that protects skin from environmental damage.'},
+  {name:'Sacha Inchi Oil',latin:'Plukenetia Volubilis Seed Oil',desc:'Amazonian oil with the highest plant-based omega-3 — deeply regenerative.'},
+  {name:'Sodium Chloride',latin:'',desc:'Also known as sea salt, used as a thickening agent in skincare products.'},
+  {name:'Squalane',latin:'Olive-derived',desc:'Mirrors skin\'s natural oils. Absorbs instantly with zero residue.'},
+  {name:'Tea Tree Oil',latin:'Melaleuca Alternifolia',desc:'Antibacterial purification without stripping or drying.'},
+  {name:'Tocopherol',latin:'Vitamin E',desc:'A powerful antioxidant that protects from environmental damage and premature aging.'},
+  {name:'White Willow Bark',latin:'Salix Alba Bark Extract',desc:'Anti-inflammatory properties that help exfoliate and clarify the skin.'},
+  {name:'Witch Hazel',latin:'Hamamelis Virginiana Water',desc:'Skin soothing and astringent that tones and minimizes pores.'},
+  {name:'Ximenia Oil',latin:'Ximenia Americana Seed Oil',desc:'A rare, nourishing oil that moisturizes and softens while promoting elasticity.'},
+  {name:'Yellowdock Root',latin:'Rumex Crispus Root Extract',desc:'A purifying ingredient that helps cleanse and detoxify the skin.'},
+  {name:'Yuzu',latin:'Citrus Junos',desc:'A bright Japanese citrus prized for its uplifting, energizing aroma and antioxidant properties.'},
+  {name:'Pomelo',latin:'Citrus Maxima',desc:'A large, fragrant citrus that refreshes the senses and provides natural vitamin C.'},
+  {name:'Litsea Cubeba',latin:'Litsea Cubeba Fruit Oil',desc:'A tropical botanical with a bright, lemony scent known to promote focus and mental clarity.'},
+  {name:'Linden Blossom',latin:'Tilia Cordata Flower Extract',desc:'A gentle, honey-sweet floral that calms the mind and supports emotional balance.'},
+  {name:'Mimosa Absolute',latin:'Acacia Dealbata',desc:'A warm, powdery floral with a delicate sweetness that evokes comfort and optimism.'},
+  {name:'Narcissus Absolute',latin:'Narcissus Poeticus',desc:'A rare, heady floral with green and earthy undertones, adding depth to fragrance compositions.'},
+  {name:'Tiare Flower',latin:'Gardenia Taitensis',desc:'A Polynesian bloom with a rich, creamy tropical fragrance used in traditional beauty rituals.'},
+  {name:'Sodium Bicarbonate',latin:'',desc:'A gentle, natural effervescent agent that activates with water to release aromatic essential oils.'},
+  {name:'Kaolin Clay',latin:'',desc:'A soft, mineral-rich clay that gently purifies and soothes skin without stripping natural oils.'},
+  {name:'Arrowroot',latin:'Maranta Arundinacea',desc:'A natural starch that absorbs moisture and provides a silky, smooth texture.'},
+  {name:'Menthol Crystals',latin:'Mentha Arvensis',desc:'Cooling crystals derived from peppermint that open airways and invigorate the senses.'},
+];
+
+// ===================== CART =====================
+let cart = [];
+function addToCart(pid,sizeIdx,qty){
+  const prod = P.find(p=>p.id===pid);
+  if(!prod) return;
+  const sz = prod.sizes[sizeIdx||0];
+  const key = pid+'-'+sz.s;
+  const existing = cart.find(c=>c.key===key);
+  if(existing){ existing.qty += (qty||1); }
+  else { cart.push({key,pid,size:sz.s,price:sz.p,qty:qty||1}); }
+  updateCartUI(); openCart();
+}
+function removeFromCart(key){ cart=cart.filter(c=>c.key!==key); updateCartUI(); renderCart(); }
+function changeQty(key,delta){
+  const item=cart.find(c=>c.key===key);
+  if(!item)return;
+  item.qty=Math.max(1,item.qty+delta);
+  updateCartUI(); renderCart();
+}
+function updateCartUI(){
+  const count=cart.reduce((s,c)=>s+c.qty,0);
+  const el=document.getElementById('cartCount');
+  el.textContent=count; el.classList.toggle('show',count>0);
+}
+function renderCart(){
+  const body=document.getElementById('cartBody');
+  if(!cart.length){ body.innerHTML='<div class="cart-empty">Your cart is empty.<br>Good things are waiting.</div>'; }
+  else {
+    body.innerHTML=cart.map(c=>{
+      const prod=P.find(p=>p.id===c.pid);
+      const imgH=prod.img?`<img src="${prod.img}" alt="${prod.name}">`:`<div style="font-size:0.58rem;color:var(--clay);text-align:center;padding:6px;">${prod.name}</div>`;
+      return `<div class="ci"><div class="ci-img">${imgH}</div><div><div class="ci-name">${prod.name}</div><div class="ci-meta">${prod.collection} · ${c.size}</div><div class="ci-qty"><button onclick="changeQty('${c.key}',-1)">−</button><span>${c.qty}</span><button onclick="changeQty('${c.key}',1)">+</button></div></div><div class="ci-right"><div class="ci-price">$${c.price*c.qty}</div><button class="ci-rm" onclick="removeFromCart('${c.key}')">Remove</button></div></div>`;
+    }).join('');
+  }
+  document.getElementById('cartTotal').textContent='$'+cart.reduce((s,c)=>s+c.price*c.qty,0);
+}
+function openCart(){ document.getElementById('cartOverlay').classList.add('on'); document.getElementById('cartDrawer').classList.add('on'); renderCart(); }
+function closeCart(){ document.getElementById('cartOverlay').classList.remove('on'); document.getElementById('cartDrawer').classList.remove('on'); }
+function toggleCart(){ document.getElementById('cartDrawer').classList.contains('on')?closeCart():openCart(); }
+
+// ===================== SHOP FILTERS =====================
+function filterShop(cat,btn){
+  document.querySelectorAll('.sf-btn').forEach(b=>b.classList.remove('on'));
+  if(btn) btn.classList.add('on');
+  // Get all product cards and collection headers
+  const cards=document.querySelectorAll('.pc[data-cat]');
+  const sections=document.querySelectorAll('.shop-coll');
+  if(cat==='all'){
+    cards.forEach(c=>c.style.display='');
+    sections.forEach(s=>s.style.display='');
+    return;
+  }
+  if(cat==='match'){
+    // Show only matched products
+    const matchIds=(quizRecs||[]).map(([id])=>id);
+    sections.forEach(s=>s.style.display='none');
+    cards.forEach(c=>{
+      const pid=c.getAttribute('onclick').match(/openPD\('([^']+)'\)/);
+      if(pid && matchIds.includes(pid[1])){ c.style.display=''; c.closest('.shop-coll').style.display=''; }
+      else { c.style.display='none'; }
+    });
+    return;
+  }
+  // Normal category filter
+  cards.forEach(c=>{
+    c.style.display=c.dataset.cat===cat?'':'none';
+  });
+  sections.forEach(s=>{
+    const visible=[...s.querySelectorAll('.pc[data-cat]')].some(c=>c.style.display!=='none');
+    s.style.display=visible?'':'none';
+  });
+}
+
+// ===================== SEARCH =====================
+function toggleSearch(){
+  const el=document.getElementById('searchOverlay');
+  el.classList.toggle('on');
+  if(el.classList.contains('on')){ setTimeout(()=>document.getElementById('searchInput').focus(),100); }
+}
+function closeSearch(){ document.getElementById('searchOverlay').classList.remove('on'); document.getElementById('searchInput').value=''; }
+function doSearch(q){
+  const res=document.getElementById('searchResults');
+  if(!q.trim()){ res.innerHTML='<div class="sr-empty">Start typing to search the collection.</div>'; return; }
+  const term=q.toLowerCase();
+  const matches=P.filter(p=>p.name.toLowerCase().includes(term)||p.sub.toLowerCase().includes(term)||p.collection.toLowerCase().includes(term)||p.cat.toLowerCase().includes(term));
+  if(!matches.length){ res.innerHTML='<div class="sr-empty">No products found for "'+q+'"</div>'; return; }
+  res.innerHTML=matches.map(p=>{
+    const imgH=p.img?`<img src="${p.img}" alt="${p.name}">`:'';
+    return `<div class="sr-item" onclick="closeSearch();openPD('${p.id}')"><div class="sr-img">${imgH}</div><div><div class="sr-name">${p.name}</div><div class="sr-meta">${p.collection} — ${p.sub}</div></div><div class="sr-price">From $${p.sizes[0].p}</div></div>`;
+  }).join('');
+}
+
+// ===================== PRODUCT DETAIL =====================
+let pdQty=1,pdSizeIdx=0,pdCurrent=null;
+function openPD(pid){
+  const prod=P.find(p=>p.id===pid); if(!prod)return;
+  pdCurrent=prod; pdQty=1; pdSizeIdx=0;
+  const el=document.getElementById('pdO');
+  const imgEl=document.getElementById('pdImg');
+  if(prod.img) imgEl.innerHTML=`<img src="${prod.img}" alt="${prod.name}">`;
+  else imgEl.innerHTML=`<div style="font-family:var(--serif);font-style:italic;font-size:1.4rem;color:var(--clay);">${prod.name}</div>`;
+  document.getElementById('pdKicker').textContent=prod.collection;
+  document.getElementById('pdName').textContent=prod.name;
+  document.getElementById('pdTag').textContent=prod.sub;
+  if(prod.sizes.length>1) document.getElementById('pdPrice').innerHTML=`<span class="from">From </span>$${prod.sizes[0].p}`;
+  else document.getElementById('pdPrice').innerHTML=`$${prod.sizes[0].p}`;
+  document.getElementById('pdWhy').textContent=prod.why;
+  document.getElementById('pdWho').textContent=prod.who;
+  document.getElementById('pdUse').textContent=prod.use;
+  document.getElementById('pdSizes').innerHTML=prod.sizes.map((sz,i)=>`<button class="sz${i===0?' on':''}" onclick="pickSz(this,${i})"><span class="sv">${sz.s}</span><span class="sp">$${sz.p}</span></button>`).join('');
+  const sorted=[...prod.ingredients].sort((a,b)=>a.localeCompare(b));
+  document.getElementById('pdIngredients').innerHTML=sorted.map(ing=>`<div class="pd-ing-item">${ing}</div>`).join('');
+  const pairProds=(prod.pairs||[]).map(id=>P.find(p=>p.id===id)).filter(Boolean).slice(0,2);
+  const pairsEl=document.getElementById('pdPairs');
+  const pairsWrap=document.getElementById('pdPairsWrap');
+  if(pairProds.length){
+    pairsEl.innerHTML=pairProds.map(pp=>{
+      const pImg=pp.img?`<img src="${pp.img}" alt="${pp.name}">`:'';
+      return `<div class="pd-pair"><div class="pd-pair-browse" onclick="openPD('${pp.id}')"><div class="pd-pair-img">${pImg}</div><div><div class="pd-pair-name">${pp.name}</div><div class="pd-pair-price">${pp.collection} · From $${pp.sizes[0].p}</div></div></div><button class="pd-pair-cart" onclick="addToCart('${pp.id}',0,1)" title="Add to cart">+ Add</button></div>`;
+    }).join('');
+    pairsWrap.style.display='';
+  } else { pairsWrap.style.display='none'; }
+  document.getElementById('pdQtyVal').textContent='1';
+  switchPdTab('detail');
+  el.classList.add('on'); document.body.style.overflow='hidden';
+}
+function closePD(){ document.getElementById('pdO').classList.remove('on'); document.body.style.overflow=''; }
+function pickSz(el,idx){ pdSizeIdx=idx; document.querySelectorAll('#pdSizes .sz').forEach(s=>s.classList.remove('on')); el.classList.add('on'); }
+function pdChangeQty(d){ pdQty=Math.max(1,pdQty+d); document.getElementById('pdQtyVal').textContent=pdQty; }
+function pdAddToCart(){ if(pdCurrent) addToCart(pdCurrent.id,pdSizeIdx,pdQty); closePD(); }
+function switchPdTab(tab){
+  document.querySelectorAll('.pd-tab').forEach(t=>t.classList.toggle('on',t.dataset.tab===tab));
+  document.querySelectorAll('.pd-tab-body').forEach(t=>t.classList.toggle('on',t.dataset.tab===tab));
+}
+
+// ===================== QUIZ — AUTO-ADVANCE + PERSISTENCE =====================
+let qS=1,qAnswers={},quizDone=false,quizRecs=null;
+
+function openQuiz(){
+  document.getElementById('qzO').classList.add('on'); document.body.style.overflow='hidden';
+  if(quizDone){ qS=6; updateQz(); return; } // Show saved results
+  qS=1; updateQz();
+}
+function closeQuiz(){ document.getElementById('qzO').classList.remove('on'); document.body.style.overflow=''; }
+
+function pickO(el,step){
+  el.parentElement.querySelectorAll('.qs-o').forEach(o=>o.classList.remove('sel'));
+  el.classList.add('sel');
+  qAnswers[step]=el.dataset.val;
+  // Auto-advance after short delay (steps 1-4 only)
+  if(parseInt(step)<=4){
+    setTimeout(()=>{ qS++; updateQz(); },350);
+  }
+}
+
+function updateQz(){
+  document.querySelectorAll('.qs').forEach(s=>s.classList.remove('on'));
+  const nav=document.getElementById('qzNav');
+  if(qS<=5){
+    const s=document.querySelector(`.qs[data-s="${qS}"]`);
+    if(s) s.classList.add('on');
+    // Show nav only on step 5 (email)
+    nav.style.display=qS===5?'flex':'none';
+    document.querySelector('.qs-back').style.visibility=qS>1?'visible':'hidden';
+    document.querySelector('.qs-next').textContent='Get My Results';
+  } else {
+    buildRecs();
+    document.querySelector('.qs[data-s="done"]').classList.add('on');
+    nav.style.display='none';
+    quizDone=true;
+    // Show the "Your Match" filter button in shop
+    document.getElementById('matchFilter').style.display='';
+  }
+  document.querySelectorAll('.qz-bar').forEach((b,i)=>b.classList.toggle('on',i<qS));
+}
+function qzNext(){ if(qS<=5){qS++;updateQz();} }
+function qzBack(){ if(qS>1){qS--;updateQz();} }
+
+function buildRecs(){
+  let scores={};
+  P.forEach(p=>{ scores[p.id]=0; });
+  const skin=qAnswers['1']||'';
+  if(skin==='oily'){scores['fo-resolve']+=3;scores['sg-as']+=1;scores['sg-ed']+=1;}
+  if(skin==='dry'){scores['fo-grace']+=2;scores['sahel']+=3;scores['bo-uto']+=2;}
+  if(skin==='combo'){scores['fo-resolve']+=2;scores['fo-grace']+=1;scores['bo-mod']+=2;}
+  if(skin==='mature'){scores['fo-grace']+=3;scores['bo-uto']+=1;scores['sahel']+=1;}
+  const concern=qAnswers['2']||'';
+  if(concern==='blemish'){scores['fo-resolve']+=3;scores['sg-as']+=1;}
+  if(concern==='dull'){scores['fo-grace']+=2;scores['bo-as']+=2;}
+  if(concern==='aging'){scores['fo-grace']+=3;scores['bo-uto']+=1;}
+  if(concern==='dry'){scores['sahel']+=3;scores['bo-uto']+=2;scores['fo-grace']+=1;}
+  const scent=qAnswers['3']||'';
+  if(scent==='warm'){scores['p-uto']+=3;scores['bo-uto']+=2;scores['candle-as']+=1;}
+  if(scent==='fresh'){scores['p-ikuku']+=3;scores['p-solaire']+=3;scores['p-mod']+=2;scores['sg-as']+=1;}
+  if(scent==='floral'){scores['p-ifuru']+=3;scores['p-solaire']+=2;scores['p-ahihia']+=1;scores['bo-ig']+=2;}
+  if(scent==='clean'){scores['p-mod']+=3;scores['bo-mod']+=2;scores['p-ubi']+=1;}
+  const oil=qAnswers['4']||'';
+  if(oil==='love'){scores['fo-resolve']+=1;scores['fo-grace']+=1;}
+  if(oil==='curious'){scores['fo-resolve']+=2;}
+  if(oil==='nervous'){scores['fo-resolve']+=2;}
+  if(oil==='never'){scores['sahel']+=2;scores['candle-as']+=1;}
+  const sorted=Object.entries(scores).sort((a,b)=>b[1]-a[1]).filter(([,s])=>s>0).slice(0,4);
+  quizRecs=sorted;
+  const recsEl=document.getElementById('qzRecs');
+  recsEl.innerHTML=sorted.map(([id])=>{
+    const prod=P.find(p=>p.id===id); if(!prod)return '';
+    const imgH=prod.img?`<img src="${prod.img}" alt="${prod.name}">`:'';
+    return `<div class="qz-rec"><div class="qz-rec-img" onclick="closeQuiz();openPD('${prod.id}')">${imgH}</div><div style="flex:1;cursor:pointer;" onclick="closeQuiz();openPD('${prod.id}')"><div class="qz-rec-name">${prod.name}</div><div class="qz-rec-why">${prod.collection} — ${prod.sub}</div></div><div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;"><div class="qz-rec-price">$${prod.sizes[0].p}</div><button class="qz-rec-cart" onclick="addToCart('${prod.id}',0,1)">Add to Cart</button></div></div>`;
+  }).join('');
+}
+
+// ===================== PAGE NAV =====================
+const pageMap={home:'Home',shop:'Shop',xp:'Experiences',ing:'Ingredients',story:'Our Story',faq:'FAQ',shipping:'Shipping & Returns',privacy:'Privacy Policy',contact:'Contact'};
+function go(p){
+  document.querySelectorAll('.pg').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+  const el=document.getElementById('pg-'+p);
+  if(el)el.classList.add('on');
+  document.querySelectorAll('.tab').forEach(t=>{if(t.textContent===pageMap[p])t.classList.add('on');});
+  window.scrollTo({top:0,behavior:'smooth'});
+  setTimeout(initReveals,100);
+}
+
+// ===================== MISC =====================
+window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>12);});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePD();closeQuiz();closeCart();closeSearch();}});
+function toggleFaq(el){ el.parentElement.classList.toggle('open'); }
+function initReveals(){
+  const obs=new IntersectionObserver(entries=>{
+    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal:not(.visible)').forEach(el=>obs.observe(el));
+}
+initReveals();
+// Render ingredients page
+const ingEl=document.getElementById('ingGrid');
+if(ingEl) ingEl.innerHTML=INGREDIENTS.map(i=>`<div class="ig"><h4>${i.name}</h4>${i.latin?`<div class="lat">${i.latin}</div>`:''}<p>${i.desc}</p></div>`).join('');
+</script>
+
+</body>
+</html>
