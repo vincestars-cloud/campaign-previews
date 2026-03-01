@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Personalized FERS Retirement Income Analysis — Free</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #1B365D;
+  --navy-dark: #0F2240;
+  --navy-deeper: #0A1830;
+  --teal: #0D6E6E;
+  --teal-dark: #0A5A5A;
+  --gold: #C5A44E;
+  --gold-light: #F5E6B8;
+  --bg: #FFFFFF;
+  --bg-alt: #F8F9FA;
+  --bg-warm: #FDFCF9;
+  --text: #1A1A1A;
+  --text-muted: #5A5A5A;
+  --text-light: #7A7A7A;
+  --border: #E5E7EB;
+  --red: #C0392B;
+  --green: #1A7A4C;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'DM Serif Display', Georgia, serif;
+  line-height: 1.2;
+  font-weight: 400;
+}
+
+.container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+.container-narrow { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+.eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+/* ── Announcement Bar ── */
+.announcement {
+  background: var(--navy-deeper);
+  color: #fff;
+  text-align: center;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 500;
+}
+.announcement span { color: var(--gold); font-weight: 700; }
+
+/* ── Nav ── */
+.nav {
+  background: var(--bg);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: box-shadow 0.3s;
+}
+.nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.06); }
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-logo {
+  font-family: 'DM Serif Display', serif;
+  font-size: 18px;
+  color: var(--navy);
+}
+.nav-step {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+.nav-step span { color: var(--teal); }
+.nav-trust {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.nav-trust em { font-style: normal; color: var(--green); }
+@media (max-width: 768px) { .nav-trust { display: none; } }
+
+/* ── Hero ── */
+.hero {
+  background: linear-gradient(135deg, var(--navy-deeper) 0%, var(--navy) 100%);
+  color: #fff;
+  padding: 72px 0 88px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -40%;
+  right: -15%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(13,110,110,0.06);
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 440px;
+  gap: 56px;
+  align-items: start;
+}
+.hero .eyebrow { color: var(--gold); }
+.hero h1 {
+  font-size: 40px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  max-width: 540px;
+}
+.hero h1 em { font-style: normal; color: var(--gold); }
+.hero-sub {
+  font-size: 17px;
+  color: rgba(255,255,255,0.75);
+  max-width: 500px;
+  margin-bottom: 24px;
+  line-height: 1.7;
+}
+.hero-trust {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  font-weight: 500;
+}
+.hero-trust-item .dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green);
+}
+.hero-stats {
+  display: flex;
+  gap: 36px;
+  margin-top: 32px;
+}
+.hero-stat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 32px;
+  color: var(--gold);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 12px;
+  color: rgba(255,255,255,0.5);
+  margin-top: 4px;
+}
+
+@media (max-width: 960px) {
+  .hero { padding: 48px 0 56px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .hero h1 { font-size: 30px; }
+}
+
+/* ── Form Card ── */
+.form-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 32px 28px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 10;
+}
+.form-badge {
+  display: inline-block;
+  background: rgba(26,122,76,0.1);
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 12px;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+.form-card h3 {
+  font-size: 22px;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+.form-card .form-sub {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+.form-group { margin-bottom: 14px; }
+.form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 5px;
+}
+.form-group select,
+.form-group input[type="email"] {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: 'Inter', sans-serif;
+  color: var(--text);
+  background: var(--bg-alt);
+  transition: border-color 0.2s;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.form-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='7'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235A5A5A' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+.form-group select:focus,
+.form-group input:focus { outline: none; border-color: var(--teal); background: #fff; }
+.radio-group { display: flex; flex-direction: column; gap: 6px; }
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 13px;
+  background: var(--bg-alt);
+}
+.radio-option:hover { border-color: var(--teal); background: #fff; }
+.radio-option input[type="radio"] { accent-color: var(--teal); width: 15px; height: 15px; }
+.form-btn {
+  width: 100%;
+  padding: 15px;
+  background: var(--teal);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 6px;
+}
+.form-btn:hover { background: var(--teal-dark); }
+.form-fine {
+  text-align: center;
+  font-size: 11px;
+  color: var(--text-light);
+  margin-top: 10px;
+}
+
+/* ── Stats Bar ── */
+.stats-bar {
+  background: var(--bg);
+  padding: 36px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: 56px;
+  flex-wrap: wrap;
+}
+.stat-item { text-align: center; }
+.stat-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 36px;
+  color: var(--navy);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+/* ── Section Styles ── */
+.section { padding: 96px 0; }
+.section-alt { background: var(--bg-alt); }
+.section-dark { background: linear-gradient(135deg, var(--navy-deeper), var(--navy)); color: #fff; }
+.section-warm { background: var(--bg-warm); }
+
+.section .eyebrow { color: var(--teal); }
+.section-dark .eyebrow { color: var(--gold); }
+
+.section h2 {
+  font-size: 34px;
+  color: var(--navy);
+  margin-bottom: 16px;
+  max-width: 700px;
+}
+.section-dark h2 { color: #fff; }
+
+.section-sub {
+  font-size: 17px;
+  color: var(--text-muted);
+  max-width: 640px;
+  margin-bottom: 48px;
+  line-height: 1.7;
+}
+.section-dark .section-sub { color: rgba(255,255,255,0.65); }
+
+@media (max-width: 768px) {
+  .section { padding: 64px 0; }
+  .section h2 { font-size: 26px; }
+}
+
+/* ── Feature Cards ── */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.feature-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  transition: box-shadow 0.2s;
+}
+.feature-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+.feature-icon {
+  width: 44px;
+  height: 44px;
+  background: linear-gradient(135deg, var(--navy), var(--teal));
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  font-size: 20px;
+}
+.feature-card h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.feature-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+@media (max-width: 900px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .features-grid { grid-template-columns: 1fr; } }
+
+/* ── Sample Analysis ── */
+.analysis-walkthrough {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+.analysis-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.analysis-card-header {
+  background: var(--bg-alt);
+  padding: 14px 20px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.analysis-page-num {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--teal);
+}
+.analysis-card-body { padding: 24px 20px; }
+.analysis-card-body h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+.analysis-card-body p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+.analysis-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+.analysis-row:last-child { border-bottom: none; }
+.analysis-row .label { color: var(--text-muted); }
+.analysis-row .value { font-weight: 700; color: var(--text); }
+.analysis-row.highlight .label { color: var(--red); font-weight: 600; }
+.analysis-row.highlight .value { color: var(--red); font-weight: 700; }
+.analysis-row.success .label { color: var(--green); font-weight: 600; }
+.analysis-row.success .value { color: var(--green); font-weight: 700; }
+@media (max-width: 768px) { .analysis-walkthrough { grid-template-columns: 1fr; } }
+
+/* ── Comparison ── */
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+.comp-card {
+  border-radius: 12px;
+  padding: 32px 28px;
+}
+.comp-card.generic {
+  background: var(--bg-alt);
+  border: 1px solid var(--border);
+}
+.comp-card.ours {
+  background: #fff;
+  border: 2px solid var(--teal);
+  box-shadow: 0 8px 24px rgba(13,110,110,0.1);
+}
+.comp-card h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.comp-card.generic h4 { color: var(--text-muted); }
+.comp-card.ours h4 { color: var(--teal); }
+.comp-list { list-style: none; }
+.comp-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+.comp-list li:last-child { border-bottom: none; }
+.comp-icon { flex-shrink: 0; font-size: 14px; margin-top: 2px; }
+@media (max-width: 768px) { .comparison-grid { grid-template-columns: 1fr; } }
+
+/* ── Couples ── */
+.couples-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.couples-list { list-style: none; }
+.couples-list li {
+  display: flex;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+}
+.couples-list li:last-child { border-bottom: none; }
+.couples-check {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  background: rgba(13,110,110,0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal);
+  font-size: 12px;
+  font-weight: 700;
+  margin-top: 3px;
+}
+.couples-quote {
+  background: var(--bg-alt);
+  border-left: 4px solid var(--gold);
+  padding: 28px;
+  border-radius: 0 12px 12px 0;
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  color: var(--navy);
+  line-height: 1.5;
+}
+.couples-quote .attr {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 12px;
+  font-weight: 500;
+}
+@media (max-width: 768px) { .couples-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+/* ── Urgency Cards ── */
+.urgency-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.urgency-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+  border-top: 3px solid var(--gold);
+}
+.urgency-card h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+.urgency-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+@media (max-width: 768px) { .urgency-grid { grid-template-columns: 1fr; } }
+
+/* ── Trust ── */
+.trust-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: start;
+}
+.trust-points { list-style: none; }
+.trust-points li {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  font-size: 15px;
+}
+.trust-points li:last-child { border-bottom: none; }
+@media (max-width: 768px) { .trust-grid { grid-template-columns: 1fr; gap: 28px; } }
+
+/* ── Delay Math ── */
+.delay-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  text-align: center;
+}
+.delay-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 32px 24px;
+}
+.delay-num {
+  font-family: 'DM Serif Display', serif;
+  font-size: 40px;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.delay-card h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.delay-card p {
+  font-size: 13px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.5;
+}
+@media (max-width: 768px) { .delay-cards { grid-template-columns: 1fr; } }
+
+/* ── Testimonials ── */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+.testimonial-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 28px 24px;
+}
+.testimonial-quote {
+  font-size: 44px;
+  font-family: 'DM Serif Display', serif;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+.testimonial-card p {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.7;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.testimonial-author { font-size: 14px; font-weight: 700; color: var(--navy); }
+.testimonial-role { font-size: 13px; color: var(--text-muted); }
+.testimonial-badge {
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--green);
+  background: rgba(26,122,76,0.08);
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+@media (max-width: 900px) { .testimonials-grid { grid-template-columns: 1fr; } }
+
+/* ── Process Steps ── */
+.steps-row {
+  display: flex;
+  gap: 28px;
+  align-items: flex-start;
+}
+.step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+}
+.step::after {
+  content: '';
+  position: absolute;
+  top: 26px;
+  right: -14px;
+  width: 28px;
+  height: 2px;
+  background: var(--border);
+}
+.step:last-child::after { display: none; }
+.step-num {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold);
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+.step h4 {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.step p { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
+@media (max-width: 640px) {
+  .steps-row { flex-direction: column; gap: 20px; }
+  .step::after { display: none; }
+  .step { text-align: left; display: flex; gap: 16px; align-items: flex-start; }
+  .step-num { margin: 0; flex-shrink: 0; width: 40px; height: 40px; font-size: 16px; }
+}
+
+/* ── FAQ ── */
+.faq-list { max-width: 720px; }
+.faq-item { border-bottom: 1px solid var(--border); }
+.faq-question {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 22px 0;
+  background: none;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+}
+.faq-question .icon {
+  font-size: 18px;
+  color: var(--teal);
+  transition: transform 0.3s;
+  flex-shrink: 0;
+  margin-left: 16px;
+}
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+.faq-answer.open { max-height: 300px; padding-bottom: 20px; }
+.faq-answer p { font-size: 14px; color: var(--text-muted); line-height: 1.7; }
+
+/* ── Pull Quote ── */
+.pull-quote-section {
+  padding: 64px 0;
+  background: var(--bg-warm);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.pull-quote {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+.pull-quote blockquote {
+  font-family: 'DM Serif Display', serif;
+  font-size: 24px;
+  color: var(--navy);
+  line-height: 1.5;
+  font-style: italic;
+}
+.pull-quote .attr {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 16px;
+  font-weight: 500;
+}
+
+/* ── Final CTA ── */
+.final-cta {
+  padding: 96px 0;
+  background: linear-gradient(135deg, var(--navy-deeper), var(--navy));
+  color: #fff;
+  text-align: center;
+}
+.final-cta .eyebrow { color: var(--gold); }
+.final-cta h2 { color: #fff; margin: 0 auto 16px; }
+.final-cta .cta-sub {
+  font-size: 17px;
+  color: rgba(255,255,255,0.65);
+  max-width: 560px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+}
+.final-form-wrap {
+  max-width: 480px;
+  margin: 0 auto;
+}
+.pill-row {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+.pill {
+  padding: 6px 14px;
+  background: rgba(197,164,78,0.15);
+  border: 1px solid rgba(197,164,78,0.25);
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 28px 0;
+  background: var(--navy-deeper);
+  color: rgba(255,255,255,0.4);
+  font-size: 12px;
+  text-align: center;
+}
+
+/* ── Animations ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="announcement">
+  <span>Personalized for You</span> &mdash; Your exact FERS numbers, TSP options, and income gap analysis
+</div>
+
+<!-- Nav -->
+<nav class="nav" id="nav">
+  <div class="container nav-inner">
+    <div class="nav-logo">Federal Retirement Analysis</div>
+    <div class="nav-step">Step <span>3 of 3</span> &mdash; Product Aware</div>
+    <div class="nav-trust">
+      <span><em>&#10003;</em> No sales call</span>
+      <span><em>&#10003;</em> Free, no obligation</span>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Free Personalized Analysis</div>
+        <h1>See Your <em>Exact</em> FERS Retirement Numbers &mdash; Personalized for Your Situation</h1>
+        <p class="hero-sub">Not a generic calculator. A personalized retirement income analysis built from your GS-level, years of creditable service, and TSP balance &mdash; prepared by FERS retirement specialists.</p>
+        <div class="hero-trust">
+          <div class="hero-trust-item"><span class="dot"></span> Prepared by retirement specialists</div>
+          <div class="hero-trust-item"><span class="dot"></span> No sales call required</div>
+          <div class="hero-trust-item"><span class="dot"></span> Free, no obligation</div>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <div class="hero-stat-num">2,000+</div>
+            <div class="hero-stat-label">Analyses completed</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">97%</div>
+            <div class="hero-stat-label">Satisfaction rate</div>
+          </div>
+          <div>
+            <div class="hero-stat-num">12 min</div>
+            <div class="hero-stat-label">Average review time</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Form Card -->
+      <div class="form-card" id="get-analysis">
+        <div class="form-badge">Free &mdash; No Advisor Contact</div>
+        <h3>Get Your Personalized Analysis</h3>
+        <p class="form-sub">Answer 5 questions. We build your numbers.</p>
+        <form id="main-form">
+          <div class="form-group">
+            <label>Your Age Bracket</label>
+            <select name="age" required>
+              <option value="" disabled selected>Select age range</option>
+              <option>50 &ndash; 54</option>
+              <option>55 &ndash; 59</option>
+              <option>60 &ndash; 62</option>
+              <option>63+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Years of Federal Service</label>
+            <select name="service" required>
+              <option value="" disabled selected>Select years</option>
+              <option>Under 10 years</option>
+              <option>10 &ndash; 19 years</option>
+              <option>20 &ndash; 29 years</option>
+              <option>30+ years</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Approximate TSP Balance</label>
+            <select name="tsp" required>
+              <option value="" disabled selected>Select balance</option>
+              <option>Under USD 100K</option>
+              <option>USD 100K &ndash; 300K</option>
+              <option>USD 300K &ndash; 500K</option>
+              <option>USD 500K &ndash; 1M</option>
+              <option>Over USD 1M</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Biggest Retirement Concern</label>
+            <div class="radio-group">
+              <label class="radio-option"><input type="radio" name="concern" value="income-gap" required> Income gap after retirement</label>
+              <label class="radio-option"><input type="radio" name="concern" value="tsp"> TSP rollover / withdrawal decisions</label>
+              <label class="radio-option"><input type="radio" name="concern" value="market"> Market risk / protecting savings</label>
+              <label class="radio-option"><input type="radio" name="concern" value="tax"> Tax strategy in retirement</label>
+              <label class="radio-option"><input type="radio" name="concern" value="survivor"> Survivor benefit elections</label>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Your Email Address</label>
+            <input type="email" name="email" placeholder="your.name@agency.gov" required>
+          </div>
+          <button type="submit" class="form-btn">Get My Free Personalized Analysis</button>
+          <p class="form-fine">No sales call. No spam. Your numbers, your decision.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+  <div class="container">
+    <div class="stats-row">
+      <div class="stat-item">
+        <div class="stat-num">2,000+</div>
+        <div class="stat-label">Analyses completed</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">USD 2,200</div>
+        <div class="stat-label">Average gap found/mo</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">12 min</div>
+        <div class="stat-label">Avg time to review</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">97%</div>
+        <div class="stat-label">Satisfaction rate</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Your Analysis Includes -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Your Analysis Includes</div>
+    <h2>Everything You Need to Make a Confident Decision</h2>
+    <p class="section-sub">This isn't a generic calculator. Each section uses YOUR numbers &mdash; your GS-level, your years of creditable service, your TSP balance, your situation.</p>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">&#128200;</div>
+        <h4>Your FERS Annuity Computation</h4>
+        <p>Your high-3 average salary &times; your years of creditable service &times; your multiplier (1% or 1.1%). Exact monthly annuity before and after taxes.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128176;</div>
+        <h4>Your TSP Income Projection</h4>
+        <p>All 4 strategies modeled with YOUR balance: stay in TSP, IRA rollover, TSP annuity purchase, and income floor. Side-by-side with fees and tax impact.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128197;</div>
+        <h4>Your Social Security Scenarios</h4>
+        <p>Claiming at 62 vs. 67 vs. 70 with YOUR estimated benefit. Total lifetime income comparison showing which timing maximizes your retirement.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128313;</div>
+        <h4>Your FERS Supplement Timeline</h4>
+        <p>YOUR MRA to age 62 bridge. Estimated supplement amount, the exact cliff date, the earnings test threshold, and what happens when it vanishes.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#127968;</div>
+        <h4>Your Income Floor Calculation</h4>
+        <p>Exactly how much of YOUR TSP to allocate to a fixed annuity to cover 100% of essential expenses. The rest stays invested for growth.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">&#128106;</div>
+        <h4>Your Survivor Benefit Analysis</h4>
+        <p>Cost vs. protection with YOUR numbers. What a full, partial, or no survivor benefit means for your annuity and your spouse's security.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sample Analysis Walkthrough -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow">Sample Analysis</div>
+    <h2>What Your Analysis Looks Like &mdash; A Real Example</h2>
+    <p class="section-sub">Here's what a personalized analysis shows for a GS-13 Step 10 with 25 years of service and a USD 450K TSP balance.</p>
+    <div class="analysis-walkthrough">
+      <div class="analysis-card">
+        <div class="analysis-card-header">
+          <span class="analysis-page-num">Page 1 of 6</span>
+          <span style="font-size:12px;color:var(--text-muted);">FERS Annuity</span>
+        </div>
+        <div class="analysis-card-body">
+          <h4>Your FERS Annuity Computation</h4>
+          <div class="analysis-row"><span class="label">High-3 average salary</span><span class="value">USD 116,000</span></div>
+          <div class="analysis-row"><span class="label">Creditable service</span><span class="value">25 years</span></div>
+          <div class="analysis-row"><span class="label">Multiplier (under 62)</span><span class="value">1.0%</span></div>
+          <div class="analysis-row"><span class="label">Annual annuity</span><span class="value">USD 29,000</span></div>
+          <div class="analysis-row"><span class="label">Monthly (gross)</span><span class="value">USD 2,417</span></div>
+          <div class="analysis-row"><span class="label">After FEHB + taxes (est.)</span><span class="value">USD 1,950</span></div>
+        </div>
+      </div>
+      <div class="analysis-card">
+        <div class="analysis-card-header">
+          <span class="analysis-page-num">Page 2 of 6</span>
+          <span style="font-size:12px;color:var(--text-muted);">Income Gap</span>
+        </div>
+        <div class="analysis-card-body">
+          <h4>Your Retirement Income Gap</h4>
+          <div class="analysis-row"><span class="label">FERS annuity (net)</span><span class="value">USD 1,950/mo</span></div>
+          <div class="analysis-row"><span class="label">Social Security (at 67)</span><span class="value">USD 2,400/mo</span></div>
+          <div class="analysis-row"><span class="label">Total guaranteed income</span><span class="value">USD 4,350/mo</span></div>
+          <div class="analysis-row"><span class="label">Current take-home</span><span class="value">USD 6,800/mo</span></div>
+          <div class="analysis-row highlight"><span class="label">Monthly gap</span><span class="value">- USD 2,450</span></div>
+          <div class="analysis-row highlight"><span class="label">Annual gap</span><span class="value">- USD 29,400</span></div>
+        </div>
+      </div>
+      <div class="analysis-card">
+        <div class="analysis-card-header">
+          <span class="analysis-page-num">Page 3 of 6</span>
+          <span style="font-size:12px;color:var(--text-muted);">TSP Options</span>
+        </div>
+        <div class="analysis-card-body">
+          <h4>Your TSP Strategy Comparison</h4>
+          <p>With a USD 450K TSP balance, here's what each strategy produces:</p>
+          <div class="analysis-row"><span class="label">4% withdrawal</span><span class="value">USD 1,500/mo</span></div>
+          <div class="analysis-row"><span class="label">TSP annuity purchase</span><span class="value">USD 2,430/mo</span></div>
+          <div class="analysis-row"><span class="label">Monthly payments (25yr)</span><span class="value">USD 2,000/mo</span></div>
+          <div class="analysis-row success"><span class="label">Income floor (USD 180K)</span><span class="value">USD 980/mo guaranteed</span></div>
+          <p style="font-size:13px;color:var(--text-muted);margin-top:8px;">+ remaining USD 270K stays invested for growth</p>
+        </div>
+      </div>
+      <div class="analysis-card">
+        <div class="analysis-card-header">
+          <span class="analysis-page-num">Pages 4-6</span>
+          <span style="font-size:12px;color:var(--text-muted);">Timeline + Recommendations</span>
+        </div>
+        <div class="analysis-card-body">
+          <h4>FERS Supplement + Social Security + Survivor Benefit</h4>
+          <p>The remaining pages cover:</p>
+          <div class="analysis-row"><span class="label">FERS Supplement (MRA-62)</span><span class="value">~USD 1,100/mo</span></div>
+          <div class="analysis-row"><span class="label">Cliff date</span><span class="value">Age 62</span></div>
+          <div class="analysis-row"><span class="label">SS at 62 vs 67 vs 70</span><span class="value">USD 1,680 / 2,400 / 2,976</span></div>
+          <div class="analysis-row"><span class="label">Survivor benefit cost</span><span class="value">10% annuity reduction</span></div>
+          <div class="analysis-row"><span class="label">Survivor benefit value</span><span class="value">50% of your annuity for life</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- What Makes This Different -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Why This Is Different</div>
+    <h2>Generic Retirement Calculator vs. Our FERS-Specific Analysis</h2>
+    <p class="section-sub">Most retirement tools are built for the general public. Ours is built for one person: the FERS federal employee approaching separation.</p>
+    <div class="comparison-grid">
+      <div class="comp-card generic">
+        <h4>&#10060; What HR / OPM Gives You</h4>
+        <ul class="comp-list">
+          <li><span class="comp-icon">&#8226;</span> 200-page OPM handbook with no personalization</li>
+          <li><span class="comp-icon">&#8226;</span> Generic FERS annuity formula without your numbers</li>
+          <li><span class="comp-icon">&#8226;</span> No TSP strategy comparison</li>
+          <li><span class="comp-icon">&#8226;</span> No income gap calculation</li>
+          <li><span class="comp-icon">&#8226;</span> No FERS Supplement cliff timeline</li>
+          <li><span class="comp-icon">&#8226;</span> No Social Security timing analysis</li>
+          <li><span class="comp-icon">&#8226;</span> No survivor benefit cost/value comparison</li>
+          <li><span class="comp-icon">&#8226;</span> HR processes paperwork &mdash; they don't advise</li>
+        </ul>
+      </div>
+      <div class="comp-card ours">
+        <h4>&#10004; Your Personalized Analysis</h4>
+        <ul class="comp-list">
+          <li><span class="comp-icon" style="color:var(--green);">&#10003;</span> 6-page analysis built from YOUR numbers</li>
+          <li><span class="comp-icon" style="color:var(--green);">&#10003;</span> Your exact annuity computation (high-3 &times; service &times; %)</li>
+          <li><span class="comp-icon" style="color:var(--green);">&#10003;</span> 4 TSP strategies compared with YOUR balance</li>
+          <li><span class="comp-icon" style="color:var(--green);">&#10003;</span> Your monthly income gap &mdash; exact dollar amount</li>
+          <li><span class="comp-icon" style="color:var(--green);">&#10003;</span> Your FERS Supplement timeline with cliff date</li>
+          <li><span class="comp-icon" style="color:var(--green);">&#10003;</span> Your SS at 62/67/70 with lifetime comparison</li>
+          <li><span class="comp-icon" style="color:var(--green);">&#10003;</span> Survivor benefit: your cost vs. spouse's protection</li>
+          <li><span class="comp-icon" style="color:var(--green);">&#10003;</span> Built by FERS specialists, not HR generalists</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pull Quote -->
+<div class="pull-quote-section">
+  <div class="container">
+    <div class="pull-quote">
+      <blockquote>&ldquo;Nobody at HR ever showed me the full picture. I was counting down to my MRA thinking everything was handled. It wasn't.&rdquo;</blockquote>
+      <div class="attr">&mdash; Former GS-14, DoD Civilian, 28 years of service</div>
+    </div>
+  </div>
+</div>
+
+<!-- Why This Week Matters -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow">The Window Is Open</div>
+    <h2>Three Reasons This Week Matters More Than Next Year</h2>
+    <p class="section-sub">Federal retirement planning is time-sensitive. The decisions you make (or avoid) in the months before separation compound over 25+ years of retirement.</p>
+    <div class="urgency-grid">
+      <div class="urgency-card">
+        <h4>TSP Allocation Decisions</h4>
+        <p>Every month your TSP sits in the wrong allocation &mdash; too aggressive or too conservative &mdash; costs you. A bear market in year one of retirement (sequence risk) can permanently damage a withdrawal strategy. Structuring your income floor NOW protects you.</p>
+      </div>
+      <div class="urgency-card">
+        <h4>The FERS Supplement Cliff</h4>
+        <p>If you don't plan for the supplement cliff at 62, you'll burn through TSP faster than expected. Every month of delay in planning means less time to prepare for the USD 1,000-1,500/month income drop that happens on your 62nd birthday.</p>
+      </div>
+      <div class="urgency-card">
+        <h4>Social Security Timing Compounds</h4>
+        <p>Each year you delay past 62 increases your benefit ~7%. The optimal claiming strategy depends on your FERS annuity, TSP income, and health. The earlier you analyze this, the more options you have to coordinate all three income sources.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Trust Section -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Why Trust Us</div>
+    <h2>We Are Not Insurance Salespeople</h2>
+    <div class="trust-grid">
+      <ul class="trust-points">
+        <li>
+          <span class="couples-check">&#10003;</span>
+          <span><strong>Education-first mission.</strong> We built this because nobody else provides FERS-specific retirement income analysis to federal employees for free. OPM doesn't. HR doesn't. Most advisors don't understand FERS.</span>
+        </li>
+        <li>
+          <span class="couples-check">&#10003;</span>
+          <span><strong>No product recommendations.</strong> Your analysis shows you the math &mdash; income sources, gaps, strategies. We don't recommend specific insurance companies, annuity products, or IRA providers.</span>
+        </li>
+        <li>
+          <span class="couples-check">&#10003;</span>
+          <span><strong>No advisor contact unless you request it.</strong> You'll get your analysis by email. Review it on your own time. If you want to talk to someone, that option exists in a follow-up email &mdash; but nobody will call you.</span>
+        </li>
+        <li>
+          <span class="couples-check">&#10003;</span>
+          <span><strong>Your numbers, your decision.</strong> We give you the clearest possible picture of your federal retirement income. What you do with that information is entirely up to you.</span>
+        </li>
+      </ul>
+      <div class="couples-quote">
+        &ldquo;Every advisor just wants my TSP money. This was the first time someone showed me my numbers without trying to sell me something.&rdquo;
+        <div class="attr">&mdash; GS-13, IRS, 24 years of service</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Couples Section -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow">The Conversation Starter</div>
+    <h2>Bring Your Spouse. This Analysis Answers the Questions You've Been Avoiding.</h2>
+    <div class="couples-grid">
+      <ul class="couples-list">
+        <li>
+          <span class="couples-check">&#10003;</span>
+          <span><strong>Survivor benefit election:</strong> Take a 5-10% annuity reduction so your spouse receives 25-50% of your annuity for life? Or skip it and invest the difference? The analysis shows the exact cost and value.</span>
+        </li>
+        <li>
+          <span class="couples-check">&#10003;</span>
+          <span><strong>Social Security coordination:</strong> If both spouses have benefits, coordinating claiming ages can add USD 50,000-100,000+ in lifetime income. The analysis models the optimal timing.</span>
+        </li>
+        <li>
+          <span class="couples-check">&#10003;</span>
+          <span><strong>FEHB continuation:</strong> Your federal health insurance continues into retirement &mdash; but the premium structure changes. The analysis factors FEHB costs into your income projection.</span>
+        </li>
+        <li>
+          <span class="couples-check">&#10003;</span>
+          <span><strong>TSP beneficiary decisions:</strong> Rollover, inherit, or withdraw? The tax implications differ dramatically. Your analysis covers the options for both of you.</span>
+        </li>
+      </ul>
+      <div class="couples-quote">
+        &ldquo;My wife and I had been arguing about retirement for two years. We sat down with the analysis and agreed on a plan in one evening. The numbers settled the debate.&rdquo;
+        <div class="attr">&mdash; GS-14, DoD Civilian, 30 years of service</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Testimonials -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Real Outcomes</div>
+    <h2>What Happened After They Got Their Analysis</h2>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="testimonial-quote">&ldquo;</div>
+        <p>I was going to roll my entire TSP to an advisor's IRA. The analysis showed me I'd pay USD 40,000+ more in fees over 20 years. Kept most of it in TSP and used the income floor strategy for the gap. Sleep like a baby now.</p>
+        <div class="testimonial-author">Denise M.</div>
+        <div class="testimonial-role">GS-12 &bull; VA &bull; 27 Years of Service</div>
+        <div class="testimonial-badge">Verified Federal Employee</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">&ldquo;</div>
+        <p>The FERS Supplement cliff was going to hit me like a truck. I had no idea the earnings test existed. My analysis showed the exact month my income would drop and gave me 3 years to prepare. That's the kind of planning HR should do but doesn't.</p>
+        <div class="testimonial-author">Robert J.</div>
+        <div class="testimonial-role">GS-14 &bull; DoD &bull; 31 Years of Service</div>
+        <div class="testimonial-badge">Verified Federal Employee</div>
+      </div>
+      <div class="testimonial-card">
+        <div class="testimonial-quote">&ldquo;</div>
+        <p>I'd been staring at my TSP balance for months without knowing what it actually translates to in retirement income. The analysis turned a number into a plan. 12 minutes to read and I finally understood my retirement for the first time in 26 years of service.</p>
+        <div class="testimonial-author">Linda T.</div>
+        <div class="testimonial-role">GS-13 &bull; IRS &bull; 26 Years of Service</div>
+        <div class="testimonial-badge">Verified Federal Employee</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Process Steps -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="eyebrow">How It Works</div>
+    <h2>From Your Answers to Your Analysis in 4 Steps</h2>
+    <div class="steps-row" style="margin-top:48px;">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h4>Answer 5 Questions</h4>
+          <p>Age, years of service, TSP balance, biggest concern, and email. Under 2 minutes.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h4>We Build Your Analysis</h4>
+          <p>Our FERS specialists use your inputs to compute your annuity, model your TSP options, and calculate your gap.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h4>Review on Your Own Time</h4>
+          <p>Your 6-page personalized analysis arrives by email. Read it at home, on your phone, at your pace.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div>
+          <h4>Optional: Ask Questions</h4>
+          <p>If you want to discuss your numbers, a follow-up email offers that option. Nobody calls unless you ask.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="eyebrow">Common Questions</div>
+    <h2>Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How is this different from the free Blueprint?
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>The Blueprint is a general educational guide that explains how FERS, TSP, and Social Security work together. This Personalized Analysis uses YOUR specific numbers &mdash; your GS-level, years of service, TSP balance &mdash; to compute YOUR annuity, YOUR income gap, and YOUR strategy options. Think of the Blueprint as the textbook and the Analysis as your personal report card.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Will someone try to sell me an annuity product?
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>No. The analysis shows you the math of different strategies &mdash; including how a fixed annuity could close your income gap. But we don't recommend specific products, insurance companies, or providers. If you decide to explore a product, that's your choice on your timeline.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          How accurate are the projections?
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>The FERS annuity computation uses the same formula OPM uses, so it's highly accurate. Social Security estimates are based on SSA averages for your income level. TSP projections use current rates and historical averages. Your analysis includes assumptions and ranges, not false precision.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          What if I'm CSRS, not FERS?
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>This analysis is designed specifically for FERS employees. CSRS has a different annuity computation (no FERS Supplement, higher multiplier, different Social Security rules). While some sections &mdash; TSP strategy and Social Security timing &mdash; are relevant to CSRS, the core computations won't match your situation.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          Can my spouse get one too?
+          <span class="icon">+</span>
+        </button>
+        <div class="faq-answer">
+          <p>Yes. If your spouse is also a federal employee, they can request their own personalized analysis. If your spouse is not a federal employee, the survivor benefit and Social Security coordination sections of YOUR analysis will cover the decisions you need to make together.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- The Math of Delay -->
+<section class="section section-dark">
+  <div class="container" style="text-align:center;">
+    <div class="eyebrow">The Math of Delay</div>
+    <h2 style="max-width:600px;margin:0 auto 48px;">Every Month You Wait Costs Money You Can't Get Back</h2>
+    <div class="delay-cards">
+      <div class="delay-card">
+        <div class="delay-num">USD 2,225</div>
+        <h4>Per Year in Fee Difference</h4>
+        <p>If your USD 500K TSP is in a high-fee IRA (0.50%) instead of TSP (0.055%). That's USD 44,500 over 20 years &mdash; silently draining your retirement.</p>
+      </div>
+      <div class="delay-card">
+        <div class="delay-num">USD 1,200</div>
+        <h4>Per Month FERS Supplement</h4>
+        <p>Lost overnight at age 62 if you haven't planned. Multiply by the months you're caught off guard &mdash; that's TSP you burn filling a gap you could have bridged.</p>
+      </div>
+      <div class="delay-card">
+        <div class="delay-num">USD 8,640</div>
+        <h4>Per Year in Social Security</h4>
+        <p>The difference between claiming at 62 (USD 1,680/mo) and 67 (USD 2,400/mo). Over 20 years, the wrong timing costs USD 172,800 in lifetime benefits.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta">
+  <div class="container">
+    <div class="eyebrow">Your Numbers Are Waiting</div>
+    <h2>See Your Exact FERS Retirement Picture</h2>
+    <p class="cta-sub">Your annuity computation. Your TSP options. Your income gap. Your strategy &mdash; all personalized for your GS-level, service years, and TSP balance.</p>
+    <div class="final-form-wrap">
+      <div class="form-card">
+        <div class="form-badge">Free &mdash; Prepared by FERS Specialists</div>
+        <h3>Get Your Personalized Analysis</h3>
+        <p class="form-sub">5 questions. Your numbers. Your decision.</p>
+        <form id="final-form">
+          <div class="form-group">
+            <label>Your Age Bracket</label>
+            <select required>
+              <option value="" disabled selected>Select age range</option>
+              <option>50 &ndash; 54</option>
+              <option>55 &ndash; 59</option>
+              <option>60 &ndash; 62</option>
+              <option>63+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Years of Federal Service</label>
+            <select required>
+              <option value="" disabled selected>Select years</option>
+              <option>Under 10 years</option>
+              <option>10 &ndash; 19 years</option>
+              <option>20 &ndash; 29 years</option>
+              <option>30+ years</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Approximate TSP Balance</label>
+            <select required>
+              <option value="" disabled selected>Select balance</option>
+              <option>Under USD 100K</option>
+              <option>USD 100K &ndash; 300K</option>
+              <option>USD 300K &ndash; 500K</option>
+              <option>USD 500K &ndash; 1M</option>
+              <option>Over USD 1M</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Your Email Address</label>
+            <input type="email" placeholder="your.name@agency.gov" required>
+          </div>
+          <button type="submit" class="form-btn">Get My Free Personalized Analysis</button>
+          <p class="form-fine">No sales call. No spam. No advisor contact. Your numbers, your decision.</p>
+        </form>
+      </div>
+    </div>
+    <div class="pill-row">
+      <span class="pill">FERS Specific</span>
+      <span class="pill">Your Numbers</span>
+      <span class="pill">6-Page Analysis</span>
+      <span class="pill">No Sales Call</span>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <p>&copy; 2026 Federal Retirement Analysis. Educational resource, not financial advice. Consult a licensed professional before making retirement decisions. Not affiliated with OPM, TSP, or the federal government.</p>
+  </div>
+</footer>
+
+<script>
+// FAQ toggle
+function toggleFaq(btn) {
+  const answer = btn.nextElementSibling;
+  const icon = btn.querySelector('.icon');
+  const isOpen = answer.classList.contains('open');
+  document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+  document.querySelectorAll('.faq-question .icon').forEach(i => i.textContent = '+');
+  if (!isOpen) { answer.classList.add('open'); icon.textContent = '\u2212'; }
+}
+
+// Scroll shadow on nav
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 10);
+});
+
+// Form submissions
+document.querySelectorAll('form').forEach(form => {
+  form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const btn = form.querySelector('.form-btn');
+    btn.textContent = 'Preparing your analysis...';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.textContent = 'Check Your Email!';
+      btn.style.background = '#1A7A4C';
+    }, 2000);
+  });
+});
+
+// Fade-in on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+
+</body>
+</html>

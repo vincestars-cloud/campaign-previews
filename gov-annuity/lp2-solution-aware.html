@@ -1,0 +1,3494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Federal Retirement Income Strategies — Compare Your Options</title>
+    <meta name="description" content="Compare 4 proven income strategies for FERS employees approaching retirement. Free 2026 Federal Retirement Income Blueprint — no advisor contact required.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ========================================
+           RESET & BASE
+           ======================================== */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #1a1a2e;
+            background: #FFFFFF;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            line-height: 1.2;
+            font-weight: 400;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        /* ========================================
+           VARIABLES
+           ======================================== */
+        :root {
+            --navy: #1B365D;
+            --navy-dark: #0F2240;
+            --teal: #0D6E6E;
+            --teal-light: #E8F5F5;
+            --gold: #C5A44E;
+            --gold-light: #FBF6EA;
+            --white: #FFFFFF;
+            --off-white: #F8F9FA;
+            --gray-100: #F1F3F5;
+            --gray-200: #E9ECEF;
+            --gray-300: #DEE2E6;
+            --gray-400: #ADB5BD;
+            --gray-600: #6C757D;
+            --gray-700: #495057;
+            --gray-800: #343A40;
+            --gray-900: #212529;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+            --shadow-xl: 0 20px 60px rgba(0,0,0,0.15);
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+            --transition: all 0.3s ease;
+        }
+
+        /* ========================================
+           UTILITY CLASSES
+           ======================================== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .container-narrow {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 6px 16px;
+            border-radius: 50px;
+            margin-bottom: 16px;
+        }
+
+        .eyebrow--gold {
+            background: var(--gold-light);
+            color: var(--gold);
+        }
+
+        .eyebrow--teal {
+            background: var(--teal-light);
+            color: var(--teal);
+        }
+
+        .eyebrow--navy {
+            background: rgba(27, 54, 93, 0.08);
+            color: var(--navy);
+        }
+
+        .eyebrow--white {
+            background: rgba(255,255,255,0.15);
+            color: rgba(255,255,255,0.9);
+        }
+
+        .section-padding {
+            padding: 96px 0;
+        }
+
+        .section-padding-lg {
+            padding: 120px 0;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .pill {
+            display: inline-block;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 4px 14px;
+            border-radius: 50px;
+            background: var(--gray-100);
+            color: var(--gray-700);
+            margin: 4px 4px 4px 0;
+        }
+
+        .pill--teal {
+            background: var(--teal-light);
+            color: var(--teal);
+        }
+
+        .pill--gold {
+            background: var(--gold-light);
+            color: #8B7332;
+        }
+
+        .pill--navy {
+            background: rgba(27, 54, 93, 0.08);
+            color: var(--navy);
+        }
+
+        /* ========================================
+           ANNOUNCEMENT BAR
+           ======================================== */
+        .announcement-bar {
+            background: var(--teal);
+            color: var(--white);
+            text-align: center;
+            padding: 10px 24px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .announcement-bar strong {
+            color: var(--gold);
+        }
+
+        /* ========================================
+           STICKY NAV
+           ======================================== */
+        .sticky-nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255,255,255,0.97);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 0 24px;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .sticky-nav.scrolled {
+            box-shadow: var(--shadow-md);
+        }
+
+        .sticky-nav__inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 60px;
+        }
+
+        .sticky-nav__brand {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.1rem;
+            color: var(--navy);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .sticky-nav__brand svg {
+            width: 28px;
+            height: 28px;
+        }
+
+        .sticky-nav__links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+
+        .sticky-nav__links a {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            transition: color 0.2s ease;
+        }
+
+        .sticky-nav__links a:hover {
+            color: var(--teal);
+        }
+
+        .sticky-nav__cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 10px 20px;
+            background: var(--teal);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            font-family: 'Inter', sans-serif;
+        }
+
+        .sticky-nav__cta:hover {
+            background: #0a5a5a;
+            transform: translateY(-1px);
+        }
+
+        @media (max-width: 768px) {
+            .sticky-nav__links {
+                display: none;
+            }
+        }
+
+        /* ========================================
+           HERO SECTION
+           ======================================== */
+        .hero {
+            background: var(--navy-dark);
+            position: relative;
+            overflow: hidden;
+            padding: 80px 0 100px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(13,110,110,0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(197,164,78,0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .hero__grid {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero__content {
+            color: var(--white);
+        }
+
+        .hero__funnel-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 20px;
+            letter-spacing: 0.05em;
+        }
+
+        .hero__funnel-tag span {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--gold);
+            display: inline-block;
+        }
+
+        .hero__funnel-dots {
+            display: flex;
+            gap: 6px;
+            margin-left: 8px;
+        }
+
+        .hero__funnel-dots .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.25);
+        }
+
+        .hero__funnel-dots .dot.active {
+            background: var(--gold);
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            line-height: 1.15;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .hero h1 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .hero__sub {
+            font-size: 1.15rem;
+            line-height: 1.7;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 32px;
+            max-width: 540px;
+        }
+
+        .hero__trust-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 36px;
+        }
+
+        .hero__trust-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .hero__trust-item svg {
+            width: 18px;
+            height: 18px;
+            color: var(--teal);
+            flex-shrink: 0;
+        }
+
+        .hero__stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            padding-top: 32px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .hero__stat {
+            text-align: left;
+        }
+
+        .hero__stat-number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .hero__stat-label {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.4;
+        }
+
+        /* ========================================
+           FORM CARD
+           ======================================== */
+        .form-card {
+            background: var(--white);
+            border-radius: var(--radius-lg);
+            padding: 40px 32px;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            z-index: 3;
+        }
+
+        .form-card__badge {
+            position: absolute;
+            top: -14px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold);
+            color: var(--navy-dark);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 6px 20px;
+            border-radius: 50px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            white-space: nowrap;
+        }
+
+        .form-card h3 {
+            font-size: 1.35rem;
+            color: var(--navy);
+            margin-bottom: 6px;
+            text-align: center;
+        }
+
+        .form-card__subtitle {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .form-group {
+            margin-bottom: 16px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--gray-800);
+            margin-bottom: 6px;
+        }
+
+        .form-group select,
+        .form-group input {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1.5px solid var(--gray-300);
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-family: 'Inter', sans-serif;
+            color: var(--gray-800);
+            background: var(--white);
+            transition: border-color 0.2s ease, box-shadow 0.2s ease;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236C757D' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 14px center;
+            padding-right: 36px;
+        }
+
+        .form-group select:focus,
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--teal);
+            box-shadow: 0 0 0 3px rgba(13,110,110,0.1);
+        }
+
+        .form-card__btn {
+            display: block;
+            width: 100%;
+            padding: 14px 24px;
+            background: var(--teal);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 8px;
+            text-align: center;
+        }
+
+        .form-card__btn:hover {
+            background: #0a5a5a;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(13,110,110,0.3);
+        }
+
+        .form-card__no-sales {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 14px;
+            font-size: 0.78rem;
+            color: var(--gray-600);
+        }
+
+        .form-card__no-sales svg {
+            width: 14px;
+            height: 14px;
+            color: var(--teal);
+        }
+
+        .form-card__social-proof {
+            text-align: center;
+            font-size: 0.78rem;
+            color: var(--gray-600);
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .form-card__social-proof strong {
+            color: var(--gray-800);
+        }
+
+        /* ========================================
+           STRATEGIES SECTION
+           ======================================== */
+        .strategies {
+            background: var(--off-white);
+        }
+
+        .strategies__header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 56px;
+        }
+
+        .strategies__header h2 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .strategies__header p {
+            font-size: 1.05rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        .strategies__grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 24px;
+        }
+
+        .strategy-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 36px 32px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .strategy-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: transparent;
+        }
+
+        .strategy-card--recommended {
+            border-color: var(--teal);
+            border-width: 2px;
+        }
+
+        .strategy-card--recommended::before {
+            content: 'MOST CHOSEN';
+            position: absolute;
+            top: 16px;
+            right: -32px;
+            background: var(--teal);
+            color: var(--white);
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 4px 40px;
+            transform: rotate(45deg);
+            letter-spacing: 0.1em;
+        }
+
+        .strategy-card__number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
+        }
+
+        .strategy-card__number--1 {
+            background: rgba(27, 54, 93, 0.08);
+            color: var(--navy);
+        }
+
+        .strategy-card__number--2 {
+            background: rgba(13, 110, 110, 0.08);
+            color: var(--teal);
+        }
+
+        .strategy-card__number--3 {
+            background: rgba(197, 164, 78, 0.08);
+            color: var(--gold);
+        }
+
+        .strategy-card__number--4 {
+            background: rgba(13, 110, 110, 0.12);
+            color: var(--teal);
+        }
+
+        .strategy-card h3 {
+            font-size: 1.3rem;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .strategy-card__subtitle {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--teal);
+            margin-bottom: 14px;
+        }
+
+        .strategy-card p {
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .strategy-card__pros,
+        .strategy-card__cons {
+            list-style: none;
+            margin-bottom: 8px;
+        }
+
+        .strategy-card__pros li,
+        .strategy-card__cons li {
+            font-size: 0.88rem;
+            color: var(--gray-700);
+            padding: 4px 0 4px 26px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .strategy-card__pros li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background: var(--teal-light);
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%230D6E6E' stroke-width='3'%3E%3Cpath d='M20 6L9 17l-5-5'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 10px;
+        }
+
+        .strategy-card__cons li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background: #FFF0F0;
+            border-radius: 50%;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='10' viewBox='0 0 24 24' fill='none' stroke='%23D94F4F' stroke-width='3'%3E%3Cpath d='M18 6L6 18M6 6l12 12'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 10px;
+        }
+
+        .strategy-card__best-for {
+            margin-top: 16px;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-200);
+            font-size: 0.85rem;
+        }
+
+        .strategy-card__best-for strong {
+            color: var(--navy);
+            font-weight: 600;
+        }
+
+        .strategy-card__best-for span {
+            color: var(--gray-700);
+        }
+
+        /* ========================================
+           COMPARISON TABLE
+           ======================================== */
+        .comparison {
+            background: var(--white);
+        }
+
+        .comparison__header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 48px;
+        }
+
+        .comparison__header h2 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .comparison__header p {
+            font-size: 1.05rem;
+            color: var(--gray-700);
+        }
+
+        .comparison__table-wrap {
+            overflow-x: auto;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--gray-200);
+        }
+
+        .comparison__table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 700px;
+        }
+
+        .comparison__table thead th {
+            background: var(--navy);
+            color: var(--white);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 700;
+            padding: 18px 20px;
+            text-align: left;
+            white-space: nowrap;
+        }
+
+        .comparison__table thead th:first-child {
+            border-radius: 0;
+            background: var(--navy-dark);
+            font-size: 0.78rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .comparison__table thead th.highlight {
+            background: var(--teal);
+            position: relative;
+        }
+
+        .comparison__table tbody td {
+            padding: 16px 20px;
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            border-bottom: 1px solid var(--gray-200);
+            vertical-align: top;
+        }
+
+        .comparison__table tbody td:first-child {
+            font-weight: 600;
+            color: var(--navy);
+            background: var(--off-white);
+            font-size: 0.85rem;
+            white-space: nowrap;
+        }
+
+        .comparison__table tbody td.highlight-col {
+            background: rgba(13, 110, 110, 0.04);
+        }
+
+        .comparison__table tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        .comparison__table tbody tr:hover td {
+            background-color: rgba(13, 110, 110, 0.02);
+        }
+
+        .comparison__table tbody tr:hover td:first-child {
+            background-color: rgba(13, 110, 110, 0.06);
+        }
+
+        .table-check {
+            color: var(--teal);
+            font-weight: 700;
+        }
+
+        .table-x {
+            color: #D94F4F;
+            font-weight: 700;
+        }
+
+        .table-partial {
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        /* ========================================
+           INCOME FLOOR DEEP DIVE
+           ======================================== */
+        .income-floor {
+            background: var(--off-white);
+        }
+
+        .income-floor__header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 56px;
+        }
+
+        .income-floor__header h2 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .income-floor__header p {
+            font-size: 1.05rem;
+            color: var(--gray-700);
+        }
+
+        .income-floor__diagram {
+            max-width: 900px;
+            margin: 0 auto 48px;
+        }
+
+        .income-floor__stack {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .income-floor__layer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 32px;
+            color: var(--white);
+        }
+
+        .income-floor__layer--growth {
+            background: linear-gradient(135deg, var(--teal), #0a5a5a);
+            border-bottom: 2px dashed rgba(255,255,255,0.3);
+        }
+
+        .income-floor__layer--annuity {
+            background: linear-gradient(135deg, var(--gold), #a88b3c);
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .income-floor__layer--ss {
+            background: linear-gradient(135deg, #4A7AB5, #3a6293);
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+        }
+
+        .income-floor__layer--fers {
+            background: linear-gradient(135deg, var(--navy), var(--navy-dark));
+        }
+
+        .income-floor__layer-left {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .income-floor__layer-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            background: rgba(255,255,255,0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .income-floor__layer-icon svg {
+            width: 22px;
+            height: 22px;
+        }
+
+        .income-floor__layer-name {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.15rem;
+        }
+
+        .income-floor__layer-desc {
+            font-size: 0.82rem;
+            opacity: 0.85;
+        }
+
+        .income-floor__layer-amount {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.6rem;
+            text-align: right;
+        }
+
+        .income-floor__layer-pct {
+            font-size: 0.78rem;
+            opacity: 0.75;
+            text-align: right;
+        }
+
+        .income-floor__example {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 40px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .income-floor__example h3 {
+            font-size: 1.4rem;
+            color: var(--navy);
+            margin-bottom: 8px;
+        }
+
+        .income-floor__example-subtitle {
+            font-size: 0.95rem;
+            color: var(--gray-600);
+            margin-bottom: 28px;
+        }
+
+        .income-floor__math {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .income-floor__math-section h4 {
+            font-size: 1rem;
+            color: var(--navy);
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--teal);
+            display: inline-block;
+        }
+
+        .math-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            font-size: 0.92rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .math-row:last-child {
+            border-bottom: none;
+        }
+
+        .math-row__label {
+            color: var(--gray-700);
+        }
+
+        .math-row__value {
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .math-row--total {
+            background: var(--teal-light);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            margin-top: 8px;
+        }
+
+        .math-row--total .math-row__label {
+            font-weight: 700;
+            color: var(--teal);
+        }
+
+        .math-row--total .math-row__value {
+            color: var(--teal);
+            font-size: 1.05rem;
+        }
+
+        .math-row--gap {
+            background: #FFF5F5;
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            margin-top: 8px;
+        }
+
+        .math-row--gap .math-row__label {
+            font-weight: 700;
+            color: #C53030;
+        }
+
+        .math-row--gap .math-row__value {
+            color: #C53030;
+            font-size: 1.05rem;
+        }
+
+        .math-row--solved {
+            background: var(--teal-light);
+            border-radius: var(--radius-sm);
+            padding: 12px 14px;
+            margin-top: 8px;
+        }
+
+        .math-row--solved .math-row__label {
+            font-weight: 700;
+            color: var(--teal);
+        }
+
+        .math-row--solved .math-row__value {
+            color: var(--teal);
+            font-size: 1.05rem;
+        }
+
+        .income-floor__footnote {
+            text-align: center;
+            font-size: 0.82rem;
+            color: var(--gray-600);
+            margin-top: 32px;
+            font-style: italic;
+        }
+
+        /* ========================================
+           STATS BAR
+           ======================================== */
+        .stats-bar {
+            background: var(--navy);
+            padding: 60px 0;
+        }
+
+        .stats-bar__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            text-align: center;
+        }
+
+        .stats-bar__item {
+            color: var(--white);
+        }
+
+        .stats-bar__number {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.6rem;
+            color: var(--gold);
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stats-bar__label {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.4;
+        }
+
+        /* ========================================
+           FERS SUPPLEMENT BRIDGE
+           ======================================== */
+        .supplement {
+            background: var(--white);
+        }
+
+        .supplement__header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 56px;
+        }
+
+        .supplement__header h2 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .supplement__header p {
+            font-size: 1.05rem;
+            color: var(--gray-700);
+        }
+
+        .supplement__timeline {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        .timeline__track {
+            display: flex;
+            align-items: stretch;
+            position: relative;
+            min-height: 300px;
+        }
+
+        .timeline__phase {
+            flex: 1;
+            position: relative;
+            padding: 0 16px;
+        }
+
+        .timeline__bar {
+            height: 8px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+
+        .timeline__bar--fers {
+            background: var(--navy);
+        }
+
+        .timeline__bar--supplement {
+            background: var(--gold);
+        }
+
+        .timeline__bar--cliff {
+            background: #D94F4F;
+        }
+
+        .timeline__bar--ss {
+            background: var(--teal);
+        }
+
+        .timeline__age {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.6rem;
+            color: var(--navy);
+            margin-bottom: 4px;
+        }
+
+        .timeline__label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--gray-800);
+            margin-bottom: 8px;
+        }
+
+        .timeline__desc {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+            line-height: 1.6;
+        }
+
+        .timeline__amount {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 6px 14px;
+            border-radius: var(--radius-sm);
+            font-size: 0.88rem;
+            font-weight: 700;
+        }
+
+        .timeline__amount--green {
+            background: var(--teal-light);
+            color: var(--teal);
+        }
+
+        .timeline__amount--gold {
+            background: var(--gold-light);
+            color: #8B7332;
+        }
+
+        .timeline__amount--red {
+            background: #FFF0F0;
+            color: #C53030;
+        }
+
+        .supplement__warning {
+            max-width: 700px;
+            margin: 40px auto 0;
+            background: #FFF8E1;
+            border-left: 4px solid var(--gold);
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            padding: 20px 24px;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+        }
+
+        .supplement__warning svg {
+            width: 22px;
+            height: 22px;
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .supplement__warning p {
+            font-size: 0.92rem;
+            color: var(--gray-700);
+            line-height: 1.6;
+        }
+
+        .supplement__warning strong {
+            color: var(--navy);
+        }
+
+        /* ========================================
+           SOCIAL SECURITY TIMING
+           ======================================== */
+        .ss-timing {
+            background: var(--off-white);
+        }
+
+        .ss-timing__header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 48px;
+        }
+
+        .ss-timing__header h2 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .ss-timing__header p {
+            font-size: 1.05rem;
+            color: var(--gray-700);
+        }
+
+        .ss-timing__cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            max-width: 960px;
+            margin: 0 auto 40px;
+        }
+
+        .ss-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 32px 28px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+            transition: var(--transition);
+        }
+
+        .ss-card:hover {
+            box-shadow: var(--shadow-md);
+        }
+
+        .ss-card--optimal {
+            border-color: var(--teal);
+            border-width: 2px;
+            position: relative;
+        }
+
+        .ss-card--optimal::after {
+            content: 'OPTIMAL FOR MOST FERS';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--teal);
+            color: var(--white);
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 4px 14px;
+            border-radius: 50px;
+            letter-spacing: 0.05em;
+            white-space: nowrap;
+        }
+
+        .ss-card__age {
+            font-family: 'DM Serif Display', serif;
+            font-size: 3rem;
+            color: var(--navy);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .ss-card__claim-type {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--gray-600);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 16px;
+        }
+
+        .ss-card__monthly {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 4px;
+        }
+
+        .ss-card__monthly--low {
+            color: #D94F4F;
+        }
+
+        .ss-card__monthly--mid {
+            color: var(--gold);
+        }
+
+        .ss-card__monthly--high {
+            color: var(--teal);
+        }
+
+        .ss-card__pct {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: var(--gray-600);
+            margin-bottom: 16px;
+        }
+
+        .ss-card__annual {
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .ss-card__annual strong {
+            color: var(--navy);
+        }
+
+        .ss-card__note {
+            font-size: 0.82rem;
+            color: var(--gray-600);
+            margin-top: 12px;
+            font-style: italic;
+        }
+
+        .ss-timing__cta {
+            text-align: center;
+        }
+
+        .ss-timing__cta p {
+            font-size: 1rem;
+            color: var(--gray-700);
+            margin-bottom: 16px;
+        }
+
+        /* ========================================
+           BLUEPRINT FEATURES
+           ======================================== */
+        .blueprint {
+            background: var(--white);
+        }
+
+        .blueprint__header {
+            text-align: center;
+            max-width: 680px;
+            margin: 0 auto 56px;
+        }
+
+        .blueprint__header h2 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .blueprint__header p {
+            font-size: 1.05rem;
+            color: var(--gray-700);
+        }
+
+        .blueprint__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .blueprint-card {
+            background: var(--off-white);
+            border-radius: var(--radius-md);
+            padding: 32px 28px;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .blueprint-card:hover {
+            background: var(--white);
+            border-color: var(--gray-200);
+            box-shadow: var(--shadow-md);
+            transform: translateY(-4px);
+        }
+
+        .blueprint-card__icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .blueprint-card__icon--navy {
+            background: rgba(27, 54, 93, 0.08);
+            color: var(--navy);
+        }
+
+        .blueprint-card__icon--teal {
+            background: var(--teal-light);
+            color: var(--teal);
+        }
+
+        .blueprint-card__icon--gold {
+            background: var(--gold-light);
+            color: var(--gold);
+        }
+
+        .blueprint-card__icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .blueprint-card h3 {
+            font-size: 1.15rem;
+            color: var(--navy);
+            margin-bottom: 10px;
+        }
+
+        .blueprint-card p {
+            font-size: 0.9rem;
+            color: var(--gray-700);
+            line-height: 1.7;
+        }
+
+        .blueprint-card__pages {
+            margin-top: 14px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--teal);
+        }
+
+        /* ========================================
+           TESTIMONIALS
+           ======================================== */
+        .testimonials {
+            background: var(--off-white);
+        }
+
+        .testimonials__header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+
+        .testimonials__header h2 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .testimonials__grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 36px 32px;
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--gray-200);
+            position: relative;
+        }
+
+        .testimonial-card__quote {
+            position: absolute;
+            top: 20px;
+            left: 28px;
+            font-family: 'DM Serif Display', serif;
+            font-size: 4rem;
+            line-height: 1;
+            color: var(--teal-light);
+            pointer-events: none;
+        }
+
+        .testimonial-card p {
+            font-size: 0.95rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+            font-style: italic;
+        }
+
+        .testimonial-card__author {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding-top: 16px;
+            border-top: 1px solid var(--gray-200);
+        }
+
+        .testimonial-card__avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--navy);
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.1rem;
+        }
+
+        .testimonial-card__name {
+            font-weight: 700;
+            font-size: 0.88rem;
+            color: var(--gray-800);
+        }
+
+        .testimonial-card__title {
+            font-size: 0.8rem;
+            color: var(--gray-600);
+        }
+
+        .testimonial-card__verified {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            font-size: 0.72rem;
+            color: var(--teal);
+            margin-top: 2px;
+        }
+
+        /* ========================================
+           FAQ
+           ======================================== */
+        .faq {
+            background: var(--white);
+        }
+
+        .faq__header {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto 48px;
+        }
+
+        .faq__header h2 {
+            font-size: 2.2rem;
+            color: var(--navy);
+            margin-bottom: 16px;
+        }
+
+        .faq__list {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .faq__item {
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-md);
+            margin-bottom: 12px;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .faq__item:hover {
+            border-color: var(--gray-300);
+        }
+
+        .faq__question {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            padding: 20px 24px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            text-align: left;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            gap: 16px;
+        }
+
+        .faq__question:hover {
+            color: var(--teal);
+        }
+
+        .faq__icon {
+            width: 24px;
+            height: 24px;
+            flex-shrink: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .faq__item.active .faq__icon {
+            transform: rotate(45deg);
+        }
+
+        .faq__answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease, padding 0.4s ease;
+        }
+
+        .faq__item.active .faq__answer {
+            max-height: 500px;
+        }
+
+        .faq__answer-inner {
+            padding: 0 24px 20px;
+            font-size: 0.92rem;
+            color: var(--gray-700);
+            line-height: 1.8;
+        }
+
+        /* ========================================
+           PULL QUOTE
+           ======================================== */
+        .pull-quote {
+            background: var(--off-white);
+            padding: 80px 0;
+        }
+
+        .pull-quote__inner {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            position: relative;
+        }
+
+        .pull-quote__mark {
+            font-family: 'DM Serif Display', serif;
+            font-size: 6rem;
+            line-height: 0.5;
+            color: var(--teal-light);
+            margin-bottom: 16px;
+        }
+
+        .pull-quote__text {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.6rem;
+            color: var(--navy);
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+
+        .pull-quote__attr {
+            font-size: 0.88rem;
+            color: var(--gray-600);
+            font-style: italic;
+        }
+
+        /* ========================================
+           FINAL CTA
+           ======================================== */
+        .final-cta {
+            background: var(--navy-dark);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 600px;
+            height: 600px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(13,110,110,0.12) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .final-cta__grid {
+            display: grid;
+            grid-template-columns: 1fr 420px;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .final-cta__content {
+            color: var(--white);
+        }
+
+        .final-cta__content h2 {
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: 16px;
+        }
+
+        .final-cta__content h2 em {
+            font-style: italic;
+            color: var(--gold);
+        }
+
+        .final-cta__content p {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 24px;
+            line-height: 1.7;
+        }
+
+        .final-cta__bullets {
+            list-style: none;
+            margin-bottom: 24px;
+        }
+
+        .final-cta__bullets li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.85);
+            padding: 6px 0;
+        }
+
+        .final-cta__bullets li svg {
+            width: 18px;
+            height: 18px;
+            color: var(--gold);
+            flex-shrink: 0;
+            margin-top: 3px;
+        }
+
+        .final-cta__urgency {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(197,164,78,0.15);
+            border: 1px solid rgba(197,164,78,0.3);
+            border-radius: var(--radius-sm);
+            padding: 12px 18px;
+            font-size: 0.88rem;
+            color: var(--gold);
+            font-weight: 600;
+        }
+
+        .final-cta__urgency svg {
+            width: 18px;
+            height: 18px;
+        }
+
+        /* ========================================
+           FOOTER
+           ======================================== */
+        .footer {
+            background: #0a1a30;
+            padding: 32px 0;
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .footer__inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer p {
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.4);
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.78rem;
+        }
+
+        .footer a:hover {
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ========================================
+           RESPONSIVE
+           ======================================== */
+        @media (max-width: 1024px) {
+            .hero__grid,
+            .final-cta__grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .form-card {
+                max-width: 480px;
+            }
+
+            .strategies__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .income-floor__math {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-padding {
+                padding: 64px 0;
+            }
+
+            .section-padding-lg {
+                padding: 80px 0;
+            }
+
+            h2 {
+                font-size: 1.8rem !important;
+            }
+
+            .hero {
+                padding: 48px 0 64px;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .hero__stats {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 16px;
+            }
+
+            .hero__stat-number {
+                font-size: 1.5rem;
+            }
+
+            .stats-bar__grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 24px;
+            }
+
+            .stats-bar__number {
+                font-size: 2rem;
+            }
+
+            .ss-timing__cards {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+            }
+
+            .blueprint__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .testimonials__grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline__track {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .pull-quote__text {
+                font-size: 1.3rem;
+            }
+
+            .income-floor__layer {
+                flex-direction: column;
+                text-align: center;
+                gap: 8px;
+            }
+
+            .income-floor__layer-left {
+                flex-direction: column;
+            }
+
+            .income-floor__layer-amount,
+            .income-floor__layer-pct {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero__stats {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+
+            .form-card {
+                padding: 28px 20px;
+            }
+
+            .stats-bar__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ========================================
+         ANNOUNCEMENT BAR
+         ======================================== -->
+    <div class="announcement-bar">
+        Updated for <strong>2026 FERS changes</strong> &mdash; New TSP withdrawal rules and COLA adjustments included
+    </div>
+
+    <!-- ========================================
+         STICKY NAV
+         ======================================== -->
+    <nav class="sticky-nav" id="stickyNav">
+        <div class="sticky-nav__inner">
+            <div class="sticky-nav__brand">
+                <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <rect width="28" height="28" rx="6" fill="#1B365D"/>
+                    <path d="M7 14h14M14 7v14" stroke="#C5A44E" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="14" cy="14" r="5" stroke="#0D6E6E" stroke-width="1.5" fill="none"/>
+                </svg>
+                Federal Retirement Strategies
+            </div>
+            <ul class="sticky-nav__links">
+                <li><a href="#strategies">4 Strategies</a></li>
+                <li><a href="#comparison">Compare</a></li>
+                <li><a href="#income-floor">Income Floor</a></li>
+                <li><a href="#supplement">FERS Supplement</a></li>
+                <li><a href="#blueprint">Blueprint</a></li>
+                <li><a href="#faq">FAQ</a></li>
+            </ul>
+            <a href="#hero-form" class="sticky-nav__cta">
+                Get My Free Blueprint
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </a>
+        </div>
+    </nav>
+
+    <!-- ========================================
+         SECTION 1: HERO
+         ======================================== -->
+    <section class="hero" id="hero">
+        <div class="container">
+            <div class="hero__grid">
+                <!-- Left Column: Content -->
+                <div class="hero__content">
+                    <div class="hero__funnel-tag">
+                        <span></span>
+                        STEP 2 OF 3: STRATEGY COMPARISON
+                        <div class="hero__funnel-dots">
+                            <div class="dot"></div>
+                            <div class="dot active"></div>
+                            <div class="dot"></div>
+                        </div>
+                    </div>
+
+                    <h1>You Know About the Gap.<br>Now Here's How to <em>Close It.</em></h1>
+
+                    <p class="hero__sub">
+                        Your FERS annuity replaces roughly 30-40% of your high-3 average salary. You've seen the gap.
+                        Now compare the 4 income strategies federal employees use to bridge it &mdash;
+                        and find out which one matches your TSP balance, your timeline, and your risk tolerance.
+                    </p>
+
+                    <div class="hero__trust-items">
+                        <div class="hero__trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            No sales call. No advisor contact.
+                        </div>
+                        <div class="hero__trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+                            Updated for 2026 FERS rules
+                        </div>
+                        <div class="hero__trust-item">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                            Built for GS-11 through SES
+                        </div>
+                    </div>
+
+                    <div class="hero__stats">
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">30-40%</div>
+                            <div class="hero__stat-label">Typical FERS annuity<br>salary replacement</div>
+                        </div>
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">$1.2M</div>
+                            <div class="hero__stat-label">Average TSP balance<br>at retirement (GS-13+)</div>
+                        </div>
+                        <div class="hero__stat">
+                            <div class="hero__stat-number">4</div>
+                            <div class="hero__stat-label">Proven strategies<br>compared inside</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Form Card -->
+                <div class="form-card" id="hero-form">
+                    <div class="form-card__badge">Free 2026 Blueprint</div>
+
+                    <h3>Get Your Strategy Comparison</h3>
+                    <p class="form-card__subtitle">See which income strategy fits your FERS retirement timeline</p>
+
+                    <form id="leadFormHero" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="ageBracketHero">Your Age Bracket</label>
+                            <select id="ageBracketHero" required>
+                                <option value="" disabled selected>Select your age range</option>
+                                <option value="50-54">50 &ndash; 54 (Pre-MRA planning)</option>
+                                <option value="55-59">55 &ndash; 59 (MRA eligible / approaching)</option>
+                                <option value="60-62">60 &ndash; 62 (Peak retirement window)</option>
+                                <option value="63+">63+ (Post-MRA, SS decisions ahead)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tspBalanceHero">Approximate TSP Balance</label>
+                            <select id="tspBalanceHero" required>
+                                <option value="" disabled selected>Select your TSP range</option>
+                                <option value="under-100k">Under $100,000</option>
+                                <option value="100k-300k">$100,000 &ndash; $300,000</option>
+                                <option value="300k-500k">$300,000 &ndash; $500,000</option>
+                                <option value="500k-1m">$500,000 &ndash; $1,000,000</option>
+                                <option value="over-1m">Over $1,000,000</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emailHero">Email Address</label>
+                            <input type="email" id="emailHero" placeholder="your.name@agency.gov" required>
+                        </div>
+
+                        <button type="submit" class="form-card__btn">
+                            Get My Free Strategy Comparison
+                        </button>
+                    </form>
+
+                    <div class="form-card__no-sales">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+                        No phone calls. No advisor contact. Just your blueprint.
+                    </div>
+
+                    <div class="form-card__social-proof">
+                        Trusted by <strong>4,200+</strong> federal employees across 38 agencies
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 2: THE 4 STRATEGIES
+         ======================================== -->
+    <section class="strategies section-padding" id="strategies">
+        <div class="container">
+            <div class="strategies__header">
+                <span class="eyebrow eyebrow--teal">Strategy Comparison</span>
+                <h2>4 Ways Federal Employees Bridge the FERS Income Gap</h2>
+                <p>
+                    Each strategy uses your TSP differently. The right choice depends on your
+                    creditable service years, your high-3 average salary, your risk tolerance,
+                    and how close you are to your Minimum Retirement Age.
+                </p>
+            </div>
+
+            <div class="strategies__grid">
+                <!-- Strategy 1: Stay in TSP -->
+                <div class="strategy-card">
+                    <div class="strategy-card__number strategy-card__number--1">1</div>
+                    <h3>Stay in TSP &amp; Withdraw</h3>
+                    <div class="strategy-card__subtitle">G Fund Safety / L Fund Glide Path</div>
+                    <p>
+                        Keep your entire balance inside the Thrift Savings Plan after separation.
+                        Use monthly withdrawals from the G Fund for stability, or let the L Income
+                        Fund gradually shift from C/S/I growth funds into bonds as you age. TSP's
+                        0.055% expense ratio is the lowest in the industry &mdash; roughly 40x cheaper
+                        than the average retail mutual fund.
+                    </p>
+                    <ul class="strategy-card__pros">
+                        <li>Lowest fees in any retirement plan (0.055%)</li>
+                        <li>G Fund backed by U.S. government securities</li>
+                        <li>L Funds auto-rebalance based on target date</li>
+                        <li>Partial withdrawals available post-separation</li>
+                    </ul>
+                    <ul class="strategy-card__cons">
+                        <li>Limited to 5 TSP fund choices (C, S, I, F, G)</li>
+                        <li>No guaranteed lifetime income stream</li>
+                        <li>Market downturns can erode withdrawals</li>
+                        <li>Withdrawal flexibility still trails IRAs</li>
+                    </ul>
+                    <div class="strategy-card__best-for">
+                        <strong>Best for:</strong> <span>Federal employees comfortable with market exposure who want the lowest-cost option and don't need guaranteed income beyond their FERS annuity and Social Security.</span>
+                    </div>
+                </div>
+
+                <!-- Strategy 2: TSP Rollover to IRA -->
+                <div class="strategy-card">
+                    <div class="strategy-card__number strategy-card__number--2">2</div>
+                    <h3>TSP Rollover to IRA</h3>
+                    <div class="strategy-card__subtitle">Full Investment Flexibility</div>
+                    <p>
+                        Roll your TSP balance into a Traditional or Roth IRA after separation from
+                        federal service. This unlocks thousands of investment options &mdash; individual
+                        stocks, bonds, REITs, ETFs, and managed portfolios. You gain full control over
+                        your withdrawal strategy and can implement Roth conversion ladders to manage
+                        your tax bracket through retirement.
+                    </p>
+                    <ul class="strategy-card__pros">
+                        <li>Thousands of investment choices (vs. TSP's 5)</li>
+                        <li>Roth conversion ladder for tax optimization</li>
+                        <li>Beneficiary flexibility for estate planning</li>
+                        <li>Consolidate old 401(k)s and IRAs in one place</li>
+                    </ul>
+                    <ul class="strategy-card__cons">
+                        <li>Higher fees (0.20%&ndash;1.0%+ vs. TSP's 0.055%)</li>
+                        <li>Requires active management or advisor</li>
+                        <li>Lose access to the G Fund's unique guarantee</li>
+                        <li>No guaranteed income without purchasing annuity</li>
+                    </ul>
+                    <div class="strategy-card__best-for">
+                        <strong>Best for:</strong> <span>Employees with $500K+ TSP balances who want sophisticated tax planning, Roth conversions, or need to consolidate multiple retirement accounts.</span>
+                    </div>
+                </div>
+
+                <!-- Strategy 3: TSP Annuity Purchase -->
+                <div class="strategy-card">
+                    <div class="strategy-card__number strategy-card__number--3">3</div>
+                    <h3>TSP Annuity Purchase</h3>
+                    <div class="strategy-card__subtitle">Guaranteed Lifetime Income</div>
+                    <p>
+                        Use part or all of your TSP balance to purchase a life annuity through
+                        MetLife (TSP's contracted provider). This converts a lump sum into a
+                        guaranteed monthly payment for life &mdash; similar to how your FERS annuity works.
+                        Options include single life, joint life with your spouse, and increasing
+                        payment riders to keep pace with inflation.
+                    </p>
+                    <ul class="strategy-card__pros">
+                        <li>Guaranteed monthly income for life</li>
+                        <li>Eliminates longevity risk completely</li>
+                        <li>Joint-life option protects surviving spouse</li>
+                        <li>No investment decisions required</li>
+                    </ul>
+                    <ul class="strategy-card__cons">
+                        <li>Irrevocable &mdash; cannot access principal once purchased</li>
+                        <li>Rates fluctuate; bad timing locks in low payments</li>
+                        <li>No inflation protection unless you pay for the rider</li>
+                        <li>If you die early, remaining value may be lost</li>
+                    </ul>
+                    <div class="strategy-card__best-for">
+                        <strong>Best for:</strong> <span>Risk-averse employees who prioritize income certainty above all else and want to replicate the guaranteed nature of their FERS annuity.</span>
+                    </div>
+                </div>
+
+                <!-- Strategy 4: Income Floor (Recommended) -->
+                <div class="strategy-card strategy-card--recommended">
+                    <div class="strategy-card__number strategy-card__number--4">4</div>
+                    <h3>The Income Floor Strategy</h3>
+                    <div class="strategy-card__subtitle">Partial TSP + Fixed Annuity + Growth</div>
+                    <p>
+                        Split your TSP into two buckets: roll enough into a fixed index annuity
+                        (outside TSP) to cover the gap between your FERS annuity + Social Security
+                        and your essential monthly expenses. Keep the rest invested in TSP's C and
+                        S Funds for long-term growth. Your essential expenses are 100% covered by
+                        guaranteed income. Your discretionary spending is funded by market growth.
+                    </p>
+                    <ul class="strategy-card__pros">
+                        <li>Essential expenses covered by guaranteed income</li>
+                        <li>Remaining TSP grows tax-deferred in equity funds</li>
+                        <li>Market crashes don't threaten your bill payments</li>
+                        <li>Psychological peace &mdash; you can weather any downturn</li>
+                    </ul>
+                    <ul class="strategy-card__cons">
+                        <li>Requires careful calculation of "floor" amount</li>
+                        <li>Annuity portion is less liquid than TSP</li>
+                        <li>More complex than a single-strategy approach</li>
+                        <li>Need to select the right annuity product</li>
+                    </ul>
+                    <div class="strategy-card__best-for">
+                        <strong>Best for:</strong> <span>Federal employees 3&ndash;7 years from retirement who want the security of guaranteed income for essentials while still participating in market growth with their remaining TSP balance.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 3: SIDE-BY-SIDE COMPARISON TABLE
+         ======================================== -->
+    <section class="comparison section-padding" id="comparison">
+        <div class="container">
+            <div class="comparison__header">
+                <span class="eyebrow eyebrow--navy">Head-to-Head</span>
+                <h2>Side-by-Side: How Each Strategy Compares</h2>
+                <p>
+                    Every strategy has trade-offs. This table breaks down the 6 factors that matter most
+                    to federal employees making TSP decisions after separation from service.
+                </p>
+            </div>
+
+            <div class="comparison__table-wrap">
+                <table class="comparison__table">
+                    <thead>
+                        <tr>
+                            <th>Factor</th>
+                            <th>Stay in TSP</th>
+                            <th>IRA Rollover</th>
+                            <th>TSP Annuity</th>
+                            <th class="highlight">Income Floor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Annual Fees</td>
+                            <td><span class="table-check">0.055%</span><br><small style="color:#6C757D">Lowest available</small></td>
+                            <td><span class="table-partial">0.20% &ndash; 1.0%+</span><br><small style="color:#6C757D">Varies by advisor</small></td>
+                            <td><span class="table-partial">Built into rate</span><br><small style="color:#6C757D">MetLife spread</small></td>
+                            <td class="highlight-col"><span class="table-check">0.055% + annuity spread</span><br><small style="color:#6C757D">Blended low cost</small></td>
+                        </tr>
+                        <tr>
+                            <td>Income Guarantee</td>
+                            <td><span class="table-x">None</span><br><small style="color:#6C757D">Depends on markets</small></td>
+                            <td><span class="table-x">None</span><br><small style="color:#6C757D">Unless you buy one</small></td>
+                            <td><span class="table-check">100% guaranteed</span><br><small style="color:#6C757D">Lifetime payments</small></td>
+                            <td class="highlight-col"><span class="table-check">Essentials guaranteed</span><br><small style="color:#6C757D">Floor covers bills</small></td>
+                        </tr>
+                        <tr>
+                            <td>Investment Flexibility</td>
+                            <td><span class="table-partial">Limited</span><br><small style="color:#6C757D">5 fund choices</small></td>
+                            <td><span class="table-check">Maximum</span><br><small style="color:#6C757D">Thousands of options</small></td>
+                            <td><span class="table-x">None</span><br><small style="color:#6C757D">Locked in at purchase</small></td>
+                            <td class="highlight-col"><span class="table-check">Growth portion flexible</span><br><small style="color:#6C757D">TSP funds for growth</small></td>
+                        </tr>
+                        <tr>
+                            <td>Market Risk</td>
+                            <td><span class="table-partial">Full exposure</span><br><small style="color:#6C757D">Unless 100% G Fund</small></td>
+                            <td><span class="table-partial">Full exposure</span><br><small style="color:#6C757D">You manage risk</small></td>
+                            <td><span class="table-check">Zero</span><br><small style="color:#6C757D">No market participation</small></td>
+                            <td class="highlight-col"><span class="table-check">Only on growth portion</span><br><small style="color:#6C757D">Essentials protected</small></td>
+                        </tr>
+                        <tr>
+                            <td>Liquidity</td>
+                            <td><span class="table-check">High</span><br><small style="color:#6C757D">Partial withdrawals OK</small></td>
+                            <td><span class="table-check">Highest</span><br><small style="color:#6C757D">Full access anytime</small></td>
+                            <td><span class="table-x">None</span><br><small style="color:#6C757D">Irrevocable decision</small></td>
+                            <td class="highlight-col"><span class="table-partial">Partial</span><br><small style="color:#6C757D">TSP portion liquid</small></td>
+                        </tr>
+                        <tr>
+                            <td>Income Certainty</td>
+                            <td><span class="table-x">Low</span><br><small style="color:#6C757D">Sequence-of-returns risk</small></td>
+                            <td><span class="table-x">Low</span><br><small style="color:#6C757D">Same risk, more options</small></td>
+                            <td><span class="table-check">Highest</span><br><small style="color:#6C757D">Paycheck for life</small></td>
+                            <td class="highlight-col"><span class="table-check">High for essentials</span><br><small style="color:#6C757D">Bills always covered</small></td>
+                        </tr>
+                        <tr>
+                            <td>Best For</td>
+                            <td>Low-cost investors<br>comfortable with<br>market risk</td>
+                            <td>Tax optimizers with<br>$500K+ who want<br>full control</td>
+                            <td>Risk-averse retirees<br>who want pure<br>guaranteed income</td>
+                            <td class="highlight-col"><strong style="color:#0D6E6E">Most FERS employees<br>who want security<br>AND growth</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="text-align:center; margin-top:32px;">
+                <a href="#hero-form" class="sticky-nav__cta" style="display:inline-flex; padding:14px 28px; font-size:0.95rem;">
+                    See Which Strategy Fits Your TSP Balance
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ========================================
+         SECTION 4: INCOME FLOOR DEEP DIVE
+         ======================================== -->
+    <section class="income-floor section-padding" id="income-floor">
+        <div class="container">
+            <div class="income-floor__header">
+                <span class="eyebrow eyebrow--gold">Deep Dive</span>
+                <h2>The Income Floor Strategy: How the Math Actually Works</h2>
+                <p>
+                    The concept is simple: your FERS annuity + Social Security + a fixed annuity
+                    from a partial TSP rollover cover every essential bill. The rest of your TSP
+                    stays invested for growth. Here's the visual breakdown.
+                </p>
+            </div>
+
+            <!-- Income Stack Diagram -->
+            <div class="income-floor__diagram">
+                <div class="income-floor__stack">
+                    <!-- Top layer: Growth -->
+                    <div class="income-floor__layer income-floor__layer--growth">
+                        <div class="income-floor__layer-left">
+                            <div class="income-floor__layer-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+                            </div>
+                            <div>
+                                <div class="income-floor__layer-name">Remaining TSP (C &amp; S Funds)</div>
+                                <div class="income-floor__layer-desc">Growth bucket &mdash; discretionary spending, travel, legacy</div>
+                            </div>
+                        </div>
+                        <div style="text-align:right">
+                            <div class="income-floor__layer-amount">$420,000</div>
+                            <div class="income-floor__layer-pct">60% of TSP stays invested</div>
+                        </div>
+                    </div>
+
+                    <!-- Fixed Annuity Layer -->
+                    <div class="income-floor__layer income-floor__layer--annuity">
+                        <div class="income-floor__layer-left">
+                            <div class="income-floor__layer-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                            </div>
+                            <div>
+                                <div class="income-floor__layer-name">Fixed Index Annuity</div>
+                                <div class="income-floor__layer-desc">40% TSP rollover &mdash; guaranteed income for life</div>
+                            </div>
+                        </div>
+                        <div style="text-align:right">
+                            <div class="income-floor__layer-amount">$1,450/mo</div>
+                            <div class="income-floor__layer-pct">From $280K partial rollover</div>
+                        </div>
+                    </div>
+
+                    <!-- Social Security Layer -->
+                    <div class="income-floor__layer income-floor__layer--ss">
+                        <div class="income-floor__layer-left">
+                            <div class="income-floor__layer-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M12 8v8M8 12h8"/></svg>
+                            </div>
+                            <div>
+                                <div class="income-floor__layer-name">Social Security</div>
+                                <div class="income-floor__layer-desc">Claiming at age 67 (full retirement age)</div>
+                            </div>
+                        </div>
+                        <div style="text-align:right">
+                            <div class="income-floor__layer-amount">$2,400/mo</div>
+                            <div class="income-floor__layer-pct">Based on 35-year work history</div>
+                        </div>
+                    </div>
+
+                    <!-- FERS Annuity Layer (Foundation) -->
+                    <div class="income-floor__layer income-floor__layer--fers">
+                        <div class="income-floor__layer-left">
+                            <div class="income-floor__layer-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 21h18M3 10h18M5 6l7-3 7 3M4 10v11M20 10v11M8 14v3M12 14v3M16 14v3"/></svg>
+                            </div>
+                            <div>
+                                <div class="income-floor__layer-name">FERS Basic Annuity</div>
+                                <div class="income-floor__layer-desc">1.1% x high-3 x years of creditable service</div>
+                            </div>
+                        </div>
+                        <div style="text-align:right">
+                            <div class="income-floor__layer-amount">$2,860/mo</div>
+                            <div class="income-floor__layer-pct">30 years at GS-13, Step 5</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GS-13 Example Math -->
+            <div class="income-floor__example">
+                <h3>Real Numbers: GS-13, Step 5 &mdash; 30 Years of Creditable Service</h3>
+                <p class="income-floor__example-subtitle">
+                    Retiring at age 60 with a $700,000 TSP balance and a high-3 average salary of $103,690
+                </p>
+
+                <div class="income-floor__math">
+                    <!-- Left: The FERS Annuity Computation -->
+                    <div class="income-floor__math-section">
+                        <h4>FERS Annuity Computation</h4>
+
+                        <div class="math-row">
+                            <span class="math-row__label">High-3 Average Salary</span>
+                            <span class="math-row__value">$103,690</span>
+                        </div>
+                        <div class="math-row">
+                            <span class="math-row__label">Multiplier (age 60+, 20+ yrs)</span>
+                            <span class="math-row__value">1.1%</span>
+                        </div>
+                        <div class="math-row">
+                            <span class="math-row__label">Years of Creditable Service</span>
+                            <span class="math-row__value">30 years</span>
+                        </div>
+                        <div class="math-row">
+                            <span class="math-row__label">Computation</span>
+                            <span class="math-row__value">1.1% &times; $103,690 &times; 30</span>
+                        </div>
+                        <div class="math-row math-row--total">
+                            <span class="math-row__label">Annual FERS Annuity</span>
+                            <span class="math-row__value">$34,217/yr ($2,851/mo)</span>
+                        </div>
+
+                        <div style="margin-top:24px;">
+                            <div class="math-row">
+                                <span class="math-row__label">+ Social Security (at 67)</span>
+                                <span class="math-row__value">$28,800/yr ($2,400/mo)</span>
+                            </div>
+                            <div class="math-row math-row--total">
+                                <span class="math-row__label">Guaranteed Base Income</span>
+                                <span class="math-row__value">$63,017/yr ($5,251/mo)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: The Gap + Floor -->
+                    <div class="income-floor__math-section">
+                        <h4>Building the Income Floor</h4>
+
+                        <div class="math-row">
+                            <span class="math-row__label">Pre-retirement take-home</span>
+                            <span class="math-row__value">~$85,000/yr</span>
+                        </div>
+                        <div class="math-row">
+                            <span class="math-row__label">Essential expenses target (80%)</span>
+                            <span class="math-row__value">$80,400/yr ($6,700/mo)</span>
+                        </div>
+                        <div class="math-row">
+                            <span class="math-row__label">Guaranteed base (FERS + SS)</span>
+                            <span class="math-row__value">$63,017/yr ($5,251/mo)</span>
+                        </div>
+                        <div class="math-row math-row--gap">
+                            <span class="math-row__label">Monthly Income Gap</span>
+                            <span class="math-row__value">$1,449/mo ($17,383/yr)</span>
+                        </div>
+
+                        <div style="margin-top:24px;">
+                            <div class="math-row">
+                                <span class="math-row__label">TSP to roll into fixed annuity</span>
+                                <span class="math-row__value">$280,000 (40%)</span>
+                            </div>
+                            <div class="math-row">
+                                <span class="math-row__label">Fixed annuity payout</span>
+                                <span class="math-row__value">~$1,450/mo guaranteed</span>
+                            </div>
+                            <div class="math-row math-row--solved">
+                                <span class="math-row__label">Gap Closed</span>
+                                <span class="math-row__value">$6,701/mo guaranteed</span>
+                            </div>
+                        </div>
+
+                        <div style="margin-top:24px;">
+                            <div class="math-row">
+                                <span class="math-row__label">TSP remaining (C &amp; S Funds)</span>
+                                <span class="math-row__value">$420,000 (60%)</span>
+                            </div>
+                            <div class="math-row">
+                                <span class="math-row__label">Projected growth (7% avg)</span>
+                                <span class="math-row__value">~$826K by age 75</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="income-floor__footnote">
+                * Example uses 2026 GS pay tables, locality pay for Rest of U.S., and illustrative annuity
+                rates. Your actual numbers depend on your specific high-3 salary, years of creditable service,
+                locality area, and current TSP balance. The free Blueprint calculates your personalized floor.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 5: STATS BAR
+         ======================================== -->
+    <section class="stats-bar" id="stats-bar">
+        <div class="container">
+            <div class="stats-bar__grid">
+                <div class="stats-bar__item">
+                    <div class="stats-bar__number">0.055%</div>
+                    <div class="stats-bar__label">TSP administrative expense<br>ratio &mdash; lowest in the nation</div>
+                </div>
+                <div class="stats-bar__item">
+                    <div class="stats-bar__number">30&ndash;40%</div>
+                    <div class="stats-bar__label">Typical FERS annuity<br>salary replacement rate</div>
+                </div>
+                <div class="stats-bar__item">
+                    <div class="stats-bar__number">54,000+</div>
+                    <div class="stats-bar__label">Pending federal retirement<br>claims as of January 2026</div>
+                </div>
+                <div class="stats-bar__item">
+                    <div class="stats-bar__number">77 days</div>
+                    <div class="stats-bar__label">Average OPM processing<br>time for retirement claims</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========================================
+         SECTION 6: THE FERS SUPPLEMENT BRIDGE
+         ======================================== -->
+    <section class="supplement section-padding" id="supplement">
+        <div class="container">
+            <div class="supplement__header">
+                <span class="eyebrow eyebrow--navy">Critical Timeline</span>
+                <h2>The FERS Supplement: Your Bridge Income (and Its Cliff)</h2>
+                <p>
+                    If you retire before 62 with at least 20 years of creditable service, OPM pays
+                    the FERS Supplement &mdash; a temporary benefit that approximates your Social Security.
+                    But it stops abruptly at 62. Here's the timeline every federal employee must understand.
+                </p>
+            </div>
+
+            <div class="supplement__timeline">
+                <div class="timeline__track">
+                    <!-- Phase 1: MRA Retirement -->
+                    <div class="timeline__phase">
+                        <div class="timeline__bar timeline__bar--fers"></div>
+                        <div class="timeline__age">56&ndash;57</div>
+                        <div class="timeline__label">MRA Retirement</div>
+                        <div class="timeline__desc">
+                            You separate from federal service at your Minimum Retirement Age
+                            (56&ndash;57 for most FERS employees born after 1970). Your FERS
+                            annuity begins immediately with 30+ years of creditable service.
+                        </div>
+                        <div class="timeline__amount timeline__amount--green">
+                            FERS annuity: $2,851/mo
+                        </div>
+                    </div>
+
+                    <!-- Phase 2: Supplement Period -->
+                    <div class="timeline__phase">
+                        <div class="timeline__bar timeline__bar--supplement"></div>
+                        <div class="timeline__age">57&ndash;62</div>
+                        <div class="timeline__label">FERS Supplement Period</div>
+                        <div class="timeline__desc">
+                            OPM pays the FERS Supplement to bridge the gap until Social Security
+                            eligibility. It approximates what your Social Security benefit would
+                            be, prorated for your years of FERS service. It is subject to an
+                            earnings test if you work.
+                        </div>
+                        <div class="timeline__amount timeline__amount--gold">
+                            Supplement: ~$1,200/mo
+                        </div>
+                    </div>
+
+                    <!-- Phase 3: The Cliff -->
+                    <div class="timeline__phase">
+                        <div class="timeline__bar timeline__bar--cliff"></div>
+                        <div class="timeline__age">62</div>
+                        <div class="timeline__label">The Supplement Cliff</div>
+                        <div class="timeline__desc">
+                            The FERS Supplement stops the month you turn 62 &mdash; regardless
+                            of whether you claim Social Security. If you delay SS to get a higher
+                            benefit, you face a gap of zero bridge income. This cliff can mean
+                            losing $1,000&ndash;$1,500/month overnight.
+                        </div>
+                        <div class="timeline__amount timeline__amount--red">
+                            Supplement drops to $0
+                        </div>
+                    </div>
+
+                    <!-- Phase 4: Social Security -->
+                    <div class="timeline__phase">
+                        <div class="timeline__bar timeline__bar--ss"></div>
+                        <div class="timeline__age">62&ndash;70</div>
+                        <div class="timeline__label">Social Security Decision</div>
+                        <div class="timeline__desc">
+                            You can claim SS as early as 62 (reduced 30%) or delay to 70 (increased 24%
+                            above full retirement age). The Income Floor strategy uses the fixed annuity
+                            to bridge this gap &mdash; so you can delay SS and get a permanently higher payment.
+                        </div>
+                        <div class="timeline__amount timeline__amount--green">
+                            SS at 67: $2,400/mo
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="supplement__warning">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                    <path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/>
+                    <line x1="12" y1="9" x2="12" y2="13"/>
+                    <line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+                <div>
+                    <p>
+                        <strong>The Supplement Cliff is the #1 planning blind spot for FERS employees.</strong>
+                        Most federal retirement calculators show your income with the Supplement included &mdash;
+                        but don't clearly show what happens the month it disappears. If your only plan is
+                        "claim Social Security at 62," you're locking in a permanently reduced benefit
+                        (up to 30% less than your full retirement age amount). The Blueprint shows you
+                        exactly how to bridge the 62&ndash;67 gap without being forced into early SS claiming.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 7: SOCIAL SECURITY TIMING
+         ======================================== -->
+    <section class="ss-timing section-padding" id="ss-timing">
+        <div class="container">
+            <div class="ss-timing__header">
+                <span class="eyebrow eyebrow--teal">Timing Matters</span>
+                <h2>Social Security at 62 vs. 67 vs. 70: The Real Dollar Impact</h2>
+                <p>
+                    For a federal employee with a full retirement age (FRA) benefit of $2,400/month,
+                    claiming age changes your monthly check by hundreds of dollars &mdash; permanently.
+                    Here's what each option actually looks like for a GS-13 retiree.
+                </p>
+            </div>
+
+            <div class="ss-timing__cards">
+                <!-- Age 62 Card -->
+                <div class="ss-card">
+                    <div class="ss-card__age">62</div>
+                    <div class="ss-card__claim-type">Early Claiming</div>
+                    <div class="ss-card__monthly ss-card__monthly--low">$1,680/mo</div>
+                    <div class="ss-card__pct">30% permanent reduction</div>
+                    <div class="ss-card__annual">
+                        Annual: <strong>$20,160</strong>
+                    </div>
+                    <div class="ss-card__note">
+                        Lowest monthly check. Most common reason: the Supplement cliff forces the decision.
+                        Over a 25-year retirement, you collect $504,000 &mdash; but leave $216,000+ on the table
+                        compared to claiming at 70.
+                    </div>
+                </div>
+
+                <!-- Age 67 Card (Optimal) -->
+                <div class="ss-card ss-card--optimal">
+                    <div class="ss-card__age">67</div>
+                    <div class="ss-card__claim-type">Full Retirement Age</div>
+                    <div class="ss-card__monthly ss-card__monthly--mid">$2,400/mo</div>
+                    <div class="ss-card__pct">100% of your FRA benefit</div>
+                    <div class="ss-card__annual">
+                        Annual: <strong>$28,800</strong>
+                    </div>
+                    <div class="ss-card__note">
+                        Full benefit with no reduction. The Income Floor strategy uses your fixed annuity
+                        to bridge 62&ndash;67, so you're not forced to claim early. Most advisors recommend
+                        this as the sweet spot for FERS employees.
+                    </div>
+                </div>
+
+                <!-- Age 70 Card -->
+                <div class="ss-card">
+                    <div class="ss-card__age">70</div>
+                    <div class="ss-card__claim-type">Maximum Delayed Credits</div>
+                    <div class="ss-card__monthly ss-card__monthly--high">$2,976/mo</div>
+                    <div class="ss-card__pct">124% of FRA (8%/yr delayed credits)</div>
+                    <div class="ss-card__annual">
+                        Annual: <strong>$35,712</strong>
+                    </div>
+                    <div class="ss-card__note">
+                        Highest possible monthly check. Best if you have longevity in your family and
+                        other income sources (FERS annuity + TSP) to cover ages 62&ndash;70. The break-even
+                        vs. claiming at 62 is approximately age 80.
+                    </div>
+                </div>
+            </div>
+
+            <div class="ss-timing__cta">
+                <p>
+                    The difference between claiming at 62 and 67 is <strong>$8,640 per year</strong> &mdash; every year for the rest of your life.
+                    Over 20 years, that's <strong>$172,800</strong> in additional guaranteed income.
+                </p>
+                <a href="#hero-form" class="sticky-nav__cta" style="display:inline-flex; padding:14px 28px; font-size:0.95rem;">
+                    See Your Personalized SS Timing Analysis
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 8: WHAT'S INSIDE THE BLUEPRINT
+         ======================================== -->
+    <section class="blueprint section-padding" id="blueprint">
+        <div class="container">
+            <div class="blueprint__header">
+                <span class="eyebrow eyebrow--gold">What You Get</span>
+                <h2>Inside the 2026 Federal Retirement Income Blueprint</h2>
+                <p>
+                    A 28-page strategy guide built specifically for FERS employees with 20+ years
+                    of creditable service. No fluff, no generic advice &mdash; just the math, the
+                    comparisons, and the decision frameworks that matter.
+                </p>
+            </div>
+
+            <div class="blueprint__grid">
+                <!-- Card 1 -->
+                <div class="blueprint-card">
+                    <div class="blueprint-card__icon blueprint-card__icon--navy">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                    </div>
+                    <h3>4-Strategy Comparison Matrix</h3>
+                    <p>
+                        Side-by-side analysis of all four TSP income strategies with fee breakdowns,
+                        risk ratings, and decision criteria. Includes a worksheet to score each strategy
+                        against your personal situation (TSP balance, risk tolerance, income needs).
+                    </p>
+                    <div class="blueprint-card__pages">Pages 4&ndash;11</div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="blueprint-card">
+                    <div class="blueprint-card__icon blueprint-card__icon--teal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="10"/></svg>
+                    </div>
+                    <h3>Income Floor Calculator</h3>
+                    <p>
+                        Fill-in-the-blank worksheets to compute your personal income floor. Enter your
+                        high-3 average salary, years of creditable service, estimated Social Security,
+                        and monthly essential expenses. The calculator shows exactly how much TSP to roll
+                        into a fixed annuity and how much to keep invested.
+                    </p>
+                    <div class="blueprint-card__pages">Pages 12&ndash;15</div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="blueprint-card">
+                    <div class="blueprint-card__icon blueprint-card__icon--gold">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>FERS Supplement Bridge Plan</h3>
+                    <p>
+                        Year-by-year income timeline from your MRA through age 70. Shows exactly when
+                        the Supplement ends, when SS starts, and how the income floor fills the gap.
+                        Includes the earnings test thresholds for 2026 if you plan to work part-time
+                        during the supplement period.
+                    </p>
+                    <div class="blueprint-card__pages">Pages 16&ndash;19</div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="blueprint-card">
+                    <div class="blueprint-card__icon blueprint-card__icon--teal">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                    </div>
+                    <h3>Social Security Timing Analysis</h3>
+                    <p>
+                        Three claiming scenarios (62 / 67 / 70) with cumulative lifetime payouts.
+                        Shows the break-even age for each option and how the FERS Supplement cliff
+                        changes the calculation for federal employees vs. private sector workers.
+                        Includes the 2026 COLA adjustment impact.
+                    </p>
+                    <div class="blueprint-card__pages">Pages 20&ndash;22</div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="blueprint-card">
+                    <div class="blueprint-card__icon blueprint-card__icon--navy">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+                    </div>
+                    <h3>FEHB in Retirement Guide</h3>
+                    <p>
+                        How to keep Federal Employees Health Benefits in retirement (the 5-year enrollment
+                        rule), what it costs as a retiree, and how FEHB coordinates with Medicare at 65.
+                        Most federal employees don't realize FEHB premiums change after separation &mdash; this
+                        section shows the actual 2026 premium tables.
+                    </p>
+                    <div class="blueprint-card__pages">Pages 23&ndash;25</div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="blueprint-card">
+                    <div class="blueprint-card__icon blueprint-card__icon--gold">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    </div>
+                    <h3>Roth Conversion Roadmap</h3>
+                    <p>
+                        Year-by-year Roth conversion strategy for the gap years between separation and
+                        Social Security (when your tax bracket is typically lowest). Shows how to convert
+                        Traditional TSP to Roth IRA systematically to reduce future RMDs and create
+                        tax-free retirement income. Includes 2026 tax bracket tables and IRMAA thresholds.
+                    </p>
+                    <div class="blueprint-card__pages">Pages 26&ndash;28</div>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-top:48px;">
+                <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-bottom:24px;">
+                    <span class="pill pill--teal">PDF Download</span>
+                    <span class="pill pill--gold">Fill-in Worksheets</span>
+                    <span class="pill pill--navy">2026 Pay Tables</span>
+                    <span class="pill pill--teal">28 Pages</span>
+                    <span class="pill pill--gold">GS-11 through SES</span>
+                    <span class="pill pill--navy">FERS-Specific</span>
+                </div>
+                <a href="#hero-form" class="sticky-nav__cta" style="display:inline-flex; padding:14px 32px; font-size:1rem;">
+                    Get My Free Strategy Comparison
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- ========================================
+         SECTION 9: TESTIMONIALS
+         ======================================== -->
+    <section class="testimonials section-padding" id="testimonials">
+        <div class="container">
+            <div class="testimonials__header">
+                <span class="eyebrow eyebrow--teal">From Federal Employees</span>
+                <h2>What Other FERS Employees Are Saying</h2>
+            </div>
+
+            <div class="testimonials__grid">
+                <!-- Testimonial 1: GS-12 VA -->
+                <div class="testimonial-card">
+                    <div class="testimonial-card__quote">&ldquo;</div>
+                    <p>
+                        I spent two years staring at my TSP balance wondering if it was enough. The
+                        comparison guide made the Income Floor concept click for me &mdash; I didn't
+                        realize I could keep 60% of my TSP in the C Fund while covering all my essential
+                        bills with guaranteed income. The GS-12 example was almost identical to my situation.
+                        I finally feel like I have a plan instead of just a hope.
+                    </p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">DM</div>
+                        <div>
+                            <div class="testimonial-card__name">Denise M.</div>
+                            <div class="testimonial-card__title">GS-12 &mdash; VA Medical Center &mdash; 27 years of creditable service</div>
+                            <div class="testimonial-card__verified">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+                                Verified federal employee
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2: GS-14 DoD -->
+                <div class="testimonial-card">
+                    <div class="testimonial-card__quote">&ldquo;</div>
+                    <p>
+                        The FERS Supplement cliff section was a wake-up call. I was planning to retire
+                        at 57 and didn't fully understand that the supplement vanishes at 62 even if
+                        I don't claim Social Security. The blueprint showed me exactly how much I'd need
+                        in a fixed annuity to bridge that gap so I could delay SS to 67 and get the full
+                        benefit. That's an extra $8,600 per year &mdash; for life.
+                    </p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">RJ</div>
+                        <div>
+                            <div class="testimonial-card__name">Robert J.</div>
+                            <div class="testimonial-card__title">GS-14 &mdash; Department of Defense &mdash; 31 years of creditable service</div>
+                            <div class="testimonial-card__verified">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+                                Verified federal employee
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3: GS-13 IRS -->
+                <div class="testimonial-card">
+                    <div class="testimonial-card__quote">&ldquo;</div>
+                    <p>
+                        What I appreciated most was the Roth conversion roadmap. Between separation at 60
+                        and Social Security at 67, my tax bracket drops significantly. The guide showed me
+                        I could convert $40K&ndash;$50K per year from my Traditional TSP to a Roth IRA and still
+                        stay in the 12% bracket. Over 7 years, that's $300K+ in tax-free retirement
+                        income. Nobody at the IRS benefits office ever mentioned this strategy.
+                    </p>
+                    <div class="testimonial-card__author">
+                        <div class="testimonial-card__avatar">LT</div>
+                        <div>
+                            <div class="testimonial-card__name">Linda T.</div>
+                            <div class="testimonial-card__title">GS-13 &mdash; Internal Revenue Service &mdash; 28 years of creditable service</div>
+                            <div class="testimonial-card__verified">
+                                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+                                Verified federal employee
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 10: FAQ
+         ======================================== -->
+    <section class="faq section-padding" id="faq">
+        <div class="container">
+            <div class="faq__header">
+                <span class="eyebrow eyebrow--navy">Common Questions</span>
+                <h2>Frequently Asked Questions</h2>
+            </div>
+
+            <div class="faq__list">
+                <!-- FAQ 1 -->
+                <div class="faq__item">
+                    <button class="faq__question" onclick="toggleFaq(this)">
+                        <span>Is the Income Floor strategy right for every federal employee?</span>
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-inner">
+                            <p>
+                                No &mdash; and the Blueprint is transparent about that. The Income Floor works best for
+                                FERS employees who are 3&ndash;7 years from retirement with TSP balances of $300K or more.
+                                If your FERS annuity plus Social Security already covers your essential expenses (common for
+                                employees with 35+ years of creditable service and modest spending), you may not need a fixed
+                                annuity at all. The comparison matrix in the Blueprint scores all four strategies against
+                                your specific situation so you can see which one actually fits.
+                            </p>
+                            <p style="margin-top:12px;">
+                                For employees with TSP balances under $100K, staying in the TSP's G Fund or L Income Fund
+                                is typically the most cost-effective approach. The key is matching the strategy to your
+                                numbers &mdash; not following generic advice.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq__item">
+                    <button class="faq__question" onclick="toggleFaq(this)">
+                        <span>What about Roth conversions? Should I convert my Traditional TSP?</span>
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-inner">
+                            <p>
+                                Roth conversions are one of the most powerful tax optimization strategies for federal
+                                employees &mdash; but timing is everything. The ideal window is the gap years between
+                                your separation from federal service and when Social Security and Required Minimum
+                                Distributions (RMDs) begin. During these years, your taxable income drops significantly,
+                                which means you can convert Traditional TSP dollars to Roth IRA dollars at a much
+                                lower tax rate.
+                            </p>
+                            <p style="margin-top:12px;">
+                                For example: a GS-13 retiring at 60 might go from a 22% marginal bracket while working
+                                to a 12% bracket in retirement (before SS and RMDs). Converting $40K&ndash;$50K per year
+                                during this window builds a tax-free Roth pool that won't increase your future IRMAA
+                                Medicare premiums, won't be subject to RMDs, and passes to your beneficiaries tax-free.
+                            </p>
+                            <p style="margin-top:12px;">
+                                The Blueprint includes a year-by-year Roth conversion roadmap with the exact bracket
+                                thresholds for 2026 and the IRMAA tipping points to avoid.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq__item">
+                    <button class="faq__question" onclick="toggleFaq(this)">
+                        <span>How does the survivor benefit affect my strategy choice?</span>
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-inner">
+                            <p>
+                                The FERS survivor benefit is a critical factor that many employees overlook. If you
+                                elect the full survivor benefit, your surviving spouse receives 50% of your unreduced
+                                annuity &mdash; but your own annuity is reduced by 10% while you're alive. If you elect
+                                the partial survivor benefit (25% to spouse), your reduction is 5%.
+                            </p>
+                            <p style="margin-top:12px;">
+                                This matters for strategy selection because the survivor benefit only applies to your
+                                FERS annuity &mdash; not your TSP, not Social Security (which has its own survivor rules),
+                                and not a private annuity. If you purchase a joint-life annuity as part of the Income
+                                Floor strategy, your spouse continues to receive that income regardless of the FERS
+                                survivor benefit election.
+                            </p>
+                            <p style="margin-top:12px;">
+                                The Blueprint walks through three scenarios: single retiree, married with full survivor
+                                benefit, and married with partial survivor benefit. Each scenario changes the optimal
+                                Income Floor split.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq__item">
+                    <button class="faq__question" onclick="toggleFaq(this)">
+                        <span>What if I'm already retired from federal service?</span>
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-inner">
+                            <p>
+                                If you've already separated from federal service and your TSP balance is sitting in
+                                the G Fund or L Income Fund, the strategies in this Blueprint still apply. You can
+                                still roll TSP dollars into an IRA or purchase an annuity at any point after separation.
+                                The key decisions &mdash; how much to keep in TSP vs. roll over, whether to purchase
+                                guaranteed income, and when to claim Social Security &mdash; are the same whether you
+                                retired last month or five years ago.
+                            </p>
+                            <p style="margin-top:12px;">
+                                That said, if you're already drawing Social Security and have begun RMDs, the Roth
+                                conversion window may be smaller or closed. The Blueprint will still help you optimize
+                                your TSP withdrawal strategy and evaluate whether an income floor makes sense for
+                                your remaining balance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq__item">
+                    <button class="faq__question" onclick="toggleFaq(this)">
+                        <span>Will I be contacted by a financial advisor or sales agent?</span>
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-inner">
+                            <p>
+                                <strong>No.</strong> Your email address is used only to deliver the Blueprint PDF.
+                                You will not receive a phone call, be added to a sales pipeline, or be contacted by
+                                any financial advisor. We know that federal employees &mdash; especially those on
+                                r/fednews and r/ThriftSavingsPlan &mdash; are rightfully skeptical of anyone who
+                                asks for their information. The Blueprint is an educational resource, not a lead
+                                generation tool for advisors.
+                            </p>
+                            <p style="margin-top:12px;">
+                                If you'd like personalized guidance after reading the Blueprint, LP3 in this series
+                                offers a custom retirement illustration. But that's entirely your choice &mdash;
+                                this Blueprint stands on its own as a complete comparison guide.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 6 -->
+                <div class="faq__item">
+                    <button class="faq__question" onclick="toggleFaq(this)">
+                        <span>How does the TSP annuity through MetLife compare to a private fixed index annuity?</span>
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-inner">
+                            <p>
+                                The TSP annuity (purchased through MetLife) and a private fixed index annuity serve
+                                similar purposes &mdash; both convert a lump sum into guaranteed lifetime income &mdash;
+                                but they differ in important ways:
+                            </p>
+                            <p style="margin-top:12px;">
+                                <strong>TSP Annuity (MetLife):</strong> Simple, low-cost, purchased directly through
+                                TSP.gov. Limited options (single life, joint life, with/without cash refund). Rates
+                                fluctuate monthly and cannot be locked in advance. Once purchased, it's irrevocable.
+                                No index-linked growth potential.
+                            </p>
+                            <p style="margin-top:12px;">
+                                <strong>Private Fixed Index Annuity:</strong> More complex, but offers potential for
+                                higher payouts through index-linked crediting methods. Can include income riders with
+                                guaranteed withdrawal percentages. May offer liquidity features (10% free withdrawal).
+                                Requires rolling TSP into an IRA first. Higher internal costs (built into the product
+                                design, not charged directly as fees).
+                            </p>
+                            <p style="margin-top:12px;">
+                                The Blueprint includes a direct comparison of both options with current rate examples
+                                so you can see the actual dollar difference for your TSP balance.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ 7 -->
+                <div class="faq__item">
+                    <button class="faq__question" onclick="toggleFaq(this)">
+                        <span>I'm under CSRS, not FERS. Does this Blueprint apply to me?</span>
+                        <svg class="faq__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    </button>
+                    <div class="faq__answer">
+                        <div class="faq__answer-inner">
+                            <p>
+                                This Blueprint is specifically designed for FERS employees. CSRS employees have a
+                                fundamentally different retirement structure &mdash; your annuity computation uses a higher
+                                multiplier (1.5%&ndash;2.0% per year vs. FERS' 1.0%&ndash;1.1%), you generally don't
+                                receive Social Security from your federal service, and you don't receive the FERS Supplement.
+                            </p>
+                            <p style="margin-top:12px;">
+                                That said, the TSP strategy concepts (Stay in TSP vs. Rollover vs. Annuity vs. Income Floor)
+                                still apply to CSRS employees with TSP balances. However, the math examples, FERS-specific
+                                computations, and Social Security timing analysis would not be applicable to your situation.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 11: PULL QUOTE
+         ======================================== -->
+    <section class="pull-quote" id="pull-quote">
+        <div class="container">
+            <div class="pull-quote__inner">
+                <div class="pull-quote__mark">&ldquo;</div>
+                <div class="pull-quote__text">
+                    I can't afford a 30% drop in my TSP this close to retirement. I'd rather earn less
+                    and know my bills are covered than swing for the fences and risk everything I've
+                    worked 28 years to accumulate. The Income Floor makes sense because it doesn't
+                    force me to choose between security and growth &mdash; I get both.
+                </div>
+                <div class="pull-quote__attr">
+                    &mdash; Common sentiment from federal employees on r/fednews and r/ThriftSavingsPlan
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECTION 12: FINAL CTA
+         ======================================== -->
+    <section class="final-cta section-padding-lg" id="final-cta">
+        <div class="container">
+            <div class="final-cta__grid">
+                <!-- Left Column: Content -->
+                <div class="final-cta__content">
+                    <span class="eyebrow eyebrow--white">Your Next Step</span>
+                    <h2>Compare Your Options <em>Before</em> You File Retirement Paperwork</h2>
+                    <p>
+                        OPM processes your SF-182 and you're done. There's no going back to restructure
+                        your TSP, redo your survivor benefit election, or change your Social Security
+                        claiming strategy. The decisions you make in the 12&ndash;24 months before
+                        separation determine your income for the next 30 years.
+                    </p>
+
+                    <ul class="final-cta__bullets">
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+                            4-strategy comparison with your TSP balance range
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+                            Income Floor calculator worksheets you can fill in today
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+                            FERS Supplement bridge timeline for your retirement age
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+                            Social Security claiming analysis with break-even ages
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+                            Roth conversion roadmap for the low-tax gap years
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M20 6L9 17l-5-5"/></svg>
+                            FEHB premium tables and Medicare coordination guide
+                        </li>
+                    </ul>
+
+                    <div class="final-cta__urgency">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        2026 TSP changes and COLA adjustments included. Updated quarterly.
+                    </div>
+                </div>
+
+                <!-- Right Column: Form -->
+                <div class="form-card" id="final-form">
+                    <div class="form-card__badge">Free &mdash; No Advisor Contact</div>
+
+                    <h3>Get the 2026 Blueprint</h3>
+                    <p class="form-card__subtitle">28 pages of FERS-specific strategy comparisons</p>
+
+                    <form id="leadFormFinal" onsubmit="handleFormSubmit(event)">
+                        <div class="form-group">
+                            <label for="ageBracketFinal">Your Age Bracket</label>
+                            <select id="ageBracketFinal" required>
+                                <option value="" disabled selected>Select your age range</option>
+                                <option value="50-54">50 &ndash; 54 (Pre-MRA planning)</option>
+                                <option value="55-59">55 &ndash; 59 (MRA eligible / approaching)</option>
+                                <option value="60-62">60 &ndash; 62 (Peak retirement window)</option>
+                                <option value="63+">63+ (Post-MRA, SS decisions ahead)</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="tspBalanceFinal">Approximate TSP Balance</label>
+                            <select id="tspBalanceFinal" required>
+                                <option value="" disabled selected>Select your TSP range</option>
+                                <option value="under-100k">Under $100,000</option>
+                                <option value="100k-300k">$100,000 &ndash; $300,000</option>
+                                <option value="300k-500k">$300,000 &ndash; $500,000</option>
+                                <option value="500k-1m">$500,000 &ndash; $1,000,000</option>
+                                <option value="over-1m">Over $1,000,000</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="emailFinal">Email Address</label>
+                            <input type="email" id="emailFinal" placeholder="your.name@agency.gov" required>
+                        </div>
+
+                        <button type="submit" class="form-card__btn">
+                            Get My Free Strategy Comparison
+                        </button>
+                    </form>
+
+                    <div class="form-card__no-sales">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+                        No phone calls. No advisor contact. Just your blueprint.
+                    </div>
+
+                    <div class="form-card__social-proof">
+                        Join <strong>4,200+</strong> federal employees who have compared their options
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         FOOTER
+         ======================================== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <p>&copy; 2026 Federal Retirement Strategies. All rights reserved. For educational purposes only.</p>
+                <p>
+                    This guide is not investment, tax, or legal advice. Consult a fiduciary financial advisor
+                    and tax professional before making retirement decisions. Not affiliated with OPM, TSP, or any federal agency.
+                </p>
+                <div>
+                    <a href="#" style="margin-right:16px;">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ========================================
+         JAVASCRIPT
+         ======================================== -->
+    <script>
+        /* ----------------------------------------
+           Sticky Nav scroll shadow
+           ---------------------------------------- */
+        (function() {
+            var nav = document.getElementById('stickyNav');
+            if (!nav) return;
+
+            var lastScrollY = 0;
+            var ticking = false;
+
+            function updateNav() {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+                ticking = false;
+            }
+
+            window.addEventListener('scroll', function() {
+                lastScrollY = window.scrollY;
+                if (!ticking) {
+                    window.requestAnimationFrame(updateNav);
+                    ticking = true;
+                }
+            });
+        })();
+
+        /* ----------------------------------------
+           Smooth scroll for anchor links
+           ---------------------------------------- */
+        document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                var targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                var target = document.querySelector(targetId);
+                if (target) {
+                    e.preventDefault();
+                    var navHeight = document.getElementById('stickyNav')
+                        ? document.getElementById('stickyNav').offsetHeight
+                        : 0;
+                    var targetPos = target.getBoundingClientRect().top + window.pageYOffset - navHeight - 20;
+                    window.scrollTo({
+                        top: targetPos,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        /* ----------------------------------------
+           FAQ toggle
+           ---------------------------------------- */
+        function toggleFaq(button) {
+            var item = button.closest('.faq__item');
+            if (!item) return;
+
+            var isActive = item.classList.contains('active');
+
+            // Close all others
+            document.querySelectorAll('.faq__item.active').forEach(function(openItem) {
+                openItem.classList.remove('active');
+            });
+
+            // Toggle current
+            if (!isActive) {
+                item.classList.add('active');
+            }
+        }
+
+        /* ----------------------------------------
+           Form submission handler
+           ---------------------------------------- */
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            var form = event.target;
+            var button = form.querySelector('button[type="submit"]');
+            var originalText = button.textContent;
+
+            // Disable button and show loading
+            button.disabled = true;
+            button.textContent = 'Preparing Your Blueprint...';
+            button.style.opacity = '0.7';
+
+            // Collect form data
+            var formData = {
+                ageBracket: form.querySelector('select[id*="ageBracket"]').value,
+                tspBalance: form.querySelector('select[id*="tspBalance"]').value,
+                email: form.querySelector('input[type="email"]').value,
+                source: 'lp2-solution-aware',
+                timestamp: new Date().toISOString()
+            };
+
+            // Log to console for integration
+            console.log('Lead captured:', JSON.stringify(formData, null, 2));
+
+            // Simulate async delivery
+            setTimeout(function() {
+                button.textContent = 'Blueprint Sent! Check Your Email';
+                button.style.background = '#0D6E6E';
+                button.style.opacity = '1';
+
+                // Show success message
+                var successMsg = document.createElement('div');
+                successMsg.style.cssText = 'margin-top:16px;padding:16px 20px;background:#E8F5F5;border-radius:8px;text-align:center;font-size:0.9rem;color:#0D6E6E;font-weight:600;';
+                successMsg.innerHTML = 'Your 2026 Federal Retirement Income Blueprint is on its way.<br><span style="font-weight:400;color:#495057;font-size:0.82rem;">Check your inbox (and spam folder) within the next 5 minutes.</span>';
+
+                // Insert after button
+                if (!form.querySelector('.success-msg')) {
+                    successMsg.className = 'success-msg';
+                    form.appendChild(successMsg);
+                }
+
+                // Re-enable after delay
+                setTimeout(function() {
+                    button.disabled = false;
+                    button.textContent = originalText;
+                    button.style.opacity = '1';
+                }, 5000);
+            }, 1500);
+        }
+
+        /* ----------------------------------------
+           Animate stats on scroll (intersection observer)
+           ---------------------------------------- */
+        (function() {
+            if (!('IntersectionObserver' in window)) return;
+
+            function animateNumber(element, target, suffix, duration) {
+                var start = 0;
+                var startTime = null;
+                var isDecimal = target % 1 !== 0;
+
+                function step(timestamp) {
+                    if (!startTime) startTime = timestamp;
+                    var progress = Math.min((timestamp - startTime) / duration, 1);
+                    var eased = 1 - Math.pow(1 - progress, 3); // ease-out cubic
+                    var current = start + (target - start) * eased;
+
+                    if (isDecimal) {
+                        element.textContent = current.toFixed(3) + suffix;
+                    } else if (target >= 1000) {
+                        element.textContent = Math.floor(current).toLocaleString() + suffix;
+                    } else {
+                        element.textContent = Math.floor(current) + suffix;
+                    }
+
+                    if (progress < 1) {
+                        window.requestAnimationFrame(step);
+                    }
+                }
+
+                window.requestAnimationFrame(step);
+            }
+
+            var statsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        var numbers = entry.target.querySelectorAll('.stats-bar__number');
+                        numbers.forEach(function(num) {
+                            var text = num.textContent.trim();
+                            if (num.dataset.animated) return;
+                            num.dataset.animated = 'true';
+
+                            if (text.includes('0.055')) {
+                                animateNumber(num, 0.055, '%', 1500);
+                            } else if (text.includes('54,000')) {
+                                animateNumber(num, 54000, '+', 1500);
+                            } else if (text.includes('77')) {
+                                animateNumber(num, 77, ' days', 1500);
+                            }
+                            // Skip the "30-40%" as it's a range
+                        });
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+
+            var statsBar = document.getElementById('stats-bar');
+            if (statsBar) {
+                statsObserver.observe(statsBar);
+            }
+        })();
+
+        /* ----------------------------------------
+           Fade-in animation on scroll
+           ---------------------------------------- */
+        (function() {
+            if (!('IntersectionObserver' in window)) return;
+
+            var style = document.createElement('style');
+            style.textContent = [
+                '.fade-in-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }',
+                '.fade-in-up.visible { opacity: 1; transform: translateY(0); }'
+            ].join('');
+            document.head.appendChild(style);
+
+            // Add class to animatable elements
+            var selectors = [
+                '.strategy-card',
+                '.blueprint-card',
+                '.testimonial-card',
+                '.ss-card',
+                '.faq__item',
+                '.income-floor__stack',
+                '.income-floor__example',
+                '.supplement__timeline',
+                '.pull-quote__inner'
+            ];
+
+            selectors.forEach(function(selector) {
+                document.querySelectorAll(selector).forEach(function(el, i) {
+                    el.classList.add('fade-in-up');
+                    el.style.transitionDelay = (i * 0.08) + 's';
+                });
+            });
+
+            var fadeObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        fadeObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+            document.querySelectorAll('.fade-in-up').forEach(function(el) {
+                fadeObserver.observe(el);
+            });
+        })();
+    </script>
+</body>
+</html>
