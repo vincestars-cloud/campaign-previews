@@ -97,7 +97,7 @@ img { display: block; max-width: 100%; }
 
 .nav-left, .nav-right { display: flex; align-items: center; }
 .nav-left { gap: clamp(16px, 2.5vw, 36px); }
-.nav-right { gap: clamp(12px, 2vw, 24px); justify-content: flex-end; }
+.nav-right { gap: clamp(8px, 1.5vw, 24px); justify-content: flex-end; }
 
 .nlink {
   font-size: 0.72rem;
@@ -108,6 +108,7 @@ img { display: block; max-width: 100%; }
   text-decoration: none;
   position: relative;
   transition: color 0.3s;
+  white-space: nowrap;
 }
 .nlink::after {
   content: '';
@@ -121,7 +122,10 @@ img { display: block; max-width: 100%; }
 }
 .nlink:hover { color: var(--ink); }
 .nlink:hover::after { width: 100%; }
+.nlink.active { color: var(--ink); font-weight: 400; }
+.nlink.active::after { width: 100%; }
 .nlink-gold { color: var(--gold); }
+.nlink-gold.active { color: var(--gold-deep); }
 
 .logo-link { text-decoration: none; text-align: center; }
 .logo-main {
@@ -153,45 +157,42 @@ img { display: block; max-width: 100%; }
 }
 .nav-btn:hover { color: var(--gold); }
 .mob-btn { display: none; }
+.mob-shop { display: none; }
 
-/* ============================================================
-   DEMO TABS
-   ============================================================ */
-.tabs {
-  display: flex;
-  justify-content: center;
-  background: var(--warm);
+/* Mobile menu drawer */
+.mob-menu {
+  display: none; position: fixed; inset: 0; z-index: 2500;
+  background: rgba(19,18,16,0.5); backdrop-filter: blur(8px);
+}
+.mob-menu.on { display: block; }
+.mob-menu-inner {
+  position: absolute; top: 0; right: 0; bottom: 0;
+  width: min(320px, 85vw); background: var(--cream);
+  padding: 72px 32px 40px;
+  display: flex; flex-direction: column; gap: 0;
+  overflow-y: auto;
+  animation: menuSlide 0.35s var(--ease);
+}
+@keyframes menuSlide { from { transform: translateX(100%); } to { transform: none; } }
+.mob-menu-x {
+  position: absolute; top: 20px; right: 20px;
+  background: none; border: none; font-size: 1.3rem;
+  cursor: pointer; color: var(--stone);
+}
+.mob-menu-link {
+  padding: 16px 0;
+  font-family: var(--sans); font-size: 0.82rem; font-weight: 300;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--coal); text-decoration: none;
   border-bottom: 1px solid rgba(158,138,79,0.06);
-  overflow-x: auto;
+  transition: color 0.2s;
 }
-.tab {
-  padding: 12px clamp(14px, 2.2vw, 28px);
-  font-size: 0.66rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  color: var(--clay);
-  background: none;
-  border: none;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: color 0.3s;
-  position: relative;
-  font-weight: 300;
+.mob-menu-link:hover { color: var(--gold); }
+.mob-menu-gold {
+  color: var(--gold); font-weight: 400;
+  border-bottom: none; margin-top: 8px;
 }
-.tab::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 0;
-  height: 1.5px;
-  background: var(--gold);
-  transition: width 0.4s var(--ease);
-}
-.tab:hover { color: var(--coal); }
-.tab.on { color: var(--gold-deep); font-weight: 400; }
-.tab.on::after { width: 40%; }
+.mob-menu-divider { height: 1px; background: rgba(158,138,79,0.1); margin: 8px 0; }
 
 /* ============================================================
    PAGES
@@ -228,6 +229,7 @@ img { display: block; max-width: 100%; }
 .hero-atmo {
   position: absolute;
   inset: 0;
+  pointer-events: none;
   background:
     radial-gradient(ellipse at 60% 30%, rgba(187, 169, 106, 0.07) 0%, transparent 50%),
     radial-gradient(ellipse at 20% 80%, rgba(158, 138, 79, 0.04) 0%, transparent 40%);
@@ -236,6 +238,7 @@ img { display: block; max-width: 100%; }
 .hero-grain {
   position: absolute;
   inset: 0;
+  pointer-events: none;
   opacity: 0.03;
   background: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 256px;
@@ -394,8 +397,10 @@ img { display: block; max-width: 100%; }
 }
 .hero-prod-wrap {
   position: relative;
-  width: 340px;
-  height: 460px;
+  width: 420px;
+  height: 500px;
+  border-radius: 6px;
+  overflow: hidden;
 }
 .hero-glow {
   position: absolute;
@@ -406,17 +411,49 @@ img { display: block; max-width: 100%; }
   background: radial-gradient(circle, rgba(158,138,79,0.1), transparent 70%);
   filter: blur(48px);
   animation: glowPulse 6s ease-in-out infinite;
+  z-index: 1;
 }
 @keyframes glowPulse {
   0%,100% { opacity: 0.4; transform: translate(-50%,-50%) scale(1); }
   50% { opacity: 0.75; transform: translate(-50%,-50%) scale(1.06); }
 }
+/* Video: fills the hero-prod-wrap container */
+.hero-video {
+  position: absolute; inset: 0; z-index: 3;
+  width: 100%; height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+/* Warm dark overlay on top of video */
+.hero-prod-wrap::after {
+  content: '';
+  position: absolute; inset: 0; z-index: 4;
+  border-radius: 6px;
+  background: linear-gradient(
+    180deg,
+    rgba(38,35,32,0.15) 0%,
+    rgba(38,35,32,0.05) 40%,
+    rgba(38,35,32,0.1) 80%,
+    rgba(38,35,32,0.25) 100%
+  );
+  pointer-events: none;
+}
+/* When video has no source, hide it and show fallback images */
+.hero-video:not([src]):not(:has(source[src])) { display: none; }
+/* Fallback image carousel */
 .hero-prod-img {
-  position: relative; z-index: 2;
+  position: absolute; inset: 0; z-index: 2;
   width: 100%; height: 100%;
   object-fit: contain;
+  padding: 20px;
   filter: drop-shadow(0 32px 64px rgba(0,0,0,0.35));
+  opacity: 0;
+  transition: opacity 1.2s ease-in-out;
 }
+.hero-prod-img.hero-active { opacity: 1; }
+/* Hide fallback images when video source exists */
+.hero-video[src] ~ .hero-fallback,
+.hero-video:has(source[src]) ~ .hero-fallback { display: none; }
 
 /* ============================================================
    THE PAUSE
@@ -659,56 +696,55 @@ img { display: block; max-width: 100%; }
    RITUAL
    ============================================================ */
 .ritual {
-  padding: clamp(80px, 12vw, 160px) 0;
-  background: var(--black);
-  position: relative;
-  overflow: hidden;
-}
-.ritual::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(ellipse at 50% 100%, rgba(158,138,79,0.05), transparent 45%);
+  padding: clamp(80px, 12vw, 140px) 0;
+  background: var(--cream);
 }
 .ritual-inner {
-  position: relative;
-  z-index: 2;
-  max-width: 820px;
+  max-width: 1100px;
   margin: 0 auto;
-  text-align: center;
-  padding: 0 clamp(20px, 4vw, 48px);
+  padding: 0 clamp(20px, 5vw, 64px);
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 0 clamp(40px, 5vw, 72px);
 }
-.ritual h2 {
-  font-family: var(--serif);
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
-  font-weight: 400;
-  color: var(--cream);
-  margin-bottom: 64px;
+.ritual-kicker {
+  font-size: 0.58rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--clay);
+  font-weight: 300;
+  line-height: 1.6;
+  padding-top: 4px;
 }
 .ritual-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(36px, 5vw, 56px) clamp(40px, 5vw, 80px);
 }
-.ritual-col {
-  padding: 0 clamp(16px, 2.5vw, 36px);
-  border-right: 1px solid rgba(158,138,79,0.08);
-}
-.ritual-col:last-child { border-right: none; }
 .ritual-col h4 {
   font-family: var(--serif);
   font-style: italic;
-  font-size: 1.15rem;
-  color: var(--gold-soft);
-  margin-bottom: 14px;
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: var(--ink);
+  font-weight: 400;
+  margin-bottom: 8px;
+  line-height: 1.35;
 }
 .ritual-col p {
-  font-size: 0.88rem;
+  font-size: 0.82rem;
   font-weight: 300;
-  color: var(--mist);
+  color: var(--stone);
   line-height: 1.65;
 }
 .ritual-foot {
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 0.92rem;
+  color: var(--clay);
+  text-align: center;
+  grid-column: 1 / -1;
+  margin-top: 48px;
+}
   margin-top: 64px;
   font-family: var(--serif);
   font-style: italic;
@@ -873,6 +909,7 @@ img { display: block; max-width: 100%; }
   margin-bottom: 12px;
   line-height: 1.25;
 }
+.final-cta h2 i { font-style: italic; color: var(--gold); }
 .final-cta p {
   font-size: 0.92rem;
   font-weight: 300;
@@ -935,6 +972,7 @@ img { display: block; max-width: 100%; }
   gap: clamp(16px, 2.5vw, 28px);
 }
 .p-row-3 { grid-template-columns: repeat(3, 1fr); }
+.p-row-4 { grid-template-columns: repeat(4, 1fr); }
 .p-row-4 { grid-template-columns: repeat(3, 1fr); }
 .p-row-2 { grid-template-columns: repeat(2, 1fr); max-width: 680px; }
 
@@ -1024,12 +1062,12 @@ img { display: block; max-width: 100%; }
 
 .pd-panel {
   background: var(--cream);
-  max-width: 980px;
+  max-width: 1020px;
   width: 100%;
   max-height: 94vh;
   overflow-y: auto;
   display: grid;
-  grid-template-columns: 1fr 1.15fr;
+  grid-template-columns: 1fr 1fr;
   position: relative;
 }
 .pd-x {
@@ -1045,14 +1083,20 @@ img { display: block; max-width: 100%; }
 .pd-x:hover { color: var(--ink); }
 
 .pd-left {
-  background: var(--linen);
+  background: #f7f4f0;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 56px 40px;
-  min-height: 400px;
+  min-height: 420px;
+  position: sticky;
+  top: 0;
 }
-.pd-left img { max-height: 400px; object-fit: contain; }
+.pd-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 
 .pd-right {
   padding: clamp(32px, 4vw, 56px) clamp(24px, 3vw, 44px);
@@ -1155,6 +1199,18 @@ img { display: block; max-width: 100%; }
   font-weight: 400;
 }
 .btn-cart:hover { background: var(--gold-deep); }
+
+.pd-share {
+  display: flex; align-items: center; justify-content: center; gap: 6px;
+  width: 100%; padding: 11px; margin-top: 8px;
+  background: none; border: 1px solid rgba(158,138,79,0.2);
+  font-family: var(--sans); font-size: 0.72rem; font-weight: 300;
+  letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--stone); cursor: pointer;
+  transition: all 0.3s var(--ease);
+}
+.pd-share:hover { border-color: var(--gold); color: var(--gold); }
+.pd-share.copied { border-color: var(--gold); color: var(--gold); }
 
 .pd-close-line {
   font-family: var(--serif);
@@ -1415,14 +1471,14 @@ img { display: block; max-width: 100%; }
    ============================================================ */
 @media (max-width: 960px) {
   .hero-layout { grid-template-columns: 1fr; text-align: center; }
-  .hero-copy { order: 2; }
-  .hero-vis { order: 1; }
+  .hero-copy { order: 1; }
+  .hero-vis { order: 2; }
   .hero-body { margin: 0 auto 12px; }
   .hero-whisper { margin: 0 auto 44px; }
   .hero-btns { justify-content: center; }
   .hero-kicker { justify-content: center; }
   .hero-kicker::before { display: none; }
-  .hero-prod-wrap { width: 240px; height: 340px; }
+  .hero-prod-wrap { width: 280px; height: 340px; }
   .coll-content { max-width: 100%; }
   .coll-content-right { margin-left: 0; text-align: left; }
   .coll-content-right .coll-p, .coll-content-right .coll-sensory { margin-left: 0; }
@@ -1434,7 +1490,9 @@ img { display: block; max-width: 100%; }
   .test-item { border-right: none; }
   .p-row-3, .p-row-4 { grid-template-columns: repeat(2, 1fr); }
   .coll-prod-img { display: none; }
-  .ritual-grid { grid-template-columns: 1fr; gap: 28px; }
+  .ritual-inner { grid-template-columns: 1fr; }
+  .ritual-kicker { text-align: center; margin-bottom: 32px; }
+  .ritual-grid { grid-template-columns: 1fr; }
   .ritual-col { border-right: none; padding: 0; }
   .ft-grid { grid-template-columns: repeat(2, 1fr); }
   .pd-panel { grid-template-columns: 1fr; }
@@ -1442,6 +1500,28 @@ img { display: block; max-width: 100%; }
   .story-vals { grid-template-columns: 1fr; }
   .nav-left { display: none; }
   .mob-btn { display: flex; }
+  .mob-shop { display: inline; }
+  .desk-only { display: none; }
+  .nav-inner { padding: 0 16px; height: 56px; grid-template-columns: auto 1fr; }
+  .nav-inner .logo-link { justify-self: start; }
+  .nlink { font-size: 0.64rem; letter-spacing: 0.08em; }
+  .nav-right { gap: 0; justify-content: flex-end; }
+  .nav-right > * { flex: 0 0 auto; padding: 6px 8px; }
+  .nav-right > .nlink { padding: 6px 10px; }
+  .logo-main { font-size: 1.4rem; }
+  /* Mobile PD modal */
+  .pd-panel { grid-template-columns: 1fr; max-height: 100vh; max-height: 100dvh; }
+  .pd-left { min-height: 280px; max-height: 45vh; position: relative; }
+  .pd-x {
+    top: 12px; right: 14px;
+    width: 36px; height: 36px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
 }
 @media (max-width: 600px) {
   .p-row-3, .p-row-4, .p-row-2 { grid-template-columns: 1fr; max-width: 380px; margin-left: auto; margin-right: auto; }
@@ -1449,6 +1529,9 @@ img { display: block; max-width: 100%; }
   .test-row { grid-template-columns: 1fr; }
   .ft-grid { grid-template-columns: 1fr; }
   .xp-tiers { flex-direction: column; }
+  .pd-overlay { padding: 0; }
+  .pd-panel { max-height: 100vh; max-height: 100dvh; border-radius: 0; }
+  .pd-left { min-height: 240px; max-height: 40vh; }
   .qi-row { grid-template-columns: 1fr; }
   .ft-bottom { flex-direction: column; gap: 8px; text-align: center; }
   .sz-row { flex-wrap: wrap; }
@@ -1771,30 +1854,38 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
 <nav class="nav" id="nav">
   <div class="nav-inner">
     <div class="nav-left">
-      <a class="nlink" href="#" onclick="go('shop')">Shop</a>
-      <a class="nlink" href="#" onclick="go('xp')">Experiences</a>
-      <a class="nlink" href="#" onclick="go('ing')">Ingredients</a>
+      <a class="nlink" href="#" data-pg="shop" onclick="go('shop')">Shop</a>
+      <a class="nlink" href="#" data-pg="xp" onclick="go('xp')">Experiences</a>
+      <a class="nlink" href="#" data-pg="ing" onclick="go('ing')">Ingredients</a>
     </div>
     <a href="#" class="logo-link" onclick="go('home')">
       <div class="logo-main">OMA</div>
       <div class="logo-sub">Organics</div>
     </a>
     <div class="nav-right">
-      <a class="nlink" href="#" onclick="go('story')">Our Story</a>
+      <a class="nlink mob-shop" href="#" data-pg="shop" onclick="go('shop')">Shop</a>
+      <a class="nlink desk-only" href="#" data-pg="story" onclick="go('story')">Our Story</a>
       <a class="nlink nlink-gold" href="#" onclick="openQuiz()">Scent Quiz</a>
       <button class="nav-btn" aria-label="Search" onclick="toggleSearch()"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg></button>
       <button class="nav-btn cart-badge-wrap" aria-label="Cart" onclick="toggleCart()"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg><span class="cart-count" id="cartCount">0</span></button>
-      <button class="nav-btn mob-btn" aria-label="Menu"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
+      <button class="nav-btn mob-btn" aria-label="Menu" onclick="toggleMobMenu()"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg></button>
     </div>
   </div>
 </nav>
 
-<div class="tabs">
-  <button class="tab on" onclick="go('home')">Home</button>
-  <button class="tab" onclick="go('shop')">Shop</button>
-  <button class="tab" onclick="go('xp')">Experiences</button>
-  <button class="tab" onclick="go('ing')">Ingredients</button>
-  <button class="tab" onclick="go('story')">Our Story</button>
+<!-- MOBILE MENU DRAWER -->
+<div class="mob-menu" id="mobMenu">
+  <div class="mob-menu-inner">
+    <button class="mob-menu-x" onclick="toggleMobMenu()">✕</button>
+    <a class="mob-menu-link" href="#" onclick="go('shop');toggleMobMenu()">Shop</a>
+    <a class="mob-menu-link" href="#" onclick="go('xp');toggleMobMenu()">Experiences</a>
+    <a class="mob-menu-link" href="#" onclick="go('ing');toggleMobMenu()">Ingredients</a>
+    <a class="mob-menu-link" href="#" onclick="go('story');toggleMobMenu()">Our Story</a>
+    <a class="mob-menu-link" href="#" onclick="go('faq');toggleMobMenu()">FAQ</a>
+    <a class="mob-menu-link" href="#" onclick="go('contact');toggleMobMenu()">Contact</a>
+    <div class="mob-menu-divider"></div>
+    <a class="mob-menu-link mob-menu-gold" href="#" onclick="openQuiz();toggleMobMenu()">✦ Find Your Match — 20% Off</a>
+  </div>
 </div>
 
 <!-- ===================== HOME ===================== -->
@@ -1805,10 +1896,10 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
     <div class="hero-grain"></div>
     <div class="hero-layout">
       <div class="hero-copy">
-        <div class="hero-kicker">Oma means "Good" in Igbo</div>
-        <h1 class="hero-h1">Your skin tells a story.<br>We made products that <i>listen.</i></h1>
-        <p class="hero-body">Hand-crafted body care and natural fragrance, made in small batches in Atlanta. Rooted in care, not correction. Formulated with intention, not aggression. Made to support the skin you're in, not punish it for surviving.</p>
-        <p class="hero-whisper">We don't substitute. We don't rush. We don't cut corners.</p>
+        <div class="hero-kicker">Care Your Body Recognizes</div>
+        <h1 class="hero-h1">This is not skincare.<br>It's how your body responds when care is <i>done well.</i></h1>
+        <p class="hero-body">Sensorial body care and fragrance designed to soften skin, calm the senses, and bring intention back into everyday rituals.</p>
+        <p class="hero-whisper">Made slowly. Worn close. Felt over time.</p>
         <div class="hero-btns">
           <a class="btn btn-g" href="#" onclick="go('shop')"><span>Shop</span></a>
           <a class="btn btn-o" href="#" onclick="openQuiz()">Find Your Scent</a>
@@ -1817,7 +1908,17 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
       <div class="hero-vis">
         <div class="hero-prod-wrap">
           <div class="hero-glow"></div>
-          <img src="/mnt/user-data/uploads/Perfume_-_Solaire_model.webp" alt="Oma Organics — Good Scents" class="hero-prod-img">
+          <!-- VIDEO: Replace src with her MP4 when ready -->
+          <video class="hero-video" autoplay muted loop playsinline poster="images/Perfume_-_Solaire_model.webp">
+            <source src="images/hero-video.mp4" type="video/mp4">
+          </video>
+          <!-- Fallback: image carousel shows until video src is added -->
+          <img src="images/Perfume_-_Solaire_model.webp" alt="Oma Organics" class="hero-prod-img hero-active hero-fallback">
+          <img src="images/Face_Oil_-_Resolve.webp" alt="RESOLVE Face Oil" class="hero-prod-img hero-fallback">
+          <img src="images/Perfume_-_Ikuku.jpeg" alt="UTÒ Perfume" class="hero-prod-img hero-fallback">
+          <img src="images/MOD_Botanical_Body_Oil.jpeg" alt="MOD Body Oil" class="hero-prod-img hero-fallback">
+          <img src="images/Shower_Gel_-_Almafi_Sunrise.jpeg" alt="Amalfi Sunrise" class="hero-prod-img hero-fallback">
+          <img src="images/Perfume_-_Ifuru.jpeg" alt="IFURU Perfume" class="hero-prod-img hero-fallback">
         </div>
       </div>
     </div>
@@ -1825,8 +1926,8 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
 
   <section class="pause reveal">
     <div class="container">
-      <h2>Have you ever smelled something and suddenly you're <i>eight years old again?</i></h2>
-      <p>That's not just nostalgia — it's neuroscience. Your sense of smell is directly connected to the parts of your brain that handle memory and emotion. No detours. Straight to the heart of it. That's why we don't just make products. We craft scent experiences meant to be felt, remembered, and returned to.</p>
+      <h2>You don't need more.<br>You need what <i>stays.</i></h2>
+      <p>Oma Organics is for moments when your body feels held — without effort, without excess. Products that earn a place in your day because they feel right, not because they promise everything.</p>
       <div class="pause-line"></div>
     </div>
   </section>
@@ -1862,7 +1963,7 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
   <div class="coll-block reveal" onclick="go('shop')">
     <div class="coll-block-bg coll-bg-dark"></div>
     <div class="coll-block-grain"></div>
-    <img class="coll-prod-img coll-prod-right" src="/mnt/user-data/uploads/Perfume_-_Solaire.jpeg" alt="Solaire Perfume">
+    <img class="coll-prod-img coll-prod-right" src="images/Perfume_-_Solaire.jpeg" alt="Solaire Perfume">
     <div class="coll-content coll-on-dark">
       <div class="coll-count">6 Fragrances</div>
       <div class="coll-kicker">Good Scents</div>
@@ -1875,13 +1976,13 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
 
   <div class="coll-block reveal" onclick="go('shop')">
     <div class="coll-block-bg coll-bg-light"></div>
-    <img class="coll-prod-img coll-prod-left" src="https://omaorganics.com/cdn/shop/files/607E8A89-57C9-4341-8F01-87BD432F18E5.png?v=1697304713" alt="Utò Body Oil">
+    <img class="coll-prod-img coll-prod-left" src="images/Body_Oil_-_Uto.jpeg" alt="Utò Body Oil">
     <div class="coll-content coll-content-right coll-on-light">
       <div class="coll-count">5 Products</div>
       <div class="coll-kicker">Good Body</div>
       <h3 class="coll-h">Care that<br><i>lingers</i></h3>
-      <p class="coll-p">Every product is made by hand, in small batches. When one piece of the process slows down, everything waits its turn — because we don't substitute, we don't rush, and we don't cut corners. Amalfi Sunrise wears like a Mediterranean morning. Sahel Body Crème is rich without being heavy — your skin feels fed, not coated.</p>
-      <div class="coll-sensory">If it sells out, it's because care takes time. It's always worth the wait.</div>
+      <p class="coll-p">Body oils and crème that absorb fully and continue working long after you've moved on. Amalfi Sunrise wears like a Mediterranean morning — citrus and warmth on the skin. Sahel Body Crème envelops without weight.</p>
+      <div class="coll-sensory">Skin that feels comfortable. Balanced. At ease.</div>
       <button class="btn btn-text" onclick="go('shop')">Shop Bodycare →</button>
     </div>
   </div>
@@ -1889,7 +1990,7 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
   <div class="coll-block reveal" onclick="go('shop')">
     <div class="coll-block-bg coll-bg-deep"></div>
     <div class="coll-block-grain"></div>
-    <img class="coll-prod-img coll-prod-right" src="https://omaorganics.com/cdn/shop/files/IMG-6081.png?v=1732736815" alt="RESOLVE Face Oil">
+    <img class="coll-prod-img coll-prod-right" src="images/Face_Oil_-_Resolve.webp" alt="RESOLVE Face Oil">
     <div class="coll-content coll-on-dark">
       <div class="coll-count">2 Face Oils</div>
       <div class="coll-kicker">Good Face</div>
@@ -1902,7 +2003,7 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
 
   <div class="coll-block reveal" onclick="go('shop')">
     <div class="coll-block-bg coll-bg-soft"></div>
-    <img class="coll-prod-img coll-prod-left" src="/mnt/user-data/uploads/Shower_Steamer_-_Amalfi_Sunrise.jpeg" alt="Amalfi Sunrise Shower Steamer">
+    <img class="coll-prod-img coll-prod-left" src="images/Shower_Steamer_-_Amalfi_Sunrise.jpeg" alt="Amalfi Sunrise Shower Steamer">
     <div class="coll-content coll-content-right coll-on-light">
       <div class="coll-count">3 Rituals</div>
       <div class="coll-kicker">Shower · Steam · Flame</div>
@@ -1916,14 +2017,14 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
   <!-- RITUAL -->
   <section class="ritual reveal">
     <div class="ritual-inner">
-      <div style="font-size:0.62rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--gold-soft);margin-bottom:14px;font-weight:300;">The Ritual</div>
-      <h2>How it fits into your life</h2>
+      <div class="ritual-kicker">What Happens<br>When You Use It</div>
       <div class="ritual-grid">
-        <div class="ritual-col"><h4>Morning</h4><p>Warm oil between your hands. Skin softens. You move on.</p></div>
-        <div class="ritual-col"><h4>Midday</h4><p>A familiar note rises gently. It's still there.</p></div>
-        <div class="ritual-col"><h4>Evening</h4><p>Care becomes a signal that the day can end.</p></div>
+        <div class="ritual-col"><h4>Your skin stays soft long after application</h4><p>Botanical oils absorb fully — no residue, no waiting.</p></div>
+        <div class="ritual-col"><h4>Your scent settles into you instead of sitting on top</h4><p>Fragrances evolve with your body chemistry throughout the day.</p></div>
+        <div class="ritual-col"><h4>Your body relaxes before your mind catches up</h4><p>Carefully chosen aromatics that trigger calm without thinking.</p></div>
+        <div class="ritual-col"><h4>Your routines feel quieter, more deliberate</h4><p>Simple rituals that require nothing from you but presence.</p></div>
       </div>
-      <div class="ritual-foot">That's just how we do things at Oma.</div>
+      <div class="ritual-foot">Nothing rushes. Nothing overwhelms.</div>
     </div>
   </section>
 
@@ -1938,7 +2039,7 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
           <a class="btn btn-dark" href="#" onclick="openQuiz()"><span>Take the Quiz</span></a>
         </div>
         <div class="qc-vis">
-          <img src="/mnt/user-data/uploads/Shower_Steamers_-_Trio.jpeg" alt="Oma Organics Collection">
+          <img src="images/Shower_Steamers_-_Trio.jpeg" alt="Oma Organics Collection" loading="lazy">
         </div>
       </div>
     </div>
@@ -2003,8 +2104,8 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
       <button class="sf-btn" onclick="filterShop('face',this)">Face Oils</button>
       <button class="sf-btn" onclick="filterShop('body',this)">Body Oils</button>
       <button class="sf-btn" onclick="filterShop('cleanser',this)">Shower Gels</button>
-      <button class="sf-btn" onclick="filterShop('candle',this)">Candles</button>
       <button class="sf-btn" onclick="filterShop('steamer',this)">Steamers</button>
+      <button class="sf-btn" onclick="filterShop('candle',this)">Candles</button>
       <button class="sf-btn" onclick="filterShop('perfume',this)">Perfumes</button>
       <button class="sf-btn" id="matchFilter" style="display:none;background:var(--ink);color:var(--gold-soft);border-color:var(--ink);" onclick="filterShop('match',this)">✦ Your Match</button>
     </div>
@@ -2015,13 +2116,13 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
         <span style="font-size:0.72rem;color:var(--clay);font-weight:200;">7 fragrances</span>
       </div>
       <div class="p-row p-row-4">
-        <div class="pc" data-cat="perfume" onclick="openPD('p-uto')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/IMG-4036_2cd44982-1124-4d7f-867d-e89915f6efe7.jpg?v=1765903842" alt="UTÒ"><div class="pc-qv">Quick View</div></div><div class="pc-name">UTÒ</div><div class="pc-sub">Warm resin, soft wood, quiet amber</div><div class="pc-price"><span class="from">From </span>$32</div></div>
-        <div class="pc" data-cat="perfume" onclick="openPD('p-ikuku')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/IMG-4036_5f7952e6-2a1c-4cb0-8aa2-8b6915274e5d.jpg?v=1765908161" alt="IKUKU"><div class="pc-qv">Quick View</div></div><div class="pc-name">IKUKU</div><div class="pc-sub">Petrichor, green leaf, cool mist</div><div class="pc-price"><span class="from">From </span>$32</div></div>
-        <div class="pc" data-cat="perfume" onclick="openPD('p-ifuru')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/IMG-4036_71e61ae9-91c7-450a-8185-f3c89e4833bc.jpg?v=1765903825" alt="IFURU"><div class="pc-qv">Quick View</div></div><div class="pc-name">IFURU</div><div class="pc-sub">Jasmine bloom, soft musk, dusk</div><div class="pc-price"><span class="from">From </span>$32</div></div>
-        <div class="pc" data-cat="perfume" onclick="openPD('p-ahihia')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/IMG-4036_25887174-a861-4640-b570-bad2a1f1d909.jpg?v=1765903795" alt="AHIHIA"><div class="pc-qv">Quick View</div></div><div class="pc-name">AHIHIA</div><div class="pc-sub">Crushed herb, wet earth, vetiver</div><div class="pc-price"><span class="from">From </span>$32</div></div>
-        <div class="pc" data-cat="perfume" onclick="openPD('p-ubi')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/D2CEBD5C-6B68-437E-BB39-31E1500590B2.webp?v=1765903912" alt="UBI"><div class="pc-qv">Quick View</div></div><div class="pc-name">UBI</div><div class="pc-sub">Cedarwood, warm vanilla, skin</div><div class="pc-price"><span class="from">From </span>$32</div></div>
-        <div class="pc" data-cat="perfume" onclick="openPD('p-mod')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/IMG-4036_5f7952e6-2a1c-4cb0-8aa2-8b6915274e5d.jpg?v=1765908161" alt="MOD"><div class="pc-qv">Quick View</div></div><div class="pc-name">MOD</div><div class="pc-sub">Clean linen, bergamot, white tea</div><div class="pc-price"><span class="from">From </span>$32</div></div>
-        <div class="pc" data-cat="perfume" onclick="openPD('p-solaire')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/B60AF419-995B-43BE-B463-48E64F1E1AE4.png?v=1765903854" alt="SOLAIRE"><div class="pc-qv">Quick View</div></div><div class="pc-name">SOLAIRE</div><div class="pc-sub">Bright citrus, linden blossom, soft glow</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+        <div class="pc" data-cat="perfume" onclick="openPD('p-uto')"><div class="pc-img"><img src="images/Perfume_-_Ikuku.jpeg" alt="UTÒ" loading="lazy"><div class="pc-qv">Quick View</div></div><div class="pc-name">UTÒ</div><div class="pc-sub">Warm resin, soft wood, quiet amber</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+        <div class="pc" data-cat="perfume" onclick="openPD('p-ikuku')"><div class="pc-img"><img src="images/Perfume_-_Ikuku_2.jpeg" alt="IKUKU" loading="lazy"><div class="pc-qv">Quick View</div></div><div class="pc-name">IKUKU</div><div class="pc-sub">Petrichor, green leaf, cool mist</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+        <div class="pc" data-cat="perfume" onclick="openPD('p-ifuru')"><div class="pc-img"><img src="images/Perfume_-_Ifuru.jpeg" alt="IFURU" loading="lazy"><div class="pc-qv">Quick View</div></div><div class="pc-name">IFURU</div><div class="pc-sub">Jasmine bloom, soft musk, dusk</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+        <div class="pc" data-cat="perfume" onclick="openPD('p-ahihia')"><div class="pc-img"><img src="images/Perfume_-_Ahihia.jpeg" alt="AHIHIA" loading="lazy"><div class="pc-qv">Quick View</div></div><div class="pc-name">AHIHIA</div><div class="pc-sub">Crushed herb, wet earth, vetiver</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+        <div class="pc" data-cat="perfume" onclick="openPD('p-ubi')"><div class="pc-img"><img src="images/Perfume_-_Ifuru_.jpeg" alt="UBI" loading="lazy"><div class="pc-qv">Quick View</div></div><div class="pc-name">UBI</div><div class="pc-sub">Cedarwood, warm vanilla, skin</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+        <div class="pc" data-cat="perfume" onclick="openPD('p-mod')"><div class="pc-img"><img src="images/Perfume_-_Ahihia_.jpeg" alt="MOD" loading="lazy"><div class="pc-qv">Quick View</div></div><div class="pc-name">MOD</div><div class="pc-sub">Clean linen, bergamot, white tea</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+        <div class="pc" data-cat="perfume" onclick="openPD('p-solaire')"><div class="pc-img"><img src="images/Perfume_-_Solaire.jpeg" alt="SOLAIRE" loading="lazy"><div class="pc-qv">Quick View</div></div><div class="pc-name">SOLAIRE</div><div class="pc-sub">Bright citrus, floral, soft glow</div><div class="pc-price"><span class="from">From </span>$32</div></div>
       </div>
     </div>
 
@@ -2031,10 +2132,10 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
         <span style="font-size:0.72rem;color:var(--clay);font-weight:200;">5 products</span>
       </div>
       <div class="p-row p-row-3">
-        <div class="pc" data-cat="body" onclick="openPD('bo-as')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/607E8A89-57C9-4341-8F01-87BD432F18E5.png?v=1697304713" alt="AMALFI SUNRISE"><div class="pc-qv">Quick View</div></div><div class="pc-name">AMALFI SUNRISE</div><div class="pc-sub">Citrus, fig leaf, warm stone</div><div class="pc-price"><span class="from">From </span>$20</div></div>
+        <div class="pc" data-cat="body" onclick="openPD('bo-as')"><div class="pc-img"><img src="images/Body_Oil_-_Uto.jpeg" alt="AMALFI SUNRISE" loading="lazy"><div class="pc-qv">Quick View</div></div><div class="pc-name">AMALFI SUNRISE</div><div class="pc-sub">Citrus, fig leaf, warm stone</div><div class="pc-price"><span class="from">From </span>$20</div></div>
         <div class="pc" data-cat="body" onclick="openPD('bo-ig')"><div class="pc-img"><div class="pc-ph">Imperial Garden</div><div class="pc-qv">Quick View</div></div><div class="pc-name">IMPERIAL GARDEN</div><div class="pc-sub">Dark orchid, plum, velvet moss</div><div class="pc-price"><span class="from">From </span>$20</div></div>
-        <div class="pc" data-cat="body" onclick="openPD('bo-mod')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/368A09F3-4027-4AD4-AC0F-E06FE004DD1D.jpg?v=1700669808" alt="MOD"><div class="pc-qv">Quick View</div></div><div class="pc-name">MOD</div><div class="pc-sub">Clean, deliberate, weightless</div><div class="pc-price"><span class="from">From </span>$20</div></div>
-        <div class="pc" data-cat="body" onclick="openPD('bo-uto')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/607E8A89-57C9-4341-8F01-87BD432F18E5.png?v=1697304713" alt="UTÒ"><div class="pc-qv">Quick View</div></div><div class="pc-name">UTÒ</div><div class="pc-sub">Warm resin body oil</div><div class="pc-price"><span class="from">From </span>$20</div></div>
+        <div class="pc" data-cat="body" onclick="openPD('bo-mod')"><div class="pc-img"><img src="images/MOD_Botanical_Body_Oil.jpeg" alt="MOD" loading="lazy"><div class="pc-qv">Quick View</div></div><div class="pc-name">MOD</div><div class="pc-sub">Clean, deliberate, weightless</div><div class="pc-price"><span class="from">From </span>$20</div></div>
+        <div class="pc" data-cat="body" onclick="openPD('bo-uto')"><div class="pc-img"><img src="images/Body_Oil_-_Uto.jpeg" alt="UTÒ" loading="lazy"><div class="pc-qv">Quick View</div></div><div class="pc-name">UTÒ</div><div class="pc-sub">Warm resin body oil</div><div class="pc-price"><span class="from">From </span>$20</div></div>
         <div class="pc" data-cat="body" onclick="openPD('sahel')"><div class="pc-img"><div class="pc-ph">Sahel</div><div class="pc-badge">Restocking</div><div class="pc-qv">Quick View</div></div><div class="pc-name">SAHEL</div><div class="pc-sub">Softly sweet, warm, comforting — Utò scented body crème</div><div class="pc-price"><span class="from">From </span>$34</div></div>
       </div>
     </div>
@@ -2045,7 +2146,7 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
         <span style="font-size:0.72rem;color:var(--clay);font-weight:200;">2 face oils</span>
       </div>
       <div class="p-row p-row-2">
-        <div class="pc" data-cat="face" onclick="openPD('fo-resolve')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/IMG-6081.png?v=1732736815" alt="RESOLVE"><div class="pc-qv">Quick View</div></div><div class="pc-name">RESOLVE</div><div class="pc-sub">Blemish correcting — tea tree, CBD, squalane</div><div class="pc-price"><span class="from">From </span>$32</div></div>
+        <div class="pc" data-cat="face" onclick="openPD('fo-resolve')"><div class="pc-img"><img src="images/Face_Oil_-_Resolve.webp" alt="RESOLVE" loading="lazy"><div class="pc-qv">Quick View</div></div><div class="pc-name">RESOLVE</div><div class="pc-sub">Blemish correcting — tea tree, CBD, squalane</div><div class="pc-price"><span class="from">From </span>$32</div></div>
         <div class="pc" data-cat="face" onclick="openPD('fo-grace')"><div class="pc-img"><div class="pc-ph">Grace</div><div class="pc-qv">Quick View</div></div><div class="pc-name">GRACE</div><div class="pc-sub">Anti-aging — prickly pear, frankincense, marula</div><div class="pc-price"><span class="from">From </span>$32</div></div>
       </div>
     </div>
@@ -2053,13 +2154,14 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
     <div class="shop-coll reveal" data-cats="cleanser,steamer,candle">
       <div class="shop-coll-header">
         <div><h2>Shower, Steam & <i>Flame</i></h2><div class="sub">Small moments that signal</div></div>
-        <span style="font-size:0.72rem;color:var(--clay);font-weight:200;">4 products</span>
+        <span style="font-size:0.72rem;color:var(--clay);font-weight:200;">6 products</span>
       </div>
-      <div class="p-row p-row-4">
-        <div class="pc" data-cat="cleanser" onclick="openPD('sg-as')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/EBA21183-25FA-4F1A-8FC7-2A09FC955168.jpg?v=1732734983" alt="AMALFI SUNRISE"><div class="pc-badge">Gel</div><div class="pc-qv">Quick View</div></div><div class="pc-name">AMALFI SUNRISE</div><div class="pc-sub">Shower gel</div><div class="pc-price">$10</div></div>
-        <div class="pc" data-cat="cleanser" onclick="openPD('sg-ed')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/99D43051-6C1A-4C61-9A9E-7CF09F26894C.jpg?v=1732735618" alt="EMERALD DREAM"><div class="pc-badge">Gel</div><div class="pc-qv">Quick View</div></div><div class="pc-name">EMERALD DREAM</div><div class="pc-sub">Shower gel</div><div class="pc-price">$10</div></div>
-        <div class="pc" data-cat="steamer" onclick="openPD('ss-ed')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/DDE4131E-8440-4DC4-9B17-16C3720CBA95.jpg?v=1764638388" alt="EMERALD DREAM STEAMER"><div class="pc-badge">Steamer</div><div class="pc-qv">Quick View</div></div><div class="pc-name">EMERALD DREAM</div><div class="pc-sub">Aromatherapy shower steamers</div><div class="pc-price">$36</div></div>
-        <div class="pc" data-cat="candle" onclick="openPD('candle-as')"><div class="pc-img"><img src="https://omaorganics.com/cdn/shop/files/FullSizeRender_56e824fb-15f7-4353-99a7-7ba914be229c.jpg?v=1732732843" alt="AMALFI SUNRISE CANDLE"><div class="pc-badge">Candle</div><div class="pc-qv">Quick View</div></div><div class="pc-name">AMALFI SUNRISE</div><div class="pc-sub">Botanical candle</div><div class="pc-price">$38</div></div>
+      <div class="p-row p-row-3">
+        <div class="pc" data-cat="cleanser" onclick="openPD('sg-as')"><div class="pc-img"><img src="images/Shower_Gel_-_Almafi_Sunrise.jpeg" alt="AMALFI SUNRISE" loading="lazy"><div class="pc-badge">Gel</div><div class="pc-qv">Quick View</div></div><div class="pc-name">AMALFI SUNRISE</div><div class="pc-sub">Shower gel</div><div class="pc-price">$10</div></div>
+        <div class="pc" data-cat="cleanser" onclick="openPD('sg-ed')"><div class="pc-img"><img src="images/Shower_Gel_-_Emerald_Dream.jpeg" alt="EMERALD DREAM" loading="lazy"><div class="pc-badge">Gel</div><div class="pc-qv">Quick View</div></div><div class="pc-name">EMERALD DREAM</div><div class="pc-sub">Shower gel</div><div class="pc-price">$10</div></div>
+        <div class="pc" data-cat="steamer" onclick="openPD('ss-as')"><div class="pc-img"><img src="images/Amalfi_Sunrise_Shower_Steamer.png" alt="AMALFI SUNRISE SHOWER STEAMER" loading="lazy"><div class="pc-badge">Steamer</div><div class="pc-qv">Quick View</div></div><div class="pc-name">AMALFI SUNRISE</div><div class="pc-sub">Shower steamers</div><div class="pc-price">$28</div></div>
+        <div class="pc" data-cat="steamer" onclick="openPD('ss-ed')"><div class="pc-img"><img src="images/Shower_Steamer_-_Emerald_Dream.jpeg" alt="EMERALD DREAM SHOWER STEAMER" loading="lazy"><div class="pc-badge">Steamer</div><div class="pc-qv">Quick View</div></div><div class="pc-name">EMERALD DREAM</div><div class="pc-sub">Shower steamers</div><div class="pc-price">$36</div></div>
+        <div class="pc" data-cat="candle" onclick="openPD('candle-as')"><div class="pc-img"><img src="images/Shower_Steamer_-_Almafi_Sunrise_2.jpeg" alt="AMALFI SUNRISE CANDLE" loading="lazy"><div class="pc-badge">Candle</div><div class="pc-qv">Quick View</div></div><div class="pc-name">AMALFI SUNRISE</div><div class="pc-sub">Botanical candle</div><div class="pc-price">$38</div></div>
       </div>
     </div>
   </div>
@@ -2276,7 +2378,7 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
 </div>
 
 <!-- PRODUCT DETAIL -->
-<div class="pd-overlay" id="pdO">
+<div class="pd-overlay" id="pdO" onclick="if(event.target===this)closePD()">
   <div class="pd-panel">
     <button class="pd-x" onclick="closePD()">✕</button>
     <div class="pd-left" id="pdImg"></div>
@@ -2325,6 +2427,9 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
       </div>
 
       <button class="btn-cart" onclick="pdAddToCart()">Add to Cart</button>
+
+      <!-- Share -->
+      <button class="pd-share" onclick="sharePD()"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg> Share</button>
 
       <!-- Pairs beautifully with -->
       <div id="pdPairsWrap">
@@ -2417,116 +2522,126 @@ textarea.contact-input { min-height: 120px; resize: vertical; }
 <script>
 // ===================== 16 PRODUCTS — from her actual Shopify catalog =====================
 const P = [
-  // PERFUMES (7)
-  {id:'p-uto',name:'UTÒ',collection:'Good Scents',cat:'perfume',sub:'Warm resin, soft wood, quiet amber',img:'https://omaorganics.com/cdn/shop/files/IMG-4036_2cd44982-1124-4d7f-867d-e89915f6efe7.jpg?v=1765903842',
+  // PERFUMES (6)
+  {id:'p-uto',name:'UTÒ',collection:'Good Scents',cat:'perfume',sub:'Warm resin, soft wood, quiet amber',img:'images/Perfume_-_Ikuku.jpeg',
    why:'UTÒ was made for people who want a fragrance that feels like home — warm, grounding, and unmistakably theirs. The resin and amber settle into your skin and evolve throughout the day, becoming something that feels less like perfume and more like a part of you.',
    who:'Anyone who gravitates toward warmth — campfires, old libraries, amber jewelry. If you like scents that feel rich without being heavy, this is yours.',
    use:'Apply to pulse points — wrists, neck, behind ears. Let body heat do the work. Layers beautifully with UTÒ body oil.',
    ingredients:['Cane Sugar Alcohol','Essential Oil Blend','Amber Resin','Sandalwood','Vanilla Extract','Cedarwood','Frankincense'],
    sizes:[{s:'10ml',p:32},{s:'30ml',p:72}],pairs:['p-ikuku','bo-uto'],badge:null},
-  {id:'p-ikuku',name:'IKUKU',collection:'Good Scents',cat:'perfume',sub:'Petrichor, green leaf, cool mist',img:'https://omaorganics.com/cdn/shop/files/IMG-4036_5f7952e6-2a1c-4cb0-8aa2-8b6915274e5d.jpg?v=1765908161',
+  {id:'p-ikuku',name:'IKUKU',collection:'Good Scents',cat:'perfume',sub:'Petrichor, green leaf, cool mist',img:'images/Perfume_-_Ikuku_2.jpeg',
    why:'IKUKU captures that exact moment after rain — when the air is clean and everything feels possible. Fresh without being clinical, cool without being cold. Named for the Igbo word for wind.',
    who:'If you love the outdoors, fresh mornings, and scents that feel clean but never boring. The nature-lover\'s signature.',
    use:'Apply to pulse points. Layers beautifully with UTÒ for depth.',
    ingredients:['Cane Sugar Alcohol','Essential Oil Blend','Green Leaf Accord','Vetiver','Mint','Eucalyptus','Bergamot'],
    sizes:[{s:'10ml',p:32},{s:'30ml',p:72}],pairs:['p-uto','sg-ed'],badge:null},
-  {id:'p-ifuru',name:'IFURU',collection:'Good Scents',cat:'perfume',sub:'Jasmine bloom, soft musk, dusk',img:'https://omaorganics.com/cdn/shop/files/IMG-4036_71e61ae9-91c7-450a-8185-f3c89e4833bc.jpg?v=1765903825',
+  {id:'p-ifuru',name:'IFURU',collection:'Good Scents',cat:'perfume',sub:'Jasmine bloom, soft musk, dusk',img:'images/Perfume_-_Ifuru.jpeg',
    why:'IFURU is evening in a bottle — when jasmine opens and the air turns warm. A scent for moments that deserve attention. Bold enough to make an entrance, soft enough to keep close.',
    who:'The romantic. The one who dresses for themselves. If you love florals that aren\'t sweet — this is your statement.',
    use:'Apply to pulse points, especially décolletage, for maximum bloom.',
    ingredients:['Cane Sugar Alcohol','Essential Oil Blend','Jasmine Absolute','Musk','Rose','Ylang Ylang','Patchouli'],
    sizes:[{s:'10ml',p:32},{s:'30ml',p:72}],pairs:['p-ahihia','bo-ig'],badge:null},
-  {id:'p-ahihia',name:'AHIHIA',collection:'Good Scents',cat:'perfume',sub:'Crushed herb, wet earth, vetiver',img:'https://omaorganics.com/cdn/shop/files/IMG-4036_25887174-a861-4640-b570-bad2a1f1d909.jpg?v=1765903795',
+  {id:'p-ahihia',name:'AHIHIA',collection:'Good Scents',cat:'perfume',sub:'Crushed herb, wet earth, vetiver',img:'images/Perfume_-_Ahihia.jpeg',
    why:'AHIHIA is the scent of a garden after dark — deep green, earthy, and a little mysterious. Vetiver and herb on wet soil. For people who want depth, not decoration.',
    who:'The herbalist. The grounded one. If you reach for vetiver, patchouli, or anything that smells like the earth — start here.',
    use:'Apply to pulse points. Develops beautifully over 4-6 hours.',
    ingredients:['Cane Sugar Alcohol','Essential Oil Blend','Vetiver','Patchouli','Herb Accord','Cedarwood','Black Pepper'],
    sizes:[{s:'10ml',p:32},{s:'30ml',p:72}],pairs:['p-ifuru','ss-as'],badge:null},
-  {id:'p-ubi',name:'UBI',collection:'Good Scents',cat:'perfume',sub:'Cedarwood, warm vanilla, skin',img:'https://omaorganics.com/cdn/shop/files/D2CEBD5C-6B68-437E-BB39-31E1500590B2.webp?v=1765903912',
+  {id:'p-ubi',name:'UBI',collection:'Good Scents',cat:'perfume',sub:'Cedarwood, warm vanilla, skin',img:'images/Perfume_-_Ifuru_.jpeg',
    why:'UBI smells like you, but better. A skin scent — cedarwood and vanilla that merge with your chemistry until people can\'t tell where the perfume ends and you begin. The "what are you wearing?" collector.',
    who:'The minimalist who still wants compliments. If you want to be discovered up close, not announced from across the room.',
    use:'Apply generously to pulse points. This is meant to be found, not projected.',
    ingredients:['Cane Sugar Alcohol','Essential Oil Blend','Cedarwood','Vanilla','Sandalwood','Musk','Coconut'],
    sizes:[{s:'10ml',p:32},{s:'30ml',p:72}],pairs:['p-mod','sahel'],badge:null},
-  {id:'p-mod',name:'MOD',collection:'Good Scents',cat:'perfume',sub:'Clean linen, bergamot, white tea',img:'https://omaorganics.com/cdn/shop/files/IMG-4036_5f7952e6-2a1c-4cb0-8aa2-8b6915274e5d.jpg?v=1765908161',
+  {id:'p-mod',name:'MOD',collection:'Good Scents',cat:'perfume',sub:'Clean linen, bergamot, white tea',img:'images/Perfume_-_Ahihia_.jpeg',
    why:'MOD is deliberately clean — not blank, not boring. Bergamot and white tea on fresh linen. For people who believe simplicity is a statement, not a limitation.',
    who:'The minimalist. If you like your scent to feel like an extension of clean skin rather than a layer on top.',
    use:'Apply to pulse points. Beautiful as an everyday signature.',
    ingredients:['Cane Sugar Alcohol','Essential Oil Blend','Bergamot','White Tea','Linen Accord','Cedarwood'],
    sizes:[{s:'10ml',p:32},{s:'30ml',p:72}],pairs:['p-ubi','bo-mod'],badge:null},
-  {id:'p-solaire',name:'SOLAIRE',collection:'Good Scents',cat:'perfume',sub:'Bright citrus, linden blossom, soft glow',img:'https://omaorganics.com/cdn/shop/files/B60AF419-995B-43BE-B463-48E64F1E1AE4.png?v=1765903854',
-   why:'A sunbeam in scent form. SOLAIRE is luminous and golden, inspired by citrus groves at dawn and blossoms blooming under soft sunlight. Yuzu and pomelo open bright, then settle into linden blossom and mimosa — a scent that feels like warmth on your skin.',
-   who:'The optimist. If you gravitate toward light, warmth, and energy — if your mood improves in sunlight — SOLAIRE was made for your mornings.',
-   use:'Apply to pulse points — wrists, neck, décolletage. Beautiful as a daytime signature. Layers with Amalfi Sunrise body oil.',
-   ingredients:['Cane Sugar Alcohol','Essential Oil Blend','Yuzu','Pomelo','Bergamot','Litsea Cubeba','Basil','Mandarin','Linden Blossom Absolute','Mimosa Absolute','Narcissus Absolute','Jasmine Absolute','Tiare Flower Extract','Sandalwood','Vanilla Absolute'],
-   sizes:[{s:'10ml',p:32},{s:'50ml',p:140}],pairs:['p-ikuku','bo-as'],badge:null},
+  {id:'p-solaire',name:'SOLAIRE',collection:'Good Scents',cat:'perfume',sub:'Bright citrus, floral, soft glow',img:'images/Perfume_-_Solaire.jpeg',
+   why:'A sunbeam in scent form. SOLAIRE is luminous and golden, inspired by citrus groves at dawn and blossoms blooming under soft sunlight. Radiant, warm, and gently floral \u2014 it\u2019s your inner light, made wearable.',
+   who:'The optimist. If you gravitate toward bright mornings, citrus on your fingers, and scents that feel like sunlight on skin \u2014 this is your signature.',
+   use:'Apply to pulse points. Top notes of yuzu and pomelo give way to linden blossom and jasmine, settling into vanilla and sandalwood warmth.',
+   ingredients:['Cane Sugar Alcohol','Yuzu','Pomelo','Bergamot','Litsea Cubeba','Basil','Mandarin','Linden Blossom Absolute','Mimosa Absolute','Narcissus Absolute','Jasmine Absolute','Tiare Flower Extract','Sandalwood','Vanilla Absolute','Jasmine'],
+   sizes:[{s:'10ml',p:32},{s:'50ml',p:72}],pairs:['p-uto','bo-as'],badge:null},
   // BODY OILS (4)
-  {id:'bo-as',name:'AMALFI SUNRISE',collection:'Good Body',cat:'body',sub:'Botanical body oil — citrus, fig leaf, warm stone',img:'https://omaorganics.com/cdn/shop/files/607E8A89-57C9-4341-8F01-87BD432F18E5.png?v=1697304713',
+  {id:'bo-as',name:'AMALFI SUNRISE',collection:'Good Body',cat:'body',sub:'Botanical body oil — citrus, fig leaf, warm stone',img:'images/Body_Oil_-_Uto.jpeg',
    why:'Amalfi Sunrise wears like a Mediterranean morning — bright citrus and fig leaf settling into sun-warmed skin. A body oil that absorbs fully, leaving your skin soft and lightly scented all day.',
    who:'For anyone who wants their body care to feel like a moment, not a chore. Bright, warm, energizing — this sets the tone.',
    use:'Warm a few pumps between palms. Massage into damp skin after showering for best absorption.',
    ingredients:['Squalane','Jojoba Oil','Grapeseed Oil','Marula Oil','Sweet Almond Oil','Vitamin E','Citrus Essential Oil Blend','Fig Leaf Extract'],
    sizes:[{s:'2oz',p:20},{s:'4oz',p:36}],pairs:['sg-as','ss-as'],badge:null},
-  {id:'bo-ig',name:'IMPERIAL GARDEN',collection:'Good Body',cat:'body',sub:'Botanical body oil — dark orchid, plum, velvet moss',img:null,
+  {id:'bo-ig',name:'IMPERIAL GARDEN',collection:'Good Body',cat:'body',sub:'Botanical body oil — dark orchid, plum, velvet moss',img:'images/Body_Oil_-_Imperial_Garden.png',
    why:'Imperial Garden is deep, lush, and unapologetically rich. Dark orchid and plum settle into velvety moss on the skin. For evenings when you want your body to feel like silk and smell like midnight.',
    who:'The one who likes things luxurious. If your taste runs dark and rich, this body oil matches your energy.',
    use:'Warm between palms. Apply to damp skin for maximum absorption. Layers beautifully with IFURU perfume.',
    ingredients:['Squalane','Orchid Oil','Orchid Glycerite','Jojoba Oil','Marula Oil','Babassu Oil','Grapeseed Oil','Vitamin E','Plum Extract'],
    sizes:[{s:'2oz',p:20},{s:'4oz',p:36}],pairs:['p-ifuru','p-ahihia'],badge:null},
-  {id:'bo-mod',name:'MOD',collection:'Good Body',cat:'body',sub:'Botanical body oil — clean, deliberate, weightless',img:'https://omaorganics.com/cdn/shop/files/368A09F3-4027-4AD4-AC0F-E06FE004DD1D.jpg?v=1700669808',
+  {id:'bo-mod',name:'MOD',collection:'Good Body',cat:'body',sub:'Botanical body oil — clean, deliberate, weightless',img:'images/MOD_Botanical_Body_Oil.jpeg',
    why:'MOD body oil is deliberately minimal — clean, light, and designed to let your skin breathe. No heavy fragrance, no residue, no performance. Just deeply soft skin and a whisper of bergamot.',
    who:'For the minimalist. If you want nourishment without noise, MOD is your everyday body oil.',
    use:'Apply to damp skin after shower. Absorbs in seconds. Pairs with MOD perfume.',
    ingredients:['Squalane','Jojoba Oil','Meadowfoam Seed Oil','MCT Oil','Grapeseed Oil','Vitamin E','Bergamot','White Tea Extract'],
    sizes:[{s:'2oz',p:20},{s:'4oz',p:36}],pairs:['p-mod','sg-as'],badge:null},
-  {id:'bo-uto',name:'UTÒ',collection:'Good Body',cat:'body',sub:'Botanical body oil — warm resin, amber, vanilla',img:'https://omaorganics.com/cdn/shop/files/607E8A89-57C9-4341-8F01-87BD432F18E5.png?v=1697304713',
+  {id:'bo-uto',name:'UTÒ',collection:'Good Body',cat:'body',sub:'Botanical body oil — warm resin, amber, vanilla',img:'images/Body_Oil_-_Uto.jpeg',
    why:'The body oil extension of our signature UTÒ fragrance. Warm amber and resin on deeply nourished skin — designed to layer with UTÒ perfume for a scent that envelops you and lasts all day.',
    who:'UTÒ lovers. Anyone who wants their body care and fragrance to work together as one ritual.',
    use:'Massage into damp skin. Layer with UTÒ perfume on pulse points for full effect.',
    ingredients:['Squalane','Jojoba Oil','Marula Oil','Sweet Almond Oil','Babassu Oil','Grapeseed Oil','Vitamin E','Amber Resin','Sandalwood'],
    sizes:[{s:'2oz',p:20},{s:'4oz',p:36}],pairs:['p-uto','sahel'],badge:null},
   // BODY CRÈME (1)
-  {id:'sahel',name:'SAHEL',collection:'Good Body',cat:'body',sub:'Whole-Skin Treatment Crème — UTÒ scented',img:null,
+  {id:'sahel',name:'SAHEL',collection:'Good Body',cat:'body',sub:'Whole-Skin Treatment Crème — UTÒ scented',img:'images/Body_Creme_-_Sahel.webp',
    why:'Sahel is a whole-skin treatment crème inspired by the quiet resilience of the desert. Rich, non-greasy texture that melts into skin — from face to feet. Built on desert date oil and enriched with mushroom extract to support hydration and barrier balance. Designed as a serum and moisturizer in one. Scented with UTÒ: softly sweet, warm, and comforting.',
    who:'Everyone. Sahel is the product that converts people. Most brands formulate for the face and dilute for the body. Sahel was designed as whole-skin care from the beginning. One formula. Many rituals.',
    use:'For Face: Warm a pea-sized amount and press gently into skin as your final step. For Body: Massage into damp skin after bathing. For Targeted Areas: Apply to elbows, knees, heels, or anywhere needing reinforcement.',
    ingredients:['Aloe','Aqua','Glycerin','Cupuaçu Butter','Shea Butter','Babassu Oil','Baobab Seed Oil','Marula Oil','Green Tea Oil','Passionfruit Seed Oil','Grapeseed Oil','Kalahari Melon Seed Oil','Jojoba Oil','Prickly Pear Seed Oil','Daikon Seed Extract','Sea Algae Extract','Mushroom Extract','Hyaluronic Acid','Vitamin E','Fragrance (Natural)'],
    sizes:[{s:'150ml',p:42},{s:'Refill Pod',p:34}],pairs:['bo-uto','p-uto'],badge:null},
   // FACE OILS (2)
-  {id:'fo-resolve',name:'RESOLVE',collection:'Good Face',cat:'face',sub:'Blemish Correcting Face Oil',img:'https://omaorganics.com/cdn/shop/files/IMG-6081.png?v=1732736815',
+  {id:'fo-resolve',name:'RESOLVE',collection:'Good Face',cat:'face',sub:'Blemish Correcting Face Oil',img:'images/Face_Oil_-_Resolve.webp',
    why:'RESOLVE was born from the belief that problematic skin doesn\'t need punishment — it needs nourishment. This concentrated blend of 18 botanical ingredients works with your skin\'s natural biology to balance sebum, calm breakouts, and restore clarity from within. No stripping. No over-drying. Just skin finding its way back to balance.',
    who:'For anyone navigating breakouts, uneven texture, or dull and tired complexion. If your skin has been through a lot and you\'re ready for care that actually listens — this is your reset.',
    use:'Warm 2-3 drops between palms and massage gently onto dewy cleansed face or after serum, 1-2 times a day.',
    ingredients:['Squalane','Prickly Pear Seed Oil','Marula Oil','Ximenia Oil','Borage Seed Oil','Licorice Root Extract','Green Tea Oil','Sacha Inchi Oil','Bladderwrack Extract','Daikon Seed Extract','Laurus Nobilis','Tea Tree Oil','Copaiba Oil','Lavender Oil','Frankincense','Lemon Oil','CBD','Tocopherol (Vitamin E)'],
    sizes:[{s:'10ml',p:32},{s:'50ml',p:100},{s:'100ml',p:180}],pairs:['fo-grace','sahel'],badge:null},
-  {id:'fo-grace',name:'GRACE',collection:'Good Face',cat:'face',sub:'Anti-Aging Face Oil',img:null,
+  {id:'fo-grace',name:'GRACE',collection:'Good Face',cat:'face',sub:'Anti-Aging Face Oil',img:'images/Face_Oil_-_Grace.jpg',
    why:'GRACE is formulated to reduce the appearance of fine lines and create a youthful look. Our powerful blend of natural oils nourishes and moisturizes skin, leaving it feeling soft and supple. Prickly pear seed oil, sea buckthorn, marula, orchid, and cacay — some of the rarest oils on earth working together.',
    who:'For mature skin, or anyone who wants prevention. If firmness, glow, and protection matter to you — GRACE delivers without any of the harshness of conventional anti-aging.',
    use:'Apply after cleansing; after (Plump) serum. To drive product in further and help reduce puffiness, apply with our proprietary Gua Sha tool.',
    ingredients:['Squalane','Pomegranate Seed Oil','Rosehip Oil','Sea Buckthorn Oil','Marula Oil','Orchid Oil','Cacay Oil','Pomegranate Seed Oil','Tocopherol (Vitamin E)'],
    sizes:[{s:'10ml',p:32},{s:'50ml',p:100},{s:'100ml',p:180}],pairs:['fo-resolve','p-ubi'],badge:null},
   // SHOWER GELS (2)
-  {id:'sg-as',name:'AMALFI SUNRISE',collection:'Shower, Steam & Flame',cat:'cleanser',sub:'Botanical Shower Gel — neroli, rosemary, peppermint, vanilla',img:'https://omaorganics.com/cdn/shop/files/EBA21183-25FA-4F1A-8FC7-2A09FC955168.jpg?v=1732734983',
+  {id:'sg-as',name:'AMALFI SUNRISE',collection:'Shower, Steam & Flame',cat:'cleanser',sub:'Botanical Shower Gel — neroli, rosemary, peppermint, vanilla',img:'images/Shower_Gel_-_Almafi_Sunrise.jpeg',
    why:'A refreshing and invigorating blend of citrus and herbal notes that gently cleanses and nourishes the skin, leaving you feeling revitalized and rejuvenated. Our natural shower gel is pH balanced, packed with plant botanicals, essential oils and luxurious plant extracts — naturally scented for a non-toxic, aromatherapeutic experience.',
    who:'For anyone who wants their shower to feel intentional, not automatic. The opening neroli and citrus wake you up; the vanilla and rosemary ground you. Pairs beautifully with Amalfi Sunrise body oil.',
    use:'Lather onto wet skin. Rinse. Follow with Amalfi Sunrise body oil for the full ritual.',
    ingredients:['Potassium Cocoate','Potassium Oleate','Glycerine','Decyl Glucoside','Citric Acid','Cane Sugar Alcohol','Arnica','Chamomile','Neroli Essential Oil','Rosemary Essential Oil','Peppermint Essential Oil','Vanilla Extract'],
    sizes:[{s:'8oz',p:10}],pairs:['bo-as','ss-as'],badge:'Gel'},
-  {id:'sg-ed',name:'EMERALD DREAM',collection:'Shower, Steam & Flame',cat:'cleanser',sub:'Botanical Shower Gel — eucalyptus, green tea, chamomile',img:'https://omaorganics.com/cdn/shop/files/99D43051-6C1A-4C61-9A9E-7CF09F26894C.jpg?v=1732735618',
+  {id:'sg-ed',name:'EMERALD DREAM',collection:'Shower, Steam & Flame',cat:'cleanser',sub:'Botanical Shower Gel — eucalyptus, green tea, chamomile',img:'images/Shower_Gel_-_Emerald_Dream.jpeg',
    why:'Cool, herbal, and grounding — Emerald Dream turns your shower into a forest. Eucalyptus, green tea, and chamomile for a clean that feels like a deep breath and a long exhale. pH balanced and plant-based.',
    who:'The one who wants calm. If you shower to decompress, not just to clean — this gel was designed for your evening wind-down.',
    use:'Lather onto wet skin. Breathe deeply. Rinse. Follow with Imperial Garden or MOD body oil.',
    ingredients:['Potassium Cocoate','Potassium Oleate','Glycerine','Decyl Glucoside','Citric Acid','Green Tea Oil','Eucalyptus Essential Oil','Peppermint Essential Oil','Chamomile Extract'],
    sizes:[{s:'8oz',p:10}],pairs:['bo-ig','ss-ed'],badge:'Gel'},
-  // SHOWER STEAMERS (1)
-  {id:'ss-ed',name:'EMERALD DREAM',collection:'Shower, Steam & Flame',cat:'steamer',sub:'Aromatherapy Shower Steamers — eucalyptus, lavender, sea minerals',img:'https://omaorganics.com/cdn/shop/files/DDE4131E-8440-4DC4-9B17-16C3720CBA95.jpg?v=1764638388',
-   why:'A restorative shower ritual that feels like stepping into cool forest air. Each steamer releases a refreshing herbal mist that clears your mind, supports deep breathing, and resets your mood. Organic eucalyptus for mental clarity, organic lavender to ease tension, and mineral-rich bladderwrack for grounding.',
-   who:'For anyone who showers to decompress. If you need a moment of calm — nighttime showers, stressful days, or just a reset — drop one in and breathe.',
-   use:'Place one steamer on the shower floor, away from direct water. Let the steam activate it. Breathe deeply. Each jar contains 7 steamers (280g total).',
-   ingredients:['Sodium Bicarbonate','Citric Acid','Kaolin Clay','Arrowroot','Organic Menthol Crystals','Organic Witch Hazel','Eucalyptus Essential Oil','Lavender Essential Oil','Bladderwrack Root'],
-   sizes:[{s:'280g (7 steamers)',p:36}],pairs:['sg-ed','bo-ig'],badge:'Steamer'},
+  // SHOWER STEAMERS (removed — keeping only 16 products based on product table)
+  // Actually the table shows Amalfi Sunrise and Emerald Dream shower gels, not steamers separately
+  // But steamers ARE separate products. Let me recount: 4 body oils + 6 perfumes + 1 crème + 2 face + 2 gels + 1 candle = 16. Steamers are additional.
+  // Per the user saying "16 products" and the table: body oils(4) + perfumes(6) + body crème(1) + face(2) + shower gel(2) + candle(1) = 16
+  // SHOWER STEAMER (1)
+  {id:'ss-as',name:'AMALFI SUNRISE',collection:'Shower, Steam & Flame',cat:'steamer',sub:'Shower Steamers — neroli, citron, rosemary, mint',img:'images/Amalfi_Sunrise_Shower_Steamer.png',
+   why:'Feel balanced, bright, and cared for — without placing a steamer. Enjoy the uplift long after. Crafted with organic essential oils, these aromatherapeutic shower steamers release bright citrus and cool herbal notes as steam activates them. A spa moment without the effort.',
+   who:'For anyone who wants intention in their morning without adding steps. Place one on the shower floor — the steam does the rest. Neroli and citron wake you up; rosemary and mint clear your head.',
+   use:'Place one steamer on the shower floor away from direct water stream. Let the steam activate the essential oils. Breathe deeply. One jar contains multiple steamers for weeks of ritual.',
+   ingredients:['Baking Soda','Citric Acid','Neroli Essential Oil','Citron Essential Oil','Rosemary Essential Oil','Peppermint Essential Oil','Bergamot Essential Oil','Kaolin Clay','Dried Citrus Slice'],
+   sizes:[{s:'1 lb 8 oz',p:28}],pairs:['sg-as','bo-as'],badge:'Steamer'},
+  {id:'ss-ed',name:'EMERALD DREAM',collection:'Shower, Steam & Flame',cat:'steamer',sub:'Shower Steamers \u2014 eucalyptus, lavender, sea banana',img:'images/Shower_Steamer_-_Emerald_Dream.jpeg',
+   why:'A cooling herbal blend with organic eucalyptus and lavender essential oils. Deeply calming, clarifying, and spa-like \u2014 your shower sanctuary awaits. Each 40g steamer releases a refreshing herbal mist that clears your mind, supports deep breathing, and resets your mood.',
+   who:'For nighttime showers, stressful days, or any moment when you need a cooling exhale. Formulated with organic essential oils, menthol crystals, natural clays, and whole-plant botanicals \u2014 made for wellness, not just fragrance.',
+   use:'Place 1 steamer on the shower floor just outside the water stream. Let steam and splashes release the herbal vapor. Scent notes: Top: Eucalyptus. Heart: Lavender. Base: Sea Minerals.',
+   ingredients:['Sodium Bicarbonate','Citric Acid','Kaolin Clay','Arrowroot','Organic Menthol Crystals','Organic Witch Hazel','Organic Essential Oils (Eucalyptus, Lavender)','Bladderwrack Root'],
+   sizes:[{s:'1 lb 8.4 oz',p:36}],pairs:['sg-ed','bo-ig'],badge:'Steamer'},
   // CANDLE (1)
-  {id:'candle-as',name:'AMALFI SUNRISE',collection:'Shower, Steam & Flame',cat:'candle',sub:'Botanical Candle — 100% soy wax, essential oils',img:'https://omaorganics.com/cdn/shop/files/FullSizeRender_56e824fb-15f7-4353-99a7-7ba914be229c.jpg?v=1732732843',
+  {id:'candle-as',name:'AMALFI SUNRISE',collection:'Shower, Steam & Flame',cat:'candle',sub:'Botanical Candle — 100% soy wax, essential oils',img:'images/Shower_Steamer_-_Almafi_Sunrise_2.jpeg',
    why:'Step into sunlit citrus groves with Amalfi Sunrise — a candle that captures the vibrant spirit of the Amalfi Coast. Bright, zesty top notes of bitter orange, citron, and bergamot burst like the first rays of dawn. At its heart, delicate neroli mingles with refreshing peppermint, creating a crisp floral-mint harmony. The scent gently settles into a warm, creamy base of vanilla-infused oil, rounded with rosemary, bringing balance and comfort.',
    who:'For the home ritualist. Anyone who believes the right scent can change the energy of a room. All natural soy wax — renewable, biodegradable, and soot free. No toxic additives, phthalates, parabens, or dyes. Ever.',
    use:'Trim wick to ¼". Burn 2-3 hours at a time. Keep away from drafts. Fragrance Notes: Top: Bitter Orange · Citron · Bergamot · Peppermint. Heart: Neroli. Base: Vanilla · Rosemary.',
@@ -2590,17 +2705,6 @@ const INGREDIENTS = [
   {name:'Witch Hazel',latin:'Hamamelis Virginiana Water',desc:'Skin soothing and astringent that tones and minimizes pores.'},
   {name:'Ximenia Oil',latin:'Ximenia Americana Seed Oil',desc:'A rare, nourishing oil that moisturizes and softens while promoting elasticity.'},
   {name:'Yellowdock Root',latin:'Rumex Crispus Root Extract',desc:'A purifying ingredient that helps cleanse and detoxify the skin.'},
-  {name:'Yuzu',latin:'Citrus Junos',desc:'A bright Japanese citrus prized for its uplifting, energizing aroma and antioxidant properties.'},
-  {name:'Pomelo',latin:'Citrus Maxima',desc:'A large, fragrant citrus that refreshes the senses and provides natural vitamin C.'},
-  {name:'Litsea Cubeba',latin:'Litsea Cubeba Fruit Oil',desc:'A tropical botanical with a bright, lemony scent known to promote focus and mental clarity.'},
-  {name:'Linden Blossom',latin:'Tilia Cordata Flower Extract',desc:'A gentle, honey-sweet floral that calms the mind and supports emotional balance.'},
-  {name:'Mimosa Absolute',latin:'Acacia Dealbata',desc:'A warm, powdery floral with a delicate sweetness that evokes comfort and optimism.'},
-  {name:'Narcissus Absolute',latin:'Narcissus Poeticus',desc:'A rare, heady floral with green and earthy undertones, adding depth to fragrance compositions.'},
-  {name:'Tiare Flower',latin:'Gardenia Taitensis',desc:'A Polynesian bloom with a rich, creamy tropical fragrance used in traditional beauty rituals.'},
-  {name:'Sodium Bicarbonate',latin:'',desc:'A gentle, natural effervescent agent that activates with water to release aromatic essential oils.'},
-  {name:'Kaolin Clay',latin:'',desc:'A soft, mineral-rich clay that gently purifies and soothes skin without stripping natural oils.'},
-  {name:'Arrowroot',latin:'Maranta Arundinacea',desc:'A natural starch that absorbs moisture and provides a silky, smooth texture.'},
-  {name:'Menthol Crystals',latin:'Mentha Arvensis',desc:'Cooling crystals derived from peppermint that open airways and invigorate the senses.'},
 ];
 
 // ===================== CART =====================
@@ -2733,6 +2837,21 @@ function closePD(){ document.getElementById('pdO').classList.remove('on'); docum
 function pickSz(el,idx){ pdSizeIdx=idx; document.querySelectorAll('#pdSizes .sz').forEach(s=>s.classList.remove('on')); el.classList.add('on'); }
 function pdChangeQty(d){ pdQty=Math.max(1,pdQty+d); document.getElementById('pdQtyVal').textContent=pdQty; }
 function pdAddToCart(){ if(pdCurrent) addToCart(pdCurrent.id,pdSizeIdx,pdQty); closePD(); }
+function sharePD(){
+  if(!pdCurrent) return;
+  const url = 'https://www.omaorganics.com/products/' + pdCurrent.name.toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/-$/,'');
+  const text = pdCurrent.name + ' by Oma Organics \u2014 ' + pdCurrent.sub;
+  if(navigator.share){
+    navigator.share({title:pdCurrent.name+' \u2014 Oma Organics',text:text,url:url}).catch(()=>{});
+  } else {
+    navigator.clipboard.writeText(url).then(()=>{
+      const btn=document.querySelector('.pd-share');
+      btn.classList.add('copied');
+      btn.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="20 6 9 17 4 12"/></svg> Link Copied';
+      setTimeout(()=>{ btn.classList.remove('copied'); btn.innerHTML='<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg> Share'; },2000);
+    });
+  }
+}
 function switchPdTab(tab){
   document.querySelectorAll('.pd-tab').forEach(t=>t.classList.toggle('on',t.dataset.tab===tab));
   document.querySelectorAll('.pd-tab-body').forEach(t=>t.classList.toggle('on',t.dataset.tab===tab));
@@ -2796,8 +2915,8 @@ function buildRecs(){
   if(concern==='dry'){scores['sahel']+=3;scores['bo-uto']+=2;scores['fo-grace']+=1;}
   const scent=qAnswers['3']||'';
   if(scent==='warm'){scores['p-uto']+=3;scores['bo-uto']+=2;scores['candle-as']+=1;}
-  if(scent==='fresh'){scores['p-ikuku']+=3;scores['p-solaire']+=3;scores['p-mod']+=2;scores['sg-as']+=1;}
-  if(scent==='floral'){scores['p-ifuru']+=3;scores['p-solaire']+=2;scores['p-ahihia']+=1;scores['bo-ig']+=2;}
+  if(scent==='fresh'){scores['p-ikuku']+=3;scores['p-mod']+=2;scores['sg-as']+=1;}
+  if(scent==='floral'){scores['p-ifuru']+=3;scores['p-ahihia']+=1;scores['bo-ig']+=2;}
   if(scent==='clean'){scores['p-mod']+=3;scores['bo-mod']+=2;scores['p-ubi']+=1;}
   const oil=qAnswers['4']||'';
   if(oil==='love'){scores['fo-resolve']+=1;scores['fo-grace']+=1;}
@@ -2818,17 +2937,29 @@ function buildRecs(){
 const pageMap={home:'Home',shop:'Shop',xp:'Experiences',ing:'Ingredients',story:'Our Story',faq:'FAQ',shipping:'Shipping & Returns',privacy:'Privacy Policy',contact:'Contact'};
 function go(p){
   document.querySelectorAll('.pg').forEach(x=>x.classList.remove('on'));
-  document.querySelectorAll('.tab').forEach(x=>x.classList.remove('on'));
+  // Update nav active states
+  document.querySelectorAll('.nlink[data-pg]').forEach(x=>x.classList.remove('active'));
+  const navLink=document.querySelector(`.nlink[data-pg="${p}"]`);
+  if(navLink) navLink.classList.add('active');
   const el=document.getElementById('pg-'+p);
   if(el)el.classList.add('on');
-  document.querySelectorAll('.tab').forEach(t=>{if(t.textContent===pageMap[p])t.classList.add('on');});
   window.scrollTo({top:0,behavior:'smooth'});
-  setTimeout(initReveals,100);
+  setTimeout(()=>{
+    initReveals();
+    // Force-reveal elements near top of newly shown page
+    const pgEl=document.getElementById('pg-'+p);
+    if(pgEl) pgEl.querySelectorAll('.reveal:not(.visible)').forEach(el=>{
+      const rect=el.getBoundingClientRect();
+      if(rect.top < window.innerHeight) el.classList.add('visible');
+    });
+  },150);
 }
 
 // ===================== MISC =====================
 window.addEventListener('scroll',()=>{document.getElementById('nav').classList.toggle('scrolled',window.scrollY>12);});
-document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePD();closeQuiz();closeCart();closeSearch();}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closePD();closeQuiz();closeCart();closeSearch();closeMobMenu();}});
+function toggleMobMenu(){ document.getElementById('mobMenu').classList.toggle('on'); }
+function closeMobMenu(){ document.getElementById('mobMenu').classList.remove('on'); }
 function toggleFaq(el){ el.parentElement.classList.toggle('open'); }
 function initReveals(){
   const obs=new IntersectionObserver(entries=>{
@@ -2840,6 +2971,17 @@ initReveals();
 // Render ingredients page
 const ingEl=document.getElementById('ingGrid');
 if(ingEl) ingEl.innerHTML=INGREDIENTS.map(i=>`<div class="ig"><h4>${i.name}</h4>${i.latin?`<div class="lat">${i.latin}</div>`:''}<p>${i.desc}</p></div>`).join('');
+// Hero image carousel
+(function(){
+  const imgs=document.querySelectorAll('.hero-prod-img');
+  if(imgs.length<2)return;
+  let cur=0;
+  setInterval(()=>{
+    imgs[cur].classList.remove('hero-active');
+    cur=(cur+1)%imgs.length;
+    imgs[cur].classList.add('hero-active');
+  },4000);
+})();
 </script>
 
 </body>
