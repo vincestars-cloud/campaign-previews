@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>5x5 Ads Matrix — Gov Annuity Campaign</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --navy: #1B365D;
+  --navy-dark: #0F2240;
+  --teal: #0D6E6E;
+  --gold: #C5A44E;
+  --bg: #F8F9FA;
+  --white: #FFFFFF;
+  --text: #1A1A1A;
+  --text-muted: #5A5A5A;
+  --border: #E5E7EB;
+  --red: #C0392B;
+  --green: #1A7A4C;
+}
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { font-family: 'DM Serif Display', serif; }
+
+/* Header */
+.page-header {
+  background: linear-gradient(135deg, var(--navy-dark), var(--navy));
+  color: #fff;
+  padding: 48px 24px;
+  text-align: center;
+}
+.page-header h1 { font-size: 36px; margin-bottom: 8px; }
+.page-header p { color: rgba(255,255,255,0.7); font-size: 16px; max-width: 640px; margin: 0 auto; }
+.page-header .meta {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+.page-header .meta-item {
+  background: rgba(255,255,255,0.1);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.page-header .meta-item span { color: var(--gold); }
+
+/* Matrix Nav */
+.matrix-nav {
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  overflow-x: auto;
+}
+.matrix-nav-inner {
+  display: flex;
+  gap: 8px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-width: max-content;
+}
+.nav-pill {
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  border: 1.5px solid var(--border);
+  background: var(--white);
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.nav-pill:hover, .nav-pill.active {
+  background: var(--navy);
+  color: #fff;
+  border-color: var(--navy);
+}
+
+/* Container */
+.container { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
+
+/* Section Headers */
+.hook-section { margin-bottom: 64px; }
+.hook-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--navy);
+}
+.hook-badge {
+  background: var(--navy);
+  color: var(--gold);
+  font-family: 'DM Serif Display', serif;
+  font-size: 20px;
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.hook-header h2 { font-size: 24px; color: var(--navy); }
+.hook-header .hook-desc { font-size: 14px; color: var(--text-muted); margin-top: 4px; }
+
+/* Ad Cards */
+.ads-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  gap: 24px;
+}
+
+.ad-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+.ad-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.08); }
+
+.ad-card-header {
+  background: var(--bg);
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+}
+.ad-number {
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--navy);
+}
+.ad-tags {
+  display: flex;
+  gap: 6px;
+}
+.ad-tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+}
+.ad-tag.hook {
+  background: rgba(27, 54, 93, 0.1);
+  color: var(--navy);
+}
+.ad-tag.angle {
+  background: rgba(13, 110, 110, 0.1);
+  color: var(--teal);
+}
+.ad-tag.priority {
+  background: rgba(197, 164, 78, 0.2);
+  color: #8B6914;
+}
+
+.ad-card-body { padding: 20px; }
+
+.ad-headline {
+  font-family: 'DM Serif Display', serif;
+  font-size: 17px;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.ad-body {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.7;
+  white-space: pre-line;
+}
+
+.ad-card-footer {
+  padding: 12px 20px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.ad-cta {
+  background: var(--teal);
+  color: #fff;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+}
+.ad-format {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ads-grid { grid-template-columns: 1fr; }
+  .page-header h1 { font-size: 28px; }
+  .hook-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+}
+</style>
+</head>
+<body>
+
+<header class="page-header">
+  <h1>5x5 Ads Matrix — Gov Annuity Campaign</h1>
+  <p>25 ad variations targeting federal employees approaching retirement. 5 hooks &times; 5 angles. Built from RECON + Competitive Intel.</p>
+  <div class="meta">
+    <div class="meta-item"><span>Target:</span> FERS Employees 55-62</div>
+    <div class="meta-item"><span>Offer:</span> Free 2026 Blueprint</div>
+    <div class="meta-item"><span>CTA:</span> Get Your Free Blueprint</div>
+    <div class="meta-item"><span>Platform:</span> Meta (FB/IG)</div>
+  </div>
+</header>
+
+<nav class="matrix-nav">
+  <div class="matrix-nav-inner">
+    <a href="#h1" class="nav-pill active">H1: Identity</a>
+    <a href="#h2" class="nav-pill">H2: Mistake</a>
+    <a href="#h3" class="nav-pill">H3: Curiosity</a>
+    <a href="#h4" class="nav-pill">H4: Math</a>
+    <a href="#h5" class="nav-pill">H5: Social Proof</a>
+  </div>
+</nav>
+
+<div class="container">
+
+<!-- ═══ H1: Identity Call-Out ═══ -->
+<section class="hook-section" id="h1">
+  <div class="hook-header">
+    <div class="hook-badge">H1</div>
+    <div>
+      <h2>Identity Call-Out</h2>
+      <div class="hook-desc">"Federal employees retiring in 2026..." — Nobody else calls them out by name.</div>
+    </div>
+  </div>
+  <div class="ads-grid">
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 1</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Identity</span>
+          <span class="ad-tag angle">Fear of Gap</span>
+          <span class="ad-tag priority">Test First</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">Federal Employees Retiring in 2026: The Income Gap Nobody Warns You About</div>
+        <div class="ad-body">You've served 20+ years. You know your FERS annuity. But have you run your annuity computation?
+
+High-3 average salary x years of service x 1% = your annual annuity.
+
+For most GS-12s and GS-13s, that's 30-40% of your salary. The FERS Supplement bridges the gap until 62 — then it vanishes completely. Social Security helps, but it still won't match your current take-home.
+
+"I did the math and my annuity is only going to be USD 2,100/month. How am I supposed to live on that?"
+
+That's the most common reaction we hear. And the answer isn't to panic — it's to plan before you separate.
+
+Our free 2026 Federal Retirement Income Blueprint shows you your exact gap and exactly how FERS + TSP + Social Security + a fixed annuity work together to close it.
+
+No sales call. No advisor contact. Just the math.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 2</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Identity</span>
+          <span class="ad-tag angle">TSP Anxiety</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">Federal Employees: What Happens to Your TSP the Day You Separate?</div>
+        <div class="ad-body">You've been contributing to your Thrift Savings Plan for decades. Now you're approaching your MRA and the questions hit all at once:
+
+Leave it in the G Fund? Roll it to an IRA? Roth conversion ladder? TSP annuity purchase? Monthly payments?
+
+"My HR just processes paperwork — they can't give me financial advice. And I don't trust the advisor who cold-called me."
+
+Sound familiar? You're not alone. The wrong TSP move at separation can trigger penalties, a massive tax bill, or lock you into high-fee funds for decades.
+
+We built the 2026 Federal Retirement Income Blueprint specifically for FERS employees facing this exact decision. It maps out every TSP option based on your age, years of service, and retirement timeline.
+
+5 questions. 2 minutes. No sales call.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 3</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Identity</span>
+          <span class="ad-tag angle">Guaranteed Income</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">Federal Employees: How to Turn Part of Your TSP Into a Paycheck That Never Stops</div>
+        <div class="ad-body">After 25 years of government service, you chose stability for a reason. You didn't pick the private sector. You picked guaranteed benefits.
+
+Your FERS annuity is guaranteed for life. Social Security is guaranteed for life. But the gap between them and your actual monthly expenses? That's where the uncertainty lives.
+
+What if a portion of your TSP could become a second guaranteed income stream — not subject to C Fund or S Fund swings, not dependent on withdrawal timing, just predictable income every month for life?
+
+That's the "income floor" strategy inside our free 2026 Federal Retirement Income Blueprint. It shows how FERS + TSP + a fixed annuity work together to cover 100% of your essential expenses with income you can never outlive.
+
+Built specifically for FERS employees. Free. No obligation.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 4</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Identity</span>
+          <span class="ad-tag angle">Simplicity</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">Retiring From Federal Service? Everything You Need on One Page.</div>
+        <div class="ad-body">FERS annuity computation. TSP withdrawal strategies. FERS Supplement rules. FEHB continuation. Social Security timing. Survivor benefit elections. Sick leave creditable service. The earnings test.
+
+If your head is spinning, you're not alone. Most federal employees within 5 years of retirement feel overwhelmed — and there's no single source that puts it all together.
+
+OPM gives you a 200-page handbook. Your HR office processes forms. Reddit gives you 47 conflicting opinions.
+
+We built one free document that does it all: the 2026 Federal Retirement Income Blueprint. Answer 5 questions and see your entire retirement picture — your FERS annuity, your TSP options, the gap, and how to close it.
+
+No jargon. No 400-page guides. Just clarity for FERS employees.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 5</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Identity</span>
+          <span class="ad-tag angle">Anti-Salesman</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">Federal Employees: Get Retirement Answers Without the Sales Pitch</div>
+        <div class="ad-body">You've probably noticed — the moment you mention "separation" or "TSP rollover," every financial advisor in a 50-mile radius starts calling.
+
+"Every advisor just wants my TSP money."
+
+We hear that from federal employees every single day. And honestly? Some of them do.
+
+That's why we built the 2026 Federal Retirement Income Blueprint — a free guide made specifically for FERS employees. No advisor involvement. No "discovery call." No 45-minute pitch for a variable annuity you don't need.
+
+Just your numbers: what your FERS annuity pays, what your TSP can produce, where the gap is, and what your real options are.
+
+You didn't serve 20+ years to get pressured into a product you don't understand.
+
+No advisor contact. No email spam. Just the math.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ H2: Mistake Warning ═══ -->
+<section class="hook-section" id="h2">
+  <div class="hook-header">
+    <div class="hook-badge">H2</div>
+    <div>
+      <h2>Mistake Warning</h2>
+      <div class="hook-desc">"The #1 TSP rollover mistake..." — Leverages Annuity Gator's pattern with federal specificity.</div>
+    </div>
+  </div>
+  <div class="ads-grid">
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 6</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Mistake</span>
+          <span class="ad-tag angle">Fear of Gap</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">The #1 Retirement Mistake Federal Employees Make (It Costs Thousands)</div>
+        <div class="ad-body">Most government employees assume their FERS annuity + Social Security will cover their lifestyle. They don't run the computation until it's too late.
+
+Let's do the math nobody at HR shows you:
+
+High-3 salary: USD 95,000
+Years of service: 25
+FERS annuity: ~USD 23,750/year (USD 1,979/month)
+
+That's before taxes. Before your FEHB premium. Before your survivor benefit reduction.
+
+Could you live on that? Factor in Social Security at 62 and you're still looking at a USD 25,000-35,000 annual gap.
+
+The mistake? Not planning for that gap BEFORE you file your retirement paperwork. Once you've separated, your options narrow dramatically — and with 54,000+ claims pending at OPM, you could wait 77+ days for your first full annuity payment.
+
+Our free Blueprint shows the exact gap and how to close it while you still have time.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 7</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Mistake</span>
+          <span class="ad-tag angle">TSP Anxiety</span>
+          <span class="ad-tag priority">Test First</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">The TSP Rollover Mistake That Costs Federal Retirees Up to USD 50,000</div>
+        <div class="ad-body">When you separate from federal service, your TSP doesn't just follow you. You face a decision — and the wrong one can trigger:
+
+• A 10% early withdrawal penalty (if you haven't hit 59½ — or 55 under the Rule of 55)
+• A massive tax bill from an unnecessary Roth conversion
+• Losing the TSP's 0.055% expense ratio for an IRA charging 10x more
+
+The biggest mistake? Rolling everything to a high-fee IRA because an advisor told you to — without comparing it to your other options first.
+
+Some of those advisors earn a 5% commission on the rollover. That's USD 25,000 on a USD 500K TSP. They're not giving you advice — they're making a sale.
+
+Before you move a single dollar, get our free 2026 Federal Retirement Income Blueprint. It maps your TSP options side by side: stay in TSP vs. rollover vs. partial annuity purchase.
+
+No advisor involved. Just the comparison.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 8</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Mistake</span>
+          <span class="ad-tag angle">Guaranteed Income</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">The Retirement Mistake That Leaves Federal Employees Without Guaranteed Income</div>
+        <div class="ad-body">Your FERS annuity guarantees income for life. Social Security does too. But what about the gap between them and your monthly expenses?
+
+Most federal retirees leave their entire TSP in the G Fund — earning below inflation — or take ad-hoc withdrawals and hope it lasts. That's not a retirement strategy. That's hope.
+
+The 2022 C Fund and S Fund losses terrified a lot of people close to retirement. Many panic-moved to the G Fund. Now they're earning 4% while inflation eats their purchasing power.
+
+"I can't afford a 30% drop this close to retirement. I'd rather earn less and keep what I have."
+
+There's a third option: convert a portion of your TSP into a guaranteed income stream that fills the gap — with no market risk and no guessing.
+
+Our free Blueprint shows you exactly how much to allocate for guaranteed income that covers 100% of your essential expenses. For life.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 9</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Mistake</span>
+          <span class="ad-tag angle">Simplicity</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">Federal Employees: Stop Googling Your Retirement Plan. Here's the Cheat Sheet.</div>
+        <div class="ad-body">Every time you search "FERS retirement calculator" you end up deeper in confusion. OPM says one thing. FedWeek says another. r/fednews has three different answers.
+
+You've bookmarked 47 pages, downloaded 6 PDFs, and you still can't answer the basic question: "What will my actual monthly income be when I retire?"
+
+The mistake? Piecing together your retirement plan from scattered sources instead of one clear document built for FERS employees.
+
+We built the 2026 Federal Retirement Income Blueprint. It takes your service years, high-3, TSP balance, and age, and shows one clear picture:
+
+Here's what you'll have. Here's the gap. Here are your options.
+
+Done. 5 questions. 2 minutes. No sales call.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 10</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Mistake</span>
+          <span class="ad-tag angle">Anti-Salesman</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">The #1 TSP Rollover Mistake: Trusting the First Advisor Who Calls</div>
+        <div class="ad-body">Within 30 days of filing your retirement paperwork, the calls start. Advisors you've never met saying "I specialize in federal employees" and "Let me help you with your TSP."
+
+Here's what they won't mention: their recommendation to roll your TSP into an IRA often generates a 1-5% commission for them. On a USD 500K TSP, that's up to USD 25,000 — coming out of YOUR retirement savings through fees.
+
+The real mistake? Making a TSP decision without knowing your numbers first.
+
+We're not advisors. We don't sell products. We built a free Federal Retirement Income Blueprint that shows you every TSP option side by side — with the actual costs, tax implications, and income projections.
+
+No advisor. No commission. No "discovery call." Just the math federal employees need to decide for themselves.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ H3: Curiosity Gap ═══ -->
+<section class="hook-section" id="h3">
+  <div class="hook-header">
+    <div class="hook-badge">H3</div>
+    <div>
+      <h2>Curiosity Gap</h2>
+      <div class="hook-desc">"Most GS-13s don't know this..." — Exploits real knowledge gaps (FERS Supplement cliff, Rule of 55).</div>
+    </div>
+  </div>
+  <div class="ads-grid">
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 11</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Curiosity</span>
+          <span class="ad-tag angle">Fear of Gap</span>
+          <span class="ad-tag priority">Test First</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">Most GS-13s Don't Know This About Their Retirement Income</div>
+        <div class="ad-body">You probably know your FERS annuity and your Social Security estimate. But do you know about the cliff?
+
+The FERS Supplement — the bridge payment between your MRA and age 62 — disappears completely when you turn 62. And most federal employees don't realize it's also subject to an earnings test if you work part-time after separating.
+
+That means your retirement income can DROP by USD 1,000-1,500/month overnight. One birthday. One cliff. Zero warning from OPM.
+
+If you haven't planned for that cliff, you'll burn through your TSP way faster than expected.
+
+Our free 2026 Federal Retirement Income Blueprint shows you exactly when the cliff hits, how much income you lose, and the strategy to bridge it before it becomes a crisis.
+
+This is specific to FERS employees. Nobody else has this problem.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Video 15s / Static</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 12</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Curiosity</span>
+          <span class="ad-tag angle">TSP Anxiety</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">Your TSP Has a Rule Most Federal Employees Never Hear About</div>
+        <div class="ad-body">If you separate from federal service in or after the year you turn 55, you can withdraw from your TSP without the 10% early withdrawal penalty.
+
+It's called the Rule of 55 — and it changes the entire calculus of your TSP strategy at retirement.
+
+Most federal employees don't know this. They assume 59½ is the magic number for everything. And some advisors "forget" to mention it — because it means you might not need their IRA rollover.
+
+There's more: the TSP offers an annuity purchase option that most employees have never explored, plus a monthly payment option that works like a paycheck.
+
+Our free 2026 Federal Retirement Income Blueprint breaks down every TSP option — withdrawals, monthly payments, rollovers, annuity purchase — and shows which one keeps the most money in your pocket based on your specific situation.
+
+Made for FERS employees. Free. 2 minutes.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 13</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Curiosity</span>
+          <span class="ad-tag angle">Guaranteed Income</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">How Some Federal Retirees Guarantee 100% of Their Monthly Bills — for Life</div>
+        <div class="ad-body">They don't have more money. They don't have better pensions. They just structured their retirement income differently.
+
+Here's the strategy:
+
+Step 1: Calculate your essential monthly expenses (housing, FEHB, food, utilities, insurance).
+Step 2: Add up your guaranteed income (FERS annuity + Social Security).
+Step 3: If there's a gap, fund a fixed annuity with a portion of your TSP to fill it.
+
+Result: 100% of essential expenses covered by income that never stops — regardless of what the stock market does.
+
+Everything above that line? Keep it in the C Fund, the L Fund, or an IRA for growth. Travel money. Grandkid money. Legacy money.
+
+That's the "income floor" strategy — and it's inside our free 2026 Federal Retirement Income Blueprint. See your exact numbers.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 14</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Curiosity</span>
+          <span class="ad-tag angle">Simplicity</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">There's a One-Page Version of Your Entire Federal Retirement Plan</div>
+        <div class="ad-body">What if you could see your FERS annuity, TSP income options, FERS Supplement timeline, Social Security scenarios, and total monthly retirement income — all on one page?
+
+No 200-page OPM handbook.
+No conflicting Reddit threads.
+No spreadsheet with 40 tabs.
+
+Just: "Here's what you'll have. Here's what you need. Here's the gap. Here's how to fill it."
+
+We built exactly that for FERS employees — the 2026 Federal Retirement Income Blueprint. It uses your service years, high-3 salary, and TSP balance to give you the clearest picture of your federal retirement you've ever seen.
+
+5 questions. 2 minutes. Free. No sales call.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 15</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Curiosity</span>
+          <span class="ad-tag angle">Anti-Salesman</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">What Your Financial Advisor Won't Tell You About Your TSP</div>
+        <div class="ad-body">Your TSP has a 0.055% expense ratio — one of the lowest-cost investment vehicles in the world. On a USD 500K balance, that's USD 275/year in fees.
+
+A typical IRA charges 0.50% or more. That's USD 2,500/year — nine times as much.
+
+So when an advisor suggests rolling your entire TSP into an IRA they manage, ask yourself: who benefits more from that move?
+
+This isn't always bad advice. Sometimes an IRA rollover IS the right move — especially if you need investment options the TSP doesn't offer. But the only way to know is to compare the numbers yourself, without someone who earns a commission on the outcome.
+
+Our free 2026 Federal Retirement Income Blueprint shows you both scenarios side by side. TSP vs. rollover. Fees. Taxes. Income projections.
+
+No advisor. No pitch. Just your numbers.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ H4: Math/Logic Bomb ═══ -->
+<section class="hook-section" id="h4">
+  <div class="hook-header">
+    <div class="hook-badge">H4</div>
+    <div>
+      <h2>Math / Logic Bomb</h2>
+      <div class="hook-desc">"Your FERS annuity only replaces 30-40%..." — Fisher's strongest play adapted with FERS math.</div>
+    </div>
+  </div>
+  <div class="ads-grid">
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 16</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Math</span>
+          <span class="ad-tag angle">Fear of Gap</span>
+          <span class="ad-tag priority">Test First</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">Your FERS Annuity Only Replaces 30-40% of Your Salary. What Covers the Rest?</div>
+        <div class="ad-body">Let's do your annuity computation.
+
+GS-13 Step 10: USD 119,146/year
+High-3 average salary: ~USD 116,000
+Years of service: 25
+FERS annuity (1%): USD 29,000/year → USD 2,417/month
+Social Security (at 62): ~USD 1,833/month
+Gross retirement income: ~USD 4,250/month
+
+Your current take-home (after TSP contributions): ~USD 6,800/month
+
+The gap: USD 2,550/month. USD 30,600/year.
+
+And that's before the FERS Supplement disappears at 62. Before FEHB premiums without the employer contribution. Before your survivor benefit election reduces your annuity 5-10%.
+
+How long does your TSP last if you're pulling USD 2,550/month to fill that gap? At a 4% withdrawal rate, you'd need USD 765,000 just for the gap — and that assumes no market downturns.
+
+There's a better way. See your exact numbers in our free 2026 Blueprint.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 17</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Math</span>
+          <span class="ad-tag angle">TSP Anxiety</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">USD 500K in Your TSP? Here's What It Actually Produces in Monthly Income.</div>
+        <div class="ad-body">Federal employees check their TSP balance and feel confident. "Half a million. I'm set."
+
+But USD 500K doesn't mean USD 500K in income.
+
+4% withdrawal rule: USD 20,000/year → USD 1,667/month
+TSP annuity purchase: ~USD 2,700/month (approximate, age-dependent)
+Monthly TSP payments over 25 years: ~USD 2,200/month (assumes 5% return)
+
+Three completely different numbers from the same balance. And that's before taxes.
+
+Now factor in: What if you retire into a bear market and your C Fund drops 25% in year one? Your USD 500K becomes USD 375K, and your 4% withdrawal is now USD 1,250/month.
+
+"I can't afford a 30% drop this close to retirement."
+
+You don't have to. Our free 2026 Federal Retirement Income Blueprint shows you how to structure your TSP for reliable income — without gambling on market timing.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 18</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Math</span>
+          <span class="ad-tag angle">Guaranteed Income</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">FERS + TSP + Fixed Annuity = 100% of Your Essential Bills Covered for Life</div>
+        <div class="ad-body">Here's the income floor math for a typical GS-12 with 25 years:
+
+Essential monthly expenses: USD 5,200
+FERS annuity: USD 2,480/month
+Social Security (at 62): USD 1,833/month
+Gap: USD 887/month
+
+A fixed annuity funded by ~USD 175,000 of your TSP can produce approximately USD 950/month — guaranteed for life. No market risk. No sequence-of-returns risk.
+
+That means: 100% of your essential bills are covered by income you can never outlive.
+
+Remaining TSP (USD 225K+): Keep it invested for growth, travel, or legacy. If the market drops, your bills are still paid.
+
+This is the "income floor" strategy — and it's why federal retirees who use it sleep better than those guessing at withdrawals.
+
+See your personalized version in our free 2026 Blueprint.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 19</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Math</span>
+          <span class="ad-tag angle">Simplicity</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">3 Numbers Every Federal Employee Must Know Before Filing Retirement Paperwork</div>
+        <div class="ad-body">1. Your FERS annuity — high-3 average salary x years of creditable service x 1% (or 1.1% if you retire at 62+ with 20+ years)
+
+2. Your Social Security at 62 vs 67 vs 70 — each year you delay past 62 increases your benefit ~7%
+
+3. The monthly gap — the difference between your guaranteed income and your actual expenses
+
+If you don't know all three, you're not ready to retire.
+
+Most FERS employees can compute #1 but get stuck on #2 and #3. Especially #3 — because nobody factors in the FERS Supplement cliff, FEHB premium changes, survivor benefit reduction, and taxes.
+
+Our free 2026 Federal Retirement Income Blueprint calculates all three in 2 minutes. Plus shows you exactly how to close the gap if there is one.
+
+The clearest picture of your federal retirement you've ever seen.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 20</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Math</span>
+          <span class="ad-tag angle">Anti-Salesman</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">Before Any Advisor Touches Your TSP — Know These Numbers</div>
+        <div class="ad-body">An advisor says: "Roll your TSP to my IRA. I'll manage it for you."
+
+Before you agree, compare:
+
+TSP annual fee on USD 500K: USD 275/yr (0.055%)
+Typical managed IRA fee on USD 500K: USD 2,500-6,250/yr (0.50-1.25%)
+20-year TSP fee total: USD 5,500
+20-year IRA fee total: USD 50,000-125,000
+Advisor upfront commission: up to 5%
+
+Does the IRA offer advantages that justify 10-20x the cost? Sometimes. If you need specific bond funds, real estate exposure, or Roth conversion flexibility — maybe.
+
+But you should know these numbers BEFORE the advisor makes the pitch. Not after you've already signed.
+
+Our free 2026 Blueprint for FERS employees does the comparison for you. No advisor. No commission. Just math.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ H5: Social Proof ═══ -->
+<section class="hook-section" id="h5">
+  <div class="hook-header">
+    <div class="hook-badge">H5</div>
+    <div>
+      <h2>Social Proof / Authority</h2>
+      <div class="hook-desc">"After helping 2,000+ federal retirees..." — Builds authority and addresses distrust.</div>
+    </div>
+  </div>
+  <div class="ads-grid">
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 21</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Social Proof</span>
+          <span class="ad-tag angle">Fear of Gap</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">"I Wish I'd Seen This 5 Years Before I Separated" — Former GS-14, DoD Civilian</div>
+        <div class="ad-body">After 28 years of federal service, he assumed he was set. FERS annuity? Computed. TSP? Healthy balance. Social Security at 62? Planned.
+
+What he didn't plan for: the USD 2,800/month gap between his retirement income and his actual expenses. His FERS Supplement helped bridge it — until it vanished at 62.
+
+Then the OPM processing backlog hit. 54,000+ pending claims. He waited 83 days for his first full annuity payment. Interim pay covered only 60% of what he was owed.
+
+"Nobody at HR ever showed me the full picture. I was counting down to my MRA thinking everything was handled. It wasn't."
+
+Don't wait until you've already filed. Get the free 2026 Federal Retirement Income Blueprint and see your full picture now — while you still have options.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 22</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Social Proof</span>
+          <span class="ad-tag angle">TSP Anxiety</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">2,000+ Federal Employees Have Used This Free Blueprint to Plan Their TSP Strategy</div>
+        <div class="ad-body">The #1 question we hear from FERS employees approaching retirement:
+
+"What do I do with my TSP?"
+
+It's not a simple answer. It depends on your age, years of service, tax bracket, other income sources, the FERS Supplement timeline, and whether you need guaranteed income or growth.
+
+Your HR office processes paperwork — they don't give financial advice. And the advisor who cold-called you? They specialize in getting your money, not in understanding FERS.
+
+That's why we built the 2026 Federal Retirement Income Blueprint. It takes your specific situation — as a federal employee, not a generic retiree — and maps out exactly how your TSP fits into your total retirement income picture.
+
+Over 2,000 FERS employees have already used it. It's free and takes 2 minutes.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 23</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Social Proof</span>
+          <span class="ad-tag angle">Guaranteed Income</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">After Helping 2,000+ Federal Retirees, Here's the Strategy That Works Best</div>
+        <div class="ad-body">After working with thousands of FERS employees, one pattern is clear: the retirees who sleep best aren't the ones with the biggest TSP balances.
+
+They're the ones whose essential expenses are 100% covered by guaranteed income.
+
+They use three layers:
+Layer 1: FERS annuity (guaranteed for life)
+Layer 2: Social Security (guaranteed for life)
+Layer 3: Fixed annuity from a portion of TSP (guaranteed for life)
+
+When the market dropped in 2022, these retirees didn't lose a minute of sleep. Their bills were covered. The rest of their TSP could recover on its own timeline.
+
+"I can't afford a 30% drop this close to retirement. I'd rather earn less and keep what I have."
+
+You don't have to choose. The income floor strategy lets you do both. See how it works with your numbers — free.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Video 15-30s</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 24</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Social Proof</span>
+          <span class="ad-tag angle">Simplicity</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">"Finally — Someone Who Understands FERS Explained My Retirement in Plain English"</div>
+        <div class="ad-body">A GS-12 with 22 years of service spent 6 months researching retirement. OPM publications. HR briefings. FedWeek articles. YouTube videos. Bogleheads forum. r/fednews.
+
+"I still couldn't answer one question: What will my actual monthly income be when I retire? Every source gave me different pieces but nobody put it together."
+
+Then she took 2 minutes to complete the 2026 Federal Retirement Income Blueprint.
+
+"It put everything on one page — my annuity computation, my TSP options, the FERS Supplement timeline, the gap, and what to do about it. In language I actually understand. Why doesn't OPM just give us this?"
+
+Because it wasn't built by OPM. It was built specifically for FERS employees who need one clear answer, not another 200-page handbook.
+
+Get yours free.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+    <div class="ad-card">
+      <div class="ad-card-header">
+        <span class="ad-number">Ad 25</span>
+        <div class="ad-tags">
+          <span class="ad-tag hook">Social Proof</span>
+          <span class="ad-tag angle">Anti-Salesman</span>
+          <span class="ad-tag priority">Test First</span>
+        </div>
+      </div>
+      <div class="ad-card-body">
+        <div class="ad-headline">"No One Tried to Sell Me Anything. That's Why I Trusted It." — FERS Retiree, VA</div>
+        <div class="ad-body">He was skeptical. 30 years of federal service taught him to read the fine print. Every "free retirement analysis" he'd tried before ended with a 45-minute sales pitch for a variable annuity he didn't need.
+
+So when he found the Federal Retirement Income Blueprint, he looked for the catch. Where's the "schedule a call" button? Where's the advisor upsell? Where's the email barrage?
+
+There wasn't one.
+
+"I got my numbers — my annuity computation, my TSP options, the gap. And then I made my own decision. Nobody followed up with a pitch. That's all I ever wanted."
+
+If you're a FERS employee approaching retirement and you're tired of every advisor treating your TSP like their next commission check — this is for you.
+
+Free. No advisor. No sales call. No strings.</div>
+      </div>
+      <div class="ad-card-footer">
+        <button class="ad-cta">Get Your Free Blueprint</button>
+        <span class="ad-format">Static 4:5</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</div>
+
+<script>
+// Smooth scroll for nav pills
+document.querySelectorAll('.nav-pill').forEach(pill => {
+  pill.addEventListener('click', function(e) {
+    e.preventDefault();
+    document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+    this.classList.add('active');
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// Update active pill on scroll
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+      const pill = document.querySelector(`.nav-pill[href="#${entry.target.id}"]`);
+      if (pill) pill.classList.add('active');
+    }
+  });
+}, { rootMargin: '-100px 0px -60% 0px' });
+
+document.querySelectorAll('.hook-section').forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
