@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenClaw for Roofers — AI That Answers Every Call, Books Every Job</title>
+<meta name="description" content="OpenClaw AI agent system for roofing companies. Never miss a call. Book inspections 24/7. Monitor storms. Rank in AI search. USD 5,000 one-time setup.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg-dark: #0a0a0f;
+    --bg-card: #12121a;
+    --bg-card-hover: #1a1a28;
+    --accent: #ff6b35;
+    --accent-glow: rgba(255, 107, 53, 0.15);
+    --accent-secondary: #00d4aa;
+    --text-primary: #f0f0f5;
+    --text-secondary: #8a8a9a;
+    --text-muted: #5a5a6a;
+    --border: #1e1e2e;
+    --serif: 'DM Serif Display', serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --max-w: 1200px;
+    --radius: 12px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Announcement Bar */
+  .announce-bar {
+    background: var(--accent);
+    color: #fff;
+    text-align: center;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .announce-bar span { opacity: 0.9; }
+
+  /* Nav */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10, 10, 15, 0.9);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 0;
+  }
+  .nav-inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    text-decoration: none;
+  }
+  .logo span { color: var(--accent); }
+  .nav-cta {
+    background: var(--accent);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 4px 20px var(--accent-glow); }
+
+  /* Sections */
+  section { padding: 96px 24px; }
+  .container { max-width: var(--max-w); margin: 0 auto; }
+
+  /* Hero */
+  .hero {
+    padding: 120px 24px 96px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-eyebrow {
+    display: inline-block;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 6px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-family: var(--serif);
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1.1;
+    margin-bottom: 24px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero h1 em {
+    color: var(--accent);
+    font-style: normal;
+  }
+  .hero p {
+    font-size: 1.2rem;
+    color: var(--text-secondary);
+    max-width: 620px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+  }
+  .hero-cta {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 16px 40px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    transition: all 0.2s;
+    box-shadow: 0 4px 30px var(--accent-glow);
+  }
+  .hero-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 40px rgba(255, 107, 53, 0.3); }
+  .hero-sub {
+    margin-top: 16px;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+  }
+
+  /* Scenario Cards */
+  .scenario-section { background: var(--bg-dark); }
+  .scenario-section h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .scenario-section > .container > p {
+    text-align: center;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 64px;
+    font-size: 1.05rem;
+  }
+  .scenario-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+  }
+  .scenario-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 40px 32px;
+    position: relative;
+    transition: all 0.3s;
+  }
+  .scenario-card:hover {
+    border-color: var(--accent);
+    background: var(--bg-card-hover);
+    transform: translateY(-4px);
+  }
+  .scenario-time {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--accent-glow);
+    border: 1px solid rgba(255, 107, 53, 0.3);
+    border-radius: 100px;
+    padding: 4px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 20px;
+  }
+  .scenario-card h3 {
+    font-family: var(--serif);
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    line-height: 1.3;
+  }
+  .scenario-card .competitor {
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 16px;
+    padding-left: 16px;
+    border-left: 2px solid #333;
+    font-size: 0.95rem;
+  }
+  .scenario-card .openclaw {
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    padding-left: 16px;
+    border-left: 2px solid var(--accent);
+    font-size: 0.95rem;
+  }
+  .scenario-card .result {
+    color: var(--accent-secondary);
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+
+  /* Identity Shift */
+  .identity-section {
+    background: linear-gradient(180deg, var(--bg-dark) 0%, #0d0d18 100%);
+  }
+  .identity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    align-items: center;
+  }
+  .identity-before, .identity-after {
+    padding: 48px;
+    border-radius: var(--radius);
+  }
+  .identity-before {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+  }
+  .identity-after {
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.08), rgba(0, 212, 170, 0.05));
+    border: 1px solid rgba(255, 107, 53, 0.2);
+  }
+  .identity-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  .identity-before .identity-label { color: var(--text-muted); }
+  .identity-after .identity-label { color: var(--accent); }
+  .identity-before h3, .identity-after h3 {
+    font-family: var(--serif);
+    font-size: 1.8rem;
+    margin-bottom: 16px;
+  }
+  .identity-before p { color: var(--text-muted); }
+  .identity-after p { color: var(--text-secondary); }
+
+  /* Features */
+  .features-section h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .features-section .section-sub {
+    text-align: center;
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto 64px;
+  }
+  .feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 24px;
+  }
+  .feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px 32px;
+    transition: all 0.3s;
+  }
+  .feature-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-2px);
+  }
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+    background: var(--accent-glow);
+    border: 1px solid rgba(255, 107, 53, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    margin-bottom: 20px;
+  }
+  .feature-card h3 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  .feature-card p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  .feature-card .pain-quote {
+    margin-top: 16px;
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    padding-top: 16px;
+    border-top: 1px solid var(--border);
+  }
+
+  /* LLM SEO Feature (full width) */
+  .llm-seo-section {
+    background: linear-gradient(135deg, rgba(0, 212, 170, 0.04), rgba(255, 107, 53, 0.04));
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+  .llm-seo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .llm-seo-grid h2 {
+    font-family: var(--serif);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    margin-bottom: 20px;
+  }
+  .llm-seo-grid h2 em {
+    color: var(--accent-secondary);
+    font-style: normal;
+  }
+  .llm-seo-grid > div:first-child p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    margin-bottom: 24px;
+  }
+  .seo-checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .seo-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+  }
+  .seo-checklist li::before {
+    content: '✓';
+    color: var(--accent-secondary);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .seo-visual {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+  }
+  .seo-visual h4 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 20px;
+  }
+  .ai-result {
+    background: #1a1a28;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 12px;
+    border-left: 3px solid var(--accent-secondary);
+  }
+  .ai-result.competitor {
+    border-left-color: var(--text-muted);
+    opacity: 0.5;
+  }
+  .ai-result .source {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+  }
+  .ai-result .answer {
+    font-size: 0.9rem;
+    color: var(--text-primary);
+  }
+  .ai-result .answer strong { color: var(--accent-secondary); }
+
+  /* Bonus Stack */
+  .bonus-section {
+    background: var(--bg-dark);
+  }
+  .bonus-section h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  .bonus-intro {
+    text-align: center;
+    color: var(--text-secondary);
+    max-width: 620px;
+    margin: 0 auto 64px;
+    font-size: 1.05rem;
+  }
+  .bonus-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+  .bonus-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 36px 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .bonus-card::before {
+    content: 'FREE';
+    position: absolute;
+    top: 16px;
+    right: -28px;
+    background: var(--accent);
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 700;
+    padding: 4px 32px;
+    transform: rotate(45deg);
+    letter-spacing: 0.1em;
+  }
+  .bonus-value {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+  .bonus-card h3 {
+    font-family: var(--serif);
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  .bonus-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+  .bonus-or {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 24px 0;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+  }
+  .bonus-or::before, .bonus-or::after {
+    content: '';
+    height: 1px;
+    width: 60px;
+    background: var(--border);
+  }
+
+  /* Value Stack / Pricing */
+  .pricing-section {
+    background: linear-gradient(180deg, #0d0d18 0%, var(--bg-dark) 100%);
+  }
+  .pricing-section h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-align: center;
+    margin-bottom: 64px;
+  }
+  .pricing-table {
+    max-width: 700px;
+    margin: 0 auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+  .pricing-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .pricing-row:last-child { border-bottom: none; }
+  .pricing-row .item { font-size: 0.95rem; }
+  .pricing-row .value {
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-align: right;
+  }
+  .pricing-row.bonus .item { color: var(--accent); }
+  .pricing-row.bonus .value { color: var(--accent); }
+  .pricing-row.total {
+    background: rgba(255, 107, 53, 0.05);
+    border-top: 2px solid var(--accent);
+  }
+  .pricing-row.total .item {
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--text-muted);
+  }
+  .pricing-row.total .value {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+    text-decoration: line-through;
+  }
+  .pricing-final {
+    text-align: center;
+    padding: 48px 0 0;
+  }
+  .pricing-final .label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .pricing-final .price {
+    font-family: var(--serif);
+    font-size: 4rem;
+    color: var(--accent);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .pricing-final .once {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-bottom: 32px;
+  }
+
+  /* Guarantee */
+  .guarantee-section {
+    background: var(--bg-dark);
+    text-align: center;
+  }
+  .guarantee-box {
+    max-width: 700px;
+    margin: 0 auto;
+    background: linear-gradient(135deg, rgba(0, 212, 170, 0.05), rgba(0, 212, 170, 0.02));
+    border: 1px solid rgba(0, 212, 170, 0.2);
+    border-radius: var(--radius);
+    padding: 48px;
+  }
+  .guarantee-box h2 {
+    font-family: var(--serif);
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--accent-secondary);
+  }
+  .guarantee-box p {
+    color: var(--text-secondary);
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .guarantee-math {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    margin-top: 32px;
+    flex-wrap: wrap;
+  }
+  .guarantee-math .stat {
+    text-align: center;
+  }
+  .guarantee-math .stat .num {
+    font-family: var(--serif);
+    font-size: 2rem;
+    color: var(--accent-secondary);
+  }
+  .guarantee-math .stat .desc {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  /* Territory / Scarcity */
+  .territory-section {
+    background: linear-gradient(180deg, var(--bg-dark) 0%, #0f0f1a 100%);
+    text-align: center;
+  }
+  .territory-section h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 20px;
+  }
+  .territory-section h2 em {
+    color: var(--accent);
+    font-style: normal;
+  }
+  .territory-section p {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto 40px;
+    font-size: 1.05rem;
+  }
+  .territory-badges {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 48px;
+  }
+  .territory-badge {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 10px 24px;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .territory-badge .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* FAQ */
+  .faq-section {
+    background: var(--bg-dark);
+  }
+  .faq-section h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    text-align: center;
+    margin-bottom: 48px;
+  }
+  .faq-list {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    border-bottom: 1px solid var(--border);
+    padding: 24px 0;
+  }
+  .faq-q {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-q::after {
+    content: '+';
+    color: var(--accent);
+    font-size: 1.3rem;
+    flex-shrink: 0;
+  }
+  .faq-a {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* Final CTA */
+  .final-cta-section {
+    background: linear-gradient(180deg, #0f0f1a 0%, var(--bg-dark) 100%);
+    text-align: center;
+    padding: 120px 24px;
+  }
+  .final-cta-section h2 {
+    font-family: var(--serif);
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 20px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .final-cta-section p {
+    color: var(--text-secondary);
+    max-width: 500px;
+    margin: 0 auto 40px;
+    font-size: 1.05rem;
+  }
+  .final-cta-section .hero-cta { margin-bottom: 16px; }
+  .final-cta-section .hero-sub { color: var(--text-muted); }
+
+  /* Footer */
+  footer {
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 32px 24px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    section { padding: 64px 16px; }
+    .hero { padding: 80px 16px 64px; }
+    .scenario-grid { grid-template-columns: 1fr; }
+    .identity-grid { grid-template-columns: 1fr; gap: 24px; }
+    .feature-grid { grid-template-columns: 1fr; }
+    .llm-seo-grid { grid-template-columns: 1fr; gap: 32px; }
+    .bonus-grid { grid-template-columns: 1fr; }
+    .pricing-row { padding: 14px 20px; flex-wrap: wrap; gap: 4px; }
+    .pricing-final .price { font-size: 3rem; }
+    .guarantee-math { gap: 24px; }
+    .territory-badges { flex-direction: column; align-items: center; }
+    .identity-before, .identity-after { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Announcement Bar -->
+<div class="announce-bar">
+  <span>LIMITED: Only 1 roofing company per metro area. Check your territory.</span>
+</div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">Open<span>Claw</span></a>
+    <a href="#book" class="nav-cta">Book Territory Call</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-eyebrow">AI for Roofing Companies</div>
+    <h1>Every missed call is an <em>$8,000 roof job</em> your competitor just picked up.</h1>
+    <p>Your AI agent answers every call, qualifies every lead, books inspections, monitors storms, ranks you in AI search, and follows up on estimates — while you're on the roof.</p>
+    <a href="#book" class="hero-cta">Book Your Territory Call</a>
+    <div class="hero-sub">15 minutes. No pressure. We'll confirm your area is still available.</div>
+  </div>
+</section>
+
+<!-- Scenario Section -->
+<section class="scenario-section">
+  <div class="container">
+    <h2>A Day With OpenClaw vs. Without</h2>
+    <p>Three real scenarios. Same leads. Different outcomes.</p>
+    <div class="scenario-grid">
+
+      <div class="scenario-card">
+        <div class="scenario-time">&#9201; 3:47 AM</div>
+        <h3>A Category 2 hail storm hits your city overnight.</h3>
+        <div class="competitor">Their office is dark. Six homeowners call and hear a beep. They Google the next roofer.</div>
+        <div class="openclaw">Your AI was monitoring hail data since midnight. It identified 847 homeowners in the damage zone with roofs over 15 years old. By the time you wake up, it's sent 200 storm-response texts and booked 14 inspections.</div>
+        <div class="result">You haven't touched your phone yet.</div>
+      </div>
+
+      <div class="scenario-card">
+        <div class="scenario-time">&#9201; 11:15 AM</div>
+        <h3>You're on a roof in 90-degree heat. Three calls come in.</h3>
+        <div class="competitor">Your competitor answers from his air-conditioned office. He books the inspection. You check voicemail at lunch — two callers already went elsewhere.</div>
+        <div class="openclaw">Your AI answered all three. Confirmed homeownership. Verified roof age. Checked service area. Booked the inspections. Sent confirmation texts. Updated your CRM.</div>
+        <div class="result">You check at lunch: three new inspections. Zero voicemails.</div>
+      </div>
+
+      <div class="scenario-card">
+        <div class="scenario-time">&#9201; 6:30 PM</div>
+        <h3>You gave an estimate three days ago. The homeowner went quiet.</h3>
+        <div class="competitor">Your competitor forgot to follow up too. The homeowner does nothing. The roof leaks next month.</div>
+        <div class="openclaw">Your AI sent a follow-up on Day 1, an email on Day 3 about insurance claim windows, and a call on Day 7. The homeowner called back.</div>
+        <div class="result">You closed an $11,200 insurance job. Follow-up isn't hard — it's just what nobody does.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Identity Shift -->
+<section class="identity-section">
+  <div class="container">
+    <div class="identity-grid">
+      <div class="identity-before">
+        <div class="identity-label">Before OpenClaw</div>
+        <h3>You are the everything.</h3>
+        <p>The receptionist. The follow-up guy. The storm-chaser. The estimator. The closer. The scheduler. The CRM updater. The review-requester. You started a roofing company to build something. Instead, you answer phones.</p>
+      </div>
+      <div class="identity-after">
+        <div class="identity-label">After OpenClaw</div>
+        <h3>You are the owner.</h3>
+        <p>You show up to inspections. You close jobs. You manage crews. Everything else — calls, texts, follow-ups, scheduling, scoring, storm monitoring, review requests — that's your AI agent's job. It works 24/7. It never calls in sick.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section class="features-section">
+  <div class="container">
+    <h2>What's Inside the System</h2>
+    <p class="section-sub">Everything configured, trained, and deployed for your roofing company.</p>
+    <div class="feature-grid">
+
+      <div class="feature-card">
+        <div class="feature-icon">&#128222;</div>
+        <h3>AI Receptionist — 24/7</h3>
+        <p>Answers every call in under 2 seconds. Qualifies callers: homeowner vs renter, roof age, location, damage type. Books inspections directly into your calendar. Transfers hot leads to you live.</p>
+        <div class="pain-quote">"I lose 3-5 calls a day when my guys are on the roof."</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">&#128260;</div>
+        <h3>AI Follow-Up Engine</h3>
+        <p>60-second missed call text-back. Estimate follow-up on Day 1, 3, 7, 14. Post-job review requests. Aged lead re-engagement. Insurance claim status updates to homeowners.</p>
+        <div class="pain-quote">"I give estimates and forget to follow up — half my revenue walks away."</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">&#9889;</div>
+        <h3>Storm Intelligence Monitor</h3>
+        <p>24/7 hail trail data monitoring. Instant alerts when storms hit your area. Pre-built storm campaigns deploy in minutes. While competitors check weather apps tomorrow, your AI filed leads tonight.</p>
+        <div class="pain-quote">"By the time I start canvassing, storm chasers already knocked 200 doors."</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">&#127919;</div>
+        <h3>Lead Scoring & Smart Routing</h3>
+        <p>Every lead scored by urgency, job size, and close probability. High-value insurance jobs go to you. Small repairs route to crew. Tire-kickers get automated follow-up until they're ready.</p>
+        <div class="pain-quote">"I waste half my day driving to tire-kicker inspections."</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">&#128202;</div>
+        <h3>CRM Integration</h3>
+        <p>Connects to ServiceTitan, HubSpot, Jobber, or your existing system. All calls, texts, and lead data synced automatically. One dashboard — your entire pipeline at a glance.</p>
+        <div class="pain-quote">"I have leads in my phone, email, and on paper. I don't even know what I'm closing."</div>
+      </div>
+
+      <div class="feature-card">
+        <div class="feature-icon">&#129302;</div>
+        <h3>Done-For-You Onboarding</h3>
+        <p>One 3-hour call. We configure everything. Write your scripts. Train your team. 30-day optimization based on real call data. You don't need to be tech-savvy.</p>
+        <div class="pain-quote">"I bought software before and never set it up."</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- LLM SEO Section -->
+<section class="llm-seo-section">
+  <div class="container">
+    <div class="llm-seo-grid">
+      <div>
+        <h2>Rank Where Customers <em>Actually</em> Search</h2>
+        <p>Google isn't the only search engine anymore. 40% of people now ask ChatGPT, Perplexity, or Google AI for roofer recommendations. If you're not optimized for AI search, you're invisible to a growing segment of homeowners.</p>
+        <ul class="seo-checklist">
+          <li>Google Business Profile optimized for AI Overviews</li>
+          <li>Schema markup (FAQ, HowTo, LocalBusiness) for AI crawlers</li>
+          <li>10 AI-optimized service pages for your city + services</li>
+          <li>NAP consistency audit across 50+ directories</li>
+          <li>Monthly AI search visibility report</li>
+          <li>Structured content that ranks in ChatGPT, Perplexity, Google SGE</li>
+        </ul>
+      </div>
+      <div class="seo-visual">
+        <h4>When a homeowner asks ChatGPT: "Best roofer near me"</h4>
+        <div class="ai-result">
+          <div class="source">ChatGPT Answer</div>
+          <div class="answer">"For storm damage repair in your area, I'd recommend <strong>Your Company</strong> — they specialize in insurance claims, have 4.9 stars across 200+ reviews, and offer free drone inspections..."</div>
+        </div>
+        <div class="ai-result competitor">
+          <div class="source">Without LLM SEO</div>
+          <div class="answer">"Here are some general tips for finding a good roofer in your area..."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bonus Stack -->
+<section class="bonus-section">
+  <div class="container">
+    <h2>Free Bonuses — Make Your Money Back Fast</h2>
+    <p class="bonus-intro">The AI system is the long game. These bonuses exist so you recoup your $5,000 investment before the system even hits its stride.</p>
+
+    <div class="bonus-grid" style="grid-template-columns: 1fr 1fr; max-width: 800px; margin: 0 auto;">
+
+      <div class="bonus-card">
+        <div class="bonus-value">Value: $2,500</div>
+        <h3>50,000 Targeted Homeowner Leads</h3>
+        <p>Verified homeowners (NOT renters) in YOUR zip codes. Roof age 15+ years. Property data: address, owner name, roof age, square footage. CSV format — import into CRM or let the AI work them. Your competitors pay $50-200/lead on Angi.</p>
+      </div>
+
+      <div class="bonus-card">
+        <div class="bonus-value">Value: $3,750</div>
+        <h3>25 Qualified Appointments</h3>
+        <p>We use the AI + lead list to book 25 real inspections. Each verified: homeowner (not renter), your area, qualified roof age, wants an inspection. Close 5 at $8K avg = $40,000 from a free bonus.</p>
+      </div>
+
+    </div>
+
+    <div class="bonus-or">CHOOSE ONE</div>
+
+    <div class="bonus-grid" style="max-width: 800px; margin: 0 auto;">
+      <div class="bonus-card">
+        <div class="bonus-value">Value: $1,500</div>
+        <h3>LLM SEO Content Pack</h3>
+        <p>10 AI-optimized blog posts. Local FAQ schema for top 20 questions. Google Business Profile checklist. AI search audit showing where you rank in ChatGPT, Perplexity, and Google AI Overviews.</p>
+      </div>
+
+      <div class="bonus-card">
+        <div class="bonus-value">Value: $500</div>
+        <h3>Storm Season Playbook</h3>
+        <p>Pre-written storm response campaigns (email, SMS, door-to-door scripts). Hail trail data sources. Insurance claim talking points. Post-storm canvassing routes. Deploy within 30 minutes of any storm.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Pricing -->
+<section class="pricing-section" id="pricing">
+  <div class="container">
+    <h2>Everything You Get</h2>
+
+    <div class="pricing-table">
+      <div class="pricing-row">
+        <span class="item">AI Receptionist (24/7 call handling)</span>
+        <span class="value">$2,400/yr</span>
+      </div>
+      <div class="pricing-row">
+        <span class="item">AI Follow-Up Engine</span>
+        <span class="value">$1,800/yr</span>
+      </div>
+      <div class="pricing-row">
+        <span class="item">Storm Intelligence Monitor</span>
+        <span class="value">$1,200/yr</span>
+      </div>
+      <div class="pricing-row">
+        <span class="item">Lead Scoring & Smart Routing</span>
+        <span class="value">$960/yr</span>
+      </div>
+      <div class="pricing-row">
+        <span class="item">CRM Integration</span>
+        <span class="value">$600</span>
+      </div>
+      <div class="pricing-row">
+        <span class="item">LLM SEO Setup (10 pages + schema)</span>
+        <span class="value">$3,000</span>
+      </div>
+      <div class="pricing-row">
+        <span class="item">Done-For-You Onboarding + 30-Day Tuning</span>
+        <span class="value">$1,500</span>
+      </div>
+      <div class="pricing-row bonus">
+        <span class="item">BONUS: 50K Leads OR 25 Appointments</span>
+        <span class="value">$2,500+</span>
+      </div>
+      <div class="pricing-row bonus">
+        <span class="item">BONUS: LLM SEO Content Pack</span>
+        <span class="value">$1,500</span>
+      </div>
+      <div class="pricing-row bonus">
+        <span class="item">BONUS: Storm Season Playbook</span>
+        <span class="value">$500</span>
+      </div>
+      <div class="pricing-row total">
+        <span class="item">TOTAL COMBINED VALUE</span>
+        <span class="value">$15,960+</span>
+      </div>
+    </div>
+
+    <div class="pricing-final">
+      <div class="label">Your One-Time Investment</div>
+      <div class="price">$5,000</div>
+      <div class="once">One-time setup. Not monthly. Not recurring.</div>
+      <a href="#book" class="hero-cta">Book Your Territory Call</a>
+      <div class="hero-sub" style="margin-top: 16px;">4 onboarding slots per week. Storm season doesn't wait.</div>
+    </div>
+  </div>
+</section>
+
+<!-- Guarantee -->
+<section class="guarantee-section">
+  <div class="container">
+    <div class="guarantee-box">
+      <h2>The "Roof Over Your Head" Guarantee</h2>
+      <p>If your OpenClaw AI system doesn't book at least <strong>10 qualified inspections</strong> in the first <strong>60 days</strong>, we'll keep working for free until it does — or refund your $5,000. No questions. No hoops. No fine print.</p>
+      <div class="guarantee-math">
+        <div class="stat">
+          <div class="num">10</div>
+          <div class="desc">Guaranteed Inspections</div>
+        </div>
+        <div class="stat">
+          <div class="num">$80K</div>
+          <div class="desc">Pipeline Value (@ $8K avg)</div>
+        </div>
+        <div class="stat">
+          <div class="num">60</div>
+          <div class="desc">Day Window</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Territory Lock -->
+<section class="territory-section">
+  <div class="container">
+    <h2>One Company Per <em>Metro Area</em></h2>
+    <p>Your AI agent works for you, not your competition. Once a roofing company claims your territory, it's locked. This isn't manufactured scarcity — it's how exclusivity works.</p>
+    <div class="territory-badges">
+      <div class="territory-badge"><span class="dot"></span> Dallas-Fort Worth — Filling</div>
+      <div class="territory-badge"><span class="dot"></span> Atlanta — Available</div>
+      <div class="territory-badge"><span class="dot"></span> Denver — Available</div>
+      <div class="territory-badge"><span class="dot"></span> Houston — Filling</div>
+    </div>
+    <a href="#book" class="hero-cta">Check Your Territory</a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <h2>Questions</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <div class="faq-q">How long until I'm up and running?</div>
+        <div class="faq-a">5 business days. One 3-hour onboarding call, then we configure and test everything. Your AI agent goes live and starts answering calls on day 5.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Do I need to be tech-savvy?</div>
+        <div class="faq-a">No. We set up everything. We write the scripts. We integrate with your CRM. We train your team. If you can answer a phone, you can use OpenClaw.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">What if the AI says something wrong?</div>
+        <div class="faq-a">Every script is written specifically for your business, reviewed by you, and tested before going live. The AI transfers to a human for anything outside its scripts. You approve everything before it talks to a single customer.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">I already rank #1 on Google. Why LLM SEO?</div>
+        <div class="faq-a">Google traditional search is shrinking. 40% of queries now go through AI Overviews, ChatGPT, Perplexity, or Gemini. Your #1 ranking is great — this makes sure you show up everywhere else people are looking for roofers too.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Is $5,000 worth it?</div>
+        <div class="faq-a">You lose 3-5 jobs per month from missed calls and slow follow-up. At $8,000 per roof job, that's $24K-$40K/month in lost revenue. $5,000 one-time to capture even ONE extra job per month = paid for itself in week one.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">Are the 50,000 leads actually good?</div>
+        <div class="faq-a">Verified homeowners (not renters) in your zip codes with roofs 15+ years old. Current property data filtered to your exact criteria. Your competitors pay $50-200 per lead on Angi. You're getting 50,000 for free.</div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">I already have an answering service.</div>
+        <div class="faq-a">Does it qualify leads by roof age and ownership? Book inspections into your calendar? Follow up on estimates automatically? Monitor storms? An answering service takes messages. OpenClaw closes jobs.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Final CTA -->
+<section class="final-cta-section" id="book">
+  <div class="container">
+    <h2>Stop losing $8,000 roof jobs to voicemail.</h2>
+    <p>Book your territory call. 15 minutes. We'll confirm your metro is available and show you exactly how it works.</p>
+    <a href="#" class="hero-cta">Book Your Territory Call Now</a>
+    <div class="hero-sub">1 company per metro. 4 slots per week. Storm season starts soon.</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 OpenClaw AI — Built by inLeap</p>
+</footer>
+
+</body>
+</html>
