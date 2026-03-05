@@ -600,6 +600,21 @@
     }
     .advisor-face:first-child { margin-left: 0; }
 
+    .state-chip {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 36px;
+      background: #e8f0fe;
+      color: var(--navy);
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      font-weight: 700;
+      border-radius: 6px;
+      letter-spacing: 0.04em;
+    }
+
     /* --- Catch Section --- */
     .catch-list { max-width: 640px; margin: 24px auto 0; }
     .catch-item {
@@ -1248,10 +1263,23 @@
         </div>
       </div>
 
-      <!-- Map + Faces -->
-      <div class="map-wrap">
-        <img src="us-map.svg" alt="Licensed Advisors available in all 50 states" style="max-width:680px;width:100%;height:auto;">
-        <p style="color:var(--text-muted);font-size:0.9375rem;margin-top:16px;">Licensed Advisors available in all 50 states</p>
+      <!-- 50 States Grid -->
+      <div style="margin-top:40px;">
+        <div style="text-align:center;margin-bottom:20px;">
+          <div style="font-family:var(--serif);font-size:1.375rem;color:var(--navy);font-weight:700;">Licensed in All 50 States</div>
+        </div>
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px;max-width:680px;margin:0 auto;">
+          <span class="state-chip">AL</span><span class="state-chip">AK</span><span class="state-chip">AZ</span><span class="state-chip">AR</span><span class="state-chip">CA</span>
+          <span class="state-chip">CO</span><span class="state-chip">CT</span><span class="state-chip">DE</span><span class="state-chip">FL</span><span class="state-chip">GA</span>
+          <span class="state-chip">HI</span><span class="state-chip">ID</span><span class="state-chip">IL</span><span class="state-chip">IN</span><span class="state-chip">IA</span>
+          <span class="state-chip">KS</span><span class="state-chip">KY</span><span class="state-chip">LA</span><span class="state-chip">ME</span><span class="state-chip">MD</span>
+          <span class="state-chip">MA</span><span class="state-chip">MI</span><span class="state-chip">MN</span><span class="state-chip">MS</span><span class="state-chip">MO</span>
+          <span class="state-chip">MT</span><span class="state-chip">NE</span><span class="state-chip">NV</span><span class="state-chip">NH</span><span class="state-chip">NJ</span>
+          <span class="state-chip">NM</span><span class="state-chip">NY</span><span class="state-chip">NC</span><span class="state-chip">ND</span><span class="state-chip">OH</span>
+          <span class="state-chip">OK</span><span class="state-chip">OR</span><span class="state-chip">PA</span><span class="state-chip">RI</span><span class="state-chip">SC</span>
+          <span class="state-chip">SD</span><span class="state-chip">TN</span><span class="state-chip">TX</span><span class="state-chip">UT</span><span class="state-chip">VT</span>
+          <span class="state-chip">VA</span><span class="state-chip">WA</span><span class="state-chip">WV</span><span class="state-chip">WI</span><span class="state-chip">WY</span>
+        </div>
       </div>
 
       <div class="advisor-faces" style="margin-top:24px;">
