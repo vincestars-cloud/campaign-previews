@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Retirement Growth Plan | Protect What You've Built</title>
+  <meta name="description" content="For retirees with $200K-$750K saved who want to protect their principal from market crashes while earning more than CDs or bonds. See if you qualify.">
+  <link rel="icon" href="https://stcdn.leadconnectorhq.com/funnel/icon/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy: #1a2744;
+      --navy-deep: #0f1a2e;
+      --navy-light: #2a3d5c;
+      --gold: #c8963e;
+      --gold-light: #daa84e;
+      --gold-bg: #fdf8f0;
+      --blue-cta: #3b7dd8;
+      --blue-cta-hover: #2d6bc4;
+      --green: #2d8a4e;
+      --red: #c04040;
+      --bg-white: #ffffff;
+      --bg-light: #f5f7fa;
+      --bg-warm: #faf9f7;
+      --text-dark: #1a2235;
+      --text-body: #3a4255;
+      --text-muted: #6b7280;
+      --text-white: #f0f2f5;
+      --serif: 'Merriweather', Georgia, serif;
+      --sans: 'Source Sans 3', 'Inter', system-ui, sans-serif;
+      --max-w: 1140px;
+      --section-py: 96px;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--sans); color: var(--text-body); line-height: 1.7; background: var(--bg-white); }
+
+    /* --- Announcement Bar --- */
+    .announce-bar {
+      background: var(--navy-deep);
+      color: var(--text-white);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .announce-bar span { color: var(--gold-light); }
+
+    /* --- Nav --- */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #e5e7eb;
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo { height: 36px; }
+    .nav-cta {
+      display: inline-block;
+      background: var(--gold);
+      color: #fff;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.875rem;
+      padding: 10px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* --- Utility --- */
+    .container { max-width: var(--max-w); margin: 0 auto; padding: 0 24px; }
+    .section { padding: var(--section-py) 0; }
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .eyebrow-dark { color: var(--gold-light); }
+    h1, h2, h3, h4 { font-family: var(--serif); color: var(--text-dark); line-height: 1.3; }
+    h1 { font-size: clamp(2rem, 5vw, 3rem); font-weight: 900; }
+    h2 { font-size: clamp(1.625rem, 4vw, 2.25rem); font-weight: 700; margin-bottom: 20px; }
+    h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 12px; }
+    p + p { margin-top: 16px; }
+    .text-muted { color: var(--text-muted); }
+    .text-center { text-align: center; }
+
+    /* --- Buttons --- */
+    .btn {
+      display: inline-block;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 1.0625rem;
+      padding: 16px 36px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+      border: none;
+    }
+    .btn-gold { background: var(--gold); color: #fff; }
+    .btn-gold:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 4px 12px rgba(200,150,62,0.3); }
+    .btn-navy { background: var(--navy); color: #fff; }
+    .btn-navy:hover { background: var(--navy-light); }
+    .btn-outline { background: transparent; color: var(--navy); border: 2px solid var(--navy); }
+    .btn-outline:hover { background: var(--navy); color: #fff; }
+    .btn-sub { display: block; font-size: 0.8125rem; font-weight: 400; margin-top: 6px; opacity: 0.8; }
+
+    /* --- Hero --- */
+    .hero {
+      background: linear-gradient(170deg, var(--navy-deep) 0%, var(--navy) 60%, var(--navy-light) 100%);
+      color: var(--text-white);
+      padding: 80px 0 96px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(200,150,62,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .hero h1 { color: #fff; margin-bottom: 24px; max-width: 720px; }
+    .hero h1 em { font-style: normal; color: var(--gold-light); }
+    .hero-sub {
+      font-size: 1.1875rem;
+      line-height: 1.65;
+      color: #c8cdd8;
+      max-width: 600px;
+      margin-bottom: 36px;
+    }
+    .hero-stat {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 8px;
+      padding: 14px 20px;
+      margin-top: 32px;
+      font-size: 0.9375rem;
+      color: #a0aab8;
+    }
+    .hero-stat strong { color: var(--gold-light); font-size: 1.5rem; }
+
+    /* --- Stats Bar --- */
+    .stats-bar {
+      background: var(--bg-light);
+      border-top: 1px solid #e5e7eb;
+      border-bottom: 1px solid #e5e7eb;
+      padding: 40px 0;
+    }
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      text-align: center;
+    }
+    .stat-number {
+      font-family: var(--serif);
+      font-size: 2.25rem;
+      font-weight: 900;
+      color: var(--navy);
+      line-height: 1.1;
+    }
+    .stat-label {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+      line-height: 1.4;
+    }
+
+    /* --- Problem Section --- */
+    .threat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 48px;
+    }
+    .threat-card {
+      background: var(--bg-white);
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 32px 28px;
+      transition: box-shadow 0.2s;
+    }
+    .threat-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.06); }
+    .threat-icon {
+      width: 48px;
+      height: 48px;
+      background: #fef2f2;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+    .threat-card h3 { font-size: 1.125rem; color: var(--text-dark); }
+    .threat-card p { font-size: 0.9375rem; color: var(--text-body); margin-top: 8px; }
+    .threat-stat {
+      display: inline-block;
+      background: #fef2f2;
+      color: var(--red);
+      font-weight: 700;
+      font-size: 0.8125rem;
+      padding: 4px 10px;
+      border-radius: 4px;
+      margin-top: 12px;
+    }
+
+    /* --- Truth Section (2 of 3) --- */
+    .truth-section { background: var(--bg-warm); }
+    .truth-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 32px;
+      background: var(--bg-white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .truth-table th {
+      background: var(--navy);
+      color: #fff;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 14px 20px;
+      text-align: left;
+    }
+    .truth-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 0.9375rem;
+    }
+    .truth-table tr:last-child td { border-bottom: none; }
+    .truth-table .check { color: var(--green); font-weight: 700; }
+    .truth-table .cross { color: var(--red); font-weight: 700; }
+    .truth-table .highlight-row { background: var(--gold-bg); }
+
+    /* --- Solution Section --- */
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .compare-card {
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .compare-card-header {
+      padding: 20px 24px;
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.0625rem;
+    }
+    .compare-card-body {
+      padding: 24px;
+      background: var(--bg-white);
+    }
+    .compare-card-body li {
+      list-style: none;
+      padding: 8px 0;
+      font-size: 0.9375rem;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    .compare-card-body li:last-child { border-bottom: none; }
+    .compare-bad .compare-card-header { background: #fef2f2; color: var(--red); }
+    .compare-mid .compare-card-header { background: #fefce8; color: #92400e; }
+    .compare-good .compare-card-header { background: #f0fdf4; color: var(--green); }
+
+    /* --- Qualification Section --- */
+    .qual-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .qual-card {
+      border-radius: 12px;
+      padding: 36px 32px;
+    }
+    .qual-yes {
+      background: #f0fdf4;
+      border: 2px solid #bbf7d0;
+    }
+    .qual-no {
+      background: #fef2f2;
+      border: 2px solid #fecaca;
+    }
+    .qual-card h3 {
+      font-size: 1.125rem;
+      margin-bottom: 20px;
+    }
+    .qual-yes h3 { color: var(--green); }
+    .qual-no h3 { color: var(--red); }
+    .qual-card li {
+      list-style: none;
+      padding: 10px 0;
+      font-size: 0.9375rem;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+    }
+    .qual-card li:last-child { border-bottom: none; }
+    .qual-icon { flex-shrink: 0; font-size: 1.125rem; line-height: 1.5; }
+
+    /* --- How It Works --- */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 48px;
+      margin-top: 48px;
+      position: relative;
+    }
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 32px;
+      left: 15%;
+      right: 15%;
+      height: 2px;
+      background: #e5e7eb;
+    }
+    .step {
+      text-align: center;
+      position: relative;
+    }
+    .step-num {
+      width: 64px;
+      height: 64px;
+      background: var(--gold);
+      color: #fff;
+      font-family: var(--serif);
+      font-weight: 900;
+      font-size: 1.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .step h3 { font-size: 1.0625rem; }
+    .step p { font-size: 0.9375rem; color: var(--text-muted); margin-top: 8px; }
+
+    /* --- Testimonials --- */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .testimonial-card {
+      background: var(--bg-white);
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 32px 28px;
+      position: relative;
+    }
+    .testimonial-card::before {
+      content: '\201C';
+      font-family: var(--serif);
+      font-size: 4rem;
+      color: var(--gold);
+      opacity: 0.3;
+      position: absolute;
+      top: 12px;
+      left: 20px;
+      line-height: 1;
+    }
+    .testimonial-text {
+      font-size: 0.9375rem;
+      font-style: italic;
+      color: var(--text-body);
+      margin-bottom: 20px;
+      position: relative;
+      z-index: 1;
+    }
+    .testimonial-author { font-weight: 700; font-size: 0.875rem; color: var(--text-dark); }
+    .testimonial-meta { font-size: 0.8125rem; color: var(--text-muted); }
+
+    /* --- FAQ --- */
+    .faq-list { max-width: 720px; margin: 40px auto 0; }
+    .faq-item {
+      border-bottom: 1px solid #e5e7eb;
+      padding: 20px 0;
+    }
+    .faq-q {
+      font-family: var(--serif);
+      font-weight: 700;
+      font-size: 1.0625rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-q::after {
+      content: '+';
+      font-family: var(--sans);
+      font-size: 1.5rem;
+      color: var(--gold);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item.open .faq-q::after {
+      content: '\2212';
+    }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+      font-size: 0.9375rem;
+      color: var(--text-body);
+    }
+    .faq-item.open .faq-a {
+      max-height: 400px;
+      padding-top: 12px;
+    }
+
+    /* --- CTA Section --- */
+    .cta-section {
+      background: linear-gradient(170deg, var(--navy-deep) 0%, var(--navy) 100%);
+      color: var(--text-white);
+      padding: 80px 0;
+    }
+    .cta-section h2 { color: #fff; }
+    .cta-section p { color: #c0c8d8; }
+    .form-card {
+      background: var(--bg-white);
+      border-radius: 16px;
+      padding: 48px 40px;
+      max-width: 640px;
+      margin: 40px auto 0;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+    }
+    .form-card h3 { color: var(--text-dark); text-align: center; margin-bottom: 8px; }
+    .form-card .form-sub {
+      text-align: center;
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+    #feathery-container { min-height: 300px; }
+
+    /* --- Trust Bar --- */
+    .trust-bar {
+      background: var(--bg-light);
+      padding: 32px 0;
+      border-top: 1px solid #e5e7eb;
+    }
+    .trust-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+    }
+    .trust-badge {
+      text-align: center;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+    .trust-badge strong {
+      display: block;
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      color: var(--navy);
+    }
+
+    /* --- Footer --- */
+    .footer {
+      background: var(--navy-deep);
+      color: #7a8599;
+      padding: 40px 0;
+      font-size: 0.8125rem;
+      line-height: 1.6;
+    }
+    .footer a { color: #9aa5b8; }
+
+    /* --- Pull Quote --- */
+    .pull-quote {
+      border-left: 4px solid var(--gold);
+      padding: 24px 32px;
+      margin: 40px 0;
+      background: var(--gold-bg);
+      border-radius: 0 8px 8px 0;
+    }
+    .pull-quote p {
+      font-family: var(--serif);
+      font-size: 1.125rem;
+      color: var(--text-dark);
+      font-style: italic;
+    }
+    .pull-quote cite {
+      display: block;
+      font-style: normal;
+      font-family: var(--sans);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-top: 8px;
+    }
+
+    /* --- Dark section text --- */
+    .dark-section { background: var(--navy); color: var(--text-white); }
+    .dark-section h2 { color: #fff; }
+    .dark-section p { color: #c0c8d8; }
+    .dark-section .eyebrow { color: var(--gold-light); }
+
+    /* --- Responsive --- */
+    @media (max-width: 768px) {
+      :root { --section-py: 64px; }
+      .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .threat-grid, .comparison-grid, .testimonial-grid, .steps-grid { grid-template-columns: 1fr; }
+      .qual-grid { grid-template-columns: 1fr; }
+      .steps-grid::before { display: none; }
+      .hero { padding: 56px 0 64px; }
+      .form-card { padding: 32px 24px; }
+      .truth-table { font-size: 0.875rem; }
+      .truth-table th, .truth-table td { padding: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announce-bar">
+    <span>51% of retirees</span> now fear running out of money &mdash; up from 30% a decade ago (MetLife 2026)
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <img src="https://storage.googleapis.com/msgsndr/m1K8OusHZEtRpWkADkQa/media/698bb54de3ea37b1de368161.svg" alt="Retirement Growth Plan" class="nav-logo">
+    <a href="#qualify" class="nav-cta">See If You Qualify</a>
+  </nav>
+
+  <!-- ============================================ -->
+  <!-- HERO -->
+  <!-- ============================================ -->
+  <section class="hero">
+    <div class="container">
+      <div class="eyebrow eyebrow-dark">For Retirees With $200K&ndash;$750K Saved</div>
+      <h1>Your Retirement Savings Survived 30 Years of Work.<br><em>Don't Let the Next 5 Years Destroy Them.</em></h1>
+      <p class="hero-sub">
+        A 15% market drop in your first year of retirement makes you <strong style="color:#fff">6x more likely to run out of money.</strong> Discover the bond alternative that protects every dollar you've saved &mdash; while still growing your wealth.
+      </p>
+      <a href="#qualify" class="btn btn-gold">
+        Check If You Qualify
+        <span class="btn-sub">Takes 30 seconds &bull; No commitment</span>
+      </a>
+      <div class="hero-stat">
+        <strong>$460B</strong>
+        <span>in annuity sales in 2025 &mdash; 4th consecutive record year. Americans are protecting their savings at historic rates.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- STATS BAR -->
+  <!-- ============================================ -->
+  <div class="stats-bar">
+    <div class="container">
+      <div class="stats-grid">
+        <div>
+          <div class="stat-number">64%</div>
+          <div class="stat-label">of Americans fear running out of money <em>more than dying</em></div>
+        </div>
+        <div>
+          <div class="stat-number">$2,074</div>
+          <div class="stat-label">average monthly Social Security &mdash; covers only 40% of expenses</div>
+        </div>
+        <div>
+          <div class="stat-number">$3T</div>
+          <div class="stat-label">wiped from retirement accounts during 2025 market volatility</div>
+        </div>
+        <div>
+          <div class="stat-number">15 yrs</div>
+          <div class="stat-label">how long pre-retirees expect savings to last &mdash; they need 25&ndash;30</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- THE 3 THREATS -->
+  <!-- ============================================ -->
+  <section class="section" style="background: var(--bg-light);">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">The 3 Threats to Your Retirement</div>
+        <h2>The Dangers No One Is Talking About<br>With Your Financial Advisor</h2>
+        <p style="max-width:640px;margin:0 auto;color:var(--text-muted);">
+          You've spent decades building your savings. But three forces are quietly working against every retiree right now &mdash; and traditional portfolios can't protect you from all of them.
+        </p>
+      </div>
+
+      <div class="threat-grid">
+        <!-- Threat 1: Market Crash -->
+        <div class="threat-card">
+          <div class="threat-icon" style="background:#fef2f2;">&#x26A0;</div>
+          <h3>The Crash You Can't Recover From</h3>
+          <p>A market crash at age 35 is a buying opportunity. A market crash at 63? It's devastating. With the Buffett Indicator at 219% and the CAPE ratio near dot-com levels, the question isn't <em>if</em> &mdash; it's <em>when</em>.</p>
+          <p>And if you're withdrawing 4% during a downturn, your portfolio may never recover.</p>
+          <div class="threat-stat">77% of retirement outcomes depend on your first 10 years</div>
+        </div>
+
+        <!-- Threat 2: Inflation -->
+        <div class="threat-card">
+          <div class="threat-icon" style="background:#fefce8;">&#x1F4C9;</div>
+          <h3>The Silent Theft of Inflation</h3>
+          <p>Your Social Security COLA was 2.8%. Your Medicare premiums went up 9.7%. Healthcare costs are rising 7% annually. Housing is climbing 4%. The math doesn't work.</p>
+          <p>Since 2010, Social Security has lost <strong>20% of its purchasing power</strong>. Every year, you can afford a little less.</p>
+          <div class="threat-stat">Senior poverty hit 15% &mdash; highest of any age group</div>
+        </div>
+
+        <!-- Threat 3: Longevity -->
+        <div class="threat-card">
+          <div class="threat-icon" style="background:#fef2f2;">&#x23F3;</div>
+          <h3>The Years You Didn't Plan For</h3>
+          <p>You might need 25&ndash;30 years of retirement income. But there's a 70% chance you'll need long-term care at some point &mdash; at $5,900 to $10,965 per month.</p>
+          <p>Only 11% of people over 65 have LTC insurance. The rest are one health event away from financial devastation.</p>
+          <div class="threat-stat">LTC can drain $200K&ndash;$400K in just 3 years</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- PULL QUOTE -->
+  <!-- ============================================ -->
+  <section class="section" style="padding: 48px 0;">
+    <div class="container">
+      <div class="pull-quote">
+        <p>&ldquo;I looked at my 401(k) this morning and in the last two days it lost $58,000. That's stressful. If that continues, I can't stay retired.&rdquo;</p>
+        <cite>&mdash; Victor Fettes, 54, Georgia (NBC News, 2025)</cite>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- THE UNCOMFORTABLE TRUTH (2 of 3) -->
+  <!-- ============================================ -->
+  <section class="section truth-section">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">The Uncomfortable Truth</div>
+        <h2>Every Financial Product Gives You 2 of 3.<br>Most Advisors Won't Tell You Which 2.</h2>
+        <p style="max-width:640px;margin:0 auto;color:var(--text-muted);">
+          There is no product on Earth that delivers high growth, full safety, <em>and</em> full liquidity. Anyone promising all three is misleading you. Here's the honest breakdown:
+        </p>
+      </div>
+
+      <table class="truth-table">
+        <thead>
+          <tr>
+            <th>If You Want...</th>
+            <th>Growth</th>
+            <th>Safety</th>
+            <th>Liquidity</th>
+            <th>The Tradeoff</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Stocks & ETFs</strong></td>
+            <td class="check">&#10003;</td>
+            <td class="cross">&#10007;</td>
+            <td class="check">&#10003;</td>
+            <td>Can lose 20&ndash;40% when you need it most</td>
+          </tr>
+          <tr>
+            <td><strong>CDs &amp; Savings</strong></td>
+            <td class="cross">&#10007;</td>
+            <td class="check">&#10003;</td>
+            <td class="check">&#10003;</td>
+            <td>4&ndash;5% barely beats inflation after taxes</td>
+          </tr>
+          <tr>
+            <td><strong>Bonds</strong></td>
+            <td class="cross">&#10007;</td>
+            <td class="check">~</td>
+            <td class="check">~</td>
+            <td>2022 proved bonds aren't as safe as you think</td>
+          </tr>
+          <tr class="highlight-row">
+            <td><strong>Retirement Growth Plan</strong></td>
+            <td class="check">&#10003;</td>
+            <td class="check">&#10003;</td>
+            <td class="cross">&#10007;*</td>
+            <td><strong>Protected growth + zero downside. Designed for money you won't touch for 7+ years.</strong></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p style="text-align:center;font-size:0.8125rem;color:var(--text-muted);margin-top:16px;">
+        *Most plans allow 10% annual penalty-free withdrawals. Hardship and nursing home waivers also available on many contracts.
+      </p>
+
+      <div style="text-align:center;margin-top:40px;">
+        <p style="max-width:580px;margin:0 auto 24px;font-size:1.0625rem;color:var(--text-dark);">
+          <strong>The Retirement Growth Plan gives you Safety + Growth.</strong><br>
+          In exchange, you commit a portion of your savings for 7&ndash;10 years. That's the tradeoff &mdash; and for the right person, it's the best decision they'll ever make.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- THE COMPARISON -->
+  <!-- ============================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">See the Difference</div>
+        <h2>What Happens to $300,000 Over 7 Years?</h2>
+        <p style="max-width:600px;margin:0 auto;color:var(--text-muted);">
+          Three real scenarios. Same starting amount. Dramatically different outcomes based on what you prioritize.
+        </p>
+      </div>
+
+      <div class="comparison-grid">
+        <div class="compare-card compare-bad">
+          <div class="compare-card-header">Stock Market (S&P 500)</div>
+          <div class="compare-card-body">
+            <ul>
+              <li>&#x1F4C8; <strong>Best case:</strong> $580K+ (if bull continues)</li>
+              <li>&#x1F4C9; <strong>Worst case:</strong> $165K (40% crash + withdrawals)</li>
+              <li>&#x26A0; No protection from sequence of returns risk</li>
+              <li>&#x1F612; Check portfolio daily, lose sleep over headlines</li>
+              <li>&#x2753; Completely unpredictable</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="compare-card compare-mid">
+          <div class="compare-card-header">CDs &amp; Bonds</div>
+          <div class="compare-card-body">
+            <ul>
+              <li>&#x1F4B0; <strong>Best case:</strong> $375K (at 4.5%)</li>
+              <li>&#x1F6E1; Principal protected (FDIC/Treasury)</li>
+              <li>&#x1F4C9; After inflation &amp; taxes: ~1&ndash;2% real return</li>
+              <li>&#x1F512; CDs lock up money too (early withdrawal penalties)</li>
+              <li>&#x1F614; Falling rates mean lower yields at renewal</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="compare-card compare-good">
+          <div class="compare-card-header">Retirement Growth Plan</div>
+          <div class="compare-card-body">
+            <ul>
+              <li>&#x1F6E1; <strong>Floor:</strong> $300K (0% in down years, never negative)</li>
+              <li>&#x1F4C8; <strong>Upside:</strong> Participate in market gains up to the cap</li>
+              <li>&#x2705; Principal 100% protected from market losses</li>
+              <li>&#x1F4B5; Tax-deferred growth (no annual tax drag)</li>
+              <li>&#x1F634; Predictable. No daily monitoring needed.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:40px;">
+        <a href="#qualify" class="btn btn-gold">See If You Qualify for Protected Growth</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- THE KEY INSIGHT -->
+  <!-- ============================================ -->
+  <section class="section dark-section">
+    <div class="container text-center">
+      <div class="eyebrow eyebrow-dark">The Insight That Changes Everything</div>
+      <h2 style="max-width:700px;margin:0 auto 24px;">In Retirement, Avoiding Losses Matters<br>More Than Chasing Gains</h2>
+      <p style="max-width:600px;margin:0 auto;">
+        When the S&P dropped 6% in a single day during tariff announcements, Retirement Growth Plan holders earned <strong style="color:var(--gold-light)">0%</strong> &mdash; not negative 6%. That's the product working exactly as designed.
+      </p>
+      <p style="max-width:600px;margin:0 auto;margin-top:16px;">
+        You don't need 10% returns. You need to <strong style="color:#fff">never go backwards</strong>. Because at 65, you don't have 20 years to wait for a recovery.
+      </p>
+
+      <div style="display:inline-flex;gap:32px;margin-top:40px;flex-wrap:wrap;justify-content:center;">
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:2.5rem;font-weight:900;color:var(--gold-light);">94%</div>
+          <div style="font-size:0.875rem;color:#8a95a8;">of RGP holders report<br>feeling financially secure</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:2.5rem;font-weight:900;color:var(--gold-light);">92%</div>
+          <div style="font-size:0.875rem;color:#8a95a8;">say their budget is<br>more predictable now</div>
+        </div>
+        <div style="text-align:center;">
+          <div style="font-family:var(--serif);font-size:2.5rem;font-weight:900;color:var(--gold-light);">88%</div>
+          <div style="font-size:0.875rem;color:#8a95a8;">say it eases worry about<br>market downturns</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- IS THIS RIGHT FOR YOU? -->
+  <!-- ============================================ -->
+  <section class="section" style="background:var(--bg-light);">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">Honest Qualification</div>
+        <h2>Is the Retirement Growth Plan Right for You?</h2>
+        <p style="max-width:600px;margin:0 auto;color:var(--text-muted);">
+          This isn't for everyone &mdash; and we'd rather tell you upfront than waste your time. Read both columns honestly.
+        </p>
+      </div>
+
+      <div class="qual-grid">
+        <div class="qual-card qual-yes">
+          <h3>&#10003; This IS For You If:</h3>
+          <ul>
+            <li><span class="qual-icon">&#10003;</span> You've saved $200K&ndash;$750K+ and <strong>cannot afford to lose it</strong></li>
+            <li><span class="qual-icon">&#10003;</span> You're tired of watching your portfolio swing with every headline</li>
+            <li><span class="qual-icon">&#10003;</span> You'd rather earn 5&ndash;6% safely than gamble for 10%+</li>
+            <li><span class="qual-icon">&#10003;</span> You have <strong>other liquid savings</strong> for short-term expenses</li>
+            <li><span class="qual-icon">&#10003;</span> You want a predictable monthly income you can budget around</li>
+            <li><span class="qual-icon">&#10003;</span> You're within 10 years of retirement &mdash; or already retired</li>
+            <li><span class="qual-icon">&#10003;</span> You think of this as a <strong>bond or CD replacement</strong>, not a stock market alternative</li>
+          </ul>
+        </div>
+
+        <div class="qual-card qual-no">
+          <h3>&#10007; This is NOT For You If:</h3>
+          <ul>
+            <li><span class="qual-icon">&#10007;</span> You're looking for aggressive, stock-market-level returns</li>
+            <li><span class="qual-icon">&#10007;</span> You need access to <strong>all</strong> of your money within the next 5 years</li>
+            <li><span class="qual-icon">&#10007;</span> You're comparing this to the S&P 500 (that's not what this replaces)</li>
+            <li><span class="qual-icon">&#10007;</span> You want high growth AND full liquidity AND zero risk (no product offers all 3)</li>
+            <li><span class="qual-icon">&#10007;</span> You have less than $100K in total retirement savings</li>
+            <li><span class="qual-icon">&#10007;</span> You're under 50 with decades of accumulation ahead</li>
+            <li><span class="qual-icon">&#10007;</span> You're looking for a &ldquo;get rich&rdquo; vehicle, not a &ldquo;don't go broke&rdquo; vehicle</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:40px;">
+        <p style="font-size:1.0625rem;color:var(--text-dark);max-width:560px;margin:0 auto;">
+          <strong>If you saw yourself in the left column</strong> &mdash; you're exactly who this was designed for. Take 30 seconds to see if you qualify.
+        </p>
+        <a href="#qualify" class="btn btn-gold" style="margin-top:20px;">Check My Eligibility</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- HOW IT WORKS -->
+  <!-- ============================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">Simple Process</div>
+        <h2>How It Works</h2>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step">
+          <div class="step-num">1</div>
+          <h3>30-Second Pre-Qualification</h3>
+          <p>Answer a few quick questions to see if you're a fit. No commitment, no pressure &mdash; just clarity.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <h3>Personalized Breakdown</h3>
+          <p>A Licensed Growth Plan Advisor walks you through the math &mdash; specific to your savings, your goals, and your timeline.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <h3>Lock In Your Protection</h3>
+          <p>If it's a fit, your advisor helps you allocate a portion of your savings to protected growth. Your principal is locked in from day one.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- TESTIMONIALS -->
+  <!-- ============================================ -->
+  <section class="section" style="background:var(--bg-light);">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">From People Like You</div>
+        <h2>What It Feels Like to Stop Worrying</h2>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-text">&ldquo;I lost $40,000 in my 401(k) and couldn't sleep for months. Now my principal is protected. When the market dropped last year, my account didn't lose a penny. I finally sleep again.&rdquo;</p>
+          <div class="testimonial-author">Robert M., 68</div>
+          <div class="testimonial-meta">Ohio &bull; Former 401(k) holder</div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">&ldquo;I was tired of checking my account every day, watching it go up and down with every news cycle. Now I don't worry. It grows, and it can never go backwards. That peace of mind is priceless.&rdquo;</p>
+          <div class="testimonial-author">Linda S., 66</div>
+          <div class="testimonial-meta">North Carolina &bull; Retired teacher</div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-text">&ldquo;My advisor told me to 'stay the course' for 15 years. What course? I was losing money and paying him 1.5% for the privilege. This was the first time someone showed me the actual math &mdash; honestly.&rdquo;</p>
+          <div class="testimonial-author">James T., 71</div>
+          <div class="testimonial-meta">Texas &bull; Retired engineer</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- TRUST BADGES -->
+  <!-- ============================================ -->
+  <div class="trust-bar">
+    <div class="container">
+      <div class="trust-row">
+        <div class="trust-badge">
+          <strong>A+</strong>
+          AM Best
+        </div>
+        <div class="trust-badge">
+          <strong>A+</strong>
+          S&amp;P Global
+        </div>
+        <div class="trust-badge">
+          <strong>A+</strong>
+          Fitch Ratings
+        </div>
+        <div class="trust-badge">
+          <strong>A1</strong>
+          Moody's
+        </div>
+        <div class="trust-badge">
+          <strong>$808B</strong>
+          Assets Managed
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================ -->
+  <!-- FAQ -->
+  <!-- ============================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">Common Questions</div>
+        <h2>Straight Answers. No Fine Print Surprises.</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q">What exactly is a Retirement Growth Plan?</div>
+          <div class="faq-a">It's a financial contract backed by A-rated insurance institutions. Your principal is protected from market losses. When the market goes up, you earn a portion of the gains (up to a cap). When the market goes down, you earn 0% &mdash; not negative. Think of it as a bond alternative with upside potential. It is not a savings account, not a CD, and not a stock.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How is this different from just keeping my money in CDs?</div>
+          <div class="faq-a">CDs pay a fixed rate (currently 4&ndash;5%) with no upside if markets rise. The RGP offers principal protection like a CD, but with the potential to earn more in years when the market performs well. Plus, growth is tax-deferred &mdash; you don't pay taxes on gains each year like you would with CD interest.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I actually lose money?</div>
+          <div class="faq-a">Your principal is protected from market losses. In a year where the market drops 30%, your account earns 0% &mdash; not negative 30%. The floor is zero. The only way to incur a penalty is withdrawing more than the penalty-free amount during the surrender period.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What about the "10.5%" &mdash; is that my guaranteed annual return?</div>
+          <div class="faq-a">No, and we want to be completely transparent about this. That figure represents the cap rate on certain products &mdash; meaning in a year where the market gains 15%, you'd earn up to 10.5%. In a year where the market gains 5%, you'd earn 5%. In a down year, you'd earn 0%. Over a full market cycle, realistic average returns range from 4&ndash;7% depending on the product and market conditions. We'll show you the actual math for your specific situation.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Can I access my money if I need it?</div>
+          <div class="faq-a">Most plans allow you to withdraw 10% of your account value each year with no penalty. Many contracts also include waivers for nursing home stays, terminal illness, or other qualifying hardships. However, this is designed for money you won't need for 7&ndash;10 years. That's why we recommend having separate liquid savings for short-term needs.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">What are the fees?</div>
+          <div class="faq-a">Most fixed indexed products have zero annual management fees. There are no advisor fees taken from your account. The insurance company earns from the spread between what they invest and what they credit to you. Compare that to a traditional financial advisor charging 1&ndash;2% per year on your balance.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">Is this an IUL (Indexed Universal Life)?</div>
+          <div class="faq-a">No. This is not life insurance. An IUL has mortality charges and insurance costs that eat into your returns. The Retirement Growth Plan is a different category of financial contract &mdash; focused purely on protected growth and retirement income.</div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q">How do I know this isn't too good to be true?</div>
+          <div class="faq-a">Because we're telling you the tradeoff upfront: you get safety and growth, but you give up full liquidity for 7&ndash;10 years. Any product promising all three &mdash; high returns, zero risk, AND full access &mdash; is lying. We'd rather have an honest 15-minute conversation than waste your time with hype.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FINAL CTA + FORM -->
+  <!-- ============================================ -->
+  <section class="cta-section" id="qualify">
+    <div class="container text-center">
+      <div class="eyebrow eyebrow-dark">Pre-Qualification</div>
+      <h2>See If You Qualify for Protected Growth</h2>
+      <p style="max-width:560px;margin:0 auto;">
+        Takes 30 seconds. No commitment. A Licensed Growth Plan Advisor will review your eligibility and show you the specific math for your savings level.
+      </p>
+
+      <div class="form-card">
+        <h3>Quick Pre-Qualification</h3>
+        <p class="form-sub">Answer a few questions to see if the Retirement Growth Plan is right for your situation.</p>
+
+        <!-- Feathery Form Embed -->
+        <div id="feathery-container"></div>
+
+        <p style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-top:16px;">
+          Your information is secure and never shared. Advisors are licensed, fiduciary-standard professionals.
+        </p>
+      </div>
+
+      <p style="margin-top:32px;font-size:0.875rem;color:#8a95a8;">
+        Spots with a Licensed Growth Plan Advisor are limited due to high demand.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FOOTER -->
+  <!-- ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p>
+        &copy; 2026 The Retirement Growth Plan&trade;. All rights reserved.
+      </p>
+      <p style="margin-top:12px;">
+        <strong>Important Disclosures:</strong> The Retirement Growth Plan refers to fixed indexed annuity products issued by A-rated insurance carriers. Guarantees are backed by the financial strength and claims-paying ability of the issuing insurance company. Rates, caps, participation rates, and spreads are subject to change and are not guaranteed beyond the initial term. Past performance of any index does not guarantee future results. This is not investment advice. Consult with a licensed professional to determine suitability for your individual situation. Withdrawals before age 59&frac12; may be subject to IRS penalties. Surrender charges may apply for withdrawals exceeding the penalty-free amount during the surrender period.
+      </p>
+      <p style="margin-top:12px;">
+        <a href="#">Privacy Policy</a> &middot; <a href="#">Terms of Service</a> &middot; <a href="#">Disclosures</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- Feathery SDK -->
+  <script src="https://cdn.feathery.io/fp.js" defer></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize Feathery form
+      if (window.Feathery) {
+        Feathery.init('b7c82cfe-b1e6-4c2c-950c-0e3834c9125c');
+        Feathery.renderAt('feathery-container', { formId: 'b3ye9v' });
+      }
+
+      // FAQ accordion
+      document.querySelectorAll('.faq-q').forEach(function(q) {
+        q.addEventListener('click', function() {
+          var item = this.parentElement;
+          var wasOpen = item.classList.contains('open');
+          // Close all
+          document.querySelectorAll('.faq-item').forEach(function(i) {
+            i.classList.remove('open');
+          });
+          // Toggle clicked
+          if (!wasOpen) item.classList.add('open');
+        });
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+        a.addEventListener('click', function(e) {
+          e.preventDefault();
+          var target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>
