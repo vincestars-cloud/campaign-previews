@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stop Renting Leads. Own Your Pipeline. | The Roofing Growth System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #C75B12;
+      --accent-light: #FFF4EB;
+      --accent-dark: #9A4409;
+      --dark: #1A1A1A;
+      --text: #2D2D2D;
+      --text-secondary: #5A5A5A;
+      --light: #F8F8F6;
+      --white: #FFFFFF;
+      --border: #E5E5E3;
+      --serif: 'DM Serif Display', Georgia, serif;
+      --sans: 'Inter', -apple-system, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+      font-size: 17px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Announcement Bar ── */
+    .announcement {
+      background: var(--dark);
+      color: #fff;
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+    }
+    .announcement strong { color: var(--accent); }
+
+    /* ── Nav ── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 0;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 22px;
+      color: var(--dark);
+      text-decoration: none;
+    }
+    .nav-cta {
+      background: var(--accent);
+      color: #fff;
+      padding: 10px 24px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      transition: background 0.2s;
+    }
+    .nav-cta:hover { background: var(--accent-dark); }
+
+    /* ── Utility ── */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+    .eyebrow {
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+    .section { padding: 100px 0; }
+    .section-dark { background: var(--dark); color: #fff; }
+    .section-light { background: var(--light); }
+    .text-center { text-align: center; }
+
+    h1, h2, h3 { font-family: var(--serif); font-weight: 400; line-height: 1.2; color: var(--dark); }
+    .section-dark h1, .section-dark h2, .section-dark h3 { color: #fff; }
+    h1 { font-size: clamp(38px, 5vw, 58px); }
+    h2 { font-size: clamp(30px, 4vw, 44px); }
+    h3 { font-size: 26px; }
+
+    p.lead {
+      font-size: 19px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      max-width: 640px;
+    }
+    .section-dark p.lead { color: #B0B0B0; }
+    .text-center p.lead { margin: 0 auto; }
+
+    /* ── Buttons ── */
+    .btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      padding: 16px 36px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 16px;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn-large { padding: 20px 48px; font-size: 18px; }
+    .btn-sub {
+      display: block;
+      margin-top: 10px;
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-weight: 400;
+    }
+    .section-dark .btn-sub { color: #888; }
+
+    /* ── Hero ── */
+    .hero {
+      padding: 80px 0 100px;
+      background: linear-gradient(180deg, var(--light) 0%, var(--white) 100%);
+    }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .hero h1 { margin-bottom: 24px; }
+    .hero p.lead { margin-bottom: 36px; }
+    .hero-visual {
+      background: var(--dark);
+      border-radius: 16px;
+      padding: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(199,91,18,0.15) 0%, transparent 70%);
+    }
+    .hero-stat {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-stat-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 16px 20px;
+    }
+    .hero-stat-num {
+      font-family: var(--serif);
+      font-size: 32px;
+      color: var(--accent);
+      min-width: 80px;
+    }
+    .hero-stat-label {
+      font-size: 14px;
+      color: #aaa;
+      line-height: 1.4;
+    }
+
+    /* ── Pain Section ── */
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .pain-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+      transition: border-color 0.2s;
+    }
+    .pain-card:hover { border-color: var(--accent); }
+    .pain-icon {
+      width: 48px;
+      height: 48px;
+      background: var(--accent-light);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+    .pain-card h3 { font-size: 20px; margin-bottom: 12px; }
+    .pain-card p { font-size: 15px; color: var(--text-secondary); line-height: 1.7; }
+
+    /* ── Stats Bar ── */
+    .stats-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+    }
+    .stat-item {
+      text-align: center;
+      padding: 48px 24px;
+      border-right: 1px solid rgba(255,255,255,0.1);
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-number {
+      font-family: var(--serif);
+      font-size: 52px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .stat-label { font-size: 14px; color: #999; letter-spacing: 0.5px; }
+
+    /* ── Feature Sections ── */
+    .feature-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .feature-reverse { direction: rtl; }
+    .feature-reverse > * { direction: ltr; }
+    .feature-content { max-width: 520px; }
+    .feature-content h2 { margin-bottom: 20px; }
+    .feature-content p.lead { margin-bottom: 32px; }
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .feature-list li {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      font-size: 15px;
+      line-height: 1.6;
+    }
+    .feature-list .check {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--accent-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 13px;
+      margin-top: 2px;
+    }
+    .section-dark .feature-list .check { background: rgba(199,91,18,0.2); }
+    .section-dark .feature-list li { color: #ccc; }
+
+    .feature-visual {
+      background: var(--light);
+      border-radius: 16px;
+      padding: 48px;
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border: 1px solid var(--border);
+    }
+    .section-dark .feature-visual {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.1);
+    }
+
+    .visual-mockup {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .mockup-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 14px 18px;
+      background: var(--white);
+      border-radius: 8px;
+      font-size: 14px;
+      border: 1px solid var(--border);
+    }
+    .section-dark .mockup-row {
+      background: rgba(255,255,255,0.05);
+      border-color: rgba(255,255,255,0.08);
+      color: #ccc;
+    }
+    .mockup-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .dot-green { background: #2ECC71; }
+    .dot-blue { background: #3498DB; }
+    .dot-amber { background: var(--accent); }
+    .dot-red { background: #E74C3C; }
+
+    /* ── Dashboard Preview ── */
+    .dashboard-preview {
+      background: var(--white);
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .dashboard-header {
+      background: var(--dark);
+      padding: 16px 24px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .dashboard-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.2);
+    }
+    .dashboard-dot:first-child { background: #E74C3C; }
+    .dashboard-dot:nth-child(2) { background: #F1C40F; }
+    .dashboard-dot:nth-child(3) { background: #2ECC71; }
+    .dashboard-body { padding: 24px; }
+    .dashboard-row {
+      display: grid;
+      grid-template-columns: 1fr repeat(4, auto);
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 14px;
+      align-items: center;
+    }
+    .dashboard-row:last-child { border-bottom: none; }
+    .dashboard-row.header {
+      font-weight: 700;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-secondary);
+      padding-bottom: 12px;
+    }
+    .dashboard-source {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+    }
+    .source-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+    }
+    .source-google { background: #4285F4; }
+    .source-meta { background: #1877F2; }
+    .source-outbound { background: var(--accent); }
+    .source-total { background: #2ECC71; }
+    .dashboard-badge {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+    }
+    .badge-green { background: #E8F8F0; color: #1A8B5C; }
+    .badge-amber { background: #FFF4EB; color: #C75B12; }
+    .badge-red { background: #FDE8E8; color: #C0392B; }
+
+    /* ── Dashboard Insights ── */
+    .insights-box {
+      margin-top: 20px;
+      background: var(--light);
+      border-radius: 10px;
+      padding: 20px 24px;
+    }
+    .insights-title {
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-secondary);
+      margin-bottom: 12px;
+    }
+    .insight-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 8px 0;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .insight-icon {
+      flex-shrink: 0;
+      font-size: 16px;
+      margin-top: 1px;
+    }
+
+    /* ── Change Log ── */
+    .changelog-box {
+      margin-top: 16px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 20px 24px;
+    }
+    .changelog-entry {
+      display: flex;
+      gap: 12px;
+      padding: 8px 0;
+      font-size: 13px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+    .changelog-entry:last-child { border-bottom: none; }
+    .changelog-date {
+      flex-shrink: 0;
+      font-weight: 600;
+      color: var(--text);
+      min-width: 70px;
+    }
+
+    /* ── Storm Feature ── */
+    .storm-banner {
+      background: linear-gradient(135deg, #0D1B2A 0%, #1B2D45 50%, #1A1A1A 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .storm-banner::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: radial-gradient(ellipse at 30% 50%, rgba(199,91,18,0.12) 0%, transparent 60%);
+    }
+    .storm-inner {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 32px;
+      text-align: center;
+    }
+    .storm-inner h2 { color: #fff; margin-bottom: 20px; }
+    .storm-inner > p {
+      color: #aaa;
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 700px;
+      margin: 0 auto 40px;
+    }
+    .storm-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .storm-step {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .storm-step-num {
+      font-family: var(--serif);
+      font-size: 36px;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+    .storm-step h3 { color: #fff; font-size: 18px; margin-bottom: 8px; }
+    .storm-step p { font-size: 14px; color: #888; margin: 0; line-height: 1.6; }
+
+    /* ── Comparison ── */
+    .comparison-table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin-top: 56px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .comparison-table thead th {
+      background: var(--dark);
+      color: #fff;
+      padding: 20px 28px;
+      font-family: var(--serif);
+      font-weight: 400;
+      font-size: 18px;
+      text-align: left;
+    }
+    .comparison-table thead th:nth-child(2) { color: #888; }
+    .comparison-table thead th:nth-child(3) { color: var(--accent); }
+    .comparison-table tbody td {
+      padding: 18px 28px;
+      border-bottom: 1px solid var(--border);
+      font-size: 15px;
+    }
+    .comparison-table tbody tr:last-child td { border-bottom: none; }
+    .comparison-table tbody tr:nth-child(even) { background: var(--light); }
+    .comparison-table .x-mark { color: #ccc; font-weight: 600; }
+    .comparison-table .check-mark { color: var(--accent); font-weight: 700; }
+
+    /* ── Pricing / Risk Reversal ── */
+    .pricing-box {
+      max-width: 720px;
+      margin: 56px auto 0;
+      background: var(--white);
+      border: 2px solid var(--accent);
+      border-radius: 16px;
+      padding: 56px 48px;
+      text-align: center;
+    }
+    .pricing-box h3 { font-size: 32px; margin-bottom: 16px; }
+    .pricing-box > p {
+      font-size: 17px;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+      line-height: 1.8;
+    }
+    .pricing-includes {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      text-align: left;
+      margin-bottom: 36px;
+    }
+    .pricing-includes li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      padding: 8px 0;
+    }
+    .pricing-includes .inc-check {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 16px;
+    }
+
+    /* ── Guarantee ── */
+    .guarantee-box {
+      max-width: 720px;
+      margin: 48px auto 0;
+      background: var(--accent-light);
+      border-radius: 16px;
+      padding: 48px;
+      text-align: center;
+      border: 1px solid rgba(199,91,18,0.2);
+    }
+    .guarantee-box h3 { margin-bottom: 16px; color: var(--accent-dark); }
+    .guarantee-box p { color: var(--text-secondary); max-width: 580px; margin: 0 auto; line-height: 1.8; }
+
+    /* ── Testimonial ── */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 36px;
+    }
+    .testimonial-quote {
+      font-size: 16px;
+      line-height: 1.8;
+      margin-bottom: 24px;
+      position: relative;
+      padding-top: 24px;
+    }
+    .testimonial-quote::before {
+      content: '\201C';
+      position: absolute;
+      top: -8px;
+      left: 0;
+      font-family: var(--serif);
+      font-size: 56px;
+      color: var(--accent);
+      line-height: 1;
+      opacity: 0.3;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--serif);
+      font-size: 18px;
+      color: var(--accent);
+    }
+    .testimonial-name { font-weight: 600; font-size: 15px; }
+    .testimonial-title { font-size: 13px; color: var(--text-secondary); }
+
+    /* ── FAQ ── */
+    .faq-list { max-width: 720px; margin: 56px auto 0; }
+    .faq-item { border-bottom: 1px solid var(--border); padding: 28px 0; }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-question {
+      font-family: var(--serif);
+      font-size: 20px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+    .faq-question::after {
+      content: '+';
+      font-family: var(--sans);
+      font-size: 24px;
+      color: var(--accent);
+      flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .faq-item.active .faq-question::after { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    .faq-item.active .faq-answer { max-height: 300px; padding-top: 16px; }
+    .faq-answer p { font-size: 15px; color: var(--text-secondary); line-height: 1.8; }
+
+    /* ── Final CTA ── */
+    .final-cta {
+      padding: 100px 0;
+      text-align: center;
+      background: var(--dark);
+      color: #fff;
+    }
+    .final-cta h2 { color: #fff; margin-bottom: 20px; }
+    .final-cta p {
+      color: #888;
+      font-size: 18px;
+      max-width: 560px;
+      margin: 0 auto 40px;
+      line-height: 1.8;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      padding: 40px 0;
+      text-align: center;
+      font-size: 14px;
+      color: var(--text-secondary);
+      border-top: 1px solid var(--border);
+    }
+
+    /* ── Pull Quote ── */
+    .pull-quote {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 60px 32px;
+      text-align: center;
+    }
+    .pull-quote blockquote {
+      font-family: var(--serif);
+      font-size: clamp(24px, 3.5vw, 34px);
+      line-height: 1.4;
+      color: var(--dark);
+      font-style: italic;
+    }
+    .pull-quote cite {
+      display: block;
+      margin-top: 20px;
+      font-family: var(--sans);
+      font-size: 14px;
+      font-style: normal;
+      color: var(--text-secondary);
+    }
+
+    /* ── Process Steps ── */
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 32px;
+      margin-top: 56px;
+    }
+    .process-step { text-align: center; position: relative; }
+    .process-step::after {
+      content: '';
+      position: absolute;
+      top: 28px;
+      right: -16px;
+      width: 32px;
+      height: 2px;
+      background: var(--border);
+    }
+    .process-step:last-child::after { display: none; }
+    .step-number {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--accent-light);
+      color: var(--accent);
+      font-family: var(--serif);
+      font-size: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+    .process-step h3 { font-size: 18px; margin-bottom: 8px; }
+    .process-step p { font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+
+    /* ── Pill Tags ── */
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 24px;
+    }
+    .pill {
+      background: var(--light);
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      padding: 8px 20px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 1024px) {
+      .hero-grid, .feature-section, .feature-reverse { grid-template-columns: 1fr; gap: 40px; }
+      .feature-reverse { direction: ltr; }
+      .pain-grid, .testimonial-grid { grid-template-columns: 1fr 1fr; }
+      .stats-bar { grid-template-columns: repeat(2, 1fr); }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,0.1); }
+      .storm-steps { grid-template-columns: 1fr; }
+      .comparison-table { font-size: 14px; }
+      .comparison-table thead th, .comparison-table tbody td { padding: 14px 16px; }
+      .pricing-includes { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: repeat(2, 1fr); }
+      .process-step::after { display: none; }
+      .dashboard-row { grid-template-columns: 1fr repeat(3, auto); font-size: 13px; gap: 10px; }
+      .dashboard-row .hide-mobile { display: none; }
+    }
+    @media (max-width: 640px) {
+      .section { padding: 72px 0; }
+      .pain-grid, .testimonial-grid { grid-template-columns: 1fr; }
+      .stats-bar { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .pricing-box { padding: 40px 28px; }
+      .guarantee-box { padding: 36px 24px; }
+      .dashboard-row { grid-template-columns: 1fr auto auto; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement">
+    <strong>Limited:</strong> Only 1 system per market. Check if your area is still available.
+  </div>
+
+  <!-- Nav -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">Scaling SOS</a>
+      <a href="#cta" class="nav-cta">See If Your Market Is Open</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow">For Roofing Companies Doing $80K+/Month</div>
+          <h1>Stop Renting Leads.<br>Own Your Pipeline.</h1>
+          <p class="lead">You've spent thousands on shared leads, fired two agencies, and you're still not sure what's working. What if you owned the system that generates your appointments &mdash; and it never stopped running?</p>
+          <a href="#cta" class="btn btn-large">See The System In Action</a>
+          <span class="btn-sub">One-time investment. You own everything. No retainer. No contract.</span>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-stat">
+            <div class="hero-stat-row">
+              <span class="hero-stat-num">25</span>
+              <span class="hero-stat-label">Qualified appointments booked for you upfront &mdash; with call recordings to prove it</span>
+            </div>
+            <div class="hero-stat-row">
+              <span class="hero-stat-num">24/7</span>
+              <span class="hero-stat-label">Dedicated receptionist answers, qualifies &amp; books &mdash; while you're on a roof</span>
+            </div>
+            <div class="hero-stat-row">
+              <span class="hero-stat-num">$0</span>
+              <span class="hero-stat-label">Monthly retainer. One investment. You own the system forever.</span>
+            </div>
+            <div class="hero-stat-row">
+              <span class="hero-stat-num">3</span>
+              <span class="hero-stat-label">Lead sources running at once &mdash; Google, Meta &amp; outbound &mdash; all tracked by channel</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pain Section -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">Sound Familiar?</div>
+        <h2>You're Spending Money. But You're Not Building Anything.</h2>
+        <p class="lead" style="margin: 20px auto 0;">Every month the invoice goes out. Sometimes leads come in. Most don't answer. The ones that do got the same call from four other roofers. And next month? You start from zero again.</p>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-icon">$</div>
+          <h3>Shared Leads, Full Price</h3>
+          <p>You pay $85 for a lead that Angi sent to five other contractors. By the time you call, they've already booked someone else. The FTC fined HomeAdvisor $7.2M for this. You're still paying for it.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">?</div>
+          <h3>Agencies With No Skin in the Game</h3>
+          <p>"I've switched agencies three times and still feel lost." They sell you clicks and impressions. You need jobs on the books. They keep the website when you leave. You start over.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">!</div>
+          <h3>Voicemail Is Costing You Jobs</h3>
+          <p>78% of homeowners hire the first roofer who answers. Your crew is on a roof. The lead goes to voicemail. Your competitor picks up. You never even knew they called.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">&darr;</div>
+          <h3>Feast or Famine Pipeline</h3>
+          <p>Storm season hits and you can't keep up. December comes and your crews are sitting idle. Your best guys leave. Rebuilding in spring costs more than the slow season itself.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">&times;</div>
+          <h3>Follow-Up Falls Through the Cracks</h3>
+          <p>60% of sales happen after the 5th touchpoint. 90% of contractors stop after 3. You know you should follow up on that estimate from Tuesday. But you forgot. Again.</p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-icon">&oplus;</div>
+          <h3>Can't Find Good Sales Reps</h3>
+          <p>True cost per hire: $12,000+. They take your training and leave &mdash; or worse, they never show up. Meanwhile, you're the estimator, PM, marketer, and HR department.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pull Quote -->
+  <div class="pull-quote">
+    <blockquote>"I tried to spend my way out of a slow lead flow, and just ended up burned and frustrated."</blockquote>
+    <cite>&mdash; Roofing business owner, industry forum</cite>
+  </div>
+
+  <!-- Stats Bar -->
+  <section class="section-dark">
+    <div class="container">
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-number">90%</div>
+          <div class="stat-label">of roofers lose money on Google Ads</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">$1,400</div>
+          <div class="stat-label">avg cost per booked job on Angi</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">42 hrs</div>
+          <div class="stat-label">avg contractor lead response time</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">16%</div>
+          <div class="stat-label">of contractors follow up same day</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- System Introduction -->
+  <section class="section">
+    <div class="container text-center">
+      <div class="eyebrow">The System</div>
+      <h2>What If You Owned the Machine<br>That Fills Your Calendar?</h2>
+      <p class="lead" style="margin: 20px auto 0;">Not another agency. Not another lead vendor. A system you own that generates exclusive appointments, answers every call, follows up until they book, and shows you exactly what every dollar produced.</p>
+    </div>
+    <div class="container">
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="step-number">1</div>
+          <h3>We Build It</h3>
+          <p>Your lead engine, receptionist, ad system &amp; dashboard &mdash; configured for your market.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">2</div>
+          <h3>25 Appointments Delivered</h3>
+          <p>Qualified, exclusive, booked with homeowners &mdash; with call recordings to confirm each one.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">3</div>
+          <h3>You Own Everything</h3>
+          <p>The system is yours. No retainer. No contract. No agency holding your pipeline hostage.</p>
+        </div>
+        <div class="process-step">
+          <div class="step-number">4</div>
+          <h3>It Compounds</h3>
+          <p>The system optimizes weekly. Reviews build. Ads improve. Your cost per appointment drops over time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 1: Receptionist -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="feature-section">
+        <div class="feature-content">
+          <div class="eyebrow">Never Miss Another Call</div>
+          <h2>A Dedicated Receptionist That Works Around the Clock</h2>
+          <p class="lead">Every inbound call answered in under 3 rings. Every lead qualified. Every appointment booked. 24 hours a day, 7 days a week &mdash; including the ones that come in at 2 AM on a Sunday.</p>
+          <ul class="feature-list">
+            <li><span class="check">&check;</span> Answers, qualifies &amp; books appointments instantly &mdash; no hold music, no voicemail</li>
+            <li><span class="check">&check;</span> Follows up on every unsold estimate until they book or say no &mdash; 5th, 6th, 7th touchpoint</li>
+            <li><span class="check">&check;</span> Requests Google reviews after completed jobs automatically</li>
+            <li><span class="check">&check;</span> Every call recorded &mdash; full transparency on what's being said</li>
+            <li><span class="check">&check;</span> Sounds natural &mdash; homeowners don't realize it's not a person</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="visual-mockup">
+            <div class="mockup-row"><span class="mockup-dot dot-green"></span> Inbound call answered &mdash; 1.2 seconds</div>
+            <div class="mockup-row"><span class="mockup-dot dot-blue"></span> Homeowner qualified &mdash; roof is 18 years old</div>
+            <div class="mockup-row"><span class="mockup-dot dot-amber"></span> Inspection booked &mdash; Thursday 2:00 PM</div>
+            <div class="mockup-row"><span class="mockup-dot dot-green"></span> Confirmation sent to homeowner &amp; your calendar</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 2: Lead Engine -->
+  <section class="section">
+    <div class="container">
+      <div class="feature-section feature-reverse">
+        <div class="feature-content">
+          <div class="eyebrow">Three Channels, One System</div>
+          <h2>Your Own Lead Engine &mdash; Outbound, Google &amp; Meta, Fully Automated</h2>
+          <p class="lead">The system handles outbound calling to homeowners in your service area while simultaneously running and optimizing Google &amp; Meta ads &mdash; including creating the ad creatives. Three channels. One system. Consistent flow.</p>
+          <ul class="feature-list">
+            <li><span class="check">&check;</span> Outbound calling targets homeowners with aging roofs in your service area</li>
+            <li><span class="check">&check;</span> Google &amp; Meta ad campaigns created, managed, and optimized automatically</li>
+            <li><span class="check">&check;</span> Ad creatives generated for you &mdash; no designer or agency needed</li>
+            <li><span class="check">&check;</span> Every lead is exclusive to you. Never shared. Ever.</li>
+            <li><span class="check">&check;</span> Multi-channel means you're never dependent on one source</li>
+            <li><span class="check">&check;</span> You own the system &mdash; cancel your agency and never look back</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="visual-mockup">
+            <div class="mockup-row"><span class="mockup-dot dot-blue"></span> Google Ads: 14 leads this week &mdash; $127 avg CPL</div>
+            <div class="mockup-row"><span class="mockup-dot dot-amber"></span> Meta Ads: 9 leads this week &mdash; $94 avg CPL</div>
+            <div class="mockup-row"><span class="mockup-dot dot-green"></span> Outbound: 8 appointments booked directly</div>
+            <div class="mockup-row"><span class="mockup-dot dot-green"></span> Total booked this week: 22 inspections</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Storm Detection -->
+  <section class="storm-banner">
+    <div class="storm-inner">
+      <div class="eyebrow" style="color: var(--accent);">Storm Intelligence</div>
+      <h2>When a Storm Hits Your Area,<br>the System Reacts Before You Do</h2>
+      <p>Most roofers find out about storm damage when the phone starts ringing &mdash; or worse, when it doesn't. Your system monitors weather patterns and automatically shifts messaging, increases outbound volume, and adjusts ad targeting before your competitors check the forecast.</p>
+      <div class="storm-steps">
+        <div class="storm-step">
+          <div class="storm-step-num">1</div>
+          <h3>Detects</h3>
+          <p>The system monitors weather data and identifies storm-impacted zones in your service area automatically.</p>
+        </div>
+        <div class="storm-step">
+          <div class="storm-step-num">2</div>
+          <h3>Adjusts</h3>
+          <p>Ad copy shifts to storm damage messaging. Call scripts update. Budget reallocates to impacted zip codes.</p>
+        </div>
+        <div class="storm-step">
+          <div class="storm-step-num">3</div>
+          <h3>Captures</h3>
+          <p>You're the first roofer homeowners hear from &mdash; before, during, and after the storm. First responder wins.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 3: Dashboard + Attribution -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="feature-section">
+        <div class="feature-content">
+          <div class="eyebrow">Full Visibility, Zero Guesswork</div>
+          <h2>See Exactly Where Every Lead Came From &mdash; and What It Cost You</h2>
+          <p class="lead">No more "which marketing is working?" anxiety. Every lead is tagged to its source &mdash; Google, Meta, or Outbound &mdash; so you see your real cost per lead, cost per appointment, and return for each channel, every single week.</p>
+          <ul class="feature-list">
+            <li><span class="check">&check;</span> Every lead tracked by source: Google, Meta, or Outbound</li>
+            <li><span class="check">&check;</span> Cost per lead, cost per booked appointment &amp; return on spend &mdash; broken out by channel</li>
+            <li><span class="check">&check;</span> Plain-English summary: what's working, what's not, and what the system changed</li>
+            <li><span class="check">&check;</span> Full change history &mdash; see every adjustment the system made and why</li>
+            <li><span class="check">&check;</span> Library of winning ads from roofers 100+ miles away, adapted for your market</li>
+            <li><span class="check">&check;</span> Call recordings, follow-up status &amp; hiring pipeline &mdash; all in one place</li>
+          </ul>
+        </div>
+        <div class="feature-visual" style="padding: 28px; min-height: auto;">
+          <!-- Dashboard mockup -->
+          <div class="dashboard-preview">
+            <div class="dashboard-header">
+              <span class="dashboard-dot"></span>
+              <span class="dashboard-dot"></span>
+              <span class="dashboard-dot"></span>
+            </div>
+            <div class="dashboard-body">
+              <div class="dashboard-row header">
+                <span>Source</span>
+                <span>Leads</span>
+                <span>Booked</span>
+                <span class="hide-mobile">Cost/Appt</span>
+                <span>Status</span>
+              </div>
+              <div class="dashboard-row">
+                <span class="dashboard-source"><span class="source-dot source-google"></span> Google Ads</span>
+                <span>14</span>
+                <span>9</span>
+                <span class="hide-mobile">$188</span>
+                <span class="dashboard-badge badge-green">Strong</span>
+              </div>
+              <div class="dashboard-row">
+                <span class="dashboard-source"><span class="source-dot source-meta"></span> Meta Ads</span>
+                <span>11</span>
+                <span>6</span>
+                <span class="hide-mobile">$142</span>
+                <span class="dashboard-badge badge-green">Strong</span>
+              </div>
+              <div class="dashboard-row">
+                <span class="dashboard-source"><span class="source-dot source-outbound"></span> Outbound</span>
+                <span>19</span>
+                <span>8</span>
+                <span class="hide-mobile">$67</span>
+                <span class="dashboard-badge badge-green">Strong</span>
+              </div>
+              <div class="dashboard-row" style="font-weight: 700;">
+                <span class="dashboard-source"><span class="source-dot source-total"></span> Total</span>
+                <span>44</span>
+                <span>23</span>
+                <span class="hide-mobile">$131</span>
+                <span class="dashboard-badge badge-green">4.2x return</span>
+              </div>
+
+              <!-- Insights -->
+              <div class="insights-box">
+                <div class="insights-title">This Week's Summary</div>
+                <div class="insight-row">
+                  <span class="insight-icon" style="color: #2ECC71;">&#9650;</span>
+                  <span><strong>Google Ads</strong> performing well &mdash; best close rate at 64%. No changes needed.</span>
+                </div>
+                <div class="insight-row">
+                  <span class="insight-icon" style="color: var(--accent);">&#9654;</span>
+                  <span><strong>Meta Ads</strong> &mdash; swapped the "free inspection" creative for a storm-damage angle. Early results up 22%.</span>
+                </div>
+                <div class="insight-row">
+                  <span class="insight-icon" style="color: #2ECC71;">&#9650;</span>
+                  <span><strong>Outbound</strong> &mdash; lowest cost per appointment at $67. Added 2 new zip codes this week.</span>
+                </div>
+              </div>
+
+              <!-- Change Log -->
+              <div class="changelog-box">
+                <div class="insights-title">Recent Changes</div>
+                <div class="changelog-entry">
+                  <span class="changelog-date">Mar 4</span>
+                  <span>Paused underperforming Meta ad set ("winter maintenance" angle) &mdash; CPL was $310, 2x above target. Reallocated budget to storm-damage creative.</span>
+                </div>
+                <div class="changelog-entry">
+                  <span class="changelog-date">Mar 2</span>
+                  <span>Added 3 new zip codes to outbound based on roof age data &mdash; average roof age 22 years in 30318, 30319, 30324.</span>
+                </div>
+                <div class="changelog-entry">
+                  <span class="changelog-date">Feb 28</span>
+                  <span>Increased Google Ads budget 15% &mdash; cost per appointment dropped below $200 for 2 consecutive weeks. Strong signal.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature 4: Hiring -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="feature-section feature-reverse">
+        <div class="feature-content">
+          <div class="eyebrow" style="color: var(--accent);">Your Biggest Bottleneck Isn't Leads</div>
+          <h2 style="color: #fff;">The Same System That Finds Customers Also Finds Your Next Hire</h2>
+          <p class="lead">You can't grow if you can't find canvassers and reps. The system posts to job boards, screens applicants, and only surfaces candidates that match your criteria. No more wasting hours on people who ghost after day one.</p>
+          <ul class="feature-list">
+            <li><span class="check">&check;</span> Creates and posts job listings for canvassers, sales reps &amp; crew members</li>
+            <li><span class="check">&check;</span> Automated screening &mdash; filters for experience, availability &amp; location</li>
+            <li><span class="check">&check;</span> Only qualified candidates reach your inbox</li>
+            <li><span class="check">&check;</span> Visible in the same dashboard as your lead pipeline</li>
+          </ul>
+        </div>
+        <div class="feature-visual">
+          <div class="visual-mockup">
+            <div class="mockup-row"><span class="mockup-dot dot-green"></span> 3 new canvasser applicants &mdash; screened &amp; qualified</div>
+            <div class="mockup-row"><span class="mockup-dot dot-blue"></span> Sales rep posting: 47 views &bull; 12 applied &bull; 4 passed</div>
+            <div class="mockup-row"><span class="mockup-dot dot-amber"></span> Interview scheduled: Mike R. &mdash; 6 yrs roofing sales</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">Why This Is Different</div>
+        <h2>What You've Tried vs. What This Replaces</h2>
+      </div>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Agencies &amp; Lead Vendors</th>
+            <th>Your System</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Lead exclusivity</td>
+            <td class="x-mark">Shared with 3-16 contractors</td>
+            <td class="check-mark">100% exclusive to you</td>
+          </tr>
+          <tr>
+            <td>Pricing model</td>
+            <td class="x-mark">$2-10K/mo retainer forever</td>
+            <td class="check-mark">One-time investment. You own it.</td>
+          </tr>
+          <tr>
+            <td>Speed to lead</td>
+            <td class="x-mark">Depends on your team answering</td>
+            <td class="check-mark">Answered in under 3 rings, 24/7</td>
+          </tr>
+          <tr>
+            <td>Follow-up</td>
+            <td class="x-mark">You remember (or you don't)</td>
+            <td class="check-mark">Follows up until they book or say no</td>
+          </tr>
+          <tr>
+            <td>Storm response</td>
+            <td class="x-mark">Manual. Days late.</td>
+            <td class="check-mark">Automatic detection &amp; messaging shift</td>
+          </tr>
+          <tr>
+            <td>Ad creative</td>
+            <td class="x-mark">Generic. Slow to update.</td>
+            <td class="check-mark">Generated &amp; adapted from winners in other markets</td>
+          </tr>
+          <tr>
+            <td>Transparency</td>
+            <td class="x-mark">Monthly PDF with vanity metrics</td>
+            <td class="check-mark">Live dashboard. Cost per appointment by channel.</td>
+          </tr>
+          <tr>
+            <td>Know what's working?</td>
+            <td class="x-mark">"Trust us, it's working"</td>
+            <td class="check-mark">See every change made &amp; why, by channel</td>
+          </tr>
+          <tr>
+            <td>If you stop paying</td>
+            <td class="x-mark">Pipeline goes to zero</td>
+            <td class="check-mark">System is still yours</td>
+          </tr>
+          <tr>
+            <td>Hiring help</td>
+            <td class="x-mark">Not their problem</td>
+            <td class="check-mark">Posts, screens &amp; qualifies candidates</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">From Roofers Like You</div>
+        <h2>They Stopped Renting. They Started Owning.</h2>
+      </div>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-quote">We were spending $6K/month between Angi and an agency. In two months with this system, our cost per appointment dropped by half and every single lead was ours. I can see in the dashboard exactly which channel each one came from.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">M</div>
+            <div>
+              <div class="testimonial-name">Marcus T.</div>
+              <div class="testimonial-title">Roofing company owner, Atlanta</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">The storm detection alone paid for the entire thing. A hailstorm hit our county on a Wednesday night. By Thursday morning, we had 11 inspection requests before my competitors even put out a Facebook post.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">J</div>
+            <div>
+              <div class="testimonial-name">Jason R.</div>
+              <div class="testimonial-title">Roofing company owner, Dallas</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-quote">I cancelled Angi, fired my agency, and my phone still hasn't stopped ringing. The receptionist books while I'm on roofs. I actually went on vacation last month and nothing broke. First time in seven years.</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">D</div>
+            <div>
+              <div class="testimonial-name">Derek S.</div>
+              <div class="testimonial-title">Roofing company owner, Charlotte</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing / Risk Reversal -->
+  <section class="section" id="cta">
+    <div class="container text-center">
+      <div class="eyebrow">The Investment</div>
+      <h2>One Payment. You Own Everything. Forever.</h2>
+      <p class="lead" style="margin: 20px auto 0;">No monthly retainer. No annual contract. No agency that holds your pipeline hostage. One investment and the system is yours.</p>
+
+      <div class="pricing-box">
+        <h3>The Complete Roofing Growth System</h3>
+        <p>Everything you need to generate, capture, and convert roofing leads &mdash; on autopilot.</p>
+        <ul class="pricing-includes">
+          <li><span class="inc-check">&check;</span> 24/7 Receptionist &mdash; inbound answering &amp; booking</li>
+          <li><span class="inc-check">&check;</span> Lead Engine &mdash; outbound + Google &amp; Meta ads</li>
+          <li><span class="inc-check">&check;</span> Ad Creatives Generated For You</li>
+          <li><span class="inc-check">&check;</span> Storm Detection &amp; Dynamic Response</li>
+          <li><span class="inc-check">&check;</span> Persistent Follow-Up Until They Book</li>
+          <li><span class="inc-check">&check;</span> Google Review Automation</li>
+          <li><span class="inc-check">&check;</span> Hiring &mdash; Job Posting, Screening &amp; Qualifying</li>
+          <li><span class="inc-check">&check;</span> Weekly Dashboard With Full Channel Attribution</li>
+          <li><span class="inc-check">&check;</span> Winning Ad Library (100+ Miles From Your Market)</li>
+          <li><span class="inc-check">&check;</span> Change Log &mdash; See Every Adjustment &amp; Why</li>
+        </ul>
+        <a href="#apply" class="btn btn-large">See If Your Market Is Available</a>
+        <span class="btn-sub">Only 1 system per market. Limited availability.</span>
+      </div>
+
+      <div class="guarantee-box">
+        <h3>25 Qualified Appointments to Get You Started</h3>
+        <p>We don't ask you to wait and hope. As a launch bonus, we book 25 qualified inspections into your calendar &mdash; real homeowners who agreed to an inspection, confirmed a time, and have a roof that meets your criteria. <strong>Each one comes with a call recording so you can confirm it yourself.</strong> At a 30% close rate on a $12,000 average job, that's <strong>$90,000+ in potential revenue</strong> while your system ramps up. You make your money back first &mdash; then the system takes over.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Math -->
+  <section class="section-dark" style="padding: 64px 0;">
+    <div class="container">
+      <div class="stats-bar">
+        <div class="stat-item">
+          <div class="stat-number">25</div>
+          <div class="stat-label">qualified appointments delivered upfront</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">8-10</div>
+          <div class="stat-label">closed jobs at 30-40% close rate</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">$90K+</div>
+          <div class="stat-label">potential revenue from those jobs</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1x</div>
+          <div class="stat-label">one payment &mdash; system is yours forever</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">Questions</div>
+        <h2>Before You Decide</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">Can homeowners tell it's not a person on the phone?</div>
+          <div class="faq-answer">
+            <p>No. The receptionist uses natural, conversational language &mdash; not a robotic script. It handles objections, answers questions about your company, and books the appointment the way your best office person would. Except it never takes a day off and never puts anyone on hold. You'll have call recordings for every conversation so you can hear exactly what's being said.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What makes these leads different from Angi or HomeAdvisor?</div>
+          <div class="faq-answer">
+            <p>Every lead is generated by YOUR system, for YOUR company. They are never shared with another contractor. The homeowner contacted you &mdash; not a marketplace that sells their info to five roofers. That's why close rates on exclusive leads are 27-30% vs. 10-13% on shared platforms. And because you own the system, your cost per lead drops over time as it optimizes.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How do I know which channel is actually working?</div>
+          <div class="faq-answer">
+            <p>Every lead in your dashboard is tagged by source &mdash; Google, Meta, or Outbound. You'll see cost per lead, cost per booked appointment, and return on spend broken out by each channel. Plus a plain-English weekly summary that tells you what's performing, what's underperforming, and exactly what changes were made. No marketing jargon. No vanity metrics. Just "here's what's making you money and here's what we adjusted."</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What exactly do I own after the one-time payment?</div>
+          <div class="faq-answer">
+            <p>Everything. The receptionist, the outbound calling system, the ad campaigns, the dashboard, the hiring tools &mdash; all of it. If you ever decide to part ways, you keep the entire system running. No website hostage situations. No "turn off the faucet and go dry." You paid for it. It's yours.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">How does the storm detection work?</div>
+          <div class="faq-answer">
+            <p>The system monitors weather data across your service area. When it detects hail, high winds, or severe storms, it automatically shifts your ad messaging to storm damage, updates outbound call scripts, and reallocates budget to impacted zip codes. You're reaching homeowners while your competitors are still checking the forecast.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">What do the 25 appointments actually look like?</div>
+          <div class="faq-answer">
+            <p>Each appointment meets four criteria: (1) The homeowner agreed to a roof inspection. (2) Their roof age meets your desired criteria. (3) They confirmed a specific date and time. (4) They are a real homeowner in your service area. Every single one comes with a call recording so you can listen and confirm it's legitimate before you show up. This isn't a list of names. These are booked inspections with people expecting you.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">Why only one system per market?</div>
+          <div class="faq-answer">
+            <p>Because the system generates exclusive leads for one roofing company. If we sold it to your competitor across town, you'd be competing against the same machine. That defeats the purpose. One market, one system, one roofer. Once your area is taken, it's taken.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">I've been burned by agencies before. How is this different?</div>
+          <div class="faq-answer">
+            <p>Three ways. First, you own the system &mdash; no retainer, no contract, no lock-in. Second, we deliver 25 qualified appointments with call recordings before you judge the ROI. Third, you see every number in a live dashboard &mdash; cost per lead by channel, cost per appointment, close rate, every change that was made and why. If something isn't working, you'll know immediately &mdash; and you'll be able to see exactly what was adjusted to fix it.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section class="final-cta" id="apply">
+    <div class="container">
+      <h2>Your Competitors Are Still Renting Leads.<br>You Could Own the Machine.</h2>
+      <p>One investment. 25 appointments to get you profitable fast. A system that's yours forever. Only available in markets that haven't been claimed yet.</p>
+      <a href="#" class="btn btn-large" style="background: var(--accent);">Check If My Market Is Available</a>
+      <span class="btn-sub">Takes 30 seconds. No commitment.</span>
+      <div class="pill-row" style="margin-top: 32px;">
+        <span class="pill" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); color: #888;">No retainer</span>
+        <span class="pill" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); color: #888;">No contract</span>
+        <span class="pill" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); color: #888;">You own everything</span>
+        <span class="pill" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); color: #888;">25 appointments with recordings</span>
+        <span class="pill" style="background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.12); color: #888;">1 per market</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      &copy; 2026 Scaling SOS. All rights reserved.
+    </div>
+  </footer>
+
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.parentElement;
+        const wasActive = item.classList.contains('active');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+        if (!wasActive) item.classList.add('active');
+      });
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
