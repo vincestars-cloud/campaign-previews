@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Growth Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #C75B12;
+      --accent-light: #FFF4ED;
+      --bg: #F8F9FA;
+      --white: #FFFFFF;
+      --dark: #1A1A1A;
+      --text: #333;
+      --text-muted: #777;
+      --border: #E5E7EB;
+      --green: #22C55E;
+      --red: #EF4444;
+      --blue: #3B82F6;
+      --serif: 'DM Serif Display', serif;
+      --sans: 'Inter', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); }
+
+    /* ── Top Bar ── */
+    .topbar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .topbar-brand {
+      font-family: var(--serif);
+      font-size: 20px;
+      color: var(--dark);
+    }
+    .topbar-brand span { color: var(--accent); }
+    .topbar-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--green);
+      font-weight: 500;
+    }
+    .topbar-status::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse-dot 2s infinite;
+    }
+    @keyframes pulse-dot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.4; }
+    }
+
+    /* ── Nav tabs ── */
+    .nav-tabs {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      scrollbar-width: none;
+    }
+    .nav-tabs::-webkit-scrollbar { display: none; }
+    .nav-tab {
+      padding: 12px 18px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-muted);
+      white-space: nowrap;
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      transition: all 0.2s;
+    }
+    .nav-tab:hover { color: var(--text); }
+    .nav-tab.active {
+      color: var(--accent);
+      border-bottom-color: var(--accent);
+    }
+
+    /* ── Layout ── */
+    .content { padding: 20px; max-width: 1100px; margin: 0 auto; }
+
+    /* ── Period selector ── */
+    .period-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .period-label { font-size: 14px; color: var(--text-muted); }
+    .period-pills {
+      display: flex;
+      gap: 6px;
+    }
+    .period-pill {
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      background: var(--white);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .period-pill.active {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    /* ── Stat Cards ── */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    @media (min-width: 768px) {
+      .stat-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .stat-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid var(--border);
+    }
+    .stat-label {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+      font-weight: 500;
+    }
+    .stat-number {
+      font-family: var(--serif);
+      font-size: 28px;
+      color: var(--dark);
+      line-height: 1.1;
+    }
+    .stat-change {
+      font-size: 11px;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .stat-change.up { color: var(--green); }
+    .stat-change.down { color: var(--red); }
+
+    /* ── Channel Cards ── */
+    .section-title {
+      font-family: var(--serif);
+      font-size: 20px;
+      margin-bottom: 14px;
+      color: var(--dark);
+    }
+    .channel-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    @media (min-width: 768px) {
+      .channel-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .channel-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid var(--border);
+    }
+    .channel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 14px;
+    }
+    .channel-name {
+      font-weight: 600;
+      font-size: 15px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .channel-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .channel-dot.google { background: #4285F4; }
+    .channel-dot.meta { background: #1877F2; }
+    .channel-dot.outbound { background: var(--accent); }
+
+    /* Toggle switch */
+    .toggle {
+      width: 44px;
+      height: 24px;
+      background: var(--green);
+      border-radius: 12px;
+      position: relative;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .toggle.off { background: #D1D5DB; }
+    .toggle::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      position: absolute;
+      top: 2px;
+      left: 22px;
+      transition: left 0.3s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+    }
+    .toggle.off::after { left: 2px; }
+
+    .channel-stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .channel-stat-label {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+    .channel-stat-value {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    /* ── Activity Feed ── */
+    .activity-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .activity-list { list-style: none; }
+    .activity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .activity-item:last-child { border-bottom: none; }
+    .activity-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .activity-icon.call { background: #DCFCE7; }
+    .activity-icon.lead { background: #DBEAFE; }
+    .activity-icon.review { background: #FEF3C7; }
+    .activity-icon.storm { background: #FEE2E2; }
+    .activity-icon.hire { background: #F3E8FF; }
+    .activity-text {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .activity-text strong { color: var(--dark); }
+    .activity-time {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ── Weekly Chart ── */
+    .chart-card {
+      background: var(--white);
+      border-radius: 12px;
+      padding: 18px;
+      border: 1px solid var(--border);
+      margin-bottom: 24px;
+    }
+    .chart-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 16px;
+    }
+    .chart-bars {
+      display: flex;
+      align-items: flex-end;
+      gap: 6px;
+      height: 140px;
+      padding-top: 10px;
+    }
+    .chart-bar-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+    }
+    .chart-bar-stack {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      height: 120px;
+      gap: 2px;
+    }
+    .chart-bar {
+      width: 80%;
+      max-width: 40px;
+      border-radius: 4px 4px 0 0;
+      transition: height 1s ease;
+    }
+    .chart-bar.google { background: #4285F4; }
+    .chart-bar.meta { background: #1877F2; }
+    .chart-bar.outbound { background: var(--accent); }
+    .chart-day {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    .chart-legend {
+      display: flex;
+      gap: 16px;
+      margin-top: 12px;
+      justify-content: center;
+    }
+    .chart-legend-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+    .chart-legend-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 2px;
+    }
+
+    /* ── Insight Box ── */
+    .insight-box {
+      background: var(--accent-light);
+      border: 1px solid rgba(199,91,18,0.15);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 24px;
+    }
+    .insight-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .insight-text {
+      font-size: 14px;
+      line-height: 1.6;
+      color: var(--text);
+    }
+
+    /* ── Change Log ── */
+    .log-item {
+      display: flex;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .log-item:last-child { border-bottom: none; }
+    .log-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      white-space: nowrap;
+      min-width: 60px;
+      padding-top: 2px;
+    }
+    .log-text {
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    /* ── Animations ── */
+    .fade-in {
+      animation: fadeIn 0.6s ease both;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in:nth-child(1) { animation-delay: 0.1s; }
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+    .fade-in:nth-child(4) { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="topbar">
+    <div class="topbar-brand">Summit Ridge <span>Roofing</span></div>
+    <div class="topbar-status">System Running</div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="nav-tabs">
+    <a class="nav-tab active" href="dashboard.html">Dashboard</a>
+    <a class="nav-tab" href="receptionist.html">Receptionist</a>
+    <a class="nav-tab" href="storm.html">Storm Alerts</a>
+    <a class="nav-tab" href="hiring.html">Hiring</a>
+    <a class="nav-tab" href="changelog.html">What Changed</a>
+    <a class="nav-tab" href="commands.html">Text Commands</a>
+  </nav>
+
+  <div class="content">
+
+    <!-- Period Selector -->
+    <div class="period-row">
+      <span class="period-label">Showing results for:</span>
+      <div class="period-pills">
+        <span class="period-pill" data-period="7d">7 Days</span>
+        <span class="period-pill active" data-period="30d">30 Days</span>
+        <span class="period-pill" data-period="90d">90 Days</span>
+      </div>
+    </div>
+
+    <!-- Top Stats -->
+    <div class="stat-grid">
+      <div class="stat-card fade-in">
+        <div class="stat-label">New Leads</div>
+        <div class="stat-number" id="stat-leads">87</div>
+        <div class="stat-change up">+23% vs last month</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-label">Appointments Booked</div>
+        <div class="stat-number" id="stat-appts">34</div>
+        <div class="stat-change up">+18% vs last month</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-label">Avg Cost Per Lead</div>
+        <div class="stat-number" id="stat-cpl">$38</div>
+        <div class="stat-change up">Down from $52</div>
+      </div>
+      <div class="stat-card fade-in">
+        <div class="stat-label">Google Reviews</div>
+        <div class="stat-number" id="stat-reviews">12</div>
+        <div class="stat-change up">+8 this month</div>
+      </div>
+    </div>
+
+    <!-- Channel Breakdown -->
+    <div class="section-title">Where Your Leads Come From</div>
+    <div class="channel-grid">
+      <div class="channel-card fade-in">
+        <div class="channel-header">
+          <div class="channel-name"><span class="channel-dot google"></span> Google Ads</div>
+          <div class="toggle" data-channel="google" onclick="toggleChannel(this)"></div>
+        </div>
+        <div class="channel-stats">
+          <div>
+            <div class="channel-stat-label">Leads</div>
+            <div class="channel-stat-value">29</div>
+          </div>
+          <div>
+            <div class="channel-stat-label">Cost Per Lead</div>
+            <div class="channel-stat-value">$48</div>
+          </div>
+          <div>
+            <div class="channel-stat-label">Appointments</div>
+            <div class="channel-stat-value">11</div>
+          </div>
+          <div>
+            <div class="channel-stat-label">Cost Per Appt</div>
+            <div class="channel-stat-value">$126</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="channel-card fade-in">
+        <div class="channel-header">
+          <div class="channel-name"><span class="channel-dot meta"></span> Facebook/Instagram</div>
+          <div class="toggle" data-channel="meta" onclick="toggleChannel(this)"></div>
+        </div>
+        <div class="channel-stats">
+          <div>
+            <div class="channel-stat-label">Leads</div>
+            <div class="channel-stat-value">33</div>
+          </div>
+          <div>
+            <div class="channel-stat-label">Cost Per Lead</div>
+            <div class="channel-stat-value">$36</div>
+          </div>
+          <div>
+            <div class="channel-stat-label">Appointments</div>
+            <div class="channel-stat-value">14</div>
+          </div>
+          <div>
+            <div class="channel-stat-label">Cost Per Appt</div>
+            <div class="channel-stat-value">$85</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="channel-card fade-in">
+        <div class="channel-header">
+          <div class="channel-name"><span class="channel-dot outbound"></span> Outbound Calls</div>
+          <div class="toggle" data-channel="outbound" onclick="toggleChannel(this)"></div>
+        </div>
+        <div class="channel-stats">
+          <div>
+            <div class="channel-stat-label">Leads</div>
+            <div class="channel-stat-value">25</div>
+          </div>
+          <div>
+            <div class="channel-stat-label">Cost Per Lead</div>
+            <div class="channel-stat-value">$31</div>
+          </div>
+          <div>
+            <div class="channel-stat-label">Appointments</div>
+            <div class="channel-stat-value">9</div>
+          </div>
+          <div>
+            <div class="channel-stat-label">Cost Per Appt</div>
+            <div class="channel-stat-value">$86</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Weekly Chart -->
+    <div class="chart-card">
+      <div class="chart-header">
+        <div class="section-title" style="margin-bottom:0;">Leads This Week</div>
+      </div>
+      <div class="chart-bars" id="chart">
+        <!-- Filled by JS -->
+      </div>
+      <div class="chart-legend">
+        <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#4285F4;"></div> Google</div>
+        <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#1877F2;"></div> Facebook</div>
+        <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#C75B12;"></div> Outbound</div>
+      </div>
+    </div>
+
+    <!-- Plain-English Insight -->
+    <div class="insight-box">
+      <div class="insight-title">This Week's Takeaway</div>
+      <div class="insight-text">
+        Facebook is your best-performing channel right now &mdash; bringing in the most leads at the lowest cost. Google leads tend to be homeowners actively searching for a roofer, so they book faster. Outbound is steady and predictable. All three channels are running. No changes needed this week.
+      </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="section-title">Recent Activity</div>
+    <div class="activity-card">
+      <ul class="activity-list" id="activity-feed">
+        <li class="activity-item fade-in">
+          <div class="activity-icon lead">&#128205;</div>
+          <div>
+            <div class="activity-text"><strong>New lead from Google Ads</strong> &mdash; Robert M., Marietta GA. Needs full roof replacement. Receptionist booked inspection for Thursday 2pm.</div>
+            <div class="activity-time">12 minutes ago</div>
+          </div>
+        </li>
+        <li class="activity-item fade-in">
+          <div class="activity-icon call">&#128222;</div>
+          <div>
+            <div class="activity-text"><strong>Missed call answered</strong> &mdash; Homeowner called while your crew was on a job. Receptionist picked up, qualified them (insurance claim, shingle damage), and booked for Friday 10am.</div>
+            <div class="activity-time">47 minutes ago</div>
+          </div>
+        </li>
+        <li class="activity-item fade-in">
+          <div class="activity-icon review">&#11088;</div>
+          <div>
+            <div class="activity-text"><strong>New Google review (5 stars)</strong> &mdash; "Summit Ridge was fast, professional, and handled our insurance claim start to finish. Highly recommend." &mdash; Karen T.</div>
+            <div class="activity-time">2 hours ago</div>
+          </div>
+        </li>
+        <li class="activity-item fade-in">
+          <div class="activity-icon storm">&#9888;&#65039;</div>
+          <div>
+            <div class="activity-text"><strong>Storm alert triggered</strong> &mdash; Hail reported in Cobb County. 47 homeowners in your service area identified. Outreach sequence started automatically.</div>
+            <div class="activity-time">Yesterday, 9:14pm</div>
+          </div>
+        </li>
+        <li class="activity-item fade-in">
+          <div class="activity-icon hire">&#128100;</div>
+          <div>
+            <div class="activity-text"><strong>New applicant screened</strong> &mdash; James W., 4 years canvassing experience, passed phone screen. Interview scheduled for Monday 3pm.</div>
+            <div class="activity-time">Yesterday, 2:30pm</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Recent Changes -->
+    <div class="section-title">What We Changed This Week</div>
+    <div class="activity-card">
+      <div class="log-item">
+        <div class="log-date">Jun 2</div>
+        <div class="log-text">Paused one underperforming Google ad (high clicks, low calls). Shifted that budget to the top-performing ad targeting "roof replacement near me." Should lower your cost per lead by ~$5.</div>
+      </div>
+      <div class="log-item">
+        <div class="log-date">Jun 1</div>
+        <div class="log-text">Added 3 new before/after photos from the Kennesaw job to your Facebook ads. Visual ads with real project photos get 2-3x more clicks than stock images.</div>
+      </div>
+      <div class="log-item">
+        <div class="log-date">May 30</div>
+        <div class="log-text">Updated the receptionist script to ask about insurance claims earlier in the call. This helps your crew prioritize higher-value jobs when the schedule is tight.</div>
+      </div>
+      <div class="log-item">
+        <div class="log-date">May 28</div>
+        <div class="log-text">Launched a new Facebook ad set targeting homeowners within 5 miles of your last 3 completed jobs. Neighbors tend to convert better &mdash; they've already seen your trucks on the street.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    // Toggle switches
+    function toggleChannel(el) {
+      el.classList.toggle('off');
+    }
+
+    // Period pills
+    document.querySelectorAll('.period-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.period-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+      });
+    });
+
+    // Chart data
+    const weekData = [
+      { day: 'Mon', google: 3, meta: 4, outbound: 2 },
+      { day: 'Tue', google: 5, meta: 3, outbound: 3 },
+      { day: 'Wed', google: 2, meta: 5, outbound: 4 },
+      { day: 'Thu', google: 4, meta: 6, outbound: 2 },
+      { day: 'Fri', google: 6, meta: 4, outbound: 3 },
+      { day: 'Sat', google: 3, meta: 5, outbound: 1 },
+      { day: 'Sun', google: 1, meta: 2, outbound: 1 },
+    ];
+
+    const chart = document.getElementById('chart');
+    const maxVal = Math.max(...weekData.map(d => d.google + d.meta + d.outbound));
+
+    weekData.forEach(d => {
+      const group = document.createElement('div');
+      group.className = 'chart-bar-group';
+
+      const stack = document.createElement('div');
+      stack.className = 'chart-bar-stack';
+
+      const pct = v => (v / maxVal) * 100;
+
+      ['outbound', 'meta', 'google'].forEach(ch => {
+        const bar = document.createElement('div');
+        bar.className = `chart-bar ${ch}`;
+        bar.style.height = `${pct(d[ch])}%`;
+        stack.appendChild(bar);
+      });
+
+      const label = document.createElement('div');
+      label.className = 'chart-day';
+      label.textContent = d.day;
+
+      group.appendChild(stack);
+      group.appendChild(label);
+      chart.appendChild(group);
+    });
+  </script>
+
+<!-- v1 - dashboard demo -->
+</body>
+</html>

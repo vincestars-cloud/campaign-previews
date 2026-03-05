@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hiring - Your Growth Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --accent: #C75B12; --accent-light: #FFF4ED; --bg: #F8F9FA; --white: #FFFFFF; --dark: #1A1A1A; --text: #333; --text-muted: #777; --border: #E5E7EB; --green: #22C55E; --red: #EF4444; --blue: #3B82F6; --yellow: #F59E0B; --serif: 'DM Serif Display', serif; --sans: 'Inter', sans-serif; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); }
+
+    .topbar { background: var(--white); border-bottom: 1px solid var(--border); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .topbar-brand { font-family: var(--serif); font-size: 20px; color: var(--dark); }
+    .topbar-brand span { color: var(--accent); }
+    .topbar-status { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--green); font-weight: 500; }
+    .topbar-status::before { content: ''; width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse-dot 2s infinite; }
+    @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    .nav-tabs { background: var(--white); border-bottom: 1px solid var(--border); display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .nav-tabs::-webkit-scrollbar { display: none; }
+    .nav-tab { padding: 12px 18px; font-size: 13px; font-weight: 500; color: var(--text-muted); white-space: nowrap; text-decoration: none; border-bottom: 2px solid transparent; transition: all 0.2s; }
+    .nav-tab:hover { color: var(--text); }
+    .nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .content { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .section-title { font-family: var(--serif); font-size: 20px; margin-bottom: 14px; color: var(--dark); }
+    .card { background: var(--white); border-radius: 12px; padding: 18px; border: 1px solid var(--border); margin-bottom: 16px; }
+
+    /* ── Stats ── */
+    .mini-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
+    @media (min-width: 640px) { .mini-stats { grid-template-columns: repeat(4, 1fr); } }
+    .mini-stat-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+    .mini-stat-value { font-family: var(--serif); font-size: 24px; color: var(--dark); }
+
+    /* ── Active postings ── */
+    .posting {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .posting-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }
+    .posting-title { font-weight: 600; font-size: 15px; }
+    .posting-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .posting-badge.live { background: #DCFCE7; color: #166534; }
+    .posting-badge.paused { background: #F3F4F6; color: #6B7280; }
+    .posting-detail {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── Applicant cards ── */
+    .applicant-card {
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+    .applicant-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .applicant-name { font-weight: 600; font-size: 15px; }
+    .applicant-score {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .score-bar {
+      width: 60px;
+      height: 6px;
+      background: #E5E7EB;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .score-fill {
+      height: 100%;
+      border-radius: 3px;
+    }
+    .score-fill.high { background: var(--green); }
+    .score-fill.medium { background: var(--yellow); }
+    .score-fill.low { background: var(--red); }
+    .score-label { font-size: 12px; font-weight: 600; }
+
+    .applicant-details {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    .applicant-detail-label { font-size: 11px; color: var(--text-muted); }
+    .applicant-detail-value { font-size: 13px; font-weight: 500; }
+
+    .applicant-status {
+      font-size: 12px;
+      padding: 8px 12px;
+      border-radius: 8px;
+      background: var(--bg);
+    }
+    .applicant-status strong { color: var(--accent); }
+
+    /* ── Screen call transcript ── */
+    .screen-call {
+      background: #F9FAFB;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      margin-top: 10px;
+    }
+    .screen-call-title {
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--dark);
+    }
+    .screen-qa {
+      margin-bottom: 10px;
+    }
+    .screen-q {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+    .screen-a {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.4;
+    }
+
+    .fade-in { animation: fadeIn 0.6s ease both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-brand">Summit Ridge <span>Roofing</span></div>
+    <div class="topbar-status">System Running</div>
+  </div>
+
+  <nav class="nav-tabs">
+    <a class="nav-tab" href="dashboard.html">Dashboard</a>
+    <a class="nav-tab" href="receptionist.html">Receptionist</a>
+    <a class="nav-tab" href="storm.html">Storm Alerts</a>
+    <a class="nav-tab active" href="hiring.html">Hiring</a>
+    <a class="nav-tab" href="changelog.html">What Changed</a>
+    <a class="nav-tab" href="commands.html">Text Commands</a>
+  </nav>
+
+  <div class="content">
+
+    <div class="mini-stats">
+      <div class="card"><div class="mini-stat-label">Active Job Posts</div><div class="mini-stat-value">2</div></div>
+      <div class="card"><div class="mini-stat-label">Applicants This Week</div><div class="mini-stat-value">18</div></div>
+      <div class="card"><div class="mini-stat-label">Phone Screens Done</div><div class="mini-stat-value">6</div></div>
+      <div class="card"><div class="mini-stat-label">Interviews Scheduled</div><div class="mini-stat-value">3</div></div>
+    </div>
+
+    <!-- Active Postings -->
+    <div class="section-title">Active Job Posts</div>
+    <div class="card fade-in">
+      <div class="posting">
+        <div class="posting-header">
+          <div class="posting-title">Door-to-Door Sales Rep &mdash; Miami, FL</div>
+          <span class="posting-badge live">Live</span>
+        </div>
+        <div class="posting-detail">Posted 5 days ago on Indeed, ZipRecruiter, and Facebook Jobs. 12 applicants so far. 4 passed the phone screen. Commission-based, no experience required.</div>
+      </div>
+      <div class="posting">
+        <div class="posting-header">
+          <div class="posting-title">Canvasser &mdash; Miami, FL</div>
+          <span class="posting-badge live">Live</span>
+        </div>
+        <div class="posting-detail">Posted 3 days ago. 6 applicants. 2 passed phone screen. Part-time OK, must have reliable transportation and clean background.</div>
+      </div>
+    </div>
+
+    <!-- Top Applicants -->
+    <div class="section-title">Top Applicants</div>
+
+    <div class="applicant-card fade-in">
+      <div class="applicant-header">
+        <div class="applicant-name">James Williams</div>
+        <div class="applicant-score">
+          <div class="score-bar"><div class="score-fill high" style="width:92%;"></div></div>
+          <span class="score-label" style="color:var(--green);">92%</span>
+        </div>
+      </div>
+      <div class="applicant-details">
+        <div><div class="applicant-detail-label">Experience</div><div class="applicant-detail-value">4 years canvassing</div></div>
+        <div><div class="applicant-detail-label">Location</div><div class="applicant-detail-value">Hialeah, FL</div></div>
+        <div><div class="applicant-detail-label">Availability</div><div class="applicant-detail-value">Start immediately</div></div>
+        <div><div class="applicant-detail-label">Transportation</div><div class="applicant-detail-value">Own vehicle</div></div>
+      </div>
+      <div class="applicant-status"><strong>Interview scheduled:</strong> Monday 3pm. Phone screen recording available.</div>
+
+      <div class="screen-call">
+        <div class="screen-call-title">Phone Screen Summary</div>
+        <div class="screen-qa">
+          <div class="screen-q">Why are you interested in door-to-door roofing sales?</div>
+          <div class="screen-a">"I did solar canvassing for 2 years and storm restoration for the last 2. I like being outside, talking to people, and I know how to handle rejection."</div>
+        </div>
+        <div class="screen-qa">
+          <div class="screen-q">How many doors can you knock per day?</div>
+          <div class="screen-a">"On a good day, 80 to 100. I usually get 3 to 5 solid conversations out of that."</div>
+        </div>
+        <div class="screen-qa">
+          <div class="screen-q">Are you comfortable with commission-only pay?</div>
+          <div class="screen-a">"Yeah, that's how I've always worked. I just need a fair split and leads that actually close."</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="applicant-card fade-in">
+      <div class="applicant-header">
+        <div class="applicant-name">Carlos Reyes</div>
+        <div class="applicant-score">
+          <div class="score-bar"><div class="score-fill high" style="width:85%;"></div></div>
+          <span class="score-label" style="color:var(--green);">85%</span>
+        </div>
+      </div>
+      <div class="applicant-details">
+        <div><div class="applicant-detail-label">Experience</div><div class="applicant-detail-value">2 years pest control sales</div></div>
+        <div><div class="applicant-detail-label">Location</div><div class="applicant-detail-value">Miami Gardens, FL</div></div>
+        <div><div class="applicant-detail-label">Availability</div><div class="applicant-detail-value">2 weeks notice</div></div>
+        <div><div class="applicant-detail-label">Transportation</div><div class="applicant-detail-value">Own vehicle</div></div>
+      </div>
+      <div class="applicant-status"><strong>Interview scheduled:</strong> Tuesday 10am. Bilingual (English/Spanish).</div>
+    </div>
+
+    <div class="applicant-card fade-in">
+      <div class="applicant-header">
+        <div class="applicant-name">Brittany Moore</div>
+        <div class="applicant-score">
+          <div class="score-bar"><div class="score-fill medium" style="width:68%;"></div></div>
+          <span class="score-label" style="color:var(--yellow);">68%</span>
+        </div>
+      </div>
+      <div class="applicant-details">
+        <div><div class="applicant-detail-label">Experience</div><div class="applicant-detail-value">No D2D experience</div></div>
+        <div><div class="applicant-detail-label">Location</div><div class="applicant-detail-value">Kendall, FL</div></div>
+        <div><div class="applicant-detail-label">Availability</div><div class="applicant-detail-value">Immediately</div></div>
+        <div><div class="applicant-detail-label">Transportation</div><div class="applicant-detail-value">Own vehicle</div></div>
+      </div>
+      <div class="applicant-status"><strong>Note:</strong> No canvassing experience but spent 3 years in retail sales at Home Depot. Phone screen showed strong communication skills. Worth an interview if you need extra hands.</div>
+    </div>
+
+    <!-- How it works -->
+    <div class="section-title" style="margin-top:8px;">How Hiring Works</div>
+    <div class="card fade-in" style="background:var(--accent-light);border-color:rgba(199,91,18,0.15);">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div>
+          <strong style="color:var(--accent);">1. You tell us what you need</strong>
+          <p style="font-size:13px;color:var(--text);margin-top:3px;">"I need 2 canvassers who can start next week in the Miami area."</p>
+        </div>
+        <div>
+          <strong style="color:var(--accent);">2. We post the jobs and screen applicants</strong>
+          <p style="font-size:13px;color:var(--text);margin-top:3px;">Ads go live on Indeed, ZipRecruiter, and Facebook. Every applicant gets a phone screen with questions you approve.</p>
+        </div>
+        <div>
+          <strong style="color:var(--accent);">3. You interview only the best ones</strong>
+          <p style="font-size:13px;color:var(--text);margin-top:3px;">We send you the top candidates with their scores, screen recordings, and availability. You pick who to interview.</p>
+        </div>
+        <div>
+          <strong style="color:var(--accent);">4. You make the final call</strong>
+          <p style="font-size:13px;color:var(--text);margin-top:3px;">You hire who you want. We don't send anyone to your job site without your approval.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+<!-- v1 - hiring demo -->
+</body>
+</html>

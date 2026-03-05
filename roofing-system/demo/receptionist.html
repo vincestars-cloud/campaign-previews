@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receptionist - Your Growth Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #C75B12;
+      --accent-light: #FFF4ED;
+      --bg: #F8F9FA;
+      --white: #FFFFFF;
+      --dark: #1A1A1A;
+      --text: #333;
+      --text-muted: #777;
+      --border: #E5E7EB;
+      --green: #22C55E;
+      --red: #EF4444;
+      --blue: #3B82F6;
+      --serif: 'DM Serif Display', serif;
+      --sans: 'Inter', sans-serif;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); }
+
+    .topbar { background: var(--white); border-bottom: 1px solid var(--border); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .topbar-brand { font-family: var(--serif); font-size: 20px; color: var(--dark); }
+    .topbar-brand span { color: var(--accent); }
+    .topbar-status { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--green); font-weight: 500; }
+    .topbar-status::before { content: ''; width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse-dot 2s infinite; }
+    @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    .nav-tabs { background: var(--white); border-bottom: 1px solid var(--border); display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .nav-tabs::-webkit-scrollbar { display: none; }
+    .nav-tab { padding: 12px 18px; font-size: 13px; font-weight: 500; color: var(--text-muted); white-space: nowrap; text-decoration: none; border-bottom: 2px solid transparent; transition: all 0.2s; }
+    .nav-tab:hover { color: var(--text); }
+    .nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .content { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .section-title { font-family: var(--serif); font-size: 20px; margin-bottom: 14px; color: var(--dark); }
+    .card { background: var(--white); border-radius: 12px; padding: 18px; border: 1px solid var(--border); margin-bottom: 16px; }
+
+    /* ── Stats row ── */
+    .mini-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 20px; }
+    @media (min-width: 640px) { .mini-stats { grid-template-columns: repeat(4, 1fr); } }
+    .mini-stat-label { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
+    .mini-stat-value { font-family: var(--serif); font-size: 24px; color: var(--dark); }
+
+    /* ── Call transcript ── */
+    .transcript-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .call-badge {
+      font-size: 11px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 20px;
+      background: #DCFCE7;
+      color: #166534;
+    }
+    .call-badge.missed { background: #FEE2E2; color: #991B1B; }
+    .call-badge.followup { background: #DBEAFE; color: #1E40AF; }
+    .call-badge.review { background: #FEF3C7; color: #92400E; }
+
+    .transcript-meta {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .transcript-bubbles {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .bubble-row {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .bubble-row.caller { align-items: flex-start; }
+    .bubble-row.receptionist { align-items: flex-end; }
+    .bubble-label {
+      font-size: 11px;
+      color: var(--text-muted);
+      font-weight: 500;
+      padding: 0 4px;
+    }
+    .bubble {
+      max-width: 85%;
+      padding: 10px 14px;
+      border-radius: 16px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+    .bubble.caller-msg {
+      background: #E9E9EB;
+      color: #1A1A1A;
+      border-radius: 16px 16px 16px 4px;
+    }
+    .bubble.receptionist-msg {
+      background: #007AFF;
+      color: white;
+      border-radius: 16px 16px 4px 16px;
+    }
+
+    .call-outcome {
+      margin-top: 14px;
+      padding: 12px;
+      background: var(--accent-light);
+      border-radius: 10px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .call-outcome strong { color: var(--accent); }
+
+    /* ── Follow-up timeline ── */
+    .followup-timeline {
+      position: relative;
+      padding-left: 24px;
+    }
+    .followup-timeline::before {
+      content: '';
+      position: absolute;
+      left: 7px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--border);
+    }
+    .followup-step {
+      position: relative;
+      padding-bottom: 18px;
+    }
+    .followup-step:last-child { padding-bottom: 0; }
+    .followup-dot {
+      position: absolute;
+      left: -20px;
+      top: 4px;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 2px solid var(--white);
+    }
+    .followup-dot.pending { background: var(--border); }
+    .followup-dot.done { background: var(--green); }
+    .followup-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    .followup-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    .followup-time {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ── Review request ── */
+    .review-mock {
+      background: #F9FAFB;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px;
+      text-align: center;
+    }
+    .review-stars { font-size: 28px; letter-spacing: 4px; margin: 10px 0; }
+    .review-mock p { font-size: 14px; color: var(--text-muted); line-height: 1.5; }
+    .review-link {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 24px;
+      background: var(--accent);
+      color: white;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .fade-in { animation: fadeIn 0.6s ease both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-brand">Summit Ridge <span>Roofing</span></div>
+    <div class="topbar-status">Receptionist Active</div>
+  </div>
+
+  <nav class="nav-tabs">
+    <a class="nav-tab" href="dashboard.html">Dashboard</a>
+    <a class="nav-tab active" href="receptionist.html">Receptionist</a>
+    <a class="nav-tab" href="storm.html">Storm Alerts</a>
+    <a class="nav-tab" href="hiring.html">Hiring</a>
+    <a class="nav-tab" href="changelog.html">What Changed</a>
+    <a class="nav-tab" href="commands.html">Text Commands</a>
+  </nav>
+
+  <div class="content">
+
+    <!-- Stats -->
+    <div class="mini-stats">
+      <div class="card">
+        <div class="mini-stat-label">Calls Answered Today</div>
+        <div class="mini-stat-value">9</div>
+      </div>
+      <div class="card">
+        <div class="mini-stat-label">Appointments Booked</div>
+        <div class="mini-stat-value">4</div>
+      </div>
+      <div class="card">
+        <div class="mini-stat-label">Follow-Ups Sent</div>
+        <div class="mini-stat-value">6</div>
+      </div>
+      <div class="card">
+        <div class="mini-stat-label">Reviews Requested</div>
+        <div class="mini-stat-value">2</div>
+      </div>
+    </div>
+
+    <!-- Live Call Transcript -->
+    <div class="section-title">Latest Call</div>
+    <div class="card fade-in">
+      <div class="transcript-header">
+        <strong>Inbound Call &mdash; Robert M.</strong>
+        <span class="call-badge">Booked</span>
+      </div>
+      <div class="transcript-meta">Today, 11:42am &bull; 2 min 18 sec &bull; (678) 555-0194</div>
+      <div class="transcript-bubbles">
+        <div class="bubble-row caller">
+          <div class="bubble-label">Robert</div>
+          <div class="bubble caller-msg">Yeah, hi. We had a bad storm last night and I think some shingles blew off. I need someone to come take a look.</div>
+        </div>
+        <div class="bubble-row receptionist">
+          <div class="bubble-label">Receptionist</div>
+          <div class="bubble receptionist-msg">I'm sorry to hear about the storm damage, Robert. I can get one of our inspectors out to you quickly. Can I grab your address so we can schedule a time?</div>
+        </div>
+        <div class="bubble-row caller">
+          <div class="bubble caller-msg">Sure, it's 415 Oak Valley Drive, Marietta.</div>
+        </div>
+        <div class="bubble-row receptionist">
+          <div class="bubble receptionist-msg">Got it. We have an opening this Thursday at 2pm. The inspector will walk your roof, take photos, and give you a full assessment right there. Does that work?</div>
+        </div>
+        <div class="bubble-row caller">
+          <div class="bubble caller-msg">Thursday at 2 works. Do I need to be home?</div>
+        </div>
+        <div class="bubble-row receptionist">
+          <div class="bubble receptionist-msg">It helps if you're there so we can walk you through what we find. But if something comes up, we'll leave a detailed report. I'll text you a confirmation right now.</div>
+        </div>
+      </div>
+      <div class="call-outcome">
+        <strong>Result:</strong> Inspection booked for Thursday 2pm. Confirmation text sent. Follow-up reminder scheduled for Wednesday evening. Call recording saved.
+      </div>
+    </div>
+
+    <!-- Missed Call Recovery -->
+    <div class="card fade-in">
+      <div class="transcript-header">
+        <strong>Missed Call Recovery &mdash; Lisa D.</strong>
+        <span class="call-badge missed">Missed &rarr; Recovered</span>
+      </div>
+      <div class="transcript-meta">Today, 9:15am &bull; You were on a roof &bull; (770) 555-0287</div>
+      <div class="transcript-bubbles">
+        <div class="bubble-row caller">
+          <div class="bubble-label">Lisa</div>
+          <div class="bubble caller-msg">Hi, I found your number on Google. I need a roof inspection &mdash; we're selling our house and the buyer's inspector flagged some issues.</div>
+        </div>
+        <div class="bubble-row receptionist">
+          <div class="bubble receptionist-msg">Thanks for calling, Lisa. Real estate inspections are something we handle all the time. I can get someone out within 48 hours so it doesn't hold up your sale. What's your address?</div>
+        </div>
+        <div class="bubble-row caller">
+          <div class="bubble caller-msg">220 Peachtree Industrial, Duluth.</div>
+        </div>
+        <div class="bubble-row receptionist">
+          <div class="bubble receptionist-msg">Perfect. I have Friday at 10am available. We'll do a full inspection and provide a written report you can share with the buyer. Sound good?</div>
+        </div>
+      </div>
+      <div class="call-outcome">
+        <strong>Result:</strong> Call came in while you were on a job site. Receptionist answered on the first ring. Inspection booked for Friday 10am. Without the receptionist, this lead would have gone to voicemail and likely called your competitor instead.
+      </div>
+    </div>
+
+    <!-- Follow-Up Sequence -->
+    <div class="section-title" style="margin-top:8px;">Automatic Follow-Up</div>
+    <div class="card fade-in">
+      <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">When someone doesn't book on the first call, the system follows up automatically until they do:</p>
+      <div class="followup-timeline">
+        <div class="followup-step">
+          <div class="followup-dot done"></div>
+          <div class="followup-label">Text message sent</div>
+          <div class="followup-desc">"Hi Mike, this is Summit Ridge Roofing. You called earlier about a roof inspection. Want me to get you on the schedule this week?"</div>
+          <div class="followup-time">Sent 2 hours after missed call</div>
+        </div>
+        <div class="followup-step">
+          <div class="followup-dot done"></div>
+          <div class="followup-label">Voicemail drop</div>
+          <div class="followup-desc">Friendly voicemail letting Mike know you have openings this week and to call or text back.</div>
+          <div class="followup-time">Next morning, 9am</div>
+        </div>
+        <div class="followup-step">
+          <div class="followup-dot"></div>
+          <div class="followup-label">Second text</div>
+          <div class="followup-desc">"Hey Mike, just checking in. We've still got a spot open Thursday afternoon if you need that inspection. Let me know."</div>
+          <div class="followup-time">Scheduled: Tomorrow, 2pm</div>
+        </div>
+        <div class="followup-step">
+          <div class="followup-dot pending"></div>
+          <div class="followup-label">Final follow-up</div>
+          <div class="followup-desc">One last check-in. If no response, marked as cold and removed from active follow-up.</div>
+          <div class="followup-time">Scheduled: Day 5</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Review Request -->
+    <div class="section-title" style="margin-top:8px;">After the Job: Review Request</div>
+    <div class="card fade-in">
+      <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">Once a job is marked complete, the system texts the homeowner asking for a Google review:</p>
+      <div class="review-mock">
+        <p style="font-weight:600;color:var(--dark);">Text sent to Karen T. after roof replacement:</p>
+        <p style="margin-top:8px;">"Hi Karen, it's Summit Ridge Roofing. Thanks for trusting us with your roof! If you had a good experience, we'd really appreciate a quick Google review. It only takes 30 seconds:"</p>
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <a href="#" class="review-link" onclick="return false;">Leave a Review</a>
+        <p style="margin-top:14px;font-size:12px;color:var(--text-muted);">Karen left a 5-star review 3 hours later. Your Google rating went from 4.6 to 4.7.</p>
+      </div>
+    </div>
+
+    <!-- Appointment Confirmation -->
+    <div class="section-title" style="margin-top:8px;">Day-Of Confirmation</div>
+    <div class="card fade-in">
+      <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">On the morning of every appointment, the system confirms with the homeowner so your crew doesn't waste a trip:</p>
+      <div style="background:#F9FAFB;border:1px solid var(--border);border-radius:12px;padding:16px;">
+        <p style="font-size:14px;line-height:1.6;color:var(--text);">
+          <strong>Text sent at 8:00am:</strong><br>
+          "Hi Robert, this is Summit Ridge Roofing confirming your roof inspection today at 2pm. Our inspector David will be there. Reply YES to confirm or call us to reschedule."
+        </p>
+        <p style="margin-top:10px;font-size:14px;color:var(--green);font-weight:600;">Robert replied: "YES. See you at 2"</p>
+        <p style="margin-top:6px;font-size:12px;color:var(--text-muted);">Confirmation logged. David notified with address and job details.</p>
+      </div>
+    </div>
+
+  </div>
+
+<!-- v1 - receptionist demo -->
+</body>
+</html>
