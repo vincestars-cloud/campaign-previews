@@ -902,16 +902,17 @@
     /* ── Natural Text Mockup ── */
     .text-command-mockup {
       margin-top: 16px;
-      background: var(--dark);
+      background: #FFFFFF;
       border-radius: 10px;
       padding: 20px;
       font-family: var(--sans);
+      border: 1px solid var(--border);
     }
     .text-bubble {
       background: #007AFF;
       color: #fff;
       padding: 10px 16px;
-      border-radius: 14px 14px 4px 14px;
+      border-radius: 18px 18px 4px 18px;
       font-size: 13px;
       max-width: 85%;
       margin-left: auto;
@@ -919,13 +920,17 @@
       line-height: 1.5;
     }
     .text-response {
-      background: rgba(255,255,255,0.1);
-      color: #ccc;
+      background: #E9E9EB;
+      color: #1A1A1A;
       padding: 10px 16px;
-      border-radius: 14px 14px 14px 4px;
+      border-radius: 18px 18px 18px 4px;
       font-size: 13px;
       max-width: 85%;
       line-height: 1.5;
+    }
+    .section-dark .text-command-mockup {
+      background: #FFFFFF;
+      border-color: rgba(255,255,255,0.15);
     }
   </style>
 </head>
