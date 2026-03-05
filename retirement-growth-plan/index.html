@@ -471,6 +471,87 @@
     }
     #feathery-container { min-height: 300px; }
 
+    /* --- Inline Multi-Step Form --- */
+    .inline-form { position: relative; overflow: hidden; }
+    .form-step {
+      display: none;
+      animation: fadeSlide 0.35s ease;
+    }
+    .form-step.active { display: block; }
+    @keyframes fadeSlide {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .form-step-label {
+      font-family: var(--serif);
+      font-size: 1.0625rem;
+      color: var(--text-dark);
+      font-weight: 700;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+    .form-progress {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 24px;
+    }
+    .form-progress-dot {
+      height: 4px;
+      flex: 1;
+      background: #e5e7eb;
+      border-radius: 2px;
+      transition: background 0.3s;
+    }
+    .form-progress-dot.filled { background: var(--gold); }
+    .form-option {
+      display: block;
+      width: 100%;
+      padding: 14px 20px;
+      border: 2px solid #e5e7eb;
+      border-radius: 10px;
+      background: var(--bg-white);
+      font-family: var(--sans);
+      font-size: 0.9375rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      text-align: left;
+      margin-bottom: 10px;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .form-option:hover {
+      border-color: var(--gold);
+      background: var(--gold-bg);
+    }
+    .form-option.selected {
+      border-color: var(--gold);
+      background: var(--gold-bg);
+    }
+    .form-select-wrap select {
+      width: 100%;
+      padding: 14px 20px;
+      border: 2px solid #e5e7eb;
+      border-radius: 10px;
+      background: var(--bg-white);
+      font-family: var(--sans);
+      font-size: 0.9375rem;
+      color: var(--text-dark);
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%236b7280' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+    }
+    .form-select-wrap select:focus {
+      outline: none;
+      border-color: var(--gold);
+    }
+    .form-step-counter {
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
     /* --- Trust Bar --- */
     .trust-bar {
       background: var(--bg-light);
@@ -715,14 +796,14 @@
             <td class="check">&#10003;</td>
             <td class="check">&#10003;</td>
             <td class="check">~</td>
-            <td><strong>Protected growth + zero downside. Partial access available depending on the plan.</strong></td>
+            <td><strong>Protected growth + zero downside. Access available depending on the plan.</strong></td>
           </tr>
         </tbody>
       </table>
 
       <div style="text-align:center;margin-top:40px;">
         <p style="max-width:580px;margin:0 auto 24px;font-size:1.0625rem;color:var(--text-dark);">
-          <strong>The Retirement Growth Plan gives you Safety + Growth.</strong><br>
+          <strong>The Retirement Growth Plan gives you Safety + Growth + Access.</strong><br>
           Your advisor will walk you through the specific plan options &mdash; including access, income, and growth features &mdash; tailored to your situation.
         </p>
       </div>
@@ -773,9 +854,9 @@
           <div class="compare-card-header">Retirement Growth Plan</div>
           <div class="compare-card-body">
             <ul>
-              <li><strong>Floor:</strong> $300K (0% in down years, never negative)</li>
-              <li><strong>Upside:</strong> Participate in market gains up to the cap</li>
-              <li>Principal 100% protected from market losses</li>
+              <li>Your $300K is protected &mdash; it never goes backwards</li>
+              <li>Participate in market gains when the market is up</li>
+              <li>In down years, you earn 0% &mdash; not negative</li>
               <li>Tax-deferred growth (no annual tax drag)</li>
               <li>Predictable. No daily monitoring needed.</li>
             </ul>
@@ -1020,8 +1101,13 @@
         <h3>Quick Pre-Qualification</h3>
         <p class="form-sub">Answer a few questions to see if the Retirement Growth Plan is right for your situation.</p>
 
-        <!-- Feathery Form Embed -->
-        <div id="feathery-container"></div>
+        <!-- Inline Pre-Qualification Form -->
+        <div class="inline-form" id="inline-form">
+          <div class="form-progress" id="form-progress"></div>
+          <div id="form-steps"></div>
+        </div>
+        <!-- Feathery (hidden, receives data on completion) -->
+        <div id="feathery-container" style="display:none;"></div>
 
         <p style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-top:16px;">
           Your information is secure and never shared. Advisors are licensed, fiduciary-standard professionals.
@@ -1053,9 +1139,10 @@
 
   <!-- Feathery SDK -->
   <script src="https://cdn.feathery.io/fp.js" defer></script>
+  <script src="form.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Initialize Feathery form
+      // Initialize Feathery (hidden until form completes)
       if (window.Feathery) {
         Feathery.init('b7c82cfe-b1e6-4c2c-950c-0e3834c9125c');
         Feathery.renderAt('feathery-container', { formId: 'b3ye9v' });
@@ -1066,11 +1153,9 @@
         q.addEventListener('click', function() {
           var item = this.parentElement;
           var wasOpen = item.classList.contains('open');
-          // Close all
           document.querySelectorAll('.faq-item').forEach(function(i) {
             i.classList.remove('open');
           });
-          // Toggle clicked
           if (!wasOpen) item.classList.add('open');
         });
       });
