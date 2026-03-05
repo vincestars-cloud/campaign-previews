@@ -1037,7 +1037,7 @@
           <div class="compare-card-body">
             <ul>
               <li><strong>Best case:</strong> $497K+ (at 7.5% compounding annually)</li>
-              <li>Your $300K is protected &mdash; it never goes backwards</li>
+              <li><strong>Worst case:</strong> $300K (your principal is protected &mdash; it never goes backwards)</li>
               <li>In down years, you earn 0% &mdash; not negative</li>
               <li>Tax-deferred growth (no annual tax drag)</li>
               <li>Predictable. No daily monitoring needed.</li>
@@ -1122,7 +1122,7 @@
           </tr>
           <tr>
             <td>Annual Fees</td>
-            <td class="rgp-val">Zero on most plans</td>
+            <td class="rgp-val">Zero</td>
             <td class="cd-val">None (but taxed annually)</td>
           </tr>
           <tr>
@@ -1250,10 +1250,80 @@
 
       <!-- Map + Faces -->
       <div class="map-wrap">
-        <img src="https://retirementgrowthplans.com/images/us-map-advisors.svg" alt="Licensed Advisors available in all 50 states" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
-        <div style="display:none;padding:40px 0;">
-          <div style="font-family:var(--serif);font-size:1.5rem;color:var(--navy);font-weight:700;">Licensed Advisors available in all 50 states</div>
-        </div>
+        <svg viewBox="0 0 960 600" style="max-width:680px;width:100%;height:auto;" xmlns="http://www.w3.org/2000/svg">
+          <!-- Simplified US Map -->
+          <defs><style>.st{fill:#d4e4f7;stroke:#fff;stroke-width:1.5;}.st:hover{fill:#c8963e;transition:fill 0.2s;}</style></defs>
+          <!-- WA --><path class="st" d="M118 42L130 45L157 40L175 42L183 57L177 80L155 75L130 80L108 72L105 55Z"/>
+          <!-- OR --><path class="st" d="M108 72L130 80L155 75L177 80L180 108L168 130L140 135L118 125L95 105Z"/>
+          <!-- CA --><path class="st" d="M95 105L118 125L140 135L145 170L138 210L125 255L110 280L90 275L78 240L75 200L80 155Z"/>
+          <!-- NV --><path class="st" d="M140 135L168 130L175 155L170 200L155 215L138 210L145 170Z"/>
+          <!-- ID --><path class="st" d="M177 80L180 108L195 95L210 105L215 135L200 150L175 155L168 130Z"/>
+          <!-- MT --><path class="st" d="M183 57L210 55L265 50L295 52L290 85L260 90L225 92L210 105L195 95L180 108L177 80Z"/>
+          <!-- WY --><path class="st" d="M210 105L225 92L260 90L290 85L295 120L270 125L240 128L215 135Z"/>
+          <!-- UT --><path class="st" d="M175 155L200 150L215 135L240 128L238 165L220 175L195 180L180 175Z"/>
+          <!-- CO --><path class="st" d="M240 128L270 125L295 120L340 118L345 158L315 162L275 165L238 165Z"/>
+          <!-- AZ --><path class="st" d="M125 255L138 210L155 215L170 200L195 180L200 215L195 255L170 275L140 278Z"/>
+          <!-- NM --><path class="st" d="M195 180L220 175L238 165L275 165L280 200L285 240L275 270L240 275L200 268L195 255L200 215Z"/>
+          <!-- ND --><path class="st" d="M295 52L340 48L385 45L390 78L365 82L330 82L295 85Z"/>
+          <!-- SD --><path class="st" d="M295 85L330 82L365 82L390 78L395 112L360 115L330 115L295 120Z"/>
+          <!-- NE --><path class="st" d="M295 120L330 115L360 115L395 112L410 115L420 130L400 140L370 142L340 140L340 118Z"/>
+          <!-- KS --><path class="st" d="M340 140L370 142L400 140L420 155L430 175L395 178L360 178L340 178L340 158Z"/>
+          <!-- OK --><path class="st" d="M340 178L360 178L395 178L430 175L445 195L460 210L440 220L405 218L370 215L340 215L335 200Z"/>
+          <!-- TX --><path class="st" d="M275 270L285 240L280 200L340 215L370 215L405 218L440 220L460 210L465 240L455 280L440 310L420 340L395 365L370 370L345 355L320 330L300 310L280 295Z"/>
+          <!-- MN --><path class="st" d="M390 45L420 40L445 42L450 52L455 78L440 95L420 100L395 112L390 78Z"/>
+          <!-- IA --><path class="st" d="M395 112L420 100L440 95L465 98L480 110L480 132L465 140L440 142L420 130L410 115Z"/>
+          <!-- MO --><path class="st" d="M420 130L440 142L465 140L480 155L490 175L485 200L465 210L445 195L430 175L420 155Z"/>
+          <!-- AR --><path class="st" d="M445 195L465 210L485 200L498 215L500 240L485 248L460 250L448 240L440 220Z"/>
+          <!-- LA --><path class="st" d="M460 250L485 248L500 240L510 260L530 270L525 290L510 300L490 295L470 285L465 265Z"/>
+          <!-- WI --><path class="st" d="M450 52L470 48L500 50L520 58L525 78L515 95L500 100L480 98L465 98L455 78Z"/>
+          <!-- IL --><path class="st" d="M480 98L500 100L520 105L530 125L535 150L528 175L510 185L490 175L480 155L465 140L480 132L480 110Z"/>
+          <!-- MI --><path class="st" d="M520 42L545 38L560 45L575 55L572 75L560 90L545 95L530 90L525 78L520 58Z M535 95L555 98L568 105L565 120L548 125L535 118L530 105Z"/>
+          <!-- IN --><path class="st" d="M530 105L535 118L548 125L555 140L550 165L540 178L528 175L535 150L530 125Z"/>
+          <!-- OH --><path class="st" d="M555 98L568 105L585 100L605 95L615 108L610 130L600 148L585 155L570 148L555 140L548 125L565 120Z"/>
+          <!-- KY --><path class="st" d="M528 175L540 178L550 165L570 148L585 155L610 155L625 148L630 168L615 180L590 185L560 190L535 192Z"/>
+          <!-- TN --><path class="st" d="M535 192L560 190L590 185L615 180L640 178L660 175L665 192L640 195L610 198L575 200L545 202Z"/>
+          <!-- MS --><path class="st" d="M498 215L510 205L535 202L545 202L540 225L535 250L530 270L510 260L500 240Z"/>
+          <!-- AL --><path class="st" d="M545 202L575 200L585 205L590 230L585 260L575 275L555 268L540 255L535 250L540 225Z"/>
+          <!-- GA --><path class="st" d="M575 200L610 198L625 202L635 225L640 255L630 275L610 280L590 270L585 260L590 230L585 205Z"/>
+          <!-- FL --><path class="st" d="M575 275L590 270L610 280L630 275L640 255L655 260L665 275L670 300L660 330L645 355L625 370L610 365L600 340L585 310L580 290Z"/>
+          <!-- SC --><path class="st" d="M625 202L640 195L660 192L670 205L665 220L650 232L635 225Z"/>
+          <!-- NC --><path class="st" d="M610 198L640 195L660 175L685 170L720 168L730 178L715 190L690 195L670 205L660 192Z"/>
+          <!-- VA --><path class="st" d="M630 168L640 155L660 148L685 145L710 150L720 158L720 168L685 170L660 175Z"/>
+          <!-- WV --><path class="st" d="M610 130L625 135L640 140L650 148L660 148L640 155L630 168L615 180L610 155L625 148Z"/>
+          <!-- PA --><path class="st" d="M605 95L630 88L660 82L695 78L700 95L698 115L680 120L650 125L630 128L615 108Z"/>
+          <!-- NY --><path class="st" d="M660 52L690 45L715 42L730 50L735 68L720 75L695 78L660 82Z M735 68L750 62L755 55L752 48L745 52Z"/>
+          <!-- VT --><path class="st" d="M720 35L728 32L735 42L730 50L720 48Z"/>
+          <!-- NH --><path class="st" d="M735 28L740 25L748 35L745 48L735 42L728 32Z"/>
+          <!-- ME --><path class="st" d="M748 10L762 8L770 18L768 35L758 45L750 38L745 28L748 20Z"/>
+          <!-- MA --><path class="st" d="M730 55L745 52L752 48L762 52L768 55L758 58L740 60Z"/>
+          <!-- CT --><path class="st" d="M730 60L745 58L752 62L748 68L735 68Z"/>
+          <!-- RI --><path class="st" d="M752 58L758 55L762 60L758 65L752 62Z"/>
+          <!-- NJ --><path class="st" d="M700 82L710 78L715 90L712 105L705 112L698 108L700 95Z"/>
+          <!-- DE --><path class="st" d="M698 115L705 112L710 120L705 130L698 125Z"/>
+          <!-- MD --><path class="st" d="M680 120L698 115L698 125L710 130L720 140L710 150L685 145L660 148L650 148L640 140L650 125Z"/>
+          <!-- AK --><path class="st" d="M55 460L75 455L100 458L125 465L140 472L130 485L108 490L85 488L65 482L50 475Z"/>
+          <!-- HI --><path class="st" d="M240 410L252 405L260 410L268 415L272 422L265 428L255 425L245 420Z"/>
+          <!-- State labels -->
+          <g font-family="Source Sans 3,Inter,Arial,sans-serif" font-size="11" fill="#1a2744" font-weight="600" text-anchor="middle">
+            <text x="145" y="62">WA</text><text x="135" y="108">OR</text><text x="108" y="195">CA</text>
+            <text x="158" y="175">NV</text><text x="195" y="120">ID</text><text x="240" y="72">MT</text>
+            <text x="255" y="112">WY</text><text x="210" y="162">UT</text><text x="290" y="145">CO</text>
+            <text x="160" y="245">AZ</text><text x="240" y="225">NM</text><text x="345" y="68">ND</text>
+            <text x="345" y="100">SD</text><text x="370" y="130">NE</text><text x="385" y="162">KS</text>
+            <text x="395" y="200">OK</text><text x="370" y="295">TX</text><text x="430" y="72">MN</text>
+            <text x="445" y="120">IA</text><text x="460" y="172">MO</text><text x="470" y="225">AR</text>
+            <text x="488" y="275">LA</text><text x="490" y="75">WI</text><text x="510" y="145">IL</text>
+            <text x="550" y="72">MI</text><text x="542" y="152">IN</text><text x="585" y="125">OH</text>
+            <text x="580" y="172">KY</text><text x="600" y="195">TN</text><text x="520" y="235">MS</text>
+            <text x="565" y="238">AL</text><text x="610" y="235">GA</text><text x="630" y="315">FL</text>
+            <text x="650" y="218">SC</text><text x="685" y="185">NC</text><text x="680" y="158">VA</text>
+            <text x="628" y="152">WV</text><text x="655" y="108">PA</text><text x="695" y="62">NY</text>
+            <text x="725" y="42">VT</text><text x="740" y="35">NH</text><text x="760" y="25">ME</text>
+            <text x="748" y="55">MA</text><text x="740" y="68">CT</text><text x="758" y="60">RI</text>
+            <text x="708" y="98">NJ</text><text x="708" y="125">DE</text><text x="685" y="138">MD</text>
+            <text x="90" y="478">AK</text><text x="258" y="420">HI</text>
+          </g>
+        </svg>
         <p style="color:var(--text-muted);font-size:0.9375rem;margin-top:16px;">Licensed Advisors available in all 50 states</p>
       </div>
 
