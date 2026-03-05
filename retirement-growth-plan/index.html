@@ -469,8 +469,6 @@
       color: var(--text-muted);
       margin-bottom: 24px;
     }
-    #feathery-container { min-height: 300px; }
-
     /* --- Inline Multi-Step Form --- */
     .inline-form { position: relative; overflow: hidden; }
     .form-step {
@@ -1106,8 +1104,6 @@
           <div class="form-progress" id="form-progress"></div>
           <div id="form-steps"></div>
         </div>
-        <!-- Feathery (hidden, receives data on completion) -->
-        <div id="feathery-container" style="display:none;"></div>
 
         <p style="font-size:0.75rem;color:var(--text-muted);text-align:center;margin-top:16px;">
           Your information is secure and never shared. Advisors are licensed, fiduciary-standard professionals.
@@ -1137,17 +1133,9 @@
     </div>
   </footer>
 
-  <!-- Feathery SDK -->
-  <script src="https://cdn.feathery.io/fp.js" defer></script>
   <script src="form.js" defer></script>
   <script>
     document.addEventListener('DOMContentLoaded', function() {
-      // Initialize Feathery (hidden until form completes)
-      if (window.Feathery) {
-        Feathery.init('b7c82cfe-b1e6-4c2c-950c-0e3834c9125c');
-        Feathery.renderAt('feathery-container', { formId: 'b3ye9v' });
-      }
-
       // FAQ accordion
       document.querySelectorAll('.faq-q').forEach(function(q) {
         q.addEventListener('click', function() {
