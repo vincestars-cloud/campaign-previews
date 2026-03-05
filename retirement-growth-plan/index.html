@@ -469,6 +469,156 @@
       color: var(--text-muted);
       margin-bottom: 24px;
     }
+    /* --- Persona Cards --- */
+    .persona-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 40px;
+    }
+    .persona-card {
+      background: var(--bg-white);
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 32px 24px;
+      text-align: center;
+    }
+    .persona-icon { font-size: 2.5rem; margin-bottom: 12px; }
+    .persona-card h3 { font-size: 1.125rem; margin-bottom: 8px; }
+    .persona-quote {
+      font-style: italic;
+      font-size: 0.9375rem;
+      color: var(--gold);
+      margin-bottom: 12px;
+    }
+    .persona-card p { font-size: 0.875rem; color: var(--text-muted); }
+
+    /* --- RGP vs CDs Table --- */
+    .rgp-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 32px;
+      background: var(--bg-white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .rgp-table th {
+      padding: 16px 20px;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-align: left;
+      border-bottom: 2px solid #e5e7eb;
+    }
+    .rgp-table th:first-child { background: var(--bg-light); }
+    .rgp-table th.rgp-col { background: #f0fdf4; color: var(--green); }
+    .rgp-table th.cd-col { background: #fefce8; color: #92400e; }
+    .rgp-table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.9375rem;
+    }
+    .rgp-table tr:last-child td { border-bottom: none; }
+    .rgp-table td:first-child { font-weight: 600; color: var(--text-dark); background: var(--bg-light); }
+    .rgp-table td.rgp-val { color: var(--green); font-weight: 600; }
+    .rgp-table td.cd-val { color: var(--text-muted); }
+
+    /* --- Math Check Table --- */
+    .math-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 24px;
+      background: var(--bg-white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+    }
+    .math-table th {
+      padding: 14px 20px;
+      background: var(--navy);
+      color: #fff;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.875rem;
+      text-align: left;
+    }
+    .math-table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid #f0f0f0;
+      font-size: 0.9375rem;
+    }
+    .math-table tr:last-child td { border-bottom: none; }
+    .math-table .math-highlight { background: #f0fdf4; font-weight: 700; }
+    .math-table .math-highlight td { color: var(--green); }
+    .math-table .math-dim td:nth-child(3) { color: var(--red); }
+
+    /* --- Advisor Section --- */
+    .advisor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 32px;
+    }
+    .advisor-card {
+      border-radius: 12px;
+      padding: 32px 28px;
+      border: 2px solid #e5e7eb;
+    }
+    .advisor-card-icon { font-size: 2rem; margin-bottom: 12px; }
+    .advisor-card h3 { font-size: 1.0625rem; margin-bottom: 8px; }
+    .advisor-card p { font-size: 0.9375rem; color: var(--text-body); }
+    .advisor-highlight {
+      border-color: var(--blue-cta);
+      background: #f0f5ff;
+    }
+
+    /* --- Map Section --- */
+    .map-wrap {
+      background: var(--bg-light);
+      border-radius: 16px;
+      padding: 40px;
+      margin-top: 32px;
+      text-align: center;
+    }
+    .map-wrap img { max-width: 100%; height: auto; }
+    .advisor-faces {
+      display: flex;
+      justify-content: center;
+      gap: -8px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+    .advisor-face {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      object-fit: cover;
+      margin-left: -8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .advisor-face:first-child { margin-left: 0; }
+
+    /* --- Catch Section --- */
+    .catch-list { max-width: 640px; margin: 24px auto 0; }
+    .catch-item {
+      padding: 16px 0;
+      border-bottom: 1px solid #e5e7eb;
+      font-size: 0.9375rem;
+    }
+    .catch-item:last-child { border-bottom: none; }
+    .catch-item strong { color: var(--text-dark); }
+
+    /* --- Testimonial with photos --- */
+    .testimonial-photo {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 12px;
+    }
+
     /* --- Inline Multi-Step Form --- */
     .inline-form { position: relative; overflow: hidden; }
     .form-step {
@@ -618,7 +768,8 @@
     @media (max-width: 768px) {
       :root { --section-py: 64px; }
       .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
-      .threat-grid, .comparison-grid, .testimonial-grid, .steps-grid { grid-template-columns: 1fr; }
+      .threat-grid, .comparison-grid, .testimonial-grid, .steps-grid, .persona-grid { grid-template-columns: 1fr; }
+      .advisor-grid { grid-template-columns: 1fr; }
       .qual-grid { grid-template-columns: 1fr; }
       .steps-grid::before { display: none; }
       .hero { padding: 56px 0 64px; }
@@ -745,6 +896,39 @@
   </section>
 
   <!-- ============================================ -->
+  <!-- WHO IS IT FOR? (3 Personas) -->
+  <!-- ============================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">Who Is It For?</div>
+        <h2>The Retirement Growth Plan Is Built for<br>Three Types of Retirees</h2>
+      </div>
+
+      <div class="persona-grid">
+        <div class="persona-card">
+          <div class="persona-icon" style="color:var(--blue-cta);">&#9741;</div>
+          <h3>The Protector</h3>
+          <div class="persona-quote">&ldquo;I can't afford to lose my retirement savings.&rdquo;</div>
+          <p>You've built your nest egg over 30, 40, maybe 50 years. You want growth &mdash; but not at the risk of losing what you've already saved.</p>
+        </div>
+        <div class="persona-card">
+          <div class="persona-icon" style="color:var(--red);">&#9776;</div>
+          <h3>The Exhausted</h3>
+          <div class="persona-quote">&ldquo;I'm tired of watching my account go up and down.&rdquo;</div>
+          <p>You're done babysitting your portfolio. You want one piece of your financial life that just runs &mdash; without the stress.</p>
+        </div>
+        <div class="persona-card">
+          <div class="persona-icon" style="color:var(--gold);">&#9733;</div>
+          <h3>The Legacy Builder</h3>
+          <div class="persona-quote">&ldquo;I want to leave something for my kids.&rdquo;</div>
+          <p>You want to know that no matter what the market does, your family will have something when you're gone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
   <!-- THE UNCOMFORTABLE TRUTH (2 of 3) -->
   <!-- ============================================ -->
   <section class="section truth-section">
@@ -840,7 +1024,7 @@
           <div class="compare-card-body">
             <ul>
               <li><strong>Best case:</strong> $375K (at 4.5%)</li>
-              <li>Principal protected (FDIC/Treasury backed)</li>
+              <li><strong>Worst case:</strong> ~$340K (rates drop to 2&ndash;3% at renewal)</li>
               <li>After inflation &amp; taxes: ~1&ndash;2% real return</li>
               <li>CDs lock up money too (early withdrawal penalties)</li>
               <li>Falling rates mean lower yields at renewal</li>
@@ -852,8 +1036,8 @@
           <div class="compare-card-header">Retirement Growth Plan</div>
           <div class="compare-card-body">
             <ul>
+              <li><strong>Best case:</strong> $497K+ (at 7.5% compounding annually)</li>
               <li>Your $300K is protected &mdash; it never goes backwards</li>
-              <li>Participate in market gains when the market is up</li>
               <li>In down years, you earn 0% &mdash; not negative</li>
               <li>Tax-deferred growth (no annual tax drag)</li>
               <li>Predictable. No daily monitoring needed.</li>
@@ -900,6 +1084,195 @@
   </section>
 
   <!-- ============================================ -->
+  <!-- RGP vs CDs TABLE -->
+  <!-- ============================================ -->
+  <section class="section" style="background:var(--bg-light);">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">Side-by-Side Comparison</div>
+        <h2>Retirement Growth Plan vs. CDs</h2>
+        <p style="max-width:600px;margin:0 auto;color:var(--text-muted);">
+          Both protect your principal. But that's where the similarities end.
+        </p>
+      </div>
+
+      <table class="rgp-table">
+        <thead>
+          <tr>
+            <th style="width:35%;">Feature</th>
+            <th class="rgp-col" style="width:32.5%;">Retirement Growth Plan</th>
+            <th class="cd-col" style="width:32.5%;">CDs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Introductory Rate</td>
+            <td class="rgp-val">Up to 10.5%+ bonus on select plans</td>
+            <td class="cd-val">4&ndash;5% (promotional, drops at renewal)</td>
+          </tr>
+          <tr>
+            <td>Can You Lose Money?</td>
+            <td class="rgp-val">No &mdash; 0% floor in down years</td>
+            <td class="cd-val">No (FDIC insured up to $250K)</td>
+          </tr>
+          <tr>
+            <td>Upside When Markets Rise</td>
+            <td class="rgp-val">Yes &mdash; participates in market gains</td>
+            <td class="cd-val">No &mdash; fixed rate only</td>
+          </tr>
+          <tr>
+            <td>Annual Fees</td>
+            <td class="rgp-val">Zero on most plans</td>
+            <td class="cd-val">None (but taxed annually)</td>
+          </tr>
+          <tr>
+            <td>Tax Treatment</td>
+            <td class="rgp-val">Tax-deferred growth</td>
+            <td class="cd-val">Taxed every year on interest</td>
+          </tr>
+          <tr>
+            <td>Enhanced Death Benefit</td>
+            <td class="rgp-val">Yes &mdash; passes to beneficiaries</td>
+            <td class="cd-val">No &mdash; just the balance</td>
+          </tr>
+          <tr>
+            <td>Lifetime Income Option</td>
+            <td class="rgp-val">Available on select plans</td>
+            <td class="cd-val">Not available</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- WHAT'S THE CATCH? -->
+  <!-- ============================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">Full Transparency</div>
+        <h2>What's The Catch?</h2>
+      </div>
+
+      <div class="catch-list">
+        <div class="catch-item">
+          <strong>1. You can't set it up yourself</strong> &mdash; you must speak to a <em>Licensed Growth Plan Advisor</em> to set this type of account up.
+        </div>
+        <div class="catch-item">
+          <strong>2. Rates can change</strong> &mdash; before you lock in your account, rates can change. Current rates are among the highest in years.
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:32px;">
+        <p style="font-size:0.9375rem;color:var(--text-muted);max-width:520px;margin:0 auto;">That's it. No hidden fees, no fine print surprises. Your advisor will walk you through every detail.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- QUICK MATH CHECK -->
+  <!-- ============================================ -->
+  <section class="section" style="background:var(--bg-warm);">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">See the Numbers</div>
+        <h2>Quick Math Check</h2>
+        <p style="max-width:600px;margin:0 auto;color:var(--text-muted);">
+          <strong>Say you started out with $100,000...</strong><br>
+          What kind of returns would you get after <strong>7 years</strong> in the most common safe-money vehicles?
+        </p>
+      </div>
+
+      <table class="math-table" style="max-width:700px;margin:32px auto 0;">
+        <thead>
+          <tr>
+            <th>Vehicle</th>
+            <th>Period</th>
+            <th>Potential Earnings</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="math-highlight">
+            <td>RGP</td>
+            <td>7 years</td>
+            <td>$160,578 &#8593;</td>
+          </tr>
+          <tr class="math-dim">
+            <td>Top Online HYSA</td>
+            <td>7 years</td>
+            <td>$136,086 &#8595;</td>
+          </tr>
+          <tr class="math-dim">
+            <td>Money-Market Fund</td>
+            <td>7 years</td>
+            <td>$104,203 &#8595;</td>
+          </tr>
+          <tr class="math-dim">
+            <td>National Avg. Savings</td>
+            <td>7 years</td>
+            <td>$102,690 &#8595;</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div style="text-align:center;margin-top:32px;">
+        <a href="#qualify" class="btn btn-gold">See Your Personalized Projection</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- LICENSED GROWTH PLAN ADVISOR -->
+  <!-- ============================================ -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center">
+        <div class="eyebrow">Your Advisor</div>
+        <h2>What Is A Licensed Growth Plan Advisor?</h2>
+        <p style="max-width:640px;margin:0 auto;color:var(--text-muted);">
+          A Licensed Growth Plan Advisor has earned a <strong style="color:var(--blue-cta);">special license</strong> required by your state. This is often different from your typical financial advisor. And allows them to be certified as a <strong>Licensed Growth Plan Advisor</strong>.
+        </p>
+      </div>
+
+      <div class="advisor-grid">
+        <div class="advisor-card">
+          <div class="advisor-card-icon" style="opacity:0.7;">&#9878;</div>
+          <h3>Traditional Advisor</h3>
+          <p>Earns 1&ndash;2% of your assets every year, whether you're up or down. Incentivized to keep you invested in the market.</p>
+        </div>
+        <div class="advisor-card advisor-highlight">
+          <div class="advisor-card-icon" style="color:var(--blue-cta);">&#9741;</div>
+          <h3>Growth Plan Advisor</h3>
+          <p>Compensated directly by financial institutions &mdash; not from your account. Zero annual fees to you. Incentivized to find the best contract for your situation, not the most expensive one.</p>
+        </div>
+      </div>
+
+      <!-- Map + Faces -->
+      <div class="map-wrap">
+        <img src="https://retirementgrowthplans.com/images/us-map-advisors.svg" alt="Licensed Advisors available in all 50 states" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+        <div style="display:none;padding:40px 0;">
+          <div style="font-family:var(--serif);font-size:1.5rem;color:var(--navy);font-weight:700;">Licensed Advisors available in all 50 states</div>
+        </div>
+        <p style="color:var(--text-muted);font-size:0.9375rem;margin-top:16px;">Licensed Advisors available in all 50 states</p>
+      </div>
+
+      <div class="advisor-faces" style="margin-top:24px;">
+        <img class="advisor-face" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=112&h=112&fit=crop&crop=face" alt="Advisor">
+        <img class="advisor-face" src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=112&h=112&fit=crop&crop=face" alt="Advisor">
+        <img class="advisor-face" src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=112&h=112&fit=crop&crop=face" alt="Advisor">
+        <img class="advisor-face" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=112&h=112&fit=crop&crop=face" alt="Advisor">
+        <img class="advisor-face" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=112&h=112&fit=crop&crop=face" alt="Advisor">
+        <img class="advisor-face" src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=112&h=112&fit=crop&crop=face" alt="Advisor">
+        <img class="advisor-face" src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=112&h=112&fit=crop&crop=face" alt="Advisor">
+        <img class="advisor-face" src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=112&h=112&fit=crop&crop=face" alt="Advisor">
+        <img class="advisor-face" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=112&h=112&fit=crop&crop=face" alt="Advisor">
+        <img class="advisor-face" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=112&h=112&fit=crop&crop=face" alt="Advisor">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
   <!-- IS THIS RIGHT FOR YOU? -->
   <!-- ============================================ -->
   <section class="section" style="background:var(--bg-light);">
@@ -916,7 +1289,7 @@
         <div class="qual-card qual-yes">
           <h3>This IS For You If:</h3>
           <ul>
-            <li><span class="qual-icon" style="color:var(--green);">&bull;</span> You've worked hard to build your savings and <strong>cannot afford to lose them</strong></li>
+            <li><span class="qual-icon" style="color:var(--green);">&bull;</span> You've worked hard to build your savings and cannot afford to lose them</li>
             <li><span class="qual-icon" style="color:var(--green);">&bull;</span> You're tired of watching your portfolio swing with every headline</li>
             <li><span class="qual-icon" style="color:var(--green);">&bull;</span> You'd rather earn consistent, protected growth than gamble for unpredictable returns</li>
             <li><span class="qual-icon" style="color:var(--green);">&bull;</span> You want a predictable income stream you can budget around in retirement</li>
@@ -989,19 +1362,22 @@
 
       <div class="testimonial-grid">
         <div class="testimonial-card">
-          <p class="testimonial-text">&ldquo;I lost $40,000 in my 401(k) and couldn't sleep for months. Now my principal is protected. When the market dropped last year, my account didn't lose a penny. I finally sleep again.&rdquo;</p>
-          <div class="testimonial-author">Robert M., 68</div>
-          <div class="testimonial-meta">Ohio &bull; Former 401(k) holder</div>
+          <img class="testimonial-photo" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face" alt="Robert M.">
+          <p class="testimonial-text">&ldquo;I lost $40,000 in my 401(k) and couldn't sleep for months. Now my principal is protected &mdash; I get growth without the fear of watching it disappear.&rdquo;</p>
+          <div class="testimonial-author">Robert M.</div>
+          <div class="testimonial-meta">68 yo | Ohio</div>
         </div>
         <div class="testimonial-card">
-          <p class="testimonial-text">&ldquo;I was tired of checking my account every day, watching it go up and down with every news cycle. Now I don't worry. It grows, and it can never go backwards. That peace of mind is priceless.&rdquo;</p>
-          <div class="testimonial-author">Linda S., 66</div>
-          <div class="testimonial-meta">North Carolina &bull; Retired teacher</div>
+          <img class="testimonial-photo" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=96&h=96&fit=crop&crop=face" alt="Linda S.">
+          <p class="testimonial-text">&ldquo;I was tired of checking my account every day, hoping the market didn't crash. Now I don't worry. It grows, and it can't go backwards.&rdquo;</p>
+          <div class="testimonial-author">Linda S.</div>
+          <div class="testimonial-meta">66 yo | North Carolina</div>
         </div>
         <div class="testimonial-card">
-          <p class="testimonial-text">&ldquo;My advisor told me to 'stay the course' for 15 years. What course? I was losing money and paying him 1.5% for the privilege. This was the first time someone showed me the actual math &mdash; honestly.&rdquo;</p>
-          <div class="testimonial-author">James T., 71</div>
-          <div class="testimonial-meta">Texas &bull; Retired engineer</div>
+          <img class="testimonial-photo" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=96&h=96&fit=crop&crop=face" alt="James T.">
+          <p class="testimonial-text">&ldquo;My advisor told me to 'stay the course' for 15 years. This was the first time someone showed me the actual math &mdash; honestly.&rdquo;</p>
+          <div class="testimonial-author">James T.</div>
+          <div class="testimonial-meta">71 yo | Texas</div>
         </div>
       </div>
     </div>
