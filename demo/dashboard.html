@@ -4,420 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Growth Dashboard</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --accent: #C75B12;
-      --accent-light: #FFF4ED;
-      --bg: #F8F9FA;
-      --white: #FFFFFF;
-      --dark: #1A1A1A;
-      --text: #333;
-      --text-muted: #777;
-      --border: #E5E7EB;
-      --green: #22C55E;
-      --red: #EF4444;
-      --blue: #3B82F6;
-      --serif: 'DM Serif Display', serif;
-      --sans: 'Inter', sans-serif;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: var(--sans); background: var(--bg); color: var(--text); }
-
-    /* ── Top Bar ── */
-    .topbar {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 14px 20px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
-    .topbar-brand {
-      font-family: var(--serif);
-      font-size: 20px;
-      color: var(--dark);
-    }
-    .topbar-brand span { color: var(--accent); }
-    .topbar-status {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 13px;
-      color: var(--green);
-      font-weight: 500;
-    }
-    .topbar-status::before {
-      content: '';
-      width: 8px;
-      height: 8px;
-      background: var(--green);
-      border-radius: 50%;
-      animation: pulse-dot 2s infinite;
-    }
-    @keyframes pulse-dot {
-      0%, 100% { opacity: 1; }
-      50% { opacity: 0.4; }
-    }
-
-    /* ── Nav tabs ── */
-    .nav-tabs {
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
-      scrollbar-width: none;
-    }
-    .nav-tabs::-webkit-scrollbar { display: none; }
-    .nav-tab {
-      padding: 12px 18px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--text-muted);
-      white-space: nowrap;
-      text-decoration: none;
-      border-bottom: 2px solid transparent;
-      transition: all 0.2s;
-    }
-    .nav-tab:hover { color: var(--text); }
-    .nav-tab.active {
-      color: var(--accent);
-      border-bottom-color: var(--accent);
-    }
-
-    /* ── Layout ── */
-    .content { padding: 20px; max-width: 1100px; margin: 0 auto; }
-
-    /* ── Period selector ── */
-    .period-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
-    }
-    .period-label { font-size: 14px; color: var(--text-muted); }
-    .period-pills {
-      display: flex;
-      gap: 6px;
-    }
-    .period-pill {
-      padding: 6px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 500;
-      border: 1px solid var(--border);
-      background: var(--white);
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .period-pill.active {
-      background: var(--accent);
-      color: white;
-      border-color: var(--accent);
-    }
-
-    /* ── Stat Cards ── */
-    .stat-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-      margin-bottom: 20px;
-    }
-    @media (min-width: 768px) {
-      .stat-grid { grid-template-columns: repeat(4, 1fr); }
-    }
-    .stat-card {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 18px;
-      border: 1px solid var(--border);
-    }
-    .stat-label {
-      font-size: 12px;
-      color: var(--text-muted);
-      margin-bottom: 6px;
-      font-weight: 500;
-    }
-    .stat-number {
-      font-family: var(--serif);
-      font-size: 28px;
-      color: var(--dark);
-      line-height: 1.1;
-    }
-    .stat-change {
-      font-size: 11px;
-      font-weight: 600;
-      margin-top: 4px;
-    }
-    .stat-change.up { color: var(--green); }
-    .stat-change.down { color: var(--red); }
-
-    /* ── Channel Cards ── */
-    .section-title {
-      font-family: var(--serif);
-      font-size: 20px;
-      margin-bottom: 14px;
-      color: var(--dark);
-    }
-    .channel-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 12px;
-      margin-bottom: 24px;
-    }
-    @media (min-width: 768px) {
-      .channel-grid { grid-template-columns: repeat(3, 1fr); }
-    }
-    .channel-card {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 18px;
-      border: 1px solid var(--border);
-    }
-    .channel-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 14px;
-    }
-    .channel-name {
-      font-weight: 600;
-      font-size: 15px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .channel-dot {
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
-      display: inline-block;
-    }
-    .channel-dot.google { background: #4285F4; }
-    .channel-dot.meta { background: #1877F2; }
-    .channel-dot.outbound { background: var(--accent); }
-
-    /* Toggle switch */
-    .toggle {
-      width: 44px;
-      height: 24px;
-      background: var(--green);
-      border-radius: 12px;
-      position: relative;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .toggle.off { background: #D1D5DB; }
-    .toggle::after {
-      content: '';
-      width: 20px;
-      height: 20px;
-      background: white;
-      border-radius: 50%;
-      position: absolute;
-      top: 2px;
-      left: 22px;
-      transition: left 0.3s;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.15);
-    }
-    .toggle.off::after { left: 2px; }
-
-    .channel-stats {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-    }
-    .channel-stat-label {
-      font-size: 11px;
-      color: var(--text-muted);
-    }
-    .channel-stat-value {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--dark);
-    }
-
-    /* ── Activity Feed ── */
-    .activity-card {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 18px;
-      border: 1px solid var(--border);
-      margin-bottom: 24px;
-    }
-    .activity-list { list-style: none; }
-    .activity-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .activity-item:last-child { border-bottom: none; }
-    .activity-icon {
-      width: 36px;
-      height: 36px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 16px;
-      flex-shrink: 0;
-    }
-    .activity-icon.call { background: #DCFCE7; }
-    .activity-icon.lead { background: #DBEAFE; }
-    .activity-icon.review { background: #FEF3C7; }
-    .activity-icon.storm { background: #FEE2E2; }
-    .activity-icon.hire { background: #F3E8FF; }
-    .activity-text {
-      font-size: 14px;
-      line-height: 1.5;
-    }
-    .activity-text strong { color: var(--dark); }
-    .activity-time {
-      font-size: 11px;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-
-    /* ── Weekly Chart ── */
-    .chart-card {
-      background: var(--white);
-      border-radius: 12px;
-      padding: 18px;
-      border: 1px solid var(--border);
-      margin-bottom: 24px;
-    }
-    .chart-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 16px;
-    }
-    .chart-bars {
-      display: flex;
-      align-items: flex-end;
-      gap: 6px;
-      height: 140px;
-      padding-top: 10px;
-    }
-    .chart-bar-group {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 4px;
-    }
-    .chart-bar-stack {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-end;
-      height: 120px;
-      gap: 2px;
-    }
-    .chart-bar {
-      width: 80%;
-      max-width: 40px;
-      border-radius: 4px 4px 0 0;
-      transition: height 1s ease;
-    }
-    .chart-bar.google { background: #4285F4; }
-    .chart-bar.meta { background: #1877F2; }
-    .chart-bar.outbound { background: var(--accent); }
-    .chart-day {
-      font-size: 11px;
-      color: var(--text-muted);
-      font-weight: 500;
-    }
-    .chart-legend {
-      display: flex;
-      gap: 16px;
-      margin-top: 12px;
-      justify-content: center;
-    }
-    .chart-legend-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 12px;
-      color: var(--text-muted);
-    }
-    .chart-legend-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 2px;
-    }
-
-    /* ── Insight Box ── */
-    .insight-box {
-      background: var(--accent-light);
-      border: 1px solid rgba(199,91,18,0.15);
-      border-radius: 12px;
-      padding: 18px;
-      margin-bottom: 24px;
-    }
-    .insight-title {
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--accent);
-      margin-bottom: 8px;
-    }
-    .insight-text {
-      font-size: 14px;
-      line-height: 1.6;
-      color: var(--text);
-    }
-
-    /* ── Change Log ── */
-    .log-item {
-      display: flex;
-      gap: 12px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .log-item:last-child { border-bottom: none; }
-    .log-date {
-      font-size: 12px;
-      color: var(--text-muted);
-      white-space: nowrap;
-      min-width: 60px;
-      padding-top: 2px;
-    }
-    .log-text {
-      font-size: 14px;
-      line-height: 1.5;
-    }
-
-    /* ── Animations ── */
-    .fade-in {
-      animation: fadeIn 0.6s ease both;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .fade-in:nth-child(1) { animation-delay: 0.1s; }
-    .fade-in:nth-child(2) { animation-delay: 0.2s; }
-    .fade-in:nth-child(3) { animation-delay: 0.3s; }
-    .fade-in:nth-child(4) { animation-delay: 0.4s; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Top Bar -->
   <div class="topbar">
-    <div class="topbar-brand">Summit Ridge <span>Roofing</span></div>
+    <div class="topbar-brand">Coastal Shield <span>Roofing</span></div>
     <div class="topbar-status">System Running</div>
   </div>
 
-  <!-- Navigation -->
   <nav class="nav-tabs">
     <a class="nav-tab active" href="dashboard.html">Dashboard</a>
     <a class="nav-tab" href="receptionist.html">Receptionist</a>
@@ -440,200 +35,338 @@
     </div>
 
     <!-- Top Stats -->
-    <div class="stat-grid">
-      <div class="stat-card fade-in">
-        <div class="stat-label">New Leads</div>
-        <div class="stat-number" id="stat-leads">87</div>
-        <div class="stat-change up">+23% vs last month</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="stat-label">Appointments Booked</div>
-        <div class="stat-number" id="stat-appts">34</div>
-        <div class="stat-change up">+18% vs last month</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="stat-label">Avg Cost Per Lead</div>
-        <div class="stat-number" id="stat-cpl">$38</div>
-        <div class="stat-change up">Down from $52</div>
-      </div>
-      <div class="stat-card fade-in">
-        <div class="stat-label">Google Reviews</div>
-        <div class="stat-number" id="stat-reviews">12</div>
-        <div class="stat-change up">+8 this month</div>
-      </div>
+    <div class="stat-grid" id="stat-grid">
+      <!-- filled by JS -->
     </div>
 
     <!-- Channel Breakdown -->
     <div class="section-title">Where Your Leads Come From</div>
-    <div class="channel-grid">
-      <div class="channel-card fade-in">
-        <div class="channel-header">
-          <div class="channel-name"><span class="channel-dot google"></span> Google Ads</div>
-          <div class="toggle" data-channel="google" onclick="toggleChannel(this)"></div>
-        </div>
-        <div class="channel-stats">
-          <div>
-            <div class="channel-stat-label">Leads</div>
-            <div class="channel-stat-value">29</div>
-          </div>
-          <div>
-            <div class="channel-stat-label">Cost Per Lead</div>
-            <div class="channel-stat-value">$48</div>
-          </div>
-          <div>
-            <div class="channel-stat-label">Appointments</div>
-            <div class="channel-stat-value">11</div>
-          </div>
-          <div>
-            <div class="channel-stat-label">Cost Per Appt</div>
-            <div class="channel-stat-value">$126</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="channel-card fade-in">
-        <div class="channel-header">
-          <div class="channel-name"><span class="channel-dot meta"></span> Facebook/Instagram</div>
-          <div class="toggle" data-channel="meta" onclick="toggleChannel(this)"></div>
-        </div>
-        <div class="channel-stats">
-          <div>
-            <div class="channel-stat-label">Leads</div>
-            <div class="channel-stat-value">33</div>
-          </div>
-          <div>
-            <div class="channel-stat-label">Cost Per Lead</div>
-            <div class="channel-stat-value">$36</div>
-          </div>
-          <div>
-            <div class="channel-stat-label">Appointments</div>
-            <div class="channel-stat-value">14</div>
-          </div>
-          <div>
-            <div class="channel-stat-label">Cost Per Appt</div>
-            <div class="channel-stat-value">$85</div>
-          </div>
-        </div>
-      </div>
-
-      <div class="channel-card fade-in">
-        <div class="channel-header">
-          <div class="channel-name"><span class="channel-dot outbound"></span> Outbound Calls</div>
-          <div class="toggle" data-channel="outbound" onclick="toggleChannel(this)"></div>
-        </div>
-        <div class="channel-stats">
-          <div>
-            <div class="channel-stat-label">Leads</div>
-            <div class="channel-stat-value">25</div>
-          </div>
-          <div>
-            <div class="channel-stat-label">Cost Per Lead</div>
-            <div class="channel-stat-value">$31</div>
-          </div>
-          <div>
-            <div class="channel-stat-label">Appointments</div>
-            <div class="channel-stat-value">9</div>
-          </div>
-          <div>
-            <div class="channel-stat-label">Cost Per Appt</div>
-            <div class="channel-stat-value">$86</div>
-          </div>
-        </div>
-      </div>
+    <div class="section-subtitle">Click a channel to see the ads running for it</div>
+    <div id="channel-grid" style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:24px;">
+      <!-- filled by JS -->
     </div>
 
     <!-- Weekly Chart -->
-    <div class="chart-card">
-      <div class="chart-header">
-        <div class="section-title" style="margin-bottom:0;">Leads This Week</div>
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <div class="section-title" style="margin-bottom:0;">Leads Per Day</div>
       </div>
-      <div class="chart-bars" id="chart">
-        <!-- Filled by JS -->
+      <div id="chart" style="display:flex;align-items:flex-end;gap:4px;height:180px;padding-top:10px;">
+        <!-- filled by JS -->
       </div>
-      <div class="chart-legend">
-        <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#4285F4;"></div> Google</div>
-        <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#1877F2;"></div> Facebook</div>
-        <div class="chart-legend-item"><div class="chart-legend-dot" style="background:#C75B12;"></div> Outbound</div>
+      <div style="display:flex;gap:16px;margin-top:12px;justify-content:center;">
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted);"><div style="width:8px;height:8px;border-radius:2px;background:#4285F4;"></div> Google</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted);"><div style="width:8px;height:8px;border-radius:2px;background:#1877F2;"></div> Facebook</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted);"><div style="width:8px;height:8px;border-radius:2px;background:var(--accent);"></div> Outbound</div>
       </div>
     </div>
 
     <!-- Plain-English Insight -->
-    <div class="insight-box">
-      <div class="insight-title">This Week's Takeaway</div>
-      <div class="insight-text">
-        Facebook is your best-performing channel right now &mdash; bringing in the most leads at the lowest cost. Google leads tend to be homeowners actively searching for a roofer, so they book faster. Outbound is steady and predictable. All three channels are running. No changes needed this week.
+    <div class="insight-box" id="insight-box">
+      <!-- filled by JS -->
+    </div>
+
+    <!-- Where Traffic Goes (Landing Pages) -->
+    <div class="section-title">Where Your Traffic Goes</div>
+    <div class="section-subtitle">These are the pages people see when they click your ads</div>
+    <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:24px;" id="lp-grid">
+      <div class="card fade-in" style="cursor:pointer;" onclick="openModal('lpModal1')">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-weight:600;font-size:15px;color:var(--dark);">Google Ads Landing Page</div>
+            <div style="font-size:13px;color:var(--text-muted);margin-top:2px;">"Free Roof Inspection in Miami-Dade" &mdash; targets homeowners searching for roofers</div>
+          </div>
+          <span class="badge badge-green">Live</span>
+        </div>
+        <div style="margin-top:12px;background:var(--bg);border-radius:var(--radius-sm);padding:14px;border:1px solid var(--border);">
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Visitors</span><div style="font-weight:700;font-size:16px;">412</div></div>
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Form Fills</span><div style="font-weight:700;font-size:16px;">29</div></div>
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Conversion</span><div style="font-weight:700;font-size:16px;color:var(--green);">7.0%</div></div>
+          </div>
+          <div style="font-size:12px;color:var(--blue);margin-top:10px;font-weight:500;">Click to preview page &rarr;</div>
+        </div>
+      </div>
+      <div class="card fade-in" style="cursor:pointer;" onclick="openModal('lpModal2')">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-weight:600;font-size:15px;color:var(--dark);">Facebook/Instagram Landing Page</div>
+            <div style="font-size:13px;color:var(--text-muted);margin-top:2px;">"Is Your Roof Ready for Hurricane Season?" &mdash; targets homeowners in Miami-Dade</div>
+          </div>
+          <span class="badge badge-green">Live</span>
+        </div>
+        <div style="margin-top:12px;background:var(--bg);border-radius:var(--radius-sm);padding:14px;border:1px solid var(--border);">
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Visitors</span><div style="font-weight:700;font-size:16px;">587</div></div>
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Form Fills</span><div style="font-weight:700;font-size:16px;">33</div></div>
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Conversion</span><div style="font-weight:700;font-size:16px;color:var(--green);">5.6%</div></div>
+          </div>
+          <div style="font-size:12px;color:var(--blue);margin-top:10px;font-weight:500;">Click to preview page &rarr;</div>
+        </div>
+      </div>
+      <div class="card fade-in" style="cursor:pointer;" onclick="openModal('lpModal3')">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-weight:600;font-size:15px;color:var(--dark);">Lead Capture Form</div>
+            <div style="font-size:13px;color:var(--text-muted);margin-top:2px;">Quick-qualify form &mdash; name, phone, address, roof age, insurance or out-of-pocket</div>
+          </div>
+          <span class="badge badge-green">Live</span>
+        </div>
+        <div style="margin-top:12px;background:var(--bg);border-radius:var(--radius-sm);padding:14px;border:1px solid var(--border);">
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Submissions</span><div style="font-weight:700;font-size:16px;">62</div></div>
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Qualified</span><div style="font-weight:700;font-size:16px;">48</div></div>
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Qualification Rate</span><div style="font-weight:700;font-size:16px;color:var(--green);">77%</div></div>
+          </div>
+          <div style="font-size:12px;color:var(--blue);margin-top:10px;font-weight:500;">Click to preview form &rarr;</div>
+        </div>
       </div>
     </div>
 
     <!-- Recent Activity -->
     <div class="section-title">Recent Activity</div>
-    <div class="activity-card">
-      <ul class="activity-list" id="activity-feed">
-        <li class="activity-item fade-in">
-          <div class="activity-icon lead">&#128205;</div>
-          <div>
-            <div class="activity-text"><strong>New lead from Google Ads</strong> &mdash; Robert M., Marietta GA. Needs full roof replacement. Receptionist booked inspection for Thursday 2pm.</div>
-            <div class="activity-time">12 minutes ago</div>
+    <div class="card">
+      <ul style="list-style:none;" id="activity-feed">
+        <li class="fade-in" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
+          <div style="width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--blue-light);">&#128205;</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;line-height:1.5;"><strong style="color:var(--dark);">New lead from Google Ads</strong> &mdash; Carlos R., Coral Gables. Needs full roof replacement after hurricane damage. <a href="#" style="color:var(--blue);font-size:12px;" onclick="return false;">View lead details &rarr;</a></div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">12 minutes ago</div>
           </div>
         </li>
-        <li class="activity-item fade-in">
-          <div class="activity-icon call">&#128222;</div>
-          <div>
-            <div class="activity-text"><strong>Missed call answered</strong> &mdash; Homeowner called while your crew was on a job. Receptionist picked up, qualified them (insurance claim, shingle damage), and booked for Friday 10am.</div>
-            <div class="activity-time">47 minutes ago</div>
+        <li class="fade-in" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
+          <div style="width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--green-light);">&#128222;</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;line-height:1.5;"><strong style="color:var(--dark);">Call answered &amp; booked</strong> &mdash; Homeowner called while you were on a job. Receptionist answered, qualified (insurance claim, tile damage), booked for Friday 10am. <a href="receptionist.html" style="color:var(--blue);font-size:12px;">Listen to recording &rarr;</a></div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">47 minutes ago</div>
           </div>
         </li>
-        <li class="activity-item fade-in">
-          <div class="activity-icon review">&#11088;</div>
-          <div>
-            <div class="activity-text"><strong>New Google review (5 stars)</strong> &mdash; "Summit Ridge was fast, professional, and handled our insurance claim start to finish. Highly recommend." &mdash; Karen T.</div>
-            <div class="activity-time">2 hours ago</div>
+        <li class="fade-in" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
+          <div style="width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--yellow-light);">&#11088;</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;line-height:1.5;"><strong style="color:var(--dark);">New Google review (5 stars)</strong> &mdash; "Coastal Shield was fast, handled insurance, and cleaned up perfectly. Highly recommend." &mdash; Maria S. <a href="#" style="color:var(--blue);font-size:12px;" onclick="return false;">View on Google &rarr;</a></div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">2 hours ago</div>
           </div>
         </li>
-        <li class="activity-item fade-in">
-          <div class="activity-icon storm">&#9888;&#65039;</div>
-          <div>
-            <div class="activity-text"><strong>Storm alert triggered</strong> &mdash; Hail reported in Cobb County. 47 homeowners in your service area identified. Outreach sequence started automatically.</div>
-            <div class="activity-time">Yesterday, 9:14pm</div>
+        <li class="fade-in" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
+          <div style="width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--red-light);">&#9888;&#65039;</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;line-height:1.5;"><strong style="color:var(--dark);">Hurricane watch issued</strong> &mdash; Tropical Storm advisory for Miami-Dade. 285,000 households in impact zone. Outreach plan ready &mdash; <a href="storm.html" style="color:var(--blue);font-size:12px;">Review &amp; approve &rarr;</a></div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Yesterday, 9:14pm</div>
           </div>
         </li>
-        <li class="activity-item fade-in">
-          <div class="activity-icon hire">&#128100;</div>
-          <div>
-            <div class="activity-text"><strong>New applicant screened</strong> &mdash; James W., 4 years canvassing experience, passed phone screen. Interview scheduled for Monday 3pm.</div>
-            <div class="activity-time">Yesterday, 2:30pm</div>
+        <li class="fade-in" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;">
+          <div style="width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--purple-light);">&#128100;</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;line-height:1.5;"><strong style="color:var(--dark);">New applicant screened</strong> &mdash; James W., 4 years canvassing, passed phone screen. <a href="hiring.html" style="color:var(--blue);font-size:12px;">View applicant &rarr;</a></div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Yesterday, 2:30pm</div>
           </div>
         </li>
       </ul>
     </div>
 
-    <!-- Recent Changes -->
-    <div class="section-title">What We Changed This Week</div>
-    <div class="activity-card">
-      <div class="log-item">
-        <div class="log-date">Jun 2</div>
-        <div class="log-text">Paused one underperforming Google ad (high clicks, low calls). Shifted that budget to the top-performing ad targeting "roof replacement near me." Should lower your cost per lead by ~$5.</div>
-      </div>
-      <div class="log-item">
-        <div class="log-date">Jun 1</div>
-        <div class="log-text">Added 3 new before/after photos from the Kennesaw job to your Facebook ads. Visual ads with real project photos get 2-3x more clicks than stock images.</div>
-      </div>
-      <div class="log-item">
-        <div class="log-date">May 30</div>
-        <div class="log-text">Updated the receptionist script to ask about insurance claims earlier in the call. This helps your crew prioritize higher-value jobs when the schedule is tight.</div>
-      </div>
-      <div class="log-item">
-        <div class="log-date">May 28</div>
-        <div class="log-text">Launched a new Facebook ad set targeting homeowners within 5 miles of your last 3 completed jobs. Neighbors tend to convert better &mdash; they've already seen your trucks on the street.</div>
+  </div>
+
+  <!-- ═══ MODALS ═══ -->
+
+  <!-- Ad Preview Modal -->
+  <div class="modal-overlay" id="adModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('adModal')">&times;</button>
+      <div class="modal-title" id="adModalTitle">Ads Running</div>
+      <div id="adModalContent"></div>
+    </div>
+  </div>
+
+  <!-- LP Preview Modals -->
+  <div class="modal-overlay" id="lpModal1">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('lpModal1')">&times;</button>
+      <div class="modal-title">Google Ads Landing Page</div>
+      <div style="background:var(--bg);border-radius:var(--radius-sm);padding:20px;border:1px solid var(--border);">
+        <div style="font-family:var(--serif);font-size:22px;color:var(--dark);margin-bottom:8px;">Free Roof Inspection in Miami-Dade</div>
+        <div style="font-size:14px;color:var(--text);line-height:1.6;margin-bottom:16px;">Your roof takes the hit so your family doesn't have to. Our certified inspectors will check every shingle, seal, and flashing &mdash; and give you an honest assessment on the spot. No sales pitch. Just the truth about your roof.</div>
+        <div style="background:var(--white);border-radius:var(--radius-sm);padding:16px;border:1px solid var(--border);">
+          <div style="font-weight:600;margin-bottom:10px;font-size:14px;">Schedule Your Free Inspection</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);">Full Name</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);">Phone Number</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);">Property Address</div>
+          <div style="background:var(--accent);color:white;text-align:center;padding:12px;border-radius:8px;font-weight:600;font-size:14px;">Book My Free Inspection</div>
+        </div>
       </div>
     </div>
+  </div>
 
+  <div class="modal-overlay" id="lpModal2">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('lpModal2')">&times;</button>
+      <div class="modal-title">Facebook/Instagram Landing Page</div>
+      <div style="background:var(--bg);border-radius:var(--radius-sm);padding:20px;border:1px solid var(--border);">
+        <div style="font-family:var(--serif);font-size:22px;color:var(--dark);margin-bottom:8px;">Is Your Roof Ready for Hurricane Season?</div>
+        <div style="font-size:14px;color:var(--text);line-height:1.6;margin-bottom:16px;">Last year, 1 in 4 Miami-Dade homeowners filed a roof damage claim. Most didn't know there was a problem until it was too late. A 20-minute inspection could save you tens of thousands in emergency repairs.</div>
+        <div style="background:var(--white);border-radius:var(--radius-sm);padding:16px;border:1px solid var(--border);">
+          <div style="font-weight:600;margin-bottom:10px;font-size:14px;">Check My Roof Before Storm Season</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);">Full Name</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);">Phone Number</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);">Zip Code</div>
+          <div style="background:var(--accent);color:white;text-align:center;padding:12px;border-radius:8px;font-weight:600;font-size:14px;">Get My Free Inspection</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="lpModal3">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('lpModal3')">&times;</button>
+      <div class="modal-title">Lead Capture Form</div>
+      <div style="background:var(--bg);border-radius:var(--radius-sm);padding:20px;border:1px solid var(--border);">
+        <div style="font-family:var(--serif);font-size:20px;color:var(--dark);margin-bottom:12px;">Quick Qualification</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">This form qualifies leads before they reach you &mdash; so your crew only shows up to real opportunities.</div>
+        <div style="background:var(--white);border-radius:var(--radius-sm);padding:16px;border:1px solid var(--border);display:flex;flex-direction:column;gap:8px;">
+          <div style="background:var(--bg);padding:10px;border-radius:8px;font-size:13px;color:var(--text-muted);">Full Name</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;font-size:13px;color:var(--text-muted);">Phone Number</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;font-size:13px;color:var(--text-muted);">Property Address</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;font-size:13px;color:var(--text-muted);">How old is your roof? (dropdown)</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;font-size:13px;color:var(--text-muted);">Insurance claim or out-of-pocket? (dropdown)</div>
+          <div style="background:var(--accent);color:white;text-align:center;padding:12px;border-radius:8px;font-weight:600;font-size:14px;">Request My Inspection</div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script>
-    // Toggle switches
-    function toggleChannel(el) {
-      el.classList.toggle('off');
+    // ═══ DATA ═══
+    const data = {
+      '7d': {
+        leads: 22, leadsChange: '+15% vs last week',
+        appts: 9, apptsChange: '+3 from last week',
+        cpl: '$36', cplChange: 'Down from $41',
+        reviews: 4, reviewsChange: '+4 this week',
+        chart: [
+          {day:'Mon',g:3,m:4,o:2},{day:'Tue',g:5,m:3,o:3},{day:'Wed',g:2,m:5,o:4},
+          {day:'Thu',g:4,m:6,o:2},{day:'Fri',g:6,m:4,o:3},{day:'Sat',g:3,m:5,o:1},{day:'Sun',g:1,m:2,o:1}
+        ],
+        channels: [
+          {name:'Google Ads',dot:'#4285F4',leads:8,cpl:'$48',appts:3,cpa:'$128'},
+          {name:'Facebook / Instagram',dot:'#1877F2',leads:9,cpl:'$36',appts:4,cpa:'$81'},
+          {name:'Outbound Calls',dot:'var(--accent)',leads:5,cpl:'$31',appts:2,cpa:'$78'}
+        ],
+        insight: 'Facebook is your strongest channel this week &mdash; lowest cost per lead and most appointments. Google leads are homeowners actively searching, so they tend to close faster. Outbound is steady. All three channels running. No changes needed.'
+      },
+      '30d': {
+        leads: 87, leadsChange: '+23% vs last month',
+        appts: 34, apptsChange: '+18% vs last month',
+        cpl: '$38', cplChange: 'Down from $52',
+        reviews: 12, reviewsChange: '+8 this month',
+        chart: [
+          {day:'Wk 1',g:7,m:9,o:5},{day:'Wk 2',g:8,m:10,o:6},{day:'Wk 3',g:9,m:8,o:7},{day:'Wk 4',g:5,m:6,o:7}
+        ],
+        channels: [
+          {name:'Google Ads',dot:'#4285F4',leads:29,cpl:'$48',appts:11,cpa:'$126'},
+          {name:'Facebook / Instagram',dot:'#1877F2',leads:33,cpl:'$36',appts:14,cpa:'$85'},
+          {name:'Outbound Calls',dot:'var(--accent)',leads:25,cpl:'$31',appts:9,cpa:'$86'}
+        ],
+        insight: 'Across all three channels, your cost per lead dropped 27% this month. Facebook brings volume, Google brings intent, outbound brings consistency. The system is fully optimized &mdash; we made 7 changes this month (see What Changed tab).'
+      },
+      '90d': {
+        leads: 241, leadsChange: '+47% vs previous quarter',
+        appts: 96, apptsChange: '+52% vs previous quarter',
+        cpl: '$42', cplChange: 'Down from $68 at launch',
+        reviews: 31, reviewsChange: 'Rating: 4.8 stars',
+        chart: [
+          {day:'Month 1',g:18,m:22,o:14},{day:'Month 2',g:25,m:28,o:19},{day:'Month 3',g:29,m:33,o:25}
+        ],
+        channels: [
+          {name:'Google Ads',dot:'#4285F4',leads:72,cpl:'$52',appts:28,cpa:'$134'},
+          {name:'Facebook / Instagram',dot:'#1877F2',leads:83,cpl:'$39',appts:38,cpa:'$85'},
+          {name:'Outbound Calls',dot:'var(--accent)',leads:86,cpl:'$31',appts:30,cpa:'$89'}
+        ],
+        insight: 'Over 90 days, your system generated 241 exclusive leads and 96 booked appointments. Cost per lead dropped 38% from launch as we optimized. Outbound became your highest-volume channel by month 3. Your Google rating went from 4.2 to 4.8 with 31 new reviews.'
+      }
+    };
+
+    const adsByChannel = {
+      'Google Ads': [
+        {type:'Search Ad',headline:'Miami Roof Repair - Free Inspection Today',desc:'Licensed & Insured. Insurance Claims Welcome. Same-Week Appointments Available. Call Now.',status:'Running',clicks:187,leads:12},
+        {type:'Search Ad',headline:'Storm Damage? Free Roof Assessment',desc:'Hurricane season is here. Get your roof inspected by certified professionals. No obligation.',status:'Running',clicks:142,leads:9},
+        {type:'Search Ad',headline:'Roof Replacement Near Me - Miami',desc:'Full roof replacement starting at competitive rates. Financing available. 25-year warranty.',status:'Paused',clicks:89,leads:3}
+      ],
+      'Facebook / Instagram': [
+        {type:'Video Ad',headline:'Before & After: Coral Gables Re-Roof',desc:'Watch the full transformation. This homeowner went from leaking ceilings to a brand new tile roof in 3 days.',status:'Running',clicks:312,leads:18,media:'video'},
+        {type:'Image Ad',headline:'Is Your Roof Ready for Hurricane Season?',desc:'1 in 4 Miami-Dade homeowners filed a damage claim last year. Free inspection &mdash; takes 20 minutes.',status:'Running',clicks:245,leads:11,media:'image'},
+        {type:'Carousel Ad',headline:'5 Signs Your Roof Needs Attention',desc:'Curling shingles, dark spots, granule loss, sagging areas, daylight through attic. Sound familiar?',status:'Running',clicks:198,leads:9,media:'carousel'}
+      ],
+      'Outbound Calls': [
+        {type:'Call Script',headline:'Storm Season Preparation Call',desc:'"Hi [Name], this is Sarah calling from Coastal Shield Roofing. We\'re offering free roof inspections in your neighborhood before hurricane season. Would you be interested in getting yours checked?"',status:'Active',clicks:null,leads:25}
+      ]
+    };
+
+    // ═══ RENDER ═══
+    let currentPeriod = '30d';
+
+    function render() {
+      const d = data[currentPeriod];
+
+      // Stats
+      document.getElementById('stat-grid').innerHTML = `
+        <div class="stat-card fade-in"><div class="stat-label">New Leads</div><div class="stat-number">${d.leads}</div><div class="stat-change up">${d.leadsChange}</div></div>
+        <div class="stat-card fade-in"><div class="stat-label">Appointments Booked</div><div class="stat-number">${d.appts}</div><div class="stat-change up">${d.apptsChange}</div></div>
+        <div class="stat-card fade-in"><div class="stat-label">Avg Cost Per Lead</div><div class="stat-number">${d.cpl}</div><div class="stat-change up">${d.cplChange}</div></div>
+        <div class="stat-card fade-in"><div class="stat-label">Google Reviews</div><div class="stat-number">${d.reviews}</div><div class="stat-change up">${d.reviewsChange}</div></div>
+      `;
+
+      // Channels
+      const cg = document.getElementById('channel-grid');
+      cg.innerHTML = '';
+      cg.style.gridTemplateColumns = window.innerWidth >= 768 ? 'repeat(3,1fr)' : '1fr';
+      d.channels.forEach(ch => {
+        const card = document.createElement('div');
+        card.className = 'card fade-in';
+        card.style.cursor = 'pointer';
+        card.onclick = () => showAds(ch.name);
+        card.innerHTML = `
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+            <div style="font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px;">
+              <span style="width:10px;height:10px;border-radius:50%;background:${ch.dot};display:inline-block;"></span> ${ch.name}
+            </div>
+            <div class="toggle" onclick="event.stopPropagation();this.classList.toggle('off');"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div><div style="font-size:11px;color:var(--text-muted);">Leads</div><div style="font-size:18px;font-weight:700;color:var(--dark);">${ch.leads}</div></div>
+            <div><div style="font-size:11px;color:var(--text-muted);">Cost Per Lead</div><div style="font-size:18px;font-weight:700;color:var(--dark);">${ch.cpl}</div></div>
+            <div><div style="font-size:11px;color:var(--text-muted);">Appointments</div><div style="font-size:18px;font-weight:700;color:var(--dark);">${ch.appts}</div></div>
+            <div><div style="font-size:11px;color:var(--text-muted);">Cost Per Appt</div><div style="font-size:18px;font-weight:700;color:var(--dark);">${ch.cpa}</div></div>
+          </div>
+          <div style="font-size:12px;color:var(--blue);margin-top:12px;font-weight:500;">View running ads &rarr;</div>
+        `;
+        cg.appendChild(card);
+      });
+
+      // Chart
+      const chartEl = document.getElementById('chart');
+      chartEl.innerHTML = '';
+      const maxVal = Math.max(...d.chart.map(r => r.g + r.m + r.o));
+      d.chart.forEach(r => {
+        const total = r.g + r.m + r.o;
+        const group = document.createElement('div');
+        group.style.cssText = 'flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;';
+        group.innerHTML = `
+          <div style="font-size:13px;font-weight:700;color:var(--dark);">${total}</div>
+          <div style="width:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:140px;gap:2px;">
+            <div style="width:80%;max-width:50px;border-radius:4px 4px 0 0;background:var(--accent);height:${(r.o/maxVal)*100}%;transition:height 0.8s;"></div>
+            <div style="width:80%;max-width:50px;background:#1877F2;height:${(r.m/maxVal)*100}%;transition:height 0.8s;"></div>
+            <div style="width:80%;max-width:50px;border-radius:0 0 4px 4px;background:#4285F4;height:${(r.g/maxVal)*100}%;transition:height 0.8s;"></div>
+          </div>
+          <div style="font-size:11px;color:var(--text-muted);font-weight:500;">${r.day}</div>
+        `;
+        chartEl.appendChild(group);
+      });
+
+      // Insight
+      document.getElementById('insight-box').innerHTML = `
+        <div class="insight-title">Plain-English Summary</div>
+        <div class="insight-text">${d.insight}</div>
+      `;
     }
 
     // Period pills
@@ -641,49 +374,48 @@
       pill.addEventListener('click', () => {
         document.querySelectorAll('.period-pill').forEach(p => p.classList.remove('active'));
         pill.classList.add('active');
+        currentPeriod = pill.dataset.period;
+        render();
       });
     });
 
-    // Chart data
-    const weekData = [
-      { day: 'Mon', google: 3, meta: 4, outbound: 2 },
-      { day: 'Tue', google: 5, meta: 3, outbound: 3 },
-      { day: 'Wed', google: 2, meta: 5, outbound: 4 },
-      { day: 'Thu', google: 4, meta: 6, outbound: 2 },
-      { day: 'Fri', google: 6, meta: 4, outbound: 3 },
-      { day: 'Sat', google: 3, meta: 5, outbound: 1 },
-      { day: 'Sun', google: 1, meta: 2, outbound: 1 },
-    ];
+    // Show ads modal
+    function showAds(channelName) {
+      const ads = adsByChannel[channelName] || [];
+      document.getElementById('adModalTitle').textContent = channelName + ' — Running Ads';
+      const content = document.getElementById('adModalContent');
+      content.innerHTML = ads.map(ad => `
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin-bottom:12px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+            <span class="badge ${ad.status === 'Running' || ad.status === 'Active' ? 'badge-green' : 'badge-gray'}">${ad.status}</span>
+            <span style="font-size:11px;color:var(--text-muted);">${ad.type}</span>
+          </div>
+          ${ad.media ? `<div style="background:var(--bg);border-radius:8px;height:160px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;border:1px solid var(--border);">
+            <div style="text-align:center;color:var(--text-muted);">
+              <div style="font-size:32px;">${ad.media === 'video' ? '&#9654;' : ad.media === 'carousel' ? '&#128247;' : '&#128444;'}</div>
+              <div style="font-size:12px;margin-top:4px;">${ad.media === 'video' ? 'Video Preview' : ad.media === 'carousel' ? 'Carousel (5 slides)' : 'Image Preview'}</div>
+            </div>
+          </div>` : ''}
+          <div style="font-weight:600;font-size:14px;color:var(--dark);margin-bottom:4px;">${ad.headline}</div>
+          <div style="font-size:13px;color:var(--text);line-height:1.5;">${ad.desc}</div>
+          ${ad.clicks !== null ? `<div style="display:flex;gap:16px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);">
+            <div><span style="font-size:11px;color:var(--text-muted);">Clicks</span><div style="font-weight:700;font-size:14px;">${ad.clicks}</div></div>
+            <div><span style="font-size:11px;color:var(--text-muted);">Leads</span><div style="font-weight:700;font-size:14px;">${ad.leads}</div></div>
+          </div>` : `<div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--border);font-size:13px;color:var(--text-muted);">${ad.leads} leads generated this month</div>`}
+        </div>
+      `).join('');
+      openModal('adModal');
+    }
 
-    const chart = document.getElementById('chart');
-    const maxVal = Math.max(...weekData.map(d => d.google + d.meta + d.outbound));
-
-    weekData.forEach(d => {
-      const group = document.createElement('div');
-      group.className = 'chart-bar-group';
-
-      const stack = document.createElement('div');
-      stack.className = 'chart-bar-stack';
-
-      const pct = v => (v / maxVal) * 100;
-
-      ['outbound', 'meta', 'google'].forEach(ch => {
-        const bar = document.createElement('div');
-        bar.className = `chart-bar ${ch}`;
-        bar.style.height = `${pct(d[ch])}%`;
-        stack.appendChild(bar);
-      });
-
-      const label = document.createElement('div');
-      label.className = 'chart-day';
-      label.textContent = d.day;
-
-      group.appendChild(stack);
-      group.appendChild(label);
-      chart.appendChild(group);
+    function openModal(id) { document.getElementById(id).classList.add('open'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+    document.querySelectorAll('.modal-overlay').forEach(m => {
+      m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
     });
+
+    render();
   </script>
 
-<!-- v1 - dashboard demo -->
+<!-- v2 - dashboard demo -->
 </body>
 </html>

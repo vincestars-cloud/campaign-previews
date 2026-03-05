@@ -4,166 +4,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Storm Alerts - Your Growth Dashboard</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    :root { --accent: #C75B12; --accent-light: #FFF4ED; --bg: #F8F9FA; --white: #FFFFFF; --dark: #1A1A1A; --text: #333; --text-muted: #777; --border: #E5E7EB; --green: #22C55E; --red: #EF4444; --blue: #3B82F6; --yellow: #F59E0B; --serif: 'DM Serif Display', serif; --sans: 'Inter', sans-serif; }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: var(--sans); background: var(--bg); color: var(--text); }
-
-    .topbar { background: var(--white); border-bottom: 1px solid var(--border); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
-    .topbar-brand { font-family: var(--serif); font-size: 20px; color: var(--dark); }
-    .topbar-brand span { color: var(--accent); }
-    .topbar-status { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--green); font-weight: 500; }
-    .topbar-status::before { content: ''; width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse-dot 2s infinite; }
-    @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
-
-    .nav-tabs { background: var(--white); border-bottom: 1px solid var(--border); display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-    .nav-tabs::-webkit-scrollbar { display: none; }
-    .nav-tab { padding: 12px 18px; font-size: 13px; font-weight: 500; color: var(--text-muted); white-space: nowrap; text-decoration: none; border-bottom: 2px solid transparent; transition: all 0.2s; }
-    .nav-tab:hover { color: var(--text); }
-    .nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
-
-    .content { padding: 20px; max-width: 900px; margin: 0 auto; }
-    .section-title { font-family: var(--serif); font-size: 20px; margin-bottom: 14px; color: var(--dark); }
-    .card { background: var(--white); border-radius: 12px; padding: 18px; border: 1px solid var(--border); margin-bottom: 16px; }
-
-    /* ── Alert banner ── */
-    .alert-banner {
-      background: linear-gradient(135deg, #991B1B, #DC2626);
-      color: white;
-      border-radius: 12px;
-      padding: 20px;
-      margin-bottom: 20px;
-      animation: alertPulse 3s infinite;
-    }
-    @keyframes alertPulse {
-      0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.3); }
-      50% { box-shadow: 0 0 0 8px rgba(220,38,38,0); }
-    }
-    .alert-badge {
-      display: inline-block;
-      background: rgba(255,255,255,0.2);
-      padding: 4px 12px;
-      border-radius: 20px;
-      font-size: 11px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 10px;
-    }
-    .alert-title {
-      font-family: var(--serif);
-      font-size: 22px;
-      margin-bottom: 6px;
-    }
-    .alert-detail {
-      font-size: 14px;
-      opacity: 0.9;
-      line-height: 1.5;
-    }
-
-    /* ── Timeline ── */
-    .storm-timeline {
-      position: relative;
-      padding-left: 28px;
-    }
-    .storm-timeline::before {
-      content: '';
-      position: absolute;
-      left: 9px;
-      top: 0;
-      bottom: 0;
-      width: 2px;
-      background: var(--border);
-    }
-    .timeline-step {
-      position: relative;
-      padding-bottom: 24px;
-    }
-    .timeline-step:last-child { padding-bottom: 0; }
-    .timeline-dot {
-      position: absolute;
-      left: -24px;
-      top: 2px;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      border: 2px solid var(--white);
-    }
-    .timeline-dot.done { background: var(--green); }
-    .timeline-dot.active { background: var(--accent); animation: pulse-dot 2s infinite; }
-    .timeline-dot.pending { background: var(--border); }
-    .timeline-time {
-      font-size: 11px;
-      color: var(--text-muted);
-      font-weight: 500;
-      margin-bottom: 3px;
-    }
-    .timeline-title {
-      font-size: 15px;
-      font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 3px;
-    }
-    .timeline-desc {
-      font-size: 13px;
-      color: var(--text-muted);
-      line-height: 1.5;
-    }
-
-    /* ── Homeowner list ── */
-    .homeowner-list { list-style: none; }
-    .homeowner-item {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .homeowner-item:last-child { border-bottom: none; }
-    .homeowner-info {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .homeowner-name { font-weight: 600; font-size: 14px; }
-    .homeowner-address { font-size: 12px; color: var(--text-muted); }
-    .homeowner-status {
-      font-size: 11px;
-      font-weight: 600;
-      padding: 4px 10px;
-      border-radius: 20px;
-      white-space: nowrap;
-    }
-    .homeowner-status.contacted { background: #DBEAFE; color: #1E40AF; }
-    .homeowner-status.booked { background: #DCFCE7; color: #166534; }
-    .homeowner-status.pending { background: #FEF3C7; color: #92400E; }
-    .homeowner-status.no-answer { background: #F3F4F6; color: #6B7280; }
-
-    /* ── Past storms ── */
-    .past-storm {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .past-storm:last-child { border-bottom: none; }
-    .past-storm-info { display: flex; flex-direction: column; gap: 2px; }
-    .past-storm-type { font-weight: 600; font-size: 14px; }
-    .past-storm-date { font-size: 12px; color: var(--text-muted); }
-    .past-storm-result { text-align: right; }
-    .past-storm-leads { font-weight: 700; font-size: 16px; color: var(--dark); }
-    .past-storm-label { font-size: 11px; color: var(--text-muted); }
-
-    .fade-in { animation: fadeIn 0.6s ease both; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <div class="topbar">
-    <div class="topbar-brand">Summit Ridge <span>Roofing</span></div>
+    <div class="topbar-brand">Coastal Shield <span>Roofing</span></div>
     <div class="topbar-status">Storm Monitoring Active</div>
   </div>
 
@@ -176,146 +22,130 @@
     <a class="nav-tab" href="commands.html">Text Commands</a>
   </nav>
 
-  <div class="content">
+  <div class="content-narrow">
 
-    <!-- Active Alert -->
-    <div class="alert-banner fade-in">
-      <div class="alert-badge">Active Storm Alert</div>
-      <div class="alert-title">Hail Reported in Cobb County</div>
-      <div class="alert-detail">Detected at 9:14pm last night. Quarter-size hail, 45mph winds. 47 homeowners in your service area identified. Outreach started automatically.</div>
+    <!-- Active Alert Banner -->
+    <div style="background:linear-gradient(135deg,#991B1B,#DC2626);color:white;border-radius:var(--radius);padding:20px;margin-bottom:20px;animation:alertPulse 3s infinite;">
+      <div style="display:inline-block;background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">Active Storm Watch</div>
+      <div style="font-family:var(--serif);font-size:22px;margin-bottom:6px;">Tropical Storm Advisory &mdash; Miami-Dade County</div>
+      <div style="font-size:14px;opacity:0.9;line-height:1.5;">High winds (65mph) and heavy rain expected. Category 1 potential. Detected 9:14pm last night.</div>
+    </div>
+    <style>@keyframes alertPulse{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,0.3);}50%{box-shadow:0 0 0 8px rgba(220,38,38,0);}}</style>
+
+    <!-- Impact Numbers -->
+    <div class="mini-stats" style="margin-bottom:20px;">
+      <div class="card card-flat">
+        <div class="mini-stat-label">Households in Impact Zone</div>
+        <div class="mini-stat-value">285K</div>
+      </div>
+      <div class="card card-flat">
+        <div class="mini-stat-label">Your Past Leads in Zone</div>
+        <div class="mini-stat-value">127</div>
+      </div>
+      <div class="card card-flat">
+        <div class="mini-stat-label">Past Customers in Zone</div>
+        <div class="mini-stat-value">34</div>
+      </div>
+      <div class="card card-flat">
+        <div class="mini-stat-label">Outreach Ready</div>
+        <div class="mini-stat-value">161</div>
+      </div>
     </div>
 
-    <!-- What happened automatically -->
-    <div class="section-title">Here's What Happened Automatically</div>
+    <!-- Pending Approval -->
+    <div class="approval-box" style="margin-bottom:20px;">
+      <div class="approval-title">Pending Your Approval</div>
+      <p style="font-size:14px;line-height:1.6;color:var(--text);margin-bottom:8px;">We've prepared outreach for <strong>161 contacts</strong> (127 past leads + 34 past customers). Here's the message that will go out:</p>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin:12px 0;">
+        <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px;font-weight:500;">TEXT MESSAGE:</div>
+        <p style="font-size:14px;line-height:1.6;color:var(--text);">"Hi [Name], this is Coastal Shield Roofing. With the tropical storm heading toward Miami-Dade, there may be roof damage in your area. We're offering priority inspections for our past clients this week. Want us to get you on the schedule? Reply YES or call us anytime."</p>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin:12px 0;">
+        <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px;font-weight:500;">OUTBOUND CALL SCRIPT (for leads who don't respond to text):</div>
+        <p style="font-size:14px;line-height:1.6;color:var(--text);">"Hi [Name], this is Sarah from Coastal Shield Roofing. I'm calling because we have a tropical storm heading our way and we want to make sure your roof is ready. We're offering free inspections this week for homeowners in your area. Would you like us to come take a look?"</p>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="approval-btn approve" onclick="this.textContent='Approved!';this.style.background='#065F46';">Approve &amp; Send</button>
+        <button class="approval-btn edit">Edit Message First</button>
+      </div>
+      <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">Nothing goes out until you approve it. You can also edit the message before sending.</p>
+    </div>
+
+    <!-- Reactivation Campaign -->
+    <div class="section-title">Reactivation Campaign</div>
     <div class="card fade-in">
-      <div class="storm-timeline">
-        <div class="timeline-step">
-          <div class="timeline-dot done"></div>
-          <div class="timeline-time">9:14 PM</div>
-          <div class="timeline-title">Storm detected</div>
-          <div class="timeline-desc">National Weather Service reported hail in Cobb County. System matched it to your service area.</div>
+      <p style="font-size:14px;color:var(--text-muted);margin-bottom:14px;">Your <strong>34 past customers</strong> already trust you. They're the fastest path to booked jobs after a storm:</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
+        <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);text-align:center;">
+          <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Past Customers</div>
+          <div style="font-size:22px;font-weight:700;color:var(--dark);">34</div>
+          <div style="font-size:11px;color:var(--green);font-weight:500;">Priority outreach</div>
         </div>
-        <div class="timeline-step">
-          <div class="timeline-dot done"></div>
-          <div class="timeline-time">9:16 PM</div>
-          <div class="timeline-title">Homeowner list pulled</div>
-          <div class="timeline-desc">47 homeowners with roofs older than 10 years in the affected zip codes (30060, 30062, 30064) identified.</div>
+        <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);text-align:center;">
+          <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Past Leads (never closed)</div>
+          <div style="font-size:22px;font-weight:700;color:var(--dark);">127</div>
+          <div style="font-size:11px;color:var(--blue);font-weight:500;">Second-wave outreach</div>
         </div>
+      </div>
+      <p style="font-size:13px;color:var(--text-muted);line-height:1.5;">Past customers get contacted first (they're warm). Past leads get contacted 2 hours later. This two-wave approach fills your schedule faster.</p>
+    </div>
+
+    <!-- Timeline -->
+    <div class="section-title">What Happens After You Approve</div>
+    <div class="card fade-in">
+      <div class="timeline">
         <div class="timeline-step">
-          <div class="timeline-dot done"></div>
-          <div class="timeline-time">7:00 AM (next day)</div>
-          <div class="timeline-title">Outreach started</div>
-          <div class="timeline-desc">Text messages sent: "Hi [Name], last night's hailstorm may have damaged roofs in your area. Summit Ridge Roofing is offering free inspections this week. Want us to take a look?" Waited until morning so people aren't bothered at night.</div>
-        </div>
-        <div class="timeline-step">
-          <div class="timeline-dot active"></div>
-          <div class="timeline-time">Now</div>
-          <div class="timeline-title">Responses coming in</div>
-          <div class="timeline-desc">11 homeowners have responded so far. 7 booked inspections. 4 asked for more info (receptionist following up). Your competitors haven't started outreach yet.</div>
+          <div class="timeline-dot pending"></div>
+          <div class="timeline-time">Immediately after approval</div>
+          <div class="timeline-title">Texts sent to 34 past customers</div>
+          <div class="timeline-desc">Priority contacts. They already know and trust you.</div>
         </div>
         <div class="timeline-step">
           <div class="timeline-dot pending"></div>
-          <div class="timeline-time">Tomorrow</div>
-          <div class="timeline-title">Follow-up calls</div>
-          <div class="timeline-desc">Receptionist will call the 36 who haven't responded yet. Second text goes out to non-responders in 48 hours.</div>
+          <div class="timeline-time">2 hours later</div>
+          <div class="timeline-title">Texts sent to 127 past leads</div>
+          <div class="timeline-desc">People who called or filled out a form before but didn't book. Storm damage gives them a reason to re-engage.</div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot pending"></div>
+          <div class="timeline-time">Next morning, 9am</div>
+          <div class="timeline-title">Follow-up calls to non-responders</div>
+          <div class="timeline-desc">Receptionist calls anyone who didn't reply to the text. Warm, helpful tone &mdash; not pushy.</div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot pending"></div>
+          <div class="timeline-time">48 hours after storm passes</div>
+          <div class="timeline-title">Second text to remaining contacts</div>
+          <div class="timeline-desc">"The storm has passed. If you noticed any damage, we still have inspection slots open this week."</div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot pending"></div>
+          <div class="timeline-time">Ongoing</div>
+          <div class="timeline-title">Results tracked in your dashboard</div>
+          <div class="timeline-desc">Every response, booking, and job is tracked so you can see exactly how many jobs came from this storm.</div>
         </div>
       </div>
     </div>
 
-    <!-- Homeowner List -->
-    <div class="section-title">Homeowners Contacted</div>
-    <div class="card fade-in">
-      <ul class="homeowner-list">
-        <li class="homeowner-item">
-          <div class="homeowner-info">
-            <div class="homeowner-name">Patricia Henderson</div>
-            <div class="homeowner-address">412 Chestnut Hill Rd, Kennesaw</div>
-          </div>
-          <span class="homeowner-status booked">Inspection Booked</span>
-        </li>
-        <li class="homeowner-item">
-          <div class="homeowner-info">
-            <div class="homeowner-name">David & Maria Nguyen</div>
-            <div class="homeowner-address">89 Whitlock Ave, Marietta</div>
-          </div>
-          <span class="homeowner-status booked">Inspection Booked</span>
-        </li>
-        <li class="homeowner-item">
-          <div class="homeowner-info">
-            <div class="homeowner-name">James Crawford</div>
-            <div class="homeowner-address">1550 Pine Mountain Rd, Kennesaw</div>
-          </div>
-          <span class="homeowner-status booked">Inspection Booked</span>
-        </li>
-        <li class="homeowner-item">
-          <div class="homeowner-info">
-            <div class="homeowner-name">Sandra Williams</div>
-            <div class="homeowner-address">234 Church St Extension, Marietta</div>
-          </div>
-          <span class="homeowner-status contacted">Wants More Info</span>
-        </li>
-        <li class="homeowner-item">
-          <div class="homeowner-info">
-            <div class="homeowner-name">Robert & Kim Lee</div>
-            <div class="homeowner-address">67 Old Mountain Rd, Powder Springs</div>
-          </div>
-          <span class="homeowner-status contacted">Wants More Info</span>
-        </li>
-        <li class="homeowner-item">
-          <div class="homeowner-info">
-            <div class="homeowner-name">Thomas Baker</div>
-            <div class="homeowner-address">890 Kennesaw Due West Rd</div>
-          </div>
-          <span class="homeowner-status pending">Text Sent</span>
-        </li>
-        <li class="homeowner-item">
-          <div class="homeowner-info">
-            <div class="homeowner-name">Angela Morales</div>
-            <div class="homeowner-address">1123 Bells Ferry Rd, Marietta</div>
-          </div>
-          <span class="homeowner-status no-answer">No Response Yet</span>
-        </li>
-      </ul>
-      <p style="font-size:13px;color:var(--text-muted);margin-top:14px;text-align:center;">Showing 7 of 47 homeowners. Full list in your dashboard.</p>
-    </div>
-
-    <!-- Past Storms -->
+    <!-- Past Storm Results -->
     <div class="section-title">Past Storm Results</div>
     <div class="card fade-in">
-      <div class="past-storm">
-        <div class="past-storm-info">
-          <div class="past-storm-type">Hail &mdash; Fulton County</div>
-          <div class="past-storm-date">May 14, 2026</div>
-        </div>
-        <div class="past-storm-result">
-          <div class="past-storm-leads">14 jobs</div>
-          <div class="past-storm-label">from 52 contacted</div>
-        </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border);">
+        <div><div style="font-weight:600;font-size:14px;">Tropical Storm &mdash; Broward County</div><div style="font-size:12px;color:var(--text-muted);">May 14, 2026 &bull; 312K households impacted</div></div>
+        <div style="text-align:right;"><div style="font-weight:700;font-size:16px;color:var(--dark);">14 jobs</div><div style="font-size:11px;color:var(--text-muted);">from 89 contacted</div></div>
       </div>
-      <div class="past-storm">
-        <div class="past-storm-info">
-          <div class="past-storm-type">High Winds &mdash; DeKalb County</div>
-          <div class="past-storm-date">April 28, 2026</div>
-        </div>
-        <div class="past-storm-result">
-          <div class="past-storm-leads">8 jobs</div>
-          <div class="past-storm-label">from 31 contacted</div>
-        </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border);">
+        <div><div style="font-weight:600;font-size:14px;">High Winds &mdash; Miami-Dade</div><div style="font-size:12px;color:var(--text-muted);">April 28, 2026 &bull; 185K households impacted</div></div>
+        <div style="text-align:right;"><div style="font-weight:700;font-size:16px;color:var(--dark);">8 jobs</div><div style="font-size:11px;color:var(--text-muted);">from 52 contacted</div></div>
       </div>
-      <div class="past-storm">
-        <div class="past-storm-info">
-          <div class="past-storm-type">Hail &mdash; Cherokee County</div>
-          <div class="past-storm-date">March 22, 2026</div>
-        </div>
-        <div class="past-storm-result">
-          <div class="past-storm-leads">11 jobs</div>
-          <div class="past-storm-label">from 39 contacted</div>
-        </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;">
+        <div><div style="font-weight:600;font-size:14px;">Hail &mdash; Palm Beach County</div><div style="font-size:12px;color:var(--text-muted);">March 22, 2026 &bull; 94K households impacted</div></div>
+        <div style="text-align:right;"><div style="font-weight:700;font-size:16px;color:var(--dark);">11 jobs</div><div style="font-size:11px;color:var(--text-muted);">from 67 contacted</div></div>
       </div>
     </div>
 
   </div>
 
-<!-- v1 - storm demo -->
+<!-- v2 - storm demo -->
 </body>
 </html>
