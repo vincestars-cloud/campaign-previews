@@ -133,7 +133,7 @@
         <!-- ========== BUILD & BUY VIEW ========== -->
         <div id="view-build" class="view p-4 sm:p-8 max-w-5xl">
             <h1 class="text-2xl font-bold mb-1">Build Your Lead List</h1>
-            <p class="text-gray-500 text-sm mb-6">Filter and preview leads before purchasing</p>
+            <p class="text-gray-500 text-sm mb-6">Filter and preview leads before purchasing. Each record includes up to 4 points of contact.</p>
 
             <!-- Top row: State + Lead Preview side by side -->
             <div class="grid grid-cols-1 lg:grid-cols-5 gap-5 mb-5">
@@ -151,20 +151,6 @@
                             <div class="text-xs text-gray-500 mb-1">Total Unique Addresses</div>
                             <div class="text-3xl font-bold text-brand-600" id="previewTotal">0</div>
                             <div class="text-xs text-gray-400 mt-1">What you pay for</div>
-                        </div>
-                        <div class="grid grid-cols-3 gap-2 text-center text-xs mb-3">
-                            <div class="bg-gray-50 rounded-lg p-2">
-                                <div class="text-gray-500">With Phone</div>
-                                <div class="font-bold text-sm mt-0.5" id="previewWithPhone">0</div>
-                            </div>
-                            <div class="bg-gray-50 rounded-lg p-2">
-                                <div class="text-gray-500">Phones</div>
-                                <div class="font-bold text-sm mt-0.5" id="previewPhones">0</div>
-                            </div>
-                            <div class="bg-gray-50 rounded-lg p-2">
-                                <div class="text-gray-500">No Phone</div>
-                                <div class="font-bold text-sm mt-0.5" id="previewNoPhone">0</div>
-                            </div>
                         </div>
                         <button onclick="goToPackages()" class="w-full bg-gray-900 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Choose Package</button>
                     </div>
@@ -223,51 +209,51 @@
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Total Assessed Value</label>
                                     <div class="flex gap-2">
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>$50K</option><option>$100K</option><option>$150K</option><option>$200K</option><option>$300K</option><option>$500K</option></select>
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>$100K</option><option>$200K</option><option>$300K</option><option>$500K</option><option>$750K</option><option>$1M+</option></select>
+                                        <select id="fValueMin" onchange="updatePreview()" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Min</option><option value="25000">$25K</option><option value="50000">$50K</option><option value="75000">$75K</option><option value="100000">$100K</option><option value="150000">$150K</option><option value="200000">$200K</option><option value="250000">$250K</option><option value="300000">$300K</option><option value="400000">$400K</option><option value="500000">$500K</option><option value="750000">$750K</option><option value="1000000">$1M</option></select>
+                                        <select id="fValueMax" onchange="updatePreview()" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Max</option><option value="75000">$75K</option><option value="100000">$100K</option><option value="150000">$150K</option><option value="200000">$200K</option><option value="250000">$250K</option><option value="300000">$300K</option><option value="400000">$400K</option><option value="500000">$500K</option><option value="750000">$750K</option><option value="1000000">$1M</option><option value="1500000">$1.5M</option><option value="2000000">$2M+</option></select>
                                     </div>
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Renters</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>All</option><option>Exclude Renters</option><option>Renters Only</option></select>
+                                    <select id="fRenters" onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">All</option><option value="exclude">Exclude Renters</option><option value="only">Renters Only</option></select>
                                 </div>
                             </div>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Square Feet</label>
                                     <div class="flex gap-2">
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>500+</option><option>1000+</option><option>1500+</option><option>2000+</option><option>3000+</option></select>
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>1000</option><option>2000</option><option>3000</option><option>5000</option><option>10000</option></select>
+                                        <select id="fSqftMin" onchange="updatePreview()" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Min</option><option>250</option><option>500</option><option>750</option><option>1,000</option><option>1,250</option><option>1,500</option><option>1,750</option><option>2,000</option><option>2,250</option><option>2,500</option><option>2,750</option><option>3,000+</option></select>
+                                        <select id="fSqftMax" onchange="updatePreview()" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Max</option><option>500</option><option>750</option><option>1,000</option><option>1,250</option><option>1,500</option><option>1,750</option><option>2,000</option><option>2,250</option><option>2,500</option><option>2,750</option><option>3,000+</option></select>
                                     </div>
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Year Built</label>
                                     <div class="flex gap-2">
-                                        <input type="text" placeholder="From" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm" maxlength="4">
-                                        <input type="text" placeholder="To" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm" maxlength="4">
+                                        <select id="fYearMin" onchange="updatePreview()" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">From</option></select>
+                                        <select id="fYearMax" onchange="updatePreview()" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">To</option></select>
                                     </div>
                                 </div>
                             </div>
                             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Rooms</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option></select>
+                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option><option>6+</option><option>8+</option></select>
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Bedrooms</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option></select>
+                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option></select>
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Bathrooms</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option></select>
+                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option></select>
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Residence</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>1+ yr</option><option>2+ yr</option><option>5+ yr</option><option>10+ yr</option></select>
+                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>1+ yr</option><option>2+ yr</option><option>3+ yr</option><option>5+ yr</option><option>7+ yr</option><option>10+ yr</option><option>15+ yr</option><option>20+ yr</option></select>
                                 </div>
                             </div>
                             <label class="flex items-center gap-2 text-sm text-gray-600">
-                                <input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
+                                <input type="checkbox" onchange="updatePreview()" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
                                 Equity Prospect
                             </label>
                         </div>
@@ -286,15 +272,15 @@
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">1st Mortgage Amount</label>
                                     <div class="flex gap-2">
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>$50K</option><option>$100K</option><option>$200K</option><option>$300K</option></select>
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>$200K</option><option>$500K</option><option>$750K</option><option>$1M+</option></select>
+                                        <select onchange="updatePreview()" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Min</option><option>$25K</option><option>$50K</option><option>$100K</option><option>$150K</option><option>$200K</option><option>$300K</option><option>$500K</option></select>
+                                        <select onchange="updatePreview()" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Max</option><option>$100K</option><option>$200K</option><option>$300K</option><option>$500K</option><option>$750K</option><option>$1M+</option></select>
                                     </div>
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">2nd Mortgage Amount</label>
                                     <div class="flex gap-2">
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>$25K</option><option>$50K</option><option>$100K</option></select>
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>$100K</option><option>$200K</option><option>$500K</option></select>
+                                        <select onchange="updatePreview()" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Min</option><option>$10K</option><option>$25K</option><option>$50K</option><option>$100K</option></select>
+                                        <select onchange="updatePreview()" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Max</option><option>$50K</option><option>$100K</option><option>$200K</option><option>$500K</option></select>
                                     </div>
                                 </div>
                             </div>
@@ -302,27 +288,43 @@
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Income</label>
                                     <div class="flex gap-2">
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>$25K</option><option>$50K</option><option>$75K</option><option>$100K</option><option>$150K</option></select>
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>$75K</option><option>$100K</option><option>$150K</option><option>$200K</option><option>$500K+</option></select>
+                                        <select id="fIncomeMin" onchange="updatePreview()" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Min</option><option value="15000">$15K</option><option value="25000">$25K</option><option value="35000">$35K</option><option value="50000">$50K</option><option value="75000">$75K</option><option value="100000">$100K</option><option value="150000">$150K</option><option value="200000">$200K</option></select>
+                                        <select id="fIncomeMax" onchange="updatePreview()" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Max</option><option value="35000">$35K</option><option value="50000">$50K</option><option value="75000">$75K</option><option value="100000">$100K</option><option value="150000">$150K</option><option value="200000">$200K</option><option value="500000">$500K+</option></select>
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Credit Rating</label>
-                                    <select id="creditSelect" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
-                                        <option>Any</option>
-                                        <option>800+</option><option>750-799</option><option>700-749</option><option>650-699</option><option>600-649</option><option>550-599</option><option>500-549</option><option>Below 500</option>
-                                    </select>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Credit Score <span id="creditCount" class="text-brand-600 font-semibold"></span></label>
+                                    <div class="relative">
+                                        <button type="button" onclick="toggleCreditDropdown()" id="creditBtn" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-left flex items-center justify-between hover:border-gray-400 transition">
+                                            <span id="creditLabel">Any</span>
+                                            <svg class="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </button>
+                                        <div id="creditDropdown" class="absolute z-20 mt-1 w-full bg-white border border-gray-200 rounded-lg shadow-lg hidden">
+                                            <div class="p-2 space-y-0.5 max-h-60 overflow-y-auto">
+                                                <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 text-sm cursor-pointer"><input type="checkbox" value="all" onchange="toggleCreditAll(this)" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500"> Check All</label>
+                                                <div class="border-t border-gray-100 my-1"></div>
+                                                <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 text-sm cursor-pointer"><input type="checkbox" value="800" onchange="updateCreditLabel()" class="credit-cb rounded border-gray-300 text-brand-600 focus:ring-brand-500"> 800+</label>
+                                                <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 text-sm cursor-pointer"><input type="checkbox" value="750" onchange="updateCreditLabel()" class="credit-cb rounded border-gray-300 text-brand-600 focus:ring-brand-500"> 750-799</label>
+                                                <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 text-sm cursor-pointer"><input type="checkbox" value="700" onchange="updateCreditLabel()" class="credit-cb rounded border-gray-300 text-brand-600 focus:ring-brand-500"> 700-749</label>
+                                                <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 text-sm cursor-pointer"><input type="checkbox" value="650" onchange="updateCreditLabel()" class="credit-cb rounded border-gray-300 text-brand-600 focus:ring-brand-500"> 650-699</label>
+                                                <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 text-sm cursor-pointer"><input type="checkbox" value="600" onchange="updateCreditLabel()" class="credit-cb rounded border-gray-300 text-brand-600 focus:ring-brand-500"> 600-649</label>
+                                                <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 text-sm cursor-pointer"><input type="checkbox" value="550" onchange="updateCreditLabel()" class="credit-cb rounded border-gray-300 text-brand-600 focus:ring-brand-500"> 550-599</label>
+                                                <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 text-sm cursor-pointer"><input type="checkbox" value="500" onchange="updateCreditLabel()" class="credit-cb rounded border-gray-300 text-brand-600 focus:ring-brand-500"> 500-549</label>
+                                                <label class="flex items-center gap-2 px-2 py-1.5 rounded hover:bg-gray-50 text-sm cursor-pointer"><input type="checkbox" value="below500" onchange="updateCreditLabel()" class="credit-cb rounded border-gray-300 text-brand-600 focus:ring-brand-500"> Below 500</label>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Net Worth</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>$0-$50K</option><option>$50K-$100K</option><option>$100K-$250K</option><option>$250K-$500K</option><option>$500K-$1M</option><option>$1M+</option></select>
+                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Under $50K</option><option>$50K-$100K</option><option>$100K-$250K</option><option>$250K-$500K</option><option>$500K-$1M</option><option>$1M-$2M</option><option>$2M+</option></select>
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Absentee Owner</label>
                                     <label class="flex items-center gap-2 text-sm text-gray-600 mt-1">
-                                        <input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
+                                        <input type="checkbox" onchange="updatePreview()" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
                                         Include only
                                     </label>
                                 </div>
@@ -338,16 +340,22 @@
                         <svg id="chevron-transport" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
                     </button>
                     <div id="filter-transport" class="filter-body bg-white">
-                        <div class="p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div>
-                                <label class="text-xs font-medium text-gray-500 mb-1.5 block">Vehicle Make</label>
-                                <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>Ford</option><option>Toyota</option><option>Honda</option><option>Chevy</option><option>BMW</option><option>Tesla</option></select>
+                        <div class="p-4 sm:p-5 space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Vehicle Make</label>
+                                    <select id="vehicleMake" onchange="onMakeChange()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option></select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Vehicle Model</label>
+                                    <select id="vehicleModel" onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Select Make first</option></select>
+                                </div>
                             </div>
                             <div>
                                 <label class="text-xs font-medium text-gray-500 mb-1.5 block">Vehicle Year</label>
-                                <div class="flex gap-2">
-                                    <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>From</option><option>2015</option><option>2018</option><option>2020</option><option>2022</option><option>2024</option></select>
-                                    <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>To</option><option>2020</option><option>2022</option><option>2024</option><option>2026</option></select>
+                                <div class="flex gap-2 max-w-sm">
+                                    <select id="vYearFrom" onchange="updatePreview()" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">From</option></select>
+                                    <select id="vYearTo" onchange="updatePreview()" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">To</option></select>
                                 </div>
                             </div>
                         </div>
@@ -365,30 +373,30 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Family Position</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>Single</option><option>Male HOH</option><option>Female HOH</option><option>Husband</option><option>Wife</option><option>Grandfather</option><option>Grandmother</option><option>Other</option></select>
+                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Single</option><option>Male HOH</option><option>Female HOH</option><option>Husband</option><option>Wife</option><option>Grandfather</option><option>Grandmother</option><option>Other</option></select>
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Language</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>English</option><option>Spanish</option><option>Chinese</option><option>Vietnamese</option><option>Korean</option><option>Other</option></select>
+                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>English</option><option>Spanish</option><option>Chinese</option><option>Vietnamese</option><option>Korean</option><option>Tagalog</option><option>Arabic</option><option>French</option><option>German</option><option>Hindi</option><option>Other</option></select>
                                 </div>
                             </div>
                             <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Pets</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>Dog</option><option>Cat</option><option>Both</option><option>None</option></select>
+                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Dog</option><option>Cat</option><option>Both</option><option>None</option></select>
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Generations</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>1</option><option>2</option><option>3+</option></select>
+                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>1</option><option>2</option><option>3+</option></select>
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Occupant Age</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>18-24</option><option>25-34</option><option>35-44</option><option>45-54</option><option>55-64</option><option>65+</option></select>
+                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>18-24</option><option>25-34</option><option>35-44</option><option>45-54</option><option>55-64</option><option>65-74</option><option>75+</option></select>
                                 </div>
                             </div>
                             <div class="flex flex-wrap gap-x-6 gap-y-2">
-                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500"> Presence of Elderly</label>
-                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500"> Presence of Young Adult</label>
+                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" onchange="updatePreview()" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500"> Presence of Elderly</label>
+                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" onchange="updatePreview()" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500"> Presence of Young Adult</label>
                             </div>
                         </div>
                     </div>
@@ -402,10 +410,10 @@
                     </button>
                     <div id="filter-consumer" class="filter-body bg-white">
                         <div class="p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Interests</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>DIY/Home Improvement</option><option>Gardening</option><option>Cooking</option><option>Fitness</option><option>Technology</option><option>Travel</option></select></div>
-                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Hobbies</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option></select></div>
-                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Donations</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>Political</option><option>Religious</option><option>Environmental</option><option>Health</option></select></div>
-                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Preferences</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option></select></div>
+                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Interests</label><select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>DIY/Home Improvement</option><option>Gardening</option><option>Cooking/Gourmet</option><option>Fitness/Exercise</option><option>Technology/Electronics</option><option>Travel</option><option>Arts/Crafts</option><option>Music</option><option>Reading/Books</option><option>Sports</option><option>Outdoors/Nature</option><option>Photography</option><option>Fashion</option><option>Investing/Finance</option><option>Gaming</option><option>Automotive</option></select></div>
+                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Hobbies</label><select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Golf</option><option>Fishing</option><option>Hunting</option><option>Camping</option><option>Boating/Sailing</option><option>Woodworking</option><option>Cycling</option><option>Running/Jogging</option><option>Swimming</option><option>Tennis</option><option>Yoga/Pilates</option><option>Bird Watching</option><option>Quilting/Sewing</option><option>Motorcycles</option><option>RVing</option></select></div>
+                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Donations</label><select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Political - Liberal</option><option>Political - Conservative</option><option>Religious</option><option>Environmental</option><option>Health/Medical</option><option>Animal Welfare</option><option>Veterans/Military</option><option>Education</option><option>Arts/Culture</option><option>Children/Youth</option><option>International Aid</option></select></div>
+                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Preferences</label><select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Online Shopper</option><option>Catalog Buyer</option><option>Brand Loyal</option><option>Coupon User</option><option>Organic/Natural</option><option>Luxury Buyer</option><option>Budget Conscious</option><option>Early Adopter</option><option>Subscription Services</option></select></div>
                         </div>
                     </div>
                 </div>
@@ -539,14 +547,57 @@ const statesData = [
 ];
 
 const countiesMap = {
-    'GA':['Fulton','DeKalb','Gwinnett','Cobb','Clayton','Cherokee','Forsyth','Henry','Hall','Richmond'],
-    'FL':['Miami-Dade','Broward','Palm Beach','Hillsborough','Orange','Duval','Pinellas','Lee','Polk','Brevard'],
-    'TX':['Harris','Dallas','Tarrant','Bexar','Travis','Collin','Denton','Hidalgo','Fort Bend','El Paso'],
-    'CA':['Los Angeles','San Diego','Orange','Riverside','San Bernardino','Santa Clara','Alameda','Sacramento','Contra Costa','Fresno'],
-    'NY':['Kings','Queens','New York','Suffolk','Nassau','Bronx','Westchester','Erie','Monroe','Richmond'],
-    'NC':['Mecklenburg','Wake','Guilford','Forsyth','Cumberland','Durham','Buncombe','Union','Cabarrus','Gaston'],
-    'OH':['Franklin','Cuyahoga','Hamilton','Summit','Montgomery','Lucas','Stark','Butler','Warren','Lorain'],
-    'OK':['Oklahoma','Tulsa','Cleveland','Canadian','Comanche','Rogers','Payne','Wagoner','Creek','Garfield']
+    'AL':['Jefferson','Mobile','Madison','Baldwin','Montgomery','Shelby','Tuscaloosa','Lee','Morgan','Calhoun'],
+    'AZ':['Maricopa','Pima','Pinal','Yavapai','Mohave','Yuma','Coconino','Cochise','Navajo','Apache'],
+    'CA':['Los Angeles','San Diego','Orange','Riverside','San Bernardino','Santa Clara','Alameda','Sacramento','Contra Costa','Fresno','San Francisco','San Mateo','Ventura','Kern'],
+    'CO':['Denver','El Paso','Arapahoe','Jefferson','Adams','Douglas','Larimer','Boulder','Weld','Broomfield'],
+    'FL':['Miami-Dade','Broward','Palm Beach','Hillsborough','Orange','Duval','Pinellas','Lee','Polk','Brevard','Volusia','Seminole','Sarasota','Manatee'],
+    'GA':['Fulton','DeKalb','Gwinnett','Cobb','Clayton','Cherokee','Forsyth','Henry','Hall','Richmond','Chatham','Muscogee','Columbia','Bibb'],
+    'IL':['Cook','DuPage','Lake','Will','Kane','McHenry','Winnebago','Madison','St. Clair','Champaign','Sangamon','Peoria'],
+    'IN':['Marion','Lake','Allen','Hamilton','St. Joseph','Elkhart','Tippecanoe','Vanderburgh','Monroe','Johnson'],
+    'MI':['Wayne','Oakland','Macomb','Kent','Genesee','Washtenaw','Ingham','Ottawa','Kalamazoo','Saginaw'],
+    'NC':['Mecklenburg','Wake','Guilford','Forsyth','Cumberland','Durham','Buncombe','Union','Cabarrus','Gaston','New Hanover','Onslow'],
+    'NJ':['Bergen','Middlesex','Essex','Hudson','Monmouth','Ocean','Union','Passaic','Camden','Morris','Burlington','Mercer'],
+    'NY':['Kings','Queens','New York','Suffolk','Nassau','Bronx','Westchester','Erie','Monroe','Richmond','Onondaga','Albany'],
+    'OH':['Franklin','Cuyahoga','Hamilton','Summit','Montgomery','Lucas','Stark','Butler','Warren','Lorain','Lake','Medina'],
+    'OK':['Oklahoma','Tulsa','Cleveland','Canadian','Comanche','Rogers','Payne','Wagoner','Creek','Garfield'],
+    'PA':['Philadelphia','Allegheny','Montgomery','Bucks','Delaware','Lancaster','Chester','York','Berks','Lehigh','Westmoreland','Erie'],
+    'TN':['Shelby','Davidson','Knox','Hamilton','Rutherford','Williamson','Sumner','Montgomery','Wilson','Blount'],
+    'TX':['Harris','Dallas','Tarrant','Bexar','Travis','Collin','Denton','Hidalgo','Fort Bend','El Paso','Williamson','Montgomery','Brazoria','Galveston'],
+    'VA':['Fairfax','Prince William','Loudoun','Chesterfield','Henrico','Virginia Beach','Arlington','Stafford','Spotsylvania','Chesapeake'],
+    'WA':['King','Pierce','Snohomish','Spokane','Clark','Thurston','Kitsap','Whatcom','Benton','Yakima']
+};
+
+const vehicleModels = {
+    'Acura':['MDX','RDX','TLX','Integra','ILX'],
+    'Audi':['A4','A6','Q5','Q7','Q3','e-tron','A3','A8','Q8','RS5'],
+    'BMW':['3 Series','5 Series','X3','X5','X1','7 Series','X7','4 Series','i4','iX'],
+    'Buick':['Encore','Enclave','Envision','Encore GX'],
+    'Cadillac':['Escalade','XT5','XT4','CT5','XT6','Lyriq','CT4'],
+    'Chevrolet':['Silverado','Equinox','Tahoe','Traverse','Malibu','Camaro','Colorado','Suburban','Trailblazer','Blazer','Bolt','Corvette'],
+    'Chrysler':['Pacifica','300','Voyager'],
+    'Dodge':['Ram','Durango','Challenger','Charger','Hornet'],
+    'Ford':['F-150','Explorer','Escape','Edge','Bronco','Mustang','Ranger','Expedition','Maverick','Bronco Sport','Transit','F-250'],
+    'GMC':['Sierra','Terrain','Acadia','Yukon','Canyon','Hummer EV'],
+    'Honda':['CR-V','Civic','Accord','HR-V','Pilot','Odyssey','Ridgeline','Passport','Prologue'],
+    'Hyundai':['Tucson','Santa Fe','Elantra','Sonata','Palisade','Kona','Ioniq 5','Ioniq 6','Venue'],
+    'Infiniti':['QX60','QX50','QX80','Q50'],
+    'Jeep':['Grand Cherokee','Wrangler','Cherokee','Compass','Gladiator','Renegade','Wagoneer'],
+    'Kia':['Sportage','Telluride','Forte','Sorento','Seltos','Soul','K5','EV6','Carnival'],
+    'Land Rover':['Range Rover','Range Rover Sport','Defender','Discovery','Evoque'],
+    'Lexus':['RX','NX','ES','IS','GX','UX','TX','LX','LC'],
+    'Lincoln':['Navigator','Aviator','Corsair','Nautilus'],
+    'Mazda':['CX-5','CX-50','Mazda3','CX-9','CX-30','MX-5'],
+    'Mercedes-Benz':['GLE','GLC','C-Class','E-Class','S-Class','GLA','GLB','A-Class','G-Class','EQS','EQE'],
+    'Mitsubishi':['Outlander','Eclipse Cross','Outlander Sport','Mirage'],
+    'Nissan':['Rogue','Altima','Sentra','Pathfinder','Kicks','Murano','Frontier','Titan','Leaf','Ariya'],
+    'Porsche':['Cayenne','Macan','911','Taycan','Panamera','718'],
+    'Ram':['1500','2500','3500','ProMaster'],
+    'Subaru':['Outback','Forester','Crosstrek','Ascent','Impreza','Legacy','WRX','Solterra'],
+    'Tesla':['Model Y','Model 3','Model X','Model S','Cybertruck'],
+    'Toyota':['RAV4','Camry','Corolla','Highlander','Tacoma','Tundra','4Runner','Sienna','Prius','GR86','Supra','bZ4X','Grand Highlander','Sequoia'],
+    'Volkswagen':['Jetta','Tiguan','Atlas','Taos','ID.4','Golf','Passat','Atlas Cross Sport'],
+    'Volvo':['XC90','XC60','XC40','S60','S90','V60','C40','EX30']
 };
 
 const packages = [
@@ -561,7 +612,7 @@ let selectedState = '';
 let areaMode = 'zip';
 let selectedZips = [];
 let selectedCounties = [];
-let currentLeadData = { total: 0, withPhone: 0, phones: 0, noPhone: 0 };
+let currentLeadData = { total: 0 };
 let selectedPackage = null;
 let orders = JSON.parse(localStorage.getItem('hlp_orders') || '[]');
 
@@ -720,27 +771,166 @@ function updatePreview() {
     const stateInfo = statesData.find(s => s.code === selectedState);
     if (!stateInfo) return;
 
-    let divisor = 1;
+    // Start with state total household count
+    let total = stateInfo.h;
+
+    // Area filter: zips or counties narrow it down
     const items = areaMode === 'zip' ? selectedZips : selectedCounties;
     if (items.length > 0) {
-        divisor = areaMode === 'zip' ? (stateInfo.h / (3000 + Math.random() * 5000)) / items.length * items.length : (stateInfo.h / (50000 + Math.random() * 80000)) / items.length * items.length;
-        divisor = Math.max(1, divisor);
+        if (areaMode === 'zip') {
+            // Each zip is roughly state / (state_zips). Average ~700 zips per state -> ~5000-8000 per zip
+            const perZip = total / (500 + Math.abs(hashCode(selectedState)) % 300);
+            total = Math.round(perZip * items.length);
+        } else {
+            // Counties: top 10 counties ~60% of state pop. Each selected county is ~state / num_counties * weight
+            const countyList = countiesMap[selectedState] || [];
+            const totalCounties = Math.max(countyList.length, 20);
+            // Top counties are bigger. Weight first few higher.
+            let countyTotal = 0;
+            items.forEach(c => {
+                const idx = countyList.indexOf(c);
+                const weight = idx >= 0 ? (1.5 - idx * 0.08) : 0.5;
+                countyTotal += (stateInfo.h / totalCounties) * Math.max(0.3, weight);
+            });
+            total = Math.round(countyTotal);
+        }
     }
 
-    const total = Math.round(stateInfo.h / Math.max(1, divisor));
-    const phoneRate = 0.55 + Math.random() * 0.08;
-    const withPhone = Math.round(total * phoneRate);
-    const phones = Math.round(withPhone * (1.3 + Math.random() * 0.5));
-    const noPhone = total - withPhone;
+    // Apply filter reductions (each active filter narrows the count)
+    const renters = document.getElementById('fRenters')?.value;
+    if (renters === 'exclude') total = Math.round(total * 0.66); // ~66% are homeowners nationally
+    if (renters === 'only') total = Math.round(total * 0.34);
 
-    currentLeadData = { total, withPhone, phones, noPhone };
+    const valMin = document.getElementById('fValueMin')?.value;
+    const valMax = document.getElementById('fValueMax')?.value;
+    if (valMin || valMax) total = Math.round(total * (0.35 + Math.random() * 0.15));
+
+    const incMin = document.getElementById('fIncomeMin')?.value;
+    const incMax = document.getElementById('fIncomeMax')?.value;
+    if (incMin && parseInt(incMin) >= 75000) total = Math.round(total * 0.42);
+    else if (incMin && parseInt(incMin) >= 50000) total = Math.round(total * 0.58);
+    else if (incMin) total = Math.round(total * 0.75);
+    if (incMax && parseInt(incMax) <= 50000) total = Math.round(total * 0.55);
+
+    // Credit score checkboxes: each checked range is ~12.5% of population
+    const creditChecked = document.querySelectorAll('.credit-cb:checked').length;
+    if (creditChecked > 0 && creditChecked < 8) total = Math.round(total * (creditChecked * 0.125));
+
+    // Year built filter
+    const yrMin = document.getElementById('fYearMin')?.value;
+    const yrMax = document.getElementById('fYearMax')?.value;
+    if (yrMin || yrMax) {
+        const span = ((parseInt(yrMax) || 2026) - (parseInt(yrMin) || 1900)) / 126;
+        total = Math.round(total * Math.max(0.05, Math.min(1, span)));
+    }
+
+    // Sq ft filter
+    const sqMin = document.getElementById('fSqftMin')?.value;
+    const sqMax = document.getElementById('fSqftMax')?.value;
+    if (sqMin || sqMax) total = Math.round(total * (0.4 + Math.random() * 0.2));
+
+    // Count non-default selects in filter sections as additional narrowing
+    let activeFilters = 0;
+    document.querySelectorAll('#view-build select').forEach(s => {
+        if (s.id === 'buildState' || s.id === 'countyDropdown' || s.id === 'vehicleMake' || s.id === 'vehicleModel' || s.id === 'fRenters' || s.id === 'fValueMin' || s.id === 'fValueMax' || s.id === 'fIncomeMin' || s.id === 'fIncomeMax' || s.id === 'fYearMin' || s.id === 'fYearMax' || s.id === 'fSqftMin' || s.id === 'fSqftMax' || s.id === 'vYearFrom' || s.id === 'vYearTo') return;
+        if (s.value && s.selectedIndex > 0) activeFilters++;
+    });
+    // Each misc filter reduces by ~15-25%
+    for (let i = 0; i < activeFilters; i++) total = Math.round(total * (0.78 + Math.random() * 0.07));
+
+    // Vehicle filters
+    if (document.getElementById('vehicleMake')?.value) total = Math.round(total * (0.06 + Math.random() * 0.04));
+    if (document.getElementById('vehicleModel')?.value) total = Math.round(total * (0.2 + Math.random() * 0.1));
+    if (document.getElementById('vYearFrom')?.value || document.getElementById('vYearTo')?.value) total = Math.round(total * 0.5);
+
+    total = Math.max(total, 0);
+
+    currentLeadData = { total };
 
     document.getElementById('previewEmpty').classList.add('hidden');
     document.getElementById('previewData').classList.remove('hidden');
     document.getElementById('previewTotal').textContent = total.toLocaleString();
-    document.getElementById('previewWithPhone').textContent = withPhone.toLocaleString();
-    document.getElementById('previewPhones').textContent = phones.toLocaleString();
-    document.getElementById('previewNoPhone').textContent = noPhone.toLocaleString();
+}
+
+// Simple hash for deterministic randomness per state
+function hashCode(str) {
+    let h = 0;
+    for (let i = 0; i < str.length; i++) h = ((h << 5) - h + str.charCodeAt(i)) | 0;
+    return h;
+}
+
+// ===== CREDIT SCORE MULTI-SELECT =====
+function toggleCreditDropdown() {
+    document.getElementById('creditDropdown').classList.toggle('hidden');
+}
+function toggleCreditAll(el) {
+    document.querySelectorAll('.credit-cb').forEach(cb => cb.checked = el.checked);
+    updateCreditLabel();
+}
+function updateCreditLabel() {
+    const checked = document.querySelectorAll('.credit-cb:checked');
+    const count = checked.length;
+    const label = document.getElementById('creditLabel');
+    const countEl = document.getElementById('creditCount');
+    if (count === 0) { label.textContent = 'Any'; countEl.textContent = ''; }
+    else if (count === 8) { label.textContent = 'All Scores'; countEl.textContent = '(8 selected)'; }
+    else { label.textContent = Array.from(checked).slice(0, 2).map(c => c.parentElement.textContent.trim()).join(', ') + (count > 2 ? '...' : ''); countEl.textContent = `(${count} selected)`; }
+    updatePreview();
+}
+// Close credit dropdown on outside click
+document.addEventListener('click', e => {
+    const dd = document.getElementById('creditDropdown');
+    const btn = document.getElementById('creditBtn');
+    if (dd && !dd.contains(e.target) && !btn.contains(e.target)) dd.classList.add('hidden');
+});
+
+// ===== VEHICLE MAKE/MODEL =====
+function initVehicles() {
+    const sel = document.getElementById('vehicleMake');
+    Object.keys(vehicleModels).sort().forEach(make => {
+        const o = document.createElement('option');
+        o.value = make; o.textContent = make;
+        sel.appendChild(o);
+    });
+    // Year dropdowns: 1990-2026
+    ['vYearFrom','vYearTo'].forEach(id => {
+        const s = document.getElementById(id);
+        for (let y = 2026; y >= 1990; y--) {
+            const o = document.createElement('option');
+            o.value = y; o.textContent = y;
+            s.appendChild(o);
+        }
+    });
+}
+function onMakeChange() {
+    const make = document.getElementById('vehicleMake').value;
+    const modelSel = document.getElementById('vehicleModel');
+    modelSel.innerHTML = '<option value="">Any Model</option>';
+    if (make && vehicleModels[make]) {
+        vehicleModels[make].forEach(m => {
+            const o = document.createElement('option');
+            o.value = m; o.textContent = m;
+            modelSel.appendChild(o);
+        });
+    } else {
+        modelSel.innerHTML = '<option value="">Select Make first</option>';
+    }
+    updatePreview();
+}
+
+// ===== YEAR BUILT DROPDOWNS =====
+function initYearBuilt() {
+    ['fYearMin','fYearMax'].forEach(id => {
+        const s = document.getElementById(id);
+        // fYearMin ascending, fYearMax descending
+        if (id === 'fYearMin') {
+            for (let y = 1900; y <= 2026; y += 5) { const o = document.createElement('option'); o.value = y; o.textContent = y; s.appendChild(o); }
+            // Add specific recent years
+            [2022,2023,2024,2025,2026].forEach(y => { if (!s.querySelector(`option[value="${y}"]`)) { const o = document.createElement('option'); o.value = y; o.textContent = y; s.appendChild(o); }});
+        } else {
+            for (let y = 2026; y >= 1900; y -= 5) { const o = document.createElement('option'); o.value = y; o.textContent = y; s.appendChild(o); }
+        }
+    });
 }
 
 // ===== FILTERS =====
@@ -917,6 +1107,8 @@ function showToast(msg) {
 
 // ===== INIT =====
 initStateDropdown();
+initVehicles();
+initYearBuilt();
 </script>
 </body>
 </html>
