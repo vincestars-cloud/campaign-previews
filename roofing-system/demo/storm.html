@@ -232,7 +232,8 @@
       document.getElementById('tl-warm').textContent = leads + visited;
 
       const slider = document.getElementById('ob-slider');
-      slider.max = Math.max(hh, 1000);
+      slider.max = hh;
+      slider.step = hh > 100000 ? 1000 : 500;
       if (parseInt(slider.value) > hh) slider.value = hh;
       updateSlider();
     }, 50);
@@ -244,6 +245,9 @@
     document.getElementById('wave3').textContent = fmt(val);
     document.getElementById('tl-new').textContent = fmt(val);
   }
+
+  // Initialize on page load so slider max matches checked counties
+  updateTotals();
 </script>
 
 <!-- v4 - sidebar nav, county selection, dynamic slider, outbound in timeline -->
