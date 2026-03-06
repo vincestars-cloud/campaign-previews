@@ -151,10 +151,10 @@
           </div>
         </div>
 
-        <!-- AI Screening Questions -->
-        <div class="section-title">AI Screening Questions</div>
+        <!-- Screening Questions -->
+        <div class="section-title">Screening Questions</div>
         <div class="card fade-in">
-          <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.6;">The AI receptionist asks these questions on every inbound and outbound call. Leads that don't meet your criteria are flagged but still logged. You can edit questions anytime or just text us a change.</p>
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.6;">Your receptionist asks these questions on every inbound and outbound call. Leads that don't meet your criteria are flagged but still logged. Edit questions anytime or just text us a change.</p>
 
           <div style="display:flex;flex-direction:column;gap:12px;">
             <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:flex-start;gap:12px;">
@@ -230,124 +230,62 @@
           </div>
         </div>
 
-        <!-- Candidate Review -->
-        <div class="section-title">Candidate Review</div>
+        <!-- Hiring Screening Questions -->
+        <div class="section-title">Hiring Screening Questions</div>
         <div class="card fade-in">
-          <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.6;">Every applicant is screened by AI before they reach you. Listen to their screening call, read their responses, and decide who to interview &mdash; all from your phone or this dashboard.</p>
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.6;">When applicants call in, these are the screening questions they're asked. Adjust them anytime to match what matters most for your crew. View applicants and listen to their responses in the <a href="hiring.html" style="color:var(--blue);">Hiring tab</a>.</p>
 
-          <!-- Candidate 1 -->
-          <div style="border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden;">
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg);">
-              <div style="display:flex;align-items:center;gap:12px;">
-                <div style="width:40px;height:40px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;">JM</div>
-                <div>
-                  <div style="font-weight:600;font-size:14px;color:var(--dark);">Jason Martinez</div>
-                  <div style="font-size:12px;color:var(--text-muted);">Applied for: Sales Rep &bull; 2 hours ago</div>
-                </div>
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:flex-start;gap:12px;">
+              <div style="width:28px;height:28px;border-radius:6px;background:#6366F1;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;">1</div>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:14px;color:var(--dark);margin-bottom:4px;">Do you have roofing or door-to-door sales experience?</div>
+                <div style="font-size:12px;color:var(--text-muted);">Preferred: <span style="font-family:var(--mono,monospace);color:#6366F1;font-weight:600;">1+ year</span> &mdash; No experience flagged for review</div>
               </div>
-              <span class="badge badge-green">Qualified</span>
+              <span style="font-size:11px;background:var(--green-light);color:#166534;padding:3px 8px;border-radius:4px;font-weight:600;flex-shrink:0;">Required</span>
             </div>
-            <div style="padding:14px;">
-              <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:8px;">Screening Responses</div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
-                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
-                  <div style="font-size:11px;color:var(--text-muted);">Roofing experience</div>
-                  <div style="font-size:13px;font-weight:600;color:var(--dark);">3 years at ABC Roofing</div>
-                </div>
-                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
-                  <div style="font-size:11px;color:var(--text-muted);">Reliable transportation</div>
-                  <div style="font-size:13px;font-weight:600;color:var(--dark);">Yes &mdash; owns vehicle</div>
-                </div>
-                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
-                  <div style="font-size:11px;color:var(--text-muted);">Available start date</div>
-                  <div style="font-size:13px;font-weight:600;color:var(--dark);">Immediately</div>
-                </div>
-                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
-                  <div style="font-size:11px;color:var(--text-muted);">Commission comfort</div>
-                  <div style="font-size:13px;font-weight:600;color:var(--dark);">Yes &mdash; prefers commission</div>
-                </div>
-              </div>
 
-              <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:6px;">Screening Call Recording</div>
-              <div style="background:var(--dark);border-radius:var(--radius-sm);padding:12px;display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-                <div style="width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;" onclick="this.querySelector('span').innerHTML=this.querySelector('span').innerHTML.includes('\u25B6')?'\u23F8':'\u25B6'">
-                  <span style="color:white;font-size:14px;">&#9654;</span>
-                </div>
-                <div style="flex:1;">
-                  <div style="background:rgba(255,255,255,0.1);border-radius:4px;height:5px;">
-                    <div style="background:var(--accent);border-radius:4px;height:100%;width:0%;"></div>
-                  </div>
-                  <div style="display:flex;justify-content:space-between;margin-top:3px;">
-                    <span style="font-size:10px;color:rgba(255,255,255,0.5);">0:00</span>
-                    <span style="font-size:10px;color:rgba(255,255,255,0.5);">4:32</span>
-                  </div>
-                </div>
+            <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:flex-start;gap:12px;">
+              <div style="width:28px;height:28px;border-radius:6px;background:#6366F1;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;">2</div>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:14px;color:var(--dark);margin-bottom:4px;">Do you have reliable transportation?</div>
+                <div style="font-size:12px;color:var(--text-muted);">Must be: <span style="font-family:var(--mono,monospace);color:#6366F1;font-weight:600;">Yes</span> &mdash; No vehicle = auto-decline</div>
               </div>
+              <span style="font-size:11px;background:var(--green-light);color:#166534;padding:3px 8px;border-radius:4px;font-weight:600;flex-shrink:0;">Required</span>
+            </div>
 
-              <div style="display:flex;gap:8px;">
-                <button style="flex:1;padding:10px;background:var(--accent);color:white;border:none;border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);">Schedule Interview</button>
-                <button style="flex:1;padding:10px;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);">Pass</button>
+            <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:flex-start;gap:12px;">
+              <div style="width:28px;height:28px;border-radius:6px;background:#6366F1;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;">3</div>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:14px;color:var(--dark);margin-bottom:4px;">Are you comfortable knocking 80+ doors per day?</div>
+                <div style="font-size:12px;color:var(--text-muted);">For canvassers only &mdash; Hesitation flagged for review</div>
               </div>
+              <span style="font-size:11px;background:var(--green-light);color:#166534;padding:3px 8px;border-radius:4px;font-weight:600;flex-shrink:0;">Required</span>
+            </div>
+
+            <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:flex-start;gap:12px;">
+              <div style="width:28px;height:28px;border-radius:6px;background:#6366F1;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;">4</div>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:14px;color:var(--dark);margin-bottom:4px;">Are you comfortable with commission-based pay?</div>
+                <div style="font-size:12px;color:var(--text-muted);">For sales reps only &mdash; Must be: <span style="font-family:var(--mono,monospace);color:#6366F1;font-weight:600;">Yes</span></div>
+              </div>
+              <span style="font-size:11px;background:var(--green-light);color:#166534;padding:3px 8px;border-radius:4px;font-weight:600;flex-shrink:0;">Required</span>
+            </div>
+
+            <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:flex-start;gap:12px;">
+              <div style="width:28px;height:28px;border-radius:6px;background:#6366F1;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;">5</div>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:14px;color:var(--dark);margin-bottom:4px;">When can you start?</div>
+                <div style="font-size:12px;color:var(--text-muted);">Preferred: <span style="font-family:var(--mono,monospace);color:#6366F1;font-weight:600;">Within 1 week</span> &mdash; Longer timelines still accepted</div>
+              </div>
+              <span style="font-size:11px;background:var(--blue-light);color:#1E40AF;padding:3px 8px;border-radius:4px;font-weight:600;flex-shrink:0;">Optional</span>
             </div>
           </div>
 
-          <!-- Candidate 2 -->
-          <div style="border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden;">
-            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg);">
-              <div style="display:flex;align-items:center;gap:12px;">
-                <div style="width:40px;height:40px;border-radius:50%;background:#6366F1;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;">TW</div>
-                <div>
-                  <div style="font-weight:600;font-size:14px;color:var(--dark);">Terrence Williams</div>
-                  <div style="font-size:12px;color:var(--text-muted);">Applied for: Canvasser &bull; 5 hours ago</div>
-                </div>
-              </div>
-              <span class="badge badge-yellow">Review</span>
-            </div>
-            <div style="padding:14px;">
-              <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:8px;">Screening Responses</div>
-              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
-                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
-                  <div style="font-size:11px;color:var(--text-muted);">D2D experience</div>
-                  <div style="font-size:13px;font-weight:600;color:var(--dark);">6 months (pest control)</div>
-                </div>
-                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
-                  <div style="font-size:11px;color:var(--text-muted);">Reliable transportation</div>
-                  <div style="font-size:13px;font-weight:600;color:var(--dark);">Yes &mdash; owns vehicle</div>
-                </div>
-                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
-                  <div style="font-size:11px;color:var(--text-muted);">Doors per day comfort</div>
-                  <div style="font-size:13px;font-weight:600;color:var(--dark);">80+ no problem</div>
-                </div>
-                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
-                  <div style="font-size:11px;color:var(--text-muted);">Available start date</div>
-                  <div style="font-size:13px;font-weight:600;color:var(--dark);">Next Monday</div>
-                </div>
-              </div>
-
-              <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:6px;">Screening Call Recording</div>
-              <div style="background:var(--dark);border-radius:var(--radius-sm);padding:12px;display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-                <div style="width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;" onclick="this.querySelector('span').innerHTML=this.querySelector('span').innerHTML.includes('\u25B6')?'\u23F8':'\u25B6'">
-                  <span style="color:white;font-size:14px;">&#9654;</span>
-                </div>
-                <div style="flex:1;">
-                  <div style="background:rgba(255,255,255,0.1);border-radius:4px;height:5px;">
-                    <div style="background:var(--accent);border-radius:4px;height:100%;width:0%;"></div>
-                  </div>
-                  <div style="display:flex;justify-content:space-between;margin-top:3px;">
-                    <span style="font-size:10px;color:rgba(255,255,255,0.5);">0:00</span>
-                    <span style="font-size:10px;color:rgba(255,255,255,0.5);">3:15</span>
-                  </div>
-                </div>
-              </div>
-
-              <div style="display:flex;gap:8px;">
-                <button style="flex:1;padding:10px;background:var(--accent);color:white;border:none;border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);">Schedule Interview</button>
-                <button style="flex:1;padding:10px;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);">Pass</button>
-              </div>
-            </div>
+          <div style="margin-top:14px;display:flex;gap:8px;">
+            <input type="text" placeholder="Add a hiring screening question..." style="flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);">
+            <button style="padding:10px 18px;background:#6366F1;color:white;border:none;border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);">Add</button>
           </div>
-
-          <div style="text-align:center;padding:8px;font-size:12px;color:var(--text-muted);">Showing 2 of 7 applicants &mdash; <a href="hiring.html" style="color:var(--blue);">View all in Hiring tab</a></div>
         </div>
 
         <!-- Scheduling -->
