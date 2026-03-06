@@ -253,21 +253,33 @@
       background: var(--light-1);
       border: 1px solid var(--border-light);
       border-radius: 14px;
-      padding: 28px;
+      padding: 32px;
       border-left: 4px solid var(--red);
+      position: relative;
+    }
+    .problem-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: var(--red-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 22px;
     }
     .problem-card h3 {
       font-family: var(--display);
-      font-size: 17px;
+      font-size: 18px;
       font-weight: 800;
       color: var(--text-dark);
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       letter-spacing: -0.02em;
     }
     .problem-card p {
       font-size: 14px;
       color: var(--text-body);
-      line-height: 1.6;
+      line-height: 1.7;
     }
     .problem-card .cost {
       display: inline-block;
@@ -275,9 +287,9 @@
       color: var(--red);
       font-size: 12px;
       font-weight: 700;
-      padding: 4px 10px;
+      padding: 5px 12px;
       border-radius: 6px;
-      margin-top: 10px;
+      margin-top: 14px;
     }
 
     /* ── How It Works (Dark) ── */
@@ -885,18 +897,54 @@
 
     /* ── Responsive ── */
     @media (max-width: 768px) {
-      .hero { padding: 60px 0 50px; }
-      .hero-quals { gap: 12px; }
-      .hero-qual { font-size: 12px; }
-      .feature-row { grid-template-columns: 1fr; gap: 32px; }
+      .hero { padding: 50px 0 40px; }
+      .hero h1 { font-size: clamp(26px, 7vw, 38px); }
+      .hero-sub { font-size: 15px; }
+      .hero-quals { flex-direction: column; align-items: center; gap: 8px; }
+      .hero-qual { font-size: 13px; }
+      .cta-btn { padding: 16px 28px; font-size: 14px; width: 100%; justify-content: center; max-width: 360px; }
+      .trust-items { flex-direction: column; align-items: center; gap: 10px; }
+      .problem { padding: 60px 0; }
+      .problem-grid { grid-template-columns: 1fr; }
+      .how-it-works { padding: 60px 0; }
+      .hiw-steps { grid-template-columns: 1fr; }
+      .feature-row { grid-template-columns: 1fr; gap: 24px; }
       .feature-row.reverse .feature-text { order: 1; }
       .feature-row.reverse .feature-visual { order: 2; }
-      .stats-row { gap: 32px; }
-      .comp-table { font-size: 13px; }
-      .comp-table th, .comp-table td { padding: 10px 14px; }
-      .final-badge { min-width: 160px; padding: 24px 20px; }
-      .final-cta-btn { padding: 20px 40px; font-size: 16px; }
-      .not-grid { gap: 16px; }
+      .feature-visual { padding: 24px; }
+      .feature-stat { font-size: 36px; }
+      .features { padding: 60px 0; }
+      .comparison { padding: 60px 0; }
+      .comp-table { font-size: 12px; display: block; overflow-x: auto; }
+      .comp-table th, .comp-table td { padding: 10px 12px; white-space: nowrap; }
+      .stats-bar { padding: 32px 0; }
+      .stats-row { gap: 24px; }
+      .stat-num { font-size: 32px; }
+      .included { padding: 60px 0; }
+      .included-grid { grid-template-columns: 1fr; }
+      .not-grid { flex-direction: column; align-items: center; gap: 12px; }
+      .apply-form { padding: 28px 20px; margin: 0 10px; }
+      .apply-form h3 { font-size: 20px; }
+      .form-submit { font-size: 15px; }
+      .faq { padding: 60px 0; }
+      .final-cta { padding: 60px 0; }
+      .final-badges { flex-direction: column; align-items: center; }
+      .final-badge { min-width: 260px; max-width: 100%; padding: 24px 20px; }
+      .final-cta-btn { padding: 20px 32px; font-size: 15px; letter-spacing: 1px; width: 100%; max-width: 360px; justify-content: center; }
+      .proof-popup { right: 12px; bottom: 12px; left: 12px; max-width: none; }
+    }
+
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .hero h1 { font-size: 24px; }
+      .announce-bar { font-size: 11px; padding: 8px 12px; }
+      .nav-logo { font-size: 17px; }
+      .nav-cta { font-size: 12px; padding: 8px 16px; }
+      .problem-card { padding: 24px 20px; }
+      .hiw-step { padding: 24px 20px; }
+      .stat-num { font-size: 28px; }
+      .stat-label { font-size: 11px; }
+      .comp-table th, .comp-table td { font-size: 11px; padding: 8px 10px; }
     }
   </style>
 </head>
@@ -926,6 +974,10 @@
         <div class="hero-qual">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
           $100K+ in Assets
+        </div>
+        <div class="hero-qual">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          Age 55+
         </div>
         <div class="hero-qual">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -981,24 +1033,28 @@
 
       <div class="problem-grid">
         <div class="problem-card">
+          <div class="problem-icon">&#127860;</div>
           <h3>Dinner Seminars</h3>
           <p>$7,000-$8,000 per event. Response rate under 1%. Half the room is there for free steak, not retirement planning. And you lose another evening with your family.</p>
-          <span class="cost">$8K per event</span>
+          <span class="cost">$8K per event &bull; Declining ROI</span>
         </div>
         <div class="problem-card">
+          <div class="problem-icon">&#128176;</div>
           <h3>Internet Lead Vendors</h3>
           <p>They charge you $250 for a lead that cost them $15. Then sell the same name to 4 other agents. The prospect gets 5 calls and trusts nobody.</p>
-          <span class="cost">200-500% markup</span>
+          <span class="cost">200-500% markup &bull; Shared leads</span>
         </div>
         <div class="problem-card">
+          <div class="problem-icon">&#128241;</div>
           <h3>Facebook Leads (DIY)</h3>
           <p>Cheap leads from people who clicked a shiny ad. They have no idea what an annuity is, no money to move, and no intention of meeting with anyone.</p>
-          <span class="cost">Low intent, low quality</span>
+          <span class="cost">Low intent &bull; Low quality</span>
         </div>
         <div class="problem-card">
+          <div class="problem-icon">&#129309;</div>
           <h3>Referrals</h3>
           <p>The highest-quality source you have &mdash; but completely unpredictable. You can't build a business on "hoping your clients mention you."</p>
-          <span class="cost">Can't scale</span>
+          <span class="cost">Unpredictable &bull; Can't scale</span>
         </div>
       </div>
     </div>
@@ -1019,12 +1075,12 @@
         <div class="hiw-step">
           <div class="hiw-num">2</div>
           <h3>Lead Generation (At Cost)</h3>
-          <p>We run campaigns on Meta, Google & YouTube. National average: ~$60/lead on Meta (varies by market). You pay the platforms directly &mdash; we don't mark up your ad spend by a single penny.</p>
+          <p>We run campaigns on Meta, Google & YouTube. The national average cost per lead on Meta is ~$60 (actual cost varies by market). You pay the platforms directly &mdash; we don't mark up your ad spend by a single penny.</p>
         </div>
         <div class="hiw-step">
           <div class="hiw-num">3</div>
           <h3>USA Team Qualifies</h3>
-          <p>Our American appointment setters call each lead. Three gates: $100K+ assets, within 2 years of retirement, interested in retirement vehicles. No gate, no booking.</p>
+          <p>Each lead completes a multi-part survey &mdash; savings, retirement concerns, timeline, age, verified phone. Then our American setters call to confirm: $100K+ assets, age 55+, within 2 years of retirement, interested in retirement vehicles. No gate, no booking.</p>
         </div>
         <div class="hiw-step">
           <div class="hiw-num">4</div>
@@ -1172,7 +1228,7 @@
         </div>
         <div class="stat-item">
           <div class="stat-num">~$60</div>
-          <div class="stat-label">Avg Cost Per Lead (At Cost)</div>
+          <div class="stat-label">National Avg CPL (At Cost)</div>
         </div>
       </div>
     </div>
@@ -1185,7 +1241,7 @@
       <div class="included-grid">
         <div class="included-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>Branded Video Funnel &mdash; 10-15 Pieces of Your Content</span>
+          <span>Branded Video Funnel &mdash; Your Name, Face &amp; Expertise</span>
         </div>
         <div class="included-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -1221,7 +1277,7 @@
         </div>
         <div class="included-item">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-          <span>Weekly Optimization Reports &mdash; Plain English, No Jargon</span>
+          <span>Multi-Part Survey &mdash; Savings, Concerns, Timeline, Age, Verified Phone</span>
         </div>
       </div>
     </div>
@@ -1328,7 +1384,7 @@
             <span>How do you qualify the leads?</span>
             <span class="faq-chevron">&#8964;</span>
           </div>
-          <div class="faq-a"><p>Three gates, no exceptions. (1) <strong>Assets:</strong> $100K+ in investable retirement savings &mdash; 401k, IRA, pension, or other investments. (2) <strong>Timeline:</strong> Within 2 years of retirement, or recently retired. (3) <strong>Intent:</strong> Actively interested in retirement income vehicles, protection strategies, or rollover options. If they don't pass all three, they don't get booked.</p></div>
+          <div class="faq-a"><p>Every lead first completes a multi-part survey: retirement savings amount, greatest retirement concern, timeline, age, and SNS-verified phone number. Then our USA setters confirm four gates: (1) <strong>Age:</strong> 55 or older. (2) <strong>Assets:</strong> $100K+ in investable retirement savings. (3) <strong>Timeline:</strong> Within 2 years of retirement, or recently retired. (4) <strong>Intent:</strong> Actively interested in retirement income vehicles or protection strategies. If they don't pass all four, they don't get booked.</p></div>
         </div>
         <div class="faq-item">
           <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
