@@ -822,6 +822,80 @@
       line-height: 1;
     }
 
+    /* ── Apply Form ── */
+    .apply-form {
+      max-width: 480px;
+      margin: 0 auto;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 36px 32px;
+      text-align: left;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+    }
+    .apply-form h3 {
+      font-family: var(--display);
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--text-dark);
+      text-align: center;
+      margin-bottom: 4px;
+    }
+    .apply-form .form-sub {
+      text-align: center;
+      font-size: 13px;
+      color: var(--text-body);
+      margin-bottom: 24px;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-dark);
+      margin-bottom: 6px;
+    }
+    .form-group input,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid var(--border-light);
+      border-radius: 10px;
+      font-family: var(--sans);
+      font-size: 15px;
+      background: #F8FAFC;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus,
+    .form-group select:focus {
+      border-color: var(--accent);
+      background: var(--white);
+    }
+    .form-group input::placeholder { color: #94A3B8; }
+    .form-submit {
+      width: 100%;
+      padding: 16px;
+      background: var(--accent);
+      color: var(--white);
+      border: none;
+      border-radius: 10px;
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: background 0.2s;
+      margin-top: 8px;
+    }
+    .form-submit:hover { background: var(--accent-dark); }
+    .form-safe {
+      text-align: center;
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
     /* ── Footer ── */
     .footer {
       background: var(--dark-1);
@@ -1142,11 +1216,41 @@
       <h2>Only 1 Partner Per City</h2>
       <p>Your competitor could be reading this right now. Once your market is locked, it's gone. Don't let someone else own YOUR territory during the biggest buying season of the year.</p>
 
-      <a href="#apply" class="cta-btn" style="font-size:17px;padding:20px 48px;">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-        See The Full System Demo
-      </a>
-      <div class="cta-sub">See the dashboard &bull; No obligation &bull; Free market analysis</div>
+      <div class="apply-form">
+        <h3>Check Your Market Availability</h3>
+        <div class="form-sub">Takes 30 seconds. No commitment.</div>
+        <form name="roofing-system-apply" data-netlify="true" action="/thank-you">
+          <div class="form-group">
+            <label>Your Name</label>
+            <input type="text" name="name" placeholder="Mike Thompson" required>
+          </div>
+          <div class="form-group">
+            <label>Business Name</label>
+            <input type="text" name="business" placeholder="Summit Ridge Roofing" required>
+          </div>
+          <div class="form-group">
+            <label>Phone Number</label>
+            <input type="tel" name="phone" placeholder="(305) 555-0142" required>
+          </div>
+          <div class="form-group">
+            <label>Your Market / City</label>
+            <input type="text" name="market" placeholder="Miami, FL" required>
+          </div>
+          <div class="form-group">
+            <label>Monthly Revenue Range</label>
+            <select name="revenue" required>
+              <option value="" disabled selected>Select your range</option>
+              <option value="under-50k">Under $50K/mo</option>
+              <option value="50k-100k">$50K - $100K/mo</option>
+              <option value="100k-250k">$100K - $250K/mo</option>
+              <option value="250k-500k">$250K - $500K/mo</option>
+              <option value="500k+">$500K+/mo</option>
+            </select>
+          </div>
+          <button type="submit" class="form-submit">Check My Market &rarr;</button>
+        </form>
+        <div class="form-safe">Your info is safe. No spam. We'll reach out within 24 hours.</div>
+      </div>
 
       <div class="final-badges">
         <div class="final-badge">
