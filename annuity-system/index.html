@@ -292,6 +292,51 @@
       margin-top: 14px;
     }
 
+    /* ── What Producers Tell Us ── */
+    .producers-tell {
+      background: var(--dark-2);
+      padding: 72px 0;
+      border-top: 1px solid var(--border-dark);
+      border-bottom: 1px solid var(--border-dark);
+    }
+    .producers-tell h2 {
+      font-family: var(--display);
+      font-size: clamp(24px, 4vw, 36px);
+      font-weight: 800;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 48px;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+    }
+    .quotes-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+    .quote-block {
+      background: var(--dark-3);
+      border-radius: 14px;
+      padding: 32px 28px;
+      border: 1px solid var(--border-dark);
+    }
+    .quote-block blockquote {
+      font-size: 18px;
+      font-weight: 700;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.45;
+      margin-bottom: 16px;
+      position: relative;
+      padding-left: 20px;
+      border-left: 3px solid var(--accent);
+    }
+    .quote-block .quote-commentary {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
     /* ── How It Works (Dark) ── */
     .how-it-works {
       background: linear-gradient(135deg, var(--dark-1) 0%, var(--dark-2) 100%);
@@ -906,6 +951,9 @@
       .trust-items { flex-direction: column; align-items: center; gap: 10px; }
       .problem { padding: 60px 0; }
       .problem-grid { grid-template-columns: 1fr !important; }
+      .producers-tell { padding: 48px 0; }
+      .quotes-grid { grid-template-columns: 1fr; gap: 20px; }
+      .quote-block blockquote { font-size: 16px; }
       .how-it-works { padding: 60px 0; }
       .hiw-steps { grid-template-columns: 1fr; }
       .feature-row { grid-template-columns: 1fr; gap: 24px; }
@@ -1035,19 +1083,19 @@
         <div class="problem-card">
           <div class="problem-icon">&#127860;</div>
           <h3>Dinner Seminars</h3>
-          <p>$7,000-$8,000 per event. Response rate under 1%. Half the room is there for free steak, not retirement planning. And you lose another evening with your family.</p>
+          <p>$7,000-$8,000 per event. Response rate under 1%. Half the room is plate lickers there for free steak, not retirement planning. And you lose another evening with your family.</p>
           <span class="cost">$8K per event &bull; Declining ROI</span>
         </div>
         <div class="problem-card">
           <div class="problem-icon">&#128176;</div>
           <h3>Internet Lead Vendors</h3>
-          <p>They charge you $250 for a lead that cost them $15. Then sell the same name to 4 other agents. The prospect gets 5 calls and trusts nobody.</p>
+          <p>Garbage leads &mdash; people who Googled &ldquo;what is an annuity.&rdquo; No money, no intent. The vendor charges you $250 for a name that cost them $15, then sells it to 4 other agents. You&rsquo;re one of 5 calls. Nobody trusts anybody.</p>
           <span class="cost">200-500% markup &bull; Shared leads</span>
         </div>
         <div class="problem-card">
           <div class="problem-icon">&#128241;</div>
           <h3>Facebook Leads (DIY)</h3>
-          <p>Cheap leads from people who clicked a shiny ad. They have no idea what an annuity is, no money to move, and no intention of meeting with anyone.</p>
+          <p>They filled out a form for a free report. They&rsquo;re not ready to move $300K. Bait-and-switch downloads &mdash; no qualification, no intent, no conversation. Just a name and a number that goes nowhere.</p>
           <span class="cost">Low intent &bull; Low quality</span>
         </div>
         <div class="problem-card">
@@ -1055,6 +1103,27 @@
           <h3>Referrals</h3>
           <p>The highest-quality source you have &mdash; but completely unpredictable. You can't build a business on "hoping your clients mention you."</p>
           <span class="cost">Unpredictable &bull; Can't scale</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What Producers Tell Us -->
+  <section class="producers-tell">
+    <div class="container">
+      <h2>Here&rsquo;s What We Hear <span class="accent">Every Week</span></h2>
+      <div class="quotes-grid">
+        <div class="quote-block">
+          <blockquote>&ldquo;I&rsquo;m spending $30K a year on marketing and I can&rsquo;t tell you what&rsquo;s working.&rdquo;</blockquote>
+          <p class="quote-commentary">We hear this constantly. Producers pouring money into dinner seminars, direct mail, and lead vendors with zero transparency. No call recordings. No real data. Just invoices.</p>
+        </div>
+        <div class="quote-block">
+          <blockquote>&ldquo;The leads are garbage. They have no money and no idea why I&rsquo;m calling.&rdquo;</blockquote>
+          <p class="quote-commentary">Because the vendor harvested a name from a bait-and-switch free report and sold it to you and three other agents. That&rsquo;s not a lead &mdash; that&rsquo;s a name on a list.</p>
+        </div>
+        <div class="quote-block">
+          <blockquote>&ldquo;I spend half my week chasing people who will never buy.&rdquo;</blockquote>
+          <p class="quote-commentary">That&rsquo;s what happens when there&rsquo;s no qualification before the name hits your desk. No asset check. No timeline. No intent. Just a phone number and a prayer.</p>
         </div>
       </div>
     </div>
