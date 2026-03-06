@@ -222,9 +222,26 @@
     .copy-btn:hover { background: var(--bg-light); color: var(--text-dark); }
     .copy-btn.copied { background: #d1fae5; color: #065f46; border-color: #a7f3d0; }
 
+    /* Table scroll wrapper */
+    .table-scroll {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+
     @media (max-width: 640px) {
       .angle-target { padding-left: 0; }
       .angle-header { flex-direction: column; gap: 8px; }
+      .container { padding: 0 16px; }
+      .header h1 { font-size: 1.375rem; }
+      .header { padding: 28px 16px; }
+      .ad-card-header { flex-direction: column; gap: 8px; align-items: flex-start; }
+      .fb-cta-bar { flex-direction: column; gap: 12px; text-align: center; }
+      .fb-cta-btn { width: 100%; }
+      .deployment-notes { padding: 24px 16px; }
+      .deployment-notes table { min-width: 480px; }
+      .deployment-notes th, .deployment-notes td { padding: 8px 10px; font-size: 0.8125rem; }
+      .nav-bar { padding: 10px 16px; gap: 6px; }
+      .nav-pill { padding: 6px 12px; font-size: 0.75rem; }
     }
   </style>
 </head>
@@ -873,12 +890,14 @@ Spots with a Licensed Growth Plan Advisor are limited.</div>
       <h2>Deployment &amp; Testing Strategy</h2>
 
       <h3 style="margin-top:24px;font-family:var(--serif);font-size:1rem;">Recommended Testing Matrix</h3>
+      <div class="table-scroll">
       <table>
         <tr><th>Funnel Stage</th><th>Angles</th><th>Why</th></tr>
         <tr><td><strong>TOF (Cold)</strong></td><td>Angle 1 (Sleep Test) + Angle 3 (Sequence Shield)</td><td>Emotion + education for first touch</td></tr>
         <tr><td><strong>MOF (Retarget)</strong></td><td>Angle 2 (Bond Replacement) + Angle 4 (Honest Broker)</td><td>Logical comparison + trust building</td></tr>
         <tr><td><strong>BOF (Hot)</strong></td><td>Angle 5 (Paycheck Replacement)</td><td>Direct solution framing for warm leads</td></tr>
       </table>
+      </div>
 
       <h3 style="margin-top:24px;font-family:var(--serif);font-size:1rem;">Audience Targeting</h3>
       <ul>
