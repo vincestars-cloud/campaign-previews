@@ -251,44 +251,57 @@
 
     <!-- Preview Sample Data -->
     <section id="preview" class="py-16 sm:py-24">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
             <div class="text-center mb-8 sm:mb-12">
                 <p class="text-brand-600 font-semibold text-sm uppercase tracking-wider mb-3">See Before You Buy</p>
                 <h2 class="text-3xl sm:text-4xl md:text-5xl mb-4">Preview Sample Lead List Data</h2>
-                <p class="text-gray-500 text-base sm:text-lg">See actual homeowner data from your lead list by ZIP code (up to 10 records)</p>
+                <p class="text-gray-500 text-base sm:text-lg">See actual homeowner data from your target market — up to 10 sample records</p>
             </div>
-            <div class="max-w-4xl mx-auto">
+            <div class="max-w-2xl mx-auto mb-8">
                 <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-5 sm:p-8">
-                    <div class="flex flex-col sm:flex-row gap-3 mb-6">
+                    <div class="flex flex-col sm:flex-row gap-3">
                         <select id="previewState" class="border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none text-base">
                             <option value="">Select State</option>
                         </select>
-                        <input type="text" id="previewZip" placeholder="Enter ZIP Code" class="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none text-base" maxlength="5">
-                        <button onclick="previewLeads()" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-3 rounded-lg font-semibold text-sm transition whitespace-nowrap">Preview Leads</button>
+                        <input type="text" id="previewZip" placeholder="ZIP Code (optional)" class="flex-1 border border-gray-300 rounded-lg px-4 py-3 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none text-base" maxlength="5">
+                        <button onclick="previewLeads()" class="bg-gray-900 hover:bg-gray-800 text-white px-6 py-3 rounded-lg font-semibold text-sm transition whitespace-nowrap">Preview Leads</button>
                     </div>
-                    <div id="previewResults" class="hidden fade-in">
-                        <div class="overflow-x-auto rounded-lg border border-gray-200 table-scroll">
-                            <table class="w-full text-sm" style="min-width: 640px;">
-                                <thead class="bg-gray-900 text-white">
-                                    <tr>
-                                        <th class="px-3 py-2.5 text-left font-semibold">Name</th>
-                                        <th class="px-3 py-2.5 text-left font-semibold">City</th>
-                                        <th class="px-3 py-2.5 text-left font-semibold">Age</th>
-                                        <th class="px-3 py-2.5 text-left font-semibold">Credit</th>
-                                        <th class="px-3 py-2.5 text-left font-semibold">Income</th>
-                                        <th class="px-3 py-2.5 text-left font-semibold">Home Value</th>
-                                        <th class="px-3 py-2.5 text-left font-semibold">Owner</th>
-                                        <th class="px-3 py-2.5 text-left font-semibold">Yr Built</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="previewTableBody"></tbody>
-                            </table>
-                        </div>
-                        <p class="text-xs text-gray-400 mt-3 text-center">Phone numbers and full addresses redacted in preview. Full data delivered on purchase.</p>
+                </div>
+            </div>
+            <div id="previewResults" class="hidden fade-in">
+                <div class="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm" style="min-width:1400px;">
+                            <thead>
+                                <tr class="bg-brand-600 text-white">
+                                    <th colspan="10" class="px-3 py-2 text-left text-xs font-bold uppercase tracking-wider">Contact Information</th>
+                                    <th colspan="5" class="px-3 py-2 text-left text-xs font-bold uppercase tracking-wider border-l border-brand-500">Demographics & Financial</th>
+                                </tr>
+                                <tr class="bg-brand-50 text-brand-700 text-xs uppercase tracking-wider">
+                                    <th class="px-3 py-2.5 text-left font-semibold">First Name</th>
+                                    <th class="px-3 py-2.5 text-left font-semibold">Last Name</th>
+                                    <th class="px-3 py-2.5 text-left font-semibold">Address</th>
+                                    <th class="px-3 py-2.5 text-left font-semibold">City</th>
+                                    <th class="px-3 py-2.5 text-left font-semibold">ST</th>
+                                    <th class="px-3 py-2.5 text-left font-semibold">ZIP</th>
+                                    <th class="px-3 py-2.5 text-left font-semibold">Phone</th>
+                                    <th class="px-3 py-2.5 text-left font-semibold">Cell</th>
+                                    <th class="px-3 py-2.5 text-left font-semibold">Email</th>
+                                    <th class="px-3 py-2.5 text-left font-semibold">DNC</th>
+                                    <th class="px-3 py-2.5 text-left font-semibold border-l border-brand-100">Age</th>
+                                    <th class="px-3 py-2.5 text-left font-semibold">Own/Rent</th>
+                                    <th class="px-3 py-2.5 text-left font-semibold">Home Value</th>
+                                    <th class="px-3 py-2.5 text-left font-semibold">Income</th>
+                                    <th class="px-3 py-2.5 text-left font-semibold">Credit Score</th>
+                                </tr>
+                            </thead>
+                            <tbody id="previewTableBody"></tbody>
+                        </table>
                     </div>
-                    <div class="text-center mt-6">
-                        <a href="javascript:void(0)" onclick="openSignup()" class="inline-block bg-brand-600 hover:bg-brand-700 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg font-bold text-sm sm:text-base transition">Get Started Today</a>
-                    </div>
+                    <div class="bg-gray-50 px-4 py-2.5 text-xs text-gray-400 border-t border-gray-100">Phone numbers, full addresses, last names, and emails are redacted in preview. Full data delivered on purchase.</div>
+                </div>
+                <div class="text-center mt-6">
+                    <a href="javascript:void(0)" onclick="openSignup()" class="inline-block bg-brand-600 hover:bg-brand-700 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg font-bold text-sm sm:text-base transition">Get Started Today</a>
                 </div>
             </div>
         </div>
@@ -642,13 +655,69 @@
         function setSearchMode(m){searchMode=m;document.getElementById('toggleZip').classList.toggle('active',m==='zip');document.getElementById('toggleCounty').classList.toggle('active',m==='county');document.getElementById('zipInput').classList.toggle('hidden',m!=='zip');document.getElementById('countyInput').classList.toggle('hidden',m!=='county');document.getElementById('leadResults').classList.add('hidden');}
         function checkLeads(){const s=document.getElementById('stateSelect').value;if(!s){alert('Please select a state.');return;}const d=stateData[s];let l,div;if(searchMode==='county'){const c=document.getElementById('countySelect').value;if(!c){alert('Please select a county.');return;}l=s+' - '+c+' County';div=5+Math.random()*10;}else{const z=document.getElementById('zipCode').value;if(z){l=s+' - ZIP '+z;div=200+Math.random()*300;}else{l=s+' (State-wide)';div=1;}}const t=Math.round(d.households/div),w=Math.round(t*d.phoneRate),wo=t-w,p=Math.round(w*(1.8+Math.random()*0.6));document.getElementById('resultsLabel').textContent='Showing results for: '+l;document.getElementById('resultAddresses').textContent=w.toLocaleString();document.getElementById('resultPhones').textContent=p.toLocaleString();document.getElementById('resultNoPhone').textContent=wo.toLocaleString();document.getElementById('leadResults').classList.remove('hidden');}
 
-        const sampleNames=[{first:'James',last:'W*****'},{first:'Maria',last:'G*****'},{first:'Robert',last:'T*****'},{first:'Linda',last:'H*****'},{first:'Michael',last:'B*****'},{first:'Patricia',last:'D*****'},{first:'David',last:'M*****'},{first:'Jennifer',last:'R*****'},{first:'William',last:'S*****'},{first:'Elizabeth',last:'K*****'}];
-        const sampleCities=['Atlanta','Marietta','Roswell','Alpharetta','Decatur','Lawrenceville','Duluth','Kennesaw','Smyrna','Johns Creek'];
-        const creditRanges=['580-620','620-660','660-700','700-740','740-780','780-820'];
-        const incomeRanges=['$35K-$50K','$50K-$75K','$75K-$100K','$100K-$150K','$150K-$200K','$200K+'];
-        const homeValues=['$120K-$180K','$180K-$250K','$250K-$350K','$350K-$500K','$500K-$750K','$750K+'];
-        const yearBuilts=['1968','1975','1982','1990','1997','2003','2008','2012','2016','2020'];
-        function previewLeads(){const s=document.getElementById('previewState').value,z=document.getElementById('previewZip').value;if(!s||!z){alert('Please select a state and enter a ZIP code.');return;}const tb=document.getElementById('previewTableBody');tb.innerHTML='';for(let i=0;i<10;i++){const r=document.createElement('tr');r.className=i%2===0?'bg-white':'bg-gray-50';r.innerHTML=`<td class="px-3 py-2.5 font-medium whitespace-nowrap">${sampleNames[i].first} ${sampleNames[i].last}</td><td class="px-3 py-2.5 text-gray-600 whitespace-nowrap">${sampleCities[i]}</td><td class="px-3 py-2.5">${30+Math.floor(Math.random()*45)}</td><td class="px-3 py-2.5"><span class="bg-blue-100 text-blue-700 px-2 py-0.5 rounded text-xs font-medium whitespace-nowrap">${creditRanges[Math.floor(Math.random()*creditRanges.length)]}</span></td><td class="px-3 py-2.5 text-gray-600 whitespace-nowrap">${incomeRanges[Math.floor(Math.random()*incomeRanges.length)]}</td><td class="px-3 py-2.5 text-gray-600 whitespace-nowrap">${homeValues[Math.floor(Math.random()*homeValues.length)]}</td><td class="px-3 py-2.5"><span class="bg-green-100 text-green-700 px-2 py-0.5 rounded text-xs font-medium">Owner</span></td><td class="px-3 py-2.5 text-gray-600">${yearBuilts[Math.floor(Math.random()*yearBuilts.length)]}</td>`;tb.appendChild(r);}document.getElementById('previewResults').classList.remove('hidden');}
+        const stateCities={'AL':[{c:'BIRMINGHAM',ac:['205'],z:'35201'},{c:'HUNTSVILLE',ac:['256'],z:'35801'},{c:'MOBILE',ac:['251'],z:'36601'},{c:'MONTGOMERY',ac:['334'],z:'36101'}],'AK':[{c:'ANCHORAGE',ac:['907'],z:'99501'}],'AZ':[{c:'PHOENIX',ac:['602','480'],z:'85001'},{c:'TUCSON',ac:['520'],z:'85701'},{c:'MESA',ac:['480'],z:'85201'},{c:'SCOTTSDALE',ac:['480'],z:'85250'}],'AR':[{c:'LITTLE ROCK',ac:['501'],z:'72201'}],'CA':[{c:'LOS ANGELES',ac:['213','310','323'],z:'90001'},{c:'SAN DIEGO',ac:['619','858'],z:'92101'},{c:'SAN FRANCISCO',ac:['415'],z:'94102'},{c:'SACRAMENTO',ac:['916'],z:'95814'},{c:'SAN JOSE',ac:['408'],z:'95101'}],'CO':[{c:'DENVER',ac:['303','720'],z:'80201'},{c:'COLORADO SPRINGS',ac:['719'],z:'80901'},{c:'AURORA',ac:['303'],z:'80010'}],'CT':[{c:'HARTFORD',ac:['860'],z:'06101'},{c:'NEW HAVEN',ac:['203'],z:'06510'},{c:'STAMFORD',ac:['203'],z:'06901'}],'DE':[{c:'WILMINGTON',ac:['302'],z:'19801'},{c:'DOVER',ac:['302'],z:'19901'}],'FL':[{c:'MIAMI',ac:['305','786'],z:'33101'},{c:'ORLANDO',ac:['407','321'],z:'32801'},{c:'TAMPA',ac:['813'],z:'33601'},{c:'JACKSONVILLE',ac:['904'],z:'32099'},{c:'FORT LAUDERDALE',ac:['954'],z:'33301'}],'GA':[{c:'ATLANTA',ac:['404','678','770'],z:'30301'},{c:'AUGUSTA',ac:['706'],z:'30901'},{c:'SAVANNAH',ac:['912'],z:'31401'},{c:'MACON',ac:['478'],z:'31201'},{c:'TULSA',ac:['404'],z:'30318'}],'HI':[{c:'HONOLULU',ac:['808'],z:'96801'}],'ID':[{c:'BOISE',ac:['208'],z:'83701'}],'IL':[{c:'CHICAGO',ac:['312','773'],z:'60601'},{c:'AURORA',ac:['630'],z:'60502'},{c:'NAPERVILLE',ac:['630'],z:'60540'},{c:'SPRINGFIELD',ac:['217'],z:'62701'}],'IN':[{c:'INDIANAPOLIS',ac:['317'],z:'46201'},{c:'FORT WAYNE',ac:['260'],z:'46801'}],'IA':[{c:'DES MOINES',ac:['515'],z:'50301'}],'KS':[{c:'WICHITA',ac:['316'],z:'67201'},{c:'KANSAS CITY',ac:['913'],z:'66101'}],'KY':[{c:'LOUISVILLE',ac:['502'],z:'40201'},{c:'LEXINGTON',ac:['859'],z:'40502'}],'LA':[{c:'NEW ORLEANS',ac:['504'],z:'70112'},{c:'BATON ROUGE',ac:['225'],z:'70801'}],'ME':[{c:'PORTLAND',ac:['207'],z:'04101'}],'MD':[{c:'BALTIMORE',ac:['410','443'],z:'21201'},{c:'BETHESDA',ac:['301'],z:'20814'}],'MA':[{c:'BOSTON',ac:['617','857'],z:'02101'},{c:'CAMBRIDGE',ac:['617'],z:'02138'},{c:'WORCESTER',ac:['508'],z:'01601'}],'MI':[{c:'DETROIT',ac:['313'],z:'48201'},{c:'GRAND RAPIDS',ac:['616'],z:'49501'},{c:'ANN ARBOR',ac:['734'],z:'48103'}],'MN':[{c:'MINNEAPOLIS',ac:['612'],z:'55401'},{c:'SAINT PAUL',ac:['651'],z:'55101'}],'MS':[{c:'JACKSON',ac:['601'],z:'39201'}],'MO':[{c:'KANSAS CITY',ac:['816'],z:'64101'},{c:'ST. LOUIS',ac:['314'],z:'63101'}],'MT':[{c:'BILLINGS',ac:['406'],z:'59101'}],'NE':[{c:'OMAHA',ac:['402'],z:'68101'},{c:'LINCOLN',ac:['402'],z:'68501'}],'NV':[{c:'LAS VEGAS',ac:['702'],z:'89101'},{c:'RENO',ac:['775'],z:'89501'}],'NH':[{c:'MANCHESTER',ac:['603'],z:'03101'}],'NJ':[{c:'NEWARK',ac:['973'],z:'07101'},{c:'JERSEY CITY',ac:['201'],z:'07302'},{c:'TRENTON',ac:['609'],z:'08601'}],'NM':[{c:'ALBUQUERQUE',ac:['505'],z:'87101'}],'NY':[{c:'NEW YORK',ac:['212','718','646'],z:'10001'},{c:'BROOKLYN',ac:['718','347'],z:'11201'},{c:'BUFFALO',ac:['716'],z:'14201'},{c:'ALBANY',ac:['518'],z:'12201'}],'NC':[{c:'CHARLOTTE',ac:['704','980'],z:'28201'},{c:'RALEIGH',ac:['919'],z:'27601'},{c:'DURHAM',ac:['919'],z:'27701'},{c:'GREENSBORO',ac:['336'],z:'27401'}],'ND':[{c:'FARGO',ac:['701'],z:'58101'}],'OH':[{c:'COLUMBUS',ac:['614'],z:'43201'},{c:'CLEVELAND',ac:['216'],z:'44101'},{c:'CINCINNATI',ac:['513'],z:'45201'}],'OK':[{c:'OKLAHOMA CITY',ac:['405'],z:'73101'},{c:'TULSA',ac:['918'],z:'74101'}],'OR':[{c:'PORTLAND',ac:['503','971'],z:'97201'},{c:'EUGENE',ac:['541'],z:'97401'}],'PA':[{c:'PHILADELPHIA',ac:['215','267'],z:'19101'},{c:'PITTSBURGH',ac:['412'],z:'15201'}],'RI':[{c:'PROVIDENCE',ac:['401'],z:'02901'}],'SC':[{c:'CHARLESTON',ac:['843'],z:'29401'},{c:'COLUMBIA',ac:['803'],z:'29201'},{c:'GREENVILLE',ac:['864'],z:'29601'}],'SD':[{c:'SIOUX FALLS',ac:['605'],z:'57101'}],'TN':[{c:'NASHVILLE',ac:['615'],z:'37201'},{c:'MEMPHIS',ac:['901'],z:'38101'},{c:'KNOXVILLE',ac:['865'],z:'37901'}],'TX':[{c:'HOUSTON',ac:['713','281','832'],z:'77001'},{c:'DALLAS',ac:['214','972'],z:'75201'},{c:'AUSTIN',ac:['512'],z:'78701'},{c:'SAN ANTONIO',ac:['210'],z:'78201'},{c:'FORT WORTH',ac:['817'],z:'76101'}],'UT':[{c:'SALT LAKE CITY',ac:['801'],z:'84101'},{c:'PROVO',ac:['801'],z:'84601'}],'VT':[{c:'BURLINGTON',ac:['802'],z:'05401'}],'VA':[{c:'VIRGINIA BEACH',ac:['757'],z:'23450'},{c:'RICHMOND',ac:['804'],z:'23219'},{c:'ARLINGTON',ac:['703'],z:'22201'}],'WA':[{c:'SEATTLE',ac:['206'],z:'98101'},{c:'SPOKANE',ac:['509'],z:'99201'},{c:'TACOMA',ac:['253'],z:'98401'}],'WV':[{c:'CHARLESTON',ac:['304'],z:'25301'}],'WI':[{c:'MILWAUKEE',ac:['414'],z:'53201'},{c:'MADISON',ac:['608'],z:'53701'}],'WY':[{c:'CHEYENNE',ac:['307'],z:'82001'}]};
+        const fNames=['ANTONIO','BENJAMIN','BRANDON','BRIDGET','CARITA','CHARLES','CHRISTINA','DANIEL','DEBORAH','DONNA','EDWARD','ELIZABETH','FRANCISCO','GLORIA','HAROLD','IRENE','JAMES','JENNIFER','KAREN','LARRY','LINDA','MARCUS','MARIA','MICHAEL','NANCY','PATRICIA','RAYMOND','ROBERT','SANDRA','STEVEN','TERESA','THOMAS','VICTORIA','WILLIAM'];
+        const streets=['Oak','Maple','Pine','Cedar','Elm','Birch','Walnut','Cherry','Magnolia','Peachtree','Highland','Park','Lake','Spring','Valley','Ridge','Hill','Creek','River','Forest','Meadow','Sunset'];
+        const stTypes=['St','Ave','Dr','Ln','Blvd','Way','Ct','Rd','Pl'];
+        const hvRanges=['$100,000 - $149,999','$150,000 - $199,999','$175,000 - $199,999','$200,000 - $224,999','$200,000 - $249,999','$250,000 - $299,999','$300,000 - $349,999','$350,000 - $399,999','$400,000 - $449,999','$450,000 - $499,999','$500,000 - $749,999','$750,000 - $999,999','$1,000,000+'];
+        const incRanges=['$25,000 - $34,999','$35,000 - $49,999','$50,000 - $59,999','$55,000 - $59,999','$60,000 - $64,999','$60,000 - $74,999','$75,000 - $99,999','$100,000 - $149,999','$150,000 - $199,999','$200,000 - $249,999','$250,000+'];
+        const crRanges=['Under 499','500 - 549','550 - 599','600 - 649','650 - 699','700 - 749','750 - 799','800+'];
+        const eDomains=['gmail.com','yahoo.com','outlook.com','aol.com','icloud.com','hotmail.com','comcast.net','att.net'];
+        function sRand(seed){let s=seed;return function(){s=(s*16807+0)%2147483647;return s/2147483647;};}
+        function hc(str){let h=0;for(let i=0;i<str.length;i++)h=((h<<5)-h+str.charCodeAt(i))|0;return h;}
+        const lk='<svg class="w-3.5 h-3.5 text-gray-300 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"/></svg>';
+        function previewLeads(){
+            const st=document.getElementById('previewState').value;
+            if(!st){alert('Please select a state.');return;}
+            const zip=document.getElementById('previewZip').value;
+            const cities=stateCities[st]||[{c:'SPRINGFIELD',ac:['555'],z:'00000'}];
+            const rand=sRand(Math.abs(hc(st+(zip||'')))+1);
+            const tb=document.getElementById('previewTableBody');
+            let html='';
+            for(let i=0;i<10;i++){
+                const ci=cities[Math.floor(rand()*cities.length)];
+                const fn=fNames[Math.floor(rand()*fNames.length)];
+                const ln=String.fromCharCode(65+Math.floor(rand()*26))+'***';
+                const sn=Math.floor(rand()*9000)+1000;
+                const addr=sn+' ***';
+                const ac1=ci.ac[Math.floor(rand()*ci.ac.length)];
+                const ac2=ci.ac[Math.floor(rand()*ci.ac.length)];
+                const z=zip||ci.z;
+                const age=25+Math.floor(rand()*55);
+                const dnc=rand()<0.15;
+                const hasCell=rand()<0.7;
+                const hasEmail=rand()<0.6;
+                const hasHome=rand()<0.5;
+                const own=rand()<0.7?'Home Owner':'Renter';
+                const hv=hvRanges[Math.floor(rand()*hvRanges.length)];
+                const inc=incRanges[Math.floor(rand()*incRanges.length)];
+                const cs=crRanges[Math.floor(rand()*crRanges.length)];
+                const em=hasEmail?fn.toLowerCase().charAt(0)+'***@'+eDomains[Math.floor(rand()*eDomains.length)]:'';
+                const hp=hasHome?'('+ac1+') '+Math.floor(rand()*90+10)+'***':'';
+                const cp=hasCell?'('+ac2+') '+Math.floor(rand()*90+10)+'***':'';
+                const bg=i%2===0?'bg-white':'bg-gray-50';
+                const dash='<span class="text-gray-300">\u2014</span>';
+                html+=`<tr class="${bg} border-t border-gray-100">
+                    <td class="px-3 py-2.5 font-medium whitespace-nowrap">${fn}</td>
+                    <td class="px-3 py-2.5 text-gray-400 whitespace-nowrap">${lk} ${ln}</td>
+                    <td class="px-3 py-2.5 text-gray-400 whitespace-nowrap">${lk} ${addr}</td>
+                    <td class="px-3 py-2.5 whitespace-nowrap">${ci.c}</td>
+                    <td class="px-3 py-2.5 font-semibold">${st}</td>
+                    <td class="px-3 py-2.5 font-medium">${z}</td>
+                    <td class="px-3 py-2.5 text-gray-400 whitespace-nowrap">${hp?lk+' '+hp:dash}</td>
+                    <td class="px-3 py-2.5 text-gray-400 whitespace-nowrap">${cp?lk+' '+cp:dash}</td>
+                    <td class="px-3 py-2.5 text-gray-400 whitespace-nowrap">${em?lk+' '+em:dash}</td>
+                    <td class="px-3 py-2.5 whitespace-nowrap"><span class="px-2 py-0.5 rounded-full text-xs font-semibold ${dnc?'bg-red-50 text-red-600':'bg-green-50 text-green-600'}">${dnc?'Yes':'No'}</span></td>
+                    <td class="px-3 py-2.5 font-medium border-l border-gray-100">${age}</td>
+                    <td class="px-3 py-2.5 whitespace-nowrap"><span class="text-xs font-medium ${own==='Home Owner'?'text-blue-700':'text-amber-600'}">${own}</span></td>
+                    <td class="px-3 py-2.5 whitespace-nowrap">${hv}</td>
+                    <td class="px-3 py-2.5 whitespace-nowrap">${inc}</td>
+                    <td class="px-3 py-2.5 whitespace-nowrap">${cs}</td>
+                </tr>`;
+            }
+            tb.innerHTML=html;
+            document.getElementById('previewResults').classList.remove('hidden');
+        }
         function toggleFaq(b){const a=b.nextElementSibling,i=b.querySelector('.faq-icon'),o=a.classList.contains('open');document.querySelectorAll('.faq-answer').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-icon').forEach(x=>x.style.transform='');if(!o){a.classList.add('open');i.style.transform='rotate(180deg)';}}
         populateStates();
     </script>
