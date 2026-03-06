@@ -92,10 +92,6 @@
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 Settings
             </a>
-            <a onclick="navigate('admin')" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-600 cursor-pointer" data-page="admin">
-                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                Admin
-            </a>
         </nav>
     </aside>
 
@@ -135,296 +131,281 @@
         </div>
 
         <!-- ========== BUILD & BUY VIEW ========== -->
-        <div id="view-build" class="view p-4 sm:p-8">
+        <div id="view-build" class="view p-4 sm:p-8 max-w-5xl">
             <h1 class="text-2xl font-bold mb-1">Build Your Lead List</h1>
             <p class="text-gray-500 text-sm mb-6">Filter and preview leads before purchasing</p>
 
-            <div class="flex flex-col lg:flex-row gap-6">
-                <!-- Left: Filters -->
-                <div class="flex-1 space-y-5">
-                    <!-- State Selection -->
-                    <div class="bg-white rounded-xl border border-gray-200 p-5">
-                        <h3 class="font-bold text-base mb-3">State Selection</h3>
-                        <select id="buildState" onchange="onStateChange()" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none">
-                            <option value="">Select State</option>
+            <!-- Top row: State + Lead Preview side by side -->
+            <div class="grid grid-cols-1 lg:grid-cols-5 gap-5 mb-5">
+                <div class="lg:col-span-3 bg-white rounded-xl border border-gray-200 p-5">
+                    <h3 class="font-bold text-base mb-3">State Selection</h3>
+                    <select id="buildState" onchange="onStateChange()" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none">
+                        <option value="">Select State</option>
+                    </select>
+                </div>
+                <div class="lg:col-span-2 bg-white rounded-xl border border-gray-200 p-5">
+                    <h3 class="font-bold text-base mb-3">Lead Preview</h3>
+                    <div id="previewEmpty" class="text-sm text-gray-400 text-center py-4">Select a state to get started</div>
+                    <div id="previewData" class="hidden">
+                        <div class="border-2 border-brand-500 rounded-xl p-4 mb-3 text-center">
+                            <div class="text-xs text-gray-500 mb-1">Total Unique Addresses</div>
+                            <div class="text-3xl font-bold text-brand-600" id="previewTotal">0</div>
+                            <div class="text-xs text-gray-400 mt-1">What you pay for</div>
+                        </div>
+                        <div class="grid grid-cols-3 gap-2 text-center text-xs mb-3">
+                            <div class="bg-gray-50 rounded-lg p-2">
+                                <div class="text-gray-500">With Phone</div>
+                                <div class="font-bold text-sm mt-0.5" id="previewWithPhone">0</div>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-2">
+                                <div class="text-gray-500">Phones</div>
+                                <div class="font-bold text-sm mt-0.5" id="previewPhones">0</div>
+                            </div>
+                            <div class="bg-gray-50 rounded-lg p-2">
+                                <div class="text-gray-500">No Phone</div>
+                                <div class="font-bold text-sm mt-0.5" id="previewNoPhone">0</div>
+                            </div>
+                        </div>
+                        <button onclick="goToPackages()" class="w-full bg-gray-900 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Choose Package</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Area Selection (hidden until state selected) -->
+            <div id="areaSection" class="bg-white rounded-xl border border-gray-200 p-5 mb-5 hidden">
+                <h3 class="font-bold text-base mb-3">Area Selection</h3>
+                <div class="mb-3">
+                    <span class="text-sm font-medium text-gray-600">Select By</span>
+                    <div class="flex gap-2 mt-2 max-w-xs">
+                        <button onclick="setAreaMode('zip')" id="areaZipBtn" class="flex-1 py-2 rounded-lg text-sm font-semibold bg-brand-600 text-white transition">ZIP Codes</button>
+                        <button onclick="setAreaMode('county')" id="areaCountyBtn" class="flex-1 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-gray-600 transition">Counties</button>
+                    </div>
+                </div>
+                <div id="zipSection">
+                    <label class="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                        <input type="checkbox" id="selectAllZips" onchange="toggleSelectAllZips()" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
+                        Select all ZIP codes in <span id="stateCodeLabel">--</span>
+                    </label>
+                    <div class="flex gap-2 max-w-sm">
+                        <input type="text" id="zipInput" placeholder="Enter ZIP code" maxlength="5" class="flex-1 border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none" onkeydown="if(event.key==='Enter')addZip()">
+                        <button onclick="addZip()" class="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Add</button>
+                    </div>
+                    <div id="zipTags" class="flex flex-wrap gap-2 mt-3"></div>
+                </div>
+                <div id="countySection" class="hidden">
+                    <label class="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                        <input type="checkbox" id="selectAllCounties" onchange="toggleSelectAllCounties()" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
+                        Select all counties in <span id="stateCodeLabel2">--</span>
+                    </label>
+                    <div class="flex gap-2 max-w-sm">
+                        <select id="countyDropdown" class="flex-1 border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none">
+                            <option value="">Select County</option>
                         </select>
+                        <button onclick="addCounty()" class="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Add</button>
                     </div>
+                    <div id="countyTags" class="flex flex-wrap gap-2 mt-3"></div>
+                </div>
+            </div>
 
-                    <!-- Area Selection (hidden until state selected) -->
-                    <div id="areaSection" class="bg-white rounded-xl border border-gray-200 p-5 hidden">
-                        <h3 class="font-bold text-base mb-3">Area Selection</h3>
-                        <div class="mb-3">
-                            <span class="text-sm font-medium text-gray-600">Select By</span>
-                            <div class="flex gap-2 mt-2">
-                                <button onclick="setAreaMode('zip')" id="areaZipBtn" class="flex-1 py-2 rounded-lg text-sm font-semibold bg-brand-600 text-white transition">ZIP Codes</button>
-                                <button onclick="setAreaMode('county')" id="areaCountyBtn" class="flex-1 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-gray-600 transition">Counties</button>
-                            </div>
-                        </div>
+            <!-- Filters heading -->
+            <h3 class="font-bold text-base text-gray-700 mb-3">Advanced Filters</h3>
+            <div class="space-y-3">
 
-                        <!-- ZIP input -->
-                        <div id="zipSection">
-                            <label class="flex items-center gap-2 text-sm text-gray-600 mb-2">
-                                <input type="checkbox" id="selectAllZips" onchange="toggleSelectAllZips()" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
-                                Select all ZIP codes in <span id="stateCodeLabel">--</span>
-                            </label>
-                            <div class="flex gap-2">
-                                <input type="text" id="zipInput" placeholder="Enter ZIP code" maxlength="5" class="flex-1 border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none" onkeydown="if(event.key==='Enter')addZip()">
-                                <button onclick="addZip()" class="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Add</button>
-                            </div>
-                            <div id="zipTags" class="flex flex-wrap gap-2 mt-3"></div>
-                        </div>
-
-                        <!-- County input -->
-                        <div id="countySection" class="hidden">
-                            <label class="flex items-center gap-2 text-sm text-gray-600 mb-2">
-                                <input type="checkbox" id="selectAllCounties" onchange="toggleSelectAllCounties()" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
-                                Select all counties in <span id="stateCodeLabel2">--</span>
-                            </label>
-                            <select id="countyDropdown" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none mb-2">
-                                <option value="">Select County</option>
-                            </select>
-                            <button onclick="addCounty()" class="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition w-full">Add County</button>
-                            <div id="countyTags" class="flex flex-wrap gap-2 mt-3"></div>
-                        </div>
-                    </div>
-
-                    <!-- Property Filters -->
-                    <div class="rounded-xl overflow-hidden border border-gray-200">
-                        <button onclick="toggleFilter('property')" class="filter-header w-full flex items-center justify-between px-5 py-3 text-white text-sm font-bold uppercase tracking-wider cursor-pointer">
-                            Property
-                            <svg id="chevron-property" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div id="filter-property" class="filter-body bg-white">
-                            <div class="p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Property Filters -->
+                <div class="rounded-xl overflow-hidden border border-gray-200">
+                    <button onclick="toggleFilter('property')" class="filter-header w-full flex items-center justify-between px-5 py-3 text-white text-sm font-bold uppercase tracking-wider cursor-pointer">
+                        Property
+                        <svg id="chevron-property" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div id="filter-property" class="filter-body bg-white">
+                        <div class="p-4 sm:p-5 space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Total Assessed Value</label>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Total Assessed Value</label>
                                     <div class="flex gap-2">
                                         <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>$50K</option><option>$100K</option><option>$150K</option><option>$200K</option><option>$300K</option><option>$500K</option></select>
                                         <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>$100K</option><option>$200K</option><option>$300K</option><option>$500K</option><option>$750K</option><option>$1M+</option></select>
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Square Feet</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Square Ft. Type</option><option>Building</option><option>Lot</option></select>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Renters</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>All</option><option>Exclude Renters</option><option>Renters Only</option></select>
                                 </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Subdivision</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-400" disabled><option>Select City/State or Zip first</option></select>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Renters</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Renters</option><option>Exclude Renters</option><option>Renters Only</option></select>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Square Feet #</label>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Square Feet</label>
                                     <div class="flex gap-2">
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>100+</option><option>500+</option><option>1000+</option><option>1500+</option><option>2000+</option><option>3000+</option></select>
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>100+</option><option>1000</option><option>2000</option><option>3000</option><option>5000</option><option>10000</option></select>
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>500+</option><option>1000+</option><option>1500+</option><option>2000+</option><option>3000+</option></select>
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>1000</option><option>2000</option><option>3000</option><option>5000</option><option>10000</option></select>
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block"># of Rooms / Bedrooms</label>
-                                    <div class="flex gap-2">
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option># of Rooms</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option></select>
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option># of Bedrooms</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option></select>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Length of Residence</label>
-                                    <div class="flex gap-2">
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>1 yr</option><option>2 yr</option><option>5 yr</option><option>7 yr</option><option>10 yr</option></select>
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>5 yr</option><option>10 yr</option><option>15 yr</option><option>20 yr</option><option>30 yr</option></select>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Year Built</label>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Year Built</label>
                                     <div class="flex gap-2">
                                         <input type="text" placeholder="From" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm" maxlength="4">
                                         <input type="text" placeholder="To" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm" maxlength="4">
                                     </div>
                                 </div>
+                            </div>
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
                                 <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block"># of Bathrooms</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option># of Bathrooms</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option></select>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Rooms</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option></select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Bedrooms</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option></select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Bathrooms</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option></select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Residence</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>1+ yr</option><option>2+ yr</option><option>5+ yr</option><option>10+ yr</option></select>
                                 </div>
                             </div>
-                            <div class="px-5 pb-4">
-                                <label class="flex items-center gap-2 text-sm text-gray-600">
-                                    <input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
-                                    Equity Prospect
-                                </label>
-                            </div>
+                            <label class="flex items-center gap-2 text-sm text-gray-600">
+                                <input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
+                                Equity Prospect
+                            </label>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Financial Filters -->
-                    <div class="rounded-xl overflow-hidden border border-gray-200">
-                        <button onclick="toggleFilter('financial')" class="filter-header w-full flex items-center justify-between px-5 py-3 text-white text-sm font-bold uppercase tracking-wider cursor-pointer">
-                            Financial
-                            <svg id="chevron-financial" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div id="filter-financial" class="filter-body bg-white">
-                            <div class="p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Financial Filters -->
+                <div class="rounded-xl overflow-hidden border border-gray-200">
+                    <button onclick="toggleFilter('financial')" class="filter-header w-full flex items-center justify-between px-5 py-3 text-white text-sm font-bold uppercase tracking-wider cursor-pointer">
+                        Financial
+                        <svg id="chevron-financial" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div id="filter-financial" class="filter-body bg-white">
+                        <div class="p-4 sm:p-5 space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">1st Mortgage Amount</label>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">1st Mortgage Amount</label>
                                     <div class="flex gap-2">
                                         <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>$50K</option><option>$100K</option><option>$200K</option><option>$300K</option></select>
                                         <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>$200K</option><option>$500K</option><option>$750K</option><option>$1M+</option></select>
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Income</label>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">2nd Mortgage Amount</label>
+                                    <div class="flex gap-2">
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>$25K</option><option>$50K</option><option>$100K</option></select>
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>$100K</option><option>$200K</option><option>$500K</option></select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Income</label>
                                     <div class="flex gap-2">
                                         <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>$25K</option><option>$50K</option><option>$75K</option><option>$100K</option><option>$150K</option></select>
                                         <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>$75K</option><option>$100K</option><option>$150K</option><option>$200K</option><option>$500K+</option></select>
                                     </div>
                                 </div>
                                 <div>
-                                    <label class="flex items-center gap-2 text-xs font-medium text-gray-500 mb-1">Absentee Owner Flag</label>
-                                    <label class="flex items-center gap-2 text-sm text-gray-600 mt-2">
-                                        <input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
-                                        Include
-                                    </label>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">2nd Mortgage Amount</label>
-                                    <div class="flex gap-2">
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>$25K</option><option>$50K</option><option>$100K</option></select>
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>$100K</option><option>$200K</option><option>$500K</option></select>
-                                    </div>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Credit Rating</label>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Credit Rating</label>
                                     <select id="creditSelect" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
-                                        <option>Credit Rating</option>
+                                        <option>Any</option>
                                         <option>800+</option><option>750-799</option><option>700-749</option><option>650-699</option><option>600-649</option><option>550-599</option><option>500-549</option><option>Below 500</option>
                                     </select>
                                 </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Net Worth</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Net Worth</option><option>$0-$50K</option><option>$50K-$100K</option><option>$100K-$250K</option><option>$250K-$500K</option><option>$500K-$1M</option><option>$1M+</option></select>
-                                </div>
                             </div>
-                        </div>
-                    </div>
-
-                    <!-- Transportation Filters -->
-                    <div class="rounded-xl overflow-hidden border border-gray-200">
-                        <button onclick="toggleFilter('transport')" class="filter-header w-full flex items-center justify-between px-5 py-3 text-white text-sm font-bold uppercase tracking-wider cursor-pointer">
-                            Transportation
-                            <svg id="chevron-transport" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div id="filter-transport" class="filter-body bg-white">
-                            <div class="p-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Vehicle</label>
-                                    <div class="flex gap-2">
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Make</option><option>Ford</option><option>Toyota</option><option>Honda</option><option>Chevy</option><option>BMW</option><option>Tesla</option></select>
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Model</option></select>
-                                    </div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Net Worth</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>$0-$50K</option><option>$50K-$100K</option><option>$100K-$250K</option><option>$250K-$500K</option><option>$500K-$1M</option><option>$1M+</option></select>
                                 </div>
                                 <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Year</label>
-                                    <div class="flex gap-2">
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>From</option><option>2015</option><option>2018</option><option>2020</option><option>2022</option><option>2024</option></select>
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>To</option><option>2020</option><option>2022</option><option>2024</option><option>2026</option></select>
-                                    </div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Absentee Owner</label>
+                                    <label class="flex items-center gap-2 text-sm text-gray-600 mt-1">
+                                        <input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
+                                        Include only
+                                    </label>
                                 </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Transaction Date</label>
-                                    <div class="flex gap-2">
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>From</option></select>
-                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>To</option></select>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Family Filters -->
-                    <div class="rounded-xl overflow-hidden border border-gray-200">
-                        <button onclick="toggleFilter('family')" class="filter-header w-full flex items-center justify-between px-5 py-3 text-white text-sm font-bold uppercase tracking-wider cursor-pointer">
-                            Family
-                            <svg id="chevron-family" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div id="filter-family" class="filter-body bg-white">
-                            <div class="p-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Family Position</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Family Position</option><option>Single</option><option>Male HOH</option><option>Female HOH</option><option>Husband</option><option>Wife</option><option>Grandfather</option><option>Grandmother</option><option>Other</option></select>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Language</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Language</option><option>English</option><option>Spanish</option><option>Chinese</option><option>Vietnamese</option><option>Korean</option><option>Other</option></select>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Pets</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Pets</option><option>Dog</option><option>Cat</option><option>Both</option><option>None</option></select>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Generations in Home</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Generations in Home</option><option>1</option><option>2</option><option>3+</option></select>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Race</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Race</option></select>
-                                </div>
-                                <div>
-                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Occupant Age</label>
-                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Occupant Age</option><option>18-24</option><option>25-34</option><option>35-44</option><option>45-54</option><option>55-64</option><option>65+</option></select>
-                                </div>
-                            </div>
-                            <div class="px-5 pb-4 flex flex-wrap gap-4">
-                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500"> Presence of Elderly</label>
-                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500"> Presence of Young Adult</label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Consumer Behavior Filters -->
-                    <div class="rounded-xl overflow-hidden border border-gray-200">
-                        <button onclick="toggleFilter('consumer')" class="filter-header w-full flex items-center justify-between px-5 py-3 text-white text-sm font-bold uppercase tracking-wider cursor-pointer">
-                            Consumer Behavior
-                            <svg id="chevron-consumer" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
-                        </button>
-                        <div id="filter-consumer" class="filter-body bg-white">
-                            <div class="p-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
-                                <div><label class="text-xs font-medium text-gray-500 mb-1 block">Interests</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Interests</option><option>DIY/Home Improvement</option><option>Gardening</option><option>Cooking</option><option>Fitness</option><option>Technology</option><option>Travel</option></select></div>
-                                <div><label class="text-xs font-medium text-gray-500 mb-1 block">Collectors</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Collectors</option></select></div>
-                                <div><label class="text-xs font-medium text-gray-500 mb-1 block">Donations</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Donations</option><option>Political</option><option>Religious</option><option>Environmental</option><option>Health</option></select></div>
-                                <div><label class="text-xs font-medium text-gray-500 mb-1 block">Hobbies</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Hobbies</option></select></div>
-                                <div><label class="text-xs font-medium text-gray-500 mb-1 block">Preferences</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Preferences</option></select></div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Right: Lead Preview Sidebar -->
-                <div class="lg:w-72 lg:flex-shrink-0">
-                    <div class="bg-white rounded-xl border border-gray-200 p-5 lg:sticky lg:top-24">
-                        <h3 class="font-bold text-base mb-4">Lead Preview</h3>
-                        <div id="previewEmpty" class="text-sm text-gray-400 text-center py-8">Select a state to get started</div>
-                        <div id="previewData" class="hidden">
-                            <div class="border-2 border-brand-500 rounded-xl p-4 mb-4 text-center">
-                                <div class="text-xs text-gray-500 mb-1">Total Unique Addresses</div>
-                                <div class="text-3xl font-bold text-brand-600" id="previewTotal">0</div>
-                                <div class="text-xs text-gray-400 mt-1">What you pay for</div>
+                <!-- Transportation Filters -->
+                <div class="rounded-xl overflow-hidden border border-gray-200">
+                    <button onclick="toggleFilter('transport')" class="filter-header w-full flex items-center justify-between px-5 py-3 text-white text-sm font-bold uppercase tracking-wider cursor-pointer">
+                        Transportation
+                        <svg id="chevron-transport" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div id="filter-transport" class="filter-body bg-white">
+                        <div class="p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="text-xs font-medium text-gray-500 mb-1.5 block">Vehicle Make</label>
+                                <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>Ford</option><option>Toyota</option><option>Honda</option><option>Chevy</option><option>BMW</option><option>Tesla</option></select>
                             </div>
-                            <div class="grid grid-cols-3 gap-2 text-center text-xs mb-4">
-                                <div class="bg-gray-50 rounded-lg p-2.5">
-                                    <div class="text-gray-500">With Phone</div>
-                                    <div class="font-bold text-sm mt-0.5" id="previewWithPhone">0</div>
-                                </div>
-                                <div class="bg-gray-50 rounded-lg p-2.5">
-                                    <div class="text-gray-500">Phones</div>
-                                    <div class="font-bold text-sm mt-0.5" id="previewPhones">0</div>
-                                </div>
-                                <div class="bg-gray-50 rounded-lg p-2.5">
-                                    <div class="text-gray-500">No Phone</div>
-                                    <div class="font-bold text-sm mt-0.5" id="previewNoPhone">0</div>
+                            <div>
+                                <label class="text-xs font-medium text-gray-500 mb-1.5 block">Vehicle Year</label>
+                                <div class="flex gap-2">
+                                    <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>From</option><option>2015</option><option>2018</option><option>2020</option><option>2022</option><option>2024</option></select>
+                                    <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>To</option><option>2020</option><option>2022</option><option>2024</option><option>2026</option></select>
                                 </div>
                             </div>
-                            <button onclick="goToPackages()" class="w-full bg-gray-900 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Choose Package</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Filters -->
+                <div class="rounded-xl overflow-hidden border border-gray-200">
+                    <button onclick="toggleFilter('family')" class="filter-header w-full flex items-center justify-between px-5 py-3 text-white text-sm font-bold uppercase tracking-wider cursor-pointer">
+                        Family
+                        <svg id="chevron-family" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div id="filter-family" class="filter-body bg-white">
+                        <div class="p-4 sm:p-5 space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Family Position</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>Single</option><option>Male HOH</option><option>Female HOH</option><option>Husband</option><option>Wife</option><option>Grandfather</option><option>Grandmother</option><option>Other</option></select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Language</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>English</option><option>Spanish</option><option>Chinese</option><option>Vietnamese</option><option>Korean</option><option>Other</option></select>
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Pets</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>Dog</option><option>Cat</option><option>Both</option><option>None</option></select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Generations</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>1</option><option>2</option><option>3+</option></select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Occupant Age</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>18-24</option><option>25-34</option><option>35-44</option><option>45-54</option><option>55-64</option><option>65+</option></select>
+                                </div>
+                            </div>
+                            <div class="flex flex-wrap gap-x-6 gap-y-2">
+                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500"> Presence of Elderly</label>
+                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500"> Presence of Young Adult</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Consumer Behavior Filters -->
+                <div class="rounded-xl overflow-hidden border border-gray-200">
+                    <button onclick="toggleFilter('consumer')" class="filter-header w-full flex items-center justify-between px-5 py-3 text-white text-sm font-bold uppercase tracking-wider cursor-pointer">
+                        Consumer Behavior
+                        <svg id="chevron-consumer" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                    </button>
+                    <div id="filter-consumer" class="filter-body bg-white">
+                        <div class="p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Interests</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>DIY/Home Improvement</option><option>Gardening</option><option>Cooking</option><option>Fitness</option><option>Technology</option><option>Travel</option></select></div>
+                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Hobbies</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option></select></div>
+                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Donations</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option><option>Political</option><option>Religious</option><option>Environmental</option><option>Health</option></select></div>
+                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Preferences</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Any</option></select></div>
                         </div>
                     </div>
                 </div>
@@ -545,14 +526,6 @@
             </div>
         </div>
 
-        <!-- ========== ADMIN VIEW ========== -->
-        <div id="view-admin" class="view p-4 sm:p-8">
-            <h1 class="text-2xl font-bold mb-1">Admin</h1>
-            <p class="text-gray-500 text-sm mb-6">Account administration</p>
-            <div class="bg-white rounded-xl border border-gray-200 p-6 max-w-2xl">
-                <p class="text-gray-500 text-sm">Admin panel coming soon.</p>
-            </div>
-        </div>
 
     </main>
 
