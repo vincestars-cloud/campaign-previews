@@ -3,418 +3,419 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard - Coastal Shield Roofing</title>
+  <title>Your Growth Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="app-layout">
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      <div class="sidebar-brand-name">Coastal Shield <span>Roofing</span></div>
-      <div class="sidebar-brand-sub">Growth Dashboard</div>
-    </div>
-    <nav class="sidebar-nav">
-      <div class="sidebar-section">Overview</div>
-      <a class="sidebar-link active" href="dashboard.html">Dashboard</a>
-      <a class="sidebar-link" href="receptionist.html">Receptionist</a>
-      <a class="sidebar-link" href="ads.html">Ads</a>
-      <div class="sidebar-section">Tools</div>
-      <a class="sidebar-link" href="storm.html">Storm Alerts<span class="link-badge">1</span></a>
-      <a class="sidebar-link" href="hiring.html">Hiring</a>
-      <a class="sidebar-link" href="commands.html">Text Commands</a>
-      <div class="sidebar-section">System</div>
-      <a class="sidebar-link" href="changelog.html">What Changed</a>
-      <a class="sidebar-link" href="settings.html">Settings</a>
-    </nav>
-    <div class="sidebar-footer">All Systems Active</div>
-  </aside>
-
-  <main class="main-content">
-    <div class="main-header">
-      <div class="page-title">Dashboard</div>
-      <div class="header-actions">
-        <div class="period-pills">
-          <span class="period-pill" data-period="7d">7 Days</span>
-          <span class="period-pill active" data-period="30d">30 Days</span>
-          <span class="period-pill" data-period="90d">90 Days</span>
-        </div>
-      </div>
-    </div>
-
-    <div class="content">
-
-      <div class="stat-grid" id="stat-grid"></div>
-
-      <div class="section-title">Where Your Leads Come From</div>
-      <div class="section-subtitle">Click a channel to see the ads running for it</div>
-      <div id="channel-grid" style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:24px;"></div>
-
-      <div class="insight-box" id="insight-box">
-        <div class="insight-title">Summary</div>
-        <div class="insight-text" id="insight-text"></div>
-      </div>
-
-      <div class="section-title">Your Landing Pages</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:24px;">
-        <div class="card fade-in" style="cursor:pointer;" onclick="openModal('lpModal1')">
-          <div style="display:flex;align-items:center;justify-content:space-between;">
-            <div><div style="font-weight:600;font-size:15px;color:var(--dark);">Google Ads Page</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Free Inspection Offer</div></div>
-            <span class="badge badge-green">Live</span>
-          </div>
-          <div style="margin-top:12px;display:flex;gap:12px;">
-            <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Visits</span><div style="font-family:var(--mono);font-weight:500;font-size:15px;">1,247</div></div>
-            <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Conv Rate</span><div style="font-family:var(--mono);font-weight:500;font-size:15px;color:var(--green);">8.2%</div></div>
-          </div>
-          <div style="font-size:12px;color:var(--blue);margin-top:10px;font-weight:500;">Preview page &rarr;</div>
-        </div>
-        <div class="card fade-in" style="cursor:pointer;" onclick="openModal('lpModal2')">
-          <div style="display:flex;align-items:center;justify-content:space-between;">
-            <div><div style="font-weight:600;font-size:15px;color:var(--dark);">Facebook Page</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Hurricane Season</div></div>
-            <span class="badge badge-green">Live</span>
-          </div>
-          <div style="margin-top:12px;display:flex;gap:12px;">
-            <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Visits</span><div style="font-family:var(--mono);font-weight:500;font-size:15px;">892</div></div>
-            <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Conv Rate</span><div style="font-family:var(--mono);font-weight:500;font-size:15px;color:var(--green);">6.7%</div></div>
-          </div>
-          <div style="font-size:12px;color:var(--blue);margin-top:10px;font-weight:500;">Preview page &rarr;</div>
-        </div>
-        <div class="card fade-in" style="cursor:pointer;" onclick="openModal('lpModal3')">
-          <div style="display:flex;align-items:center;justify-content:space-between;">
-            <div><div style="font-weight:600;font-size:15px;color:var(--dark);">Lead Capture Form</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Quick Qualifier</div></div>
-            <span class="badge badge-green">Live</span>
-          </div>
-          <div style="margin-top:12px;display:flex;gap:12px;">
-            <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Submissions</span><div style="font-family:var(--mono);font-weight:500;font-size:15px;">62</div></div>
-            <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Qualified</span><div style="font-family:var(--mono);font-weight:500;font-size:15px;color:var(--green);">77%</div></div>
-          </div>
-          <div style="font-size:12px;color:var(--blue);margin-top:10px;font-weight:500;">Preview form &rarr;</div>
-        </div>
-      </div>
-
-      <div class="section-title">Recent Activity</div>
-      <div class="card">
-        <ul style="list-style:none;">
-          <li class="fade-in" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
-            <div style="width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--blue-light);">&#128205;</div>
-            <div style="flex:1;"><div style="font-size:14px;line-height:1.5;"><strong style="color:var(--dark);">New lead from Google Ads</strong> &mdash; Carlos R., Coral Gables. Needs full roof replacement after hurricane damage. <a href="receptionist.html" style="color:var(--blue);font-size:12px;">View lead &rarr;</a></div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">12 minutes ago</div></div>
-          </li>
-          <li class="fade-in" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
-            <div style="width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--green-light);">&#128222;</div>
-            <div style="flex:1;"><div style="font-size:14px;line-height:1.5;"><strong style="color:var(--dark);">Call answered &amp; booked</strong> &mdash; Receptionist qualified (insurance claim, tile damage), booked for Friday 10am. <a href="receptionist.html" style="color:var(--blue);font-size:12px;">Listen &rarr;</a></div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">47 minutes ago</div></div>
-          </li>
-          <li class="fade-in" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
-            <div style="width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--yellow-light);">&#11088;</div>
-            <div style="flex:1;"><div style="font-size:14px;line-height:1.5;"><strong style="color:var(--dark);">New Google review (5 stars)</strong> &mdash; "Coastal Shield was fast, handled insurance, and cleaned up perfectly." &mdash; Maria S.</div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">2 hours ago</div></div>
-          </li>
-          <li class="fade-in" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
-            <div style="width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--red-light);">&#9888;&#65039;</div>
-            <div style="flex:1;"><div style="font-size:14px;line-height:1.5;"><strong style="color:var(--dark);">Storm watch issued</strong> &mdash; Tropical Storm advisory for Miami-Dade. 285K households in impact zone. <a href="storm.html" style="color:var(--blue);font-size:12px;">Review &amp; approve &rarr;</a></div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Yesterday, 9:14pm</div></div>
-          </li>
-          <li class="fade-in" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;">
-            <div style="width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--purple-light);">&#128100;</div>
-            <div style="flex:1;"><div style="font-size:14px;line-height:1.5;"><strong style="color:var(--dark);">New applicant screened</strong> &mdash; James W., 4 years canvassing, passed phone screen. <a href="hiring.html" style="color:var(--blue);font-size:12px;">View applicant &rarr;</a></div><div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Yesterday, 2:30pm</div></div>
-          </li>
-        </ul>
-      </div>
-
-    </div>
-  </main>
-</div>
-
-<!-- Ad Preview Modal -->
-<div class="modal-overlay" id="adModal">
-  <div class="modal" style="max-width:720px;">
-    <button class="modal-close" onclick="closeModal('adModal')">&times;</button>
-    <div class="modal-title" id="adModalTitle">Ads Running</div>
-    <div id="adModalContent"></div>
+  <div class="topbar">
+    <div class="topbar-brand">Coastal Shield <span>Roofing</span></div>
+    <div class="topbar-status">System Running</div>
   </div>
-</div>
 
-<!-- LP1: Google Ads Landing Page -->
-<div class="modal-overlay" id="lpModal1">
-  <div class="modal" style="max-width:760px;padding:0;overflow:hidden;">
-    <button class="modal-close" onclick="closeModal('lpModal1')" style="position:absolute;right:16px;top:12px;z-index:10;background:rgba(255,255,255,0.9);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;">&times;</button>
-    <div style="background:#F1F3F4;padding:8px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);">
-      <div style="display:flex;gap:5px;"><div style="width:10px;height:10px;border-radius:50%;background:#FF5F57;"></div><div style="width:10px;height:10px;border-radius:50%;background:#FFBD2E;"></div><div style="width:10px;height:10px;border-radius:50%;background:#28C840;"></div></div>
-      <div style="flex:1;background:white;border-radius:14px;padding:5px 12px;font-size:11px;color:var(--text-muted);border:1px solid #ddd;">&#128274; coastalshieldroofing.com/free-inspection</div>
+  <nav class="nav-tabs">
+    <a class="nav-tab active" href="dashboard.html">Dashboard</a>
+    <a class="nav-tab" href="receptionist.html">Receptionist</a>
+    <a class="nav-tab" href="storm.html">Storm Alerts</a>
+    <a class="nav-tab" href="hiring.html">Hiring</a>
+    <a class="nav-tab" href="changelog.html">What Changed</a>
+    <a class="nav-tab" href="commands.html">Text Commands</a>
+  </nav>
+
+  <div class="content">
+
+    <!-- Period Selector -->
+    <div class="period-row">
+      <span class="period-label">Showing results for:</span>
+      <div class="period-pills">
+        <span class="period-pill" data-period="7d">7 Days</span>
+        <span class="period-pill active" data-period="30d">30 Days</span>
+        <span class="period-pill" data-period="90d">90 Days</span>
+      </div>
     </div>
-    <div style="background:white;">
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid #f0f0f0;">
-        <div style="font-family:var(--serif);font-size:15px;color:var(--dark);">Coastal Shield <span style="color:var(--accent);">Roofing</span></div>
-        <div style="display:flex;gap:16px;font-size:11px;color:var(--text-muted);align-items:center;">
-          <span>Services</span><span>About</span><span>Reviews</span>
-          <span style="background:var(--accent);color:white;padding:5px 12px;border-radius:6px;font-weight:600;">Free Inspection</span>
+
+    <!-- Top Stats -->
+    <div class="stat-grid" id="stat-grid">
+      <!-- filled by JS -->
+    </div>
+
+    <!-- Channel Breakdown -->
+    <div class="section-title">Where Your Leads Come From</div>
+    <div class="section-subtitle">Click a channel to see the ads running for it</div>
+    <div id="channel-grid" style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:24px;">
+      <!-- filled by JS -->
+    </div>
+
+    <!-- Weekly Chart -->
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+        <div class="section-title" style="margin-bottom:0;">Leads Per Day</div>
+      </div>
+      <div id="chart" style="display:flex;align-items:flex-end;gap:4px;height:180px;padding-top:10px;">
+        <!-- filled by JS -->
+      </div>
+      <div style="display:flex;gap:16px;margin-top:12px;justify-content:center;">
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted);"><div style="width:8px;height:8px;border-radius:2px;background:#4285F4;"></div> Google</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted);"><div style="width:8px;height:8px;border-radius:2px;background:#1877F2;"></div> Facebook</div>
+        <div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted);"><div style="width:8px;height:8px;border-radius:2px;background:var(--accent);"></div> Outbound</div>
+      </div>
+    </div>
+
+    <!-- Plain-English Insight -->
+    <div class="insight-box" id="insight-box">
+      <!-- filled by JS -->
+    </div>
+
+    <!-- Where Traffic Goes (Landing Pages) -->
+    <div class="section-title">Where Your Traffic Goes</div>
+    <div class="section-subtitle">These are the pages people see when they click your ads</div>
+    <div style="display:grid;grid-template-columns:1fr;gap:12px;margin-bottom:24px;" id="lp-grid">
+      <div class="card fade-in" style="cursor:pointer;" onclick="openModal('lpModal1')">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-weight:600;font-size:15px;color:var(--dark);">Google Ads Landing Page</div>
+            <div style="font-size:13px;color:var(--text-muted);margin-top:2px;">"Free Roof Inspection in Miami-Dade" &mdash; targets homeowners searching for roofers</div>
+          </div>
+          <span class="badge badge-green">Live</span>
+        </div>
+        <div style="margin-top:12px;background:var(--bg);border-radius:var(--radius-sm);padding:14px;border:1px solid var(--border);">
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Visitors</span><div style="font-weight:700;font-size:16px;">412</div></div>
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Form Fills</span><div style="font-weight:700;font-size:16px;">29</div></div>
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Conversion</span><div style="font-weight:700;font-size:16px;color:var(--green);">7.0%</div></div>
+          </div>
+          <div style="font-size:12px;color:var(--blue);margin-top:10px;font-weight:500;">Click to preview page &rarr;</div>
         </div>
       </div>
-      <div style="padding:40px 24px;text-align:center;background:linear-gradient(180deg,#FAFBFC,white);">
-        <div style="font-size:11px;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:10px;">Miami-Dade's Trusted Roofing Company</div>
-        <div style="font-family:var(--serif);font-size:30px;color:var(--dark);line-height:1.2;margin-bottom:12px;max-width:500px;margin-left:auto;margin-right:auto;">Your Roof Protects Everything You Love. Get It Inspected Free.</div>
-        <div style="font-size:14px;color:var(--text-muted);max-width:440px;margin:0 auto 20px;line-height:1.7;">Our certified inspectors check every shingle, seal, and flashing &mdash; and give you an honest assessment on the spot. No sales pitch. No obligation. Takes 20 minutes.</div>
-        <div style="display:flex;justify-content:center;gap:24px;margin-bottom:24px;">
-          <div style="text-align:center;"><div style="font-family:var(--mono);font-size:22px;font-weight:500;color:var(--dark);">500+</div><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;">Roofs Inspected</div></div>
-          <div style="text-align:center;"><div style="font-family:var(--mono);font-size:22px;font-weight:500;color:var(--dark);">4.8 &#9733;</div><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;">Google Rating</div></div>
-          <div style="text-align:center;"><div style="font-family:var(--mono);font-size:22px;font-weight:500;color:var(--dark);">24hr</div><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;">Response Time</div></div>
+      <div class="card fade-in" style="cursor:pointer;" onclick="openModal('lpModal2')">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-weight:600;font-size:15px;color:var(--dark);">Facebook/Instagram Landing Page</div>
+            <div style="font-size:13px;color:var(--text-muted);margin-top:2px;">"Is Your Roof Ready for Hurricane Season?" &mdash; targets homeowners in Miami-Dade</div>
+          </div>
+          <span class="badge badge-green">Live</span>
         </div>
-        <div style="max-width:360px;margin:0 auto;background:var(--bg);border-radius:var(--radius);padding:24px;border:1px solid var(--border);text-align:left;">
-          <div style="font-weight:700;margin-bottom:14px;font-size:15px;text-align:center;color:var(--dark);">Schedule Your Free Inspection</div>
-          <div style="background:white;padding:10px 12px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);">Full Name</div>
-          <div style="background:white;padding:10px 12px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);">Phone Number</div>
-          <div style="background:white;padding:10px 12px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);">Property Address</div>
-          <div style="background:white;padding:10px 12px;border-radius:8px;margin-bottom:14px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);">How old is your roof? (approx)</div>
-          <div style="background:var(--accent);color:white;text-align:center;padding:13px;border-radius:8px;font-weight:600;font-size:14px;">Book My Free Inspection &rarr;</div>
-          <div style="text-align:center;margin-top:8px;font-size:11px;color:var(--text-muted);">Takes 30 seconds. We'll call to confirm within 2 hours.</div>
+        <div style="margin-top:12px;background:var(--bg);border-radius:var(--radius-sm);padding:14px;border:1px solid var(--border);">
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Visitors</span><div style="font-weight:700;font-size:16px;">587</div></div>
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Form Fills</span><div style="font-weight:700;font-size:16px;">33</div></div>
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Conversion</span><div style="font-weight:700;font-size:16px;color:var(--green);">5.6%</div></div>
+          </div>
+          <div style="font-size:12px;color:var(--blue);margin-top:10px;font-weight:500;">Click to preview page &rarr;</div>
         </div>
       </div>
-      <div style="background:var(--bg);padding:18px 24px;border-top:1px solid var(--border);">
-        <div style="max-width:440px;margin:0 auto;text-align:center;">
-          <div style="font-size:13px;color:var(--text);line-height:1.6;font-style:italic;">"They found damage I didn't even know about. Insurance covered everything. Coastal Shield made the whole process painless."</div>
-          <div style="font-size:12px;font-weight:600;color:var(--dark);margin-top:6px;">Maria S. &mdash; Homestead, FL</div>
-          <div style="color:var(--yellow);font-size:12px;margin-top:2px;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <div class="card fade-in" style="cursor:pointer;" onclick="openModal('lpModal3')">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-weight:600;font-size:15px;color:var(--dark);">Lead Capture Form</div>
+            <div style="font-size:13px;color:var(--text-muted);margin-top:2px;">Quick-qualify form &mdash; name, phone, address, roof age, insurance or out-of-pocket</div>
+          </div>
+          <span class="badge badge-green">Live</span>
+        </div>
+        <div style="margin-top:12px;background:var(--bg);border-radius:var(--radius-sm);padding:14px;border:1px solid var(--border);">
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Submissions</span><div style="font-weight:700;font-size:16px;">62</div></div>
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Qualified</span><div style="font-weight:700;font-size:16px;">48</div></div>
+            <div><span style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Qualification Rate</span><div style="font-weight:700;font-size:16px;color:var(--green);">77%</div></div>
+          </div>
+          <div style="font-size:12px;color:var(--blue);margin-top:10px;font-weight:500;">Click to preview form &rarr;</div>
         </div>
       </div>
+    </div>
+
+    <!-- Recent Activity -->
+    <div class="section-title">Recent Activity</div>
+    <div class="card">
+      <ul style="list-style:none;" id="activity-feed">
+        <li class="fade-in" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
+          <div style="width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--blue-light);">&#128205;</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;line-height:1.5;"><strong style="color:var(--dark);">New lead from Google Ads</strong> &mdash; Carlos R., Coral Gables. Needs full roof replacement after hurricane damage. <a href="#" style="color:var(--blue);font-size:12px;" onclick="return false;">View lead details &rarr;</a></div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">12 minutes ago</div>
+          </div>
+        </li>
+        <li class="fade-in" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
+          <div style="width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--green-light);">&#128222;</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;line-height:1.5;"><strong style="color:var(--dark);">Call answered &amp; booked</strong> &mdash; Homeowner called while you were on a job. Receptionist answered, qualified (insurance claim, tile damage), booked for Friday 10am. <a href="receptionist.html" style="color:var(--blue);font-size:12px;">Listen to recording &rarr;</a></div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">47 minutes ago</div>
+          </div>
+        </li>
+        <li class="fade-in" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
+          <div style="width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--yellow-light);">&#11088;</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;line-height:1.5;"><strong style="color:var(--dark);">New Google review (5 stars)</strong> &mdash; "Coastal Shield was fast, handled insurance, and cleaned up perfectly. Highly recommend." &mdash; Maria S. <a href="#" style="color:var(--blue);font-size:12px;" onclick="return false;">View on Google &rarr;</a></div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">2 hours ago</div>
+          </div>
+        </li>
+        <li class="fade-in" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid var(--border);">
+          <div style="width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--red-light);">&#9888;&#65039;</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;line-height:1.5;"><strong style="color:var(--dark);">Hurricane watch issued</strong> &mdash; Tropical Storm advisory for Miami-Dade. 285,000 households in impact zone. Outreach plan ready &mdash; <a href="storm.html" style="color:var(--blue);font-size:12px;">Review &amp; approve &rarr;</a></div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Yesterday, 9:14pm</div>
+          </div>
+        </li>
+        <li class="fade-in" style="display:flex;align-items:flex-start;gap:12px;padding:12px 0;">
+          <div style="width:36px;height:36px;border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;background:var(--purple-light);">&#128100;</div>
+          <div style="flex:1;">
+            <div style="font-size:14px;line-height:1.5;"><strong style="color:var(--dark);">New applicant screened</strong> &mdash; James W., 4 years canvassing, passed phone screen. <a href="hiring.html" style="color:var(--blue);font-size:12px;">View applicant &rarr;</a></div>
+            <div style="font-size:11px;color:var(--text-muted);margin-top:2px;">Yesterday, 2:30pm</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- ═══ MODALS ═══ -->
+
+  <!-- Ad Preview Modal -->
+  <div class="modal-overlay" id="adModal">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('adModal')">&times;</button>
+      <div class="modal-title" id="adModalTitle">Ads Running</div>
+      <div id="adModalContent"></div>
     </div>
   </div>
-</div>
 
-<!-- LP2: Facebook Hurricane Season Page -->
-<div class="modal-overlay" id="lpModal2">
-  <div class="modal" style="max-width:760px;padding:0;overflow:hidden;">
-    <button class="modal-close" onclick="closeModal('lpModal2')" style="position:absolute;right:16px;top:12px;z-index:10;background:rgba(255,255,255,0.9);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;">&times;</button>
-    <div style="background:#F1F3F4;padding:8px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);">
-      <div style="display:flex;gap:5px;"><div style="width:10px;height:10px;border-radius:50%;background:#FF5F57;"></div><div style="width:10px;height:10px;border-radius:50%;background:#FFBD2E;"></div><div style="width:10px;height:10px;border-radius:50%;background:#28C840;"></div></div>
-      <div style="flex:1;background:white;border-radius:14px;padding:5px 12px;font-size:11px;color:var(--text-muted);border:1px solid #ddd;">&#128274; coastalshieldroofing.com/hurricane-season</div>
-    </div>
-    <div style="background:white;">
-      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 24px;border-bottom:1px solid #f0f0f0;">
-        <div style="font-family:var(--serif);font-size:15px;color:var(--dark);">Coastal Shield <span style="color:var(--accent);">Roofing</span></div>
-        <span style="background:var(--accent);color:white;padding:5px 12px;border-radius:6px;font-weight:600;font-size:11px;">Get Protected</span>
-      </div>
-      <div style="background:linear-gradient(135deg,var(--dark),#1E293B);color:white;padding:40px 24px;text-align:center;">
-        <div style="font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:600;">Hurricane Season 2026</div>
-        <div style="font-family:var(--serif);font-size:28px;line-height:1.2;margin-bottom:12px;">Is Your Roof Ready for<br>What's Coming?</div>
-        <div style="font-size:14px;opacity:0.8;max-width:440px;margin:0 auto;line-height:1.7;">Last year, 1 in 4 Miami-Dade homeowners filed a roof damage claim. Most didn't know there was a problem until water was coming through the ceiling.</div>
-        <div style="display:inline-block;background:var(--accent);color:white;padding:12px 28px;border-radius:8px;font-weight:600;font-size:14px;margin-top:20px;">Get Your Free Inspection &rarr;</div>
-      </div>
-      <div style="padding:24px;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-        <div style="background:var(--bg);padding:18px;border-radius:var(--radius-sm);"><div style="font-weight:700;font-size:14px;color:var(--dark);margin-bottom:6px;">Free 20-Min Inspection</div><div style="font-size:12px;color:var(--text-muted);line-height:1.6;">No cost. No obligation. Honest report you can keep.</div></div>
-        <div style="background:var(--bg);padding:18px;border-radius:var(--radius-sm);"><div style="font-weight:700;font-size:14px;color:var(--dark);margin-bottom:6px;">Insurance Claim Help</div><div style="font-size:12px;color:var(--text-muted);line-height:1.6;">We handle paperwork and meet with your adjuster.</div></div>
-        <div style="background:var(--bg);padding:18px;border-radius:var(--radius-sm);"><div style="font-weight:700;font-size:14px;color:var(--dark);margin-bottom:6px;">Same-Week Appointments</div><div style="font-size:12px;color:var(--text-muted);line-height:1.6;">Inspector out within 2-3 days. 24hr response.</div></div>
-        <div style="background:var(--bg);padding:18px;border-radius:var(--radius-sm);"><div style="font-weight:700;font-size:14px;color:var(--dark);margin-bottom:6px;">Licensed &amp; Insured</div><div style="font-size:12px;color:var(--text-muted);line-height:1.6;">Florida-licensed. 25-year workmanship warranty.</div></div>
-      </div>
-      <div style="padding:0 24px 24px;">
-        <div style="max-width:360px;margin:0 auto;background:var(--bg);border-radius:var(--radius);padding:24px;border:1px solid var(--border);">
-          <div style="font-weight:700;margin-bottom:14px;font-size:15px;text-align:center;color:var(--dark);">Check My Roof Before Storm Season</div>
-          <div style="background:white;padding:10px 12px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);">Full Name</div>
-          <div style="background:white;padding:10px 12px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);">Phone Number</div>
-          <div style="background:white;padding:10px 12px;border-radius:8px;margin-bottom:14px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);">Zip Code</div>
-          <div style="background:var(--accent);color:white;text-align:center;padding:13px;border-radius:8px;font-weight:600;font-size:14px;">Get My Free Inspection &rarr;</div>
+  <!-- LP Preview Modals -->
+  <div class="modal-overlay" id="lpModal1">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('lpModal1')">&times;</button>
+      <div class="modal-title">Google Ads Landing Page</div>
+      <div style="background:var(--bg);border-radius:var(--radius-sm);padding:20px;border:1px solid var(--border);">
+        <div style="font-family:var(--serif);font-size:22px;color:var(--dark);margin-bottom:8px;">Free Roof Inspection in Miami-Dade</div>
+        <div style="font-size:14px;color:var(--text);line-height:1.6;margin-bottom:16px;">Your roof takes the hit so your family doesn't have to. Our certified inspectors will check every shingle, seal, and flashing &mdash; and give you an honest assessment on the spot. No sales pitch. Just the truth about your roof.</div>
+        <div style="background:var(--white);border-radius:var(--radius-sm);padding:16px;border:1px solid var(--border);">
+          <div style="font-weight:600;margin-bottom:10px;font-size:14px;">Schedule Your Free Inspection</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);">Full Name</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);">Phone Number</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);">Property Address</div>
+          <div style="background:var(--accent);color:white;text-align:center;padding:12px;border-radius:8px;font-weight:600;font-size:14px;">Book My Free Inspection</div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
-<!-- LP3: Lead Form -->
-<div class="modal-overlay" id="lpModal3">
-  <div class="modal" style="max-width:760px;padding:0;overflow:hidden;">
-    <button class="modal-close" onclick="closeModal('lpModal3')" style="position:absolute;right:16px;top:12px;z-index:10;background:rgba(255,255,255,0.9);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;">&times;</button>
-    <div style="background:#F1F3F4;padding:8px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--border);">
-      <div style="display:flex;gap:5px;"><div style="width:10px;height:10px;border-radius:50%;background:#FF5F57;"></div><div style="width:10px;height:10px;border-radius:50%;background:#FFBD2E;"></div><div style="width:10px;height:10px;border-radius:50%;background:#28C840;"></div></div>
-      <div style="flex:1;background:white;border-radius:14px;padding:5px 12px;font-size:11px;color:var(--text-muted);border:1px solid #ddd;">&#128274; coastalshieldroofing.com/get-quote</div>
-    </div>
-    <div style="background:white;padding:40px 24px;">
-      <div style="max-width:420px;margin:0 auto;">
-        <div style="text-align:center;margin-bottom:24px;">
-          <div style="font-family:var(--serif);font-size:14px;color:var(--accent);margin-bottom:6px;">Coastal Shield Roofing</div>
-          <div style="font-family:var(--serif);font-size:24px;color:var(--dark);line-height:1.2;margin-bottom:8px;">Get Your Free Roof Assessment</div>
-          <div style="font-size:13px;color:var(--text-muted);line-height:1.6;">Answer a few quick questions so we can match you with the right inspector.</div>
+  <div class="modal-overlay" id="lpModal2">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('lpModal2')">&times;</button>
+      <div class="modal-title">Facebook/Instagram Landing Page</div>
+      <div style="background:var(--bg);border-radius:var(--radius-sm);padding:20px;border:1px solid var(--border);">
+        <div style="font-family:var(--serif);font-size:22px;color:var(--dark);margin-bottom:8px;">Is Your Roof Ready for Hurricane Season?</div>
+        <div style="font-size:14px;color:var(--text);line-height:1.6;margin-bottom:16px;">Last year, 1 in 4 Miami-Dade homeowners filed a roof damage claim. Most didn't know there was a problem until it was too late. A 20-minute inspection could save you tens of thousands in emergency repairs.</div>
+        <div style="background:var(--white);border-radius:var(--radius-sm);padding:16px;border:1px solid var(--border);">
+          <div style="font-weight:600;margin-bottom:10px;font-size:14px;">Check My Roof Before Storm Season</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);">Full Name</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);">Phone Number</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);">Zip Code</div>
+          <div style="background:var(--accent);color:white;text-align:center;padding:12px;border-radius:8px;font-weight:600;font-size:14px;">Get My Free Inspection</div>
         </div>
-        <div style="display:flex;gap:6px;margin-bottom:24px;">
-          <div style="flex:1;height:4px;background:var(--accent);border-radius:2px;"></div>
-          <div style="flex:1;height:4px;background:var(--border);border-radius:2px;"></div>
-          <div style="flex:1;height:4px;background:var(--border);border-radius:2px;"></div>
-        </div>
-        <div style="font-weight:600;font-size:14px;color:var(--dark);margin-bottom:14px;">Step 1: Your Information</div>
-        <div style="background:var(--bg);padding:10px 12px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);">Full Name</div>
-        <div style="background:var(--bg);padding:10px 12px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);">Phone Number</div>
-        <div style="background:var(--bg);padding:10px 12px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);">Email Address</div>
-        <div style="background:var(--bg);padding:10px 12px;border-radius:8px;margin-bottom:16px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);">Property Address</div>
-        <div style="font-weight:600;font-size:14px;color:var(--dark);margin-bottom:14px;">Step 2: Your Roof</div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:8px;">
-          <div style="background:var(--bg);padding:10px 12px;border-radius:8px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);">Roof Type &#9662;</div>
-          <div style="background:var(--bg);padding:10px 12px;border-radius:8px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);">Approx Age &#9662;</div>
-        </div>
-        <div style="background:var(--bg);padding:10px 12px;border-radius:8px;margin-bottom:8px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);">What do you need? (Inspection / Repair / Replacement)</div>
-        <div style="background:var(--bg);padding:10px 12px;border-radius:8px;margin-bottom:16px;font-size:13px;color:var(--text-muted);border:1px solid var(--border);">Insurance claim or out of pocket? &#9662;</div>
-        <div style="background:var(--accent);color:white;text-align:center;padding:13px;border-radius:8px;font-weight:600;font-size:14px;">Submit &amp; Get My Free Assessment &rarr;</div>
-        <div style="text-align:center;margin-top:8px;font-size:11px;color:var(--text-muted);">We'll call within 2 hours to schedule.</div>
       </div>
     </div>
   </div>
-</div>
 
-<script>
-  const data = {
-    '7d': {
-      leads: 22, leadsChange: '+15% vs last week',
-      appts: 9, apptsChange: '+3 from last week',
-      cpl: '$36', cplChange: 'Down from $41',
-      reviews: 4, reviewsChange: '+4 this week',
-      channels: [
-        {name:'Google Ads',dot:'#4285F4',leads:8,cpl:'$48',appts:3,cpa:'$128'},
-        {name:'Facebook / Instagram',dot:'#1877F2',leads:9,cpl:'$36',appts:4,cpa:'$81'},
-        {name:'Outbound Calls',dot:'var(--accent)',leads:5,cpl:'$31',appts:2,cpa:'$78'}
-      ],
-      insight: 'Facebook is your strongest channel this week &mdash; lowest cost per lead and most appointments. Google leads are homeowners actively searching, so they close faster. Outbound is steady.'
-    },
-    '30d': {
-      leads: 87, leadsChange: '+23% vs last month',
-      appts: 34, apptsChange: '+18% vs last month',
-      cpl: '$38', cplChange: 'Down from $52',
-      reviews: 12, reviewsChange: '+8 this month',
-      channels: [
-        {name:'Google Ads',dot:'#4285F4',leads:29,cpl:'$48',appts:11,cpa:'$126'},
-        {name:'Facebook / Instagram',dot:'#1877F2',leads:33,cpl:'$36',appts:14,cpa:'$85'},
-        {name:'Outbound Calls',dot:'var(--accent)',leads:25,cpl:'$31',appts:9,cpa:'$86'}
-      ],
-      insight: 'Cost per lead dropped 27% this month across all three channels. Facebook brings volume, Google brings intent, outbound brings consistency. 7 changes made this month (see What Changed).'
-    },
-    '90d': {
-      leads: 241, leadsChange: '+47% vs previous quarter',
-      appts: 96, apptsChange: '+52% vs previous quarter',
-      cpl: '$42', cplChange: 'Down from $68 at launch',
-      reviews: 31, reviewsChange: 'Rating: 4.8 stars',
-      channels: [
-        {name:'Google Ads',dot:'#4285F4',leads:72,cpl:'$52',appts:28,cpa:'$134'},
-        {name:'Facebook / Instagram',dot:'#1877F2',leads:83,cpl:'$39',appts:38,cpa:'$85'},
-        {name:'Outbound Calls',dot:'var(--accent)',leads:86,cpl:'$31',appts:30,cpa:'$89'}
-      ],
-      insight: '241 exclusive leads, 96 booked appointments in 90 days. Cost per lead dropped 38% from launch. Outbound became your highest-volume channel by month 3. Google rating: 4.2 &rarr; 4.8.'
-    }
-  };
-
-  const adsByChannel = {
-    'Google Ads': [
-      {type:'Search Ad',headline:'Miami Roof Repair - Free Inspection Today',desc:'Licensed & Insured. Insurance Claims Welcome. Same-Week Appointments. Call Now.',status:'Running',clicks:187,leads:12,spend:'$576',ctr:'6.4%'},
-      {type:'Search Ad',headline:'Storm Damage? Free Roof Assessment',desc:'Hurricane season is here. Get inspected by certified professionals. No obligation.',status:'Running',clicks:142,leads:9,spend:'$432',ctr:'5.8%'},
-      {type:'Search Ad',headline:'Roof Replacement Near Me - Miami',desc:'Full roof replacement. Financing available. 25-year warranty.',status:'Paused',clicks:89,leads:3,spend:'$267',ctr:'3.4%'}
-    ],
-    'Facebook / Instagram': [
-      {type:'Video Ad',headline:'Before & After: Coral Gables Re-Roof',desc:'Watch the full transformation — leaking ceiling to brand new tile roof in 3 days.',primaryText:'Your neighbors are already protecting their homes before hurricane season. This Coral Gables homeowner called us after noticing water stains on the ceiling. 3 days later — brand new tile roof, fully covered by insurance. Free inspections available this week.',status:'Running',clicks:312,leads:18,spend:'$648',ctr:'4.2%',media:'video',
-        imgSrc:'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="500" height="280"><defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#1a1a2e"/><stop offset="100%" stop-color="#16213e"/></linearGradient></defs><rect width="500" height="280" fill="url(#g1)"/><rect x="0" y="0" width="250" height="280" fill="#1a1a2e" opacity="0.8"/><text x="125" y="30" text-anchor="middle" fill="#EF4444" font-size="11" font-weight="bold" font-family="sans-serif">BEFORE</text><rect x="30" y="45" width="190" height="110" rx="4" fill="#0f0f1a" stroke="#333" stroke-width="1"/><text x="125" y="95" text-anchor="middle" fill="#666" font-size="10" font-family="sans-serif">Water-damaged ceiling</text><text x="125" y="110" text-anchor="middle" fill="#555" font-size="9" font-family="sans-serif">Missing tiles, active leak</text><rect x="250" y="0" width="250" height="280" fill="#0d2818" opacity="0.6"/><text x="375" y="30" text-anchor="middle" fill="#10B981" font-size="11" font-weight="bold" font-family="sans-serif">AFTER</text><rect x="280" y="45" width="190" height="110" rx="4" fill="#0a1f12" stroke="#10B981" stroke-width="1"/><text x="375" y="95" text-anchor="middle" fill="#10B981" font-size="10" font-family="sans-serif">Brand new tile roof</text><text x="375" y="110" text-anchor="middle" fill="#0d9" font-size="9" font-family="sans-serif">3-day installation</text><circle cx="250" cy="140" r="28" fill="#C75B12"/><polygon points="242,128 242,152 264,140" fill="white"/><text x="250" y="195" text-anchor="middle" fill="white" font-size="16" font-weight="bold" font-family="sans-serif">Coral Gables Re-Roof</text><text x="250" y="215" text-anchor="middle" fill="#94A3B8" font-size="11" font-family="sans-serif">Full transformation in 3 days</text><rect x="175" y="232" width="150" height="32" rx="6" fill="#C75B12"/><text x="250" y="253" text-anchor="middle" fill="white" font-size="12" font-weight="bold" font-family="sans-serif">Watch Video 0:28</text></svg>')},
-      {type:'Image Ad',headline:'Is Your Roof Ready for Hurricane Season?',desc:'1 in 4 Miami-Dade homeowners filed a damage claim last year.',primaryText:'Last hurricane season, 1 in 4 Miami-Dade homeowners filed a roof damage claim. Most didn\'t know there was a problem until water was coming through the ceiling. A free 20-minute inspection could save you tens of thousands.',status:'Running',clicks:245,leads:11,spend:'$396',ctr:'3.8%',media:'image',
-        imgSrc:'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="500" height="280"><defs><linearGradient id="bg2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#DC2626"/><stop offset="100%" stop-color="#991B1B"/></linearGradient></defs><rect width="500" height="280" fill="url(#bg2)"/><rect x="20" y="20" width="460" height="240" rx="8" fill="rgba(0,0,0,0.3)"/><text x="250" y="70" text-anchor="middle" fill="white" font-size="13" font-weight="bold" font-family="sans-serif" letter-spacing="3">HURRICANE SEASON 2026</text><text x="250" y="110" text-anchor="middle" fill="white" font-size="26" font-weight="bold" font-family="sans-serif">FREE ROOF</text><text x="250" y="140" text-anchor="middle" fill="white" font-size="26" font-weight="bold" font-family="sans-serif">INSPECTION</text><text x="250" y="170" text-anchor="middle" fill="#FCD34D" font-size="14" font-family="sans-serif">Before It\'s Too Late</text><rect x="165" y="185" width="170" height="38" rx="6" fill="white"/><text x="250" y="210" text-anchor="middle" fill="#991B1B" font-size="13" font-weight="bold" font-family="sans-serif">Book Now — It\'s Free</text><text x="250" y="248" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="11" font-family="sans-serif">Coastal Shield Roofing · coastalshieldroofing.com</text></svg>')},
-      {type:'Image Ad',headline:'New Roof As Low As $150/Month',desc:'Financing available. No money down. Free inspection included.',primaryText:'Transform your roof without breaking the bank. We offer hassle-free financing for full roof replacement or repair — as low as $150/month. Get your free inspection today. No pushy salespeople. Just honest answers.',status:'Running',clicks:198,leads:9,spend:'$318',ctr:'3.5%',media:'image',
-        imgSrc:'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="500" height="280"><rect width="500" height="280" fill="#0F172A"/><rect x="0" y="0" width="500" height="70" fill="#C75B12"/><text x="250" y="28" text-anchor="middle" fill="white" font-size="14" font-weight="bold" font-family="sans-serif" letter-spacing="2">COASTAL SHIELD ROOFING</text><text x="250" y="55" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-size="11" font-family="sans-serif">Licensed · Insured · Miami-Dade</text><text x="250" y="115" text-anchor="middle" fill="white" font-size="18" font-weight="bold" font-family="sans-serif">NEW ROOF</text><text x="250" y="160" text-anchor="middle" fill="#C75B12" font-size="42" font-weight="bold" font-family="sans-serif">$150</text><text x="250" y="180" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">/month · No Money Down</text><rect x="150" y="200" width="200" height="36" rx="6" fill="#10B981"/><text x="250" y="224" text-anchor="middle" fill="white" font-size="13" font-weight="bold" font-family="sans-serif">Get Free Quote</text><text x="250" y="260" text-anchor="middle" fill="#94A3B8" font-size="10" font-family="sans-serif">*Subject to credit approval. Free inspection included.</text></svg>')}
-    ],
-    'Outbound Calls': [
-      {type:'Call Script',headline:'Storm Season Preparation Call',desc:'"Hi [Name], this is Sarah from Coastal Shield Roofing. We\'re offering free inspections before hurricane season. Would you like to get yours checked?"',status:'Active',clicks:null,leads:25,spend:'$775',media:'script'}
-    ]
-  };
-
-  let currentPeriod = '30d';
-
-  function render() {
-    const d = data[currentPeriod];
-    document.getElementById('stat-grid').innerHTML = `
-      <div class="stat-card fade-in"><div class="stat-label">New Leads</div><div class="stat-number">${d.leads}</div><div class="stat-change up">${d.leadsChange}</div></div>
-      <div class="stat-card fade-in"><div class="stat-label">Appointments Booked</div><div class="stat-number">${d.appts}</div><div class="stat-change up">${d.apptsChange}</div></div>
-      <div class="stat-card fade-in"><div class="stat-label">Avg Cost Per Lead</div><div class="stat-number">${d.cpl}</div><div class="stat-change up">${d.cplChange}</div></div>
-      <div class="stat-card fade-in"><div class="stat-label">Google Reviews</div><div class="stat-number">${d.reviews}</div><div class="stat-change up">${d.reviewsChange}</div></div>
-    `;
-    const cg = document.getElementById('channel-grid');
-    cg.innerHTML = '';
-    cg.style.gridTemplateColumns = window.innerWidth >= 768 ? 'repeat(3,1fr)' : '1fr';
-    d.channels.forEach(ch => {
-      const card = document.createElement('div');
-      card.className = 'card fade-in';
-      card.style.cursor = 'pointer';
-      card.onclick = () => showAds(ch.name);
-      card.innerHTML = `
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
-          <div style="font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px;">
-            <span style="width:10px;height:10px;border-radius:50%;background:${ch.dot};display:inline-block;"></span> ${ch.name}
-          </div>
-          <div class="toggle" onclick="event.stopPropagation();this.classList.toggle('off');"></div>
+  <div class="modal-overlay" id="lpModal3">
+    <div class="modal">
+      <button class="modal-close" onclick="closeModal('lpModal3')">&times;</button>
+      <div class="modal-title">Lead Capture Form</div>
+      <div style="background:var(--bg);border-radius:var(--radius-sm);padding:20px;border:1px solid var(--border);">
+        <div style="font-family:var(--serif);font-size:20px;color:var(--dark);margin-bottom:12px;">Quick Qualification</div>
+        <div style="font-size:13px;color:var(--text-muted);margin-bottom:16px;">This form qualifies leads before they reach you &mdash; so your crew only shows up to real opportunities.</div>
+        <div style="background:var(--white);border-radius:var(--radius-sm);padding:16px;border:1px solid var(--border);display:flex;flex-direction:column;gap:8px;">
+          <div style="background:var(--bg);padding:10px;border-radius:8px;font-size:13px;color:var(--text-muted);">Full Name</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;font-size:13px;color:var(--text-muted);">Phone Number</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;font-size:13px;color:var(--text-muted);">Property Address</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;font-size:13px;color:var(--text-muted);">How old is your roof? (dropdown)</div>
+          <div style="background:var(--bg);padding:10px;border-radius:8px;font-size:13px;color:var(--text-muted);">Insurance claim or out-of-pocket? (dropdown)</div>
+          <div style="background:var(--accent);color:white;text-align:center;padding:12px;border-radius:8px;font-weight:600;font-size:14px;">Request My Inspection</div>
         </div>
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
-          <div><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Leads</div><div style="font-family:var(--mono);font-size:18px;font-weight:500;color:var(--dark);">${ch.leads}</div></div>
-          <div><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Cost/Lead</div><div style="font-family:var(--mono);font-size:18px;font-weight:500;color:var(--dark);">${ch.cpl}</div></div>
-          <div><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Appointments</div><div style="font-family:var(--mono);font-size:18px;font-weight:500;color:var(--dark);">${ch.appts}</div></div>
-          <div><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Cost/Appt</div><div style="font-family:var(--mono);font-size:18px;font-weight:500;color:var(--dark);">${ch.cpa}</div></div>
-        </div>
-        <div style="font-size:12px;color:var(--blue);margin-top:12px;font-weight:500;">View running ads &rarr;</div>
-      `;
-      cg.appendChild(card);
-    });
-    document.getElementById('insight-text').innerHTML = d.insight;
-  }
+      </div>
+    </div>
+  </div>
 
-  document.querySelectorAll('.period-pill').forEach(pill => {
-    pill.addEventListener('click', () => {
-      document.querySelectorAll('.period-pill').forEach(p => p.classList.remove('active'));
-      pill.classList.add('active');
-      currentPeriod = pill.dataset.period;
-      render();
-    });
-  });
-
-  function showAds(channelName) {
-    const ads = adsByChannel[channelName] || [];
-    document.getElementById('adModalTitle').textContent = channelName + ' — Running Ads';
-    document.getElementById('adModalContent').innerHTML = ads.map(ad => {
-      if (ad.imgSrc) {
-        return `
-        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;margin-bottom:16px;background:white;">
-          <div style="padding:12px 14px;display:flex;align-items:center;gap:10px;">
-            <div style="width:36px;height:36px;border-radius:50%;background:var(--dark);display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:var(--accent);flex-shrink:0;">CS</div>
-            <div><div style="font-size:13px;font-weight:600;color:var(--dark);">Coastal Shield Roofing</div><div style="font-size:11px;color:var(--text-muted);">Sponsored</div></div>
-          </div>
-          ${ad.primaryText ? `<div style="padding:0 14px 10px;font-size:13px;line-height:1.6;color:var(--text);">${ad.primaryText.substring(0,180)}${ad.primaryText.length>180?'... <span style="color:var(--text-muted);">See more</span>':''}</div>` : ''}
-          <div style="border-top:1px solid var(--border);border-bottom:1px solid var(--border);"><img src="${ad.imgSrc}" style="width:100%;display:block;" alt="${ad.headline}"></div>
-          <div style="padding:10px 14px;display:flex;align-items:center;justify-content:space-between;background:#FAFAFA;">
-            <div><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;">COASTALSHIELDROOFING.COM</div><div style="font-size:13px;font-weight:600;color:var(--dark);">${ad.headline}</div><div style="font-size:11px;color:var(--text-muted);">${ad.desc}</div></div>
-            <div style="background:var(--bg);border:1px solid var(--border);padding:7px 16px;border-radius:6px;font-size:12px;font-weight:600;color:var(--dark);white-space:nowrap;flex-shrink:0;margin-left:12px;">Learn more</div>
-          </div>
-          <div style="display:flex;gap:16px;padding:10px 14px;border-top:1px solid var(--border);">
-            <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Clicks</span><div style="font-family:var(--mono);font-weight:500;font-size:14px;">${ad.clicks}</div></div>
-            <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Leads</span><div style="font-family:var(--mono);font-weight:500;font-size:14px;">${ad.leads}</div></div>
-            <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Spend</span><div style="font-family:var(--mono);font-weight:500;font-size:14px;">${ad.spend}</div></div>
-            <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">CTR</span><div style="font-family:var(--mono);font-weight:500;font-size:14px;">${ad.ctr}</div></div>
-          </div>
-        </div>`;
+  <script>
+    // ═══ DATA ═══
+    const data = {
+      '7d': {
+        leads: 22, leadsChange: '+15% vs last week',
+        appts: 9, apptsChange: '+3 from last week',
+        cpl: '$36', cplChange: 'Down from $41',
+        reviews: 4, reviewsChange: '+4 this week',
+        chart: [
+          {day:'Mon',g:3,m:4,o:2},{day:'Tue',g:5,m:3,o:3},{day:'Wed',g:2,m:5,o:4},
+          {day:'Thu',g:4,m:6,o:2},{day:'Fri',g:6,m:4,o:3},{day:'Sat',g:3,m:5,o:1},{day:'Sun',g:1,m:2,o:1}
+        ],
+        channels: [
+          {name:'Google Ads',dot:'#4285F4',leads:8,cpl:'$48',appts:3,cpa:'$128'},
+          {name:'Facebook / Instagram',dot:'#1877F2',leads:9,cpl:'$36',appts:4,cpa:'$81'},
+          {name:'Outbound Calls',dot:'var(--accent)',leads:5,cpl:'$31',appts:2,cpa:'$78'}
+        ],
+        insight: 'Facebook is your strongest channel this week &mdash; lowest cost per lead and most appointments. Google leads are homeowners actively searching, so they tend to close faster. Outbound is steady. All three channels running. No changes needed.'
+      },
+      '30d': {
+        leads: 87, leadsChange: '+23% vs last month',
+        appts: 34, apptsChange: '+18% vs last month',
+        cpl: '$38', cplChange: 'Down from $52',
+        reviews: 12, reviewsChange: '+8 this month',
+        chart: [
+          {day:'Wk 1',g:7,m:9,o:5},{day:'Wk 2',g:8,m:10,o:6},{day:'Wk 3',g:9,m:8,o:7},{day:'Wk 4',g:5,m:6,o:7}
+        ],
+        channels: [
+          {name:'Google Ads',dot:'#4285F4',leads:29,cpl:'$48',appts:11,cpa:'$126'},
+          {name:'Facebook / Instagram',dot:'#1877F2',leads:33,cpl:'$36',appts:14,cpa:'$85'},
+          {name:'Outbound Calls',dot:'var(--accent)',leads:25,cpl:'$31',appts:9,cpa:'$86'}
+        ],
+        insight: 'Across all three channels, your cost per lead dropped 27% this month. Facebook brings volume, Google brings intent, outbound brings consistency. The system is fully optimized &mdash; we made 7 changes this month (see What Changed tab).'
+      },
+      '90d': {
+        leads: 241, leadsChange: '+47% vs previous quarter',
+        appts: 96, apptsChange: '+52% vs previous quarter',
+        cpl: '$42', cplChange: 'Down from $68 at launch',
+        reviews: 31, reviewsChange: 'Rating: 4.8 stars',
+        chart: [
+          {day:'Month 1',g:18,m:22,o:14},{day:'Month 2',g:25,m:28,o:19},{day:'Month 3',g:29,m:33,o:25}
+        ],
+        channels: [
+          {name:'Google Ads',dot:'#4285F4',leads:72,cpl:'$52',appts:28,cpa:'$134'},
+          {name:'Facebook / Instagram',dot:'#1877F2',leads:83,cpl:'$39',appts:38,cpa:'$85'},
+          {name:'Outbound Calls',dot:'var(--accent)',leads:86,cpl:'$31',appts:30,cpa:'$89'}
+        ],
+        insight: 'Over 90 days, your system generated 241 exclusive leads and 96 booked appointments. Cost per lead dropped 38% from launch as we optimized. Outbound became your highest-volume channel by month 3. Your Google rating went from 4.2 to 4.8 with 31 new reviews.'
       }
-      return `
-      <div style="border:1px solid var(--border);border-radius:var(--radius-sm);overflow:hidden;margin-bottom:16px;padding:16px;">
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-          <span class="badge ${ad.status==='Running'||ad.status==='Active'?'badge-green':'badge-gray'}">${ad.status}</span>
-          <span style="font-size:11px;color:var(--text-muted);">${ad.type}</span>
+    };
+
+    const adsByChannel = {
+      'Google Ads': [
+        {type:'Search Ad',headline:'Miami Roof Repair - Free Inspection Today',desc:'Licensed & Insured. Insurance Claims Welcome. Same-Week Appointments Available. Call Now.',status:'Running',clicks:187,leads:12},
+        {type:'Search Ad',headline:'Storm Damage? Free Roof Assessment',desc:'Hurricane season is here. Get your roof inspected by certified professionals. No obligation.',status:'Running',clicks:142,leads:9},
+        {type:'Search Ad',headline:'Roof Replacement Near Me - Miami',desc:'Full roof replacement starting at competitive rates. Financing available. 25-year warranty.',status:'Paused',clicks:89,leads:3}
+      ],
+      'Facebook / Instagram': [
+        {type:'Video Ad',headline:'Before & After: Coral Gables Re-Roof',desc:'Watch the full transformation. This homeowner went from leaking ceilings to a brand new tile roof in 3 days.',status:'Running',clicks:312,leads:18,media:'video'},
+        {type:'Image Ad',headline:'Is Your Roof Ready for Hurricane Season?',desc:'1 in 4 Miami-Dade homeowners filed a damage claim last year. Free inspection &mdash; takes 20 minutes.',status:'Running',clicks:245,leads:11,media:'image'},
+        {type:'Carousel Ad',headline:'5 Signs Your Roof Needs Attention',desc:'Curling shingles, dark spots, granule loss, sagging areas, daylight through attic. Sound familiar?',status:'Running',clicks:198,leads:9,media:'carousel'}
+      ],
+      'Outbound Calls': [
+        {type:'Call Script',headline:'Storm Season Preparation Call',desc:'"Hi [Name], this is Sarah calling from Coastal Shield Roofing. We\'re offering free roof inspections in your neighborhood before hurricane season. Would you be interested in getting yours checked?"',status:'Active',clicks:null,leads:25}
+      ]
+    };
+
+    // ═══ RENDER ═══
+    let currentPeriod = '30d';
+
+    function render() {
+      const d = data[currentPeriod];
+
+      // Stats
+      document.getElementById('stat-grid').innerHTML = `
+        <div class="stat-card fade-in"><div class="stat-label">New Leads</div><div class="stat-number">${d.leads}</div><div class="stat-change up">${d.leadsChange}</div></div>
+        <div class="stat-card fade-in"><div class="stat-label">Appointments Booked</div><div class="stat-number">${d.appts}</div><div class="stat-change up">${d.apptsChange}</div></div>
+        <div class="stat-card fade-in"><div class="stat-label">Avg Cost Per Lead</div><div class="stat-number">${d.cpl}</div><div class="stat-change up">${d.cplChange}</div></div>
+        <div class="stat-card fade-in"><div class="stat-label">Google Reviews</div><div class="stat-number">${d.reviews}</div><div class="stat-change up">${d.reviewsChange}</div></div>
+      `;
+
+      // Channels
+      const cg = document.getElementById('channel-grid');
+      cg.innerHTML = '';
+      cg.style.gridTemplateColumns = window.innerWidth >= 768 ? 'repeat(3,1fr)' : '1fr';
+      d.channels.forEach(ch => {
+        const card = document.createElement('div');
+        card.className = 'card fade-in';
+        card.style.cursor = 'pointer';
+        card.onclick = () => showAds(ch.name);
+        card.innerHTML = `
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+            <div style="font-weight:600;font-size:15px;display:flex;align-items:center;gap:8px;">
+              <span style="width:10px;height:10px;border-radius:50%;background:${ch.dot};display:inline-block;"></span> ${ch.name}
+            </div>
+            <div class="toggle" onclick="event.stopPropagation();this.classList.toggle('off');"></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div><div style="font-size:11px;color:var(--text-muted);">Leads</div><div style="font-size:18px;font-weight:700;color:var(--dark);">${ch.leads}</div></div>
+            <div><div style="font-size:11px;color:var(--text-muted);">Cost Per Lead</div><div style="font-size:18px;font-weight:700;color:var(--dark);">${ch.cpl}</div></div>
+            <div><div style="font-size:11px;color:var(--text-muted);">Appointments</div><div style="font-size:18px;font-weight:700;color:var(--dark);">${ch.appts}</div></div>
+            <div><div style="font-size:11px;color:var(--text-muted);">Cost Per Appt</div><div style="font-size:18px;font-weight:700;color:var(--dark);">${ch.cpa}</div></div>
+          </div>
+          <div style="font-size:12px;color:var(--blue);margin-top:12px;font-weight:500;">View running ads &rarr;</div>
+        `;
+        cg.appendChild(card);
+      });
+
+      // Chart
+      const chartEl = document.getElementById('chart');
+      chartEl.innerHTML = '';
+      const maxVal = Math.max(...d.chart.map(r => r.g + r.m + r.o));
+      d.chart.forEach(r => {
+        const total = r.g + r.m + r.o;
+        const group = document.createElement('div');
+        group.style.cssText = 'flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;';
+        group.innerHTML = `
+          <div style="font-size:13px;font-weight:700;color:var(--dark);">${total}</div>
+          <div style="width:100%;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:140px;gap:2px;">
+            <div style="width:80%;max-width:50px;border-radius:4px 4px 0 0;background:var(--accent);height:${(r.o/maxVal)*100}%;transition:height 0.8s;"></div>
+            <div style="width:80%;max-width:50px;background:#1877F2;height:${(r.m/maxVal)*100}%;transition:height 0.8s;"></div>
+            <div style="width:80%;max-width:50px;border-radius:0 0 4px 4px;background:#4285F4;height:${(r.g/maxVal)*100}%;transition:height 0.8s;"></div>
+          </div>
+          <div style="font-size:11px;color:var(--text-muted);font-weight:500;">${r.day}</div>
+        `;
+        chartEl.appendChild(group);
+      });
+
+      // Insight
+      document.getElementById('insight-box').innerHTML = `
+        <div class="insight-title">Plain-English Summary</div>
+        <div class="insight-text">${d.insight}</div>
+      `;
+    }
+
+    // Period pills
+    document.querySelectorAll('.period-pill').forEach(pill => {
+      pill.addEventListener('click', () => {
+        document.querySelectorAll('.period-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentPeriod = pill.dataset.period;
+        render();
+      });
+    });
+
+    // Show ads modal
+    function showAds(channelName) {
+      const ads = adsByChannel[channelName] || [];
+      document.getElementById('adModalTitle').textContent = channelName + ' — Running Ads';
+      const content = document.getElementById('adModalContent');
+      content.innerHTML = ads.map(ad => `
+        <div style="border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;margin-bottom:12px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;">
+            <span class="badge ${ad.status === 'Running' || ad.status === 'Active' ? 'badge-green' : 'badge-gray'}">${ad.status}</span>
+            <span style="font-size:11px;color:var(--text-muted);">${ad.type}</span>
+          </div>
+          ${ad.media ? `<div style="background:var(--bg);border-radius:8px;height:160px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;border:1px solid var(--border);">
+            <div style="text-align:center;color:var(--text-muted);">
+              <div style="font-size:32px;">${ad.media === 'video' ? '&#9654;' : ad.media === 'carousel' ? '&#128247;' : '&#128444;'}</div>
+              <div style="font-size:12px;margin-top:4px;">${ad.media === 'video' ? 'Video Preview' : ad.media === 'carousel' ? 'Carousel (5 slides)' : 'Image Preview'}</div>
+            </div>
+          </div>` : ''}
+          <div style="font-weight:600;font-size:14px;color:var(--dark);margin-bottom:4px;">${ad.headline}</div>
+          <div style="font-size:13px;color:var(--text);line-height:1.5;">${ad.desc}</div>
+          ${ad.clicks !== null ? `<div style="display:flex;gap:16px;margin-top:12px;padding-top:10px;border-top:1px solid var(--border);">
+            <div><span style="font-size:11px;color:var(--text-muted);">Clicks</span><div style="font-weight:700;font-size:14px;">${ad.clicks}</div></div>
+            <div><span style="font-size:11px;color:var(--text-muted);">Leads</span><div style="font-weight:700;font-size:14px;">${ad.leads}</div></div>
+          </div>` : `<div style="margin-top:12px;padding-top:10px;border-top:1px solid var(--border);font-size:13px;color:var(--text-muted);">${ad.leads} leads generated this month</div>`}
         </div>
-        <div style="font-weight:700;font-size:15px;color:var(--dark);margin-bottom:6px;">${ad.headline}</div>
-        <div style="font-size:13px;color:var(--text);line-height:1.6;margin-bottom:8px;">${ad.desc}</div>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;padding-top:10px;border-top:1px solid var(--border);">
-          ${ad.clicks!==null?`
-            <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Clicks</span><div style="font-family:var(--mono);font-weight:500;font-size:14px;">${ad.clicks}</div></div>
-            <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Leads</span><div style="font-family:var(--mono);font-weight:500;font-size:14px;">${ad.leads}</div></div>
-            <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Spend</span><div style="font-family:var(--mono);font-weight:500;font-size:14px;">${ad.spend}</div></div>
-            <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">CTR</span><div style="font-family:var(--mono);font-weight:500;font-size:14px;">${ad.ctr}</div></div>
-          `:`<div style="font-size:13px;color:var(--text-muted);">${ad.leads} leads · ${ad.spend} total spend</div>`}
-        </div>
-      </div>`;
-    }).join('');
-    openModal('adModal');
-  }
+      `).join('');
+      openModal('adModal');
+    }
 
-  function openModal(id) { document.getElementById(id).classList.add('open'); }
-  function closeModal(id) { document.getElementById(id).classList.remove('open'); }
-  document.querySelectorAll('.modal-overlay').forEach(m => {
-    m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
-  });
+    function openModal(id) { document.getElementById(id).classList.add('open'); }
+    function closeModal(id) { document.getElementById(id).classList.remove('open'); }
+    document.querySelectorAll('.modal-overlay').forEach(m => {
+      m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
+    });
 
-  render();
-</script>
+    render();
+  </script>
 
-<!-- v4 - sidebar nav, removed chart, enhanced LP previews, Facebook ad card format -->
+<!-- v2 - dashboard demo -->
 </body>
 </html>

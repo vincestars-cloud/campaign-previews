@@ -4,8 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>What Changed - Your Growth Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root { --accent: #C75B12; --accent-light: #FFF4ED; --bg: #F8F9FA; --white: #FFFFFF; --dark: #1A1A1A; --text: #333; --text-muted: #777; --border: #E5E7EB; --green: #22C55E; --red: #EF4444; --blue: #3B82F6; --yellow: #F59E0B; --serif: 'DM Serif Display', serif; --sans: 'Inter', sans-serif; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); }
+
+    .topbar { background: var(--white); border-bottom: 1px solid var(--border); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .topbar-brand { font-family: var(--serif); font-size: 20px; color: var(--dark); }
+    .topbar-brand span { color: var(--accent); }
+    .topbar-status { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--green); font-weight: 500; }
+    .topbar-status::before { content: ''; width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse-dot 2s infinite; }
+    @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    .nav-tabs { background: var(--white); border-bottom: 1px solid var(--border); display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .nav-tabs::-webkit-scrollbar { display: none; }
+    .nav-tab { padding: 12px 18px; font-size: 13px; font-weight: 500; color: var(--text-muted); white-space: nowrap; text-decoration: none; border-bottom: 2px solid transparent; transition: all 0.2s; }
+    .nav-tab:hover { color: var(--text); }
+    .nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .content { padding: 20px; max-width: 900px; margin: 0 auto; }
+    .section-title { font-family: var(--serif); font-size: 20px; margin-bottom: 14px; color: var(--dark); }
+    .card { background: var(--white); border-radius: 12px; padding: 18px; border: 1px solid var(--border); margin-bottom: 16px; }
+
+    /* ── Week header ── */
     .week-header {
       font-family: var(--serif);
       font-size: 18px;
@@ -16,6 +38,8 @@
       margin-top: 24px;
     }
     .week-header:first-of-type { margin-top: 0; }
+
+    /* ── Log entries ── */
     .log-entry {
       display: flex;
       gap: 14px;
@@ -23,6 +47,7 @@
       border-bottom: 1px solid var(--border);
     }
     .log-entry:last-child { border-bottom: none; }
+
     .log-tag {
       font-size: 10px;
       font-weight: 700;
@@ -35,26 +60,65 @@
       flex-shrink: 0;
       margin-top: 2px;
     }
-    .log-tag.ads { background: var(--blue-light); color: #1E40AF; }
-    .log-tag.receptionist { background: var(--green-light); color: #166534; }
-    .log-tag.creative { background: var(--purple-light); color: #6B21A8; }
-    .log-tag.hiring { background: var(--yellow-light); color: #92400E; }
-    .log-tag.storm { background: var(--red-light); color: #991B1B; }
-    .log-tag.reviews { background: var(--accent-light); color: var(--accent); }
+    .log-tag.ads { background: #DBEAFE; color: #1E40AF; }
+    .log-tag.receptionist { background: #DCFCE7; color: #166534; }
+    .log-tag.creative { background: #F3E8FF; color: #6B21A8; }
+    .log-tag.hiring { background: #FEF3C7; color: #92400E; }
+    .log-tag.storm { background: #FEE2E2; color: #991B1B; }
+    .log-tag.reviews { background: #FFF4ED; color: #C75B12; }
+
     .log-body { flex: 1; }
-    .log-date { font-size: 12px; color: var(--text-muted); margin-bottom: 4px; }
-    .log-title { font-weight: 600; font-size: 14px; color: var(--dark); margin-bottom: 4px; }
-    .log-desc { font-size: 13px; color: var(--text); line-height: 1.6; }
-    .log-result { font-size: 12px; color: var(--green); font-weight: 600; margin-top: 6px; }
-    .log-link { font-size: 12px; color: var(--blue); font-weight: 500; margin-top: 4px; }
-    .log-link a { color: var(--blue); text-decoration: none; }
-    .log-link a:hover { text-decoration: underline; }
+    .log-date {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    .log-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--dark);
+      margin-bottom: 4px;
+    }
+    .log-desc {
+      font-size: 13px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .log-result {
+      font-size: 12px;
+      color: var(--green);
+      font-weight: 600;
+      margin-top: 6px;
+    }
+
+    /* ── Summary box ── */
+    .summary-box {
+      background: var(--accent-light);
+      border: 1px solid rgba(199,91,18,0.15);
+      border-radius: 12px;
+      padding: 18px;
+      margin-bottom: 20px;
+    }
+    .summary-title {
+      font-family: var(--serif);
+      font-size: 18px;
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+    .summary-text {
+      font-size: 14px;
+      line-height: 1.7;
+      color: var(--text);
+    }
+
+    .fade-in { animation: fadeIn 0.6s ease both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
 
   <div class="topbar">
-    <div class="topbar-brand">Coastal Shield <span>Roofing</span></div>
+    <div class="topbar-brand">Summit Ridge <span>Roofing</span></div>
     <div class="topbar-status">System Running</div>
   </div>
 
@@ -67,11 +131,11 @@
     <a class="nav-tab" href="commands.html">Text Commands</a>
   </nav>
 
-  <div class="content-narrow">
+  <div class="content">
 
-    <div class="insight-box" style="margin-bottom:20px;">
-      <div class="insight-title">Why This Page Exists</div>
-      <div class="insight-text">
+    <div class="summary-box fade-in">
+      <div class="summary-title">Why This Page Exists</div>
+      <div class="summary-text">
         Every week, we optimize your ads, update your receptionist scripts, and adjust your outreach. This page shows you exactly what changed and why &mdash; in plain English. No surprises. No black box. If you ever want to know what's happening with your system, it's all right here.
       </div>
     </div>
@@ -86,7 +150,6 @@
           <div class="log-title">Paused one Google ad, shifted budget to top performer</div>
           <div class="log-desc">Your "emergency roof repair" ad was getting clicks but not calls. We paused it and moved that $15/day to your "roof replacement near me" ad, which books 1 appointment for every 8 clicks.</div>
           <div class="log-result">Expected result: cost per lead drops ~$5</div>
-          <div class="log-link"><a href="dashboard.html">View ad performance on dashboard &rarr;</a></div>
         </div>
       </div>
       <div class="log-entry">
@@ -94,9 +157,8 @@
         <div class="log-body">
           <div class="log-date">Monday, Jun 2</div>
           <div class="log-title">Added before/after photos to Facebook ads</div>
-          <div class="log-desc">Used the 3 before/after photos from your Coral Gables job (the one with the blue tarp). Real project photos consistently outperform stock images &mdash; people want to see your actual work.</div>
+          <div class="log-desc">Used the 3 before/after photos from your Kennesaw job (the one with the blue tarp). Real project photos consistently outperform stock images &mdash; people want to see your actual work.</div>
           <div class="log-result">Expected result: 2-3x higher click rate on those ads</div>
-          <div class="log-link"><a href="dashboard.html">View running ads &rarr;</a></div>
         </div>
       </div>
       <div class="log-entry">
@@ -105,7 +167,6 @@
           <div class="log-date">Wednesday, Jun 4</div>
           <div class="log-title">Updated phone script to ask about insurance earlier</div>
           <div class="log-desc">We noticed your crew prefers insurance jobs when the schedule is packed. The receptionist now asks "Is this an insurance claim or out-of-pocket?" within the first 30 seconds, so she can prioritize accordingly.</div>
-          <div class="log-link"><a href="receptionist.html">See receptionist call examples &rarr;</a></div>
         </div>
       </div>
       <div class="log-entry">
@@ -114,17 +175,15 @@
           <div class="log-date">Thursday, Jun 5</div>
           <div class="log-title">Launched neighborhood-targeting ad set on Facebook</div>
           <div class="log-desc">New ads targeting homeowners within 5 miles of your last 3 completed jobs. Neighbors convert better &mdash; they've already seen your trucks and yard signs on the street. Running with a $20/day budget to test.</div>
-          <div class="log-link"><a href="dashboard.html">View Facebook ads &rarr;</a></div>
         </div>
       </div>
       <div class="log-entry">
         <span class="log-tag storm">Storm</span>
         <div class="log-body">
           <div class="log-date">Friday, Jun 6</div>
-          <div class="log-title">Tropical storm triggered &mdash; Miami-Dade outreach ready</div>
-          <div class="log-desc">High winds reported at 9:14pm. System identified 161 contacts in affected zip codes (127 past leads + 34 past customers). Outreach message prepared and waiting for your approval.</div>
-          <div class="log-result">Pending your approval &mdash; nothing sent yet</div>
-          <div class="log-link"><a href="storm.html">Review storm outreach plan &rarr;</a></div>
+          <div class="log-title">Hail alert triggered &mdash; Cobb County outreach started</div>
+          <div class="log-desc">Quarter-size hail reported at 9:14pm. System identified 47 homeowners in affected zip codes and started text outreach at 7am Saturday morning. 11 responses so far, 7 inspections booked.</div>
+          <div class="log-result">Result so far: 7 booked inspections at $0 ad spend</div>
         </div>
       </div>
     </div>
@@ -139,17 +198,15 @@
           <div class="log-title">Increased Google Ads budget from $40 to $55/day</div>
           <div class="log-desc">Your Google cost per lead dropped below $50 for the first time. When a channel is performing well, we put more money behind it. This should add 3-4 more leads per week without raising your cost per lead.</div>
           <div class="log-result">Result: 6 extra leads that week, cost per lead stayed at $47</div>
-          <div class="log-link"><a href="dashboard.html">View lead costs on dashboard &rarr;</a></div>
         </div>
       </div>
       <div class="log-entry">
         <span class="log-tag reviews">Reviews</span>
         <div class="log-body">
           <div class="log-date">Tuesday, May 27</div>
-          <div class="log-title">Review request timing changed from 1 hour to 24 hours</div>
+          <div class="log-title">Review request timing changed from 1 hour to 24 hours after job</div>
           <div class="log-desc">We were sending the review request text 1 hour after job completion. Homeowners were still cleaning up and not in the mood. Switched to next-day morning &mdash; they've had time to appreciate the work and are more likely to leave a review.</div>
           <div class="log-result">Result: review response rate went from 18% to 31%</div>
-          <div class="log-link"><a href="receptionist.html">See review request flow &rarr;</a></div>
         </div>
       </div>
       <div class="log-entry">
@@ -157,8 +214,7 @@
         <div class="log-body">
           <div class="log-date">Wednesday, May 28</div>
           <div class="log-title">Posted 2 new job listings for Miami market</div>
-          <div class="log-desc">You mentioned needing canvassers and a sales rep. Posted on Indeed, ZipRecruiter, Facebook Jobs, and LinkedIn. Phone screening questions based on what you told us matters most: reliability, transportation, and willingness to knock 80+ doors/day.</div>
-          <div class="log-link"><a href="hiring.html">View job posts &amp; applicants &rarr;</a></div>
+          <div class="log-desc">You mentioned needing canvassers and a sales rep for Miami. Posted on Indeed, ZipRecruiter, and Facebook Jobs. Phone screening questions based on what you told us matters most: reliability, transportation, and willingness to knock 80+ doors/day.</div>
         </div>
       </div>
       <div class="log-entry">
@@ -168,7 +224,6 @@
           <div class="log-title">Added day-of appointment confirmation texts</div>
           <div class="log-desc">Your crew drove to 2 no-shows last week. Now the receptionist texts every homeowner at 8am on their appointment day: "Confirming your inspection at [time]. Reply YES or call to reschedule." If they don't confirm by 11am, receptionist calls them.</div>
           <div class="log-result">Result: no-show rate dropped from 15% to 4%</div>
-          <div class="log-link"><a href="receptionist.html">See confirmation example &rarr;</a></div>
         </div>
       </div>
     </div>
@@ -183,7 +238,6 @@
           <div class="log-title">Launched outbound calling alongside Google and Facebook</div>
           <div class="log-desc">Your third lead channel is now live. Outbound calls target homeowners with roofs over 15 years old in your service area. The pitch is simple: free inspection, no pressure. This gives you leads that don't come from ads &mdash; so if ad costs go up, you still have a pipeline.</div>
           <div class="log-result">Result: 25 outbound leads in first 2 weeks at $31/lead</div>
-          <div class="log-link"><a href="dashboard.html">View outbound results &rarr;</a></div>
         </div>
       </div>
       <div class="log-entry">
@@ -192,13 +246,12 @@
           <div class="log-date">Thursday, May 22</div>
           <div class="log-title">Created 5 new Facebook video ads</div>
           <div class="log-desc">Short videos (15-30 seconds each) showing your crew on job sites, before/after transformations, and a quick "meet the owner" clip. Video ads get 30-50% more engagement than static images on Facebook.</div>
-          <div class="log-link"><a href="dashboard.html">View video ads &rarr;</a></div>
         </div>
       </div>
     </div>
 
   </div>
 
-<!-- v2 - changelog demo -->
+<!-- v1 - changelog demo -->
 </body>
 </html>

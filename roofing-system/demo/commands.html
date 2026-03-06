@@ -161,98 +161,82 @@
 </head>
 <body>
 
-  <div class="app-layout">
-    <aside class="sidebar">
-      <div class="sidebar-brand">
-        <div class="sidebar-brand-name">Coastal Shield <span>Roofing</span></div>
-        <div class="sidebar-brand-sub">Growth Dashboard</div>
-      </div>
-      <nav class="sidebar-nav">
-        <div class="sidebar-section">Overview</div>
-        <a class="sidebar-link" href="dashboard.html">Dashboard</a>
-        <a class="sidebar-link" href="receptionist.html">Receptionist</a>
-        <a class="sidebar-link" href="ads.html">Ads</a>
-        <div class="sidebar-section">Tools</div>
-        <a class="sidebar-link" href="storm.html">Storm Alerts<span class="link-badge">1</span></a>
-        <a class="sidebar-link" href="hiring.html">Hiring</a>
-        <a class="sidebar-link active" href="commands.html">Text Commands</a>
-        <div class="sidebar-section">System</div>
-        <a class="sidebar-link" href="changelog.html">What Changed</a>
-        <a class="sidebar-link" href="settings.html">Settings</a>
-      </nav>
-      <div class="sidebar-footer">All Systems Active</div>
-    </aside>
+  <div class="topbar">
+    <div class="topbar-brand">Coastal Shield <span>Roofing</span></div>
+    <div class="topbar-status">System Running</div>
+  </div>
 
-    <main class="main-content">
-      <div class="main-header">
-        <div class="page-title">Text Commands</div>
-        <div class="header-status">Control everything by text</div>
-      </div>
+  <nav class="nav-tabs">
+    <a class="nav-tab" href="dashboard.html">Dashboard</a>
+    <a class="nav-tab" href="receptionist.html">Receptionist</a>
+    <a class="nav-tab" href="storm.html">Storm Alerts</a>
+    <a class="nav-tab" href="hiring.html">Hiring</a>
+    <a class="nav-tab" href="changelog.html">What Changed</a>
+    <a class="nav-tab active" href="commands.html">Text Commands</a>
+  </nav>
 
-      <div class="content" style="max-width:600px;">
+  <div style="padding:20px;max-width:600px;margin:0 auto;">
 
-        <p style="font-size:14px;color:var(--text-muted);margin-bottom:20px;line-height:1.6;">
-          You control your entire system by texting. No apps to learn. No dashboards to log into. Just text what you need in plain English from your phone &mdash; even from a job site.
-        </p>
+    <p style="font-size:14px;color:var(--text-muted);margin-bottom:20px;line-height:1.6;">
+      You control your entire system by texting. No apps to learn. No dashboards to log into. Just text what you need in plain English from your phone &mdash; even from a job site.
+    </p>
 
-        <!-- Phone Mockup -->
-        <div class="phone-frame">
-          <div class="phone-header">
-            <div class="phone-avatar">CS</div>
-            <div>
-              <div class="phone-contact">My Growth System</div>
-              <div class="phone-contact-sub">Text any command</div>
-            </div>
-          </div>
-          <div class="chat-area" id="chatArea">
-            <div class="msg-time">Today, 2:15 PM</div>
-          </div>
-          <div class="phone-input">
-            <input type="text" id="chatInput" placeholder="Type a command..." autocomplete="off">
-            <button class="send-btn" onclick="sendMessage()">&#9650;</button>
-          </div>
+    <!-- Phone Mockup -->
+    <div class="phone-frame">
+      <div class="phone-header">
+        <div class="phone-avatar">CS</div>
+        <div>
+          <div class="phone-contact">My Growth System</div>
+          <div class="phone-contact-sub">Text any command</div>
         </div>
-
-        <!-- Example Commands -->
-        <div class="section-title">Try These Commands</div>
-        <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">Tap any example to see it in action:</p>
-        <div class="example-grid">
-          <div class="example-card" onclick="runExample('How many leads this week?', 'You got 22 leads this week. 8 from Google ($48 avg), 9 from Facebook ($36 avg), 5 from outbound calls ($31 avg). 9 of them booked appointments. Want me to break it down by day?')">
-            <div class="example-you">"How many leads this week?"</div>
-            <div class="example-response">Get a quick count of leads by channel</div>
-          </div>
-          <div class="example-card" onclick="runExample('Pause Google ads until Monday', 'Done. Google Ads are paused. They\'ll automatically restart Monday at 6am. Your Facebook and outbound channels are still running. Text me anytime to turn them back on.')">
-            <div class="example-you">"Pause Google ads until Monday"</div>
-            <div class="example-response">Turn channels on or off instantly</div>
-          </div>
-          <div class="example-card" onclick="runExample('Only book inspections Tue-Thu this week', 'Got it. I updated your receptionist to only book inspections Tuesday through Thursday this week. Calls on other days will still be answered and added to the follow-up list for next week.')">
-            <div class="example-you">"Only book inspections Tue-Thu"</div>
-            <div class="example-response">Change your schedule on the fly</div>
-          </div>
-          <div class="example-card" onclick="runExample('What did we change this week?', '3 changes this week: (1) Paused one Google ad that was getting clicks but no calls — moved budget to your top performer. (2) Added before/after photos from the Coral Gables job to Facebook ads. (3) Updated the receptionist to ask about insurance claims earlier. Full details in your change log.')">
-            <div class="example-you">"What did we change this week?"</div>
-            <div class="example-response">Get a summary of all optimizations</div>
-          </div>
-          <div class="example-card" onclick="runExample('Stop calling 305-555-0142', 'Done. That number (305-555-0142) has been added to the do-not-contact list. We won\'t call, text, or email them again.')">
-            <div class="example-you">"Stop calling 305-555-0142"</div>
-            <div class="example-response">Remove someone from outreach instantly</div>
-          </div>
-          <div class="example-card" onclick="runExample('I need 2 more canvassers in Miami', 'On it. I\'ll post the job on Indeed, ZipRecruiter, Facebook Jobs, and LinkedIn today. I\'ll screen applicants using the same questions from your last hire. You\'ll see the top candidates in your hiring tab within 3-5 days. Anything specific you want me to ask?')">
-            <div class="example-you">"I need 2 more canvassers"</div>
-            <div class="example-response">Kick off hiring with a text</div>
-          </div>
-          <div class="example-card" onclick="runExample('Raise the minimum job size to $5,000', 'Updated. Your receptionist will now only book inspections for jobs estimated at $5,000 or higher. Smaller jobs will be politely declined with a referral to another contractor. Want me to adjust any other qualifying criteria?')">
-            <div class="example-you">"Raise minimum job size to $5K"</div>
-            <div class="example-response">Change qualifying criteria on the spot</div>
-          </div>
-          <div class="example-card" onclick="runExample('Send me the recording from the last call', 'Here\'s the recording from your most recent call: Carlos R., today at 11:42am, 2 min 18 sec. He needs a full roof replacement in Coral Gables. Insurance claim. Receptionist booked him for Thursday 2pm. [Recording attached]')">
-            <div class="example-you">"Send me the last call recording"</div>
-            <div class="example-response">Listen to any call from your phone</div>
-          </div>
-        </div>
-
       </div>
-    </main>
+      <div class="chat-area" id="chatArea">
+        <div class="msg-time">Today, 2:15 PM</div>
+      </div>
+      <div class="phone-input">
+        <input type="text" id="chatInput" placeholder="Type a command..." autocomplete="off">
+        <button class="send-btn" onclick="sendMessage()">&#9650;</button>
+      </div>
+    </div>
+
+    <!-- Example Commands -->
+    <div class="section-title">Try These Commands</div>
+    <p style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">Tap any example to see it in action:</p>
+    <div class="example-grid">
+      <div class="example-card" onclick="runExample('How many leads this week?', 'You got 22 leads this week. 8 from Google ($48 avg), 9 from Facebook ($36 avg), 5 from outbound calls ($31 avg). 9 of them booked appointments. Want me to break it down by day?')">
+        <div class="example-you">"How many leads this week?"</div>
+        <div class="example-response">Get a quick count of leads by channel</div>
+      </div>
+      <div class="example-card" onclick="runExample('Pause Google ads until Monday', 'Done. Google Ads are paused. They\'ll automatically restart Monday at 6am. Your Facebook and outbound channels are still running. Text me anytime to turn them back on.')">
+        <div class="example-you">"Pause Google ads until Monday"</div>
+        <div class="example-response">Turn channels on or off instantly</div>
+      </div>
+      <div class="example-card" onclick="runExample('Only book inspections Tue-Thu this week', 'Got it. I updated your receptionist to only book inspections Tuesday through Thursday this week. Calls on other days will still be answered and added to the follow-up list for next week.')">
+        <div class="example-you">"Only book inspections Tue-Thu"</div>
+        <div class="example-response">Change your schedule on the fly</div>
+      </div>
+      <div class="example-card" onclick="runExample('What did we change this week?', '3 changes this week: (1) Paused one Google ad that was getting clicks but no calls — moved budget to your top performer. (2) Added before/after photos from the Coral Gables job to Facebook ads. (3) Updated the receptionist to ask about insurance claims earlier. Full details in your change log.')">
+        <div class="example-you">"What did we change this week?"</div>
+        <div class="example-response">Get a summary of all optimizations</div>
+      </div>
+      <div class="example-card" onclick="runExample('Stop calling 305-555-0142', 'Done. That number (305-555-0142) has been added to the do-not-contact list. We won\'t call, text, or email them again.')">
+        <div class="example-you">"Stop calling 305-555-0142"</div>
+        <div class="example-response">Remove someone from outreach instantly</div>
+      </div>
+      <div class="example-card" onclick="runExample('I need 2 more canvassers in Miami', 'On it. I\'ll post the job on Indeed, ZipRecruiter, Facebook Jobs, and LinkedIn today. I\'ll screen applicants using the same questions from your last hire. You\'ll see the top candidates in your hiring tab within 3-5 days. Anything specific you want me to ask?')">
+        <div class="example-you">"I need 2 more canvassers"</div>
+        <div class="example-response">Kick off hiring with a text</div>
+      </div>
+      <div class="example-card" onclick="runExample('Raise the minimum job size to $5,000', 'Updated. Your receptionist will now only book inspections for jobs estimated at $5,000 or higher. Smaller jobs will be politely declined with a referral to another contractor. Want me to adjust any other qualifying criteria?')">
+        <div class="example-you">"Raise minimum job size to $5K"</div>
+        <div class="example-response">Change qualifying criteria on the spot</div>
+      </div>
+      <div class="example-card" onclick="runExample('Send me the recording from the last call', 'Here\'s the recording from your most recent call: Carlos R., today at 11:42am, 2 min 18 sec. He needs a full roof replacement in Coral Gables. Insurance claim. Receptionist booked him for Thursday 2pm. [Recording attached]')">
+        <div class="example-you">"Send me the last call recording"</div>
+        <div class="example-response">Listen to any call from your phone</div>
+      </div>
+    </div>
+
   </div>
 
   <script>
@@ -307,6 +291,6 @@
     });
   </script>
 
-<!-- v3 - commands with sidebar layout -->
+<!-- v2 - commands demo -->
 </body>
 </html>

@@ -3,263 +3,272 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hiring - Coastal Shield Roofing</title>
+  <title>Hiring - Your Growth Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="app-layout">
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      <div class="sidebar-brand-name">Coastal Shield <span>Roofing</span></div>
-      <div class="sidebar-brand-sub">Growth Dashboard</div>
-    </div>
-    <nav class="sidebar-nav">
-      <div class="sidebar-section">Overview</div>
-      <a class="sidebar-link" href="dashboard.html">Dashboard</a>
-      <a class="sidebar-link" href="receptionist.html">Receptionist</a>
-      <a class="sidebar-link" href="ads.html">Ads</a>
-      <div class="sidebar-section">Tools</div>
-      <a class="sidebar-link" href="storm.html">Storm Alerts<span class="link-badge">1</span></a>
-      <a class="sidebar-link active" href="hiring.html">Hiring</a>
-      <a class="sidebar-link" href="commands.html">Text Commands</a>
-      <div class="sidebar-section">System</div>
-      <a class="sidebar-link" href="changelog.html">What Changed</a>
-      <a class="sidebar-link" href="settings.html">Settings</a>
-    </nav>
-    <div class="sidebar-footer">All Systems Active</div>
-  </aside>
-
-  <main class="main-content">
-    <div class="main-header">
-      <div class="page-title">Hiring</div>
-      <div class="header-status">2 Active Posts</div>
-    </div>
-
-    <div class="content-narrow">
-
-      <div class="mini-stats">
-        <div class="card card-flat"><div class="mini-stat-label">Active Posts</div><div class="mini-stat-value">2</div></div>
-        <div class="card card-flat"><div class="mini-stat-label">Applicants</div><div class="mini-stat-value">18</div></div>
-        <div class="card card-flat"><div class="mini-stat-label">Screened</div><div class="mini-stat-value">6</div></div>
-        <div class="card card-flat"><div class="mini-stat-label">Interviews</div><div class="mini-stat-value">3</div></div>
-      </div>
-
-      <!-- Job Posts -->
-      <div class="section-title">Active Job Posts</div>
-      <div class="section-subtitle">Click a posting to see the full description</div>
-
-      <div class="card fade-in" style="cursor:pointer;" onclick="togglePost('post1')">
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <div><div style="font-weight:600;font-size:15px;color:var(--dark);">Door-to-Door Sales Rep</div><div style="font-size:13px;color:var(--text-muted);margin-top:2px;">Miami-Dade &bull; Full-Time &bull; Commission &bull; 5 days ago</div></div>
-          <div style="display:flex;align-items:center;gap:10px;"><span class="badge badge-green">Live</span><span class="expand-icon" id="icon-post1">&#9660;</span></div>
-        </div>
-        <div style="display:flex;gap:16px;margin-top:10px;">
-          <div><span style="font-size:11px;color:var(--text-muted);">Applicants</span><div style="font-family:var(--mono);font-weight:500;">12</div></div>
-          <div><span style="font-size:11px;color:var(--text-muted);">Screened</span><div style="font-family:var(--mono);font-weight:500;">4</div></div>
-          <div><span style="font-size:11px;color:var(--text-muted);">Interviews</span><div style="font-family:var(--mono);font-weight:500;">2</div></div>
-        </div>
-        <div class="expandable-body" id="post1" onclick="event.stopPropagation();">
-          <div style="border-top:1px solid var(--border);padding-top:16px;">
-            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:8px;">Posted On</div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;"><span class="badge badge-blue">Indeed</span><span class="badge badge-blue">ZipRecruiter</span><span class="badge badge-purple">Facebook Jobs</span><span class="badge badge-gray">LinkedIn</span></div>
-            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:8px;">About The Role</div>
-            <div style="font-size:14px;line-height:1.7;color:var(--text);margin-bottom:14px;">
-              <p style="margin-bottom:8px;">Coastal Shield Roofing is looking for motivated Door-to-Door Sales Representatives to join our growing team in Miami-Dade County. You'll be the first point of contact for homeowners, knocking on doors in assigned neighborhoods, talking to people about free roof inspections, and setting appointments for our inspection crew.</p>
-              <p style="margin-bottom:8px;">This isn't cold selling &mdash; you're offering a free service that protects their home. After storms, homeowners are actively looking for help, and our system tells you exactly which neighborhoods to hit.</p>
-            </div>
-            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:8px;">What You'll Do</div>
-            <ul style="font-size:14px;line-height:1.7;color:var(--text);margin-bottom:14px;padding-left:18px;">
-              <li>Knock 60-100 doors per day in assigned neighborhoods</li>
-              <li>Talk to homeowners about free roof inspections and storm damage</li>
-              <li>Set appointments for our inspection crew using a simple mobile app</li>
-              <li>Take photos of visible roof damage and log addresses</li>
-              <li>Follow up with interested homeowners who weren't home</li>
-              <li>Report daily activity and results to your team lead</li>
-            </ul>
-            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:8px;">Requirements</div>
-            <ul style="font-size:14px;line-height:1.7;color:var(--text);margin-bottom:14px;padding-left:18px;">
-              <li>Reliable personal vehicle (mileage reimbursed)</li>
-              <li>Comfortable talking to strangers and handling rejection</li>
-              <li>Available Monday through Friday, rain or shine</li>
-              <li>Smartphone with data plan</li>
-              <li>Clean background check</li>
-              <li>Sales or canvassing experience preferred but not required &mdash; we train</li>
-            </ul>
-            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:8px;">Compensation</div>
-            <div style="font-size:14px;line-height:1.7;color:var(--text);margin-bottom:14px;">
-              <p style="margin-bottom:8px;"><strong>100% Commission-Based.</strong> You eat what you kill. Top reps consistently earn <strong>$1,500 - $3,500/week</strong>. Our best rep made $4,200 last week during the storm surge.</p>
-              <p style="margin-bottom:8px;">We provide: training, storm alerts so you know where to go, lead lists, branded materials, and a dedicated inspection crew so you never have to worry about the technical side.</p>
-              <p><strong>Bonus structure:</strong> $50 per booked inspection that results in a signed contract. Average close rate is 35%, so if you book 20 inspections/week, that's ~7 closes = $350 in bonuses on top of your commission.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card fade-in" style="cursor:pointer;" onclick="togglePost('post2')">
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <div><div style="font-weight:600;font-size:15px;color:var(--dark);">Canvasser</div><div style="font-size:13px;color:var(--text-muted);margin-top:2px;">Miami-Dade &bull; Part-time OK &bull; Hourly + Bonus &bull; 3 days ago</div></div>
-          <div style="display:flex;align-items:center;gap:10px;"><span class="badge badge-green">Live</span><span class="expand-icon" id="icon-post2">&#9660;</span></div>
-        </div>
-        <div style="display:flex;gap:16px;margin-top:10px;">
-          <div><span style="font-size:11px;color:var(--text-muted);">Applicants</span><div style="font-family:var(--mono);font-weight:500;">6</div></div>
-          <div><span style="font-size:11px;color:var(--text-muted);">Screened</span><div style="font-family:var(--mono);font-weight:500;">2</div></div>
-          <div><span style="font-size:11px;color:var(--text-muted);">Interviews</span><div style="font-family:var(--mono);font-weight:500;">1</div></div>
-        </div>
-        <div class="expandable-body" id="post2" onclick="event.stopPropagation();">
-          <div style="border-top:1px solid var(--border);padding-top:16px;">
-            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:8px;">Posted On</div>
-            <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;"><span class="badge badge-blue">Indeed</span><span class="badge badge-blue">ZipRecruiter</span><span class="badge badge-purple">Facebook Jobs</span></div>
-            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:8px;">About The Role</div>
-            <div style="font-size:14px;line-height:1.7;color:var(--text);margin-bottom:14px;">
-              <p style="margin-bottom:8px;">We need reliable Canvassers to walk neighborhoods and leave door hangers on homes in targeted areas. You don't need to sell anything &mdash; just walk, hang materials, and take photos of any visible roof damage you spot. Great for people who like being active and working independently.</p>
-            </div>
-            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:8px;">What You'll Do</div>
-            <ul style="font-size:14px;line-height:1.7;color:var(--text);margin-bottom:14px;padding-left:18px;">
-              <li>Walk assigned neighborhoods and hang branded door materials</li>
-              <li>Take photos of roofs with visible damage (cracked tiles, missing shingles, tarps)</li>
-              <li>Log streets covered and photos taken in a simple app</li>
-              <li>Cover 3-5 miles per shift (4-6 hour shifts)</li>
-              <li>Work independently &mdash; you pick your shift times within your assigned area</li>
-            </ul>
-            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:8px;">Requirements</div>
-            <ul style="font-size:14px;line-height:1.7;color:var(--text);margin-bottom:14px;padding-left:18px;">
-              <li>Reliable transportation to get to starting locations</li>
-              <li>Comfortable walking 3-5 miles per shift in Florida weather</li>
-              <li>Smartphone with camera</li>
-              <li>Clean background check</li>
-              <li>Part-time (15-25 hrs/week) or full-time (35+ hrs/week) available</li>
-            </ul>
-            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:8px;">Compensation</div>
-            <div style="font-size:14px;line-height:1.7;color:var(--text);">
-              <p style="margin-bottom:8px;"><strong>$15/hour base</strong> + $25 bonus per appointment that comes from your area. Most canvassers earn <strong>$18-$24/hour</strong> after bonuses.</p>
-              <p>Weekly pay via direct deposit. We provide all door hanger materials and training on what to photograph.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Applicant Table -->
-      <div class="section-title" style="margin-top:8px;">Applicants</div>
-      <div class="card" style="padding:0;overflow-x:auto;">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Position</th>
-              <th>Score</th>
-              <th>Status</th>
-              <th>Location</th>
-            </tr>
-          </thead>
-          <tbody id="applicant-table"></tbody>
-        </table>
-      </div>
-
-    </div>
-  </main>
-</div>
-
-<!-- Applicant Detail Modal -->
-<div class="modal-overlay" id="appModal">
-  <div class="modal">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
-    <div id="appModalContent"></div>
+  <div class="topbar">
+    <div class="topbar-brand">Coastal Shield <span>Roofing</span></div>
+    <div class="topbar-status">Hiring Active</div>
   </div>
-</div>
 
-<script>
-  function togglePost(id) {
-    document.getElementById(id).classList.toggle('open');
-    document.getElementById('icon-'+id).classList.toggle('open');
-  }
+  <nav class="nav-tabs">
+    <a class="nav-tab" href="dashboard.html">Dashboard</a>
+    <a class="nav-tab" href="receptionist.html">Receptionist</a>
+    <a class="nav-tab" href="storm.html">Storm Alerts</a>
+    <a class="nav-tab active" href="hiring.html">Hiring</a>
+    <a class="nav-tab" href="changelog.html">What Changed</a>
+    <a class="nav-tab" href="commands.html">Text Commands</a>
+  </nav>
 
-  const applicants = [
-    {name:'James Williams',city:'Hialeah, FL',position:'Sales Rep',score:92,scoreColor:'var(--green)',experience:'4 years canvassing (solar + storm restoration)',transport:'Own vehicle',availability:'Start immediately',languages:'English',status:'Interview Mon 3pm',
-      screen:[
-        {q:'Why door-to-door roofing sales?',a:'"I did solar canvassing for 2 years and storm restoration for the last 2. I like being outside, talking to people, and I know how to handle rejection."'},
-        {q:'How many doors per day can you hit?',a:'"On a good day, 80 to 100. I usually get 3 to 5 solid conversations out of that."'},
-        {q:'Comfortable with commission-only?',a:'"Yeah, that\'s how I\'ve always worked. I just need a fair split and leads that actually close."'}
-      ]},
-    {name:'Carlos Reyes',city:'Miami Gardens, FL',position:'Sales Rep',score:85,scoreColor:'var(--green)',experience:'2 years pest control D2D sales',transport:'Own vehicle',availability:'2 weeks notice',languages:'English / Spanish',status:'Interview Tue 10am',screen:[]},
-    {name:'Brittany Moore',city:'Kendall, FL',position:'Canvasser',score:68,scoreColor:'var(--yellow)',experience:'No D2D — 3 years Home Depot retail',transport:'Own vehicle',availability:'Immediately',languages:'English',status:'Under review',screen:[]},
-    {name:'Marcus Johnson',city:'Opa-locka, FL',position:'Sales Rep',score:74,scoreColor:'var(--yellow)',experience:'1 year roofing canvasser',transport:'Own vehicle',availability:'1 week notice',languages:'English / Creole',status:'Phone screen done',screen:[]},
-    {name:'Ana Torres',city:'Doral, FL',position:'Canvasser',score:81,scoreColor:'var(--green)',experience:'6 months political canvassing',transport:'Own vehicle',availability:'Immediately',languages:'English / Spanish',status:'Interview Wed 2pm',screen:[]},
-    {name:'Devon Clark',city:'North Miami, FL',position:'Sales Rep',score:55,scoreColor:'var(--red)',experience:'No sales experience',transport:'Public transit',availability:'Immediately',languages:'English',status:'Declined',screen:[]}
-  ];
+  <div class="content-narrow">
 
-  function renderApplicants() {
-    document.getElementById('applicant-table').innerHTML = applicants.map((a,i) => `
-      <tr onclick="showApplicant(${i})">
-        <td style="font-weight:600;color:var(--dark);">${a.name}</td>
-        <td style="font-size:12px;color:var(--text-muted);">${a.position}</td>
-        <td>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <div style="width:50px;height:5px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="height:100%;width:${a.score}%;background:${a.scoreColor};border-radius:3px;"></div></div>
-            <span style="font-family:var(--mono);font-size:12px;font-weight:500;color:${a.scoreColor};">${a.score}%</span>
-          </div>
-        </td>
-        <td style="font-size:12px;color:var(--text);">${a.status}</td>
-        <td style="font-size:12px;color:var(--text-muted);">${a.city}</td>
-      </tr>
-    `).join('');
-  }
+    <div class="mini-stats">
+      <div class="card card-flat"><div class="mini-stat-label">Active Job Posts</div><div class="mini-stat-value">2</div></div>
+      <div class="card card-flat"><div class="mini-stat-label">Applicants This Week</div><div class="mini-stat-value">18</div></div>
+      <div class="card card-flat"><div class="mini-stat-label">Phone Screens Done</div><div class="mini-stat-value">6</div></div>
+      <div class="card card-flat"><div class="mini-stat-label">Interviews Scheduled</div><div class="mini-stat-value">3</div></div>
+    </div>
 
-  function showApplicant(i) {
-    const a = applicants[i];
-    document.getElementById('appModalContent').innerHTML = `
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+    <!-- Active Job Posts -->
+    <div class="section-title">Active Job Posts</div>
+    <p class="section-subtitle">Click a posting to see the full job description and where it's listed</p>
+
+    <!-- Job Post 1 -->
+    <div class="card fade-in" style="cursor:pointer;" onclick="togglePost('post1')">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
         <div>
-          <div class="modal-title" style="margin-bottom:2px;">${a.name}</div>
-          <div style="font-size:13px;color:var(--text-muted);">${a.city} · ${a.position}</div>
+          <div style="font-weight:600;font-size:15px;color:var(--dark);">Door-to-Door Sales Rep</div>
+          <div style="font-size:13px;color:var(--text-muted);margin-top:2px;">Miami-Dade County &bull; Commission-based &bull; Posted 5 days ago</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="badge badge-green">Live</span>
+          <span class="expand-icon" id="icon-post1">&#9660;</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;margin-top:12px;">
+        <div><span style="font-size:11px;color:var(--text-muted);">Applicants</span><div style="font-weight:700;font-size:16px;">12</div></div>
+        <div><span style="font-size:11px;color:var(--text-muted);">Screened</span><div style="font-weight:700;font-size:16px;">4</div></div>
+        <div><span style="font-size:11px;color:var(--text-muted);">Interviews</span><div style="font-weight:700;font-size:16px;">2</div></div>
+      </div>
+
+      <div class="expandable-body" id="post1" onclick="event.stopPropagation();">
+        <div style="border-top:1px solid var(--border);padding-top:16px;">
+          <!-- Where posted -->
+          <div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;font-weight:600;letter-spacing:0.03em;margin-bottom:10px;">Posted On</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
+            <span class="badge badge-blue">Indeed</span>
+            <span class="badge badge-blue">ZipRecruiter</span>
+            <span class="badge badge-purple">Facebook Jobs</span>
+            <span class="badge badge-gray">LinkedIn</span>
+          </div>
+
+          <!-- Job Description -->
+          <div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;font-weight:600;letter-spacing:0.03em;margin-bottom:10px;">Job Description</div>
+          <div style="font-size:14px;line-height:1.7;color:var(--text);margin-bottom:16px;">
+            <p style="margin-bottom:10px;"><strong>Coastal Shield Roofing</strong> is looking for motivated door-to-door sales reps in the Miami-Dade area. No roofing experience needed &mdash; we train you. You need energy, a good attitude, and the ability to knock 80+ doors a day.</p>
+            <p style="margin-bottom:10px;"><strong>What you'll do:</strong></p>
+            <ul style="padding-left:18px;margin-bottom:10px;">
+              <li>Knock doors in assigned neighborhoods after storms or in target areas</li>
+              <li>Talk to homeowners about free roof inspections</li>
+              <li>Set appointments for our inspection crew</li>
+              <li>Follow up with interested homeowners via text</li>
+            </ul>
+            <p style="margin-bottom:10px;"><strong>What we're looking for:</strong></p>
+            <ul style="padding-left:18px;margin-bottom:10px;">
+              <li>Reliable transportation (you'll drive to neighborhoods)</li>
+              <li>Comfortable talking to strangers at their door</li>
+              <li>Available to work at least 5 days a week</li>
+              <li>Clean background check</li>
+            </ul>
+            <p><strong>Pay:</strong> Commission-based. Top reps earn $1,500-$3,000/week. We provide leads, training, branded materials, and storm alerts so you know exactly where to knock.</p>
+          </div>
+
+          <!-- Screen Questions -->
+          <div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;font-weight:600;letter-spacing:0.03em;margin-bottom:10px;">Phone Screen Questions</div>
+          <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px;font-size:13px;line-height:1.6;color:var(--text);">
+            <ol style="padding-left:18px;">
+              <li style="margin-bottom:6px;">Why are you interested in door-to-door sales?</li>
+              <li style="margin-bottom:6px;">Have you done any canvassing or sales before? If so, where?</li>
+              <li style="margin-bottom:6px;">How many doors can you knock in a day?</li>
+              <li style="margin-bottom:6px;">Are you comfortable with commission-only pay?</li>
+              <li>Do you have reliable transportation?</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Job Post 2 -->
+    <div class="card fade-in" style="cursor:pointer;" onclick="togglePost('post2')">
+      <div style="display:flex;align-items:center;justify-content:space-between;">
+        <div>
+          <div style="font-weight:600;font-size:15px;color:var(--dark);">Canvasser</div>
+          <div style="font-size:13px;color:var(--text-muted);margin-top:2px;">Miami-Dade County &bull; Part-time OK &bull; Posted 3 days ago</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <span class="badge badge-green">Live</span>
+          <span class="expand-icon" id="icon-post2">&#9660;</span>
+        </div>
+      </div>
+      <div style="display:flex;gap:16px;margin-top:12px;">
+        <div><span style="font-size:11px;color:var(--text-muted);">Applicants</span><div style="font-weight:700;font-size:16px;">6</div></div>
+        <div><span style="font-size:11px;color:var(--text-muted);">Screened</span><div style="font-weight:700;font-size:16px;">2</div></div>
+        <div><span style="font-size:11px;color:var(--text-muted);">Interviews</span><div style="font-weight:700;font-size:16px;">1</div></div>
+      </div>
+
+      <div class="expandable-body" id="post2" onclick="event.stopPropagation();">
+        <div style="border-top:1px solid var(--border);padding-top:16px;">
+          <div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;font-weight:600;letter-spacing:0.03em;margin-bottom:10px;">Posted On</div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px;">
+            <span class="badge badge-blue">Indeed</span>
+            <span class="badge badge-blue">ZipRecruiter</span>
+            <span class="badge badge-purple">Facebook Jobs</span>
+          </div>
+
+          <div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;font-weight:600;letter-spacing:0.03em;margin-bottom:10px;">Job Description</div>
+          <div style="font-size:14px;line-height:1.7;color:var(--text);margin-bottom:16px;">
+            <p style="margin-bottom:10px;"><strong>Coastal Shield Roofing</strong> needs canvassers to walk neighborhoods and leave door hangers, flyers, and info packets for homeowners. This is not sales &mdash; you don't need to pitch anything. Just get our materials on doors in the right areas.</p>
+            <p style="margin-bottom:10px;"><strong>What you'll do:</strong></p>
+            <ul style="padding-left:18px;margin-bottom:10px;">
+              <li>Walk assigned neighborhoods and hang materials on doors</li>
+              <li>Take photos of damaged roofs you spot (we'll train you on what to look for)</li>
+              <li>Log which streets you covered in a simple app</li>
+            </ul>
+            <p style="margin-bottom:10px;"><strong>Requirements:</strong></p>
+            <ul style="padding-left:18px;margin-bottom:10px;">
+              <li>Reliable transportation</li>
+              <li>Able to walk 3-5 miles per shift</li>
+              <li>Clean background</li>
+              <li>Part-time or full-time &mdash; flexible</li>
+            </ul>
+            <p><strong>Pay:</strong> $15/hour + bonus per appointment that comes from your area. Most canvassers earn $18-$22/hour after bonuses.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Top Applicants -->
+    <div class="section-title">Top Applicants</div>
+
+    <div class="card fade-in">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <div>
+          <div style="font-weight:600;font-size:15px;color:var(--dark);">James Williams</div>
+          <div style="font-size:12px;color:var(--text-muted);">Sales Rep position &bull; Hialeah, FL</div>
         </div>
         <div style="display:flex;align-items:center;gap:6px;">
-          <div style="width:60px;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="height:100%;width:${a.score}%;background:${a.scoreColor};border-radius:3px;"></div></div>
-          <span style="font-family:var(--mono);font-size:14px;font-weight:500;color:${a.scoreColor};">${a.score}%</span>
+          <div style="width:60px;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="height:100%;width:92%;background:var(--green);border-radius:3px;"></div></div>
+          <span style="font-size:12px;font-weight:700;color:var(--green);">92%</span>
         </div>
       </div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
-        <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);"><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:3px;">Experience</div><div style="font-size:13px;font-weight:500;color:var(--dark);">${a.experience}</div></div>
-        <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);"><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:3px;">Transportation</div><div style="font-size:13px;font-weight:500;color:var(--dark);">${a.transport}</div></div>
-        <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);"><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:3px;">Availability</div><div style="font-size:13px;font-weight:500;color:var(--dark);">${a.availability}</div></div>
-        <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);"><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:3px;">Languages</div><div style="font-size:13px;font-weight:500;color:var(--dark);">${a.languages}</div></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+        <div><div style="font-size:11px;color:var(--text-muted);">Experience</div><div style="font-size:13px;font-weight:500;">4 years canvassing</div></div>
+        <div><div style="font-size:11px;color:var(--text-muted);">Transportation</div><div style="font-size:13px;font-weight:500;">Own vehicle</div></div>
+        <div><div style="font-size:11px;color:var(--text-muted);">Availability</div><div style="font-size:13px;font-weight:500;">Start immediately</div></div>
+        <div><div style="font-size:11px;color:var(--text-muted);">Languages</div><div style="font-size:13px;font-weight:500;">English</div></div>
       </div>
-      <div style="background:var(--accent-light);padding:12px 14px;border-radius:var(--radius-sm);font-size:13px;margin-bottom:16px;">
-        <strong style="color:var(--accent);">Status:</strong> ${a.status}
+      <div style="background:var(--accent-light);padding:10px 14px;border-radius:var(--radius-sm);font-size:13px;margin-bottom:14px;">
+        <strong style="color:var(--accent);">Interview scheduled:</strong> Monday 3pm
       </div>
-      ${a.screen.length ? `
-      <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:8px;">Phone Screen Answers</div>
+
+      <!-- Phone Screen -->
       <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;">
-        ${a.screen.map(s => `
-          <div style="margin-bottom:12px;">
-            <div style="font-size:11px;color:var(--text-muted);margin-bottom:3px;">${s.q}</div>
-            <div style="font-size:13px;line-height:1.5;color:var(--text);">${s.a}</div>
-          </div>
-        `).join('')}
-      </div>
-      <!-- Call Recording -->
-      <div style="margin-top:14px;">
-        <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:6px;">Screen Call Recording</div>
-        <div style="background:var(--dark);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:center;gap:12px;">
-          <div style="width:40px;height:40px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;" onclick="this.innerHTML=this.innerHTML.includes('▶')?'&#10074;&#10074;':'&#9654;'">
-            <span style="color:white;font-size:16px;">&#9654;</span>
-          </div>
-          <div style="flex:1;">
-            <div style="background:rgba(255,255,255,0.1);border-radius:4px;height:6px;"><div style="background:var(--accent);border-radius:4px;height:100%;width:0%;"></div></div>
-            <div style="display:flex;justify-content:space-between;margin-top:4px;"><span style="font-size:11px;color:rgba(255,255,255,0.5);">0:00</span><span style="font-size:11px;color:rgba(255,255,255,0.5);">4:32</span></div>
-          </div>
+        <div style="font-size:12px;font-weight:600;color:var(--dark);margin-bottom:10px;">Phone Screen Summary</div>
+        <div style="margin-bottom:10px;">
+          <div style="font-size:11px;color:var(--text-muted);margin-bottom:2px;">Why door-to-door roofing sales?</div>
+          <div style="font-size:13px;line-height:1.5;">"I did solar canvassing for 2 years and storm restoration for the last 2. I like being outside, talking to people, and I know how to handle rejection."</div>
         </div>
-      </div>` : '<div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px;font-size:13px;color:var(--text-muted);text-align:center;">Phone screen not yet completed.</div>'}
-    `;
-    document.getElementById('appModal').classList.add('open');
-  }
+        <div style="margin-bottom:10px;">
+          <div style="font-size:11px;color:var(--text-muted);margin-bottom:2px;">How many doors per day?</div>
+          <div style="font-size:13px;line-height:1.5;">"On a good day, 80 to 100. I usually get 3 to 5 solid conversations out of that."</div>
+        </div>
+        <div>
+          <div style="font-size:11px;color:var(--text-muted);margin-bottom:2px;">Comfortable with commission-only?</div>
+          <div style="font-size:13px;line-height:1.5;">"Yeah, that's how I've always worked. I just need a fair split and leads that actually close."</div>
+        </div>
+      </div>
+    </div>
 
-  function closeModal() { document.getElementById('appModal').classList.remove('open'); }
-  document.getElementById('appModal').addEventListener('click', e => { if (e.target.id === 'appModal') closeModal(); });
+    <div class="card fade-in">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <div>
+          <div style="font-weight:600;font-size:15px;color:var(--dark);">Carlos Reyes</div>
+          <div style="font-size:12px;color:var(--text-muted);">Sales Rep position &bull; Miami Gardens, FL</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <div style="width:60px;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="height:100%;width:85%;background:var(--green);border-radius:3px;"></div></div>
+          <span style="font-size:12px;font-weight:700;color:var(--green);">85%</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+        <div><div style="font-size:11px;color:var(--text-muted);">Experience</div><div style="font-size:13px;font-weight:500;">2 years pest control sales</div></div>
+        <div><div style="font-size:11px;color:var(--text-muted);">Transportation</div><div style="font-size:13px;font-weight:500;">Own vehicle</div></div>
+        <div><div style="font-size:11px;color:var(--text-muted);">Availability</div><div style="font-size:13px;font-weight:500;">2 weeks notice</div></div>
+        <div><div style="font-size:11px;color:var(--text-muted);">Languages</div><div style="font-size:13px;font-weight:500;">English / Spanish</div></div>
+      </div>
+      <div style="background:var(--accent-light);padding:10px 14px;border-radius:var(--radius-sm);font-size:13px;">
+        <strong style="color:var(--accent);">Interview scheduled:</strong> Tuesday 10am &mdash; Bilingual (English/Spanish) is a big plus for Miami-Dade.
+      </div>
+    </div>
 
-  renderApplicants();
-</script>
+    <div class="card fade-in">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+        <div>
+          <div style="font-weight:600;font-size:15px;color:var(--dark);">Brittany Moore</div>
+          <div style="font-size:12px;color:var(--text-muted);">Canvasser position &bull; Kendall, FL</div>
+        </div>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <div style="width:60px;height:6px;background:var(--border);border-radius:3px;overflow:hidden;"><div style="height:100%;width:68%;background:var(--yellow);border-radius:3px;"></div></div>
+          <span style="font-size:12px;font-weight:700;color:var(--yellow);">68%</span>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+        <div><div style="font-size:11px;color:var(--text-muted);">Experience</div><div style="font-size:13px;font-weight:500;">No D2D experience</div></div>
+        <div><div style="font-size:11px;color:var(--text-muted);">Transportation</div><div style="font-size:13px;font-weight:500;">Own vehicle</div></div>
+        <div><div style="font-size:11px;color:var(--text-muted);">Availability</div><div style="font-size:13px;font-weight:500;">Immediately</div></div>
+        <div><div style="font-size:11px;color:var(--text-muted);">Background</div><div style="font-size:13px;font-weight:500;">3 years retail (Home Depot)</div></div>
+      </div>
+      <div style="background:var(--bg);padding:10px 14px;border-radius:var(--radius-sm);font-size:13px;color:var(--text-muted);">
+        No canvassing experience but strong communication skills from retail. Worth an interview if you need extra hands.
+      </div>
+    </div>
 
-<!-- v4 - sidebar nav, realistic job descriptions, call recording in applicant modal -->
+    <!-- How it works -->
+    <div class="section-title" style="margin-top:8px;">How Hiring Works</div>
+    <div class="insight-box">
+      <div style="display:flex;flex-direction:column;gap:16px;">
+        <div>
+          <div class="insight-title" style="margin-bottom:4px;">1. You tell us what you need</div>
+          <div style="font-size:14px;color:var(--text);line-height:1.6;">"I need 2 canvassers who can start next week in Miami." That's all it takes &mdash; text it or tell us on a call.</div>
+        </div>
+        <div>
+          <div class="insight-title" style="margin-bottom:4px;">2. We post and screen</div>
+          <div style="font-size:14px;color:var(--text);line-height:1.6;">Ads go live on Indeed, ZipRecruiter, Facebook, and LinkedIn. Every applicant gets a phone screen with questions you approve.</div>
+        </div>
+        <div>
+          <div class="insight-title" style="margin-bottom:4px;">3. You interview the best</div>
+          <div style="font-size:14px;color:var(--text);line-height:1.6;">We send you top candidates with scores, screen recordings, and availability. You pick who to interview.</div>
+        </div>
+        <div>
+          <div class="insight-title" style="margin-bottom:4px;">4. You make the final call</div>
+          <div style="font-size:14px;color:var(--text);line-height:1.6;">You hire who you want. Nobody shows up on your job site without your approval.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function togglePost(id) {
+      const el = document.getElementById(id);
+      const icon = document.getElementById('icon-' + id);
+      el.classList.toggle('open');
+      icon.classList.toggle('open');
+    }
+  </script>
+
+<!-- v2 - hiring demo -->
 </body>
 </html>

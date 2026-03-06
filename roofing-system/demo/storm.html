@@ -3,253 +3,149 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Storm Alerts - Coastal Shield Roofing</title>
+  <title>Storm Alerts - Your Growth Dashboard</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<div class="app-layout">
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      <div class="sidebar-brand-name">Coastal Shield <span>Roofing</span></div>
-      <div class="sidebar-brand-sub">Growth Dashboard</div>
+  <div class="topbar">
+    <div class="topbar-brand">Coastal Shield <span>Roofing</span></div>
+    <div class="topbar-status">Storm Monitoring Active</div>
+  </div>
+
+  <nav class="nav-tabs">
+    <a class="nav-tab" href="dashboard.html">Dashboard</a>
+    <a class="nav-tab" href="receptionist.html">Receptionist</a>
+    <a class="nav-tab active" href="storm.html">Storm Alerts</a>
+    <a class="nav-tab" href="hiring.html">Hiring</a>
+    <a class="nav-tab" href="changelog.html">What Changed</a>
+    <a class="nav-tab" href="commands.html">Text Commands</a>
+  </nav>
+
+  <div class="content-narrow">
+
+    <!-- Active Alert Banner -->
+    <div style="background:linear-gradient(135deg,#991B1B,#DC2626);color:white;border-radius:var(--radius);padding:20px;margin-bottom:20px;animation:alertPulse 3s infinite;">
+      <div style="display:inline-block;background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">Active Storm Watch</div>
+      <div style="font-family:var(--serif);font-size:22px;margin-bottom:6px;">Tropical Storm Advisory &mdash; Miami-Dade County</div>
+      <div style="font-size:14px;opacity:0.9;line-height:1.5;">High winds (65mph) and heavy rain expected. Category 1 potential. Detected 9:14pm last night.</div>
     </div>
-    <nav class="sidebar-nav">
-      <div class="sidebar-section">Overview</div>
-      <a class="sidebar-link" href="dashboard.html">Dashboard</a>
-      <a class="sidebar-link" href="receptionist.html">Receptionist</a>
-      <a class="sidebar-link" href="ads.html">Ads</a>
-      <div class="sidebar-section">Tools</div>
-      <a class="sidebar-link active" href="storm.html">Storm Alerts<span class="link-badge">1</span></a>
-      <a class="sidebar-link" href="hiring.html">Hiring</a>
-      <a class="sidebar-link" href="commands.html">Text Commands</a>
-      <div class="sidebar-section">System</div>
-      <a class="sidebar-link" href="changelog.html">What Changed</a>
-      <a class="sidebar-link" href="settings.html">Settings</a>
-    </nav>
-    <div class="sidebar-footer">All Systems Active</div>
-  </aside>
+    <style>@keyframes alertPulse{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,0.3);}50%{box-shadow:0 0 0 8px rgba(220,38,38,0);}}</style>
 
-  <main class="main-content">
-    <div class="main-header">
-      <div class="page-title">Storm Alerts</div>
-      <div class="header-status" style="background:rgba(239,68,68,0.08);color:var(--red);">Storm Watch Active</div>
+    <!-- Impact Numbers -->
+    <div class="mini-stats" style="margin-bottom:20px;">
+      <div class="card card-flat">
+        <div class="mini-stat-label">Households in Impact Zone</div>
+        <div class="mini-stat-value">285K</div>
+      </div>
+      <div class="card card-flat">
+        <div class="mini-stat-label">Your Past Leads in Zone</div>
+        <div class="mini-stat-value">127</div>
+      </div>
+      <div class="card card-flat">
+        <div class="mini-stat-label">Past Customers in Zone</div>
+        <div class="mini-stat-value">34</div>
+      </div>
+      <div class="card card-flat">
+        <div class="mini-stat-label">Outreach Ready</div>
+        <div class="mini-stat-value">161</div>
+      </div>
     </div>
 
-    <div class="content-narrow">
-
-      <!-- Active Alert Banner -->
-      <div style="background:linear-gradient(135deg,#991B1B,#DC2626);color:white;border-radius:var(--radius);padding:20px;margin-bottom:20px;animation:alertPulse 3s infinite;">
-        <div style="display:inline-block;background:rgba(255,255,255,0.2);padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;margin-bottom:10px;">Active Storm Watch</div>
-        <div style="font-family:var(--serif);font-size:22px;margin-bottom:6px;">Tropical Storm Advisory &mdash; South Florida</div>
-        <div style="font-size:14px;opacity:0.9;line-height:1.5;">High winds (65mph) and heavy rain expected. Category 1 potential. Detected 9:14pm last night.</div>
+    <!-- Pending Approval -->
+    <div class="approval-box" style="margin-bottom:20px;">
+      <div class="approval-title">Pending Your Approval</div>
+      <p style="font-size:14px;line-height:1.6;color:var(--text);margin-bottom:8px;">We've prepared outreach for <strong>161 contacts</strong> (127 past leads + 34 past customers). Here's the message that will go out:</p>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin:12px 0;">
+        <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px;font-weight:500;">TEXT MESSAGE:</div>
+        <p style="font-size:14px;line-height:1.6;color:var(--text);">"Hi [Name], this is Coastal Shield Roofing. With the tropical storm heading toward Miami-Dade, there may be roof damage in your area. We're offering priority inspections for our past clients this week. Want us to get you on the schedule? Reply YES or call us anytime."</p>
       </div>
-      <style>@keyframes alertPulse{0%,100%{box-shadow:0 0 0 0 rgba(220,38,38,0.3);}50%{box-shadow:0 0 0 8px rgba(220,38,38,0);}}</style>
-
-      <!-- County Selection -->
-      <div class="section-title">Select Impacted Counties</div>
-      <div class="section-subtitle">Check the counties where you want to activate storm outreach</div>
-      <div class="card fade-in" style="margin-bottom:20px;">
-        <div style="display:grid;grid-template-columns:1fr 1fr;gap:0;">
-          <label style="display:flex;align-items:flex-start;gap:12px;padding:14px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);cursor:pointer;" onclick="updateTotals()">
-            <input type="checkbox" checked id="county-dade" style="accent-color:var(--accent);margin-top:2px;width:18px;height:18px;">
-            <div style="flex:1;">
-              <div style="font-weight:600;font-size:14px;color:var(--dark);">Miami-Dade County</div>
-              <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Wind gusts up to 65mph &bull; Heavy rain</div>
-              <div style="display:flex;gap:12px;margin-top:8px;">
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Households</span><div style="font-family:var(--mono);font-weight:500;">285K</div></div>
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Past Leads</span><div style="font-family:var(--mono);font-weight:500;">127</div></div>
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Customers</span><div style="font-family:var(--mono);font-weight:500;">34</div></div>
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Visited</span><div style="font-family:var(--mono);font-weight:500;">89</div></div>
-              </div>
-              <span class="badge badge-red" style="margin-top:8px;">High Impact</span>
-            </div>
-          </label>
-          <label style="display:flex;align-items:flex-start;gap:12px;padding:14px;border-bottom:1px solid var(--border);cursor:pointer;" onclick="updateTotals()">
-            <input type="checkbox" checked id="county-broward" style="accent-color:var(--accent);margin-top:2px;width:18px;height:18px;">
-            <div style="flex:1;">
-              <div style="font-weight:600;font-size:14px;color:var(--dark);">Broward County</div>
-              <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Wind gusts up to 55mph &bull; Moderate rain</div>
-              <div style="display:flex;gap:12px;margin-top:8px;">
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Households</span><div style="font-family:var(--mono);font-weight:500;">312K</div></div>
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Past Leads</span><div style="font-family:var(--mono);font-weight:500;">64</div></div>
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Customers</span><div style="font-family:var(--mono);font-weight:500;">18</div></div>
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Visited</span><div style="font-family:var(--mono);font-weight:500;">41</div></div>
-              </div>
-              <span class="badge badge-yellow" style="margin-top:8px;">Moderate</span>
-            </div>
-          </label>
-          <label style="display:flex;align-items:flex-start;gap:12px;padding:14px;border-right:1px solid var(--border);cursor:pointer;" onclick="updateTotals()">
-            <input type="checkbox" id="county-palm" style="accent-color:var(--accent);margin-top:2px;width:18px;height:18px;">
-            <div style="flex:1;">
-              <div style="font-weight:600;font-size:14px;color:var(--dark);">Palm Beach County</div>
-              <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Wind gusts up to 40mph &bull; Light rain</div>
-              <div style="display:flex;gap:12px;margin-top:8px;">
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Households</span><div style="font-family:var(--mono);font-weight:500;">198K</div></div>
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Past Leads</span><div style="font-family:var(--mono);font-weight:500;">38</div></div>
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Customers</span><div style="font-family:var(--mono);font-weight:500;">11</div></div>
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Visited</span><div style="font-family:var(--mono);font-weight:500;">26</div></div>
-              </div>
-              <span class="badge badge-gray" style="margin-top:8px;">Low Impact</span>
-            </div>
-          </label>
-          <label style="display:flex;align-items:flex-start;gap:12px;padding:14px;cursor:pointer;" onclick="updateTotals()">
-            <input type="checkbox" id="county-monroe" style="accent-color:var(--accent);margin-top:2px;width:18px;height:18px;">
-            <div style="flex:1;">
-              <div style="font-weight:600;font-size:14px;color:var(--dark);">Monroe County</div>
-              <div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Wind gusts up to 45mph &bull; Moderate rain</div>
-              <div style="display:flex;gap:12px;margin-top:8px;">
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Households</span><div style="font-family:var(--mono);font-weight:500;">42K</div></div>
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Past Leads</span><div style="font-family:var(--mono);font-weight:500;">12</div></div>
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Customers</span><div style="font-family:var(--mono);font-weight:500;">4</div></div>
-                <div><span style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Visited</span><div style="font-family:var(--mono);font-weight:500;">8</div></div>
-              </div>
-              <span class="badge badge-yellow" style="margin-top:8px;">Moderate</span>
-            </div>
-          </label>
-        </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin:12px 0;">
+        <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px;font-weight:500;">OUTBOUND CALL SCRIPT (for leads who don't respond to text):</div>
+        <p style="font-size:14px;line-height:1.6;color:var(--text);">"Hi [Name], this is Sarah from Coastal Shield Roofing. I'm calling because we have a tropical storm heading our way and we want to make sure your roof is ready. We're offering free inspections this week for homeowners in your area. Would you like us to come take a look?"</p>
       </div>
-
-      <!-- Outreach Controls -->
-      <div class="section-title">Outreach Controls</div>
-      <div class="approval-box" style="margin-bottom:20px;">
-        <div class="approval-title">Pending Your Approval</div>
-
-        <!-- Warm contacts summary -->
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin:12px 0;">
-          <div style="font-size:13px;font-weight:600;color:var(--dark);margin-bottom:10px;">Warm Contacts (selected counties)</div>
-          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;font-size:13px;">
-            <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted);">Past Customers</span><strong id="total-customers">52</strong></div>
-            <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted);">Past Leads</span><strong id="total-leads">191</strong></div>
-            <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted);">Visited (No Sale)</span><strong id="total-visited">130</strong></div>
-            <div style="display:flex;justify-content:space-between;"><span style="color:var(--text-muted);font-weight:600;">Total Warm</span><strong style="color:var(--accent);" id="total-warm">373</strong></div>
-          </div>
-        </div>
-
-        <!-- Outbound new homeowners -->
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin:12px 0;">
-          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;">
-            <div><div style="font-size:13px;font-weight:600;color:var(--dark);">Outbound to new homeowners in impacted areas</div><div style="font-size:12px;color:var(--text-muted);margin-top:2px;">Cold outreach to homeowners you haven't contacted before</div></div>
-            <div class="toggle" onclick="this.classList.toggle('off');document.getElementById('ob-ctrl').style.display=this.classList.contains('off')?'none':'block';"></div>
-          </div>
-          <div id="ob-ctrl">
-            <div style="font-size:12px;color:var(--text-muted);margin-bottom:8px;"><span id="total-hh">597K</span> total households in selected areas. How many new contacts?</div>
-            <div style="display:flex;align-items:center;gap:12px;">
-              <input type="range" min="500" max="600000" value="5000" step="500" id="ob-slider" oninput="updateSlider()" style="flex:1;accent-color:var(--accent);">
-              <div style="background:var(--bg);padding:8px 14px;border-radius:var(--radius-sm);min-width:90px;text-align:center;"><div style="font-family:var(--mono);font-size:18px;font-weight:500;color:var(--dark);" id="ob-count">5,000</div><div style="font-size:10px;color:var(--text-muted);">contacts</div></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Message preview -->
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin:12px 0;">
-          <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px;font-weight:600;text-transform:uppercase;">Text Message</div>
-          <p style="font-size:14px;line-height:1.6;color:var(--text);">"Hi [Name], this is Coastal Shield Roofing. With the tropical storm heading toward your area, there may be roof damage. We're offering priority inspections this week. Want us to get you on the schedule? Reply YES or call us anytime."</p>
-        </div>
-        <div style="background:var(--white);border:1px solid var(--border);border-radius:var(--radius-sm);padding:14px;margin:12px 0;">
-          <div style="font-size:12px;color:var(--text-muted);margin-bottom:6px;font-weight:600;text-transform:uppercase;">Call Script (for non-responders)</div>
-          <p style="font-size:14px;line-height:1.6;color:var(--text);">"Hi [Name], this is Sarah from Coastal Shield Roofing. I'm calling because we have a tropical storm heading our way and we want to make sure your roof is ready. We're offering free inspections this week. Would you like us to come take a look?"</p>
-        </div>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;">
-          <button class="approval-btn approve" onclick="this.textContent='Approved!';this.style.background='#065F46';">Approve &amp; Send</button>
-          <button class="approval-btn edit">Edit Messages First</button>
-        </div>
-        <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">Nothing goes out until you approve it.</p>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="approval-btn approve" onclick="this.textContent='Approved!';this.style.background='#065F46';">Approve &amp; Send</button>
+        <button class="approval-btn edit">Edit Message First</button>
       </div>
-
-      <!-- Outreach Strategy -->
-      <div class="section-title">Outreach Strategy</div>
-      <div class="card fade-in">
-        <p style="font-size:14px;color:var(--text-muted);margin-bottom:14px;">Contacts reached in waves, warmest first:</p>
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:14px;">
-          <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);text-align:center;"><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Wave 1</div><div style="font-family:var(--mono);font-size:22px;font-weight:500;color:var(--dark);" id="wave1">52</div><div style="font-size:11px;color:var(--green);font-weight:500;">Past Customers</div><div style="font-size:10px;color:var(--text-muted);margin-top:2px;">Immediately</div></div>
-          <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);text-align:center;"><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Wave 2</div><div style="font-family:var(--mono);font-size:22px;font-weight:500;color:var(--dark);" id="wave2">321</div><div style="font-size:11px;color:var(--blue);font-weight:500;">Leads + Visited</div><div style="font-size:10px;color:var(--text-muted);margin-top:2px;">2 hours later</div></div>
-          <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);text-align:center;"><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;">Wave 3</div><div style="font-family:var(--mono);font-size:22px;font-weight:500;color:var(--dark);" id="wave3">5,000</div><div style="font-size:11px;color:var(--accent);font-weight:500;">New Homeowners</div><div style="font-size:10px;color:var(--text-muted);margin-top:2px;">Next morning</div></div>
-        </div>
-      </div>
-
-      <!-- What Happens After Approval -->
-      <div class="section-title">What Happens After You Approve</div>
-      <div class="card fade-in">
-        <div class="timeline">
-          <div class="timeline-step"><div class="timeline-dot pending"></div><div class="timeline-time">Immediately</div><div class="timeline-title">Texts sent to <span id="tl-cust">52</span> past customers</div><div class="timeline-desc">They already know and trust you. Highest response rate.</div></div>
-          <div class="timeline-step"><div class="timeline-dot pending"></div><div class="timeline-time">2 hours later</div><div class="timeline-title">Texts sent to <span id="tl-warm">321</span> past leads + visited homes</div><div class="timeline-desc">Storm gives them a reason to re-engage.</div></div>
-          <div class="timeline-step"><div class="timeline-dot pending"></div><div class="timeline-time">Next morning, 9am</div><div class="timeline-title">Follow-up calls + outbound to <span id="tl-new">5,000</span> new homeowners</div><div class="timeline-desc">Receptionist calls warm non-responders. Outbound team begins calling new homeowners in selected counties.</div></div>
-          <div class="timeline-step"><div class="timeline-dot pending"></div><div class="timeline-time">48 hours after storm</div><div class="timeline-title">Second text to all remaining contacts</div><div class="timeline-desc">"The storm has passed. If you noticed any damage, we still have inspection slots this week."</div></div>
-          <div class="timeline-step"><div class="timeline-dot pending"></div><div class="timeline-time">Ongoing</div><div class="timeline-title">Results tracked in dashboard</div><div class="timeline-desc">Every response, booking, and job tracked &mdash; see exactly how many jobs came from this storm.</div></div>
-        </div>
-      </div>
-
-      <!-- Past Storm Results -->
-      <div class="section-title">Past Storm Results</div>
-      <div class="card fade-in">
-        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border);">
-          <div><div style="font-weight:600;font-size:14px;">Tropical Storm &mdash; Broward</div><div style="font-size:12px;color:var(--text-muted);">May 14 &bull; 312K households</div></div>
-          <div style="text-align:right;"><div style="font-family:var(--mono);font-weight:500;font-size:16px;color:var(--dark);">14 jobs</div><div style="font-size:11px;color:var(--text-muted);">from 89 contacted</div></div>
-        </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border);">
-          <div><div style="font-weight:600;font-size:14px;">High Winds &mdash; Miami-Dade</div><div style="font-size:12px;color:var(--text-muted);">Apr 28 &bull; 185K households</div></div>
-          <div style="text-align:right;"><div style="font-family:var(--mono);font-weight:500;font-size:16px;color:var(--dark);">8 jobs</div><div style="font-size:11px;color:var(--text-muted);">from 52 contacted</div></div>
-        </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;">
-          <div><div style="font-weight:600;font-size:14px;">Hail &mdash; Palm Beach</div><div style="font-size:12px;color:var(--text-muted);">Mar 22 &bull; 94K households</div></div>
-          <div style="text-align:right;"><div style="font-family:var(--mono);font-weight:500;font-size:16px;color:var(--dark);">11 jobs</div><div style="font-size:11px;color:var(--text-muted);">from 67 contacted</div></div>
-        </div>
-      </div>
-
+      <p style="font-size:12px;color:var(--text-muted);margin-top:10px;">Nothing goes out until you approve it. You can also edit the message before sending.</p>
     </div>
-  </main>
-</div>
 
-<script>
-  const counties = {
-    dade: {hh:285000, leads:127, customers:34, visited:89},
-    broward: {hh:312000, leads:64, customers:18, visited:41},
-    palm: {hh:198000, leads:38, customers:11, visited:26},
-    monroe: {hh:42000, leads:12, customers:4, visited:8}
-  };
+    <!-- Reactivation Campaign -->
+    <div class="section-title">Reactivation Campaign</div>
+    <div class="card fade-in">
+      <p style="font-size:14px;color:var(--text-muted);margin-bottom:14px;">Your <strong>34 past customers</strong> already trust you. They're the fastest path to booked jobs after a storm:</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:14px;">
+        <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);text-align:center;">
+          <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Past Customers</div>
+          <div style="font-size:22px;font-weight:700;color:var(--dark);">34</div>
+          <div style="font-size:11px;color:var(--green);font-weight:500;">Priority outreach</div>
+        </div>
+        <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);text-align:center;">
+          <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;">Past Leads (never closed)</div>
+          <div style="font-size:22px;font-weight:700;color:var(--dark);">127</div>
+          <div style="font-size:11px;color:var(--blue);font-weight:500;">Second-wave outreach</div>
+        </div>
+      </div>
+      <p style="font-size:13px;color:var(--text-muted);line-height:1.5;">Past customers get contacted first (they're warm). Past leads get contacted 2 hours later. This two-wave approach fills your schedule faster.</p>
+    </div>
 
-  function fmt(n) { return n.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ','); }
-  function fmtK(n) { return n >= 1000 ? Math.round(n/1000) + 'K' : n; }
+    <!-- Timeline -->
+    <div class="section-title">What Happens After You Approve</div>
+    <div class="card fade-in">
+      <div class="timeline">
+        <div class="timeline-step">
+          <div class="timeline-dot pending"></div>
+          <div class="timeline-time">Immediately after approval</div>
+          <div class="timeline-title">Texts sent to 34 past customers</div>
+          <div class="timeline-desc">Priority contacts. They already know and trust you.</div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot pending"></div>
+          <div class="timeline-time">2 hours later</div>
+          <div class="timeline-title">Texts sent to 127 past leads</div>
+          <div class="timeline-desc">People who called or filled out a form before but didn't book. Storm damage gives them a reason to re-engage.</div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot pending"></div>
+          <div class="timeline-time">Next morning, 9am</div>
+          <div class="timeline-title">Follow-up calls to non-responders</div>
+          <div class="timeline-desc">Receptionist calls anyone who didn't reply to the text. Warm, helpful tone &mdash; not pushy.</div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot pending"></div>
+          <div class="timeline-time">48 hours after storm passes</div>
+          <div class="timeline-title">Second text to remaining contacts</div>
+          <div class="timeline-desc">"The storm has passed. If you noticed any damage, we still have inspection slots open this week."</div>
+        </div>
+        <div class="timeline-step">
+          <div class="timeline-dot pending"></div>
+          <div class="timeline-time">Ongoing</div>
+          <div class="timeline-title">Results tracked in your dashboard</div>
+          <div class="timeline-desc">Every response, booking, and job is tracked so you can see exactly how many jobs came from this storm.</div>
+        </div>
+      </div>
+    </div>
 
-  function updateTotals() {
-    setTimeout(() => {
-      let hh=0, leads=0, customers=0, visited=0;
-      ['dade','broward','palm','monroe'].forEach(id => {
-        if (document.getElementById('county-'+id).checked) {
-          const c = counties[id];
-          hh += c.hh; leads += c.leads; customers += c.customers; visited += c.visited;
-        }
-      });
-      document.getElementById('total-customers').textContent = customers;
-      document.getElementById('total-leads').textContent = leads;
-      document.getElementById('total-visited').textContent = visited;
-      document.getElementById('total-warm').textContent = customers + leads + visited;
-      document.getElementById('total-hh').textContent = fmtK(hh);
-      document.getElementById('wave1').textContent = customers;
-      document.getElementById('wave2').textContent = leads + visited;
-      document.getElementById('tl-cust').textContent = customers;
-      document.getElementById('tl-warm').textContent = leads + visited;
+    <!-- Past Storm Results -->
+    <div class="section-title">Past Storm Results</div>
+    <div class="card fade-in">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border);">
+        <div><div style="font-weight:600;font-size:14px;">Tropical Storm &mdash; Broward County</div><div style="font-size:12px;color:var(--text-muted);">May 14, 2026 &bull; 312K households impacted</div></div>
+        <div style="text-align:right;"><div style="font-weight:700;font-size:16px;color:var(--dark);">14 jobs</div><div style="font-size:11px;color:var(--text-muted);">from 89 contacted</div></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;border-bottom:1px solid var(--border);">
+        <div><div style="font-weight:600;font-size:14px;">High Winds &mdash; Miami-Dade</div><div style="font-size:12px;color:var(--text-muted);">April 28, 2026 &bull; 185K households impacted</div></div>
+        <div style="text-align:right;"><div style="font-weight:700;font-size:16px;color:var(--dark);">8 jobs</div><div style="font-size:11px;color:var(--text-muted);">from 52 contacted</div></div>
+      </div>
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:14px 0;">
+        <div><div style="font-weight:600;font-size:14px;">Hail &mdash; Palm Beach County</div><div style="font-size:12px;color:var(--text-muted);">March 22, 2026 &bull; 94K households impacted</div></div>
+        <div style="text-align:right;"><div style="font-weight:700;font-size:16px;color:var(--dark);">11 jobs</div><div style="font-size:11px;color:var(--text-muted);">from 67 contacted</div></div>
+      </div>
+    </div>
 
-      const slider = document.getElementById('ob-slider');
-      slider.max = hh;
-      slider.step = hh > 100000 ? 1000 : 500;
-      if (parseInt(slider.value) > hh) slider.value = hh;
-      updateSlider();
-    }, 50);
-  }
+  </div>
 
-  function updateSlider() {
-    const val = parseInt(document.getElementById('ob-slider').value);
-    document.getElementById('ob-count').textContent = fmt(val);
-    document.getElementById('wave3').textContent = fmt(val);
-    document.getElementById('tl-new').textContent = fmt(val);
-  }
-
-  // Initialize on page load so slider max matches checked counties
-  updateTotals();
-</script>
-
-<!-- v4 - sidebar nav, county selection, dynamic slider, outbound in timeline -->
+<!-- v2 - storm demo -->
 </body>
 </html>

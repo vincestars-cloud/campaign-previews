@@ -4,8 +4,30 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Text Commands - Your Growth Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    :root { --accent: #C75B12; --accent-light: #FFF4ED; --bg: #F8F9FA; --white: #FFFFFF; --dark: #1A1A1A; --text: #333; --text-muted: #777; --border: #E5E7EB; --green: #22C55E; --red: #EF4444; --blue: #007AFF; --serif: 'DM Serif Display', serif; --sans: 'Inter', sans-serif; }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--text); }
+
+    .topbar { background: var(--white); border-bottom: 1px solid var(--border); padding: 14px 20px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+    .topbar-brand { font-family: var(--serif); font-size: 20px; color: var(--dark); }
+    .topbar-brand span { color: var(--accent); }
+    .topbar-status { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--green); font-weight: 500; }
+    .topbar-status::before { content: ''; width: 8px; height: 8px; background: var(--green); border-radius: 50%; animation: pulse-dot 2s infinite; }
+    @keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+    .nav-tabs { background: var(--white); border-bottom: 1px solid var(--border); display: flex; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .nav-tabs::-webkit-scrollbar { display: none; }
+    .nav-tab { padding: 12px 18px; font-size: 13px; font-weight: 500; color: var(--text-muted); white-space: nowrap; text-decoration: none; border-bottom: 2px solid transparent; transition: all 0.2s; }
+    .nav-tab:hover { color: var(--text); }
+    .nav-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    .content { padding: 20px; max-width: 600px; margin: 0 auto; }
+    .section-title { font-family: var(--serif); font-size: 20px; margin-bottom: 14px; color: var(--dark); }
+    .card { background: var(--white); border-radius: 12px; padding: 18px; border: 1px solid var(--border); margin-bottom: 16px; }
+
+    /* ── Phone mockup ── */
     .phone-frame {
       background: var(--white);
       border: 1px solid var(--border);
@@ -13,10 +35,10 @@
       max-width: 400px;
       margin: 0 auto 24px;
       overflow: hidden;
-      box-shadow: var(--shadow-lg);
+      box-shadow: 0 4px 24px rgba(0,0,0,0.08);
     }
     .phone-header {
-      background: var(--bg);
+      background: #F2F2F7;
       padding: 12px 16px;
       display: flex;
       align-items: center;
@@ -35,9 +57,17 @@
       font-weight: 700;
       font-size: 14px;
     }
-    .phone-contact { font-weight: 600; font-size: 15px; color: var(--dark); }
-    .phone-contact-sub { font-size: 11px; color: var(--text-muted); }
-    .chat-area {
+    .phone-contact {
+      font-weight: 600;
+      font-size: 15px;
+      color: var(--dark);
+    }
+    .phone-contact-sub {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    .chat-body {
       padding: 16px;
       min-height: 300px;
       background: var(--white);
@@ -45,50 +75,51 @@
       flex-direction: column;
       gap: 10px;
     }
-    .msg {
+
+    .chat-bubble {
       max-width: 80%;
       padding: 10px 14px;
       font-size: 14px;
       line-height: 1.5;
       animation: bubbleIn 0.4s ease both;
     }
-    .msg.sent {
-      background: var(--imessage-blue);
+    .chat-bubble.sent {
+      background: var(--blue);
       color: white;
       border-radius: 18px 18px 4px 18px;
       align-self: flex-end;
     }
-    .msg.recv {
+    .chat-bubble.received {
       background: #E9E9EB;
       color: #1A1A1A;
       border-radius: 18px 18px 18px 4px;
       align-self: flex-start;
     }
-    .msg-time {
+    .chat-time {
       font-size: 10px;
       color: var(--text-muted);
       text-align: center;
       padding: 4px 0;
     }
-    .typing-dots {
+    .chat-typing {
       align-self: flex-start;
       background: #E9E9EB;
       border-radius: 18px;
       padding: 10px 16px;
       display: none;
     }
-    .typing-dots span {
+    .chat-typing span {
       display: inline-block;
       width: 7px;
       height: 7px;
       background: #999;
       border-radius: 50%;
       margin: 0 1px;
-      animation: dot 1.4s infinite;
+      animation: typingDot 1.4s infinite;
     }
-    .typing-dots span:nth-child(2) { animation-delay: 0.2s; }
-    .typing-dots span:nth-child(3) { animation-delay: 0.4s; }
-    @keyframes dot {
+    .chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+    .chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes typingDot {
       0%, 60%, 100% { transform: translateY(0); opacity: 0.4; }
       30% { transform: translateY(-4px); opacity: 1; }
     }
@@ -96,13 +127,15 @@
       from { opacity: 0; transform: translateY(8px) scale(0.95); }
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
+
+    /* ── Input bar ── */
     .phone-input {
       display: flex;
       align-items: center;
       gap: 8px;
       padding: 10px 14px;
       border-top: 1px solid var(--border);
-      background: var(--bg);
+      background: #F2F2F7;
     }
     .phone-input input {
       flex: 1;
@@ -114,12 +147,12 @@
       background: var(--white);
       outline: none;
     }
-    .phone-input input:focus { border-color: var(--imessage-blue); }
+    .phone-input input:focus { border-color: var(--blue); }
     .send-btn {
       width: 36px;
       height: 36px;
       border-radius: 50%;
-      background: var(--imessage-blue);
+      background: var(--blue);
       border: none;
       color: white;
       font-size: 18px;
@@ -128,6 +161,8 @@
       align-items: center;
       justify-content: center;
     }
+
+    /* ── Example commands ── */
     .example-grid {
       display: grid;
       grid-template-columns: 1fr;
@@ -136,11 +171,10 @@
     @media (min-width: 640px) { .example-grid { grid-template-columns: 1fr 1fr; } }
     .example-card {
       border: 1px solid var(--border);
-      border-radius: var(--radius-sm);
+      border-radius: 10px;
       padding: 14px;
       cursor: pointer;
       transition: all 0.2s;
-      background: var(--white);
     }
     .example-card:hover {
       border-color: var(--accent);
@@ -149,7 +183,7 @@
     .example-you {
       font-size: 13px;
       font-weight: 600;
-      color: var(--imessage-blue);
+      color: var(--blue);
       margin-bottom: 4px;
     }
     .example-response {
@@ -157,12 +191,15 @@
       color: var(--text-muted);
       line-height: 1.4;
     }
+
+    .fade-in { animation: fadeIn 0.6s ease both; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
   </style>
 </head>
 <body>
 
   <div class="topbar">
-    <div class="topbar-brand">Coastal Shield <span>Roofing</span></div>
+    <div class="topbar-brand">Summit Ridge <span>Roofing</span></div>
     <div class="topbar-status">System Running</div>
   </div>
 
@@ -175,7 +212,7 @@
     <a class="nav-tab active" href="commands.html">Text Commands</a>
   </nav>
 
-  <div style="padding:20px;max-width:600px;margin:0 auto;">
+  <div class="content">
 
     <p style="font-size:14px;color:var(--text-muted);margin-bottom:20px;line-height:1.6;">
       You control your entire system by texting. No apps to learn. No dashboards to log into. Just text what you need in plain English from your phone &mdash; even from a job site.
@@ -184,14 +221,15 @@
     <!-- Phone Mockup -->
     <div class="phone-frame">
       <div class="phone-header">
-        <div class="phone-avatar">CS</div>
+        <div class="phone-avatar">SR</div>
         <div>
           <div class="phone-contact">My Growth System</div>
           <div class="phone-contact-sub">Text any command</div>
         </div>
       </div>
-      <div class="chat-area" id="chatArea">
-        <div class="msg-time">Today, 2:15 PM</div>
+      <div class="chat-body" id="chatBody">
+        <div class="chat-time">Today, 2:15 PM</div>
+        <!-- Messages get added here -->
       </div>
       <div class="phone-input">
         <input type="text" id="chatInput" placeholder="Type a command..." autocomplete="off">
@@ -215,23 +253,23 @@
         <div class="example-you">"Only book inspections Tue-Thu"</div>
         <div class="example-response">Change your schedule on the fly</div>
       </div>
-      <div class="example-card" onclick="runExample('What did we change this week?', '3 changes this week: (1) Paused one Google ad that was getting clicks but no calls — moved budget to your top performer. (2) Added before/after photos from the Coral Gables job to Facebook ads. (3) Updated the receptionist to ask about insurance claims earlier. Full details in your change log.')">
+      <div class="example-card" onclick="runExample('What did we change this week?', '3 changes this week: (1) Paused one Google ad that was getting clicks but no calls &mdash; moved budget to your top performer. (2) Added before/after photos from the Kennesaw job to Facebook ads. (3) Updated the receptionist to ask about insurance claims earlier. Full details in your change log.')">
         <div class="example-you">"What did we change this week?"</div>
         <div class="example-response">Get a summary of all optimizations</div>
       </div>
-      <div class="example-card" onclick="runExample('Stop calling 305-555-0142', 'Done. That number (305-555-0142) has been added to the do-not-contact list. We won\'t call, text, or email them again.')">
-        <div class="example-you">"Stop calling 305-555-0142"</div>
+      <div class="example-card" onclick="runExample('Stop calling 770-555-0142', 'Done. That number (770-555-0142) has been added to the do-not-contact list. We won\'t call, text, or email them again.')">
+        <div class="example-you">"Stop calling 770-555-0142"</div>
         <div class="example-response">Remove someone from outreach instantly</div>
       </div>
-      <div class="example-card" onclick="runExample('I need 2 more canvassers in Miami', 'On it. I\'ll post the job on Indeed, ZipRecruiter, Facebook Jobs, and LinkedIn today. I\'ll screen applicants using the same questions from your last hire. You\'ll see the top candidates in your hiring tab within 3-5 days. Anything specific you want me to ask?')">
-        <div class="example-you">"I need 2 more canvassers"</div>
+      <div class="example-card" onclick="runExample('I need 2 more canvassers in Miami', 'On it. I\'ll post the job on Indeed, ZipRecruiter, and Facebook Jobs today. I\'ll screen applicants using the same questions from your last hire. You\'ll see the top candidates in your hiring tab within 3-5 days. Anything specific you want me to ask?')">
+        <div class="example-you">"I need 2 more canvassers in Miami"</div>
         <div class="example-response">Kick off hiring with a text</div>
       </div>
       <div class="example-card" onclick="runExample('Raise the minimum job size to $5,000', 'Updated. Your receptionist will now only book inspections for jobs estimated at $5,000 or higher. Smaller jobs will be politely declined with a referral to another contractor. Want me to adjust any other qualifying criteria?')">
-        <div class="example-you">"Raise minimum job size to $5K"</div>
+        <div class="example-you">"Raise minimum job size to $5,000"</div>
         <div class="example-response">Change qualifying criteria on the spot</div>
       </div>
-      <div class="example-card" onclick="runExample('Send me the recording from the last call', 'Here\'s the recording from your most recent call: Carlos R., today at 11:42am, 2 min 18 sec. He needs a full roof replacement in Coral Gables. Insurance claim. Receptionist booked him for Thursday 2pm. [Recording attached]')">
+      <div class="example-card" onclick="runExample('Send me the recording from the last call', 'Here\'s the recording from your most recent call: Robert M., today at 11:42am, 2 min 18 sec. He needs a full roof replacement in Marietta. Receptionist booked him for Thursday 2pm. [Recording attached]')">
         <div class="example-you">"Send me the last call recording"</div>
         <div class="example-response">Listen to any call from your phone</div>
       </div>
@@ -240,50 +278,61 @@
   </div>
 
   <script>
-    const chatArea = document.getElementById('chatArea');
+    const chatBody = document.getElementById('chatBody');
     const chatInput = document.getElementById('chatInput');
 
-    function addMsg(text, type) {
-      const el = document.createElement('div');
-      el.className = `msg ${type}`;
-      el.innerHTML = text;
-      chatArea.appendChild(el);
-      chatArea.scrollTop = chatArea.scrollHeight;
+    function addBubble(text, type, delay) {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          const bubble = document.createElement('div');
+          bubble.className = `chat-bubble ${type}`;
+          bubble.innerHTML = text;
+          chatBody.appendChild(bubble);
+          chatBody.scrollTop = chatBody.scrollHeight;
+          resolve();
+        }, delay);
+      });
     }
 
     function showTyping() {
-      const t = document.createElement('div');
-      t.className = 'typing-dots';
-      t.id = 'typing';
-      t.innerHTML = '<span></span><span></span><span></span>';
-      t.style.display = 'block';
-      chatArea.appendChild(t);
-      chatArea.scrollTop = chatArea.scrollHeight;
+      const typing = document.createElement('div');
+      typing.className = 'chat-typing';
+      typing.id = 'typingIndicator';
+      typing.innerHTML = '<span></span><span></span><span></span>';
+      typing.style.display = 'block';
+      chatBody.appendChild(typing);
+      chatBody.scrollTop = chatBody.scrollHeight;
     }
 
     function hideTyping() {
-      const t = document.getElementById('typing');
+      const t = document.getElementById('typingIndicator');
       if (t) t.remove();
     }
 
     async function runExample(sent, received) {
-      addMsg(sent, 'sent');
+      await addBubble(sent, 'sent', 0);
       showTyping();
       await new Promise(r => setTimeout(r, 1500));
       hideTyping();
-      addMsg(received, 'recv');
+      await addBubble(received, 'received', 0);
     }
 
     function sendMessage() {
       const text = chatInput.value.trim();
       if (!text) return;
       chatInput.value = '';
-      addMsg(text, 'sent');
-      showTyping();
-      setTimeout(() => {
-        hideTyping();
-        addMsg("Got it. I'll take care of that and update you when it's done. Anything else?", 'recv');
-      }, 1500);
+
+      const responses = {
+        default: "Got it. I'll take care of that and update you when it's done. Anything else?"
+      };
+
+      addBubble(text, 'sent', 0).then(() => {
+        showTyping();
+        setTimeout(() => {
+          hideTyping();
+          addBubble(responses.default, 'received', 0);
+        }, 1500);
+      });
     }
 
     chatInput.addEventListener('keypress', e => {
@@ -291,6 +340,6 @@
     });
   </script>
 
-<!-- v2 - commands demo -->
+<!-- v1 - commands demo -->
 </body>
 </html>

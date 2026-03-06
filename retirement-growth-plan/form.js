@@ -101,7 +101,7 @@
     html += '<div class="form-step-label" style="margin-bottom:4px;">Based on your answers, you may qualify.</div>';
     html += '<p style="color:#6b7280;font-size:0.875rem;margin:0;">Enter your details and a Licensed Growth Plan Advisor will reach out with a personalized breakdown.</p>';
     html += '</div>';
-    html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;" class="cf-name-grid">';
+    html += '<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">';
     html += '<input type="text" id="cf-first" placeholder="First name" style="padding:12px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:0.9375rem;font-family:inherit;outline:none;" onfocus="this.style.borderColor=\'#c8963e\'" onblur="this.style.borderColor=\'#e5e7eb\'">';
     html += '<input type="text" id="cf-last" placeholder="Last name" style="padding:12px 16px;border:2px solid #e5e7eb;border-radius:10px;font-size:0.9375rem;font-family:inherit;outline:none;" onfocus="this.style.borderColor=\'#c8963e\'" onblur="this.style.borderColor=\'#e5e7eb\'">';
     html += '</div>';

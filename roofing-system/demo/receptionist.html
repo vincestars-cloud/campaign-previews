@@ -8,76 +8,171 @@
 </head>
 <body>
 
-  <div class="app-layout">
-    <aside class="sidebar">
-      <div class="sidebar-brand">
-        <div class="sidebar-brand-name">Coastal Shield <span>Roofing</span></div>
-        <div class="sidebar-brand-sub">Growth Dashboard</div>
-      </div>
-      <nav class="sidebar-nav">
-        <div class="sidebar-section">Overview</div>
-        <a class="sidebar-link" href="dashboard.html">Dashboard</a>
-        <a class="sidebar-link active" href="receptionist.html">Receptionist</a>
-        <a class="sidebar-link" href="ads.html">Ads</a>
-        <div class="sidebar-section">Tools</div>
-        <a class="sidebar-link" href="storm.html">Storm Alerts<span class="link-badge">1</span></a>
-        <a class="sidebar-link" href="hiring.html">Hiring</a>
-        <a class="sidebar-link" href="commands.html">Text Commands</a>
-        <div class="sidebar-section">System</div>
-        <a class="sidebar-link" href="changelog.html">What Changed</a>
-        <a class="sidebar-link" href="settings.html">Settings</a>
-      </nav>
-      <div class="sidebar-footer">All Systems Active</div>
-    </aside>
-
-    <main class="main-content">
-      <div class="main-header">
-        <div class="page-title">Receptionist</div>
-        <div class="header-status" style="display:flex;align-items:center;gap:6px;"><span style="width:8px;height:8px;border-radius:50%;background:var(--green);display:inline-block;"></span> Active 24/7</div>
-      </div>
-
-      <div class="content" style="max-width:900px;">
-
-        <div class="mini-stats">
-          <div class="card card-flat"><div class="mini-stat-label">Calls Today</div><div class="mini-stat-value" style="font-family:var(--mono);">9</div></div>
-          <div class="card card-flat"><div class="mini-stat-label">Booked</div><div class="mini-stat-value" style="font-family:var(--mono);">4</div></div>
-          <div class="card card-flat"><div class="mini-stat-label">Follow-Ups</div><div class="mini-stat-value" style="font-family:var(--mono);">6</div></div>
-          <div class="card card-flat"><div class="mini-stat-label">Reviews Sent</div><div class="mini-stat-value" style="font-family:var(--mono);">2</div></div>
-        </div>
-
-        <div class="insight-box" style="margin-bottom:20px;">
-          <div class="insight-title">24/7 Coverage</div>
-          <div class="insight-text">Every call is answered &mdash; nights, weekends, holidays. No voicemail. No missed opportunities. Click any lead below to see the full conversation, transcript, and recording.</div>
-        </div>
-
-        <!-- Lead Table -->
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
-          <div class="section-title" style="margin-bottom:0;">All Leads (87)</div>
-        </div>
-
-        <div class="card" style="padding:0;overflow-x:auto;">
-          <table class="data-table" style="width:100%;">
-            <thead>
-              <tr>
-                <th>Name</th>
-                <th>Source</th>
-                <th>Status</th>
-                <th>Appointment</th>
-                <th>Date</th>
-              </tr>
-            </thead>
-            <tbody id="lead-table-body"></tbody>
-          </table>
-        </div>
-        <div style="text-align:center;padding:14px;font-size:12px;color:var(--text-muted);">Showing 15 of 87 leads &mdash; <a href="#" style="color:var(--blue);" onclick="return false;">View all</a></div>
-
-      </div>
-    </main>
+  <div class="topbar">
+    <div class="topbar-brand">Coastal Shield <span>Roofing</span></div>
+    <div class="topbar-status">Receptionist Active 24/7</div>
   </div>
 
-  <!-- Lead Detail Modal -->
+  <nav class="nav-tabs">
+    <a class="nav-tab" href="dashboard.html">Dashboard</a>
+    <a class="nav-tab active" href="receptionist.html">Receptionist</a>
+    <a class="nav-tab" href="storm.html">Storm Alerts</a>
+    <a class="nav-tab" href="hiring.html">Hiring</a>
+    <a class="nav-tab" href="changelog.html">What Changed</a>
+    <a class="nav-tab" href="commands.html">Text Commands</a>
+  </nav>
+
+  <div class="content-narrow">
+
+    <div class="mini-stats">
+      <div class="card card-flat"><div class="mini-stat-label">Calls Answered Today</div><div class="mini-stat-value">9</div></div>
+      <div class="card card-flat"><div class="mini-stat-label">Appointments Booked</div><div class="mini-stat-value">4</div></div>
+      <div class="card card-flat"><div class="mini-stat-label">Follow-Ups Active</div><div class="mini-stat-value">6</div></div>
+      <div class="card card-flat"><div class="mini-stat-label">Reviews Requested</div><div class="mini-stat-value">2</div></div>
+    </div>
+
+    <div class="insight-box" style="margin-bottom:20px;">
+      <div class="insight-title">24/7 Coverage</div>
+      <div class="insight-text">Every call is answered &mdash; nights, weekends, while you're on a roof. No voicemail. No missed opportunities. Click any lead below to see the full conversation and recording.</div>
+    </div>
+
+    <!-- View Toggle -->
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+      <div class="section-title" style="margin-bottom:0;">All Leads (87)</div>
+      <div style="display:flex;gap:6px;">
+        <button class="period-pill active" id="btn-table" onclick="showView('table')">Table</button>
+        <button class="period-pill" id="btn-calls" onclick="showView('calls')">Call Details</button>
+      </div>
+    </div>
+
+    <!-- ═══ TABLE VIEW (default) ═══ -->
+    <div id="view-table">
+      <div class="card" style="padding:0;overflow-x:auto;">
+        <table style="width:100%;border-collapse:collapse;font-size:13px;">
+          <thead>
+            <tr style="background:var(--bg);text-align:left;">
+              <th style="padding:12px 14px;font-weight:600;font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.03em;">Name</th>
+              <th style="padding:12px 14px;font-weight:600;font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.03em;">Source</th>
+              <th style="padding:12px 14px;font-weight:600;font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.03em;">Status</th>
+              <th style="padding:12px 14px;font-weight:600;font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.03em;">Date</th>
+              <th style="padding:12px 14px;font-weight:600;font-size:12px;color:var(--text-muted);text-transform:uppercase;letter-spacing:0.03em;">Details</th>
+            </tr>
+          </thead>
+          <tbody id="lead-table-body">
+          </tbody>
+        </table>
+      </div>
+      <div style="text-align:center;padding:14px;font-size:12px;color:var(--text-muted);">Showing 15 of 87 leads &mdash; <a href="#" style="color:var(--blue);" onclick="return false;">View all</a></div>
+    </div>
+
+    <!-- ═══ CALL DETAIL VIEW ═══ -->
+    <div id="view-calls" style="display:none;">
+
+      <!-- Call 1 -->
+      <div class="card fade-in">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <strong style="font-size:15px;">Carlos R. &mdash; Coral Gables</strong>
+          <span class="badge badge-green">Booked</span>
+        </div>
+        <div style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">Today, 11:42am &bull; 2 min 18 sec &bull; (305) 555-0194 &bull; <a href="#" style="color:var(--blue);" onclick="return false;">Play recording</a></div>
+        <div style="font-size:12px;color:var(--text-muted);background:var(--bg);padding:8px 12px;border-radius:8px;margin-bottom:14px;">You were on a job site in Kendall when this call came in. Receptionist answered on the first ring.</div>
+        <div class="chat-body" style="border-radius:var(--radius-sm);border:1px solid var(--border);padding:14px;">
+          <div class="bubble-row caller"><div class="bubble-label">Carlos</div><div class="bubble caller-msg">Hi, we had bad wind damage from the storm last week. Some tiles blew off and I think there's a leak in the master bedroom.</div></div>
+          <div class="bubble-row system"><div class="bubble-label">Receptionist</div><div class="bubble system-msg">I'm sorry to hear about the damage, Carlos. I can get one of our inspectors out to you quickly. Can I get your address?</div></div>
+          <div class="bubble-row caller"><div class="bubble caller-msg">Sure, it's 812 Alhambra Circle, Coral Gables.</div></div>
+          <div class="bubble-row system"><div class="bubble system-msg">Got it. We have an opening this Thursday at 2pm. Our inspector will check the tiles, look for any water damage, and give you a full assessment on the spot. Does that work?</div></div>
+          <div class="bubble-row caller"><div class="bubble caller-msg">Thursday at 2 is perfect.</div></div>
+          <div class="bubble-row system"><div class="bubble system-msg">Great. I'll text you a confirmation right now. Is this an insurance claim or are you paying out of pocket?</div></div>
+          <div class="bubble-row caller"><div class="bubble caller-msg">Insurance. I already filed the claim.</div></div>
+          <div class="bubble-row system"><div class="bubble system-msg">Perfect, our team handles insurance inspections regularly. We'll bring the documentation your adjuster will need. See you Thursday, Carlos.</div></div>
+        </div>
+        <div style="margin-top:14px;padding:12px;background:var(--accent-light);border-radius:var(--radius-sm);font-size:13px;line-height:1.5;">
+          <strong style="color:var(--accent);">Result:</strong> Inspection booked for Thursday 2pm. Insurance claim &mdash; higher value job. Confirmation text sent. Reminder scheduled for Wednesday evening.
+        </div>
+      </div>
+
+      <!-- Call 2 -->
+      <div class="card fade-in">
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;">
+          <strong style="font-size:15px;">Maria & David S. &mdash; Homestead</strong>
+          <span class="badge badge-green">Booked</span>
+        </div>
+        <div style="font-size:13px;color:var(--text-muted);margin-bottom:14px;">Today, 6:47am &bull; 1 min 52 sec &bull; (786) 555-0312 &bull; <a href="#" style="color:var(--blue);" onclick="return false;">Play recording</a></div>
+        <div style="font-size:12px;color:var(--text-muted);background:var(--bg);padding:8px 12px;border-radius:8px;margin-bottom:14px;">Called before business hours. Most roofers don't answer before 8am &mdash; your receptionist does.</div>
+        <div class="chat-body" style="border-radius:var(--radius-sm);border:1px solid var(--border);padding:14px;">
+          <div class="bubble-row caller"><div class="bubble-label">Maria</div><div class="bubble caller-msg">Hi, I saw your ad on Facebook. We're selling our house and the buyer's inspector flagged roof issues. We need someone out fast.</div></div>
+          <div class="bubble-row system"><div class="bubble-label">Receptionist</div><div class="bubble system-msg">Absolutely, Maria. Real estate inspections are time-sensitive and we handle them all the time. I can get someone out within 48 hours so it doesn't hold up your sale. What's your address?</div></div>
+          <div class="bubble-row caller"><div class="bubble caller-msg">14500 SW 280th Street, Homestead.</div></div>
+          <div class="bubble-row system"><div class="bubble system-msg">Got it. I have Friday at 10am. We'll do a full inspection and provide a written report you can share with the buyer's agent. Does that work?</div></div>
+          <div class="bubble-row caller"><div class="bubble caller-msg">Yes, Friday is great. Thank you so much for picking up this early.</div></div>
+        </div>
+        <div style="margin-top:14px;padding:12px;background:var(--accent-light);border-radius:var(--radius-sm);font-size:13px;line-height:1.5;">
+          <strong style="color:var(--accent);">Result:</strong> Booked for Friday 10am. Urgent real estate deal &mdash; if we hadn't answered at 6:47am, she would have called the next roofer on Google.
+        </div>
+      </div>
+
+      <!-- Follow-Up Sequence -->
+      <div class="section-title" style="margin-top:8px;">Automatic Follow-Up</div>
+      <div class="card fade-in">
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:16px;">When someone calls but doesn't book right away, the system follows up automatically until they do:</p>
+        <div class="timeline">
+          <div class="timeline-step">
+            <div class="timeline-dot done"></div>
+            <div class="timeline-time">2 hours after call</div>
+            <div class="timeline-title">Text message sent</div>
+            <div class="timeline-desc">"Hi Mike, this is Coastal Shield Roofing. You called earlier about a roof inspection. Want me to get you on the schedule this week?"</div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot done"></div>
+            <div class="timeline-time">Next morning, 9am</div>
+            <div class="timeline-title">Voicemail drop</div>
+            <div class="timeline-desc">Friendly voicemail letting Mike know you have openings this week and to call or text back anytime.</div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot active"></div>
+            <div class="timeline-time">Scheduled: Tomorrow, 2pm</div>
+            <div class="timeline-title">Second text</div>
+            <div class="timeline-desc">"Hey Mike, just checking in. We've still got a spot open Thursday afternoon if you need that inspection."</div>
+          </div>
+          <div class="timeline-step">
+            <div class="timeline-dot pending"></div>
+            <div class="timeline-time">Scheduled: Day 5</div>
+            <div class="timeline-title">Final follow-up</div>
+            <div class="timeline-desc">One last check-in. If no response, marked as cold and removed from active follow-up. No one gets spammed.</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Day-Of Confirmation -->
+      <div class="section-title" style="margin-top:8px;">Day-Of Confirmation</div>
+      <div class="card fade-in">
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:14px;">Morning of every appointment, the system confirms so your crew doesn't waste a trip:</p>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;">
+          <p style="font-size:14px;line-height:1.6;"><strong>Text sent at 8:00am:</strong><br>"Hi Carlos, this is Coastal Shield Roofing confirming your roof inspection today at 2pm. Our inspector David will be there. Reply YES to confirm or call us to reschedule."</p>
+          <p style="margin-top:10px;font-size:14px;color:var(--green);font-weight:600;">Carlos replied: "YES. See you at 2"</p>
+          <p style="margin-top:6px;font-size:12px;color:var(--text-muted);">Confirmation logged. David notified with address, job details, and insurance claim number.</p>
+        </div>
+      </div>
+
+      <!-- Google Review Request -->
+      <div class="section-title" style="margin-top:8px;">After the Job: Review Request</div>
+      <div class="card fade-in">
+        <p style="font-size:14px;color:var(--text-muted);margin-bottom:14px;">24 hours after a job is marked complete, the system texts asking for a Google review:</p>
+        <div style="background:var(--bg);border:1px solid var(--border);border-radius:var(--radius-sm);padding:16px;text-align:center;">
+          <p style="font-weight:600;color:var(--dark);font-size:14px;">Text sent to Maria S.:</p>
+          <p style="margin-top:8px;font-size:14px;line-height:1.6;color:var(--text);">"Hi Maria, it's Coastal Shield Roofing. Thanks for trusting us with your roof! If you had a good experience, a quick Google review means the world to us. Takes 30 seconds:"</p>
+          <div style="font-size:28px;letter-spacing:4px;margin:12px 0;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <a href="#" style="display:inline-block;padding:10px 24px;background:var(--accent);color:white;border-radius:8px;font-weight:600;font-size:14px;text-decoration:none;" onclick="return false;">Leave a Review</a>
+          <p style="margin-top:14px;font-size:12px;color:var(--text-muted);">Maria left a 5-star review 3 hours later. Your Google rating went from 4.7 to 4.8.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ═══ LEAD DETAIL MODAL ═══ -->
   <div class="modal-overlay" id="leadModal">
-    <div class="modal" style="max-width:680px;">
+    <div class="modal">
       <button class="modal-close" onclick="closeModal()">&times;</button>
       <div id="leadModalContent"></div>
     </div>
@@ -85,127 +180,101 @@
 
   <script>
     const leads = [
-      {name:'Carlos R.',city:'Coral Gables',phone:'(305) 555-0194',source:'Google Ads',status:'Booked',statusColor:'green',date:'Today, 11:42am',duration:'2:18',type:'Insurance',need:'Tile damage + leak from storm. Some tiles blew off, water in master bedroom.',appt:'February 6, 2026 at 2:00 PM',notes:'Inspector David assigned. Insurance claim already filed. Will bring adjuster docs. Confirmation text sent, reminder scheduled for Wednesday evening.',
-        transcript:[
-          {who:'Carlos',msg:'Hi, we had bad wind damage from the storm last week. Some tiles blew off and I think there\'s a leak in the master bedroom.'},
-          {who:'Receptionist',msg:'I\'m sorry to hear about the damage, Carlos. I can get one of our inspectors out to you quickly. Can I get your address?'},
-          {who:'Carlos',msg:'Sure, it\'s 812 Alhambra Circle, Coral Gables.'},
-          {who:'Receptionist',msg:'Got it. We have an opening this Thursday at 2pm. Our inspector will check the tiles, look for any water damage, and give you a full assessment on the spot. Does that work?'},
-          {who:'Carlos',msg:'Thursday at 2 is perfect.'},
-          {who:'Receptionist',msg:'Great. I\'ll text you a confirmation right now. Is this an insurance claim or are you paying out of pocket?'},
-          {who:'Carlos',msg:'Insurance. I already filed the claim.'},
-          {who:'Receptionist',msg:'Perfect, our team handles insurance inspections regularly. We\'ll bring the documentation your adjuster will need. See you Thursday, Carlos.'}
-        ]},
-      {name:'Maria S.',city:'Homestead',phone:'(786) 555-0312',source:'Facebook',status:'Booked',statusColor:'green',date:'Today, 6:47am',duration:'1:52',type:'Out of pocket',need:'Real estate inspection — buyer flagged roof issues. Closing next week.',appt:'February 7, 2026 at 10:00 AM',notes:'Urgent — closing next week. Written report needed for buyer\'s agent.',
-        transcript:[
-          {who:'Maria',msg:'Hi, I saw your ad on Facebook. We\'re selling our house and the buyer\'s inspector flagged roof issues. We need someone out fast.'},
-          {who:'Receptionist',msg:'Absolutely, Maria. Real estate inspections are time-sensitive and we handle them all the time. I can get someone out within 48 hours so it doesn\'t hold up your sale. What\'s your address?'},
-          {who:'Maria',msg:'14500 SW 280th Street, Homestead.'},
-          {who:'Receptionist',msg:'Got it. I have Friday at 10am. We\'ll do a full inspection and provide a written report you can share with the buyer\'s agent. Does that work?'},
-          {who:'Maria',msg:'Yes, Friday is great. Thank you so much for picking up this early.'}
-        ]},
-      {name:'Robert T.',city:'Kendall',phone:'(305) 555-0287',source:'Google Ads',status:'Booked',statusColor:'green',date:'Today, 10:15am',duration:'3:04',type:'Insurance',need:'Full roof replacement, 20+ years old. Shingle roof, 2400 sq ft.',appt:'February 6, 2026 at 9:00 AM',notes:'Large job potential. Referred by neighbor.',transcript:[]},
-      {name:'Mike H.',city:'Miami Lakes',phone:'(786) 555-0445',source:'Outbound',status:'Following up',statusColor:'yellow',date:'Today, 9:30am',duration:'1:22',type:'Unknown',need:'Interested in inspection but wants to check schedule.',appt:'—',notes:'Follow-up text sent. Second text scheduled for tomorrow 2pm.',transcript:[]},
-      {name:'Patricia L.',city:'Doral',phone:'(305) 555-0518',source:'Facebook',status:'Booked',statusColor:'green',date:'Yesterday',duration:'2:41',type:'Insurance',need:'Hurricane damage — missing shingles on south side.',appt:'February 5, 2026 at 1:00 PM',notes:'Filed claim with State Farm. Confirmation text sent.',transcript:[]},
-      {name:'James D.',city:'Hialeah',phone:'(786) 555-0623',source:'Google Ads',status:'Following up',statusColor:'yellow',date:'Yesterday',duration:'0:58',type:'Out of pocket',need:'Roof leak in kitchen area.',appt:'—',notes:'Voicemail left. Second follow-up scheduled for tomorrow morning.',transcript:[]},
-      {name:'Sandra M.',city:'Palmetto Bay',phone:'(305) 555-0734',source:'Facebook',status:'Booked',statusColor:'green',date:'Yesterday',duration:'2:15',type:'Out of pocket',need:'Wants estimate for re-roofing before hurricane season. 3200 sq ft tile.',appt:'February 7, 2026 at 2:00 PM',notes:'Budget-conscious — wants comparison quote.',transcript:[]},
-      {name:'Eduardo V.',city:'Miami Beach',phone:'(786) 555-0891',source:'Outbound',status:'Booked',statusColor:'green',date:'Yesterday',duration:'1:48',type:'Insurance',need:'Water stains on ceiling after last rain. Possible leak.',appt:'February 6, 2026 at 11:00 AM',notes:'Insurance claim in progress. Condo building — need HOA access.',transcript:[]},
-      {name:'Lisa K.',city:'Coconut Grove',phone:'(305) 555-0156',source:'Google Ads',status:'Completed',statusColor:'blue',date:'2 days ago',duration:'1:33',type:'Out of pocket',need:'Flat roof maintenance check.',appt:'Completed Feb 4, 2026',notes:'Job done. Crew found minor ponding issue — quoted $1,200 repair. Review request sent.',transcript:[]},
-      {name:'Anthony G.',city:'North Miami',phone:'(786) 555-0267',source:'Outbound',status:'Following up',statusColor:'yellow',date:'2 days ago',duration:'1:07',type:'Unknown',need:'Curious about cost of roof replacement.',appt:'—',notes:'Said to call back next week. Follow-up call scheduled Monday 10am.',transcript:[]},
-      {name:'Carmen R.',city:'Aventura',phone:'(305) 555-0378',source:'Facebook',status:'Completed',statusColor:'blue',date:'3 days ago',duration:'2:22',type:'Insurance',need:'Tile roof storm damage.',appt:'Completed Feb 3, 2026',notes:'$8,400 job approved by insurance. 5-star review received.',transcript:[]},
-      {name:'Derek W.',city:'Cutler Bay',phone:'(786) 555-0489',source:'Google Ads',status:'Booked',statusColor:'green',date:'3 days ago',duration:'1:55',type:'Out of pocket',need:'Gutter + soffit damage. Wants full roof check too.',appt:'February 7, 2026 at 9:00 AM',notes:'Smaller job but could upsell to replacement.',transcript:[]},
-      {name:'Tanya B.',city:'Pinecrest',phone:'(305) 555-0590',source:'Outbound',status:'No answer',statusColor:'gray',date:'3 days ago',duration:'—',type:'—',need:'—',appt:'—',notes:'Called 3x, no answer. Final voicemail left. Marked cold.',transcript:[]},
-      {name:'Nelson P.',city:'Sweetwater',phone:'(786) 555-0601',source:'Facebook',status:'Following up',statusColor:'yellow',date:'4 days ago',duration:'1:14',type:'Insurance',need:'Wind damage to ridge caps.',appt:'—',notes:'Interested but traveling this week. Will call back Monday.',transcript:[]},
-      {name:'Rachel F.',city:'Key Biscayne',phone:'(305) 555-0712',source:'Google Ads',status:'Completed',statusColor:'blue',date:'5 days ago',duration:'2:08',type:'Out of pocket',need:'Luxury home re-roof. Premium materials.',appt:'Completed Jan 30, 2026',notes:'$22,000 job completed. Left 5-star review. Great referral source.',transcript:[]}
+      {name:'Carlos R.',city:'Coral Gables',phone:'(305) 555-0194',source:'Google Ads',status:'Booked',statusColor:'green',date:'Today, 11:42am',duration:'2:18',type:'Insurance',need:'Tile damage + leak from storm',appt:'Thu 2pm',notes:'Inspector David assigned. Insurance claim already filed. Will bring adjuster docs.'},
+      {name:'Maria S.',city:'Homestead',phone:'(786) 555-0312',source:'Facebook',status:'Booked',statusColor:'green',date:'Today, 6:47am',duration:'1:52',type:'Out of pocket',need:'Real estate inspection — buyer flagged issues',appt:'Fri 10am',notes:'Urgent — closing next week. Written report needed for buyer\'s agent.'},
+      {name:'Robert T.',city:'Kendall',phone:'(305) 555-0287',source:'Google Ads',status:'Booked',statusColor:'green',date:'Today, 10:15am',duration:'3:04',type:'Insurance',need:'Full roof replacement, 20+ years old',appt:'Thu 9am',notes:'Large job potential. Shingle roof, 2400 sq ft. Referred by neighbor.'},
+      {name:'Mike H.',city:'Miami Lakes',phone:'(786) 555-0445',source:'Outbound',status:'Following up',statusColor:'yellow',date:'Today, 9:30am',duration:'1:22',type:'Unknown',need:'Interested in inspection but wants to check schedule',appt:'—',notes:'Follow-up text sent. Second text scheduled for tomorrow 2pm.'},
+      {name:'Patricia L.',city:'Doral',phone:'(305) 555-0518',source:'Facebook',status:'Booked',statusColor:'green',date:'Yesterday',duration:'2:41',type:'Insurance',need:'Hurricane damage — missing shingles',appt:'Wed 1pm',notes:'Filed claim with State Farm. Confirmation text sent.'},
+      {name:'James D.',city:'Hialeah',phone:'(786) 555-0623',source:'Google Ads',status:'Following up',statusColor:'yellow',date:'Yesterday',duration:'0:58',type:'Out of pocket',need:'Roof leak in kitchen area',appt:'—',notes:'Voicemail left. Second follow-up scheduled for tomorrow.'},
+      {name:'Sandra M.',city:'Palmetto Bay',phone:'(305) 555-0734',source:'Facebook',status:'Booked',statusColor:'green',date:'Yesterday',duration:'2:15',type:'Out of pocket',need:'Wants estimate for re-roofing before hurricane season',appt:'Fri 2pm',notes:'3200 sq ft tile roof. Budget-conscious — wants comparison quote.'},
+      {name:'Eduardo V.',city:'Miami Beach',phone:'(786) 555-0891',source:'Outbound',status:'Booked',statusColor:'green',date:'Yesterday',duration:'1:48',type:'Insurance',need:'Water stains on ceiling after last rain',appt:'Thu 11am',notes:'Possible leak. Insurance claim in progress. Condo building — need HOA access.'},
+      {name:'Lisa K.',city:'Coconut Grove',phone:'(305) 555-0156',source:'Google Ads',status:'Completed',statusColor:'blue',date:'2 days ago',duration:'1:33',type:'Out of pocket',need:'Flat roof maintenance check',appt:'Completed Tue',notes:'Job done. Crew found minor ponding issue — quoted $1,200 repair. Review request sent.'},
+      {name:'Anthony G.',city:'North Miami',phone:'(786) 555-0267',source:'Outbound',status:'Following up',statusColor:'yellow',date:'2 days ago',duration:'1:07',type:'Unknown',need:'Curious about cost of roof replacement',appt:'—',notes:'Said to call back next week. Follow-up call scheduled Monday 10am.'},
+      {name:'Carmen R.',city:'Aventura',phone:'(305) 555-0378',source:'Facebook',status:'Completed',statusColor:'blue',date:'3 days ago',duration:'2:22',type:'Insurance',need:'Tile roof storm damage',appt:'Completed Mon',notes:'$8,400 job approved by insurance. 5-star review received.'},
+      {name:'Derek W.',city:'Cutler Bay',phone:'(786) 555-0489',source:'Google Ads',status:'Booked',statusColor:'green',date:'3 days ago',duration:'1:55',type:'Out of pocket',need:'Gutter + soffit damage',appt:'Fri 9am',notes:'Smaller job but wants full roof check too. Could upsell to replacement.'},
+      {name:'Tanya B.',city:'Pinecrest',phone:'(305) 555-0590',source:'Outbound',status:'No answer',statusColor:'gray',date:'3 days ago',duration:'—',type:'—',need:'—',appt:'—',notes:'Called 3x, no answer. Final voicemail left. Marked cold.'},
+      {name:'Nelson P.',city:'Sweetwater',phone:'(786) 555-0601',source:'Facebook',status:'Following up',statusColor:'yellow',date:'4 days ago',duration:'1:14',type:'Insurance',need:'Wind damage to ridge caps',appt:'—',notes:'Interested but traveling this week. Will call back Monday.'},
+      {name:'Rachel F.',city:'Key Biscayne',phone:'(305) 555-0712',source:'Google Ads',status:'Completed',statusColor:'blue',date:'5 days ago',duration:'2:08',type:'Out of pocket',need:'Luxury home re-roof',appt:'Completed last Thu',notes:'$22,000 job. Premium materials. Left 5-star review. Great referral source.'}
     ];
 
     function renderTable() {
-      document.getElementById('lead-table-body').innerHTML = leads.map((l, i) => `
-        <tr style="cursor:pointer;" onclick="showLead(${i})">
-          <td><div style="font-weight:600;color:var(--dark);">${l.name}</div><div style="font-size:11px;color:var(--text-muted);">${l.city}</div></td>
-          <td><span class="badge badge-${l.source==='Google Ads'?'blue':l.source==='Facebook'?'purple':'yellow'}" style="font-size:10px;">${l.source}</span></td>
-          <td><span class="badge badge-${l.statusColor}">${l.status}</span></td>
-          <td style="font-size:12px;color:${l.appt==='—'?'var(--text-muted)':'var(--dark)'};font-weight:${l.appt==='—'?'400':'500'};">${l.appt}</td>
-          <td style="font-size:12px;color:var(--text-muted);">${l.date}</td>
+      const tbody = document.getElementById('lead-table-body');
+      tbody.innerHTML = leads.map((l, i) => `
+        <tr style="cursor:pointer;border-bottom:1px solid var(--border);transition:background 0.15s;" onmouseover="this.style.background='var(--bg)'" onmouseout="this.style.background=''" onclick="showLead(${i})">
+          <td style="padding:12px 14px;">
+            <div style="font-weight:600;color:var(--dark);">${l.name}</div>
+            <div style="font-size:11px;color:var(--text-muted);">${l.city}</div>
+          </td>
+          <td style="padding:12px 14px;"><span class="badge badge-${l.source==='Google Ads'?'blue':l.source==='Facebook'?'purple':'yellow'}" style="font-size:10px;">${l.source}</span></td>
+          <td style="padding:12px 14px;"><span class="badge badge-${l.statusColor}">${l.status}</span></td>
+          <td style="padding:12px 14px;font-size:12px;color:var(--text-muted);">${l.date}</td>
+          <td style="padding:12px 14px;font-size:12px;color:var(--blue);font-weight:500;">View &rarr;</td>
         </tr>
       `).join('');
     }
 
-    function showLead(i) {
-      const l = leads[i];
-      const hasTranscript = l.transcript && l.transcript.length > 0;
-      document.getElementById('leadModalContent').innerHTML = `
+    function showLead(index) {
+      const l = leads[index];
+      const content = document.getElementById('leadModalContent');
+      content.innerHTML = `
         <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
           <div>
             <div class="modal-title" style="margin-bottom:2px;">${l.name}</div>
             <div style="font-size:13px;color:var(--text-muted);">${l.city} &bull; ${l.phone}</div>
           </div>
-          <span class="badge badge-${l.statusColor}" style="font-size:12px;padding:6px 14px;">${l.status}</span>
+          <span class="badge badge-${l.statusColor}" style="font-size:12px;">${l.status}</span>
         </div>
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px;">
-          <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);"><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:3px;">Source</div><div style="font-size:14px;font-weight:600;color:var(--dark);">${l.source}</div></div>
-          <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);"><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:3px;">Payment Type</div><div style="font-size:14px;font-weight:600;color:var(--dark);">${l.type}</div></div>
-          <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);"><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:3px;">Call Duration</div><div style="font-size:14px;font-weight:600;color:var(--dark);font-family:var(--mono);">${l.duration}</div></div>
-          <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);"><div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:3px;">Appointment</div><div style="font-size:14px;font-weight:600;color:var(--dark);">${l.appt}</div></div>
+          <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);">
+            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;margin-bottom:3px;">Source</div>
+            <div style="font-size:14px;font-weight:600;color:var(--dark);">${l.source}</div>
+          </div>
+          <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);">
+            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;margin-bottom:3px;">Payment Type</div>
+            <div style="font-size:14px;font-weight:600;color:var(--dark);">${l.type}</div>
+          </div>
+          <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);">
+            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;margin-bottom:3px;">Call Duration</div>
+            <div style="font-size:14px;font-weight:600;color:var(--dark);">${l.duration}</div>
+          </div>
+          <div style="background:var(--bg);padding:12px;border-radius:var(--radius-sm);">
+            <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:500;margin-bottom:3px;">Appointment</div>
+            <div style="font-size:14px;font-weight:600;color:var(--dark);">${l.appt}</div>
+          </div>
         </div>
         <div style="margin-bottom:16px;">
-          <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:6px;">What They Need</div>
+          <div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;font-weight:500;margin-bottom:6px;">What They Need</div>
           <div style="font-size:14px;line-height:1.6;color:var(--text);background:var(--bg);padding:12px;border-radius:var(--radius-sm);">${l.need}</div>
         </div>
         <div style="margin-bottom:16px;">
-          <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:6px;">Notes</div>
+          <div style="font-size:12px;color:var(--text-muted);text-transform:uppercase;font-weight:500;margin-bottom:6px;">Notes</div>
           <div style="font-size:14px;line-height:1.6;color:var(--text);background:var(--bg);padding:12px;border-radius:var(--radius-sm);">${l.notes}</div>
         </div>
-
-        <!-- Call Recording -->
-        ${l.duration !== '—' ? `
-        <div style="margin-bottom:16px;">
-          <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:6px;">Call Recording</div>
-          <div style="background:var(--dark);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:center;gap:12px;">
-            <div style="width:40px;height:40px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;" onclick="this.innerHTML=this.innerHTML.includes('\u25B6')?'\u23F8\uFE0F':'\u25B6'">
-              <span style="color:white;font-size:16px;">&#9654;</span>
-            </div>
-            <div style="flex:1;">
-              <div style="background:rgba(255,255,255,0.1);border-radius:4px;height:6px;position:relative;">
-                <div style="background:var(--accent);border-radius:4px;height:100%;width:0%;transition:width 0.3s;" id="progress-${i}"></div>
-              </div>
-              <div style="display:flex;justify-content:space-between;margin-top:4px;">
-                <span style="font-size:11px;color:rgba(255,255,255,0.5);">0:00</span>
-                <span style="font-size:11px;color:rgba(255,255,255,0.5);font-family:var(--mono);">${l.duration}</span>
-              </div>
-            </div>
-          </div>
-        </div>` : ''}
-
-        <!-- Transcript -->
-        ${hasTranscript ? `
-        <div>
-          <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:6px;">Call Transcript</div>
-          <div class="chat-body" style="border-radius:var(--radius-sm);border:1px solid var(--border);padding:14px;">
-            ${l.transcript.map(t => `
-              <div class="bubble-row ${t.who==='Receptionist'?'system':'caller'}">
-                <div class="bubble-label">${t.who}</div>
-                <div class="bubble ${t.who==='Receptionist'?'system-msg':'caller-msg'}">${t.msg}</div>
-              </div>
-            `).join('')}
-          </div>
-        </div>` : l.duration !== '—' ? `
-        <div>
-          <div style="font-size:10px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:6px;">Call Transcript</div>
-          <div style="background:var(--bg);border-radius:var(--radius-sm);padding:16px;text-align:center;color:var(--text-muted);font-size:13px;">
-            Transcript available &mdash; play recording above to listen.
-          </div>
-        </div>` : ''}
+        <div style="display:flex;gap:8px;flex-wrap:wrap;">
+          <a href="#" style="display:inline-block;padding:8px 16px;background:var(--accent);color:white;border-radius:8px;font-weight:600;font-size:13px;text-decoration:none;" onclick="return false;">Play Recording</a>
+          <a href="#" style="display:inline-block;padding:8px 16px;background:var(--white);color:var(--text);border:1px solid var(--border);border-radius:8px;font-weight:600;font-size:13px;text-decoration:none;" onclick="return false;">View Transcript</a>
+        </div>
       `;
       document.getElementById('leadModal').classList.add('open');
     }
 
-    function closeModal() { document.getElementById('leadModal').classList.remove('open'); }
-    document.getElementById('leadModal').addEventListener('click', e => { if (e.target.id === 'leadModal') closeModal(); });
+    function closeModal() {
+      document.getElementById('leadModal').classList.remove('open');
+    }
+    document.getElementById('leadModal').addEventListener('click', e => {
+      if (e.target.id === 'leadModal') closeModal();
+    });
+
+    function showView(view) {
+      document.getElementById('view-table').style.display = view === 'table' ? '' : 'none';
+      document.getElementById('view-calls').style.display = view === 'calls' ? '' : 'none';
+      document.getElementById('btn-table').classList.toggle('active', view === 'table');
+      document.getElementById('btn-calls').classList.toggle('active', view === 'calls');
+    }
 
     renderTable();
   </script>
 
-<!-- v5 - receptionist with sidebar layout, transcripts, recordings -->
+<!-- v3 - receptionist with lead table -->
 </body>
 </html>
