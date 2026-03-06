@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeLeads Pro — Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .sidebar-link { transition: all 0.15s; }
+        .sidebar-link.active { background: #eff6ff; color: #2563eb; font-weight: 600; }
+        .sidebar-link:hover:not(.active) { background: #f8fafc; }
+        .filter-header { background: #1e293b; }
+        .filter-header:hover { background: #334155; }
+        .filter-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
+        .filter-body.open { max-height: 800px; }
+        .zip-tag { animation: fadeIn 0.2s ease; }
+        @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+        .view { display: none; }
+        .view.active { display: block; }
+        .package-card { transition: all 0.2s; }
+        .package-card:hover { border-color: #2563eb; }
+        .package-card.selected { border-color: #2563eb; box-shadow: 0 0 0 2px #2563eb; }
+        input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
+        .toast { animation: slideUp 0.3s ease, fadeOut 0.3s ease 3s forwards; }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        @keyframes fadeOut { to { opacity: 0; } }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: { 50: '#eff6ff', 100: '#dbeafe', 500: '#3b82f6', 600: '#2563eb', 700: '#1d4ed8', 800: '#1e40af' }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+    <!-- Top Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 h-16">
+        <div class="flex items-center justify-between h-full px-4 sm:px-6">
+            <div class="flex items-center gap-3">
+                <button onclick="toggleSidebar()" class="lg:hidden p-2 rounded-lg hover:bg-gray-100">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+                <div class="flex items-center gap-2">
+                    <div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-700 to-blue-500 flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg>
+                    </div>
+                    <span class="text-lg font-bold hidden sm:inline">HomeLeads<span class="text-brand-600">Pro</span></span>
+                </div>
+            </div>
+            <div class="flex items-center gap-4">
+                <div class="text-right hidden sm:block">
+                    <div class="text-sm font-semibold" id="userName">Demo User</div>
+                    <div class="text-xs text-gray-500" id="userEmail">demo@company.com</div>
+                </div>
+                <button onclick="logout()" class="flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 border border-gray-200 rounded-lg px-3 py-1.5 hover:bg-gray-50 transition">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"/></svg>
+                    Logout
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Sidebar -->
+    <aside id="sidebar" class="fixed top-16 left-0 bottom-0 w-56 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform">
+        <nav class="p-3 space-y-1">
+            <a onclick="navigate('dashboard')" class="sidebar-link active flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm cursor-pointer" data-page="dashboard">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
+                Dashboard
+            </a>
+            <a onclick="navigate('build')" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-600 cursor-pointer" data-page="build">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 4v16m8-8H4"/></svg>
+                Build & Buy Leads
+            </a>
+            <a onclick="navigate('orders')" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-600 cursor-pointer" data-page="orders">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                My Orders
+            </a>
+            <div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-400 cursor-default">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/></svg>
+                Storms <span class="ml-auto text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full font-medium">Soon</span>
+            </div>
+            <div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-400 cursor-default">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/></svg>
+                Alerts <span class="ml-auto text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full font-medium">Soon</span>
+            </div>
+            <div class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-400 cursor-default">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                Integrations <span class="ml-auto text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full font-medium">Soon</span>
+            </div>
+            <div class="border-t border-gray-100 my-2"></div>
+            <a onclick="navigate('billing')" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-600 cursor-pointer" data-page="billing">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/></svg>
+                Billing
+            </a>
+            <a onclick="navigate('settings')" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-600 cursor-pointer" data-page="settings">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                Settings
+            </a>
+            <a onclick="navigate('admin')" class="sidebar-link flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm text-gray-600 cursor-pointer" data-page="admin">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M5.121 17.804A13.937 13.937 0 0112 16c2.5 0 4.847.655 6.879 1.804M15 10a3 3 0 11-6 0 3 3 0 016 0zm6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                Admin
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Sidebar overlay for mobile -->
+    <div id="sidebarOverlay" class="fixed inset-0 bg-black/40 z-30 hidden lg:hidden" onclick="toggleSidebar()"></div>
+
+    <!-- Main Content -->
+    <main class="lg:ml-56 mt-16 min-h-[calc(100vh-4rem)]">
+
+        <!-- ========== DASHBOARD VIEW ========== -->
+        <div id="view-dashboard" class="view active p-4 sm:p-8">
+            <h1 class="text-2xl font-bold mb-1">Dashboard</h1>
+            <p class="text-gray-500 text-sm mb-8">Welcome back! Ready to build your next lead list?</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
+                <!-- Build & Buy Card -->
+                <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition cursor-pointer" onclick="navigate('build')">
+                    <div class="w-12 h-12 rounded-xl bg-blue-50 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-brand-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-1">Build & Buy Leads</h3>
+                    <p class="text-gray-500 text-sm mb-5">Create a custom lead list with advanced filtering options</p>
+                    <div class="bg-gray-900 text-white text-center py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Start Building</div>
+                </div>
+
+                <!-- My Orders Card -->
+                <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition cursor-pointer" onclick="navigate('orders')">
+                    <div class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center mb-4">
+                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                    </div>
+                    <h3 class="text-lg font-bold mb-1">My Orders</h3>
+                    <p class="text-gray-500 text-sm mb-5">View and download your purchased lead lists</p>
+                    <div class="border border-gray-200 text-gray-700 text-center py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-50 transition">View Orders</div>
+                </div>
+            </div>
+
+            <!-- Coming Soon -->
+            <h3 class="text-lg font-bold mt-10 mb-4">Coming Soon</h3>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl">
+                <div class="bg-white rounded-xl border border-gray-200 p-5 opacity-60">
+                    <div class="text-sm font-semibold text-gray-400">Storms</div>
+                    <p class="text-xs text-gray-400 mt-1">Automated lead monitoring & alerts</p>
+                </div>
+                <div class="bg-white rounded-xl border border-gray-200 p-5 opacity-60">
+                    <div class="text-sm font-semibold text-gray-400">Alerts</div>
+                    <p class="text-xs text-gray-400 mt-1">Real-time notifications for new leads</p>
+                </div>
+                <div class="bg-white rounded-xl border border-gray-200 p-5 opacity-60">
+                    <div class="text-sm font-semibold text-gray-400">Integrations</div>
+                    <p class="text-xs text-gray-400 mt-1">CRM & dialer integrations</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== BUILD & BUY VIEW ========== -->
+        <div id="view-build" class="view p-4 sm:p-8">
+            <h1 class="text-2xl font-bold mb-1">Build Your Lead List</h1>
+            <p class="text-gray-500 text-sm mb-6">Filter and preview leads before purchasing</p>
+
+            <div class="flex flex-col lg:flex-row gap-6">
+                <!-- Left: Filters -->
+                <div class="flex-1 space-y-5">
+                    <!-- State Selection -->
+                    <div class="bg-white rounded-xl border border-gray-200 p-5">
+                        <h3 class="font-bold text-base mb-3">State Selection</h3>
+                        <select id="buildState" onchange="onStateChange()" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none">
+                            <option value="">Select State</option>
+                        </select>
+                    </div>
+
+                    <!-- Area Selection (hidden until state selected) -->
+                    <div id="areaSection" class="bg-white rounded-xl border border-gray-200 p-5 hidden">
+                        <h3 class="font-bold text-base mb-3">Area Selection</h3>
+                        <div class="mb-3">
+                            <span class="text-sm font-medium text-gray-600">Select By</span>
+                            <div class="flex gap-2 mt-2">
+                                <button onclick="setAreaMode('zip')" id="areaZipBtn" class="flex-1 py-2 rounded-lg text-sm font-semibold bg-brand-600 text-white transition">ZIP Codes</button>
+                                <button onclick="setAreaMode('county')" id="areaCountyBtn" class="flex-1 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-gray-600 transition">Counties</button>
+                            </div>
+                        </div>
+
+                        <!-- ZIP input -->
+                        <div id="zipSection">
+                            <label class="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                                <input type="checkbox" id="selectAllZips" onchange="toggleSelectAllZips()" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
+                                Select all ZIP codes in <span id="stateCodeLabel">--</span>
+                            </label>
+                            <div class="flex gap-2">
+                                <input type="text" id="zipInput" placeholder="Enter ZIP code" maxlength="5" class="flex-1 border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none" onkeydown="if(event.key==='Enter')addZip()">
+                                <button onclick="addZip()" class="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Add</button>
+                            </div>
+                            <div id="zipTags" class="flex flex-wrap gap-2 mt-3"></div>
+                        </div>
+
+                        <!-- County input -->
+                        <div id="countySection" class="hidden">
+                            <label class="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                                <input type="checkbox" id="selectAllCounties" onchange="toggleSelectAllCounties()" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
+                                Select all counties in <span id="stateCodeLabel2">--</span>
+                            </label>
+                            <select id="countyDropdown" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none mb-2">
+                                <option value="">Select County</option>
+                            </select>
+                            <button onclick="addCounty()" class="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition w-full">Add County</button>
+                            <div id="countyTags" class="flex flex-wrap gap-2 mt-3"></div>
+                        </div>
+                    </div>
+
+                    <!-- Property Filters -->
+                    <div class="rounded-xl overflow-hidden border border-gray-200">
+                        <button onclick="toggleFilter('property')" class="filter-header w-full flex items-center justify-between px-5 py-3 text-white text-sm font-bold uppercase tracking-wider cursor-pointer">
+                            Property
+                            <svg id="chevron-property" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div id="filter-property" class="filter-body bg-white">
+                            <div class="p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Total Assessed Value</label>
+                                    <div class="flex gap-2">
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>$50K</option><option>$100K</option><option>$150K</option><option>$200K</option><option>$300K</option><option>$500K</option></select>
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>$100K</option><option>$200K</option><option>$300K</option><option>$500K</option><option>$750K</option><option>$1M+</option></select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Square Feet</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Square Ft. Type</option><option>Building</option><option>Lot</option></select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Subdivision</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm text-gray-400" disabled><option>Select City/State or Zip first</option></select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Renters</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Renters</option><option>Exclude Renters</option><option>Renters Only</option></select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Square Feet #</label>
+                                    <div class="flex gap-2">
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>100+</option><option>500+</option><option>1000+</option><option>1500+</option><option>2000+</option><option>3000+</option></select>
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>100+</option><option>1000</option><option>2000</option><option>3000</option><option>5000</option><option>10000</option></select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block"># of Rooms / Bedrooms</label>
+                                    <div class="flex gap-2">
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option># of Rooms</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option></select>
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option># of Bedrooms</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option></select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Length of Residence</label>
+                                    <div class="flex gap-2">
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>1 yr</option><option>2 yr</option><option>5 yr</option><option>7 yr</option><option>10 yr</option></select>
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>5 yr</option><option>10 yr</option><option>15 yr</option><option>20 yr</option><option>30 yr</option></select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Year Built</label>
+                                    <div class="flex gap-2">
+                                        <input type="text" placeholder="From" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm" maxlength="4">
+                                        <input type="text" placeholder="To" class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm" maxlength="4">
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block"># of Bathrooms</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option># of Bathrooms</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option></select>
+                                </div>
+                            </div>
+                            <div class="px-5 pb-4">
+                                <label class="flex items-center gap-2 text-sm text-gray-600">
+                                    <input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
+                                    Equity Prospect
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Financial Filters -->
+                    <div class="rounded-xl overflow-hidden border border-gray-200">
+                        <button onclick="toggleFilter('financial')" class="filter-header w-full flex items-center justify-between px-5 py-3 text-white text-sm font-bold uppercase tracking-wider cursor-pointer">
+                            Financial
+                            <svg id="chevron-financial" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div id="filter-financial" class="filter-body bg-white">
+                            <div class="p-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">1st Mortgage Amount</label>
+                                    <div class="flex gap-2">
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>$50K</option><option>$100K</option><option>$200K</option><option>$300K</option></select>
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>$200K</option><option>$500K</option><option>$750K</option><option>$1M+</option></select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Income</label>
+                                    <div class="flex gap-2">
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>$25K</option><option>$50K</option><option>$75K</option><option>$100K</option><option>$150K</option></select>
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>$75K</option><option>$100K</option><option>$150K</option><option>$200K</option><option>$500K+</option></select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="flex items-center gap-2 text-xs font-medium text-gray-500 mb-1">Absentee Owner Flag</label>
+                                    <label class="flex items-center gap-2 text-sm text-gray-600 mt-2">
+                                        <input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
+                                        Include
+                                    </label>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">2nd Mortgage Amount</label>
+                                    <div class="flex gap-2">
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Min</option><option>$25K</option><option>$50K</option><option>$100K</option></select>
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Max</option><option>$100K</option><option>$200K</option><option>$500K</option></select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Credit Rating</label>
+                                    <select id="creditSelect" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm">
+                                        <option>Credit Rating</option>
+                                        <option>800+</option><option>750-799</option><option>700-749</option><option>650-699</option><option>600-649</option><option>550-599</option><option>500-549</option><option>Below 500</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Net Worth</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Net Worth</option><option>$0-$50K</option><option>$50K-$100K</option><option>$100K-$250K</option><option>$250K-$500K</option><option>$500K-$1M</option><option>$1M+</option></select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Transportation Filters -->
+                    <div class="rounded-xl overflow-hidden border border-gray-200">
+                        <button onclick="toggleFilter('transport')" class="filter-header w-full flex items-center justify-between px-5 py-3 text-white text-sm font-bold uppercase tracking-wider cursor-pointer">
+                            Transportation
+                            <svg id="chevron-transport" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div id="filter-transport" class="filter-body bg-white">
+                            <div class="p-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Vehicle</label>
+                                    <div class="flex gap-2">
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Make</option><option>Ford</option><option>Toyota</option><option>Honda</option><option>Chevy</option><option>BMW</option><option>Tesla</option></select>
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Model</option></select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Year</label>
+                                    <div class="flex gap-2">
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>From</option><option>2015</option><option>2018</option><option>2020</option><option>2022</option><option>2024</option></select>
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>To</option><option>2020</option><option>2022</option><option>2024</option><option>2026</option></select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Transaction Date</label>
+                                    <div class="flex gap-2">
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>From</option></select>
+                                        <select class="flex-1 border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>To</option></select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Family Filters -->
+                    <div class="rounded-xl overflow-hidden border border-gray-200">
+                        <button onclick="toggleFilter('family')" class="filter-header w-full flex items-center justify-between px-5 py-3 text-white text-sm font-bold uppercase tracking-wider cursor-pointer">
+                            Family
+                            <svg id="chevron-family" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div id="filter-family" class="filter-body bg-white">
+                            <div class="p-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Family Position</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Family Position</option><option>Single</option><option>Male HOH</option><option>Female HOH</option><option>Husband</option><option>Wife</option><option>Grandfather</option><option>Grandmother</option><option>Other</option></select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Language</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Language</option><option>English</option><option>Spanish</option><option>Chinese</option><option>Vietnamese</option><option>Korean</option><option>Other</option></select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Pets</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Pets</option><option>Dog</option><option>Cat</option><option>Both</option><option>None</option></select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Generations in Home</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Generations in Home</option><option>1</option><option>2</option><option>3+</option></select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Race</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Race</option></select>
+                                </div>
+                                <div>
+                                    <label class="text-xs font-medium text-gray-500 mb-1 block">Occupant Age</label>
+                                    <select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Occupant Age</option><option>18-24</option><option>25-34</option><option>35-44</option><option>45-54</option><option>55-64</option><option>65+</option></select>
+                                </div>
+                            </div>
+                            <div class="px-5 pb-4 flex flex-wrap gap-4">
+                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500"> Presence of Elderly</label>
+                                <label class="flex items-center gap-2 text-sm text-gray-600"><input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500"> Presence of Young Adult</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consumer Behavior Filters -->
+                    <div class="rounded-xl overflow-hidden border border-gray-200">
+                        <button onclick="toggleFilter('consumer')" class="filter-header w-full flex items-center justify-between px-5 py-3 text-white text-sm font-bold uppercase tracking-wider cursor-pointer">
+                            Consumer Behavior
+                            <svg id="chevron-consumer" class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                        </button>
+                        <div id="filter-consumer" class="filter-body bg-white">
+                            <div class="p-5 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                                <div><label class="text-xs font-medium text-gray-500 mb-1 block">Interests</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Interests</option><option>DIY/Home Improvement</option><option>Gardening</option><option>Cooking</option><option>Fitness</option><option>Technology</option><option>Travel</option></select></div>
+                                <div><label class="text-xs font-medium text-gray-500 mb-1 block">Collectors</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Collectors</option></select></div>
+                                <div><label class="text-xs font-medium text-gray-500 mb-1 block">Donations</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Donations</option><option>Political</option><option>Religious</option><option>Environmental</option><option>Health</option></select></div>
+                                <div><label class="text-xs font-medium text-gray-500 mb-1 block">Hobbies</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Hobbies</option></select></div>
+                                <div><label class="text-xs font-medium text-gray-500 mb-1 block">Preferences</label><select class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option>Preferences</option></select></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Lead Preview Sidebar -->
+                <div class="lg:w-72 lg:flex-shrink-0">
+                    <div class="bg-white rounded-xl border border-gray-200 p-5 lg:sticky lg:top-24">
+                        <h3 class="font-bold text-base mb-4">Lead Preview</h3>
+                        <div id="previewEmpty" class="text-sm text-gray-400 text-center py-8">Select a state to get started</div>
+                        <div id="previewData" class="hidden">
+                            <div class="border-2 border-brand-500 rounded-xl p-4 mb-4 text-center">
+                                <div class="text-xs text-gray-500 mb-1">Total Unique Addresses</div>
+                                <div class="text-3xl font-bold text-brand-600" id="previewTotal">0</div>
+                                <div class="text-xs text-gray-400 mt-1">What you pay for</div>
+                            </div>
+                            <div class="grid grid-cols-3 gap-2 text-center text-xs mb-4">
+                                <div class="bg-gray-50 rounded-lg p-2.5">
+                                    <div class="text-gray-500">With Phone</div>
+                                    <div class="font-bold text-sm mt-0.5" id="previewWithPhone">0</div>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-2.5">
+                                    <div class="text-gray-500">Phones</div>
+                                    <div class="font-bold text-sm mt-0.5" id="previewPhones">0</div>
+                                </div>
+                                <div class="bg-gray-50 rounded-lg p-2.5">
+                                    <div class="text-gray-500">No Phone</div>
+                                    <div class="font-bold text-sm mt-0.5" id="previewNoPhone">0</div>
+                                </div>
+                            </div>
+                            <button onclick="goToPackages()" class="w-full bg-gray-900 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Choose Package</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== PACKAGES VIEW ========== -->
+        <div id="view-packages" class="view p-4 sm:p-8">
+            <h1 class="text-2xl font-bold mb-1">Choose Your Package</h1>
+            <p class="text-gray-500 text-sm mb-6">Select the best pricing option for <span id="pkgLeadCount" class="font-semibold">0</span> leads</p>
+
+            <!-- Credits notice -->
+            <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 max-w-3xl">
+                <div class="flex gap-3">
+                    <div class="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-amber-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    </div>
+                    <div>
+                        <div class="font-bold text-sm">Earn Credits on Every Purchase</div>
+                        <p class="text-sm text-gray-600 mt-1">When you purchase a package with more leads than your list contains, you'll receive credits for the difference. These credits <strong>never expire</strong> and can be used on any future lead list purchase to reduce your total cost.</p>
+                        <p class="text-sm text-gray-500 mt-2 italic">Example: Buy the 50,000 lead package with only 30,000 leads &#8594; Pay full price, get 20,000 credits for next time!</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-bold mb-4">Or Purchase a Package:</h3>
+            <div class="space-y-4 max-w-3xl" id="packagesList"></div>
+
+            <div class="mt-6 max-w-3xl">
+                <button onclick="navigate('build')" class="border border-gray-300 text-gray-700 px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-50 transition">Back to Filters</button>
+            </div>
+        </div>
+
+        <!-- ========== CHECKOUT VIEW ========== -->
+        <div id="view-checkout" class="view p-4 sm:p-8">
+            <div class="max-w-2xl">
+                <h1 class="text-2xl font-bold mb-6">Order Summary</h1>
+                <div class="bg-white rounded-xl border border-gray-200 p-6 space-y-3" id="orderSummary"></div>
+
+                <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mt-6">
+                    <p class="text-sm text-gray-700"><strong>Note:</strong> You will be redirected to Stripe to complete your payment securely.</p>
+                </div>
+
+                <div class="flex gap-3 mt-6">
+                    <button onclick="navigate('packages')" class="border border-gray-300 text-gray-700 px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-50 transition">Back to Packages</button>
+                    <button onclick="processPayment()" class="flex-1 bg-gray-900 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Proceed to Checkout</button>
+                </div>
+
+                <!-- Filters summary -->
+                <div class="bg-white rounded-xl border border-gray-200 p-5 mt-6">
+                    <h3 class="font-bold text-sm mb-3">Your Filters</h3>
+                    <div class="grid grid-cols-2 gap-2 text-sm" id="filtersSummary"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== SUCCESS VIEW ========== -->
+        <div id="view-success" class="view p-4 sm:p-8">
+            <div class="max-w-lg mx-auto text-center mt-8">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <svg class="w-10 h-10 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <h1 class="text-2xl font-bold mb-2">Payment Successful!</h1>
+                <p class="text-gray-500 text-sm mb-6">Payment successful! Your order has been confirmed.</p>
+
+                <div class="bg-green-50 border border-green-200 rounded-xl p-5 text-left mb-6">
+                    <div class="flex justify-between text-sm py-1.5"><span class="text-gray-500">Order ID:</span><span class="font-mono font-semibold" id="successOrderId">--</span></div>
+                    <div class="flex justify-between text-sm py-1.5"><span class="text-gray-500">List ID:</span><span class="font-mono font-semibold" id="successListId">--</span></div>
+                </div>
+
+                <div class="flex gap-3">
+                    <button onclick="navigate('dashboard')" class="flex-1 border border-gray-300 text-gray-700 py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-50 transition">Go to Dashboard</button>
+                    <button onclick="navigate('orders')" class="flex-1 bg-gray-900 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">View My Orders</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========== MY ORDERS VIEW ========== -->
+        <div id="view-orders" class="view p-4 sm:p-8">
+            <h1 class="text-2xl font-bold mb-1">My Orders</h1>
+            <p class="text-gray-500 text-sm mb-6">View and download your purchased lead lists</p>
+            <div class="space-y-4 max-w-4xl" id="ordersList"></div>
+            <div id="noOrders" class="text-center py-16 text-gray-400 hidden">
+                <svg class="w-12 h-12 mx-auto mb-3 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+                <p class="font-medium">No orders yet</p>
+                <p class="text-sm mt-1">Build your first lead list to get started</p>
+                <button onclick="navigate('build')" class="mt-4 bg-brand-600 text-white px-6 py-2 rounded-lg text-sm font-semibold hover:bg-brand-700 transition">Build & Buy Leads</button>
+            </div>
+        </div>
+
+        <!-- ========== BILLING VIEW ========== -->
+        <div id="view-billing" class="view p-4 sm:p-8">
+            <h1 class="text-2xl font-bold mb-1">Billing</h1>
+            <p class="text-gray-500 text-sm mb-6">Manage your payment methods and billing history</p>
+            <div class="bg-white rounded-xl border border-gray-200 p-6 max-w-2xl">
+                <p class="text-gray-500 text-sm">Billing management coming soon. Contact support for billing inquiries.</p>
+            </div>
+        </div>
+
+        <!-- ========== SETTINGS VIEW ========== -->
+        <div id="view-settings" class="view p-4 sm:p-8">
+            <h1 class="text-2xl font-bold mb-1">Settings</h1>
+            <p class="text-gray-500 text-sm mb-6">Manage your account preferences</p>
+            <div class="bg-white rounded-xl border border-gray-200 p-6 max-w-2xl space-y-4">
+                <div>
+                    <label class="text-xs font-medium text-gray-500 mb-1 block">Full Name</label>
+                    <input type="text" value="Demo User" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm">
+                </div>
+                <div>
+                    <label class="text-xs font-medium text-gray-500 mb-1 block">Email</label>
+                    <input type="email" value="demo@company.com" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm">
+                </div>
+                <div>
+                    <label class="text-xs font-medium text-gray-500 mb-1 block">Company</label>
+                    <input type="text" value="" placeholder="Your company name" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm">
+                </div>
+                <button class="bg-brand-600 text-white px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-brand-700 transition">Save Changes</button>
+            </div>
+        </div>
+
+        <!-- ========== ADMIN VIEW ========== -->
+        <div id="view-admin" class="view p-4 sm:p-8">
+            <h1 class="text-2xl font-bold mb-1">Admin</h1>
+            <p class="text-gray-500 text-sm mb-6">Account administration</p>
+            <div class="bg-white rounded-xl border border-gray-200 p-6 max-w-2xl">
+                <p class="text-gray-500 text-sm">Admin panel coming soon.</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Toast container -->
+    <div id="toastContainer" class="fixed bottom-6 right-6 z-50"></div>
+
+<script>
+// ===== DATA =====
+const statesData = [
+    {code:'AL',name:'Alabama',h:1920000},{code:'AK',name:'Alaska',h:260000},{code:'AZ',name:'Arizona',h:2680000},{code:'AR',name:'Arkansas',h:1150000},{code:'CA',name:'California',h:13200000},{code:'CO',name:'Colorado',h:2200000},{code:'CT',name:'Connecticut',h:1380000},{code:'DE',name:'Delaware',h:380000},{code:'FL',name:'Florida',h:8400000},{code:'GA',name:'Georgia',h:3850000},{code:'HI',name:'Hawaii',h:470000},{code:'ID',name:'Idaho',h:680000},{code:'IL',name:'Illinois',h:4900000},{code:'IN',name:'Indiana',h:2600000},{code:'IA',name:'Iowa',h:1280000},{code:'KS',name:'Kansas',h:1120000},{code:'KY',name:'Kentucky',h:1760000},{code:'LA',name:'Louisiana',h:1780000},{code:'ME',name:'Maine',h:580000},{code:'MD',name:'Maryland',h:2250000},{code:'MA',name:'Massachusetts',h:2680000},{code:'MI',name:'Michigan',h:3960000},{code:'MN',name:'Minnesota',h:2240000},{code:'MS',name:'Mississippi',h:1100000},{code:'MO',name:'Missouri',h:2450000},{code:'MT',name:'Montana',h:440000},{code:'NE',name:'Nebraska',h:780000},{code:'NV',name:'Nevada',h:1120000},{code:'NH',name:'New Hampshire',h:560000},{code:'NJ',name:'New Jersey',h:3400000},{code:'NM',name:'New Mexico',h:800000},{code:'NY',name:'New York',h:7500000},{code:'NC',name:'North Carolina',h:4100000},{code:'ND',name:'North Dakota',h:320000},{code:'OH',name:'Ohio',h:4700000},{code:'OK',name:'Oklahoma',h:1520000},{code:'OR',name:'Oregon',h:1650000},{code:'PA',name:'Pennsylvania',h:5200000},{code:'RI',name:'Rhode Island',h:420000},{code:'SC',name:'South Carolina',h:2020000},{code:'SD',name:'South Dakota',h:360000},{code:'TN',name:'Tennessee',h:2720000},{code:'TX',name:'Texas',h:10200000},{code:'UT',name:'Utah',h:1020000},{code:'VT',name:'Vermont',h:270000},{code:'VA',name:'Virginia',h:3280000},{code:'WA',name:'Washington',h:2960000},{code:'WV',name:'West Virginia',h:740000},{code:'WI',name:'Wisconsin',h:2380000},{code:'WY',name:'Wyoming',h:230000}
+];
+
+const countiesMap = {
+    'GA':['Fulton','DeKalb','Gwinnett','Cobb','Clayton','Cherokee','Forsyth','Henry','Hall','Richmond'],
+    'FL':['Miami-Dade','Broward','Palm Beach','Hillsborough','Orange','Duval','Pinellas','Lee','Polk','Brevard'],
+    'TX':['Harris','Dallas','Tarrant','Bexar','Travis','Collin','Denton','Hidalgo','Fort Bend','El Paso'],
+    'CA':['Los Angeles','San Diego','Orange','Riverside','San Bernardino','Santa Clara','Alameda','Sacramento','Contra Costa','Fresno'],
+    'NY':['Kings','Queens','New York','Suffolk','Nassau','Bronx','Westchester','Erie','Monroe','Richmond'],
+    'NC':['Mecklenburg','Wake','Guilford','Forsyth','Cumberland','Durham','Buncombe','Union','Cabarrus','Gaston'],
+    'OH':['Franklin','Cuyahoga','Hamilton','Summit','Montgomery','Lucas','Stark','Butler','Warren','Lorain'],
+    'OK':['Oklahoma','Tulsa','Cleveland','Canadian','Comanche','Rogers','Payne','Wagoner','Creek','Garfield']
+};
+
+const packages = [
+    { name: '50,000 Leads', count: 50000, price: 3500, perLead: 0.07, overage: 0.08 },
+    { name: '100,000 Leads', count: 100000, price: 4000, perLead: 0.04, overage: 0.05 },
+    { name: '250,000+ Leads', count: 250000, price: 10000, perLead: 0.04, overage: 0.04, unlimited: true }
+];
+
+// ===== STATE =====
+let currentView = 'dashboard';
+let selectedState = '';
+let areaMode = 'zip';
+let selectedZips = [];
+let selectedCounties = [];
+let currentLeadData = { total: 0, withPhone: 0, phones: 0, noPhone: 0 };
+let selectedPackage = null;
+let orders = JSON.parse(localStorage.getItem('hlp_orders') || '[]');
+
+// ===== NAVIGATION =====
+function navigate(page) {
+    currentView = page;
+    document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+    document.getElementById('view-' + page).classList.add('active');
+    document.querySelectorAll('.sidebar-link').forEach(l => {
+        l.classList.toggle('active', l.dataset.page === page);
+        if (l.dataset.page === page) l.classList.remove('text-gray-600');
+        else if (!l.classList.contains('active')) l.classList.add('text-gray-600');
+    });
+    if (page === 'orders') renderOrders();
+    closeSidebar();
+    window.scrollTo(0, 0);
+}
+
+function toggleSidebar() {
+    const sb = document.getElementById('sidebar');
+    const ov = document.getElementById('sidebarOverlay');
+    sb.classList.toggle('-translate-x-full');
+    ov.classList.toggle('hidden');
+}
+function closeSidebar() {
+    if (window.innerWidth < 1024) {
+        document.getElementById('sidebar').classList.add('-translate-x-full');
+        document.getElementById('sidebarOverlay').classList.add('hidden');
+    }
+}
+
+function logout() {
+    window.location.href = 'index.html';
+}
+
+// ===== BUILD & BUY =====
+function initStateDropdown() {
+    const sel = document.getElementById('buildState');
+    statesData.forEach(s => {
+        const o = document.createElement('option');
+        o.value = s.code;
+        o.textContent = s.name;
+        sel.appendChild(o);
+    });
+}
+
+function onStateChange() {
+    selectedState = document.getElementById('buildState').value;
+    selectedZips = [];
+    selectedCounties = [];
+    renderZipTags();
+    renderCountyTags();
+    document.getElementById('selectAllZips').checked = false;
+    document.getElementById('selectAllCounties').checked = false;
+
+    if (selectedState) {
+        document.getElementById('areaSection').classList.remove('hidden');
+        document.getElementById('stateCodeLabel').textContent = selectedState;
+        document.getElementById('stateCodeLabel2').textContent = selectedState;
+        populateCounties();
+        updatePreview();
+    } else {
+        document.getElementById('areaSection').classList.add('hidden');
+        document.getElementById('previewEmpty').classList.remove('hidden');
+        document.getElementById('previewData').classList.add('hidden');
+    }
+}
+
+function setAreaMode(mode) {
+    areaMode = mode;
+    document.getElementById('areaZipBtn').className = mode === 'zip' ? 'flex-1 py-2 rounded-lg text-sm font-semibold bg-brand-600 text-white transition' : 'flex-1 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-gray-600 transition';
+    document.getElementById('areaCountyBtn').className = mode === 'county' ? 'flex-1 py-2 rounded-lg text-sm font-semibold bg-brand-600 text-white transition' : 'flex-1 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-gray-600 transition';
+    document.getElementById('zipSection').classList.toggle('hidden', mode !== 'zip');
+    document.getElementById('countySection').classList.toggle('hidden', mode !== 'county');
+}
+
+function addZip() {
+    const input = document.getElementById('zipInput');
+    const zip = input.value.trim();
+    if (zip.length === 5 && /^\d+$/.test(zip) && !selectedZips.includes(zip)) {
+        selectedZips.push(zip);
+        input.value = '';
+        renderZipTags();
+        updatePreview();
+    }
+}
+
+function removeZip(zip) {
+    selectedZips = selectedZips.filter(z => z !== zip);
+    renderZipTags();
+    updatePreview();
+}
+
+function renderZipTags() {
+    const c = document.getElementById('zipTags');
+    c.innerHTML = selectedZips.map(z => `<span class="zip-tag inline-flex items-center gap-1.5 bg-gray-900 text-white text-sm px-3 py-1 rounded-full">${z} <button onclick="removeZip('${z}')" class="hover:text-red-300">&times;</button></span>`).join('');
+}
+
+function toggleSelectAllZips() {
+    if (document.getElementById('selectAllZips').checked) {
+        // Simulate adding 5 random zips for the state
+        const base = Math.floor(10000 + Math.random() * 89000);
+        for (let i = 0; i < 5; i++) {
+            const z = String(base + i * 3);
+            if (!selectedZips.includes(z)) selectedZips.push(z);
+        }
+        renderZipTags();
+        updatePreview();
+    }
+}
+
+function populateCounties() {
+    const sel = document.getElementById('countyDropdown');
+    sel.innerHTML = '<option value="">Select County</option>';
+    const list = countiesMap[selectedState] || ['County 1','County 2','County 3','County 4','County 5'];
+    list.forEach(c => {
+        const o = document.createElement('option');
+        o.value = c;
+        o.textContent = c;
+        sel.appendChild(o);
+    });
+}
+
+function addCounty() {
+    const sel = document.getElementById('countyDropdown');
+    const county = sel.value;
+    if (county && !selectedCounties.includes(county)) {
+        selectedCounties.push(county);
+        sel.value = '';
+        renderCountyTags();
+        updatePreview();
+    }
+}
+
+function removeCounty(county) {
+    selectedCounties = selectedCounties.filter(c => c !== county);
+    renderCountyTags();
+    updatePreview();
+}
+
+function renderCountyTags() {
+    const c = document.getElementById('countyTags');
+    c.innerHTML = selectedCounties.map(cn => `<span class="zip-tag inline-flex items-center gap-1.5 bg-gray-900 text-white text-sm px-3 py-1 rounded-full">${cn} <button onclick="removeCounty('${cn}')" class="hover:text-red-300">&times;</button></span>`).join('');
+}
+
+function toggleSelectAllCounties() {
+    if (document.getElementById('selectAllCounties').checked) {
+        const list = countiesMap[selectedState] || ['County 1','County 2','County 3'];
+        list.forEach(c => { if (!selectedCounties.includes(c)) selectedCounties.push(c); });
+        renderCountyTags();
+        updatePreview();
+    }
+}
+
+function updatePreview() {
+    const stateInfo = statesData.find(s => s.code === selectedState);
+    if (!stateInfo) return;
+
+    let divisor = 1;
+    const items = areaMode === 'zip' ? selectedZips : selectedCounties;
+    if (items.length > 0) {
+        divisor = areaMode === 'zip' ? (stateInfo.h / (3000 + Math.random() * 5000)) / items.length * items.length : (stateInfo.h / (50000 + Math.random() * 80000)) / items.length * items.length;
+        divisor = Math.max(1, divisor);
+    }
+
+    const total = Math.round(stateInfo.h / Math.max(1, divisor));
+    const phoneRate = 0.55 + Math.random() * 0.08;
+    const withPhone = Math.round(total * phoneRate);
+    const phones = Math.round(withPhone * (1.3 + Math.random() * 0.5));
+    const noPhone = total - withPhone;
+
+    currentLeadData = { total, withPhone, phones, noPhone };
+
+    document.getElementById('previewEmpty').classList.add('hidden');
+    document.getElementById('previewData').classList.remove('hidden');
+    document.getElementById('previewTotal').textContent = total.toLocaleString();
+    document.getElementById('previewWithPhone').textContent = withPhone.toLocaleString();
+    document.getElementById('previewPhones').textContent = phones.toLocaleString();
+    document.getElementById('previewNoPhone').textContent = noPhone.toLocaleString();
+}
+
+// ===== FILTERS =====
+function toggleFilter(name) {
+    const body = document.getElementById('filter-' + name);
+    const chevron = document.getElementById('chevron-' + name);
+    const isOpen = body.classList.contains('open');
+    body.classList.toggle('open');
+    chevron.style.transform = isOpen ? '' : 'rotate(180deg)';
+}
+
+// ===== PACKAGES =====
+function goToPackages() {
+    if (currentLeadData.total === 0) return;
+    navigate('packages');
+    document.getElementById('pkgLeadCount').textContent = currentLeadData.total.toLocaleString();
+    renderPackages();
+}
+
+function renderPackages() {
+    const c = document.getElementById('packagesList');
+    c.innerHTML = packages.map((pkg, i) => {
+        const remaining = currentLeadData.total;
+        const overage = remaining > pkg.count ? remaining - pkg.count : 0;
+        const credits = pkg.count > remaining ? pkg.count - remaining : 0;
+        const overageCost = overage * pkg.overage;
+        const finalPrice = pkg.price + overageCost;
+
+        return `
+        <div class="package-card bg-white rounded-xl border-2 border-gray-200 p-6 cursor-pointer" onclick="selectPackage(${i})">
+            <div class="flex items-center gap-3 mb-4">
+                <div class="w-5 h-5 rounded-full border-2 ${selectedPackage === i ? 'border-brand-600 bg-brand-600' : 'border-gray-300'} flex items-center justify-center">
+                    ${selectedPackage === i ? '<div class="w-2 h-2 rounded-full bg-white"></div>' : ''}
+                </div>
+                <span class="text-lg font-bold">${pkg.name}</span>
+            </div>
+            <div class="space-y-2 text-sm">
+                <div class="flex justify-between"><span class="text-gray-500">Total Leads Requested:</span><span class="font-medium">${remaining.toLocaleString()}</span></div>
+                <div class="flex justify-between"><span class="text-gray-500">Remaining to Purchase:</span><span class="font-medium">${remaining.toLocaleString()} leads</span></div>
+                <div class="border-t border-gray-100 my-2"></div>
+                <div class="flex justify-between"><span class="text-gray-500">Package Price:</span><span class="font-semibold">$${pkg.price.toLocaleString()}</span></div>
+                ${credits > 0 ? `<div class="flex justify-between"><span class="text-green-600">Credits You'll Earn:</span><span class="text-green-600 font-medium">+${credits.toLocaleString()}</span></div>` : ''}
+                ${overage > 0 ? `<div class="flex justify-between"><span class="text-gray-500">Overage (${overage.toLocaleString()} @ $${pkg.overage.toFixed(2)}):</span><span class="text-orange-600 font-medium">+$${overageCost.toFixed(2)}</span></div>` : ''}
+            </div>
+            <div class="bg-gray-50 rounded-lg p-4 mt-4">
+                <div class="text-xs text-gray-500">Final Price</div>
+                <div class="text-2xl font-bold text-brand-600">$${finalPrice.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</div>
+            </div>
+            <div class="flex gap-4 mt-3 text-xs">
+                ${pkg.unlimited ? '<span class="text-green-600 flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Unlimited</span>' : `<span class="text-green-600 flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> ${pkg.count.toLocaleString()} leads included</span>`}
+                <span class="text-green-600 flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> $${pkg.perLead.toFixed(2)} per lead</span>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+function selectPackage(index) {
+    selectedPackage = index;
+    renderPackages();
+    // Auto-proceed to checkout
+    setTimeout(() => goToCheckout(), 300);
+}
+
+// ===== CHECKOUT =====
+function goToCheckout() {
+    if (selectedPackage === null) return;
+    navigate('checkout');
+
+    const pkg = packages[selectedPackage];
+    const remaining = currentLeadData.total;
+    const overage = remaining > pkg.count ? remaining - pkg.count : 0;
+    const overageCost = overage * pkg.overage;
+    const finalPrice = pkg.price + overageCost;
+
+    const summary = document.getElementById('orderSummary');
+    summary.innerHTML = `
+        <div class="flex justify-between text-sm py-1"><span class="text-gray-500">Total Leads Requested</span><span class="font-medium">${remaining.toLocaleString()} leads</span></div>
+        <div class="flex justify-between text-sm py-1"><span class="text-gray-500">Remaining Leads to Purchase</span><span class="font-medium">${remaining.toLocaleString()} leads</span></div>
+        <div class="flex justify-between text-sm py-1"><span class="text-gray-500">Package Selected</span><span class="font-medium">${pkg.name}</span></div>
+        <div class="flex justify-between text-sm py-1"><span class="text-gray-500">Package Price</span><span class="font-medium">$${pkg.price.toLocaleString()}</span></div>
+        ${overage > 0 ? `<div class="flex justify-between text-sm py-1"><span class="text-gray-500">Overage (${overage.toLocaleString()} leads @ $${pkg.overage.toFixed(2)})</span><span class="text-orange-600 font-medium">+$${overageCost.toFixed(2)}</span></div>` : ''}
+        <div class="border-t border-gray-200 mt-2 pt-3">
+            <div class="flex justify-between items-center">
+                <span class="text-lg font-bold">Total Due Today</span>
+                <span class="text-2xl font-bold text-brand-600">$${finalPrice.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</span>
+            </div>
+        </div>
+    `;
+
+    const areas = areaMode === 'zip' ? selectedZips : selectedCounties;
+    document.getElementById('filtersSummary').innerHTML = `
+        <div><span class="text-gray-500">State:</span> <strong>${selectedState}</strong></div>
+        <div><span class="text-gray-500">${areaMode === 'zip' ? 'ZIP Codes' : 'Counties'}:</span> <strong>${areas.length}</strong></div>
+        <div><span class="text-gray-500">DNC Filter:</span> <strong>All leads</strong></div>
+        <div><span class="text-gray-500">No Phone:</span> <strong>Included</strong></div>
+    `;
+}
+
+// ===== PAYMENT =====
+function processPayment() {
+    const pkg = packages[selectedPackage];
+    const overage = currentLeadData.total > pkg.count ? currentLeadData.total - pkg.count : 0;
+    const overageCost = overage * pkg.overage;
+    const finalPrice = pkg.price + overageCost;
+    const areas = areaMode === 'zip' ? selectedZips : selectedCounties;
+
+    const order = {
+        id: 'ORD-' + Date.now(),
+        listId: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substr(2, 8) + '-' + Math.random().toString(36).substr(2, 8),
+        date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }),
+        state: selectedState,
+        areas: areas.slice(0, 3).join(', ') + (areas.length > 3 ? '...' : ''),
+        leadCount: currentLeadData.total,
+        totalPaid: finalPrice,
+        costPerLead: (finalPrice / currentLeadData.total).toFixed(2),
+        packageName: pkg.name
+    };
+
+    orders.unshift(order);
+    localStorage.setItem('hlp_orders', JSON.stringify(orders));
+
+    document.getElementById('successOrderId').textContent = order.id;
+    document.getElementById('successListId').textContent = order.listId;
+    navigate('success');
+    showToast('Payment completed successfully!');
+}
+
+// ===== ORDERS =====
+function renderOrders() {
+    const c = document.getElementById('ordersList');
+    const empty = document.getElementById('noOrders');
+
+    if (orders.length === 0) {
+        c.innerHTML = '';
+        empty.classList.remove('hidden');
+        return;
+    }
+
+    empty.classList.add('hidden');
+    c.innerHTML = orders.map(o => `
+        <div class="bg-white rounded-xl border border-gray-200 p-5">
+            <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
+                <div>
+                    <div class="flex items-center gap-2 flex-wrap">
+                        <span class="font-bold">${o.state} - ${o.areas}</span>
+                        <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">Completed</span>
+                    </div>
+                    <div class="text-xs text-gray-500 mt-1">Order ID: ${o.id} &bull; ${o.date}</div>
+                </div>
+                <button onclick="showToast('CSV download started!')" class="flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-800 transition flex-shrink-0">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                    Download CSV
+                </button>
+            </div>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
+                <div><div class="text-gray-500 text-xs">Lead Count</div><div class="font-bold text-lg">${o.leadCount.toLocaleString()}</div></div>
+                <div><div class="text-gray-500 text-xs">Total Paid</div><div class="font-bold text-lg">$${o.totalPaid.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</div></div>
+                <div><div class="text-gray-500 text-xs">Cost Per Lead</div><div class="font-bold text-lg">$${o.costPerLead}</div></div>
+                <div><div class="text-gray-500 text-xs">Package</div><div class="font-bold text-lg">${o.packageName}</div></div>
+            </div>
+        </div>
+    `).join('');
+}
+
+// ===== TOAST =====
+function showToast(msg) {
+    const c = document.getElementById('toastContainer');
+    const t = document.createElement('div');
+    t.className = 'toast flex items-center gap-2 bg-white border border-gray-200 shadow-lg rounded-lg px-4 py-3 text-sm font-medium';
+    t.innerHTML = `<svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg> ${msg}`;
+    c.appendChild(t);
+    setTimeout(() => t.remove(), 3500);
+}
+
+// ===== INIT =====
+initStateDropdown();
+</script>
+</body>
+</html>
