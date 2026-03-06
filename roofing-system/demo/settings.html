@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings - Your Growth Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="sidebar-brand-name">Coastal Shield <span>Roofing</span></div>
+        <div class="sidebar-brand-sub">Growth Dashboard</div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">Overview</div>
+        <a class="sidebar-link" href="dashboard.html">Dashboard</a>
+        <a class="sidebar-link" href="receptionist.html">Receptionist</a>
+        <a class="sidebar-link" href="ads.html">Ads</a>
+        <div class="sidebar-section">Tools</div>
+        <a class="sidebar-link" href="storm.html">Storm Alerts<span class="link-badge">1</span></a>
+        <a class="sidebar-link" href="hiring.html">Hiring</a>
+        <a class="sidebar-link" href="commands.html">Text Commands</a>
+        <div class="sidebar-section">System</div>
+        <a class="sidebar-link" href="changelog.html">What Changed</a>
+        <a class="sidebar-link active" href="settings.html">Settings</a>
+      </nav>
+      <div class="sidebar-footer">All Systems Active</div>
+    </aside>
+
+    <main class="main-content">
+      <div class="main-header">
+        <div class="page-title">Settings</div>
+        <div class="header-status">Last saved 2 hours ago</div>
+      </div>
+
+      <div class="content" style="max-width:800px;">
+
+        <!-- Company Info -->
+        <div class="section-title">Company Information</div>
+        <div class="card fade-in">
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div>
+              <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Company Name</label>
+              <input type="text" value="Coastal Shield Roofing" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);box-sizing:border-box;">
+            </div>
+            <div>
+              <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Phone Number</label>
+              <input type="text" value="(305) 555-0199" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);box-sizing:border-box;">
+            </div>
+            <div>
+              <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Owner Name</label>
+              <input type="text" value="Mike Rodriguez" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);box-sizing:border-box;">
+            </div>
+            <div>
+              <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Website</label>
+              <input type="text" value="coastalshieldroofing.com" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);box-sizing:border-box;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Service Areas -->
+        <div class="section-title">Service Areas</div>
+        <div class="card fade-in">
+          <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+            <span style="background:var(--accent-light);color:var(--accent);padding:6px 14px;border-radius:6px;font-size:13px;font-weight:500;display:flex;align-items:center;gap:6px;">Miami-Dade County <span style="cursor:pointer;font-size:16px;line-height:1;" onclick="this.parentElement.remove()">&times;</span></span>
+            <span style="background:var(--accent-light);color:var(--accent);padding:6px 14px;border-radius:6px;font-size:13px;font-weight:500;display:flex;align-items:center;gap:6px;">Broward County <span style="cursor:pointer;font-size:16px;line-height:1;" onclick="this.parentElement.remove()">&times;</span></span>
+            <span style="background:var(--accent-light);color:var(--accent);padding:6px 14px;border-radius:6px;font-size:13px;font-weight:500;display:flex;align-items:center;gap:6px;">Palm Beach County <span style="cursor:pointer;font-size:16px;line-height:1;" onclick="this.parentElement.remove()">&times;</span></span>
+          </div>
+          <div style="display:flex;gap:8px;">
+            <input type="text" placeholder="Add a service area..." style="flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);">
+            <button style="padding:10px 18px;background:var(--accent);color:white;border:none;border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);">Add</button>
+          </div>
+        </div>
+
+        <!-- Targeting Criteria -->
+        <div class="section-title">Targeting Criteria</div>
+        <div class="card fade-in">
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.6;">These criteria control which homeowners your outbound calls, ads, and canvassers target. Only homes matching ALL criteria will be contacted.</p>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;">
+            <div>
+              <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Minimum Roof Age</label>
+              <div style="display:flex;align-items:center;gap:4px;">
+                <input type="text" value="12" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--mono,monospace);background:var(--white);box-sizing:border-box;">
+                <span style="font-size:13px;color:var(--text-muted);white-space:nowrap;">years</span>
+              </div>
+            </div>
+            <div>
+              <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Minimum Roof Size</label>
+              <div style="display:flex;align-items:center;gap:4px;">
+                <input type="text" value="1,800" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--mono,monospace);background:var(--white);box-sizing:border-box;">
+                <span style="font-size:13px;color:var(--text-muted);white-space:nowrap;">sq ft</span>
+              </div>
+            </div>
+            <div>
+              <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Minimum Household Income</label>
+              <div style="display:flex;align-items:center;gap:4px;">
+                <span style="font-size:14px;color:var(--text-muted);">$</span>
+                <input type="text" value="75,000" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--mono,monospace);background:var(--white);box-sizing:border-box;">
+              </div>
+            </div>
+            <div>
+              <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Home Insurance Required</label>
+              <div style="display:flex;align-items:center;gap:10px;height:42px;">
+                <div class="toggle" onclick="this.classList.toggle('off')"></div>
+                <span style="font-size:13px;color:var(--text);">Only target insured properties</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:18px;">
+            <div>
+              <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Minimum Job Size</label>
+              <div style="display:flex;align-items:center;gap:4px;">
+                <span style="font-size:14px;color:var(--text-muted);">$</span>
+                <input type="text" value="3,000" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--mono,monospace);background:var(--white);box-sizing:border-box;">
+              </div>
+            </div>
+            <div>
+              <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Max Drive Distance</label>
+              <div style="display:flex;align-items:center;gap:4px;">
+                <input type="text" value="30" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--mono,monospace);background:var(--white);box-sizing:border-box;">
+                <span style="font-size:13px;color:var(--text-muted);">mi</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-bottom:14px;">
+            <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:8px;">Roof Types Accepted</label>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text);cursor:pointer;"><input type="checkbox" checked style="accent-color:var(--accent);"> Tile</label>
+              <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text);cursor:pointer;"><input type="checkbox" checked style="accent-color:var(--accent);"> Shingle</label>
+              <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text);cursor:pointer;"><input type="checkbox" checked style="accent-color:var(--accent);"> Metal</label>
+              <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text);cursor:pointer;"><input type="checkbox" checked style="accent-color:var(--accent);"> Flat</label>
+              <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text);cursor:pointer;"><input type="checkbox" style="accent-color:var(--accent);"> Commercial</label>
+            </div>
+          </div>
+
+          <div>
+            <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:8px;">Job Types Accepted</label>
+            <div style="display:flex;gap:12px;flex-wrap:wrap;">
+              <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text);cursor:pointer;"><input type="checkbox" checked style="accent-color:var(--accent);"> Full Replacement</label>
+              <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text);cursor:pointer;"><input type="checkbox" checked style="accent-color:var(--accent);"> Repair</label>
+              <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text);cursor:pointer;"><input type="checkbox" checked style="accent-color:var(--accent);"> Insurance Claim</label>
+              <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text);cursor:pointer;"><input type="checkbox" checked style="accent-color:var(--accent);"> Inspection</label>
+              <label style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text);cursor:pointer;"><input type="checkbox" style="accent-color:var(--accent);"> Gutter Only</label>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI Screening Questions -->
+        <div class="section-title">AI Screening Questions</div>
+        <div class="card fade-in">
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.6;">The AI receptionist asks these questions on every inbound and outbound call. Leads that don't meet your criteria are flagged but still logged. You can edit questions anytime or just text us a change.</p>
+
+          <div style="display:flex;flex-direction:column;gap:12px;">
+            <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:flex-start;gap:12px;">
+              <div style="width:28px;height:28px;border-radius:6px;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;">1</div>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:14px;color:var(--dark);margin-bottom:4px;">How old is your roof?</div>
+                <div style="font-size:12px;color:var(--text-muted);">Qualifies for: <span style="font-family:var(--mono,monospace);color:var(--accent);font-weight:600;">12+ years</span> &mdash; Younger roofs flagged as low priority</div>
+              </div>
+              <div style="display:flex;gap:6px;flex-shrink:0;">
+                <span style="font-size:11px;background:var(--green-light);color:#166534;padding:3px 8px;border-radius:4px;font-weight:600;">Required</span>
+              </div>
+            </div>
+
+            <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:flex-start;gap:12px;">
+              <div style="width:28px;height:28px;border-radius:6px;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;">2</div>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:14px;color:var(--dark);margin-bottom:4px;">Are you the homeowner?</div>
+                <div style="font-size:12px;color:var(--text-muted);">Must be: <span style="font-family:var(--mono,monospace);color:var(--accent);font-weight:600;">Yes</span> &mdash; Tenants politely declined</div>
+              </div>
+              <div style="display:flex;gap:6px;flex-shrink:0;">
+                <span style="font-size:11px;background:var(--green-light);color:#166534;padding:3px 8px;border-radius:4px;font-weight:600;">Required</span>
+              </div>
+            </div>
+
+            <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:flex-start;gap:12px;">
+              <div style="width:28px;height:28px;border-radius:6px;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;">3</div>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:14px;color:var(--dark);margin-bottom:4px;">Is this an insurance claim or out-of-pocket?</div>
+                <div style="font-size:12px;color:var(--text-muted);">Accepts: <span style="font-family:var(--mono,monospace);color:var(--accent);font-weight:600;">Both</span> &mdash; Insurance claims prioritized when schedule is full</div>
+              </div>
+              <div style="display:flex;gap:6px;flex-shrink:0;">
+                <span style="font-size:11px;background:var(--green-light);color:#166534;padding:3px 8px;border-radius:4px;font-weight:600;">Required</span>
+              </div>
+            </div>
+
+            <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:flex-start;gap:12px;">
+              <div style="width:28px;height:28px;border-radius:6px;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;">4</div>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:14px;color:var(--dark);margin-bottom:4px;">What type of roof do you have?</div>
+                <div style="font-size:12px;color:var(--text-muted);">Accepts: <span style="font-family:var(--mono,monospace);color:var(--accent);font-weight:600;">Tile, Shingle, Metal, Flat</span> &mdash; Commercial declined</div>
+              </div>
+              <div style="display:flex;gap:6px;flex-shrink:0;">
+                <span style="font-size:11px;background:var(--blue-light);color:#1E40AF;padding:3px 8px;border-radius:4px;font-weight:600;">Optional</span>
+              </div>
+            </div>
+
+            <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:flex-start;gap:12px;">
+              <div style="width:28px;height:28px;border-radius:6px;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;">5</div>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:14px;color:var(--dark);margin-bottom:4px;">Do you currently have homeowner's insurance?</div>
+                <div style="font-size:12px;color:var(--text-muted);">Must be: <span style="font-family:var(--mono,monospace);color:var(--accent);font-weight:600;">Yes</span> &mdash; Uninsured flagged for review</div>
+              </div>
+              <div style="display:flex;gap:6px;flex-shrink:0;">
+                <span style="font-size:11px;background:var(--green-light);color:#166534;padding:3px 8px;border-radius:4px;font-weight:600;">Required</span>
+              </div>
+            </div>
+
+            <div style="background:var(--bg);border-radius:var(--radius-sm);padding:14px;display:flex;align-items:flex-start;gap:12px;">
+              <div style="width:28px;height:28px;border-radius:6px;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;">6</div>
+              <div style="flex:1;">
+                <div style="font-weight:600;font-size:14px;color:var(--dark);margin-bottom:4px;">What's your zip code?</div>
+                <div style="font-size:12px;color:var(--text-muted);">Must be within: <span style="font-family:var(--mono,monospace);color:var(--accent);font-weight:600;">30 mi of service area</span> &mdash; Out-of-range referred out</div>
+              </div>
+              <div style="display:flex;gap:6px;flex-shrink:0;">
+                <span style="font-size:11px;background:var(--green-light);color:#166534;padding:3px 8px;border-radius:4px;font-weight:600;">Required</span>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:14px;display:flex;gap:8px;">
+            <input type="text" placeholder="Add a screening question..." style="flex:1;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);">
+            <button style="padding:10px 18px;background:var(--accent);color:white;border:none;border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);">Add</button>
+          </div>
+        </div>
+
+        <!-- Candidate Review -->
+        <div class="section-title">Candidate Review</div>
+        <div class="card fade-in">
+          <p style="font-size:13px;color:var(--text-muted);margin-bottom:16px;line-height:1.6;">Every applicant is screened by AI before they reach you. Listen to their screening call, read their responses, and decide who to interview &mdash; all from your phone or this dashboard.</p>
+
+          <!-- Candidate 1 -->
+          <div style="border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden;">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg);">
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:40px;height:40px;border-radius:50%;background:var(--accent);color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;">JM</div>
+                <div>
+                  <div style="font-weight:600;font-size:14px;color:var(--dark);">Jason Martinez</div>
+                  <div style="font-size:12px;color:var(--text-muted);">Applied for: Sales Rep &bull; 2 hours ago</div>
+                </div>
+              </div>
+              <span class="badge badge-green">Qualified</span>
+            </div>
+            <div style="padding:14px;">
+              <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:8px;">Screening Responses</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
+                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
+                  <div style="font-size:11px;color:var(--text-muted);">Roofing experience</div>
+                  <div style="font-size:13px;font-weight:600;color:var(--dark);">3 years at ABC Roofing</div>
+                </div>
+                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
+                  <div style="font-size:11px;color:var(--text-muted);">Reliable transportation</div>
+                  <div style="font-size:13px;font-weight:600;color:var(--dark);">Yes &mdash; owns vehicle</div>
+                </div>
+                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
+                  <div style="font-size:11px;color:var(--text-muted);">Available start date</div>
+                  <div style="font-size:13px;font-weight:600;color:var(--dark);">Immediately</div>
+                </div>
+                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
+                  <div style="font-size:11px;color:var(--text-muted);">Commission comfort</div>
+                  <div style="font-size:13px;font-weight:600;color:var(--dark);">Yes &mdash; prefers commission</div>
+                </div>
+              </div>
+
+              <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:6px;">Screening Call Recording</div>
+              <div style="background:var(--dark);border-radius:var(--radius-sm);padding:12px;display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+                <div style="width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;" onclick="this.querySelector('span').innerHTML=this.querySelector('span').innerHTML.includes('\u25B6')?'\u23F8':'\u25B6'">
+                  <span style="color:white;font-size:14px;">&#9654;</span>
+                </div>
+                <div style="flex:1;">
+                  <div style="background:rgba(255,255,255,0.1);border-radius:4px;height:5px;">
+                    <div style="background:var(--accent);border-radius:4px;height:100%;width:0%;"></div>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;margin-top:3px;">
+                    <span style="font-size:10px;color:rgba(255,255,255,0.5);">0:00</span>
+                    <span style="font-size:10px;color:rgba(255,255,255,0.5);">4:32</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display:flex;gap:8px;">
+                <button style="flex:1;padding:10px;background:var(--accent);color:white;border:none;border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);">Schedule Interview</button>
+                <button style="flex:1;padding:10px;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);">Pass</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Candidate 2 -->
+          <div style="border:1px solid var(--border);border-radius:var(--radius-sm);margin-bottom:12px;overflow:hidden;">
+            <div style="display:flex;align-items:center;justify-content:space-between;padding:14px;background:var(--bg);">
+              <div style="display:flex;align-items:center;gap:12px;">
+                <div style="width:40px;height:40px;border-radius:50%;background:#6366F1;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;">TW</div>
+                <div>
+                  <div style="font-weight:600;font-size:14px;color:var(--dark);">Terrence Williams</div>
+                  <div style="font-size:12px;color:var(--text-muted);">Applied for: Canvasser &bull; 5 hours ago</div>
+                </div>
+              </div>
+              <span class="badge badge-yellow">Review</span>
+            </div>
+            <div style="padding:14px;">
+              <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:8px;">Screening Responses</div>
+              <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:14px;">
+                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
+                  <div style="font-size:11px;color:var(--text-muted);">D2D experience</div>
+                  <div style="font-size:13px;font-weight:600;color:var(--dark);">6 months (pest control)</div>
+                </div>
+                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
+                  <div style="font-size:11px;color:var(--text-muted);">Reliable transportation</div>
+                  <div style="font-size:13px;font-weight:600;color:var(--dark);">Yes &mdash; owns vehicle</div>
+                </div>
+                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
+                  <div style="font-size:11px;color:var(--text-muted);">Doors per day comfort</div>
+                  <div style="font-size:13px;font-weight:600;color:var(--dark);">80+ no problem</div>
+                </div>
+                <div style="background:var(--bg);padding:10px;border-radius:var(--radius-sm);">
+                  <div style="font-size:11px;color:var(--text-muted);">Available start date</div>
+                  <div style="font-size:13px;font-weight:600;color:var(--dark);">Next Monday</div>
+                </div>
+              </div>
+
+              <div style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;margin-bottom:6px;">Screening Call Recording</div>
+              <div style="background:var(--dark);border-radius:var(--radius-sm);padding:12px;display:flex;align-items:center;gap:12px;margin-bottom:12px;">
+                <div style="width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;" onclick="this.querySelector('span').innerHTML=this.querySelector('span').innerHTML.includes('\u25B6')?'\u23F8':'\u25B6'">
+                  <span style="color:white;font-size:14px;">&#9654;</span>
+                </div>
+                <div style="flex:1;">
+                  <div style="background:rgba(255,255,255,0.1);border-radius:4px;height:5px;">
+                    <div style="background:var(--accent);border-radius:4px;height:100%;width:0%;"></div>
+                  </div>
+                  <div style="display:flex;justify-content:space-between;margin-top:3px;">
+                    <span style="font-size:10px;color:rgba(255,255,255,0.5);">0:00</span>
+                    <span style="font-size:10px;color:rgba(255,255,255,0.5);">3:15</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display:flex;gap:8px;">
+                <button style="flex:1;padding:10px;background:var(--accent);color:white;border:none;border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);">Schedule Interview</button>
+                <button style="flex:1;padding:10px;background:var(--bg);color:var(--text);border:1px solid var(--border);border-radius:var(--radius-sm);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--sans);">Pass</button>
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align:center;padding:8px;font-size:12px;color:var(--text-muted);">Showing 2 of 7 applicants &mdash; <a href="hiring.html" style="color:var(--blue);">View all in Hiring tab</a></div>
+        </div>
+
+        <!-- Scheduling -->
+        <div class="section-title">Scheduling</div>
+        <div class="card fade-in">
+          <div style="margin-bottom:14px;">
+            <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:8px;">Inspection Availability</label>
+            <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:6px;margin-bottom:14px;">
+              <div style="text-align:center;"><div style="font-size:11px;color:var(--text-muted);margin-bottom:4px;">Mon</div><div class="toggle" style="margin:0 auto;" onclick="this.classList.toggle('off')"></div></div>
+              <div style="text-align:center;"><div style="font-size:11px;color:var(--text-muted);margin-bottom:4px;">Tue</div><div class="toggle" style="margin:0 auto;" onclick="this.classList.toggle('off')"></div></div>
+              <div style="text-align:center;"><div style="font-size:11px;color:var(--text-muted);margin-bottom:4px;">Wed</div><div class="toggle" style="margin:0 auto;" onclick="this.classList.toggle('off')"></div></div>
+              <div style="text-align:center;"><div style="font-size:11px;color:var(--text-muted);margin-bottom:4px;">Thu</div><div class="toggle" style="margin:0 auto;" onclick="this.classList.toggle('off')"></div></div>
+              <div style="text-align:center;"><div style="font-size:11px;color:var(--text-muted);margin-bottom:4px;">Fri</div><div class="toggle" style="margin:0 auto;" onclick="this.classList.toggle('off')"></div></div>
+              <div style="text-align:center;"><div style="font-size:11px;color:var(--text-muted);margin-bottom:4px;">Sat</div><div class="toggle off" style="margin:0 auto;" onclick="this.classList.toggle('off')"></div></div>
+              <div style="text-align:center;"><div style="font-size:11px;color:var(--text-muted);margin-bottom:4px;">Sun</div><div class="toggle off" style="margin:0 auto;" onclick="this.classList.toggle('off')"></div></div>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+            <div>
+              <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Earliest Start</label>
+              <input type="text" value="8:00 AM" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);box-sizing:border-box;">
+            </div>
+            <div>
+              <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Latest Start</label>
+              <input type="text" value="4:00 PM" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);box-sizing:border-box;">
+            </div>
+            <div>
+              <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Max Inspections Per Day</label>
+              <input type="text" value="6" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);box-sizing:border-box;">
+            </div>
+            <div>
+              <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Buffer Between Appointments</label>
+              <input type="text" value="30 min" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);box-sizing:border-box;">
+            </div>
+          </div>
+        </div>
+
+        <!-- Outbound Script -->
+        <div class="section-title">Outbound Call Script</div>
+        <div class="card fade-in">
+          <div style="margin-bottom:14px;">
+            <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Caller Name</label>
+            <input type="text" value="Sarah" style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);box-sizing:border-box;">
+          </div>
+          <div style="margin-bottom:14px;">
+            <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Opening Script</label>
+            <textarea style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);min-height:80px;resize:vertical;line-height:1.6;box-sizing:border-box;">Hi [Name], this is Sarah calling from Coastal Shield Roofing. We're offering free roof inspections in your neighborhood before hurricane season. Would you be interested in getting yours checked?</textarea>
+          </div>
+          <div style="margin-bottom:14px;">
+            <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Objection Handling</label>
+            <textarea style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);min-height:80px;resize:vertical;line-height:1.6;box-sizing:border-box;">I completely understand. Just so you know, the inspection is totally free and takes about 20 minutes. Many homeowners find damage they didn't know about, and it can save thousands if caught early. Would next week work better for you?</textarea>
+          </div>
+          <div>
+            <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Storm Follow-Up Script</label>
+            <textarea style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);min-height:80px;resize:vertical;line-height:1.6;box-sizing:border-box;">Hi [Name], this is Sarah from Coastal Shield Roofing. We noticed the recent storm hit your area. We're offering free inspections this week to make sure your roof wasn't damaged. Can we get you on the schedule?</textarea>
+          </div>
+        </div>
+
+        <!-- Text Message Templates -->
+        <div class="section-title">Text Message Templates</div>
+        <div class="card fade-in">
+          <div style="margin-bottom:14px;">
+            <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Storm Outreach Text</label>
+            <textarea style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);min-height:60px;resize:vertical;line-height:1.6;box-sizing:border-box;">Hi [Name], this is Coastal Shield Roofing. With the tropical storm heading toward your area, there may be roof damage. We're offering priority inspections this week. Want us to get you on the schedule? Reply YES or call us anytime.</textarea>
+          </div>
+          <div style="margin-bottom:14px;">
+            <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Post-Storm Follow-Up Text</label>
+            <textarea style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);min-height:60px;resize:vertical;line-height:1.6;box-sizing:border-box;">The storm has passed. If you noticed any damage, we still have inspection slots this week. Reply YES and we'll get you on the schedule. - Coastal Shield Roofing</textarea>
+          </div>
+          <div>
+            <label style="font-size:11px;color:var(--text-muted);text-transform:uppercase;font-weight:600;display:block;margin-bottom:4px;">Appointment Confirmation Text</label>
+            <textarea style="width:100%;padding:10px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:14px;font-family:var(--sans);background:var(--white);min-height:60px;resize:vertical;line-height:1.6;box-sizing:border-box;">Hi [Name], your roof inspection with Coastal Shield Roofing is confirmed for [Date] at [Time]. Our inspector will arrive within a 30-minute window. Reply CHANGE to reschedule or call (305) 555-0199.</textarea>
+          </div>
+        </div>
+
+        <!-- Notifications -->
+        <div class="section-title">Notifications</div>
+        <div class="card fade-in">
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);">
+            <div><div style="font-weight:600;font-size:14px;color:var(--dark);">New Lead Alerts</div><div style="font-size:12px;color:var(--text-muted);">Get texted when a new lead comes in</div></div>
+            <div class="toggle" onclick="this.classList.toggle('off')"></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);">
+            <div><div style="font-weight:600;font-size:14px;color:var(--dark);">Appointment Booked</div><div style="font-size:12px;color:var(--text-muted);">Get notified when receptionist books an appointment</div></div>
+            <div class="toggle" onclick="this.classList.toggle('off')"></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);">
+            <div><div style="font-weight:600;font-size:14px;color:var(--dark);">Storm Alerts</div><div style="font-size:12px;color:var(--text-muted);">Get alerted when storms impact your service areas</div></div>
+            <div class="toggle" onclick="this.classList.toggle('off')"></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--border);">
+            <div><div style="font-weight:600;font-size:14px;color:var(--dark);">Daily Summary</div><div style="font-size:12px;color:var(--text-muted);">End-of-day text with your numbers</div></div>
+            <div class="toggle" onclick="this.classList.toggle('off')"></div>
+          </div>
+          <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;">
+            <div><div style="font-weight:600;font-size:14px;color:var(--dark);">Weekly Report</div><div style="font-size:12px;color:var(--text-muted);">Weekly performance recap every Monday morning</div></div>
+            <div class="toggle" onclick="this.classList.toggle('off')"></div>
+          </div>
+        </div>
+
+        <div style="text-align:center;padding:20px 0;">
+          <button onclick="this.textContent='Saved!';this.style.background='#065F46';setTimeout(()=>{this.textContent='Save All Changes';this.style.background=''},2000)" style="padding:14px 40px;background:var(--accent);color:white;border:none;border-radius:var(--radius-sm);font-size:15px;font-weight:600;cursor:pointer;font-family:var(--sans);transition:background 0.2s;">Save All Changes</button>
+          <p style="font-size:12px;color:var(--text-muted);margin-top:8px;">Or just text us any change &mdash; we'll update it for you.</p>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+<!-- v2 - settings with sidebar, targeting criteria, AI screening questions, candidate review, no DNC -->
+</body>
+</html>

@@ -53,152 +53,168 @@
 </head>
 <body>
 
-  <div class="topbar">
-    <div class="topbar-brand">Coastal Shield <span>Roofing</span></div>
-    <div class="topbar-status">System Running</div>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <div class="sidebar-brand-name">Coastal Shield <span>Roofing</span></div>
+        <div class="sidebar-brand-sub">Growth Dashboard</div>
+      </div>
+      <nav class="sidebar-nav">
+        <div class="sidebar-section">Overview</div>
+        <a class="sidebar-link" href="dashboard.html">Dashboard</a>
+        <a class="sidebar-link" href="receptionist.html">Receptionist</a>
+        <a class="sidebar-link" href="ads.html">Ads</a>
+        <div class="sidebar-section">Tools</div>
+        <a class="sidebar-link" href="storm.html">Storm Alerts<span class="link-badge">1</span></a>
+        <a class="sidebar-link" href="hiring.html">Hiring</a>
+        <a class="sidebar-link" href="commands.html">Text Commands</a>
+        <div class="sidebar-section">System</div>
+        <a class="sidebar-link active" href="changelog.html">What Changed</a>
+        <a class="sidebar-link" href="settings.html">Settings</a>
+      </nav>
+      <div class="sidebar-footer">All Systems Active</div>
+    </aside>
+
+    <main class="main-content">
+      <div class="main-header">
+        <div class="page-title">What Changed</div>
+        <div class="header-status">Updated daily</div>
+      </div>
+
+      <div class="content" style="max-width:800px;">
+
+        <div class="insight-box" style="margin-bottom:20px;">
+          <div class="insight-title">Why This Page Exists</div>
+          <div class="insight-text">
+            Every week, we optimize your ads, update your receptionist scripts, and adjust your outreach. This page shows you exactly what changed and why &mdash; in plain English. No surprises. No black box. If you ever want to know what's happening with your system, it's all right here.
+          </div>
+        </div>
+
+        <!-- This Week -->
+        <div class="week-header">This Week &mdash; June 2-8</div>
+        <div class="card fade-in">
+          <div class="log-entry">
+            <span class="log-tag ads">Ads</span>
+            <div class="log-body">
+              <div class="log-date">Monday, Jun 2</div>
+              <div class="log-title">Paused one Google ad, shifted budget to top performer</div>
+              <div class="log-desc">Your "emergency roof repair" ad was getting clicks but not calls. We paused it and moved that $15/day to your "roof replacement near me" ad, which books 1 appointment for every 8 clicks.</div>
+              <div class="log-result">Expected result: cost per lead drops ~$5</div>
+              <div class="log-link"><a href="dashboard.html">View ad performance on dashboard &rarr;</a></div>
+            </div>
+          </div>
+          <div class="log-entry">
+            <span class="log-tag creative">Creative</span>
+            <div class="log-body">
+              <div class="log-date">Monday, Jun 2</div>
+              <div class="log-title">Added before/after photos to Facebook ads</div>
+              <div class="log-desc">Used the 3 before/after photos from your Coral Gables job (the one with the blue tarp). Real project photos consistently outperform stock images &mdash; people want to see your actual work.</div>
+              <div class="log-result">Expected result: 2-3x higher click rate on those ads</div>
+              <div class="log-link"><a href="ads.html">View running ads &rarr;</a></div>
+            </div>
+          </div>
+          <div class="log-entry">
+            <span class="log-tag receptionist">Receptionist</span>
+            <div class="log-body">
+              <div class="log-date">Wednesday, Jun 4</div>
+              <div class="log-title">Updated phone script to ask about insurance earlier</div>
+              <div class="log-desc">We noticed your crew prefers insurance jobs when the schedule is packed. The receptionist now asks "Is this an insurance claim or out-of-pocket?" within the first 30 seconds, so she can prioritize accordingly.</div>
+              <div class="log-link"><a href="receptionist.html">See receptionist call examples &rarr;</a></div>
+            </div>
+          </div>
+          <div class="log-entry">
+            <span class="log-tag ads">Ads</span>
+            <div class="log-body">
+              <div class="log-date">Thursday, Jun 5</div>
+              <div class="log-title">Launched neighborhood-targeting ad set on Facebook</div>
+              <div class="log-desc">New ads targeting homeowners within 5 miles of your last 3 completed jobs. Neighbors convert better &mdash; they've already seen your trucks and yard signs on the street. Running with a $20/day budget to test.</div>
+              <div class="log-link"><a href="ads.html">View Facebook ads &rarr;</a></div>
+            </div>
+          </div>
+          <div class="log-entry">
+            <span class="log-tag storm">Storm</span>
+            <div class="log-body">
+              <div class="log-date">Friday, Jun 6</div>
+              <div class="log-title">Tropical storm triggered &mdash; Miami-Dade outreach ready</div>
+              <div class="log-desc">High winds reported at 9:14pm. System identified 161 contacts in affected zip codes (127 past leads + 34 past customers). Outreach message prepared and waiting for your approval.</div>
+              <div class="log-result">Pending your approval &mdash; nothing sent yet</div>
+              <div class="log-link"><a href="storm.html">Review storm outreach plan &rarr;</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Last Week -->
+        <div class="week-header">Last Week &mdash; May 26 - Jun 1</div>
+        <div class="card fade-in">
+          <div class="log-entry">
+            <span class="log-tag ads">Ads</span>
+            <div class="log-body">
+              <div class="log-date">Monday, May 26</div>
+              <div class="log-title">Increased Google Ads budget from $40 to $55/day</div>
+              <div class="log-desc">Your Google cost per lead dropped below $50 for the first time. When a channel is performing well, we put more money behind it. This should add 3-4 more leads per week without raising your cost per lead.</div>
+              <div class="log-result">Result: 6 extra leads that week, cost per lead stayed at $47</div>
+              <div class="log-link"><a href="dashboard.html">View lead costs on dashboard &rarr;</a></div>
+            </div>
+          </div>
+          <div class="log-entry">
+            <span class="log-tag reviews">Reviews</span>
+            <div class="log-body">
+              <div class="log-date">Tuesday, May 27</div>
+              <div class="log-title">Review request timing changed from 1 hour to 24 hours</div>
+              <div class="log-desc">We were sending the review request text 1 hour after job completion. Homeowners were still cleaning up and not in the mood. Switched to next-day morning &mdash; they've had time to appreciate the work and are more likely to leave a review.</div>
+              <div class="log-result">Result: review response rate went from 18% to 31%</div>
+              <div class="log-link"><a href="receptionist.html">See review request flow &rarr;</a></div>
+            </div>
+          </div>
+          <div class="log-entry">
+            <span class="log-tag hiring">Hiring</span>
+            <div class="log-body">
+              <div class="log-date">Wednesday, May 28</div>
+              <div class="log-title">Posted 2 new job listings for Miami market</div>
+              <div class="log-desc">You mentioned needing canvassers and a sales rep. Posted on Indeed, ZipRecruiter, Facebook Jobs, and LinkedIn. Phone screening questions based on what you told us matters most: reliability, transportation, and willingness to knock 80+ doors/day.</div>
+              <div class="log-link"><a href="hiring.html">View job posts &amp; applicants &rarr;</a></div>
+            </div>
+          </div>
+          <div class="log-entry">
+            <span class="log-tag receptionist">Receptionist</span>
+            <div class="log-body">
+              <div class="log-date">Friday, May 30</div>
+              <div class="log-title">Added day-of appointment confirmation texts</div>
+              <div class="log-desc">Your crew drove to 2 no-shows last week. Now the receptionist texts every homeowner at 8am on their appointment day: "Confirming your inspection at [time]. Reply YES or call to reschedule." If they don't confirm by 11am, receptionist calls them.</div>
+              <div class="log-result">Result: no-show rate dropped from 15% to 4%</div>
+              <div class="log-link"><a href="receptionist.html">See confirmation example &rarr;</a></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 Weeks Ago -->
+        <div class="week-header">2 Weeks Ago &mdash; May 19-25</div>
+        <div class="card fade-in">
+          <div class="log-entry">
+            <span class="log-tag ads">Ads</span>
+            <div class="log-body">
+              <div class="log-date">Monday, May 19</div>
+              <div class="log-title">Launched outbound calling alongside Google and Facebook</div>
+              <div class="log-desc">Your third lead channel is now live. Outbound calls target homeowners with roofs over 15 years old in your service area. The pitch is simple: free inspection, no pressure. This gives you leads that don't come from ads &mdash; so if ad costs go up, you still have a pipeline.</div>
+              <div class="log-result">Result: 25 outbound leads in first 2 weeks at $31/lead</div>
+              <div class="log-link"><a href="dashboard.html">View outbound results &rarr;</a></div>
+            </div>
+          </div>
+          <div class="log-entry">
+            <span class="log-tag creative">Creative</span>
+            <div class="log-body">
+              <div class="log-date">Thursday, May 22</div>
+              <div class="log-title">Created 5 new Facebook video ads</div>
+              <div class="log-desc">Short videos (15-30 seconds each) showing your crew on job sites, before/after transformations, and a quick "meet the owner" clip. Video ads get 30-50% more engagement than static images on Facebook.</div>
+              <div class="log-link"><a href="ads.html">View video ads &rarr;</a></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
   </div>
 
-  <nav class="nav-tabs">
-    <a class="nav-tab" href="dashboard.html">Dashboard</a>
-    <a class="nav-tab" href="receptionist.html">Receptionist</a>
-    <a class="nav-tab" href="storm.html">Storm Alerts</a>
-    <a class="nav-tab" href="hiring.html">Hiring</a>
-    <a class="nav-tab active" href="changelog.html">What Changed</a>
-    <a class="nav-tab" href="commands.html">Text Commands</a>
-  </nav>
-
-  <div class="content-narrow">
-
-    <div class="insight-box" style="margin-bottom:20px;">
-      <div class="insight-title">Why This Page Exists</div>
-      <div class="insight-text">
-        Every week, we optimize your ads, update your receptionist scripts, and adjust your outreach. This page shows you exactly what changed and why &mdash; in plain English. No surprises. No black box. If you ever want to know what's happening with your system, it's all right here.
-      </div>
-    </div>
-
-    <!-- This Week -->
-    <div class="week-header">This Week &mdash; June 2-8</div>
-    <div class="card fade-in">
-      <div class="log-entry">
-        <span class="log-tag ads">Ads</span>
-        <div class="log-body">
-          <div class="log-date">Monday, Jun 2</div>
-          <div class="log-title">Paused one Google ad, shifted budget to top performer</div>
-          <div class="log-desc">Your "emergency roof repair" ad was getting clicks but not calls. We paused it and moved that $15/day to your "roof replacement near me" ad, which books 1 appointment for every 8 clicks.</div>
-          <div class="log-result">Expected result: cost per lead drops ~$5</div>
-          <div class="log-link"><a href="dashboard.html">View ad performance on dashboard &rarr;</a></div>
-        </div>
-      </div>
-      <div class="log-entry">
-        <span class="log-tag creative">Creative</span>
-        <div class="log-body">
-          <div class="log-date">Monday, Jun 2</div>
-          <div class="log-title">Added before/after photos to Facebook ads</div>
-          <div class="log-desc">Used the 3 before/after photos from your Coral Gables job (the one with the blue tarp). Real project photos consistently outperform stock images &mdash; people want to see your actual work.</div>
-          <div class="log-result">Expected result: 2-3x higher click rate on those ads</div>
-          <div class="log-link"><a href="dashboard.html">View running ads &rarr;</a></div>
-        </div>
-      </div>
-      <div class="log-entry">
-        <span class="log-tag receptionist">Receptionist</span>
-        <div class="log-body">
-          <div class="log-date">Wednesday, Jun 4</div>
-          <div class="log-title">Updated phone script to ask about insurance earlier</div>
-          <div class="log-desc">We noticed your crew prefers insurance jobs when the schedule is packed. The receptionist now asks "Is this an insurance claim or out-of-pocket?" within the first 30 seconds, so she can prioritize accordingly.</div>
-          <div class="log-link"><a href="receptionist.html">See receptionist call examples &rarr;</a></div>
-        </div>
-      </div>
-      <div class="log-entry">
-        <span class="log-tag ads">Ads</span>
-        <div class="log-body">
-          <div class="log-date">Thursday, Jun 5</div>
-          <div class="log-title">Launched neighborhood-targeting ad set on Facebook</div>
-          <div class="log-desc">New ads targeting homeowners within 5 miles of your last 3 completed jobs. Neighbors convert better &mdash; they've already seen your trucks and yard signs on the street. Running with a $20/day budget to test.</div>
-          <div class="log-link"><a href="dashboard.html">View Facebook ads &rarr;</a></div>
-        </div>
-      </div>
-      <div class="log-entry">
-        <span class="log-tag storm">Storm</span>
-        <div class="log-body">
-          <div class="log-date">Friday, Jun 6</div>
-          <div class="log-title">Tropical storm triggered &mdash; Miami-Dade outreach ready</div>
-          <div class="log-desc">High winds reported at 9:14pm. System identified 161 contacts in affected zip codes (127 past leads + 34 past customers). Outreach message prepared and waiting for your approval.</div>
-          <div class="log-result">Pending your approval &mdash; nothing sent yet</div>
-          <div class="log-link"><a href="storm.html">Review storm outreach plan &rarr;</a></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Last Week -->
-    <div class="week-header">Last Week &mdash; May 26 - Jun 1</div>
-    <div class="card fade-in">
-      <div class="log-entry">
-        <span class="log-tag ads">Ads</span>
-        <div class="log-body">
-          <div class="log-date">Monday, May 26</div>
-          <div class="log-title">Increased Google Ads budget from $40 to $55/day</div>
-          <div class="log-desc">Your Google cost per lead dropped below $50 for the first time. When a channel is performing well, we put more money behind it. This should add 3-4 more leads per week without raising your cost per lead.</div>
-          <div class="log-result">Result: 6 extra leads that week, cost per lead stayed at $47</div>
-          <div class="log-link"><a href="dashboard.html">View lead costs on dashboard &rarr;</a></div>
-        </div>
-      </div>
-      <div class="log-entry">
-        <span class="log-tag reviews">Reviews</span>
-        <div class="log-body">
-          <div class="log-date">Tuesday, May 27</div>
-          <div class="log-title">Review request timing changed from 1 hour to 24 hours</div>
-          <div class="log-desc">We were sending the review request text 1 hour after job completion. Homeowners were still cleaning up and not in the mood. Switched to next-day morning &mdash; they've had time to appreciate the work and are more likely to leave a review.</div>
-          <div class="log-result">Result: review response rate went from 18% to 31%</div>
-          <div class="log-link"><a href="receptionist.html">See review request flow &rarr;</a></div>
-        </div>
-      </div>
-      <div class="log-entry">
-        <span class="log-tag hiring">Hiring</span>
-        <div class="log-body">
-          <div class="log-date">Wednesday, May 28</div>
-          <div class="log-title">Posted 2 new job listings for Miami market</div>
-          <div class="log-desc">You mentioned needing canvassers and a sales rep. Posted on Indeed, ZipRecruiter, Facebook Jobs, and LinkedIn. Phone screening questions based on what you told us matters most: reliability, transportation, and willingness to knock 80+ doors/day.</div>
-          <div class="log-link"><a href="hiring.html">View job posts &amp; applicants &rarr;</a></div>
-        </div>
-      </div>
-      <div class="log-entry">
-        <span class="log-tag receptionist">Receptionist</span>
-        <div class="log-body">
-          <div class="log-date">Friday, May 30</div>
-          <div class="log-title">Added day-of appointment confirmation texts</div>
-          <div class="log-desc">Your crew drove to 2 no-shows last week. Now the receptionist texts every homeowner at 8am on their appointment day: "Confirming your inspection at [time]. Reply YES or call to reschedule." If they don't confirm by 11am, receptionist calls them.</div>
-          <div class="log-result">Result: no-show rate dropped from 15% to 4%</div>
-          <div class="log-link"><a href="receptionist.html">See confirmation example &rarr;</a></div>
-        </div>
-      </div>
-    </div>
-
-    <!-- 2 Weeks Ago -->
-    <div class="week-header">2 Weeks Ago &mdash; May 19-25</div>
-    <div class="card fade-in">
-      <div class="log-entry">
-        <span class="log-tag ads">Ads</span>
-        <div class="log-body">
-          <div class="log-date">Monday, May 19</div>
-          <div class="log-title">Launched outbound calling alongside Google and Facebook</div>
-          <div class="log-desc">Your third lead channel is now live. Outbound calls target homeowners with roofs over 15 years old in your service area. The pitch is simple: free inspection, no pressure. This gives you leads that don't come from ads &mdash; so if ad costs go up, you still have a pipeline.</div>
-          <div class="log-result">Result: 25 outbound leads in first 2 weeks at $31/lead</div>
-          <div class="log-link"><a href="dashboard.html">View outbound results &rarr;</a></div>
-        </div>
-      </div>
-      <div class="log-entry">
-        <span class="log-tag creative">Creative</span>
-        <div class="log-body">
-          <div class="log-date">Thursday, May 22</div>
-          <div class="log-title">Created 5 new Facebook video ads</div>
-          <div class="log-desc">Short videos (15-30 seconds each) showing your crew on job sites, before/after transformations, and a quick "meet the owner" clip. Video ads get 30-50% more engagement than static images on Facebook.</div>
-          <div class="log-link"><a href="dashboard.html">View video ads &rarr;</a></div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-
-<!-- v2 - changelog demo -->
+<!-- v3 - changelog with sidebar layout -->
 </body>
 </html>
