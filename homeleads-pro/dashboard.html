@@ -601,9 +601,9 @@ const vehicleModels = {
 };
 
 const packages = [
-    { name: '50,000 Leads', count: 50000, price: 3500, perLead: 0.07, overage: 0.08 },
-    { name: '100,000 Leads', count: 100000, price: 4000, perLead: 0.04, overage: 0.05 },
-    { name: '250,000+ Leads', count: 250000, price: 10000, perLead: 0.04, overage: 0.04, unlimited: true }
+    { name: 'Starter - 20,000 Leads', count: 20000, price: 1500, perLead: 0.075, overage: 0.08, stateLimit: 1 },
+    { name: 'Pro - 50,000 Leads', count: 50000, price: 3000, perLead: 0.06, overage: 0.07 },
+    { name: 'Bulk - 100,000+ Leads', count: 100000, price: 4000, perLead: 0.04, overage: 0.05 }
 ];
 
 // ===== STATE =====
@@ -981,7 +981,8 @@ function renderPackages() {
             </div>
             <div class="flex gap-4 mt-3 text-xs">
                 ${pkg.unlimited ? '<span class="text-green-600 flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Unlimited</span>' : `<span class="text-green-600 flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> ${pkg.count.toLocaleString()} leads included</span>`}
-                <span class="text-green-600 flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> $${pkg.perLead.toFixed(2)} per lead</span>
+                <span class="text-green-600 flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> $${pkg.perLead.toFixed(pkg.perLead === 0.075 ? 3 : 2)} per lead</span>
+                <span class="${pkg.stateLimit ? 'text-gray-500' : 'text-green-600'} flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> ${pkg.stateLimit ? '1 state access' : 'Multi-state access'}</span>
             </div>
         </div>`;
     }).join('');
