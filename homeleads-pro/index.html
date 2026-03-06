@@ -63,7 +63,7 @@
             </div>
             <div class="flex items-center gap-2 sm:gap-3">
                 <a href="javascript:void(0)" onclick="openLogin()" class="text-gray-600 hover:text-brand-600 px-3 sm:px-4 py-2 sm:py-2.5 text-xs sm:text-sm font-semibold transition">Log In</a>
-                <a href="#pricing" class="bg-brand-600 hover:bg-brand-700 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition">Get Started</a>
+                <a href="javascript:void(0)" onclick="openSignup()" class="bg-brand-600 hover:bg-brand-700 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg text-xs sm:text-sm font-semibold transition">Get Started</a>
             </div>
         </div>
     </nav>
@@ -287,7 +287,7 @@
                         <p class="text-xs text-gray-400 mt-3 text-center">Phone numbers and full addresses redacted in preview. Full data delivered on purchase.</p>
                     </div>
                     <div class="text-center mt-6">
-                        <a href="#pricing" class="inline-block bg-brand-600 hover:bg-brand-700 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg font-bold text-sm sm:text-base transition">Get Started Today - Free to Sign Up</a>
+                        <a href="javascript:void(0)" onclick="openSignup()" class="inline-block bg-brand-600 hover:bg-brand-700 text-white px-6 sm:px-8 py-3 sm:py-3.5 rounded-lg font-bold text-sm sm:text-base transition">Get Started Today - Free to Sign Up</a>
                     </div>
                 </div>
             </div>
@@ -383,7 +383,7 @@
                         <li class="flex items-center gap-3 text-sm"><svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> CSV export, CRM-ready</li>
                         <li class="flex items-center gap-3 text-sm"><svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Credit score, income, home value</li>
                     </ul>
-                    <a href="#" class="block text-center bg-gray-900 hover:bg-gray-800 text-white py-3.5 rounded-lg font-bold transition">Get Started</a>
+                    <a href="javascript:void(0)" onclick="openSignup()" class="block text-center bg-gray-900 hover:bg-gray-800 text-white py-3.5 rounded-lg font-bold transition">Get Started</a>
                 </div>
                 <div class="bg-white border-2 border-brand-600 rounded-2xl p-6 sm:p-10 card-hover relative">
                     <div class="absolute -top-3 right-6 bg-brand-600 text-white text-xs font-bold px-4 py-1 rounded-full uppercase tracking-wider">Best Value</div>
@@ -407,7 +407,7 @@
                         <li class="flex items-center gap-3 text-sm"><svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Dedicated account support</li>
                         <li class="flex items-center gap-3 text-sm"><svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg> Multi-state targeting</li>
                     </ul>
-                    <a href="#" class="block text-center bg-brand-600 hover:bg-brand-700 text-white py-3.5 rounded-lg font-bold transition">Get Started</a>
+                    <a href="javascript:void(0)" onclick="openSignup()" class="block text-center bg-brand-600 hover:bg-brand-700 text-white py-3.5 rounded-lg font-bold transition">Get Started</a>
                 </div>
             </div>
             <p class="text-center text-gray-400 text-sm mt-6 sm:mt-8">Need higher volume? <a href="#" class="text-brand-600 font-semibold hover:underline">Contact us for enterprise pricing.</a></p>
@@ -482,7 +482,7 @@
             <h2 class="text-3xl sm:text-4xl md:text-5xl mb-4">Ready to Fill Your Pipeline?</h2>
             <p class="text-base sm:text-xl text-blue-100 mb-6 sm:mb-8">136M+ homeowner records. 18+ data points. Self-serve platform. Build and download your own lists in minutes.</p>
             <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
-                <a href="#" class="bg-white text-brand-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-bold hover:bg-gray-100 transition">Get Started Free</a>
+                <a href="javascript:void(0)" onclick="openSignup()" class="bg-white text-brand-700 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-bold hover:bg-gray-100 transition">Get Started Free</a>
                 <a href="#check-leads" class="border-2 border-white text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-medium hover:bg-white/10 transition">Check Lead Availability</a>
             </div>
             <p class="text-blue-200 text-xs sm:text-sm mt-6">Questions? Email us at <a href="mailto:hello@homeleadspro.com" class="underline">hello@homeleadspro.com</a></p>
@@ -540,7 +540,63 @@
                     </div>
                     <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white py-2.5 rounded-lg text-sm font-semibold transition">Log In</button>
                 </form>
-                <p class="text-center text-sm text-gray-500 mt-5">Don't have an account? <a href="#pricing" onclick="closeLogin()" class="text-brand-600 hover:text-brand-700 font-medium">Get Started</a></p>
+                <p class="text-center text-sm text-gray-500 mt-5">Don't have an account? <a href="#" onclick="event.preventDefault();closeLogin();openSignup();" class="text-brand-600 hover:text-brand-700 font-medium">Sign Up Free</a></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="fixed inset-0 z-[100] hidden">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" onclick="closeSignup()"></div>
+        <div class="relative min-h-screen flex items-center justify-center p-4">
+            <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md p-6 sm:p-8 relative">
+                <button onclick="closeSignup()" class="absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+                </button>
+                <div class="flex items-center gap-2 mb-6">
+                    <div class="w-8 h-8 rounded-lg gradient-blue flex items-center justify-center">
+                        <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-4 0a1 1 0 01-1-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 01-1 1h-2z"/></svg>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">HomeLeads<span class="text-brand-600">Pro</span></span>
+                </div>
+                <h3 class="serif text-2xl text-gray-900 mb-1">Create your account</h3>
+                <p class="text-gray-500 text-sm mb-6">Start building targeted lead lists in minutes. Free to sign up.</p>
+                <form onsubmit="event.preventDefault(); window.location.href='dashboard.html';">
+                    <div class="grid grid-cols-2 gap-3 mb-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5">First Name</label>
+                            <input type="text" placeholder="John" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-1.5">Last Name</label>
+                            <input type="text" placeholder="Smith" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1.5">Company Name</label>
+                        <input type="text" placeholder="Your company or agency" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1.5">Work Email</label>
+                        <input type="email" placeholder="you@company.com" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1.5">Phone Number</label>
+                        <input type="tel" placeholder="(555) 123-4567" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+                    </div>
+                    <div class="mb-4">
+                        <label class="block text-sm font-medium text-gray-700 mb-1.5">Password</label>
+                        <input type="password" placeholder="Create a password (8+ characters)" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none transition">
+                    </div>
+                    <div class="mb-6">
+                        <label class="flex items-start gap-2 text-sm text-gray-600">
+                            <input type="checkbox" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500 mt-0.5">
+                            <span>I agree to the <a href="#" class="text-brand-600 hover:text-brand-700 font-medium">Terms of Service</a> and <a href="#" class="text-brand-600 hover:text-brand-700 font-medium">Privacy Policy</a></span>
+                        </label>
+                    </div>
+                    <button type="submit" class="w-full bg-brand-600 hover:bg-brand-700 text-white py-2.5 rounded-lg text-sm font-semibold transition">Create Account</button>
+                </form>
+                <p class="text-center text-sm text-gray-500 mt-5">Already have an account? <a href="#" onclick="event.preventDefault();closeSignup();openLogin();" class="text-brand-600 hover:text-brand-700 font-medium">Log In</a></p>
             </div>
         </div>
     </div>
@@ -548,6 +604,8 @@
     <script>
         function openLogin(){document.getElementById('loginModal').classList.remove('hidden');document.body.style.overflow='hidden';}
         function closeLogin(){document.getElementById('loginModal').classList.add('hidden');document.body.style.overflow='';}
+        function openSignup(){document.getElementById('signupModal').classList.remove('hidden');document.body.style.overflow='hidden';}
+        function closeSignup(){document.getElementById('signupModal').classList.add('hidden');document.body.style.overflow='';}
         const states=[{code:'AL',name:'Alabama'},{code:'AK',name:'Alaska'},{code:'AZ',name:'Arizona'},{code:'AR',name:'Arkansas'},{code:'CA',name:'California'},{code:'CO',name:'Colorado'},{code:'CT',name:'Connecticut'},{code:'DE',name:'Delaware'},{code:'FL',name:'Florida'},{code:'GA',name:'Georgia'},{code:'HI',name:'Hawaii'},{code:'ID',name:'Idaho'},{code:'IL',name:'Illinois'},{code:'IN',name:'Indiana'},{code:'IA',name:'Iowa'},{code:'KS',name:'Kansas'},{code:'KY',name:'Kentucky'},{code:'LA',name:'Louisiana'},{code:'ME',name:'Maine'},{code:'MD',name:'Maryland'},{code:'MA',name:'Massachusetts'},{code:'MI',name:'Michigan'},{code:'MN',name:'Minnesota'},{code:'MS',name:'Mississippi'},{code:'MO',name:'Missouri'},{code:'MT',name:'Montana'},{code:'NE',name:'Nebraska'},{code:'NV',name:'Nevada'},{code:'NH',name:'New Hampshire'},{code:'NJ',name:'New Jersey'},{code:'NM',name:'New Mexico'},{code:'NY',name:'New York'},{code:'NC',name:'North Carolina'},{code:'ND',name:'North Dakota'},{code:'OH',name:'Ohio'},{code:'OK',name:'Oklahoma'},{code:'OR',name:'Oregon'},{code:'PA',name:'Pennsylvania'},{code:'RI',name:'Rhode Island'},{code:'SC',name:'South Carolina'},{code:'SD',name:'South Dakota'},{code:'TN',name:'Tennessee'},{code:'TX',name:'Texas'},{code:'UT',name:'Utah'},{code:'VT',name:'Vermont'},{code:'VA',name:'Virginia'},{code:'WA',name:'Washington'},{code:'WV',name:'West Virginia'},{code:'WI',name:'Wisconsin'},{code:'WY',name:'Wyoming'}];
         const counties={'GA':['Fulton','DeKalb','Gwinnett','Cobb','Clayton','Cherokee','Forsyth','Henry','Hall','Richmond'],'FL':['Miami-Dade','Broward','Palm Beach','Hillsborough','Orange','Duval','Pinellas','Lee','Polk','Brevard'],'TX':['Harris','Dallas','Tarrant','Bexar','Travis','Collin','Denton','Hidalgo','Fort Bend','El Paso'],'CA':['Los Angeles','San Diego','Orange','Riverside','San Bernardino','Santa Clara','Alameda','Sacramento','Contra Costa','Fresno'],'NY':['Kings','Queens','New York','Suffolk','Nassau','Bronx','Westchester','Erie','Monroe','Richmond'],'NC':['Mecklenburg','Wake','Guilford','Forsyth','Cumberland','Durham','Buncombe','Union','Cabarrus','Gaston'],'OH':['Franklin','Cuyahoga','Hamilton','Summit','Montgomery','Lucas','Stark','Butler','Warren','Lorain'],'PA':['Philadelphia','Allegheny','Montgomery','Bucks','Delaware','Lancaster','Chester','York','Berks','Lehigh'],'IL':['Cook','DuPage','Lake','Will','Kane','McHenry','Winnebago','Madison','St. Clair','Champaign'],'AZ':['Maricopa','Pima','Pinal','Yavapai','Mohave','Yuma','Coconino','Cochise','Navajo','Apache'],'MI':['Wayne','Oakland','Macomb','Kent','Genesee','Washtenaw','Ingham','Ottawa','Kalamazoo','Saginaw'],'NJ':['Bergen','Middlesex','Essex','Hudson','Monmouth','Ocean','Union','Passaic','Camden','Morris'],'VA':['Fairfax','Prince William','Loudoun','Chesterfield','Henrico','Virginia Beach','Arlington','Stafford','Spotsylvania','Chesapeake'],'WA':['King','Pierce','Snohomish','Spokane','Clark','Thurston','Kitsap','Whatcom','Benton','Yakima'],'TN':['Shelby','Davidson','Knox','Hamilton','Rutherford','Williamson','Sumner','Montgomery','Wilson','Blount'],'CO':['Denver','El Paso','Arapahoe','Jefferson','Adams','Douglas','Larimer','Boulder','Weld','Broomfield'],'SC':['Greenville','Richland','Charleston','Horry','Spartanburg','Lexington','York','Berkeley','Beaufort','Anderson'],'AL':['Jefferson','Mobile','Madison','Baldwin','Montgomery','Shelby','Tuscaloosa','Lee','Morgan','Calhoun'],'DE':['New Castle','Sussex','Kent']};
         const stateData={'AL':{households:1920000,phoneRate:0.55},'AK':{households:260000,phoneRate:0.48},'AZ':{households:2680000,phoneRate:0.57},'AR':{households:1150000,phoneRate:0.52},'CA':{households:13200000,phoneRate:0.54},'CO':{households:2200000,phoneRate:0.56},'CT':{households:1380000,phoneRate:0.58},'DE':{households:380000,phoneRate:0.55},'FL':{households:8400000,phoneRate:0.56},'GA':{households:3850000,phoneRate:0.55},'HI':{households:470000,phoneRate:0.49},'ID':{households:680000,phoneRate:0.51},'IL':{households:4900000,phoneRate:0.56},'IN':{households:2600000,phoneRate:0.54},'IA':{households:1280000,phoneRate:0.53},'KS':{households:1120000,phoneRate:0.52},'KY':{households:1760000,phoneRate:0.53},'LA':{households:1780000,phoneRate:0.51},'ME':{households:580000,phoneRate:0.55},'MD':{households:2250000,phoneRate:0.57},'MA':{households:2680000,phoneRate:0.58},'MI':{households:3960000,phoneRate:0.55},'MN':{households:2240000,phoneRate:0.56},'MS':{households:1100000,phoneRate:0.50},'MO':{households:2450000,phoneRate:0.54},'MT':{households:440000,phoneRate:0.49},'NE':{households:780000,phoneRate:0.53},'NV':{households:1120000,phoneRate:0.54},'NH':{households:560000,phoneRate:0.56},'NJ':{households:3400000,phoneRate:0.58},'NM':{households:800000,phoneRate:0.50},'NY':{households:7500000,phoneRate:0.55},'NC':{households:4100000,phoneRate:0.56},'ND':{households:320000,phoneRate:0.50},'OH':{households:4700000,phoneRate:0.55},'OK':{households:1520000,phoneRate:0.52},'OR':{households:1650000,phoneRate:0.54},'PA':{households:5200000,phoneRate:0.56},'RI':{households:420000,phoneRate:0.56},'SC':{households:2020000,phoneRate:0.54},'SD':{households:360000,phoneRate:0.51},'TN':{households:2720000,phoneRate:0.54},'TX':{households:10200000,phoneRate:0.55},'UT':{households:1020000,phoneRate:0.53},'VT':{households:270000,phoneRate:0.54},'VA':{households:3280000,phoneRate:0.57},'WA':{households:2960000,phoneRate:0.56},'WV':{households:740000,phoneRate:0.51},'WI':{households:2380000,phoneRate:0.55},'WY':{households:230000,phoneRate:0.49}};
