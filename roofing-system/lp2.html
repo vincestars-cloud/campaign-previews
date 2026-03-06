@@ -1,0 +1,1243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stop Overpaying For Shared Leads And Own Your Pipeline | Roofing Growth System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --accent: #E8641B;
+      --accent-dark: #C7500E;
+      --accent-light: rgba(232,100,27,0.12);
+      --dark-1: #0B1120;
+      --dark-2: #111827;
+      --dark-3: #1A2332;
+      --dark-card: #162033;
+      --light-1: #FDF8F3;
+      --light-2: #FAF5EF;
+      --white: #FFFFFF;
+      --text-white: #F1F5F9;
+      --text-muted: #94A3B8;
+      --text-dark: #1E293B;
+      --text-body: #475569;
+      --border-dark: rgba(255,255,255,0.08);
+      --border-light: #E2E8F0;
+      --green: #10B981;
+      --red: #EF4444;
+      --sans: 'Inter', -apple-system, sans-serif;
+      --display: 'Playfair Display', Georgia, serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.7;
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+    .text-center { text-align: center; }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--dark-1) 0%, #0E1A2E 50%, var(--dark-2) 100%);
+      padding: 48px 0 72px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -40%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 800px;
+      height: 800px;
+      background: radial-gradient(circle, rgba(232,100,27,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content { position: relative; z-index: 2; }
+
+    .deadline-pill {
+      display: inline-block;
+      background: rgba(232,100,27,0.15);
+      border: 1px solid rgba(232,100,27,0.4);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 8px 20px;
+      border-radius: 50px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 {
+      font-family: var(--display);
+      font-size: clamp(32px, 5.5vw, 58px);
+      font-weight: 900;
+      color: var(--white);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero h1 .accent { color: var(--accent); }
+
+    .hero-sub {
+      font-size: clamp(16px, 2.5vw, 20px);
+      font-weight: 700;
+      color: var(--text-white);
+      margin-bottom: 12px;
+    }
+    .hero-desc {
+      font-size: 15px;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin: 0 auto 32px;
+      line-height: 1.7;
+    }
+    .hero-desc strong { color: var(--text-white); }
+    .hero-desc .accent-text { color: var(--accent); font-weight: 700; }
+
+    /* ── CTA Button ── */
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 16px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 18px 40px;
+      border-radius: 8px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: var(--sans);
+    }
+    .cta-btn:hover { background: var(--accent-dark); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(232,100,27,0.3); }
+    .cta-btn svg { width: 20px; height: 20px; }
+    .cta-sub {
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-top: 12px;
+    }
+
+    /* ── Countdown ── */
+    .countdown-wrap {
+      background: var(--dark-3);
+      border: 1px solid var(--border-dark);
+      border-radius: 14px;
+      padding: 24px 32px;
+      display: inline-block;
+      margin-top: 36px;
+    }
+    .countdown-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    .countdown-label svg { width: 16px; height: 16px; color: var(--accent); }
+    .countdown {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      justify-content: center;
+    }
+    .cd-box {
+      background: var(--dark-1);
+      border: 1px solid var(--border-dark);
+      border-radius: 10px;
+      padding: 14px 20px;
+      min-width: 80px;
+      text-align: center;
+    }
+    .cd-num {
+      font-family: var(--display);
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+    }
+    .cd-unit {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+    .cd-colon {
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-muted);
+      line-height: 1;
+    }
+
+    /* ── Urgency Section ── */
+    .urgency {
+      padding: 80px 0;
+      background: var(--light-1);
+    }
+    .urgency h2 {
+      font-family: var(--display);
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 900;
+      color: var(--text-dark);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .urgency h2 .accent { color: var(--accent); }
+    .urgency-sub {
+      text-align: center;
+      color: var(--text-body);
+      font-size: 15px;
+      margin-bottom: 48px;
+      max-width: 580px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .urgency-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    @media (max-width: 768px) { .urgency-grid { grid-template-columns: 1fr; } }
+    .urgency-card {
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 28px;
+      transition: transform 0.2s;
+    }
+    .urgency-card:hover { transform: translateY(-4px); }
+    .urgency-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      font-size: 20px;
+    }
+    .urgency-icon.green { background: #D1FAE5; color: #059669; }
+    .urgency-icon.orange { background: var(--accent-light); color: var(--accent); }
+    .urgency-icon.red { background: #FEE2E2; color: #DC2626; }
+    .urgency-card h3 {
+      font-family: var(--sans);
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .urgency-card p {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+    .urgency-tag {
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+    .urgency-tag.green { background: #D1FAE5; color: #059669; }
+    .urgency-tag.orange { background: var(--accent-light); color: var(--accent); }
+    .urgency-tag.red { background: #FEE2E2; color: #DC2626; }
+
+    /* ── Dark Feature Section ── */
+    .features-dark {
+      background: var(--dark-1);
+      padding: 80px 0;
+    }
+    .features-dark h2 {
+      font-family: var(--display);
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 900;
+      color: var(--white);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .features-dark h2 .accent { color: var(--accent); }
+    .features-dark-sub {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 48px;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 768px) { .feature-grid { grid-template-columns: 1fr; } }
+    .feature-card {
+      background: var(--dark-card);
+      border: 1px solid var(--border-dark);
+      border-radius: 14px;
+      padding: 28px;
+    }
+    .feature-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(232,100,27,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 16px;
+      color: var(--accent);
+      font-size: 20px;
+    }
+    .feature-card h3 {
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+    .feature-card p {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    /* ── Results / Social Proof ── */
+    .results {
+      padding: 80px 0;
+      background: var(--light-1);
+    }
+    .results-eyebrow {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+    .results h2 {
+      font-family: var(--display);
+      font-size: clamp(26px, 4vw, 42px);
+      font-weight: 900;
+      color: var(--text-dark);
+      margin-bottom: 8px;
+    }
+    .results h2 .accent { color: var(--accent); }
+    .results-sub {
+      color: var(--text-body);
+      font-size: 15px;
+      margin-bottom: 48px;
+    }
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-bottom: 48px;
+    }
+    @media (max-width: 768px) { .stats-row { grid-template-columns: 1fr; } }
+    .stat-card {
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 28px;
+      text-align: center;
+    }
+    .stat-num {
+      font-family: var(--display);
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--accent);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-body);
+    }
+    .stat-detail {
+      font-size: 11px;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+
+    /* ── Testimonial Cards ── */
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 768px) { .testimonial-grid { grid-template-columns: 1fr; } }
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: 14px;
+      padding: 24px;
+    }
+    .testimonial-stars {
+      color: #F59E0B;
+      font-size: 16px;
+      margin-bottom: 12px;
+      letter-spacing: 2px;
+    }
+    .testimonial-text {
+      font-size: 14px;
+      color: var(--text-dark);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      font-style: italic;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--dark-2);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .testimonial-name {
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--text-dark);
+    }
+    .testimonial-company {
+      font-size: 12px;
+      color: var(--text-body);
+    }
+
+    /* ── Mid CTA ── */
+    .mid-cta {
+      padding: 64px 0;
+      background: var(--white);
+    }
+    .mid-cta-box {
+      background: var(--dark-1);
+      border-radius: 20px;
+      padding: 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .mid-cta-box::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(232,100,27,0.1) 0%, transparent 60%);
+    }
+    .mid-cta-box > * { position: relative; z-index: 1; }
+    .mid-cta-icon {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+      background: rgba(232,100,27,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 24px;
+      color: var(--accent);
+    }
+    .mid-cta-box h2 {
+      font-family: var(--display);
+      font-size: clamp(22px, 3.5vw, 32px);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .mid-cta-box p {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 28px;
+    }
+
+    /* ── Video Section ── */
+    .video-section {
+      background: linear-gradient(180deg, var(--dark-2) 0%, var(--dark-1) 100%);
+      padding: 80px 0;
+    }
+    .video-eyebrow {
+      display: inline-block;
+      background: var(--accent);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+    }
+    .video-section h2 {
+      font-family: var(--display);
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .video-section h2 .accent { color: var(--accent); }
+    .video-section .vid-sub {
+      color: var(--text-muted);
+      font-size: 15px;
+      margin-bottom: 36px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .video-placeholder {
+      background: var(--dark-3);
+      border: 1px solid var(--border-dark);
+      border-radius: 16px;
+      padding: 48px;
+      text-align: center;
+      max-width: 700px;
+      margin: 0 auto 36px;
+    }
+    .video-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    @media (max-width: 768px) { .video-steps { grid-template-columns: 1fr; } }
+    .video-step {
+      background: var(--dark-card);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .video-step-num {
+      font-family: var(--display);
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .video-step h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .video-step p {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    /* ── What's Included ── */
+    .included {
+      padding: 80px 0;
+      background: var(--light-1);
+    }
+    .included h2 {
+      font-family: var(--display);
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 900;
+      color: var(--text-dark);
+      text-align: center;
+      margin-bottom: 48px;
+    }
+    .included-list {
+      max-width: 640px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .included-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      padding: 18px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text-dark);
+      line-height: 1.5;
+    }
+    .included-check {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: #D1FAE5;
+      color: #059669;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 14px;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .exclusivity-box {
+      max-width: 640px;
+      margin: 36px auto 0;
+      background: var(--white);
+      border: 2px solid var(--accent);
+      border-radius: 14px;
+      padding: 24px;
+      text-align: center;
+    }
+    .exclusivity-box h3 {
+      font-family: var(--sans);
+      font-size: 16px;
+      font-weight: 800;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+    .exclusivity-box p {
+      font-size: 13px;
+      color: var(--text-body);
+      line-height: 1.6;
+    }
+
+    /* ── FAQ ── */
+    .faq {
+      padding: 80px 0;
+      background: var(--white);
+    }
+    .faq h2 {
+      font-family: var(--display);
+      font-size: clamp(26px, 4vw, 38px);
+      font-weight: 900;
+      color: var(--text-dark);
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    .faq-sub {
+      text-align: center;
+      color: var(--text-body);
+      font-size: 15px;
+      margin-bottom: 40px;
+    }
+    .faq-list {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      border: 1px solid var(--border-light);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .faq-item.open { border-color: var(--accent); }
+    .faq-q {
+      padding: 18px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--text-dark);
+      background: var(--white);
+      transition: background 0.2s;
+    }
+    .faq-q:hover { background: var(--light-2); }
+    .faq-chevron {
+      color: var(--accent);
+      font-size: 18px;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); }
+    .faq-a {
+      padding: 0 20px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s, padding 0.3s;
+    }
+    .faq-item.open .faq-a {
+      max-height: 300px;
+      padding: 0 20px 20px;
+    }
+    .faq-a p {
+      font-size: 14px;
+      color: var(--text-body);
+      line-height: 1.7;
+    }
+
+    /* ── Final CTA ── */
+    .final-cta {
+      background: linear-gradient(135deg, var(--dark-1) 0%, #0E1A2E 50%, var(--dark-2) 100%);
+      padding: 80px 0;
+      text-align: center;
+    }
+    .final-warning {
+      display: inline-block;
+      background: var(--red);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+    }
+    .final-cta h2 {
+      font-family: var(--display);
+      font-size: clamp(28px, 4.5vw, 46px);
+      font-weight: 900;
+      color: var(--white);
+      margin-bottom: 14px;
+    }
+    .final-cta p {
+      color: var(--text-muted);
+      font-size: 15px;
+      max-width: 560px;
+      margin: 0 auto 36px;
+      line-height: 1.7;
+    }
+    .final-badges {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 36px;
+      flex-wrap: wrap;
+    }
+    .final-badge {
+      background: var(--dark-card);
+      border: 1px solid var(--border-dark);
+      border-radius: 12px;
+      padding: 20px 28px;
+      text-align: center;
+      min-width: 180px;
+    }
+    .final-badge-icon {
+      color: var(--green);
+      font-size: 28px;
+      margin-bottom: 8px;
+    }
+    .final-badge h4 {
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+    .final-badge p {
+      font-size: 12px;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    /* ── Social Proof Popup ── */
+    .proof-popup {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      background: var(--white);
+      border-radius: 12px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+      padding: 14px 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      z-index: 1000;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.4s;
+      pointer-events: none;
+      max-width: 320px;
+    }
+    .proof-popup.show {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+    .proof-check {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #D1FAE5;
+      color: #059669;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    .proof-info { flex: 1; }
+    .proof-name { font-weight: 700; font-size: 13px; color: var(--text-dark); }
+    .proof-detail { font-size: 11px; color: var(--text-body); }
+    .proof-time { font-size: 10px; color: var(--text-muted); }
+    .proof-close {
+      position: absolute;
+      top: 6px;
+      right: 10px;
+      font-size: 14px;
+      color: var(--text-muted);
+      cursor: pointer;
+      background: none;
+      border: none;
+      line-height: 1;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: var(--dark-1);
+      border-top: 1px solid var(--border-dark);
+      padding: 24px 0;
+      text-align: center;
+    }
+    .footer p {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══ HERO ═══ -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="deadline-pill">Limited Availability &mdash; Summer 2026</div>
+      <h1>Stop Overpaying For <span class="accent">Shared Leads</span> And Own Your Pipeline</h1>
+      <div class="hero-sub">Own Your Own High-Performance Growth System In Just 14 Days</div>
+      <p class="hero-desc">Stop paying for shared leads. We'll build you a <strong>complete growth system</strong> &mdash; receptionist, ads, outbound &mdash; in just <span class="accent-text">14 days</span>. Get a dedicated pipeline of exclusive appointments delivered straight to your calendar.</p>
+
+      <a href="#apply" class="cta-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        See The Full System Demo
+      </a>
+      <div class="cta-sub">See the full dashboard. No commitment.</div>
+
+      <div class="countdown-wrap">
+        <div class="countdown-label">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Market Exclusivity Window Closes In:
+        </div>
+        <div class="countdown">
+          <div class="cd-box"><div class="cd-num" id="cd-h">23</div><div class="cd-unit">Hours</div></div>
+          <div class="cd-colon">:</div>
+          <div class="cd-box"><div class="cd-num" id="cd-m">58</div><div class="cd-unit">Minutes</div></div>
+          <div class="cd-colon">:</div>
+          <div class="cd-box"><div class="cd-num" id="cd-s">46</div><div class="cd-unit">Seconds</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ URGENCY SECTION ═══ -->
+  <section class="urgency">
+    <div class="container">
+      <h2>Why Roofing Contractors Are <span class="accent">Acting NOW</span></h2>
+      <p class="urgency-sub">Three critical factors make this the perfect time to own your pipeline. Miss this window and watch your competitors dominate.</p>
+      <div class="urgency-grid">
+        <div class="urgency-card">
+          <div class="urgency-icon green">&#128197;</div>
+          <h3>Prime Roofing Season</h3>
+          <p>Q2 and Q3 are the <strong>highest-demand periods</strong> for roofing. Homeowners are planning projects NOW. Storm season is coming.</p>
+          <span class="urgency-tag green">Peak Buying Season</span>
+        </div>
+        <div class="urgency-card">
+          <div class="urgency-icon orange">&#128737;</div>
+          <h3>Territory Protection</h3>
+          <p>We only work with <strong>ONE roofing company per market</strong>. Once your territory is claimed, the opportunity is gone.</p>
+          <span class="urgency-tag orange">Exclusive Partnership</span>
+        </div>
+        <div class="urgency-card">
+          <div class="urgency-icon red">&#9888;</div>
+          <h3>73% of Markets Taken</h3>
+          <p>Most major metros are already claimed. Lock in your market before your competitor does. <strong>Act now or lose your territory.</strong></p>
+          <span class="urgency-tag red">Limited Availability</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FEATURES DARK ═══ -->
+  <section class="features-dark">
+    <div class="container">
+      <h2>Your Complete <span class="accent">Growth System</span></h2>
+      <p class="features-dark-sub">Everything a roofing company needs to generate, qualify, and book exclusive appointments. We handle everything. You just close deals.</p>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-card-icon">&#128222;</div>
+          <h3>24/7 Receptionist</h3>
+          <p>Every call answered. Qualifies leads, books inspections, handles objections, sends confirmations. Nights, weekends, holidays.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-icon">&#128200;</div>
+          <h3>3-Channel Lead Engine</h3>
+          <p>Google Ads, Meta Ads, and outbound calling running simultaneously. You choose which channels run. All leads exclusive to you.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-icon">&#127919;</div>
+          <h3>Precision Targeting</h3>
+          <p>Set minimum roof age, roof size, household income, and insurance requirements. Only reach homeowners with the need and the means.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-icon">&#9889;</div>
+          <h3>Storm Detection</h3>
+          <p>Auto-detects weather events, shifts messaging, increases outbound, and adjusts ad targeting to impacted areas before competitors react.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-icon">&#128101;</div>
+          <h3>Hiring Pipeline</h3>
+          <p>Posts jobs, screens applicants by phone, and sends you qualified candidates with their responses and call recordings.</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-card-icon">&#128274;</div>
+          <h3>Market Exclusivity</h3>
+          <p>One system per market. Your competitor can't buy the same system across town. Your market, your leads, your pipeline.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ RESULTS ═══ -->
+  <section class="results">
+    <div class="container text-center">
+      <span class="results-eyebrow">Trusted By Established Contractors</span>
+      <h2>Real Results From <span class="accent">Real Clients</span></h2>
+      <p class="results-sub">See what contractors are saying about their growth systems.</p>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-num">87</div>
+          <div class="stat-label">Leads in 30 Days</div>
+          <div class="stat-detail">Avg across active clients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">$41</div>
+          <div class="stat-label">Avg Cost Per Lead</div>
+          <div class="stat-detail">Across all 3 channels</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-num">24/7</div>
+          <div class="stat-label">Call Coverage</div>
+          <div class="stat-detail">Zero missed opportunities</div>
+        </div>
+      </div>
+
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-text">"I was spending $3,200/mo on Angi and getting garbage leads shared with 4 other roofers. First month with this system, I got 34 exclusive leads at half the cost. Every single one was mine."</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">MT</div>
+            <div>
+              <div class="testimonial-name">Marcus Thompson</div>
+              <div class="testimonial-company">Summit Ridge Roofing &bull; Atlanta, GA</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-text">"The receptionist alone paid for the whole system. I was losing 30% of my calls to voicemail. Now every call gets answered, qualified, and booked. My close rate went from 18% to 29%."</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">JR</div>
+            <div>
+              <div class="testimonial-name">Jason Rivera</div>
+              <div class="testimonial-company">Lone Star Exterior Solutions &bull; Dallas, TX</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-text">"Storm detection is a game changer. The system had outreach ready before I even checked the weather. We booked 19 inspections in 48 hours after the last storm. No other roofer in my market moved that fast."</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">DS</div>
+            <div>
+              <div class="testimonial-name">Derek Sullivan</div>
+              <div class="testimonial-company">Crown Shield Roofing &bull; Charlotte, NC</div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-text">"I love that I can control everything from my phone. I texted 'pause Google ads until Monday' from a job site and it was done instantly. No calling an agency, no waiting, no BS. Just text and go."</div>
+          <div class="testimonial-author">
+            <div class="testimonial-avatar">RG</div>
+            <div>
+              <div class="testimonial-name">Roberto Garcia</div>
+              <div class="testimonial-company">Garcia Roofing &bull; Miami, FL</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ MID CTA ═══ -->
+  <section class="mid-cta">
+    <div class="container">
+      <div class="mid-cta-box">
+        <div class="mid-cta-icon">&#9889;</div>
+        <h2>Ready to Own Your Pipeline?</h2>
+        <p>Join the contractors who stopped chasing leads and started closing deals.</p>
+        <a href="#apply" class="cta-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          See The Full System Demo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ VIDEO SECTION ═══ -->
+  <section class="video-section">
+    <div class="container text-center">
+      <span class="video-eyebrow">Watch This First</span>
+      <h2>See How We Build Your <span class="accent">Growth System</span></h2>
+      <p class="vid-sub">Watch this walkthrough to understand exactly how the system generates exclusive leads, books appointments, and fills your calendar.</p>
+
+      <div class="video-placeholder">
+        <a href="#apply" class="cta-btn" style="font-size:14px;padding:16px 32px;">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:18px;height:18px;"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Watch The Demo Now
+        </a>
+        <div class="cta-sub" style="margin-top:14px;">5-minute walkthrough &bull; See real results &bull; Understand the process</div>
+      </div>
+
+      <div class="video-steps">
+        <div class="video-step">
+          <div class="video-step-num">01</div>
+          <h4>The System</h4>
+          <p>See how the receptionist, ads, and outbound work together</p>
+        </div>
+        <div class="video-step">
+          <div class="video-step-num">02</div>
+          <h4>The Results</h4>
+          <p>Real contractors sharing their revenue growth stories</p>
+        </div>
+        <div class="video-step">
+          <div class="video-step-num">03</div>
+          <h4>Your Next Step</h4>
+          <p>See the demo dashboard and secure your market</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT'S INCLUDED ═══ -->
+  <section class="included">
+    <div class="container">
+      <h2>Everything You Get</h2>
+      <div class="included-list">
+        <div class="included-item"><span class="included-check">&check;</span> 24/7 Receptionist &mdash; Every Call Answered &amp; Qualified</div>
+        <div class="included-item"><span class="included-check">&check;</span> 3-Channel Lead Engine &mdash; Google, Meta &amp; Outbound</div>
+        <div class="included-item"><span class="included-check">&check;</span> Precision Targeting &mdash; Roof Age, Size, Income &amp; Insurance</div>
+        <div class="included-item"><span class="included-check">&check;</span> Ad Creatives &mdash; Images, Videos &amp; Copy Created For You</div>
+        <div class="included-item"><span class="included-check">&check;</span> Storm Detection &amp; Rapid-Response Outreach</div>
+        <div class="included-item"><span class="included-check">&check;</span> Hiring Pipeline &mdash; Job Posts, Screening &amp; Qualified Candidates</div>
+        <div class="included-item"><span class="included-check">&check;</span> Full Dashboard With Source Attribution &amp; Cost Tracking</div>
+        <div class="included-item"><span class="included-check">&check;</span> Weekly Change Log &mdash; Every Adjustment Explained In Plain English</div>
+        <div class="included-item"><span class="included-check">&check;</span> Text &amp; Voice Commands &mdash; Control Everything From Your Phone</div>
+        <div class="included-item"><span class="included-check">&check;</span> 25 Qualified Appointments In Your First 7 Days (Launch Bonus)</div>
+      </div>
+
+      <div class="exclusivity-box">
+        <h3>Only 1 Partner Per Market</h3>
+        <p>Once your territory is claimed by another contractor, this opportunity is gone forever. Book now to secure your exclusive market access.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <p class="faq-sub">Everything you need to know before securing your market.</p>
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>How much does this cost?</span>
+            <span class="faq-chevron">&#8964;</span>
+          </div>
+          <div class="faq-a"><p>One-time investment. No monthly retainer. No agency fees. Your ad spend goes directly to the platforms &mdash; Google and Meta &mdash; with zero markup. You own the entire system outright. If you ever part ways, everything keeps running.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>How much time do I need to commit?</span>
+            <span class="faq-chevron">&#8964;</span>
+          </div>
+          <div class="faq-a"><p>Zero. This is a fully managed system. We handle setup, optimization, creative, scripts &mdash; everything. You show up to the appointments we book for you. When you want to make a change, just text us in plain English.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>What makes these leads different from Angi or HomeAdvisor?</span>
+            <span class="faq-chevron">&#8964;</span>
+          </div>
+          <div class="faq-a"><p>Every lead is generated by YOUR system, for YOUR company. Never shared. The homeowner contacted you &mdash; not a marketplace that sells their info to five roofers. Close rates on exclusive leads are 27-30% vs. 10-13% on shared platforms.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>What's the market exclusivity policy?</span>
+            <span class="faq-chevron">&#8964;</span>
+          </div>
+          <div class="faq-a"><p>One system per market. If we sold it to your competitor across town, you'd be competing against the same machine. Once your area is taken, it's taken. 73% of major metros are already claimed.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>How fast can you get us up and running?</span>
+            <span class="faq-chevron">&#8964;</span>
+          </div>
+          <div class="faq-a"><p>14 days from kickoff. Your receptionist, ads, outbound, and dashboard are all live. Plus you get 25 qualified appointments booked into your calendar within the first 7 days while the system ramps up.</p></div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-q" onclick="this.parentElement.classList.toggle('open')">
+            <span>Do I need to be tech-savvy?</span>
+            <span class="faq-chevron">&#8964;</span>
+          </div>
+          <div class="faq-a"><p>Not at all. There's nothing to learn. When you want to make a change &mdash; update your service area, adjust targeting criteria, pause a channel &mdash; just text us in plain English. If you can send a text, you can run this system.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FINAL CTA ═══ -->
+  <section class="final-cta" id="apply">
+    <div class="container">
+      <span class="final-warning">&#9888; Final Warning</span>
+      <h2>Only 1 Partner Per City</h2>
+      <p>Your competitor could be reading this right now. Once your market is locked, it's gone. Don't let someone else own YOUR territory during the biggest buying season of the year.</p>
+
+      <a href="#apply" class="cta-btn" style="font-size:17px;padding:20px 48px;">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        See The Full System Demo
+      </a>
+      <div class="cta-sub">See the dashboard &bull; No obligation &bull; Free market analysis</div>
+
+      <div class="final-badges">
+        <div class="final-badge">
+          <div class="final-badge-icon">&check;</div>
+          <h4>Exclusive Territory</h4>
+          <p>Protected market access</p>
+        </div>
+        <div class="final-badge">
+          <div class="final-badge-icon">&check;</div>
+          <h4>14-Day Setup</h4>
+          <p>Operational in two weeks</p>
+        </div>
+        <div class="final-badge">
+          <div class="final-badge-icon">&check;</div>
+          <h4>Zero Time Investment</h4>
+          <p>Fully managed solution</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Roofing Growth System. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ═══ SOCIAL PROOF POPUP ═══ -->
+  <div class="proof-popup" id="proofPopup">
+    <div class="proof-check">&check;</div>
+    <div class="proof-info">
+      <div class="proof-name" id="proofName">Mike R.</div>
+      <div class="proof-detail" id="proofDetail">Denver, CO</div>
+      <div class="proof-time" id="proofAction">viewed the system demo</div>
+      <div class="proof-time">Just now</div>
+    </div>
+    <button class="proof-close" onclick="hideProof()">&times;</button>
+  </div>
+
+  <script>
+    // Countdown timer
+    function startCountdown() {
+      let h = 23, m = 58, s = 46;
+      function tick() {
+        s--;
+        if (s < 0) { s = 59; m--; }
+        if (m < 0) { m = 59; h--; }
+        if (h < 0) { h = 23; m = 59; s = 59; }
+        document.getElementById('cd-h').textContent = String(h).padStart(2, '0');
+        document.getElementById('cd-m').textContent = String(m).padStart(2, '0');
+        document.getElementById('cd-s').textContent = String(s).padStart(2, '0');
+      }
+      setInterval(tick, 1000);
+    }
+    startCountdown();
+
+    // Social proof popups
+    const proofs = [
+      { name: 'Mike R.', detail: 'Denver, CO', action: 'viewed the system demo' },
+      { name: 'Lisa W.', detail: 'Atlanta, GA', action: 'checked market availability' },
+      { name: 'David K.', detail: 'Charlotte, NC', action: 'viewed the system demo' },
+      { name: 'Robert H.', detail: 'Dallas, TX', action: 'checked market availability' },
+      { name: 'Sarah M.', detail: 'Phoenix, AZ', action: 'viewed the system demo' },
+      { name: 'James T.', detail: 'Tampa, FL', action: 'secured their market' },
+      { name: 'Carlos P.', detail: 'Houston, TX', action: 'viewed the system demo' },
+    ];
+    let proofIdx = 0;
+
+    function showProof() {
+      const p = proofs[proofIdx % proofs.length];
+      document.getElementById('proofName').textContent = p.name;
+      document.getElementById('proofDetail').textContent = p.detail;
+      document.getElementById('proofAction').textContent = p.action;
+      document.getElementById('proofPopup').classList.add('show');
+      setTimeout(hideProof, 4000);
+      proofIdx++;
+    }
+
+    function hideProof() {
+      document.getElementById('proofPopup').classList.remove('show');
+    }
+
+    // Show first popup after 8s, then every 15-25s
+    setTimeout(() => {
+      showProof();
+      setInterval(() => {
+        setTimeout(showProof, Math.random() * 10000);
+      }, 20000);
+    }, 8000);
+  </script>
+
+</body>
+</html>
