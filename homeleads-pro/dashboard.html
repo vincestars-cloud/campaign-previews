@@ -19,9 +19,6 @@
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
         .view { display: none; }
         .view.active { display: block; }
-        .package-card { transition: all 0.2s; }
-        .package-card:hover { border-color: #2563eb; }
-        .package-card.selected { border-color: #2563eb; box-shadow: 0 0 0 2px #2563eb; }
         input[type="number"]::-webkit-inner-spin-button { -webkit-appearance: none; }
         .toast { animation: slideUp 0.3s ease, fadeOut 0.3s ease 3s forwards; }
         @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
@@ -70,7 +67,7 @@
 
     <!-- Sidebar -->
     <aside id="sidebar" class="fixed top-16 left-0 bottom-0 w-56 bg-white border-r border-gray-200 z-40 transform -translate-x-full lg:translate-x-0 transition-transform">
-        <nav class="p-3 space-y-1">
+        <nav class="p-3 space-y-1 flex flex-col h-full">
             <a onclick="navigate('dashboard')" class="sidebar-link active flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm cursor-pointer" data-page="dashboard">
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zm10 0a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"/></svg>
                 Dashboard
@@ -92,6 +89,15 @@
                 <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
                 Settings
             </a>
+            <div class="flex-1"></div>
+            <!-- Credit Balance Module -->
+            <div class="border-t border-gray-100 pt-3 mt-2">
+                <div class="bg-gray-50 rounded-lg p-3">
+                    <div class="text-[10px] text-gray-400 uppercase tracking-wider font-semibold mb-1">Credit Balance</div>
+                    <div class="text-lg font-bold text-gray-900" id="sidebarCredits">0</div>
+                    <div class="text-[10px] text-gray-400 mt-0.5">Plan Rate: <span class="text-brand-600 font-semibold">$<span id="sidebarPlanRate">0.04</span>/record</span></div>
+                </div>
+            </div>
         </nav>
     </aside>
 
@@ -105,26 +111,6 @@
         <div id="view-dashboard" class="view active p-4 sm:p-8">
             <h1 class="text-2xl font-bold mb-1">Dashboard</h1>
             <p class="text-gray-500 text-sm mb-8">Welcome back! Ready to build your next lead list?</p>
-
-            <!-- Credit Balance Banner -->
-            <div class="bg-white rounded-xl border border-gray-200 p-5 mb-6 max-w-3xl">
-                <div class="flex items-center justify-between">
-                    <div class="flex items-center gap-4">
-                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-600 to-brand-700 flex items-center justify-center">
-                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
-                        </div>
-                        <div>
-                            <div class="text-xs text-gray-500 font-medium uppercase tracking-wider">Credit Balance</div>
-                            <div class="text-2xl font-bold text-gray-900"><span id="dashCreditsCount">0</span> <span class="text-sm font-medium text-gray-500">records</span></div>
-                            <div class="text-xs text-gray-400 mt-0.5">$<span id="dashCreditsValue">0.00</span> value at your plan rate</div>
-                        </div>
-                    </div>
-                    <div class="text-right hidden sm:block">
-                        <div class="text-xs text-gray-500">Plan Rate</div>
-                        <div class="text-sm font-bold text-brand-600">$<span id="dashPlanRate">0.04</span>/record</div>
-                    </div>
-                </div>
-            </div>
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
                 <!-- Build & Buy Card -->
@@ -172,7 +158,7 @@
                             <div class="text-3xl font-bold text-brand-600" id="previewTotal">0</div>
                             <div class="text-xs text-gray-400 mt-1">What you pay for</div>
                         </div>
-                        <button onclick="goToPackages()" class="w-full bg-gray-900 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Choose Package</button>
+                        <button onclick="goToPackages()" class="w-full bg-gray-900 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Get This List</button>
                     </div>
                 </div>
             </div>
@@ -439,11 +425,11 @@
                 </div>
             </div>
 
-            <!-- Output Fields Selection -->
+            <!-- Additional Fields to Output -->
             <div class="bg-white rounded-xl border border-gray-200 p-5 mt-5">
                 <div class="flex items-center justify-between mb-3">
                     <div>
-                        <h3 class="font-bold text-base">Output Fields</h3>
+                        <h3 class="font-bold text-base">Additional Fields to Output</h3>
                         <p class="text-xs text-gray-500 mt-0.5">Select which fields to include in your CSV export. <span id="fieldCount" class="font-semibold text-brand-600">0</span> selected.</p>
                     </div>
                     <div class="flex gap-2">
@@ -455,62 +441,26 @@
                 <div class="mb-3">
                     <input type="text" id="fieldSearch" oninput="filterFields()" placeholder="Search fields..." class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none">
                 </div>
-                <div id="fieldGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-1 max-h-72 overflow-y-auto border border-gray-100 rounded-lg p-3"></div>
+                <div id="fieldGrid" class="max-h-72 overflow-y-auto border border-gray-100 rounded-lg p-3 space-y-0.5"></div>
             </div>
 
         </div>
 
-        <!-- ========== PACKAGES VIEW ========== -->
-        <div id="view-packages" class="view p-4 sm:p-8">
-            <h1 class="text-2xl font-bold mb-1">Choose Your Package</h1>
-            <p class="text-gray-500 text-sm mb-6">Select the best pricing option for <span id="pkgLeadCount" class="font-semibold">0</span> leads</p>
-
-            <!-- Credits notice -->
-            <div class="bg-amber-50 border border-amber-200 rounded-xl p-5 mb-8 max-w-3xl">
-                <div class="flex gap-3">
-                    <div class="w-8 h-8 bg-amber-100 rounded-full flex items-center justify-center flex-shrink-0">
-                        <svg class="w-5 h-5 text-amber-600" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    </div>
-                    <div>
-                        <div class="font-bold text-sm">Earn Credits on Every Purchase</div>
-                        <p class="text-sm text-gray-600 mt-1">When you purchase a package with more leads than your list contains, you'll receive credits for the difference. These credits <strong>never expire</strong> and can be used on any future lead list purchase to reduce your total cost.</p>
-                        <p class="text-sm text-gray-500 mt-2 italic">Example: Buy the 50,000 lead package with only 30,000 leads &#8594; Pay full price, get 20,000 credits for next time!</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Credit Balance in Packages -->
-            <div id="pkgCreditBanner" class="bg-green-50 border border-green-200 rounded-xl p-4 mb-6 max-w-3xl hidden">
-                <div class="flex items-center gap-3">
-                    <svg class="w-6 h-6 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
-                    <div>
-                        <div class="font-bold text-sm text-green-800">You have <span id="pkgCreditCount">0</span> credits available</div>
-                        <p class="text-xs text-green-700 mt-0.5">Credits will be applied automatically before billing. Any remaining records will be charged at your package rate.</p>
-                    </div>
-                </div>
-            </div>
-
-            <h3 class="text-lg font-bold mb-4">Choose a Package:</h3>
-            <div class="space-y-4 max-w-3xl" id="packagesList"></div>
-
-            <div class="mt-6 max-w-3xl">
-                <button onclick="navigate('build')" class="border border-gray-300 text-gray-700 px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-50 transition">Back to Filters</button>
-            </div>
-        </div>
-
-        <!-- ========== CHECKOUT VIEW ========== -->
+        <!-- ========== CHECKOUT VIEW (replaces packages + old checkout) ========== -->
         <div id="view-checkout" class="view p-4 sm:p-8">
             <div class="max-w-2xl">
-                <h1 class="text-2xl font-bold mb-6">Order Summary</h1>
+                <h1 class="text-2xl font-bold mb-1">Order Summary</h1>
+                <p class="text-gray-500 text-sm mb-6">Review your order before completing</p>
+
                 <div class="bg-white rounded-xl border border-gray-200 p-6 space-y-3" id="orderSummary"></div>
 
-                <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mt-6">
+                <div id="stripeNote" class="bg-blue-50 border border-blue-200 rounded-xl p-4 mt-6 hidden">
                     <p class="text-sm text-gray-700"><strong>Note:</strong> You will be redirected to Stripe to complete your payment securely.</p>
                 </div>
 
                 <div class="flex gap-3 mt-6">
-                    <button onclick="navigate('packages')" class="border border-gray-300 text-gray-700 px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-50 transition">Back to Packages</button>
-                    <button onclick="processPayment()" class="flex-1 bg-gray-900 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Proceed to Checkout</button>
+                    <button onclick="navigate('build')" class="border border-gray-300 text-gray-700 px-6 py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-50 transition">Back to Filters</button>
+                    <button onclick="processPayment()" id="checkoutBtn" class="flex-1 bg-gray-900 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Confirm & Download</button>
                 </div>
 
                 <!-- Filters summary -->
@@ -651,12 +601,6 @@ const vehicleModels = {
     'Volvo':['XC90','XC60','XC40','S60','S90','V60','C40','EX30']
 };
 
-const packages = [
-    { name: 'Starter - 20,000 Leads', count: 20000, price: 1500, perLead: 0.075, overage: 0.08, stateLimit: 1 },
-    { name: 'Pro - 50,000 Leads', count: 50000, price: 3000, perLead: 0.06, overage: 0.07 },
-    { name: 'Bulk - 100,000+ Leads', count: 100000, price: 4000, perLead: 0.04, overage: 0.05 }
-];
-
 // ===== STATE =====
 let currentView = 'dashboard';
 let selectedState = '';
@@ -664,7 +608,6 @@ let areaMode = 'zip';
 let selectedZips = [];
 let selectedCounties = [];
 let currentLeadData = { total: 0 };
-let selectedPackage = null;
 let orders = JSON.parse(localStorage.getItem('hlp_orders') || '[]');
 
 // ===== NAVIGATION =====
@@ -759,17 +702,22 @@ function removeZip(zip) {
 
 function renderZipTags() {
     const c = document.getElementById('zipTags');
-    c.innerHTML = selectedZips.map(z => `<span class="zip-tag inline-flex items-center gap-1.5 bg-gray-900 text-white text-sm px-3 py-1 rounded-full">${z} <button onclick="removeZip('${z}')" class="hover:text-red-300">&times;</button></span>`).join('');
+    if (selectedZips.length === 1 && selectedZips[0] === 'ALL') {
+        c.innerHTML = `<span class="zip-tag inline-flex items-center gap-1.5 bg-brand-600 text-white text-sm px-3 py-1 rounded-full">All ZIP codes in ${selectedState}</span>`;
+    } else {
+        c.innerHTML = selectedZips.map(z => `<span class="zip-tag inline-flex items-center gap-1.5 bg-gray-900 text-white text-sm px-3 py-1 rounded-full">${z} <button onclick="removeZip('${z}')" class="hover:text-red-300">&times;</button></span>`).join('');
+    }
 }
 
+let allZipsSelected = false;
 function toggleSelectAllZips() {
-    if (document.getElementById('selectAllZips').checked) {
-        // Simulate adding 5 random zips for the state
-        const base = Math.floor(10000 + Math.random() * 89000);
-        for (let i = 0; i < 5; i++) {
-            const z = String(base + i * 3);
-            if (!selectedZips.includes(z)) selectedZips.push(z);
-        }
+    allZipsSelected = document.getElementById('selectAllZips').checked;
+    if (allZipsSelected) {
+        selectedZips = ['ALL'];
+        renderZipTags();
+        updatePreview();
+    } else {
+        selectedZips = [];
         renderZipTags();
         updatePreview();
     }
@@ -806,13 +754,22 @@ function removeCounty(county) {
 
 function renderCountyTags() {
     const c = document.getElementById('countyTags');
-    c.innerHTML = selectedCounties.map(cn => `<span class="zip-tag inline-flex items-center gap-1.5 bg-gray-900 text-white text-sm px-3 py-1 rounded-full">${cn} <button onclick="removeCounty('${cn}')" class="hover:text-red-300">&times;</button></span>`).join('');
+    if (selectedCounties.length === 1 && selectedCounties[0] === 'ALL') {
+        c.innerHTML = `<span class="zip-tag inline-flex items-center gap-1.5 bg-brand-600 text-white text-sm px-3 py-1 rounded-full">All counties in ${selectedState}</span>`;
+    } else {
+        c.innerHTML = selectedCounties.map(cn => `<span class="zip-tag inline-flex items-center gap-1.5 bg-gray-900 text-white text-sm px-3 py-1 rounded-full">${cn} <button onclick="removeCounty('${cn}')" class="hover:text-red-300">&times;</button></span>`).join('');
+    }
 }
 
+let allCountiesSelected = false;
 function toggleSelectAllCounties() {
-    if (document.getElementById('selectAllCounties').checked) {
-        const list = countiesMap[selectedState] || ['County 1','County 2','County 3'];
-        list.forEach(c => { if (!selectedCounties.includes(c)) selectedCounties.push(c); });
+    allCountiesSelected = document.getElementById('selectAllCounties').checked;
+    if (allCountiesSelected) {
+        selectedCounties = ['ALL'];
+        renderCountyTags();
+        updatePreview();
+    } else {
+        selectedCounties = [];
         renderCountyTags();
         updatePreview();
     }
@@ -825,18 +782,16 @@ function updatePreview() {
     // Start with state total household count
     let total = stateInfo.h;
 
-    // Area filter: zips or counties narrow it down
+    // Area filter: zips or counties narrow it down (selecting ALL = full state total)
     const items = areaMode === 'zip' ? selectedZips : selectedCounties;
-    if (items.length > 0) {
+    const isAllSelected = items.length === 1 && items[0] === 'ALL';
+    if (items.length > 0 && !isAllSelected) {
         if (areaMode === 'zip') {
-            // Each zip is roughly state / (state_zips). Average ~700 zips per state -> ~5000-8000 per zip
             const perZip = total / (500 + Math.abs(hashCode(selectedState)) % 300);
             total = Math.round(perZip * items.length);
         } else {
-            // Counties: top 10 counties ~60% of state pop. Each selected county is ~state / num_counties * weight
             const countyList = countiesMap[selectedState] || [];
             const totalCounties = Math.max(countyList.length, 20);
-            // Top counties are bigger. Weight first few higher.
             let countyTotal = 0;
             items.forEach(c => {
                 const idx = countyList.indexOf(c);
@@ -993,165 +948,93 @@ function toggleFilter(name) {
     chevron.style.transform = isOpen ? '' : 'rotate(180deg)';
 }
 
-// ===== PACKAGES =====
+// ===== CHECKOUT =====
 function goToPackages() {
     if (currentLeadData.total === 0) return;
-    navigate('packages');
-    document.getElementById('pkgLeadCount').textContent = currentLeadData.total.toLocaleString();
-    renderPackages();
+    goToCheckout();
 }
 
-function renderPackages() {
-    // Show credit banner if user has credits
-    const creditBanner = document.getElementById('pkgCreditBanner');
-    if (creditBalance > 0) {
-        creditBanner.classList.remove('hidden');
-        document.getElementById('pkgCreditCount').textContent = creditBalance.toLocaleString();
-    } else {
-        creditBanner.classList.add('hidden');
-    }
-
-    const c = document.getElementById('packagesList');
-    c.innerHTML = packages.map((pkg, i) => {
-        const totalNeeded = currentLeadData.total;
-        // Credits cover some records, reducing what needs to be purchased
-        const creditsUsed = Math.min(creditBalance, totalNeeded);
-        const recordsToPurchase = totalNeeded - creditsUsed;
-
-        // Package covers recordsToPurchase
-        const overage = recordsToPurchase > pkg.count ? recordsToPurchase - pkg.count : 0;
-        const earnedCredits = pkg.count > recordsToPurchase ? pkg.count - recordsToPurchase : 0;
-        const overageCost = overage * pkg.overage;
-        const finalPrice = recordsToPurchase <= 0 ? 0 : pkg.price + overageCost;
-
-        return `
-        <div class="package-card bg-white rounded-xl border-2 border-gray-200 p-6 cursor-pointer" onclick="selectPackage(${i})">
-            <div class="flex items-center gap-3 mb-4">
-                <div class="w-5 h-5 rounded-full border-2 ${selectedPackage === i ? 'border-brand-600 bg-brand-600' : 'border-gray-300'} flex items-center justify-center">
-                    ${selectedPackage === i ? '<div class="w-2 h-2 rounded-full bg-white"></div>' : ''}
-                </div>
-                <span class="text-lg font-bold">${pkg.name}</span>
-            </div>
-            <div class="space-y-2 text-sm">
-                <div class="flex justify-between"><span class="text-gray-500">Total Records Requested:</span><span class="font-medium">${totalNeeded.toLocaleString()}</span></div>
-                ${creditsUsed > 0 ? `<div class="flex justify-between"><span class="text-green-600">Credits Applied:</span><span class="text-green-600 font-medium">-${creditsUsed.toLocaleString()} records</span></div>` : ''}
-                <div class="flex justify-between"><span class="text-gray-500">Records to Purchase:</span><span class="font-medium">${recordsToPurchase.toLocaleString()}</span></div>
-                <div class="border-t border-gray-100 my-2"></div>
-                ${recordsToPurchase > 0 ? `<div class="flex justify-between"><span class="text-gray-500">Package Price:</span><span class="font-semibold">$${pkg.price.toLocaleString()}</span></div>` : ''}
-                ${earnedCredits > 0 ? `<div class="flex justify-between"><span class="text-green-600">Credits You'll Earn:</span><span class="text-green-600 font-medium">+${earnedCredits.toLocaleString()}</span></div>` : ''}
-                ${overage > 0 ? `<div class="flex justify-between"><span class="text-gray-500">Overage (${overage.toLocaleString()} @ $${pkg.overage.toFixed(2)}):</span><span class="text-amber-600 font-medium">+$${overageCost.toFixed(2)}</span></div>` : ''}
-            </div>
-            <div class="bg-gray-50 rounded-lg p-4 mt-4">
-                <div class="text-xs text-gray-500">${recordsToPurchase <= 0 ? 'Fully Covered by Credits' : 'Total Due Today'}</div>
-                <div class="text-2xl font-bold ${recordsToPurchase <= 0 ? 'text-green-600' : 'text-brand-600'}">$${finalPrice.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</div>
-            </div>
-            <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs">
-                <span class="text-green-600 flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> ${pkg.count.toLocaleString()} leads included</span>
-                <span class="text-green-600 flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> $${pkg.perLead.toFixed(pkg.perLead === 0.075 ? 3 : 2)} per lead</span>
-                <span class="${pkg.stateLimit ? 'text-gray-500' : 'text-green-600'} flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> ${pkg.stateLimit ? '1 state access' : 'Multi-state access'}</span>
-            </div>
-        </div>`;
-    }).join('');
-}
-
-function selectPackage(index) {
-    selectedPackage = index;
-    renderPackages();
-    // Auto-proceed to checkout
-    setTimeout(() => goToCheckout(), 300);
-}
-
-// ===== CHECKOUT =====
-function calcOrder(pkg) {
+function calcOrder() {
     const totalNeeded = currentLeadData.total;
     const creditsUsed = Math.min(creditBalance, totalNeeded);
-    const recordsToPurchase = totalNeeded - creditsUsed;
-    const overage = recordsToPurchase > pkg.count ? recordsToPurchase - pkg.count : 0;
-    const earnedCredits = pkg.count > recordsToPurchase ? pkg.count - recordsToPurchase : 0;
-    const overageCost = overage * pkg.overage;
-    const finalPrice = recordsToPurchase <= 0 ? 0 : pkg.price + overageCost;
-    return { totalNeeded, creditsUsed, recordsToPurchase, overage, earnedCredits, overageCost, finalPrice };
+    const overageRecords = totalNeeded - creditsUsed;
+    const overageCost = overageRecords * planRate;
+    return { totalNeeded, creditsUsed, overageRecords, overageCost };
 }
 
 function goToCheckout() {
-    if (selectedPackage === null) return;
     navigate('checkout');
-
-    const pkg = packages[selectedPackage];
-    const o = calcOrder(pkg);
+    const o = calcOrder();
 
     const summary = document.getElementById('orderSummary');
     summary.innerHTML = `
         <div class="flex justify-between text-sm py-1"><span class="text-gray-500">Total Records Requested</span><span class="font-medium">${o.totalNeeded.toLocaleString()}</span></div>
-        ${o.creditsUsed > 0 ? `<div class="flex justify-between text-sm py-1"><span class="text-green-600">Credits Applied</span><span class="text-green-600 font-medium">-${o.creditsUsed.toLocaleString()} records</span></div>` : ''}
-        <div class="flex justify-between text-sm py-1"><span class="text-gray-500">Records to Purchase</span><span class="font-medium">${o.recordsToPurchase.toLocaleString()}</span></div>
-        ${o.recordsToPurchase > 0 ? `<div class="flex justify-between text-sm py-1"><span class="text-gray-500">Package Selected</span><span class="font-medium">${pkg.name}</span></div>
-        <div class="flex justify-between text-sm py-1"><span class="text-gray-500">Package Price</span><span class="font-medium">$${pkg.price.toLocaleString()}</span></div>` : ''}
-        ${o.overage > 0 ? `<div class="flex justify-between text-sm py-1"><span class="text-gray-500">Overage (${o.overage.toLocaleString()} @ $${pkg.overage.toFixed(2)})</span><span class="text-amber-600 font-medium">+$${o.overageCost.toFixed(2)}</span></div>` : ''}
-        ${o.earnedCredits > 0 ? `<div class="flex justify-between text-sm py-1"><span class="text-green-600">Credits Earned</span><span class="text-green-600 font-medium">+${o.earnedCredits.toLocaleString()} records</span></div>` : ''}
+        <div class="flex justify-between text-sm py-1"><span class="text-gray-500">Your Credit Balance</span><span class="font-medium">${creditBalance.toLocaleString()} records</span></div>
+        <div class="border-t border-gray-100 my-2"></div>
+        <div class="flex justify-between text-sm py-1"><span class="text-green-600">Credits Applied</span><span class="text-green-600 font-medium">-${o.creditsUsed.toLocaleString()} records</span></div>
+        ${o.overageRecords > 0 ? `<div class="flex justify-between text-sm py-1"><span class="text-gray-500">Additional Records</span><span class="font-medium">${o.overageRecords.toLocaleString()} @ $${planRate.toFixed(planRate === 0.075 ? 3 : 2)}/record</span></div>` : ''}
         <div class="border-t border-gray-200 mt-2 pt-3">
             <div class="flex justify-between items-center">
-                <span class="text-lg font-bold">${o.finalPrice === 0 ? 'Covered by Credits' : 'Total Due Today'}</span>
-                <span class="text-2xl font-bold ${o.finalPrice === 0 ? 'text-green-600' : 'text-brand-600'}">$${o.finalPrice.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</span>
+                <span class="text-lg font-bold">${o.overageRecords <= 0 ? 'Fully Covered by Credits' : 'Amount Due'}</span>
+                <span class="text-2xl font-bold ${o.overageRecords <= 0 ? 'text-green-600' : 'text-brand-600'}">$${o.overageCost.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</span>
             </div>
         </div>
+        <div class="text-xs text-gray-400 mt-2">Remaining balance after purchase: ${Math.max(0, creditBalance - o.creditsUsed).toLocaleString()} records</div>
     `;
 
+    // Show Stripe note only if payment is needed
+    document.getElementById('stripeNote').classList.toggle('hidden', o.overageRecords <= 0);
+    document.getElementById('checkoutBtn').textContent = o.overageRecords > 0 ? 'Proceed to Payment' : 'Confirm & Download';
+
     const areas = areaMode === 'zip' ? selectedZips : selectedCounties;
+    const areaLabel = (areas.length === 1 && areas[0] === 'ALL') ? 'All' : areas.length;
     document.getElementById('filtersSummary').innerHTML = `
         <div><span class="text-gray-500">State:</span> <strong>${selectedState}</strong></div>
-        <div><span class="text-gray-500">${areaMode === 'zip' ? 'ZIP Codes' : 'Counties'}:</span> <strong>${areas.length}</strong></div>
-        <div><span class="text-gray-500">Output Fields:</span> <strong>${selectedFields.size} fields</strong></div>
+        <div><span class="text-gray-500">${areaMode === 'zip' ? 'ZIP Codes' : 'Counties'}:</span> <strong>${areaLabel}</strong></div>
+        <div><span class="text-gray-500">Additional Fields:</span> <strong>${selectedFields.size} fields</strong></div>
         <div><span class="text-gray-500">DNC Filter:</span> <strong>All leads</strong></div>
     `;
 }
 
 // ===== PAYMENT =====
 function processPayment() {
-    const pkg = packages[selectedPackage];
-    const o = calcOrder(pkg);
+    const o = calcOrder();
     const areas = areaMode === 'zip' ? selectedZips : selectedCounties;
+    const areaLabel = (areas.length === 1 && areas[0] === 'ALL') ? `All in ${selectedState}` : areas.slice(0, 3).join(', ') + (areas.length > 3 ? '...' : '');
 
-    // Step 1: Deduct credits FIRST (before generating the list)
-    const creditsUsedNow = o.creditsUsed;
-    creditBalance -= creditsUsedNow;
+    // Step 1: Deduct credits
+    creditBalance -= o.creditsUsed;
 
-    // Step 2: Add any earned credits from package overage
-    creditBalance += o.earnedCredits;
-
-    // Step 3: Update plan rate based on selected package
-    planRate = pkg.perLead;
-
-    // Step 4: Save credit state
+    // Step 2: Save credit state
     saveCredits();
 
-    // Step 5: Create order record
+    // Step 3: Create order record
+    const orderName = `${selectedState} - ${areaLabel}`;
     const order = {
         id: 'ORD-' + Date.now(),
         listId: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substr(2, 8) + '-' + Math.random().toString(36).substr(2, 8),
+        name: orderName,
         date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }),
         state: selectedState,
-        areas: areas.slice(0, 3).join(', ') + (areas.length > 3 ? '...' : ''),
+        areas: areaLabel,
         leadCount: o.totalNeeded,
-        totalPaid: o.finalPrice,
-        creditsUsed: creditsUsedNow,
-        creditsEarned: o.earnedCredits,
-        costPerLead: o.totalNeeded > 0 ? (o.finalPrice / o.totalNeeded).toFixed(3) : '0.000',
-        packageName: pkg.name,
-        fieldsSelected: selectedFields.size
+        totalPaid: o.overageCost,
+        creditsUsed: o.creditsUsed,
+        costPerLead: o.totalNeeded > 0 ? ((o.overageCost) / o.totalNeeded).toFixed(3) : '0.000',
+        fieldsSelected: selectedFields.size,
+        fieldsArray: Array.from(selectedFields)
     };
 
     orders.unshift(order);
     localStorage.setItem('hlp_orders', JSON.stringify(orders));
 
-    // Step 6: Show success (list is now available for download)
+    // Step 4: Show success
     document.getElementById('successOrderId').textContent = order.id;
     document.getElementById('successListId').textContent = order.listId;
     navigate('success');
 
-    const msgs = [`Payment completed! ${o.totalNeeded.toLocaleString()} records ready.`];
-    if (creditsUsedNow > 0) msgs.push(`${creditsUsedNow.toLocaleString()} credits applied.`);
-    if (o.earnedCredits > 0) msgs.push(`${o.earnedCredits.toLocaleString()} credits earned!`);
+    const msgs = [`Order confirmed! ${o.totalNeeded.toLocaleString()} records ready for download.`];
+    if (o.creditsUsed > 0) msgs.push(`${o.creditsUsed.toLocaleString()} credits applied.`);
     showToast(msgs.join(' '));
 }
 
@@ -1167,29 +1050,76 @@ function renderOrders() {
     }
 
     empty.classList.add('hidden');
-    c.innerHTML = orders.map(o => `
+    c.innerHTML = orders.map((o, i) => `
         <div class="bg-white rounded-xl border border-gray-200 p-5">
             <div class="flex flex-col sm:flex-row sm:items-start justify-between gap-3 mb-4">
                 <div>
                     <div class="flex items-center gap-2 flex-wrap">
-                        <span class="font-bold">${o.state} - ${o.areas}</span>
+                        <span class="font-bold order-name" id="orderName${i}">${o.name || (o.state + ' - ' + o.areas)}</span>
+                        <button onclick="renameOrder(${i})" class="text-gray-400 hover:text-brand-600 transition" title="Rename">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/></svg>
+                        </button>
                         <span class="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full font-medium">Completed</span>
                     </div>
-                    <div class="text-xs text-gray-500 mt-1">Order ID: ${o.id} &bull; ${o.date}</div>
+                    <div class="text-xs text-gray-500 mt-1">Order ${o.id} &bull; ${o.date}</div>
                 </div>
-                <button onclick="showToast('CSV download started!')" class="flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-800 transition flex-shrink-0">
+                <button onclick="downloadOrder(${i})" class="flex items-center gap-2 bg-gray-900 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:bg-gray-800 transition flex-shrink-0">
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
                     Download CSV
                 </button>
             </div>
             <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-sm">
-                <div><div class="text-gray-500 text-xs">Lead Count</div><div class="font-bold text-lg">${o.leadCount.toLocaleString()}</div></div>
-                <div><div class="text-gray-500 text-xs">Total Paid</div><div class="font-bold text-lg">$${o.totalPaid.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</div></div>
-                <div><div class="text-gray-500 text-xs">Cost Per Lead</div><div class="font-bold text-lg">$${o.costPerLead}</div></div>
-                <div><div class="text-gray-500 text-xs">Package</div><div class="font-bold text-lg">${o.packageName}</div></div>
+                <div><div class="text-gray-500 text-xs">Records</div><div class="font-bold text-lg">${o.leadCount.toLocaleString()}</div></div>
+                <div><div class="text-gray-500 text-xs">Amount Charged</div><div class="font-bold text-lg">$${(o.totalPaid || 0).toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</div></div>
+                <div><div class="text-gray-500 text-xs">Credits Used</div><div class="font-bold text-lg">${(o.creditsUsed || 0).toLocaleString()}</div></div>
+                <div><div class="text-gray-500 text-xs">Fields Selected</div><div class="font-bold text-lg">${o.fieldsSelected || 0}</div></div>
             </div>
         </div>
     `).join('');
+}
+
+function renameOrder(index) {
+    const current = orders[index].name || (orders[index].state + ' - ' + orders[index].areas);
+    const newName = prompt('Rename this order:', current);
+    if (newName && newName.trim()) {
+        orders[index].name = newName.trim();
+        localStorage.setItem('hlp_orders', JSON.stringify(orders));
+        renderOrders();
+        showToast('Order renamed successfully');
+    }
+}
+
+function downloadOrder(index) {
+    const o = orders[index];
+    // Generate a demo CSV with the selected fields
+    const fields = o.fieldsArray || ['First Name','Last Name','Address','City','State','Zip Code','Phone','Email'];
+    const header = fields.join(',');
+    const sampleNames = ['James Smith','Maria Garcia','Robert Johnson','Linda Williams','Michael Brown','Patricia Jones','David Miller','Jennifer Davis','William Wilson','Elizabeth Moore'];
+    const rows = [];
+    const count = Math.min(o.leadCount, 50); // Demo: show up to 50 rows
+    for (let i = 0; i < count; i++) {
+        const row = fields.map(f => {
+            if (f === 'First Name') return sampleNames[i % 10].split(' ')[0];
+            if (f === 'Last Name') return sampleNames[i % 10].split(' ')[1];
+            if (f === 'Address') return `${1000 + i * 17} ${['Oak','Elm','Main','Pine','Maple'][i % 5]} St`;
+            if (f === 'City') return ['Austin','Tampa','Phoenix','Denver','Charlotte'][i % 5];
+            if (f === 'State') return o.state;
+            if (f === 'Zip Code') return String(10001 + i * 7);
+            if (f === 'Phone') return `(${555 + (i % 4)}) ${100 + i}-${1000 + i * 3}`;
+            if (f === 'Email') return sampleNames[i % 10].toLowerCase().replace(' ', '.') + '@email.com';
+            return '';
+        });
+        rows.push(row.join(','));
+    }
+    const csv = header + '\n' + rows.join('\n');
+    const blob = new Blob([csv], { type: 'text/csv' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = (o.name || o.id) + '.csv';
+    a.click();
+    URL.revokeObjectURL(url);
+    showToast('CSV download started!');
 }
 
 // ===== TOAST =====
@@ -1285,8 +1215,10 @@ function updateFieldCount() {
 }
 
 // ===== CREDITS =====
-let creditBalance = parseInt(localStorage.getItem('hlp_credits') || '0');
+let creditBalance = parseInt(localStorage.getItem('hlp_credits') ?? '100000');
 let planRate = parseFloat(localStorage.getItem('hlp_plan_rate') || '0.04');
+// Set demo defaults if first visit
+if (localStorage.getItem('hlp_credits') === null) { creditBalance = 100000; localStorage.setItem('hlp_credits', '100000'); }
 
 function saveCredits() {
     localStorage.setItem('hlp_credits', String(creditBalance));
@@ -1295,13 +1227,11 @@ function saveCredits() {
 }
 
 function updateCreditDisplays() {
-    // Dashboard credit display
-    const countEl = document.getElementById('dashCreditsCount');
-    const valueEl = document.getElementById('dashCreditsValue');
-    const rateEl = document.getElementById('dashPlanRate');
-    if (countEl) countEl.textContent = creditBalance.toLocaleString();
-    if (valueEl) valueEl.textContent = (creditBalance * planRate).toFixed(2);
-    if (rateEl) rateEl.textContent = planRate.toFixed(planRate === 0.075 ? 3 : 2);
+    // Sidebar credit display
+    const sidebarCredits = document.getElementById('sidebarCredits');
+    const sidebarRate = document.getElementById('sidebarPlanRate');
+    if (sidebarCredits) sidebarCredits.textContent = creditBalance.toLocaleString();
+    if (sidebarRate) sidebarRate.textContent = planRate.toFixed(planRate === 0.075 ? 3 : 2);
 }
 
 // ===== INIT =====
