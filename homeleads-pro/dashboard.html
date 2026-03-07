@@ -14,7 +14,7 @@
         .filter-header { background: #1e293b; }
         .filter-header:hover { background: #334155; }
         .filter-body { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
-        .filter-body.open { max-height: 800px; }
+        .filter-body.open { max-height: 800px; overflow: visible; }
         .zip-tag { animation: fadeIn 0.2s ease; }
         @keyframes fadeIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
         .view { display: none; }
@@ -379,17 +379,17 @@
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Family Position</label>
-                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Single</option><option>Male HOH</option><option>Female HOH</option><option>Husband</option><option>Wife</option><option>Grandfather</option><option>Grandmother</option><option>Other</option></select>
+                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Female HOH</option><option>Grandfather</option><option>Grandmother</option><option>Husband</option><option>Male HOH</option><option>Single</option><option>Wife</option><option>Other</option></select>
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Language</label>
-                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>English</option><option>Spanish</option><option>Chinese</option><option>Vietnamese</option><option>Korean</option><option>Tagalog</option><option>Arabic</option><option>French</option><option>German</option><option>Hindi</option><option>Other</option></select>
+                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Arabic</option><option>Chinese</option><option>English</option><option>French</option><option>German</option><option>Hindi</option><option>Italian</option><option>Japanese</option><option>Korean</option><option>Polish</option><option>Portuguese</option><option>Russian</option><option>Spanish</option><option>Tagalog</option><option>Vietnamese</option><option>Other</option></select>
                                 </div>
                             </div>
                             <div class="grid grid-cols-2 sm:grid-cols-3 gap-4">
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Pets</label>
-                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Dog</option><option>Cat</option><option>Both</option><option>None</option></select>
+                                    <select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Both</option><option>Cat</option><option>Dog</option><option>None</option></select>
                                 </div>
                                 <div>
                                     <label class="text-xs font-medium text-gray-500 mb-1.5 block">Generations</label>
@@ -416,10 +416,10 @@
                     </button>
                     <div id="filter-consumer" class="filter-body bg-white">
                         <div class="p-4 sm:p-5 grid grid-cols-1 sm:grid-cols-2 gap-4">
-                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Interests</label><select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>DIY/Home Improvement</option><option>Gardening</option><option>Cooking/Gourmet</option><option>Fitness/Exercise</option><option>Technology/Electronics</option><option>Travel</option><option>Arts/Crafts</option><option>Music</option><option>Reading/Books</option><option>Sports</option><option>Outdoors/Nature</option><option>Photography</option><option>Fashion</option><option>Investing/Finance</option><option>Gaming</option><option>Automotive</option></select></div>
-                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Hobbies</label><select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Golf</option><option>Fishing</option><option>Hunting</option><option>Camping</option><option>Boating/Sailing</option><option>Woodworking</option><option>Cycling</option><option>Running/Jogging</option><option>Swimming</option><option>Tennis</option><option>Yoga/Pilates</option><option>Bird Watching</option><option>Quilting/Sewing</option><option>Motorcycles</option><option>RVing</option></select></div>
-                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Donations</label><select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Political - Liberal</option><option>Political - Conservative</option><option>Religious</option><option>Environmental</option><option>Health/Medical</option><option>Animal Welfare</option><option>Veterans/Military</option><option>Education</option><option>Arts/Culture</option><option>Children/Youth</option><option>International Aid</option></select></div>
-                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Preferences</label><select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Online Shopper</option><option>Catalog Buyer</option><option>Brand Loyal</option><option>Coupon User</option><option>Organic/Natural</option><option>Luxury Buyer</option><option>Budget Conscious</option><option>Early Adopter</option><option>Subscription Services</option></select></div>
+                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Interests</label><select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Arts/Crafts</option><option>Automotive</option><option>Cooking/Gourmet</option><option>DIY/Home Improvement</option><option>Fashion</option><option>Fitness/Exercise</option><option>Gaming</option><option>Gardening</option><option>Investing/Finance</option><option>Music</option><option>Outdoors/Nature</option><option>Photography</option><option>Reading/Books</option><option>Sports</option><option>Technology/Electronics</option><option>Travel</option></select></div>
+                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Hobbies</label><select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Bird Watching</option><option>Boating/Sailing</option><option>Camping</option><option>Cycling</option><option>Fishing</option><option>Golf</option><option>Hiking</option><option>Horseback Riding</option><option>Hunting</option><option>Motorcycles</option><option>Quilting/Sewing</option><option>Running/Jogging</option><option>RVing</option><option>Skiing/Snowboarding</option><option>Swimming</option><option>Tennis</option><option>Woodworking</option><option>Yoga/Pilates</option></select></div>
+                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Donations</label><select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Animal Welfare</option><option>Arts/Culture</option><option>Children/Youth</option><option>Education</option><option>Environmental</option><option>Health/Medical</option><option>International Aid</option><option>Political - Conservative</option><option>Political - Liberal</option><option>Religious</option><option>Veterans/Military</option></select></div>
+                            <div><label class="text-xs font-medium text-gray-500 mb-1.5 block">Preferences</label><select onchange="updatePreview()" class="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm"><option value="">Any</option><option>Brand Loyal</option><option>Budget Conscious</option><option>Catalog Buyer</option><option>Coupon User</option><option>Early Adopter</option><option>Luxury Buyer</option><option>Online Shopper</option><option>Organic/Natural</option><option>Subscription Services</option></select></div>
                         </div>
                     </div>
                 </div>
@@ -548,58 +548,102 @@ const statesData = [
 ];
 
 const countiesMap = {
-    'AL':['Jefferson','Mobile','Madison','Baldwin','Montgomery','Shelby','Tuscaloosa','Lee','Morgan','Calhoun'],
-    'AZ':['Maricopa','Pima','Pinal','Yavapai','Mohave','Yuma','Coconino','Cochise','Navajo','Apache'],
-    'CA':['Los Angeles','San Diego','Orange','Riverside','San Bernardino','Santa Clara','Alameda','Sacramento','Contra Costa','Fresno','San Francisco','San Mateo','Ventura','Kern'],
-    'CO':['Denver','El Paso','Arapahoe','Jefferson','Adams','Douglas','Larimer','Boulder','Weld','Broomfield'],
-    'FL':['Miami-Dade','Broward','Palm Beach','Hillsborough','Orange','Duval','Pinellas','Lee','Polk','Brevard','Volusia','Seminole','Sarasota','Manatee'],
-    'GA':['Fulton','DeKalb','Gwinnett','Cobb','Clayton','Cherokee','Forsyth','Henry','Hall','Richmond','Chatham','Muscogee','Columbia','Bibb'],
-    'IL':['Cook','DuPage','Lake','Will','Kane','McHenry','Winnebago','Madison','St. Clair','Champaign','Sangamon','Peoria'],
-    'IN':['Marion','Lake','Allen','Hamilton','St. Joseph','Elkhart','Tippecanoe','Vanderburgh','Monroe','Johnson'],
-    'MI':['Wayne','Oakland','Macomb','Kent','Genesee','Washtenaw','Ingham','Ottawa','Kalamazoo','Saginaw'],
-    'NC':['Mecklenburg','Wake','Guilford','Forsyth','Cumberland','Durham','Buncombe','Union','Cabarrus','Gaston','New Hanover','Onslow'],
-    'NJ':['Bergen','Middlesex','Essex','Hudson','Monmouth','Ocean','Union','Passaic','Camden','Morris','Burlington','Mercer'],
-    'NY':['Kings','Queens','New York','Suffolk','Nassau','Bronx','Westchester','Erie','Monroe','Richmond','Onondaga','Albany'],
-    'OH':['Franklin','Cuyahoga','Hamilton','Summit','Montgomery','Lucas','Stark','Butler','Warren','Lorain','Lake','Medina'],
-    'OK':['Oklahoma','Tulsa','Cleveland','Canadian','Comanche','Rogers','Payne','Wagoner','Creek','Garfield'],
-    'PA':['Philadelphia','Allegheny','Montgomery','Bucks','Delaware','Lancaster','Chester','York','Berks','Lehigh','Westmoreland','Erie'],
-    'TN':['Shelby','Davidson','Knox','Hamilton','Rutherford','Williamson','Sumner','Montgomery','Wilson','Blount'],
-    'TX':['Harris','Dallas','Tarrant','Bexar','Travis','Collin','Denton','Hidalgo','Fort Bend','El Paso','Williamson','Montgomery','Brazoria','Galveston'],
-    'VA':['Fairfax','Prince William','Loudoun','Chesterfield','Henrico','Virginia Beach','Arlington','Stafford','Spotsylvania','Chesapeake'],
-    'WA':['King','Pierce','Snohomish','Spokane','Clark','Thurston','Kitsap','Whatcom','Benton','Yakima']
-};
+    'AL':['Autauga','Baldwin','Blount','Calhoun','Chilton','Coffee','Colbert','Dale','Dallas','DeKalb','Elmore','Escambia','Etowah','Houston','Jefferson','Lauderdale','Lee','Limestone','Madison','Marengo','Marshall','Mobile','Montgomery','Morgan','Russell','Shelby','St. Clair','Talladega','Tallapoosa','Tuscaloosa','Walker'],
+    'AK':['Anchorage','Bethel','Fairbanks North Star','Juneau','Kenai Peninsula','Ketchikan Gateway','Kodiak Island','Matanuska-Susitna','Nome','North Slope','Sitka','Valdez-Cordova','Wade Hampton','Yakutat'],
+    'AZ':['Apache','Cochise','Coconino','Gila','Graham','Greenlee','La Paz','Maricopa','Mohave','Navajo','Pima','Pinal','Santa Cruz','Yavapai','Yuma'],
+    'AR':['Benton','Boone','Clark','Craighead','Crawford','Crittenden','Faulkner','Garland','Greene','Hot Spring','Independence','Jefferson','Johnson','Lonoke','Miller','Mississippi','Pope','Pulaski','Saline','Sebastian','Union','Washington','White'],
+    'CA':['Alameda','Butte','Contra Costa','El Dorado','Fresno','Humboldt','Imperial','Kern','Kings','Lake','Los Angeles','Madera','Marin','Merced','Monterey','Napa','Nevada','Orange','Placer','Riverside','Sacramento','San Bernardino','San Diego','San Francisco','San Joaquin','San Luis Obispo','San Mateo','Santa Barbara','Santa Clara','Santa Cruz','Shasta','Solano','Sonoma','Stanislaus','Sutter','Tulare','Ventura','Yolo'],
+    'CO':['Adams','Arapahoe','Boulder','Broomfield','Denver','Douglas','Eagle','El Paso','Garfield','Jefferson','La Plata','Larimer','Mesa','Pueblo','Summit','Weld'],
+    'CT':['Fairfield','Hartford','Litchfield','Middlesex','New Haven','New London','Tolland','Windham'],
+    'DE':['Kent','New Castle','Sussex'],
+    'FL':['Alachua','Bay','Brevard','Broward','Charlotte','Citrus','Clay','Collier','Duval','Escambia','Flagler','Hernando','Hillsborough','Indian River','Lake','Lee','Leon','Manatee','Marion','Martin','Miami-Dade','Monroe','Nassau','Okaloosa','Orange','Osceola','Palm Beach','Pasco','Pinellas','Polk','Sarasota','Seminole','St. Johns','St. Lucie','Volusia','Walton'],
+    'GA':['Baldwin','Bartow','Bibb','Bulloch','Carroll','Chatham','Cherokee','Clarke','Clayton','Cobb','Coffee','Columbia','Coweta','DeKalb','Dougherty','Douglas','Effingham','Fayette','Floyd','Forsyth','Fulton','Glynn','Gordon','Gwinnett','Hall','Henry','Houston','Jackson','Lowndes','Muscogee','Newton','Paulding','Richmond','Rockdale','Troup','Union','Walton','Whitfield'],
+    'HI':['Hawaii','Honolulu','Kauai','Maui'],
+    'ID':['Ada','Bannock','Bingham','Blaine','Bonner','Bonneville','Canyon','Cassia','Elmore','Gem','Idaho','Jefferson','Jerome','Kootenai','Latah','Madison','Nez Perce','Payette','Twin Falls'],
+    'IL':['Adams','Champaign','Cook','DeKalb','DuPage','Kane','Kankakee','Kendall','Knox','Lake','LaSalle','Lee','Macon','Madison','McHenry','McLean','Monroe','Peoria','Rock Island','Sangamon','St. Clair','Tazewell','Vermilion','Will','Winnebago','Woodford'],
+    'IN':['Allen','Bartholomew','Boone','Clark','Clinton','Dearborn','Delaware','Elkhart','Floyd','Grant','Hamilton','Hancock','Harrison','Hendricks','Howard','Huntington','Jackson','Johnson','Kosciusko','LaPorte','Lake','Madison','Marion','Marshall','Monroe','Morgan','Porter','St. Joseph','Tippecanoe','Vanderburgh','Vigo','Warrick','Wayne'],
+    'IA':['Black Hawk','Cerro Gordo','Clinton','Dallas','Des Moines','Dubuque','Johnson','Linn','Marshall','Polk','Pottawattamie','Scott','Story','Warren','Woodbury'],
+    'KS':['Butler','Douglas','Ellis','Harvey','Johnson','Leavenworth','Lyon','McPherson','Miami','Reno','Riley','Saline','Sedgwick','Shawnee','Wyandotte'],
+    'KY':['Boone','Boyd','Bullitt','Campbell','Christian','Clark','Daviess','Fayette','Franklin','Greenup','Hardin','Henderson','Jefferson','Jessamine','Kenton','Laurel','Madison','McCracken','Nelson','Oldham','Pike','Pulaski','Scott','Shelby','Warren','Woodford'],
+    'LA':['Acadia','Ascension','Bossier','Caddo','Calcasieu','East Baton Rouge','Iberia','Jefferson','Lafayette','Lafourche','Livingston','Natchitoches','Orleans','Ouachita','Rapides','St. Charles','St. John the Baptist','St. Landry','St. Martin','St. Tammany','Tangipahoa','Terrebonne','Vernon','Washington','Webster'],
+    'ME':['Androscoggin','Aroostook','Cumberland','Hancock','Kennebec','Knox','Lincoln','Oxford','Penobscot','Sagadahoc','Somerset','Waldo','Washington','York'],
+    'MD':['Allegany','Anne Arundel','Baltimore','Baltimore City','Calvert','Caroline','Carroll','Cecil','Charles','Dorchester','Frederick','Garrett','Harford','Howard','Kent','Montgomery','Prince George\'s','Queen Anne\'s','Somerset','St. Mary\'s','Talbot','Washington','Wicomico','Worcester'],
+    'MA':['Barnstable','Berkshire','Bristol','Dukes','Essex','Franklin','Hampden','Hampshire','Middlesex','Nantucket','Norfolk','Plymouth','Suffolk','Worcester'],
+    'MI':['Allegan','Barry','Bay','Berrien','Calhoun','Clinton','Eaton','Genesee','Grand Traverse','Gratiot','Ingham','Ionia','Isabella','Jackson','Kalamazoo','Kent','Lapeer','Lenawee','Livingston','Macomb','Marquette','Mecosta','Midland','Monroe','Muskegon','Oakland','Ottawa','Saginaw','St. Clair','Shiawassee','Washtenaw','Wayne'],
+    'MN':['Anoka','Becker','Beltrami','Blue Earth','Carlton','Carver','Clay','Dakota','Douglas','Goodhue','Hennepin','Itasca','Olmsted','Otter Tail','Ramsey','Rice','Scott','Sherburne','St. Louis','Stearns','Washington','Winona','Wright'],
+    'MS':['Adams','Bolivar','DeSoto','Forrest','Harrison','Hinds','Jackson','Jones','Lamar','Lauderdale','Lee','Lowndes','Madison','Marion','Oktibbeha','Panola','Pearl River','Pike','Rankin','Simpson','Warren','Washington','Yazoo'],
+    'MO':['Boone','Buchanan','Cape Girardeau','Cass','Christian','Clay','Cole','Franklin','Greene','Jackson','Jasper','Jefferson','Johnson','Lafayette','Lincoln','Pettis','Platte','St. Charles','St. Louis','St. Louis City','Scott','Taney','Warren'],
+    'MT':['Cascade','Flathead','Gallatin','Hill','Lake','Lewis and Clark','Lincoln','Missoula','Park','Ravalli','Silver Bow','Yellowstone'],
+    'NE':['Adams','Buffalo','Dakota','Dawson','Dodge','Douglas','Hall','Lancaster','Lincoln','Madison','Platte','Sarpy','Scotts Bluff','Seward','Washington'],
+    'NV':['Carson City','Churchill','Clark','Douglas','Elko','Humboldt','Lyon','Nye','Washoe','White Pine'],
+    'NH':['Belknap','Carroll','Cheshire','Coos','Grafton','Hillsborough','Merrimack','Rockingham','Strafford','Sullivan'],
+    'NJ':['Atlantic','Bergen','Burlington','Camden','Cape May','Cumberland','Essex','Gloucester','Hudson','Hunterdon','Mercer','Middlesex','Monmouth','Morris','Ocean','Passaic','Salem','Somerset','Sussex','Union','Warren'],
+    'NM':['Bernalillo','Chaves','Cibola','Curry','Dona Ana','Eddy','Grant','Lea','Lincoln','Los Alamos','Luna','McKinley','Otero','Rio Arriba','Sandoval','San Juan','San Miguel','Santa Fe','Sierra','Socorro','Taos','Valencia'],
+    'NY':['Albany','Bronx','Broome','Chautauqua','Chemung','Dutchess','Erie','Essex','Franklin','Fulton','Herkimer','Jefferson','Kings','Monroe','Montgomery','Nassau','New York','Niagara','Oneida','Onondaga','Ontario','Orange','Oswego','Otsego','Putnam','Queens','Rensselaer','Richmond','Rockland','Saratoga','Schenectady','Steuben','Suffolk','Sullivan','Tompkins','Ulster','Warren','Westchester'],
+    'NC':['Alamance','Brunswick','Buncombe','Burke','Cabarrus','Caldwell','Carteret','Catawba','Chatham','Cleveland','Craven','Cumberland','Davidson','Durham','Forsyth','Franklin','Gaston','Guilford','Harnett','Henderson','Iredell','Johnston','Lee','Lincoln','Mecklenburg','Moore','Nash','New Hanover','Onslow','Orange','Pitt','Randolph','Robeson','Rowan','Union','Wake','Wayne','Wilson'],
+    'ND':['Barnes','Burleigh','Cass','Grand Forks','McKenzie','Morton','Stark','Stutsman','Walsh','Ward','Williams'],
+    'OH':['Allen','Ashland','Ashtabula','Athens','Belmont','Butler','Clark','Clermont','Columbiana','Cuyahoga','Delaware','Erie','Fairfield','Franklin','Greene','Hamilton','Hancock','Lake','Licking','Lorain','Lucas','Mahoning','Marion','Medina','Miami','Montgomery','Muskingum','Portage','Richland','Ross','Scioto','Stark','Summit','Trumbull','Tuscarawas','Warren','Wayne','Wood'],
+    'OK':['Canadian','Carter','Cherokee','Cleveland','Comanche','Creek','Garfield','Grady','Kay','Le Flore','Logan','McClain','Muskogee','Oklahoma','Osage','Ottawa','Payne','Pittsburg','Pontotoc','Pottawatomie','Rogers','Sequoyah','Stephens','Tulsa','Wagoner','Washington'],
+    'OR':['Benton','Clackamas','Clatsop','Coos','Deschutes','Douglas','Jackson','Josephine','Klamath','Lane','Lincoln','Linn','Malheur','Marion','Multnomah','Polk','Umatilla','Union','Wasco','Washington','Yamhill'],
+    'PA':['Adams','Allegheny','Beaver','Berks','Blair','Bradford','Bucks','Butler','Cambria','Centre','Chester','Columbia','Crawford','Cumberland','Dauphin','Delaware','Erie','Fayette','Franklin','Lackawanna','Lancaster','Lawrence','Lebanon','Lehigh','Luzerne','Lycoming','McKean','Mercer','Monroe','Montgomery','Northampton','Philadelphia','Pike','Schuylkill','Washington','Westmoreland','York'],
+    'RI':['Bristol','Kent','Newport','Providence','Washington'],
+    'SC':['Aiken','Anderson','Beaufort','Berkeley','Charleston','Cherokee','Chester','Chesterfield','Darlington','Dorchester','Florence','Georgetown','Greenville','Horry','Kershaw','Lancaster','Laurens','Lexington','Oconee','Orangeburg','Pickens','Richland','Spartanburg','Sumter','York'],
+    'SD':['Beadle','Brookings','Brown','Codington','Davison','Hughes','Lawrence','Lincoln','Meade','Minnehaha','Pennington','Yankton'],
+    'TN':['Anderson','Blount','Bradley','Carter','Cheatham','Coffee','Cumberland','Davidson','Dickson','Fayette','Franklin','Greene','Hamblen','Hamilton','Hawkins','Jefferson','Knox','Loudon','Maury','McMinn','Monroe','Montgomery','Obion','Putnam','Robertson','Rutherford','Sevier','Shelby','Sullivan','Sumner','Tipton','Washington','Williamson','Wilson'],
+    'TX':['Bell','Bexar','Bowie','Brazoria','Brazos','Cameron','Collin','Comal','Cooke','Dallas','Denton','Ector','El Paso','Ellis','Fort Bend','Galveston','Grayson','Guadalupe','Hays','Hidalgo','Harris','Hunt','Jefferson','Johnson','Kaufman','Lubbock','McLennan','Midland','Montgomery','Nueces','Parker','Potter','Randall','Rockwall','Smith','Tarrant','Taylor','Tom Green','Travis','Victoria','Webb','Wichita','Williamson','Wise'],
+    'UT':['Box Elder','Cache','Carbon','Davis','Duchesne','Iron','Juab','Morgan','Salt Lake','San Juan','Sanpete','Sevier','Summit','Tooele','Uintah','Utah','Wasatch','Washington','Weber'],
+    'VT':['Addison','Bennington','Caledonia','Chittenden','Essex','Franklin','Grand Isle','Lamoille','Orange','Orleans','Rutland','Washington','Windham','Windsor'],
+    'VA':['Albemarle','Arlington','Augusta','Bedford','Botetourt','Campbell','Caroline','Chesapeake','Chesterfield','Clarke','Culpeper','Fairfax','Fauquier','Floyd','Frederick','Hanover','Henrico','Isle of Wight','James City','King George','Loudoun','Louisa','Montgomery','New Kent','Norfolk','Page','Patrick','Prince William','Roanoke','Rockingham','Spotsylvania','Stafford','Suffolk','Virginia Beach','Warren','York'],
+    'WA':['Benton','Chelan','Clallam','Clark','Cowlitz','Franklin','Grant','Grays Harbor','Island','King','Kitsap','Kittitas','Lewis','Mason','Pierce','Skagit','Snohomish','Spokane','Stevens','Thurston','Walla Walla','Whatcom','Whitman','Yakima'],
+    'WV':['Berkeley','Cabell','Fayette','Greenbrier','Hampshire','Harrison','Jackson','Jefferson','Kanawha','Marion','Marshall','Mason','McDowell','Mercer','Mineral','Mingo','Monongalia','Morgan','Nicholas','Ohio','Putnam','Raleigh','Randolph','Tucker','Wayne','Wetzel','Wood'],
+    'WI':['Adams','Brown','Calumet','Chippewa','Columbia','Dane','Dodge','Door','Douglas','Eau Claire','Fond du Lac','Green','Jefferson','Kenosha','La Crosse','Manitowoc','Marathon','Milwaukee','Monroe','Oconto','Oneida','Outagamie','Ozaukee','Pierce','Portage','Racine','Rock','Sauk','Sheboygan','St. Croix','Walworth','Washington','Waukesha','Waupaca','Winnebago','Wood'],
+    'WY':['Albany','Big Horn','Campbell','Carbon','Converse','Fremont','Goshen','Hot Springs','Johnson','Laramie','Lincoln','Natrona','Park','Sheridan','Sublette','Sweetwater','Teton','Uinta','Washakie','Weston']
+}
 
 const vehicleModels = {
-    'Acura':['MDX','RDX','TLX','Integra','ILX'],
-    'Audi':['A4','A6','Q5','Q7','Q3','e-tron','A3','A8','Q8','RS5'],
-    'BMW':['3 Series','5 Series','X3','X5','X1','7 Series','X7','4 Series','i4','iX'],
-    'Buick':['Encore','Enclave','Envision','Encore GX'],
-    'Cadillac':['Escalade','XT5','XT4','CT5','XT6','Lyriq','CT4'],
-    'Chevrolet':['Silverado','Equinox','Tahoe','Traverse','Malibu','Camaro','Colorado','Suburban','Trailblazer','Blazer','Bolt','Corvette'],
-    'Chrysler':['Pacifica','300','Voyager'],
-    'Dodge':['Ram','Durango','Challenger','Charger','Hornet'],
-    'Ford':['F-150','Explorer','Escape','Edge','Bronco','Mustang','Ranger','Expedition','Maverick','Bronco Sport','Transit','F-250'],
-    'GMC':['Sierra','Terrain','Acadia','Yukon','Canyon','Hummer EV'],
-    'Honda':['CR-V','Civic','Accord','HR-V','Pilot','Odyssey','Ridgeline','Passport','Prologue'],
-    'Hyundai':['Tucson','Santa Fe','Elantra','Sonata','Palisade','Kona','Ioniq 5','Ioniq 6','Venue'],
-    'Infiniti':['QX60','QX50','QX80','Q50'],
-    'Jeep':['Grand Cherokee','Wrangler','Cherokee','Compass','Gladiator','Renegade','Wagoneer'],
-    'Kia':['Sportage','Telluride','Forte','Sorento','Seltos','Soul','K5','EV6','Carnival'],
-    'Land Rover':['Range Rover','Range Rover Sport','Defender','Discovery','Evoque'],
-    'Lexus':['RX','NX','ES','IS','GX','UX','TX','LX','LC'],
-    'Lincoln':['Navigator','Aviator','Corsair','Nautilus'],
-    'Mazda':['CX-5','CX-50','Mazda3','CX-9','CX-30','MX-5'],
-    'Mercedes-Benz':['GLE','GLC','C-Class','E-Class','S-Class','GLA','GLB','A-Class','G-Class','EQS','EQE'],
-    'Mitsubishi':['Outlander','Eclipse Cross','Outlander Sport','Mirage'],
-    'Nissan':['Rogue','Altima','Sentra','Pathfinder','Kicks','Murano','Frontier','Titan','Leaf','Ariya'],
-    'Porsche':['Cayenne','Macan','911','Taycan','Panamera','718'],
-    'Ram':['1500','2500','3500','ProMaster'],
-    'Subaru':['Outback','Forester','Crosstrek','Ascent','Impreza','Legacy','WRX','Solterra'],
-    'Tesla':['Model Y','Model 3','Model X','Model S','Cybertruck'],
-    'Toyota':['RAV4','Camry','Corolla','Highlander','Tacoma','Tundra','4Runner','Sienna','Prius','GR86','Supra','bZ4X','Grand Highlander','Sequoia'],
-    'Volkswagen':['Jetta','Tiguan','Atlas','Taos','ID.4','Golf','Passat','Atlas Cross Sport'],
-    'Volvo':['XC90','XC60','XC40','S60','S90','V60','C40','EX30']
-};
+    'Acura':['Integra','ILX','MDX','RDX','TLX'],
+    'Alfa Romeo':['Giulia','Stelvio','Tonale'],
+    'Aston Martin':['DB11','DB12','DBX','Vantage'],
+    'Audi':['A3','A4','A5','A6','A7','A8','e-tron','e-tron GT','Q3','Q4 e-tron','Q5','Q7','Q8','RS5','RS6','RS7','S4','S5','TT'],
+    'Bentley':['Bentayga','Continental GT','Flying Spur'],
+    'BMW':['2 Series','3 Series','4 Series','5 Series','7 Series','8 Series','i4','i5','i7','iX','M3','M4','M5','X1','X2','X3','X4','X5','X6','X7','Z4'],
+    'Buick':['Enclave','Encore','Encore GX','Envision','Envista'],
+    'Cadillac':['CT4','CT5','Escalade','Lyriq','XT4','XT5','XT6'],
+    'Chevrolet':['Blazer','Bolt','Camaro','Colorado','Corvette','Equinox','Malibu','Silverado 1500','Silverado 2500HD','Silverado 3500HD','Suburban','Tahoe','Trailblazer','Traverse','Trax'],
+    'Chrysler':['300','Pacifica','Voyager'],
+    'Dodge':['Challenger','Charger','Durango','Hornet'],
+    'Fiat':['500e','500X'],
+    'Ford':['Bronco','Bronco Sport','Edge','Escape','Expedition','Explorer','F-150','F-150 Lightning','F-250','F-350','Maverick','Mustang','Mustang Mach-E','Ranger','Transit','Transit Connect'],
+    'Genesis':['Electrified G80','Electrified GV70','G70','G80','G90','GV60','GV70','GV80'],
+    'GMC':['Acadia','Canyon','Hummer EV','Sierra 1500','Sierra 2500HD','Sierra 3500HD','Terrain','Yukon','Yukon XL'],
+    'Honda':['Accord','Civic','CR-V','HR-V','Odyssey','Passport','Pilot','Prologue','Ridgeline'],
+    'Hyundai':['Elantra','Ioniq 5','Ioniq 6','Kona','Palisade','Santa Cruz','Santa Fe','Sonata','Tucson','Venue'],
+    'Infiniti':['Q50','QX50','QX55','QX60','QX80'],
+    'Jaguar':['E-PACE','F-PACE','F-TYPE','I-PACE','XF'],
+    'Jeep':['Cherokee','Compass','Gladiator','Grand Cherokee','Grand Cherokee L','Grand Wagoneer','Renegade','Wagoneer','Wrangler'],
+    'Kia':['Carnival','EV6','EV9','Forte','K5','Niro','Seltos','Sorento','Soul','Sportage','Stinger','Telluride'],
+    'Lamborghini':['Huracan','Revuelto','Urus'],
+    'Land Rover':['Defender','Discovery','Discovery Sport','Evoque','Range Rover','Range Rover Sport','Range Rover Velar'],
+    'Lexus':['ES','GX','IS','LC','LS','LX','NX','RC','RX','RZ','TX','UX'],
+    'Lincoln':['Aviator','Corsair','Nautilus','Navigator'],
+    'Lucid':['Air','Gravity'],
+    'Maserati':['Ghibli','GranTurismo','Grecale','Levante','MC20','Quattroporte'],
+    'Mazda':['CX-30','CX-5','CX-50','CX-70','CX-90','Mazda3','MX-5 Miata'],
+    'Mercedes-Benz':['A-Class','C-Class','CLA','CLE','E-Class','EQB','EQE','EQS','G-Class','GLA','GLB','GLC','GLE','GLS','S-Class'],
+    'MINI':['Clubman','Convertible','Countryman','Hardtop 2 Door','Hardtop 4 Door'],
+    'Mitsubishi':['Eclipse Cross','Mirage','Outlander','Outlander Sport'],
+    'Nissan':['Altima','Ariya','Frontier','Kicks','Leaf','Maxima','Murano','Pathfinder','Rogue','Sentra','Titan','Versa','Z'],
+    'Polestar':['Polestar 2','Polestar 3'],
+    'Porsche':['718 Boxster','718 Cayman','911','Cayenne','Macan','Panamera','Taycan'],
+    'Ram':['1500','2500','3500','ProMaster','ProMaster City'],
+    'Rivian':['R1S','R1T','R2'],
+    'Rolls-Royce':['Cullinan','Ghost','Phantom','Spectre','Wraith'],
+    'Subaru':['Ascent','Crosstrek','Forester','Impreza','Legacy','Outback','Solterra','WRX'],
+    'Tesla':['Cybertruck','Model 3','Model S','Model X','Model Y'],
+    'Toyota':['4Runner','bZ4X','Camry','Corolla','Corolla Cross','Grand Highlander','GR86','GR Corolla','GR Supra','Highlander','Land Cruiser','Prius','RAV4','Sequoia','Sienna','Tacoma','Tundra','Venza'],
+    'Volkswagen':['Atlas','Atlas Cross Sport','Golf','Golf GTI','Golf R','ID.4','ID.Buzz','Jetta','Taos','Tiguan'],
+    'Volvo':['C40','EX30','EX90','S60','S90','V60','XC40','XC60','XC90']
+}
 
 // ===== STATE =====
 let currentView = 'dashboard';
@@ -726,7 +770,7 @@ function toggleSelectAllZips() {
 function populateCounties() {
     const sel = document.getElementById('countyDropdown');
     sel.innerHTML = '<option value="">Select County</option>';
-    const list = countiesMap[selectedState] || ['County 1','County 2','County 3','County 4','County 5'];
+    const list = (countiesMap[selectedState] || []).slice().sort();
     list.forEach(c => {
         const o = document.createElement('option');
         o.value = c;
