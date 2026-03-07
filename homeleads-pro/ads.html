@@ -2905,35 +2905,56 @@ You can go deep whenever you&#x27;re ready — takes about 60 seconds. Don&#x27;
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
                 <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#fefce8; padding:12px; border-radius:8px; border:1px solid #fef08a; margin-top:4px; max-height:400px; overflow-y:auto;">BRAND STYLE: HomeLeads Pro — B2B data intelligence SaaS for real estate professionals.
-COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8.
-TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold weight. Body text uses a clean sans-serif (like Inter).
-LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue diamond icon before the text.
-OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements.
+COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8, warm cream #f5f0e8, burnt orange #c2410c.
+TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold/extra-bold weight. Body text uses a clean sans-serif (like Inter).
+LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue house/diamond icon before the text.
+OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements. For cheeky ads: bold personality, scroll-stopping headlines that dominate 40%+ of canvas.
 
-RENDERING STYLE: Photorealistic 3D render with cinematic lighting. Dark, premium, depth-heavy. Think movie poster meets SaaS product shot. NOT flat design.
+RENDERING STYLE: Photorealistic 3D render with cinematic lighting. Dark, premium, depth-heavy. The visual concept is an ACCORDION of data layers going progressively deeper — the image itself demonstrates &quot;going deeper.&quot;
 
 COMPOSITION (1080x1080 square):
-- BACKGROUND: Very dark charcoal (#111827) with subtle atmospheric haze — like a spotlight illuminating the center from above-right at 45 degrees. Background has subtle depth-of-field blur at edges.
+- BACKGROUND: Very dark charcoal (#111827) with subtle atmospheric haze — a spotlight illuminating the center from above-right at 45 degrees. Background has subtle depth-of-field blur at edges. Faint floating dust particles in the light beam.
 
-HEADLINE:
-- &quot;GO DEEPER&quot; in DM Serif Display, 900 weight, 80pt, white (#ffffff). Centered, positioned in upper 35%. Crisp, high-contrast against dark bg.
+HEADLINE (upper 35% of canvas):
+- &quot;GO DEEPER&quot; in DM Serif Display, 900 weight, 80pt, white (#ffffff). Centered. Crisp, high-contrast against dark bg.
 - &quot;THAN ANYONE ELSE&quot; in same font, 64pt, white. 8px below. Centered.
-- &quot;In Your Market.&quot; in Inter, 500 weight, 24pt, #94a3b8 (medium gray). Below headline. Centered.
+- &quot;In Your Market.&quot; in Inter, 500 weight, 24pt, #94a3b8 (medium gray). 8px below. Centered.
 
-VISUAL (center-bottom area, 50% of canvas):
-- A cascade of 5-6 translucent data cards falling/stacking in perspective — like playing cards being dealt onto a dark glass table.
-- Cards are semi-transparent frosted glass effect (backdrop-blur style), approximately 300x180px each.
-- Each card shows blurred contact data rows (name, phone, property, value) — the data is intentionally blurred/redacted for privacy but the STRUCTURE is clear.
-- Cards have thin blue (#2563eb) top borders and subtle blue edge glow.
-- The cards are arranged in a 3D perspective — front card is sharp and large, cards behind get progressively smaller, blurrier, and more transparent (z-depth effect).
-- The top/front card has one visible green (#22c55e) checkmark badge in corner.
-- Subtle light rays/bokeh effects between the cards — tiny blue and white light particles floating.
-- Cast shadows: cards cast soft shadows on each other and on the &quot;surface&quot; below.
+VISUAL (center, 45% of canvas):
+- An ACCORDION / STACK of 6 translucent data layer cards, arranged vertically from top to bottom — each one deeper, slightly narrower, and slightly more transparent, creating a visual drill-down effect. Like geological strata or an expanding accordion going DOWN.
 
-BRAND: Bottom-left, &quot;HomeLeads Pro&quot; in white with blue diamond.
-- A subtle blue reflection/glow on the dark surface below the cards.
+  LAYER 1 (top — widest, most opaque, ~480px wide):
+  - Semi-transparent frosted glass card, light slate fill (#1e293b at 90% opacity).
+  - Shows: &quot;Name • Phone • Address&quot; in Inter 500, 16pt, white.
+  - This is the SURFACE level — what competitors give you.
 
-LIGHTING: Dramatic key light from upper-right. Soft fill from left. Rim light on card edges. Volumetric haze. Cinematic color grading — slightly desaturated with blue-teal shadows and warm highlights.</pre>
+  LAYER 2 (~440px wide, more transparent):
+  - Shows: &quot;Email • Mobile (Verified)&quot; with green checkmarks.
+
+  LAYER 3 (~400px wide):
+  - Shows: &quot;Property Value • Equity %&quot; with green checkmarks.
+
+  LAYER 4 (~360px wide):
+  - Shows: &quot;Mortgage Balance • Last Sale Date&quot; with green checkmarks.
+
+  LAYER 5 (~320px wide):
+  - Shows: &quot;Household Size • Income Range&quot; with green checkmarks.
+
+  LAYER 6 (bottom — narrowest, ~280px, with blue (#2563eb) edge glow):
+  - Shows: &quot;DNC Status • Credit Range&quot; with green checkmarks.
+  - This deepest layer has a blue glow beneath it — the treasure at the bottom.
+
+- Each layer card: frosted glass effect, thin blue (#2563eb) top border, 12px border-radius, subtle drop shadow. Cards are stacked with 8px vertical gap, each slightly narrower than the one above, creating a pyramid/funnel shape going DOWN.
+- A subtle blue line connects all layers on the left edge — like a depth indicator.
+- The whole stack narrows as it goes deeper, literally showing &quot;going deeper.&quot;
+
+CLARIFYING TEXT (below the accordion, bottom 15%):
+- &quot;18 data points per record.&quot; in Inter, 600 weight, 18pt, white (#ffffff). Centered.
+- &quot;Stop receiving only 3.&quot; in Inter, 400 weight, 16pt, #94a3b8. Centered. 4px below.
+
+BRAND MARK: Bottom-center, &quot;HomeLeads Pro&quot; in white with blue diamond icon. Inter 500, 14pt.
+
+LIGHTING: Dramatic key light from upper-right creating depth between the layers. Each layer casts a soft shadow on the one below it. Volumetric haze between layers. Cinematic blue-teal color grading.</pre>
             </div>
         </details>
     </div>
@@ -2992,44 +3013,47 @@ You can see what you&#x27;ve been missing — takes about 60 seconds. Fair warni
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
                 <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#fefce8; padding:12px; border-radius:8px; border:1px solid #fef08a; margin-top:4px; max-height:400px; overflow-y:auto;">BRAND STYLE: HomeLeads Pro — B2B data intelligence SaaS for real estate professionals.
-COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8.
-TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold weight. Body text uses a clean sans-serif (like Inter).
-LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue diamond icon before the text.
-OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements.
+COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8, warm cream #f5f0e8, burnt orange #c2410c.
+TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold/extra-bold weight. Body text uses a clean sans-serif (like Inter).
+LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue house/diamond icon before the text.
+OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements. For cheeky ads: bold personality, scroll-stopping headlines that dominate 40%+ of canvas.
 
-RENDERING STYLE: Photorealistic 3D render with dramatic lighting. Product comparison shot — like an Apple product comparison page but for data. Physical objects on a dark surface.
+RENDERING STYLE: Photorealistic 3D render with dramatic studio lighting. Product comparison shot — like an Apple product comparison page but for data. Physical objects on a dark reflective surface.
 
 COMPOSITION (1080x1080 square):
-- BACKGROUND: Dark gradient — near-black (#0a0a0a) at top fading to very dark navy (#0f172a) at bottom. A subtle reflective surface/plane at the bottom third of the image (like a dark glass desk).
+- BACKGROUND: Dark gradient — near-black (#0a0a0a) at top fading to very dark navy (#0f172a) at bottom. A subtle reflective surface/plane at the bottom third (like a dark glass desk). Faint bokeh light spots in background.
 
-HEADLINE:
-- &quot;SIZE ISN&#x27;T EVERYTHING.&quot; in DM Serif Display, 900 weight, 64pt, white (#ffffff). Centered, top 25% of canvas.
-- &quot;But 18 points helps.&quot; in Inter, 500 weight, 24pt, #2563eb (blue). Centered, below headline.
+HEADLINE (upper 25%):
+- &quot;SIZE ISN&#x27;T EVERYTHING.&quot; in DM Serif Display, 900 weight, 64pt, white (#ffffff). Centered.
+- &quot;But 18 points helps.&quot; in Inter, 500 weight, 24pt, #2563eb (blue). Centered, 8px below.
 
-VISUAL (center, 55% of canvas):
-- Two physical-looking data &quot;blocks&quot; or &quot;cubes&quot; sitting on the reflective dark surface:
+VISUAL (center, 50% of canvas):
+- Two physical data &quot;blocks&quot; sitting on the dark reflective surface:
 
 LEFT BLOCK — small and underwhelming:
 - A small, thin card/tile (approximately 160x100px apparent size in perspective).
-- Matte white surface with &quot;3&quot; embossed/raised in dark gray. The &quot;3&quot; is 60pt.
-- Below the number: &quot;fields&quot; in tiny text, 12pt.
-- The card looks physically thin, flimsy — casting a tiny shadow.
-- Matte, dull finish. No glow. Slightly dusty/worn look.
+- Matte silver/gray surface with &quot;3&quot; embossed in dark charcoal. The &quot;3&quot; is 60pt.
+- Below the number on the block: &quot;fields&quot; in tiny text, 12pt.
+- The card looks physically thin, flimsy — casting a tiny, weak shadow.
+- Matte, dull finish. No glow. Slightly worn/scuffed look.
 
 RIGHT BLOCK — large and impressive:
 - A much larger, thicker card/block (approximately 360x240px apparent size).
-- Dark navy surface (#0f172a) with &quot;18+&quot; in white, embossed/raised with a subtle blue (#2563eb) glow. The &quot;18+&quot; is 96pt.
+- Dark navy surface (#0f172a) with &quot;18+&quot; in white, embossed/raised with a subtle blue (#2563eb) edge glow. The &quot;18+&quot; is 96pt.
 - Below: &quot;data points&quot; in white, 18pt.
-- The block has a premium feel: sharp edges, subtle metallic blue reflection on edges, clean.
+- Premium feel: sharp edges, subtle metallic blue reflection on edges, clean matte finish.
 - Casts a larger, more defined shadow on the reflective surface.
-- A subtle blue LED-like glow emanating from the bottom edge.
+- A subtle blue LED-like glow emanating from the bottom edge of the block.
 
-- Between the blocks: the size contrast tells the story visually. No &quot;VS&quot; needed — the physical scale difference IS the argument.
-- Both blocks reflect in the dark glass surface below them.
+- The SIZE CONTRAST between the two blocks tells the story visually. No &quot;VS&quot; needed.
+- Both blocks reflect softly in the dark glass surface below them.
 
-BRAND: Bottom-right, white &quot;HomeLeads Pro&quot; with blue diamond, sitting on the reflection surface.
+CLARIFYING TEXT (below the blocks, bottom 15%):
+- &quot;A name &amp; phone number isn&#x27;t a record. It&#x27;s a post-it note.&quot; in Inter, 500 weight, 17pt, #94a3b8. Centered. Italic style.
 
-LIGHTING: Studio product photography lighting. Key light from upper-left at 40 degrees. Fill from right. Rim light catching the edges of the large block. The small block is slightly less lit — naturally de-emphasized by the lighting setup.</pre>
+BRAND MARK: Bottom-center, &quot;HomeLeads Pro&quot; in white with blue diamond. Inter 500, 14pt.
+
+LIGHTING: Studio product photography lighting. Key light from upper-left at 40 degrees. Fill from right. Rim light catching the edges of the large block. The small block is slightly less lit — naturally de-emphasized.</pre>
             </div>
         </details>
     </div>
@@ -3091,36 +3115,60 @@ You can experience the full thing whenever you&#x27;re ready — takes about 60 
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
                 <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#fefce8; padding:12px; border-radius:8px; border:1px solid #fef08a; margin-top:4px; max-height:400px; overflow-y:auto;">BRAND STYLE: HomeLeads Pro — B2B data intelligence SaaS for real estate professionals.
-COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8.
-TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold weight. Body text uses a clean sans-serif (like Inter).
-LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue diamond icon before the text.
-OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements.
+COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8, warm cream #f5f0e8, burnt orange #c2410c.
+TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold/extra-bold weight. Body text uses a clean sans-serif (like Inter).
+LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue house/diamond icon before the text.
+OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements. For cheeky ads: bold personality, scroll-stopping headlines that dominate 40%+ of canvas.
 
-RENDERING STYLE: Bold, high-energy graphic design. Saturated blue background with overflowing data visualization. Think cereal-box-bursting energy meets clean SaaS. Playful but professional.
+RENDERING STYLE: Bold, high-energy graphic design. Saturated blue background with overflowing data card and exploding confetti/fragments. Think cereal-box-bursting energy meets clean SaaS. Playful but professional. The card is OVERFLOWING — physically can&#x27;t contain all the data.
 
 COMPOSITION (1080x1350 vertical):
-- BACKGROUND: Solid brand blue (#2563eb) — vivid, saturated, impossible to scroll past.
+- BACKGROUND: Solid brand blue (#2563eb) — vivid, saturated, impossible to scroll past in any feed.
 
-HEADLINE:
-- &quot;WE&#x27;VE BEEN TOLD&quot; in DM Serif Display, 900 weight, 56pt, black (#000000). Centered, upper 25%.
-- &quot;WE GIVE TOO MUCH.&quot; in same font/size, black. Below. 4px gap.
-  The word &quot;TOO MUCH&quot; has a white highlight/stroke outline effect — like it&#x27;s been circled or emphasized.
+HEADLINE (upper 20%):
+- &quot;WE&#x27;VE BEEN TOLD&quot; in DM Serif Display, 900 weight, 56pt, black (#000000). Centered.
+- &quot;WE GIVE TOO MUCH.&quot; in same font/size, black. 4px below. Centered.
+  The words &quot;TOO MUCH&quot; have a white paint-brush-stroke highlight/underline behind them — hand-drawn feel, like someone circled them.
+- &quot;Reach the right homeowner on the first dial.&quot; in Inter, 500 weight, 18pt, white (#ffffff). Centered. 12px below.
 
-VISUAL (center, 50% of canvas):
-- A large data card (440x520px) that&#x27;s OVERFLOWING with content:
-  - Card background: white (#ffffff), border-radius 16px, subtle shadow.
-  - Card is tilted slightly (3 degrees) for dynamism.
-  - Inside: rows of data fields stacked densely, each with a green checkmark:
-    &quot;Mobile Verified ✓&quot; / &quot;Landline ✓&quot; / &quot;Email ✓&quot; / &quot;Property Address ✓&quot; / &quot;Mailing Address ✓&quot; / &quot;Property Value ✓&quot; / &quot;Equity % ✓&quot; / &quot;Mortgage Balance ✓&quot; / &quot;DNC Status ✓&quot; / &quot;Last Sale Date ✓&quot; / &quot;Owner Name ✓&quot; / &quot;Household Size ✓&quot;
-    - Text in Inter 500, 14pt, dark navy.
-  - The bottom 4-5 rows EXTEND BELOW the card boundary — they&#x27;re &quot;spilling out&quot; of the card like it can&#x27;t contain everything.
-  - Additional &quot;benefit pills&quot; (small rounded badges) float around the card edges:
-    - &quot;Phone Verified&quot; (green bg), &quot;4 Channels&quot; (blue bg), &quot;DNC Built-In&quot; (green bg), &quot;Free Replacements&quot; (amber bg)
-    - These pills are at various angles, scattered artfully around the card — some overlapping the card edge, some floating in the blue background.
+VISUAL (center, 55% of canvas):
+- A large white data card (440x560px) that is OVERFLOWING with content:
+  - Card background: white (#ffffff), border-radius 16px, subtle drop shadow.
+  - Card is tilted slightly (2-3 degrees clockwise) for dynamism.
+  - Inside the card: rows of data fields stacked densely, each with a green (#22c55e) checkmark circle:
+    Row 1: Phone icon (green) + &quot;Mobile Verified&quot; + green checkmark
+    Row 2: Phone icon + &quot;Landline&quot; + green checkmark
+    Row 3: Envelope icon + &quot;Email&quot; + green checkmark
+    Row 4: Home icon + &quot;Property Address&quot; + green checkmark
+    Row 5: Home icon + &quot;Mailing Address&quot; + green checkmark
+    Row 6: Dollar icon + &quot;Property Value&quot; + green checkmark
+    Row 7: Percent icon + &quot;Equity %&quot; + green checkmark
+    Row 8: Bank icon + &quot;Mortgage Balance&quot; + green checkmark
+    Row 9: Shield icon + &quot;DNC Status&quot; + green checkmark
+    Row 10: Calendar icon + &quot;Last Sale Date&quot; + green checkmark
+    Row 11: Person icon + &quot;Owner Name&quot; + green checkmark
+    Row 12: People icon + &quot;Household Size&quot; + green checkmark
+  - Text: Inter 600, 15pt, dark navy (#0f172a). Icons: 20x20px, green.
+  - The bottom 3-4 rows EXTEND BELOW the card boundary — they&#x27;re &quot;spilling out&quot; like the card physically can&#x27;t contain everything. The text continues past the card edge.
+  - Below the spilling rows (partially visible): &quot;Free Replacements&quot; in lighter text.
 
-- Small speech bubble in corner: &quot;We said too much? We haven&#x27;t even started.&quot; in Inter 500, 14pt, white on black bubble.
+- BENEFIT PILLS floating around the card at various angles, scattered artfully:
+  - &quot;Phone Verified&quot; — green (#22c55e) rounded pill, white text + white checkmark. ~120x32px.
+  - &quot;4 Channels&quot; — blue (#2563eb darker shade) pill, white text + grid icon.
+  - &quot;DNC Built-In&quot; — green pill, white text + checkmark.
+  - &quot;Free Built-In&quot; — amber/gold (#f59e0b) pill, white text + checkmark.
+  - &quot;Phone Verified&quot; (duplicate) — another green pill on opposite side.
+  - &quot;DNC Built-In&quot; (duplicate) — another pill.
+  - Pills float at various angles (-10, +5, -3, +8 degrees), some overlapping the card edge, some floating freely in the blue background.
 
-BRAND: Bottom center, &quot;HomeLeads Pro&quot; in white with blue diamond on the blue background.
+- CONFETTI/FRAGMENTS: Small colorful squares, rectangles, and dots (blue, green, yellow, white) exploding outward from behind the card — like data is literally bursting out. Dense near the card, sparse at edges.
+
+- Small black speech bubble in bottom-right area: &quot;We said too much? We haven&#x27;t even started.&quot; in Inter 500, 13pt, white text on black (#000000) rounded rectangle.
+
+CLARIFYING TEXT (below the card, bottom 10%):
+- &quot;With 18+ data points per record. We don&#x27;t know how to do less.&quot; in Inter, 600 weight, 17pt, white (#ffffff). Centered.
+
+BRAND MARK: Bottom-center, &quot;HomeLeads Pro&quot; in white with blue diamond.
 
 FEELING: Abundance. Generosity. &quot;We literally can&#x27;t fit all the value into one card.&quot; The overflowing visual IS the message.</pre>
             </div>
@@ -3181,35 +3229,48 @@ You can see what fast feels like — takes about 60 seconds.</div>
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
                 <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#fefce8; padding:12px; border-radius:8px; border:1px solid #fef08a; margin-top:4px; max-height:400px; overflow-y:auto;">BRAND STYLE: HomeLeads Pro — B2B data intelligence SaaS for real estate professionals.
-COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8.
-TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold weight. Body text uses a clean sans-serif (like Inter).
-LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue diamond icon before the text.
-OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements.
+COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8, warm cream #f5f0e8, burnt orange #c2410c.
+TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold/extra-bold weight. Body text uses a clean sans-serif (like Inter).
+LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue house/diamond icon before the text.
+OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements. For cheeky ads: bold personality, scroll-stopping headlines that dominate 40%+ of canvas.
 
-RENDERING STYLE: Clean SaaS hero with data visualization. Dark background, metric-forward. Think dashboard KPI widget blown up to ad size.
+RENDERING STYLE: Clean, bold editorial ad design — ON BRAND navy/blue version of the original flat style. NOT a speed test or dashboard. Simple, typographic-forward with a small supporting visual. Think premium print ad in a trade magazine.
 
 COMPOSITION (1080x1080 square):
-- BACKGROUND: Deep navy (#0f172a) with subtle radial gradient from center.
+- BACKGROUND: Off-white / warm light gray (#f5f0e8) — clean, editorial feel. No dark backgrounds.
 
-HEADLINE:
-- &quot;FINISH FASTER.&quot; in DM Serif Display, 900 weight, 80pt, white (#ffffff). Centered, upper 30%.
-- Small supporting text below: &quot;Reach the right homeowner on the first dial.&quot; in Inter, 400 weight, 20pt, #94a3b8. Centered.
+EYEBROW (top-left area, 40px from top, 48px from left):
+- &quot;YOU SHOULD&quot; in Inter, 700 weight, 14pt, #c2410c (burnt orange/rust). Uppercase. Letter-spacing 0.08em.
+  This reads as a lead-in so the eye flows: &quot;YOU SHOULD → FINISH FASTER.&quot;
 
-VISUAL (center):
-- A large circular gauge/speedometer (320x320px diameter):
-  - Track: 270-degree arc, background #1e293b (dark), 16px thick.
-  - Fill: gradient arc from blue (#2563eb) to green (#22c55e), filling 95% of the track. 16px thick.
-  - Center of gauge: &quot;95%&quot; in Inter, 900 weight, 72pt, white. Below: &quot;Connect Rate&quot; in Inter 400, 16pt, #94a3b8.
-  - The tip of the arc has a bright green (#22c55e) glow dot — like a LED indicator.
-  - Behind the gauge: very subtle blue radial glow, 400px diameter, 8% opacity.
+HEADLINE (upper-left area, below eyebrow, 8px gap):
+- &quot;FINISH&quot; in DM Serif Display, 900 weight, 96pt, dark navy (#0f172a). Left-aligned, 48px from left.
+- &quot;FASTER.&quot; in same font/size, navy. Directly below, tight line-height (1.0). Left-aligned.
+  The period is important — makes it a statement.
 
-- Below gauge: a thin comparison bar:
-  - &quot;Industry Avg: 22%&quot; — small bar, red (#ef4444), 22% width. Label in Inter 500, 14pt.
-  - &quot;HomeLeads Pro: 95%&quot; — large bar, green (#22c55e), 95% width. Label in Inter 500, 14pt.
-  - Bars are 8px tall, rounded, stacked with 8px gap.
+SUPPORTING TEXT (below headline, 16px gap):
+- &quot;Reach the right homeowner&quot; in Inter, 400 weight, 18pt, #64748b (medium gray). Left-aligned, 48px from left.
+- &quot;on the first dial. Not the 47th.&quot; in Inter, 400 weight, 18pt, #64748b. Below, 4px gap. Left-aligned.
 
-CTA: Blue pill, bottom.
-BRAND: White wordmark, bottom-left.</pre>
+VISUAL (right side, vertically centered):
+- A simple circular gauge/dial (160x160px), positioned in the right-center area:
+  - Ring track: 270-degree arc, 8px thick, light gray (#e5e7eb) background.
+  - Fill arc: gradient from blue (#2563eb) to green (#22c55e), filling ~95%. 8px thick.
+  - A small green dot at the tip of the filled arc.
+  - Center text: &quot;95%&quot; in Inter, 800 weight, 32pt, dark navy (#0f172a).
+  - This gauge is SMALL and SUPPORTING — not the hero element. The headline dominates.
+
+FOOTER BAR (bottom, full width):
+- A thin line, 1px, #d1d5db, at about 80% from top.
+- Below the line: &quot;Replacement Guarantee | 18+ Data Points Per Record&quot; in Inter, 500 weight, 12pt, #94a3b8. Centered.
+
+BRAND &amp; CTA (bottom area):
+- Left side: &quot;HomeLeads Pro&quot; in Inter, 600 weight, 14pt, dark navy, with blue diamond icon.
+- Right side: Rounded button — burnt orange (#c2410c) background, white text &quot;homeleadspro.com&quot; in Inter 600, 13pt. Border-radius 6px. 120x36px.
+
+LAYOUT: Asymmetric — headline dominates the left 60%, gauge sits in the right 40%. Clean, minimal, editorial. Lots of whitespace.
+
+FEELING: Confident, direct, typographic-forward. The headline does all the work. The gauge is a subtle proof point, not the focus.</pre>
             </div>
         </details>
     </div>
@@ -3272,44 +3333,53 @@ You can see what commitment looks like — takes about 60 seconds.</div>
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
                 <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#fefce8; padding:12px; border-radius:8px; border:1px solid #fef08a; margin-top:4px; max-height:400px; overflow-y:auto;">BRAND STYLE: HomeLeads Pro — B2B data intelligence SaaS for real estate professionals.
-COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8.
-TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold weight. Body text uses a clean sans-serif (like Inter).
-LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue diamond icon before the text.
-OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements.
+COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8, warm cream #f5f0e8, burnt orange #c2410c.
+TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold/extra-bold weight. Body text uses a clean sans-serif (like Inter).
+LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue house/diamond icon before the text.
+OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements. For cheeky ads: bold personality, scroll-stopping headlines that dominate 40%+ of canvas.
 
-RENDERING STYLE: Dark, moody SaaS graphic with icon-based visual metaphor. Simple but evocative. Think premium B2B ad in a LinkedIn feed.
+RENDERING STYLE: Dark, moody animated-style illustration. Two contrasting headset characters — one ghosting/dissolving (red, broken), one alive and connected (green, vibrant). Think modern icon-illustration style with glow effects and atmospheric depth. The ghost emoji in the headline adds playful personality.
 
 COMPOSITION (1080x1080 square):
-- BACKGROUND: Dark charcoal (#111827) with a subtle moody gradient — slightly warmer (#1a1520) in the bottom-right corner.
+- BACKGROUND: Very dark charcoal/black (#0a0a0a to #111827 gradient) with subtle atmospheric texture — faint noise grain, moody. Warm reddish tint in the lower-left, cool greenish tint in the lower-right.
 
-HEADLINE:
-- &quot;WE DON&#x27;T GHOST.&quot; in DM Serif Display, 900 weight, 72pt, white (#ffffff). Centered, upper 35%.
-- Subtle: The letter &quot;O&quot; in &quot;GHOST&quot; is replaced with a small ghost emoji/icon (👻) rendered in a flat white vector style — playful but clean.
+HEADLINE (upper 30%):
+- &quot;WE DON&#x27;T&quot; in DM Serif Display, 900 weight, 72pt, white (#ffffff). Centered.
+- Between &quot;DON&#x27;T&quot; and &quot;GHOST&quot;: a small ghost emoji/icon rendered as a 3D-ish cute ghost character (~48x48px), white/translucent, floating between the words. Playful but not childish.
+- &quot;GHOST.&quot; in DM Serif Display, 900 weight, 72pt, white. After the ghost icon. Same line or next line depending on fit.
 
-VISUAL (center):
-- Two headset icons side by side, each approximately 180x180px:
+VISUAL (center, 40% of canvas):
+- Two large headset character icons side by side (each ~200x200px), separated by a vertical dotted line (1px, #374151, 120px tall):
 
-LEFT HEADSET — &quot;ghosted&quot;:
-- A phone headset icon drawn in simple line style, 3px stroke, #ef4444 (red).
-- The headset has a dotted/dashed outline — it&#x27;s fading, dissolving, disappearing.
-- Small &quot;x&quot; marks where the ear cups should be.
-- Below: &quot;Their data.&quot; in Inter 500, 16pt, #64748b.
-- The entire left icon has 40% opacity — it&#x27;s literally fading away.
+LEFT HEADSET — &quot;ghosted&quot; / dissolving:
+- A call center headset icon drawn in bold line art, 4px stroke, #ef4444 (red).
+- The headset band (top arc) is DASHED — broken, incomplete, dissolving.
+- Pieces of the left side of the headset are breaking apart — pixel fragments / shards scattering to the left, like it&#x27;s digitally disintegrating.
+- The ear cups have &quot;X&quot; marks (red) where the speakers should be — dead, no signal.
+- The microphone boom hangs limp or is broken off.
+- A faint red glow/aura behind the headset — danger energy.
+- The entire icon is at 60% opacity — it&#x27;s fading, ghosting.
+- Below: &quot;Their data.&quot; in Inter, 400 weight, 16pt, #64748b. Centered under icon.
 
-RIGHT HEADSET — &quot;connected&quot;:
-- A phone headset icon, solid lines, 3px stroke, #22c55e (green).
-- The headset is solid, confident, with a subtle green glow behind it.
-- Small sound-wave arcs emanating from the microphone (3 curved lines, green, like active audio).
-- Below: &quot;Our data.&quot; in Inter 500, 16pt, white.
-- Full opacity, vibrant.
+RIGHT HEADSET — alive and connected:
+- Same headset icon style but SOLID, confident lines, 4px stroke, #22c55e (green).
+- The headset is complete, clean, intact.
+- Sound wave arcs (3 curved lines) emanating from the ear cup — active audio signal, green.
+- The microphone has a small green dot (active indicator) — live.
+- A vibrant green glow/aura behind the headset — life, energy, connected.
+- Full 100% opacity. Vibrant.
+- Below: &quot;Our data.&quot; in Inter, 600 weight, 16pt, white (#ffffff). Centered under icon.
 
-- Between the headsets: a vertical dotted line, 1px, #374151.
+SUPPORTING TEXT (below the headsets, 32px gap):
+- &quot;18+ data points. Every number verified.&quot; in Inter, 500 weight, 17pt, white (#ffffff). Centered.
+- &quot;Every bad number replaced for free.&quot; in Inter, 500 weight, 17pt, white. Centered. 4px below.
 
-SUPPORTING: Below the icons.
-- &quot;Every number verified. Every record complete.&quot; in Inter 400, 18pt, #94a3b8. Centered.
+FOOTER BAR (bottom area):
+- &quot;Homeowner Data | Replacement Guarantee&quot; in Inter, 500 weight, 12pt, #94a3b8. Centered.
 
-CTA: Blue pill, bottom.
-BRAND: White wordmark with blue diamond.</pre>
+BRAND MARK: Bottom-center, &quot;HomeLeads Pro&quot; in white with blue diamond.
+
+FEELING: The broken/dissolving headset vs the solid/glowing one creates an instant visual metaphor. The ghost emoji in the headline adds personality without undermining the message.</pre>
             </div>
         </details>
     </div>
@@ -3368,35 +3438,37 @@ You can stop praying and start closing — takes about 60 seconds.</div>
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
                 <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#fefce8; padding:12px; border-radius:8px; border:1px solid #fef08a; margin-top:4px; max-height:400px; overflow-y:auto;">BRAND STYLE: HomeLeads Pro — B2B data intelligence SaaS for real estate professionals.
-COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8.
-TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold weight. Body text uses a clean sans-serif (like Inter).
-LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue diamond icon before the text.
-OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements.
+COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8, warm cream #f5f0e8, burnt orange #c2410c.
+TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold/extra-bold weight. Body text uses a clean sans-serif (like Inter).
+LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue house/diamond icon before the text.
+OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements. For cheeky ads: bold personality, scroll-stopping headlines that dominate 40%+ of canvas.
 
-RENDERING STYLE: High-energy, bold graphic design. Vivid blue background with sparkling/lucky visual effects. Think casino/game aesthetic crossed with clean SaaS. Fun but not gimmicky.
+RENDERING STYLE: Bold, flat editorial ad design — ON BRAND navy/blue version of the original orange flat style. Clean, typographic-forward with a playful phone-and-sparkles icon. Think high-end print ad, not digital dashboard.
 
 COMPOSITION (1080x1080 square):
-- BACKGROUND: Bright brand blue (#2563eb) — solid, vivid, eye-catching in any feed.
+- BACKGROUND: Solid brand blue (#2563eb) — vivid, saturated, scroll-stopping.
 
-HEADLINE:
-- &quot;GET LUCKY&quot; in DM Serif Display, 900 weight, 96pt, black (#000000). Centered, upper 35%.
-  The text has a subtle shine/highlight effect — a white gradient sweep across the letters at 30% opacity, as if light is reflecting off metallic text.
-- &quot;On Every Dial.&quot; in Inter, 600 weight, 28pt, white (#ffffff). Below, centered.
+HEADLINE (upper 40%):
+- &quot;GET LUCKY&quot; in DM Serif Display, 900 weight, 96pt, black (#000000). Centered.
+  Bold, punchy, impossible to miss. The double entendre headline IS the scroll-stopper.
+- &quot;ON EVERY DIAL.&quot; in DM Serif Display, 900 weight, 48pt, black (#000000). Centered, 8px below.
 
-VISUAL (center):
-- A large stylized phone handset icon (240x240px), white (#ffffff), clean geometric outline style.
-- Around the phone: 12-15 small sparkle/star icons (✦) in various sizes (8-24px), scattered artfully. Colors: white, gold (#fbbf24), and light blue (#93c5fd).
-- The sparkles radiate outward from the phone like a starburst — suggesting luck/success on every call.
-- Below the phone: three green (#22c55e) checkmark badges in a row:
-  - &quot;Verified&quot; / &quot;Live&quot; / &quot;Ready to Answer&quot;
-  - Each in a small white rounded pill with green checkmark icon.
+VISUAL (center, 30% of canvas):
+- A large stylized phone handset icon (~200x200px), white (#ffffff), clean outline style with 4px stroke. Slightly tilted (10 degrees) for dynamism.
+- Around the phone: 10-15 sparkle/star icons in various sizes (8-28px), scattered in a starburst pattern radiating outward from the phone.
+  - Colors: white, gold/amber (#fbbf24), and light blue (#93c5fd).
+  - The sparkles should feel celebratory and lucky — like magic/fortune surrounding every dial.
+  - Mix of 4-point stars, 6-point stars, and small dots.
 
-SUPPORTING: Below visuals.
-- &quot;97% connect rate. Not luck. Data.&quot; in Inter, 600 weight, 20pt, white. Centered.
+SUPPORTING TEXT (below the sparkle area):
+- &quot;It&#x27;s not luck. It&#x27;s 18 data points&quot; in Inter, 500 weight, 18pt, white (#ffffff). Centered.
+- &quot;and a replacement guarantee.&quot; in Inter, 500 weight, 18pt, white. Centered. 4px below.
 
-BRAND: Bottom center, &quot;HomeLeads Pro&quot; in white with white diamond on the blue bg.
+BRAND MARK: Bottom-center, &quot;HomeLeads Pro&quot; in white with white diamond icon on blue bg. Inter 600, 16pt.
 
-FEELING: Energetic, optimistic, confident. The sparkles should feel celebratory, not childish. Premium luck, not lottery ticket.</pre>
+NO false claims. No percentages. No &quot;verified&quot;, &quot;live&quot;, or &quot;ready to answer&quot; badges. The text says exactly what the product offers: data points + guarantee. Nothing more.
+
+FEELING: Energetic, optimistic, confident. The sparkles feel celebratory, not childish. Premium luck, not lottery ticket. The blue background pops in any feed.</pre>
             </div>
         </details>
     </div>
@@ -3457,43 +3529,50 @@ You can see what a real relationship looks like — takes about 60 seconds. Your
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
                 <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#fefce8; padding:12px; border-radius:8px; border:1px solid #fef08a; margin-top:4px; max-height:400px; overflow-y:auto;">BRAND STYLE: HomeLeads Pro — B2B data intelligence SaaS for real estate professionals.
-COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8.
-TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold weight. Body text uses a clean sans-serif (like Inter).
-LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue diamond icon before the text.
-OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements.
+COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8, warm cream #f5f0e8, burnt orange #c2410c.
+TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold/extra-bold weight. Body text uses a clean sans-serif (like Inter).
+LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue house/diamond icon before the text.
+OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements. For cheeky ads: bold personality, scroll-stopping headlines that dominate 40%+ of canvas.
 
-RENDERING STYLE: Split-contrast editorial design on dark background. Two halves telling a visual story. Bold, provocative headline dominates. Think Vice magazine cover meets B2B SaaS.
+RENDERING STYLE: Bold, flat editorial ad design — ON BRAND navy version of the original orange/cream flat style. Typographic-forward. The headline &quot;STOP ONE NIGHT STANDS&quot; must DOMINATE — it&#x27;s the scroll stopper. Everything else supports it.
 
 COMPOSITION (1080x1350 vertical):
-- BACKGROUND: Split — top 60% is pure black (#000000), bottom 40% is deep navy (#0f172a).
+- BACKGROUND: Off-white / warm cream (#f5f0e8) — clean editorial feel, not dark.
 
-HEADLINE (on the black section):
-- &quot;STOP&quot; in DM Serif Display, 900 weight, 96pt, white (#ffffff). Left-aligned, 80px margin. At 15% from top.
-- &quot;ONE NIGHT STANDS&quot; in same font, 72pt, white. Below. Left-aligned.
-  The words &quot;ONE NIGHT STANDS&quot; have a subtle rough/distressed texture effect on the letters — like slightly worn type.
-- &quot;with your data.&quot; in Inter, 500 weight, 28pt, #94a3b8 (gray). Below, left-aligned. Lowercase — deliberate contrast with the uppercase headline.
+HEADLINE (upper 45% — this takes up almost HALF the canvas):
+- &quot;STOP&quot; in DM Serif Display, 900 weight, 120pt, dark navy (#0f172a). Left-aligned, 48px from left margin.
+- &quot;ONE NIGHT&quot; in same font, 100pt, dark navy. Below, tight line-height 1.0. Left-aligned.
+- &quot;STANDS&quot; in same font, 100pt, dark navy. Below. Left-aligned.
+  These three lines DOMINATE the upper half. Massive. Impossible to miss.
 
-VISUAL (crossing the split boundary):
-- Two icons side by side, centered:
+SUBHEAD (below headline, 12px gap):
+- &quot;...with your data.&quot; in Inter, 500 weight, 22pt, #64748b (medium gray). Left-aligned, 48px from left. Lowercase, conversational tone — the punchline that recontextualizes the headline.
 
-LEFT ICON (140x140px) — &quot;one night stand&quot; data:
-- A crumpled piece of paper icon, rendered in line art, 3px stroke, #ef4444 (red).
-- The paper is visibly wrinkled, messy — representing used-and-tossed data.
-- Small scattered fragments around it — data that fell apart.
-- Below: &quot;Buy. Use. Toss. Repeat.&quot; in Inter 400, 14pt, #64748b.
+VISUAL (center area, 25% of canvas):
+- Two simple icons side by side, each ~100x100px:
 
-RIGHT ICON (140x140px) — &quot;committed&quot; data:
-- A clean, organized file folder icon, line art, 3px stroke, #22c55e (green).
-- Inside the folder: neat rows of data lines visible. A small heart icon on the folder tab (green).
-- A subtle glow behind the folder.
-- Below: &quot;Verified. Complete. Guaranteed.&quot; in Inter 500, 14pt, white.
+LEFT ICON: A crumpled paper icon — simple line art style, 3px stroke, #ef4444 (red).
+  - The paper is visibly wrinkled/balled up.
+  - A red &quot;X&quot; badge (24px circle) overlapping the corner.
+  - Below: &quot;Them&quot; in Inter 500, 14pt, #64748b.
 
-- Between them: &quot;→&quot; arrow, white, suggesting transformation.
+RIGHT ICON: A clean document icon with a heart tab — line art, 3px stroke, #22c55e (green).
+  - Document has neat horizontal lines (data rows) and green checkmarks.
+  - A green checkmark badge (24px circle) overlapping the corner.
+  - Below: &quot;Us&quot; in Inter 500, 14pt, dark navy.
 
-SUPPORTING: On the navy section, below icons.
-- &quot;Your data should be a relationship, not a transaction.&quot; in Inter 400, 18pt, #94a3b8. Centered.
+BODY TEXT (below icons, 24px gap):
+- &quot;We&#x27;re the list source that actually sticks around.&quot; in Inter, 500 weight, 18pt, #334155. Left-aligned, 48px margin.
 
-CTA: Blue pill on navy section, near bottom.</pre>
+FOOTER (bottom area):
+- A thin horizontal line, 1px, #d1d5db.
+- Below: &quot;Replacement Guarantee | 18+ Data Points | homeleadspro.com&quot; in Inter, 500 weight, 12pt, #94a3b8. Centered.
+
+BRAND: Bottom-left, &quot;HomeLeads Pro&quot; in Inter 600, 14pt, dark navy, with blue diamond.
+
+LAYOUT: The headline is 45% of the canvas. Everything else is secondary. Lots of whitespace. Editorial, not busy.
+
+FEELING: The massive headline grabs attention with the double entendre. &quot;...with your data.&quot; recontextualizes it. The icons provide a quick before/after. Clean, editorial, bold.</pre>
             </div>
         </details>
     </div>
@@ -3553,56 +3632,59 @@ You can clean up whenever you&#x27;re ready — takes about 60 seconds. But your
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
                 <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#fefce8; padding:12px; border-radius:8px; border:1px solid #fef08a; margin-top:4px; max-height:400px; overflow-y:auto;">BRAND STYLE: HomeLeads Pro — B2B data intelligence SaaS for real estate professionals.
-COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8.
-TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold weight. Body text uses a clean sans-serif (like Inter).
-LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue diamond icon before the text.
-OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements.
+COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8, warm cream #f5f0e8, burnt orange #c2410c.
+TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold/extra-bold weight. Body text uses a clean sans-serif (like Inter).
+LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue house/diamond icon before the text.
+OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements. For cheeky ads: bold personality, scroll-stopping headlines that dominate 40%+ of canvas.
 
-RENDERING STYLE: High-contrast editorial on white background. &quot;Dirty&quot; visual effect on one element, pristine cleanliness on the other. Think laundry detergent &quot;before/after&quot; crossed with SaaS product comparison.
+RENDERING STYLE: High-contrast editorial on WHITE background. &quot;Dirty&quot; visual treatment on one data card, pristine cleanliness on the other. Think laundry detergent &quot;before/after&quot; crossed with SaaS product comparison. The dirty card should look PHYSICALLY stained and worn.
 
 COMPOSITION (1080x1080 square):
-- BACKGROUND: Clean white (#ffffff).
+- BACKGROUND: Clean white (#ffffff). No gradients, no texture on the background itself.
 
-HEADLINE:
-- &quot;YOUR DATA&quot; in DM Serif Display, 900 weight, 72pt, dark navy (#0f172a). Centered, upper 30%.
-- &quot;IS DIRTY.&quot; in same font, 72pt, navy. Centered below.
-  The word &quot;DIRTY&quot; has a visual treatment: the letters have a &quot;smudge&quot; or &quot;stain&quot; effect — like coffee spills, fingerprints, or ink blots on the characters. Brownish (#92400e at 40% opacity) splotches partially obscure the word. It should look literally dirty/smeared.
+HEADLINE (upper 30%):
+- &quot;YOUR DATA&quot; in DM Serif Display, 900 weight, 72pt, dark navy (#0f172a). Centered.
+- &quot;IS DIRTY.&quot; in same font, 72pt, dark navy. Centered, 4px below.
+  The word &quot;DIRTY&quot; has a visual &quot;smudge&quot; or &quot;stain&quot; effect — brownish (#92400e at 40% opacity) splotches and fingerprint marks partially obscuring the letters. Like someone touched the word with dirty/coffee-stained hands. The letters look physically grimy/smeared while remaining readable.
 
-VISUAL (center, side by side):
-- Two data cards, 300x320px each, 32px gap between them:
+VISUAL (center, side by side, 50% of canvas):
+- Two data cards, each ~300x360px, with 32px gap between them:
 
 LEFT CARD — &quot;dirty&quot; data:
-- White card with visible stains, creases, and a coffee ring mark (circular brown stain in corner).
-- 1px border #d1d5db, but border is slightly uneven/rough.
-- Header: &quot;YOUR CURRENT DATA&quot; in Inter 700, 13pt, #991b1b (dark red).
-- Rows (messy, incomplete):
-  - &quot;Name: John S.&quot; — normal
-  - &quot;Phone: (555) 000-0000&quot; — RED strikethrough, with red &quot;DISCONNECTED&quot; badge
-  - &quot;Email: —&quot; — blank/missing, gray dash
-  - &quot;Property Value: —&quot; — blank
-  - &quot;DNC Status: UNKNOWN&quot; — red warning icon
-- The card has a subtle &quot;worn paper&quot; texture.
-- Red &quot;3 Fields&quot; badge in corner, dim.
+- White card background but visibly STAINED: coffee ring mark (circular brown stain, ~60px diameter) in the bottom-left corner. Brown/yellow age spots scattered. Paper texture looks old, creased, worn.
+- Border: 1px #d1d5db but slightly uneven, rough.
+- Red header underline: thin line under header area, #ef4444.
+- Header: &quot;YOUR CURRENT DATA&quot; in Inter 700, 13pt, #991b1b (dark red). Uppercase.
+- Red &quot;3 Fields&quot; badge in top-right corner — red circle with white &quot;3&quot;, 28px diameter.
+- Data rows (messy, incomplete):
+  - &quot;Name: John S.&quot; — Inter 400, 15pt, dark gray. Truncated, incomplete.
+  - &quot;Phone: (555) 000-0000&quot; — with RED strikethrough line through the number + red &quot;DISCONNECTED&quot; badge (small red pill, white text, 8pt).
+  - &quot;Email: —&quot; — just a gray dash. Empty/missing field.
+  - &quot;Property Value: —&quot; — gray dash. Missing.
+  - &quot;DNC Status:&quot; + red warning triangle icon + &quot;UNKNOWN&quot; in red text.
+- Overall feel: this card is damaged, incomplete, useless. Visually distressed.
 
 RIGHT CARD — &quot;clean&quot; data:
-- Crisp white card, perfect edges, subtle premium shadow (0 4px 24px rgba(0,0,0,0.08)).
-- 2px border #22c55e (green), slightly rounded.
-- Header: &quot;HOMELEADS PRO&quot; in Inter 700, 13pt, #166534 (dark green).
-- Rows (complete, verified):
-  - &quot;Name: John A. Stevens&quot; — bold, complete
-  - &quot;Mobile: (404) 555-8832 ✓&quot; — green check
-  - &quot;Email: j.stevens@email.com ✓&quot; — green check
-  - &quot;Property: $487,000 ✓&quot; — green check
-  - &quot;DNC Status: CLEAR ✓&quot; — green badge
-  - &quot;+13 more fields...&quot; — blue text
-- The card literally sparkles — two small shine/glint marks (✦) on the edges, white.
-- Blue &quot;18+&quot; badge in corner, vibrant.
+- Crisp white card, perfectly clean, sharp corners, premium shadow (0 4px 24px rgba(0,0,0,0.08)).
+- Green border: 2px solid #22c55e, border-radius 8px. Clean, sharp.
+- Green header bar: &quot;HOMELEADS PRO&quot; in Inter 700, 13pt, #166534 on subtle green tint header area.
+- Blue &quot;18+&quot; badge in top-right corner — blue (#2563eb) circle with white &quot;18+&quot;, 28px diameter.
+- Data rows (complete, verified, clean):
+  - &quot;Name: John A. Stevens&quot; — bold, complete full name.
+  - &quot;Mobile: (404) 555-5555&quot; + green checkmark circle.
+  - &quot;Email: j.stevens@email.com&quot; + green checkmark circle.
+  - &quot;Property: $487,000&quot; + green checkmark circle.
+  - &quot;DNC Status: CLEAR&quot; in green text + green checkmark badge.
+  - &quot;+13 more fields...&quot; in blue (#2563eb) text at bottom.
+- Two small sparkle/shine marks on the card edges — tiny white 4-point stars. The card literally sparkles.
+- Overall feel: crisp, complete, verified, premium.
 
-SUPPORTING: Below cards.
-- &quot;Clean your pipeline.&quot; in Inter 600, 20pt, #0f172a. Centered.
+CLARIFYING TEXT (below cards, bottom 12%):
+- &quot;Clean record. 18 data points. Free replacements.&quot; in Inter, 600 weight, 18pt, dark navy (#0f172a). Centered.
 
-CTA: Bottom center, blue pill.
-BRAND: Bottom-right, navy wordmark on white.</pre>
+BRAND MARK: Bottom-center, &quot;HomeLeads Pro&quot; in navy with blue diamond icon.
+
+LIGHTING: Flat, editorial. The dirty card is slightly less saturated (muted). The clean card is slightly brighter. White background lets both cards breathe.</pre>
             </div>
         </details>
     </div>
@@ -3662,59 +3744,69 @@ You can go all the way whenever you&#x27;re ready — takes about 60 seconds. Th
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
                 <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#fefce8; padding:12px; border-radius:8px; border:1px solid #fef08a; margin-top:4px; max-height:400px; overflow-y:auto;">BRAND STYLE: HomeLeads Pro — B2B data intelligence SaaS for real estate professionals.
-COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8.
-TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold weight. Body text uses a clean sans-serif (like Inter).
-LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue diamond icon before the text.
-OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements.
+COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8, warm cream #f5f0e8, burnt orange #c2410c.
+TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold/extra-bold weight. Body text uses a clean sans-serif (like Inter).
+LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue house/diamond icon before the text.
+OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements. For cheeky ads: bold personality, scroll-stopping headlines that dominate 40%+ of canvas.
 
-RENDERING STYLE: Dark, layered infographic with depth visualization. Think geological cross-section or deep-sea exploration — layers going deeper. Premium, moody, data-rich.
+RENDERING STYLE: Dark, layered infographic with depth visualization. Think geological cross-section or deep-sea exploration — layers going progressively deeper into darkness. Premium, moody, data-rich. A blue glow &quot;surface line&quot; separates the headline from the depth layers.
 
 COMPOSITION (1080x1350 vertical):
-- BACKGROUND: Deep navy (#0f172a) at top, getting progressively darker toward bottom (#050a14). Gradient suggests depth — going deeper.
+- BACKGROUND: Deep navy (#0f172a) at top, getting progressively darker toward bottom (#050a14). Gradient suggests depth — going deeper into the data.
 
-HEADLINE:
-- &quot;WE GO DEEP.&quot; in DM Serif Display, 900 weight, 80pt, white (#ffffff). Centered, upper 25%.
-- A subtle horizontal glow line below the headline, blue (#2563eb at 30% opacity), 200px wide. Suggests a surface/water line.
+HEADLINE (upper 20%):
+- &quot;WE GO DEEP.&quot; in DM Serif Display, 900 weight, 80pt, white (#ffffff). Centered.
 
-VISUAL (center, 60% of canvas):
-- A vertical &quot;depth chart&quot; — layers stacked from top to bottom, each getting deeper in color and more detailed:
+SURFACE LINE: A horizontal glow line below the headline — blue (#2563eb at 40% opacity), spans 80% of canvas width, 2px thick with 60px glow spread. This represents the &quot;surface&quot; — everything below is depth.
 
-LAYER 1 (surface — brightest):
-- Light slate (#1e293b) background, full width card (600px wide, 60px tall).
-- Icon: user silhouette + &quot;Owner Name&quot; + &quot;✓&quot; green check.
-- This is the shallowest, most basic data.
+VISUAL (center, 55% of canvas):
+- A vertical stack of 6 DEPTH LAYERS, each a frosted glass card. Layers get PROGRESSIVELY NARROWER and DARKER as they go deeper — funnel/pyramid shape going down.
 
-LAYER 2:
-- Slightly darker (#1a2744), narrower (560px), same height.
-- Icon: phone + &quot;Mobile &amp; Landline&quot; + &quot;✓ ✓&quot; two green checks.
+LAYER 1 (surface — widest ~580px, lightest bg #1e293b):
+- Left: User silhouette icon (20px, white)
+- Text: &quot;Name • Phone • Address&quot; in Inter 500, 16pt, white.
+- Right: Green checkmark circles (3 of them, one per data point).
+- This is what MOST providers give you — surface level only.
 
-LAYER 3:
-- Darker (#162040), narrower (520px).
-- Icon: envelope + &quot;Email Address&quot; + &quot;✓&quot;
+LAYER 2 (~520px wide, bg #1a2744):
+- Left: Home icon (20px, white)
+- Text: &quot;Home Value • Income&quot; in Inter 500, 16pt, white.
+- Right: Two green checkmarks.
 
-LAYER 4:
-- Darker (#121a38), narrower (480px).
-- Icon: home + &quot;Property Details &amp; Value&quot; + &quot;✓&quot;
+LAYER 3 (~460px wide, bg #162040):
+- Left: Chart/graph icon (20px, white)
+- Text: &quot;Credit Range • Age&quot; in Inter 500, 16pt, white.
+- Right: Two green checkmarks.
 
-LAYER 5:
-- Darker (#0e1530), narrower (440px).
-- Icon: dollar + &quot;Mortgage &amp; Equity&quot; + &quot;✓&quot;
+LAYER 4 (~400px wide, bg #121a38):
+- Left: Dollar icon (20px, white)
+- Text: &quot;Mortgage • Equity %&quot; in Inter 500, 16pt, white.
+- Right: Two green checkmarks.
 
-LAYER 6 (deepest — darkest, with blue glow):
-- Darkest (#0a1028), narrowest (400px), but has a blue (#2563eb) border glow.
-- Icon: shield + &quot;DNC Status &amp; Compliance&quot; + &quot;✓&quot;
-- This bottom layer has a subtle pulsing blue glow — the deep treasure.
+LAYER 5 (~340px wide, bg #0e1530):
+- Left: Calendar icon (20px, white)
+- Text: &quot;Last Sale • Household Size&quot; in Inter 500, 16pt, white.
+- Right: Two green checkmarks.
 
-- Each layer connects to the next with subtle vertical lines, creating a funnel/drill shape.
-- The depth progression should feel like drilling deeper into data — each layer reveals more valuable intel.
-- Small &quot;18+&quot; label floating next to the stack with a subtle glow.
+LAYER 6 (deepest — narrowest ~280px, bg #0a1028, with BLUE GLOW border):
+- Left: Shield icon (20px, white)
+- Text: &quot;DNC Status • Compliance&quot; in Inter 500, 16pt, white.
+- Right: Two green checkmarks.
+- This bottom layer has a blue (#2563eb) border glow — 2px border with 20px glow spread. The deep treasure.
+- A small &quot;18+&quot; pill badge floats to the right of this layer — blue bg, white text.
 
-SUPPORTING: Below the depth chart.
-- &quot;Most providers stop at Layer 1.&quot; in Inter 400, 16pt, #64748b. Centered.
-- &quot;We go all the way down.&quot; in Inter 600, 18pt, white. Centered.
+- Each layer: frosted glass effect, 12px border-radius, 10px vertical gap between layers. Subtle drop shadow connecting each to the one below.
+- A thin blue (#2563eb at 20% opacity) vertical line runs down the left side connecting all layers — like a depth indicator/ruler.
+- The narrowing creates a visual funnel that literally shows DEPTH.
 
-CTA: Blue pill, bottom.
-BRAND: White wordmark, bottom.</pre>
+SUPPORTING TEXT (below layers, bottom 18%):
+- &quot;Most providers stop at Layer 1.&quot; in Inter, 400 weight, 17pt, #64748b. Centered.
+- &quot;We go all the way down.&quot; in Inter, 600 weight, 20pt, white (#ffffff). Centered. 4px below.
+- &quot;18 data points deep. Each record.&quot; in Inter, 500 weight, 16pt, #2563eb (blue). Centered. 4px below.
+
+BRAND MARK: Bottom-center, &quot;HomeLeads Pro&quot; in white with blue diamond.
+
+LIGHTING: The surface line creates an ethereal glow. Each deeper layer gets slightly less ambient light. The bottom layer&#x27;s blue glow is the only bright element in the deepest section — the payoff.</pre>
             </div>
         </details>
     </div>
@@ -3777,47 +3869,54 @@ You can see what peak performance looks like — takes about 60 seconds. Your te
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
                 <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#fefce8; padding:12px; border-radius:8px; border:1px solid #fef08a; margin-top:4px; max-height:400px; overflow-y:auto;">BRAND STYLE: HomeLeads Pro — B2B data intelligence SaaS for real estate professionals.
-COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8.
-TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold weight. Body text uses a clean sans-serif (like Inter).
-LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue diamond icon before the text.
-OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements.
+COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8, warm cream #f5f0e8, burnt orange #c2410c.
+TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold/extra-bold weight. Body text uses a clean sans-serif (like Inter).
+LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue house/diamond icon before the text.
+OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements. For cheeky ads: bold personality, scroll-stopping headlines that dominate 40%+ of canvas.
 
-RENDERING STYLE: Dark SaaS hero with contrasting connection states. Simple, clean, emotional. The disconnection/connection metaphor should be instantly readable.
+RENDERING STYLE: Dark, moody illustration with two contrasting headset states. Same visual language as &quot;We Don&#x27;t Ghost&quot; (ad 6.5) — broken/disconnected vs alive/connected headsets. Simple, clean, emotional. The connection metaphor is instant.
 
 COMPOSITION (1080x1080 square):
-- BACKGROUND: Dark charcoal (#111827) with subtle gradient — slightly lighter in center.
+- BACKGROUND: Very dark charcoal (#111827) with subtle gradient — slightly lighter in center. Faint texture grain for premium feel.
 
-HEADLINE:
-- &quot;HAVING TROUBLE&quot; in DM Serif Display, 800 weight, 64pt, white (#ffffff). Centered, upper 30%.
-- &quot;CONNECTING?&quot; in same font, 72pt, #2563eb (blue). Centered below. Slightly larger for emphasis.
+HEADLINE (upper 30%):
+- &quot;HAVING TROUBLE&quot; in DM Serif Display, 800 weight, 64pt, white (#ffffff). Centered.
+- &quot;CONNECTING?&quot; in DM Serif Display, 800 weight, 72pt, #2563eb (blue). Centered, 4px below. Slightly larger for emphasis — the blue makes &quot;CONNECTING&quot; pop.
 
-VISUAL (center):
-- Two phone headset icons, large (200x200px each), side by side with 80px gap:
+VISUAL (center, 35% of canvas):
+- Two phone headset icons, large (~180x180px each), side by side with 80px gap:
 
-LEFT HEADSET — disconnected:
-- Drawn in dashed/broken line style, 3px stroke, #ef4444 (red).
-- The cord/cable below the headset is visibly frayed/broken — cut ends visible.
-- A small red &quot;X&quot; circle (32px) at the break point.
-- Two small &quot;signal lost&quot; wave arcs near the ear cup, but they&#x27;re broken/interrupted (dashed lines fading out).
-- The entire icon has a slight transparency (70% opacity).
-- Below: &quot;Their numbers.&quot; in Inter 400, 16pt, #64748b.
+LEFT HEADSET — disconnected / broken:
+- Drawn in dashed/broken line style, 4px stroke, #ef4444 (red).
+- The headset band is cracked/broken at the top — a visible gap/break in the arc.
+- Small pixel fragments scatter from the broken areas.
+- A red &quot;X&quot; circle badge (28px) near the bottom.
+- Small broken signal waves near the ear cup — dashed lines that fade out (signal lost).
+- The mic boom droops or is detached.
+- Overall opacity: 65% — it&#x27;s fading.
+- Below: &quot;Their numbers.&quot; in Inter, 400 weight, 15pt, #64748b. Centered.
 
-RIGHT HEADSET — connected:
-- Drawn in solid, clean lines, 3px stroke, #22c55e (green).
-- The cord is intact, with a subtle pulse effect (small green dot traveling down the cord).
-- Three concentric signal arcs emanating from the ear cup — solid, strong, green.
-- A small green check circle (32px) near the top.
-- Full opacity, vibrant. Subtle green glow behind.
-- Below: &quot;Our numbers.&quot; in Inter 600, 16pt, white.
+RIGHT HEADSET — connected / alive:
+- Solid, clean lines, 4px stroke, #22c55e (green).
+- Headset is complete, intact, confident.
+- Three solid signal wave arcs emanating from the ear cup — strong active signal, green.
+- A green checkmark circle badge (28px) near the top.
+- Small green sparkle dots around the headset — alive, active.
+- Subtle green glow behind the entire headset.
+- Full opacity, vibrant.
+- Below: &quot;Our numbers.&quot; in Inter, 600 weight, 15pt, white (#ffffff). Centered.
 
-- Between them: a small &quot;VS&quot; or just blank space — the contrast speaks for itself.
+- Between them: a vertical dotted line (1px, #374151, 100px tall).
 
-SUPPORTING: Below icons, 40px gap.
-- &quot;97% of our numbers connect.&quot; in Inter 500, 20pt, white. Centered.
-- &quot;That&#x27;s not marketing. That&#x27;s the data.&quot; in Inter 400, 17pt, #94a3b8. Centered.
+SUPPORTING TEXT (below the headsets, 32px gap):
+- &quot;It&#x27;s not you. It&#x27;s your data.&quot; in Inter, 600 weight, 22pt, white (#ffffff). Centered. This is the key line — empathetic, clear, no false claims.
 
-CTA: Blue pill, bottom.
-BRAND: White wordmark with blue diamond, bottom-left.</pre>
+FOOTER:
+- &quot;Replacement Guarantee | 18+ Data Points&quot; in Inter, 500 weight, 12pt, #94a3b8. Centered.
+
+BRAND MARK: Bottom-center, &quot;HomeLeads Pro&quot; in white with blue diamond.
+
+NO percentages. NO &quot;97%&quot;. NO &quot;marketing&quot;. NO false claims about connection rates. The visual metaphor (broken vs connected headset) tells the story. The text is empathetic (&quot;it&#x27;s not you&quot;) and directs blame at the data, not the dialer.</pre>
             </div>
         </details>
     </div>
