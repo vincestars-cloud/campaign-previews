@@ -11,8 +11,8 @@
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
         /* Ad image uniform sizing */
-        .ad-img-wrap { border-top:1px solid #f0f0f0; border-bottom:1px solid #f0f0f0; overflow:hidden; aspect-ratio:1/1; background:#f1f5f9; }
-        .ad-img-wrap img { width:100%; height:100%; object-fit:cover; display:block; }
+        .ad-img-wrap { border-top:1px solid #f0f0f0; border-bottom:1px solid #f0f0f0; overflow:hidden; background:#f1f5f9; }
+        .ad-img-wrap img { width:100%; height:auto; display:block; }
         /* Mobile responsive */
         @media (max-width: 768px) {
             .ad-grid { grid-template-columns: 1fr !important; }
@@ -3358,52 +3358,83 @@ TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold/ex
 LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue house/diamond icon before the text.
 OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements. For cheeky ads: bold personality, scroll-stopping headlines that dominate 40%+ of canvas.
 
-RENDERING STYLE: Bold, dark, moody illustration with atmospheric depth. Two contrasting character silhouettes — one ghostly/broken (red), one human/alive (green). Modern icon-illustration style with glow effects, subtle particle disintegration on the ghost side, and atmospheric lighting. NOT photorealistic — stylized flat illustration with depth effects (subtle gradients, glows, ambient light). Think high-end motion graphics frozen in one frame.
+Create a clean SaaS-style advertisement graphic, 1080x1080 square.
 
-COMPOSITION (1080x1080 square):
-- BACKGROUND: Very dark charcoal-to-navy gradient (#0a0a0a top → #111827 bottom) with subtle atmospheric texture. Faint noise grain (2% opacity) for cinematic feel. The left half has a barely visible warm reddish ambient wash. The right half has a barely visible cool greenish ambient wash. A faint horizontal lens-flare line (very thin, white-blue, 5% opacity) runs across the upper third — subtle cinematic touch.
+COLOR PALETTE: Primary navy #0f172a, accent blue #2563eb, success green #22c55e, danger red #ef4444, white #ffffff, light gray #f1f5f9, medium gray #94a3b8, warm cream #f5f0e8, burnt orange #c2410c.
 
-HEADLINE (upper 25-30% of canvas):
-- &quot;WE DON&#x27;T&quot; in DM Serif Display, 900 weight, 72pt, pure white (#ffffff). Centered horizontally.
-- Then a small ghost emoji/icon rendered as a stylized 3D-ish cute ghost character (~40x44px), white/slightly translucent with a subtle glow, floating between words. The ghost has simple dot eyes and a wavy bottom edge. It sits on the same baseline or slightly above.
-- &quot;GHOST.&quot; in DM Serif Display, 900 weight, 72pt, pure white (#ffffff). Same line or immediately after the ghost icon.
-- The headline text has a very subtle drop shadow (0 2px 8px rgba(0,0,0,0.5)) for depth against the dark bg.
+STYLE
+Minimal, flat UI illustration style. Soft neutral palette. No dramatic lighting. Clean marketing graphic similar to modern SaaS landing pages. Everything centered and evenly spaced.
 
-VISUAL (center of canvas, occupying ~40% of height):
-Two large character silhouettes side by side, separated by a vertical thin dotted line (1px, #374151, about 160px tall):
+BACKGROUND
+Very light warm gray (#f2efe9) with subtle soft shadows.
 
-LEFT CHARACTER — &quot;GHOSTED / BROKEN&quot; (their data):
-- A GHOST FIGURE silhouette (~200px wide x 220px tall) — this is NOT just a headset. It&#x27;s a ghost/phantom shape (rounded head tapering to a wavy bottom like a classic ghost silhouette) wearing a call center headset on top.
-- The ghost body is rendered in dark gray (#374151) with a red (#ef4444) tint, at about 50-60% opacity — semi-transparent, fading.
-- The headset on the ghost: over-ear headset shape, drawn in bold line art (3-4px stroke), colored #ef4444 (red). The headband (arc over the top of the head) is DASHED/BROKEN — segments missing, showing gaps. The ear cups have small &quot;X&quot; marks inside them.
-- The ghost shape is DISINTEGRATING — the left side and bottom are breaking apart into small square pixel fragments / digital shards that scatter outward to the left. These particles are red (#ef4444) and dark gray, various sizes (4-12px squares), with decreasing opacity as they drift further. About 15-20 particles total.
-- A circular badge/stamp overlapping the ghost&#x27;s upper-left area: a circle (~48px diameter) with a red (#ef4444) background and a bold white &quot;✕&quot; (X mark) inside. The circle has a 2px white border. This is the &quot;big visual red X mark.&quot;
-- A faint red glow/aura radiates behind the ghost figure — rgba(239,68,68,0.15), soft, ~300px spread.
-- Below the ghost: &quot;Their data.&quot; in Inter, 400 weight, 16pt, #64748b (muted gray). Centered under the figure.
+HEADLINE (top center)
+Large uppercase serif headline:
+&quot;WE DON&#x27;T GHOST.&quot;
+Font similar to DM Serif Display or Playfair Display.
+Color: very light beige-gray (#d9d4cc).
+Weight: bold.
+Text spans nearly full width.
+Centered.
 
-RIGHT CHARACTER — &quot;CONNECTED / ALIVE&quot; (our data):
-- A HUMAN SILHOUETTE (~200px wide x 220px tall) — a clean, solid human head-and-shoulders outline (like a generic person icon/avatar shape), wearing a call center headset.
-- The human silhouette is rendered as a solid shape in #22c55e (green) with full opacity — vibrant, alive, present. Clean edges, no disintegration.
-- The headset on the human: same over-ear headset shape, drawn in bold line art (3-4px stroke), colored #22c55e (green). The headband is SOLID and COMPLETE. The ear cups are intact.
-- Sound wave arcs (3 curved lines, progressively larger) emanate from the right ear cup outward — green (#22c55e), indicating active audio signal, live connection. The microphone boom has a small bright green dot at its tip — a &quot;live&quot; indicator light, glowing.
-- A circular badge/stamp overlapping the human&#x27;s upper-right area: a circle (~48px diameter) with a green (#22c55e) background and a bold white &quot;✓&quot; (checkmark) inside. The circle has a 2px white border. This is the &quot;green checkmark.&quot;
-- A vibrant green glow/aura radiates behind the human figure — rgba(34,197,94,0.15), soft, ~300px spread. Slightly brighter than the red glow on the ghost side.
-- Below the human: &quot;Our data.&quot; in Inter, 600 weight, 16pt, white (#ffffff). Centered under the figure. Note the bolder weight than &quot;Their data.&quot; — intentional emphasis.
+MAIN VISUAL (center of canvas)
+Two headset icons side-by-side with a ghost character on the left.
 
-THE CONTRAST: The ghost is fading, dissolving, broken headset, red X — representing ghosted data, dead numbers. The human is solid, present, connected headset with live audio, green checkmark — representing verified, working data. The visual metaphor is instant and visceral.
+LEFT ICON
+Ghost character wearing a headset.
+Ghost body shape is soft and rounded with a small tail.
+Color: medium gray (#6b6b6b).
+Headset band and ear cups same gray color.
+Microphone boom extending forward.
 
-SUPPORTING TEXT (below the two figures, 32px gap):
-- Line 1: &quot;18+ data points. Every number verified.&quot; in Inter, 500 weight, 17pt, white (#ffffff). Centered.
-- Line 2: &quot;Every bad number replaced for free.&quot; in Inter, 500 weight, 17pt, white (#ffffff). Centered. 6px below line 1.
-- The comma after &quot;free&quot; is intentional — trailing, conversational.
+Above-left of the ghost icon place an orange circular badge (#f08a3e) with a white &quot;X&quot; inside.
 
-FOOTER BAR (bottom 10% of canvas):
-- &quot;Homeowner Data | Replacement Guarantee&quot; in Inter, 500 weight, 12pt, #94a3b8. Centered.
+RIGHT ICON
+Standard call-center headset icon.
+Minimal line style.
+Color: light beige-gray (#d8d2c9).
+Microphone boom visible.
+Headset centered.
 
-BRAND MARK: Bottom-center, below footer text, 20px from bottom edge.
-- Blue diamond icon (10x10px) + &quot;HomeLeads Pro&quot; in Inter, 600 weight, 14pt, white (#ffffff).
+Below-right of the headset place a green circular badge (#2ecc71) with a white checkmark.
 
-OVERALL FEELING: Dark, moody, cinematic. The dissolving ghost vs solid human creates instant visual tension. The red vs green color coding is unmistakable. The ghost emoji in the headline adds cheeky personality without undermining the professional feel. This should stop someone mid-scroll with recognition — &quot;oh, THAT kind of ghosting.&quot;
+Both icons should be the same size and horizontally aligned with equal spacing.
+
+SUPPORTING TEXT (below icons)
+Small centered text:
+&quot;Every number verified. Every dead number replaced.&quot;
+Font: clean sans-serif similar to Inter.
+Color: medium gray (#8a8a8a).
+
+BOTTOM INFORMATION BAR
+Full-width dark gray bar (#4a4a4a).
+Centered text inside bar:
+&quot;Homeowner Data  |  Replacement Guarantee  |  18+ Data Points&quot;
+Text color: white.
+Font: Inter or similar sans-serif.
+
+BOTTOM BRAND ROW
+Left side:
+&quot;HomeLeads Pro&quot;
+Font: Inter medium.
+Color: light gray (#bdbdbd).
+
+Right side:
+Rounded blue CTA button.
+Button text in white:
+&quot;Never Get Ghosted&quot;.
+
+BUTTON STYLE
+Rounded pill shape.
+Soft shadow.
+Centered vertically in bottom section.
+
+COMPOSITION
+Everything centered.
+Large whitespace.
+Clean marketing graphic.
+Minimal design.
+Balanced spacing between sections.
 </pre>
             </div>
         </details>
@@ -3899,49 +3930,127 @@ TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold/ex
 LOGO: &quot;HomeLeads Pro&quot; in clean white sans-serif with a small blue house/diamond icon before the text.
 OVERALL AESTHETIC: Premium, dark, data-driven. Think Bloomberg Terminal meets modern SaaS. Clean lines, generous whitespace, subtle depth through layered card elements. For cheeky ads: bold personality, scroll-stopping headlines that dominate 40%+ of canvas.
 
-RENDERING STYLE: Dark, moody illustration with two contrasting headset states. Same visual language as &quot;We Don&#x27;t Ghost&quot; (ad 6.5) — broken/disconnected vs alive/connected headsets. Simple, clean, emotional. The connection metaphor is instant.
+Create a clean SaaS marketing advertisement graphic, 1080x1080 square.
 
-COMPOSITION (1080x1080 square):
-- BACKGROUND: Very dark charcoal (#111827) with subtle gradient — slightly lighter in center. Faint texture grain for premium feel.
+STYLE
+Minimal flat UI illustration similar to modern SaaS landing pages.
+Soft neutral palette, clean spacing, balanced layout, light shadows.
+Everything centered with generous whitespace.
 
-HEADLINE (upper 30%):
-- &quot;HAVING TROUBLE&quot; in DM Serif Display, 800 weight, 64pt, white (#ffffff). Centered.
-- &quot;CONNECTING?&quot; in DM Serif Display, 800 weight, 72pt, #2563eb (blue). Centered, 4px below. Slightly larger for emphasis — the blue makes &quot;CONNECTING&quot; pop.
+COLOR PALETTE
+Primary navy #0f172a
+Accent blue #2563eb
+Success green #22c55e
+White #ffffff
+Light gray #f1f5f9
+Medium gray #94a3b8
+Warm cream #f5f0e8
 
-VISUAL (center, 35% of canvas):
-- Two phone headset icons, large (~180x180px each), side by side with 80px gap:
+BACKGROUND
+Very light warm cream (#f5f0e8) with subtle soft shadows.
 
-LEFT HEADSET — disconnected / broken:
-- Drawn in dashed/broken line style, 4px stroke, #ef4444 (red).
-- The headset band is cracked/broken at the top — a visible gap/break in the arc.
-- Small pixel fragments scatter from the broken areas.
-- A red &quot;X&quot; circle badge (28px) near the bottom.
-- Small broken signal waves near the ear cup — dashed lines that fade out (signal lost).
-- The mic boom droops or is detached.
-- Overall opacity: 65% — it&#x27;s fading.
-- Below: &quot;Their numbers.&quot; in Inter, 400 weight, 15pt, #64748b. Centered.
+TOP EYEBROW TEXT (top center)
+&quot;OUTBOUND TEAMS&quot;
+Font: Inter or similar clean sans-serif
+Weight: 600
+Size: small
+Color: accent blue (#2563eb)
+Uppercase
+Letter spacing slightly expanded
+Centered.
 
-RIGHT HEADSET — connected / alive:
-- Solid, clean lines, 4px stroke, #22c55e (green).
-- Headset is complete, intact, confident.
-- Three solid signal wave arcs emanating from the ear cup — strong active signal, green.
-- A green checkmark circle badge (28px) near the top.
-- Small green sparkle dots around the headset — alive, active.
-- Subtle green glow behind the entire headset.
-- Full opacity, vibrant.
-- Below: &quot;Our numbers.&quot; in Inter, 600 weight, 15pt, white (#ffffff). Centered.
+MAIN HEADLINE (below eyebrow)
+&quot;HAVING TROUBLE CONNECTING?&quot;
+Font: DM Serif Display or Playfair Display
+Weight: bold
+Color: very light beige-gray (#d9d4cc)
+Large size
+Uppercase
+Centered.
+Headline spans nearly the full width.
 
-- Between them: a vertical dotted line (1px, #374151, 100px tall).
+MAIN VISUAL (center of canvas)
 
-SUPPORTING TEXT (below the headsets, 32px gap):
-- &quot;It&#x27;s not you. It&#x27;s your data.&quot; in Inter, 600 weight, 22pt, white (#ffffff). Centered. This is the key line — empathetic, clear, no false claims.
+Left side:
+Minimal line illustration of a call-center headset.
+Color: light beige gray (#d8d2c9).
+Below it, a small ghost face icon (three dots for eyes and mouth).
+Between the headset and the cards is a blue X icon.
 
-FOOTER:
-- &quot;Replacement Guarantee | 18+ Data Points&quot; in Inter, 500 weight, 12pt, #94a3b8. Centered.
+Middle:
+Large blue X symbol (#2563eb) representing failed connection.
 
-BRAND MARK: Bottom-center, &quot;HomeLeads Pro&quot; in white with blue diamond.
+Right side:
+Two UI call-result cards stacked vertically.
 
-NO percentages. NO &quot;97%&quot;. NO &quot;marketing&quot;. NO false claims about connection rates. The visual metaphor (broken vs connected headset) tells the story. The text is empathetic (&quot;it&#x27;s not you&quot;) and directs blame at the data, not the dialer.</pre>
+CARD 1 (top card)
+Rounded rectangle UI card.
+Light gray background (#f1f5f9).
+Left icon: small gray phone symbol.
+Text: &quot;Disconnected&quot;
+Font: Inter medium.
+Text color: dark gray (#374151).
+
+CARD 2 (bottom card)
+Rounded rectangle UI card.
+Light gray background (#f1f5f9).
+Left icon: green phone symbol.
+Text:
+&quot;Connected&quot;
+Below it smaller text:
+&quot;0.47&quot;
+Font: Inter medium.
+Text color: dark gray.
+
+To the left of the bottom card place a green circle checkmark (#22c55e).
+
+SUPPORTING STATEMENT (below visual)
+&quot;It&#x27;s not you. It&#x27;s your homeowner data.&quot;
+Font: Inter.
+Weight: 500.
+Color: accent blue (#2563eb).
+Centered.
+
+FOOTER INFORMATION LINE (below supporting statement)
+Thin divider line light gray (#e5e7eb).
+
+Below divider small centered text:
+&quot;Replacement Guarantees | 18+ Data Points&quot;
+Font: Inter.
+Color: #94a3b8.
+Small size.
+
+BOTTOM BRAND AREA
+
+Left side:
+HomeLeads Pro logo text
+Font: Inter medium
+Color: #0f172a
+Include small blue diamond icon before text.
+
+Right side:
+Rounded CTA button
+Color: accent blue (#2563eb)
+White text:
+&quot;Start Connecting&quot;
+
+Button style:
+Rounded pill
+Soft shadow
+Centered vertically.
+
+LAYOUT
+Top: eyebrow text
+Below: large headline
+Center: headset illustration + connection cards
+Below: supporting statement
+Footer: divider and features
+Bottom row: logo left, CTA button right
+
+Spacing should be airy and balanced.
+Minimal modern SaaS marketing aesthetic.
+
+IMPORTANT: 1080x1080 square format. Clean, minimal, modern.</pre>
             </div>
         </details>
     </div>
