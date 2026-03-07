@@ -26,11 +26,11 @@
             <div class="flex items-center justify-between">
                 <div>
                     <h1 class="text-xl sm:text-2xl font-bold text-gray-900">HomeLeads Pro - 5x5 Ad Matrix</h1>
-                    <p class="text-sm text-gray-500 mt-0.5">5 Angles x 5 Hooks = 25 Ads | TOF Lead Gen | March 2026</p>
+                    <p class="text-sm text-gray-500 mt-0.5">6 Angles — 35 Ads | TOF Lead Gen | March 2026</p>
                 </div>
                 <div class="text-right text-xs text-gray-400">
-                    <div>17 Static | 3 Carousel | 5 Video</div>
-                    <div>v2 — Framework-driven rewrite</div>
+                    <div>27 Static | 3 Carousel | 5 Video</div>
+                    <div>v3 — Cheeky angle added</div>
                 </div>
             </div>
         </div>
@@ -105,7 +105,8 @@
             <button class="angle-tab px-4 py-2 rounded-lg text-sm font-semibold border border-gray-200" data-angle="3">3. 3 Fields vs 18</button>
             <button class="angle-tab px-4 py-2 rounded-lg text-sm font-semibold border border-gray-200" data-angle="4">4. Replacement Guarantee</button>
             <button class="angle-tab px-4 py-2 rounded-lg text-sm font-semibold border border-gray-200" data-angle="5">5. TCPA Time Bomb</button>
-            <button class="angle-tab px-4 py-2 rounded-lg text-sm font-semibold border border-gray-200" data-angle="all">All 25</button>
+            <button class="angle-tab px-4 py-2 rounded-lg text-sm font-semibold border border-gray-200" data-angle="6">6. Cheeky</button>
+            <button class="angle-tab px-4 py-2 rounded-lg text-sm font-semibold border border-gray-200" data-angle="all">All 35</button>
         </div>
         <div id="angleDesc"></div>
     </div>
@@ -127,7 +128,8 @@
   Ad Set 2: Calling Blind (Aspirational) .............. Ads 2.1 - 2.5
   Ad Set 3: 3 Fields vs 18 (Contrarian) ............... Ads 3.1 - 3.5
   Ad Set 4: Replacement Guarantee (Trust) ............. Ads 4.1 - 4.5
-  Ad Set 5: TCPA Time Bomb (Fear/Educational) ......... Ads 5.1 - 5.5</pre>
+  Ad Set 5: TCPA Time Bomb (Fear/Educational) ......... Ads 5.1 - 5.5
+  Ad Set 6: Cheeky / Double Entendre .................. Ads 6.1 - 6.10</pre>
             <div class="mt-6">
                 <h3 class="text-sm font-bold text-gray-900 mb-3">Kill/Scale Thresholds (after 3-5 days, $50+ spend/ad set)</h3>
                 <div class="grid sm:grid-cols-2 gap-3">
@@ -150,7 +152,8 @@ const angleColors = {
     2: { bg: 'bg-blue-50', border: 'border-blue-200', badge: 'bg-blue-100 text-blue-800', accent: 'text-blue-600' },
     3: { bg: 'bg-amber-50', border: 'border-amber-200', badge: 'bg-amber-100 text-amber-800', accent: 'text-amber-600' },
     4: { bg: 'bg-green-50', border: 'border-green-200', badge: 'bg-green-100 text-green-800', accent: 'text-green-600' },
-    5: { bg: 'bg-purple-50', border: 'border-purple-200', badge: 'bg-purple-100 text-purple-800', accent: 'text-purple-600' }
+    5: { bg: 'bg-purple-50', border: 'border-purple-200', badge: 'bg-purple-100 text-purple-800', accent: 'text-purple-600' },
+    6: { bg: 'bg-pink-50', border: 'border-pink-200', badge: 'bg-pink-100 text-pink-800', accent: 'text-pink-600' }
 };
 
 const angleDescs = {
@@ -158,7 +161,8 @@ const angleDescs = {
     2: { name: 'Calling Blind (Aspirational)', desc: 'Hopes & Dreams + Desired Outcomes. Most list providers give name + phone + address. Our 18+ data points let buyers pre-qualify before dialing. Sell the destination, not the flight.' },
     3: { name: '3 Fields vs 18 (Contrarian)', desc: 'Frustrations + Solution Soundbites. Most providers give 3 fields and call it a "record." We deliver 18+ fields and up to 4 contact channels. Challenges the assumption all data is the same.' },
     4: { name: 'Replacement Guarantee (Trust/Risk Reversal)', desc: 'Our only-in-market differentiator. Every disconnected or wrong number replaced free. No threshold, no limit. Hormozi: this IS the offer — risk reversal so strong they feel stupid saying no.' },
-    5: { name: 'TCPA Time Bomb (Fear/Educational)', desc: 'TCPA class actions surged 112% in 2025. Keller Williams: $40M. Momentum Solar: $30M. Up to $1,500 per violation. DNC status included in every record. Nobody else runs fear-based ads here.' }
+    5: { name: 'TCPA Time Bomb (Fear/Educational)', desc: 'TCPA class actions surged 112% in 2025. Keller Williams: $40M. Momentum Solar: $30M. Up to $1,500 per violation. DNC status included in every record. Nobody else runs fear-based ads here.' },
+    6: { name: 'Cheeky / Double Entendre', desc: 'Personality-driven ads inspired by Graza ("The Foursome Experience") and Snuff Co ("Made For Spitters, Not Quitters"). Suggestive headlines on bold block colors — the data product visual delivers the punchline. Scroll-stopping innuendo that resolves into real selling points.' }
 };
 
 const formatBadges = {
@@ -382,7 +386,83 @@ const ads = [
       primary: "Outbound teams making 1,000+ calls a day:\n\nYour list provider's terms say you're responsible for DNC compliance. But did they actually scrub the full registry — or just the known litigators?\n\nMost don't. And they won't tell you which.\n\nKeller Williams: $40M. Momentum Solar: $30M. Up to $1,500 per violation.\n\nDo NOT dial a list that doesn't include DNC status on every record.\n\nEvery HomeLeads Pro record includes DNC status as a standard data point. Not an upsell. Not an add-on. It's in every file.\n\nKnow before you dial.\n\nhomeleadspro.com",
       headline: 'Do NOT Dial Without DNC Status.',
       description: 'DNC included on every record. Standard.',
-      prompt: 'BACKGROUND: Navy (#1E3A5F).\nCALLOUT: Red (#DC2626) eyebrow: "OUTBOUND TEAMS: 1,000+ CALLS/DAY"\nHEADLINE: Large white "DO NOT DIAL" line 1. Orange "WITHOUT DNC STATUS." line 2 — 40% of canvas.\nVISUAL: Two white info cards stacked:\n  Card 1: "Keller Williams: $40M" + red warning icon\n  Card 2: "Momentum Solar: $30M" + red warning icon\nSUPPORTING: White: "Up to $1,500 per violation. DNC status on every record."\nSOCIAL PROOF: Lighter navy strip: "HomeLeads Pro | 18+ Data Points | Replacement Guarantee"\nCTA: Orange button: "Build a Compliant List"\n1080x1350 portrait.' }
+      prompt: 'BACKGROUND: Navy (#1E3A5F).\nCALLOUT: Red (#DC2626) eyebrow: "OUTBOUND TEAMS: 1,000+ CALLS/DAY"\nHEADLINE: Large white "DO NOT DIAL" line 1. Orange "WITHOUT DNC STATUS." line 2 — 40% of canvas.\nVISUAL: Two white info cards stacked:\n  Card 1: "Keller Williams: $40M" + red warning icon\n  Card 2: "Momentum Solar: $30M" + red warning icon\nSUPPORTING: White: "Up to $1,500 per violation. DNC status on every record."\nSOCIAL PROOF: Lighter navy strip: "HomeLeads Pro | 18+ Data Points | Replacement Guarantee"\nCTA: Orange button: "Build a Compliant List"\n1080x1350 portrait.' },
+
+    // ==========================================
+    // ANGLE 6: CHEEKY / DOUBLE ENTENDRE
+    // Emotion: Humor + Confidence
+    // Reference: Graza "Foursome", Snuff Co "Spitters Not Quitters"
+    // Suggestive headline stops scroll, data product delivers punchline
+    // ==========================================
+    { id: '6.1', angle: 6, hook: 'Double Entendre', format: 'Static 1080x1080',
+      formula: 'Graza/Snuff Co style + Oliver (Metric+Magnitude)', visualFormat: 'A',
+      primary: "Most list providers barely scratch the surface. Name. Phone. Address. Done.\n\nWe don't stop at 3 fields. We go 18 deep.\n\nCredit range. Income level. Home value. Home age. Square footage. Mortgage status. DNC flag. Up to 4 contact channels.\n\nYour competitors are still working with the bare minimum. You don't have to.\n\n18 data points per record. Replacement guarantee on every bad number.\n\nhomeleadspro.com",
+      headline: 'Go Deeper Than Anyone Else In Your Market.',
+      description: '18 data points per record. Your competitors are still working with 3.',
+      prompt: 'BACKGROUND: Solid charcoal (#2D3436) — dark, bold, Graza-style.\nHEADLINE: Large white stacked serif (DM Serif or Playfair Display): "GO DEEPER" line 1 (massive, 35% of canvas). "THAN ANYONE ELSE" line 2 (slightly smaller). "IN YOUR MARKET." line 3 (same size as line 2). Stacked left-aligned.\nVISUAL: Layered data card effect — 3 translucent white cards stacked with depth/offset, each revealing MORE data fields than the last. Top card shows 3 fields (grayed out). Middle card shows 8 fields. Bottom card (most visible) shows 18+ fields with green checkmarks. Creates visual "depth" that matches the headline.\nTAGLINE: Small orange (#FF6B35) text beneath visual: "18 data points per record. Your competitors are still working with 3."\nBRAND: White "HomeLeads Pro" wordmark bottom-left. Orange pill CTA bottom-right: "Go Deep"\n1080x1080 square.' },
+
+    { id: '6.2', angle: 6, hook: 'Double Entendre', format: 'Static 1080x1080',
+      formula: 'Snuff Co style + Tiana #11 (It\'s Not X, It\'s Y)', visualFormat: 'C',
+      primary: "Relax. We're talking about data points.\n\nMost list providers hand you a name and a phone number and call it a \"record.\" That's not a record. That's a Post-It note.\n\nWe give you 18 data points per homeowner — credit range, income, home value, home age, property type, square footage, and more. Plus up to 4 contact channels.\n\nOnce you've worked with the full picture, 3 fields feels incomplete.\n\nhomeleadspro.com",
+      headline: "Size Isn't Everything. But 18 Points Helps.",
+      description: "Name and phone number isn't a record. It's a Post-It note.",
+      prompt: 'BACKGROUND: Solid navy (#1E3A5F) — clean, confident.\nHEADLINE: Massive white serif "SIZE ISN\'T" line 1. "EVERYTHING." line 2 (larger, cheeky emphasis). 45% of canvas. Below in smaller orange (#FF6B35) sans-serif: "But 18 points helps."\nVISUAL: Side-by-side size comparison. LEFT: Tiny sad white rectangle labeled "3" with "Name | Phone | Address" barely visible — undersized, pathetic. RIGHT: Large confident white rectangle labeled "18+" with rows of data field names visible — clearly bigger, fuller, dominant. The size contrast IS the visual joke.\nTAGLINE: Small white text: "Name and phone number isn\'t a record. It\'s a Post-It note."\nBRAND: White "HomeLeads Pro" bottom-left. Small orange CTA: "See the full picture"\n1080x1080 square. Headline-dominant, Snuff Co energy.' },
+
+    { id: '6.3', angle: 6, hook: 'Double Entendre', format: 'Static 1080x1350',
+      formula: 'Graza personality + Tiana #7 (3 Reasons)', visualFormat: 'B',
+      primary: "We know. It's a lot.\n\nCredit range. Income level. Home value. Home age. Square footage. Property type. Mortgage status. DNC flag. Phone. Cell. Email. Mailing address.\n\nThat's 18+ data points and up to 4 contact channels per homeowner record. Most list sources give you 3 fields and expect you to figure out the rest.\n\nWe just don't know how to hold back.\n\nEvery bad number replaced free. No limit.\n\nhomeleadspro.com",
+      headline: "We've Been Told We Give Too Much.",
+      description: "18+ data points per record. We don't know how to do less.",
+      prompt: 'BACKGROUND: Solid signal orange (#FF6B35) — hot, bold, impossible to scroll past.\nHEADLINE: Large bold black sans-serif "WE\'VE BEEN TOLD" line 1. "WE GIVE TOO MUCH." line 2 — 35% of canvas, top-aligned.\nVISUAL: Overflowing data card — white rounded rectangle in center with benefit pills SPILLING OUT of it in all directions, some tilted, some overlapping the edges. Pills read: "Credit Range", "Income", "Home Value", "Home Age", "Sq Footage", "Cell Phone", "Email", "DNC Status", "Mortgage", "Property Type", "Mailing Address", "Phone". Black text on white pills. Some pills extend past the card borders — visual overwhelm that matches the headline.\nTAGLINE: Black text beneath: "18+ data points per record. We don\'t know how to do less."\nBRAND: Black "HomeLeads Pro" bottom-left. White pill CTA: "Get It All"\n1080x1350 portrait. The orange bg + overflowing pills = maximum scroll-stop.' },
+
+    { id: '6.4', angle: 6, hook: 'Double Entendre', format: 'Static 1080x1080',
+      formula: 'Snuff Co punchline style + Oliver (Sell Destination)', visualFormat: 'A',
+      primary: "Your team dials 200 numbers to reach 40 homeowners. That's 160 wasted calls before lunch.\n\nWhat if every number connected? What if you already knew the home value, credit range, and income level before you picked up the phone?\n\nReach the right homeowner on the first dial. Not the 47th.\n\n18 data points per record. Every bad number replaced free.\n\nhomeleadspro.com",
+      headline: 'Finish Faster.',
+      description: 'Reach the right homeowner on the first dial. Not the 47th.',
+      prompt: 'BACKGROUND: Solid navy (#1E3A5F) — dark, punchy.\nHEADLINE: MASSIVE bold white sans-serif "FINISH" line 1. "FASTER." line 2 — 50% of canvas. Two words. Maximum impact. The double entendre is the scroll-stop.\nSUPPORTING: Smaller white text beneath: "Reach the right homeowner on the first dial. Not the 47th."\nVISUAL: Simple white stopwatch icon with orange (#FF6B35) hand — small, offset bottom-right. Clean and minimal. The headline does ALL the work.\nSOCIAL PROOF: Thin lighter navy strip at bottom: "Replacement Guarantee | 18+ Data Points Per Record"\nCTA: Orange rounded pill: "homeleadspro.com"\nBRAND: Small white "HomeLeads Pro" wordmark bottom-left.\n1080x1080 square. Minimal design — two giant words + product context = punchline.' },
+
+    { id: '6.5', angle: 6, hook: 'Double Entendre', format: 'Static 1080x1080',
+      formula: 'Graza/Snuff Co tone + Tiana #1 (Pain Point Gone)', visualFormat: 'A',
+      primary: "You dial. No answer. You dial again. Disconnected. You leave a voicemail that nobody will ever hear. Sound familiar?\n\nYour list provider sold you those numbers and disappeared. No replacements. No accountability. No way to reach the homeowner through any other channel.\n\nWe verify every number before delivery. The ones that slip through? Replaced. Free. No ticket. No hold music.\n\nPlus up to 4 contact channels per record. Phone doesn't work? You've still got cell, email, and mailing address.\n\nUnlike your last list source — we actually pick up.\n\nhomeleadspro.com",
+      headline: "We Don't Ghost.",
+      description: 'Every number verified. Every dead number replaced.',
+      prompt: 'BACKGROUND: Solid charcoal (#2D3436) — dark, moody.\nHEADLINE: Large bold white sans-serif "WE DON\'T" line 1. "GHOST." line 2 — 45% of canvas. Period at the end adds finality/confidence.\nVISUAL: Two phone icons side by side. LEFT: Faded/transparent ghost-like phone icon with red X and "..." speech bubble (ghosted). RIGHT: Solid white phone icon with green (#27AE60) checkmark and solid speech bubble (connected). The contrast between ghosted and connected IS the visual joke.\nTAGLINE: Small white text: "Every number verified. Every dead number replaced."\nSOCIAL PROOF: Thin strip at bottom: "Replacement Guarantee | 4 Contact Channels Per Record"\nBRAND: White "HomeLeads Pro" bottom-left. Orange pill CTA: "Never Get Ghosted"\n1080x1080 square.' },
+
+    { id: '6.6', angle: 6, hook: 'Double Entendre', format: 'Static 1080x1080',
+      formula: 'Snuff Co personality + Tiana #10 (Finally)', visualFormat: 'C',
+      primary: "Luck has nothing to do with it.\n\nWhen every record comes with 18 data points and verified contact info, \"getting lucky\" is just Tuesday.\n\nCredit range. Income level. Home value. Home age. DNC status. Up to 4 contact channels. You know exactly who you're calling and exactly how to reach them.\n\nNo more praying the number works. No more crossing your fingers on the second ring.\n\nEvery bad number replaced free. No limit.\n\nhomeleadspro.com",
+      headline: 'Get Lucky On Every Dial.',
+      description: "It's not luck. It's 18 data points and a replacement guarantee.",
+      prompt: 'BACKGROUND: Solid signal orange (#FF6B35) — hot, energetic, impossible to miss.\nHEADLINE: Large bold black serif "GET LUCKY" line 1 (massive, 35% of canvas). "ON EVERY DIAL." line 2 (slightly smaller). Left-aligned.\nVISUAL: Simple white phone handset icon with 3 small sparkle/star elements around it — like it\'s glowing/lucky. Offset right, 25% of canvas. Playful but clean.\nTAGLINE: Black text beneath: "It\'s not luck. It\'s 18 data points and a replacement guarantee."\nBRAND: Black "HomeLeads Pro" bottom-left. White pill CTA: "Build Your List"\n1080x1080 square. Orange bg is the pattern interrupt. Headline + sparkle phone = cheeky energy.' },
+
+    { id: '6.7', angle: 6, hook: 'Double Entendre', format: 'Static 1080x1350',
+      formula: 'Graza relationship humor + Tiana #2 (No More)', visualFormat: 'A',
+      primary: "Buy a cheap list. Burn through it in a week. Toss it. Buy another one from someone else. Repeat.\n\nThat cycle costs you more than bad data. It costs you time re-learning a new platform, re-training your team on new formats, and re-discovering the same problems with a different logo on the invoice.\n\nWe're the list source that actually sticks around.\n\nReplacement guarantee — every dead number replaced, no limit, no expiration. Ongoing data access. A partner your connect rate deserves.\n\nStop swiping. Start committing.\n\nhomeleadspro.com",
+      headline: 'Stop Treating Your Data Like a One Night Stand.',
+      description: "We're the list source that actually sticks around.",
+      prompt: 'BACKGROUND: Split — left half charcoal (#2D3436), right half navy (#1E3A5F). Subtle tonal split.\nHEADLINE: Large white serif "STOP TREATING" line 1. "YOUR DATA LIKE A" line 2. "ONE NIGHT STAND." line 3 — "ONE NIGHT STAND" in orange (#FF6B35) for emphasis. 40% of canvas, left-aligned.\nVISUAL: Two icons stacked vertically on right side.\n  TOP: Crumpled/wrinkled white paper icon with small red X — represents disposable lists. Label: "Them"\n  BOTTOM: Clean organized white file icon with green checkmark and small heart — represents lasting partnership. Label: "Us"\nThe visual contrast reinforces the relationship metaphor.\nTAGLINE: Small white text: "We\'re the list source that actually sticks around."\nSOCIAL PROOF: Strip at bottom: "Replacement Guarantee | 18+ Data Points | homeleadspro.com"\nBRAND: White "HomeLeads Pro" bottom-left.\n1080x1350 portrait.' },
+
+    { id: '6.8', angle: 6, hook: 'Double Entendre', format: 'Static 1080x1080',
+      formula: 'Snuff Co tone + Tiana #1 (Pain Point Gone)', visualFormat: 'A',
+      primary: "Disconnected numbers. Recycled contacts from 2019. Phone numbers that belong to someone three owners ago.\n\nYou've been working with dirty data and calling it \"good enough.\" It's not good enough. It's costing you conversations, commissions, and credibility.\n\nClean records. 18 data points. Verified before delivery. Every bad number replaced free.\n\nYour data has a hygiene problem. We're the fix.\n\nhomeleadspro.com",
+      headline: 'Your Data Is Dirty.',
+      description: "Clean records. 18 data points. Replacement guarantee.",
+      prompt: 'BACKGROUND: Solid white (#FFFFFF) — stark, clinical contrast to the \"dirty\" concept.\nHEADLINE: Large bold charcoal (#2D3436) sans-serif "YOUR DATA" line 1. "IS DIRTY." line 2 — "DIRTY" slightly larger, with a subtle smudge/texture effect on the letters (as if the word itself is dirty). 45% of canvas.\nVISUAL: Before/after split. LEFT: A data card that looks smudged, stained, messy — fields grayed out, red X marks, scratchy texture overlay. 3 visible fields only. RIGHT: A pristine clean white data card — crisp green checkmarks, 18 fields visible, sharp edges, slight glow. The \"clean\" card is slightly larger/more prominent.\nTAGLINE: Small charcoal text: "Clean records. 18 data points. Replacement guarantee."\nBRAND: Navy "HomeLeads Pro" bottom-left. Orange pill CTA: "Clean Up Your Data"\n1080x1080 square. The dirty/clean visual contrast stops the scroll.' },
+
+    { id: '6.9', angle: 6, hook: 'Double Entendre', format: 'Static 1080x1350',
+      formula: 'Graza innuendo + Oliver (Metric+Magnitude)', visualFormat: 'B',
+      primary: "Three fields is surface level. We go all the way.\n\nCredit range. Income level. Home value. Home age. Square footage. Property type. Mortgage status. DNC flag. Landline. Cell. Email. Mailing address. And six more where those came from.\n\n18+ data points per homeowner record. Up to 4 contact channels.\n\nYour current list source gives you the basics. We give you everything.\n\nEvery bad number replaced free. No limit.\n\nhomeleadspro.com",
+      headline: 'We Go Deep.',
+      description: '18+ data points. Up to 4 contact channels. Every bad number replaced.',
+      prompt: 'BACKGROUND: Solid navy (#1E3A5F) — deep, rich (visual pun intended).\nHEADLINE: Massive white bold serif "WE GO" line 1. "DEEP." line 2 — "DEEP." is enormous, 40% of canvas on its own. Period adds weight.\nVISUAL: Vertical depth chart / layers concept. 5 horizontal white translucent bars stacked vertically with increasing opacity (deeper = more solid). Each bar reveals more data fields:\n  Layer 1 (faintest, top): "Name, Phone, Address" — labeled "What they give you"\n  Layer 2: "+ Home Value, Income"\n  Layer 3: "+ Credit Range, Home Age"\n  Layer 4: "+ Sq Footage, Mortgage, DNC"\n  Layer 5 (most solid, bottom): "+ Cell, Email, Mail + more" — labeled "What we give you"\nArrow pointing DOWN along left side. Creates literal visual depth.\nTAGLINE: Orange (#FF6B35) text: "18+ data points per record. They stop at 3."\nBRAND: White "HomeLeads Pro" bottom-left. Orange pill CTA: "Go Deep"\n1080x1350 portrait.' },
+
+    { id: '6.10', angle: 6, hook: 'Double Entendre', format: 'Static 1080x1080',
+      formula: 'Snuff Co cheeky + Tiana #4 (Pain Point?)', visualFormat: 'A',
+      primary: "It happens to the best of us. You've got the script. The pitch. The closer on the line. And then — nothing. Dead air. Wrong number. \"Who is this?\"\n\nIt's not you. It's your data.\n\nSwitch to a list source that actually performs. 18 data points per record. Verified numbers. Up to 4 contact channels. And if anything still slips through — we replace it. Free.\n\nNo awkward conversation needed.\n\nhomeleadspro.com",
+      headline: 'Having Trouble Connecting?',
+      description: "It's not you. It's your data.",
+      prompt: 'BACKGROUND: Solid charcoal (#2D3436) — dark, intimate, confessional tone.\nHEADLINE: Large white serif "HAVING TROUBLE" line 1. "CONNECTING?" line 2 — 45% of canvas. The question mark adds vulnerability/cheek. Slight italic on "Connecting?" for playful emphasis.\nVISUAL: Simple line illustration — two phone handsets with a dotted line between them. The dotted line is BROKEN in the middle with a red X (failed connection). Below it, same illustration but dotted line is SOLID green with a checkmark (successful connection). Before/after without labeling it. Clean white line art on dark bg.\nTAGLINE: Small orange (#FF6B35) text: "It\'s not you. It\'s your data."\nSOCIAL PROOF: Thin strip at bottom: "Replacement Guarantee | 18+ Data Points Per Record"\nBRAND: White "HomeLeads Pro" bottom-left. Orange pill CTA: "Start Connecting"\n1080x1080 square. The vulnerability of the headline + the broken/fixed connection visual = cheeky empathy.' }
 ];
 
 function renderAngleDesc(angleNum) {
