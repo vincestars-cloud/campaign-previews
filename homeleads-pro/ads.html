@@ -9,6 +9,12 @@
         body { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; background: #f8f9fa; }
         .ad-card { transition: all 0.2s; }
         .ad-card:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0,0,0,0.1); }
+        .section-tab { cursor: pointer; transition: all 0.2s; }
+        .section-tab[data-section="matrix"].active { background: #111827; color: white; border-color: #111827; }
+        .section-tab[data-section="matrix"]:not(.active) { background: white; color: #374151; border-color: #d1d5db; }
+        .section-tab[data-section="cheeky"].active { background: #ec4899; color: white; border-color: #ec4899; }
+        .section-tab[data-section="cheeky"]:not(.active) { background: #fdf2f8; color: #db2777; border-color: #f9a8d4; }
+        .section-tab:not(.active):hover { opacity: 0.8; }
         .angle-tab { cursor: pointer; transition: all 0.2s; }
         .angle-tab.active { background: #1e3a5f; color: white; }
         .angle-tab:not(.active):hover { background: #e2e8f0; }
@@ -26,11 +32,11 @@
             <div class="flex items-center justify-between">
                 <div>
                     <h1 class="text-xl sm:text-2xl font-bold text-gray-900">HomeLeads Pro - 5x5 Ad Matrix</h1>
-                    <p class="text-sm text-gray-500 mt-0.5">6 Angles — 35 Ads | TOF Lead Gen | March 2026</p>
+                    <p class="text-sm text-gray-500 mt-0.5">5x5 Matrix + Cheeky — 35 Ads | TOF Lead Gen | March 2026</p>
                 </div>
                 <div class="text-right text-xs text-gray-400">
                     <div>27 Static | 3 Carousel | 5 Video</div>
-                    <div>v3 — Cheeky angle added</div>
+                    <div>v4 — Separate cheeky tab</div>
                 </div>
             </div>
         </div>
@@ -100,16 +106,21 @@
         </div>
     </div>
 
-    <!-- Angle Tabs -->
+    <!-- Section Tabs (Top Level) -->
     <div class="max-w-7xl mx-auto px-4 sm:px-6 pt-6">
+        <div class="flex gap-2 mb-4" id="sectionTabs">
+            <button class="section-tab active px-5 py-2.5 rounded-xl text-sm font-bold border-2 border-gray-900 bg-gray-900 text-white" data-section="matrix">5x5 Matrix <span class="text-xs font-normal opacity-70">25 ads</span></button>
+            <button class="section-tab px-5 py-2.5 rounded-xl text-sm font-bold border-2 border-pink-400 text-pink-600 bg-pink-50" data-section="cheeky">Cheeky Ads <span class="text-xs font-normal opacity-70">10 ads</span></button>
+        </div>
+
+        <!-- Angle Sub-Tabs (visible in Matrix view) -->
         <div class="flex flex-wrap gap-2 mb-2" id="angleTabs">
             <button class="angle-tab active px-4 py-2 rounded-lg text-sm font-semibold border border-gray-200" data-angle="1">1. Dead Numbers</button>
             <button class="angle-tab px-4 py-2 rounded-lg text-sm font-semibold border border-gray-200" data-angle="2">2. Calling Blind</button>
             <button class="angle-tab px-4 py-2 rounded-lg text-sm font-semibold border border-gray-200" data-angle="3">3. 3 Fields vs 18</button>
             <button class="angle-tab px-4 py-2 rounded-lg text-sm font-semibold border border-gray-200" data-angle="4">4. Replacement Guarantee</button>
             <button class="angle-tab px-4 py-2 rounded-lg text-sm font-semibold border border-gray-200" data-angle="5">5. TCPA Time Bomb</button>
-            <button class="angle-tab px-4 py-2 rounded-lg text-sm font-semibold border border-gray-200" data-angle="6">6. Cheeky</button>
-            <button class="angle-tab px-4 py-2 rounded-lg text-sm font-semibold border border-gray-200" data-angle="all">All 35</button>
+            <button class="angle-tab px-4 py-2 rounded-lg text-sm font-semibold border border-gray-200" data-angle="all">All 25</button>
         </div>
         <div id="angleDesc"></div>
     </div>
@@ -127,11 +138,14 @@
   Objective: Leads (or Conversions -> Landing Page)
   Budget: CBO (Campaign Budget Optimization)
 
+  ── 5x5 Matrix (25 ads) ──────────────────────────────
   Ad Set 1: Dead Numbers (Pain-Agitation) ............. Ads 1.1 - 1.5
   Ad Set 2: Calling Blind (Aspirational) .............. Ads 2.1 - 2.5
   Ad Set 3: 3 Fields vs 18 (Contrarian) ............... Ads 3.1 - 3.5
   Ad Set 4: Replacement Guarantee (Trust) ............. Ads 4.1 - 4.5
   Ad Set 5: TCPA Time Bomb (Fear/Educational) ......... Ads 5.1 - 5.5
+
+  ── Cheeky Ads (10 ads) ──────────────────────────────
   Ad Set 6: Cheeky / Double Entendre .................. Ads 6.1 - 6.10</pre>
             <div class="mt-6">
                 <h3 class="text-sm font-bold text-gray-900 mb-3">Kill/Scale Thresholds (after 3-5 days, $50+ spend/ad set)</h3>
@@ -478,12 +492,36 @@ const ads = [
       prompt: 'BACKGROUND: Solid dark gray (#111827) — dark, intimate, confessional tone.\nEYEBROW: Small blue (#2563eb) text: "OUTBOUND TEAMS"\nHEADLINE: Large white serif "HAVING TROUBLE" line 1. "CONNECTING?" line 2 — 45% of canvas. The question mark adds vulnerability/cheek. Slight italic on "Connecting?" for playful emphasis.\nVISUAL: Two call center headset icons with CRM dashboard backdrop. TOP: Headset with broken dotted line and red X — failed call log showing "Disconnected". BOTTOM: Headset with solid green line and checkmark — live call screen showing "Connected 0:47". Headsets + call logs signal outbound calling context.\nTAGLINE: Small blue (#2563eb) text: "It\'s not you. It\'s your homeowner data."\nSOCIAL PROOF: Thin strip at bottom: "Replacement Guarantee | 18+ Data Points Per Record"\nBRAND: White "HomeLeads Pro" bottom-left. Blue pill CTA: "Start Connecting"\n1080x1080 square.' }
 ];
 
+let currentSection = 'matrix';
+
 function renderAngleDesc(angleNum) {
     const container = document.getElementById('angleDesc');
-    if (angleNum === 'all') { container.innerHTML = ''; return; }
+    if (angleNum === 'all' || angleNum === 'cheeky') { container.innerHTML = ''; return; }
     const a = angleDescs[angleNum];
     const c = angleColors[angleNum];
     container.innerHTML = `<div class="${c.bg} ${c.border} border rounded-xl p-4 mb-2"><p class="font-bold text-gray-900 text-sm">Angle ${angleNum}: ${a.name}</p><p class="text-sm text-gray-600 mt-1">${a.desc}</p></div>`;
+}
+
+function switchSection(section) {
+    currentSection = section;
+    const angleTabs = document.getElementById('angleTabs');
+    const descBox = document.getElementById('angleDesc');
+
+    document.querySelectorAll('.section-tab').forEach(t => t.classList.remove('active'));
+    document.querySelector(`.section-tab[data-section="${section}"]`).classList.add('active');
+
+    if (section === 'matrix') {
+        angleTabs.style.display = 'flex';
+        // Reset to angle 1
+        document.querySelectorAll('.angle-tab').forEach(t => t.classList.remove('active'));
+        document.querySelector('.angle-tab[data-angle="1"]').classList.add('active');
+        renderAngleDesc(1);
+        renderAds(1);
+    } else {
+        angleTabs.style.display = 'none';
+        descBox.innerHTML = `<div class="bg-pink-50 border-pink-200 border rounded-xl p-4 mb-2"><p class="font-bold text-gray-900 text-sm">Cheeky / Double Entendre</p><p class="text-sm text-gray-600 mt-1">${angleDescs[6].desc}</p></div>`;
+        renderAds('cheeky');
+    }
 }
 
 function copyText(text, btn) {
@@ -497,7 +535,14 @@ function copyText(text, btn) {
 
 function renderAds(angleFilter) {
     const grid = document.getElementById('adGrid');
-    const filtered = angleFilter === 'all' ? ads : ads.filter(a => a.angle == angleFilter);
+    let filtered;
+    if (angleFilter === 'cheeky') {
+        filtered = ads.filter(a => a.angle === 6);
+    } else if (angleFilter === 'all') {
+        filtered = ads.filter(a => a.angle <= 5);
+    } else {
+        filtered = ads.filter(a => a.angle == angleFilter);
+    }
 
     grid.innerHTML = filtered.map(ad => {
         const c = angleColors[ad.angle];
@@ -558,6 +603,10 @@ function renderAds(angleFilter) {
         </div>`;
     }).join('');
 }
+
+document.querySelectorAll('.section-tab').forEach(tab => {
+    tab.addEventListener('click', () => switchSection(tab.dataset.section));
+});
 
 document.querySelectorAll('.angle-tab').forEach(tab => {
     tab.addEventListener('click', () => {
