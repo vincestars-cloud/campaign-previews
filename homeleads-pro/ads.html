@@ -10,6 +10,19 @@
         body { font-family:'Inter',sans-serif; background:#f8f9fa; color:#1a1a1a; }
         details > summary { list-style: none; }
         details > summary::-webkit-details-marker { display: none; }
+        /* Ad image uniform sizing */
+        .ad-img-wrap { border-top:1px solid #f0f0f0; border-bottom:1px solid #f0f0f0; overflow:hidden; aspect-ratio:1/1; background:#f1f5f9; }
+        .ad-img-wrap img { width:100%; height:100%; object-fit:cover; display:block; }
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .ad-grid { grid-template-columns: 1fr !important; }
+            .kill-scale-grid { grid-template-columns: 1fr !important; }
+        }
+        @media (max-width: 480px) {
+            .hero-stats { gap: 8px !important; }
+            .hero-stats > div { padding: 8px 12px !important; }
+            .hero-stats > div > div:first-child { font-size: 22px !important; }
+        }
     </style>
 </head>
 <body>
@@ -17,7 +30,7 @@
     <div style="background:linear-gradient(135deg, #0f172a, #1e3a5f); padding:48px 24px; text-align:center;">
         <h1 style="font-family:'DM Serif Display',Georgia,serif; font-size:36px; color:white; margin-bottom:8px;">HomeLeads Pro</h1>
         <p style="font-size:16px; color:rgba(255,255,255,0.8); max-width:600px; margin:0 auto 24px;">5x5 Ad Matrix + 10 Cheeky — 35 total ads. Each ad includes paste-ready AI image prompts and video storyboards.</p>
-        <div style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
+        <div class="hero-stats" style="display:flex; gap:16px; justify-content:center; flex-wrap:wrap;">
             <div style="background:rgba(255,255,255,0.15); padding:12px 20px; border-radius:10px;">
                 <div style="font-size:28px; font-weight:800; color:white;">35</div>
                 <div style="font-size:11px; color:rgba(255,255,255,0.7); text-transform:uppercase; letter-spacing:0.05em;">Total Ads</div>
@@ -90,7 +103,7 @@
                     <div style="font-size:13px; color:#6b7280;">Emotion: Frustration / Relief | 5 hook variations</div>
                 </div>
             </div>
-            <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap:16px;">
+            <div class="ad-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:16px;">
     <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; break-inside:avoid; margin-bottom:20px;">
         <!-- Header -->
         <div style="padding:12px 16px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #f0f0f0;">
@@ -637,7 +650,7 @@ BRAND MARK: Bottom-left, 24px from edges.
                     <div style="font-size:13px; color:#6b7280;">Emotion: Hope / Empowerment | 5 hook variations</div>
                 </div>
             </div>
-            <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap:16px;">
+            <div class="ad-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:16px;">
     <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; break-inside:avoid; margin-bottom:20px;">
         <!-- Header -->
         <div style="padding:12px 16px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #f0f0f0;">
@@ -1186,7 +1199,7 @@ CARD 5 — CTA:
                     <div style="font-size:13px; color:#6b7280;">Emotion: Curiosity / Empowerment | 5 hook variations</div>
                 </div>
             </div>
-            <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap:16px;">
+            <div class="ad-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:16px;">
     <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; break-inside:avoid; margin-bottom:20px;">
         <!-- Header -->
         <div style="padding:12px 16px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #f0f0f0;">
@@ -1713,7 +1726,7 @@ BRAND: White wordmark, bottom-left.</pre>
                     <div style="font-size:13px; color:#6b7280;">Emotion: Trust / Confidence | 5 hook variations</div>
                 </div>
             </div>
-            <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap:16px;">
+            <div class="ad-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:16px;">
     <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; break-inside:avoid; margin-bottom:20px;">
         <!-- Header -->
         <div style="padding:12px 16px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #f0f0f0;">
@@ -2288,7 +2301,7 @@ CARD 5 — CTA:
                     <div style="font-size:13px; color:#6b7280;">Emotion: Fear / Urgency | 5 hook variations</div>
                 </div>
             </div>
-            <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap:16px;">
+            <div class="ad-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:16px;">
     <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; break-inside:avoid; margin-bottom:20px;">
         <!-- Header -->
         <div style="padding:12px 16px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #f0f0f0;">
@@ -2847,7 +2860,7 @@ BRAND: White wordmark, bottom-left.</pre>
                 </div>
             </div>
             <p style="font-size:13px; color:#6b7280; margin-bottom:20px; max-width:900px;">Personality-driven ads inspired by Graza and Snuff Co. Suggestive headlines on bold block colors — the data product visual delivers the punchline. Humor calibrated to core demo: male-dominated outbound sales floors, 25-45, call center culture.</p>
-            <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap:16px;">
+            <div class="ad-grid" style="display:grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap:16px;">
     <div style="background:#ffffff; border:1px solid #e5e7eb; border-radius:12px; overflow:hidden; break-inside:avoid; margin-bottom:20px;">
         <!-- Header -->
         <div style="padding:12px 16px; display:flex; align-items:center; gap:10px; border-bottom:1px solid #f0f0f0;">
@@ -2873,7 +2886,7 @@ We don&#x27;t stop at 3. We go 18 deep. And we take our time — verifying every
                 <span style="color:#2563eb; cursor:pointer; font-weight:500;"> See more</span>
             </div>
         </div>
-        <div style="border-top:1px solid #f0f0f0; border-bottom:1px solid #f0f0f0;">
+        <div class="ad-img-wrap">
             <img src="images/ad_6_1.png" alt="Ad 6.1 creative" style="width:100%; display:block;" loading="lazy" />
         </div>
         <div style="padding:10px 16px; display:flex; align-items:center; justify-content:space-between; background:#f8f9fa;">
@@ -2983,7 +2996,7 @@ Most list providers hand you a name and a phone number and call it a &quot;recor
                 <span style="color:#2563eb; cursor:pointer; font-weight:500;"> See more</span>
             </div>
         </div>
-        <div style="border-top:1px solid #f0f0f0; border-bottom:1px solid #f0f0f0;">
+        <div class="ad-img-wrap">
             <img src="images/ad_6_2.png" alt="Ad 6.2 creative" style="width:100%; display:block;" loading="lazy" />
         </div>
         <div style="padding:10px 16px; display:flex; align-items:center; justify-content:space-between; background:#f8f9fa;">
@@ -3083,7 +3096,7 @@ But we can&#x27;t help ourselves.
                 <span style="color:#2563eb; cursor:pointer; font-weight:500;"> See more</span>
             </div>
         </div>
-        <div style="border-top:1px solid #f0f0f0; border-bottom:1px solid #f0f0f0;">
+        <div class="ad-img-wrap">
             <img src="images/ad_6_3.png" alt="Ad 6.3 creative" style="width:100%; display:block;" loading="lazy" />
         </div>
         <div style="padding:10px 16px; display:flex; align-items:center; justify-content:space-between; background:#f8f9fa;">
@@ -3197,7 +3210,7 @@ FEELING: Abundance. Generosity. &quot;We literally can&#x27;t fit all the value 
                 <span style="color:#2563eb; cursor:pointer; font-weight:500;"> See more</span>
             </div>
         </div>
-        <div style="border-top:1px solid #f0f0f0; border-bottom:1px solid #f0f0f0;">
+        <div class="ad-img-wrap">
             <img src="images/ad_6_4.png" alt="Ad 6.4 creative" style="width:100%; display:block;" loading="lazy" />
         </div>
         <div style="padding:10px 16px; display:flex; align-items:center; justify-content:space-between; background:#f8f9fa;">
@@ -3304,7 +3317,7 @@ WHAT THIS IS NOT: Not a dashboard screenshot. Not a SaaS product UI. Not a chart
                 <span style="color:#2563eb; cursor:pointer; font-weight:500;"> See more</span>
             </div>
         </div>
-        <div style="border-top:1px solid #f0f0f0; border-bottom:1px solid #f0f0f0;">
+        <div class="ad-img-wrap">
             <img src="images/ad_6_5.png" alt="Ad 6.5 creative" style="width:100%; display:block;" loading="lazy" />
         </div>
         <div style="padding:10px 16px; display:flex; align-items:center; justify-content:space-between; background:#f8f9fa;">
@@ -3420,7 +3433,7 @@ When every record comes with a complete profile and verified contact info, &quot
                 <span style="color:#2563eb; cursor:pointer; font-weight:500;"> See more</span>
             </div>
         </div>
-        <div style="border-top:1px solid #f0f0f0; border-bottom:1px solid #f0f0f0;">
+        <div class="ad-img-wrap">
             <img src="images/ad_6_6.png" alt="Ad 6.6 creative" style="width:100%; display:block;" loading="lazy" />
         </div>
         <div style="padding:10px 16px; display:flex; align-items:center; justify-content:space-between; background:#f8f9fa;">
@@ -3509,7 +3522,7 @@ You&#x27;ve had — what, six list providers in two years? Seven? Each one promi
                 <span style="color:#2563eb; cursor:pointer; font-weight:500;"> See more</span>
             </div>
         </div>
-        <div style="border-top:1px solid #f0f0f0; border-bottom:1px solid #f0f0f0;">
+        <div class="ad-img-wrap">
             <img src="images/ad_6_7.png" alt="Ad 6.7 creative" style="width:100%; display:block;" loading="lazy" />
         </div>
         <div style="padding:10px 16px; display:flex; align-items:center; justify-content:space-between; background:#f8f9fa;">
@@ -3612,7 +3625,7 @@ FEELING: The massive headline grabs attention with the double entendre. &quot;..
                 <span style="color:#2563eb; cursor:pointer; font-weight:500;"> See more</span>
             </div>
         </div>
-        <div style="border-top:1px solid #f0f0f0; border-bottom:1px solid #f0f0f0;">
+        <div class="ad-img-wrap">
             <img src="images/ad_6_8.png" alt="Ad 6.8 creative" style="width:100%; display:block;" loading="lazy" />
         </div>
         <div style="padding:10px 16px; display:flex; align-items:center; justify-content:space-between; background:#f8f9fa;">
@@ -3724,7 +3737,7 @@ LIGHTING: Flat, editorial. The dirty card is slightly less saturated (muted). Th
                 <span style="color:#2563eb; cursor:pointer; font-weight:500;"> See more</span>
             </div>
         </div>
-        <div style="border-top:1px solid #f0f0f0; border-bottom:1px solid #f0f0f0;">
+        <div class="ad-img-wrap">
             <img src="images/ad_6_9.png" alt="Ad 6.9 creative" style="width:100%; display:block;" loading="lazy" />
         </div>
         <div style="padding:10px 16px; display:flex; align-items:center; justify-content:space-between; background:#f8f9fa;">
@@ -3847,7 +3860,7 @@ You&#x27;ve got the script. The pitch. The closer on the line — ready, confide
                 <span style="color:#2563eb; cursor:pointer; font-weight:500;"> See more</span>
             </div>
         </div>
-        <div style="border-top:1px solid #f0f0f0; border-bottom:1px solid #f0f0f0;">
+        <div class="ad-img-wrap">
             <img src="images/ad_6_10.png" alt="Ad 6.10 creative" style="width:100%; display:block;" loading="lazy" />
         </div>
         <div style="padding:10px 16px; display:flex; align-items:center; justify-content:space-between; background:#f8f9fa;">
@@ -3950,7 +3963,7 @@ NO percentages. NO &quot;97%&quot;. NO &quot;marketing&quot;. NO false claims ab
 
   ── Cheeky Ads (10 ads) ────────────────────────────────────
   Ad Set 6: Cheeky / Double Entendre .................. Ads 6.1 - 6.10</pre>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px;">
+            <div class="kill-scale-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:16px;">
                 <div style="background:#fef2f2; border:1px solid #fecaca; border-radius:8px; padding:12px;">
                     <div style="font-size:12px; font-weight:700; color:#991b1b; margin-bottom:4px;">KILL</div>
                     <div style="font-size:12px; color:#b91c1c;">CTR &lt; 1.0% | CPC &gt; $5.00 | CPA &gt; 2x target | Frequency &gt; 3.0</div>
