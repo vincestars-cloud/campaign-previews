@@ -106,6 +106,26 @@
             <h1 class="text-2xl font-bold mb-1">Dashboard</h1>
             <p class="text-gray-500 text-sm mb-8">Welcome back! Ready to build your next lead list?</p>
 
+            <!-- Credit Balance Banner -->
+            <div class="bg-white rounded-xl border border-gray-200 p-5 mb-6 max-w-3xl">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-brand-600 to-brand-700 flex items-center justify-center">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <div>
+                            <div class="text-xs text-gray-500 font-medium uppercase tracking-wider">Credit Balance</div>
+                            <div class="text-2xl font-bold text-gray-900"><span id="dashCreditsCount">0</span> <span class="text-sm font-medium text-gray-500">records</span></div>
+                            <div class="text-xs text-gray-400 mt-0.5">$<span id="dashCreditsValue">0.00</span> value at your plan rate</div>
+                        </div>
+                    </div>
+                    <div class="text-right hidden sm:block">
+                        <div class="text-xs text-gray-500">Plan Rate</div>
+                        <div class="text-sm font-bold text-brand-600">$<span id="dashPlanRate">0.04</span>/record</div>
+                    </div>
+                </div>
+            </div>
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl">
                 <!-- Build & Buy Card -->
                 <div class="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md transition cursor-pointer" onclick="navigate('build')">
@@ -419,6 +439,25 @@
                 </div>
             </div>
 
+            <!-- Output Fields Selection -->
+            <div class="bg-white rounded-xl border border-gray-200 p-5 mt-5">
+                <div class="flex items-center justify-between mb-3">
+                    <div>
+                        <h3 class="font-bold text-base">Output Fields</h3>
+                        <p class="text-xs text-gray-500 mt-0.5">Select which fields to include in your CSV export. <span id="fieldCount" class="font-semibold text-brand-600">0</span> selected.</p>
+                    </div>
+                    <div class="flex gap-2">
+                        <button onclick="selectAllFields()" class="text-xs text-brand-600 font-semibold hover:underline">Select All</button>
+                        <span class="text-gray-300">|</span>
+                        <button onclick="deselectAllFields()" class="text-xs text-gray-500 font-semibold hover:underline">Clear All</button>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <input type="text" id="fieldSearch" oninput="filterFields()" placeholder="Search fields..." class="w-full border border-gray-300 rounded-lg px-4 py-2 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none">
+                </div>
+                <div id="fieldGrid" class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-4 gap-y-1 max-h-72 overflow-y-auto border border-gray-100 rounded-lg p-3"></div>
+            </div>
+
         </div>
 
         <!-- ========== PACKAGES VIEW ========== -->
@@ -440,7 +479,18 @@
                 </div>
             </div>
 
-            <h3 class="text-lg font-bold mb-4">Or Purchase a Package:</h3>
+            <!-- Credit Balance in Packages -->
+            <div id="pkgCreditBanner" class="bg-green-50 border border-green-200 rounded-xl p-4 mb-6 max-w-3xl hidden">
+                <div class="flex items-center gap-3">
+                    <svg class="w-6 h-6 text-green-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/></svg>
+                    <div>
+                        <div class="font-bold text-sm text-green-800">You have <span id="pkgCreditCount">0</span> credits available</div>
+                        <p class="text-xs text-green-700 mt-0.5">Credits will be applied automatically before billing. Any remaining records will be charged at your package rate.</p>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="text-lg font-bold mb-4">Choose a Package:</h3>
             <div class="space-y-4 max-w-3xl" id="packagesList"></div>
 
             <div class="mt-6 max-w-3xl">
@@ -952,13 +1002,27 @@ function goToPackages() {
 }
 
 function renderPackages() {
+    // Show credit banner if user has credits
+    const creditBanner = document.getElementById('pkgCreditBanner');
+    if (creditBalance > 0) {
+        creditBanner.classList.remove('hidden');
+        document.getElementById('pkgCreditCount').textContent = creditBalance.toLocaleString();
+    } else {
+        creditBanner.classList.add('hidden');
+    }
+
     const c = document.getElementById('packagesList');
     c.innerHTML = packages.map((pkg, i) => {
-        const remaining = currentLeadData.total;
-        const overage = remaining > pkg.count ? remaining - pkg.count : 0;
-        const credits = pkg.count > remaining ? pkg.count - remaining : 0;
+        const totalNeeded = currentLeadData.total;
+        // Credits cover some records, reducing what needs to be purchased
+        const creditsUsed = Math.min(creditBalance, totalNeeded);
+        const recordsToPurchase = totalNeeded - creditsUsed;
+
+        // Package covers recordsToPurchase
+        const overage = recordsToPurchase > pkg.count ? recordsToPurchase - pkg.count : 0;
+        const earnedCredits = pkg.count > recordsToPurchase ? pkg.count - recordsToPurchase : 0;
         const overageCost = overage * pkg.overage;
-        const finalPrice = pkg.price + overageCost;
+        const finalPrice = recordsToPurchase <= 0 ? 0 : pkg.price + overageCost;
 
         return `
         <div class="package-card bg-white rounded-xl border-2 border-gray-200 p-6 cursor-pointer" onclick="selectPackage(${i})">
@@ -969,19 +1033,20 @@ function renderPackages() {
                 <span class="text-lg font-bold">${pkg.name}</span>
             </div>
             <div class="space-y-2 text-sm">
-                <div class="flex justify-between"><span class="text-gray-500">Total Leads Requested:</span><span class="font-medium">${remaining.toLocaleString()}</span></div>
-                <div class="flex justify-between"><span class="text-gray-500">Remaining to Purchase:</span><span class="font-medium">${remaining.toLocaleString()} leads</span></div>
+                <div class="flex justify-between"><span class="text-gray-500">Total Records Requested:</span><span class="font-medium">${totalNeeded.toLocaleString()}</span></div>
+                ${creditsUsed > 0 ? `<div class="flex justify-between"><span class="text-green-600">Credits Applied:</span><span class="text-green-600 font-medium">-${creditsUsed.toLocaleString()} records</span></div>` : ''}
+                <div class="flex justify-between"><span class="text-gray-500">Records to Purchase:</span><span class="font-medium">${recordsToPurchase.toLocaleString()}</span></div>
                 <div class="border-t border-gray-100 my-2"></div>
-                <div class="flex justify-between"><span class="text-gray-500">Package Price:</span><span class="font-semibold">$${pkg.price.toLocaleString()}</span></div>
-                ${credits > 0 ? `<div class="flex justify-between"><span class="text-green-600">Credits You'll Earn:</span><span class="text-green-600 font-medium">+${credits.toLocaleString()}</span></div>` : ''}
-                ${overage > 0 ? `<div class="flex justify-between"><span class="text-gray-500">Overage (${overage.toLocaleString()} @ $${pkg.overage.toFixed(2)}):</span><span class="text-orange-600 font-medium">+$${overageCost.toFixed(2)}</span></div>` : ''}
+                ${recordsToPurchase > 0 ? `<div class="flex justify-between"><span class="text-gray-500">Package Price:</span><span class="font-semibold">$${pkg.price.toLocaleString()}</span></div>` : ''}
+                ${earnedCredits > 0 ? `<div class="flex justify-between"><span class="text-green-600">Credits You'll Earn:</span><span class="text-green-600 font-medium">+${earnedCredits.toLocaleString()}</span></div>` : ''}
+                ${overage > 0 ? `<div class="flex justify-between"><span class="text-gray-500">Overage (${overage.toLocaleString()} @ $${pkg.overage.toFixed(2)}):</span><span class="text-amber-600 font-medium">+$${overageCost.toFixed(2)}</span></div>` : ''}
             </div>
             <div class="bg-gray-50 rounded-lg p-4 mt-4">
-                <div class="text-xs text-gray-500">Final Price</div>
-                <div class="text-2xl font-bold text-brand-600">$${finalPrice.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</div>
+                <div class="text-xs text-gray-500">${recordsToPurchase <= 0 ? 'Fully Covered by Credits' : 'Total Due Today'}</div>
+                <div class="text-2xl font-bold ${recordsToPurchase <= 0 ? 'text-green-600' : 'text-brand-600'}">$${finalPrice.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</div>
             </div>
             <div class="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-xs">
-                ${pkg.unlimited ? '<span class="text-green-600 flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> Unlimited</span>' : `<span class="text-green-600 flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> ${pkg.count.toLocaleString()} leads included</span>`}
+                <span class="text-green-600 flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> ${pkg.count.toLocaleString()} leads included</span>
                 <span class="text-green-600 flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> $${pkg.perLead.toFixed(pkg.perLead === 0.075 ? 3 : 2)} per lead</span>
                 <span class="${pkg.stateLimit ? 'text-gray-500' : 'text-green-600'} flex items-center gap-1"><svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg> ${pkg.stateLimit ? '1 state access' : 'Multi-state access'}</span>
             </div>
@@ -997,27 +1062,37 @@ function selectPackage(index) {
 }
 
 // ===== CHECKOUT =====
+function calcOrder(pkg) {
+    const totalNeeded = currentLeadData.total;
+    const creditsUsed = Math.min(creditBalance, totalNeeded);
+    const recordsToPurchase = totalNeeded - creditsUsed;
+    const overage = recordsToPurchase > pkg.count ? recordsToPurchase - pkg.count : 0;
+    const earnedCredits = pkg.count > recordsToPurchase ? pkg.count - recordsToPurchase : 0;
+    const overageCost = overage * pkg.overage;
+    const finalPrice = recordsToPurchase <= 0 ? 0 : pkg.price + overageCost;
+    return { totalNeeded, creditsUsed, recordsToPurchase, overage, earnedCredits, overageCost, finalPrice };
+}
+
 function goToCheckout() {
     if (selectedPackage === null) return;
     navigate('checkout');
 
     const pkg = packages[selectedPackage];
-    const remaining = currentLeadData.total;
-    const overage = remaining > pkg.count ? remaining - pkg.count : 0;
-    const overageCost = overage * pkg.overage;
-    const finalPrice = pkg.price + overageCost;
+    const o = calcOrder(pkg);
 
     const summary = document.getElementById('orderSummary');
     summary.innerHTML = `
-        <div class="flex justify-between text-sm py-1"><span class="text-gray-500">Total Leads Requested</span><span class="font-medium">${remaining.toLocaleString()} leads</span></div>
-        <div class="flex justify-between text-sm py-1"><span class="text-gray-500">Remaining Leads to Purchase</span><span class="font-medium">${remaining.toLocaleString()} leads</span></div>
-        <div class="flex justify-between text-sm py-1"><span class="text-gray-500">Package Selected</span><span class="font-medium">${pkg.name}</span></div>
-        <div class="flex justify-between text-sm py-1"><span class="text-gray-500">Package Price</span><span class="font-medium">$${pkg.price.toLocaleString()}</span></div>
-        ${overage > 0 ? `<div class="flex justify-between text-sm py-1"><span class="text-gray-500">Overage (${overage.toLocaleString()} leads @ $${pkg.overage.toFixed(2)})</span><span class="text-orange-600 font-medium">+$${overageCost.toFixed(2)}</span></div>` : ''}
+        <div class="flex justify-between text-sm py-1"><span class="text-gray-500">Total Records Requested</span><span class="font-medium">${o.totalNeeded.toLocaleString()}</span></div>
+        ${o.creditsUsed > 0 ? `<div class="flex justify-between text-sm py-1"><span class="text-green-600">Credits Applied</span><span class="text-green-600 font-medium">-${o.creditsUsed.toLocaleString()} records</span></div>` : ''}
+        <div class="flex justify-between text-sm py-1"><span class="text-gray-500">Records to Purchase</span><span class="font-medium">${o.recordsToPurchase.toLocaleString()}</span></div>
+        ${o.recordsToPurchase > 0 ? `<div class="flex justify-between text-sm py-1"><span class="text-gray-500">Package Selected</span><span class="font-medium">${pkg.name}</span></div>
+        <div class="flex justify-between text-sm py-1"><span class="text-gray-500">Package Price</span><span class="font-medium">$${pkg.price.toLocaleString()}</span></div>` : ''}
+        ${o.overage > 0 ? `<div class="flex justify-between text-sm py-1"><span class="text-gray-500">Overage (${o.overage.toLocaleString()} @ $${pkg.overage.toFixed(2)})</span><span class="text-amber-600 font-medium">+$${o.overageCost.toFixed(2)}</span></div>` : ''}
+        ${o.earnedCredits > 0 ? `<div class="flex justify-between text-sm py-1"><span class="text-green-600">Credits Earned</span><span class="text-green-600 font-medium">+${o.earnedCredits.toLocaleString()} records</span></div>` : ''}
         <div class="border-t border-gray-200 mt-2 pt-3">
             <div class="flex justify-between items-center">
-                <span class="text-lg font-bold">Total Due Today</span>
-                <span class="text-2xl font-bold text-brand-600">$${finalPrice.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</span>
+                <span class="text-lg font-bold">${o.finalPrice === 0 ? 'Covered by Credits' : 'Total Due Today'}</span>
+                <span class="text-2xl font-bold ${o.finalPrice === 0 ? 'text-green-600' : 'text-brand-600'}">$${o.finalPrice.toLocaleString(undefined, {minimumFractionDigits:2, maximumFractionDigits:2})}</span>
             </div>
         </div>
     `;
@@ -1026,38 +1101,58 @@ function goToCheckout() {
     document.getElementById('filtersSummary').innerHTML = `
         <div><span class="text-gray-500">State:</span> <strong>${selectedState}</strong></div>
         <div><span class="text-gray-500">${areaMode === 'zip' ? 'ZIP Codes' : 'Counties'}:</span> <strong>${areas.length}</strong></div>
+        <div><span class="text-gray-500">Output Fields:</span> <strong>${selectedFields.size} fields</strong></div>
         <div><span class="text-gray-500">DNC Filter:</span> <strong>All leads</strong></div>
-        <div><span class="text-gray-500">No Phone:</span> <strong>Included</strong></div>
     `;
 }
 
 // ===== PAYMENT =====
 function processPayment() {
     const pkg = packages[selectedPackage];
-    const overage = currentLeadData.total > pkg.count ? currentLeadData.total - pkg.count : 0;
-    const overageCost = overage * pkg.overage;
-    const finalPrice = pkg.price + overageCost;
+    const o = calcOrder(pkg);
     const areas = areaMode === 'zip' ? selectedZips : selectedCounties;
 
+    // Step 1: Deduct credits FIRST (before generating the list)
+    const creditsUsedNow = o.creditsUsed;
+    creditBalance -= creditsUsedNow;
+
+    // Step 2: Add any earned credits from package overage
+    creditBalance += o.earnedCredits;
+
+    // Step 3: Update plan rate based on selected package
+    planRate = pkg.perLead;
+
+    // Step 4: Save credit state
+    saveCredits();
+
+    // Step 5: Create order record
     const order = {
         id: 'ORD-' + Date.now(),
         listId: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(36).substr(2, 8) + '-' + Math.random().toString(36).substr(2, 8),
         date: new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' }),
         state: selectedState,
         areas: areas.slice(0, 3).join(', ') + (areas.length > 3 ? '...' : ''),
-        leadCount: currentLeadData.total,
-        totalPaid: finalPrice,
-        costPerLead: (finalPrice / currentLeadData.total).toFixed(2),
-        packageName: pkg.name
+        leadCount: o.totalNeeded,
+        totalPaid: o.finalPrice,
+        creditsUsed: creditsUsedNow,
+        creditsEarned: o.earnedCredits,
+        costPerLead: o.totalNeeded > 0 ? (o.finalPrice / o.totalNeeded).toFixed(3) : '0.000',
+        packageName: pkg.name,
+        fieldsSelected: selectedFields.size
     };
 
     orders.unshift(order);
     localStorage.setItem('hlp_orders', JSON.stringify(orders));
 
+    // Step 6: Show success (list is now available for download)
     document.getElementById('successOrderId').textContent = order.id;
     document.getElementById('successListId').textContent = order.listId;
     navigate('success');
-    showToast('Payment completed successfully!');
+
+    const msgs = [`Payment completed! ${o.totalNeeded.toLocaleString()} records ready.`];
+    if (creditsUsedNow > 0) msgs.push(`${creditsUsedNow.toLocaleString()} credits applied.`);
+    if (o.earnedCredits > 0) msgs.push(`${o.earnedCredits.toLocaleString()} credits earned!`);
+    showToast(msgs.join(' '));
 }
 
 // ===== ORDERS =====
@@ -1107,10 +1202,114 @@ function showToast(msg) {
     setTimeout(() => t.remove(), 3500);
 }
 
+// ===== OUTPUT FIELDS =====
+const outputFields = [
+    "# Of Dwelling Unit","1st Mortgage Amount","Absentee Owner Status","Acres","Address","Adjusted Gross Square Feet",
+    "Age","Air Conditioning","Appraised Improvement Value","Appraised Land Value","Appraised Total Value",
+    "Assessed Improvement Value","Assessed Land Value","Assessed Total Value","Assessed Year",
+    "Auto Motorcycle Racing","Auto Parts Repair Accessories Work","Bank Card","Baseball",
+    "Basement Description","Basement Finish","Basement Square Feet","Basketball","Bedrooms","Boat",
+    "Building Code","Building Improvement Code","Building Square Feet","Building Square Feet Indicator",
+    "Carrier Route","Carrier Route Type","Cash Mortgage Purchase",
+    "CC Premium American Express","CC Premium Discover","CC Premium Store Or Retail","CC Premium Visa Or Mastercard",
+    "CC Regular American Express","CC Regular Discover","CC Regular Store Or Retail","CC Regular Visa Or Mastercard",
+    "Cell Phone","City","Collector Antiques","Collector Coins","Collector Dolls","Collector Figurines",
+    "Collector Fine Arts","Collector Music","Collector Plates","Collector Sports Memorabilia",
+    "Condition","Conf. Homeowner","Construction Loan","Construction Type",
+    "Contribute Animal","Contribute Childrens","Contribute Environment","Contribute Health",
+    "Contribute Political Conservative","Contribute Political Liberal","Contribute Religious","Contribute Veterans",
+    "County","Credit Rating","Current Home Value","Date of Birth","Depth Footage",
+    "DNC","DNC Cell","Do It Yourself","Donor Arts Or Cultural","Dwelling Type",
+    "Education Code","Effective Year Built","Electricity Energy","Email","Empty","Equity Flag",
+    "Exterior Walls","Family","Family Position","Federal Cell DNC","Federal DNC",
+    "Fireplace Indicator","Fireplace Number","First Mortgage Amount","First Name","Fishing","Fitness",
+    "Flood Zone Community Panel ID","Floor","Football","Foreclosure","Foundation",
+    "Health Living","Heating","Hispanic","Hobby Bird Watching","Hobby Board Games",
+    "Hobby Cigar Smoking","Hobby Computer Games","Hobby Cooking","Hobby Cooking Gourmet",
+    "Hobby Sewing","Hobby Video Games","Hobby Wine Appreciation","Hobby Woodworking",
+    "Hockey","Home Decor","Home Heat Indicator","Home Value","Homestead Exempt","Hunting",
+    "Last Name","Mailing Address","Market Improvement Value","Market Land Value","Market Total Value",
+    "Median Home Value","Median Income","Middle Initial","MO Books","MO Books Or Magazines","MO Childrens Products",
+    "Mortgage Term","Mortgage Term Code","Mortgage Year","Motorcycle","Movie","Music",
+    "Name Suffix","Nascar","Phone","Property Address","Property Type",
+    "Science Space","Scuba Diving","Second Deed Type","Second Mortgage Amount","Second Mortgage Loan Type Code",
+    "Self Improvement","Seller Carry Back","Sewer","Square Footage","State",
+    "Weight Lifting","Working Woman","Year 1","Year 2","Year 3","Year 4","Year Built",
+    "Young Adult In Household","Zip Code","Zip Code 4"
+];
+
+let selectedFields = new Set();
+
+function initFields() {
+    renderFields();
+}
+
+function renderFields(filter = '') {
+    const grid = document.getElementById('fieldGrid');
+    const lowerFilter = filter.toLowerCase();
+    grid.innerHTML = outputFields
+        .filter(f => !lowerFilter || f.toLowerCase().includes(lowerFilter))
+        .map(f => {
+            const checked = selectedFields.has(f) ? 'checked' : '';
+            const id = 'field_' + f.replace(/[^a-zA-Z0-9]/g, '_');
+            return `<label class="flex items-center gap-2 py-1 text-sm text-gray-700 cursor-pointer hover:bg-gray-50 rounded px-1 field-label" data-field="${f}">
+                <input type="checkbox" ${checked} onchange="toggleField('${f.replace(/'/g, "\\'")}', this.checked)" class="rounded border-gray-300 text-brand-600 focus:ring-brand-500 flex-shrink-0">
+                <span class="truncate">${f}</span>
+            </label>`;
+        }).join('');
+    updateFieldCount();
+}
+
+function toggleField(name, checked) {
+    if (checked) selectedFields.add(name);
+    else selectedFields.delete(name);
+    updateFieldCount();
+}
+
+function selectAllFields() {
+    outputFields.forEach(f => selectedFields.add(f));
+    renderFields(document.getElementById('fieldSearch').value);
+}
+
+function deselectAllFields() {
+    selectedFields.clear();
+    renderFields(document.getElementById('fieldSearch').value);
+}
+
+function filterFields() {
+    renderFields(document.getElementById('fieldSearch').value);
+}
+
+function updateFieldCount() {
+    document.getElementById('fieldCount').textContent = selectedFields.size;
+}
+
+// ===== CREDITS =====
+let creditBalance = parseInt(localStorage.getItem('hlp_credits') || '0');
+let planRate = parseFloat(localStorage.getItem('hlp_plan_rate') || '0.04');
+
+function saveCredits() {
+    localStorage.setItem('hlp_credits', String(creditBalance));
+    localStorage.setItem('hlp_plan_rate', String(planRate));
+    updateCreditDisplays();
+}
+
+function updateCreditDisplays() {
+    // Dashboard credit display
+    const countEl = document.getElementById('dashCreditsCount');
+    const valueEl = document.getElementById('dashCreditsValue');
+    const rateEl = document.getElementById('dashPlanRate');
+    if (countEl) countEl.textContent = creditBalance.toLocaleString();
+    if (valueEl) valueEl.textContent = (creditBalance * planRate).toFixed(2);
+    if (rateEl) rateEl.textContent = planRate.toFixed(planRate === 0.075 ? 3 : 2);
+}
+
 // ===== INIT =====
 initStateDropdown();
 initVehicles();
 initYearBuilt();
+initFields();
+updateCreditDisplays();
 </script>
 </body>
 </html>
