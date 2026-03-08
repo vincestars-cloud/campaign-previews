@@ -819,6 +819,10 @@ function toggleSelectAllCounties() {
     }
 }
 
+// Demo data: exact counts for demo video walkthrough
+const demoCountyCounts = { 'GA': { 'Fulton': 273206, 'DeKalb': 248710, 'Gwinnett': 231450, 'Cobb': 264380, 'Clayton': 98520 } };
+const demoZipCounts = { '30310': 5456, '30318': 7893, '30032': 9523, '30301': 3812, '30303': 2145, '30305': 6234, '30306': 8102, '30307': 4567, '30308': 3289, '30309': 5678, '30311': 6890, '30312': 4321, '30313': 2987, '30314': 5123, '30315': 7456, '30316': 8234, '30317': 6012, '30319': 9876, '30322': 1234, '30324': 4567, '30326': 3456, '30327': 5890, '30328': 7123, '30329': 4890, '30331': 8456, '30332': 1023, '30334': 890, '30336': 3456, '30337': 5678, '30338': 6789, '30339': 7234, '30340': 8567, '30341': 5432, '30342': 6123, '30344': 7890, '30345': 5678, '30349': 9012, '30350': 6543, '30354': 4321, '30360': 3210 };
+
 function updatePreview() {
     const stateInfo = statesData.find(s => s.code === selectedState);
     if (!stateInfo) return;
@@ -831,18 +835,35 @@ function updatePreview() {
     const isAllSelected = items.length === 1 && items[0] === 'ALL';
     if (items.length > 0 && !isAllSelected) {
         if (areaMode === 'zip') {
-            const perZip = total / (500 + Math.abs(hashCode(selectedState)) % 300);
-            total = Math.round(perZip * items.length);
-        } else {
-            const countyList = countiesMap[selectedState] || [];
-            const totalCounties = Math.max(countyList.length, 20);
-            let countyTotal = 0;
-            items.forEach(c => {
-                const idx = countyList.indexOf(c);
-                const weight = idx >= 0 ? (1.5 - idx * 0.08) : 0.5;
-                countyTotal += (stateInfo.h / totalCounties) * Math.max(0.3, weight);
+            // Use demo zip counts if available, otherwise estimate
+            let zipTotal = 0;
+            let allHaveDemo = true;
+            items.forEach(z => {
+                if (demoZipCounts[z]) { zipTotal += demoZipCounts[z]; }
+                else { allHaveDemo = false; }
             });
-            total = Math.round(countyTotal);
+            if (allHaveDemo && zipTotal > 0) {
+                total = zipTotal;
+            } else {
+                const perZip = total / (500 + Math.abs(hashCode(selectedState)) % 300);
+                total = Math.round(perZip * items.length);
+            }
+        } else {
+            // Use demo county counts if available, otherwise estimate
+            const demoState = demoCountyCounts[selectedState];
+            if (demoState && items.every(c => demoState[c])) {
+                total = items.reduce((sum, c) => sum + demoState[c], 0);
+            } else {
+                const countyList = countiesMap[selectedState] || [];
+                const totalCounties = Math.max(countyList.length, 20);
+                let countyTotal = 0;
+                items.forEach(c => {
+                    const idx = countyList.indexOf(c);
+                    const weight = idx >= 0 ? (1.5 - idx * 0.08) : 0.5;
+                    countyTotal += (stateInfo.h / totalCounties) * Math.max(0.3, weight);
+                });
+                total = Math.round(countyTotal);
+            }
         }
     }
 
