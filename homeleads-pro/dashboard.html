@@ -835,7 +835,6 @@ function updatePreview() {
     const isAllSelected = items.length === 1 && items[0] === 'ALL';
     if (items.length > 0 && !isAllSelected) {
         if (areaMode === 'zip') {
-            // Use demo zip counts if available, otherwise estimate
             let zipTotal = 0;
             let allHaveDemo = true;
             items.forEach(z => {
@@ -849,7 +848,6 @@ function updatePreview() {
                 total = Math.round(perZip * items.length);
             }
         } else {
-            // Use demo county counts if available, otherwise estimate
             const demoState = demoCountyCounts[selectedState];
             if (demoState && items.every(c => demoState[c])) {
                 total = items.reduce((sum, c) => sum + demoState[c], 0);
