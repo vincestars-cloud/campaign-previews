@@ -1516,11 +1516,17 @@ const WEBHOOK_URL = 'https://n8n.americanlifeteam.com/webhook/bookedsolid-pro-da
 async function sendWebhook(event, data) {
     if (!WEBHOOK_URL) return; // No webhook configured yet
     try {
-        await fetch(WEBHOOK_URL, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ event, timestamp: new Date().toISOString(), ...data })
-        });
+        const payload = JSON.stringify({ event, timestamp: new Date().toISOString(), ...data });
+        if (navigator.sendBeacon) {
+            navigator.sendBeacon(WEBHOOK_URL, new Blob([payload], { type: 'application/json' }));
+        } else {
+            await fetch(WEBHOOK_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'text/plain' },
+                body: payload
+            });
+        }
     } catch (e) {
         console.warn('Webhook failed:', e);
     }
@@ -1583,6 +1589,24 @@ function renderCalendar() {
     }).join('');
 }
 
+function renderTimeSlots(dateStr) {
+    const slots = [];
+    for (let h = 9; h <= 16; h++) {
+        for (let m = 0; m < 60; m += 5) {
+            const hour12 = h > 12 ? h - 12 : h;
+            const ampm = h >= 12 ? 'PM' : 'AM';
+            const timeStr = `${hour12}:${String(m).padStart(2,'0')} ${ampm}`;
+            const seed = (dateStr.charCodeAt(dateStr.length-1) * 7 + h * 13 + m) % 10;
+            const available = seed > 2;
+            slots.push({ time: timeStr, available });
+        }
+    }
+    document.getElementById('calTimeSlots').innerHTML = slots.map(s => {
+        if (!s.available) return `<div class="py-1.5 px-1 rounded-lg text-[11px] text-center bg-gray-50 text-gray-300 line-through">${s.time}</div>`;
+        return `<button onclick="selectCalTime('${s.time}')" class="py-1.5 px-1 rounded-lg text-[11px] text-center font-medium transition ${calSelectedTime === s.time ? 'bg-brand-600 text-white' : 'bg-gray-50 hover:bg-brand-50 hover:text-brand-600 text-gray-700 border border-gray-200'}">${s.time}</button>`;
+    }).join('');
+}
+
 function selectCalDay(dateStr) {
     calSelectedDay = dateStr;
     calSelectedTime = null;
@@ -1592,25 +1616,7 @@ function selectCalDay(dateStr) {
     const d = new Date(dateStr + 'T00:00:00');
     document.getElementById('calSelectedDate').textContent = d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
 
-    // Generate time slots (9am - 5pm, every 5 min)
-    const slots = [];
-    for (let h = 9; h <= 16; h++) {
-        for (let m = 0; m < 60; m += 5) {
-            const hour12 = h > 12 ? h - 12 : h;
-            const ampm = h >= 12 ? 'PM' : 'AM';
-            const timeStr = `${hour12}:${String(m).padStart(2,'0')} ${ampm}`;
-            // Use deterministic availability based on day+time (not random, so it stays consistent)
-            const seed = (dateStr.charCodeAt(dateStr.length-1) * 7 + h * 13 + m) % 10;
-            const available = seed > 2; // ~70% available
-            slots.push({ time: timeStr, available });
-        }
-    }
-
-    document.getElementById('calTimeSlots').innerHTML = slots.map(s => {
-        if (!s.available) return `<div class="py-1.5 px-1 rounded-lg text-[11px] text-center bg-gray-50 text-gray-300 line-through">${s.time}</div>`;
-        return `<button onclick="selectCalTime('${s.time}')" class="py-1.5 px-1 rounded-lg text-[11px] text-center font-medium transition ${calSelectedTime === s.time ? 'bg-brand-600 text-white' : 'bg-gray-50 hover:bg-brand-50 hover:text-brand-600 text-gray-700 border border-gray-200'}">${s.time}</button>`;
-    }).join('');
-
+    renderTimeSlots(dateStr);
     renderCalendar();
 }
 
@@ -1620,8 +1626,8 @@ function selectCalTime(time) {
     document.getElementById('calConfirmDateTime').textContent = `${d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })} at ${time}`;
     document.getElementById('calConfirmSection').classList.remove('hidden');
 
-    // Re-render time slots to show selection
-    selectCalDay(calSelectedDay);
+    // Re-render time slots to show selection highlight (without resetting state)
+    renderTimeSlots(calSelectedDay);
 }
 
 function prevCalWeek() {
