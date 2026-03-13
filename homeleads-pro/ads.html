@@ -1550,8 +1550,8 @@ Denise knows. She&#x27;s a mortgage broker in Tampa. Her top closer quit last mo
                 Hope / Empowerment
             </div>
             <div style="margin-top:8px; display:flex; gap:6px; justify-content:center; flex-wrap:wrap;">
-                <span style="font-size:10px; background:white; color:#6b7280; padding:2px 8px; border-radius:12px; border:1px solid #e5e7eb;">Carousel 5 cards</span>
-                <span style="font-size:10px; background:white; color:#6b7280; padding:2px 8px; border-radius:12px; border:1px solid #e5e7eb;">Format Carousel</span>
+                <span style="font-size:10px; background:white; color:#6b7280; padding:2px 8px; border-radius:12px; border:1px solid #e5e7eb;">Static 1080x1080</span>
+                <span style="font-size:10px; background:white; color:#6b7280; padding:2px 8px; border-radius:12px; border:1px solid #e5e7eb;">Format CSV</span>
             </div>
         </div>
         <div style="padding:10px 16px; display:flex; align-items:center; justify-content:space-between; background:#f8f9fa;">
@@ -1588,36 +1588,41 @@ TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold we
 LOGO: &quot;BookedSolid Pro&quot; in clean navy sans-serif with a small blue diamond icon before the text.
 OVERALL AESTHETIC: Light editorial / print-inspired. Clean cream or off-white background, navy headlines, editorial card elements. Think premium direct-mail meets modern SaaS — Stripe docs meets Bloomberg print edition.
 
-RENDERING STYLE: Realistic CSV/spreadsheet mockup on light background. Clean editorial data visualization — think a premium SaaS product screenshot framed as a marketing ad.
+RENDERING STYLE: Single static image. One realistic CSV/spreadsheet table on a light background. The spreadsheet occupies the center of the canvas and displays ALL 18+ data columns horizontally in one continuous table. This is a product screenshot — it should look like an actual Excel/Google Sheets export. NOT a carousel. NOT multiple cards. ONE image. ONE spreadsheet.
 
-COMPOSITION (Carousel 5 cards, each 1080x1080 square):
+COMPOSITION (1080x1080 square):
 - BACKGROUND: Off-white (#f8fafc).
 
-HEADLINE (top, above spreadsheet):
-- &quot;MORTGAGE PROS:&quot; in Inter 700, 18pt, #2563eb, uppercase.
-- &quot;BETTER DATA EXISTS.&quot; in DM Serif Display, 800 weight, 52pt, navy (#0f172a). 8px below.
+HEADLINE (top 22%):
+- &quot;MORTGAGE PROS:&quot; in Inter 700, 16pt, #2563eb, uppercase, letter-spacing 0.1em. Centered.
+- &quot;BETTER DATA EXISTS.&quot; in DM Serif Display, 800 weight, 48pt, navy (#0f172a). Centered. 6px below.
 
-SPREADSHEET MOCKUP (center, 880x480px, drop shadow, border-radius 8px, white bg):
-Blue banner at top of spreadsheet (full width, #2563eb, 40px tall): &quot;SAMPLE: 18+ Data Points Per Record&quot; in Inter 700, 14pt, white, centered.
-Mortgage-focused columns shown prominently (colored header highlight in light blue #dbeafe):
-  First Name | Last Name | Mobile | Landline | Home Value | Equity | Equity % | LTV | Mortgage Bal | Income | Credit | DNC | Property Type | Home Age
-  8 rows of realistic mortgage prospect data (homeowners with high equity):
-  Row 1: James | Mitchell | (404) 555-8832 | (404) 555-1247 | $487,000 | $301,940 | 62% | 38% | $185,060 | $95-120K | 680-720 | CLEAR | Single Family | 22 yrs
-  Row 2: Sandra | Okafor | (713) 555-2291 | (713) 555-4478 | $312,000 | $198,000 | 63% | 37% | $114,000 | $75-95K | 720-760 | CLEAR | Single Family | 14 yrs
-  Row 3: Marcus | Delgado | (602) 555-7714 | (602) 555-3309 | $529,000 | $340,500 | 64% | 36% | $188,500 | $110-140K | 740-780 | CLEAR | Single Family | 8 yrs
-  ...5 more rows.
-Equity % and LTV columns highlighted in light green (#dcfce7) to draw the eye.
+SPREADSHEET (center, occupies ~55% of canvas, 960x420px):
+- White card with subtle drop shadow (0 4px 20px rgba(0,0,0,0.08)), border-radius 8px, 1px border #e2e8f0.
+- Blue banner across top of table (full width, #2563eb, 36px tall): &quot;SAMPLE: 18+ Data Points Per Record&quot; in Inter 700, 13pt, white, centered.
+- Column headers row: navy (#0f172a) background, white text, Inter 700, 11pt. ALL of these columns visible left to right in one continuous row:
+  First Name | Last Name | Mobile | Landline | Email | Address | City | State | ZIP | Home Value | Equity | Equity % | LTV | Mortgage Bal | Income | Credit | Cardholder | DNC | Property Type | Home Age | Sq Ft
+- The rightmost 3-4 columns (Email, Address, City partially) have a realistic Gaussian blur overlay — the data is redacted/obscured, suggesting privacy protection. The blur fades from sharp (left columns) to fully blurred (rightmost columns).
+- 7 rows of realistic mortgage prospect data with high equity values:
+  Row 1: James | Mitchell | (404) 555-4553 | (404) 555-1217 | [blurred] | [blurred] | Atlanta | GA | 30309 | $487,000 | $301,940 | 62% | 38% | $185,060 | $95-120K | 680-720 | Amex | CLEAR | Single Family | 22 | 2,840
+  Row 2: Sandra | Okafor | (718) 555-2029 | (718) 555-1344 | [blurred] | [blurred] | Brooklyn | NY | 11201 | $312,000 | $193,440 | 62% | 38% | $118,560 | $75-95K | 720-760 | Visa | CLEAR | Single Family | 14 | 1,960
+  Row 3: Marcus | Delgado | (602) 555-7718 | (602) 555-3388 | [blurred] | [blurred] | Phoenix | AZ | 85004 | $529,000 | $327,980 | 62% | 38% | $201,020 | $110-140K | 740-780 | Amex | CLEAR | Single Family | 8 | 3,200
+  Row 4: Jadyn | Hermlee | (016) 555-3322 | (923) 555-3787 | [blurred] | [blurred] | Tampa | FL | 33602 | $385,000 | $261,800 | 68% | 32% | $123,200 | $85-110K | 700-740 | Visa | CLEAR | Single Family | 18 | 2,480
+  Row 5: Jady | Hermetz | (714) 555-3934 | (755) 555-0018 | [blurred] | [blurred] | Denver | CO | 80202 | $629,460 | $415,446 | 66% | 34% | $214,014 | $120-150K | 760-800 | Amex | CLEAR | Single Family | 11 | 3,100
+  Row 6: Barloars | Jantor | (975) 555-4433 | (416) 555-9809 | [blurred] | [blurred] | Austin | TX | 78701 | $462,100 | $319,850 | 69% | 31% | $142,250 | $95-120K | 700-740 | Discover | CLEAR | Single Family | 15 | 2,660
+  Row 7: Emila | Gettmer | (464) 555-2834 | [blurred] | [blurred] | [blurred] | Charlotte | NC | 28202 | $297,100 | $184,202 | 62% | 38% | $112,898 | $70-90K | 660-700 | Visa | CLEAR | Single Family | 20 | 1,840
+- Alternating row colors: white (#ffffff) and very light gray (#f8fafc).
+- Equity % column cells highlighted in light green (#dcfce7). DNC column shows green &quot;CLEAR&quot; pill badges.
+- The table should feel like a real product — dense, professional, data-rich. Small font sizes are fine (10-11pt for data cells).
 
-DNC column shows green &quot;CLEAR&quot; badges.
-
-CAPTION below spreadsheet:
-- &quot;Every record: verified contact data + equity estimates + income data + credit range.&quot; in Inter 400, 14pt, #64748b. Centered.
-- &quot;Find your refi candidates before your competitors do.&quot; in Inter 600, 16pt, navy. Centered. 8px below.
+CAPTION (below spreadsheet, bottom 18%):
+- &quot;Every record: verified contact data + equity estimates + income data + credit range.&quot; in Inter 400, 13pt, #64748b. Centered.
+- &quot;Find your refi candidates before your competitors do.&quot; in Inter 600, 15pt, navy. Centered. 8px below.
 
 CTA: Bottom center.
-- Blue pill: 240x50px, #2563eb. &quot;solidbookedpro.com&quot; white.
+- Blue pill: 220x44px, #2563eb. &quot;solidbookedpro.com&quot; white Inter 600, 14pt.
 
-BRAND: Bottom-left, navy wordmark.</pre>
+BRAND: Bottom-left, small navy wordmark with blue diamond.</pre>
             </div>
         </details>
         <details style="border-top:1px solid #f0f0f0;">
@@ -1915,37 +1920,35 @@ TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold we
 LOGO: &quot;BookedSolid Pro&quot; in clean navy sans-serif with a small blue diamond icon before the text.
 OVERALL AESTHETIC: Light editorial / print-inspired. Clean cream or off-white background, navy headlines, editorial card elements. Think premium direct-mail meets modern SaaS — Stripe docs meets Bloomberg print edition.
 
-RENDERING STYLE: Clean light editorial spreadsheet mockup showing 4 contact channel columns highlighted. The spreadsheet IS the argument — one list, four ways to reach each person.
+RENDERING STYLE: Single static image. One realistic CSV/spreadsheet table on a light background showing all 18+ columns. The 4 contact channel columns (Mobile, Landline, Email, Mailing Address) are visually highlighted to demonstrate multi-channel reach. NOT multiple images. ONE spreadsheet.
 
 COMPOSITION (1080x1080 square):
 - BACKGROUND: Off-white (#f8fafc).
 
-HEADLINE: Upper 25%.
-- &quot;4 CHANNELS.&quot; in DM Serif Display, 800 weight, 64pt, navy (#0f172a). Centered.
-- &quot;NOT 1.&quot; in same font, 64pt, #2563eb (blue). Centered. 4px gap.
+HEADLINE (top 22%):
+- &quot;4 CHANNELS.&quot; in DM Serif Display, 800 weight, 60pt, navy (#0f172a). Centered.
+- &quot;NOT 1.&quot; in same font, 60pt, #2563eb (blue). Centered. 4px gap.
 
-SPREADSHEET MOCKUP (center, 880x440px, drop shadow, white bg, border-radius 8px):
-Blue banner at top of spreadsheet (full width, #2563eb, 40px tall): &quot;SAMPLE: 18+ Data Points Per Record&quot; in Inter 700, 14pt, white, centered.
-All standard columns shown. The four contact channel columns are visually highlighted:
-  - &quot;Mobile&quot; column: blue (#dbeafe) background highlight, blue header text
-  - &quot;Landline&quot; column: green (#dcfce7) background highlight, green header text
-  - &quot;Email&quot; column: purple (#ede9fe) background highlight, purple header text
-  - &quot;Address&quot; column: amber (#fef3c7) background highlight, amber header text
-A thin colored underline bar (4px) under each of those 4 column headers matches its highlight color.
-Other columns (name, city, state, etc.) use standard white/alternating rows.
+SPREADSHEET (center, 960x420px, drop shadow, white bg, border-radius 8px):
+- Blue banner across top (full width, #2563eb, 36px): &quot;SAMPLE: 18+ Data Points Per Record&quot; in Inter 700, 13pt, white, centered.
+- ALL columns visible in one continuous horizontal row:
+  First Name | Last Name | Mobile | Landline | Email | Mailing Address | City | State | ZIP | Home Value | Equity | Credit | Income | DNC | Cardholder | Property Type | Home Age | Sq Ft
+- The 4 contact channel columns are each highlighted with a distinct background color in their entire column (header + all data cells):
+  - &quot;Mobile&quot; column: light blue (#dbeafe) background
+  - &quot;Landline&quot; column: light green (#dcfce7) background
+  - &quot;Email&quot; column: light purple (#ede9fe) background
+  - &quot;Mailing Address&quot; column: light amber (#fef3c7) background
+- A thin 3px colored bar sits under each of those 4 column headers matching its highlight color.
+- The rightmost 2-3 columns have a soft Gaussian blur — data redacted for privacy.
+- 7 rows of realistic homeowner data. All 4 channel columns show realistic values (phone numbers, email addresses, street addresses).
+- Alternating row colors. DNC column shows green &quot;CLEAR&quot; badges.
+- A small blue callout annotation floating to the right of the table: blue rounded rectangle with &quot;4 channels per record&quot; in Inter 600, 12pt, white. Arrow pointing to the highlighted columns.
 
-8 realistic homeowner rows. Each of the 4 channel columns shows realistic data (phone numbers, email addresses, street addresses).
-
-Below the &quot;Email&quot; column header: a tiny blue label &quot;DELIVERABLE&quot; in Inter 600, 9pt.
-Below the &quot;Mobile&quot; column header: a tiny green label &quot;VERIFIED&quot; in Inter 600, 9pt.
-
-A callout annotation on the right side of the spreadsheet: a blue rounded rectangle with text &quot;Up to 4 channels per record&quot; in Inter 600, 13pt, white.
-
-CAPTION below spreadsheet:
-- &quot;One list. Every channel. No extra cost.&quot; in Inter 600, 17pt, navy. Centered.
+CAPTION (below spreadsheet):
+- &quot;One list. Every channel. No extra cost.&quot; in Inter 600, 16pt, navy. Centered.
 
 CTA: Bottom center.
-- Blue pill: 220x48px, #2563eb. &quot;solidbookedpro.com&quot; white.
+- Blue pill: 220x44px, #2563eb. &quot;solidbookedpro.com&quot; white.
 
 BRAND: Bottom-left, navy wordmark.</pre>
             </div>
@@ -2365,40 +2368,42 @@ TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold we
 LOGO: &quot;BookedSolid Pro&quot; in clean navy sans-serif with a small blue diamond icon before the text.
 OVERALL AESTHETIC: Light editorial / print-inspired. Clean cream or off-white background, navy headlines, editorial card elements. Think premium direct-mail meets modern SaaS — Stripe docs meets Bloomberg print edition.
 
-RENDERING STYLE: Split-screen spreadsheet comparison on light background. Left: a tiny 3-column spreadsheet (basic data). Right: a full 18-column rich record spreadsheet. The visual contrast between 3 columns and 18 columns IS the entire argument.
+RENDERING STYLE: Single static image. Split-screen spreadsheet comparison on light background. LEFT: a pathetically small 3-column spreadsheet. RIGHT: a rich 18+ column spreadsheet. The visual width contrast IS the argument. Both are real spreadsheet tables, not cards or icons. ONE image.
 
 COMPOSITION (1080x1350 vertical):
 - BACKGROUND: Off-white (#f8fafc).
 
-HEADLINE: Upper 22%.
-- &quot;RICHER RECORDS.&quot; in DM Serif Display, 800 weight, 56pt, navy (#0f172a). Centered.
-- &quot;MORE CHANNELS.&quot; in same font, 56pt, #2563eb (blue). Centered. 6px below.
+HEADLINE (top 20%):
+- &quot;RICHER RECORDS.&quot; in DM Serif Display, 800 weight, 52pt, navy (#0f172a). Centered.
+- &quot;MORE CHANNELS.&quot; in same font, 52pt, #2563eb. Centered. 6px below.
 
-VISUAL (center, 58% of canvas):
-- Side-by-side comparison with a vertical divider (#e2e8f0, 1px) in the center:
+VISUAL (center, 60% of canvas):
+- A thin vertical divider line (#e2e8f0, 1px) splits the canvas. Labels &quot;Them&quot; and &quot;Us&quot; above each side in Inter 600, 14pt, #94a3b8.
 
-  LEFT SIDE — &quot;THEIR DATA&quot;:
-  - Small label: &quot;STANDARD LIST&quot; in Inter 700, 11pt, #ef4444, uppercase.
-  - Tiny spreadsheet (360x220px), white bg, drop shadow, border-radius 6px:
-    - 3 columns only: First Name | Phone | Address — headers in gray (#94a3b8).
-    - 5 rows of dull gray data.
-    - Red &quot;3 COLUMNS&quot; badge at top-right corner.
-  - Below: &quot;Name. Phone. Address.&quot; in Inter 400 italic, 13pt, #94a3b8.
-  - Even tinier: &quot;That&#x27;s it.&quot; in Inter 700, 12pt, #ef4444.
+LEFT SIDE — &quot;STANDARD LIST&quot;:
+- Red &quot;3&quot; badge in top corner.
+- Narrow spreadsheet (280x240px), white bg, drop shadow, border-radius 6px:
+  - Only 3 columns: First Name | Phone | Address — headers in gray.
+  - 6 rows of sparse, dull data. No extra fields. Feels empty and incomplete.
+  - Red accent line under headers (2px, #ef4444).
+- Below table: &quot;Name. Phone. Address. That&#x27;s it.&quot; in Inter 400 italic, 12pt, #94a3b8.
 
-  RIGHT SIDE — &quot;BOOKEDSOLID PRO&quot;:
-  - Label: &quot;BOOKEDSOLID PRO&quot; in Inter 700, 11pt, #2563eb, uppercase.
-  - Larger spreadsheet (420x320px), white bg, drop shadow, border-radius 6px:
-    Blue banner at top of spreadsheet (full width, #2563eb, 40px tall): &quot;SAMPLE: 18+ Data Points Per Record&quot; in Inter 700, 14pt, white, centered.
-    18 columns visible. Column headers in navy. Alternating rows. The 4 contact channel columns (Mobile, Landline, Email, Address) are lightly highlighted in blue (#dbeafe).
-    Blue &quot;18+ COLUMNS&quot; badge top-right.
-  - Below: &quot;Everything your closer needs.&quot; in Inter 600, 13pt, #2563eb.
+RIGHT SIDE — &quot;BOOKEDSOLID PRO&quot;:
+- Blue &quot;18+&quot; badge in top corner.
+- Wide spreadsheet (520x340px), white bg, drop shadow, border-radius 6px:
+  - Blue banner: &quot;SAMPLE: 18+ Data Points Per Record&quot; in Inter 700, 12pt, white on #2563eb.
+  - ALL 18+ columns visible horizontally (small font OK — the density IS the point):
+    First Name | Last Name | Mobile | Landline | Email | Address | City | State | ZIP | Home Value | Equity | Credit | Income | DNC | Cardholder | Type | Age | Sq Ft
+  - 6 rows of rich data. 4 channel columns lightly highlighted. DNC shows green &quot;CLEAR&quot; badges.
+  - The rightmost columns fade into a soft blur (privacy redaction).
+  - The table is visibly wider, denser, more professional.
+- Below table: &quot;Everything your closer needs.&quot; in Inter 600, 12pt, #2563eb.
 
-SUPPORTING: Below the comparison.
-- &quot;Same price. 6x the intelligence. 4x the reach.&quot; in Inter 600, 17pt, navy. Centered.
+SUPPORTING (bottom 15%):
+- &quot;Same price. 6x the intelligence. 4x the reach.&quot; in Inter 600, 16pt, navy. Centered.
 
 CTA: Bottom center.
-- Blue pill: 240x50px, #2563eb. &quot;solidbookedpro.com&quot; white.
+- Blue pill: 240x48px, #2563eb. &quot;solidbookedpro.com&quot; white.
 
 BRAND: Bottom-left, navy wordmark.</pre>
             </div>
@@ -2657,34 +2662,39 @@ TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold we
 LOGO: &quot;BookedSolid Pro&quot; in clean navy sans-serif with a small blue diamond icon before the text.
 OVERALL AESTHETIC: Light editorial / print-inspired. Clean cream or off-white background, navy headlines, editorial card elements. Think premium direct-mail meets modern SaaS — Stripe docs meets Bloomberg print edition.
 
-RENDERING STYLE: Light editorial spreadsheet mockup with a prominent &quot;Replaced&quot; status column demonstrating the guarantee in action. The spreadsheet shows the guarantee as a live feature — not just a promise.
+RENDERING STYLE: Single static image. One realistic CSV/spreadsheet table on a light background with a prominent STATUS column showing &quot;VERIFIED&quot; and &quot;REPLACED&quot; badges — demonstrating the guarantee as a live product feature. ONE spreadsheet. NOT multiple cards.
 
 COMPOSITION (1080x1080 square):
 - BACKGROUND: Off-white (#f8fafc).
 
-HEADLINE: Upper 28%.
-- &quot;FINALLY.&quot; in DM Serif Display, 800 weight, 72pt, navy (#0f172a). Centered. Period in #2563eb.
-- &quot;DATA WITH A GUARANTEE.&quot; in DM Serif Display, 800 weight, 44pt, navy. Centered. 10px below. &quot;GUARANTEE&quot; in #22c55e (green).
+HEADLINE (top 25%):
+- &quot;FINALLY.&quot; in DM Serif Display, 800 weight, 72pt, navy (#0f172a). Centered.
+- &quot;DATA WITH A GUARANTEE.&quot; in DM Serif Display, 800 weight, 40pt, navy. Centered. 8px below. The word &quot;GUARANTEE&quot; in green (#22c55e).
 
-SPREADSHEET MOCKUP (center, 880x380px, drop shadow, border-radius 8px, white bg):
-Blue banner at top of spreadsheet (full width, #2563eb, 40px tall): &quot;SAMPLE: 18+ Data Points Per Record&quot; in Inter 700, 14pt, white, centered.
-Standard columns PLUS a final column: &quot;STATUS&quot; — this is the hero column.
-The STATUS column has colored badge cells:
-  - Row 1: green pill badge &quot;VERIFIED&quot; (#22c55e bg, white text)
-  - Row 2: green pill badge &quot;VERIFIED&quot;
-  - Row 3: blue pill badge &quot;REPLACED&quot; (#2563eb bg, white text) — with a small refresh icon before text
-  - Row 4: green pill badge &quot;VERIFIED&quot;
-  - Row 5: blue pill badge &quot;REPLACED&quot;
-  - Row 6-8: green &quot;VERIFIED&quot;
-The &quot;REPLACED&quot; rows have a very subtle light blue row highlight (#eff6ff).
-The STATUS column header is highlighted in green (#dcfce7) with bold green text.
-A callout annotation pointing to a &quot;REPLACED&quot; cell: blue speech bubble with &quot;Bad number? New record delivered. Free.&quot; in Inter 500, 12pt, white.
+SPREADSHEET (center, 960x380px, drop shadow, border-radius 8px, white bg):
+- Blue banner across top (full width, #2563eb, 36px): &quot;SAMPLE: 18+ Data Points Per Record&quot; in Inter 700, 13pt, white, centered.
+- ALL standard columns PLUS a final &quot;STATUS&quot; column on the far right:
+  First Name | Last Name | Mobile | Landline | Home Value | Equity | Credit | Income | DNC | ... | STATUS
+- The STATUS column is the hero — wider than other columns, with colored pill badges:
+  Row 1: green pill &quot;VERIFIED&quot; (#22c55e bg, white text)
+  Row 2: green pill &quot;VERIFIED&quot;
+  Row 3: blue pill &quot;REPLACED&quot; (#2563eb bg, white text, small refresh/swap icon)
+  Row 4: green pill &quot;VERIFIED&quot;
+  Row 5: blue pill &quot;REPLACED&quot;
+  Row 6: green pill &quot;VERIFIED&quot;
+  Row 7: green pill &quot;VERIFIED&quot;
+  Row 8: green pill &quot;VERIFIED&quot;
+- The &quot;REPLACED&quot; rows have a very subtle blue row tint (#eff6ff) across the entire row.
+- STATUS column header highlighted green (#dcfce7).
+- A blue callout speech bubble pointing to one &quot;REPLACED&quot; badge: &quot;Bad number? New record. Free.&quot; in Inter 500, 11pt, white on blue.
+- Rightmost data columns (before STATUS) have soft Gaussian blur for privacy.
+- Alternating row colors. DNC column shows green &quot;CLEAR&quot; badges.
 
-CAPTION below spreadsheet:
-- &quot;Every bad number replaced. No threshold. No form. No wait.&quot; in Inter 500, 16pt, #334155. Centered.
+CAPTION (below spreadsheet):
+- &quot;Every bad number replaced. No threshold. No form. No wait.&quot; in Inter 500, 15pt, #334155. Centered.
 
 CTA: Bottom center.
-- Blue pill: 240x50px, #2563eb. &quot;solidbookedpro.com&quot; white.
+- Blue pill: 240x48px, #2563eb. &quot;solidbookedpro.com&quot; white.
 
 BRAND: Bottom-left, navy wordmark.</pre>
             </div>
@@ -3055,8 +3065,8 @@ Do the napkin math Nicole did. If 30% of your numbers are dead, that&#x27;s 30% 
                 Trust / Confidence
             </div>
             <div style="margin-top:8px; display:flex; gap:6px; justify-content:center; flex-wrap:wrap;">
-                <span style="font-size:10px; background:white; color:#6b7280; padding:2px 8px; border-radius:12px; border:1px solid #e5e7eb;">Carousel 5 cards</span>
-                <span style="font-size:10px; background:white; color:#6b7280; padding:2px 8px; border-radius:12px; border:1px solid #e5e7eb;">Format Carousel</span>
+                <span style="font-size:10px; background:white; color:#6b7280; padding:2px 8px; border-radius:12px; border:1px solid #e5e7eb;">Static 1080x1080</span>
+                <span style="font-size:10px; background:white; color:#6b7280; padding:2px 8px; border-radius:12px; border:1px solid #e5e7eb;">Format CSV</span>
             </div>
         </div>
         <div style="padding:10px 16px; display:flex; align-items:center; justify-content:space-between; background:#f8f9fa;">
@@ -3097,55 +3107,43 @@ TYPOGRAPHY: Headlines use a modern serif font (like DM Serif Display) in bold we
 LOGO: &quot;BookedSolid Pro&quot; in clean navy sans-serif with a small blue diamond icon before the text.
 OVERALL AESTHETIC: Light editorial / print-inspired. Clean cream or off-white background, navy headlines, editorial card elements. Think premium direct-mail meets modern SaaS — Stripe docs meets Bloomberg print edition.
 
-RENDERING STYLE: Carousel spreadsheet mockup series. Clean light editorial with a multi-card format showing the cost of dead numbers vs the value of verified data. Each card uses the spreadsheet as the anchor visual.
+RENDERING STYLE: Single static image. One realistic CSV/spreadsheet table on a light background showing verified data with STATUS indicators. The spreadsheet demonstrates what &quot;zero dead air&quot; looks like as a real product. NOT a carousel. NOT multiple cards. ONE image. ONE spreadsheet.
 
-FORMAT: 5 cards, each 1080x1080 square.
+COMPOSITION (1080x1080 square):
+- BACKGROUND: Off-white (#f8fafc).
 
-CARD 1 — HOOK:
-- Background: Off-white (#f8fafc).
-- Headline: &quot;CONVERSATIONS,&quot; in DM Serif Display, 800 weight, 56pt, navy. Centered.
-- Line 2: &quot;NOT DEAD AIR.&quot; in same, 56pt, #ef4444 (red). Centered.
-- Subtext: &quot;What if every number you dialed actually picked up?&quot; in Inter 400, 18pt, #64748b. Centered.
-- Small spreadsheet fragment (400x180px) partially visible at bottom — teaser. Shows column headers and 2 rows with STATUS column &quot;VERIFIED&quot; (green).
-- 5 page dots at bottom, first filled.
+HEADLINE (top 22%):
+- &quot;CONVERSATIONS,&quot; in DM Serif Display, 800 weight, 48pt, navy (#0f172a). Centered.
+- &quot;NOT DEAD AIR.&quot; in same font, 48pt, #ef4444 (red). Centered. 4px below.
 
-CARD 2 — THE MATH:
-- Background: Off-white.
-- Headline: &quot;THE COST OF DEAD AIR&quot; in Inter 800, 16pt, #ef4444, uppercase, with red underline.
-- Two-column infographic:
-  Left: Red metric box (280x200px): &quot;40%&quot; dead number rate | &quot;$514,800/year&quot; in payroll waste | &quot;3,600 dead dials/day&quot; — red typography, light red (#fff8f8) bg.
-  Right: Green metric box (280x200px): &quot;97%&quot; live number rate | &quot;Every bad number replaced&quot; | &quot;No wasted dials&quot; — green typography, light green (#f0fdf4) bg.
-- Page dots, second filled.
+SPREADSHEET (center, 960x420px, drop shadow, border-radius 8px, white bg):
+- Blue banner across top (full width, #2563eb, 36px): &quot;SAMPLE: 18+ Data Points Per Record&quot; in Inter 700, 13pt, white, centered.
+- ALL columns visible horizontally:
+  First Name | Last Name | Mobile | Landline | Email | Address | City | State | Home Value | Equity | Credit | Income | DNC | Cardholder | Type | Age | STATUS
+- STATUS column (far right) shows colored pill badges:
+  Row 1: green &quot;VERIFIED&quot; badge + green checkmark
+  Row 2: green &quot;VERIFIED&quot;
+  Row 3: green &quot;VERIFIED&quot;
+  Row 4: blue &quot;REPLACED&quot; badge (with refresh icon) — this row has subtle blue tint
+  Row 5: green &quot;VERIFIED&quot;
+  Row 6: green &quot;VERIFIED&quot;
+  Row 7: blue &quot;REPLACED&quot; — subtle blue tint
+  Row 8: green &quot;VERIFIED&quot;
+- The 4 contact channel columns (Mobile, Landline, Email, Address) are lightly highlighted in blue (#dbeafe).
+- DNC column shows green &quot;CLEAR&quot; pill badges.
+- Rightmost data columns have soft Gaussian blur for privacy redaction.
+- 8 rows of realistic homeowner data. Alternating white/#f8fafc rows.
+- Small red annotation in top-left of table: strikethrough text &quot;40% dead&quot; in red (#ef4444), 10pt.
+- Small green annotation in top-right of table: &quot;97% verified&quot; in green (#22c55e), 10pt.
 
-CARD 3 — SPREADSHEET:
-- Background: Off-white.
-- Eyebrow: &quot;YOUR VERIFIED LIST LOOKS LIKE THIS&quot; in Inter 700, 12pt, #2563eb, uppercase.
-- Full spreadsheet mockup (900x440px, drop shadow, border-radius 8px):
-  Blue banner at top of spreadsheet (full width, #2563eb, 40px tall): &quot;SAMPLE: 18+ Data Points Per Record&quot; in Inter 700, 14pt, white, centered.
-  All standard columns. STATUS column on far right:
-    Row 1: &quot;VERIFIED&quot; green badge
-    Row 2: &quot;VERIFIED&quot; green badge
-    Row 3: &quot;REPLACED&quot; blue badge (with refresh icon)
-    Row 4: &quot;VERIFIED&quot; green badge
-    Rows 5-8: &quot;VERIFIED&quot; green badge
-  DNC column shows &quot;CLEAR&quot; in green for all rows.
-  4 contact channel columns highlighted with their respective colors (blue/green/purple/amber).
-- Page dots, third filled.
+CAPTION (below spreadsheet):
+- &quot;Your payroll should buy conversations — not dead air.&quot; in Inter 500, 15pt, #334155. Centered.
+- &quot;$514,800/year saved when every number connects.&quot; in Inter 700, 13pt, navy. Centered. 6px below.
 
-CARD 4 — GUARANTEE:
-- Background: Off-white.
-- Large circular guarantee seal (320px), navy outline, white fill.
-- Center: &quot;REPLACEMENT GUARANTEE&quot; navy, bold. &quot;No Limit. No Questions.&quot; green below.
-- Three benefit chips around the seal.
-- Page dots, fourth filled.
+CTA: Bottom center.
+- Blue pill: 240x48px, #2563eb. &quot;solidbookedpro.com&quot; white.
 
-CARD 5 — CTA:
-- Background: Off-white.
-- Logo centered, navy.
-- &quot;Build your guaranteed list&quot; in DM Serif Display, 48pt, navy.
-- &quot;60 seconds. No credit card.&quot; in Inter 400, 18pt, #64748b.
-- Large blue CTA pill.
-- Page dots, fifth filled.</pre>
+BRAND: Bottom-left, navy wordmark.</pre>
             </div>
         </details>
         <details style="border-top:1px solid #f0f0f0;">
