@@ -213,29 +213,48 @@ LIGHTING: Flat with subtle ambient glow from the phone screen illuminating nearb
             </summary>
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
-                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">AI VIDEO STORYBOARD — Ad 1.1
-FORMAT: 9:16 vertical (1080x1920), 15 seconds, 30fps
-MOOD: Frustration to Relief
-MUSIC: Royalty-free, matches frustration to relief arc
+                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">
+FORMAT: 1080x1920 (9:16 vertical) | 15 seconds | 30fps
+COLOR GRADE: High-contrast noir. Blacks crushed to #0a0a0a. Desaturated scenes 1-2, color blooms in scene 3.
+MUSIC: Low tension drone (scenes 1-2) -&gt; clean piano resolution (scenes 3-4).
 
-── HOOK (0-3s) ──────────────────────────
-Close-up of phone screen showing Number Disconnected in red. Camera pulls back to reveal frustrated sales rep at desk with headset, staring at call log full of red X marks. Text overlay fades in: DEAD NUMBERS? in DM Serif Display, 800 weight, white, centered top 40%.
-AUDIO: Sharp drum hit. Tension strings.
+SCENE 1 (0-3s): HOOK — QUESTION SLAM
+- Black screen (#000000). 0.5s hold.
+- At 0.5s: &quot;Dead Numbers?&quot; appears — DM Serif Display, 96pt, white (#ffffff), center-screen.
+- At 1.5s: Text glitches (RGB split, 4px offset, 3 frames) then snaps to red (#ef4444).
+- At 2.0s: &quot;Gone.&quot; slams in below — DM Serif Display, 120pt, green (#22c55e), screen-shake (3px, 4 frames).
+- At 2.5s: Thin horizontal line (#2563eb, 2px) draws left-to-right beneath &quot;Gone.&quot;
+- Sound: Deep bass hit on &quot;Dead Numbers?&quot; — sharp metallic clang on &quot;Gone.&quot;
 
-── AGITATE (3-7s) ──────────────────────────
-Quick montage: three split-screen dials each showing DISCONNECTED flash red. Counter ticks up: 83 dead numbers. Rep coffee goes cold. Text: 83 dead numbers before lunch in Inter 600, 24pt, white with red underline.
-AUDIO: Tempo builds. Staccato percussion.
+SCENE 2 (3-7s): AGITATE — PHONE GRAVEYARD
+- Dissolve to phone screen mockup (dark UI, centered, 60% width).
+- Contact list scrolls upward. Each entry has:
+  - Redacted name bar (gray #64748b)
+  - Status rotating: &quot;Disconnected&quot; (red #ef4444), &quot;Wrong Number&quot; (orange #f59e0b), &quot;Not in Service&quot; (#b91c1c)
+  - Small red X icon next to each
+- Counter overlay top-right: &quot;Dead: 1... 14... 31... 47...&quot; Inter Mono, 28pt, red (#ef4444).
+- At 5.5s: Counter freezes at &quot;Dead: 347 / 500&quot;
+- Text overlay bottom-third: &quot;You&#x27;re paying for all 500.&quot; — Inter 600, 22pt, white.
+- Sound: Rapid-fire disconnected tones (boop-boop-boop). Cash register on each tick.
 
-── PROOF (7-11s) ──────────────────────────
-Screen wipe to BookedSolid Pro dashboard. Verification badges pulse green on each record. Connect rate gauge animates from 34% to 72%. Text: 34% to 72% connect rate. Week one. in Inter 700, 28pt, white on navy.
-AUDIO: Uplifting synth pad. Relief tone.
+SCENE 3 (7-11s): PROOF — CLEAN SWEEP
+- Hard cut. Navy background (#0f172a).
+- Verified data card slides in from bottom — white card, rounded corners (16px), subtle shadow.
+- Card header: green checkmark + &quot;VERIFIED RECORD&quot; Inter 700, 14pt, green (#22c55e).
+- Fields populate one by one with blue glow animation (0.3s each):
+  - &quot;Phone: Active&quot; (green dot) | &quot;Alt Phone: Active&quot; | &quot;Email: Deliverable&quot;
+  - &quot;Home Value: $285,000&quot; | &quot;Mortgage: 78% LTV&quot; | &quot;DNC: Clear&quot;
+- Text overlay: &quot;Every dead number replaced. Free.&quot; — DM Serif Display, 36pt, white.
+- Sound: Satisfying &quot;ding&quot; chime on each field. Ascending synth pad.
 
-── CTA (11-15s) ──────────────────────────
-Dashboard zooms out to show full verified list. Green checkmarks cascade down rows. BookedSolid Pro logo locks up center. Text: You can see what a verified list looks like for your zip code. in Inter 500, 20pt, white. Subtle blue glow.
-AUDIO: Resolves to clean tone. Confidence.
-
-── CONDENSED SINGLE-SHOT PROMPT ──────────────────────────
-15-second vertical video (1080x1920, 30fps). Color palette: navy #0f172a, blue #2563eb, green #22c55e, white. Typography: DM Serif Display headlines, Inter body. Mood arc: Frustration to Relief.</pre>
+SCENE 4 (11-15s): CTA — BRAND CARD
+- Smooth zoom-out to full brand layout on navy (#0f172a).
+- &quot;BookedSolid Pro&quot; logo centered — white with blue (#2563eb) diamond, 48pt.
+- Below: &quot;Verified data. Dead numbers replaced.&quot; — Inter 500, 22pt, #94a3b8.
+- CTA pill: blue (#2563eb) rounded rectangle, &quot;Build a Free List&quot; white Inter 700, 20pt. Pulse animation.
+- Below pill: &quot;60 seconds. No credit card.&quot; — Inter 400, 14pt, #64748b.
+- Sound: Confident resolution chord (major key). Subtle whoosh on pill.
+</pre>
             </div>
         </details>
     </div>
@@ -342,29 +361,41 @@ NO brand mark — the stark minimalism IS the brand statement. The emptiness aro
             </summary>
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
-                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">AI VIDEO STORYBOARD — Ad 1.2
-FORMAT: 9:16 vertical (1080x1920), 15 seconds, 30fps
-MOOD: Frustration to Relief
-MUSIC: Royalty-free, matches frustration to relief arc
+                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">
+FORMAT: 1080x1920 (9:16 vertical) | 15 seconds | 30fps
+COLOR GRADE: Stark black-and-red for pain (scenes 1-2), transitions to navy/green for relief (scenes 3-4).
+MUSIC: Industrial tension pulse (scenes 1-2) -&gt; ambient resolution (scenes 3-4).
 
-── HOOK (0-3s) ──────────────────────────
-Close-up of phone screen showing Number Disconnected in red. Camera pulls back to reveal frustrated sales rep at desk with headset, staring at call log full of red X marks. Text overlay fades in: DEAD NUMBERS? in DM Serif Display, 800 weight, white, centered top 40%.
-AUDIO: Sharp drum hit. Tension strings.
+SCENE 1 (0-3s): HOOK — KINETIC STAT BOMB
+- Black screen (#000000).
+- At 0.3s: &quot;70%&quot; explodes onto screen — DM Serif Display, 200pt, red (#ef4444), centered. Scales from 300% to 100% with overshoot bounce.
+- At 1.2s: &quot;of Your List&quot; fades in below — Inter 600, 32pt, white. Typewriter effect.
+- At 2.0s: &quot;Is Wasted.&quot; slams in — DM Serif Display, 72pt, white. Hard cut with 2px screen-shake.
+- Red line (#ef4444, 3px) underscores &quot;Wasted.&quot; drawing left-to-right.
+- Sound: Heavy bass impact on &quot;70%&quot;. Typewriter clicks. Slam on &quot;Wasted.&quot;
 
-── AGITATE (3-7s) ──────────────────────────
-Quick montage: three split-screen dials each showing DISCONNECTED flash red. Counter ticks up: 83 dead numbers. Rep coffee goes cold. Text: 83 dead numbers before lunch in Inter 600, 24pt, white with red underline.
-AUDIO: Tempo builds. Staccato percussion.
+SCENE 2 (3-7s): AGITATE — PIE CHART DESTRUCTION
+- Centered pie chart on black. 70% fills red (#ef4444), 30% fills gray (#374151).
+- Labels: &quot;Dead / Wrong / Disconnected&quot; on red, &quot;Actually Reachable&quot; on gray.
+- At 4.5s: Red segment CRACKS — fracture lines (white, 1px).
+- At 5.5s: Dollar signs rain from red segment. Counter: &quot;$2,100 wasted per list&quot; — Inter Mono, 24pt, red.
+- At 6.5s: &quot;Same provider. Same excuse. Every month.&quot; — Inter 500, 20pt, white.
+- Sound: Clock ticking during fill. Glass cracking. Coins dropping.
 
-── PROOF (7-11s) ──────────────────────────
-Screen wipe to BookedSolid Pro dashboard. Verification badges pulse green on each record. Connect rate gauge animates from 34% to 72%. Text: 34% to 72% connect rate. Week one. in Inter 700, 28pt, white on navy.
-AUDIO: Uplifting synth pad. Relief tone.
+SCENE 3 (7-11s): PROOF — CHART TRANSFORMATION
+- Pie chart morphs (0.8s): red shrinks to 5% sliver, green (#22c55e) fills 95%.
+- New labels: &quot;Verified &amp; Active&quot; on green, &quot;Replaced Free&quot; on red sliver.
+- Stats flanking: &quot;18 data points per record&quot; | &quot;4 contact channels&quot; — Inter 500, 18pt, white.
+- &quot;What if 95% of your list actually picked up?&quot; — DM Serif Display, 32pt, white.
+- Sound: Reverse crack (healing). Rising synth. Confident chime.
 
-── CTA (11-15s) ──────────────────────────
-Dashboard zooms out to show full verified list. Green checkmarks cascade down rows. BookedSolid Pro logo locks up center. Text: You can see what a verified list looks like for your zip code. in Inter 500, 20pt, white. Subtle blue glow.
-AUDIO: Resolves to clean tone. Confidence.
-
-── CONDENSED SINGLE-SHOT PROMPT ──────────────────────────
-15-second vertical video (1080x1920, 30fps). Color palette: navy #0f172a, blue #2563eb, green #22c55e, white. Typography: DM Serif Display headlines, Inter body. Mood arc: Frustration to Relief.</pre>
+SCENE 4 (11-15s): CTA — BRAND CARD
+- Chart shrinks to top-center (30% size). Navy (#0f172a) background.
+- &quot;BookedSolid Pro&quot; logo — white with blue diamond, 44pt.
+- &quot;95% connect rate or we replace them.&quot; — Inter 500, 20pt, #94a3b8.
+- CTA pill: blue (#2563eb), &quot;Build a Free List&quot; white Inter 700, 20pt. Pulse.
+- Sound: Clean resolution tone. Subtle bass warmth.
+</pre>
             </div>
         </details>
     </div>
@@ -633,29 +664,48 @@ NO brand mark, NO visual elements. The accusation in the headline creates all th
             </summary>
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
-                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">AI VIDEO STORYBOARD — Ad 1.4
-FORMAT: 9:16 vertical (1080x1920), 15 seconds, 30fps
-MOOD: Frustration to Relief
-MUSIC: Royalty-free, matches frustration to relief arc
+                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">
+FORMAT: 1080x1920 (9:16 vertical) | 15 seconds | 30fps
+COLOR GRADE: Documentary expose feel. Desaturated, high contrast. Grainy film texture overlay.
+MUSIC: Investigative journalism tension (low strings, sparse piano) -&gt; resolution.
 
-── HOOK (0-3s) ──────────────────────────
-Close-up of phone screen showing Number Disconnected in red. Camera pulls back to reveal frustrated sales rep at desk with headset, staring at call log full of red X marks. Text overlay fades in: DEAD NUMBERS? in DM Serif Display, 800 weight, white, centered top 40%.
-AUDIO: Sharp drum hit. Tension strings.
+SCENE 1 (0-3s): HOOK — BETRAYAL REVEAL
+- Black screen (#000000). Slight film grain overlay.
+- At 0.3s: &quot;THEY KNOW.&quot; — DM Serif Display, 88pt, white, left-aligned (80px margin), 35% from top.
+- At 1.3s: &quot;THEY SELL ANYWAY.&quot; below (16px gap) — same font/size. &quot;ANYWAY&quot; pulses red (#ef4444) glow once.
+- At 2.5s: Thin white horizontal rule (1px, 60% width) draws from left.
+- Subtle handheld camera drift (2px sine wave).
+- Sound: Low ominous drone. Single minor piano note on &quot;ANYWAY.&quot;
 
-── AGITATE (3-7s) ──────────────────────────
-Quick montage: three split-screen dials each showing DISCONNECTED flash red. Counter ticks up: 83 dead numbers. Rep coffee goes cold. Text: 83 dead numbers before lunch in Inter 600, 24pt, white with red underline.
-AUDIO: Tempo builds. Staccato percussion.
+SCENE 2 (3-7s): AGITATE — LEAKED DOCUMENT
+- Mock internal document on crumpled paper texture (#f5f0e8).
+- Redacted company header. Body text types out line by line:
+  - &quot;Average data freshness: 6-14 months&quot;
+  - &quot;Estimated dead number rate: 38-42%&quot;
+  - &quot;Customer churn expectation: built into pricing&quot;
+- Key phrases get yellow (#fef08a) marker highlight as they appear.
+- At 6.0s: Red &quot;EXPOSED&quot; stamp rotates in (15 degrees, off-center) — red border/text, 64pt.
+- Pull-quote: &quot;Same data pools. Different logo.&quot; — Inter 600 italic, 20pt, #ef4444.
+- Sound: Paper rustling. Typewriter clicks. Rubber stamp THUD.
 
-── PROOF (7-11s) ──────────────────────────
-Screen wipe to BookedSolid Pro dashboard. Verification badges pulse green on each record. Connect rate gauge animates from 34% to 72%. Text: 34% to 72% connect rate. Week one. in Inter 700, 28pt, white on navy.
-AUDIO: Uplifting synth pad. Relief tone.
+SCENE 3 (7-11s): PROOF — CLEAN ALTERNATIVE
+- Blue (#2563eb) horizontal wipe left-to-right. Navy (#0f172a) background.
+- Three verification stages animate in sequence:
+  - &quot;Source Verified&quot; — green checkmark + progress bar fills 100%
+  - &quot;Line Tested&quot; — green checkmark + bar fills
+  - &quot;Delivered Fresh&quot; — green checkmark + bar fills
+- Each stage 0.8s. Green pulse on completion.
+- Right side: &quot;Multi-source. Real-time. Not recycled.&quot; — Inter 600, 20pt, white.
+- Sound: Three ascending verification tones. Digital processing hum.
 
-── CTA (11-15s) ──────────────────────────
-Dashboard zooms out to show full verified list. Green checkmarks cascade down rows. BookedSolid Pro logo locks up center. Text: You can see what a verified list looks like for your zip code. in Inter 500, 20pt, white. Subtle blue glow.
-AUDIO: Resolves to clean tone. Confidence.
-
-── CONDENSED SINGLE-SHOT PROMPT ──────────────────────────
-15-second vertical video (1080x1920, 30fps). Color palette: navy #0f172a, blue #2563eb, green #22c55e, white. Typography: DM Serif Display headlines, Inter body. Mood arc: Frustration to Relief.</pre>
+SCENE 4 (11-15s): CTA — BRAND CARD
+- Dashboard fades to 30% opacity. Brand card centers.
+- &quot;BookedSolid Pro&quot; logo — white with blue diamond, 48pt.
+- &quot;See what verified data actually looks like.&quot; — Inter 500, 20pt, #94a3b8.
+- CTA pill: blue (#2563eb), &quot;Build a Free List&quot; white Inter 700, 20pt. Pulse.
+- Lock icon (#22c55e) + &quot;Your territory. Your data. No shared pools.&quot; — Inter 400, 14pt, #64748b.
+- Sound: Resolving chord. Authority. Quiet confidence.
+</pre>
             </div>
         </details>
     </div>
@@ -767,29 +817,48 @@ BRAND MARK: Bottom-left, 24px from edges.
             </summary>
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
-                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">AI VIDEO STORYBOARD — Ad 1.5
-FORMAT: 9:16 vertical (1080x1920), 15 seconds, 30fps
-MOOD: Frustration to Relief
-MUSIC: Royalty-free, matches frustration to relief arc
+                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">
+FORMAT: 1080x1920 (9:16 vertical) | 15 seconds | 30fps
+COLOR GRADE: Clean, authoritative. Navy-dominant with high contrast accents.
+MUSIC: Percussive determination (scenes 1-2) -&gt; triumphant resolution (scenes 3-4).
 
-── HOOK (0-3s) ──────────────────────────
-Close-up of phone screen showing Number Disconnected in red. Camera pulls back to reveal frustrated sales rep at desk with headset, staring at call log full of red X marks. Text overlay fades in: DEAD NUMBERS? in DM Serif Display, 800 weight, white, centered top 40%.
-AUDIO: Sharp drum hit. Tension strings.
+SCENE 1 (0-3s): HOOK — SHIELD DECLARATION
+- Navy background (#0f172a).
+- At 0.3s: Shield icon outline draws itself center — blue (#2563eb) stroke, 2px, 120x140px. 0.8s.
+- At 1.2s: Inside shield, red X (#ef4444) with slash through dollar sign.
+- At 1.8s: &quot;NO MORE PAYING&quot; above shield — DM Serif Display, 56pt, white.
+- At 2.3s: &quot;FOR DEAD NUMBERS.&quot; below shield — DM Serif Display, 56pt, white. &quot;DEAD&quot; is red (#ef4444).
+- Sound: Metallic scraping on shield draw. Bass drop on text.
 
-── AGITATE (3-7s) ──────────────────────────
-Quick montage: three split-screen dials each showing DISCONNECTED flash red. Counter ticks up: 83 dead numbers. Rep coffee goes cold. Text: 83 dead numbers before lunch in Inter 600, 24pt, white with red underline.
-AUDIO: Tempo builds. Staccato percussion.
+SCENE 2 (3-7s): AGITATE — CALCULATOR OF WASTE
+- Black (#000000). Calculator interface (flat design, centered).
+- Numbers type in sequence:
+  - &quot;10,000 records x $0.15 = $1,500&quot; — Inter Mono, 24pt, white
+  - &quot;- 4,000 dead = wasted&quot; — red (#ef4444)
+  - &quot;- 2,000 wrong person = wasted&quot; — red
+  - &quot;= 4,000 usable ($0.38 each)&quot; — amber (#f59e0b)
+- At 5.5s: Red strip: &quot;You&#x27;re paying $0.15. You&#x27;re getting $0.38.&quot; — Inter 700, 28pt, white on red.
+- &quot;Every. Single. Month.&quot; — Inter 600, 20pt, #94a3b8, each word 0.3s apart.
+- Sound: Calculator clicks. Error buzzer on &quot;wasted&quot; lines. Cash register.
 
-── PROOF (7-11s) ──────────────────────────
-Screen wipe to BookedSolid Pro dashboard. Verification badges pulse green on each record. Connect rate gauge animates from 34% to 72%. Text: 34% to 72% connect rate. Week one. in Inter 700, 28pt, white on navy.
-AUDIO: Uplifting synth pad. Relief tone.
+SCENE 3 (7-11s): PROOF — THE GUARANTEE
+- Navy (#0f172a). Guarantee badge/seal animates in — circular, blue (#2563eb) border, white center.
+- Seal text: &quot;DEAD NUMBER REPLACEMENT GUARANTEE&quot; Inter 800, 14pt, circular.
+- Center: green (#22c55e) checkmark, 64px.
+- Three lines staggered below:
+  - &quot;Dead number? Replaced.&quot; — green dot, Inter 600, 22pt, white
+  - &quot;Wrong person? Replaced.&quot; — green dot
+  - &quot;No questions. No extra cost.&quot; — green dot
+- Sound: Seal stamp. Three &quot;ding&quot; confirmations. Music swell.
 
-── CTA (11-15s) ──────────────────────────
-Dashboard zooms out to show full verified list. Green checkmarks cascade down rows. BookedSolid Pro logo locks up center. Text: You can see what a verified list looks like for your zip code. in Inter 500, 20pt, white. Subtle blue glow.
-AUDIO: Resolves to clean tone. Confidence.
-
-── CONDENSED SINGLE-SHOT PROMPT ──────────────────────────
-15-second vertical video (1080x1920, 30fps). Color palette: navy #0f172a, blue #2563eb, green #22c55e, white. Typography: DM Serif Display headlines, Inter body. Mood arc: Frustration to Relief.</pre>
+SCENE 4 (11-15s): CTA — BRAND CARD
+- Seal shrinks to top-right (40px, 30% opacity).
+- &quot;BookedSolid Pro&quot; logo — white with blue diamond, 48pt.
+- &quot;Stop paying for data that doesn&#x27;t pick up.&quot; — Inter 500, 20pt, #94a3b8.
+- CTA pill: blue (#2563eb), &quot;Build a Free List&quot; white Inter 700, 20pt. Pulse.
+- &quot;See your replacement guarantee.&quot; — Inter 400, 14pt, #64748b.
+- Sound: Confident major-key resolution.
+</pre>
             </div>
         </details>
     </div>
@@ -915,29 +984,48 @@ BRAND: Bottom-left, small white wordmark.</pre>
             </summary>
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
-                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">AI VIDEO STORYBOARD — Ad 2.1
-FORMAT: 9:16 vertical (1080x1920), 15 seconds, 30fps
-MOOD: Curiosity to Empowerment
-MUSIC: Royalty-free, matches curiosity to empowerment arc
+                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">
+FORMAT: 1080x1920 (9:16 vertical) | 15 seconds | 30fps
+COLOR GRADE: Cool intelligence aesthetic. Navy base, blue data accents, green confirmations.
+MUSIC: Subtle tech pulse (scene 1) -&gt; rising anticipation (scene 2) -&gt; confident groove (scenes 3-4).
 
-── HOOK (0-3s) ──────────────────────────
-Split screen: LEFT generic 3-column spreadsheet (Name, Phone, Address). RIGHT rich data card with 18+ fields glowing blue. Text: CALLING BLIND? in DM Serif Display, 800 weight, white, top 40%.
-AUDIO: Suspenseful piano note. Clean.
+SCENE 1 (0-3s): HOOK — DATA CARD REVEAL
+- Navy background (#0f172a).
+- At 0.3s: Small dim data card floats in from bottom — gray (#374151), 200x120px, 3 redacted fields.
+- &quot;STANDARD DATA&quot; label — Inter 600, 10pt, gray badge.
+- At 1.5s: &quot;Know Before You Call.&quot; types across top — DM Serif Display, 64pt, white. Cursor blink.
+- At 2.5s: Gray card begins to glow blue (#2563eb) at edges — pulsing.
+- Sound: Paper slide. Typing clicks. Rising electronic tone.
 
-── AGITATE (3-7s) ──────────────────────────
-LEFT side crumbles while RIGHT expands. Data fields populate with animations: home value, income, roof age, credit tier, equity. Closer face lights up reading the record. Text: 3 fields vs 18. Which closer wins? in Inter 600, 22pt, white.
-AUDIO: Building momentum. Strings rise.
+SCENE 2 (3-7s): AGITATE / TRANSFORM — DOSSIER EXPANSION
+- Gray 3-field card EXPANDS (1.2s) into full dossier — white bg, blue (#2563eb) left border, 4px.
+- 18 fields cascade in from right (0.2s stagger each):
+  - Credit Range: 680-720 | Income: $85K | Home Value: $312,000
+  - Home Age: 22 years | Mortgage: $189K | LTV: 61%
+  - Equity: $123,000 | DNC: Clear | Mobile: Verified
+  - Landline: Verified | Email: Deliverable | Address: Current
+- Counter top-right: &quot;3... 6... 9... 12... 15... 18&quot; — Inter Mono, 20pt, blue.
+- At 6.5s: &quot;18 DATA POINTS&quot; badge pulses green (#22c55e).
+- Sound: Digital loading clicks. Soft &quot;pop&quot; per field. Rising anticipation.
 
-── PROOF (7-11s) ──────────────────────────
-Full-screen rich data card. Each field animates in: Property Value $487,000 / Equity 62% / Mortgage $185,060 / Roof Age 22yr. Text: Know who youre calling before you dial. in Inter 700, 26pt, white on navy.
-AUDIO: Confident. Clean beat drops.
+SCENE 3 (7-11s): PROOF — THE CALL SCENARIO
+- Split screen horizontal. Top: dossier card (compressed). Bottom: navy.
+- Conversation simulation:
+  - Blue bubble (right): &quot;I see your home is 22 years old with strong equity...&quot;
+  - Green bubble (left): &quot;How did you know that?&quot;
+  - Blue bubble: &quot;We specialize in homes just like yours.&quot;
+- Each bubble 0.6s delay. Typing indicator dots before each.
+- &quot;Intelligence. Not guesswork.&quot; — DM Serif Display, 28pt, white.
+- Sound: Phone dialing. Conversation ambience. Confident music.
 
-── CTA (11-15s) ──────────────────────────
-Data card shrinks into phone screen. Rep smiles, picks up headset confidently. BookedSolid Pro logo + tagline. Text: You can build a sample list for your territory -- takes 60 seconds. in Inter 500, 20pt, white.
-AUDIO: Warm resolution. Brand tone.
-
-── CONDENSED SINGLE-SHOT PROMPT ──────────────────────────
-15-second vertical video (1080x1920, 30fps). Color palette: navy #0f172a, blue #2563eb, green #22c55e, white. Typography: DM Serif Display headlines, Inter body. Mood arc: Curiosity to Empowerment.</pre>
+SCENE 4 (11-15s): CTA — BRAND CARD
+- Conversation fades. Navy (#0f172a).
+- &quot;BookedSolid Pro&quot; logo — white with blue diamond, 48pt.
+- &quot;18 data points. Before the first ring.&quot; — Inter 500, 20pt, #94a3b8.
+- CTA pill: blue (#2563eb), &quot;Build a Free List&quot; white Inter 700, 20pt. Pulse.
+- &quot;See a sample dossier for your zip code.&quot; — Inter 400, 14pt, #64748b.
+- Sound: Confident piano resolution. Single clean chime.
+</pre>
             </div>
         </details>
     </div>
@@ -1053,29 +1141,45 @@ BRAND: Bottom-right, navy wordmark.</pre>
             </summary>
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
-                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">AI VIDEO STORYBOARD — Ad 2.2
-FORMAT: 9:16 vertical (1080x1920), 15 seconds, 30fps
-MOOD: Curiosity to Empowerment
-MUSIC: Royalty-free, matches curiosity to empowerment arc
+                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">
+FORMAT: 1080x1920 (9:16 vertical) | 15 seconds | 30fps
+COLOR GRADE: Split editorial — left desaturated/gray, right full color with blue accents.
+MUSIC: Uncertainty ambience (scene 1) -&gt; clarity synth (scene 2) -&gt; editorial confidence (scenes 3-4).
 
-── HOOK (0-3s) ──────────────────────────
-Split screen: LEFT generic 3-column spreadsheet (Name, Phone, Address). RIGHT rich data card with 18+ fields glowing blue. Text: CALLING BLIND? in DM Serif Display, 800 weight, white, top 40%.
-AUDIO: Suspenseful piano note. Clean.
+SCENE 1 (0-3s): HOOK — SPLIT COMPARISON
+- Screen splits vertically with thin white line (2px).
+- LEFT (gray #1e293b): &quot;BEFORE&quot; header (red #ef4444). Dim card, 3 fields with red question marks.
+- RIGHT (navy #0f172a): &quot;AFTER&quot; header (green #22c55e). Blue particles floating.
+- Centered overlay: &quot;Full Dossier. Zero Guesswork.&quot; — DM Serif Display, 56pt, white.
+- Sound: Record scratch (left). Anticipation tone (right).
 
-── AGITATE (3-7s) ──────────────────────────
-LEFT side crumbles while RIGHT expands. Data fields populate with animations: home value, income, roof age, credit tier, equity. Closer face lights up reading the record. Text: 3 fields vs 18. Which closer wins? in Inter 600, 22pt, white.
-AUDIO: Building momentum. Strings rise.
+SCENE 2 (3-7s): AGITATE — SIDE-BY-SIDE FILL
+- LEFT stays static — 3 sad fields with red &quot;?&quot; annotations: &quot;Income? ???&quot; &quot;Home value? ???&quot; &quot;DNC? ???&quot;
+- Counter below left: &quot;Conversion rate: ~12%&quot; red, Inter 500, 16pt.
+- RIGHT: 18-field dossier builds field by field (0.15s per field) with blue glow and tick sound.
+- Fields organized: Contact | Property | Financial | Compliance.
+- Counter below right: &quot;Conversion rate: ~34%&quot; green (#22c55e).
+- At 6.5s: Dividing line pulses blue, right side expands 5%.
+- Sound: Error buzzer (left). Digital build (right). Rising tone.
 
-── PROOF (7-11s) ──────────────────────────
-Full-screen rich data card. Each field animates in: Property Value $487,000 / Equity 62% / Mortgage $185,060 / Roof Age 22yr. Text: Know who youre calling before you dial. in Inter 700, 26pt, white on navy.
-AUDIO: Confident. Clean beat drops.
+SCENE 3 (7-11s): PROOF — DOSSIER CLOSE-UP
+- Left slides off-screen. Right takes full width.
+- Complete dossier card enlarges (80% width, white on navy).
+- Magnifying glass icon sweeps card, highlighting:
+  - &quot;Equity: $142K&quot; — green highlight box
+  - &quot;Home Age: 19 years&quot; — green highlight
+  - &quot;Mobile: Verified + Active&quot; — green highlight
+- &quot;Every field your closer needs. Before they dial.&quot; — Inter 600, 20pt, white.
+- Corner: &quot;vs 3 fields&quot; crossed out red, strikethrough.
+- Sound: Magnifying glass whoosh. Three dings. Confident pad.
 
-── CTA (11-15s) ──────────────────────────
-Data card shrinks into phone screen. Rep smiles, picks up headset confidently. BookedSolid Pro logo + tagline. Text: You can build a sample list for your territory -- takes 60 seconds. in Inter 500, 20pt, white.
-AUDIO: Warm resolution. Brand tone.
-
-── CONDENSED SINGLE-SHOT PROMPT ──────────────────────────
-15-second vertical video (1080x1920, 30fps). Color palette: navy #0f172a, blue #2563eb, green #22c55e, white. Typography: DM Serif Display headlines, Inter body. Mood arc: Curiosity to Empowerment.</pre>
+SCENE 4 (11-15s): CTA — BRAND CARD
+- Dossier shrinks to thumbnail top-center.
+- &quot;BookedSolid Pro&quot; logo — white with blue diamond, 48pt.
+- &quot;Full intelligence on every homeowner.&quot; — Inter 500, 20pt, #94a3b8.
+- CTA pill: blue (#2563eb), &quot;Build a Free List&quot; white Inter 700, 20pt. Pulse.
+- Sound: Editorial confidence chord.
+</pre>
             </div>
         </details>
     </div>
@@ -1190,29 +1294,45 @@ CTA: Bottom center, 48px from bottom.
             </summary>
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
-                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">AI VIDEO STORYBOARD — Ad 2.3
-FORMAT: 9:16 vertical (1080x1920), 15 seconds, 30fps
-MOOD: Curiosity to Empowerment
-MUSIC: Royalty-free, matches curiosity to empowerment arc
+                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">
+FORMAT: 1080x1920 (9:16 vertical) | 15 seconds | 30fps
+COLOR GRADE: Warm professional (scene 1) -&gt; clean data visualization (scenes 2-3) -&gt; navy brand (scene 4).
+MUSIC: Conversational warmth (scene 1) -&gt; uplifting build (scenes 2-3) -&gt; clean resolution (scene 4).
 
-── HOOK (0-3s) ──────────────────────────
-Split screen: LEFT generic 3-column spreadsheet (Name, Phone, Address). RIGHT rich data card with 18+ fields glowing blue. Text: CALLING BLIND? in DM Serif Display, 800 weight, white, top 40%.
-AUDIO: Suspenseful piano note. Clean.
+SCENE 1 (0-3s): HOOK — TESTIMONIAL CARD
+- White background (#f8fafc). Social proof card slides up.
+- Card (80% width, rounded 16px): Quote marks icon blue (#2563eb), 36pt.
+- &quot;We didn&#x27;t change our team. We changed our targeting.&quot; — DM Serif Display, 36pt, navy.
+- &quot;— Ray, Charlotte NC&quot; — Inter 500, 16pt, #64748b. 5 green stars.
+- &quot;Same Team. Better Targets.&quot; types below — Inter 800, 24pt, blue (#2563eb).
+- Sound: Subtle whoosh. Warm ambient tone.
 
-── AGITATE (3-7s) ──────────────────────────
-LEFT side crumbles while RIGHT expands. Data fields populate with animations: home value, income, roof age, credit tier, equity. Closer face lights up reading the record. Text: 3 fields vs 18. Which closer wins? in Inter 600, 22pt, white.
-AUDIO: Building momentum. Strings rise.
+SCENE 2 (3-7s): AGITATE — BEFORE/AFTER TARGETING
+- Navy (#0f172a). BEFORE (3-4s): Map mockup, scattered red pins. &quot;Old Targeting: Every homeowner in 28203&quot;
+- At 4.5s: Pins disappear with red &quot;poof.&quot; Filter panel slides in:
+  - &quot;Home Age: 20+ years&quot; (toggle ON, green)
+  - &quot;Home Value: $200K+&quot; (toggle ON, green)
+  - &quot;Credit: 640+&quot; (toggle ON, green)
+- AFTER (5.5-7s): Remaining pins turn green, concentrated. &quot;New Targeting: Qualified homeowners only&quot;
+- Counter: &quot;4,200 leads -&gt; 890 qualified&quot; — Inter Mono, 20pt, white.
+- Sound: Pops (pins). Clicks (toggles). Ascending tone on green.
 
-── PROOF (7-11s) ──────────────────────────
-Full-screen rich data card. Each field animates in: Property Value $487,000 / Equity 62% / Mortgage $185,060 / Roof Age 22yr. Text: Know who youre calling before you dial. in Inter 700, 26pt, white on navy.
-AUDIO: Confident. Clean beat drops.
+SCENE 3 (7-11s): PROOF — RESULTS METRICS
+- Navy. Three metric cards stack vertically (80% width):
+  - &quot;Connect Rate&quot; | &quot;38% -&gt; 67%&quot; | green up-arrow, progress bar
+  - &quot;Appointments/Week&quot; | &quot;4 -&gt; 11&quot; | green up-arrow
+  - &quot;Same Closers&quot; | &quot;Same 3 reps&quot; | blue checkmark
+- Each card 0.5s stagger, sliding from right.
+- &quot;Same team. Same scripts. Different data.&quot; — DM Serif Display, 28pt, white.
+- Sound: Three ascending chimes. Uplifting synth build.
 
-── CTA (11-15s) ──────────────────────────
-Data card shrinks into phone screen. Rep smiles, picks up headset confidently. BookedSolid Pro logo + tagline. Text: You can build a sample list for your territory -- takes 60 seconds. in Inter 500, 20pt, white.
-AUDIO: Warm resolution. Brand tone.
-
-── CONDENSED SINGLE-SHOT PROMPT ──────────────────────────
-15-second vertical video (1080x1920, 30fps). Color palette: navy #0f172a, blue #2563eb, green #22c55e, white. Typography: DM Serif Display headlines, Inter body. Mood arc: Curiosity to Empowerment.</pre>
+SCENE 4 (11-15s): CTA — BRAND CARD
+- Metric cards fade to 20% opacity.
+- &quot;BookedSolid Pro&quot; logo — white with blue diamond, 48pt.
+- &quot;Filter by what matters before you build the list.&quot; — Inter 500, 20pt, #94a3b8.
+- CTA pill: blue (#2563eb), &quot;Build a Free List&quot; white Inter 700, 20pt. Pulse.
+- Sound: Warm resolution. Piano + pad.
+</pre>
             </div>
         </details>
     </div>
@@ -1317,29 +1437,44 @@ Maximum negative space. The black void around the text creates the tension.</pre
             </summary>
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
-                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">AI VIDEO STORYBOARD — Ad 2.4
-FORMAT: 9:16 vertical (1080x1920), 15 seconds, 30fps
-MOOD: Curiosity to Empowerment
-MUSIC: Royalty-free, matches curiosity to empowerment arc
+                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">
+FORMAT: 1080x1920 (9:16 vertical) | 15 seconds | 30fps
+COLOR GRADE: Vintage-to-modern transition. Sepia/warm (scenes 1-2) dissolve to cool navy/blue (scenes 3-4).
+MUSIC: Retro dial-tone ambience (scenes 1-2) -&gt; modern tech pulse (scenes 3-4).
 
-── HOOK (0-3s) ──────────────────────────
-Split screen: LEFT generic 3-column spreadsheet (Name, Phone, Address). RIGHT rich data card with 18+ fields glowing blue. Text: CALLING BLIND? in DM Serif Display, 800 weight, white, top 40%.
-AUDIO: Suspenseful piano note. Clean.
+SCENE 1 (0-3s): HOOK — CONTRARIAN TYPOGRAPHY
+- Warm beige (#f5f0e8), textured like old paper.
+- &quot;It&#x27;s Not a List.&quot; — DM Serif Display, 72pt, dark brown (#44403c). Vintage letterpress effect.
+- At 1.5s: Thick red (#ef4444) line strikes through &quot;List&quot; (hand-drawn feel, 4px, angled).
+- &quot;It&#x27;s a Phone Book.&quot; below — same font. &quot;Phone Book&quot; has yellow (#fef08a) highlight.
+- Small Yellow Pages icon fades in beside — tiny, ironic.
+- Sound: Rotary phone dial. Page turning. Stamp/thud on strikethrough.
 
-── AGITATE (3-7s) ──────────────────────────
-LEFT side crumbles while RIGHT expands. Data fields populate with animations: home value, income, roof age, credit tier, equity. Closer face lights up reading the record. Text: 3 fields vs 18. Which closer wins? in Inter 600, 22pt, white.
-AUDIO: Building momentum. Strings rise.
+SCENE 2 (3-7s): AGITATE — PHONE BOOK MOCKUP
+- Beige persists. Thick old phone book drops from above, lands with thud.
+- Cover: &quot;YOUR LEAD LIST&quot; in dated serif font.
+- Book opens (page flip) to reveal columns: Name | Phone | Address — hundreds of identical rows.
+- Red stamp rotates onto page: &quot;3 FIELDS. THAT&#x27;S IT.&quot; — 48pt, red, 12 degrees.
+- Bottom overlay: &quot;Name. Phone. Address. That&#x27;s all you got.&quot; — Inter 600, 20pt, white on dark strip.
+- Sound: Heavy book drop. Page flipping. Stamp sound.
 
-── PROOF (7-11s) ──────────────────────────
-Full-screen rich data card. Each field animates in: Property Value $487,000 / Equity 62% / Mortgage $185,060 / Roof Age 22yr. Text: Know who youre calling before you dial. in Inter 700, 26pt, white on navy.
-AUDIO: Confident. Clean beat drops.
+SCENE 3 (7-11s): PROOF — MODERN DATA UPGRADE
+- Phone book disintegrates (particles upward, beige-to-blue transition).
+- Navy (#0f172a). Modern data dashboard materializes:
+  - Header: &quot;HOMEOWNER INTELLIGENCE REPORT&quot; — Inter 700, 16pt, blue (#2563eb)
+  - 18 fields in clean 3-column grid with data type icons
+  - Color-coded: Contact (blue), Property (green), Financial (amber), Compliance (white)
+- Counter: &quot;3 fields -&gt; 18 fields&quot; — 3 crossed out red, 18 glowing green.
+- &quot;This is what a list should look like.&quot; — DM Serif Display, 28pt, white.
+- Sound: Digital transformation whoosh. Data clicks. Modern synth chord.
 
-── CTA (11-15s) ──────────────────────────
-Data card shrinks into phone screen. Rep smiles, picks up headset confidently. BookedSolid Pro logo + tagline. Text: You can build a sample list for your territory -- takes 60 seconds. in Inter 500, 20pt, white.
-AUDIO: Warm resolution. Brand tone.
-
-── CONDENSED SINGLE-SHOT PROMPT ──────────────────────────
-15-second vertical video (1080x1920, 30fps). Color palette: navy #0f172a, blue #2563eb, green #22c55e, white. Typography: DM Serif Display headlines, Inter body. Mood arc: Curiosity to Empowerment.</pre>
+SCENE 4 (11-15s): CTA — BRAND CARD
+- Dashboard compresses to top third at 60% opacity.
+- &quot;BookedSolid Pro&quot; logo — white with blue diamond, 48pt.
+- &quot;Upgrade from a phone book to intelligence.&quot; — Inter 500, 20pt, #94a3b8.
+- CTA pill: blue (#2563eb), &quot;Build a Free List&quot; white Inter 700, 20pt. Pulse.
+- Sound: Confident resolution. Modern, clean.
+</pre>
             </div>
         </details>
     </div>
@@ -1471,29 +1606,46 @@ CARD 5 — CTA:
             </summary>
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
-                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">AI VIDEO STORYBOARD — Ad 2.5
-FORMAT: 9:16 vertical (1080x1920), 15 seconds, 30fps
-MOOD: Curiosity to Empowerment
-MUSIC: Royalty-free, matches curiosity to empowerment arc
+                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">
+FORMAT: 1080x1920 (9:16 vertical) | 15 seconds | 30fps
+COLOR GRADE: Professional finance aesthetic. Navy base, gold/amber accents for mortgage industry.
+MUSIC: Professional urgency (percussion + piano) -&gt; empowering build -&gt; resolution.
 
-── HOOK (0-3s) ──────────────────────────
-Split screen: LEFT generic 3-column spreadsheet (Name, Phone, Address). RIGHT rich data card with 18+ fields glowing blue. Text: CALLING BLIND? in DM Serif Display, 800 weight, white, top 40%.
-AUDIO: Suspenseful piano note. Clean.
+SCENE 1 (0-3s): HOOK — INDUSTRY CALL-OUT
+- Navy (#0f172a).
+- &quot;MORTGAGE PROS:&quot; at top — Inter 800, 20pt, amber (#f59e0b), uppercase, letter-spacing 0.15em. 30% from top, left-aligned (64px).
+- &quot;Better Data Exists.&quot; below — DM Serif Display, 72pt, white. Word-by-word reveal (0.3s stagger).
+- Mortgage document icon (house + doc lines, outlined, white, 48px) appears right of headline, rotating in.
+- Sound: Authoritative tone. Single piano chord. Office hum.
 
-── AGITATE (3-7s) ──────────────────────────
-LEFT side crumbles while RIGHT expands. Data fields populate with animations: home value, income, roof age, credit tier, equity. Closer face lights up reading the record. Text: 3 fields vs 18. Which closer wins? in Inter 600, 22pt, white.
-AUDIO: Building momentum. Strings rise.
+SCENE 2 (3-7s): AGITATE — DENISE&#x27;S STORY CAROUSEL
+- Three cards swipe left-to-right:
+- CARD 1 (3-4.2s): Dark gray (#1e293b). &quot;Denise, Tampa. Mortgage brokerage.&quot; / &quot;Her best closer was leaving.&quot; / &quot;Not because of leads. Because of DATA.&quot; — Inter 400, 20pt, white. Line-by-line fade.
+- CARD 2 (4.2-5.5s): Three red X items: &quot;Calling homeowners with no equity&quot; / &quot;Pitching refis to people who just closed&quot; / &quot;Zero income data = blind qualification&quot; — Inter 400, 18pt, red X + white.
+- CARD 3 (5.5-7s): &quot;Then she found records with:&quot; — #94a3b8. Green checks: Equity estimates | Credit ranges | Mortgage age | Income brackets. &quot;Her closer stayed.&quot; — Inter 600, 22pt, white.
+- Sound: Swipe sounds. Soft buzzer (card 2). Success chimes (card 3).
 
-── PROOF (7-11s) ──────────────────────────
-Full-screen rich data card. Each field animates in: Property Value $487,000 / Equity 62% / Mortgage $185,060 / Roof Age 22yr. Text: Know who youre calling before you dial. in Inter 700, 26pt, white on navy.
-AUDIO: Confident. Clean beat drops.
+SCENE 3 (7-11s): PROOF — MORTGAGE-SPECIFIC DATA
+- Navy. Mortgage-specific data card (white, 80% width).
+- Header: &quot;MORTGAGE-QUALIFIED HOMEOWNER&quot; — blue (#2563eb) badge.
+- Key fields highlight in sequence:
+  - &quot;Mortgage Balance: $224,000&quot; — amber highlight
+  - &quot;Estimated Equity: $118,000&quot; — green highlight
+  - &quot;Credit Range: 700-740&quot; — green highlight
+  - &quot;Home Age: 14 years (orig. 2012)&quot; — blue highlight
+  - &quot;Income Bracket: $95-120K&quot; — amber highlight
+- &quot;REFI CANDIDATE: HIGH&quot; badge — green (#22c55e) bg, white text, Inter 700.
+- &quot;Your closer sees this before dialing.&quot; — DM Serif Display, 24pt, white.
+- Sound: Data population sounds. Ascending tones. Soft &quot;lock&quot; per highlight.
 
-── CTA (11-15s) ──────────────────────────
-Data card shrinks into phone screen. Rep smiles, picks up headset confidently. BookedSolid Pro logo + tagline. Text: You can build a sample list for your territory -- takes 60 seconds. in Inter 500, 20pt, white.
-AUDIO: Warm resolution. Brand tone.
-
-── CONDENSED SINGLE-SHOT PROMPT ──────────────────────────
-15-second vertical video (1080x1920, 30fps). Color palette: navy #0f172a, blue #2563eb, green #22c55e, white. Typography: DM Serif Display headlines, Inter body. Mood arc: Curiosity to Empowerment.</pre>
+SCENE 4 (11-15s): CTA — BRAND CARD
+- Data card slides to upper-right (thumbnail, 30%).
+- &quot;BookedSolid Pro&quot; logo — white with blue diamond, 48pt.
+- &quot;Built for mortgage professionals.&quot; — Inter 500, 20pt, #94a3b8.
+- CTA pill: blue (#2563eb), &quot;Build a Free List&quot; white Inter 700, 20pt. Pulse.
+- &quot;Filter by equity, credit, mortgage age.&quot; — Inter 400, 14pt, #64748b.
+- Sound: Professional resolution. Authoritative.
+</pre>
             </div>
         </details>
     </div>
@@ -1620,29 +1772,48 @@ BRAND: Bottom-left, white wordmark.</pre>
             </summary>
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
-                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">AI VIDEO STORYBOARD — Ad 3.1
-FORMAT: 9:16 vertical (1080x1920), 15 seconds, 30fps
-MOOD: Surprise to Confidence
-MUSIC: Royalty-free, matches surprise to confidence arc
+                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">
+FORMAT: 1080x1920 (9:16 vertical) | 15 seconds | 30fps
+COLOR GRADE: Sharp contrast. Red/gray for inadequacy (scenes 1-2), blue/green for intelligence (scenes 3-4).
+MUSIC: Mechanical/sterile (scenes 1-2) -&gt; alive, confident tech pulse (scenes 3-4).
 
-── HOOK (0-3s) ──────────────────────────
-Animated counter: 3 in massive red text shrinks while 18 in massive green text grows to fill screen. Eyebrow: HOMEOWNER DATA in Inter 700, 14pt, caps. Main text: STILL SETTLING FOR 3? in DM Serif Display, 800 weight, 72pt, white.
-AUDIO: Sharp contrast sound. Attention grab.
+SCENE 1 (0-3s): HOOK — SIDE-BY-SIDE ENTRANCE
+- Black screen splits vertically.
+- LEFT (40%): Gray (#1e293b). Undersized card &quot;YOUR DATA&quot; slides up. 3 sparse fields: Name, Phone, Address. Red &quot;3&quot; badge (red circle #ef4444, white text, 32px).
+- RIGHT (60%): Navy (#0f172a). Empty — blue particles floating.
+- Centered overlay: &quot;3 Fields Is Not Intelligence.&quot; — DM Serif Display, 52pt, white. &quot;Intelligence&quot; has blue (#2563eb) underline glow.
+- Sound: Dial-up modem (left). Digital anticipation hum (right). Bass hit on text.
 
-── AGITATE (3-7s) ──────────────────────────
-Three sad data cards (Name / Phone / Address) animate out while 18 rich data fields cascade in like a waterfall: home value, income tier, roof age, equity, mortgage balance, credit score, household size, ownership tenure. Text: Your competitor has 6x the intel. in Inter 600, 24pt, white.
-AUDIO: Cascading chime sounds. Building energy.
+SCENE 2 (3-7s): AGITATE — THE EMPTINESS
+- Zoom into LEFT card (80% of screen).
+- Red (#ef4444) callout annotations appear one at a time:
+  - Arrow to Name: &quot;Shared with 47 other buyers&quot; — Inter 400, 14pt, red
+  - Arrow to Phone: &quot;38% chance it&#x27;s disconnected&quot; — red
+  - Arrow to Address: &quot;Last verified: ???&quot; — red
+- At 5.5s: Card cracks — white fracture lines radiating from center.
+- &quot;This is what you&#x27;re paying for.&quot; — Inter 600, 22pt, white.
+- &quot;This is what everyone else has too.&quot; — Inter 400, 18pt, #94a3b8.
+- Sound: Three error tones. Cracking glass. Low drone.
 
-── PROOF (7-11s) ──────────────────────────
-Side-by-side call simulation: LEFT caller stammers with no context. RIGHT opens with I see youve got a 2003 home valued at $380K -- homeowner eyes widen. Text: 18 data points. Every call is a warm call. in Inter 700, 26pt, white on navy.
-AUDIO: Confident beat. Trust building.
+SCENE 3 (7-11s): PROOF — 18-FIELD INTELLIGENCE CARD
+- Cracked card SHATTERS (particles outward). Navy revealed.
+- Full 18-field card slides in from right — white, blue left-border (4px #2563eb), rounded 16px.
+- 4 sections with colored headers:
+  - CONTACT (blue): Mobile, Landline, Email, Mailing — 4 green dots
+  - PROPERTY (green): Value, Age, Type, Sq Ft — values populate
+  - FINANCIAL (amber): Credit, Income, Equity, Mortgage — values populate
+  - COMPLIANCE (white): DNC, Litigator, Scrub Status — green checkmarks
+- &quot;18&quot; badge pulses top-right — blue circle, white text, 32px.
+- &quot;This is intelligence.&quot; — DM Serif Display, 32pt, white.
+- Sound: Shattering glass. Data loading sequence. Rising confidence chord.
 
-── CTA (11-15s) ──────────────────────────
-Full BookedSolid Pro record card fills screen with all 18 fields visible. Logo locks up. Text: You can see the difference 18 fields makes -- no commitment, no call. in Inter 500, 20pt, white.
-AUDIO: Clean resolution. Brand confidence.
-
-── CONDENSED SINGLE-SHOT PROMPT ──────────────────────────
-15-second vertical video (1080x1920, 30fps). Color palette: navy #0f172a, blue #2563eb, green #22c55e, white. Typography: DM Serif Display headlines, Inter body. Mood arc: Surprise to Confidence.</pre>
+SCENE 4 (11-15s): CTA — BRAND CARD
+- Intelligence card shrinks to top-center thumbnail.
+- &quot;BookedSolid Pro&quot; logo — white with blue diamond, 48pt.
+- &quot;18 data points. 4 channels. Per record.&quot; — Inter 500, 20pt, #94a3b8.
+- CTA pill: blue (#2563eb), &quot;Build a Free List&quot; white Inter 700, 20pt. Pulse.
+- Sound: Authoritative resolution chord.
+</pre>
             </div>
         </details>
     </div>
@@ -1766,29 +1937,49 @@ CTA: Bottom center, 40px from bottom.
             </summary>
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
-                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">AI VIDEO STORYBOARD — Ad 3.2
-FORMAT: 9:16 vertical (1080x1920), 15 seconds, 30fps
-MOOD: Surprise to Confidence
-MUSIC: Royalty-free, matches surprise to confidence arc
+                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">
+FORMAT: 1080x1920 (9:16 vertical) | 15 seconds | 30fps
+COLOR GRADE: Dark base with multi-color channel accents (blue, green, purple, amber).
+MUSIC: Single note isolation (scene 1) -&gt; building layers (scene 2) -&gt; full multi-layered (scenes 3-4).
 
-── HOOK (0-3s) ──────────────────────────
-Animated counter: 3 in massive red text shrinks while 18 in massive green text grows to fill screen. Eyebrow: HOMEOWNER DATA in Inter 700, 14pt, caps. Main text: STILL SETTLING FOR 3? in DM Serif Display, 800 weight, 72pt, white.
-AUDIO: Sharp contrast sound. Attention grab.
+SCENE 1 (0-3s): HOOK — SINGLE CHANNEL ISOLATION
+- Black screen (#000000).
+- At 0.3s: Single phone icon centered — white outline, 80px.
+- At 0.8s: &quot;Your only channel.&quot; types below — Inter 400, 20pt, red (#ef4444).
+- At 1.5s: Phone icon gets red X overlay. &quot;DISCONNECTED&quot; stamp — red, Inter 700, 16pt.
+- At 2.0s: &quot;4 Channels. Not 1.&quot; slams across center — DM Serif Display, 64pt, white. &quot;4&quot; blue (#2563eb), &quot;1&quot; red (#ef4444).
+- Sound: Single dial tone. Disconnected beep. Bass slam.
 
-── AGITATE (3-7s) ──────────────────────────
-Three sad data cards (Name / Phone / Address) animate out while 18 rich data fields cascade in like a waterfall: home value, income tier, roof age, equity, mortgage balance, credit score, household size, ownership tenure. Text: Your competitor has 6x the intel. in Inter 600, 24pt, white.
-AUDIO: Cascading chime sounds. Building energy.
+SCENE 2 (3-7s): AGITATE — CHANNEL GRID BUILD
+- Navy (#0f172a). Phone icon shrinks to top-left, dimmed.
+- 2x2 grid builds in center (220x220px squares, 16px gap):
+  - TOP-LEFT (3.5s): Blue (#2563eb) — Phone icon + &quot;COLD CALL&quot; + &quot;Verified Numbers&quot;
+  - TOP-RIGHT (4.3s): Green (#22c55e) — Envelope + &quot;DIRECT MAIL&quot; + &quot;Verified Addresses&quot;
+  - BOTTOM-LEFT (5.1s): Purple (#8b5cf6) — @ icon + &quot;EMAIL&quot; + &quot;Deliverable Emails&quot;
+  - BOTTOM-RIGHT (5.9s): Amber (#f59e0b) — Chat bubble + &quot;SMS / RVM&quot; + &quot;Mobile Numbers&quot;
+- Each square: glow-in (0% to 100% opacity, scale 90% to 100%).
+- At 6.5s: Connection lines draw between all 4 (white, 1px, glowing endpoints).
+- &quot;One list. Every channel.&quot; — Inter 600, 22pt, white.
+- Sound: Ascending scale (C, E, G, C-octave) per square. Linking sound on connections.
 
-── PROOF (7-11s) ──────────────────────────
-Side-by-side call simulation: LEFT caller stammers with no context. RIGHT opens with I see youve got a 2003 home valued at $380K -- homeowner eyes widen. Text: 18 data points. Every call is a warm call. in Inter 700, 26pt, white on navy.
-AUDIO: Confident beat. Trust building.
+SCENE 3 (7-11s): PROOF — CHANNEL IN ACTION
+- Grid compresses to top-third (50% size).
+- Multi-channel sequence below:
+  - Step 1: &quot;Cold Call - No Answer&quot; — blue icon, gray text (7.5s)
+  - Arrow down → Step 2: &quot;SMS Sent - &#x27;Saw you have a 2003 home...&#x27;&quot; — amber (8.5s)
+  - Arrow down → Step 3: &quot;Email Follow-up - Property report attached&quot; — purple (9.5s)
+  - Arrow down → Step 4: &quot;Direct Mail - Personalized postcard&quot; — green (10.5s)
+- &quot;4 touches. Zero extra cost.&quot; — Inter 700, 24pt, green (#22c55e).
+- Sound: Different notification tones per step. Ascending confidence.
 
-── CTA (11-15s) ──────────────────────────
-Full BookedSolid Pro record card fills screen with all 18 fields visible. Logo locks up. Text: You can see the difference 18 fields makes -- no commitment, no call. in Inter 500, 20pt, white.
-AUDIO: Clean resolution. Brand confidence.
-
-── CONDENSED SINGLE-SHOT PROMPT ──────────────────────────
-15-second vertical video (1080x1920, 30fps). Color palette: navy #0f172a, blue #2563eb, green #22c55e, white. Typography: DM Serif Display headlines, Inter body. Mood arc: Surprise to Confidence.</pre>
+SCENE 4 (11-15s): CTA — BRAND CARD
+- Sequence compresses up. Navy.
+- &quot;BookedSolid Pro&quot; logo — white with blue diamond, 48pt.
+- &quot;Phone. Email. Mail. SMS. One list.&quot; — Inter 500, 20pt, #94a3b8.
+- CTA pill: blue (#2563eb), &quot;Build a Free List&quot; white Inter 700, 20pt. Pulse.
+- Four tiny colored dots (blue, green, purple, amber) below pill — representing 4 channels.
+- Sound: Full chord combining all 4 tones. Satisfying resolution.
+</pre>
             </div>
         </details>
     </div>
@@ -1896,29 +2087,53 @@ CTA: &quot;bookedsolidpro.com&quot; in blue, bottom.</pre>
             </summary>
             <div style="padding:8px 16px 16px; position:relative;">
                 <button onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText).then(()=>{this.innerText='Copied!';setTimeout(()=>this.innerText='Copy',1500)})" style="position:absolute; top:8px; right:16px; background:#0f172a; color:white; border:none; padding:4px 12px; border-radius:6px; font-size:11px; font-weight:600; cursor:pointer;">Copy</button>
-                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">AI VIDEO STORYBOARD — Ad 3.3
-FORMAT: 9:16 vertical (1080x1920), 15 seconds, 30fps
-MOOD: Surprise to Confidence
-MUSIC: Royalty-free, matches surprise to confidence arc
+                <pre style="font-size:11px; line-height:1.5; color:#333; white-space:pre-wrap; background:#f5f3ff; padding:12px; border-radius:8px; border:1px solid #e9d5ff; margin-top:4px; max-height:400px; overflow-y:auto;">
+FORMAT: 1080x1920 (9:16 vertical) | 15 seconds | 30fps
+COLOR GRADE: Forum/community warmth (scene 1) -&gt; data contrast blue/red (scene 2) -&gt; clean proof (scene 3) -&gt; navy brand (scene 4).
+MUSIC: Casual/authentic (scene 1) -&gt; analytical tension (scene 2) -&gt; confident build (scenes 3-4).
 
-── HOOK (0-3s) ──────────────────────────
-Animated counter: 3 in massive red text shrinks while 18 in massive green text grows to fill screen. Eyebrow: HOMEOWNER DATA in Inter 700, 14pt, caps. Main text: STILL SETTLING FOR 3? in DM Serif Display, 800 weight, 72pt, white.
-AUDIO: Sharp contrast sound. Attention grab.
+SCENE 1 (0-3s): HOOK — FORUM POST
+- Dark gray (#1e293b).
+- Forum post card slides in from bottom — white, rounded 12px, shadow.
+- Avatar: gray circle + &quot;Nick_REI&quot; — Inter 600, 14pt.
+- Post types out: &quot;I&#x27;m paying good money for this data and half the numbers don&#x27;t even work.&quot; — Inter 400, 20pt, #1a1a1a.
+- Upvote: &quot;127&quot; with green up-arrow.
+- &quot;Same Homeowners. Better Records.&quot; above card — DM Serif Display, 48pt, white.
+- Sound: Forum notification. Keyboard typing. Crowd murmur.
 
-── AGITATE (3-7s) ──────────────────────────
-Three sad data cards (Name / Phone / Address) animate out while 18 rich data fields cascade in like a waterfall: home value, income tier, roof age, equity, mortgage balance, credit score, household size, ownership tenure. Text: Your competitor has 6x the intel. in Inter 600, 24pt, white.
-AUDIO: Cascading chime sounds. Building energy.
+SCENE 2 (3-7s): AGITATE — RECORD COMPARISON
+- Forum post shrinks to corner (20% opacity). Screen splits horizontally:
+- TOP (red zone): &quot;THEIR RECORD&quot; — Inter 700, 14pt, red (#ef4444).
+  - &quot;John Smith&quot; | &quot;555-0142&quot; | &quot;123 Oak St&quot;
+  - Status: &quot;Phone: Unknown&quot; (gray) | &quot;Income: N/A&quot; | &quot;Credit: N/A&quot;
+  - Watermark: &quot;LAST UPDATED: 11 MONTHS AGO&quot; — red, 12pt
+  - Red strip: &quot;This is what you&#x27;re getting.&quot;
+- BOTTOM (blue zone): &quot;OUR RECORD&quot; — Inter 700, 14pt, blue (#2563eb).
+  - &quot;John Smith&quot; | &quot;555-0142 (Verified Active)&quot; | &quot;123 Oak St (Owner-Occupied)&quot;
+  - Status: &quot;Credit: 710&quot; (green) | &quot;Income: $88K&quot; | &quot;Equity: $134K&quot;
+  - 15 more fields visible but compressed
+  - Blue watermark: &quot;VERIFIED: TODAY&quot;
+- Divider pulses red-to-blue.
+- Sound: Buzzer (top). Ascending chime (bottom).
 
-── PROOF (7-11s) ──────────────────────────
-Side-by-side call simulation: LEFT caller stammers with no context. RIGHT opens with I see youve got a 2003 home valued at $380K -- homeowner eyes widen. Text: 18 data points. Every call is a warm call. in Inter 700, 26pt, white on navy.
-AUDIO: Confident beat. Trust building.
+SCENE 3 (7-11s): PROOF — THE UPGRADE
+- Bottom half expands to full screen. Full record card enlarges.
+- Three proof points (staggered, 0.6s each):
+  - Green checkmark + &quot;Same homeowner. 6x the data.&quot; — Inter 600, 20pt, white
+  - Green checkmark + &quot;4 verified contact channels.&quot;
+  - Green checkmark + &quot;Updated in real-time. Not quarterly.&quot;
+- &quot;6x&quot; badge bottom-right — 72pt, DM Serif Display, green (#22c55e), subtle glow.
+- &quot;3 fields didn&#x27;t work for Nick. Or you.&quot; — Inter 500, 18pt, #94a3b8.
+- Sound: Three confirmation dings. Building synth pad.
 
-── CTA (11-15s) ──────────────────────────
-Full BookedSolid Pro record card fills screen with all 18 fields visible. Logo locks up. Text: You can see the difference 18 fields makes -- no commitment, no call. in Inter 500, 20pt, white.
-AUDIO: Clean resolution. Brand confidence.
-
-── CONDENSED SINGLE-SHOT PROMPT ──────────────────────────
-15-second vertical video (1080x1920, 30fps). Color palette: navy #0f172a, blue #2563eb, green #22c55e, white. Typography: DM Serif Display headlines, Inter body. Mood arc: Surprise to Confidence.</pre>
+SCENE 4 (11-15s): CTA — BRAND CARD
+- Record card fades out.
+- &quot;BookedSolid Pro&quot; logo — white with blue diamond, 48pt.
+- &quot;Same homeowners. 6x the intelligence.&quot; — Inter 500, 20pt, #94a3b8.
+- CTA pill: blue (#2563eb), &quot;Build a Free List&quot; white Inter 700, 20pt. Pulse.
+- &quot;Compare your current data side-by-side.&quot; — Inter 400, 14pt, #64748b.
+- Sound: Warm, authoritative resolution.
+</pre>
             </div>
         </details>
     </div>
