@@ -158,7 +158,7 @@
                             <div class="text-3xl font-bold text-brand-600" id="previewTotal">0</div>
                             <div class="text-xs text-gray-400 mt-1">What you pay for</div>
                         </div>
-                        <button onclick="goToPackages()" class="w-full bg-gray-900 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Get This List</button>
+                        <button onclick="goToPackages()" class="w-full bg-gray-900 text-white py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition mt-2">Get This List</button>
                     </div>
                 </div>
             </div>
@@ -196,6 +196,67 @@
                         <button onclick="addCounty()" class="bg-gray-900 text-white px-5 py-2.5 rounded-lg text-sm font-semibold hover:bg-gray-800 transition">Add</button>
                     </div>
                     <div id="countyTags" class="flex flex-wrap gap-2 mt-3"></div>
+                </div>
+            </div>
+
+            <!-- Record Selection -->
+            <div id="recordSelectionSection" class="bg-white rounded-xl border border-gray-200 p-5 mb-5 hidden">
+                <h3 class="font-bold text-base mb-1">Record Selection</h3>
+                <p class="text-xs text-gray-500 mb-4">You don't have to get every lead in the area. Choose how many you need and how they're selected.</p>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="text-xs font-medium text-gray-500 mb-1.5 block">How many records?</label>
+                        <div class="flex gap-2 items-center">
+                            <button onclick="setRecordMode('all')" id="recModeAll" class="flex-1 py-2 rounded-lg text-sm font-semibold bg-brand-600 text-white transition">All Available</button>
+                            <button onclick="setRecordMode('custom')" id="recModeCustom" class="flex-1 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-gray-600 transition">Custom Amount</button>
+                        </div>
+                    </div>
+                    <div id="customAmountSection" class="hidden">
+                        <label class="text-xs font-medium text-gray-500 mb-1.5 block">Number of records</label>
+                        <input type="number" id="customRecordCount" min="1" step="1" placeholder="e.g. 3000" oninput="onCustomCountChange()" class="w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-brand-500 focus:border-brand-500 outline-none">
+                        <div class="text-xs text-gray-400 mt-1">Max available: <span id="maxAvailable" class="font-semibold">0</span></div>
+                    </div>
+                </div>
+
+                <div id="selectionMethodSection" class="hidden">
+                    <label class="text-xs font-medium text-gray-500 mb-1.5 block">Selection Method</label>
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 mb-3">
+                        <label class="flex items-center gap-2 border border-gray-200 rounded-lg p-3 cursor-pointer hover:border-brand-500 transition has-[:checked]:border-brand-500 has-[:checked]:bg-blue-50">
+                            <input type="radio" name="selectionMethod" value="first" checked class="text-brand-600 focus:ring-brand-500">
+                            <div>
+                                <div class="text-sm font-semibold">First N Records</div>
+                                <div class="text-xs text-gray-400">Sequential from start</div>
+                            </div>
+                        </label>
+                        <label class="flex items-center gap-2 border border-gray-200 rounded-lg p-3 cursor-pointer hover:border-brand-500 transition has-[:checked]:border-brand-500 has-[:checked]:bg-blue-50">
+                            <input type="radio" name="selectionMethod" value="everyNth" class="text-brand-600 focus:ring-brand-500">
+                            <div>
+                                <div class="text-sm font-semibold">Every Nth Record</div>
+                                <div class="text-xs text-gray-400">Spread evenly across list</div>
+                            </div>
+                        </label>
+                        <label class="flex items-center gap-2 border border-gray-200 rounded-lg p-3 cursor-pointer hover:border-brand-500 transition has-[:checked]:border-brand-500 has-[:checked]:bg-blue-50">
+                            <input type="radio" name="selectionMethod" value="random" class="text-brand-600 focus:ring-brand-500">
+                            <div>
+                                <div class="text-sm font-semibold">Random Sample</div>
+                                <div class="text-xs text-gray-400">Randomly distributed</div>
+                            </div>
+                        </label>
+                    </div>
+                </div>
+
+                <label class="flex items-center gap-2 text-sm text-gray-600 bg-amber-50 border border-amber-200 rounded-lg p-3">
+                    <input type="checkbox" id="excludeDuplicates" checked class="rounded border-gray-300 text-brand-600 focus:ring-brand-500">
+                    <div>
+                        <span class="font-semibold">Exclude records I already have</span>
+                        <span class="text-xs text-gray-400 block">We track your previous orders so you never get the same record twice</span>
+                    </div>
+                </label>
+
+                <div id="recordSelectionSummary" class="mt-3 bg-gray-50 rounded-lg p-3 text-sm hidden">
+                    <div class="flex justify-between"><span class="text-gray-500">Records you'll receive:</span><span class="font-bold text-brand-600" id="selectedRecordCount">0</span></div>
+                    <div class="flex justify-between mt-1"><span class="text-gray-500">Previously purchased (excluded):</span><span class="font-medium text-gray-600" id="excludedDuplicateCount">0</span></div>
                 </div>
             </div>
 
@@ -537,6 +598,50 @@
 
 
     </main>
+
+    <!-- Activation Calendar Modal -->
+    <div id="activationModal" class="fixed inset-0 z-[60] bg-black/50 flex items-center justify-center p-4 hidden">
+        <div class="bg-white rounded-2xl max-w-lg w-full shadow-2xl overflow-hidden">
+            <div class="bg-gradient-to-r from-blue-700 to-blue-500 p-6 text-white text-center">
+                <div class="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+                </div>
+                <h2 class="text-xl font-bold mb-1">Activate Your Account</h2>
+                <p class="text-blue-100 text-sm">One quick step before your leads are ready</p>
+            </div>
+            <div class="p-6">
+                <div class="bg-blue-50 border border-blue-200 rounded-xl p-4 mb-5">
+                    <p class="text-sm text-gray-700 leading-relaxed">
+                        Since we provide access to <strong>18+ points of data</strong> for each lead, to ensure we are in compliance we have a brief <strong>3-minute call</strong> with our <strong>Data Compliance Specialist</strong> prior to activating your account.
+                    </p>
+                </div>
+                <p class="text-sm text-gray-500 mb-4 text-center">Pick a time that works for you:</p>
+
+                <!-- Calendar Picker -->
+                <div class="border border-gray-200 rounded-xl overflow-hidden mb-4">
+                    <div class="bg-gray-50 px-4 py-3 flex items-center justify-between border-b border-gray-200">
+                        <button onclick="prevCalWeek()" class="p-1 rounded hover:bg-gray-200 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg></button>
+                        <span class="font-semibold text-sm" id="calWeekLabel">March 2026</span>
+                        <button onclick="nextCalWeek()" class="p-1 rounded hover:bg-gray-200 transition"><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg></button>
+                    </div>
+                    <div id="calDays" class="grid grid-cols-5 gap-1 p-3"></div>
+                    <div id="calTimes" class="border-t border-gray-200 p-3 hidden">
+                        <p class="text-xs text-gray-500 mb-2">Available times for <strong id="calSelectedDate">--</strong>:</p>
+                        <div id="calTimeSlots" class="grid grid-cols-3 gap-2"></div>
+                    </div>
+                </div>
+
+                <div id="calConfirmSection" class="hidden">
+                    <div class="bg-green-50 border border-green-200 rounded-xl p-4 mb-4 text-center">
+                        <p class="text-sm text-gray-700"><strong>Selected:</strong> <span id="calConfirmDateTime" class="text-green-700">--</span></p>
+                    </div>
+                    <button onclick="confirmActivation()" class="w-full bg-gray-900 text-white py-3 rounded-lg text-sm font-bold hover:bg-gray-800 transition">Confirm & Schedule Call</button>
+                </div>
+
+                <button onclick="closeActivationModal()" class="w-full text-gray-400 text-xs mt-3 hover:text-gray-600 transition">I'll do this later</button>
+            </div>
+        </div>
+    </div>
 
     <!-- Toast container -->
     <div id="toastContainer" class="fixed bottom-6 right-6 z-50"></div>
@@ -919,6 +1024,10 @@ function updatePreview() {
     document.getElementById('previewEmpty').classList.add('hidden');
     document.getElementById('previewData').classList.remove('hidden');
     document.getElementById('previewTotal').textContent = total.toLocaleString();
+
+    // Show record selection section
+    document.getElementById('recordSelectionSection').classList.remove('hidden');
+    updateRecordSelection();
 }
 
 // Simple hash for deterministic randomness per state
@@ -1018,11 +1127,13 @@ function goToPackages() {
 }
 
 function calcOrder() {
-    const totalNeeded = currentLeadData.total;
+    const totalNeeded = getEffectiveRecordCount();
     const creditsUsed = Math.min(creditBalance, totalNeeded);
     const overageRecords = totalNeeded - creditsUsed;
     const overageCost = overageRecords * planRate;
-    return { totalNeeded, creditsUsed, overageRecords, overageCost };
+    const selectionMethod = getSelectionMethod();
+    const excludeDuplicates = document.getElementById('excludeDuplicates')?.checked ?? true;
+    return { totalNeeded, creditsUsed, overageRecords, overageCost, selectionMethod, excludeDuplicates, totalAvailable: currentLeadData.total };
 }
 
 function goToCheckout() {
@@ -1051,11 +1162,14 @@ function goToCheckout() {
 
     const areas = areaMode === 'zip' ? selectedZips : selectedCounties;
     const areaLabel = (areas.length === 1 && areas[0] === 'ALL') ? 'All' : areas.length;
+    const methodLabels = { first: 'First N Records', everyNth: 'Every Nth Record', random: 'Random Sample' };
     document.getElementById('filtersSummary').innerHTML = `
         <div><span class="text-gray-500">State:</span> <strong>${selectedState}</strong></div>
         <div><span class="text-gray-500">${areaMode === 'zip' ? 'ZIP Codes' : 'Counties'}:</span> <strong>${areaLabel}</strong></div>
+        <div><span class="text-gray-500">Records:</span> <strong>${o.totalNeeded.toLocaleString()} of ${o.totalAvailable.toLocaleString()}</strong></div>
+        <div><span class="text-gray-500">Selection:</span> <strong>${recordMode === 'all' ? 'All Available' : methodLabels[o.selectionMethod]}</strong></div>
+        <div><span class="text-gray-500">Exclude Duplicates:</span> <strong>${o.excludeDuplicates ? 'Yes' : 'No'}</strong></div>
         <div><span class="text-gray-500">Additional Fields:</span> <strong>${selectedFields.size} fields</strong></div>
-        <div><span class="text-gray-500">DNC Filter:</span> <strong>All leads</strong></div>
     `;
 }
 
@@ -1081,6 +1195,9 @@ function processPayment() {
         state: selectedState,
         areas: areaLabel,
         leadCount: o.totalNeeded,
+        totalAvailable: o.totalAvailable,
+        selectionMethod: recordMode === 'all' ? 'all' : o.selectionMethod,
+        excludeDuplicates: o.excludeDuplicates,
         totalPaid: o.overageCost,
         creditsUsed: o.creditsUsed,
         costPerLead: o.totalNeeded > 0 ? ((o.overageCost) / o.totalNeeded).toFixed(3) : '0.000',
@@ -1091,7 +1208,44 @@ function processPayment() {
     orders.unshift(order);
     localStorage.setItem('hlp_orders', JSON.stringify(orders));
 
-    // Step 4: Show success
+    // Track record hashes to prevent future duplicates
+    const orderHash = `${selectedState}_${areaLabel}_${Date.now()}`;
+    previousRecordHashes.push(orderHash);
+    localStorage.setItem('hlp_previous_records', JSON.stringify(previousRecordHashes));
+
+    // Send order data to webhook (Notion + Supabase sync)
+    sendWebhook('order_completed', {
+        order_id: order.id,
+        list_id: order.listId,
+        customer_name: document.getElementById('userName')?.textContent,
+        customer_email: document.getElementById('userEmail')?.textContent,
+        state: order.state,
+        areas: order.areas,
+        lead_count: order.leadCount,
+        selection_method: order.selectionMethod,
+        total_paid: order.totalPaid,
+        credits_used: order.creditsUsed,
+        fields_selected: order.fieldsSelected,
+        date: order.date
+    });
+
+    // Step 4: Check if this is the first-ever purchase → show activation calendar
+    if (!hasEverPurchased) {
+        hasEverPurchased = true;
+        localStorage.setItem('hlp_has_purchased', 'true');
+
+        // Show success info first, then activation modal
+        document.getElementById('successOrderId').textContent = order.id;
+        document.getElementById('successListId').textContent = order.listId;
+        navigate('success');
+        showToast(`Order confirmed! ${o.totalNeeded.toLocaleString()} records ready for download.`);
+
+        // Show activation calendar modal after a brief delay
+        setTimeout(() => showActivationModal(), 800);
+        return;
+    }
+
+    // Step 5: Show success
     document.getElementById('successOrderId').textContent = order.id;
     document.getElementById('successListId').textContent = order.listId;
     navigate('success');
@@ -1277,11 +1431,70 @@ function updateFieldCount() {
     document.getElementById('fieldCount').textContent = selectedFields.size;
 }
 
+// ===== RECORD SELECTION =====
+let recordMode = 'all'; // 'all' or 'custom'
+let customRecordCount = 0;
+
+function setRecordMode(mode) {
+    recordMode = mode;
+    document.getElementById('recModeAll').className = mode === 'all' ? 'flex-1 py-2 rounded-lg text-sm font-semibold bg-brand-600 text-white transition' : 'flex-1 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-gray-600 transition';
+    document.getElementById('recModeCustom').className = mode === 'custom' ? 'flex-1 py-2 rounded-lg text-sm font-semibold bg-brand-600 text-white transition' : 'flex-1 py-2 rounded-lg text-sm font-semibold bg-gray-100 text-gray-600 transition';
+    document.getElementById('customAmountSection').classList.toggle('hidden', mode !== 'custom');
+    document.getElementById('selectionMethodSection').classList.toggle('hidden', mode !== 'custom');
+    document.getElementById('recordSelectionSummary').classList.toggle('hidden', mode !== 'custom');
+    updateRecordSelection();
+}
+
+function onCustomCountChange() {
+    const input = document.getElementById('customRecordCount');
+    const max = currentLeadData.total || 0;
+    let val = parseInt(input.value) || 0;
+    if (val > max) { val = max; input.value = max; }
+    if (val < 0) { val = 0; input.value = 0; }
+    customRecordCount = val;
+    updateRecordSelection();
+}
+
+function updateRecordSelection() {
+    const max = currentLeadData.total || 0;
+    document.getElementById('maxAvailable').textContent = max.toLocaleString();
+
+    if (recordMode === 'custom' && customRecordCount > 0) {
+        const excludeDups = document.getElementById('excludeDuplicates').checked;
+        // Simulate duplicate count based on previous orders for this state/area combo
+        const prevOrdersForArea = orders.filter(o => o.state === selectedState).reduce((sum, o) => sum + (o.leadCount || 0), 0);
+        const estimatedDups = excludeDups ? Math.min(Math.round(prevOrdersForArea * 0.15), Math.round(max * 0.1)) : 0;
+        const effectiveCount = Math.min(customRecordCount, max - estimatedDups);
+
+        document.getElementById('selectedRecordCount').textContent = effectiveCount.toLocaleString();
+        document.getElementById('excludedDuplicateCount').textContent = estimatedDups.toLocaleString();
+        document.getElementById('recordSelectionSummary').classList.remove('hidden');
+    }
+}
+
+function getEffectiveRecordCount() {
+    if (recordMode === 'all') return currentLeadData.total;
+    const max = currentLeadData.total || 0;
+    const excludeDups = document.getElementById('excludeDuplicates')?.checked;
+    const prevOrdersForArea = orders.filter(o => o.state === selectedState).reduce((sum, o) => sum + (o.leadCount || 0), 0);
+    const estimatedDups = excludeDups ? Math.min(Math.round(prevOrdersForArea * 0.15), Math.round(max * 0.1)) : 0;
+    return Math.min(customRecordCount || max, max - estimatedDups);
+}
+
+function getSelectionMethod() {
+    const radio = document.querySelector('input[name="selectionMethod"]:checked');
+    return radio ? radio.value : 'first';
+}
+
 // ===== CREDITS =====
-let creditBalance = parseInt(localStorage.getItem('hlp_credits') ?? '100000');
+let creditBalance = parseInt(localStorage.getItem('hlp_credits') ?? '0');
 let planRate = parseFloat(localStorage.getItem('hlp_plan_rate') || '0.04');
-// Set demo defaults if first visit
-if (localStorage.getItem('hlp_credits') === null) { creditBalance = 100000; localStorage.setItem('hlp_credits', '100000'); }
+// New accounts start with 0 credits — credits are only granted after purchasing a package
+if (localStorage.getItem('hlp_credits') === null) { creditBalance = 0; localStorage.setItem('hlp_credits', '0'); }
+// Track whether user has ever purchased (for activation calendar)
+let hasEverPurchased = localStorage.getItem('hlp_has_purchased') === 'true';
+// Track previously downloaded record hashes to prevent duplicates
+let previousRecordHashes = JSON.parse(localStorage.getItem('hlp_previous_records') || '[]');
 
 function saveCredits() {
     localStorage.setItem('hlp_credits', String(creditBalance));
@@ -1295,6 +1508,142 @@ function updateCreditDisplays() {
     const sidebarRate = document.getElementById('sidebarPlanRate');
     if (sidebarCredits) sidebarCredits.textContent = creditBalance.toLocaleString();
     if (sidebarRate) sidebarRate.textContent = planRate.toFixed(planRate === 0.075 ? 3 : 2);
+}
+
+// ===== WEBHOOK / NOTION SYNC =====
+const WEBHOOK_URL = ''; // Set your n8n webhook URL here (e.g. https://your-n8n.app.n8n.cloud/webhook/bookedsolid)
+
+async function sendWebhook(event, data) {
+    if (!WEBHOOK_URL) return; // No webhook configured yet
+    try {
+        await fetch(WEBHOOK_URL, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ event, timestamp: new Date().toISOString(), ...data })
+        });
+    } catch (e) {
+        console.warn('Webhook failed:', e);
+    }
+}
+
+// Send registration event on first visit
+if (!localStorage.getItem('hlp_registered')) {
+    localStorage.setItem('hlp_registered', 'true');
+    sendWebhook('user_registered', {
+        customer_name: document.getElementById('userName')?.textContent || 'New User',
+        customer_email: document.getElementById('userEmail')?.textContent || '',
+        registered_at: new Date().toISOString()
+    });
+}
+
+// ===== ACTIVATION CALENDAR =====
+let calWeekOffset = 0;
+let calSelectedDay = null;
+let calSelectedTime = null;
+
+function showActivationModal() {
+    document.getElementById('activationModal').classList.remove('hidden');
+    renderCalendar();
+}
+
+function closeActivationModal() {
+    document.getElementById('activationModal').classList.add('hidden');
+}
+
+function renderCalendar() {
+    const container = document.getElementById('calDays');
+    const today = new Date();
+    // Start from next business day
+    const startDate = new Date(today);
+    startDate.setDate(startDate.getDate() + 1 + (calWeekOffset * 7));
+
+    // Skip to Monday if weekend
+    while (startDate.getDay() === 0 || startDate.getDay() === 6) startDate.setDate(startDate.getDate() + 1);
+
+    const days = [];
+    let d = new Date(startDate);
+    while (days.length < 5) {
+        if (d.getDay() !== 0 && d.getDay() !== 6) {
+            days.push(new Date(d));
+        }
+        d.setDate(d.getDate() + 1);
+    }
+
+    const monthNames = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    document.getElementById('calWeekLabel').textContent = `${monthNames[days[0].getMonth()]} ${days[0].getFullYear()}`;
+
+    const dayNames = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    container.innerHTML = days.map(day => {
+        const dateStr = day.toISOString().split('T')[0];
+        const isSelected = calSelectedDay === dateStr;
+        return `<button onclick="selectCalDay('${dateStr}')" class="py-3 px-2 rounded-lg text-center transition ${isSelected ? 'bg-brand-600 text-white' : 'bg-gray-50 hover:bg-gray-100 text-gray-700'}">
+            <div class="text-[10px] uppercase font-medium ${isSelected ? 'text-blue-200' : 'text-gray-400'}">${dayNames[day.getDay()]}</div>
+            <div class="text-lg font-bold">${day.getDate()}</div>
+        </button>`;
+    }).join('');
+}
+
+function selectCalDay(dateStr) {
+    calSelectedDay = dateStr;
+    calSelectedTime = null;
+    document.getElementById('calTimes').classList.remove('hidden');
+    document.getElementById('calConfirmSection').classList.add('hidden');
+
+    const d = new Date(dateStr + 'T00:00:00');
+    document.getElementById('calSelectedDate').textContent = d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' });
+
+    // Generate time slots (9am - 5pm, every 30 min)
+    const slots = [];
+    for (let h = 9; h <= 16; h++) {
+        for (let m = 0; m < 60; m += 30) {
+            const hour12 = h > 12 ? h - 12 : h;
+            const ampm = h >= 12 ? 'PM' : 'AM';
+            const timeStr = `${hour12}:${String(m).padStart(2,'0')} ${ampm}`;
+            // Randomly mark some as unavailable for realism
+            const available = Math.random() > 0.25;
+            slots.push({ time: timeStr, available });
+        }
+    }
+
+    document.getElementById('calTimeSlots').innerHTML = slots.map(s => {
+        if (!s.available) return `<div class="py-2 px-2 rounded-lg text-xs text-center bg-gray-50 text-gray-300 line-through">${s.time}</div>`;
+        return `<button onclick="selectCalTime('${s.time}')" class="py-2 px-2 rounded-lg text-xs text-center font-medium transition ${calSelectedTime === s.time ? 'bg-brand-600 text-white' : 'bg-gray-50 hover:bg-brand-50 hover:text-brand-600 text-gray-700 border border-gray-200'}">${s.time}</button>`;
+    }).join('');
+
+    renderCalendar();
+}
+
+function selectCalTime(time) {
+    calSelectedTime = time;
+    const d = new Date(calSelectedDay + 'T00:00:00');
+    document.getElementById('calConfirmDateTime').textContent = `${d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' })} at ${time}`;
+    document.getElementById('calConfirmSection').classList.remove('hidden');
+
+    // Re-render time slots to show selection
+    selectCalDay(calSelectedDay);
+}
+
+function prevCalWeek() {
+    if (calWeekOffset > 0) { calWeekOffset--; renderCalendar(); }
+}
+
+function nextCalWeek() {
+    if (calWeekOffset < 4) { calWeekOffset++; renderCalendar(); }
+}
+
+function confirmActivation() {
+    // Send activation booking to webhook
+    sendWebhook('activation_scheduled', {
+        customer_name: document.getElementById('userName')?.textContent,
+        customer_email: document.getElementById('userEmail')?.textContent,
+        scheduled_date: calSelectedDay,
+        scheduled_time: calSelectedTime,
+        booked_at: new Date().toISOString()
+    });
+
+    localStorage.setItem('hlp_activation_scheduled', JSON.stringify({ date: calSelectedDay, time: calSelectedTime }));
+    closeActivationModal();
+    showToast('Activation call scheduled! Check your email for confirmation.');
 }
 
 // ===== INIT =====
