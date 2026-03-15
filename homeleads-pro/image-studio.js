@@ -437,7 +437,8 @@
         for (let i = 0; i < 20; i++) {
           el = el.parentElement;
           if (!el) break;
-          if (el.tagName === 'DIV' && el.style.borderRadius === '12px' && el.style.background === 'rgb(255, 255, 255)') {
+          const css = (el.style?.cssText || '').toLowerCase();
+          if (el.tagName === 'DIV' && css.includes('border-radius') && (css.includes('#ffffff') || css.includes('rgb(255, 255, 255)') || css.includes('background:#ffffff') || css.includes('background: #ffffff'))) {
             adCards.push({ adId: text, card: el });
             break;
           }
@@ -481,17 +482,26 @@
       const existingImages = await getImages(adId);
       buildCarousel(existingImages, adId, carouselContainer);
 
-      // Find the image placeholder div (the one with gradient background)
+      // Find insertion point: gradient div, or CTA bar, or first details element
       const gradientDiv = card.querySelector('div[style*="linear-gradient"]');
-      if (gradientDiv) {
-        gradientDiv.parentNode.insertBefore(carouselContainer, gradientDiv.nextSibling);
+      const ctaBar = card.querySelector('div[style*="background:#f8f9fa"]');
+      const firstDetails = card.querySelector('details');
+      const insertBefore = (gradientDiv && gradientDiv.nextSibling) || ctaBar || firstDetails;
+
+      if (insertBefore && insertBefore.parentNode) {
+        insertBefore.parentNode.insertBefore(carouselContainer, insertBefore);
+      } else {
+        // Fallback: append to card
+        card.appendChild(carouselContainer);
       }
 
       // 2. Generate/Enhance Controls
       const controls = buildControls(adId, structured, carouselContainer);
 
       // Insert controls after carousel
-      carouselContainer.parentNode.insertBefore(controls, carouselContainer.nextSibling);
+      if (carouselContainer.parentNode) {
+        carouselContainer.parentNode.insertBefore(controls, carouselContainer.nextSibling);
+      }
 
       // 3. Structured Prompt Editor (replace the raw prompt <pre>)
       // Find the details element containing the image prompt
