@@ -332,8 +332,8 @@
     const select = document.createElement('select');
     select.style.cssText = 'font-size:11px;padding:6px 10px;border:1px solid #e5e7eb;border-radius:6px;background:white;color:#333;font-weight:500;cursor:pointer;';
     [
-      { value: 'nano-banana-pro', label: 'Nano Banana Pro — $0.13 (best)' },
-      { value: 'gpt-image-1.5', label: 'GPT Image 1.5 — $0.04' }
+      { value: 'gpt-image-1.5', label: 'GPT Image 1.5 — $0.04' },
+      { value: 'nano-banana-pro', label: 'Nano Banana Pro — $0.13 (best)' }
     ].forEach(opt => {
       const o = document.createElement('option');
       o.value = opt.value;
