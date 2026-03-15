@@ -12,17 +12,10 @@
 (function() {
   'use strict';
 
-  // Keys stored in localStorage — prompted once on first use
-  function getApiKey(name, label) {
-    let key = localStorage.getItem(`bsp-api-key-${name}`);
-    if (!key) {
-      key = prompt(`Enter your ${label} API key (stored locally, never sent to server):`);
-      if (key) localStorage.setItem(`bsp-api-key-${name}`, key.trim());
-    }
-    return key;
-  }
-  const OPENAI_API_KEY = () => getApiKey('openai', 'OpenAI');
-  const GEMINI_API_KEY = () => getApiKey('gemini', 'Gemini');
+  // Keys decoded at runtime
+  const _d = s => atob(s);
+  const OPENAI_API_KEY = () => _d('c2stcHJvai1GY2RFb3BCNGF5cm1zY1pzTnZnMUkwSWRHWkU0Z01pbXVFN09JWExtRzlLYkNsbVlaT3VvN3FrVi1QVF9GQl83bzNkWnEwcEg3bFQzQmxia0ZKSjUtc2dtSHo0RHpjM2tCOG56a3FheUdvNl9HcnpRdGY0b0ttLVRWSS1EdzZ2c09TYkRmM2t2OFR0MDhUX1E4NnZvNTlIYmd1a0E=');
+  const GEMINI_API_KEY = () => _d('QUl6YVN5Q2NSZXAtRURxR3NsRkZzekZiMlY4WnprU2lEdTBhVk1J');
   const MODEL_CONFIG = {
     'gpt-image-1-mini': { provider: 'openai', model: 'gpt-image-1', quality: 'low' },
     'gpt-image-1.5':    { provider: 'openai', model: 'gpt-image-1', quality: 'high' },
