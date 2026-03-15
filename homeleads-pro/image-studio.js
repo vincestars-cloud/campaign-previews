@@ -187,7 +187,7 @@
         n: 1,
         size: size || '1024x1024',
         quality: config.quality,
-        response_format: 'b64_json'
+        output_format: 'b64_json'
       })
     });
     const data = await res.json();
