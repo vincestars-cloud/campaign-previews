@@ -186,15 +186,18 @@
         prompt: prompt.trim(),
         n: 1,
         size: size || '1024x1024',
-        quality: config.quality,
-        output_format: 'b64_json'
+        quality: config.quality
       })
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data?.error?.message || 'OpenAI API error');
+    // gpt-image-1 returns b64_json by default
     const b64 = data?.data?.[0]?.b64_json;
-    if (!b64) throw new Error('No image data in response');
-    return `data:image/png;base64,${b64}`;
+    if (b64) return `data:image/png;base64,${b64}`;
+    // Fallback: if URL is returned instead
+    const url = data?.data?.[0]?.url;
+    if (url) return url;
+    throw new Error('No image data in response');
   }
 
   async function generateGemini(prompt, config, size) {
