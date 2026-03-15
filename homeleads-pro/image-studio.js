@@ -570,16 +570,17 @@
     }
 
     // ─── Auto-render initial images for ads without any ───
-    // Only for NEW angles (7.x, 8.x, 9.x) — skip existing BSP ads
-    // The user said: "Do not render any new images if an existing image is already there for (bookedsolidpro)"
+    // Only runs ONCE ever (tracked via localStorage flag). After that, user clicks Generate manually.
+    const autoRenderDone = localStorage.getItem('bsp-auto-render-done');
     const autoRenderQueue = [];
-    for (const { adId } of adCards) {
-      const hasImages = await hasAnyImages(adId);
-      if (!hasImages) {
-        // Check if this is a new angle (7, 8, 9) — don't auto-render existing 1-6
-        const angleNum = parseInt(adId.split('.')[0]);
-        if (angleNum >= 7) {
-          autoRenderQueue.push(adId);
+    if (!autoRenderDone) {
+      for (const { adId } of adCards) {
+        const hasImages = await hasAnyImages(adId);
+        if (!hasImages) {
+          const angleNum = parseInt(adId.split('.')[0]);
+          if (angleNum >= 7) {
+            autoRenderQueue.push(adId);
+          }
         }
       }
     }
@@ -634,6 +635,7 @@
       }
 
       progressText.textContent = `Done! ${completed} concept images generated.`;
+      localStorage.setItem('bsp-auto-render-done', 'true');
       setTimeout(() => progressBar.remove(), 3000);
     }
   }
