@@ -1,9 +1,9 @@
 /**
  * BookedSolid Pro — Image Generation Studio
  * Adds to the 5x5 ad matrix page:
- * - Auto-render initial images with GPT Image 1 Mini (conceptual previews)
+ * - Auto-render initial images with Nano Banana Pro (conceptual previews)
  * - Editable structured JSON prompts per ad
- * - Enhance button with model selection (Nano Banana Pro, GPT Image 1 Mini, GPT Image 1.5)
+ * - Enhance button with model selection (Nano Banana Pro, Nano Banana Pro, GPT Image 1.5)
  * - Image carousel per ad with delete capability
  * - Structured JSON prompts for consistency
  * - Persistent storage via IndexedDB
@@ -17,7 +17,6 @@
   const OPENAI_API_KEY = () => _d('c2stcHJvai1GY2RFb3BCNGF5cm1zY1pzTnZnMUkwSWRHWkU0Z01pbXVFN09JWExtRzlLYkNsbVlaT3VvN3FrVi1QVF9GQl83bzNkWnEwcEg3bFQzQmxia0ZKSjUtc2dtSHo0RHpjM2tCOG56a3FheUdvNl9HcnpRdGY0b0ttLVRWSS1EdzZ2c09TYkRmM2t2OFR0MDhUX1E4NnZvNTlIYmd1a0E=');
   const GEMINI_API_KEY = () => _d('QUl6YVN5Q2NSZXAtRURxR3NsRkZzekZiMlY4WnprU2lEdTBhVk1J');
   const MODEL_CONFIG = {
-    'gpt-image-1-mini': { provider: 'openai', model: 'gpt-image-1', quality: 'low' },
     'gpt-image-1.5':    { provider: 'openai', model: 'gpt-image-1', quality: 'high' },
     'nano-banana-pro':   { provider: 'gemini', model: 'gemini-3-pro-image-preview' }
   };
@@ -150,7 +149,7 @@
 
   // ─── Image Generation (OpenAI + Gemini) ──────────────────────────
   async function generateImage(prompt, model, size) {
-    const config = MODEL_CONFIG[model] || MODEL_CONFIG['gpt-image-1-mini'];
+    const config = MODEL_CONFIG[model] || MODEL_CONFIG['nano-banana-pro'];
 
     if (config.provider === 'gemini') {
       return await generateGemini(prompt, config, size);
@@ -333,7 +332,6 @@
     const select = document.createElement('select');
     select.style.cssText = 'font-size:11px;padding:6px 10px;border:1px solid #e5e7eb;border-radius:6px;background:white;color:#333;font-weight:500;cursor:pointer;';
     [
-      { value: 'gpt-image-1-mini', label: 'GPT Image 1 Mini — $0.005' },
       { value: 'nano-banana-pro', label: 'Nano Banana Pro — $0.13 (best)' },
       { value: 'gpt-image-1.5', label: 'GPT Image 1.5 — $0.04' }
     ].forEach(opt => {
@@ -586,7 +584,7 @@
     }
 
     if (autoRenderQueue.length > 0) {
-      console.log(`[Image Studio] Auto-rendering ${autoRenderQueue.length} images with GPT Image 1 Mini...`);
+      console.log(`[Image Studio] Auto-rendering ${autoRenderQueue.length} images with Nano Banana Pro...`);
       // Show a global progress bar
       const progressBar = document.createElement('div');
       progressBar.style.cssText = 'position:fixed;top:0;left:0;right:0;background:#0f172a;color:white;padding:12px 24px;font-size:13px;font-weight:600;z-index:9999;display:flex;align-items:center;gap:12px;';
@@ -616,8 +614,8 @@
           const comp = (s.composition_background || rawStored).toLowerCase();
           if (comp.includes('1350') || comp.includes('vertical')) size = '1024x1536';
 
-          const imageData = await generateImage(textPrompt, 'gpt-image-1-mini', size);
-          await saveImage(adId, imageData, 'gpt-image-1-mini', textPrompt);
+          const imageData = await generateImage(textPrompt, 'nano-banana-pro', size);
+          await saveImage(adId, imageData, 'nano-banana-pro', textPrompt);
 
           // Update carousel
           const carousel = document.getElementById(`carousel-${adId}`);
