@@ -348,9 +348,9 @@
     const select = document.createElement('select');
     select.style.cssText = 'font-size:11px;padding:6px 10px;border:1px solid #e5e7eb;border-radius:6px;background:white;color:#333;font-weight:500;cursor:pointer;';
     [
-      { value: 'gpt-image-1-mini', label: 'GPT Image 1 Mini (fast)' },
-      { value: 'nano-banana-pro', label: 'Nano Banana Pro' },
-      { value: 'gpt-image-1.5', label: 'GPT Image 1.5 (best)' }
+      { value: 'gpt-image-1-mini', label: 'GPT Image 1 Mini — $0.005' },
+      { value: 'nano-banana-pro', label: 'Nano Banana Pro — $0.13 (best)' },
+      { value: 'gpt-image-1.5', label: 'GPT Image 1.5 — $0.04' }
     ].forEach(opt => {
       const o = document.createElement('option');
       o.value = opt.value;
@@ -409,7 +409,7 @@
     }
 
     genBtn.onclick = () => doGenerate(select.value);
-    enhanceBtn.onclick = () => doGenerate(select.value);
+    enhanceBtn.onclick = () => doGenerate('nano-banana-pro');
 
     controls.appendChild(select);
     controls.appendChild(genBtn);
