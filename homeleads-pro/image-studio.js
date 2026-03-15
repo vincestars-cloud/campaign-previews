@@ -85,61 +85,46 @@
   }
 
   // ─── Structured Prompt Parser ────────────────────────────────────
+  // Section headers in order of appearance — used to split the raw prompt into editable fields.
+  // Each entry: [key, regex that matches the start of the section].
+  const SECTION_ORDER = [
+    ['brand_style',           /^BRAND STYLE:\s*/m],
+    ['color_palette',         /^COLOR PALETTE:\s*/m],
+    ['typography',            /^TYPOGRAPHY:\s*/m],
+    ['logo',                  /^LOGO:\s*/m],
+    ['overall_aesthetic',     /^OVERALL AESTHETIC:\s*/m],
+    ['rendering_style',       /^RENDERING STYLE:\s*/m],
+    ['composition_background',/^COMPOSITION[^:\n]*:\s*/m],
+    ['headline',              /^(?:- )?HEADLINE[^:\n]*:\s*/m],
+    ['visual_element',        /^(?:- )?VISUAL ELEMENT[^:\n]*:\s*/m],
+    ['supporting_text',       /^(?:- )?SUPPORTING TEXT[^:\n]*:\s*/m],
+    ['cta',                   /^(?:- )?CTA:\s*/m],
+    ['brand_mark',            /^(?:- )?BRAND MARK:\s*/m],
+    ['lighting',              /^(?:- )?LIGHTING:\s*/m],
+  ];
+
   // Converts the existing text prompt into structured JSON fields
   function parsePromptToStructured(textPrompt) {
     const sections = {};
+    SECTION_ORDER.forEach(([key]) => { sections[key] = ''; });
 
-    // Extract brand style
-    const brandMatch = textPrompt.match(/BRAND STYLE:\s*(.+?)(?:\n|$)/);
-    sections.brand_style = brandMatch ? brandMatch[1].trim() : '';
+    // Find every section header's position in the text
+    const found = [];
+    for (const [key, rx] of SECTION_ORDER) {
+      const m = textPrompt.match(rx);
+      if (m) {
+        found.push({ key, start: m.index, headerEnd: m.index + m[0].length });
+      }
+    }
+    // Sort by position in text
+    found.sort((a, b) => a.start - b.start);
 
-    // Extract color palette
-    const colorMatch = textPrompt.match(/COLOR PALETTE:\s*(.+?)(?:\n|$)/);
-    sections.color_palette = colorMatch ? colorMatch[1].trim() : '';
-
-    // Extract typography
-    const typoMatch = textPrompt.match(/TYPOGRAPHY:\s*(.+?)(?:\n|$)/);
-    sections.typography = typoMatch ? typoMatch[1].trim() : '';
-
-    // Extract logo
-    const logoMatch = textPrompt.match(/LOGO:\s*(.+?)(?:\n|$)/);
-    sections.logo = logoMatch ? logoMatch[1].trim() : '';
-
-    // Extract overall aesthetic
-    const aestheticMatch = textPrompt.match(/OVERALL AESTHETIC:\s*(.+?)(?:\n|$)/);
-    sections.overall_aesthetic = aestheticMatch ? aestheticMatch[1].trim() : '';
-
-    // Extract rendering style
-    const renderMatch = textPrompt.match(/RENDERING STYLE:\s*(.+?)(?:\n|$)/);
-    sections.rendering_style = renderMatch ? renderMatch[1].trim() : '';
-
-    // Extract composition (everything from COMPOSITION to the next major section or end)
-    const compMatch = textPrompt.match(/COMPOSITION[^:]*:\s*\n([\s\S]*?)(?=\n(?:HEADLINE|VISUAL|SUPPORTING|CTA|BRAND MARK|LIGHTING|NO brand|$))/i);
-    sections.composition_background = compMatch ? compMatch[1].trim() : '';
-
-    // Extract headline section
-    const headlineMatch = textPrompt.match(/HEADLINE[^:]*:?\s*\n?([\s\S]*?)(?=\n(?:VISUAL|SUPPORTING|CTA|BRAND MARK|LIGHTING|NO brand|$))/i);
-    sections.headline = headlineMatch ? headlineMatch[1].trim() : '';
-
-    // Extract visual element
-    const visualMatch = textPrompt.match(/VISUAL ELEMENT[^:]*:\s*\n?([\s\S]*?)(?=\n(?:SUPPORTING|CTA|BRAND MARK|LIGHTING|NO brand|$))/i);
-    sections.visual_element = visualMatch ? visualMatch[1].trim() : '';
-
-    // Extract supporting text
-    const supportMatch = textPrompt.match(/SUPPORTING TEXT[^:]*:\s*\n?([\s\S]*?)(?=\n(?:CTA|BRAND MARK|LIGHTING|NO brand|$))/i);
-    sections.supporting_text = supportMatch ? supportMatch[1].trim() : '';
-
-    // Extract CTA
-    const ctaMatch = textPrompt.match(/CTA:\s*\n?([\s\S]*?)(?=\n(?:BRAND MARK|LIGHTING|NO brand|$))/i);
-    sections.cta = ctaMatch ? ctaMatch[1].trim() : '';
-
-    // Extract brand mark
-    const brandMarkMatch = textPrompt.match(/BRAND MARK:\s*\n?([\s\S]*?)(?=\n(?:LIGHTING|NO brand|$))/i);
-    sections.brand_mark = brandMarkMatch ? brandMarkMatch[1].trim() : '';
-
-    // Extract lighting
-    const lightMatch = textPrompt.match(/LIGHTING:\s*(.+?)$/im);
-    sections.lighting = lightMatch ? lightMatch[1].trim() : '';
+    // Extract content between headers
+    for (let i = 0; i < found.length; i++) {
+      const contentStart = found[i].headerEnd;
+      const contentEnd = i + 1 < found.length ? found[i + 1].start : textPrompt.length;
+      sections[found[i].key] = textPrompt.slice(contentStart, contentEnd).trim();
+    }
 
     return sections;
   }
@@ -384,11 +369,17 @@
         // Get latest structured prompt (may have been edited)
         const stored = localStorage.getItem(`bsp-prompt-${adId}`);
         const currentStructured = stored ? JSON.parse(stored) : structured;
-        const textPrompt = structuredToText(currentStructured);
+        const reconstructed = structuredToText(currentStructured);
 
-        // Determine size from composition
+        // Use raw prompt if reconstruction lost too much content (>30% shorter)
+        const rawStored = localStorage.getItem(`bsp-raw-${adId}`) || '';
+        const textPrompt = (rawStored.length > 0 && reconstructed.length < rawStored.length * 0.7)
+          ? rawStored
+          : reconstructed;
+
+        // Determine size from composition or raw prompt
         let size = '1024x1024';
-        const compText = (currentStructured.composition_background || '').toLowerCase();
+        const compText = (currentStructured.composition_background || rawStored).toLowerCase();
         if (compText.includes('1080x1350') || compText.includes('vertical') || compText.includes('1350')) {
           size = '1024x1536';
         }
@@ -457,12 +448,24 @@
       const rawPrompt = promptPre.textContent;
 
       // Parse prompt to structured JSON
+      // Always store the raw prompt as source of truth
+      localStorage.setItem(`bsp-raw-${adId}`, rawPrompt);
+
       let structured = parsePromptToStructured(rawPrompt);
 
-      // Check for saved edits
+      // Check for saved edits — but validate they have real content
       const savedPrompt = localStorage.getItem(`bsp-prompt-${adId}`);
       if (savedPrompt) {
-        try { structured = JSON.parse(savedPrompt); } catch (e) {}
+        try {
+          const saved = JSON.parse(savedPrompt);
+          // If saved parse has empty composition but raw doesn't, re-parse (fix broken parses)
+          if (!saved.composition_background && rawPrompt.includes('COMPOSITION')) {
+            structured = parsePromptToStructured(rawPrompt);
+            localStorage.setItem(`bsp-prompt-${adId}`, JSON.stringify(structured));
+          } else {
+            structured = saved;
+          }
+        } catch (e) {}
       } else {
         localStorage.setItem(`bsp-prompt-${adId}`, JSON.stringify(structured));
       }
@@ -602,10 +605,14 @@
         try {
           const stored = localStorage.getItem(`bsp-prompt-${adId}`);
           const s = stored ? JSON.parse(stored) : {};
-          const textPrompt = structuredToText(s);
+          const reconstructed = structuredToText(s);
+
+          // Prefer raw prompt — it has full detail for better image generation
+          const rawStored = localStorage.getItem(`bsp-raw-${adId}`) || '';
+          const textPrompt = rawStored.length > reconstructed.length ? rawStored : reconstructed;
 
           let size = '1024x1024';
-          const comp = (s.composition_background || '').toLowerCase();
+          const comp = (s.composition_background || rawStored).toLowerCase();
           if (comp.includes('1350') || comp.includes('vertical')) size = '1024x1536';
 
           const imageData = await generateImage(textPrompt, 'gpt-image-1-mini', size);
