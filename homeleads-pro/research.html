@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookedSolid Pro — Deep Buyer Research</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { font-family: 'Inter', sans-serif; }
+  .font-serif { font-family: 'DM Serif Display', serif; }
+  .tab-btn { transition: all 0.2s ease; }
+  .tab-btn.active { background: #1e3a5f; color: #fff; box-shadow: 0 2px 8px rgba(30,58,95,0.3); }
+  .tab-btn:not(.active):hover { background: #e2e8f0; }
+  .quote-card { border-left: 4px solid #3b82f6; background: #f0f7ff; }
+  .pill { display: inline-block; padding: 4px 14px; border-radius: 9999px; font-size: 0.8rem; font-weight: 600; margin: 3px; }
+  .table-alt tr:nth-child(even) { background: #f8fafc; }
+  .table-alt tr:nth-child(odd) { background: #fff; }
+  .table-alt th { background: #0f172a; color: #fff; }
+  .section-card { background: #fff; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 14px rgba(0,0,0,0.04); padding: 1.5rem 2rem; margin-bottom: 1.5rem; }
+  @media (max-width: 768px) { .section-card { padding: 1rem 1.25rem; } }
+  .tab-content { display: none; animation: fadeIn 0.25s ease; }
+  .tab-content.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
+  .stats-pill { background: rgba(255,255,255,0.12); backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.15); }
+  .fear-amount { color: #ef4444; font-weight: 700; }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+  .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+
+<!-- HEADER -->
+<header style="background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 100%);" class="text-white py-8 px-4 md:px-8 relative">
+  <div class="max-w-6xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+      <div>
+        <h1 class="font-serif text-3xl md:text-4xl tracking-tight">BookedSolid Pro</h1>
+        <p class="text-blue-200 mt-1 text-sm md:text-base font-light">Deep Buyer Research &mdash; Sabri Suby 10-Tab Framework</p>
+      </div>
+      <a href="ads.html" class="text-blue-300 hover:text-white text-sm font-medium transition-colors flex items-center gap-1 self-start md:self-center">
+        &larr; Back to Ad Matrix
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+      </a>
+    </div>
+    <!-- STATS BAR -->
+    <div class="flex flex-wrap gap-3 mt-6">
+      <div class="stats-pill rounded-full px-5 py-2 text-sm font-semibold flex items-center gap-2">
+        <span class="text-blue-300 text-lg">💬</span> 85 Direct Quotes
+      </div>
+      <div class="stats-pill rounded-full px-5 py-2 text-sm font-semibold flex items-center gap-2">
+        <span class="text-blue-300 text-lg">📑</span> 10 Research Tabs
+      </div>
+      <div class="stats-pill rounded-full px-5 py-2 text-sm font-semibold flex items-center gap-2">
+        <span class="text-blue-300 text-lg">👥</span> 6 Buyer Segments
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- TAB BAR -->
+<nav class="sticky top-0 z-50 bg-white border-b border-gray-200 shadow-sm">
+  <div class="max-w-6xl mx-auto px-4 md:px-8">
+    <div class="flex gap-1 py-2 overflow-x-auto scrollbar-hide" id="tabBar">
+      <button class="tab-btn active whitespace-nowrap rounded-lg px-3 py-2 text-xs md:text-sm font-semibold" onclick="switchTab(0)">😰 Fears</button>
+      <button class="tab-btn whitespace-nowrap rounded-lg px-3 py-2 text-xs md:text-sm font-semibold text-gray-600" onclick="switchTab(1)">🌟 Dreams</button>
+      <button class="tab-btn whitespace-nowrap rounded-lg px-3 py-2 text-xs md:text-sm font-semibold text-gray-600" onclick="switchTab(2)">💔 Relationships</button>
+      <button class="tab-btn whitespace-nowrap rounded-lg px-3 py-2 text-xs md:text-sm font-semibold text-gray-600" onclick="switchTab(3)">💬 Soundbites</button>
+      <button class="tab-btn whitespace-nowrap rounded-lg px-3 py-2 text-xs md:text-sm font-semibold text-gray-600" onclick="switchTab(4)">😤 Frustrations</button>
+      <button class="tab-btn whitespace-nowrap rounded-lg px-3 py-2 text-xs md:text-sm font-semibold text-gray-600" onclick="switchTab(5)">❌ Failed Solutions</button>
+      <button class="tab-btn whitespace-nowrap rounded-lg px-3 py-2 text-xs md:text-sm font-semibold text-gray-600" onclick="switchTab(6)">💡 Ideal Fix</button>
+      <button class="tab-btn whitespace-nowrap rounded-lg px-3 py-2 text-xs md:text-sm font-semibold text-gray-600" onclick="switchTab(7)">🎯 Outcomes</button>
+      <button class="tab-btn whitespace-nowrap rounded-lg px-3 py-2 text-xs md:text-sm font-semibold text-gray-600" onclick="switchTab(8)">📅 Daily Workflow</button>
+      <button class="tab-btn whitespace-nowrap rounded-lg px-3 py-2 text-xs md:text-sm font-semibold text-gray-600" onclick="switchTab(9)">📊 Summary</button>
+    </div>
+  </div>
+</nav>
+
+<!-- CONTENT -->
+<main class="max-w-6xl mx-auto px-4 md:px-8 py-8">
+
+<!-- TAB 1: FEARS -->
+<div class="tab-content active" id="tab-0">
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Fear #1: TCPA Lawsuits &amp; Regulatory Destruction</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Legal &amp; Financial Risk</p>
+    <ul class="space-y-3 text-gray-700 text-sm leading-relaxed">
+      <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">&#9679;</span><span><span class="fear-amount">$1,500</span> per noncompliant call, text or fax &mdash; Victor Insurance / NAR Risk Advisory</span></li>
+      <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">&#9679;</span><span>Keller Williams settled for <span class="fear-amount">$40 million</span> for unsolicited pre-recorded calls</span></li>
+      <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">&#9679;</span><span>Momentum Solar settled for <span class="fear-amount">$30 million</span> for unsolicited telemarketing calls</span></li>
+      <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">&#9679;</span><span>Coldwell Banker settled for <span class="fear-amount">$20 million</span> &mdash; 700,000 calls to 298,494 class members</span></li>
+      <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">&#9679;</span><span>SolarCity settled for <span class="fear-amount">$15 million</span> for telemarketing without express consent</span></li>
+    </ul>
+    <div class="quote-card rounded-lg p-4 mt-5">
+      <p class="text-gray-700 text-sm italic">"A class of 100,000 consumers receiving one non-compliant call each creates potential exposure of <strong>$50 million to $150 million</strong>."</p>
+      <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; CompliancePoint</p>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Fear #2: Wasting Money on Bad Data</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Financial Waste</p>
+    <div class="space-y-3">
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"I've made hundreds of calls and most are disconnected, rejected, or extremely rude."</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; Taylor Mosby, BiggerPockets</p>
+      </div>
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"I have yet to make any measurable progress (no leads at all!)"</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; Taylor Mosby</p>
+      </div>
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"it is a considerable amount"</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; re: $100 spent on skip tracing with zero results</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Fear #3: Being Perceived as a Scammer</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Reputation Risk</p>
+    <div class="space-y-3">
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"He then said I'm just trying to make sure this isn't a scam."</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; Jason Johnson, BiggerPockets</p>
+      </div>
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"The sheer volume of cold texts I receive makes me block them."</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; LaVonne Eaton, BiggerPockets</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Fear #4: Burnout &amp; Business Failure</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Personal Sustainability</p>
+    <div class="space-y-3">
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"Burnout is real. Cold calling eats up a ton of time and energy."</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; Jeremy Beland, BiggerPockets</p>
+      </div>
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"Investors who do not 'pay' themselves tend to burn out and go out of business."</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; Jerry Puckett</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 2: HOPES & DREAMS -->
+<div class="tab-content" id="tab-1">
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Dream #1: Exclusive, Verified, High-Intent Leads</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Quality Over Quantity</p>
+    <div class="space-y-3">
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"double-verified leads, where each lead is verified to meet quality standards"</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; Digital Media Solutions</p>
+      </div>
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"Online search-generated leads are proven to close at five times the rate"</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; QuoteWizard</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Dream #2: Data That Actually Connects</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Accuracy &amp; Reliability</p>
+    <div class="space-y-3">
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"Saving $10 to miss out on proper data that leads you to a $40k deal is not worth it."</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; James Heller</p>
+      </div>
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"Skip tracing accuracy and data quality make or break your outbound campaign."</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; Stephen Morales</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Dream #3: Scalability Without Burnout</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Growth</p>
+    <div class="quote-card rounded-lg p-4">
+      <p class="text-gray-700 text-sm italic">"Long-term scalability is tough. Eventually, you want to move beyond just dialing numbers."</p>
+      <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; Jeremy Beland</p>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Dream #4: Compliant Operations Without Legal Risk</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Peace of Mind</p>
+    <div class="quote-card rounded-lg p-4">
+      <p class="text-gray-700 text-sm italic">"the added expense of generating compliant leads tends to pay off in more efficient agent time use, higher conversions, and avoiding legal fines"</p>
+      <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; Convoso</p>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 3: RELATIONSHIP FEARS -->
+<div class="tab-content" id="tab-2">
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Professional Reputation Damage</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Brand &amp; Trust</p>
+    <ul class="space-y-3 text-gray-700 text-sm leading-relaxed">
+      <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">&#9679;</span><span>Homeowner installed <strong>$1,950 security system</strong> specifically because of unwanted cold callers</span></li>
+    </ul>
+    <div class="quote-card rounded-lg p-4 mt-4">
+      <p class="text-gray-700 text-sm italic">"I've had many tell me they received calls from several contractors within minutes"</p>
+      <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; contractor re: HomeAdvisor</p>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Personal/Family Strain</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Emotional Toll</p>
+    <div class="quote-card rounded-lg p-4">
+      <p class="text-gray-700 text-sm italic">"at times it is discouraging"</p>
+      <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; college student spending savings with zero results</p>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Industry Trust Erosion</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Market-Wide Damage</p>
+    <div class="space-y-3">
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"sad how these so called gurus take advantage of people"</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; Terrell Jones re: data vendors</p>
+      </div>
+    </div>
+    <ul class="mt-4 space-y-2 text-gray-700 text-sm">
+      <li class="flex items-start gap-2"><span class="text-red-500 mt-0.5">&#9679;</span><span>FTC required HomeAdvisor to pay <span class="fear-amount">$7.2 million</span> for deceptive lead-selling tactics</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- TAB 4: SOUNDBITES -->
+<div class="tab-content" id="tab-3">
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Skip Tracing &amp; Data Quality Language</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">What They Actually Say</p>
+    <div class="space-y-3">
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"Lots of wrong/bad numbers and high email bounce rate."</p>
+      </div>
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"Of 1k properties only 20-30% may have any contact info at all."</p>
+      </div>
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"I have similar result, only like 30-40% of data yield valid phone numbers."</p>
+      </div>
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"The data sources used by nearly everyone are generally stale. They're ALL accessing the same data pools."</p>
+      </div>
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"Those lists are sold and resold numerous times over and over again for the same data."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Emotional/Descriptive Language Patterns</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Recurring Phrases</p>
+    <div class="flex flex-wrap gap-2">
+      <span class="pill bg-red-100 text-red-700">"riddled with dead numbers"</span>
+      <span class="pill bg-red-100 text-red-700">"garbage"</span>
+      <span class="pill bg-orange-100 text-orange-700">"stale data"</span>
+      <span class="pill bg-red-100 text-red-700">"scamming crooks"</span>
+      <span class="pill bg-orange-100 text-orange-700">"effectively unusable"</span>
+      <span class="pill bg-yellow-100 text-yellow-700">"throwing money away"</span>
+      <span class="pill bg-yellow-100 text-yellow-700">"waste of money"</span>
+      <span class="pill bg-red-100 text-red-700">"dead leads"</span>
+      <span class="pill bg-orange-100 text-orange-700">"burn through your money"</span>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Common Jargon</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Industry Vocabulary</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div class="bg-gray-50 rounded-lg p-3">
+        <span class="font-semibold text-gray-900 text-sm">hit rate</span>
+        <p class="text-gray-500 text-xs mt-0.5">% of skip traced numbers actually valid</p>
+      </div>
+      <div class="bg-gray-50 rounded-lg p-3">
+        <span class="font-semibold text-gray-900 text-sm">match rate</span>
+        <p class="text-gray-500 text-xs mt-0.5">% of records where phone/email found</p>
+      </div>
+      <div class="bg-gray-50 rounded-lg p-3">
+        <span class="font-semibold text-gray-900 text-sm">DNC</span>
+        <p class="text-gray-500 text-xs mt-0.5">Do Not Call list</p>
+      </div>
+      <div class="bg-gray-50 rounded-lg p-3">
+        <span class="font-semibold text-gray-900 text-sm">skip trace</span>
+        <p class="text-gray-500 text-xs mt-0.5">finding contact info for property owners</p>
+      </div>
+      <div class="bg-gray-50 rounded-lg p-3">
+        <span class="font-semibold text-gray-900 text-sm">pulling lists</span>
+        <p class="text-gray-500 text-xs mt-0.5">downloading homeowner data</p>
+      </div>
+      <div class="bg-gray-50 rounded-lg p-3">
+        <span class="font-semibold text-gray-900 text-sm">dead numbers</span>
+        <p class="text-gray-500 text-xs mt-0.5">disconnected phone numbers</p>
+      </div>
+      <div class="bg-gray-50 rounded-lg p-3">
+        <span class="font-semibold text-gray-900 text-sm">burned list</span>
+        <p class="text-gray-500 text-xs mt-0.5">list called by too many people</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 5: FRUSTRATIONS -->
+<div class="tab-content" id="tab-4">
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Wrong Numbers &amp; Disconnected Phones</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">The #1 Pain Point</p>
+    <div class="space-y-3">
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"It's been 2 or 3 hours I've been calling this list and it's riddled with dead numbers"</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; $500 on Propwire</p>
+      </div>
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"Called over 50 numbers and they were either a wrong number or disconnected."</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; REDX review</p>
+      </div>
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"Probably 40% are disconnected numbers and another 30% I end up calling people that have no connection to the property"</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; REI Skip user</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Tenant Data Instead of Owner Data</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Wrong Contact, Wrong Person</p>
+    <div class="space-y-3">
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"Supposed vacant properties aren't vacant and other properties were already sold."</p>
+      </div>
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"My phone number was listed in their database, which it should not be"</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; PropStream BBB complaint</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Stale/Outdated Lists</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Data Decay</p>
+    <div class="space-y-3">
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"Contact information I received for leads was inaccurate... leads whose property was actively listed on the market."</p>
+      </div>
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"They were all extremely old numbers."</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Leads Sold to Multiple Buyers</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Oversaturation</p>
+    <div class="quote-card rounded-lg p-4">
+      <p class="text-gray-700 text-sm italic">"When you have 100,000 real estate investors all working off the same lists &mdash; there is nothing that differentiates you."</p>
+      <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; Chris Seveney</p>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Expensive Tools That Don't Deliver</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Broken Promises</p>
+    <div class="space-y-3">
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"So expensive and credits don't even go past the month."</p>
+        <p class="text-gray-400 text-xs mt-2 font-medium">&mdash; PropStream Trustpilot</p>
+      </div>
+      <div class="quote-card rounded-lg p-4">
+        <p class="text-gray-700 text-sm italic">"I paid them over $1k to mail postcards... nobody got a postcard. They refused to refund my money."</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 6: PREVIOUS SOLUTIONS -->
+<div class="tab-content" id="tab-5">
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Failed Provider Report Card</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">What They Tried &amp; Why It Failed</p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-alt rounded-lg overflow-hidden">
+        <thead>
+          <tr>
+            <th class="text-left px-4 py-3 font-semibold text-sm">Provider</th>
+            <th class="text-left px-4 py-3 font-semibold text-sm">Complaint</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-100">
+            <td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">PropStream</td>
+            <td class="px-4 py-3 text-gray-600 italic">"contact data has been very poor" / "great as aggregator but skip tracing outside is better"</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">BatchSkipTracing</td>
+            <td class="px-4 py-3 text-gray-600 italic">"the worst. Results are inaccurate and support team is terrible" / 0.03% success rate</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">BatchData</td>
+            <td class="px-4 py-3 text-gray-600 italic">99/110 email hits were "undeliverable"</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">REDX</td>
+            <td class="px-4 py-3 text-gray-600 italic">"50 numbers... either wrong number or disconnected" / "outdated, blocked, disconnected, on DNC"</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">Propwire</td>
+            <td class="px-4 py-3 text-gray-600 italic">$500 spent, "riddled with dead numbers"</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">HomeAdvisor</td>
+            <td class="px-4 py-3 text-gray-600 italic">"$300 to join, first 9 leads were fake or garbage" / 16/25 leads useless / FTC $7.2M fine</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-gray-900 whitespace-nowrap">Vulcan7</td>
+            <td class="px-4 py-3 text-gray-600 italic">$900 over 3 months, "wrong numbers or people who already bought homes"</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Manual Workarounds</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">DIY Alternatives They Resort To</p>
+    <div class="flex flex-wrap gap-2">
+      <span class="pill bg-gray-100 text-gray-700">Driving for dollars</span>
+      <span class="pill bg-gray-100 text-gray-700">County courthouse records</span>
+      <span class="pill bg-gray-100 text-gray-700">Cross-referencing multiple skip tracers</span>
+      <span class="pill bg-gray-100 text-gray-700">Hand-scrubbing data</span>
+      <span class="pill bg-gray-100 text-gray-700">Social media stalking</span>
+      <span class="pill bg-gray-100 text-gray-700">Door knocking</span>
+      <span class="pill bg-gray-100 text-gray-700">Building own SEO/Google Ads</span>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 7: SOLUTION SOUNDBITES -->
+<div class="tab-content" id="tab-6">
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">The Ideal Solution Stack</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">From Buyer Language</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div class="bg-green-50 border border-green-200 rounded-lg p-4 flex items-start gap-3">
+        <span class="text-green-500 text-lg mt-0.5">&#10003;</span>
+        <div>
+          <p class="font-semibold text-gray-900 text-sm">Fresh data</p>
+          <p class="text-gray-500 text-xs mt-0.5">Updated within 30 days</p>
+        </div>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-lg p-4 flex items-start gap-3">
+        <span class="text-green-500 text-lg mt-0.5">&#10003;</span>
+        <div>
+          <p class="font-semibold text-gray-900 text-sm">Verified numbers</p>
+          <p class="text-gray-500 text-xs mt-0.5">Actually confirmed working, not just matched</p>
+        </div>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-lg p-4 flex items-start gap-3">
+        <span class="text-green-500 text-lg mt-0.5">&#10003;</span>
+        <div>
+          <p class="font-semibold text-gray-900 text-sm">Owner-verified</p>
+          <p class="text-gray-500 text-xs mt-0.5">Connects to actual property owner, not tenant</p>
+        </div>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-lg p-4 flex items-start gap-3">
+        <span class="text-green-500 text-lg mt-0.5">&#10003;</span>
+        <div>
+          <p class="font-semibold text-gray-900 text-sm">DNC-scrubbed</p>
+          <p class="text-gray-500 text-xs mt-0.5">Full DNC list, not just "active litigators"</p>
+        </div>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-lg p-4 flex items-start gap-3">
+        <span class="text-green-500 text-lg mt-0.5">&#10003;</span>
+        <div>
+          <p class="font-semibold text-gray-900 text-sm">Exclusive</p>
+          <p class="text-gray-500 text-xs mt-0.5">Not sold to 100,000 other buyers</p>
+        </div>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-lg p-4 flex items-start gap-3">
+        <span class="text-green-500 text-lg mt-0.5">&#10003;</span>
+        <div>
+          <p class="font-semibold text-gray-900 text-sm">Intent signals</p>
+          <p class="text-gray-500 text-xs mt-0.5">Homeowner actually motivated</p>
+        </div>
+      </div>
+      <div class="bg-green-50 border border-green-200 rounded-lg p-4 flex items-start gap-3 md:col-span-2">
+        <span class="text-green-500 text-lg mt-0.5">&#10003;</span>
+        <div>
+          <p class="font-semibold text-gray-900 text-sm">Compliance built-in</p>
+          <p class="text-gray-500 text-xs mt-0.5">Consent documentation, TCPA-safe</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Benchmarks They Reference</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Accuracy Claims in the Market</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+        <p class="text-3xl font-bold text-blue-600">85-89%</p>
+        <p class="text-gray-600 text-sm mt-1">Wholster claimed accuracy</p>
+        <p class="text-gray-400 text-xs mt-0.5">at $0.12/record</p>
+      </div>
+      <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+        <p class="text-3xl font-bold text-blue-600">95%+</p>
+        <p class="text-gray-600 text-sm mt-1">SkipMatrix claimed accuracy</p>
+        <p class="text-gray-400 text-xs mt-0.5">"accuracy rates well above 95%"</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 8: DESIRED OUTCOMES -->
+<div class="tab-content" id="tab-7">
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Desired Outcomes by Segment</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">What Each Buyer Type Needs</p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-alt rounded-lg overflow-hidden">
+        <thead>
+          <tr>
+            <th class="text-left px-4 py-3 font-semibold text-sm">Segment</th>
+            <th class="text-left px-4 py-3 font-semibold text-sm">Goal</th>
+            <th class="text-left px-4 py-3 font-semibold text-sm">Volume Required</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-100">
+            <td class="px-4 py-3 font-semibold text-gray-900">Real Estate Wholesalers</td>
+            <td class="px-4 py-3 text-gray-600">1-2 deals/month at $10K-$40K</td>
+            <td class="px-4 py-3 text-gray-600">100+ calls/day</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="px-4 py-3 font-semibold text-gray-900">Solar Installers</td>
+            <td class="px-4 py-3 text-gray-600">3-5 installs/month at $15K-$30K</td>
+            <td class="px-4 py-3 text-gray-600">20-30 qualified appointments</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="px-4 py-3 font-semibold text-gray-900">Insurance Agents</td>
+            <td class="px-4 py-3 text-gray-600">10-20 new policies/month at $1,200-$2,500</td>
+            <td class="px-4 py-3 text-gray-600">50-100 quality contacts</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="px-4 py-3 font-semibold text-gray-900">Roofing Contractors</td>
+            <td class="px-4 py-3 text-gray-600">5-10 inspections/week in storm season</td>
+            <td class="px-4 py-3 text-gray-600">Speed-to-lead critical</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-gray-900">Mortgage Lenders</td>
+            <td class="px-4 py-3 text-gray-600">Refi pipeline needs 100+ contacts/week</td>
+            <td class="px-4 py-3 text-gray-600">Equity and credit signals</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">The ROI Math</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Unit Economics</p>
+    <div class="bg-gradient-to-r from-blue-50 to-indigo-50 border border-blue-200 rounded-lg p-6">
+      <p class="text-gray-700 text-sm leading-relaxed">If data costs <strong>$0.10-$2.00/record</strong> and a deal is worth <strong>$10K-$40K</strong>, even <strong>0.1% conversion</strong> is profitable &mdash; <em>IF the data connects to real, motivated homeowners.</em></p>
+      <div class="flex flex-wrap gap-4 mt-4">
+        <div class="text-center">
+          <p class="text-2xl font-bold text-blue-600">$0.10-$2.00</p>
+          <p class="text-xs text-gray-500">Cost per record</p>
+        </div>
+        <div class="text-center flex items-center">
+          <span class="text-gray-400 text-2xl">&rarr;</span>
+        </div>
+        <div class="text-center">
+          <p class="text-2xl font-bold text-green-600">$10K-$40K</p>
+          <p class="text-xs text-gray-500">Deal value</p>
+        </div>
+        <div class="text-center flex items-center">
+          <span class="text-gray-400 text-2xl">=</span>
+        </div>
+        <div class="text-center">
+          <p class="text-2xl font-bold text-indigo-600">5,000-400,000x</p>
+          <p class="text-xs text-gray-500">Potential ROI</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 9: TYPICAL DAY -->
+<div class="tab-content" id="tab-8">
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Real Estate Wholesaler Daily Workflow</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">A Day in the Life</p>
+    <div class="space-y-0">
+      <div class="flex items-start gap-4 py-3 border-b border-gray-100">
+        <span class="bg-blue-100 text-blue-700 font-bold text-xs px-3 py-1 rounded-full whitespace-nowrap mt-0.5">7:00 AM</span>
+        <p class="text-gray-700 text-sm">Pull new lists (absentee owners, pre-foreclosures, high equity)</p>
+      </div>
+      <div class="flex items-start gap-4 py-3 border-b border-gray-100">
+        <span class="bg-blue-100 text-blue-700 font-bold text-xs px-3 py-1 rounded-full whitespace-nowrap mt-0.5">8:00 AM</span>
+        <p class="text-gray-700 text-sm">Skip trace batch (upload CSV, wait)</p>
+      </div>
+      <div class="flex items-start gap-4 py-3 border-b border-gray-100">
+        <span class="bg-blue-100 text-blue-700 font-bold text-xs px-3 py-1 rounded-full whitespace-nowrap mt-0.5">9:00 AM</span>
+        <p class="text-gray-700 text-sm">DNC scrub results</p>
+      </div>
+      <div class="flex items-start gap-4 py-3 border-b border-gray-100">
+        <span class="bg-blue-100 text-blue-700 font-bold text-xs px-3 py-1 rounded-full whitespace-nowrap mt-0.5">9:30 AM</span>
+        <p class="text-gray-700 text-sm">Load into dialer (Mojo, Batch Dialer, PhoneBurner)</p>
+      </div>
+      <div class="flex items-start gap-4 py-3 border-b border-gray-100">
+        <span class="bg-red-100 text-red-700 font-bold text-xs px-3 py-1 rounded-full whitespace-nowrap mt-0.5">10 AM - 2 PM</span>
+        <p class="text-gray-700 text-sm font-medium">Cold calling (100-200 dials)</p>
+      </div>
+      <div class="flex items-start gap-4 py-3 border-b border-gray-100">
+        <span class="bg-blue-100 text-blue-700 font-bold text-xs px-3 py-1 rounded-full whitespace-nowrap mt-0.5">2:00 PM</span>
+        <p class="text-gray-700 text-sm">Follow-ups, texts to no-answers</p>
+      </div>
+      <div class="flex items-start gap-4 py-3 border-b border-gray-100">
+        <span class="bg-blue-100 text-blue-700 font-bold text-xs px-3 py-1 rounded-full whitespace-nowrap mt-0.5">3:00 PM</span>
+        <p class="text-gray-700 text-sm">Drive for dollars</p>
+      </div>
+      <div class="flex items-start gap-4 py-3">
+        <span class="bg-blue-100 text-blue-700 font-bold text-xs px-3 py-1 rounded-full whitespace-nowrap mt-0.5">4:00 PM</span>
+        <p class="text-gray-700 text-sm">CRM updates, schedule callbacks</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Volume Benchmarks</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Industry Numbers</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 text-center">
+        <p class="text-3xl font-bold text-orange-600">100</p>
+        <p class="text-gray-600 text-sm mt-1">calls to get 1 deal</p>
+        <p class="text-gray-400 text-xs">(industry average)</p>
+      </div>
+      <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 text-center">
+        <p class="text-3xl font-bold text-orange-600">33</p>
+        <p class="text-gray-600 text-sm mt-1">calls/day average</p>
+        <p class="text-gray-400 text-xs">for active wholesalers</p>
+      </div>
+      <div class="bg-orange-50 border border-orange-200 rounded-lg p-4 text-center">
+        <p class="text-3xl font-bold text-orange-600">209</p>
+        <p class="text-gray-600 text-sm mt-1">calls per appointment</p>
+        <p class="text-gray-400 text-xs">30% contact, 1% appt rate</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Tools Used Daily</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Their Current Stack</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div>
+        <h3 class="font-semibold text-gray-900 text-sm mb-2">Dialers</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill bg-purple-100 text-purple-700">Mojo</span>
+          <span class="pill bg-purple-100 text-purple-700">Batch Dialer</span>
+          <span class="pill bg-purple-100 text-purple-700">PhoneBurner</span>
+          <span class="pill bg-purple-100 text-purple-700">REDX Power Dialer</span>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-semibold text-gray-900 text-sm mb-2">Skip Tracing</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill bg-blue-100 text-blue-700">PropStream</span>
+          <span class="pill bg-blue-100 text-blue-700">BatchLeads</span>
+          <span class="pill bg-blue-100 text-blue-700">REISkip</span>
+          <span class="pill bg-blue-100 text-blue-700">DealMachine</span>
+          <span class="pill bg-blue-100 text-blue-700">Lead Sherpa</span>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-semibold text-gray-900 text-sm mb-2">CRM</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill bg-green-100 text-green-700">REsimpli</span>
+          <span class="pill bg-green-100 text-green-700">Podio</span>
+          <span class="pill bg-green-100 text-green-700">Follow Up Boss</span>
+          <span class="pill bg-green-100 text-green-700">HubSpot</span>
+        </div>
+      </div>
+      <div>
+        <h3 class="font-semibold text-gray-900 text-sm mb-2">DNC Scrubbing</h3>
+        <div class="flex flex-wrap gap-2">
+          <span class="pill bg-red-100 text-red-700">DNC.com</span>
+          <span class="pill bg-red-100 text-red-700">Lead Sherpa</span>
+          <span class="pill bg-red-100 text-red-700">Batch built-in</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 10: BUYER SUMMARY -->
+<div class="tab-content" id="tab-9">
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Primary Buyer Segments</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Market Sizing</p>
+    <div class="overflow-x-auto">
+      <table class="w-full text-sm table-alt rounded-lg overflow-hidden">
+        <thead>
+          <tr>
+            <th class="text-left px-4 py-3 font-semibold text-sm">Segment</th>
+            <th class="text-left px-4 py-3 font-semibold text-sm">Annual Data Spend</th>
+            <th class="text-left px-4 py-3 font-semibold text-sm">Volume/Month</th>
+            <th class="text-left px-4 py-3 font-semibold text-sm">Primary Use Case</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="border-b border-gray-100">
+            <td class="px-4 py-3 font-semibold text-gray-900">RE Investors/Wholesalers</td>
+            <td class="px-4 py-3 text-gray-600">$1,200-$12,000</td>
+            <td class="px-4 py-3 text-gray-600">5K-100K records</td>
+            <td class="px-4 py-3 text-gray-600">Skip tracing for off-market deals</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="px-4 py-3 font-semibold text-gray-900">Solar/Roofing Contractors</td>
+            <td class="px-4 py-3 text-gray-600">$5,000-$50,000</td>
+            <td class="px-4 py-3 text-gray-600">10K-500K records</td>
+            <td class="px-4 py-3 text-gray-600">Outbound homeowner contact lists</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="px-4 py-3 font-semibold text-gray-900">Insurance Agents</td>
+            <td class="px-4 py-3 text-gray-600">$2,400-$24,000</td>
+            <td class="px-4 py-3 text-gray-600">1K-50K records</td>
+            <td class="px-4 py-3 text-gray-600">Policy prospecting</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="px-4 py-3 font-semibold text-gray-900">Mortgage Lenders</td>
+            <td class="px-4 py-3 text-gray-600">$10,000-$100,000+</td>
+            <td class="px-4 py-3 text-gray-600">50K-1M+ records</td>
+            <td class="px-4 py-3 text-gray-600">Refi/purchase trigger leads</td>
+          </tr>
+          <tr class="border-b border-gray-100">
+            <td class="px-4 py-3 font-semibold text-gray-900">Marketing Agencies</td>
+            <td class="px-4 py-3 text-gray-600">$5,000-$60,000</td>
+            <td class="px-4 py-3 text-gray-600">10K-500K records</td>
+            <td class="px-4 py-3 text-gray-600">Campaign targeting</td>
+          </tr>
+          <tr>
+            <td class="px-4 py-3 font-semibold text-gray-900">Political Campaigns</td>
+            <td class="px-4 py-3 text-gray-600">$50,000-$500,000+</td>
+            <td class="px-4 py-3 text-gray-600">1M-10M+ records</td>
+            <td class="px-4 py-3 text-gray-600">Voter outreach</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="section-card">
+      <h2 class="font-serif text-xl text-gray-900 mb-4">Top 5 Fears</h2>
+      <ol class="space-y-3 text-sm text-gray-700">
+        <li class="flex items-start gap-3">
+          <span class="bg-red-100 text-red-700 font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+          <span>TCPA lawsuits ($1,500/call, $15M-$40M class actions)</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-red-100 text-red-700 font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+          <span>Wasting money on stale data (40-70% disconnected is normal)</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-red-100 text-red-700 font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+          <span>Being perceived as scammers</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-red-100 text-red-700 font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+          <span>Burnout from hundreds of rejected calls daily</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-red-100 text-red-700 font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">5</span>
+          <span>Oversaturation &mdash; 100,000+ competitors calling same lists</span>
+        </li>
+      </ol>
+    </div>
+
+    <div class="section-card">
+      <h2 class="font-serif text-xl text-gray-900 mb-4">Top 5 Wants</h2>
+      <ol class="space-y-3 text-sm text-gray-700">
+        <li class="flex items-start gap-3">
+          <span class="bg-green-100 text-green-700 font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">1</span>
+          <span>Fresh, verified data &mdash; working numbers for actual owners</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-green-100 text-green-700 font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">2</span>
+          <span>Exclusive leads &mdash; not sold to thousands of competitors</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-green-100 text-green-700 font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">3</span>
+          <span>Intent signals &mdash; motivated homeowners</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-green-100 text-green-700 font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">4</span>
+          <span>Compliance built-in &mdash; full DNC, TCPA-safe, consent docs</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <span class="bg-green-100 text-green-700 font-bold text-xs w-6 h-6 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">5</span>
+          <span>Higher conversion &mdash; will pay 10x more per record if it converts</span>
+        </li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">The Core Tension</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">The Paradox Every Buyer Faces</p>
+    <div class="bg-gradient-to-r from-amber-50 to-orange-50 border border-amber-200 rounded-lg p-6">
+      <p class="text-gray-800 text-sm leading-relaxed">Every buyer faces the same paradox: they need <strong>volume</strong> to find deals, but volume means <strong>low quality</strong>. The data is stale, sold to everyone, 40-70% of numbers don't work, TCPA enforcement is skyrocketing, and homeowners are increasingly hostile.</p>
+    </div>
+  </div>
+
+  <div class="section-card">
+    <h2 class="font-serif text-2xl text-gray-900 mb-1">Language Bank</h2>
+    <p class="text-gray-400 text-xs uppercase tracking-widest mb-4 font-semibold">Copy-Ready Phrases from Real Buyers</p>
+    <div class="flex flex-wrap gap-2">
+      <span class="pill bg-red-100 text-red-700">"riddled with dead numbers"</span>
+      <span class="pill bg-yellow-100 text-yellow-700">"waste of money"</span>
+      <span class="pill bg-orange-100 text-orange-700">"stale data"</span>
+      <span class="pill bg-red-100 text-red-700">"burned list"</span>
+      <span class="pill bg-orange-100 text-orange-700">"same data pools"</span>
+      <span class="pill bg-blue-100 text-blue-700">"make or break your campaign"</span>
+      <span class="pill bg-red-100 text-red-700">"wasting dials, time, and losing deals"</span>
+      <span class="pill bg-orange-100 text-orange-700">"40% disconnected"</span>
+      <span class="pill bg-yellow-100 text-yellow-700">"sold and resold"</span>
+      <span class="pill bg-red-100 text-red-700">"promised the world... immediately disappointed"</span>
+    </div>
+  </div>
+</div>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="text-center py-8 text-gray-400 text-xs border-t border-gray-200">
+  <p>BookedSolid Pro &mdash; Deep Buyer Research &mdash; Sabri Suby 10-Tab Framework</p>
+  <p class="mt-1">Generated by OpenClaw Marketing Intelligence</p>
+</footer>
+
+<script>
+function switchTab(index) {
+  // Update tab buttons
+  const buttons = document.querySelectorAll('#tabBar .tab-btn');
+  buttons.forEach((btn, i) => {
+    if (i === index) {
+      btn.classList.add('active');
+      btn.classList.remove('text-gray-600');
+    } else {
+      btn.classList.remove('active');
+      btn.classList.add('text-gray-600');
+    }
+  });
+
+  // Update tab content
+  const tabs = document.querySelectorAll('.tab-content');
+  tabs.forEach((tab, i) => {
+    if (i === index) {
+      tab.classList.add('active');
+    } else {
+      tab.classList.remove('active');
+    }
+  });
+
+  // Scroll active tab button into view
+  buttons[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+}
+</script>
+
+</body>
+</html>
