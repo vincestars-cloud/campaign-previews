@@ -76,15 +76,27 @@
             .steps-row { flex-direction: column !important; }
             .step-connector { display: none !important; }
             .offer-grid { grid-template-columns: 1fr !important; }
+            /* Hide desktop table, show mobile cards */
+            .comparison-table-desktop { display: none !important; }
+            .comparison-cards-mobile { display: block !important; }
+            /* Guarantee box — stack vertically on mobile */
+            .guarantee-box { flex-direction: column !important; text-align: center !important; }
+            .guarantee-box svg { margin: 0 auto 8px !important; }
+            .guarantee-box p { text-align: center !important; }
+            /* Announcement bar smaller text */
+            .announce-text { font-size: 12px; }
+        }
+        @media (min-width: 641px) {
+            .comparison-cards-mobile { display: none !important; }
         }
     </style>
 </head>
 <body>
 
     <!-- ANNOUNCEMENT BAR -->
-    <div class="bg-dark-1 text-white py-2.5 px-4 text-center text-sm font-medium">
-        <span class="inline-block w-2 h-2 rounded-full bg-green-400 pulse-dot mr-2 align-middle"></span>
-        <span class="align-middle">Only <strong>200</strong> Founding Member Spots — Lock In Your Charter Rate Before Launch</span>
+    <div class="bg-dark-1 text-white py-2.5 px-4 text-center font-medium" style="font-size: clamp(11px, 3vw, 14px);">
+        <span class="inline-block w-2 h-2 rounded-full bg-green-400 pulse-dot mr-1.5 sm:mr-2 align-middle"></span>
+        <span class="align-middle">Only <strong>200</strong> Founding Member Spots — Lock In Your Charter Rate</span>
     </div>
 
     <!-- STICKY NAV -->
@@ -419,7 +431,7 @@
 
             <!-- Guarantee -->
             <div class="max-w-2xl mx-auto text-center fade-up">
-                <div class="inline-flex items-center gap-3 bg-forest/5 rounded-2xl px-6 py-4 border border-forest/10">
+                <div class="guarantee-box inline-flex items-center gap-3 bg-forest/5 rounded-2xl px-5 sm:px-6 py-4 border border-forest/10">
                     <svg class="w-8 h-8 text-forest flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                     <p class="text-sm text-left"><strong class="text-dark-1">30-Day Money-Back Guarantee.</strong> <span class="text-neutral-500">Train for a full month. If The Yard isn't for you, 100% refund — no questions, no hassle. We earn your business every month.</span></p>
                 </div>
@@ -435,8 +447,9 @@
                 <h2 class="font-serif text-3xl sm:text-4xl text-dark-1 fade-up">The Buckhead Gym Comparison</h2>
             </div>
 
-            <div class="overflow-x-auto -webkit-overflow-scrolling-touch fade-up">
-                <table class="w-full min-w-[500px] text-sm">
+            <!-- DESKTOP TABLE (hidden on mobile) -->
+            <div class="comparison-table-desktop fade-up" style="overflow-x:auto;-webkit-overflow-scrolling:touch;">
+                <table class="w-full min-w-[540px] text-sm">
                     <thead>
                         <tr class="border-b-2 border-gray-200">
                             <th class="text-left py-4 pr-4 text-neutral-500 font-medium"></th>
@@ -495,6 +508,61 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+
+            <!-- MOBILE COMPARISON CARDS (hidden on desktop) -->
+            <div class="comparison-cards-mobile space-y-4 fade-up">
+                <!-- The Yard Card (highlighted) -->
+                <div class="bg-forest/5 border-2 border-forest rounded-2xl p-5">
+                    <div class="flex items-center justify-between mb-4">
+                        <span class="font-bold text-forest text-lg">The Yard</span>
+                        <span class="bg-forest text-white text-xs font-bold px-3 py-1 rounded-full">BEST VALUE</span>
+                    </div>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between"><span class="text-neutral-600">Monthly Price</span><span class="font-bold text-forest">$149</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Outdoor Space</span><span class="text-forest font-medium">&#10003; 5,000+ sq ft</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Expert Coaching</span><span class="text-forest font-medium">&#10003; Every class</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">No Contract</span><span class="text-forest font-medium">&#10003;</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Rate Lock</span><span class="text-forest font-medium">&#10003; Forever</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Community</span><span class="text-forest font-medium">&#10003; Built-in</span></div>
+                    </div>
+                </div>
+                <!-- Life Time Card -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-5">
+                    <span class="font-semibold text-neutral-500 text-base mb-3 block">Life Time</span>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between"><span class="text-neutral-600">Monthly Price</span><span class="text-neutral-500">$250+</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Outdoor Space</span><span class="text-neutral-400">Pool only</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Expert Coaching</span><span class="text-neutral-400">Extra $$</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">No Contract</span><span class="text-red-400">12-month</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Rate Lock</span><span class="text-red-400">+15-20%/yr</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Community</span><span class="text-neutral-400">Impersonal</span></div>
+                    </div>
+                </div>
+                <!-- LA Fitness Card -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-5">
+                    <span class="font-semibold text-neutral-500 text-base mb-3 block">LA Fitness</span>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between"><span class="text-neutral-600">Monthly Price</span><span class="text-neutral-500">$35</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Outdoor Space</span><span class="text-red-400">&#10007;</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Expert Coaching</span><span class="text-red-400">&#10007;</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">No Contract</span><span class="text-neutral-400">Annual</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Rate Lock</span><span class="text-neutral-400">Varies</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Community</span><span class="text-red-400">&#10007;</span></div>
+                    </div>
+                </div>
+                <!-- CrossFit Card -->
+                <div class="bg-white border border-gray-200 rounded-2xl p-5">
+                    <span class="font-semibold text-neutral-500 text-base mb-3 block">CrossFit</span>
+                    <div class="space-y-3 text-sm">
+                        <div class="flex justify-between"><span class="text-neutral-600">Monthly Price</span><span class="text-neutral-500">$200+</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Outdoor Space</span><span class="text-neutral-400">Some</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Expert Coaching</span><span class="text-forest">&#10003;</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">No Contract</span><span class="text-forest">&#10003;</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Rate Lock</span><span class="text-neutral-400">Varies</span></div>
+                        <div class="flex justify-between"><span class="text-neutral-600">Community</span><span class="text-forest">&#10003;</span></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
