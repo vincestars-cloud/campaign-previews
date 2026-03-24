@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BSP Enterprise V6 — Ad Review</title>
+<title>BSP Enterprise V6.1 — Ad Review</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -175,11 +175,11 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
 
 <!-- HERO -->
 <section class="hero">
-  <h1>BSP Enterprise V6 — REWRITE</h1>
-  <p class="subtitle">Complete ad creative overhaul based on client feedback. Every ad: 3-5 lines, one job, hook first.</p>
+  <h1>BSP Enterprise V6.1 — PRESSURE</h1>
+  <p class="subtitle">V6 + blame shift, more pipeline control, more team pain, time pressure, controlled intensity. Every ad: punch first, protect the person, confront the problem.</p>
   <div class="hero-stats">
-    <div class="hero-stat"><div class="num">45</div><div class="label">Total Ads</div></div>
-    <div class="hero-stat"><div class="num">7</div><div class="label">Angles</div></div>
+    <div class="hero-stat"><div class="num">58</div><div class="label">Total Ads</div></div>
+    <div class="hero-stat"><div class="num">8</div><div class="label">Angles</div></div>
     <div class="hero-stat"><div class="num">3</div><div class="label">Campaigns</div></div>
     <div class="hero-stat"><div class="num">4</div><div class="label">Styles</div></div>
   </div>
@@ -222,11 +222,16 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
       <li>Weaponize the pain — make them FEEL vendor betrayal, not just mention it</li>
       <li>B2B emotion: fear of wasting money, looking bad to boss, reps quitting</li>
     </ul>
-    <h3>Biggest Angle (Vince's Words)</h3>
+    <h3>V6.1 Feedback (Round 2)</h3>
     <ul class="feedback-list">
-      <li>"Pipeline Control / Dependency — THIS IS BIG"</li>
-      <li>"Your pipeline shouldn't depend on a vendor"</li>
-      <li>"Control your deal flow"</li>
+      <li>More BLAME SHIFT — "It's not your reps / script / offer" unlocks clicks in B2B</li>
+      <li>More PIPELINE CONTROL — "You don't have a pipeline. You have a subscription."</li>
+      <li>More TEAM PAIN — "Your reps are dialing ghosts" / "This is why your team is frustrated"</li>
+      <li>More TIME PRESSURE — "right now", "today", "every hour"</li>
+      <li>More IDENTITY HOOKS — "If you're spending $10K/month on leads…"</li>
+      <li>TONE: controlled intensity, economic pressure, real-world frustration — NOT hype/drama</li>
+      <li>CUT: soft hooks ("you might be…"), feature-heavy ads (fields/filters/platform), over-explained ads</li>
+      <li>Balance: confront the problem, protect the person — "You're solving the wrong problem" not "You're doing everything wrong"</li>
     </ul>
   </div>
 </div>
@@ -240,7 +245,7 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
     <div class="seg seg-c3">10% Trust</div>
   </div>
   <div class="campaign-legend">
-    <span><span class="dot" style="background:#2d6a4f"></span> C1: Problem Aware (~30 ads) — waste math, dead numbers, frustration, control</span>
+    <span><span class="dot" style="background:#2d6a4f"></span> C1: Problem Aware (~40 ads) — waste math, dead numbers, blame shift, frustration, control</span>
     <span><span class="dot" style="background:#e76f51"></span> C2: Pattern Interrupt (~10 ads) — cheeky, double meaning, scroll-stopping</span>
     <span><span class="dot" style="background:#264653"></span> C3: Trust / Conversion (~5 ads) — guarantee, proof, testimonials</span>
   </div>
@@ -263,6 +268,7 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
   <button class="filter-btn" data-filter="angle" data-value="A5">Team Frustration</button>
   <button class="filter-btn" data-filter="angle" data-value="A6">Vendor Betrayal</button>
   <button class="filter-btn" data-filter="angle" data-value="A7">Low ROI</button>
+  <button class="filter-btn" data-filter="angle" data-value="A8">Blame Shift</button>
   <div class="filter-sep"></div>
   <span class="filter-label">Style:</span>
   <button class="filter-btn active" data-filter="style" data-value="all">All</button>
@@ -282,390 +288,514 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
   <span>Approved: <strong class="sb-green" id="approvedCount">0</strong></span>
   <span>Changes: <strong class="sb-yellow" id="changesCount">0</strong></span>
   <span>Rejected: <strong class="sb-red" id="rejectedCount">0</strong></span>
-  <span>Remaining: <strong id="remainingCount">45</strong></span>
+  <span>Remaining: <strong id="remainingCount">58</strong></span>
 </div>
 
 <script>
 // =========================================================================
-// AD DATA — 45 ads
+// AD DATA — 58 ads (V6.1: +blame shift, +pipeline, +team pain, +time pressure)
 // =========================================================================
 const ADS = [
-// ===================== CAMPAIGN 1: PROBLEM AWARE (30 ads) =====================
+// ===================== CAMPAIGN 1: PROBLEM AWARE (40 ads) =====================
 
-// --- ANGLE 1: WASTED MONEY / BAD DATA (6 ads) ---
+// --- ANGLE 1: WASTED MONEY / BAD DATA (5 ads) ---
 {
   id: "c1-a1-01", campaign: "C1", angle: "A1", style: "Math",
-  primary: `You're spending $3,000/month on leads.\n40% are disconnected.\nThat's $1,200/month you'll never get back.`,
-  headline: "Do The Math On Your Lead Spend",
-  description: "See what accurate data actually looks like.",
+  primary: `You're losing $1,200/month on disconnected numbers.\nRight now. Today.\nNot next quarter. Today.`,
+  headline: "You're Losing Money Today",
+  description: "See exactly how much bad data is costing you.",
   cta: "Learn More",
-  aiPrompt: "Split-screen image: left side shows money being shredded with red lighting, right side shows clean stacked cash with green lighting. Bold white text overlay: '$1,200/month — gone.' Dark moody aesthetic, high contrast. 1080x1080."
+  aiPrompt: "Bold red text '$1,200/month — TODAY' on a cracked phone screen showing disconnected calls. Dark background, high contrast. 1080x1080."
 },
 {
   id: "c1-a1-02", campaign: "C1", angle: "A1", style: "Direct",
-  primary: `Most guys aren't losing money on marketing.\nThey're losing it on bad data.\nThe list is the problem. Not your team. Not your script.`,
-  headline: "It Was Never Your Team",
-  description: "The real cost of cheap data.",
+  primary: `You pay for the list.\nPay to skip trace.\nPay to call.\nAnd still get nothing.\nYour data is costing you deals right now.`,
+  headline: "Four Payments. Zero Results.",
+  description: "Every day you wait, you pay again.",
   cta: "Learn More",
-  aiPrompt: "Close-up of a frustrated business owner staring at a laptop screen showing a spreadsheet full of red 'disconnected' entries. Office setting, warm overhead lighting, shallow depth of field. Photorealistic style. 1080x1080."
+  aiPrompt: "Four receipts fanned out on a desk, each stamped 'PAID' in red. Empty appointment book beside them. Overhead shot, soft shadows. 1080x1080."
 },
 {
   id: "c1-a1-03", campaign: "C1", angle: "A1", style: "Math",
-  primary: `Every bad record costs you 3 times.\nOnce for the data. Once for the dialer time. Once for the deal you didn't close.\nMultiply that by 500 records.`,
+  primary: `Every bad record costs you 3 times.\nThe data. The dialer time. The deal you lost.\nMultiply that by every hour your team is on the phone today.`,
   headline: "The Triple Tax On Bad Data",
-  description: "Stop paying 3x for leads that don't work.",
+  description: "It's adding up. Every single hour.",
   cta: "Learn More",
-  aiPrompt: "Three stacks of money getting progressively smaller, labeled 'Data Cost', 'Time Cost', 'Lost Revenue'. Clean infographic style on dark background. Bold sans-serif typography. 1080x1080."
+  aiPrompt: "Three stacks of money getting progressively smaller, labeled 'Data', 'Time', 'Lost Deals'. Dark background, bold typography. 1080x1080."
 },
 {
-  id: "c1-a1-04", campaign: "C1", angle: "A1", style: "Direct",
-  primary: `How much have you spent on lists that went nowhere?\nNot hundreds. Thousands.\nAnd you kept buying from the same vendor.`,
-  headline: "You Already Know The Answer",
-  description: "There's a reason your ROI hasn't changed.",
+  id: "c1-a1-04", campaign: "C1", angle: "A1", style: "Story",
+  primary: `Insurance agent bought 500 leads for $2,800.\n212 were disconnected.\n3 appointments booked.\n$933 per sit.`,
+  headline: "This Is Happening Right Now",
+  description: "Somewhere, someone just paid for this again today.",
   cta: "Learn More",
-  aiPrompt: "Hand dropping cash into a paper shredder. Top-down angle, clean white desk. Minimalist editorial style. One line of text: 'Same vendor. Same results.' 1080x1080."
+  aiPrompt: "Insurance agent alone in empty office, headset around neck, staring at nearly empty calendar. Late afternoon light through blinds. Cinematic. 1080x1080."
 },
 {
-  id: "c1-a1-05", campaign: "C1", angle: "A1", style: "Story",
-  primary: `Insurance agent bought 500 leads for $2,800.\n212 were disconnected.\nHe booked 3 appointments.\nThat's $933 per sit.`,
-  headline: "This Shouldn't Be Normal",
-  description: "What happens when data quality isn't the priority.",
+  id: "c1-a1-05", campaign: "C1", angle: "A1", style: "Direct",
+  primary: `If you're spending $10K+/month on leads…\nAnd your close rate hasn't moved…\nYou're solving the wrong problem.`,
+  headline: "Wrong Problem",
+  description: "The bottleneck isn't your team. It's upstream.",
   cta: "Learn More",
-  aiPrompt: "Insurance agent sitting alone in an empty office with a headset around his neck, staring at a nearly empty calendar on the wall. Late afternoon light through blinds. Cinematic mood. 1080x1080."
-},
-{
-  id: "c1-a1-06", campaign: "C1", angle: "A1", style: "Direct",
-  primary: `You pay for the list.\nPay to skip trace.\nPay to call.\nAnd still get nothing.\nAt what point do you question the source?`,
-  headline: "Four Payments. Zero Results.",
-  description: "The real cost of your current data vendor.",
-  cta: "Learn More",
-  aiPrompt: "Four receipts fanned out on a desk, each one stamped 'PAID' in red. An empty appointment book sits next to them. Clean overhead shot, soft shadows. 1080x1080."
+  aiPrompt: "Hand dropping cash into paper shredder. Minimalist style, one line text: 'Wrong problem.' 1080x1080."
 },
 
 // --- ANGLE 2: DEAD NUMBERS / CAN'T REACH ANYONE (5 ads) ---
 {
   id: "c1-a2-01", campaign: "C1", angle: "A2", style: "Direct",
-  primary: `Ever call a list and half the numbers don't even work?\nThat's not bad luck.\nThat's your vendor.`,
-  headline: "It's Not The Market. It's The Data.",
-  description: "What 97% accuracy actually feels like.",
+  primary: `Half your list doesn't work.\nThat's not bad luck.\nThat's your vendor.`,
+  headline: "It's Not The Market",
+  description: "Your data is the problem. Not your team.",
   cta: "Learn More",
-  aiPrompt: "Phone screen showing a call log with dozens of 'Call Failed' and 'Number Disconnected' entries in red. Tight crop, realistic phone UI. Dark background. 1080x1080."
+  aiPrompt: "Phone screen showing call log with dozens of red 'Disconnected' entries. Tight crop, dark background. 1080x1080."
 },
 {
   id: "c1-a2-02", campaign: "C1", angle: "A2", style: "Math",
-  primary: `A 40-rep call center tracked one day.\n6,720 calls went to dead numbers.\nThat's $1,680 burned… in ONE day.`,
-  headline: "One Day. $1,680 Wasted.",
-  description: "Dead numbers aren't a minor issue.",
+  primary: `A 40-rep call center tracked one day.\n6,720 calls went to dead numbers.\n$1,680 burned before lunch.`,
+  headline: "$1,680 Gone. Before Lunch.",
+  description: "This is what bad data looks like at scale.",
   cta: "Learn More",
-  aiPrompt: "Call center floor from above — rows of empty desks with headsets, one large digital counter on the wall showing '6,720 FAILED'. Red tint overlay. Dramatic corporate photography. 1080x1080."
+  aiPrompt: "Call center floor from above, large digital counter showing '6,720 FAILED'. Red tint. Corporate photography. 1080x1080."
 },
 {
   id: "c1-a2-03", campaign: "C1", angle: "A2", style: "Direct",
-  primary: `If no one answers… you don't have leads.\nYou have a list of strangers who will never pick up.\nThere's a difference.`,
-  headline: "Leads vs. Dead Numbers",
-  description: "You're paying for one and getting the other.",
+  primary: `Your reps are dialing ghosts.\n200 calls a day into numbers that don't exist.\nEvery hour that continues, you're paying for nothing.`,
+  headline: "Dialing Ghosts",
+  description: "Every hour. Every day. Until you change the source.",
   cta: "Learn More",
-  aiPrompt: "Two side-by-side phone icons: left one shows 'Ringing...' with a green glow, right one shows 'Disconnected' in red with a crack through the screen. Clean minimal design on white. 1080x1080."
+  aiPrompt: "Ghost silhouettes rising from a pile of printed phone numbers. Moody office lighting, surreal but grounded. 1080x1080."
 },
 {
-  id: "c1-a2-04", campaign: "C1", angle: "A2", style: "Story",
-  primary: `Hours dialing.\nZero conversations.\nYour rep didn't quit because the job is hard.\nHe quit because the data made it impossible.`,
-  headline: "It Wasn't The Rep",
-  description: "Good people leave when tools fail them.",
+  id: "c1-a2-04", campaign: "C1", angle: "A2", style: "Direct",
+  primary: `If no one answers… you don't have leads.\nYou're paying for calls that will never connect.\nToday. Tomorrow. Until something changes.`,
+  headline: "These Calls Will Never Connect",
+  description: "Your data is broken. Not your effort.",
   cta: "Learn More",
-  aiPrompt: "Sales rep packing a box at their desk, headset left behind on the keyboard. Other reps visible in background still dialing. Office lighting, candid documentary style. 1080x1080."
+  aiPrompt: "Phone cord cut in half, dangling. Clean studio shot, dramatic side lighting. 1080x1080."
 },
 {
-  id: "c1-a2-05", campaign: "C1", angle: "A2", style: "Direct",
-  primary: `You're doing the work.\nBut the data is broken.\nSame effort. Same hours. Zero results.\nNothing changes until the source changes.`,
-  headline: "Effort Isn't The Problem",
-  description: "Your team is fine. Your data isn't.",
+  id: "c1-a2-05", campaign: "C1", angle: "A2", style: "Math",
+  primary: `Every hour your reps are dialing bad data, you're burning payroll.\n$200/hour in labor.\nOn numbers that were dead before you bought them.`,
+  headline: "$200/Hour On Dead Numbers",
+  description: "That's what's happening right now on your floor.",
   cta: "Learn More",
-  aiPrompt: "Hard-working sales rep with rolled-up sleeves at a desk covered in printed call sheets, all marked up with red X's. Determined expression but defeated posture. Warm office lighting. 1080x1080."
+  aiPrompt: "Clock face with dollar bills for hands, numbers replaced with 'DEAD' stamps. Clean conceptual illustration. 1080x1080."
 },
 
-// --- ANGLE 3: OVERSATURATION / SAME LISTS (4 ads) ---
+// --- ANGLE 3: OVERSATURATION / SAME LISTS (3 ads) ---
 {
   id: "c1-a3-01", campaign: "C1", angle: "A3", style: "Direct",
-  primary: `"You're the 5th person who called me today."\nThat's what happens when everyone pulls from the same lists.\nYour edge isn't outreach — it's who you're reaching.`,
+  primary: `"You're the 5th person who called me today."\nThat's your vendor's business model.\nSell the same list to everyone. Let you fight over scraps.`,
   headline: "5th Caller Today",
-  description: "Same lists = same competition.",
+  description: "You're not competing on skill. You're competing on timing.",
   cta: "Learn More",
-  aiPrompt: "Annoyed homeowner looking at phone showing '5 Missed Calls' from different numbers. Kitchen setting, natural light, relatable everyday scene. 1080x1080."
+  aiPrompt: "Annoyed homeowner looking at phone showing '5 Missed Calls' from different numbers. Kitchen, natural light. 1080x1080."
 },
 {
   id: "c1-a3-02", campaign: "C1", angle: "A3", style: "Direct",
-  primary: `If you're running a 5-20 rep call center…\nYou're probably calling the same people as 8 other companies.\nRight now. Today.`,
-  headline: "You're Not The Only One Calling",
-  description: "Exclusive data changes everything.",
+  primary: `If you're running a 5-20 rep call center…\nYou're calling the same people as 8 other companies.\nRight now. Today. This morning.`,
+  headline: "8 Teams. Same List. Right Now.",
+  description: "Your reps don't know. But the homeowner does.",
   cta: "Learn More",
-  aiPrompt: "Bird's eye view of 8 identical office buildings in a grid, all with phone lines extending to one single house in the center. Clean illustrated style, muted colors. 1080x1080."
+  aiPrompt: "Bird's eye view of 8 office buildings with phone lines extending to one house. Illustrated, muted colors. 1080x1080."
 },
 {
   id: "c1-a3-03", campaign: "C1", angle: "A3", style: "Math",
-  primary: `Your vendor sold that list to 8+ buyers.\nThat means 8 teams calling the same people.\nYour 2% contact rate isn't the market — it's the math.`,
-  headline: "8 Buyers. 1 List. Do The Math.",
-  description: "Why your contact rates keep dropping.",
+  primary: `Your vendor sold that list to 8+ buyers.\n8 teams. Same names. Same numbers.\nYour 2% contact rate isn't the market — it's the math.`,
+  headline: "8 Buyers. 1 List.",
+  description: "This is why your contact rates keep dropping.",
   cta: "Learn More",
-  aiPrompt: "One document being photocopied 8 times on a copy machine, copies flying everywhere. Overhead angle, office setting. Visual metaphor for oversold lists. 1080x1080."
-},
-{
-  id: "c1-a3-04", campaign: "C1", angle: "A3", style: "Direct",
-  primary: `The data isn't the secret.\nEveryone has access to the same lists.\nThe secret is getting there first — with numbers that actually work.`,
-  headline: "First Call Advantage",
-  description: "Speed + accuracy = the real edge.",
-  cta: "Learn More",
-  aiPrompt: "Race starting line with one runner already 50 meters ahead while others are just starting. Clean sports photography style with business overlay text. 1080x1080."
+  aiPrompt: "One document being photocopied 8 times, copies flying everywhere. Office setting. 1080x1080."
 },
 
-// --- ANGLE 4: PIPELINE CONTROL / DEPENDENCY (6 ads) ---
+// --- ANGLE 4: PIPELINE CONTROL / DEPENDENCY (10 ads) ---
 {
   id: "c1-a4-01", campaign: "C1", angle: "A4", style: "Direct",
-  primary: `Your pipeline shouldn't depend on a vendor.\nBut right now — if they raise prices or cut quality…\nYou're stuck.`,
-  headline: "Who Actually Controls Your Pipeline?",
-  description: "Take back control of your deal flow.",
+  primary: `You don't have a pipeline.\nYou have a subscription.\nCancel it and watch everything stop.`,
+  headline: "Pipeline Or Subscription?",
+  description: "There's a difference. And you know which one you have.",
   cta: "Learn More",
-  aiPrompt: "Puppet strings attached to a sales pipeline funnel diagram, with a shadowy hand above controlling it. Dark dramatic lighting, conceptual art style. 1080x1080."
+  aiPrompt: "Subscription cancel button on a screen, with a pipeline funnel going from full to empty. Split screen, dramatic. 1080x1080."
 },
 {
   id: "c1-a4-02", campaign: "C1", angle: "A4", style: "Direct",
-  primary: `As soon as you stop paying… leads stop.\nThat's not a business.\nThat's a subscription to someone else's business.`,
-  headline: "You Don't Own Your Pipeline",
-  description: "Build one that doesn't disappear when you stop paying.",
+  primary: `Your pipeline shouldn't depend on a vendor.\nBut right now — if they raise prices tomorrow…\nYou have no backup. No plan. No control.`,
+  headline: "Who Actually Controls Your Pipeline?",
+  description: "If the answer isn't 'me,' that's the problem.",
   cta: "Learn More",
-  aiPrompt: "Water faucet being turned off, with a sales pipeline diagram going from flowing to dry. Split visual — left side green and flowing, right side cracked and empty. 1080x1080."
+  aiPrompt: "Puppet strings attached to a sales pipeline funnel, shadowy hand above. Dark dramatic lighting. 1080x1080."
 },
 {
   id: "c1-a4-03", campaign: "C1", angle: "A4", style: "Direct",
-  primary: `If you're spending $5K+/month on leads…\nAsk yourself one question:\nWhat happens if your vendor shuts down tomorrow?`,
-  headline: "One Vendor Away From Zero",
-  description: "Control your deal flow.",
+  primary: `As soon as you stop paying… leads stop.\nThat's not a business.\nThat's a subscription to someone else's business.`,
+  headline: "You Don't Own Your Pipeline",
+  description: "You're renting it. And the landlord can raise the rent anytime.",
   cta: "Learn More",
-  aiPrompt: "Business owner at a desk with a single power cord going to a wall outlet — if it's unplugged, everything goes dark. Dramatic lighting, the plug is slightly loose. 1080x1080."
+  aiPrompt: "Faucet being turned off, pipeline going from flowing to dry. Green to cracked. 1080x1080."
 },
 {
   id: "c1-a4-04", campaign: "C1", angle: "A4", style: "Direct",
-  primary: `Control your deal flow.\nNot your vendor's mood. Not their pricing. Not their timeline.\nYours.`,
+  primary: `If you're spending $5K+/month on leads…\nWhat happens when your vendor shuts down tomorrow?\nYou already know the answer.`,
+  headline: "One Vendor Away From Zero",
+  description: "Control your deal flow. Today.",
+  cta: "Learn More",
+  aiPrompt: "Power cord unplugged from wall, everything going dark. Loose plug, dramatic lighting. 1080x1080."
+},
+{
+  id: "c1-a4-05", campaign: "C1", angle: "A4", style: "Direct",
+  primary: `Control your deal flow.\nNot your vendor's mood.\nNot their pricing schedule.\nYours.`,
   headline: "Your Pipeline. Your Rules.",
   description: "Never rely on vendors again.",
   cta: "Learn More",
-  aiPrompt: "Confident business owner at a clean desk with a dashboard showing upward pipeline metrics, hands on keyboard, in control. Bright modern office, clean and powerful. 1080x1080."
+  aiPrompt: "Confident business owner at clean desk, pipeline dashboard glowing. Modern office, in control. 1080x1080."
 },
 {
-  id: "c1-a4-05", campaign: "C1", angle: "A4", style: "Story",
-  primary: `He built a $2M/year wholesaling operation.\nThen his data vendor raised prices 40%.\nHe had zero backup. Pipeline froze for 3 weeks.`,
-  headline: "One Vendor Change. Pipeline Frozen.",
-  description: "Don't build your business on someone else's terms.",
+  id: "c1-a4-06", campaign: "C1", angle: "A4", style: "Story",
+  primary: `He built a $2M/year operation.\nThen his data vendor raised prices 40%.\nNo backup. Pipeline froze for 3 weeks.\nHe's still recovering.`,
+  headline: "Pipeline Frozen. Still Recovering.",
+  description: "One vendor change. Three weeks of zero revenue.",
   cta: "Learn More",
-  aiPrompt: "Frozen pipeline — literally a metal pipe covered in ice and frost, sitting on top of a stack of dollar bills. Conceptual product photography, blue-cold tones. 1080x1080."
+  aiPrompt: "Frozen metal pipe covered in ice on top of dollar bills. Blue-cold tones, conceptual photography. 1080x1080."
 },
 {
-  id: "c1-a4-06", campaign: "C1", angle: "A4", style: "Direct",
-  primary: `Never rely on vendors again.\nNot for your data. Not for your pipeline. Not for your revenue.\nOwn the source.`,
-  headline: "Own The Source",
-  description: "The only lead gen that's truly yours.",
+  id: "c1-a4-07", campaign: "C1", angle: "A4", style: "Direct",
+  primary: `Every day you run someone else's data through your pipeline…\nYou're building their business. Not yours.\nOwn the source.`,
+  headline: "You're Building Their Business",
+  description: "Own the source. Own the pipeline.",
   cta: "Learn More",
-  aiPrompt: "Hand planting a flag on top of a data server stack, with 'MINE' on the flag. Bold, clean, minimal illustration style with dark background. 1080x1080."
+  aiPrompt: "Hand planting a flag on data server stack, 'MINE' on the flag. Dark background, bold. 1080x1080."
+},
+{
+  id: "c1-a4-08", campaign: "C1", angle: "A4", style: "Direct",
+  primary: `If you're spending $10K/month on leads…\nAnd your vendor controls the quality, the pricing, and the timing…\nWho actually runs your business?`,
+  headline: "Who Runs Your Business?",
+  description: "It should be you. Right now it's not.",
+  cta: "Learn More",
+  aiPrompt: "Business owner looking at vendor logo on a throne, while owner stands below. Conceptual power dynamic illustration. 1080x1080."
+},
+{
+  id: "c1-a4-09", campaign: "C1", angle: "A4", style: "Math",
+  primary: `$5K/month to rent a pipeline.\n$60K/year for something you don't own.\nWhat could you build with $60K in data you actually control?`,
+  headline: "$60K/Year To Rent Leads",
+  description: "At some point, you need to own the source.",
+  cta: "Learn More",
+  aiPrompt: "Rent vs Own comparison. Left: money flowing out forever. Right: asset growing. Clean infographic. 1080x1080."
+},
+{
+  id: "c1-a4-10", campaign: "C1", angle: "A4", style: "Direct",
+  primary: `Your competitors control their own data.\nYou're still waiting for a vendor to send you a list.\nThat gap is widening every week.`,
+  headline: "They Own Their Data. You Don't.",
+  description: "The gap is widening. Every week.",
+  cta: "Learn More",
+  aiPrompt: "Two runners diverging paths — one on solid ground, one on a treadmill going nowhere. Clean illustration. 1080x1080."
 },
 
-// --- ANGLE 5: TEAM FRUSTRATION / SALES REP PAIN (5 ads) ---
+// --- ANGLE 5: TEAM FRUSTRATION / SALES REP PAIN (7 ads) ---
 {
   id: "c1-a5-01", campaign: "C1", angle: "A5", style: "Direct",
-  primary: `Your reps aren't bad.\nYour data is.\nThey're making 200 calls a day into a list that's 40% dead.`,
-  headline: "Stop Blaming Your Team",
-  description: "Give them data worth dialing.",
+  primary: `Your reps aren't bad.\nYour data is.\n200 calls a day into a list that's 40% dead.\nThis is why your team is frustrated.`,
+  headline: "This Is Why Your Team Is Frustrated",
+  description: "It was never the reps. It was the data.",
   cta: "Learn More",
-  aiPrompt: "Split image: left side shows a frustrated sales rep at desk (red tint), right side shows same rep smiling on a call (green tint). Same person, different data. 1080x1080."
+  aiPrompt: "Frustrated sales rep at desk, red tint vs same rep smiling on call, green tint. Same person, different data. 1080x1080."
 },
 {
-  id: "c1-a5-02", campaign: "C1", angle: "A5", style: "Story",
-  primary: `"I've been calling for 3 hours — all dead numbers."\nThat's not a lazy rep.\nThat's a data problem wearing a headset.`,
-  headline: "Heard This From Your Team Lately?",
-  description: "The burnout isn't from the work. It's from the waste.",
+  id: "c1-a5-02", campaign: "C1", angle: "A5", style: "Direct",
+  primary: `Your reps are dialing for 3 hours…\nAnd getting nowhere.\nNot because they're lazy.\nBecause the numbers don't work.`,
+  headline: "3 Hours. Zero Conversations.",
+  description: "That's happening on your floor right now.",
   cta: "Learn More",
-  aiPrompt: "Close-up of a sales rep's face resting in their hands, headset still on, computer screen showing a call log behind them. Natural office lighting, documentary style. 1080x1080."
+  aiPrompt: "Close-up of rep's face resting in hands, headset on, call log behind them. Documentary style. 1080x1080."
 },
 {
   id: "c1-a5-03", campaign: "C1", angle: "A5", style: "Direct",
-  primary: `If you're managing a sales team…\nYou know the real problem isn't motivation.\nIt's watching good people burn out on garbage leads.`,
+  primary: `"These leads are garbage."\nYour reps are telling you every day.\nAt some point, that's not complaining.\nThat's a warning.`,
+  headline: "They're Warning You",
+  description: "The next thing they'll tell you is they're leaving.",
+  cta: "Learn More",
+  aiPrompt: "Whiteboard: 'THESE LEADS ARE GARBAGE' in marker, tally marks under 'Disconnected'. Candid office photo. 1080x1080."
+},
+{
+  id: "c1-a5-04", campaign: "C1", angle: "A5", style: "Math",
+  primary: `20 reps. 200 calls/day. 40% dead.\n1,600 wasted calls every single day.\nThat's not a team problem.\nThat's a data problem.`,
+  headline: "1,600 Wasted Calls. Today.",
+  description: "Same thing will happen tomorrow. Unless you change the source.",
+  cta: "Learn More",
+  aiPrompt: "Calculator showing 1,600 with red circle, sitting on daily call report. White background, dramatic shadow. 1080x1080."
+},
+{
+  id: "c1-a5-05", campaign: "C1", angle: "A5", style: "Direct",
+  primary: `If you're managing a sales team…\nThe real problem isn't motivation.\nIt's watching good people burn out on garbage leads.\nEvery. Single. Day.`,
   headline: "Good Reps. Garbage Leads.",
-  description: "They'll leave before the data improves. Unless you fix it first.",
+  description: "They'll leave before the data improves.",
   cta: "Learn More",
-  aiPrompt: "Manager looking through glass office wall at a team of reps, half the desks are empty with 'QUIT' post-it notes. Corporate office, cinematic depth of field. 1080x1080."
+  aiPrompt: "Manager looking through glass at team, half desks empty with 'QUIT' post-its. Cinematic depth of field. 1080x1080."
 },
 {
-  id: "c1-a5-04", campaign: "C1", angle: "A5", style: "Direct",
-  primary: `"These leads are garbage."\nYou've heard it. Your managers have heard it.\nAt some point, you have to listen.`,
-  headline: "Your Team Already Told You",
-  description: "The front line knows before the spreadsheet does.",
+  id: "c1-a5-06", campaign: "C1", angle: "A5", style: "Story",
+  primary: `His top closer quit on a Tuesday.\nNot because the job was hard.\nBecause 3 hours a day were spent dialing numbers that didn't exist.`,
+  headline: "His Best Rep Quit",
+  description: "The data drove him out. Not the work.",
   cta: "Learn More",
-  aiPrompt: "Whiteboard in a sales office with 'THESE LEADS ARE GARBAGE' written in marker, surrounded by tally marks under 'Disconnected' and 'Wrong Number'. Candid office photo style. 1080x1080."
+  aiPrompt: "Sales rep packing box at desk, headset left behind on keyboard. Others dialing in background. Documentary. 1080x1080."
 },
 {
-  id: "c1-a5-05", campaign: "C1", angle: "A5", style: "Math",
-  primary: `20 reps x 200 calls/day x 40% dead = 1,600 wasted calls.\nEvery. Single. Day.\nThat's not a team problem. That's a data problem.`,
-  headline: "1,600 Wasted Calls Per Day",
-  description: "The math your data vendor doesn't want you to see.",
+  id: "c1-a5-07", campaign: "C1", angle: "A5", style: "Direct",
+  primary: `Your team is wasting hours every day dialing numbers that don't work.\nNot because they're doing it wrong.\nBecause the data was broken before they touched it.`,
+  headline: "Broken Before They Touched It",
+  description: "The system is broken. Not your people.",
   cta: "Learn More",
-  aiPrompt: "Calculator showing 1,600 with a red circle around it, sitting on top of a daily call report. Clean product-style photography, white background, dramatic shadow. 1080x1080."
+  aiPrompt: "Hard-working rep at desk covered in call sheets marked with red X's. Determined but defeated. Warm light. 1080x1080."
 },
 
 // --- ANGLE 6: VENDOR BETRAYAL (4 ads) ---
 {
   id: "c1-a6-01", campaign: "C1", angle: "A6", style: "Direct",
-  primary: `Your data vendor sold your list to 8+ other buyers.\nWhile you were trusting them with your pipeline.\nYou've been getting played and didn't even realize it.`,
+  primary: `Your "exclusive" list went to 8 other buyers.\nWhile you were trusting them with your pipeline.\nYou've been getting played and didn't realize it.`,
   headline: "They Played You",
-  description: "Your 'exclusive' list was never exclusive.",
+  description: "Your vendor's business model depends on you not knowing.",
   cta: "Learn More",
-  aiPrompt: "Handshake where one hand has crossed fingers behind their back. Clean studio shot, dramatic side lighting, trust-breaking visual metaphor. 1080x1080."
+  aiPrompt: "Handshake with crossed fingers behind the back. Studio shot, dramatic side lighting. 1080x1080."
 },
 {
   id: "c1-a6-02", campaign: "C1", angle: "A6", style: "Direct",
-  primary: `They got more greedy over time.\nHigher prices. Lower quality. Same promises.\nAnd you kept paying because switching felt harder than staying.`,
+  primary: `Higher prices. Lower quality. Same promises.\nThey got greedy. And you kept paying.\nBecause switching felt harder than staying.`,
   headline: "They Counted On You Staying",
-  description: "Switching is easier than you think.",
+  description: "Switching is easier than you think. Starting today.",
   cta: "Learn More",
-  aiPrompt: "Price tag being changed from $500 to $800 by a hand, while the product (a data CD/USB) visually degrades and gets dusty. Before/after comparison. 1080x1080."
+  aiPrompt: "Price tag changed from $500 to $800 while product degrades. Before/after. 1080x1080."
 },
 {
   id: "c1-a6-03", campaign: "C1", angle: "A6", style: "Story",
-  primary: `He paid $4K/month for "exclusive" leads.\nThen ran into 3 competitors at the same property.\nSame list. Same vendor. Different buyers.`,
+  primary: `He paid $4K/month for "exclusive" leads.\nRan into 3 competitors at the same property.\nSame list. Same vendor. Different buyers.`,
   headline: "Exclusive Means Nothing To Them",
-  description: "Find out what real exclusivity looks like.",
+  description: "Their 'exclusive' is your competition.",
   cta: "Learn More",
-  aiPrompt: "Three different company cars parked outside the same house, each person holding the same printed lead sheet. Suburban street, documentary style. 1080x1080."
+  aiPrompt: "Three company cars parked outside same house, each person holding same lead sheet. Documentary style. 1080x1080."
 },
 {
   id: "c1-a6-04", campaign: "C1", angle: "A6", style: "Direct",
-  primary: `Your vendor doesn't care if you close.\nThey already got paid.\nYou need a source that only wins when you win.`,
+  primary: `Your vendor doesn't care if you close.\nThey already got paid.\nEvery day you stay is another day they profit from your loyalty.`,
   headline: "They Got Paid Either Way",
-  description: "Aligned incentives change everything.",
+  description: "Your loyalty is their business model.",
   cta: "Learn More",
-  aiPrompt: "Two doors: one labeled 'Your Vendor' showing someone walking away counting cash, the other labeled 'Your Partner' showing someone standing beside you. Conceptual illustration, clean lines. 1080x1080."
+  aiPrompt: "Two doors: 'Your Vendor' walking away counting cash, 'Your Partner' standing beside you. Illustration. 1080x1080."
 },
 
-// ===================== CAMPAIGN 2: PATTERN INTERRUPT (10 ads) =====================
+// --- ANGLE 7: LOW ROI (2 ads) ---
+{
+  id: "c1-a7-01", campaign: "C1", angle: "A7", style: "Direct",
+  primary: `If your lists aren't turning into deals…\nYou're not buying leads.\nYou're buying busy work.`,
+  headline: "Leads Or Busy Work?",
+  description: "Your ROI knows the difference.",
+  cta: "Learn More",
+  aiPrompt: "Stack of call sheets next to empty deal board. Busy but unproductive. Office setting. 1080x1080."
+},
+{
+  id: "c1-a7-02", campaign: "C1", angle: "A7", style: "Direct",
+  primary: `You're busy. Your team is busy.\nBut busy isn't profitable.\nEvery day you run this data, you're paying to stand still.`,
+  headline: "Busy Isn't Profitable",
+  description: "You're paying for motion. Not results.",
+  cta: "Learn More",
+  aiPrompt: "Hamster wheel with a suited business person running. Clean, conceptual illustration. 1080x1080."
+},
+
+// --- ANGLE 8: BLAME SHIFT (6 ads) — NEW ---
+{
+  id: "c1-a8-01", campaign: "C1", angle: "A8", style: "Direct",
+  primary: `It's not your reps.\nIt's not your script.\nIt's not your offer.\nIt's your data.`,
+  headline: "You're Solving The Wrong Problem",
+  description: "Every training, every script change — wasted. The data is the problem.",
+  cta: "Learn More",
+  aiPrompt: "Checklist with 'Reps', 'Script', 'Offer' all crossed out in green, 'DATA' circled in red. Clean whiteboard style. 1080x1080."
+},
+{
+  id: "c1-a8-02", campaign: "C1", angle: "A8", style: "Direct",
+  primary: `You've changed the script.\nYou've trained the team.\nYou've tried 3 different dialers.\nThe one thing you haven't changed is the source.`,
+  headline: "You Changed Everything Except The Source",
+  description: "The list was always the problem.",
+  cta: "Learn More",
+  aiPrompt: "Multiple tools (script paper, training manual, dialer) tossed aside. One USB drive labeled 'DATA' glowing. Dramatic. 1080x1080."
+},
+{
+  id: "c1-a8-03", campaign: "C1", angle: "A8", style: "Direct",
+  primary: `Your system isn't broken.\nYour team isn't broken.\nYour data is broken.\nAnd it's costing you every single day you don't fix it.`,
+  headline: "Your System Works. Your Data Doesn't.",
+  description: "Fix the input. The output fixes itself.",
+  cta: "Learn More",
+  aiPrompt: "Machine with clean gears, but dirty/corrupted data being fed in. Clean output on other side blocked. Conceptual. 1080x1080."
+},
+{
+  id: "c1-a8-04", campaign: "C1", angle: "A8", style: "Direct",
+  primary: `This isn't your team's fault.\nThey're working the phones. They're making the calls.\nBut no script fixes a disconnected number.`,
+  headline: "No Script Fixes A Dead Number",
+  description: "Protect your team. Fix the source.",
+  cta: "Learn More",
+  aiPrompt: "Script page crumpled next to phone showing 'Number Disconnected'. Clean desk, editorial style. 1080x1080."
+},
+{
+  id: "c1-a8-05", campaign: "C1", angle: "A8", style: "Direct",
+  primary: `If you're spending $10K/month on leads…\nAnd blaming your closers for the conversion rate…\nYou're looking at the wrong number.`,
+  headline: "Wrong Number. Wrong Blame.",
+  description: "The conversion problem starts before the first call.",
+  cta: "Learn More",
+  aiPrompt: "Finger pointing at sales rep, but a mirror reveals the data vendor behind the pointing hand. Conceptual. 1080x1080."
+},
+{
+  id: "c1-a8-06", campaign: "C1", angle: "A8", style: "Math",
+  primary: `You fired 2 reps this quarter.\nBut your data was 40% dead the whole time.\nThey weren't underperforming.\nThey were set up to fail.`,
+  headline: "They Were Set Up To Fail",
+  description: "Bad data looks like bad reps. It's not.",
+  cta: "Learn More",
+  aiPrompt: "Two employee badges with 'TERMINATED' stamped on them, next to a data report showing 40% failure rate. Dark, somber. 1080x1080."
+},
+
+// ===================== CAMPAIGN 2: PATTERN INTERRUPT (13 ads) =====================
 {
   id: "c2-ch-01", campaign: "C2", angle: "A1", style: "Cheeky",
-  primary: `Stop One Night Stands.\nWith your data vendor.\nYou deserve commitment, consistency, and leads that actually pick up.`,
-  headline: "You Deserve Better Data",
-  description: "It's time for a real relationship with your leads.",
+  primary: `Stop One Night Stands.\nWith your data vendor.\nYou deserve leads that actually pick up.`,
+  headline: "You Deserve Better",
+  description: "Commitment > convenience.",
   cta: "Learn More",
-  aiPrompt: "Broken heart emoji made out of scattered business cards and phone numbers on a bar counter. Playful lighting, cheeky vibe, clean composition. 1080x1080."
+  aiPrompt: "Broken heart made of scattered business cards on bar counter. Playful lighting, cheeky vibe. 1080x1080."
 },
 {
   id: "c2-ch-02", campaign: "C2", angle: "A2", style: "Cheeky",
-  primary: `Size Isn't Everything.\nEspecially when it comes to lead lists.\n500 accurate contacts beat 5,000 disconnected numbers every time.`,
-  headline: "Quality Over Quantity",
-  description: "Smaller list. Bigger results.",
+  primary: `Size Isn't Everything.\n500 accurate contacts beat 5,000 dead numbers.\nEvery single time.`,
+  headline: "Smaller List. Bigger Results.",
+  description: "Quality > quantity. Always.",
   cta: "Learn More",
-  aiPrompt: "Tiny diamond next to a huge pile of glass beads. Clean white surface, luxury product photography lighting. Simple and clever visual metaphor. 1080x1080."
+  aiPrompt: "Tiny diamond next to huge pile of glass beads. Luxury product photography. 1080x1080."
 },
 {
   id: "c2-ch-03", campaign: "C2", angle: "A2", style: "Cheeky",
   primary: `Stop Chasing Ghosts.\nHalf your list doesn't exist anymore.\nThe other half wishes you'd stop calling.`,
-  headline: "Your List Isn't Haunted. It's Dead.",
+  headline: "Your List Is Dead.",
   description: "Get leads that are actually alive.",
   cta: "Learn More",
-  aiPrompt: "Cartoon-style ghost floating out of a phone receiver, with a call center in the background. Playful but professional, muted pastel colors. 1080x1080."
+  aiPrompt: "Ghost floating out of phone receiver, call center in background. Playful but professional. 1080x1080."
 },
 {
   id: "c2-ch-04", campaign: "C2", angle: "A4", style: "Cheeky",
-  primary: `Breaking Up Is Hard To Do.\nEspecially with a data vendor you've been loyal to for years.\nBut loyalty shouldn't cost you $3K/month in dead leads.`,
-  headline: "It's Not You. It's Your Data.",
-  description: "Time to move on.",
+  primary: `Breaking Up Is Hard To Do.\nBut loyalty shouldn't cost you $3K/month in dead leads.\nIt's not you. It's your data.`,
+  headline: "Time To Move On",
+  description: "Your vendor relationship has run its course.",
   cta: "Learn More",
-  aiPrompt: "Person sitting on a couch with a box of 'Data Vendor' branded items (like a breakup box), looking relieved. Light comedic editorial style. 1080x1080."
+  aiPrompt: "Person on couch with 'Data Vendor' breakup box, looking relieved. Editorial comedy style. 1080x1080."
 },
 {
   id: "c2-ch-05", campaign: "C2", angle: "A3", style: "Cheeky",
-  primary: `Your Leads Have Commitment Issues.\nBecause they're seeing 8 other companies.\nAt the same time.\nMaybe it's not them. Maybe it's your vendor.`,
+  primary: `Your Leads Have Commitment Issues.\nThey're seeing 8 other companies.\nMaybe it's not them. Maybe it's your vendor.`,
   headline: "It's Definitely Your Vendor",
   description: "Get leads that aren't seeing other people.",
   cta: "Learn More",
-  aiPrompt: "Dating app-style profile card for 'Your Lead' showing '8 Active Matches' with company logos. Playful swipe-right format. Bright, fun colors. 1080x1080."
+  aiPrompt: "Dating app profile for 'Your Lead' showing '8 Active Matches'. Swipe-right format, bright colors. 1080x1080."
 },
 {
-  id: "c2-ch-06", campaign: "C2", angle: "A5", style: "Cheeky",
-  primary: `Your Sales Team's Horoscope Today:\n"You will make 200 calls.\n190 will go to voicemail.\nYour energy is wasted. Change your source."`,
-  headline: "The Stars Have Spoken",
-  description: "Your data vendor isn't in your sign.",
-  cta: "Learn More",
-  aiPrompt: "Horoscope page from a newspaper/magazine with the zodiac sign highlighting a sales forecast about dead numbers. Vintage newspaper texture, whimsical font. 1080x1080."
-},
-{
-  id: "c2-ch-07", campaign: "C2", angle: "A6", style: "Cheeky",
-  primary: `Plot Twist:\nYour "exclusive" leads were also sent to your competitor.\nAnd the guy down the street.\nAnd 6 other people you've never met.`,
+  id: "c2-ch-06", campaign: "C2", angle: "A6", style: "Cheeky",
+  primary: `Plot Twist:\nYour "exclusive" leads went to your competitor.\nAnd the guy down the street.\nAnd 6 people you've never met.`,
   headline: "Some Exclusivity",
   description: "Real exclusive data exists. This is it.",
   cta: "Learn More",
-  aiPrompt: "Movie-style 'PLOT TWIST' title card on a dark screen with dramatic spotlight. Clean, cinematic, bold typography. 1080x1080."
+  aiPrompt: "'PLOT TWIST' title card on dark screen with spotlight. Cinematic, bold typography. 1080x1080."
 },
 {
-  id: "c2-ch-08", campaign: "C2", angle: "A1", style: "Cheeky",
-  primary: `If Your Data Vendor Were A Restaurant…\nThe reviews would say:\n"Paid full price. Got half a meal. Wouldn't recommend."`,
+  id: "c2-ch-07", campaign: "C2", angle: "A1", style: "Cheeky",
+  primary: `If Your Data Vendor Were A Restaurant…\n"Paid full price. Got half a meal."\n1 star. Would not recommend.`,
   headline: "1-Star Data",
   description: "You wouldn't eat there. Why buy leads there?",
   cta: "Learn More",
-  aiPrompt: "Yelp/Google review card showing 1 star with the review text about data quality. Restaurant review format but about a data vendor. Clean mockup. 1080x1080."
+  aiPrompt: "Google review card showing 1 star about data quality. Restaurant review format. Clean mockup. 1080x1080."
 },
 {
-  id: "c2-ch-09", campaign: "C2", angle: "A7", style: "Cheeky",
-  primary: `Netflix, gym memberships, your data vendor…\nThings you keep paying for even when they stopped working.\nAt least Netflix has good shows.`,
+  id: "c2-ch-08", campaign: "C2", angle: "A7", style: "Cheeky",
+  primary: `Netflix. Gym membership. Your data vendor.\nThings you keep paying for even when they stopped working.\nAt least Netflix has good shows.`,
   headline: "Cancel Your Bad Data Subscription",
-  description: "Unlike Netflix, this one is actually costing you money.",
+  description: "This one is actually costing you money.",
   cta: "Learn More",
-  aiPrompt: "Three subscription cards: Netflix (green check), Gym (yellow meh), Data Vendor (red X with flames). Clean flat illustration style, witty visual. 1080x1080."
+  aiPrompt: "Three subscription cards: Netflix (check), Gym (meh), Data Vendor (red X with flames). Flat illustration. 1080x1080."
 },
 {
-  id: "c2-ch-10", campaign: "C2", angle: "A4", style: "Cheeky",
-  primary: `Your Data Vendor Right Now:\n"Please don't look behind the curtain."\nWe looked.\n40% dead numbers. 8x resold lists. Zero accountability.`,
+  id: "c2-ch-09", campaign: "C2", angle: "A4", style: "Cheeky",
+  primary: `Your Data Vendor Right Now:\n"Please don't look behind the curtain."\n40% dead. 8x resold. Zero accountability.`,
   headline: "We Looked Behind The Curtain",
-  description: "What your vendor doesn't want you to see.",
+  description: "What they don't want you to see.",
   cta: "Learn More",
-  aiPrompt: "Wizard of Oz-style curtain being pulled back to reveal a messy, chaotic office with piles of recycled lead lists. Dramatic reveal moment. 1080x1080."
+  aiPrompt: "Wizard of Oz curtain pulled back to reveal chaos and recycled lead lists. Dramatic reveal. 1080x1080."
+},
+{
+  id: "c2-ch-10", campaign: "C2", angle: "A8", style: "Cheeky",
+  primary: `Your Sales Team's Horoscope Today:\n"You will dial 200 numbers.\n190 will be dead.\nStars say: change your source."`,
+  headline: "The Stars Have Spoken",
+  description: "It's written in the data.",
+  cta: "Learn More",
+  aiPrompt: "Horoscope page highlighting sales forecast about dead numbers. Vintage newspaper texture. 1080x1080."
+},
+{
+  id: "c2-ch-11", campaign: "C2", angle: "A5", style: "Cheeky",
+  primary: `Your Reps Right Now:\n"I've been calling for 3 hours."\n"All dead numbers."\n"Again."`,
+  headline: "Again.",
+  description: "Same data. Same results. Every single day.",
+  cta: "Learn More",
+  aiPrompt: "Slack-style chat bubbles showing rep frustration messages. Clean UI mockup, relatable. 1080x1080."
+},
+{
+  id: "c2-ch-12", campaign: "C2", angle: "A8", style: "Cheeky",
+  primary: `Things that aren't the problem:\nYour reps. Your script. Your CRM. Your dialer.\n\nThe problem:\nThe list.`,
+  headline: "Process Of Elimination",
+  description: "You already know. You just haven't acted on it.",
+  cta: "Learn More",
+  aiPrompt: "Checklist with everything crossed out except 'THE LIST' circled in red. Minimal, impactful. 1080x1080."
+},
+{
+  id: "c2-ch-13", campaign: "C2", angle: "A4", style: "Cheeky",
+  primary: `Roses are red.\nYour list is dead.\nYour vendor got paid.\nAnd you got misled.`,
+  headline: "A Poem For Your Vendor",
+  description: "Romance isn't dead. But your leads are.",
+  cta: "Learn More",
+  aiPrompt: "Valentine card style with poem text, dead roses around the border. Cheeky, dark humor. 1080x1080."
 },
 
 // ===================== CAMPAIGN 3: TRUST / CONVERSION (5 ads) =====================
 {
   id: "c3-tr-01", campaign: "C3", angle: "A4", style: "Direct",
-  primary: `Everyone wants $50K spreads.\nBut few actually get in front of the right sellers.\nThis is the tool top wholesalers use to do it.`,
+  primary: `Everyone wants $50K spreads.\nFew actually get in front of the right sellers.\nThis is what top wholesalers use to do it.`,
   headline: "What Top Wholesalers Use",
-  description: "97% data accuracy. Exclusive records. Full control.",
+  description: "Control your deal flow. Starting today.",
   cta: "Learn More",
-  aiPrompt: "Clean, premium product shot of a laptop showing the BSP dashboard with pipeline metrics, on a high-end desk setup. Aspirational, successful business owner aesthetic. 1080x1080."
+  aiPrompt: "Premium laptop showing BSP dashboard with pipeline metrics. High-end desk setup, aspirational. 1080x1080."
 },
 {
   id: "c3-tr-02", campaign: "C3", angle: "A1", style: "Direct",
-  primary: `97% accuracy.\nEvery bad record replaced.\nNo contracts. No commitments.\nIf it doesn't work, you pay nothing.`,
-  headline: "Guaranteed Data Accuracy",
+  primary: `Every bad record replaced. No cap.\nNo contracts. No commitments.\nIf it doesn't work, you pay nothing.`,
+  headline: "Guaranteed. Or Free.",
   description: "We replace every bad number. Period.",
   cta: "Learn More",
-  aiPrompt: "Bold '97%' in large typography with a guarantee badge/seal, on a clean dark background. Premium, trustworthy, corporate design. Gold accent on the seal. 1080x1080."
+  aiPrompt: "Bold guarantee badge/seal on dark background. Premium, trustworthy, gold accent. 1080x1080."
 },
 {
   id: "c3-tr-03", campaign: "C3", angle: "A2", style: "Direct",
-  primary: `When your data is getting scary good…\nYou stop worrying about contact rates.\nYou start worrying about having enough reps to handle the volume.`,
+  primary: `When your data is getting scary good…\nYou stop worrying about contact rates.\nYou start worrying about having enough reps.`,
   headline: "A Better Problem To Have",
   description: "From dead numbers to too many conversations.",
   cta: "Learn More",
-  aiPrompt: "Sales team high-fiving in an office, busy phones, energy in the room. Bright, positive, aspirational corporate photography. Green and white tones. 1080x1080."
+  aiPrompt: "Sales team high-fiving, busy phones, energy. Bright, aspirational corporate photography. 1080x1080."
 },
 {
-  id: "c3-tr-04", campaign: "C3", angle: "A5", style: "Story",
-  primary: `His team went from 12% contact rate to 67%.\nSame reps. Same scripts. Same hours.\nOnly thing that changed was the data.`,
-  headline: "Same Team. Different Data. 5x Results.",
-  description: "See what happens when accuracy is the standard.",
+  id: "c3-tr-04", campaign: "C3", angle: "A8", style: "Story",
+  primary: `Same reps. Same scripts. Same hours.\n12% contact rate → 67%.\nOnly thing that changed was the data.`,
+  headline: "Same Team. 5x Results.",
+  description: "The team was never the problem.",
   cta: "Learn More",
-  aiPrompt: "Before/after dashboard comparison: left shows 12% in red, right shows 67% in green. Clean analytics UI style, realistic software screenshot aesthetic. 1080x1080."
+  aiPrompt: "Before/after dashboard: 12% in red → 67% in green. Realistic analytics UI. 1080x1080."
 },
 {
-  id: "c3-tr-05", campaign: "C3", angle: "A7", style: "Direct",
-  primary: `Call centers. Wholesalers. Insurance teams. Solar closers.\nThe ones winning right now all figured out the same thing:\nThe list is the strategy.`,
-  headline: "The List Is The Strategy",
-  description: "Join the teams already using BSP Enterprise.",
+  id: "c3-tr-05", campaign: "C3", angle: "A5", style: "Direct",
+  primary: `His reps stopped complaining about leads.\nStarted complaining about not having enough hours in the day.\nThat's the switch.`,
+  headline: "The Switch",
+  description: "From 'these leads are garbage' to 'I need more hours.'",
   cta: "Learn More",
-  aiPrompt: "Grid of 4 industry icons (phone, house, shield, sun) all connected by lines to a central BSP logo. Clean infographic on dark background, professional and premium. 1080x1080."
+  aiPrompt: "Before: frustrated rep. After: same rep overwhelmed with callbacks, smiling. Split screen. 1080x1080."
 }
 ];
 
@@ -677,7 +807,7 @@ const grid = document.getElementById('adGrid');
 function renderCard(ad) {
   const campClass = ad.campaign === 'C1' ? 'tag-c1' : ad.campaign === 'C2' ? 'tag-c2' : 'tag-c3';
   const campLabel = ad.campaign === 'C1' ? 'Problem Aware' : ad.campaign === 'C2' ? 'Pattern Interrupt' : 'Trust';
-  const angleMap = {A1:'Wasted Money',A2:'Dead Numbers',A3:'Oversaturation',A4:'Pipeline Control',A5:'Team Pain',A6:'Vendor Betrayal',A7:'Low ROI'};
+  const angleMap = {A1:'Wasted Money',A2:'Dead Numbers',A3:'Oversaturation',A4:'Pipeline Control',A5:'Team Pain',A6:'Vendor Betrayal',A7:'Low ROI',A8:'Blame Shift'};
 
   const saved = localStorage.getItem('vote-'+ad.id) || '';
 
