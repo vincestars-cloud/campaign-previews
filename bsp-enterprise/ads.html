@@ -151,20 +151,34 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
 .copy-prompt-btn:hover { background: #333; }
 .copy-prompt-btn.copied { background: #059669; }
 
-/* Image upload/preview */
-.ad-image-upload {
-  border-top: 1px solid #eee; padding: 20px 16px; text-align: center;
-  cursor: pointer; color: #888; font-size: 0.82rem; transition: background 0.15s;
+/* Image gallery */
+.ad-image-gallery { border-top: 1px solid #eee; }
+.gallery-images { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+.gallery-images::-webkit-scrollbar { height: 4px; }
+.gallery-images::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+.gallery-slide { flex: 0 0 100%; scroll-snap-align: start; position: relative; }
+.gallery-slide img { width: 100%; display: block; }
+.gallery-remove {
+  position: absolute; top: 8px; right: 8px;
+  background: rgba(0,0,0,0.7); color: #fff; border: none; padding: 4px 10px;
+  border-radius: 4px; font-size: 0.7rem; cursor: pointer; opacity: 0; transition: opacity 0.15s;
 }
-.ad-image-upload:hover { background: #f5f5f0; color: #444; }
-.ad-image-upload span { display: flex; align-items: center; justify-content: center; gap: 4px; }
-.ad-image-preview { border-top: 1px solid #eee; position: relative; }
-.ad-image-preview img { width: 100%; display: block; }
-.ad-image-preview:hover::after {
-  content: '× Remove'; position: absolute; top: 8px; right: 8px;
-  background: rgba(0,0,0,0.7); color: #fff; padding: 4px 10px; border-radius: 4px;
-  font-size: 0.7rem; cursor: pointer;
+.gallery-slide:hover .gallery-remove { opacity: 1; }
+.gallery-dots { display: flex; justify-content: center; gap: 6px; padding: 8px 0; }
+.gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: #ddd; border: none; cursor: pointer; padding: 0; }
+.gallery-dot.active { background: #1a1a1a; }
+.gallery-count { text-align: center; font-size: 0.72rem; color: #999; padding-bottom: 6px; }
+
+/* Drop zone */
+.ad-image-dropzone {
+  border-top: 1px solid #eee; padding: 24px 16px; text-align: center;
+  cursor: pointer; color: #888; font-size: 0.82rem; transition: all 0.15s;
+  border: 2px dashed transparent; margin: 0;
 }
+.ad-image-dropzone:hover { background: #f5f5f0; color: #444; }
+.ad-image-dropzone.dragover { background: #ecfdf5; border-color: #22c55e; color: #059669; }
+.ad-image-dropzone span { display: flex; align-items: center; justify-content: center; gap: 6px; flex-direction: column; }
+.ad-image-dropzone .drop-hint { font-size: 0.72rem; color: #aaa; }
 
 /* Vote filter buttons */
 .vote-filter-row { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; align-items: center; }
@@ -846,7 +860,6 @@ function renderCard(ad) {
   const angleMap = {A1:'Wasted Money',A2:'Dead Numbers',A3:'Oversaturation',A4:'Pipeline Control',A5:'Team Pain',A6:'Vendor Betrayal',A7:'Low ROI',A8:'Blame Shift'};
 
   const saved = localStorage.getItem('vote-'+ad.id) || '';
-  const savedImg = localStorage.getItem('img-'+ad.id) || '';
 
   return `
   <div class="ad-card" data-campaign="${ad.campaign}" data-angle="${ad.angle}" data-style="${ad.style}" data-id="${ad.id}">
@@ -872,7 +885,7 @@ function renderCard(ad) {
         <button class="ad-cta-btn">${ad.cta || 'Learn More'}</button>
       </div>
     </div>
-    ${savedImg ? `<div class="ad-image-preview"><img src="${savedImg}" alt="Ad creative for ${ad.headline}" /></div>` : `<div class="ad-image-upload" onclick="document.getElementById('upload-${ad.id}').click()"><span>+ Add Rendered Image</span><input type="file" id="upload-${ad.id}" accept="image/*" style="display:none" onchange="uploadImage('${ad.id}',this)" /></div>`}
+    ${renderGallery(ad.id, ad.headline)}
     <div class="ai-prompt-toggle" onclick="togglePrompt(this)">Show AI Image Prompt</div>
     <div class="ai-prompt-body"><button class="copy-prompt-btn" onclick="copyPrompt(this, '${ad.id}')">Copy</button>${escHtml(ad.aiPrompt)}</div>
     <div class="vote-row">
@@ -892,6 +905,8 @@ function escHtml(s) {
 function renderAll() {
   grid.innerHTML = ADS.map(renderCard).join('');
   updateCounts();
+  setupDropzones();
+  setupGalleryScroll();
 }
 
 // =========================================================================
@@ -959,37 +974,123 @@ function copyPrompt(btn, id) {
 }
 
 // =========================================================================
-// IMAGE UPLOAD / REMOVE
+// IMAGE GALLERY (multiple images, drag & drop, localStorage)
 // =========================================================================
-function uploadImage(id, input) {
-  const file = input.files[0];
-  if (!file) return;
-  const reader = new FileReader();
-  reader.onload = function(e) {
-    localStorage.setItem('img-'+id, e.target.result);
-    renderAll();
-    applyFilters();
-  };
-  reader.readAsDataURL(file);
+function getImages(id) {
+  try { return JSON.parse(localStorage.getItem('imgs-'+id)) || []; }
+  catch { return []; }
 }
 
-function removeImage(id) {
-  localStorage.removeItem('img-'+id);
+function saveImages(id, imgs) {
+  try { localStorage.setItem('imgs-'+id, JSON.stringify(imgs)); }
+  catch(e) {
+    alert('Storage full. Try removing some images from other ads first.');
+  }
+}
+
+function renderGallery(id, headline) {
+  const imgs = getImages(id);
+  let html = '<div class="ad-image-gallery">';
+
+  if (imgs.length > 0) {
+    html += `<div class="gallery-images" id="gallery-${id}">`;
+    imgs.forEach((src, i) => {
+      html += `<div class="gallery-slide"><img src="${src}" alt="Creative ${i+1} for ${headline}" /><button class="gallery-remove" onclick="event.stopPropagation();removeImage('${id}',${i})">Remove</button></div>`;
+    });
+    html += '</div>';
+    if (imgs.length > 1) {
+      html += `<div class="gallery-dots">`;
+      imgs.forEach((_, i) => {
+        html += `<button class="gallery-dot ${i===0?'active':''}" onclick="scrollGallery('${id}',${i})"></button>`;
+      });
+      html += `</div>`;
+      html += `<div class="gallery-count">${imgs.length} image${imgs.length>1?'s':''}</div>`;
+    }
+  }
+
+  html += `<div class="ad-image-dropzone" id="dropzone-${id}" onclick="document.getElementById('upload-${id}').click()">`;
+  html += `<span>${imgs.length > 0 ? '+ Add More Images' : '+ Add Rendered Images'}<span class="drop-hint">or drag & drop</span></span>`;
+  html += `<input type="file" id="upload-${id}" accept="image/*" multiple style="display:none" onchange="handleFiles('${id}',this.files)" />`;
+  html += '</div></div>';
+  return html;
+}
+
+function handleFiles(id, files) {
+  if (!files.length) return;
+  const imgs = getImages(id);
+  let loaded = 0;
+  Array.from(files).forEach(file => {
+    if (!file.type.startsWith('image/')) return;
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      // Resize to limit storage — max 800px wide
+      const img = new Image();
+      img.onload = function() {
+        const maxW = 800;
+        let w = img.width, h = img.height;
+        if (w > maxW) { h = Math.round(h * maxW / w); w = maxW; }
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, w, h);
+        imgs.push(canvas.toDataURL('image/jpeg', 0.85));
+        loaded++;
+        if (loaded === files.length) {
+          saveImages(id, imgs);
+          renderAll();
+          applyFilters();
+        }
+      };
+      img.src = e.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function removeImage(id, index) {
+  const imgs = getImages(id);
+  imgs.splice(index, 1);
+  saveImages(id, imgs);
   renderAll();
   applyFilters();
 }
 
-// Add click handler for image removal via event delegation
-document.addEventListener('click', function(e) {
-  const preview = e.target.closest('.ad-image-preview');
-  if (preview) {
-    const card = preview.closest('.ad-card');
-    if (card) {
-      const id = card.dataset.id;
-      if (confirm('Remove this image?')) removeImage(id);
-    }
-  }
-});
+function scrollGallery(id, index) {
+  const gallery = document.getElementById('gallery-'+id);
+  if (!gallery) return;
+  const slide = gallery.children[index];
+  if (slide) slide.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  gallery.closest('.ad-image-gallery').querySelectorAll('.gallery-dot').forEach((d, i) => {
+    d.classList.toggle('active', i === index);
+  });
+}
+
+// Drag & drop setup — attach after render
+function setupDropzones() {
+  document.querySelectorAll('.ad-image-dropzone').forEach(zone => {
+    zone.addEventListener('dragover', e => { e.preventDefault(); zone.classList.add('dragover'); });
+    zone.addEventListener('dragleave', () => { zone.classList.remove('dragover'); });
+    zone.addEventListener('drop', e => {
+      e.preventDefault();
+      zone.classList.remove('dragover');
+      const id = zone.id.replace('dropzone-', '');
+      if (e.dataTransfer.files.length) handleFiles(id, e.dataTransfer.files);
+    });
+  });
+}
+
+// Auto-update dots on scroll
+function setupGalleryScroll() {
+  document.querySelectorAll('.gallery-images').forEach(gallery => {
+    gallery.addEventListener('scroll', () => {
+      const slideW = gallery.children[0]?.offsetWidth || 1;
+      const index = Math.round(gallery.scrollLeft / slideW);
+      gallery.closest('.ad-image-gallery')?.querySelectorAll('.gallery-dot').forEach((d, i) => {
+        d.classList.toggle('active', i === index);
+      });
+    });
+  });
+}
 
 function updateCounts() {
   let a = 0, c = 0, r = 0;
