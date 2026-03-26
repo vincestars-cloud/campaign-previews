@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BookedSolid Pro V10 — Image-First</title>
+<title>BookedSolid Pro V11 — Stage-Mapped</title>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -216,8 +216,8 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
 
 <!-- HERO -->
 <section class="hero">
-  <h1>BookedSolid Pro Enterprise V8 — FINAL</h1>
-  <p class="subtitle">27 ads. Image-first. Copy matched to proven visuals. 27 unique styles.</p>
+  <h1>BookedSolid Pro V11</h1>
+  <p class="subtitle">35 ads. 4 awareness stages. 13 angles. Stage-specific copy + CTA rules.</p>
   <div class="hero-stats">
     <div class="hero-stat"><div class="num">35</div><div class="label">Total Ads</div></div>
     <div class="hero-stat"><div class="num">13</div><div class="label">Angles</div></div>
@@ -286,8 +286,8 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
     <div class="seg seg-c3">10% Trust</div>
   </div>
   <div class="campaign-legend">
-    <span><span class="dot" style="background:#2d6a4f"></span> C1: Problem Aware (~40 ads) — waste math, dead numbers, blame shift, frustration, control</span>
-    <span><span class="dot" style="background:#e76f51"></span> C2: Pattern Interrupt (~10 ads) — cheeky, double meaning, scroll-stopping</span>
+    <span><span class="dot" style="background:#2d6a4f"></span> S2: This Sucks (~40 ads) — waste math, dead numbers, blame shift, frustration, control</span>
+    <span><span class="dot" style="background:#e76f51"></span> S3: Why It Sucks (~10 ads) — cheeky, double meaning, scroll-stopping</span>
     <span><span class="dot" style="background:#264653"></span> C3: Trust + Mechanism / Conversion (~5 ads) — guarantee, proof, testimonials</span>
   </div>
 </div>
@@ -296,12 +296,25 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
 <div class="filters" id="filters">
   <span class="filter-label">Campaign:</span>
   <button class="filter-btn active" data-filter="campaign" data-value="all">All</button>
-  <button class="filter-btn" data-filter="campaign" data-value="C1">C1: Problem Aware</button>
-  <button class="filter-btn" data-filter="campaign" data-value="C2">C2: Pattern Interrupt</button>
-  <button class="filter-btn" data-filter="campaign" data-value="C3">C3: Trust + Product</button>
+  <button class="filter-btn" data-filter="campaign" data-value="C1">S2: This Sucks</button>
+  <button class="filter-btn" data-filter="campaign" data-value="C2">S3: Why It Sucks</button>
+  <button class="filter-btn" data-filter="campaign" data-value="C3">S4: Why Us</button>
   <div class="filter-sep"></div>
   <span class="filter-label">Angle:</span>
   <button class="filter-btn active" data-filter="angle" data-value="all">All</button>
+  <button class="filter-btn" data-filter="angle" data-value="A1">Dead Numbers</button>
+  <button class="filter-btn" data-filter="angle" data-value="A2">Wasted Money</button>
+  <button class="filter-btn" data-filter="angle" data-value="A3">Rep Pain</button>
+  <button class="filter-btn" data-filter="angle" data-value="A4">Bad Pipeline</button>
+  <button class="filter-btn" data-filter="angle" data-value="A5">Wrong Blame</button>
+  <button class="filter-btn" data-filter="angle" data-value="A6">Contact Rate</button>
+  <button class="filter-btn" data-filter="angle" data-value="A7">Bad Data Effect</button>
+  <button class="filter-btn" data-filter="angle" data-value="A8">Outbound Fix</button>
+  <button class="filter-btn" data-filter="angle" data-value="A9">Guarantee</button>
+  <button class="filter-btn" data-filter="angle" data-value="A10">Comparison</button>
+  <button class="filter-btn" data-filter="angle" data-value="A11">Trust</button>
+  <button class="filter-btn" data-filter="angle" data-value="A12">Risk Removal</button>
+  <button class="filter-btn" data-filter="angle" data-value="A13">Instant Access</button>
   <div class="filter-sep"></div>
   <span class="filter-label">Style:</span>
   <button class="filter-btn active" data-filter="style" data-value="all">All</button>
@@ -328,549 +341,621 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
 </div>
 
 <script>
-// BookedSolid Pro — Enterprise Ad Campaign v8 FINAL
-// 35 ads across 3 campaigns, 7 angles
-// Style usage tracked in comments
 
-// BookedSolid Pro — Enterprise Ad Campaign v9 FINAL
-// 35 ads across 3 campaigns
-// Complete rewrite — all credibility issues fixed
-// RULES: Lead with BSP value. No made-up math. No telling prospects what they have.
-// BookedSolid Pro — Enterprise Ad Campaign v10 FINAL
-// 27 ads — one per proven image
-// Copy written TO MATCH each specific image
+// BookedSolid Pro — V11 Awareness-Stage Campaign
+// 35 ads — 4 stages (S2-S5), 13 angles
 // CORRECTED FACTS: 85+ data points, 90% working number accuracy, DNC included (not scrubbed), $0.04/record
-// Guarantee rotations: G1-G5 | CTA rotations: C1-C5
+// Every bad number replaced free — no cap, no expiration
+// "BookedSolid Pro" always spelled out
+// Guarantee rotations: G1-G5 | CTA rotations per stage
 
 const ADS = [
 
-  // ═══════════════════════════════════════════════════════════
-// BookedSolid Pro — Enterprise Ad Campaign v10 FINAL
-// 27 ads — one per proven image
-// Copy written TO MATCH each specific image
-// CORRECTED FACTS: 85+ data points, 90% working number accuracy, DNC included (not scrubbed), $0.04/record
-// Guarantee rotations: G1-G5 | CTA rotations: C1-C5
+  // ═══════════════════════════════════════════════════════════════
+  //
+  //  STAGE 2: "THIS SUCKS" — 12 ads (~35%)
+  //  Mirror pain. Make them feel seen. Use THEIR language.
+  //  DO NOT: educate, introduce solutions, mention product,
+  //          talk about accuracy/features.
+  //  CTA: Soft — "Look at this" / "See this"
+  //
+  // ═══════════════════════════════════════════════════════════════
 
-const ADS = [
+  // ─── A1: Dead Numbers / Disconnects (3 ads) ───
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 1 — Dark Shield / Guarantee Badge
-  // Image: Shield icon, "EVERY BAD NUMBER REPLACED FREE", bullet guarantees
-  // Status: NEEDS EDIT (update data points + accuracy claim)
-  // Guarantee: G1 | CTA: C1
-  // ═══════════════════════════════════════════════════════════
+  // S2-A1-01
+  // First 50 chars: "200 dials today. 9 people picked up." (37 chars)
+  // Image: Napkin Tally / Bar Scene (from V10 #11)
   {
-    id: "v10-01",
-    campaign: "C1",
-    angle: "Guarantee",
-    style: "Dark Shield / Guarantee Badge",
-    primary: `Most data vendors sell you a list and disappear. BookedSolid Pro replaces every bad number — free. No cap. No expiration.\n\n85+ data points per record. 90% working number accuracy. And if any slip through, they get replaced at no cost.\n\nNo subscription. No contract. No minimum order.\n\nPull a sample list for your market. 60 seconds, no commitment.`,
-    headline: "Every Bad Number Replaced Free.",
-    description: "85+ data points per record. $0.04 each. No subscription.",
-    cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Dark navy-blue background with a subtle radial gradient — darkest at edges (#0a0f1a), slightly lighter in the center (#0f172a). A soft blue glow emanates from behind the central shield element. TOP ZONE (top 15%): Large bold white italic serif text (DM Serif Display, ~60px) reading 'EVERY BAD NUMBER' centered horizontally. CENTER ZONE (middle 35%): A large 3D-rendered shield icon, approximately 280px tall, with a metallic dark steel-blue body and a bright green checkmark in the center. The shield has a slight glossy reflection and dimensional beveling. The green checkmark is bold, hex #22c55e. Below the shield, large bold white serif text (~70px) reading 'REPLACED FREE' centered. LOWER ZONE (next 30%): Four bullet points stacked vertically, each with a small green circle checkmark icon (20px) to the left. Text in white sans-serif (Inter, ~28px): Line 1: 'No cap on replacements', Line 2: 'No expiration date', Line 3: 'No support ticket required', Line 4: 'No form to fill out'. Each line has comfortable spacing (~45px between lines). BOTTOM ZONE (bottom 15%): A thin horizontal divider line, then the brand bar — a blue diamond icon followed by 'BookedSolid Pro' in white bold sans-serif (~24px), then '$0.04/record' in white (~24px) to the right. At the very bottom, a slim dark gray bar (#1e293b) spanning full width with centered white text (~16px): 'No Subscription . No Contract . No Minimum' with centered dots as separators. Lighting: Soft ambient glow from center, creating depth behind the shield. Material: Smooth matte digital surface with subtle noise texture. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
-  },
-
-  // ═══════════════════════════════════════════════════════════
-  // AD 2 — Before/After Phone Split
-  // Image: Two phones — left disconnected (red), right verified record (green)
-  // Status: NEEDS EDIT (18 fields → 85+ data points)
-  // Guarantee: G2 | CTA: C2
-  // ═══════════════════════════════════════════════════════════
-  {
-    id: "v10-02",
-    campaign: "C1",
-    angle: "Transformation",
-    style: "Before/After Phone Split",
-    primary: `Left phone: "Number Disconnected." Right phone: full name, mobile, email, property value, mortgage balance, and 80 more data points.\n\nSame dial. Different data. That's the difference BookedSolid Pro makes.\n\nDead number? Replaced. No form. No ticket. No waiting.\n\nSee the data before you buy. No card required.`,
-    headline: "Same Dial. Different Outcome.",
-    description: "85+ verified data points per record. Bad numbers replaced free.",
-    cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Background is a dark gradient split — left side has a warm dark red-tinted hue (#1a0505), right side has a cool dark green-tinted hue (#051a0a), blending in the center. TOP ZONE (top 10%): Two labels — left side shows 'BEFORE' in bold green text (#22c55e, ~36px, DM Serif Display), right side shows 'AFTER' in bold green text (#22c55e, ~36px). A subtle '>' arrow between them. CENTER ZONE (40%): Two photorealistic smartphone mockups side by side, slightly angled. LEFT PHONE: Shows an iPhone with a red-tinted screen displaying 'Number Disconnected' with a red X icon at top. Below that, a 'Recents' call log showing multiple entries all reading 'Number Disconnected' with gray text, stacked. The phone has a red error badge. At the bottom of the phone screen, a red pill-shaped badge reading 'Disconnected' in white. RIGHT PHONE: Shows an iPhone with a green-tinted screen displaying 'Connected' with a large green circle checkmark. Below shows a contact card for 'Becky Davis' with a green 'VERIFIED' badge, address '9412 Aster St W, Harrisburg, PA 17112', property type 'Proper:', phone '(703) 555-1298', mailing address info, and multiple data field tabs at bottom (People, Titles, Money, Tenant, Success). Text at bottom of phone: '85+ data points visible'. The phones cast subtle reflections on a glossy dark surface below them. LOWER ZONE (20%): A dark metallic banner/pill shape with white text reading 'FREE REPLACEMENT' in bold caps (~32px). Below that, centered: blue diamond icon + 'BookedSolid Pro' in white bold (~28px). BOTTOM (10%): Centered text in white/light gray (~20px): '$0.04/record . No Cap . No Expiration'. Lighting: Dramatic split lighting — red glow on left, green glow on right. Material: Glossy reflective dark surface under the phones. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
-  },
-
-  // ═══════════════════════════════════════════════════════════
-  // AD 3 — Guarantee Seal / Gold Badge
-  // Image: Gold guarantee seal with ribbon, bullet list
-  // Status: NEEDS EDIT (18 fields → 85+, phone-verified → 90% accuracy)
-  // Guarantee: G3 | CTA: C3
-  // ═══════════════════════════════════════════════════════════
-  {
-    id: "v10-03",
-    campaign: "C1",
-    angle: "Guarantee",
-    style: "Guarantee Seal / Gold Badge",
-    primary: `Most data comes with a terms-of-service page. BookedSolid Pro comes with an actual guarantee.\n\nEvery bad number replaced. No cap. No expiration. No form. No support ticket. No waiting period.\n\n90% working number accuracy. If any slip through, we replace them. Free.\n\nBuild a list for your territory right now. Takes 60 seconds.`,
-    headline: "Guaranteed. Not Hoped For.",
-    description: "85+ data points. Bad numbers replaced free. No contract.",
-    cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Background is very dark navy-black (#090d15) with a subtle radial glow behind the central seal element. CENTER-TOP ZONE (top 45%): A large ornate gold/brass circular seal badge, approximately 400px diameter. The seal has a scalloped/starburst edge pattern with alternating raised points, rendered in metallic gold (#c5a03f) with darker gold shadows. Across the top arc of the seal, curved text reading 'GUARANTEED' in bold gold serif font. In the center of the seal: a blue diamond icon (~30px) above 'BookedSolid Pro' in white bold text (~24px). Below that, a green ribbon banner crossing horizontally with white text reading 'EVERY BAD NUMBER REPLACED FREE' in bold caps (~18px). The seal has a dimensional, embossed metallic look with highlights and shadows suggesting 3D depth. LOWER ZONE (next 35%): Five bullet points stacked vertically with green circle checkmark icons on the left. Each line in white sans-serif (Inter, ~26px): 'No cap on replacements', 'No expiration date', 'No form required', 'No support ticket', 'No waiting period'. Comfortable spacing between lines (~40px). BOTTOM ZONE (bottom 10%): Centered text in light gray/white (~18px): '$0.04/record . 85+ data points . 90% working number accuracy'. Lighting: Warm spotlight illuminating the gold seal from above, creating metallic reflections. Dark ambient everywhere else. Material: Metallic gold with embossed texture on the seal; smooth dark matte background. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
-  },
-
-  // ═══════════════════════════════════════════════════════════
-  // AD 4 — Money Shredder / Guarantee Contrast
-  // Image: Paper shredder destroying sarcastic vendor guarantee, BSP badge beside it
-  // Status: NEEDS EDIT (18 fields → 85+ data points)
-  // Guarantee: G4 | CTA: C4
-  // ═══════════════════════════════════════════════════════════
-  {
-    id: "v10-04",
-    campaign: "C1",
-    angle: "Competitor Attack / Sarcasm",
-    style: "Money Shredder / Guarantee Contrast",
-    primary: `Your current data vendor's guarantee: "We hope some of these numbers work. Good luck."\n\nBookedSolid Pro's guarantee: Every bad number replaced free. No cap. No expiration. Period.\n\n85+ data points per record. $0.04 each. No subscription.\n\nCompare it against your current data. 60-second sample.`,
-    headline: "Their Guarantee vs. Ours.",
-    description: "Every bad record guaranteed. Free replacement. No questions.",
-    cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Photorealistic office desktop scene shot from a slightly elevated angle. A light wood-grain desk surface fills the frame. TOP-CENTER: A small white/silver desktop paper shredder sitting on the desk, with shredded paper strips coming out the bottom into its collection area. A piece of paper is partially fed into the top of the shredder. The paper visible above the shredder reads in dark serif text: 'DATA VENDOR GUARANTEE' as a bold header, followed by italic text: 'We hope some of these numbers work. Good luck.' — styled like a sarcastic certificate. A laptop edge is barely visible in the top-right corner. CENTER-RIGHT: Overlaid on the desk scene, a dark navy-blue rounded-corner card (~350px wide) resembling a coaster or badge. The card features: at the top, a gold/green circular seal with 'GUARANTEED' arcing across it and a green ribbon banner. Below the seal: 'BookedSolid Pro' with blue diamond icon, then 'OUR VENDOR GUARANTEE' in small caps. Below that in white bold: 'EVERY BAD NUMBER REPLACED FREE'. Then 'NO CAP . NO EXPIRATION' in smaller white text. And the BookedSolid Pro logo at the bottom of the card. BOTTOM ZONE (bottom 12%): White background bar spanning full width. Left-aligned: '$0.04/record . 85+ data points' in dark text (~22px). Right-aligned: blue diamond + 'BookedSolid Pro' in navy text. Lighting: Natural warm office lighting from upper-left, casting soft shadows from the shredder. Material: Real wood desk texture, matte paper, glossy shredder plastic. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
-  },
-
-  // ═══════════════════════════════════════════════════════════
-  // AD 5 — Napkin Verse / Bar Scene
-  // Image: Cocktail napkin with handwritten poem, bar setting
-  // Status: NEEDS EDIT (change attribution from BSP to "— Your Data Provider")
-  // Guarantee: G5 | CTA: C5
-  // ═══════════════════════════════════════════════════════════
-  {
-    id: "v10-05",
-    campaign: "C1",
-    angle: "Pattern Interrupt / Humor",
-    style: "Napkin Verse / Bar Scene",
-    primary: `Your reps wrote this on a napkin after today's shift.\n\nRoses are red. Your numbers are dead. You paid for the list. And got nothing instead.\n\nBookedSolid Pro: 85+ data points per record. 90% working number accuracy. Every bad number replaced free.\n\nTry it. One list. Your market. 60 seconds.`,
-    headline: "Your Team Wrote This Today.",
-    description: "85+ verified data points. Bad numbers replaced free.",
-    cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Photorealistic overhead shot of a dark polished wood bar/table surface. CENTER: A white cocktail napkin, slightly crumpled at the edges with natural paper texture and folds, sits on the dark wood. Handwritten text in black ink (casual script/handwriting style, ~28px equivalent) on the napkin reads four lines centered: 'Roses are red.' / 'Your numbers are dead.' / 'You paid for the list.' / 'And got nothing instead.' — each line on its own row with natural handwriting spacing. Below the poem, in the bottom-right area of the napkin, smaller handwritten text: '— Your Data Provider' (~18px). TOP-LEFT: A partially visible glass beer mug with golden amber beer, about 25% visible at the edge of the frame, casting a subtle shadow on the napkin. RIGHT: A silver/chrome ballpoint pen lies diagonally next to the napkin, pointing toward the bottom-right corner. Lighting: Warm ambient bar lighting from above-left, creating soft shadows under the napkin and pen. The wood surface shows warm reflections. Material: Real textured cocktail napkin (slightly translucent white paper), polished dark mahogany/walnut wood grain, glass, metal pen. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
-  },
-
-  // ═══════════════════════════════════════════════════════════
-  // AD 6 — Bold Text Dark "GUARANTEED. OR FREE."
-  // Image: Pure black bg, white/blue bold text, minimal
-  // Status: READY
-  // Guarantee: G1 | CTA: C1
-  // ═══════════════════════════════════════════════════════════
-  {
-    id: "v10-06",
-    campaign: "C1",
-    angle: "Guarantee",
-    style: "Bold Text / Minimal Dark",
-    primary: `Every bad record replaced. No cap. No contracts. No commitments.\n\nBookedSolid Pro delivers 85+ data points per record at $0.04 each. If a number doesn't work, it gets replaced. Free.\n\nEvery bad number replaced free. No cap. No expiration.\n\nPull a sample list for your market. 60 seconds, no commitment.`,
-    headline: "Guaranteed. Or Free.",
-    description: "85+ data points per record. $0.04 each. No subscription.",
-    cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Solid pure black background (#000000). All text centered both horizontally and vertically. TOP TEXT (upper 35%): Large bold white serif text (DM Serif Display, ~72px) reading 'GUARANTEED.' on one line. Below it, same size bold text but in a muted steel-blue color (#64748b): 'OR FREE.' in italics. CENTER TEXT (middle area, ~25%): Two lines of smaller light gray text (Inter, ~18px, color #94a3b8), centered: 'Every bad record replaced. No cap.' and below it: 'No contracts. No commitments.' LOWER TEXT (bottom 25%): 'solidbookedpro.com' in muted blue-gray text (#64748b, Inter, ~20px), centered. The overall aesthetic is extremely minimal — no graphics, no icons, just powerful typography on black. Lots of breathing room between text blocks. Lighting: None — flat black background. Material: Pure digital, no texture. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
-  },
-
-  // ═══════════════════════════════════════════════════════════
-  // AD 7 — Bold Text Light with Shields (Us vs Them)
-  // Image: Light bg, bold text, red broken shield vs blue checkmark shield
-  // Status: READY
-  // Guarantee: G2 | CTA: C2
-  // ═══════════════════════════════════════════════════════════
-  {
-    id: "v10-07",
-    campaign: "C1",
-    angle: "Competitor Comparison",
-    style: "Bold Text / Us vs. Them Shields",
-    primary: `Them: no guarantee. Your loss.\nUs: every bad number replaced. Free. No cap. No expiration.\n\nBookedSolid Pro gives you 85+ data points per record. $0.04 each. No subscription, no contract.\n\nDead number? Replaced. No form. No ticket. No waiting.\n\nSee the data before you buy. No card required.`,
-    headline: "No Guarantee vs. Full Guarantee.",
-    description: "Every bad number replaced free. No cap. No contract.",
-    cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Light gray background (#f1f5f9), clean and minimal. TOP ZONE (top 20%): Large bold dark navy text (DM Serif Display, ~56px) centered: 'GUARANTEED.' on one line, then 'OR FREE.' on the next line, also bold navy. Below, two lines of smaller dark gray text (Inter, ~20px): 'Every bad record replaced.' and 'No cap. No contracts.' CENTER ZONE (middle 40%): Two icons side by side, centered horizontally with space between them. LEFT ICON: A cracked/broken gray shield with a red X circle overlay in the top-right corner. The shield is dull gray (#94a3b8) with a visible crack/split down the middle. Below it, red label text: 'Them:' in bold red (#ef4444), followed by 'no guarantee' in regular dark gray. RIGHT ICON: A solid intact blue shield (#2563eb) with a teal/blue checkmark on it, looking strong and polished. Below it, teal label text: 'Us:' in bold blue (#2563eb), followed by 'every number guaranteed' in regular dark gray. BOTTOM ZONE (bottom 20%): 'solidbookedpro.com' in dark navy text (~22px), centered. Below that, blue diamond icon + 'BookedSolid Pro' in navy bold text (~20px), centered. Lighting: Flat, even studio lighting — no dramatic shadows. Material: Clean flat digital design, no textures. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
-  },
-
-  // ═══════════════════════════════════════════════════════════
-  // AD 8 — Glowing Display / 5x Results
-  // Image: Before 8/day → After 42/day glowing screens
-  // Status: NEEDS EDIT (fix broken URL)
-  // Guarantee: G3 | CTA: C3
-  // ═══════════════════════════════════════════════════════════
-  {
-    id: "v10-08",
-    campaign: "C2",
-    angle: "Results / Transformation",
-    style: "Glowing Display / 5x Results",
-    primary: `Same reps. Same script. Same dialer. The only thing that changed was the data.\n\nBefore: 8 conversations a day. After: 42.\n\n90% working number accuracy. If any slip through, we replace them. Free.\n\nBuild a list for your territory right now. Takes 60 seconds.`,
-    headline: "Same Team. Only The Data Changed.",
-    description: "85+ data points. 90% working number accuracy. $0.04/record.",
-    cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Dark charcoal-black background (#0a0a0a) with a subtle reflective glossy floor surface at the bottom third. TOP ZONE (top 15%): Bold white italic serif text (DM Serif Display, ~44px) centered: 'Same Team.' followed by '5x' in bright green (#22c55e) then 'Results.' in white. A thin horizontal gold/amber line below the text spanning about 60% of the width, centered. CENTER ZONE (middle 55%): Two glowing LED-style display panels sitting on the reflective dark surface. LEFT PANEL (smaller, ~180px wide): A dark rectangular display with subtle rounded corners, dimly lit. Header text 'BEFORE:' in small white caps. Large number '8' in white/light gray (~80px). Below: 'conversations/day' in small white text. The panel has a faint dark glow. RIGHT PANEL (larger, ~320px wide): A bright glowing rectangular display with rounded corners and a vivid blue-cyan LED glow emanating from the edges (#3b82f6 to #06b6d4). Header 'AFTER:' in white bold caps. Huge number '42' in bright green (#22c55e, ~120px). Below: 'conversations/day' in white text. The panel casts a bright blue reflection on the glossy floor below it. Both panels appear to be physical glass/acrylic light-box displays. BOTTOM ZONE (bottom 20%): Centered white italic text (~24px): 'Only the data changed.' Below that: 'solidbookedpro.com' in light gray (~20px). Lighting: The right LED panel is the main light source, casting blue-green light on the floor and subtle ambient fill. Material: Glass/acrylic LED displays on glossy reflective dark surface. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
-  },
-
-  // ═══════════════════════════════════════════════════════════
-  // AD 9 — Whiteboard Pay 4 Times
-  // Image: Flip chart with cost checklist, red circle punchline
-  // Status: NEEDS EDIT (skip trace → $1,800, "dead" → "bad number", add free replacements)
-  // Guarantee: G4 | CTA: C4
-  // ═══════════════════════════════════════════════════════════
-  {
-    id: "v10-09",
-    campaign: "C2",
-    angle: "Cost Stacking / Pain",
-    style: "Whiteboard / Pay 4 Times",
-    primary: `The list. The skip trace. The dialer. The reps. You pay four times before anyone picks up the phone.\n\nAnd when 40% of those numbers are bad? You just paid four times for nothing.\n\nEvery record guaranteed. Bad number = free replacement. Period.\n\nCompare it against your current data. 60-second sample.`,
-    headline: "You Pay Four Times. Then Nothing.",
-    description: "BookedSolid Pro: $0.04/record. Every bad number replaced free.",
-    cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Photorealistic image of a white flipchart/easel pad on a metal tripod stand in an office environment. The flipchart takes up most of the frame, shot straight-on. The white paper has a slightly off-white tone with subtle paper texture. An office environment is softly blurred behind the easel. CONTENT ON THE WHITEBOARD/FLIPCHART (handwritten in marker): TOP: Underlined bold black marker text (~48px): 'YOU PAY FOR:' in all caps, with a horizontal line beneath it. Then a numbered list in bold black marker (~36px each line): '1. The list' followed by a black checkmark and '($500)' in parentheses. '2. The skip trace' followed by a black checkmark and '($1,800)' in parentheses. '3. The dialer' followed by a black checkmark and '($200)' in parentheses. '4. The reps' followed by a black checkmark and '($2,000)' in parentheses. Below the list, circled in a hand-drawn red marker oval/circle: 'AND 40% OF THE NUMBERS ARE BAD.' in bold black text. The red circle is rough and hand-drawn. Below the red circle, in green marker text (~28px, handwritten italic): 'We verify BEFORE delivery.' and on the next line: 'Every bad number replaced.' with 'BEFORE' in underlined bold green. BOTTOM-RIGHT of flipchart: 'BookedSolid Pro' in dark text with blue diamond icon, and 'solidbookedpro.com' below it (~18px). The easel has visible metal legs/tripod at the bottom. Lighting: Bright office fluorescent lighting from above. Material: Smooth flipchart paper, metal easel stand. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
-  },
-
-  // ═══════════════════════════════════════════════════════════
-  // AD 10 — Whiteboard Things Changed / Wrong Blame
-  // Image: Process checklist — everything changed except the list
-  // Status: NEEDS EDIT (remove CRM row, use closers/script/training, mention accuracy)
-  // Guarantee: G5 | CTA: C5
-  // ═══════════════════════════════════════════════════════════
-  {
-    id: "v10-10",
-    campaign: "C2",
-    angle: "Diagnostic / Wrong Blame",
-    style: "Whiteboard / Things Changed",
-    primary: `New closers. New script. New training program. You changed everything.\n\nEverything except the list.\n\nBookedSolid Pro: 90% working number accuracy. 85+ data points per record. Every bad number replaced free. No limit. No questions. No cost.\n\nTry it. One list. Your market. 60 seconds.`,
-    headline: "You Changed Everything Except This.",
-    description: "Fix the data. Fix the results. 85+ data points per record.",
-    cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Photorealistic close-up of a wall-mounted whiteboard in an office. The whiteboard fills most of the frame with a narrow metal tray at the bottom holding colored dry-erase markers (black, red, green, orange visible). CONTENT ON WHITEBOARD (handwritten in marker): TOP: Bold black marker underlined heading (~44px): 'THINGS WE CHANGED:' with a hand-drawn underline. Below, a checklist with hand-drawn checkbox squares (checked with checkmarks) in green: Line 1: checked box + 'Reps — hired new ones' in black marker. Line 2: checked box + 'Script — rewrote 3x' in black marker. Line 3: checked box + 'Closers — retrained' in black marker. Line 4: checked box + 'Training — updated' in black marker. Below the checklist, circled in a bold hand-drawn red oval: 'THE LIST — unchanged' in black marker. An arrow points to the circled text with 'START HERE.' written in bold red marker to the left of the arrow. To the right of the arrow, in green marker handwriting: 'Fix the input.' and below it 'Fix the output.' BOTTOM SECTION: Bold black text (~28px): 'How Many Of Today\'s 200 Dials' and below: 'Were Real Conversations?' Below that: '90% working number accuracy' in green marker. 'solidbookedpro.com' in black text at the bottom. Lighting: Bright even office lighting, slight glare/sheen on the whiteboard surface. Material: Glossy whiteboard surface with dry-erase marker strokes. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
-  },
-
-  // ═══════════════════════════════════════════════════════════
-  // AD 11 — Napkin Tally / Bar Scene
-  // Image: Tally marks showing 200 dials vs ~9 conversations
-  // Status: READY
-  // Guarantee: G1 | CTA: C1
-  // ═══════════════════════════════════════════════════════════
-  {
-    id: "v10-11",
-    campaign: "C2",
-    angle: "Pain Visualization",
-    style: "Napkin Tally / Bar Scene",
-    primary: `200 dials. 9 conversations. Your reps can count.\n\nThe problem isn't your team. It's the list. BookedSolid Pro delivers 85+ data points per record with 90% working number accuracy.\n\nEvery bad number replaced free. No cap. No expiration.\n\nPull a sample list for your market. 60 seconds, no commitment.`,
-    headline: "200 Dials. 9 Conversations.",
-    description: "90% working number accuracy. Bad numbers replaced free.",
+    id: "s2-a1-01", campaign: "S2", angle: "A1", style: "Napkin Tally / Bar Scene",
+    primary: `200 dials today. 9 people picked up.\n\nYour rep sat there for three hours listening to dial tones, voicemails, and "this number is no longer in service."\n\nThen they did it again after lunch.\n\nThat's not a bad day. That's every day.`,
+    headline: "9 Out Of 200.",
+    description: "That number keeps showing up.",
     cta: "Learn More",
     aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). The image is split into two zones — top 65% is a photorealistic scene, bottom 35% is a dark navy overlay with text. TOP ZONE: Overhead/angled shot of a white cocktail napkin on a dark polished wood bar surface. A beer glass (partially visible, upper-left) and a silver ballpoint pen (right side) frame the napkin. On the napkin, handwritten in black ink: Header: '200 DIALS TODAY' underlined. Below, tally marks (groups of 5 with strike-through) showing roughly 200 tallies spread across several rows — about 10 groups of 5 per row across 4 rows. Below the tally section: 'CONVERSATIONS' underlined. Below that, only about 9 tally marks (one group of 5 + 4 singles). Below the tallies: 'solidbookedpro.com' in small handwriting. The napkin has natural wrinkles and folds. BOTTOM ZONE: Dark navy background (#0f172a). Large bold white serif text (DM Serif Display, ~40px) centered: 'How Many Of Today\'s 200' and next line: 'Dials' in white, then 'Were Real Conversations?' in white, with 'Dials' appearing in regular weight and 'Were Real Conversations?' in regular weight. 'solidbookedpro.com' in blue text (#2563eb, ~20px) centered at the bottom. Lighting: Warm overhead bar lighting illuminating the napkin, casting soft shadows from the pen and glass. Material: Cocktail napkin paper, dark polished wood, glass. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   },
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 12 — Slack Chat / Sales Floor
-  // Image: Mock Slack chat with frustrated reps
-  // Status: READY
-  // Guarantee: G2 | CTA: C2
-  // ═══════════════════════════════════════════════════════════
+  // S2-A1-02
+  // First 50 chars: "Disconnected. Disconnected. Voicemail. Disconnec" (49 chars)
+  // Image: Dark Office / Cinematic Scene (from V10 #13)
   {
-    id: "v10-12",
-    campaign: "C2",
-    angle: "Rep Turnover / Team Morale",
-    style: "Slack Chat / Sales Floor",
-    primary: `"Can someone PLEASE talk to management about this data?"\n\nThat message is sitting in your team's Slack right now. Good reps don't complain forever — they leave.\n\nBookedSolid Pro: 85+ data points per record. Every bad number replaced free. No form. No ticket. No waiting.\n\nSee the data before you buy. No card required.`,
-    headline: "Good Reps Leave Bad Data.",
-    description: "85+ data points. Every bad number replaced free.",
+    id: "s2-a1-02", campaign: "S2", angle: "A1", style: "Dark Office / Cinematic Scene",
+    primary: `Disconnected. Disconnected. Voicemail. Disconnected. Wrong number. Disconnected.\n\nThat's the first 20 minutes of every shift.\n\nBy hour three, your reps aren't selling. They're surviving.\n\nYou already know this. You hear it every week.`,
+    headline: "The First 20 Minutes.",
+    description: "Same sequence. Every shift.",
     cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Dark background (#0f172a to #000000). TOP ZONE (top 65%): A realistic mockup of a Slack/team chat interface with a dark theme. The channel header shows a hash icon and 'sales-floor' channel name with a dropdown arrow, and user/settings icons on the right. The chat area has a dark charcoal background (#1a1d21). Four messages displayed: Message 1: Small circular avatar photo of a young Black man. Bold name 'Jake M' with timestamp 'Today at 4:47 PM'. Message text: 'Another 3 hours of dead numbers today' followed by a grimacing/frustrated emoji. Message 2: Small circular avatar of a woman. Bold name 'Sara K.' with timestamp 'Today at 4:47 PM'. Text: 'Same. 200 dials, 6 pickups.' Message 3: Small circular avatar of a man. Bold name 'Mike T:' with timestamp 'Today at 4:47 PM'. Text: 'I\'m updating my Linkedin.' Message 4: Jake M again with same avatar. Text: 'Can someone PLEASE talk to management about this data?' with a small blue checkmark/delivered indicator and timestamp below. BOTTOM ZONE (bottom 35%): Slightly lighter dark panel. A small blue thumbs-up icon. Bold white serif text (DM Serif Display, ~36px) centered: 'Good Reps. Garbage Leads.' Below in lighter gray italic text (~22px): 'They\'ll Leave Before The Data Improves.' At the bottom: 'solidbookedpro.com' in blue text (#2563eb, ~20px). Lighting: Screen-glow aesthetic — the chat interface provides all the light. Material: Digital UI mockup. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Photorealistic dark moody office desk scene. The scene is dimly lit with a single warm desk lamp providing the main light source from the upper-left. A computer monitor on the right side shows a blue-tinted data screen/spreadsheet (blurred). A white coffee mug sits near the monitor. In the foreground: a black telephone headset lies disconnected on top of scattered printed papers/lead lists. The papers have red X marks and handwritten annotations scrawled over them, suggesting marked-up dead leads. The papers are slightly crumpled and messy. TEXT OVERLAY (upper-center, over the dark background): Bold white sans-serif text (Inter, ~44px): 'Disconnected.' in bold white, then 'Disconnected.' again below, then 'Disconnected.' again. Below in slightly smaller light gray italic text (~22px): 'The first 20 minutes of every shift.' The text has a very subtle dark shadow/outline for readability against the scene. Lighting: Single warm desk lamp from upper-left creating dramatic shadows. The monitor provides a cool blue fill light on the right. Overall mood is dark and frustrated. Material: Real office items — matte desk surface, paper, plastic headset, ceramic mug. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   },
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 13 — Dark Office / Cinematic Scene
-  // Image: "3 Hours. Zero Conversations." + "$600 in payroll burned"
-  // Status: READY
-  // Guarantee: G3 | CTA: C3
-  // ═══════════════════════════════════════════════════════════
+  // S2-A1-03
+  // First 50 chars: "\"This number is no longer in service.\" You've hea" (50 chars)
+  // Image: Bold Text / Pain Sequence Dark (from V10 #18)
   {
-    id: "v10-13",
-    campaign: "C2",
-    angle: "Cost of Inaction",
-    style: "Dark Office / Cinematic Scene",
-    primary: `Three hours. Zero conversations. $600 in payroll burned on dial tones.\n\nThat's not a bad day — that's a data problem. And it repeats every shift until the list changes.\n\n90% working number accuracy. If any slip through, we replace them. Free.\n\nBuild a list for your territory right now. Takes 60 seconds.`,
-    headline: "$600 Burned Before Lunch.",
-    description: "BookedSolid Pro: 90% accuracy. Bad numbers replaced free.",
+    id: "s2-a1-03", campaign: "S2", angle: "A1", style: "Bold Text / Pain Sequence Dark",
+    primary: `"This number is no longer in service." You've heard it so many times it doesn't even register anymore.\n\nYour reps have memorized the voicemail lady's voice.\n\nAt some point, you stopped counting the dead numbers. You just accepted it.\n\nBut your reps haven't.`,
+    headline: "You Stopped Counting.",
+    description: "They haven't.",
     cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Photorealistic dark moody office desk scene. The scene is dimly lit with a single warm desk lamp providing the main light source from the upper-left. A computer monitor on the right side shows a blue-tinted data screen/spreadsheet (blurred). A white coffee mug sits near the monitor. In the foreground: a black telephone headset lies disconnected on top of scattered printed papers/lead lists. The papers have red X marks and handwritten annotations scrawled over them, suggesting marked-up dead leads. The papers are slightly crumpled and messy. TEXT OVERLAY (upper-center, over the dark background): Bold white sans-serif text (Inter, ~44px): '3 Hours.' in bold white, then 'Zero Conversations.' in regular weight white. Below in slightly smaller light gray italic text (~22px): '$600 in payroll burned on dial tones.' The text has a very subtle dark shadow/outline for readability against the scene. Lighting: Single warm desk lamp from upper-left creating dramatic shadows. The monitor provides a cool blue fill light on the right. Overall mood is dark and frustrated. Material: Real office items — matte desk surface, paper, plastic headset, ceramic mug. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Solid black background (#000000). All text centered horizontally. TOP ZONE (top 30%): Three lines of light gray text (Inter, ~22px, color #94a3b8), centered with comfortable spacing: '"This number is no longer in service."' / '"This number is no longer in service."' / '"This number is no longer in service."' CENTER ZONE (middle 30%): Large bold white text (DM Serif Display, ~48px): 'You stopped counting.' Below that, smaller italic gray text (~28px): 'Your reps haven\'t.' Both lines centered. LOWER ZONE (next 15%): White regular text (Inter, ~22px): 'They hear it every single shift.' centered. BOTTOM ZONE (bottom 15%): 'solidbookedpro.com' in muted gray text (~18px), centered. Massive amounts of negative black space throughout — the text floats in darkness. Lighting: None — pure black. Material: Digital, no texture. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   },
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 14 — Bold Text "costs you 3 times"
-  // Image: "Every bad number costs you 3 times. The data. The time. The deal."
-  // Status: READY
-  // Guarantee: G4 | CTA: C4
-  // ═══════════════════════════════════════════════════════════
-  {
-    id: "v10-14",
-    campaign: "C2",
-    angle: "Cost Amplification",
-    style: "Bold Text / Triple Cost",
-    primary: `The data cost. The dialer time. The deal you never got. Every bad number costs you three times.\n\nAnd it adds up every single hour your team is on the phones.\n\nEvery record guaranteed. Bad number = free replacement. Period.\n\nCompare it against your current data. 60-second sample.`,
-    headline: "One Bad Number. Three Costs.",
-    description: "BookedSolid Pro: $0.04/record. Every bad number replaced.",
-    cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Solid black background (#000000). All text centered. TOP-CENTER: Bold white serif text (DM Serif Display, ~48px): 'Every bad number' on line 1, 'costs you' on line 2, '3' in italic blue (#64748b) then 'times.' in white on line 3. MIDDLE: Three short lines in light gray italic text (Inter, ~20px, color #94a3b8): 'The data.' / 'The dialer time.' / 'The deal you never got.' — each on its own line with ~30px spacing. LOWER-MIDDLE: Smaller italic light gray text (~16px): 'It adds up every single hour.' BOTTOM: 'solidbookedpro.com' in muted gray text (#64748b, ~18px). Extremely minimal — just text on black. Large amounts of negative space above and below text blocks. Lighting: None — flat black. Material: Pure digital. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
-  },
+  // ─── A2: Wasted Money / Paying for Nothing (3 ads) ───
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 15 — Receipt / Cost Stack
-  // Image: Receipt showing 4 line items + "40% OF NUMBERS WERE DEAD"
-  // Status: NEEDS EDIT (skip trace $1,800, spell out BookedSolid Pro, add free replacements)
-  // Guarantee: G5 | CTA: C5
-  // ═══════════════════════════════════════════════════════════
+  // S2-A2-01
+  // First 50 chars: "You paid for the list. The skip trace. The dialer." (50 chars)
+  // Image: Receipt / Cost Stack (from V10 #15)
   {
-    id: "v10-15",
-    campaign: "C2",
-    angle: "Cost Stacking / Receipt",
-    style: "Receipt / Cost Stack",
-    primary: `Lead list: $500. Skip trace: $1,800. Dialer: $200. Rep payroll: $2,000. Total: $4,500.\n\n40% of those numbers never rang. You paid $4,500 and almost half was wasted.\n\nWe replace every bad number. No limit. No questions. No cost.\n\nTry it. One list. Your market. 60 seconds.`,
-    headline: "$4,500 Spent. 40% Wasted.",
-    description: "BookedSolid Pro: Every bad number replaced free.",
+    id: "s2-a2-01", campaign: "S2", angle: "A2", style: "Receipt / Cost Stack",
+    primary: `You paid for the list. The skip trace. The dialer. The reps.\n\nFour line items on your P&L before a single person picks up the phone.\n\nAnd when half those numbers are dead, you didn't just waste one of those. You wasted all four.\n\nEvery month. Same receipt.`,
+    headline: "Four Costs. Zero Conversations.",
+    description: "Same receipt every month.",
     cta: "Learn More",
     aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Dark textured background — a dark navy/charcoal surface (#0f172a) with subtle scratched/worn texture, like a dark slate countertop. A circular coffee ring stain is visible in the upper-right area (semi-transparent brown ring). TOP: Bold white serif text (DM Serif Display, ~44px) centered at the top: 'You Pay 4 Times.' and below it: 'And Still Get Nothing.' CENTER: A photorealistic crumpled/wrinkled white paper receipt or invoice, slightly tilted, sitting on the dark surface. The receipt shows a handwritten/typed itemized list: 'Lead List' with a dash and '$500' right-aligned. 'Skip Trace' with a dash and '$1,800' right-aligned. 'Dialer' with a dash and '$200' right-aligned. 'Rep Payroll' with a dash and '$2,000' right-aligned. A horizontal line separator. 'Subtotal' in bold on the left, '$4,500' in bold on the right. At the bottom of the receipt, a red rubber-stamp style text reading '40% OF NUMBERS WERE BAD' — slightly tilted, in a red distressed stamp font with imperfect ink coverage. A red ballpoint pen lies diagonally to the right of the receipt. Lighting: Single overhead spotlight creating a dramatic pool of light on the receipt, dark edges. Material: Crumpled paper receipt, dark stone/slate surface, metal pen. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   },
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 16 — Dirty vs Clean Cards
-  // Image: Two data cards — incomplete vs complete
-  // Status: NEEDS EDIT (18 data points → 85+)
-  // Guarantee: G1 | CTA: C1
-  // ═══════════════════════════════════════════════════════════
+  // S2-A2-02
+  // First 50 chars: "$4,500 out the door before anyone picks up." (44 chars)
+  // Image: Whiteboard / Pay 4 Times (from V10 #9)
   {
-    id: "v10-16",
-    campaign: "C3",
-    angle: "Data Quality Comparison",
-    style: "Dirty vs Clean / Card Comparison",
-    primary: `Your current data card: name, phone (disconnected), nothing else.\n\nBookedSolid Pro data card: full name, mobile, email, property value, mortgage balance, DNC status, and 80+ more data points.\n\nEvery bad number replaced free. No cap. No expiration.\n\nPull a sample list for your market. 60 seconds, no commitment.`,
-    headline: "Your Card vs. Our Card.",
-    description: "85+ data points per record. Bad numbers replaced free.",
+    id: "s2-a2-02", campaign: "S2", angle: "A2", style: "Whiteboard / Pay 4 Times",
+    primary: `$4,500 out the door before anyone picks up.\n\nThe list. The skip trace. The dialer. The reps. You paid for all of it.\n\nAnd when 40% of those numbers never ring, you don't get a refund. You don't get a credit. You just... pay again next month.\n\nSound familiar?`,
+    headline: "$4,500 Before A Single Pickup.",
+    description: "And next month, you'll pay it again.",
     cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Dark background (#0f172a to #1a1a2e) with subtle warm texture. TOP ZONE (top 15%): Bold white italic serif text (DM Serif Display, ~40px) centered: 'You Keep Fixing The Team.' and below: 'The Problem Is The List.' CENTER ZONE (middle 50%): Two card-style UI components side by side. LEFT CARD (~280px wide): Styled like a worn, stained, old paper card with brown coffee stains and aged texture. A red notification badge with '3' in the upper-right corner. Content: 'YOUR CURRENT DATA' header in bold caps. Fields listed: 'Name: John S.' / 'Phone:' with a red 'DISCONNECTED' badge / 'Email: —' (empty) / 'Property Value: —' with a red X / 'DNC Status: UNKNOWN' with a yellow warning triangle. The card looks cheap and damaged. Label below: 'Them' in gray text. RIGHT CARD (~280px wide): Clean, modern white card with rounded corners and a subtle shadow. A green notification badge with '85+' in the upper-right corner. Content: 'BOOKEDSOLID PRO' header in bold caps. Fields listed with green checkmarks: 'Name: John A. Stevens' / 'Mobile: (404) 555-5555' with green check / 'Email: j.stevens@email.com' with green check / 'Property: $487,000' with green check / 'DNC: CLEAR' with green check. Below: '+80 more fields...' in small blue text. Label below: 'Us' in blue text. BOTTOM ZONE (bottom 20%): Labels 'Them' under left card, 'Us' under right card in gray text. Centered text: 'Clean record.' in regular white, '85+ data points.' in bold white, 'Free replacements.' in regular white (~22px). 'solidbookedpro.com' in blue text (#2563eb, ~20px) at the very bottom. Lighting: Subtle spotlight highlighting the cards from above. Material: Aged paper (left card), clean digital UI (right card). BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Photorealistic image of a white flipchart/easel pad on a metal tripod stand in an office environment. The flipchart takes up most of the frame, shot straight-on. The white paper has a slightly off-white tone with subtle paper texture. An office environment is softly blurred behind the easel. CONTENT ON THE WHITEBOARD/FLIPCHART (handwritten in marker): TOP: Underlined bold black marker text (~48px): 'YOU PAY FOR:' in all caps, with a horizontal line beneath it. Then a numbered list in bold black marker (~36px each line): '1. The list' followed by a black checkmark and '($500)' in parentheses. '2. The skip trace' followed by a black checkmark and '($1,800)' in parentheses. '3. The dialer' followed by a black checkmark and '($200)' in parentheses. '4. The reps' followed by a black checkmark and '($2,000)' in parentheses. Below the list, circled in a hand-drawn red marker oval/circle: 'AND 40% OF THE NUMBERS ARE BAD.' in bold black text. The red circle is rough and hand-drawn. Below the red circle, in green marker text (~28px, handwritten italic): 'Same thing. Every month.' and on the next line: 'No refund. No credit.' BOTTOM-RIGHT of flipchart: 'solidbookedpro.com' below it (~18px). The easel has visible metal legs/tripod at the bottom. Lighting: Bright office fluorescent lighting from above. Material: Smooth flipchart paper, metal easel stand. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   },
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 17 — Bold Text + Chart
-  // Image: "Every bad number costs you 3 times" + declining chart + CTA button
-  // Status: READY
-  // Guarantee: G2 | CTA: C2
-  // ═══════════════════════════════════════════════════════════
+  // S2-A2-03
+  // First 50 chars: "Every bad number costs you three times." (39 chars)
+  // Image: Bold Text / Triple Cost (from V10 #14)
   {
-    id: "v10-17",
-    campaign: "C3",
-    angle: "Cost Amplification / Direct Response",
-    style: "Bold Text + Chart",
-    primary: `The data. The time. The deal. Every bad number costs you three times — and it's adding up every single hour.\n\nBookedSolid Pro: 85+ data points per record. $0.04 each. Every bad number replaced at no cost.\n\nDead number? Replaced. No form. No ticket. No waiting.\n\nSee the data before you buy. No card required.`,
-    headline: "It Adds Up Every Hour.",
-    description: "85+ data points. $0.04/record. Bad numbers replaced free.",
+    id: "s2-a2-03", campaign: "S2", angle: "A2", style: "Bold Text / Triple Cost",
+    primary: `Every bad number costs you three times.\n\nThe data you paid for. The payroll you burned. The deal that never had a chance.\n\nMultiply that by 80 bad numbers a day. Five days a week. Four weeks a month.\n\nThat's not a rounding error. That's a line item.`,
+    headline: "One Bad Number. Three Costs.",
+    description: "Multiply by 80 a day.",
     cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Dark charcoal-black background (#0a0a0a), very clean and minimal. TOP ZONE (top 40%): Large bold white serif text (DM Serif Display) stacked vertically, left-aligned with generous padding (~60px from left edge): Line 1 (~52px): 'Every bad number' / Line 2: 'costs you' then '3 times.' with '3 times.' in red (#ef4444). Line 3 (~56px bold): 'The data.' Line 4 (~56px bold): 'The time.' Line 5 (~56px bold): 'The deal.' Each line stacked with ~20px spacing, creating a powerful staircase of bold text. MIDDLE ZONE (center): Italic light gray text (Inter, ~20px, #94a3b8): 'It\'s adding up. Every single hour.' Left-aligned. A small dark chart/graph element (~150px wide) showing a downward-trending blue line graph on a dark background — representing declining performance. The chart is minimal with just a jagged blue line trending down-right. LOWER ZONE: A white outlined rounded-rectangle button (~200px wide, ~50px tall) with black/white text inside: 'See Verified Data'. The button has a thin white border and no fill (transparent). BOTTOM-RIGHT: 'BookedSolid Pro' in white text with a small blue diamond dot, right-aligned (~18px). Lighting: None — flat dark. Material: Pure digital, minimal. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Solid black background (#000000). All text centered. TOP-CENTER: Bold white serif text (DM Serif Display, ~48px): 'Every bad number' on line 1, 'costs you' on line 2, '3' in italic blue (#64748b) then 'times.' in white on line 3. MIDDLE: Three short lines in light gray italic text (Inter, ~20px, color #94a3b8): 'The data.' / 'The dialer time.' / 'The deal you never got.' — each on its own line with ~30px spacing. LOWER-MIDDLE: Smaller italic light gray text (~16px): 'It adds up every single hour.' BOTTOM: 'solidbookedpro.com' in muted gray text (#64748b, ~18px). Extremely minimal — just text on black. Large amounts of negative space above and below text blocks. Lighting: None — flat black. Material: Pure digital. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   },
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 18 — Pain Sequence Dark
-  // Image: "You pay for the list. You pay for the skip trace. You pay to call..." + "and nobody picks up."
-  // Status: READY
-  // Guarantee: G3 | CTA: C3
-  // ═══════════════════════════════════════════════════════════
+  // ─── A3: Rep Frustration / Team Pain (3 ads) ───
+
+  // S2-A3-01
+  // First 50 chars: "\"Can someone PLEASE talk to management about this" (50 chars)
+  // Image: Slack Chat / Sales Floor (from V10 #12)
   {
-    id: "v10-18",
-    campaign: "C3",
-    angle: "Pain Amplification / Urgency",
-    style: "Bold Text / Pain Sequence Dark",
-    primary: `You pay for the list. You pay for the skip trace. You pay to call. And nobody picks up.\n\nEvery day you wait, you pay again. Same list. Same results. Same frustration.\n\n90% working number accuracy. If any slip through, we replace them. Free.\n\nBuild a list for your territory right now. Takes 60 seconds.`,
-    headline: "You Keep Paying. Nobody Picks Up.",
-    description: "BookedSolid Pro: 90% accuracy. Every bad number replaced.",
+    id: "s2-a3-01", campaign: "S2", angle: "A3", style: "Slack Chat / Sales Floor",
+    primary: `"Can someone PLEASE talk to management about this data?"\n\nThat message is sitting in your team's group chat right now.\n\nThey're not going to keep complaining. The good ones will update their LinkedIn. The rest will just stop trying.\n\nYou know which one is worse.`,
+    headline: "Check Your Team's Group Chat.",
+    description: "They're already talking about it.",
     cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Solid black background (#000000). All text centered horizontally. TOP ZONE (top 30%): Three lines of light gray text (Inter, ~22px, color #94a3b8), centered with comfortable spacing: 'You pay for the list.' / 'You pay for the skip trace.' / 'You pay to call...' CENTER ZONE (middle 30%): Large bold white text (DM Serif Display, ~48px): 'and nobody picks up.' Below that, bold text with '40%' in red (#ef4444, ~52px) followed by 'don\'t even ring.' in white (~48px). Both lines centered. LOWER ZONE (next 15%): White regular text (Inter, ~22px): 'Every day you wait, you pay again.' centered. BOTTOM ZONE (bottom 15%): 'solidbookedpro.com' in muted gray text (~18px), centered. Below: 'BookedSolid Pro' with a small blue diamond dot in white text (~16px), right-aligned toward bottom-right corner. Massive amounts of negative black space throughout — the text floats in darkness. Lighting: None — pure black. Material: Digital, no texture. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Dark background (#0f172a to #000000). TOP ZONE (top 65%): A realistic mockup of a Slack/team chat interface with a dark theme. The channel header shows a hash icon and 'sales-floor' channel name with a dropdown arrow, and user/settings icons on the right. The chat area has a dark charcoal background (#1a1d21). Four messages displayed: Message 1: Small circular avatar photo of a young Black man. Bold name 'Jake M' with timestamp 'Today at 4:47 PM'. Message text: 'Another 3 hours of dead numbers today' followed by a grimacing/frustrated emoji. Message 2: Small circular avatar of a woman. Bold name 'Sara K.' with timestamp 'Today at 4:47 PM'. Text: 'Same. 200 dials, 6 pickups.' Message 3: Small circular avatar of a man. Bold name 'Mike T:' with timestamp 'Today at 4:47 PM'. Text: 'I\'m updating my LinkedIn.' Message 4: Jake M again with same avatar. Text: 'Can someone PLEASE talk to management about this data?' with a small blue checkmark/delivered indicator and timestamp below. BOTTOM ZONE (bottom 35%): Slightly lighter dark panel. A small blue thumbs-up icon. Bold white serif text (DM Serif Display, ~36px) centered: 'Good Reps. Garbage Leads.' Below in lighter gray italic text (~22px): 'They\'ll Leave Before The Data Improves.' At the bottom: 'solidbookedpro.com' in blue text (#2563eb, ~20px). Lighting: Screen-glow aesthetic — the chat interface provides all the light. Material: Digital UI mockup. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   },
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 19 — Whiteboard Team Frustrated
-  // Image: "This Is Why Your Team Is Frustrated" + problem checklist
-  // Status: READY
-  // Guarantee: G4 | CTA: C4
-  // ═══════════════════════════════════════════════════════════
+  // S2-A3-02
+  // First 50 chars: "Your best closer quit last month. The one before t" (50 chars)
+  // Image: Napkin Verse / Bar Scene (from V10 #5)
   {
-    id: "v10-19",
-    campaign: "C3",
-    angle: "Diagnostic / Team Morale",
-    style: "Whiteboard / Team Frustrated",
-    primary: `You buy the list. Half the numbers are wrong. Endless voicemails. Dial tones. Dead leads. Your team isn't underperforming — they're dialing bad data.\n\nBookedSolid Pro verifies every number. Every bad number replaced. No questions asked.\n\nEvery record guaranteed. Bad number = free replacement. Period.\n\nCompare it against your current data. 60-second sample.`,
-    headline: "Your Team Isn't The Problem.",
-    description: "85+ data points. Every bad number replaced free.",
+    id: "s2-a3-02", campaign: "S2", angle: "A3", style: "Napkin Verse / Bar Scene",
+    primary: `Your best closer quit last month. The one before that quit in October.\n\nYou replaced them both. Trained the new ones. Same scripts. Same process.\n\nAnd two weeks in, the new reps are saying the same thing the old reps said:\n\n"These numbers don't work."`,
+    headline: "Same Complaint. Different Rep.",
+    description: "The pattern keeps repeating.",
     cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Photorealistic image of a whiteboard flipchart on a metal tripod easel stand in a modern office. The flipchart paper fills most of the frame. A blurred office background (glass walls, desks) is visible behind the easel. Blue and black dry-erase markers sit in the tray at the base. CONTENT ON FLIPCHART (handwritten in marker): TOP: Cursive/script heading in black marker (~44px): 'This Is Why Your Team' and below it: 'Is Frustrated' — styled as a hand-lettered title. Below, a checklist: Line 1: Green checkbox (checked) + 'You buy the list.' in black marker. Line 2: Red checkbox (X mark) + 'Half the numbers are wrong.' in black marker. Line 3: Red checkbox (X mark) + 'Endless voicemails + dial tones.' in black marker. Line 4: Red checkbox (X mark) + 'Wasting time on dead leads.' in black marker. Below the checklist, a red hand-drawn arrow pointing right to: 'Bad data' circled in a bold red oval, followed by 'is killing your close rate.' in black marker. The word 'Bad data' inside the red circle is written in red marker. Below: Two lines in green marker (~24px): 'We verify every number.' and 'Every bad number replaced.' BOTTOM: Left side: blue diamond + 'BookedSolid Pro' in black text. Right side: 'solidbookedpro.com' in black text. Metal easel legs visible at the bottom. Lighting: Bright office overhead lighting with slight shadows from the easel frame. Material: Flipchart paper, metal easel, marker ink. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Photorealistic overhead shot of a dark polished wood bar/table surface. CENTER: A white cocktail napkin, slightly crumpled at the edges with natural paper texture and folds, sits on the dark wood. Handwritten text in black ink (casual script/handwriting style, ~28px equivalent) on the napkin reads four lines centered: 'Roses are red.' / 'Your numbers are dead.' / 'You paid for the list.' / 'And got nothing instead.' — each line on its own row with natural handwriting spacing. Below the poem, in the bottom-right area of the napkin, smaller handwritten text: '— Your Sales Floor' (~18px). TOP-LEFT: A partially visible glass beer mug with golden amber beer, about 25% visible at the edge of the frame, casting a subtle shadow on the napkin. RIGHT: A silver/chrome ballpoint pen lies diagonally next to the napkin, pointing toward the bottom-right corner. Lighting: Warm ambient bar lighting from above-left, creating soft shadows under the napkin and pen. The wood surface shows warm reflections. Material: Real textured cocktail napkin (slightly translucent white paper), polished dark mahogany/walnut wood grain, glass, metal pen. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   },
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 20 — Whiteboard Process of Elimination
-  // Image: Elimination checklist + shield (reps, script, CRM, dialer all fine → THE LIST)
-  // Status: NEEDS EDIT (97% → 90% working number accuracy)
-  // Guarantee: G5 | CTA: C5
-  // ═══════════════════════════════════════════════════════════
+  // S2-A3-03
+  // First 50 chars: "Three hours in and your rep hasn't had a real conv" (50 chars)
+  // NEW IMAGE — UGC Selfie style (Style #26 from dictionary)
   {
-    id: "v10-20",
-    campaign: "C3",
-    angle: "Diagnostic / Process of Elimination",
-    style: "Whiteboard / Process of Elimination",
-    primary: `Your reps — fine. Your script — tested. Your CRM — working. Your dialer — upgraded.\n\nProcess of elimination says it's the list. Fix the input, fix the output.\n\nWe replace every bad number. No limit. No questions. No cost.\n\nTry it. One list. Your market. 60 seconds.`,
-    headline: "Process of Elimination Says: The List.",
-    description: "90% working number accuracy. Bad numbers replaced free.",
+    id: "s2-a3-03", campaign: "S2", angle: "A3", style: "UGC Selfie / Exhausted Rep",
+    primary: `Three hours in and your rep hasn't had a real conversation yet.\n\nThey showed up motivated. New shirt. Coffee in hand. Ready to close.\n\nNow they're staring at the ceiling between dial tones.\n\nYou hired the right person. That's not the problem.`,
+    headline: "They Showed Up Ready.",
+    description: "Three hours later, they're staring at the ceiling.",
     cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Light off-white/cream textured background resembling a whiteboard or light paper surface with very subtle gray grain texture. CONTENT (handwritten marker style, centered): TOP: Elegant cursive/script heading in dark navy ink (~44px): 'Process Of Elimination'. Below, four lines each with a green checkbox (checked) on the left, green checkmark on the right: Line 1: green check + 'Your reps' + green checkmark + 'They\'re fine' in dark text. Line 2: green check + 'Your script' + green checkmark + 'Tested it'. Line 3: green check + 'Your closers' + green checkmark + 'Trained'. Line 4: green check + 'Your dialer' + green checkmark + 'Upgraded'. Below the checklist: 'THE LIST' written in large bold dark text, circled with a hand-drawn red marker oval. An arrow points from the circle to the right where bold dark text reads 'THIS ONE'. CENTER-LOWER: A blue shield icon with a white/light blue checkmark inside (~80px tall). To the right of the shield, a small card/tooltip showing a list: five green bars each reading 'VERIFIED' with green checkmarks, and one line reading 'REPLACED →' with an arrow — styled like a mini verification report card. BOTTOM TEXT: Bold dark text (~24px): 'Fix the list. Everything else already works.' in italic. Below: '90% accuracy. Every bad record replaced. No cap.' in smaller dark text (~18px). A blue rounded-rectangle CTA button: 'Learn More' in white text on blue (#2563eb) background. Below the button: 'solidbookedpro.com' in dark text (~16px). Lighting: Flat, even — no dramatic shadows. Material: Light paper/whiteboard texture with marker-style text. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Photorealistic UGC-style selfie photo. A professional man in his late 20s with short dark hair, wearing a button-up shirt, taking a selfie in an office/call center environment. He has a tired, defeated expression — one hand resting on his forehead, headset around his neck. The background shows a blurred open office with other workers at desks visible out of focus. He is looking directly into the camera with an exhausted, frustrated expression. The lighting is natural office fluorescent — slightly flat and realistic, not glamorous. The photo feels authentic and unposed, like a real person took this with their phone front camera during a rough shift. TEXT OVERLAY at the bottom of the image: Bold white text with a subtle dark shadow for readability (~36px, Inter Bold): '3 hours. Zero conversations.' Below in white italic text (~24px): 'Same thing yesterday.' BOTTOM-LEFT corner: Small 'solidbookedpro.com' text in white with slight transparency (~14px). The overall feel should be raw, authentic, and relatable — like a frustrated rep posted this to their story. Lighting: Flat office fluorescent overhead lighting, natural and unedited. Material: Phone camera photo quality — slight grain, natural depth of field blur on background. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   },
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 21 — Whiteboard Wrong Problem
-  // Image: "You're Solving The Wrong Problem" + checklist + shield
-  // Status: NEEDS EDIT (headline needs to be more impactful per Vince)
-  // Guarantee: G1 | CTA: C1
-  // ═══════════════════════════════════════════════════════════
+  // ─── A4: Unpredictable Pipeline (3 ads) ───
+
+  // S2-A4-01
+  // First 50 chars: "Monday: 14 conversations. Tuesday: 3. Wednesday: " (49 chars)
+  // Image: Bold Text + Chart (from V10 #17)
   {
-    id: "v10-21",
-    campaign: "C3",
-    angle: "Reframe / Diagnostic",
-    style: "Whiteboard / Wrong Problem",
-    primary: `New reps won't fix it. A new script won't fix it. A new offer won't fix it.\n\nIf 40% of your numbers never ring, nothing downstream matters. The problem is upstream — it's the data.\n\nEvery bad number replaced free. No cap. No expiration.\n\nPull a sample list for your market. 60 seconds, no commitment.`,
+    id: "s2-a4-01", campaign: "S2", angle: "A4", style: "Bold Text + Chart",
+    primary: `Monday: 14 conversations. Tuesday: 3. Wednesday: 11. Thursday: 2.\n\nSame reps. Same scripts. Same hours. Wildly different results.\n\nYou can't forecast off of that. You can't staff off of that. You can't build anything off of that.\n\nBut here you are, trying.`,
+    headline: "You Can't Build On Randomness.",
+    description: "Same inputs. Random outputs.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Dark charcoal-black background (#0a0a0a), very clean and minimal. TOP ZONE (top 40%): Large bold white serif text (DM Serif Display) stacked vertically, left-aligned with generous padding (~60px from left edge): Line 1 (~52px): 'Monday: 14' / Line 2: 'Tuesday: 3' / Line 3: 'Wednesday: 11' / Line 4: 'Thursday: 2' — with the numbers in red (#ef4444) and the days in white. Each line stacked with ~20px spacing, creating a volatile staircase of results. MIDDLE ZONE (center): Italic light gray text (Inter, ~20px, #94a3b8): 'Same reps. Same script. Same hours.' Left-aligned. A small dark chart/graph element (~150px wide) showing a wildly jagged blue line graph on a dark background — representing unpredictable performance. The chart is minimal with a chaotic blue line bouncing up and down. LOWER ZONE: White text (Inter, ~22px): 'You can\'t build on that.' Left-aligned. BOTTOM-RIGHT: 'solidbookedpro.com' in muted gray text (~18px). Lighting: None — flat dark. Material: Pure digital, minimal. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // S2-A4-02
+  // First 50 chars: "Your pipeline doesn't have a leak. It has a guess" (49 chars)
+  // NEW IMAGE — Bold Quote on Dark (Style #25 from dictionary)
+  {
+    id: "s2-a4-02", campaign: "S2", angle: "A4", style: "Bold Quote on Dark",
+    primary: `Your pipeline doesn't have a leak. It has a guessing problem.\n\nSome weeks you hit goal. Some weeks you're at 30%. Nothing changed on your end.\n\nYou've stopped promising numbers to leadership because the numbers keep lying to you first.\n\nThat's exhausting.`,
+    headline: "The Numbers Lie To You First.",
+    description: "Then you have to explain them.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Dark charcoal/near-black background (#111111). All text centered vertically and horizontally. Large light gray open-quotation mark (~80px, color #333333) at top. Bold white text (DM Serif Display, ~40px): 'Your pipeline doesn\'t have a leak.' in bold white. Below, italic lighter text (~36px, #94a3b8): 'It has a guessing problem.' Large light gray close-quotation mark (~80px, color #333333) after the text. Below, separated by generous white space, smaller text in muted gray (Inter, ~18px, #64748b): 'Some weeks you hit goal. Some weeks you\'re at 30%.' and below: 'Nothing changed on your end.' Small gray 'solidbookedpro.com' text at the very bottom (~16px). No images, no icons, no buttons, no design elements. Just text on dark background. Intimate, minimal, powerful feel. Lighting: None — flat dark. Material: Pure digital. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // S2-A4-03
+  // First 50 chars: "You told leadership you'd hit 40 deals this month" (49 chars)
+  // Image: Bold Stat / Dark (from V10 #26)
+  {
+    id: "s2-a4-03", campaign: "S2", angle: "A4", style: "Bold Stat / Dark",
+    primary: `You told leadership you'd hit 40 deals this month.\n\nTwo weeks in, you're at 11. Not because your team isn't working — they're dialing 8 hours a day.\n\nThe pipeline looks full on paper. But half of it was built on numbers that never connected.\n\nYou can feel the end-of-month conversation coming.`,
+    headline: "You Can Feel It Coming.",
+    description: "The end-of-month conversation.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Solid black background (#000000). All text centered. MAIN TEXT (center): Enormous bold text taking up most of the frame — '11' in a deep dark red/maroon color (#7f1d1d, ~200px font size). The numbers dominate the visual space. Below the giant number: 'OUT OF 40 PROMISED.' in bold white serif text (DM Serif Display, ~36px) with tight letter spacing. LOWER TEXT: Two lines of small light gray text (Inter, ~18px, color #94a3b8), centered: 'Two weeks in. Same team.' / 'Same hours. Half the results.' BOTTOM: 'solidbookedpro.com' in muted gray text (~16px), centered at the very bottom. Extreme minimalism — the giant red number dominates, everything else is secondary. Massive negative black space above and to the sides. Lighting: None — pure black. Material: Pure digital. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+
+  // ═══════════════════════════════════════════════════════════════
+  //
+  //  STAGE 3: "OH... THIS IS WHY" — 10 ads (~30%)
+  //  Reframe the problem. Reassign blame.
+  //  Break belief → Replace belief → Expand insight.
+  //  DO NOT: say "we have better data," mention accuracy %,
+  //          talk about features, push product.
+  //  CTA: Curiosity — "You'll see this fast" / "See what's happening"
+  //
+  // ═══════════════════════════════════════════════════════════════
+
+  // ─── A5: Wrong Blame / Fixing the Wrong Thing (3 ads) ───
+
+  // S3-A5-01
+  // First 50 chars: "You fired two reps this year. Retrained the rest." (49 chars)
+  // Image: Whiteboard / Things Changed (from V10 #10)
+  {
+    id: "s3-a5-01", campaign: "S3", angle: "A5", style: "Whiteboard / Things Changed",
+    primary: `You fired two reps this year. Retrained the rest. Rewrote the script three times.\n\nResults didn't move.\n\nBecause you were fixing the people standing in front of a broken input. The reps aren't the variable. The data is.\n\nThe fix is upstream. Not downstream.`,
+    headline: "You Fixed Everything Downstream.",
+    description: "The problem is upstream.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Photorealistic close-up of a wall-mounted whiteboard in an office. The whiteboard fills most of the frame with a narrow metal tray at the bottom holding colored dry-erase markers (black, red, green, orange visible). CONTENT ON WHITEBOARD (handwritten in marker): TOP: Bold black marker underlined heading (~44px): 'THINGS WE CHANGED:' with a hand-drawn underline. Below, a checklist with hand-drawn checkbox squares (checked with checkmarks) in green: Line 1: checked box + 'Reps — hired new ones' in black marker. Line 2: checked box + 'Script — rewrote 3x' in black marker. Line 3: checked box + 'Closers — retrained' in black marker. Line 4: checked box + 'Training — updated' in black marker. Below the checklist, circled in a bold hand-drawn red oval: 'THE LIST — unchanged' in black marker. An arrow points to the circled text with 'START HERE.' written in bold red marker to the left of the arrow. To the right of the arrow, in green marker handwriting: 'Fix the input.' and below it 'Fix the output.' BOTTOM SECTION: Bold black text (~28px): 'How Many Of Today\'s 200 Dials' and below: 'Were Real Conversations?' Below that: 'The answer is upstream.' in green marker. 'solidbookedpro.com' in black text at the bottom. Lighting: Bright even office lighting, slight glare/sheen on the whiteboard surface. Material: Glossy whiteboard surface with dry-erase marker strokes. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // S3-A5-02
+  // First 50 chars: "New reps won't fix it. A new script won't fix it." (49 chars)
+  // Image: Whiteboard / Wrong Problem (from V10 #21)
+  {
+    id: "s3-a5-02", campaign: "S3", angle: "A5", style: "Whiteboard / Wrong Problem",
+    primary: `New reps won't fix it. A new script won't fix it. A new CRM won't fix it.\n\nIf the numbers your team is dialing don't connect, nothing downstream matters.\n\nYou're not solving a people problem. You're solving an input problem.\n\nAnd the input is the list.`,
     headline: "It Was Never The Reps.",
-    description: "BookedSolid Pro: 85+ data points. Bad numbers replaced free.",
+    description: "The input decides the output.",
     cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Photorealistic whiteboard/flipchart paper surface filling the frame. The paper has a slightly off-white tone with subtle texture. A black uncapped marker pen lies at the bottom-right corner of the paper. CONTENT (handwritten in marker): TOP: Bold cursive/script heading in dark navy marker (~44px): 'IT WAS NEVER YOUR REPS.' with hand-drawn underline flourish. Below, a checklist with green checkboxes (checked): Line 1: green check + 'Reps' + green checkmark + 'Not the issue' in black marker. Line 2: green check + 'Script' + green checkmark + 'Changed 3x' in black marker. Line 3: green check + 'Offer' + green checkmark + 'Tested' in black marker. Below the checklist: The word 'DATA' written large in bold dark text, circled multiple times with a hand-drawn red oval (scribbled, aggressive red circle suggesting frustration/emphasis). A green arrow points from 'DATA' to the right where 'THIS.' is written in very bold large dark text (~60px) with a green underline. CENTER-LOWER: A blue shield icon with white checkmark (~60px). To the right, a small verification card showing: five green bars reading 'VERIFIED' with checkmarks, and one line reading 'REPLACED →'. Below: Green italic handwritten text: 'Fix the input with verified data →' BOTTOM: Two lines of bold dark serif text (~22px): 'We verify every number before delivery.' and 'Every bad number replaced.' Below: 'Solidbookedpro.com' in dark text. Bottom-right corner: 'BookedSolid Pro' with blue diamond dot logo. Lighting: Bright even lighting on the paper surface. Material: Flipchart paper, marker ink, plastic marker pen. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Photorealistic whiteboard/flipchart paper surface filling the frame. The paper has a slightly off-white tone with subtle texture. A black uncapped marker pen lies at the bottom-right corner of the paper. CONTENT (handwritten in marker): TOP: Bold cursive/script heading in dark navy marker (~44px): 'IT WAS NEVER YOUR REPS.' with hand-drawn underline flourish. Below, a checklist with green checkboxes (checked): Line 1: green check + 'Reps' + green checkmark + 'Not the issue' in black marker. Line 2: green check + 'Script' + green checkmark + 'Changed 3x' in black marker. Line 3: green check + 'Offer' + green checkmark + 'Tested' in black marker. Below the checklist: The word 'DATA' written large in bold dark text, circled multiple times with a hand-drawn red oval (scribbled, aggressive red circle suggesting frustration/emphasis). A green arrow points from 'DATA' to the right where 'THIS.' is written in very bold large dark text (~60px) with a green underline. CENTER-LOWER: Italic text in black marker: 'The input decides the output.' BOTTOM: 'solidbookedpro.com' in dark text. Bottom-right corner: Small text. Lighting: Bright even lighting on the paper surface. Material: Flipchart paper, marker ink, plastic marker pen. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   },
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 22 — Split Comparison People
-  // Image: Frustrated vs confident person + feature bullets
-  // Status: NEEDS EDIT (85+ data points, 90% accuracy, DNC included not scrubbed)
-  // Guarantee: G2 | CTA: C2
-  // ═══════════════════════════════════════════════════════════
+  // S3-A5-03
+  // First 50 chars: "You've spent more on rep turnover this year than o" (50 chars)
+  // Image: Whiteboard / Team Frustrated (from V10 #19)
   {
-    id: "v10-22",
-    campaign: "C3",
-    angle: "Before/After Comparison",
-    style: "Split Comparison / People",
-    primary: `Left side: 40% disconnected numbers. No DNC status. Three data fields. Dead numbers are your loss.\n\nRight side: 90% working number accuracy. DNC status included. 85+ data points. Every bad number replaced free.\n\nDead number? Replaced. No form. No ticket. No waiting.\n\nSee the data before you buy. No card required.`,
-    headline: "Basic Skip Trace vs. BookedSolid Pro.",
-    description: "85+ data points. 90% accuracy. DNC status included.",
+    id: "s3-a5-03", campaign: "S3", angle: "A5", style: "Whiteboard / Team Frustrated",
+    primary: `You've spent more on rep turnover this year than on data.\n\nHiring costs. Training time. Lost momentum. And the new reps are saying the same thing the old ones did.\n\nWhat if the reps were never the problem?\n\nWhat if the thing you spent the least on was the thing that broke everything else?`,
+    headline: "What If It Was Never The Reps?",
+    description: "The cheapest line item might be the most expensive.",
     cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Split down the middle vertically into two halves. LEFT HALF: Warm gray-beige background (#d4c8b8). A photorealistic image of a Caucasian man in his 30s-40s wearing a dark blue button-up shirt, sitting at an office desk. He is on the phone with one hand holding a cell phone to his ear and the other hand pressing against his temple in frustration, eyes closed, stressed expression. Behind him, a blurry computer monitor shows a basic spreadsheet/list. Above him, elegant italic header text in dark navy (~24px): 'Basic Skip Trace List'. Below the photo, four bullet points with red X circle icons: '40% disconnected numbers' / 'No DNC status' / 'Name, phone, address only' / 'Dead numbers = your loss'. Each in dark text (~16px). RIGHT HALF: Dark navy background (#0f172a). Same photorealistic style — a Caucasian man in his 30s wearing a light blue button-up shirt, sitting at a desk, smiling confidently at the camera with arms resting on the desk. Behind him, a monitor shows a detailed data dashboard. Above him, 'BookedSolid Pro' in bold white text with a red circle badge reading 'FROM $0.04' in the upper-right. Below the photo, four bullet points with green checkmark circle icons: '90% working number accuracy' / 'DNC status included' / '85+ data points + mortgage intel' / 'Every dead number replaced free'. Each in white text (~16px). The split creates a stark visual contrast between the frustrated left side and the confident right side. Lighting: LEFT — flat office lighting, slightly desaturated. RIGHT — warm professional lighting, vibrant. Material: Photorealistic office photography. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Photorealistic image of a whiteboard flipchart on a metal tripod easel stand in a modern office. The flipchart paper fills most of the frame. A blurred office background (glass walls, desks) is visible behind the easel. Blue and black dry-erase markers sit in the tray at the base. CONTENT ON FLIPCHART (handwritten in marker): TOP: Cursive/script heading in black marker (~44px): 'What If It Was Never' and below it: 'The Reps?' — styled as a hand-lettered title. Below, a checklist: Line 1: Red checkbox (X mark) + 'Rep #1 quit — replaced, retrained' in black marker. Line 2: Red checkbox (X mark) + 'Rep #2 quit — replaced, retrained' in black marker. Line 3: Red checkbox (X mark) + 'New reps say the same thing' in black marker. Below the checklist, a red hand-drawn arrow pointing right to: 'The list' circled in a bold red oval, followed by '= cheapest line item' in black marker. Below: 'But it controls everything downstream.' in green marker (~24px). BOTTOM: 'solidbookedpro.com' in black text. Metal easel legs visible at the bottom. Lighting: Bright office overhead lighting with slight shadows from the easel frame. Material: Flipchart paper, metal easel, marker ink. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   },
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 23 — Editorial / News Article
-  // Image: "HOW OUTBOUND TEAMS ARE CUTTING DEAD DIALS BY 40%"
-  // Status: READY
-  // Guarantee: G3 | CTA: C3
-  // ═══════════════════════════════════════════════════════════
+  // ─── A6: Contact Rate Is the Real Metric (3 ads) ───
+
+  // S3-A6-01
+  // First 50 chars: "Your team made 200 dials today. That's not a KPI." (49 chars)
+  // Image: Glowing Display / 5x Results (from V10 #8)
   {
-    id: "v10-23",
-    campaign: "C3",
-    angle: "Editorial / Native",
-    style: "Editorial / News Article",
-    primary: `Outbound teams are cutting dead dials by 40% — without changing their dialer, their script, or their reps.\n\nThe difference? The data they start with. 85+ data points per record. 90% working number accuracy. Every bad number replaced.\n\n90% working number accuracy. If any slip through, we replace them. Free.\n\nBuild a list for your territory right now. Takes 60 seconds.`,
-    headline: "Cut Dead Dials By 40%.",
-    description: "See how outbound teams are fixing their data problem.",
+    id: "s3-a6-01", campaign: "S3", angle: "A6", style: "Glowing Display / Conversations vs Dials",
+    primary: `Your team made 200 dials today. That's not a KPI.\n\nDials measure activity. Contact rate measures whether the data is real.\n\nIf 40% of numbers are disconnected, your "200 dials" is actually 120 dials — and you're paying for 200.\n\nContact rate is the metric that tells you if your data works.`,
+    headline: "Dials Aren't A KPI.",
+    description: "Contact rate is.",
     cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Clean white/off-white background (#fafafa) styled like a news article or editorial report page. TOP-LEFT: A dark navy rectangular badge/label (#0f172a, ~120px wide, ~30px tall) with white text: 'SALES OPS' in bold caps (~14px). Below the badge, large bold dark navy serif headline text (DM Serif Display, ~36px), left-aligned with generous left padding: 'HOW OUTBOUND TEAMS ARE' / 'CUTTING DEAD DIALS BY 40% —' / 'WITHOUT CHANGING THEIR DIALER' — three lines, all caps. CENTER: A large photorealistic image (~full width, ~45% of image height) showing an overhead/elevated view of a busy call center floor. Multiple rows of desks with workers wearing headsets, sitting at computers with dual monitors. The workers are diverse — men and women of various ethnicities. The office is brightly lit with overhead fluorescent lights. The photo has a slightly desaturated editorial quality. BOTTOM-RIGHT: A small circular headshot photo (~60px diameter) of an Asian man in his 30s-40s wearing a dark blazer, professional look. To the left of the headshot: 'David Chen' in bold dark text (~16px) and below it 'VP Sales Operations' in lighter gray text (~14px). BOTTOM-LEFT: Small text in dark gray (~14px): 'Swipe to read full report >' with an arrow. Lighting: Bright, clean editorial lighting. Material: Clean digital editorial layout. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Dark charcoal-black background (#0a0a0a) with a subtle reflective glossy floor surface at the bottom third. TOP ZONE (top 15%): Bold white italic serif text (DM Serif Display, ~44px) centered: 'Dials Measure Activity.' followed by a line break and 'Contact Rate Measures Truth.' in white. A thin horizontal gold/amber line below the text spanning about 60% of the width, centered. CENTER ZONE (middle 55%): Two glowing LED-style display panels sitting on the reflective dark surface. LEFT PANEL (smaller, ~180px wide): A dark rectangular display with subtle rounded corners, dimly lit. Header text 'DIALS:' in small white caps. Large number '200' in white/light gray (~80px). Below: 'means nothing alone' in small white text. The panel has a faint dark glow. RIGHT PANEL (larger, ~320px wide): A bright glowing rectangular display with rounded corners and a vivid blue-cyan LED glow emanating from the edges (#3b82f6 to #06b6d4). Header 'CONTACT RATE:' in white bold caps. Large text 'THIS' in bright green (#22c55e, ~80px). Below: 'tells you if the data works' in white text. The panel casts a bright blue reflection on the glossy floor below it. Both panels appear to be physical glass/acrylic light-box displays. BOTTOM ZONE (bottom 20%): Centered white italic text (~24px): 'Which one are you tracking?' Below that: 'solidbookedpro.com' in light gray (~20px). Lighting: The right LED panel is the main light source, casting blue-green light on the floor and subtle ambient fill. Material: Glass/acrylic LED displays on glossy reflective dark surface. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   },
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 24 — UGC Selfie / Testimonial
-  // Image: Man with headset, "70% of my list was dead. Then I switched providers."
-  // Status: READY
-  // Guarantee: G4 | CTA: C4
-  // ═══════════════════════════════════════════════════════════
+  // S3-A6-02
+  // First 50 chars: "Ask your reps one question: out of 200 dials, how" (49 chars)
+  // Image: Editorial / News Article (from V10 #23)
   {
-    id: "v10-24",
-    campaign: "C3",
-    angle: "UGC / Testimonial",
-    style: "UGC Selfie / Testimonial",
-    primary: `"70% of my list was dead. Then I switched providers."\n\nBookedSolid Pro: 85+ data points per record. 90% working number accuracy. $0.04 each. No subscription. No contract.\n\nEvery record guaranteed. Bad number = free replacement. Period.\n\nCompare it against your current data. 60-second sample.`,
-    headline: "Then I Switched Providers.",
-    description: "85+ data points. 90% accuracy. Every bad number replaced.",
+    id: "s3-a6-02", campaign: "S3", angle: "A6", style: "Editorial / News Article",
+    primary: `Ask your reps one question: out of 200 dials, how many were actual conversations?\n\nIf the answer is under 30, the issue isn't effort. It's contact rate.\n\nContact rate is controlled by one thing: the quality of the data your team starts with every morning.\n\nEverything else is downstream of that number.`,
+    headline: "Ask Your Team One Question.",
+    description: "The answer tells you everything.",
     cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Photorealistic UGC-style (user-generated content) selfie photo. A Caucasian man in his early 30s with short brown hair, light stubble, and a neutral/serious expression is taking a selfie in an office/call center environment. He wears a dark gray/olive button-up shirt. A black over-ear headset with microphone hangs around his neck. The background shows a blurred open office with other workers at desks visible out of focus. He is looking directly into the camera with a slightly tired but determined expression. The lighting is natural office fluorescent — slightly flat and realistic, not glamorous. The photo feels authentic and unposed, like a real person took this with their phone front camera. TEXT OVERLAY at the bottom of the image: Bold white text with a subtle dark shadow for readability (~36px, Inter Bold): '70% of my list was dead.' Below in white italic text (~24px): 'Then I switched providers.' BOTTOM-LEFT corner: Small 'BookedSolid Pro' text in white with slight transparency (~14px). The overall feel should be raw, authentic, and relatable — like a real testimonial selfie someone posted on social media. Lighting: Flat office fluorescent overhead lighting, natural and unedited. Material: Phone camera photo quality — slight grain, natural depth of field blur on background. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Clean white/off-white background (#fafafa) styled like a news article or editorial report page. TOP-LEFT: A dark navy rectangular badge/label (#0f172a, ~120px wide, ~30px tall) with white text: 'SALES OPS' in bold caps (~14px). Below the badge, large bold dark navy serif headline text (DM Serif Display, ~36px), left-aligned with generous left padding: 'WHY CONTACT RATE —' / 'NOT DIALS — IS THE ONLY' / 'METRIC THAT MATTERS' — three lines, all caps. CENTER: A large photorealistic image (~full width, ~45% of image height) showing an overhead/elevated view of a busy call center floor. Multiple rows of desks with workers wearing headsets, sitting at computers with dual monitors. The workers are diverse — men and women of various ethnicities. The office is brightly lit with overhead fluorescent lights. The photo has a slightly desaturated editorial quality. BOTTOM-RIGHT: A small circular headshot photo (~60px diameter) of an Asian man in his 30s-40s wearing a dark blazer, professional look. To the left of the headshot: 'David Chen' in bold dark text (~16px) and below it 'VP Sales Operations' in lighter gray text (~14px). BOTTOM-LEFT: Small text in dark gray (~14px): 'Swipe to read full report >' with an arrow. Lighting: Bright, clean editorial lighting. Material: Clean digital editorial layout. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   },
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 25 — Clean Feature List (Light)
-  // Image: "No More Dead Numbers." + feature bullets + CTA button
-  // Status: NEEDS EDIT (DNC-scrubbed → DNC status included)
-  // Guarantee: G5 | CTA: C5
-  // ═══════════════════════════════════════════════════════════
+  // S3-A6-03
+  // First 50 chars: "Two teams. Same size. Same script. Same dialer." (47 chars)
+  // NEW IMAGE — Leaderboard style (Style #33 from dictionary)
   {
-    id: "v10-25",
-    campaign: "C3",
-    angle: "Product / Feature",
-    style: "Clean Feature List / Light",
-    primary: `No more dead numbers. No more guessing which records are real.\n\nBookedSolid Pro: every disconnected number replaced free. DNC status included on every record. Up to 4 contact channels. 85+ data points.\n\nWe replace every bad number. No limit. No questions. No cost.\n\nTry it. One list. Your market. 60 seconds.`,
-    headline: "No More Dead Numbers.",
-    description: "85+ data points. DNC status included. Bad numbers replaced.",
+    id: "s3-a6-03", campaign: "S3", angle: "A6", style: "Leaderboard / Two Teams",
+    primary: `Two teams. Same size. Same script. Same dialer.\n\nTeam A: 42 conversations a day. Team B: 9.\n\nThe difference isn't the reps. It's not the manager. It's not the time zone.\n\nIt's the contact rate. And the contact rate is decided before the first dial of the day.`,
+    headline: "Same Everything. 5x Difference.",
+    description: "Contact rate decides it before they dial.",
     cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Clean warm off-white/cream background (#faf7f2) with a very subtle warm tint. TOP ZONE (top 8%): 'BOOKEDSOLID PRO' in navy blue spaced-out uppercase tracking text (Inter, ~14px, letter-spacing wide), centered. Below: Very large bold dark navy serif text (DM Serif Display, ~64px): 'No More' on line 1, 'Dead Numbers.' on line 2 — centered, with a period at the end. CENTER ZONE (middle 35%): Four rounded-corner pill-shaped light gray/white buttons stacked vertically, centered, each ~350px wide and ~50px tall with subtle shadow: Button 1: 'Every disconnected number replaced – free' in dark gray text (~16px). Button 2: 'DNC status included with every record' in dark gray text. Button 3: 'Up to 4 contact channels per record' in dark gray text. Button 4: 'Real-time phone verification' in dark gray text. Each button has a clean, minimal rounded-rectangle style with very light border. LOWER-CENTER: A simple line-art icon of a telephone handset in dark navy/teal (~60px) with a small green circle checkmark badge overlapping its bottom-right corner. BOTTOM ZONE (bottom 20%): A large orange/coral CTA button (#f97316), rounded corners, ~280px wide, ~55px tall. White bold text inside: 'See a Sample Record' (~20px). Below the button: A small green shield checkmark icon followed by '136M+ verified households' in dark gray text (~14px), centered. Lighting: Flat, bright, clean — no shadows except subtle button shadows. Material: Clean digital SaaS/startup aesthetic. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Dark navy background (#0f172a) with subtle ambient lighting. CENTER: A large display screen/monitor showing a 'DAILY LEADERBOARD' with a blue header bar. Two entries displayed prominently: '#1 Team A — 42 conversations' highlighted in green with a large green bar, and '#2 Team B — 9 conversations' in red/muted with a small red bar. The contrast between the two bars is dramatic. Below the entries, small text: 'Same script. Same dialer. Same hours.' At the bottom of the leaderboard: 'What changed? The contact rate.' in yellow/gold highlighted text. The display sits on a dark surface with subtle reflections. BOTTOM: 'solidbookedpro.com' in light gray text (~20px) centered. The overall feel is competitive and data-driven — the leaderboard makes the disparity impossible to ignore. Lighting: Screen glow from the display, dark ambient everywhere else. Material: Digital display/monitor mockup. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   },
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 26 — Bold Stat "70%" (Dark)
-  // Image: "70% OF YOUR LIST IS WASTED." on black
-  // Status: READY
-  // Guarantee: G1 | CTA: C1
-  // ═══════════════════════════════════════════════════════════
+  // ─── A7: Bad Data Makes Everything Look Broken (2 ads) ───
+
+  // S3-A7-01
+  // First 50 chars: "Bad data doesn't just waste dials. It makes good r" (50 chars)
+  // Image: Whiteboard / Process of Elimination (from V10 #20)
   {
-    id: "v10-26",
-    campaign: "C3",
-    angle: "Stat Shock / Pattern Interrupt",
-    style: "Bold Stat / Dark",
-    primary: `70% of your list is wasted. You're paying for numbers that will never pick up.\n\nBookedSolid Pro delivers 85+ data points per record with 90% working number accuracy. $0.04 each. No subscription.\n\nEvery bad number replaced free. No cap. No expiration.\n\nPull a sample list for your market. 60 seconds, no commitment.`,
-    headline: "70% Wasted. Every Shift.",
-    description: "90% working number accuracy. Bad numbers replaced free.",
+    id: "s3-a7-01", campaign: "S3", angle: "A7", style: "Whiteboard / Process of Elimination",
+    primary: `Bad data doesn't just waste dials. It makes good reps look bad. It makes proven scripts look broken. It makes your pipeline look unpredictable.\n\nYou start doubting the team. Doubting the offer. Doubting the market.\n\nBut the only thing that was actually broken was the first input in the chain.`,
+    headline: "Everything Looks Broken.",
+    description: "Only one thing actually is.",
     cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Solid black background (#000000). All text centered. MAIN TEXT (center): Enormous bold text taking up most of the frame — '70' in a deep dark red/maroon color (#7f1d1d, ~200px font size) with '%' in the same color but slightly smaller (~140px). The numbers dominate the visual space. Below the giant percentage: 'OF YOUR LIST IS WASTED.' in bold white serif text (DM Serif Display, ~36px) with tight letter spacing. LOWER TEXT: Two lines of small light gray text (Inter, ~18px, color #94a3b8), centered: 'You\'re paying for numbers that will' / 'never pick up.' BOTTOM: 'bookedsolidpro.com' in muted gray text (~16px), centered at the very bottom. Extreme minimalism — the giant red 70% dominates, everything else is secondary. Massive negative black space above and to the sides. Lighting: None — pure black. Material: Pure digital. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Light off-white/cream textured background resembling a whiteboard or light paper surface with very subtle gray grain texture. CONTENT (handwritten marker style, centered): TOP: Elegant cursive/script heading in dark navy ink (~44px): 'Process Of Elimination'. Below, four lines each with a green checkbox (checked) on the left, green checkmark on the right: Line 1: green check + 'Your reps' + green checkmark + 'They\'re fine' in dark text. Line 2: green check + 'Your script' + green checkmark + 'Tested it'. Line 3: green check + 'Your closers' + green checkmark + 'Trained'. Line 4: green check + 'Your dialer' + green checkmark + 'Upgraded'. Below the checklist: 'THE LIST' written in large bold dark text, circled with a hand-drawn red marker oval. An arrow points from the circle to the right where bold dark text reads 'THIS ONE'. CENTER-LOWER: Text in dark ink (~24px): 'Everything looks broken. Only one thing actually is.' BOTTOM TEXT: 'solidbookedpro.com' in dark text (~18px). Lighting: Flat, even — no dramatic shadows. Material: Light paper/whiteboard texture with marker-style text. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   },
 
-  // ═══════════════════════════════════════════════════════════
-  // AD 27 — Dark Shield / Phone Animation
-  // Image: Phone graphic with bad numbers being swept away, replacement guarantee
-  // Status: NEEDS EDIT (16+ → 85+ data points)
-  // Guarantee: G2 | CTA: C2
-  // ═══════════════════════════════════════════════════════════
+  // S3-A7-02
+  // First 50 chars: "When 40% of numbers are dead, everything downstrea" (50 chars)
+  // NEW IMAGE — Post-It Notes on Desk (Style #23 from dictionary)
   {
-    id: "v10-27",
-    campaign: "C3",
-    angle: "Product Demo / Guarantee",
-    style: "Dark Shield / Phone Animation",
-    primary: `Bad numbers? Gone. Every one replaced — free. No limit.\n\nBookedSolid Pro delivers 85+ data points per record. 90% working number accuracy. $0.04 each. No subscription, no contract.\n\nDead number? Replaced. No form. No ticket. No waiting.\n\nSee the data before you buy. No card required.`,
-    headline: "Bad Numbers Gone. Replaced Free.",
-    description: "85+ data points per record. Replacement guarantee included.",
+    id: "s3-a7-02", campaign: "S3", angle: "A7", style: "Post-It Notes on Desk",
+    primary: `When 40% of numbers are dead, everything downstream looks like it's failing.\n\nYour close rate looks low — but your reps never got to pitch.\nYour pipeline looks empty — but the leads existed, the numbers didn't.\nYour cost-per-deal looks insane — because you're paying for phantom volume.\n\nOne bad input. Three broken dashboards.`,
+    headline: "Three Dashboards. One Input.",
+    description: "The data breaks everything it touches.",
     cta: "Learn More",
-    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Dark navy-blue background (#0f172a) with a subtle radial blue glow emanating from the center. TOP BAR: A thin horizontal line of small light gray text (~14px) spanning the width: 'Replacement Guarantee  |  85+ Data Points Per Record' — centered at the very top with generous top padding. HEADLINE (upper 25%): Large bold white serif text (DM Serif Display, ~56px) centered: 'DEAD NUMBERS?' on line 1. Below it, 'GONE.' in bold bright green text (#22c55e, ~64px) with a period. CENTER (middle 45%): A flat-style smartphone mockup (white/light bezel, ~200px wide, ~350px tall), centered. On the phone screen: Three red horizontal bars/rows at the top, each with a red X circle icon on the left — representing disconnected/bad numbers. The red bars have a dissolving/pixelating effect on their right edges, as if they are disintegrating and flying away as red pixel particles to the upper-right. A curved red arrow sweeps from the top of the phone upward and to the left, carrying the red pixels away. Below the red bars: Two green horizontal bars/rows, each with a green checkmark circle icon — representing verified good numbers. A curved green arrow sweeps from the bottom of the phone downward and to the right, suggesting replacement/renewal. LOWER TEXT: Bold white text (Inter, ~24px) centered: 'Every bad number replaced free. No limit.' CTA BUTTON: A wide rounded-rectangle button in deep blue (#1e40af to #2563eb gradient), ~300px wide, ~50px tall. White bold text inside: 'bookedsolidpro.com' (~20px). BOTTOM-LEFT: Blue diamond icon + 'BookedSolid Pro' in white text (~18px). Lighting: Blue ambient glow from center background. The phone has subtle edge lighting. Material: Flat digital design with the phone as a graphic element. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Photorealistic top-down overhead shot of an office desk. Include a partially visible laptop showing a spreadsheet/CRM dashboard, a ceramic coffee mug with dark coffee, and a smartphone with a headset coiled next to it. Scatter three colorful post-it notes on the desk: YELLOW post-it with handwritten text: 'Close rate looks low — but we never got to pitch.' LIGHT GREEN post-it with handwritten text: 'Pipeline looks empty — numbers didn\'t connect.' PINK post-it with handwritten text: 'Cost-per-deal is insane — paying for phantom volume.' Each post-it has slightly different angle and natural-looking adhesive curled corners. The scene should look natural and lived-in, like a real sales manager's workspace photographed from above. Warm, natural office lighting. A small 'solidbookedpro.com' is visible on a white card/business card near the edge of the desk. Authentic, casual, anti-polished feel. Lighting: Warm natural overhead office lighting. Material: Real desk surface, paper post-its, laptop, ceramic mug. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // ─── A8: Outbound Isn't Broken, Data Is (2 ads) ───
+
+  // S3-A8-01
+  // First 50 chars: "Outbound isn't dead. Your data is." (34 chars)
+  // Image: UGC Selfie / Testimonial (from V10 #24)
+  {
+    id: "s3-a8-01", campaign: "S3", angle: "A8", style: "UGC Selfie / Reframe",
+    primary: `Outbound isn't dead. Your data is.\n\nPeople keep saying cold calling doesn't work anymore. They're wrong. What doesn't work is calling numbers that don't connect.\n\nThe channel works. The script works. The reps work.\n\nThe thing that decides whether any of it matters happens before the first dial.`,
+    headline: "Outbound Isn't Dead.",
+    description: "The data is.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Photorealistic UGC-style (user-generated content) selfie photo. A Caucasian man in his early 30s with short brown hair, light stubble, and a neutral/serious expression is taking a selfie in an office/call center environment. He wears a dark gray/olive button-up shirt. A black over-ear headset with microphone hangs around his neck. The background shows a blurred open office with other workers at desks visible out of focus. He is looking directly into the camera with a slightly tired but determined expression. The lighting is natural office fluorescent — slightly flat and realistic, not glamorous. The photo feels authentic and unposed, like a real person took this with their phone front camera. TEXT OVERLAY at the bottom of the image: Bold white text with a subtle dark shadow for readability (~36px, Inter Bold): 'Outbound isn\'t dead.' Below in white italic text (~24px): 'Your data is.' BOTTOM-LEFT corner: Small 'solidbookedpro.com' text in white with slight transparency (~14px). The overall feel should be raw, authentic, and relatable — like a real testimonial selfie someone posted on social media. Lighting: Flat office fluorescent overhead lighting, natural and unedited. Material: Phone camera photo quality — slight grain, natural depth of field blur on background. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // S3-A8-02
+  // First 50 chars: "Every team that says \"outbound doesn't work anymor" (50 chars)
+  // NEW IMAGE — Money Shredder / Photo-Object Metaphor (Style #15 from dictionary)
+  {
+    id: "s3-a8-02", campaign: "S3", angle: "A8", style: "Money Shredder / Wrong Problem",
+    primary: `Every team that says "outbound doesn't work anymore" is running the same setup as the teams closing 40+ deals a month.\n\nSame dialers. Same scripts. Same call blocks.\n\nThe only difference? Where the data came from.\n\nThe bottleneck was never the channel. It was the input feeding the channel.`,
+    headline: "Same Setup. Different Input.",
+    description: "That's the only difference.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Clean white/light gray tabletop product photography style. A hand in a blue business suit sleeve feeds a piece of paper labeled 'OUTBOUND IS DEAD' into a black paper shredder sitting on a white surface. Shredded paper strips come out the bottom. Next to the shredder, a small whiteboard/card propped up reads: 'Same dialer. Same script. Same hours.' and below in bold green: 'Different input. Different results.' Bold dark serif headline at top of image (DM Serif Display, ~40px): 'Wrong Problem.' Smaller dark text below the scene (Inter, ~20px): 'The bottleneck was never the channel.' 'solidbookedpro.com' in small text at the bottom. Lighting: Natural warm office lighting from upper-left, casting soft shadows from the shredder. Material: Real white desk surface, matte paper, glossy shredder plastic, fabric suit sleeve. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+
+  // ═══════════════════════════════════════════════════════════════
+  //
+  //  STAGE 4: "WHY YOU?" — 8 ads (~23%)
+  //  Prove least risky. They've been burned.
+  //  DO talk about accuracy, features, guarantee, competitors.
+  //  DO NOT re-educate about data quality.
+  //  CTA: Comparison — "Compare our data" / "Pull a sample list"
+  //
+  // ═══════════════════════════════════════════════════════════════
+
+  // ─── A9: Guarantee as Proof (3 ads) ───
+
+  // S4-A9-01
+  // First 50 chars: "Every bad number replaced free. No cap. No expirat" (50 chars)
+  // Image: Dark Shield / Guarantee Badge (from V10 #1)
+  {
+    id: "s4-a9-01", campaign: "S4", angle: "A9", style: "Dark Shield / Guarantee Badge",
+    primary: `Every bad number replaced free. No cap. No expiration. No form to fill out.\n\nMost data vendors sell you a list and disappear. BookedSolid Pro replaces every bad number — free.\n\n85+ data points per record. $0.04 each. No subscription. No contract.\n\nPull a sample list for your market. 60 seconds.`,
+    headline: "Every Bad Number Replaced Free.",
+    description: "No cap. No expiration. No form.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Dark navy-blue background with a subtle radial gradient — darkest at edges (#0a0f1a), slightly lighter in the center (#0f172a). A soft blue glow emanates from behind the central shield element. TOP ZONE (top 15%): Large bold white italic serif text (DM Serif Display, ~60px) reading 'EVERY BAD NUMBER' centered horizontally. CENTER ZONE (middle 35%): A large 3D-rendered shield icon, approximately 280px tall, with a metallic dark steel-blue body and a bright green checkmark in the center. The shield has a slight glossy reflection and dimensional beveling. The green checkmark is bold, hex #22c55e. Below the shield, large bold white serif text (~70px) reading 'REPLACED FREE' centered. LOWER ZONE (next 30%): Four bullet points stacked vertically, each with a small green circle checkmark icon (20px) to the left. Text in white sans-serif (Inter, ~28px): Line 1: 'No cap on replacements', Line 2: 'No expiration date', Line 3: 'No support ticket required', Line 4: 'No form to fill out'. Each line has comfortable spacing (~45px between lines). BOTTOM ZONE (bottom 15%): A thin horizontal divider line, then the brand bar — a blue diamond icon followed by 'BookedSolid Pro' in white bold sans-serif (~24px), then '$0.04/record' in white (~24px) to the right. At the very bottom, a slim dark gray bar (#1e293b) spanning full width with centered white text (~16px): 'No Subscription . No Contract . No Minimum' with centered dots as separators. Lighting: Soft ambient glow from center, creating depth behind the shield. Material: Smooth matte digital surface with subtle noise texture. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // S4-A9-02
+  // First 50 chars: "Most vendors give you a terms-of-service page. We " (50 chars)
+  // Image: Guarantee Seal / Gold Badge (from V10 #3)
+  {
+    id: "s4-a9-02", campaign: "S4", angle: "A9", style: "Guarantee Seal / Gold Badge",
+    primary: `Most vendors give you a terms-of-service page. We give you a guarantee.\n\nEvery bad number replaced. No cap. No expiration. No form. No support ticket.\n\n90% working number accuracy. If any slip through, we replace them. Free.\n\nCompare our data against your current provider. 60-second sample.`,
+    headline: "Guaranteed. Not Hoped For.",
+    description: "Every bad number replaced free. No questions.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Background is very dark navy-black (#090d15) with a subtle radial glow behind the central seal element. CENTER-TOP ZONE (top 45%): A large ornate gold/brass circular seal badge, approximately 400px diameter. The seal has a scalloped/starburst edge pattern with alternating raised points, rendered in metallic gold (#c5a03f) with darker gold shadows. Across the top arc of the seal, curved text reading 'GUARANTEED' in bold gold serif font. In the center of the seal: a blue diamond icon (~30px) above 'BookedSolid Pro' in white bold text (~24px). Below that, a green ribbon banner crossing horizontally with white text reading 'EVERY BAD NUMBER REPLACED FREE' in bold caps (~18px). The seal has a dimensional, embossed metallic look with highlights and shadows suggesting 3D depth. LOWER ZONE (next 35%): Five bullet points stacked vertically with green circle checkmark icons on the left. Each line in white sans-serif (Inter, ~26px): 'No cap on replacements', 'No expiration date', 'No form required', 'No support ticket', 'No waiting period'. Comfortable spacing between lines (~40px). BOTTOM ZONE (bottom 10%): Centered text in light gray/white (~18px): '$0.04/record . 85+ data points . 90% working number accuracy'. Lighting: Warm spotlight illuminating the gold seal from above, creating metallic reflections. Dark ambient everywhere else. Material: Metallic gold with embossed texture on the seal; smooth dark matte background. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // S4-A9-03
+  // First 50 chars: "\"Every bad number replaced free\" isn't a marketing" (50 chars)
+  // Image: Bold Text / Minimal Dark (from V10 #6)
+  {
+    id: "s4-a9-03", campaign: "S4", angle: "A9", style: "Bold Text / Minimal Dark",
+    primary: `"Every bad number replaced free" isn't a marketing line. It's the policy.\n\nNo cap on replacements. No expiration date. No form. No ticket. No waiting.\n\n85+ data points per record. $0.04 each. No subscription. No contract. No minimum.\n\nPull a sample list and see the data before you pay.`,
+    headline: "It's The Policy. Not A Tagline.",
+    description: "Every bad number replaced. No cap. No expiration.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Solid pure black background (#000000). All text centered both horizontally and vertically. TOP TEXT (upper 35%): Large bold white serif text (DM Serif Display, ~72px) reading 'GUARANTEED.' on one line. Below it, same size bold text but in a muted steel-blue color (#64748b): 'OR FREE.' in italics. CENTER TEXT (middle area, ~25%): Two lines of smaller light gray text (Inter, ~18px, color #94a3b8), centered: 'Every bad record replaced. No cap.' and below it: 'No contracts. No commitments.' LOWER TEXT (bottom 25%): 'solidbookedpro.com' in muted blue-gray text (#64748b, Inter, ~20px), centered. The overall aesthetic is extremely minimal — no graphics, no icons, just powerful typography on black. Lots of breathing room between text blocks. Lighting: None — flat black background. Material: Pure digital, no texture. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // ─── A10: Feature/Price Comparison (3 ads) ───
+
+  // S4-A10-01
+  // First 50 chars: "Your current vendor: 3 fields. No DNC status. No g" (50 chars)
+  // Image: Dirty vs Clean / Card Comparison (from V10 #16)
+  {
+    id: "s4-a10-01", campaign: "S4", angle: "A10", style: "Dirty vs Clean / Card Comparison",
+    primary: `Your current vendor: 3 fields. No DNC status. No guarantee. Dead numbers are your problem.\n\nBookedSolid Pro: 85+ data points. DNC status included. Every bad number replaced free. $0.04/record.\n\nNo subscription. No contract. No minimum order.\n\nCompare them side by side. Pull a sample list now.`,
+    headline: "Your Card vs. Our Card.",
+    description: "85+ data points. $0.04/record. Guaranteed.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Dark background (#0f172a to #1a1a2e) with subtle warm texture. TOP ZONE (top 15%): Bold white italic serif text (DM Serif Display, ~40px) centered: 'Your Current Data' and below: 'vs. BookedSolid Pro' CENTER ZONE (middle 50%): Two card-style UI components side by side. LEFT CARD (~280px wide): Styled like a worn, stained, old paper card with brown coffee stains and aged texture. A red notification badge with '3' in the upper-right corner. Content: 'YOUR CURRENT DATA' header in bold caps. Fields listed: 'Name: John S.' / 'Phone:' with a red 'DISCONNECTED' badge / 'Email: —' (empty) / 'Property Value: —' with a red X / 'DNC Status: UNKNOWN' with a yellow warning triangle. The card looks cheap and damaged. Label below: 'Them' in gray text. RIGHT CARD (~280px wide): Clean, modern white card with rounded corners and a subtle shadow. A green notification badge with '85+' in the upper-right corner. Content: 'BOOKEDSOLID PRO' header in bold caps. Fields listed with green checkmarks: 'Name: John A. Stevens' / 'Mobile: (404) 555-5555' with green check / 'Email: j.stevens@email.com' with green check / 'Property: $487,000' with green check / 'DNC: CLEAR' with green check. Below: '+80 more fields...' in small blue text. Label below: 'Us' in blue text. BOTTOM ZONE (bottom 20%): Labels 'Them' under left card, 'Us' under right card in gray text. Centered text: 'Clean record.' in regular white, '85+ data points.' in bold white, 'Free replacements.' in regular white (~22px). 'solidbookedpro.com' in blue text (#2563eb, ~20px) at the very bottom. Lighting: Subtle spotlight highlighting the cards from above. Material: Aged paper (left card), clean digital UI (right card). BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // S4-A10-02
+  // First 50 chars: "85+ data points per record. $0.04 each. DNC status" (50 chars)
+  // Image: Bold Text / Us vs. Them Shields (from V10 #7)
+  {
+    id: "s4-a10-02", campaign: "S4", angle: "A10", style: "Bold Text / Us vs. Them Shields",
+    primary: `85+ data points per record. $0.04 each. DNC status included on every record. Every bad number replaced free.\n\nNo subscription. No contract. No minimum. No setup fee.\n\nYour current provider doesn't offer that. Neither does anyone else.\n\nSee the data side by side. Pull a sample list now.`,
+    headline: "No Guarantee vs. Full Guarantee.",
+    description: "85+ data points. $0.04/record. No contract.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Light gray background (#f1f5f9), clean and minimal. TOP ZONE (top 20%): Large bold dark navy text (DM Serif Display, ~56px) centered: 'GUARANTEED.' on one line, then 'OR FREE.' on the next line, also bold navy. Below, two lines of smaller dark gray text (Inter, ~20px): 'Every bad record replaced.' and 'No cap. No contracts.' CENTER ZONE (middle 40%): Two icons side by side, centered horizontally with space between them. LEFT ICON: A cracked/broken gray shield with a red X circle overlay in the top-right corner. The shield is dull gray (#94a3b8) with a visible crack/split down the middle. Below it, red label text: 'Them:' in bold red (#ef4444), followed by 'no guarantee' in regular dark gray. RIGHT ICON: A solid intact blue shield (#2563eb) with a teal/blue checkmark on it, looking strong and polished. Below it, teal label text: 'Us:' in bold blue (#2563eb), followed by 'every number guaranteed' in regular dark gray. BOTTOM ZONE (bottom 20%): 'solidbookedpro.com' in dark navy text (~22px), centered. Below that, blue diamond icon + 'BookedSolid Pro' in navy bold text (~20px), centered. Lighting: Flat, even studio lighting — no dramatic shadows. Material: Clean flat digital design, no textures. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // S4-A10-03
+  // First 50 chars: "PropStream: $99/mo. BatchLeads: $79/mo. ListSource" (50 chars)
+  // NEW IMAGE — Price Crossed Out Whiteboard (Style #24 from dictionary)
+  {
+    id: "s4-a10-03", campaign: "S4", angle: "A10", style: "Price Crossed Out / Whiteboard",
+    primary: `PropStream: $99/mo. BatchLeads: $79/mo. ListSource: $0.15/record.\n\nBookedSolid Pro: $0.04/record. 85+ data points. DNC status included. Every bad number replaced free.\n\nNo subscription. No contract. No minimum order.\n\nCompare our data against yours. Pull a sample list in 60 seconds.`,
+    headline: "Line Them Up. Compare.",
+    description: "$0.04/record. 85+ data points. Guaranteed.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). White/off-white background resembling a whiteboard or piece of paper with subtle texture. Three lines of handwritten-style text in dark ink, each showing a competitor name followed by a dash and their price/limitation: Line 1: 'PropStream — $99/mo (limited data)' with a hand-drawn red strikethrough line through the entire text. Line 2: 'BatchLeads — $79/mo (basic skip trace)' with a hand-drawn red strikethrough line through the entire text. Line 3: 'ListSource — $0.15/record (no phone numbers)' with a hand-drawn red strikethrough line through the entire text. Below these crossed-out lines, in larger, bolder green handwriting: 'BookedSolid Pro — $0.04/record' on one line, then '85+ data points + DNC + guarantee' on the next line — these lines have NO strikethrough. The green text is noticeably larger and more confident than the crossed-out text above. At the bottom: 'solidbookedpro.com' in small dark text. The overall feel is hand-drawn, like someone sketched this comparison on a whiteboard during a meeting. Off-white/cream background with subtle paper or whiteboard texture. Lighting: Bright, even lighting. Material: Whiteboard/paper surface, marker ink. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // ─── A11: Trust / Burned Before (2 ads) ───
+
+  // S4-A11-01
+  // First 50 chars: "You've heard \"95% accurate\" before. You bought it." (50 chars)
+  // Image: Money Shredder / Guarantee Contrast (from V10 #4)
+  {
+    id: "s4-a11-01", campaign: "S4", angle: "A11", style: "Money Shredder / Guarantee Contrast",
+    primary: `You've heard "95% accurate" before. You bought it. Half the numbers were dead.\n\nEvery vendor says the same thing. BookedSolid Pro backs it up differently: every bad number replaced free. No cap. No expiration.\n\n90% working number accuracy. If any slip through — replaced. Period.\n\nPull a sample list. See the data before you pay.`,
+    headline: "Their Guarantee vs. Ours.",
+    description: "Every bad number replaced. No cap. No questions.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Photorealistic office desktop scene shot from a slightly elevated angle. A light wood-grain desk surface fills the frame. TOP-CENTER: A small white/silver desktop paper shredder sitting on the desk, with shredded paper strips coming out the bottom into its collection area. A piece of paper is partially fed into the top of the shredder. The paper visible above the shredder reads in dark serif text: 'DATA VENDOR GUARANTEE' as a bold header, followed by italic text: '"95% accurate" — Terms and conditions apply.' — styled like a sarcastic certificate. A laptop edge is barely visible in the top-right corner. CENTER-RIGHT: Overlaid on the desk scene, a dark navy-blue rounded-corner card (~350px wide) resembling a coaster or badge. The card features: at the top, a gold/green circular seal with 'GUARANTEED' arcing across it and a green ribbon banner. Below the seal: 'BookedSolid Pro' with blue diamond icon, then 'OUR GUARANTEE' in small caps. Below that in white bold: 'EVERY BAD NUMBER REPLACED FREE'. Then 'NO CAP . NO EXPIRATION' in smaller white text. And the BookedSolid Pro logo at the bottom of the card. BOTTOM ZONE (bottom 12%): White background bar spanning full width. Left-aligned: '$0.04/record . 85+ data points' in dark text (~22px). Right-aligned: blue diamond + 'BookedSolid Pro' in navy text. Lighting: Natural warm office lighting from upper-left, casting soft shadows from the shredder. Material: Real wood desk texture, matte paper, glossy shredder plastic. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // S4-A11-02
+  // First 50 chars: "Last vendor said \"phone-verified.\" Half the number" (50 chars)
+  // Image: Split Comparison / People (from V10 #22)
+  {
+    id: "s4-a11-02", campaign: "S4", angle: "A11", style: "Split Comparison / People",
+    primary: `Last vendor said "phone-verified." Half the numbers were dead. The one before that said "real-time data." Same result.\n\nBookedSolid Pro: 90% working number accuracy. 85+ data points per record. DNC status included — not scrubbed, included.\n\nEvery bad number replaced free. No cap. No expiration.\n\nCompare our data against yours. Pull a sample list.`,
+    headline: "You've Been Burned. We Know.",
+    description: "90% accuracy. DNC included. Every bad number replaced.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Split down the middle vertically into two halves. LEFT HALF: Warm gray-beige background (#d4c8b8). A photorealistic image of a Caucasian man in his 30s-40s wearing a dark blue button-up shirt, sitting at an office desk. He is on the phone with one hand holding a cell phone to his ear and the other hand pressing against his temple in frustration, eyes closed, stressed expression. Behind him, a blurry computer monitor shows a basic spreadsheet/list. Above him, elegant italic header text in dark navy (~24px): 'Last Vendor\'s Promise'. Below the photo, four bullet points with red X circle icons: '"Phone-verified" — half dead' / '"Real-time data" — same result' / '"95% accurate" — not even close' / 'No guarantee — your loss'. Each in dark text (~16px). RIGHT HALF: Dark navy background (#0f172a). Same photorealistic style — a Caucasian man in his 30s wearing a light blue button-up shirt, sitting at a desk, smiling confidently at the camera with arms resting on the desk. Behind him, a monitor shows a detailed data dashboard. Above him, 'BookedSolid Pro' in bold white text with a red circle badge reading 'FROM $0.04' in the upper-right. Below the photo, four bullet points with green checkmark circle icons: '90% working number accuracy' / 'DNC status included' / '85+ data points per record' / 'Every bad number replaced free'. Each in white text (~16px). The split creates a stark visual contrast between the frustrated left side and the confident right side. Lighting: LEFT — flat office lighting, slightly desaturated. RIGHT — warm professional lighting, vibrant. Material: Photorealistic office photography. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+
+  // ═══════════════════════════════════════════════════════════════
+  //
+  //  STAGE 5: "OK LET ME TRY" — 5 ads (~14%)
+  //  Remove risk. Create urgency. Close the gap.
+  //  Logic is done. Emotion is satisfied.
+  //  Remove the LAST reason not to act.
+  //  DO NOT: re-explain the problem, re-teach Stage 3, add complexity.
+  //  CTA: Direct — "Get your list" / "See it now" / "Test it"
+  //
+  // ═══════════════════════════════════════════════════════════════
+
+  // ─── A12: Risk Removal / No Catch (3 ads) ───
+
+  // S5-A12-01
+  // First 50 chars: "No subscription. No contract. No minimum. No setu" (49 chars)
+  // Image: Clean Feature List / Light (from V10 #25)
+  {
+    id: "s5-a12-01", campaign: "S5", angle: "A12", style: "Clean Feature List / Light",
+    primary: `No subscription. No contract. No minimum. No setup fee. No credit card to start.\n\nBookedSolid Pro: $0.04 per record. 85+ data points. Every bad number replaced free.\n\nSee the data before you pay. Build a list for your market in 60 seconds.\n\nGet your list now.`,
+    headline: "No Catch. Seriously.",
+    description: "$0.04/record. See it before you pay.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Clean warm off-white/cream background (#faf7f2) with a very subtle warm tint. TOP ZONE (top 8%): 'BOOKEDSOLID PRO' in navy blue spaced-out uppercase tracking text (Inter, ~14px, letter-spacing wide), centered. Below: Very large bold dark navy serif text (DM Serif Display, ~64px): 'No Catch.' on line 1, 'Seriously.' on line 2 — centered, with a period at the end. CENTER ZONE (middle 35%): Five rounded-corner pill-shaped light gray/white buttons stacked vertically, centered, each ~350px wide and ~50px tall with subtle shadow: Button 1: 'No subscription' in dark gray text (~16px). Button 2: 'No contract' in dark gray text. Button 3: 'No minimum order' in dark gray text. Button 4: 'No setup fee' in dark gray text. Button 5: 'No credit card to start' in dark gray text. Each button has a clean, minimal rounded-rectangle style with very light border. LOWER-CENTER: A simple line-art icon of a telephone handset in dark navy/teal (~60px) with a small green circle checkmark badge overlapping its bottom-right corner. BOTTOM ZONE (bottom 20%): A large orange/coral CTA button (#f97316), rounded corners, ~280px wide, ~55px tall. White bold text inside: 'Build Your List Now' (~20px). Below the button: '$0.04/record . 85+ data points . Every bad number replaced free' in dark gray text (~14px), centered. Lighting: Flat, bright, clean — no shadows except subtle button shadows. Material: Clean digital SaaS/startup aesthetic. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // S5-A12-02
+  // First 50 chars: "You're not signing anything. You're not committing" (49 chars)
+  // Image: Before/After Phone Split (from V10 #2)
+  {
+    id: "s5-a12-02", campaign: "S5", angle: "A12", style: "Before/After Phone Split",
+    primary: `You're not signing anything. You're not committing to anything. You're pulling a list.\n\n$0.04 per record. See the data before you buy. If a number is bad, it gets replaced — free.\n\nYou already know the problem. You already know the fix. This is the step.\n\nTest it with one list.`,
+    headline: "Pull One List. That's It.",
+    description: "$0.04/record. See it before you pay.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1536 pixels (2:3 portrait ratio). Background is a dark gradient split — left side has a warm dark red-tinted hue (#1a0505), right side has a cool dark green-tinted hue (#051a0a), blending in the center. TOP ZONE (top 10%): Two labels — left side shows 'BEFORE' in bold green text (#22c55e, ~36px, DM Serif Display), right side shows 'AFTER' in bold green text (#22c55e, ~36px). A subtle '>' arrow between them. CENTER ZONE (40%): Two photorealistic smartphone mockups side by side, slightly angled. LEFT PHONE: Shows an iPhone with a red-tinted screen displaying 'Number Disconnected' with a red X icon at top. Below that, a 'Recents' call log showing multiple entries all reading 'Number Disconnected' with gray text, stacked. The phone has a red error badge. At the bottom of the phone screen, a red pill-shaped badge reading 'Disconnected' in white. RIGHT PHONE: Shows an iPhone with a green-tinted screen displaying 'Connected' with a large green circle checkmark. Below shows a contact card for 'Becky Davis' with a green 'VERIFIED' badge, address '9412 Aster St W, Harrisburg, PA 17112', property type 'Proper:', phone '(703) 555-1298', mailing address info, and multiple data field tabs at bottom (People, Titles, Money, Tenant, Success). Text at bottom of phone: '85+ data points visible'. The phones cast subtle reflections on a glossy dark surface below them. LOWER ZONE (20%): A dark metallic banner/pill shape with white text reading 'FREE REPLACEMENT' in bold caps (~32px). Below that, centered: blue diamond icon + 'BookedSolid Pro' in white bold (~28px). BOTTOM (10%): Centered text in white/light gray (~20px): '$0.04/record . No Cap . No Expiration'. Lighting: Dramatic split lighting — red glow on left, green glow on right. Material: Glossy reflective dark surface under the phones. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // S5-A12-03
+  // First 50 chars: "Every reason not to try just disappeared." (41 chars)
+  // NEW IMAGE — Data Table / Spreadsheet Preview (Style #7 from dictionary)
+  {
+    id: "s5-a12-03", campaign: "S5", angle: "A12", style: "Data Table / Spreadsheet Preview",
+    primary: `Every reason not to try just disappeared.\n\nNo subscription — pay per record. No contract — cancel anytime. No minimum — buy 10 records or 10,000. Every bad number — replaced free.\n\n85+ data points. $0.04 per record. DNC status included.\n\nGet your list. 60 seconds. No commitment.`,
+    headline: "Zero Reasons Not To Try.",
+    description: "See the data. $0.04/record. No commitment.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Light gray/off-white background (#fafafa). Bold dark serif headline at very top (DM Serif Display, ~40px): 'ZERO REASONS' on line 1, 'NOT TO TRY.' on line 2 — 'ZERO' in blue (#2563eb). A styled data table/spreadsheet below showing sample records with column headers (First Name, Last Name, Mobile, Property Value, DNC Status), 6 rows of data with some fields blurred/redacted for privacy, and a 'STATUS' column with green 'VERIFIED' badges on 5 rows and one blue 'REPLACED' badge on 1 row. A small callout tooltip bubble pointing to the replaced row reads: 'Replaced free. No form. No ticket.' Below the table, bold dark text (~20px): 'No subscription. No contract. No minimum. $0.04/record.' A rounded blue CTA button (#2563eb) with white text: 'Build Your List Now'. Brand logo at bottom: blue diamond + 'BookedSolid Pro' in navy text. Lighting: Bright, clean, even lighting. Material: Clean digital editorial layout. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // ─── A13: Instant Access / See It Now (2 ads) ───
+
+  // S5-A13-01
+  // First 50 chars: "60 seconds. Your market. Your filters. Your list." (49 chars)
+  // Image: Dark Shield / Phone Animation (from V10 #27)
+  {
+    id: "s5-a13-01", campaign: "S5", angle: "A13", style: "Dark Shield / Phone Animation",
+    primary: `60 seconds. Your market. Your filters. Your list.\n\nBookedSolid Pro: 85+ data points per record. $0.04 each. Every bad number replaced free.\n\nNo signup process. No demo call. No "let me check with my team."\n\nSee it now.`,
+    headline: "Your List. 60 Seconds.",
+    description: "85+ data points. $0.04/record. See it now.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Dark navy-blue background (#0f172a) with a subtle radial blue glow emanating from the center. TOP BAR: A thin horizontal line of small light gray text (~14px) spanning the width: 'Replacement Guarantee  |  85+ Data Points Per Record' — centered at the very top with generous top padding. HEADLINE (upper 25%): Large bold white serif text (DM Serif Display, ~56px) centered: 'YOUR LIST.' on line 1. Below it, '60 SECONDS.' in bold bright green text (#22c55e, ~64px) with a period. CENTER (middle 45%): A flat-style smartphone mockup (white/light bezel, ~200px wide, ~350px tall), centered. On the phone screen: Three red horizontal bars/rows at the top, each with a red X circle icon on the left — representing disconnected/bad numbers. The red bars have a dissolving/pixelating effect on their right edges, as if they are disintegrating and flying away as red pixel particles to the upper-right. A curved red arrow sweeps from the top of the phone upward and to the left, carrying the red pixels away. Below the red bars: Two green horizontal bars/rows, each with a green checkmark circle icon — representing verified good numbers. A curved green arrow sweeps from the bottom of the phone downward and to the right, suggesting replacement/renewal. LOWER TEXT: Bold white text (Inter, ~24px) centered: 'No demo. No signup. No "let me check."' CTA BUTTON: A wide rounded-rectangle button in deep blue (#1e40af to #2563eb gradient), ~300px wide, ~50px tall. White bold text inside: 'See It Now' (~20px). BOTTOM-LEFT: Blue diamond icon + 'BookedSolid Pro' in white text (~18px). Lighting: Blue ambient glow from center background. The phone has subtle edge lighting. Material: Flat digital design with the phone as a graphic element. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
+  },
+
+  // S5-A13-02
+  // First 50 chars: "Right now. Not after a demo. Not after a sales cal" (50 chars)
+  // NEW IMAGE — Feature Comparison Table (Style #18 from dictionary)
+  {
+    id: "s5-a13-02", campaign: "S5", angle: "A13", style: "Feature Comparison Table / Instant Access",
+    primary: `Right now. Not after a demo. Not after a sales call. Not after a free trial that requires a credit card.\n\nBookedSolid Pro: pick your market, set your filters, see the data. 60 seconds.\n\n$0.04/record. 85+ data points. Every bad number replaced free.\n\nTest it.`,
+    headline: "Right Now. Not After A Demo.",
+    description: "$0.04/record. 85+ data points. Test it now.",
+    cta: "Learn More",
+    aiPrompt: `Create a static ad image, 1024x1024 pixels (1:1 square). Dark navy background (#0f172a) with subtle blue tint. A comparison table with two columns taking up the center of the image. LEFT COLUMN: Gray header bar reading 'TYPICAL DATA VENDOR' in white caps. Rows below with light gray dividers: 'Access:' — 'After demo call' in red text. 'Pricing:' — '$99-199/mo subscription' in red text. 'Data:' — '3-5 fields' in red text. 'Guarantee:' — 'None' in red text with red X icon. 'Commitment:' — '12-month contract' in red text. RIGHT COLUMN: Green/gold header bar reading 'BOOKEDSOLID PRO' in white caps with blue diamond icon. Same rows: 'Access:' — 'Instant. 60 seconds.' in green text. 'Pricing:' — '$0.04/record. No subscription.' in green text. 'Data:' — '85+ data points' in green text. 'Guarantee:' — 'Every bad number replaced free' in green text with green checkmark icon. 'Commitment:' — 'None. No contract.' in green text. The right column values are noticeably more compelling. Below the table: Gold/yellow highlighted text centered (~22px): 'See it now. No demo required.' and below: 'solidbookedpro.com' in light gray. Lighting: Screen-style glow, dark ambient. Material: Clean digital UI comparison table. BRAND: BookedSolid Pro — property + homeowner data platform. COLORS: Navy #0f172a, blue #2563eb, green #22c55e, red #ef4444, white #ffffff, gray #f1f5f9. FONTS: DM Serif Display headlines, Inter body. LOGO: 'BookedSolid Pro' white text + blue diamond icon. URL: solidbookedpro.com. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No 'shutterstock' or 'getty' text. No borders or frames around the entire image. No extra text beyond what is specified. No misspellings. Natural skin texture on all people — not AI-smooth. Correct number of fingers on all visible hands. No cartoon illustrations. No clip art. Single static image, NOT carousel.`
   }
 
 ];
 
-// ═══════════════════════════════════════════════════════════
-// CAMPAIGN SUMMARY
-// ═══════════════════════════════════════════════════════════
-// C1 (Guarantee + Trust): Ads 1-7 (7 ads)
-// C2 (Pain + Cost):       Ads 8-15 (8 ads)
-// C3 (Data Quality + Social Proof): Ads 16-27 (12 ads)
+// ═══════════════════════════════════════════════════════════════
+// V11 CAMPAIGN ARCHITECTURE
+// ═══════════════════════════════════════════════════════════════
 //
-// IMAGE STATUS:
-// READY (12): #6, #7, #11, #12, #13, #14, #17, #18, #19, #23, #24, #26
-// NEEDS EDIT (15): #1, #2, #3, #4, #5, #8, #9, #10, #15, #16, #20, #21, #22, #25, #27
+// STAGE 2 — "THIS SUCKS" (12 ads, ~35%):
+//   A1: Dead Numbers / Disconnects: s2-a1-01, s2-a1-02, s2-a1-03
+//   A2: Wasted Money / Paying for Nothing: s2-a2-01, s2-a2-02, s2-a2-03
+//   A3: Rep Frustration / Team Pain: s2-a3-01, s2-a3-02, s2-a3-03
+//   A4: Unpredictable Pipeline: s2-a4-01, s2-a4-02, s2-a4-03
 //
-// GUARANTEE ROTATION: G1→G2→G3→G4→G5→G1→G2→G3→G4→G5→G1→G2→G3→G4→G5→G1→G2→G3→G4→G5→G1→G2→G3→G4→G5→G1→G2
-// CTA ROTATION:       C1→C2→C3→C4→C5→C1→C2→C3→C4→C5→C1→C2→C3→C4→C5→C1→C2→C3→C4→C5→C1→C2→C3→C4→C5→C1→C2
-// No consecutive repeats of either.
+// STAGE 3 — "OH... THIS IS WHY" (10 ads, ~30%):
+//   A5: Wrong Blame / Fixing the Wrong Thing: s3-a5-01, s3-a5-02, s3-a5-03
+//   A6: Contact Rate Is the Real Metric: s3-a6-01, s3-a6-02, s3-a6-03
+//   A7: Bad Data Makes Everything Look Broken: s3-a7-01, s3-a7-02
+//   A8: Outbound Isn't Broken, Data Is: s3-a8-01, s3-a8-02
 //
-// CORRECTED FACTS (all ads verified):
+// STAGE 4 — "WHY YOU?" (8 ads, ~23%):
+//   A9: Guarantee as Proof: s4-a9-01, s4-a9-02, s4-a9-03
+//   A10: Feature/Price Comparison: s4-a10-01, s4-a10-02, s4-a10-03
+//   A11: Trust / Burned Before: s4-a11-01, s4-a11-02
+//
+// STAGE 5 — "OK LET ME TRY" (5 ads, ~14%):
+//   A12: Risk Removal / No Catch: s5-a12-01, s5-a12-02, s5-a12-03
+//   A13: Instant Access / See It Now: s5-a13-01, s5-a13-02
+//
+// ═══════════════════════════════════════════════════════════════
+// STAGE RULE COMPLIANCE
+// ═══════════════════════════════════════════════════════════════
+//
+// S2 ads (12): NO product mentions, NO features, NO accuracy stats.
+//   Copy mirrors pain using prospect language only. CTAs are soft.
+//
+// S3 ads (10): NO "we have better data", NO accuracy %, NO features.
+//   Copy reframes: blame the data, not the team. CTAs create curiosity.
+//
+// S4 ads (8): Product/features/guarantee front and center.
+//   Proves least risky. CTAs invite comparison.
+//
+// S5 ads (5): Pure risk removal and urgency. No re-education.
+//   CTAs are direct action: "Get your list" / "Test it" / "See it now"
+//
+// ═══════════════════════════════════════════════════════════════
+// IMAGE MAPPING: V10 → V11
+// ═══════════════════════════════════════════════════════════════
+//
+// REUSED FROM V10 (27 images mapped to best-fit stage/angle):
+//   V10 #1  → s4-a9-01  (Dark Shield → Guarantee as Proof)
+//   V10 #2  → s5-a12-02 (Before/After Phone → Risk Removal)
+//   V10 #3  → s4-a9-02  (Gold Badge → Guarantee as Proof)
+//   V10 #4  → s4-a11-01 (Money Shredder → Burned Before)
+//   V10 #5  → s2-a3-02  (Napkin Verse → Rep Frustration)
+//   V10 #6  → s4-a9-03  (Bold Dark → Guarantee as Proof)
+//   V10 #7  → s4-a10-02 (Us vs Them → Feature Comparison)
+//   V10 #8  → s3-a6-01  (Glowing Display → Contact Rate)
+//   V10 #9  → s2-a2-02  (Whiteboard Pay 4x → Wasted Money)
+//   V10 #10 → s3-a5-01  (Whiteboard Changed → Wrong Blame)
+//   V10 #11 → s2-a1-01  (Napkin Tally → Dead Numbers)
+//   V10 #12 → s2-a3-01  (Slack Chat → Rep Frustration)
+//   V10 #13 → s2-a1-02  (Dark Office → Dead Numbers)
+//   V10 #14 → s2-a2-03  (Triple Cost → Wasted Money)
+//   V10 #15 → s2-a2-01  (Receipt → Wasted Money)
+//   V10 #16 → s4-a10-01 (Dirty vs Clean → Feature Comparison)
+//   V10 #17 → s2-a4-01  (Bold + Chart → Unpredictable Pipeline)
+//   V10 #18 → s2-a1-03  (Pain Sequence → Dead Numbers)
+//   V10 #19 → s3-a5-03  (Team Frustrated → Wrong Blame)
+//   V10 #20 → s3-a7-01  (Process Elimination → Bad Data Breaks All)
+//   V10 #21 → s3-a5-02  (Wrong Problem → Wrong Blame)
+//   V10 #22 → s4-a11-02 (Split People → Burned Before)
+//   V10 #23 → s3-a6-02  (Editorial → Contact Rate)
+//   V10 #24 → s3-a8-01  (UGC Selfie → Outbound Not Broken)
+//   V10 #25 → s5-a12-01 (Clean Feature → Risk Removal)
+//   V10 #26 → s2-a4-03  (Bold Stat → Unpredictable Pipeline)
+//   V10 #27 → s5-a13-01 (Phone Animation → Instant Access)
+//
+// NEW IMAGES (8 — written from image style dictionary):
+//   s2-a3-03 — UGC Selfie / Exhausted Rep (Style #26)
+//   s2-a4-02 — Bold Quote on Dark (Style #25)
+//   s3-a6-03 — Leaderboard / Two Teams (Style #33)
+//   s3-a7-02 — Post-It Notes on Desk (Style #23)
+//   s3-a8-02 — Money Shredder / Wrong Problem (Style #15)
+//   s4-a10-03 — Price Crossed Out / Whiteboard (Style #24)
+//   s5-a12-03 — Data Table / Spreadsheet Preview (Style #7)
+//   s5-a13-02 — Feature Comparison Table (Style #18)
+//
+// ═══════════════════════════════════════════════════════════════
+// FIRST-50-CHARS VERIFICATION (all ads checked)
+// ═══════════════════════════════════════════════════════════════
+//
+// Every ad's primary text opens with the most compelling line
+// within the first 50 characters. No weak openers, no setup lines,
+// no clever wordplay that requires context.
+//
+// ═══════════════════════════════════════════════════════════════
+// FACT CHECK (all 35 ads verified)
+// ═══════════════════════════════════════════════════════════════
+//
+// S2 ads: ZERO mentions of BookedSolid Pro, accuracy, features,
+//         or data points. Pure pain mirroring. PASS.
+// S3 ads: ZERO mentions of accuracy %, features, or product push.
+//         Reframes blame to data input. PASS.
+// S4 ads: Product, features, guarantee all present. PASS.
+// S5 ads: Risk removal only. No re-education. PASS.
+//
 // ✓ 85+ data points (never 18 or 16)
 // ✓ 90% working number accuracy (never "phone-verified" or 97%)
 // ✓ DNC status INCLUDED (never "scrubbed" or "removed")
 // ✓ $0.04/record — no subscription, no contract, no minimum
 // ✓ Every bad number replaced free — no cap, no expiration
 // ✓ "BookedSolid Pro" always spelled out (never "BSP")
-// ✓ No made-up math, no invented costs
-// ✓ No vulgar language
 // ✓ All headlines under 10 words
-// ✓ 4-line body copy format maintained
-// ✓ "Would a VP say this in a meeting?" — all pass
-// ═══════════════════════════════════════════════════════════
-
-
+// ✓ CTA matches stage (soft S2, curiosity S3, comparison S4, direct S5)
+// ═══════════════════════════════════════════════════════════════
 
 // =========================================================================
 const grid = document.getElementById('adGrid');
@@ -878,7 +963,7 @@ const grid = document.getElementById('adGrid');
 function renderCard(ad) {
   const campClass = ad.campaign === 'C1' ? 'tag-c1' : ad.campaign === 'C2' ? 'tag-c2' : 'tag-c3';
   const campLabel = ad.campaign === 'C1' ? 'Problem Aware' : ad.campaign === 'C2' ? 'Pattern Interrupt' : 'Trust';
-  const angleMap = {};
+  const angleMap = {A1:'Dead Numbers',A2:'Wasted Money',A3:'Rep Pain',A4:'Bad Pipeline',A5:'Wrong Blame',A6:'Contact Rate',A7:'Bad Data Effect',A8:'Outbound Fix',A9:'Guarantee',A10:'Comparison',A11:'Trust',A12:'Risk Removal',A13:'Instant Access'};
 
   const saved = localStorage.getItem('vote-'+ad.id) || '';
 
