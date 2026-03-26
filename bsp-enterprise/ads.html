@@ -298,30 +298,26 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
   <button class="filter-btn active" data-filter="campaign" data-value="all">All</button>
   <button class="filter-btn" data-filter="campaign" data-value="C1">C1: Problem Aware</button>
   <button class="filter-btn" data-filter="campaign" data-value="C2">C2: Pattern Interrupt</button>
-  <button class="filter-btn" data-filter="campaign" data-value="C3">C3: Trust + Mechanism</button>
+  <button class="filter-btn" data-filter="campaign" data-value="C3">C3: Trust + Product</button>
   <div class="filter-sep"></div>
   <span class="filter-label">Angle:</span>
   <button class="filter-btn active" data-filter="angle" data-value="all">All</button>
   <button class="filter-btn" data-filter="angle" data-value="A1">Wasted Money</button>
   <button class="filter-btn" data-filter="angle" data-value="A2">Dead Numbers</button>
   <button class="filter-btn" data-filter="angle" data-value="A3">Oversaturation</button>
-  <button class="filter-btn" data-filter="angle" data-value="A4">Pipeline Control</button>
+  <button class="filter-btn" data-filter="angle" data-value="A4">Data Ownership</button>
   <button class="filter-btn" data-filter="angle" data-value="A5">Team Frustration</button>
   <button class="filter-btn" data-filter="angle" data-value="A6">Vendor Betrayal</button>
-  <button class="filter-btn" data-filter="angle" data-value="A7">Low ROI</button>
-  <button class="filter-btn" data-filter="angle" data-value="A8">Blame Shift</button>
-  <button class="filter-btn" data-filter="angle" data-value="A9">TCPA/Legal</button>
-  <button class="filter-btn" data-filter="angle" data-value="A10">Scammer Identity</button>
-  <button class="filter-btn" data-filter="angle" data-value="PI">Pattern Interrupt</button>
-  <button class="filter-btn" data-filter="angle" data-value="TR">Trust/Proof</button>
-  <button class="filter-btn" data-filter="angle" data-value="MX">Mechanism</button>
+  <button class="filter-btn" data-filter="angle" data-value="A7">TCPA / Legal</button>
+  <button class="filter-btn" data-filter="angle" data-value="Pattern Interrupt">Pattern Interrupt</button>
+  <button class="filter-btn" data-filter="angle" data-value="Product Showcase">Product</button>
+  <button class="filter-btn" data-filter="angle" data-value="Price Comparison">Price</button>
+  <button class="filter-btn" data-filter="angle" data-value="Guarantee Proof">Guarantee</button>
+  <button class="filter-btn" data-filter="angle" data-value="Social Proof">Social Proof</button>
+  <button class="filter-btn" data-filter="angle" data-value="Trust / Risk Reversal">Trust</button>
   <div class="filter-sep"></div>
   <span class="filter-label">Style:</span>
   <button class="filter-btn active" data-filter="style" data-value="all">All</button>
-  <button class="filter-btn" data-filter="style" data-value="Direct">Direct</button>
-  <button class="filter-btn" data-filter="style" data-value="Math">Math</button>
-  <button class="filter-btn" data-filter="style" data-value="Story">Story</button>
-  <button class="filter-btn" data-filter="style" data-value="Cheeky">Cheeky</button>
   <div class="filter-sep"></div>
   <span class="filter-label">Status:</span>
   <button class="filter-btn active" data-filter="vote" data-value="all">All</button>
@@ -882,7 +878,7 @@ const grid = document.getElementById('adGrid');
 function renderCard(ad) {
   const campClass = ad.campaign === 'C1' ? 'tag-c1' : ad.campaign === 'C2' ? 'tag-c2' : 'tag-c3';
   const campLabel = ad.campaign === 'C1' ? 'Problem Aware' : ad.campaign === 'C2' ? 'Pattern Interrupt' : 'Trust';
-  const angleMap = {A1:'Wasted Money',A2:'Dead Numbers',A3:'Oversaturation',A4:'Pipeline Control',A5:'Team Pain',A6:'Vendor Betrayal',A7:'Low ROI',A8:'Blame Shift'};
+  const angleMap = {A1:'Wasted Money',A2:'Dead Numbers',A3:'Oversaturation',A4:'Data Ownership',A5:'Team Frustration',A6:'Vendor Betrayal',A7:'TCPA/Legal','Pattern Interrupt':'Pattern Interrupt','Product Showcase':'Product','Price Comparison':'Price','Guarantee Proof':'Guarantee','Social Proof':'Social Proof','Trust / Risk Reversal':'Trust'};
 
   const saved = localStorage.getItem('vote-'+ad.id) || '';
 
