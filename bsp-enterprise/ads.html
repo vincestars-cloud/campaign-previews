@@ -1172,7 +1172,12 @@ function renderGallery(id, headline) {
   setTimeout(async () => {
     const imgs = await getImages(id);
     const container = document.getElementById('gallery-container-'+id);
-    if (container) container.innerHTML = renderGalleryHTML(imgs, id, headline);
+    if (container) {
+      container.innerHTML = renderGalleryHTML(imgs, id, headline);
+      // Re-attach drag & drop + scroll listeners after async content loads
+      setupDropzones();
+      setupGalleryScroll();
+    }
   }, 0);
   return `<div id="gallery-container-${id}">${renderGalleryHTML([], id, headline)}</div>`;
 }
