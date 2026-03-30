@@ -39,9 +39,9 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
 .perf-item .desc { font-size: 0.82rem; color: #666; margin-top: 4px; }
 .campaign-bar { display: flex; border-radius: 8px; overflow: hidden; height: 40px; margin: 16px 0; }
 .campaign-bar .seg { display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 600; font-size: 0.85rem; }
-.seg-c1 { background: #2d6a4f; flex: 7; }
-.seg-c2 { background: #e76f51; flex: 2; }
-.seg-c3 { background: #264653; flex: 1; }
+.seg-c1 { background: #2d6a4f; flex: 15; }
+.seg-c2 { background: #e76f51; flex: 7; }
+.seg-c3 { background: #264653; flex: 3; }
 .campaign-legend { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 12px; }
 .campaign-legend span { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; }
 .campaign-legend .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
@@ -173,12 +173,12 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
 
 <section class="hero">
   <h1>BookedSolid Pro &mdash; Mortgage Ads Matrix</h1>
-  <p class="subtitle">25 ads. 3 awareness stages. 11 angles.</p>
+  <p class="subtitle">25 ads. 3 awareness stages. 10 angles.</p>
   <div class="hero-stats">
     <div class="hero-stat"><div class="num">25</div><div class="label">Total Ads</div></div>
-    <div class="hero-stat"><div class="num">11</div><div class="label">Angles</div></div>
+    <div class="hero-stat"><div class="num">10</div><div class="label">Angles</div></div>
     <div class="hero-stat"><div class="num">3</div><div class="label">Campaigns</div></div>
-    <div class="hero-stat"><div class="num">14</div><div class="label">Image Styles</div></div>
+    <div class="hero-stat"><div class="num">12+</div><div class="label">Image Styles</div></div>
   </div>
 </section>
 
@@ -187,12 +187,12 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
 <div class="panel">
   <h2>Mortgage Industry Benchmarks</h2>
   <div class="perf-grid">
-    <div class="perf-item"><div class="val">$3K-15K</div><div class="desc">Per Funded Loan (Shared)</div></div>
-    <div class="perf-item"><div class="val">$443</div><div class="desc">Net Profit/Loan (MBA)</div></div>
+    <div class="perf-item"><div class="val">$12,579</div><div class="desc">Cost to Originate (MBA)</div></div>
+    <div class="perf-item"><div class="val">$443</div><div class="desc">Net Profit Per Funded Loan</div></div>
     <div class="perf-item"><div class="val">$500</div><div class="desc">BSP 10K Records</div></div>
     <div class="perf-item"><div class="val">90%</div><div class="desc">Working Numbers</div></div>
     <div class="perf-item"><div class="val">BANNED</div><div class="desc">Trigger Leads (Mar 2026)</div></div>
-    <div class="perf-item"><div class="val">58%</div><div class="desc">TCPA Lawsuit Increase YoY</div></div>
+    <div class="perf-item"><div class="val">85+</div><div class="desc">Data Points Per Record</div></div>
   </div>
 </div>
 
@@ -201,23 +201,31 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
     <h2 style="margin:0">Mortgage Industry Context</h2>
   </div>
   <div class="collapsible-body">
-    <h3>The Trigger Lead Ban</h3>
+    <h3>The Trigger Lead Ban (March 5, 2026)</h3>
     <ul class="feedback-list">
-      <li>Homebuyers Privacy Protection Act banned trigger leads March 2026</li>
-      <li>Trigger leads were $0.10-$0.50/lead with highest intent &mdash; the industry cheat code for 15 years</li>
-      <li>Every LO in America now competing for same shared leads from 3 aggregators at 10x-100x the price</li>
+      <li>Homebuyers Privacy Protection Act banned trigger leads &mdash; the mortgage industry&rsquo;s highest-intent, lowest-cost lead source for 15 years</li>
+      <li>Pre-ban: $0.10-$0.50/lead with real-time credit-pull intent signals. Post-ban: $30-$150/lead from aggregators with shared, recycled data</li>
+      <li>Pre-ban economics: $14K/month on triggers &rarr; 24 closings/month &rarr; $115,200 revenue. Post-ban: $18.5K/month on aggregators &rarr; 11 closings/month &rarr; $52,800 revenue</li>
+      <li>Cost UP 32%. Revenue DOWN 54%. Every LO in America competing for the same shared leads from the same 3 aggregators</li>
     </ul>
-    <h3>The Math Problem</h3>
+    <h3>The Shared Lead Math Problem</h3>
     <ul class="feedback-list">
-      <li>LendingTree: $30-$150/lead, 0.5-2% close rate = $3,000-$15,000 per funded loan</li>
-      <li>Bankrate: $100-$250/lead = $3,750-$6,250 per funded loan</li>
+      <li>Aggregators: $30-$150/lead, 0.5-2% close rate = $3,000-$15,000 cost per funded loan</li>
+      <li>Premium shared: $100-$250/lead = $3,750-$6,250 per funded loan</li>
       <li>MBA data: $11,000-$12,500 to originate one loan, net profit $443</li>
-      <li>TCPA lawsuits up 58% YoY &mdash; shared leads create compliance risk</li>
+      <li>&ldquo;Buying mortgage leads as a rookie is a quick way to go broke&rdquo; &mdash; r/loanoriginators</li>
+    </ul>
+    <h3>Dead Numbers &amp; Speed-to-Call</h3>
+    <ul class="feedback-list">
+      <li>60-70% skip trace accuracy = up to 30% wrong/disconnected numbers</li>
+      <li>Shared leads: borrower gets 5 calls in 12 minutes. You&rsquo;re call #4.</li>
+      <li>$43,000 TCPA fine per violation on DNC numbers. LOs dialing without DNC status.</li>
+      <li>Top producers leaving because they dial dead numbers all day</li>
     </ul>
     <h3>Target Audience</h3>
     <ul class="feedback-list">
-      <li>Loan officers, branch managers, mortgage ops leads</li>
-      <li>Pain: pipeline collapsed overnight, shared leads hemorrhaging money, reps quitting</li>
+      <li>Loan officers, branch managers, mortgage ops leads, call center managers</li>
+      <li>Pain: pipeline collapsed overnight, shared leads hemorrhaging money, reps quitting, can&rsquo;t forecast</li>
       <li>Landing page: solidbookedpro.com/mortgage</li>
     </ul>
   </div>
@@ -226,14 +234,14 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
 <div class="panel">
   <h2>Campaign Structure</h2>
   <div class="campaign-bar">
-    <div class="seg seg-c1">70% Problem Aware</div>
-    <div class="seg seg-c2">20% Pattern Interrupt</div>
-    <div class="seg seg-c3">10% Trust</div>
+    <div class="seg seg-c1">60% Problem Aware</div>
+    <div class="seg seg-c2">28% Reframe</div>
+    <div class="seg seg-c3">12% Trust</div>
   </div>
   <div class="campaign-legend">
-    <span><span class="dot" style="background:#2d6a4f"></span> S2: &ldquo;This Sucks&rdquo; (15 ads) &mdash; trigger ban, shared lead cost, dead numbers, speed race, pipeline</span>
-    <span><span class="dot" style="background:#e76f51"></span> S3: &ldquo;Why It Sucks&rdquo; (7 ads) &mdash; cheeky, math/stats, blame shift</span>
-    <span><span class="dot" style="background:#264653"></span> S4: &ldquo;Why Us&rdquo; (3 ads) &mdash; guarantee, comparison, instant access</span>
+    <span><span class="dot" style="background:#2d6a4f"></span> S2: &ldquo;This Sucks&rdquo; (15 ads) &mdash; trigger ban panic, shared lead cost, dead numbers, speed race, pipeline roulette</span>
+    <span><span class="dot" style="background:#e76f51"></span> S3: &ldquo;Oh... This Is Why&rdquo; (7 ads) &mdash; wrong blame, contact rate truth, outbound isn&rsquo;t dead</span>
+    <span><span class="dot" style="background:#264653"></span> S4: &ldquo;Why You?&rdquo; (3 ads) &mdash; guarantee, before/after, zero risk trial</span>
   </div>
 </div>
 
@@ -241,22 +249,22 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
   <span class="filter-label">Campaign:</span>
   <button class="filter-btn active" data-filter="campaign" data-value="all">All</button>
   <button class="filter-btn" data-filter="campaign" data-value="C1">S2: This Sucks</button>
-  <button class="filter-btn" data-filter="campaign" data-value="C2">S3: Why It Sucks</button>
-  <button class="filter-btn" data-filter="campaign" data-value="C3">S4: Why Us</button>
+  <button class="filter-btn" data-filter="campaign" data-value="C2">S3: Oh... This Is Why</button>
+  <button class="filter-btn" data-filter="campaign" data-value="C3">S4: Why You?</button>
   <div class="filter-sep"></div>
   <span class="filter-label">Angle:</span>
   <button class="filter-btn active" data-filter="angle" data-value="all">All</button>
-  <button class="filter-btn" data-filter="angle" data-value="A1">Trigger Lead Ban</button>
-  <button class="filter-btn" data-filter="angle" data-value="A2">Shared Lead Cost</button>
-  <button class="filter-btn" data-filter="angle" data-value="A3">Dead Numbers</button>
-  <button class="filter-btn" data-filter="angle" data-value="A4">Speed-to-Call Race</button>
-  <button class="filter-btn" data-filter="angle" data-value="A5">Pipeline Dependency</button>
-  <button class="filter-btn" data-filter="angle" data-value="A6">Cheeky</button>
-  <button class="filter-btn" data-filter="angle" data-value="A7">Math/Stats</button>
-  <button class="filter-btn" data-filter="angle" data-value="A8">Blame Shift</button>
+  <button class="filter-btn" data-filter="angle" data-value="A1">Trigger Lead Panic</button>
+  <button class="filter-btn" data-filter="angle" data-value="A2">Paying for Nothing</button>
+  <button class="filter-btn" data-filter="angle" data-value="A3">Dead Numbers / LO Morale</button>
+  <button class="filter-btn" data-filter="angle" data-value="A4">Already Called</button>
+  <button class="filter-btn" data-filter="angle" data-value="A5">Pipeline Roulette</button>
+  <button class="filter-btn" data-filter="angle" data-value="A6">Wrong Blame</button>
+  <button class="filter-btn" data-filter="angle" data-value="A7">Contact Rate Truth</button>
+  <button class="filter-btn" data-filter="angle" data-value="A8">Outbound Isn't Dead</button>
   <button class="filter-btn" data-filter="angle" data-value="A9">Guarantee</button>
-  <button class="filter-btn" data-filter="angle" data-value="A10">Comparison</button>
-  <button class="filter-btn" data-filter="angle" data-value="A11">Instant Access</button>
+  <button class="filter-btn" data-filter="angle" data-value="A10">Before/After</button>
+  <button class="filter-btn" data-filter="angle" data-value="A11">Zero Risk Trial</button>
   <div class="filter-sep"></div>
   <span class="filter-label">Style:</span>
   <button class="filter-btn active" data-filter="style" data-value="all">All</button>
@@ -284,292 +292,276 @@ body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; li
 
 const ADS = [
 
-  // === STAGE 2: "THIS SUCKS" - 15 ads (70%) ===
-  // --- A1: Trigger Lead Ban (5 ads) ---
+  // ============================================================
+  // STAGE 2: "THIS SUCKS" - 15 ads (60%)
+  // ============================================================
+
+  // --- A1: Trigger Lead Panic (3 ads) ---
 
   {
-    id: "s2-a1-01", campaign: "C1", angle: "A1", style: "Editorial Article Format",
-    primary: "March 2026. Trigger leads \u2014 gone. Overnight.\n\nThe source that fed your pipeline for years. The $0.10 leads that actually converted. Banned.\n\nNow you\u2019re scrambling. Shared leads at $30-$150 each. Conversion rates in the basement. Your pipeline went from predictable to empty in 30 days.\n\nAnd nobody\u2019s talking about what happens next.",
-    imageText: "MORTGAGE OPS IN CRISIS AFTER TRIGGER LEAD BAN",
-    headline: "Your pipeline didn\u2019t slow down. It stopped.",
-    description: "See how mortgage teams are rebuilding pipeline after the trigger lead ban.",
-    cta: "See how it works \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Styled as an editorial news article screenshot. Clean white/off-white background with subtle newspaper grid texture. TOP: A thin red BREAKING banner strip. HEADLINE in large bold black serif text (DM Serif Display, ~44px): MORTGAGE OPS IN CRISIS AFTER TRIGGER LEAD BAN. Below in smaller gray text: March 2026 \u2014 Homebuyers Privacy Protection Act ends 15 years of trigger leads. A thin horizontal rule separates the headline from a blurred article excerpt. BOTTOM: solidbookedpro.com in muted gray. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No misspellings. Single static image, NOT carousel."
+    id: "s2-a1-01", campaign: "C1", angle: "A1", style: "Napkin Tally",
+    primary: "March 5, 2026. Your phone stopped ringing.\n\nNot slowly. Not a dip. The trigger lead pipeline you\u2019d built fifteen years of staffing plans around went to zero in one signature.\n\nYour morning used to start with forty fresh credit-pull leads sitting in the CRM. Now it starts with a Slack thread: \u201cAnyone know what we\u2019re supposed to do now?\u201d\n\nWhat if the pipeline didn\u2019t have to depend on one source? What if you owned the data instead of renting it? 300 free records. No card. See what changes \u2192",
+    headline: "March 5. Pipeline: Zero.",
+    description: "One signature ended fifteen years of deal flow.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A crumpled cocktail napkin on a dark mahogany bar surface, slightly damp with a faint ring from a glass. Hand-drawn in blue ballpoint pen: a simple tally chart. Left column header in messy handwriting: TRIGGER LEADS. Five vertical tally marks, then a dramatic horizontal line scratched through all of them in red ink, with BANNED written above in aggressive caps. Right column header: PLAN B with a large question mark below it, underlined twice. The napkin has natural creases, a small coffee stain in the corner. Warm overhead bar lighting casting a soft shadow from the napkin onto the wood. At bottom edge of napkin in tiny pen: solidbookedpro.com. The scene feels like a loan officer sitting alone at happy hour, doing the math on what just happened to their career. Photorealistic rendering, shallow depth of field, the bar surface slightly blurred at edges. No watermarks. No stock badges. No misspellings. Single static image."
   },
 
   {
-    id: "s2-a1-02", campaign: "C1", angle: "A1", style: "Dark Shield",
-    primary: "You built your entire mortgage operation on trigger leads.\n\nEvery hire. Every quota. Every projection. All based on a source you didn\u2019t control.\n\nMarch 2026 \u2014 that source is illegal. And the alternatives cost 100x more.\n\nIf your pipeline depends on one vendor, you don\u2019t have a pipeline. You have a subscription that just got cancelled.",
-    imageText: "ONE SOURCE. ZERO BACKUP PLAN.",
-    headline: "Built your business on trigger leads?",
-    description: "Thousands of LOs are asking the same question right now.",
-    cta: "See how it works \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark navy background (#0f172a). Center: a large shield icon with a cracked/broken effect, rendered in dark gray with a red glow from the cracks. Inside the shield in bold white text: ONE SOURCE. and below: ZERO BACKUP PLAN. The shield is fractured down the middle. Below the shield: solidbookedpro.com in muted gray. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s2-a1-02", campaign: "C1", angle: "A1", style: "iMessage Thread",
+    primary: "$14,000 a month on trigger leads. 24 closings. $115,200 in revenue.\n\nThat was January.\n\nMarch: $18,500 a month on aggregators. 11 closings. $52,800.\n\nCost went up 32%. Revenue dropped 54%. Same team. Same scripts. Same market.\n\nThe only thing that changed was where the numbers came from.\n\nWhat if 11 closings wasn\u2019t the new ceiling? What if the data source was the only variable? 300 free records. No card. See what changes \u2192",
+    headline: "Cost Up 32%. Revenue Down 54%.",
+    description: "Same team. Same scripts. Different source.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A realistic iPhone 15 Pro screen showing an iMessage conversation between two contacts. The top shows \u2018Branch Manager\u2019 with a tiny green dot. Messages in gray and blue bubbles: Gray bubble: \u2018January numbers are in. 24 funded.\u2019 Blue bubble: \u2018Nice. What did we spend?\u2019 Gray: \u2018$14K on triggers. Standard.\u2019 Then a visible time gap showing \u2018March 28\u2019. Gray bubble: \u2018March numbers.\u2019 Gray: \u201811 funded. $18.5K on the new aggregator stuff.\u2019 Blue bubble with three typing dots that turned into: \u2018That\u2019s half the revenue at higher cost\u2019. Gray: \u2018I know.\u2019 The phone screen has a subtle crack in the upper right corner of the screen protector. Warm ambient light. Dark background behind the phone, slightly out of focus desk surface with a coffee mug edge visible. solidbookedpro.com watermark at very bottom center in muted gray. Photorealistic, cinematic lighting from upper left. No stock badges. No misspellings. Single static image."
   },
 
   {
-    id: "s2-a1-03", campaign: "C1", angle: "A1", style: "CSV/Data Table with Status Badges",
-    primary: "Trigger leads banned. So you tried LoanBright.\n\n$20-$50 per lead. Sounds reasonable until you realize the quality is the same recycled data every other LO is calling.\n\nr/loanoriginators said it best: \u201cBuying mortgage leads as a rookie is a quick way to go broke.\u201d\n\nVeterans know it too. They just haven\u2019t found the alternative yet.",
-    imageText: "$20-$50/LEAD. STILL GARBAGE.",
-    headline: "Switched from triggers to LoanBright? Same problem.",
-    description: "Cheaper doesn\u2019t mean better. Ask anyone who\u2019s tried.",
-    cta: "Look at this \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark background (#111). A spreadsheet/CSV table showing lead data with status badges. Columns: Source, Cost/Lead, Quality, Status. Rows: LoanBright $20-$50 red RECYCLED badge, Trigger Leads $0.10 red BANNED badge, LendingTree $30-$150 yellow SHARED badge, Bankrate $100-$250 yellow SHARED badge. Large text overlay: $20-$50/LEAD. STILL GARBAGE. in bold white. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s2-a1-03", campaign: "C1", angle: "A1", style: "Torn Paper Reveal",
+    primary: "Every LO in America got the same email in March. \u201cDue to regulatory changes, trigger lead delivery has been permanently discontinued.\u201d\n\nFifteen years of pipeline strategy. Gone in one paragraph.\n\nThe scramble started the same day. Everyone flooding the same three aggregators. Prices tripled by the end of the week. Quality didn\u2019t.\n\nWhat if the replacement wasn\u2019t another vendor? What if you just owned the records yourself? 300 free records. No card. See what changes \u2192",
+    headline: "Permanently Discontinued.",
+    description: "Fifteen years of pipeline strategy in one paragraph.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A photorealistic torn piece of paper, ripped roughly in half, sitting on a dark charcoal desk surface. The visible portion of the paper is a formal letter \u2014 corporate letterhead at top (generic, no real company name), dated March 2026. The key visible paragraph in clean serif type reads: \u2018Due to regulatory changes, trigger lead delivery has been permanently discontinued effective immediately. We appreciate your partnership over the past fifteen years.\u2019 The word \u2018permanently\u2019 is circled aggressively in red pen, with a handwritten note in the margin: \u2018NOW WHAT?\u2019 The torn edge reveals a second layer underneath \u2014 a glimpse of a clean data table with green checkmarks and phone numbers, barely visible. Dramatic overhead lighting casting hard shadows. A pen lies across the torn edge. solidbookedpro.com in small muted text at bottom right of desk surface. Cinematic, moody, photorealistic. No watermarks. No stock badges. No misspellings. Single static image."
+  },
+
+  // --- A2: Paying for Nothing (3 ads) ---
+
+  {
+    id: "s2-a2-01", campaign: "C1", angle: "A2", style: "Receipt / Cost Stack",
+    primary: "$150 for the lead. $12,579 to originate the loan. 45 days of back-and-forth.\n\nFunded. Finally.\n\nNet profit: $443.\n\nYour lead vendor made more on the sale of that name than you made closing the deal. And they sold it to four other LOs too.\n\nWhat if the cost per record was $0.05 instead of $150? What if nobody else got that number? 300 free records. No card. See what changes \u2192",
+    headline: "$150 Lead. $443 Profit. Read That Again.",
+    description: "Your vendor made more selling the name than you made closing it.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A stack of crumpled receipts on a worn wooden desk, photographed from above like a flat lay. The top receipt is large and clearly readable \u2014 it looks like a diner receipt but the line items are mortgage costs: \u2018Lead Acquisition: $150.00\u2019, \u2018Origination Cost: $12,579.00\u2019, \u2018Processing: $2,400.00\u2019, \u2018Compliance: $890.00\u2019. A thick black line. \u2018TOTAL COST: $16,019.00\u2019. Then below: \u2018Revenue: $16,462.00\u2019. Another line. \u2018NET PROFIT: $443.00\u2019 circled in red marker with an arrow pointing to it. Below the receipts, barely visible, a second receipt from the lead vendor: \u2018Lead sold to: 4 buyers @ $150 = $600 revenue\u2019. A ballpoint pen rests on the stack. Warm tungsten overhead lighting. solidbookedpro.com printed at bottom of the main receipt in tiny text. Photorealistic, editorial food-photography style but with receipts instead of food. No watermarks. No misspellings. Single static image."
   },
 
   {
-    id: "s2-a1-04", campaign: "C1", angle: "A1", style: "Editorial Article Format",
-    primary: "For 15 years, trigger leads were the cheat code. Pull a credit report, get a lead in real time. Highest intent. Lowest cost.\n\nThe Homebuyers Privacy Protection Act ended that.\n\nNow every LO in America is competing for the same shared leads from the same 3 aggregators at 10x the price. And conversion rates are falling.",
-    imageText: "THE TRIGGER LEAD ERA IS OVER.",
-    headline: "Trigger leads are illegal. Now what?",
-    description: "The mortgage industry\u2019s best lead source is gone. Permanently.",
-    cta: "See how it works \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Editorial newspaper style. Clean off-white background. Large bold black serif headline: THE TRIGGER LEAD ERA IS OVER. Below: Homebuyers Privacy Protection Act \u2014 March 2026. A faded article body suggesting depth. A small OPINION tag in red at top-left. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
-  },
-
-  // --- A2: Shared Lead Cost (3 ads) ---
-
-  {
-    id: "s2-a2-01", campaign: "C1", angle: "A2", style: "Price Crossed Out Whiteboard",
-    primary: "LendingTree: $30-$150 per lead.\nClose rate: 0.5-2%.\nCost per funded loan: $3,000-$15,000.\n\nNet profit per funded loan after all costs: $443.\n\nYou\u2019re spending more to acquire the loan than you make on it. That\u2019s not a business model. That\u2019s a math problem.",
-    imageText: "$30-$150/lead. 0.5-2% close rate. Do the math.",
-    headline: "You\u2019re paying more for leads than profit per loan.",
-    description: "The mortgage lead math doesn\u2019t work anymore.",
-    cta: "Look at this \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Whiteboard style with light off-white background and marker texture. Handwritten math in black marker: $30-$150 per lead with a red X crossed through $150. Below: 0.5-2% close rate. Below: = $3,000-$15,000 per funded loan circled in red. Arrow points to: Net profit: $443 with !!! in red. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s2-a2-02", campaign: "C1", angle: "A2", style: "Whiteboard Math",
+    primary: "The math your branch manager won\u2019t put on the whiteboard:\n\nAggregator leads: $30-$150 each. Close rate: 0.5-2%. Cost per funded loan: $3,000 to $15,000.\n\nMBA says net profit per funded loan is $443.\n\nYou\u2019re spending $15,000 to make $443. That\u2019s not a margin. That\u2019s a rounding error.\n\nWhat if the acquisition cost dropped to $50 for a thousand records? What if the math actually worked? 300 free records. No card. See what changes \u2192",
+    headline: "$15,000 To Make $443.",
+    description: "That\u2019s not a margin. That\u2019s a rounding error.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A real office whiteboard photographed straight-on, slightly scuffed from years of use with ghost marks from old writings. Written in black dry-erase marker in a branch manager\u2019s hurried handwriting: the header \u2018LEAD ECONOMICS\u2019 is underlined. Below: \u2018Cost/lead: $30-$150\u2019, \u2018Close rate: 0.5-2%\u2019, \u2018Cost per funded loan:\u2019 then in LARGE numbers \u2018$3,000-$15,000\u2019. An arrow points down to: \u2018Net profit/loan: $443\u2019 which is circled multiple times in red marker, with three red exclamation marks. Someone has drawn a simple bar chart next to it \u2014 a tall red bar labeled COST and a tiny green sliver labeled PROFIT. At the bottom right of the whiteboard, taped on: a small yellow sticky note reading \u2018this can\u2019t be right\u2019 in different handwriting. The whiteboard tray holds three markers (black, red, green) and a worn eraser. Fluorescent office lighting from above. solidbookedpro.com written small in black marker at bottom left corner of board. Photorealistic, office documentary style. No watermarks. No misspellings. Single static image."
   },
 
   {
-    id: "s2-a2-02", campaign: "C1", angle: "A2", style: "Money Shredder",
-    primary: "Bankrate: $100-$250 per lead.\nAt 2% conversion, that\u2019s $5,000-$12,500 per funded loan.\n\nMBA says the average net profit per loan is $443.\n\nYou\u2019re not generating revenue. You\u2019re subsidizing lead vendors. Every \u201cpremium\u201d lead you buy makes the hole deeper.",
-    imageText: "$250 PER LEAD. $443 NET PROFIT PER LOAN.",
-    headline: "Your lead vendor makes more than you do.",
-    description: "The numbers don\u2019t lie. Neither does your P&L.",
-    cta: "See how it works \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark background. Center: photorealistic paper shredder with dollar bills being fed in showing $250 printed on them. Shredded strips fall out below. Bold white text at top: $250 PER LEAD. Below: $443 NET PROFIT PER LOAN. solidbookedpro.com at bottom in gray. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s2-a2-03", campaign: "C1", angle: "A2", style: "LinkedIn Notification",
+    primary: "r/loanoriginators said it best: \u201cBuying mortgage leads as a rookie is a quick way to go broke.\u201d\n\nVeterans know it too. They just stopped saying it out loud because the alternative was \u2014 what? Stop buying leads entirely?\n\nThe problem isn\u2019t that leads are expensive. The problem is that the lead-buying model was designed to make vendors rich, not LOs profitable.\n\nWhat if you bought the raw data for $0.05 a record and did the outreach yourself? 300 free records. No card. See what changes \u2192",
+    headline: "Quick Way To Go Broke.",
+    description: "Veterans know. They just stopped saying it.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A realistic LinkedIn notification card floating on a soft gradient background (light gray to white). The card has LinkedIn\u2019s signature rounded corners and subtle shadow. At top: a small Reddit-style icon (simplified, generic). The notification shows a quoted post: a user avatar (generic silhouette), username redacted with a gray bar, posted in \u2018r/loanoriginators\u2019. The quote in clean sans-serif: \u2018Buying mortgage leads as a rookie is a quick way to go broke.\u2019 Below: engagement stats showing 847 upvotes, 312 comments. Under the card, in large bold dark text on the background: THE VETERANS KNOW TOO. And below in smaller muted text: THEY JUST STOPPED SAYING IT. solidbookedpro.com at bottom center in muted gray. Clean, modern, social-proof style. No watermarks. No misspellings. Single static image."
+  },
+
+  // --- A3: Dead Numbers / LO Morale (3 ads) ---
+
+  {
+    id: "s2-a3-01", campaign: "C1", angle: "A3", style: "Slack Chat Mockup",
+    primary: "200 dials before lunch. 11 pickups. Three of them were wrong numbers.\n\nYour LO sat in that chair for three hours listening to dial tones, voicemails, and \u201cthis number has been disconnected.\u201d\n\nThen they did it again after lunch. And they\u2019ll do it again tomorrow. Until they don\u2019t. Until they take that offer from the branch across town that promised \u201cbetter data.\u201d\n\nWhat if 11 out of 200 wasn\u2019t the ceiling? What if the numbers actually connected? 300 free records. No card. See what changes \u2192",
+    headline: "11 Out Of 200.",
+    description: "That number keeps showing up on the call report.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A realistic Slack workspace interface screenshot on a dark sidebar theme. The channel name is #loan-officers. Three messages visible: First message from \u2018Jake M.\u2019 (small avatar, green online dot): \u2018200 dials this morning. 11 pickups. Three were wrong numbers. I\u2019m done.\u2019 Timestamp: 11:47 AM. Second message from \u2018Sarah K.\u2019: \u2018Same. I had 8. Two hung up immediately.\u2019 Timestamp: 11:49 AM. Third message from \u2018Marcus T.\u2019: \u2018Anyone else just staring at their phone wondering why we do this?\u2019 with two emoji reactions: a crying face with count 7 and a 100 with count 4. Timestamp: 11:52 AM. The typing indicator at bottom shows \u20183 people are typing...\u2019. The Slack interface is pixel-accurate with proper fonts, spacing, avatars, and the characteristic purple sidebar. Below the Slack screenshot on a dark background: large bold white text \u2018CHECK YOUR TEAM\u2019S GROUP CHAT.\u2019 solidbookedpro.com in small gray text at bottom. Photorealistic UI screenshot style. No watermarks. No misspellings. Single static image."
   },
 
   {
-    id: "s2-a2-03", campaign: "C1", angle: "A2", style: "Price Crossed Out Whiteboard",
-    primary: "MBA data: $11,000-$12,500 to originate one mortgage loan.\n\nAdd $3,000-$15,000 in lead acquisition costs on top.\n\nNet profit after everything: $443.\n\nYou\u2019re working 45-day loan cycles to make less than a weekend bartender. And the lead vendors are the only ones getting rich.",
-    imageText: "$11,000 TO ORIGINATE. $443 NET PROFIT.",
-    headline: "$443 net profit. Per loan. After everything.",
-    description: "The mortgage lead economics are broken.",
-    cta: "See how it works \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Whiteboard style. Handwritten math: Cost to originate: $11,000-$12,500 + Lead acquisition: $3,000-$15,000 with line underneath = Total: $14,000-$27,500. Arrow to: Net profit: $443 circled in red. Coffee stain marks on whiteboard. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
-  },
-
-  // --- A3: Dead Numbers (3 ads) ---
-
-  {
-    id: "s2-a3-01", campaign: "C1", angle: "A3", style: "Dirty vs Clean Card Comparison",
-    primary: "You buy the list. You load it into your dialer.\n\nHalf the numbers ring to voicemail. A quarter are disconnected. The rest? Wrong person.\n\nYour LOs spend 3 hours a day calling numbers that don\u2019t exist. That\u2019s not prospecting. That\u2019s busywork.",
-    imageText: "CALLED 200. REACHED 40.",
-    headline: "Your team isn\u2019t underperforming. The numbers are dead.",
-    description: "Most mortgage lists are 40-60% disconnected before you even dial.",
-    cta: "Look at this \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Split comparison. LEFT (red tinted): worn, coffee-stained lead list with numbers crossed out in red, DISCONNECTED stamps. Header: YOUR CURRENT LIST. Stats: 200 Dials / 40 Reached / 20% Contact Rate. RIGHT (green tinted): crisp data table with green checkmarks. Header: WHAT IT SHOULD LOOK LIKE. Stats: 200 Dials / 180 Reached / 90% Contact Rate. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s2-a3-02", campaign: "C1", angle: "A3", style: "Printed Weekly Report",
+    primary: "Your top producer quit last Tuesday.\n\nShe didn\u2019t leave for more money. She left because she spent four months dialing numbers that don\u2019t exist, talking to people who\u2019d already been called by three other lenders, and watching her close rate collapse.\n\nShe\u2019s not underperforming. She\u2019s exhausted. And the next one is already updating their LinkedIn.\n\nWhat if your best LOs had numbers that actually connected? What if they wanted to stay? 300 free records. No card. See what changes \u2192",
+    headline: "She Didn\u2019t Leave For More Money.",
+    description: "Your best LOs are leaving. It\u2019s not the comp plan.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A printed weekly sales report on standard white paper, sitting on a desk, photographed from above at a slight angle. The report header: \u2018WEEKLY PERFORMANCE REPORT \u2014 Branch 47\u2019 with a date range. A table with columns: LO Name, Dials, Contacts, Applications, Status. Five rows of data. The top row shows the best performer \u2014 name highlighted in yellow: \u2018Rivera, M.\u2019 with 1,247 dials, 89 contacts, 12 applications. But the Status column shows a red stamp: RESIGNED. Someone has handwritten in blue pen next to it: \u2018WHY?\u2019 with an underline. The other rows show declining numbers down the list. At the bottom of the report, a handwritten note in pen: \u2018Need to talk about data quality \u2014 this isn\u2019t a people problem.\u2019 A paperclip holds the corner. A coffee cup ring stains the upper right. Fluorescent overhead lighting. solidbookedpro.com in small gray at bottom of page. Photorealistic document photography. No watermarks. No misspellings. Single static image."
   },
 
   {
-    id: "s2-a3-02", campaign: "C1", angle: "A3", style: "Split Person Comparison",
-    primary: "Your loan officers aren\u2019t lazy.\n\nThey show up. They dial. They follow the script.\n\nAnd they get voicemail, disconnected tones, and wrong numbers all day. Then you wonder why turnover is high and morale is low.\n\nIt\u2019s not the reps. It\u2019s the list.",
-    imageText: "3 HOURS OF CALLS. ZERO CONVERSATIONS.",
-    headline: "This is why your LOs hate calling.",
-    description: "It\u2019s not the rejection. It\u2019s calling numbers that don\u2019t exist.",
-    cta: "See how it works \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Split down the middle. LEFT: frustrated loan officer at desk, head in hands, dim lighting, headset around neck. Text: 3 HOURS OF CALLS. RIGHT: same person energized, on a call, leaning forward, well-lit. Text: ZERO CONVERSATIONS. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s2-a3-03", campaign: "C1", angle: "A3", style: "CRM Dashboard",
+    primary: "Three hours of calling. Your LO\u2019s dialer log:\n\nDisconnected. Voicemail. Disconnected. Wrong number. Voicemail. Voicemail. Disconnected. \u201cStop calling me.\u201d Disconnected.\n\nThat\u2019s not a bad day. That\u2019s every day. And every one of those disconnected numbers is a line item you paid for.\n\nWhat if 90% of the numbers actually worked? What if your team could have conversations instead of listening to dial tones? 300 free records. No card. See what changes \u2192",
+    headline: "Disconnected. Voicemail. Repeat.",
+    description: "That\u2019s not a bad day. That\u2019s every day.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A dark-themed CRM dialer dashboard screenshot, realistic SaaS interface. The main panel shows a call log list with timestamps from today. Each row has a contact name (partially redacted), phone number, and a status badge. The statuses tell the story: 9:01 AM \u2018Disconnected\u2019 (red badge), 9:03 AM \u2018Voicemail\u2019 (yellow), 9:04 AM \u2018Disconnected\u2019 (red), 9:07 AM \u2018Wrong Number\u2019 (orange), 9:09 AM \u2018Voicemail\u2019 (yellow), 9:11 AM \u2018Voicemail\u2019 (yellow), 9:14 AM \u2018Disconnected\u2019 (red), 9:16 AM \u2018DNC Violation Risk\u2019 (bright red with warning icon), 9:18 AM \u2018Disconnected\u2019 (red). A sidebar shows today\u2019s stats: Dials: 94, Connected: 7, Contact Rate: 7.4% in red text. At top of dashboard: a thin banner in amber: \u2018CONTACT RATE BELOW THRESHOLD\u2019. Below the dashboard screenshot on dark background: large bold white text \u2018THIS IS WHAT YOUR DATA LOOKS LIKE IN ACTION.\u2019 solidbookedpro.com in gray at bottom. Pixel-perfect SaaS UI style. No watermarks. No misspellings. Single static image."
+  },
+
+  // --- A4: Already Called / Speed-to-Call (3 ads) ---
+
+  {
+    id: "s2-a4-01", campaign: "C1", angle: "A4", style: "iMessage Thread",
+    primary: "Shared lead comes in at 2:14 PM. You call at 2:16. Fast.\n\nBorrower picks up: \u201cYou\u2019re the fourth person to call me. I already have a rate quote. Please stop.\u201d\n\nYou paid $75 for that interaction. The LO who called at 2:14 paid $75 too. So did the other two. One borrower, four invoices, one winner \u2014 and it wasn\u2019t you.\n\nWhat if you were the only one calling? What if the number wasn\u2019t shared with anyone? 300 free records. No card. See what changes \u2192",
+    headline: "You\u2019re The Fourth Call.",
+    description: "The borrower already has a rate quote.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A realistic iPhone screen showing a recent calls log (the Phone app\u2019s Recents tab). The screen shows the call history for one contact: \u2018Mortgage Lead - Johnson\u2019. Four incoming calls listed in rapid succession: 2:14 PM (1 min, answered), 2:15 PM (missed), 2:16 PM (missed), 2:17 PM (missed). The 2:16 call has a small label added: \u2018YOU\u2019 in red. Below the call log, overlaid on the phone screen, a text notification preview slides in from the top: a message from the contact saying \u2018Please stop calling me. I already have a rate quote.\u2019 The phone sits on a dark desk surface. A small sticky note next to the phone reads \u2018$75 per lead\u2019 in handwriting with \u2018x4 buyers\u2019 below it. Warm desk lamp lighting from the left. solidbookedpro.com in subtle text at bottom. Photorealistic, intimate desk scene. No watermarks. No misspellings. Single static image."
   },
 
   {
-    id: "s2-a3-03", campaign: "C1", angle: "A3", style: "Billo-Style Dark SaaS",
-    primary: "Your list doesn\u2019t include DNC status.\n\nSo your LOs are dialing numbers on the Do Not Call registry. Every call is a potential $43,000 fine.\n\nAnd your lead vendor? They disclaim liability in paragraph 47 of their terms. You\u2019re on the hook.",
-    imageText: "NO DNC STATUS. NO IDEA WHO YOU\u2019RE CALLING.",
-    headline: "Dialing without DNC data is a $43K gamble.",
-    description: "Every call to a DNC number is your liability, not your vendor\u2019s.",
-    cta: "Look at this \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark SaaS dashboard aesthetic \u2014 dark navy/charcoal background (#0f172a). Compliance warning screen mockup with red alert icon. Center text in bold white: NO DNC STATUS. Below: NO IDEA WHO YOU ARE CALLING. Red warning badge: $43,000 FINE PER VIOLATION. Sleek, modern, alarming. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
-  },
-
-  // --- A4: Speed-to-Call Race (2 ads) ---
-
-  {
-    id: "s2-a4-01", campaign: "C1", angle: "A4", style: "Billo-Style Dark SaaS",
-    primary: "Shared lead comes in. You call within 2 minutes. Fast, right?\n\nThree other LOs already called. The borrower picked up for the first one, maybe the second. By the time you call, they\u2019re annoyed. Or they already have a rate quote.\n\nYou\u2019re paying $50-$150 to be the person they don\u2019t answer for.",
-    imageText: "YOU\u2019RE THE 4TH CALL. THE BORROWER IS DONE TALKING.",
-    headline: "Shared leads = shared rejection.",
-    description: "If you\u2019re not first, you\u2019re paying full price for leftovers.",
-    cta: "Look at this \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark SaaS style. Phone call queue visualization \u2014 4 numbered positions (1st, 2nd, 3rd, 4th). Positions 1-3 green/filled. Position 4 (labeled YOU) is red with TOO LATE badge. Bold text: YOU ARE THE 4TH CALL. Below: THE BORROWER IS DONE TALKING. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s2-a4-02", campaign: "C1", angle: "A4", style: "Leaderboard Display",
+    primary: "The aggregator sells your lead to five lenders. Five calls hit that borrower\u2019s phone in twelve minutes.\n\nThe first one gets a conversation. Maybe the second. By the third call, the borrower is annoyed. By yours, they\u2019re hostile.\n\nYou\u2019re not buying a lead. You\u2019re buying a lottery ticket where four out of five people lose \u2014 and everyone pays full price.\n\nWhat if you didn\u2019t compete for attention on a number you paid for? What if you were the only call? 300 free records. No card. See what changes \u2192",
+    headline: "Five Lenders. One Borrower. Twelve Minutes.",
+    description: "Four out of five pay full price and get nothing.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A dramatic sports-style leaderboard display on a dark background, designed like an ESPN-style race graphic. The header: \u2018SPEED TO CALL \u2014 Lead #4,827\u2019. Five horizontal lanes, like a swimming race results board. Lane 1: \u2018Lender A\u2019 \u2014 2:14:03 PM \u2014 green CONNECTED badge \u2014 trophy icon. Lane 2: \u2018Lender B\u2019 \u2014 2:14:47 PM \u2014 yellow VOICEMAIL badge. Lane 3: \u2018Lender C\u2019 \u2014 2:15:22 PM \u2014 red DECLINED badge. Lane 4: highlighted in red, \u2018YOU\u2019 \u2014 2:16:01 PM \u2014 red DECLINED badge \u2014 small text: \u2018$75 charged\u2019. Lane 5: \u2018Lender E\u2019 \u2014 2:17:44 PM \u2014 gray DIDN\u2019T ANSWER badge. Below the leaderboard: \u20185 buyers. 1 winner. Everyone pays.\u2019 in clean white text. solidbookedpro.com at bottom in muted gray. Dark, competitive, high-contrast. No watermarks. No misspellings. Single static image."
   },
 
   {
-    id: "s2-a4-02", campaign: "C1", angle: "A4", style: "Modern Day Lending Pain Question",
-    primary: "TCPA lawsuits up 58% year over year.\n\nEvery shared lead gets sold to 3-5 lenders. That borrower gets 10+ calls in the first hour. They file complaints. They sue.\n\nYou\u2019re not just losing money on bad conversion. You\u2019re accumulating legal risk with every dial.",
-    imageText: "HOW MANY TIMES CAN ONE BORROWER GET CALLED?",
-    headline: "Shared leads are a liability now.",
-    description: "58% more TCPA lawsuits. Your shared lead vendor doesn\u2019t care.",
-    cta: "See how it works \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Clean modern design with question-forward layout. Large bold centered text: HOW MANY TIMES CAN ONE BORROWER GET CALLED? Below: visual showing 10+ calls in 1 hour with phone icons. Red stat badge: TCPA lawsuits +58% YoY. Clean, modern, slightly alarming. White/light background. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s2-a4-03", campaign: "C1", angle: "A4", style: "Bold Stat on Dark",
+    primary: "The borrower filed a complaint. Two complaints, actually. One with the FTC, one with their state AG.\n\nThey got five calls in twelve minutes from five lenders they never contacted. TCPA lawsuits are up 58% year over year. And the aggregator\u2019s terms of service? Paragraph 47 says you assume all liability.\n\nYou\u2019re not just losing money on bad conversions. You\u2019re accumulating legal exposure with every shared dial.\n\nWhat if the records you called had DNC status included? What if you controlled the compliance? 300 free records. No card. See what changes \u2192",
+    headline: "$43,000 Per Violation.",
+    description: "Your aggregator\u2019s terms say it\u2019s your liability, not theirs.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Stark, minimal, high-impact. Solid matte black background (#0a0a0a). Center of image: the number \u2018$43,000\u2019 in massive bold white sans-serif text, taking up roughly 40% of the image width. Below in smaller but still prominent white text: \u2018PER TCPA VIOLATION\u2019. Below that, a thin white horizontal rule. Then in muted gray text, three lines: \u2018Your shared lead vendor sells to 5 lenders.\u2019 then \u2018The borrower gets 5 calls in 12 minutes.\u2019 then \u2018You assume all liability. Paragraph 47.\u2019 At the very bottom: solidbookedpro.com in small muted gray. The overall feel is a legal warning \u2014 cold, serious, impossible to scroll past. No decorative elements. No icons. Just the number and the truth. No watermarks. No misspellings. Single static image."
   },
 
-  // --- A5: Pipeline Dependency (3 ads) ---
+  // --- A5: Pipeline Roulette (3 ads) ---
 
   {
-    id: "s2-a5-01", campaign: "C1", angle: "A5", style: "Editorial Article Format",
-    primary: "Pipeline\u2019s full in January. Dead by March.\n\nYou can\u2019t forecast. You can\u2019t hire confidently. You can\u2019t plan because your entire deal flow depends on whatever your lead vendor decides to send this week.\n\nThat\u2019s not a pipeline. That\u2019s a coin flip.",
-    imageText: "GOOD MONTH. BAD MONTH. REPEAT.",
-    headline: "You can\u2019t scale what you can\u2019t predict.",
-    description: "If your pipeline resets to zero every month, something is broken.",
-    cta: "Look at this \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Editorial article style. Off-white background. Bold serif headline: GOOD MONTH. BAD MONTH. REPEAT. Below: simple bar chart showing alternating high/low months \u2014 Jan (high), Feb (medium), Mar (low), Apr (high), May (low). Hand-drawn chart style. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s2-a5-01", campaign: "C1", angle: "A5", style: "Post-It Notes",
+    primary: "January: 24 funded loans. Hired two LOs.\nFebruary: 19 funded. Felt like a dip.\nMarch: 8. Trigger leads banned. Aggregator leads converting at a quarter the rate.\nApril: VP wants a forecast. You don\u2019t have one. You can\u2019t have one. Your entire pipeline depends on what a vendor decides to charge this week.\n\nWhat if you could forecast because you controlled the input? What if pipeline wasn\u2019t a coin flip? 300 free records. No card. See what changes \u2192",
+    headline: "The VP Wants A Forecast. You Don\u2019t Have One.",
+    description: "Good month. Bad month. Repeat.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A glass office wall or whiteboard with four Post-It notes stuck in a row, photographed straight-on. Each Post-It is a different color. Yellow Post-It: \u2018JAN \u2014 24 funded\u2019 with a small smiley face drawn in pen. Blue Post-It: \u2018FEB \u2014 19 funded\u2019 with a downward arrow. Pink Post-It: \u2018MAR \u2014 8 funded\u2019 with \u2018TRIGGER BAN\u2019 written below in aggressive caps, underlined. Green Post-It: \u2018APR \u2014 ???\u2019 with \u2018VP wants forecast\u2019 written below and a large question mark. Below the Post-Its, written directly on the glass in red dry-erase marker: \u2018CAN\u2019T FORECAST WHAT YOU DON\u2019T CONTROL\u2019. Through the glass, a blurred modern office is visible with cubicles and overhead lighting. solidbookedpro.com written small in black marker on the glass at bottom right. Photorealistic, natural office lighting. No watermarks. No misspellings. Single static image."
   },
 
   {
-    id: "s2-a5-02", campaign: "C1", angle: "A5", style: "Dark Shield",
-    primary: "When you stop paying, leads stop coming.\n\nNo leads. No calls. No loans. Your entire mortgage operation shuts down because one vendor turned off the faucet.\n\nYou don\u2019t own your pipeline. You rent it. And the landlord just raised the price.",
-    imageText: "YOUR VENDOR CONTROLS YOUR PIPELINE.",
-    headline: "Stop paying, pipeline stops. That\u2019s the problem.",
-    description: "Your business shouldn\u2019t have a single point of failure.",
-    cta: "See how it works \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark navy background (#0f172a). Large shield icon, dark and imposing. Inside the shield in bold white text: YOUR VENDOR CONTROLS YOUR PIPELINE. Below: Stop paying. Pipeline stops. Subtle red glow around edges. solidbookedpro.com at bottom in gray. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s2-a5-02", campaign: "C1", angle: "A5", style: "UGC Selfie",
+    primary: "When you stop paying, leads stop. No grace period. No wind-down. Pipeline goes to zero the day the invoice doesn\u2019t process.\n\nYou don\u2019t own your pipeline. You rent it. And the landlord just tripled the price because trigger leads got banned and every LO in America showed up at the same three doors.\n\nWhat if you owned the data? What if stopping a subscription didn\u2019t mean stopping your pipeline? 300 free records. No card. See what changes \u2192",
+    headline: "Stop Paying. Pipeline Stops.",
+    description: "You don\u2019t own your pipeline. You rent it.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A UGC-style selfie photo taken by a tired-looking loan officer (male, mid-30s, loosened tie, top button undone) sitting alone in a modern open-plan office. The office is clearly after hours \u2014 overhead lights are off, his face lit by the blue glow of two monitors behind him. One monitor shows a CRM with an empty pipeline view, the other shows a vendor billing page. He\u2019s holding the phone at a slight upward angle (classic selfie perspective) with a resigned, exhausted expression \u2014 not dramatic, just done. His desk has a cold coffee mug, a mouse, and a sticky note that reads \u2018cancel aggregator?\u2019 In the background, rows of empty desks. The overall mood is 9 PM on a Tuesday, alone, wondering if this is sustainable. Text overlay at bottom in bold white with subtle dark shadow: \u2018STOP PAYING. PIPELINE STOPS.\u2019 and \u2018solidbookedpro.com\u2019 in small gray below. Shot on phone feel, slightly grainy, warm-cool mixed lighting. No watermarks. No misspellings. Single static image."
   },
 
   {
-    id: "s2-a5-03", campaign: "C1", angle: "A5", style: "Modern Day Lending Pain Question",
-    primary: "Your top producer left last quarter. Two more are interviewing.\n\nIt\u2019s not the comp plan. It\u2019s not the culture. It\u2019s that they sit in a chair for 8 hours dialing numbers that don\u2019t connect, talking to people who already chose another lender, and closing nothing.\n\nGood reps don\u2019t tolerate bad data. They just leave.",
-    imageText: "WHY DO YOUR BEST LOS KEEP LEAVING?",
-    headline: "Your best LOs are leaving. The data is why.",
-    description: "Retention starts with giving your team something worth calling.",
-    cta: "Look at this \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Clean modern design. Large bold centered text: WHY DO YOUR BEST LOS KEEP LEAVING? Below: visual of 5 person icons, 3 fading/walking away. Muted colors, modern sans-serif. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s2-a5-03", campaign: "C1", angle: "A5", style: "Napkin Tally",
+    primary: "You hired three LOs in January when pipeline was strong. By April, two of them have nothing to call.\n\nYou can\u2019t staff to peaks because the valleys are unpredictable. You can\u2019t staff to valleys because the peaks are where the money is.\n\nSo you guess. And you\u2019re wrong about half the time. And the ones you hired in January are already interviewing somewhere else.\n\nWhat if pipeline was consistent enough to staff against? What if the input didn\u2019t change every thirty days? 300 free records. No card. See what changes \u2192",
+    headline: "Hired In January. Nothing To Call By April.",
+    description: "You can\u2019t staff what you can\u2019t predict.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A cocktail napkin on a dark wooden table, slightly wrinkled. Drawn in blue pen: a simple line graph showing monthly funded loans. January is high (24), February dips (19), March drops sharply (8), April has a question mark with a dotted line going in two directions \u2014 one up, one continuing down. Below the graph, handwritten: \u2018Hired 3 in Jan. 2 have nothing to call.\u2019 In the corner of the napkin, a small doodle of a frustrated face. A whiskey glass with a finger of amber liquid sits at the edge of frame, slightly out of focus. Warm bar lighting from above casting the napkin in a golden pool of light with dark edges. solidbookedpro.com written in tiny pen at bottom edge of napkin. Photorealistic, moody, intimate. No watermarks. No misspellings. Single static image."
   },
 
-  // === STAGE 3: "WHY IT SUCKS" - 7 ads (20%) ===
-  // --- A6: Cheeky (2 ads) ---
+  // ============================================================
+  // STAGE 3: "OH... THIS IS WHY" - 7 ads (28%)
+  // ============================================================
+
+  // --- A6: Wrong Blame (2 ads) ---
 
   {
-    id: "s3-a6-01", campaign: "C2", angle: "A6", style: "Cleo-Style Product Hero",
-    primary: "Leads stop when you stop paying.\n\nThat\u2019s not a pipeline. That\u2019s a subscription to someone else\u2019s database. And they sell the same records to every LO in your zip code.\n\nThe problem isn\u2019t that leads are expensive. The problem is you\u2019re renting access to data you should own.",
-    imageText: "YOU DON\u2019T HAVE A PIPELINE. YOU HAVE A SUBSCRIPTION.",
-    headline: "Your pipeline has a cancel button.",
-    description: "If someone else controls your deal flow, it\u2019s not yours.",
-    cta: "You\u2019ll see this fast \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Minimal product hero style \u2014 clean, modern, lots of white space. Center: stylized cancel subscription button UI mockup, big red button with CANCEL PIPELINE text. Above in bold serif: YOU DON'T HAVE A PIPELINE. Below: YOU HAVE A SUBSCRIPTION. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
-  },
-
-  {
-    id: "s3-a6-02", campaign: "C2", angle: "A6", style: "Dark Shield",
-    primary: "You paid $75 for that lead.\n\nSo did Mike at CrossCountry. And Sarah at United Wholesale. And two guys at a broker shop across town.\n\nThe borrower got 5 calls in 12 minutes. They picked one. It wasn\u2019t you.\n\nThat\u2019s not a lead. That\u2019s a lottery ticket.",
-    imageText: "YOUR LEAD VENDOR SOLD THAT LEAD TO 4 OTHER LOS.",
-    headline: "Shared leads = paying for someone else\u2019s deal.",
-    description: "You\u2019re funding your competitor\u2019s pipeline.",
-    cta: "See what\u2019s happening \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark navy background. Shield/badge graphic with a receipt showing $75 duplicated 5 times, fanning out like cards. Bold white text: YOUR LEAD VENDOR SOLD THAT LEAD TO 4 OTHER LOS. Below: Same lead. 5 buyers. 1 winner. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
-  },
-
-  // --- A7: Math/Stats (2 ads) ---
-
-  {
-    id: "s3-a7-01", campaign: "C2", angle: "A7", style: "Price Crossed Out Whiteboard",
-    primary: "LendingTree: $3,000-$15,000 per funded loan.\nBankrate: $3,750-$6,250 per funded loan.\nLoanBright: terrible quality at any price.\n\nOr: $500 for 10,000 mortgage-relevant records with working phone numbers. Do your own math.\n\nOne of these models scales. The others break you.",
-    imageText: "$3,000-$15,000 PER FUNDED LOAN... OR $500 FOR 10,000 RECORDS.",
-    headline: "The mortgage lead math, side by side.",
-    description: "$500 for 10,000 records vs $15,000 for one funded loan.",
-    cta: "See how it works \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Whiteboard comparison. LEFT column: THE OLD WAY with prices crossed out in red \u2014 $3,000-$15,000 per funded loan (LendingTree), $3,750-$6,250 (Bankrate), BANNED (Triggers). RIGHT column: THE NEW WAY \u2014 $500 for 10,000 records circled in green. Big red X over left, big green checkmark over right. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s3-a6-01", campaign: "C2", angle: "A6", style: "Whiteboard Math",
+    primary: "You fired two LOs. Rewrote the script. Bought a new dialer. Ran a week of training.\n\nResults didn\u2019t move.\n\nBecause none of those were the variable. The list was the variable. Give the same team the same script on numbers that actually connect and the board looks different by Friday.\n\nYou\u2019ve been solving the wrong problem. The data is upstream of everything. See how \u2192",
+    headline: "New Dialer. New Script. Same Results.",
+    description: "You keep fixing everything except the actual problem.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). An office whiteboard, well-used, with a problem-solving diagram drawn in dry-erase marker. At the top in black: \u2018WHY AREN\u2019T WE CLOSING?\u2019 underlined. Below, a list of attempted fixes, each crossed out in red with a red X: \u2018Fired underperformers\u2019, \u2018New dialer\u2019, \u2018Rewrote scripts\u2019, \u2018More training\u2019, \u2018Extended hours\u2019. At the bottom, circled in green marker with a big arrow pointing to it: \u2018THE LIST. (90% of numbers don\u2019t connect.)\u2019 A green checkmark next to it. Someone has written in a different color (blue) below: \u2018Fix the INPUT.\u2019 The whiteboard tray has scattered markers. One marker cap is missing. Realistic office lighting from fluorescent panels. solidbookedpro.com in black marker at bottom left. Photorealistic, everyday office setting. No watermarks. No misspellings. Single static image."
   },
 
   {
-    id: "s3-a7-02", campaign: "C2", angle: "A7", style: "Billo-Style Dark SaaS",
-    primary: "200 dials. 40 pickups. 8 conversations. 1 application.\n\nThe bottleneck isn\u2019t your script or your closer. It\u2019s the 160 dials that never connected.\n\nFix the contact rate and every downstream metric improves. More conversations per hour. More applications per week. More funded loans per month.",
-    imageText: "YOU\u2019RE TRACKING DIALS. YOU SHOULD TRACK CONVERSATIONS.",
-    headline: "Contact rate is the only metric that matters.",
-    description: "Everything downstream depends on reaching real people.",
-    cta: "You\u2019ll see this fast \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark SaaS dashboard style. Funnel visualization: Top: 200 DIALS (wide). Middle: 40 PICKUPS (narrower, red). Next: 8 CONVERSATIONS (orange). Bottom: 1 APPLICATION (tiny, green). Arrow pointing to the 200-to-40 gap: THIS IS THE BOTTLENECK. Bold text below: YOU ARE TRACKING DIALS. YOU SHOULD TRACK CONVERSATIONS. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s3-a6-02", campaign: "C2", angle: "A6", style: "Torn Paper Reveal",
+    primary: "Your branch spent $40,000 on a new dialer last quarter. Predictive. AI-powered. Parallel lines.\n\nContact rate didn\u2019t move.\n\nBecause the fastest dialer in the world can\u2019t connect a call to a number that doesn\u2019t exist. You automated the wrong layer. The technology works. The input doesn\u2019t.\n\nFix what happens before the dial and the leaderboard changes. See how \u2192",
+    headline: "$40K Dialer. Same Contact Rate.",
+    description: "You automated the wrong layer.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A piece of glossy marketing collateral \u2014 like a vendor\u2019s sell sheet for an AI-powered dialer \u2014 has been torn in half. The visible portion shows buzzwords: \u2018AI-POWERED\u2019, \u2018PREDICTIVE\u2019, \u2018PARALLEL LINES\u2019, \u2018INCREASE EFFICIENCY 300%\u2019, a sleek dashboard screenshot. But the paper is physically torn, and beneath the tear, on a dark surface, white bold text is revealed: \u2018CONTACT RATE DIDN\u2019T MOVE.\u2019 And below in smaller text: \u2018The fastest dialer can\u2019t connect to a number that doesn\u2019t exist.\u2019 The torn edge is ragged and dramatic, like someone ripped it in frustration. The sell sheet sits on a dark charcoal desk. A receipt showing \u2018$40,000 \u2014 Dialer License\u2019 peeks out from behind the torn paper. solidbookedpro.com at bottom in muted gray. Cinematic lighting, dramatic contrast between the glossy marketing material and the stark truth beneath. No watermarks. No misspellings. Single static image."
   },
 
-  // --- A8: Blame Shift (3 ads) ---
+  // --- A7: Contact Rate Truth (3 ads) ---
 
   {
-    id: "s3-a8-01", campaign: "C2", angle: "A8", style: "Split Person Comparison",
-    primary: "Same reps. Same scripts. Same hours.\n\nGive them a list where 60% of numbers are dead \u2014 they look terrible. Give them a list where 90% connect \u2014 they look like closers.\n\nThe variable isn\u2019t talent. It\u2019s data. Bad data makes good LOs look average. And it\u2019s costing you hires, morale, and funded loans.",
-    imageText: "YOUR LOS AREN\u2019T UNDERPERFORMING.",
-    headline: "Bad data makes your best LOs look average.",
-    description: "It was never the reps. It was always the list.",
-    cta: "See what\u2019s happening \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Split comparison. LEFT: dejected LO at desk, dim lighting, slumped. Label: 60% DEAD NUMBERS in red. RIGHT: same person energized, on a call, well-lit. Label: 90% WORKING NUMBERS in green. Center bold text: YOUR LOS AREN'T UNDERPERFORMING. Below: The list is. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s3-a7-01", campaign: "C2", angle: "A7", style: "Leaderboard Display",
+    primary: "Two teams. Same size. Same script. Same dialer. Same hours.\n\nTeam A: 47 conversations a day. Team B: 9.\n\nThe difference isn\u2019t the reps. It\u2019s not the manager. It\u2019s not the time zone.\n\nIt\u2019s the contact rate. Team A\u2019s list connects at 90%. Team B\u2019s connects at 7%.\n\nFix what happens before the dial and the leaderboard changes. See how \u2192",
+    headline: "Same Everything. 5x Difference.",
+    description: "Contact rate decides it before they dial.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A sales leaderboard display styled like a corporate TV dashboard mounted on an office wall. Dark background with clean data visualization. Two team panels side by side. LEFT panel labeled \u2018TEAM A\u2019 in green: Dials: 200, Connected: 180, Conversations: 47, Contact Rate: 90% (green). The numbers glow slightly. RIGHT panel labeled \u2018TEAM B\u2019 in red: Dials: 200, Connected: 14, Conversations: 9, Contact Rate: 7% (red). Between them, a large VS with a dotted line. Below both panels: \u2018SAME SCRIPT. SAME DIALER. SAME HOURS.\u2019 in clean white text. And below that in slightly larger text: \u2018DIFFERENT LIST.\u2019 highlighted with a subtle green underline. The display has a thin bezel like a wall-mounted TV. Subtle reflections on the screen surface. solidbookedpro.com at bottom of screen. Dark, corporate, data-driven aesthetic. No watermarks. No misspellings. Single static image."
   },
 
   {
-    id: "s3-a8-02", campaign: "C2", angle: "A8", style: "Money Shredder",
-    primary: "You\u2019re hiring better LOs. Buying new dialers. Rewriting scripts. Running more training.\n\nNone of it will matter if half the numbers on your list are disconnected.\n\nYou\u2019re optimizing everything downstream of the real problem. The data is upstream. Fix that first.",
-    imageText: "WRONG PROBLEM.",
-    headline: "You keep fixing the wrong thing.",
-    description: "Scripts, training, dialers \u2014 none of it fixes dead numbers.",
-    cta: "See how it works \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark background. Paper shredder consuming documents labeled New Script, Better Dialer, More Training, New Hires. Shredded pieces fall uselessly. Above: huge bold white text WRONG PROBLEM. Below: The data is upstream. Fix that first. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s3-a7-02", campaign: "C2", angle: "A7", style: "Bold Stat on Dark",
+    primary: "You track dials per hour. Applications per week. Funded loans per month.\n\nYou don\u2019t track the one number that determines all of them: contact rate.\n\nDials don\u2019t matter if 93% of them don\u2019t connect. Applications don\u2019t matter if the funnel starts with dead numbers. Funded loans don\u2019t grow when the input is broken.\n\nContact rate is upstream of everything. Fix the list, fix the business. See how \u2192",
+    headline: "You\u2019re Tracking The Wrong Number.",
+    description: "Dials per hour means nothing at 7% contact rate.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Solid matte black background. A vertical funnel diagram in the center, minimal and geometric. Top level: \u20187% CONTACT RATE\u2019 in large red text with a wide funnel opening. Each subsequent level narrows dramatically: \u2018CONVERSATIONS\u2019 (smaller), \u2018APPLICATIONS\u2019 (smaller), \u2018FUNDED LOANS\u2019 (tiny sliver at bottom). A bold white arrow points to the top of the funnel with text: \u2018EVERYTHING STARTS HERE.\u2019 Below the funnel in clean white sans-serif: \u2018FIX THE INPUT. FIX THE OUTPUT.\u2019 The funnel has a subtle gradient from red (top) to green (bottom) suggesting the transformation. solidbookedpro.com at very bottom in muted gray. Ultra-clean, data visualization style, lots of negative space. No watermarks. No misspellings. Single static image."
   },
 
   {
-    id: "s3-a8-03", campaign: "C2", angle: "A8", style: "Editorial Article Format",
-    primary: "Trigger leads worked because they had one thing: real-time intent signals tied to verified contact info.\n\nThe aggregators selling you \u201creplacements\u201d don\u2019t have that. They have recycled data, shared with everyone, at 100x the price.\n\nThe question isn\u2019t \u201cwhere do I buy leads now?\u201d The question is: \u201cwhy am I still buying leads at all when I could own the data?\u201d",
-    imageText: "THE TRIGGER LEAD REPLACEMENT NOBODY\u2019S TALKING ABOUT",
-    headline: "You\u2019re asking the wrong question.",
-    description: "Stop replacing trigger leads. Replace the model.",
-    cta: "You\u2019ll see this fast \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Editorial investigative article style. Off-white background. Bold serif headline: THE TRIGGER LEAD REPLACEMENT NOBODY IS TALKING ABOUT. A DEEP DIVE tag in blue. Subhead: Why owning data beats buying leads. Blurred body text. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s3-a7-03", campaign: "C2", angle: "A7", style: "CRM Dashboard",
+    primary: "Pre-ban: $14K/month. 24 funded loans. $115,200 revenue.\nPost-ban: $18.5K/month. 11 funded loans. $52,800 revenue.\n\nSame reps. Same market. Same rates. Same everything.\n\nThe only variable that changed was the data source. Trigger leads connected. Aggregator leads don\u2019t. Everything downstream followed.\n\nThe math isn\u2019t complicated. The source is the strategy. See how \u2192",
+    headline: "Same Team. Half The Revenue.",
+    description: "One variable changed. Everything followed.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A CRM analytics dashboard, dark theme, showing a before/after comparison. The dashboard has two time periods toggled at top: \u2018Pre-Ban (Jan 2026)\u2019 and \u2018Post-Ban (Mar 2026)\u2019. LEFT panel (Jan, green-tinted): Monthly Spend: $14,000. Funded Loans: 24. Revenue: $115,200. Contact Rate: 68%. Clean green trend line going up. RIGHT panel (Mar, red-tinted): Monthly Spend: $18,500. Funded Loans: 11. Revenue: $52,800. Contact Rate: 12%. Harsh red trend line going down. Between them, highlighted in white on dark: \u2018COST +32% | REVENUE -54%\u2019. At bottom of dashboard: \u2018Only variable changed: data source.\u2019 in clean text. The dashboard has realistic SaaS styling \u2014 rounded corners, proper spacing, chart elements. solidbookedpro.com at bottom. No watermarks. No misspellings. Single static image."
   },
 
-  // === STAGE 4: "WHY US" - 3 ads (10%) ===
+  // --- A8: Outbound Isn't Dead (2 ads) ---
+
+  {
+    id: "s3-a8-01", campaign: "C2", angle: "A8", style: "LinkedIn Notification",
+    primary: "LinkedIn is full of mortgage coaches telling you outbound is dead. \u201cBuild your personal brand.\u201d \u201cContent is the new cold call.\u201d \u201cInbound only.\u201d\n\nTheir solution takes eighteen months. You need funded loans this month.\n\nOutbound isn\u2019t dead. Outbound on dead numbers is dead. Fix the numbers and the channel works exactly like it did before the ban. See how \u2192",
+    headline: "Outbound Isn\u2019t Dead. Your Numbers Are.",
+    description: "The channel works. The input doesn\u2019t.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A realistic LinkedIn feed screenshot on a white background. A post from a generic \u2018Mortgage Coach\u2019 profile (stock headshot silhouette, blue verification badge, 10K followers): the post text reads \u2018Outbound calling is DEAD in 2026. Here\u2019s why you need to focus on personal brand...\u2019 with a \u2018See more\u2019 truncation. Below: 2,847 likes, 412 comments. Then overlaid on top of the LinkedIn post, a bold stamp/watermark effect in red, slightly rotated: \u2018WRONG.\u2019 Below the LinkedIn screenshot on a clean dark background: two lines of white text. Line 1: \u2018OUTBOUND ISN\u2019T DEAD.\u2019 Line 2 in a teal/green accent color: \u2018YOUR NUMBERS ARE.\u2019 solidbookedpro.com in small muted gray at bottom. Clean contrast between the polished LinkedIn aesthetic and the blunt correction. No watermarks. No misspellings. Single static image."
+  },
+
+  {
+    id: "s3-a8-02", campaign: "C2", angle: "A8", style: "Slack Chat Mockup",
+    primary: "Your competitor\u2019s team isn\u2019t bigger. Their reps aren\u2019t better. Their script isn\u2019t magic.\n\nThey\u2019re dialing numbers that connect. You\u2019re dialing numbers that don\u2019t. That\u2019s the entire gap.\n\nOutbound works when the numbers work. It doesn\u2019t when they don\u2019t. Every other variable is a rounding error compared to whether a human picks up the phone.\n\nThe fix is upstream. Not downstream. See how \u2192",
+    headline: "Their Reps Aren\u2019t Better. Their Data Is.",
+    description: "The gap between you and your competitor is one variable.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A Slack workspace interface, dark theme. Channel: #sales-leadership. A thread between two branch managers. First message from \u2018Director, East Region\u2019: \u2018Our team hit 34 funded this month. What\u2019s working?\u2019 Reply from \u2018BM - Tampa\u2019: \u2018Switched data providers in February. Same reps, same scripts. Contact rate went from 8% to 74%.\u2019 Reply from \u2018BM - Atlanta\u2019: \u2018Wait, 74%? We\u2019re at 11. What provider?\u2019 Reply from \u2018BM - Tampa\u2019: \u2018DM me.\u2019 Three emoji reactions on that last message: eyes emoji (count: 12), fire (count: 8), plus-one (count: 6). The typing indicator shows \u20185 people are typing...\u2019 Below the Slack mockup on dark background: \u2018SAME TEAM. DIFFERENT DATA. DIFFERENT RESULTS.\u2019 in white. solidbookedpro.com in gray at bottom. Photorealistic UI. No watermarks. No misspellings. Single static image."
+  },
+
+  // ============================================================
+  // STAGE 4: "WHY YOU?" - 3 ads (12%)
+  // ============================================================
+
   // --- A9: Guarantee (1 ad) ---
 
   {
-    id: "s4-a9-01", campaign: "C3", angle: "A9", style: "CSV/Data Table with Status Badges",
-    primary: "90% working number accuracy. If a number doesn\u2019t connect, we replace it. Free. No cap. No expiration.\n\nDNC status included on every record. No contracts. No minimums. Cancel anytime.\n\n$500 for 10,000 mortgage-relevant records. Equity data, loan age, property value, working phones, 85+ data points per record.\n\nYour current vendor won\u2019t guarantee their numbers. That tells you everything.",
-    imageText: "EVERY BAD NUMBER REPLACED. FREE. NO LIMIT.",
-    headline: "We guarantee our data. They don\u2019t.",
-    description: "Every disconnected number replaced. No limit. No questions.",
-    cta: "See how it works \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark background (#111). Clean data table mockup showing sample mortgage records with columns: Phone, Status, DNC, Equity, Loan Age. Green VERIFIED badges next to phone numbers. One row shows red DISCONNECTED badge with green REPLACED FREE tag overlaying it. Bold white text at top: EVERY BAD NUMBER REPLACED. FREE. NO LIMIT. Below table: 90% working numbers. 85+ data points. $500 for 10K records. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s4-a9-01", campaign: "C3", angle: "A9", style: "Receipt / Cost Stack",
+    primary: "Every bad number replaced free. No cap. No expiration. No form to fill out.\n\nMost data vendors sell you a list and disappear. BookedSolid Pro replaces every disconnected number \u2014 free.\n\n85+ data points per record. Equity data. Loan age. Property value. DNC status. Working phone numbers. $0.05 each. No subscription. No contract.\n\nThat\u2019s not marketing \u2014 that\u2019s how confident we are in the data. 300 free records. No credit card. Compare them against yours \u2192",
+    headline: "Every Bad Number Replaced Free.",
+    description: "No cap. No expiration. No form.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A clean, premium receipt sitting on a dark marble surface. The receipt is from \u2018BookedSolid Pro\u2019 with a minimal logo at top. Line items in clean monospace type: \u201810,000 Mortgage Records: $500.00\u2019, \u201885+ Data Points/Record: INCLUDED\u2019, \u2018DNC Status: INCLUDED\u2019, \u2018Equity + Loan Age Data: INCLUDED\u2019, \u2018Working Phone Numbers (90%): INCLUDED\u2019. Then a line. \u2018Bad Number Replacements: FREE\u2019 (highlighted in green). \u2018Cap: NONE\u2019. \u2018Expiration: NONE\u2019. \u2018Contract Required: NO\u2019. The receipt has a subtle watermark: \u2018GUARANTEED\u2019 in light gray. Next to the receipt, for contrast, a crumpled, faded receipt from a generic \u2018Lead Vendor\u2019 showing \u201825 Shared Leads: $3,750.00\u2019, \u2018Guarantee: N/A\u2019, \u2018Refund: See Terms (pg 47)\u2019. Dramatic side lighting creating shadows. solidbookedpro.com at bottom of the clean receipt. Photorealistic, premium product photography style. No watermarks. No misspellings. Single static image."
   },
 
-  // --- A10: Comparison (1 ad) ---
+  // --- A10: Before/After (1 ad) ---
 
   {
-    id: "s4-a10-01", campaign: "C3", angle: "A10", style: "Dirty vs Clean Card Comparison",
-    primary: "LendingTree: $30-$150/lead. Shared with 3-5 lenders. No phone verification. No DNC status.\n\nBankrate: $100-$250/lead. Same shared model. Same speed-to-call race.\n\nTrigger leads: Illegal as of March 2026.\n\nBookedSolid Pro: $500 for 10,000 records. 90% working numbers. DNC included. 85+ data points. Bad numbers replaced free. No contract.",
-    imageText: "COMPARE. THEN DECIDE.",
-    headline: "Compare. Then decide.",
-    description: "$0.05/record vs $150/lead. Same borrower pool.",
-    cta: "See the difference \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Split comparison card style. LEFT (dirty/red tinted): worn card showing LendingTree / Bankrate with $30-$250/lead, Shared 3-5x, No DNC, No guarantee. Red EXPENSIVE stamp. RIGHT (clean/green tinted): crisp card showing BookedSolid Pro with $0.05/record, Exclusive, DNC included, Bad numbers replaced free. Green COMPARE stamp. Center: VS in bold. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s4-a10-01", campaign: "C3", angle: "A10", style: "CRM Dashboard",
+    primary: "Before: 200 dials. 14 connections. 3 conversations. Pipeline depends on the vendor.\n\nAfter: 200 dials. 180 connections. 47 conversations. Pipeline depends on you.\n\nSame team. Same script. Same dialer. Same hours. Different data.\n\nBookedSolid Pro. 85+ data points. 90% working numbers. DNC status included. $0.05 per record. Bad numbers replaced free.\n\n300 free records. No credit card. See the difference yourself \u2192",
+    headline: "Same Team. 5x The Conversations.",
+    description: "200 dials. The only difference is the list.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). A side-by-side CRM dashboard comparison, dark theme, split down the middle with a glowing divider line. LEFT side labeled \u2018BEFORE\u2019 in red: a pipeline dashboard showing anemic metrics. Dials: 200, Connected: 14, Conversations: 3, Contact Rate: 7% (red). A sparse pipeline funnel, mostly empty. The mood is cold, clinical, failing. RIGHT side labeled \u2018AFTER\u2019 in green: same dashboard layout but thriving. Dials: 200, Connected: 180, Conversations: 47, Contact Rate: 90% (green). A full, healthy pipeline funnel. The mood is warm, active, profitable. At the bottom center, spanning both sides: \u2018SAME TEAM. SAME SCRIPT. SAME DIALER.\u2019 in white. Below: \u2018DIFFERENT DATA.\u2019 highlighted in teal (#4ecdc4). solidbookedpro.com at very bottom. Clean, modern SaaS aesthetic. No watermarks. No misspellings. Single static image."
   },
 
-  // --- A11: Instant Access (1 ad) ---
+  // --- A11: Zero Risk Trial (1 ad) ---
 
   {
-    id: "s4-a11-01", campaign: "C3", angle: "A11", style: "Cleo-Style Product Hero",
-    primary: "Pick your market. Pull your list. See the data.\n\n300 mortgage-relevant records. Working phone numbers. Equity data. Loan age. Property value. DNC status. 85+ data points.\n\nNo demo. No sales call. No credit card. Just data you can test today.\n\nIf it doesn\u2019t work, you\u2019ve lost nothing. If it does, you just found your post-trigger-lead pipeline.",
-    imageText: "300 FREE RECORDS. NO CREDIT CARD. 60 SECONDS.",
-    headline: "Test it. 300 free records. No card.",
-    description: "60 seconds to see if this replaces your current lead source.",
-    cta: "Get your free records \u2192",
-    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Clean minimal product hero style with lots of white space. Center: stylized UI mockup showing a Get 300 Free Records button in green (#22c55e) with cursor about to click. Above: 300 FREE RECORDS. in bold serif. Below the button: NO CREDIT CARD. 60 SECONDS. Three small icons: clock (60 sec), credit card with X (no card), shield (no risk). solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+    id: "s4-a11-01", campaign: "C3", angle: "A11", style: "Post-It Notes",
+    primary: "Pick your market. Pick your zip codes. Pull 300 records.\n\nWorking phone numbers. Equity data. Loan age. Property value. DNC status. 85+ data points per record.\n\nNo demo call. No sales pitch. No credit card. Just data you can compare against your current list today.\n\nIf it doesn\u2019t outperform what you\u2019re using, you\u2019ve lost nothing. If it does, you just found your post-trigger-lead pipeline. 300 free records. 60 seconds. See for yourself \u2192",
+    headline: "300 Records. No Card. 60 Seconds.",
+    description: "Compare them against your current list. That\u2019s the whole pitch.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Three Post-It notes arranged on a clean white desk surface, slightly overlapping, each a different pastel color (green, blue, yellow). GREEN Post-It (largest, center): \u2018300 FREE RECORDS\u2019 in bold hand-drawn text, with a checkbox list below: \u2018Working phones\u2019 (checked), \u2018Equity data\u2019 (checked), \u2018Loan age\u2019 (checked), \u2018DNC status\u2019 (checked), \u201885+ data points\u2019 (checked). All checkmarks in green pen. BLUE Post-It (upper right): \u2018NO credit card\u2019, \u2018NO demo call\u2019, \u2018NO sales pitch\u2019 each with a line through the \u2018NO\u2019 for emphasis. YELLOW Post-It (lower left): \u201860 seconds\u2019 with a small clock doodle, and below: \u2018compare against your current list\u2019 underlined. A nice pen rests diagonally across the corner. Clean, bright, overhead lighting. solidbookedpro.com written in pen on the green Post-It at bottom. Inviting, low-pressure, clear. Photorealistic. No watermarks. No misspellings. Single static image."
   }
 
 ];
 
 const ANGLE_LABELS = {
-  A1: "Trigger Lead Ban", A2: "Shared Lead Cost", A3: "Dead Numbers",
-  A4: "Speed-to-Call Race", A5: "Pipeline Dependency", A6: "Cheeky",
-  A7: "Math/Stats", A8: "Blame Shift", A9: "Guarantee",
-  A10: "Comparison", A11: "Instant Access"
+  A1: "Trigger Lead Panic", A2: "Paying for Nothing", A3: "Dead Numbers / LO Morale",
+  A4: "Already Called", A5: "Pipeline Roulette", A6: "Wrong Blame",
+  A7: "Contact Rate Truth", A8: "Outbound Isn\u2019t Dead", A9: "Guarantee",
+  A10: "Before/After", A11: "Zero Risk Trial"
 };
 
 const CAMPAIGN_LABELS = {
-  C1: "S2: This Sucks", C2: "S3: Why It Sucks", C3: "S4: Why Us"
+  C1: "S2: This Sucks", C2: "S3: Oh... This Is Why", C3: "S4: Why You?"
 };
 
 const CAMPAIGN_TAG_CLASS = { C1: "tag-c1", C2: "tag-c2", C3: "tag-c3" };
