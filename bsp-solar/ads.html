@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookedSolid Pro &mdash; Solar Ads Matrix</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; line-height: 1.6; }
+.hero {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);
+  color: #fff; padding: 60px 24px; text-align: center;
+}
+.hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 8px; }
+.hero .subtitle { color: #a0a0a0; font-size: 1.05rem; margin-bottom: 32px; }
+.hero-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; margin-top: 24px; }
+.hero-stat { text-align: center; }
+.hero-stat .num { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: #4ecdc4; }
+.hero-stat .label { font-size: 0.85rem; color: #888; margin-top: 4px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.panel {
+  background: #fff; border: 1px solid #e0e0e0; border-radius: 12px;
+  padding: 28px; margin: 24px 0;
+}
+.panel h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 16px; }
+.panel h3 { font-size: 1.1rem; font-weight: 600; margin: 16px 0 8px; }
+.collapsible-header {
+  cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  user-select: none;
+}
+.collapsible-header::after { content: '+'; font-size: 1.4rem; color: #666; transition: transform 0.2s; }
+.collapsible-header.open::after { content: '\2212'; }
+.collapsible-body { display: none; margin-top: 16px; }
+.collapsible-body.open { display: block; }
+.perf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px; }
+.perf-item { background: #f8f8f5; border-radius: 8px; padding: 16px; text-align: center; }
+.perf-item .val { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: #1a1a1a; }
+.perf-item .desc { font-size: 0.82rem; color: #666; margin-top: 4px; }
+.campaign-bar { display: flex; border-radius: 8px; overflow: hidden; height: 40px; margin: 16px 0; }
+.campaign-bar .seg { display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 600; font-size: 0.85rem; }
+.seg-c1 { background: #2d6a4f; flex: 15; }
+.seg-c2 { background: #e76f51; flex: 7; }
+.seg-c3 { background: #264653; flex: 3; }
+.campaign-legend { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 12px; }
+.campaign-legend span { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; }
+.campaign-legend .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.feedback-list { list-style: none; }
+.feedback-list li { padding: 6px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.92rem; }
+.feedback-list li::before { content: '\2192 '; color: #e76f51; font-weight: 700; }
+.filters {
+  display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0; padding: 20px;
+  background: #fff; border-radius: 12px; border: 1px solid #e0e0e0;
+  align-items: center;
+}
+.filters .filter-label { font-weight: 600; font-size: 0.85rem; color: #666; margin-right: 4px; }
+.filter-btn {
+  padding: 6px 14px; border-radius: 20px; border: 1px solid #ddd;
+  background: #fff; cursor: pointer; font-size: 0.82rem; font-family: 'Inter', sans-serif;
+  transition: all 0.15s;
+}
+.filter-btn:hover { border-color: #999; }
+.filter-btn.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+.filter-sep { width: 1px; height: 24px; background: #e0e0e0; margin: 0 8px; }
+.ad-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 24px; margin: 24px 0; }
+@media (max-width: 420px) { .ad-grid { grid-template-columns: 1fr; } }
+.ad-card {
+  background: #fff; border: 1px solid #e0e0e0; border-radius: 12px;
+  overflow: hidden; transition: box-shadow 0.2s;
+}
+.ad-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.ad-tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 14px 16px 0; }
+.tag {
+  font-size: 0.7rem; font-weight: 600; padding: 3px 8px; border-radius: 4px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.tag-c1 { background: #d8f3dc; color: #1b4332; }
+.tag-c2 { background: #fde8e0; color: #6b2d14; }
+.tag-c3 { background: #d4e4ed; color: #1d3557; }
+.tag-angle { background: #f0e6ff; color: #4a1d96; }
+.tag-style { background: #fff3cd; color: #664d03; }
+.fb-header { display: flex; align-items: center; gap: 10px; padding: 12px 16px; }
+.fb-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #1a1a2e, #4ecdc4); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.9rem; }
+.fb-name { font-weight: 600; font-size: 0.9rem; }
+.fb-sponsored { font-size: 0.75rem; color: #888; }
+.ad-primary { padding: 0 16px 12px; font-size: 0.92rem; line-height: 1.55; white-space: pre-line; }
+.ad-link-preview {
+  border-top: 1px solid #eee; background: #f8f8f5; padding: 14px 16px;
+}
+.ad-headline { font-weight: 700; font-size: 0.95rem; margin-bottom: 2px; }
+.ad-description { font-size: 0.82rem; color: #666; margin-bottom: 8px; }
+.ad-cta-row { display: flex; justify-content: space-between; align-items: center; }
+.ad-domain { font-size: 0.75rem; color: #888; text-transform: uppercase; }
+.ad-cta-btn {
+  background: #1a1a1a; color: #fff; border: none; padding: 6px 16px;
+  border-radius: 6px; font-size: 0.82rem; font-weight: 600; cursor: pointer;
+}
+.vote-row { display: flex; border-top: 1px solid #eee; }
+.vote-btn {
+  flex: 1; padding: 10px; text-align: center; cursor: pointer;
+  font-size: 0.8rem; font-weight: 600; border: none; background: transparent;
+  font-family: 'Inter', sans-serif; transition: background 0.15s;
+}
+.vote-btn:not(:last-child) { border-right: 1px solid #eee; }
+.vote-btn:hover { background: #f5f5f0; }
+.vote-btn.voted-approve { background: #d8f3dc; color: #1b4332; }
+.vote-btn.voted-changes { background: #fff3cd; color: #664d03; }
+.vote-btn.voted-reject { background: #fde8e0; color: #6b2d14; }
+.ai-prompt-toggle {
+  padding: 8px 16px; font-size: 0.78rem; color: #888; cursor: pointer;
+  border-top: 1px solid #f0f0f0; user-select: none;
+}
+.ai-prompt-toggle:hover { color: #444; }
+.ai-prompt-body { display: none; padding: 12px 16px; font-size: 0.82rem; background: #fafaf7; border-top: 1px solid #f0f0f0; white-space: pre-line; color: #555; position: relative; }
+.ai-prompt-body.open { display: block; }
+.copy-prompt-btn {
+  position: absolute; top: 8px; right: 12px;
+  background: #1a1a1a; color: #fff; border: none; padding: 5px 14px;
+  border-radius: 6px; font-size: 0.75rem; font-weight: 600; cursor: pointer;
+  font-family: 'Inter', sans-serif; transition: background 0.15s;
+}
+.copy-prompt-btn:hover { background: #333; }
+.copy-prompt-btn.copied { background: #059669; }
+.ad-image-gallery { border-top: 1px solid #eee; }
+.gallery-images { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+.gallery-images::-webkit-scrollbar { height: 4px; }
+.gallery-images::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+.gallery-slide { flex: 0 0 100%; scroll-snap-align: start; position: relative; }
+.gallery-slide img { width: 100%; display: block; }
+.gallery-remove {
+  position: absolute; top: 8px; right: 8px;
+  background: rgba(0,0,0,0.7); color: #fff; border: none; padding: 4px 10px;
+  border-radius: 4px; font-size: 0.7rem; cursor: pointer; opacity: 0; transition: opacity 0.15s;
+}
+.gallery-slide:hover .gallery-remove { opacity: 1; }
+.gallery-dots { display: flex; justify-content: center; gap: 6px; padding: 8px 0; }
+.gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: #ddd; border: none; cursor: pointer; padding: 0; }
+.gallery-dot.active { background: #1a1a1a; }
+.gallery-count { text-align: center; font-size: 0.72rem; color: #999; padding-bottom: 6px; }
+.ad-image-dropzone {
+  border-top: 1px solid #eee; padding: 24px 16px; text-align: center;
+  cursor: pointer; color: #888; font-size: 0.82rem; transition: all 0.15s;
+  border: 2px dashed transparent; margin: 0;
+}
+.ad-image-dropzone:hover { background: #f5f5f0; color: #444; }
+.ad-image-dropzone.dragover { background: #ecfdf5; border-color: #22c55e; color: #059669; }
+.ad-image-dropzone span { display: flex; align-items: center; justify-content: center; gap: 6px; flex-direction: column; }
+.ad-image-dropzone .drop-hint { font-size: 0.72rem; color: #aaa; }
+.summary-bar {
+  position: sticky; bottom: 0; background: #1a1a1a; color: #fff;
+  padding: 12px 24px; display: flex; justify-content: center; gap: 32px;
+  font-size: 0.85rem; z-index: 100;
+}
+.summary-bar span { display: flex; align-items: center; gap: 6px; }
+.sb-green { color: #4ecdc4; }
+.sb-yellow { color: #ffd166; }
+.sb-red { color: #ef476f; }
+.count-badge {
+  display: inline-block; background: #1a1a1a; color: #fff; border-radius: 10px;
+  padding: 1px 7px; font-size: 0.7rem; margin-left: 4px; vertical-align: middle;
+}
+@media (max-width: 600px) {
+  .hero { padding: 40px 16px; }
+  .hero-stats { gap: 16px; }
+  .hero-stat .num { font-size: 1.8rem; }
+  .panel { padding: 20px 16px; }
+  .filters { padding: 14px; }
+  .filter-sep { display: none; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <h1>BookedSolid Pro &mdash; Solar Ads Matrix</h1>
+  <p class="subtitle">25 ads. 3 awareness stages. 11 angles.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">25</div><div class="label">Total Ads</div></div>
+    <div class="hero-stat"><div class="num">11</div><div class="label">Angles</div></div>
+    <div class="hero-stat"><div class="num">3</div><div class="label">Campaigns</div></div>
+    <div class="hero-stat"><div class="num">10</div><div class="label">Image Styles</div></div>
+  </div>
+</section>
+
+<div class="container">
+
+<div class="panel">
+  <h2>Solar Industry Benchmarks</h2>
+  <div class="perf-grid">
+    <div class="perf-item"><div class="val">$0.84/W</div><div class="desc">CAC Per Watt (2026)</div></div>
+    <div class="perf-item"><div class="val">$5,040</div><div class="desc">Per Install (6kW)</div></div>
+    <div class="perf-item"><div class="val">$500</div><div class="desc">BSP 10K Records</div></div>
+    <div class="perf-item"><div class="val">90%</div><div class="desc">Working Numbers</div></div>
+    <div class="perf-item"><div class="val">40%</div><div class="desc">Dead Numbers (Industry Avg)</div></div>
+    <div class="perf-item"><div class="val">85+</div><div class="desc">Data Points Per Record</div></div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="collapsible-header" onclick="toggleCollapsible(this)">
+    <h2 style="margin:0">Solar Industry Context</h2>
+  </div>
+  <div class="collapsible-body">
+    <h3>The CAC Crisis</h3>
+    <ul class="feedback-list">
+      <li>Rising CAC hit $0.84/watt in 2026, jumped 40% YoY</li>
+      <li>$5,040 per 6kW install before material/labor/permits</li>
+      <li>Margins evaporating before crews even show up</li>
+    </ul>
+    <h3>The Shared Lead Problem</h3>
+    <ul class="feedback-list">
+      <li>Modernize leads $80/each shared with 5 installers</li>
+      <li>Solar Exclusive packages $3K-$18K/month still shared</li>
+      <li>Close rate ~1 in 8 on shared leads</li>
+    </ul>
+    <h3>The D2D Ceiling</h3>
+    <ul class="feedback-list">
+      <li>200 doors/day = 1 appointment</li>
+      <li>90-day canvasser turnover</li>
+      <li>$2K-$4K per hire, can&rsquo;t scale</li>
+    </ul>
+    <h3>Target Audience</h3>
+    <ul class="feedback-list">
+      <li>Solar company owners, sales managers, canvassing teams</li>
+      <li>Pain: rising CAC, shared leads, D2D burnout, dead numbers, unqualified homeowners</li>
+      <li>Landing page: solidbookedpro.com/solar</li>
+    </ul>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>Campaign Structure</h2>
+  <div class="campaign-bar">
+    <div class="seg seg-c1">60% Problem Aware</div>
+    <div class="seg seg-c2">28% Pattern Interrupt</div>
+    <div class="seg seg-c3">12% Trust</div>
+  </div>
+  <div class="campaign-legend">
+    <span><span class="dot" style="background:#2d6a4f"></span> S2: &ldquo;This Sucks&rdquo; (15 ads) &mdash; rising CAC, dead numbers, shared leads, D2D burnout, unqualified homeowners</span>
+    <span><span class="dot" style="background:#e76f51"></span> S3: &ldquo;Why It Sucks&rdquo; (7 ads) &mdash; cheeky, math/stats, blame shift</span>
+    <span><span class="dot" style="background:#264653"></span> S4: &ldquo;Why Us&rdquo; (3 ads) &mdash; guarantee, comparison, instant access</span>
+  </div>
+</div>
+
+<div class="filters" id="filters">
+  <span class="filter-label">Campaign:</span>
+  <button class="filter-btn active" data-filter="campaign" data-value="all">All</button>
+  <button class="filter-btn" data-filter="campaign" data-value="C1">S2: This Sucks</button>
+  <button class="filter-btn" data-filter="campaign" data-value="C2">S3: Why It Sucks</button>
+  <button class="filter-btn" data-filter="campaign" data-value="C3">S4: Why Us</button>
+  <div class="filter-sep"></div>
+  <span class="filter-label">Angle:</span>
+  <button class="filter-btn active" data-filter="angle" data-value="all">All</button>
+  <button class="filter-btn" data-filter="angle" data-value="A1">Rising CAC</button>
+  <button class="filter-btn" data-filter="angle" data-value="A2">Dead Numbers</button>
+  <button class="filter-btn" data-filter="angle" data-value="A3">Shared Leads</button>
+  <button class="filter-btn" data-filter="angle" data-value="A4">D2D Burnout</button>
+  <button class="filter-btn" data-filter="angle" data-value="A5">Unqualified</button>
+  <button class="filter-btn" data-filter="angle" data-value="A6">Cheeky</button>
+  <button class="filter-btn" data-filter="angle" data-value="A7">Math/Stats</button>
+  <button class="filter-btn" data-filter="angle" data-value="A8">Blame Shift</button>
+  <button class="filter-btn" data-filter="angle" data-value="A9">Guarantee</button>
+  <button class="filter-btn" data-filter="angle" data-value="A10">Comparison</button>
+  <button class="filter-btn" data-filter="angle" data-value="A11">Instant Access</button>
+  <div class="filter-sep"></div>
+  <span class="filter-label">Style:</span>
+  <button class="filter-btn active" data-filter="style" data-value="all">All</button>
+  <div class="filter-sep"></div>
+  <span class="filter-label">Status:</span>
+  <button class="filter-btn active" data-filter="vote" data-value="all">All</button>
+  <button class="filter-btn" data-filter="vote" data-value="approve">Approved</button>
+  <button class="filter-btn" data-filter="vote" data-value="changes">Changes</button>
+  <button class="filter-btn" data-filter="vote" data-value="reject">Rejected</button>
+  <button class="filter-btn" data-filter="vote" data-value="none">Unvoted</button>
+</div>
+
+<div class="ad-grid" id="adGrid"></div>
+
+</div>
+
+<div class="summary-bar" id="summaryBar">
+  <span>Approved: <strong class="sb-green" id="approvedCount">0</strong></span>
+  <span>Changes: <strong class="sb-yellow" id="changesCount">0</strong></span>
+  <span>Rejected: <strong class="sb-red" id="rejectedCount">0</strong></span>
+  <span>Remaining: <strong id="remainingCount">25</strong></span>
+</div>
+
+<script>
+
+const ADS = [
+
+  // === STAGE 2: "THIS SUCKS" - 15 ads ===
+  // --- A1: Rising CAC (3 ads) ---
+
+  {
+    id: "s2-a1-01", campaign: "C1", angle: "A1", style: "Money Shredder",
+    primary: "$0.84 per watt just to acquire one install.\n\nThat\u2019s $5,040 per 6kW system \u2014 before material, labor, permits, or overhead. Your margin is gone before the crew shows up.\n\nAnd it jumped 40% this year alone.\n\nSee pricing & how it works \u2192",
+    imageText: "CUSTOMER ACQUISITION: $5,040 PER INSTALL",
+    headline: "$5K to land one install. Then what?",
+    description: "Your acquisition cost jumped 40% in 2026.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark background. Photorealistic paper shredder feeding $100 bills. Invoice overlay showing 'Customer Acquisition: $5,040'. Bold white text: CUSTOMER ACQUISITION: $5,040 PER INSTALL. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a1-02", campaign: "C1", angle: "A1", style: "Billo-Style Dark SaaS",
+    primary: "Solar CAC hit $0.84/watt in 2026.\n\nA 6kW install costs you $5,040 to acquire before you break ground. That leaves almost nothing after cost of goods.\n\nThree years ago it was half that.\n\nSee pricing & how it works \u2192",
+    imageText: "CAC DOUBLED. MARGINS DIDN'T.",
+    headline: "CAC doubled. Margins didn\u2019t.",
+    description: "The math stopped working in 2026.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark SaaS dashboard style (#0f172a). Bold white headline: CAC DOUBLED. MARGINS DIDN'T. Declining margin line graph 2023-2026. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a1-03", campaign: "C1", angle: "A1", style: "Price Crossed Out Whiteboard",
+    primary: "Three years. Three price jumps. Same close rate.\n\nYou\u2019re spending more per watt to acquire every install and the leads aren\u2019t getting better. They\u2019re getting worse.\n\nSomething upstream is broken.\n\nSee pricing & how it works \u2192",
+    imageText: "$0.84/WATT JUST TO GET IN THE DOOR",
+    headline: "$0.84/watt just to get in the door.",
+    description: "Acquisition cost climbed 40% this year.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Whiteboard style. Handwritten: '2024: $0.60/watt' crossed out, '2025: $0.72/watt' crossed out, '2026: $0.84/watt' circled in red. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A2: Dead Numbers (3 ads) ---
+
+  {
+    id: "s2-a2-01", campaign: "C1", angle: "A2", style: "Dirty vs Clean Card Comparison",
+    primary: "4 out of every 10 numbers your team dials are dead.\n\nNot busy. Not voicemail. Disconnected. Gone. Your reps are burning hours listening to error tones and wondering why they took this job.\n\nThat\u2019s not a volume problem.\n\nSee pricing & how it works \u2192",
+    imageText: "40% DEAD LINES. EVERY SINGLE LIST.",
+    headline: "40% dead lines. Every single list.",
+    description: "Your reps aren\u2019t slow. The numbers don\u2019t work.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Split comparison. LEFT (red tinted): lead card with DISCONNECTED badge, missing fields. RIGHT: blurred/empty. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a2-02", campaign: "C1", angle: "A2", style: "Modern Day Pain Question",
+    primary: "Your setter dials 200 numbers today.\n\n80 are disconnected. 40 go to voicemail for someone who moved. 30 are renters. They book maybe 2 appointments from 200 dials.\n\nThat\u2019s the list, not the rep.\n\nSee pricing & how it works \u2192",
+    imageText: "HALF YOUR LIST DOESN'T EVEN RING?",
+    headline: "200 dials. 80 disconnected.",
+    description: "Dead numbers are killing your setter\u2019s day.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Frustrated rep with headset, text overlay: HALF YOUR LIST DOESN'T EVEN RING? solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a2-03", campaign: "C1", angle: "A2", style: "Editorial Article Format",
+    primary: "3 hours of calling. Nothing to show for it.\n\nDial. Disconnected. Dial. Wrong number. Dial. \"I\u2019m a renter.\" Dial. Disconnected again.\n\nYour team isn\u2019t underperforming. They never had a chance.\n\nSee pricing & how it works \u2192",
+    imageText: "WHY SOLAR SALES TEAMS BURN 3 HOURS A DAY ON DEAD DIALS",
+    headline: "3 hours dialing. Zero conversations.",
+    description: "It\u2019s not the reps. It\u2019s the numbers.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Editorial newspaper style. SOLAR OPS category badge. Headline: WHY SOLAR SALES TEAMS BURN 3 HOURS A DAY ON DEAD DIALS. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A3: Shared Leads (3 ads) ---
+
+  {
+    id: "s2-a3-01", campaign: "C1", angle: "A3", style: "Split Person Comparison",
+    primary: "You paid $80 for that Modernize lead.\n\nSo did 4 other installers. The homeowner got 5 calls in 20 minutes. By the time you reached out, they already had 3 quotes.\n\nThat\u2019s not a lead. That\u2019s an auction.\n\nSee pricing & how it works \u2192",
+    imageText: "$80 LEAD. 5 COMPANIES GOT IT.",
+    headline: "$80 lead. 5 companies got it.",
+    description: "Shared leads turn every sale into a race.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Split comparison. LEFT: 5 identical installer icons pointing at 1 homeowner, red background. RIGHT: blurred/empty. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a3-02", campaign: "C1", angle: "A3", style: "Billo-Style Dark SaaS",
+    primary: "$80 per lead from Modernize. 5 installers get it.\n\nYour close rate on shared leads is maybe 1 in 8. That\u2019s $640 per closed deal \u2014 just in lead cost. Before the site visit. Before the proposal. Before the permit.\n\nHow long can that math work?\n\nSee pricing & how it works \u2192",
+    imageText: "$640 IN LEADS TO CLOSE ONE DEAL",
+    headline: "$640 in leads to close one deal.",
+    description: "Shared leads are the most expensive way to grow.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark SaaS style. Calculator showing '$80 x 5 companies = $400 wasted per homeowner'. Bold text: $640 IN LEADS TO CLOSE ONE DEAL. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a3-03", campaign: "C1", angle: "A3", style: "Price Crossed Out Whiteboard",
+    primary: "$3K to $18K per month for \"exclusive\" appointments.\n\nExcept they\u2019re not exclusive. Three other installers got the same homeowner this week. You just paid more for the illusion of exclusivity.\n\nSame lead. Premium price.\n\nSee pricing & how it works \u2192",
+    imageText: "EXCLUSIVE LEADS. 3 OTHER BIDS.",
+    headline: "\"Exclusive\" leads. 3 other bids.",
+    description: "You\u2019re paying exclusive prices for shared leads.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Whiteboard style. Handwritten: 'Solar Exclusive: $3,000/mo (shared)', '$8,000/mo (semi-exclusive)', '$18,000/mo (exclusive?)' with question marks. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A4: D2D Burnout (3 ads) ---
+
+  {
+    id: "s2-a4-01", campaign: "C1", angle: "A4", style: "Modern Day Pain Question",
+    primary: "You hired 4 canvassers this quarter. 3 already quit.\n\nDoor-knocking in July heat. 200 doors. 8 conversations. Maybe 1 appointment. Rinse and repeat until they don\u2019t show up Monday.\n\nYou can\u2019t scale a company on 90-day turnover.\n\nSee pricing & how it works \u2192",
+    imageText: "ANOTHER SETTER QUIT AFTER 90 DAYS?",
+    headline: "90 days. That\u2019s how long they last.",
+    description: "D2D turnover is killing your growth.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Exhausted door-knocker walking away from house, text overlay: ANOTHER SETTER QUIT AFTER 90 DAYS? solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a4-02", campaign: "C1", angle: "A4", style: "Editorial Article Format",
+    primary: "Every canvasser costs $2K-$4K to recruit, train, and ramp.\n\nThen they quit in 90 days. You start over. New hire, new training, new ramp period. Meanwhile, your pipeline has a 3-month gap.\n\nThis cycle doesn\u2019t get better with more hiring.\n\nSee pricing & how it works \u2192",
+    imageText: "THE HIDDEN COST OF REPLACING DOOR KNOCKERS EVERY QUARTER",
+    headline: "$4K to train. Gone in 90 days.",
+    description: "The revolving door costs more than you think.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Editorial style. SOLAR SALES category badge. Headline: THE HIDDEN COST OF REPLACING DOOR KNOCKERS EVERY QUARTER. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a4-03", campaign: "C1", angle: "A4", style: "Dark Shield",
+    primary: "One canvasser covers one neighborhood per day.\n\n200 doors. 150 aren\u2019t home. 30 say no at the door. 15 listen. Maybe 1 books. To scale, you need more canvassers. But they keep quitting.\n\nYou\u2019re scaling a system that doesn\u2019t scale.\n\nSee pricing & how it works \u2192",
+    imageText: "200 DOORS/DAY = 1 APPOINTMENT",
+    headline: "200 doors. 1 appointment. Repeat.",
+    description: "Door-knocking has a math ceiling.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark navy background (#0f172a). Map pin icons showing limited territory radius. Bold stat: 200 DOORS/DAY = 1 APPOINTMENT. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A5: Unqualified (3 ads) ---
+
+  {
+    id: "s2-a5-01", campaign: "C1", angle: "A5", style: "Dirty vs Clean Card Comparison",
+    primary: "Your setter knocks 200 doors. Half are renters.\n\nA quarter can\u2019t finance. Some just replaced their roof. By the time you filter to qualified homeowners, you\u2019ve burned the whole day on people who were never going to buy.\n\nSee pricing & how it works \u2192",
+    imageText: "RENTER. CREDIT: 520. ROOF AGE: 2 YRS.",
+    headline: "Half your doors are renters.",
+    description: "You\u2019re pitching people who can\u2019t say yes.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Split comparison. LEFT: lead card with RENTER, Credit: 520, Roof Age: 2 yrs, red X badges. RIGHT: blurred. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a5-02", campaign: "C1", angle: "A5", style: "Cleo-Style Product Hero",
+    primary: "New roof. HOA restrictions. Already went solar.\n\nYour team has no way to know before they knock. So they knock every door and hope. That\u2019s not prospecting. That\u2019s guessing.\n\nThe information exists. You just don\u2019t have it.\n\nSee pricing & how it works \u2192",
+    imageText: "INSTALLED 2024. YOU KNOCKED ANYWAY.",
+    headline: "Brand new roof. Knocked anyway.",
+    description: "No data means knocking blind.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Clean product hero style. Image of brand-new roof with text: INSTALLED 2024. YOU KNOCKED ANYWAY. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a5-03", campaign: "C1", angle: "A5", style: "Money Shredder",
+    primary: "You drove 45 minutes to the appointment. Spent an hour on the proposal. Ran credit. Denied.\n\nThe homeowner couldn\u2019t finance from the start. But nobody knew that before the sit because nobody checked.\n\nThat\u2019s a full afternoon gone.\n\nSee pricing & how it works \u2192",
+    imageText: "2-HOUR APPOINTMENT. CREDIT DENIED.",
+    headline: "2-hour appointment. Credit denied.",
+    description: "Unqualified sits cost more than bad leads.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark background. Shredder eating 'Proposal: 6kW System - $24,000' document. Bold text: 2-HOUR APPOINTMENT. CREDIT DENIED. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // === STAGE 3: "WHY IT SUCKS" - 7 ads ===
+  // --- A6: Cheeky (2 ads) ---
+
+  {
+    id: "s3-a6-01", campaign: "C2", angle: "A6", style: "Modern Day Pain Question",
+    primary: "That \"exclusive\" lead got 5 calls before lunch.\n\nYou\u2019re not competing on price or proposal quality. You\u2019re competing on who dials fastest after the lead drops. That\u2019s not sales. That\u2019s a race you\u2019ll lose half the time by default.\n\nThe game is rigged before you start.\n\nSee pricing & how it works \u2192",
+    imageText: "YOUR LEADS GOT THIS TOO.",
+    headline: "5 calls before lunch. You were #4.",
+    description: "The lead model is designed against you.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Close-up of phone screen showing 47 missed calls, text overlay: YOUR LEADS GOT THIS TOO. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s3-a6-02", campaign: "C2", angle: "A6", style: "Dark Shield",
+    primary: "Stop paying Modernize for a month. See what happens.\n\nYour pipeline goes to zero. Not because your team stopped working. Because your entire sales operation depends on a vendor you don\u2019t control.\n\nThat\u2019s not a pipeline. That\u2019s a subscription.\n\nSee pricing & how it works \u2192",
+    imageText: "WHAT HAPPENS WHEN YOU STOP PAYING?",
+    headline: "Your pipeline has a cancel button.",
+    description: "Vendor dependency is the real risk.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark navy background. Power plug being pulled from wall, pipeline funnel going dark. Headline: WHAT HAPPENS WHEN YOU STOP PAYING? solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A7: Math/Stats (3 ads) ---
+
+  {
+    id: "s3-a7-01", campaign: "C2", angle: "A7", style: "Price Crossed Out Whiteboard",
+    primary: "$80 lead. $40 in gas. 2-hour site visit. Credit denied.\n\nThat\u2019s one appointment. Multiply by the 60% that don\u2019t close and you\u2019re spending $300-$500 per closed deal in hidden costs alone \u2014 on top of the lead cost.\n\nThe lead isn\u2019t expensive. Everything after it is.\n\nSee pricing & how it works \u2192",
+    imageText: "$80 LEAD. $500 TO FIND OUT IT'S BAD.",
+    headline: "$80 lead. $500 to find out it\u2019s bad.",
+    description: "The real cost is downstream.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Whiteboard style. Handwritten math: 'Lead: $80 + Drive: $40 + Proposal: 2hrs + Credit check: denied = $0 revenue'. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s3-a7-02", campaign: "C2", angle: "A7", style: "Billo-Style Dark SaaS",
+    primary: "Shared solar leads close around 1 in 8.\n\nAt $80 per lead, that\u2019s $640 in lead cost alone per closed install. Add the site visits, proposals, and credit checks on the 7 that didn\u2019t close.\n\nYour real cost per deal is north of $1,000 before you pick up a tool.\n\nSee pricing & how it works \u2192",
+    imageText: "$640 PER CLOSED INSTALL (JUST LEAD COST)",
+    headline: "$640 in leads per closed install.",
+    description: "Shared lead math doesn\u2019t add up.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark SaaS style. Math stack: '$80/lead x 8 leads to close 1 = $640 per deal (just lead cost)'. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s3-a7-03", campaign: "C2", angle: "A7", style: "Split Person Comparison",
+    primary: "One canvasser costs $4K/month in salary alone.\n\nThey cover 200 doors/day, book maybe 1 appointment, and quit in 90 days. Meanwhile, 10,000 targeted homeowner records cost $500. No turnover. No weather days. No territory limits.\n\nYou\u2019re solving the right problem the wrong way.\n\nSee pricing & how it works \u2192",
+    imageText: "$4K/MONTH OR $500. SAME PIPELINE.",
+    headline: "$4K/month or $500. Same pipeline.",
+    description: "The canvassing model has a ceiling.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Split comparison. LEFT: 'D2D Canvasser' with costs stacked ($3K hire + $4K/mo + 90-day churn). RIGHT: '10,000 records' with '$500 total' badge. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A8: Blame Shift (2 ads) ---
+
+  {
+    id: "s3-a8-01", campaign: "C2", angle: "A8", style: "Editorial Article Format",
+    primary: "Your closers aren\u2019t underperforming.\n\nThey\u2019re showing up to appointments with renters, people who can\u2019t finance, and homeowners with 2-year-old roofs. The problem isn\u2019t downstream. It\u2019s upstream \u2014 in the data that decided who they visited.\n\nFix what\u2019s feeding them and the numbers change.\n\nSee pricing & how it works \u2192",
+    imageText: "IT'S NOT YOUR CLOSERS. IT'S WHAT YOU'RE FEEDING THEM.",
+    headline: "It\u2019s not your closers. Look upstream.",
+    description: "Bad data makes good reps look average.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Editorial style. SOLAR OPERATIONS badge. Headline: IT'S NOT YOUR CLOSERS. IT'S WHAT YOU'RE FEEDING THEM. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s3-a8-02", campaign: "C2", angle: "A8", style: "Modern Day Pain Question",
+    primary: "New script. New training. New objection handling deck.\n\nAnd the numbers barely move. Because the problem was never the script. It\u2019s who you\u2019re calling. Renters don\u2019t buy solar. Bad credit can\u2019t finance. Dead numbers can\u2019t answer.\n\nYou\u2019ve been optimizing the wrong variable.\n\nSee pricing & how it works \u2192",
+    imageText: "YOU KEEP FIXING THE SCRIPT. THE SCRIPT ISN'T BROKEN.",
+    headline: "New script. Same results. Why?",
+    description: "You\u2019re fixing downstream when the problem is upstream.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Sales manager reviewing whiteboard, text: YOU KEEP FIXING THE SCRIPT. THE SCRIPT ISN'T BROKEN. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // === STAGE 4: "WHY US" - 3 ads ===
+  // --- A9: Guarantee (1 ad) ---
+
+  {
+    id: "s4-a9-01", campaign: "C3", angle: "A9", style: "Dark Shield",
+    primary: "Every bad number replaced free. No cap. No expiration.\n\n90% working number accuracy on every list. 85+ data points per record \u2014 roof age, credit indicators, income range, property details, owner-matched. From $0.05/record.\n\nNo contracts. No subscriptions. Buy what you need.\n\nIf a number doesn\u2019t work, we replace it. That\u2019s it.\n\nSee pricing & how it works \u2192",
+    imageText: "EVERY BAD NUMBER REPLACED FREE",
+    headline: "Bad number? Replaced free. Period.",
+    description: "No contracts. No subscriptions. Guaranteed data.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark navy background. Shield icon with checkmark. Bold: EVERY BAD NUMBER REPLACED FREE. Below: No cap. No questions. No expiration. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A10: Comparison (1 ad) ---
+
+  {
+    id: "s4-a10-01", campaign: "C3", angle: "A10", style: "Price Crossed Out Whiteboard",
+    primary: "Modernize: $80/lead, shared with 5 installers.\nSolar Exclusive: $3K-$18K/month for \"exclusive\" appointments.\nDoor-to-door: $4K/month per canvasser, 90-day turnover.\n\nBookedSolid Pro: $500 for 10,000 targeted homeowner records. 85+ data points. 90% working numbers. Every bad number replaced free.\n\nNo subscription. No contract. No shared leads.\n\nSee pricing & how it works \u2192",
+    imageText: "$0.05/RECORD VS $80/LEAD. YOU PICK.",
+    headline: "$0.05/record vs $80/lead. You pick.",
+    description: "Side-by-side comparison. The math speaks.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Whiteboard comparison. Three columns: Modernize $80/lead (shared, 5 companies), Solar Exclusive $3K-$18K/mo (still shared), BookedSolid Pro $0.05/record (85+ fields, guaranteed). solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A11: Instant Access (1 ad) ---
+
+  {
+    id: "s4-a11-01", campaign: "C3", angle: "A11", style: "CSV/Data Table with Status Badges",
+    primary: "300 free homeowner records. No credit card.\n\nPull your market. See roof age, credit indicators, income range, owner-matched phones, DNC status \u2014 85+ data points per record. Compare it against whatever you\u2019re using now.\n\nIf the data is bad, we replace it free. If you don\u2019t like it, you paid nothing.\n\nSee pricing & how it works \u2192",
+    imageText: "300 FREE RECORDS. NO CARD NEEDED.",
+    headline: "300 free records. No card needed.",
+    description: "Test it against your current data. Free.",
+    cta: "Learn More",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark background (#111). Spreadsheet showing solar fields: Owner Name, Property, Roof Age, Credit, Income, Phone (VERIFIED), DNC Status. 300 FREE RECORDS banner. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  }
+
+];
+
+const ANGLE_LABELS = {
+  A1: "Rising CAC", A2: "Dead Numbers", A3: "Shared Leads",
+  A4: "D2D Burnout", A5: "Unqualified", A6: "Cheeky",
+  A7: "Math/Stats", A8: "Blame Shift", A9: "Guarantee",
+  A10: "Comparison", A11: "Instant Access"
+};
+
+const CAMPAIGN_LABELS = {
+  C1: "S2: This Sucks", C2: "S3: Why It Sucks", C3: "S4: Why Us"
+};
+
+const CAMPAIGN_TAG_CLASS = { C1: "tag-c1", C2: "tag-c2", C3: "tag-c3" };
+
+const votes = JSON.parse(localStorage.getItem('bsp-solar-votes') || '{}');
+const images = JSON.parse(localStorage.getItem('bsp-solar-images') || '{}');
+let activeFilters = { campaign: "all", angle: "all", style: "all", vote: "all" };
+
+function populateStyleFilters() {
+  const styles = [...new Set(ADS.map(a => a.style))].sort();
+  const allStyleBtns = document.querySelectorAll('[data-filter="style"]');
+  const styleAllBtn = allStyleBtns[0];
+  const parent = styleAllBtn.parentNode;
+  let insertBefore = styleAllBtn.nextSibling;
+  while (insertBefore && !insertBefore.classList?.contains('filter-sep')) {
+    insertBefore = insertBefore.nextSibling;
+  }
+  styles.forEach(s => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.filter = 'style';
+    btn.dataset.value = s;
+    btn.textContent = s;
+    parent.insertBefore(btn, insertBefore);
+  });
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function buildCard(ad) {
+  const campaignLabel = CAMPAIGN_LABELS[ad.campaign] || ad.campaign;
+  const angleLabel = ANGLE_LABELS[ad.angle] || ad.angle;
+  const tagClass = CAMPAIGN_TAG_CLASS[ad.campaign] || "tag-c1";
+  const v = votes[ad.id] || null;
+  const adImages = images[ad.id] || [];
+
+  let galleryHTML = '';
+  if (adImages.length > 0) {
+    const slides = adImages.map((src, i) =>
+      '<div class="gallery-slide"><img src="' + escapeHtml(src) + '" alt="Ad image ' + (i+1) + '"><button class="gallery-remove" onclick="removeImage(\'' + ad.id + '\', ' + i + ')">Remove</button></div>'
+    ).join('');
+    const dots = adImages.map((_, i) =>
+      '<button class="gallery-dot' + (i === 0 ? ' active' : '') + '" onclick="scrollGallery(\'' + ad.id + '\', ' + i + ')"></button>'
+    ).join('');
+    galleryHTML =
+      '<div class="ad-image-gallery">' +
+        '<div class="gallery-images" id="gallery-' + ad.id + '">' + slides + '</div>' +
+        (adImages.length > 1 ? '<div class="gallery-dots" id="dots-' + ad.id + '">' + dots + '</div>' : '') +
+        '<div class="gallery-count">' + adImages.length + ' image' + (adImages.length > 1 ? 's' : '') + '</div>' +
+      '</div>';
+  }
+
+  return '<div class="ad-card" data-id="' + ad.id + '" data-campaign="' + ad.campaign + '" data-angle="' + ad.angle + '" data-style="' + escapeHtml(ad.style) + '" data-vote="' + (v || 'none') + '">' +
+    '<div class="ad-tags">' +
+      '<span class="tag ' + tagClass + '">' + campaignLabel + '</span>' +
+      '<span class="tag tag-angle">' + angleLabel + '</span>' +
+      '<span class="tag tag-style">' + escapeHtml(ad.style) + '</span>' +
+    '</div>' +
+    '<div class="fb-header">' +
+      '<div class="fb-avatar">BP</div>' +
+      '<div><div class="fb-name">BookedSolid Pro</div><div class="fb-sponsored">Sponsored</div></div>' +
+    '</div>' +
+    '<div class="ad-primary">' + ad.primary + '</div>' +
+    galleryHTML +
+    '<div class="ad-image-dropzone" ondragover="dzOver(event)" ondragleave="dzLeave(event)" ondrop="dzDrop(event,\'' + ad.id + '\')" onclick="dzClick(\'' + ad.id + '\')">' +
+      '<span>Drop image here or click to upload<span class="drop-hint">PNG, JPG, WebP</span></span>' +
+      '<input type="file" accept="image/*" multiple style="display:none" id="file-' + ad.id + '" onchange="handleFiles(this.files,\'' + ad.id + '\')">' +
+    '</div>' +
+    '<div class="ad-link-preview">' +
+      '<div class="ad-headline">' + ad.headline + '</div>' +
+      '<div class="ad-description">' + ad.description + '</div>' +
+      '<div class="ad-cta-row">' +
+        '<span class="ad-domain">SOLIDBOOKEDPRO.COM</span>' +
+        '<button class="ad-cta-btn">' + ad.cta + '</button>' +
+      '</div>' +
+    '</div>' +
+    '<div class="vote-row">' +
+      '<button class="vote-btn' + (v === 'approve' ? ' voted-approve' : '') + '" onclick="vote(\'' + ad.id + '\',\'approve\')">Approve</button>' +
+      '<button class="vote-btn' + (v === 'changes' ? ' voted-changes' : '') + '" onclick="vote(\'' + ad.id + '\',\'changes\')">Changes</button>' +
+      '<button class="vote-btn' + (v === 'reject' ? ' voted-reject' : '') + '" onclick="vote(\'' + ad.id + '\',\'reject\')">Reject</button>' +
+    '</div>' +
+    '<div class="ai-prompt-toggle" onclick="togglePrompt(this)">Show AI Image Prompt</div>' +
+    '<div class="ai-prompt-body">' + escapeHtml(ad.aiPrompt || 'No AI prompt available.') + '<button class="copy-prompt-btn" onclick="copyPrompt(this, event)">Copy</button></div>' +
+  '</div>';
+}
+
+function render() {
+  const grid = document.getElementById('adGrid');
+  const cards = ADS.map(ad => ({ html: buildCard(ad), show: matchesFilters(ad), ad }));
+  grid.innerHTML = cards.map(c => c.html).join('');
+  const cardEls = grid.querySelectorAll('.ad-card');
+  cards.forEach((c, i) => { if (!c.show) cardEls[i].style.display = 'none'; });
+  updateSummary();
+}
+
+function matchesFilters(ad) {
+  const v = votes[ad.id] || 'none';
+  if (activeFilters.campaign !== 'all' && ad.campaign !== activeFilters.campaign) return false;
+  if (activeFilters.angle !== 'all' && ad.angle !== activeFilters.angle) return false;
+  if (activeFilters.style !== 'all' && ad.style !== activeFilters.style) return false;
+  if (activeFilters.vote !== 'all' && v !== activeFilters.vote) return false;
+  return true;
+}
+
+function vote(id, type) {
+  if (votes[id] === type) { delete votes[id]; } else { votes[id] = type; }
+  localStorage.setItem('bsp-solar-votes', JSON.stringify(votes));
+  render();
+}
+
+function updateSummary() {
+  let approved = 0, changes = 0, rejected = 0;
+  ADS.forEach(ad => {
+    const v = votes[ad.id];
+    if (v === 'approve') approved++;
+    else if (v === 'changes') changes++;
+    else if (v === 'reject') rejected++;
+  });
+  document.getElementById('approvedCount').textContent = approved;
+  document.getElementById('changesCount').textContent = changes;
+  document.getElementById('rejectedCount').textContent = rejected;
+  document.getElementById('remainingCount').textContent = ADS.length - approved - changes - rejected;
+}
+
+document.getElementById('filters').addEventListener('click', function(e) {
+  if (!e.target.classList.contains('filter-btn')) return;
+  var type = e.target.dataset.filter;
+  var value = e.target.dataset.value;
+  activeFilters[type] = value;
+  document.querySelectorAll('[data-filter="' + type + '"]').forEach(function(btn) { btn.classList.remove('active'); });
+  e.target.classList.add('active');
+  render();
+});
+
+function toggleCollapsible(header) {
+  header.classList.toggle('open');
+  header.nextElementSibling.classList.toggle('open');
+}
+
+function togglePrompt(el) {
+  var body = el.nextElementSibling;
+  body.classList.toggle('open');
+  el.textContent = body.classList.contains('open') ? 'Hide AI Image Prompt' : 'Show AI Image Prompt';
+}
+
+function copyPrompt(btn, e) {
+  e.stopPropagation();
+  var text = btn.parentElement.textContent.replace('Copy', '').replace('Copied!', '').trim();
+  navigator.clipboard.writeText(text).then(function() {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+function dzOver(e) { e.preventDefault(); e.currentTarget.classList.add('dragover'); }
+function dzLeave(e) { e.currentTarget.classList.remove('dragover'); }
+function dzDrop(e, id) { e.preventDefault(); e.currentTarget.classList.remove('dragover'); handleFiles(e.dataTransfer.files, id); }
+function dzClick(id) { document.getElementById('file-' + id).click(); }
+
+function handleFiles(files, id) {
+  if (!files.length) return;
+  if (!images[id]) images[id] = [];
+  Array.from(files).forEach(function(file) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      images[id].push(e.target.result);
+      localStorage.setItem('bsp-solar-images', JSON.stringify(images));
+      render();
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function removeImage(id, index) {
+  if (!images[id]) return;
+  images[id].splice(index, 1);
+  if (images[id].length === 0) delete images[id];
+  localStorage.setItem('bsp-solar-images', JSON.stringify(images));
+  render();
+}
+
+function scrollGallery(id, index) {
+  var gallery = document.getElementById('gallery-' + id);
+  if (!gallery) return;
+  var slides = gallery.querySelectorAll('.gallery-slide');
+  if (slides[index]) slides[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  var dots = document.querySelectorAll('#dots-' + id + ' .gallery-dot');
+  dots.forEach(function(d, i) { d.classList.toggle('active', i === index); });
+}
+
+populateStyleFilters();
+render();
+
+</script>
+</body>
+</html>

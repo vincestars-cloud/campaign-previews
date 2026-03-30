@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BookedSolid Pro &mdash; Mortgage Ads Matrix</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #f5f5f0; color: #1a1a1a; line-height: 1.6; }
+.hero {
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a2e 50%, #16213e 100%);
+  color: #fff; padding: 60px 24px; text-align: center;
+}
+.hero h1 { font-family: 'DM Serif Display', serif; font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 8px; }
+.hero .subtitle { color: #a0a0a0; font-size: 1.05rem; margin-bottom: 32px; }
+.hero-stats { display: flex; flex-wrap: wrap; justify-content: center; gap: 32px; margin-top: 24px; }
+.hero-stat { text-align: center; }
+.hero-stat .num { font-family: 'DM Serif Display', serif; font-size: 2.4rem; color: #4ecdc4; }
+.hero-stat .label { font-size: 0.85rem; color: #888; margin-top: 4px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.panel {
+  background: #fff; border: 1px solid #e0e0e0; border-radius: 12px;
+  padding: 28px; margin: 24px 0;
+}
+.panel h2 { font-family: 'DM Serif Display', serif; font-size: 1.5rem; margin-bottom: 16px; }
+.panel h3 { font-size: 1.1rem; font-weight: 600; margin: 16px 0 8px; }
+.collapsible-header {
+  cursor: pointer; display: flex; align-items: center; justify-content: space-between;
+  user-select: none;
+}
+.collapsible-header::after { content: '+'; font-size: 1.4rem; color: #666; transition: transform 0.2s; }
+.collapsible-header.open::after { content: '\2212'; }
+.collapsible-body { display: none; margin-top: 16px; }
+.collapsible-body.open { display: block; }
+.perf-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-top: 16px; }
+.perf-item { background: #f8f8f5; border-radius: 8px; padding: 16px; text-align: center; }
+.perf-item .val { font-family: 'DM Serif Display', serif; font-size: 1.6rem; color: #1a1a1a; }
+.perf-item .desc { font-size: 0.82rem; color: #666; margin-top: 4px; }
+.campaign-bar { display: flex; border-radius: 8px; overflow: hidden; height: 40px; margin: 16px 0; }
+.campaign-bar .seg { display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 600; font-size: 0.85rem; }
+.seg-c1 { background: #2d6a4f; flex: 7; }
+.seg-c2 { background: #e76f51; flex: 2; }
+.seg-c3 { background: #264653; flex: 1; }
+.campaign-legend { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 12px; }
+.campaign-legend span { display: flex; align-items: center; gap: 6px; font-size: 0.9rem; }
+.campaign-legend .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+.feedback-list { list-style: none; }
+.feedback-list li { padding: 6px 0; border-bottom: 1px solid #f0f0f0; font-size: 0.92rem; }
+.feedback-list li::before { content: '\2192 '; color: #e76f51; font-weight: 700; }
+.filters {
+  display: flex; flex-wrap: wrap; gap: 8px; margin: 24px 0; padding: 20px;
+  background: #fff; border-radius: 12px; border: 1px solid #e0e0e0;
+  align-items: center;
+}
+.filters .filter-label { font-weight: 600; font-size: 0.85rem; color: #666; margin-right: 4px; }
+.filter-btn {
+  padding: 6px 14px; border-radius: 20px; border: 1px solid #ddd;
+  background: #fff; cursor: pointer; font-size: 0.82rem; font-family: 'Inter', sans-serif;
+  transition: all 0.15s;
+}
+.filter-btn:hover { border-color: #999; }
+.filter-btn.active { background: #1a1a1a; color: #fff; border-color: #1a1a1a; }
+.filter-sep { width: 1px; height: 24px; background: #e0e0e0; margin: 0 8px; }
+.ad-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 24px; margin: 24px 0; }
+@media (max-width: 420px) { .ad-grid { grid-template-columns: 1fr; } }
+.ad-card {
+  background: #fff; border: 1px solid #e0e0e0; border-radius: 12px;
+  overflow: hidden; transition: box-shadow 0.2s;
+}
+.ad-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+.ad-tags { display: flex; flex-wrap: wrap; gap: 6px; padding: 14px 16px 0; }
+.tag {
+  font-size: 0.7rem; font-weight: 600; padding: 3px 8px; border-radius: 4px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+.tag-c1 { background: #d8f3dc; color: #1b4332; }
+.tag-c2 { background: #fde8e0; color: #6b2d14; }
+.tag-c3 { background: #d4e4ed; color: #1d3557; }
+.tag-angle { background: #f0e6ff; color: #4a1d96; }
+.tag-style { background: #fff3cd; color: #664d03; }
+.fb-header { display: flex; align-items: center; gap: 10px; padding: 12px 16px; }
+.fb-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, #1a1a2e, #4ecdc4); display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.9rem; }
+.fb-name { font-weight: 600; font-size: 0.9rem; }
+.fb-sponsored { font-size: 0.75rem; color: #888; }
+.ad-primary { padding: 0 16px 12px; font-size: 0.92rem; line-height: 1.55; white-space: pre-line; }
+.ad-link-preview {
+  border-top: 1px solid #eee; background: #f8f8f5; padding: 14px 16px;
+}
+.ad-headline { font-weight: 700; font-size: 0.95rem; margin-bottom: 2px; }
+.ad-description { font-size: 0.82rem; color: #666; margin-bottom: 8px; }
+.ad-cta-row { display: flex; justify-content: space-between; align-items: center; }
+.ad-domain { font-size: 0.75rem; color: #888; text-transform: uppercase; }
+.ad-cta-btn {
+  background: #1a1a1a; color: #fff; border: none; padding: 6px 16px;
+  border-radius: 6px; font-size: 0.82rem; font-weight: 600; cursor: pointer;
+}
+.vote-row { display: flex; border-top: 1px solid #eee; }
+.vote-btn {
+  flex: 1; padding: 10px; text-align: center; cursor: pointer;
+  font-size: 0.8rem; font-weight: 600; border: none; background: transparent;
+  font-family: 'Inter', sans-serif; transition: background 0.15s;
+}
+.vote-btn:not(:last-child) { border-right: 1px solid #eee; }
+.vote-btn:hover { background: #f5f5f0; }
+.vote-btn.voted-approve { background: #d8f3dc; color: #1b4332; }
+.vote-btn.voted-changes { background: #fff3cd; color: #664d03; }
+.vote-btn.voted-reject { background: #fde8e0; color: #6b2d14; }
+.ai-prompt-toggle {
+  padding: 8px 16px; font-size: 0.78rem; color: #888; cursor: pointer;
+  border-top: 1px solid #f0f0f0; user-select: none;
+}
+.ai-prompt-toggle:hover { color: #444; }
+.ai-prompt-body { display: none; padding: 12px 16px; font-size: 0.82rem; background: #fafaf7; border-top: 1px solid #f0f0f0; white-space: pre-line; color: #555; position: relative; }
+.ai-prompt-body.open { display: block; }
+.copy-prompt-btn {
+  position: absolute; top: 8px; right: 12px;
+  background: #1a1a1a; color: #fff; border: none; padding: 5px 14px;
+  border-radius: 6px; font-size: 0.75rem; font-weight: 600; cursor: pointer;
+  font-family: 'Inter', sans-serif; transition: background 0.15s;
+}
+.copy-prompt-btn:hover { background: #333; }
+.copy-prompt-btn.copied { background: #059669; }
+.ad-image-gallery { border-top: 1px solid #eee; }
+.gallery-images { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch; }
+.gallery-images::-webkit-scrollbar { height: 4px; }
+.gallery-images::-webkit-scrollbar-thumb { background: #ccc; border-radius: 2px; }
+.gallery-slide { flex: 0 0 100%; scroll-snap-align: start; position: relative; }
+.gallery-slide img { width: 100%; display: block; }
+.gallery-remove {
+  position: absolute; top: 8px; right: 8px;
+  background: rgba(0,0,0,0.7); color: #fff; border: none; padding: 4px 10px;
+  border-radius: 4px; font-size: 0.7rem; cursor: pointer; opacity: 0; transition: opacity 0.15s;
+}
+.gallery-slide:hover .gallery-remove { opacity: 1; }
+.gallery-dots { display: flex; justify-content: center; gap: 6px; padding: 8px 0; }
+.gallery-dot { width: 8px; height: 8px; border-radius: 50%; background: #ddd; border: none; cursor: pointer; padding: 0; }
+.gallery-dot.active { background: #1a1a1a; }
+.gallery-count { text-align: center; font-size: 0.72rem; color: #999; padding-bottom: 6px; }
+.ad-image-dropzone {
+  border-top: 1px solid #eee; padding: 24px 16px; text-align: center;
+  cursor: pointer; color: #888; font-size: 0.82rem; transition: all 0.15s;
+  border: 2px dashed transparent; margin: 0;
+}
+.ad-image-dropzone:hover { background: #f5f5f0; color: #444; }
+.ad-image-dropzone.dragover { background: #ecfdf5; border-color: #22c55e; color: #059669; }
+.ad-image-dropzone span { display: flex; align-items: center; justify-content: center; gap: 6px; flex-direction: column; }
+.ad-image-dropzone .drop-hint { font-size: 0.72rem; color: #aaa; }
+.summary-bar {
+  position: sticky; bottom: 0; background: #1a1a1a; color: #fff;
+  padding: 12px 24px; display: flex; justify-content: center; gap: 32px;
+  font-size: 0.85rem; z-index: 100;
+}
+.summary-bar span { display: flex; align-items: center; gap: 6px; }
+.sb-green { color: #4ecdc4; }
+.sb-yellow { color: #ffd166; }
+.sb-red { color: #ef476f; }
+.count-badge {
+  display: inline-block; background: #1a1a1a; color: #fff; border-radius: 10px;
+  padding: 1px 7px; font-size: 0.7rem; margin-left: 4px; vertical-align: middle;
+}
+@media (max-width: 600px) {
+  .hero { padding: 40px 16px; }
+  .hero-stats { gap: 16px; }
+  .hero-stat .num { font-size: 1.8rem; }
+  .panel { padding: 20px 16px; }
+  .filters { padding: 14px; }
+  .filter-sep { display: none; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <h1>BookedSolid Pro &mdash; Mortgage Ads Matrix</h1>
+  <p class="subtitle">25 ads. 3 awareness stages. 11 angles.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">25</div><div class="label">Total Ads</div></div>
+    <div class="hero-stat"><div class="num">11</div><div class="label">Angles</div></div>
+    <div class="hero-stat"><div class="num">3</div><div class="label">Campaigns</div></div>
+    <div class="hero-stat"><div class="num">14</div><div class="label">Image Styles</div></div>
+  </div>
+</section>
+
+<div class="container">
+
+<div class="panel">
+  <h2>Mortgage Industry Benchmarks</h2>
+  <div class="perf-grid">
+    <div class="perf-item"><div class="val">$3K-15K</div><div class="desc">Per Funded Loan (Shared)</div></div>
+    <div class="perf-item"><div class="val">$443</div><div class="desc">Net Profit/Loan (MBA)</div></div>
+    <div class="perf-item"><div class="val">$500</div><div class="desc">BSP 10K Records</div></div>
+    <div class="perf-item"><div class="val">90%</div><div class="desc">Working Numbers</div></div>
+    <div class="perf-item"><div class="val">BANNED</div><div class="desc">Trigger Leads (Mar 2026)</div></div>
+    <div class="perf-item"><div class="val">58%</div><div class="desc">TCPA Lawsuit Increase YoY</div></div>
+  </div>
+</div>
+
+<div class="panel">
+  <div class="collapsible-header" onclick="toggleCollapsible(this)">
+    <h2 style="margin:0">Mortgage Industry Context</h2>
+  </div>
+  <div class="collapsible-body">
+    <h3>The Trigger Lead Ban</h3>
+    <ul class="feedback-list">
+      <li>Homebuyers Privacy Protection Act banned trigger leads March 2026</li>
+      <li>Trigger leads were $0.10-$0.50/lead with highest intent &mdash; the industry cheat code for 15 years</li>
+      <li>Every LO in America now competing for same shared leads from 3 aggregators at 10x-100x the price</li>
+    </ul>
+    <h3>The Math Problem</h3>
+    <ul class="feedback-list">
+      <li>LendingTree: $30-$150/lead, 0.5-2% close rate = $3,000-$15,000 per funded loan</li>
+      <li>Bankrate: $100-$250/lead = $3,750-$6,250 per funded loan</li>
+      <li>MBA data: $11,000-$12,500 to originate one loan, net profit $443</li>
+      <li>TCPA lawsuits up 58% YoY &mdash; shared leads create compliance risk</li>
+    </ul>
+    <h3>Target Audience</h3>
+    <ul class="feedback-list">
+      <li>Loan officers, branch managers, mortgage ops leads</li>
+      <li>Pain: pipeline collapsed overnight, shared leads hemorrhaging money, reps quitting</li>
+      <li>Landing page: solidbookedpro.com/mortgage</li>
+    </ul>
+  </div>
+</div>
+
+<div class="panel">
+  <h2>Campaign Structure</h2>
+  <div class="campaign-bar">
+    <div class="seg seg-c1">70% Problem Aware</div>
+    <div class="seg seg-c2">20% Pattern Interrupt</div>
+    <div class="seg seg-c3">10% Trust</div>
+  </div>
+  <div class="campaign-legend">
+    <span><span class="dot" style="background:#2d6a4f"></span> S2: &ldquo;This Sucks&rdquo; (15 ads) &mdash; trigger ban, shared lead cost, dead numbers, speed race, pipeline</span>
+    <span><span class="dot" style="background:#e76f51"></span> S3: &ldquo;Why It Sucks&rdquo; (7 ads) &mdash; cheeky, math/stats, blame shift</span>
+    <span><span class="dot" style="background:#264653"></span> S4: &ldquo;Why Us&rdquo; (3 ads) &mdash; guarantee, comparison, instant access</span>
+  </div>
+</div>
+
+<div class="filters" id="filters">
+  <span class="filter-label">Campaign:</span>
+  <button class="filter-btn active" data-filter="campaign" data-value="all">All</button>
+  <button class="filter-btn" data-filter="campaign" data-value="C1">S2: This Sucks</button>
+  <button class="filter-btn" data-filter="campaign" data-value="C2">S3: Why It Sucks</button>
+  <button class="filter-btn" data-filter="campaign" data-value="C3">S4: Why Us</button>
+  <div class="filter-sep"></div>
+  <span class="filter-label">Angle:</span>
+  <button class="filter-btn active" data-filter="angle" data-value="all">All</button>
+  <button class="filter-btn" data-filter="angle" data-value="A1">Trigger Lead Ban</button>
+  <button class="filter-btn" data-filter="angle" data-value="A2">Shared Lead Cost</button>
+  <button class="filter-btn" data-filter="angle" data-value="A3">Dead Numbers</button>
+  <button class="filter-btn" data-filter="angle" data-value="A4">Speed-to-Call Race</button>
+  <button class="filter-btn" data-filter="angle" data-value="A5">Pipeline Dependency</button>
+  <button class="filter-btn" data-filter="angle" data-value="A6">Cheeky</button>
+  <button class="filter-btn" data-filter="angle" data-value="A7">Math/Stats</button>
+  <button class="filter-btn" data-filter="angle" data-value="A8">Blame Shift</button>
+  <button class="filter-btn" data-filter="angle" data-value="A9">Guarantee</button>
+  <button class="filter-btn" data-filter="angle" data-value="A10">Comparison</button>
+  <button class="filter-btn" data-filter="angle" data-value="A11">Instant Access</button>
+  <div class="filter-sep"></div>
+  <span class="filter-label">Style:</span>
+  <button class="filter-btn active" data-filter="style" data-value="all">All</button>
+  <div class="filter-sep"></div>
+  <span class="filter-label">Status:</span>
+  <button class="filter-btn active" data-filter="vote" data-value="all">All</button>
+  <button class="filter-btn" data-filter="vote" data-value="approve">Approved</button>
+  <button class="filter-btn" data-filter="vote" data-value="changes">Changes</button>
+  <button class="filter-btn" data-filter="vote" data-value="reject">Rejected</button>
+  <button class="filter-btn" data-filter="vote" data-value="none">Unvoted</button>
+</div>
+
+<div class="ad-grid" id="adGrid"></div>
+
+</div>
+
+<div class="summary-bar" id="summaryBar">
+  <span>Approved: <strong class="sb-green" id="approvedCount">0</strong></span>
+  <span>Changes: <strong class="sb-yellow" id="changesCount">0</strong></span>
+  <span>Rejected: <strong class="sb-red" id="rejectedCount">0</strong></span>
+  <span>Remaining: <strong id="remainingCount">25</strong></span>
+</div>
+
+<script>
+
+const ADS = [
+
+  // === STAGE 2: "THIS SUCKS" - 15 ads (70%) ===
+  // --- A1: Trigger Lead Ban (5 ads) ---
+
+  {
+    id: "s2-a1-01", campaign: "C1", angle: "A1", style: "Editorial Article Format",
+    primary: "March 2026. Trigger leads \u2014 gone. Overnight.\n\nThe source that fed your pipeline for years. The $0.10 leads that actually converted. Banned.\n\nNow you\u2019re scrambling. Shared leads at $30-$150 each. Conversion rates in the basement. Your pipeline went from predictable to empty in 30 days.\n\nAnd nobody\u2019s talking about what happens next.",
+    imageText: "MORTGAGE OPS IN CRISIS AFTER TRIGGER LEAD BAN",
+    headline: "Your pipeline didn\u2019t slow down. It stopped.",
+    description: "See how mortgage teams are rebuilding pipeline after the trigger lead ban.",
+    cta: "See how it works \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Styled as an editorial news article screenshot. Clean white/off-white background with subtle newspaper grid texture. TOP: A thin red BREAKING banner strip. HEADLINE in large bold black serif text (DM Serif Display, ~44px): MORTGAGE OPS IN CRISIS AFTER TRIGGER LEAD BAN. Below in smaller gray text: March 2026 \u2014 Homebuyers Privacy Protection Act ends 15 years of trigger leads. A thin horizontal rule separates the headline from a blurred article excerpt. BOTTOM: solidbookedpro.com in muted gray. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No stock photo badges. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a1-02", campaign: "C1", angle: "A1", style: "Dark Shield",
+    primary: "You built your entire mortgage operation on trigger leads.\n\nEvery hire. Every quota. Every projection. All based on a source you didn\u2019t control.\n\nMarch 2026 \u2014 that source is illegal. And the alternatives cost 100x more.\n\nIf your pipeline depends on one vendor, you don\u2019t have a pipeline. You have a subscription that just got cancelled.",
+    imageText: "ONE SOURCE. ZERO BACKUP PLAN.",
+    headline: "Built your business on trigger leads?",
+    description: "Thousands of LOs are asking the same question right now.",
+    cta: "See how it works \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark navy background (#0f172a). Center: a large shield icon with a cracked/broken effect, rendered in dark gray with a red glow from the cracks. Inside the shield in bold white text: ONE SOURCE. and below: ZERO BACKUP PLAN. The shield is fractured down the middle. Below the shield: solidbookedpro.com in muted gray. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a1-03", campaign: "C1", angle: "A1", style: "CSV/Data Table with Status Badges",
+    primary: "Trigger leads banned. So you tried LoanBright.\n\n$20-$50 per lead. Sounds reasonable until you realize the quality is the same recycled data every other LO is calling.\n\nr/loanoriginators said it best: \u201cBuying mortgage leads as a rookie is a quick way to go broke.\u201d\n\nVeterans know it too. They just haven\u2019t found the alternative yet.",
+    imageText: "$20-$50/LEAD. STILL GARBAGE.",
+    headline: "Switched from triggers to LoanBright? Same problem.",
+    description: "Cheaper doesn\u2019t mean better. Ask anyone who\u2019s tried.",
+    cta: "Look at this \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark background (#111). A spreadsheet/CSV table showing lead data with status badges. Columns: Source, Cost/Lead, Quality, Status. Rows: LoanBright $20-$50 red RECYCLED badge, Trigger Leads $0.10 red BANNED badge, LendingTree $30-$150 yellow SHARED badge, Bankrate $100-$250 yellow SHARED badge. Large text overlay: $20-$50/LEAD. STILL GARBAGE. in bold white. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a1-04", campaign: "C1", angle: "A1", style: "Editorial Article Format",
+    primary: "For 15 years, trigger leads were the cheat code. Pull a credit report, get a lead in real time. Highest intent. Lowest cost.\n\nThe Homebuyers Privacy Protection Act ended that.\n\nNow every LO in America is competing for the same shared leads from the same 3 aggregators at 10x the price. And conversion rates are falling.",
+    imageText: "THE TRIGGER LEAD ERA IS OVER.",
+    headline: "Trigger leads are illegal. Now what?",
+    description: "The mortgage industry\u2019s best lead source is gone. Permanently.",
+    cta: "See how it works \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Editorial newspaper style. Clean off-white background. Large bold black serif headline: THE TRIGGER LEAD ERA IS OVER. Below: Homebuyers Privacy Protection Act \u2014 March 2026. A faded article body suggesting depth. A small OPINION tag in red at top-left. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A2: Shared Lead Cost (3 ads) ---
+
+  {
+    id: "s2-a2-01", campaign: "C1", angle: "A2", style: "Price Crossed Out Whiteboard",
+    primary: "LendingTree: $30-$150 per lead.\nClose rate: 0.5-2%.\nCost per funded loan: $3,000-$15,000.\n\nNet profit per funded loan after all costs: $443.\n\nYou\u2019re spending more to acquire the loan than you make on it. That\u2019s not a business model. That\u2019s a math problem.",
+    imageText: "$30-$150/lead. 0.5-2% close rate. Do the math.",
+    headline: "You\u2019re paying more for leads than profit per loan.",
+    description: "The mortgage lead math doesn\u2019t work anymore.",
+    cta: "Look at this \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Whiteboard style with light off-white background and marker texture. Handwritten math in black marker: $30-$150 per lead with a red X crossed through $150. Below: 0.5-2% close rate. Below: = $3,000-$15,000 per funded loan circled in red. Arrow points to: Net profit: $443 with !!! in red. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a2-02", campaign: "C1", angle: "A2", style: "Money Shredder",
+    primary: "Bankrate: $100-$250 per lead.\nAt 2% conversion, that\u2019s $5,000-$12,500 per funded loan.\n\nMBA says the average net profit per loan is $443.\n\nYou\u2019re not generating revenue. You\u2019re subsidizing lead vendors. Every \u201cpremium\u201d lead you buy makes the hole deeper.",
+    imageText: "$250 PER LEAD. $443 NET PROFIT PER LOAN.",
+    headline: "Your lead vendor makes more than you do.",
+    description: "The numbers don\u2019t lie. Neither does your P&L.",
+    cta: "See how it works \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark background. Center: photorealistic paper shredder with dollar bills being fed in showing $250 printed on them. Shredded strips fall out below. Bold white text at top: $250 PER LEAD. Below: $443 NET PROFIT PER LOAN. solidbookedpro.com at bottom in gray. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a2-03", campaign: "C1", angle: "A2", style: "Price Crossed Out Whiteboard",
+    primary: "MBA data: $11,000-$12,500 to originate one mortgage loan.\n\nAdd $3,000-$15,000 in lead acquisition costs on top.\n\nNet profit after everything: $443.\n\nYou\u2019re working 45-day loan cycles to make less than a weekend bartender. And the lead vendors are the only ones getting rich.",
+    imageText: "$11,000 TO ORIGINATE. $443 NET PROFIT.",
+    headline: "$443 net profit. Per loan. After everything.",
+    description: "The mortgage lead economics are broken.",
+    cta: "See how it works \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Whiteboard style. Handwritten math: Cost to originate: $11,000-$12,500 + Lead acquisition: $3,000-$15,000 with line underneath = Total: $14,000-$27,500. Arrow to: Net profit: $443 circled in red. Coffee stain marks on whiteboard. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A3: Dead Numbers (3 ads) ---
+
+  {
+    id: "s2-a3-01", campaign: "C1", angle: "A3", style: "Dirty vs Clean Card Comparison",
+    primary: "You buy the list. You load it into your dialer.\n\nHalf the numbers ring to voicemail. A quarter are disconnected. The rest? Wrong person.\n\nYour LOs spend 3 hours a day calling numbers that don\u2019t exist. That\u2019s not prospecting. That\u2019s busywork.",
+    imageText: "CALLED 200. REACHED 40.",
+    headline: "Your team isn\u2019t underperforming. The numbers are dead.",
+    description: "Most mortgage lists are 40-60% disconnected before you even dial.",
+    cta: "Look at this \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Split comparison. LEFT (red tinted): worn, coffee-stained lead list with numbers crossed out in red, DISCONNECTED stamps. Header: YOUR CURRENT LIST. Stats: 200 Dials / 40 Reached / 20% Contact Rate. RIGHT (green tinted): crisp data table with green checkmarks. Header: WHAT IT SHOULD LOOK LIKE. Stats: 200 Dials / 180 Reached / 90% Contact Rate. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a3-02", campaign: "C1", angle: "A3", style: "Split Person Comparison",
+    primary: "Your loan officers aren\u2019t lazy.\n\nThey show up. They dial. They follow the script.\n\nAnd they get voicemail, disconnected tones, and wrong numbers all day. Then you wonder why turnover is high and morale is low.\n\nIt\u2019s not the reps. It\u2019s the list.",
+    imageText: "3 HOURS OF CALLS. ZERO CONVERSATIONS.",
+    headline: "This is why your LOs hate calling.",
+    description: "It\u2019s not the rejection. It\u2019s calling numbers that don\u2019t exist.",
+    cta: "See how it works \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Split down the middle. LEFT: frustrated loan officer at desk, head in hands, dim lighting, headset around neck. Text: 3 HOURS OF CALLS. RIGHT: same person energized, on a call, leaning forward, well-lit. Text: ZERO CONVERSATIONS. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a3-03", campaign: "C1", angle: "A3", style: "Billo-Style Dark SaaS",
+    primary: "Your list doesn\u2019t include DNC status.\n\nSo your LOs are dialing numbers on the Do Not Call registry. Every call is a potential $43,000 fine.\n\nAnd your lead vendor? They disclaim liability in paragraph 47 of their terms. You\u2019re on the hook.",
+    imageText: "NO DNC STATUS. NO IDEA WHO YOU\u2019RE CALLING.",
+    headline: "Dialing without DNC data is a $43K gamble.",
+    description: "Every call to a DNC number is your liability, not your vendor\u2019s.",
+    cta: "Look at this \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark SaaS dashboard aesthetic \u2014 dark navy/charcoal background (#0f172a). Compliance warning screen mockup with red alert icon. Center text in bold white: NO DNC STATUS. Below: NO IDEA WHO YOU ARE CALLING. Red warning badge: $43,000 FINE PER VIOLATION. Sleek, modern, alarming. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A4: Speed-to-Call Race (2 ads) ---
+
+  {
+    id: "s2-a4-01", campaign: "C1", angle: "A4", style: "Billo-Style Dark SaaS",
+    primary: "Shared lead comes in. You call within 2 minutes. Fast, right?\n\nThree other LOs already called. The borrower picked up for the first one, maybe the second. By the time you call, they\u2019re annoyed. Or they already have a rate quote.\n\nYou\u2019re paying $50-$150 to be the person they don\u2019t answer for.",
+    imageText: "YOU\u2019RE THE 4TH CALL. THE BORROWER IS DONE TALKING.",
+    headline: "Shared leads = shared rejection.",
+    description: "If you\u2019re not first, you\u2019re paying full price for leftovers.",
+    cta: "Look at this \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark SaaS style. Phone call queue visualization \u2014 4 numbered positions (1st, 2nd, 3rd, 4th). Positions 1-3 green/filled. Position 4 (labeled YOU) is red with TOO LATE badge. Bold text: YOU ARE THE 4TH CALL. Below: THE BORROWER IS DONE TALKING. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a4-02", campaign: "C1", angle: "A4", style: "Modern Day Lending Pain Question",
+    primary: "TCPA lawsuits up 58% year over year.\n\nEvery shared lead gets sold to 3-5 lenders. That borrower gets 10+ calls in the first hour. They file complaints. They sue.\n\nYou\u2019re not just losing money on bad conversion. You\u2019re accumulating legal risk with every dial.",
+    imageText: "HOW MANY TIMES CAN ONE BORROWER GET CALLED?",
+    headline: "Shared leads are a liability now.",
+    description: "58% more TCPA lawsuits. Your shared lead vendor doesn\u2019t care.",
+    cta: "See how it works \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Clean modern design with question-forward layout. Large bold centered text: HOW MANY TIMES CAN ONE BORROWER GET CALLED? Below: visual showing 10+ calls in 1 hour with phone icons. Red stat badge: TCPA lawsuits +58% YoY. Clean, modern, slightly alarming. White/light background. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A5: Pipeline Dependency (3 ads) ---
+
+  {
+    id: "s2-a5-01", campaign: "C1", angle: "A5", style: "Editorial Article Format",
+    primary: "Pipeline\u2019s full in January. Dead by March.\n\nYou can\u2019t forecast. You can\u2019t hire confidently. You can\u2019t plan because your entire deal flow depends on whatever your lead vendor decides to send this week.\n\nThat\u2019s not a pipeline. That\u2019s a coin flip.",
+    imageText: "GOOD MONTH. BAD MONTH. REPEAT.",
+    headline: "You can\u2019t scale what you can\u2019t predict.",
+    description: "If your pipeline resets to zero every month, something is broken.",
+    cta: "Look at this \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Editorial article style. Off-white background. Bold serif headline: GOOD MONTH. BAD MONTH. REPEAT. Below: simple bar chart showing alternating high/low months \u2014 Jan (high), Feb (medium), Mar (low), Apr (high), May (low). Hand-drawn chart style. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a5-02", campaign: "C1", angle: "A5", style: "Dark Shield",
+    primary: "When you stop paying, leads stop coming.\n\nNo leads. No calls. No loans. Your entire mortgage operation shuts down because one vendor turned off the faucet.\n\nYou don\u2019t own your pipeline. You rent it. And the landlord just raised the price.",
+    imageText: "YOUR VENDOR CONTROLS YOUR PIPELINE.",
+    headline: "Stop paying, pipeline stops. That\u2019s the problem.",
+    description: "Your business shouldn\u2019t have a single point of failure.",
+    cta: "See how it works \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark navy background (#0f172a). Large shield icon, dark and imposing. Inside the shield in bold white text: YOUR VENDOR CONTROLS YOUR PIPELINE. Below: Stop paying. Pipeline stops. Subtle red glow around edges. solidbookedpro.com at bottom in gray. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s2-a5-03", campaign: "C1", angle: "A5", style: "Modern Day Lending Pain Question",
+    primary: "Your top producer left last quarter. Two more are interviewing.\n\nIt\u2019s not the comp plan. It\u2019s not the culture. It\u2019s that they sit in a chair for 8 hours dialing numbers that don\u2019t connect, talking to people who already chose another lender, and closing nothing.\n\nGood reps don\u2019t tolerate bad data. They just leave.",
+    imageText: "WHY DO YOUR BEST LOS KEEP LEAVING?",
+    headline: "Your best LOs are leaving. The data is why.",
+    description: "Retention starts with giving your team something worth calling.",
+    cta: "Look at this \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Clean modern design. Large bold centered text: WHY DO YOUR BEST LOS KEEP LEAVING? Below: visual of 5 person icons, 3 fading/walking away. Muted colors, modern sans-serif. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // === STAGE 3: "WHY IT SUCKS" - 7 ads (20%) ===
+  // --- A6: Cheeky (2 ads) ---
+
+  {
+    id: "s3-a6-01", campaign: "C2", angle: "A6", style: "Cleo-Style Product Hero",
+    primary: "Leads stop when you stop paying.\n\nThat\u2019s not a pipeline. That\u2019s a subscription to someone else\u2019s database. And they sell the same records to every LO in your zip code.\n\nThe problem isn\u2019t that leads are expensive. The problem is you\u2019re renting access to data you should own.",
+    imageText: "YOU DON\u2019T HAVE A PIPELINE. YOU HAVE A SUBSCRIPTION.",
+    headline: "Your pipeline has a cancel button.",
+    description: "If someone else controls your deal flow, it\u2019s not yours.",
+    cta: "You\u2019ll see this fast \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Minimal product hero style \u2014 clean, modern, lots of white space. Center: stylized cancel subscription button UI mockup, big red button with CANCEL PIPELINE text. Above in bold serif: YOU DON'T HAVE A PIPELINE. Below: YOU HAVE A SUBSCRIPTION. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s3-a6-02", campaign: "C2", angle: "A6", style: "Dark Shield",
+    primary: "You paid $75 for that lead.\n\nSo did Mike at CrossCountry. And Sarah at United Wholesale. And two guys at a broker shop across town.\n\nThe borrower got 5 calls in 12 minutes. They picked one. It wasn\u2019t you.\n\nThat\u2019s not a lead. That\u2019s a lottery ticket.",
+    imageText: "YOUR LEAD VENDOR SOLD THAT LEAD TO 4 OTHER LOS.",
+    headline: "Shared leads = paying for someone else\u2019s deal.",
+    description: "You\u2019re funding your competitor\u2019s pipeline.",
+    cta: "See what\u2019s happening \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark navy background. Shield/badge graphic with a receipt showing $75 duplicated 5 times, fanning out like cards. Bold white text: YOUR LEAD VENDOR SOLD THAT LEAD TO 4 OTHER LOS. Below: Same lead. 5 buyers. 1 winner. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A7: Math/Stats (2 ads) ---
+
+  {
+    id: "s3-a7-01", campaign: "C2", angle: "A7", style: "Price Crossed Out Whiteboard",
+    primary: "LendingTree: $3,000-$15,000 per funded loan.\nBankrate: $3,750-$6,250 per funded loan.\nLoanBright: terrible quality at any price.\n\nOr: $500 for 10,000 mortgage-relevant records with working phone numbers. Do your own math.\n\nOne of these models scales. The others break you.",
+    imageText: "$3,000-$15,000 PER FUNDED LOAN... OR $500 FOR 10,000 RECORDS.",
+    headline: "The mortgage lead math, side by side.",
+    description: "$500 for 10,000 records vs $15,000 for one funded loan.",
+    cta: "See how it works \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Whiteboard comparison. LEFT column: THE OLD WAY with prices crossed out in red \u2014 $3,000-$15,000 per funded loan (LendingTree), $3,750-$6,250 (Bankrate), BANNED (Triggers). RIGHT column: THE NEW WAY \u2014 $500 for 10,000 records circled in green. Big red X over left, big green checkmark over right. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s3-a7-02", campaign: "C2", angle: "A7", style: "Billo-Style Dark SaaS",
+    primary: "200 dials. 40 pickups. 8 conversations. 1 application.\n\nThe bottleneck isn\u2019t your script or your closer. It\u2019s the 160 dials that never connected.\n\nFix the contact rate and every downstream metric improves. More conversations per hour. More applications per week. More funded loans per month.",
+    imageText: "YOU\u2019RE TRACKING DIALS. YOU SHOULD TRACK CONVERSATIONS.",
+    headline: "Contact rate is the only metric that matters.",
+    description: "Everything downstream depends on reaching real people.",
+    cta: "You\u2019ll see this fast \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark SaaS dashboard style. Funnel visualization: Top: 200 DIALS (wide). Middle: 40 PICKUPS (narrower, red). Next: 8 CONVERSATIONS (orange). Bottom: 1 APPLICATION (tiny, green). Arrow pointing to the 200-to-40 gap: THIS IS THE BOTTLENECK. Bold text below: YOU ARE TRACKING DIALS. YOU SHOULD TRACK CONVERSATIONS. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A8: Blame Shift (3 ads) ---
+
+  {
+    id: "s3-a8-01", campaign: "C2", angle: "A8", style: "Split Person Comparison",
+    primary: "Same reps. Same scripts. Same hours.\n\nGive them a list where 60% of numbers are dead \u2014 they look terrible. Give them a list where 90% connect \u2014 they look like closers.\n\nThe variable isn\u2019t talent. It\u2019s data. Bad data makes good LOs look average. And it\u2019s costing you hires, morale, and funded loans.",
+    imageText: "YOUR LOS AREN\u2019T UNDERPERFORMING.",
+    headline: "Bad data makes your best LOs look average.",
+    description: "It was never the reps. It was always the list.",
+    cta: "See what\u2019s happening \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Split comparison. LEFT: dejected LO at desk, dim lighting, slumped. Label: 60% DEAD NUMBERS in red. RIGHT: same person energized, on a call, well-lit. Label: 90% WORKING NUMBERS in green. Center bold text: YOUR LOS AREN'T UNDERPERFORMING. Below: The list is. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s3-a8-02", campaign: "C2", angle: "A8", style: "Money Shredder",
+    primary: "You\u2019re hiring better LOs. Buying new dialers. Rewriting scripts. Running more training.\n\nNone of it will matter if half the numbers on your list are disconnected.\n\nYou\u2019re optimizing everything downstream of the real problem. The data is upstream. Fix that first.",
+    imageText: "WRONG PROBLEM.",
+    headline: "You keep fixing the wrong thing.",
+    description: "Scripts, training, dialers \u2014 none of it fixes dead numbers.",
+    cta: "See how it works \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark background. Paper shredder consuming documents labeled New Script, Better Dialer, More Training, New Hires. Shredded pieces fall uselessly. Above: huge bold white text WRONG PROBLEM. Below: The data is upstream. Fix that first. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  {
+    id: "s3-a8-03", campaign: "C2", angle: "A8", style: "Editorial Article Format",
+    primary: "Trigger leads worked because they had one thing: real-time intent signals tied to verified contact info.\n\nThe aggregators selling you \u201creplacements\u201d don\u2019t have that. They have recycled data, shared with everyone, at 100x the price.\n\nThe question isn\u2019t \u201cwhere do I buy leads now?\u201d The question is: \u201cwhy am I still buying leads at all when I could own the data?\u201d",
+    imageText: "THE TRIGGER LEAD REPLACEMENT NOBODY\u2019S TALKING ABOUT",
+    headline: "You\u2019re asking the wrong question.",
+    description: "Stop replacing trigger leads. Replace the model.",
+    cta: "You\u2019ll see this fast \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Editorial investigative article style. Off-white background. Bold serif headline: THE TRIGGER LEAD REPLACEMENT NOBODY IS TALKING ABOUT. A DEEP DIVE tag in blue. Subhead: Why owning data beats buying leads. Blurred body text. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // === STAGE 4: "WHY US" - 3 ads (10%) ===
+  // --- A9: Guarantee (1 ad) ---
+
+  {
+    id: "s4-a9-01", campaign: "C3", angle: "A9", style: "CSV/Data Table with Status Badges",
+    primary: "90% working number accuracy. If a number doesn\u2019t connect, we replace it. Free. No cap. No expiration.\n\nDNC status included on every record. No contracts. No minimums. Cancel anytime.\n\n$500 for 10,000 mortgage-relevant records. Equity data, loan age, property value, working phones, 85+ data points per record.\n\nYour current vendor won\u2019t guarantee their numbers. That tells you everything.",
+    imageText: "EVERY BAD NUMBER REPLACED. FREE. NO LIMIT.",
+    headline: "We guarantee our data. They don\u2019t.",
+    description: "Every disconnected number replaced. No limit. No questions.",
+    cta: "See how it works \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Dark background (#111). Clean data table mockup showing sample mortgage records with columns: Phone, Status, DNC, Equity, Loan Age. Green VERIFIED badges next to phone numbers. One row shows red DISCONNECTED badge with green REPLACED FREE tag overlaying it. Bold white text at top: EVERY BAD NUMBER REPLACED. FREE. NO LIMIT. Below table: 90% working numbers. 85+ data points. $500 for 10K records. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A10: Comparison (1 ad) ---
+
+  {
+    id: "s4-a10-01", campaign: "C3", angle: "A10", style: "Dirty vs Clean Card Comparison",
+    primary: "LendingTree: $30-$150/lead. Shared with 3-5 lenders. No phone verification. No DNC status.\n\nBankrate: $100-$250/lead. Same shared model. Same speed-to-call race.\n\nTrigger leads: Illegal as of March 2026.\n\nBookedSolid Pro: $500 for 10,000 records. 90% working numbers. DNC included. 85+ data points. Bad numbers replaced free. No contract.",
+    imageText: "COMPARE. THEN DECIDE.",
+    headline: "Compare. Then decide.",
+    description: "$0.05/record vs $150/lead. Same borrower pool.",
+    cta: "See the difference \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Split comparison card style. LEFT (dirty/red tinted): worn card showing LendingTree / Bankrate with $30-$250/lead, Shared 3-5x, No DNC, No guarantee. Red EXPENSIVE stamp. RIGHT (clean/green tinted): crisp card showing BookedSolid Pro with $0.05/record, Exclusive, DNC included, Bad numbers replaced free. Green COMPARE stamp. Center: VS in bold. solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  },
+
+  // --- A11: Instant Access (1 ad) ---
+
+  {
+    id: "s4-a11-01", campaign: "C3", angle: "A11", style: "Cleo-Style Product Hero",
+    primary: "Pick your market. Pull your list. See the data.\n\n300 mortgage-relevant records. Working phone numbers. Equity data. Loan age. Property value. DNC status. 85+ data points.\n\nNo demo. No sales call. No credit card. Just data you can test today.\n\nIf it doesn\u2019t work, you\u2019ve lost nothing. If it does, you just found your post-trigger-lead pipeline.",
+    imageText: "300 FREE RECORDS. NO CREDIT CARD. 60 SECONDS.",
+    headline: "Test it. 300 free records. No card.",
+    description: "60 seconds to see if this replaces your current lead source.",
+    cta: "Get your free records \u2192",
+    aiPrompt: "Create a static ad image, 1024x1024 pixels (1:1 square). Clean minimal product hero style with lots of white space. Center: stylized UI mockup showing a Get 300 Free Records button in green (#22c55e) with cursor about to click. Above: 300 FREE RECORDS. in bold serif. Below the button: NO CREDIT CARD. 60 SECONDS. Three small icons: clock (60 sec), credit card with X (no card), shield (no risk). solidbookedpro.com at bottom. BRAND: BookedSolid Pro. CRITICAL NEGATIVES: No watermarks. No misspellings. Single static image, NOT carousel."
+  }
+
+];
+
+const ANGLE_LABELS = {
+  A1: "Trigger Lead Ban", A2: "Shared Lead Cost", A3: "Dead Numbers",
+  A4: "Speed-to-Call Race", A5: "Pipeline Dependency", A6: "Cheeky",
+  A7: "Math/Stats", A8: "Blame Shift", A9: "Guarantee",
+  A10: "Comparison", A11: "Instant Access"
+};
+
+const CAMPAIGN_LABELS = {
+  C1: "S2: This Sucks", C2: "S3: Why It Sucks", C3: "S4: Why Us"
+};
+
+const CAMPAIGN_TAG_CLASS = { C1: "tag-c1", C2: "tag-c2", C3: "tag-c3" };
+
+const votes = JSON.parse(localStorage.getItem('bsp-mortgage-votes') || '{}');
+const images = JSON.parse(localStorage.getItem('bsp-mortgage-images') || '{}');
+let activeFilters = { campaign: "all", angle: "all", style: "all", vote: "all" };
+
+function populateStyleFilters() {
+  const styles = [...new Set(ADS.map(a => a.style))].sort();
+  const allStyleBtns = document.querySelectorAll('[data-filter="style"]');
+  const styleAllBtn = allStyleBtns[0];
+  const parent = styleAllBtn.parentNode;
+  let insertBefore = styleAllBtn.nextSibling;
+  while (insertBefore && !insertBefore.classList?.contains('filter-sep')) {
+    insertBefore = insertBefore.nextSibling;
+  }
+  styles.forEach(s => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.filter = 'style';
+    btn.dataset.value = s;
+    btn.textContent = s;
+    parent.insertBefore(btn, insertBefore);
+  });
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function buildCard(ad) {
+  const campaignLabel = CAMPAIGN_LABELS[ad.campaign] || ad.campaign;
+  const angleLabel = ANGLE_LABELS[ad.angle] || ad.angle;
+  const tagClass = CAMPAIGN_TAG_CLASS[ad.campaign] || "tag-c1";
+  const v = votes[ad.id] || null;
+  const adImages = images[ad.id] || [];
+
+  let galleryHTML = '';
+  if (adImages.length > 0) {
+    const slides = adImages.map((src, i) =>
+      '<div class="gallery-slide"><img src="' + escapeHtml(src) + '" alt="Ad image ' + (i+1) + '"><button class="gallery-remove" onclick="removeImage(\'' + ad.id + '\', ' + i + ')">Remove</button></div>'
+    ).join('');
+    const dots = adImages.map((_, i) =>
+      '<button class="gallery-dot' + (i === 0 ? ' active' : '') + '" onclick="scrollGallery(\'' + ad.id + '\', ' + i + ')"></button>'
+    ).join('');
+    galleryHTML =
+      '<div class="ad-image-gallery">' +
+        '<div class="gallery-images" id="gallery-' + ad.id + '">' + slides + '</div>' +
+        (adImages.length > 1 ? '<div class="gallery-dots" id="dots-' + ad.id + '">' + dots + '</div>' : '') +
+        '<div class="gallery-count">' + adImages.length + ' image' + (adImages.length > 1 ? 's' : '') + '</div>' +
+      '</div>';
+  }
+
+  return '<div class="ad-card" data-id="' + ad.id + '" data-campaign="' + ad.campaign + '" data-angle="' + ad.angle + '" data-style="' + escapeHtml(ad.style) + '" data-vote="' + (v || 'none') + '">' +
+    '<div class="ad-tags">' +
+      '<span class="tag ' + tagClass + '">' + campaignLabel + '</span>' +
+      '<span class="tag tag-angle">' + angleLabel + '</span>' +
+      '<span class="tag tag-style">' + escapeHtml(ad.style) + '</span>' +
+    '</div>' +
+    '<div class="fb-header">' +
+      '<div class="fb-avatar">BP</div>' +
+      '<div><div class="fb-name">BookedSolid Pro</div><div class="fb-sponsored">Sponsored</div></div>' +
+    '</div>' +
+    '<div class="ad-primary">' + ad.primary + '</div>' +
+    galleryHTML +
+    '<div class="ad-image-dropzone" ondragover="dzOver(event)" ondragleave="dzLeave(event)" ondrop="dzDrop(event,\'' + ad.id + '\')" onclick="dzClick(\'' + ad.id + '\')">' +
+      '<span>Drop image here or click to upload<span class="drop-hint">PNG, JPG, WebP</span></span>' +
+      '<input type="file" accept="image/*" multiple style="display:none" id="file-' + ad.id + '" onchange="handleFiles(this.files,\'' + ad.id + '\')">' +
+    '</div>' +
+    '<div class="ad-link-preview">' +
+      '<div class="ad-headline">' + ad.headline + '</div>' +
+      '<div class="ad-description">' + ad.description + '</div>' +
+      '<div class="ad-cta-row">' +
+        '<span class="ad-domain">SOLIDBOOKEDPRO.COM</span>' +
+        '<button class="ad-cta-btn">' + ad.cta + '</button>' +
+      '</div>' +
+    '</div>' +
+    '<div class="vote-row">' +
+      '<button class="vote-btn' + (v === 'approve' ? ' voted-approve' : '') + '" onclick="vote(\'' + ad.id + '\',\'approve\')">Approve</button>' +
+      '<button class="vote-btn' + (v === 'changes' ? ' voted-changes' : '') + '" onclick="vote(\'' + ad.id + '\',\'changes\')">Changes</button>' +
+      '<button class="vote-btn' + (v === 'reject' ? ' voted-reject' : '') + '" onclick="vote(\'' + ad.id + '\',\'reject\')">Reject</button>' +
+    '</div>' +
+    '<div class="ai-prompt-toggle" onclick="togglePrompt(this)">Show AI Image Prompt</div>' +
+    '<div class="ai-prompt-body">' + escapeHtml(ad.aiPrompt || 'No AI prompt available.') + '<button class="copy-prompt-btn" onclick="copyPrompt(this, event)">Copy</button></div>' +
+  '</div>';
+}
+
+function render() {
+  const grid = document.getElementById('adGrid');
+  const cards = ADS.map(ad => ({ html: buildCard(ad), show: matchesFilters(ad), ad }));
+  grid.innerHTML = cards.map(c => c.html).join('');
+  const cardEls = grid.querySelectorAll('.ad-card');
+  cards.forEach((c, i) => { if (!c.show) cardEls[i].style.display = 'none'; });
+  updateSummary();
+}
+
+function matchesFilters(ad) {
+  const v = votes[ad.id] || 'none';
+  if (activeFilters.campaign !== 'all' && ad.campaign !== activeFilters.campaign) return false;
+  if (activeFilters.angle !== 'all' && ad.angle !== activeFilters.angle) return false;
+  if (activeFilters.style !== 'all' && ad.style !== activeFilters.style) return false;
+  if (activeFilters.vote !== 'all' && v !== activeFilters.vote) return false;
+  return true;
+}
+
+function vote(id, type) {
+  if (votes[id] === type) { delete votes[id]; } else { votes[id] = type; }
+  localStorage.setItem('bsp-mortgage-votes', JSON.stringify(votes));
+  render();
+}
+
+function updateSummary() {
+  let approved = 0, changes = 0, rejected = 0;
+  ADS.forEach(ad => {
+    const v = votes[ad.id];
+    if (v === 'approve') approved++;
+    else if (v === 'changes') changes++;
+    else if (v === 'reject') rejected++;
+  });
+  document.getElementById('approvedCount').textContent = approved;
+  document.getElementById('changesCount').textContent = changes;
+  document.getElementById('rejectedCount').textContent = rejected;
+  document.getElementById('remainingCount').textContent = ADS.length - approved - changes - rejected;
+}
+
+document.getElementById('filters').addEventListener('click', function(e) {
+  if (!e.target.classList.contains('filter-btn')) return;
+  var type = e.target.dataset.filter;
+  var value = e.target.dataset.value;
+  activeFilters[type] = value;
+  document.querySelectorAll('[data-filter="' + type + '"]').forEach(function(btn) { btn.classList.remove('active'); });
+  e.target.classList.add('active');
+  render();
+});
+
+function toggleCollapsible(header) {
+  header.classList.toggle('open');
+  header.nextElementSibling.classList.toggle('open');
+}
+
+function togglePrompt(el) {
+  var body = el.nextElementSibling;
+  body.classList.toggle('open');
+  el.textContent = body.classList.contains('open') ? 'Hide AI Image Prompt' : 'Show AI Image Prompt';
+}
+
+function copyPrompt(btn, e) {
+  e.stopPropagation();
+  var text = btn.parentElement.textContent.replace('Copy', '').replace('Copied!', '').trim();
+  navigator.clipboard.writeText(text).then(function() {
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(function() { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+function dzOver(e) { e.preventDefault(); e.currentTarget.classList.add('dragover'); }
+function dzLeave(e) { e.currentTarget.classList.remove('dragover'); }
+function dzDrop(e, id) { e.preventDefault(); e.currentTarget.classList.remove('dragover'); handleFiles(e.dataTransfer.files, id); }
+function dzClick(id) { document.getElementById('file-' + id).click(); }
+
+function handleFiles(files, id) {
+  if (!files.length) return;
+  if (!images[id]) images[id] = [];
+  Array.from(files).forEach(function(file) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      images[id].push(e.target.result);
+      localStorage.setItem('bsp-mortgage-images', JSON.stringify(images));
+      render();
+    };
+    reader.readAsDataURL(file);
+  });
+}
+
+function removeImage(id, index) {
+  if (!images[id]) return;
+  images[id].splice(index, 1);
+  if (images[id].length === 0) delete images[id];
+  localStorage.setItem('bsp-mortgage-images', JSON.stringify(images));
+  render();
+}
+
+function scrollGallery(id, index) {
+  var gallery = document.getElementById('gallery-' + id);
+  if (!gallery) return;
+  var slides = gallery.querySelectorAll('.gallery-slide');
+  if (slides[index]) slides[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  var dots = document.querySelectorAll('#dots-' + id + ' .gallery-dot');
+  dots.forEach(function(d, i) { d.classList.toggle('active', i === index); });
+}
+
+populateStyleFilters();
+render();
+
+</script>
+</body>
+</html>
