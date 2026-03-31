@@ -1044,7 +1044,7 @@ function buildCard(ad) {
     galleryHTML +
     '<div class="ad-image-dropzone" ondragover="dzOver(event)" ondragleave="dzLeave(event)" ondrop="dzDrop(event,\'' + ad.id + '\')" onclick="dzClick(\'' + ad.id + '\')">' +
       '<span>Drop image here or click to upload<span class="drop-hint">PNG, JPG, WebP</span></span>' +
-      '<input type="file" accept="image/*" multiple style="display:none" id="file-' + ad.id + '" onchange="handleFiles(this.files,\'' + ad.id + '\')">' +
+      '<input type="file" accept="image/*" multiple style="display:none" id="file-' + ad.id + '" onchange="handleFiles(this.files,\'' + ad.id + '\')" onclick="event.stopPropagation()">' +
     '</div>' +
     '<div class="ad-link-preview">' +
       '<div class="ad-headline">' + ad.headline + '</div>' +
