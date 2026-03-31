@@ -563,7 +563,45 @@ const CAMPAIGN_LABELS = {
 const CAMPAIGN_TAG_CLASS = { C1: "tag-c1", C2: "tag-c2", C3: "tag-c3" };
 
 const votes = JSON.parse(localStorage.getItem('bsp-roofing-votes') || '{}');
-const images = JSON.parse(localStorage.getItem('bsp-roofing-images') || '{}');
+const DB_NAME = 'bsp-ads-images';
+const DB_STORE = 'images';
+let _db = null;
+
+function openDB() {
+  return new Promise((resolve, reject) => {
+    if (_db) return resolve(_db);
+    const req = indexedDB.open(DB_NAME, 1);
+    req.onupgradeneeded = () => req.result.createObjectStore(DB_STORE);
+    req.onsuccess = () => { _db = req.result; resolve(_db); };
+    req.onerror = () => reject(req.error);
+  });
+}
+
+async function getImages(id) {
+  try {
+    const db = await openDB();
+    return new Promise((resolve) => {
+      const tx = db.transaction(DB_STORE, 'readonly');
+      const req = tx.objectStore(DB_STORE).get('imgs-'+id);
+      req.onsuccess = () => resolve(req.result || []);
+      req.onerror = () => resolve([]);
+    });
+  } catch { return []; }
+}
+
+async function saveImages(id, imgs) {
+  try {
+    const db = await openDB();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(DB_STORE, 'readwrite');
+      tx.objectStore(DB_STORE).put(imgs, 'imgs-'+id);
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => { alert('Storage error. Try removing some images.'); reject(); };
+    });
+  } catch(e) {
+    alert('Storage error: ' + e.message);
+  }
+}
 let activeFilters = { campaign: "all", angle: "all", style: "all", vote: "all" };
 
 function populateStyleFilters() {
@@ -594,24 +632,6 @@ function buildCard(ad) {
   const angleLabel = ANGLE_LABELS[ad.angle] || ad.angle;
   const tagClass = CAMPAIGN_TAG_CLASS[ad.campaign] || "tag-c1";
   const v = votes[ad.id] || null;
-  const adImages = images[ad.id] || [];
-
-  let galleryHTML = '';
-  if (adImages.length > 0) {
-    const slides = adImages.map((src, i) =>
-      '<div class="gallery-slide"><img src="' + escapeHtml(src) + '" alt="Ad image ' + (i+1) + '"><button class="gallery-remove" onclick="removeImage(\'' + ad.id + '\', ' + i + ')">Remove</button></div>'
-    ).join('');
-    const dots = adImages.map((_, i) =>
-      '<button class="gallery-dot' + (i === 0 ? ' active' : '') + '" onclick="scrollGallery(\'' + ad.id + '\', ' + i + ')"></button>'
-    ).join('');
-    galleryHTML =
-      '<div class="ad-image-gallery">' +
-        '<div class="gallery-images" id="gallery-' + ad.id + '">' + slides + '</div>' +
-        (adImages.length > 1 ? '<div class="gallery-dots" id="dots-' + ad.id + '">' + dots + '</div>' : '') +
-        '<div class="gallery-count">' + adImages.length + ' image' + (adImages.length > 1 ? 's' : '') + '</div>' +
-      '</div>';
-  }
-
   return '<div class="ad-card" data-id="' + ad.id + '" data-campaign="' + ad.campaign + '" data-angle="' + ad.angle + '" data-style="' + escapeHtml(ad.style) + '" data-vote="' + (v || 'none') + '">' +
     '<div class="ad-tags">' +
       '<span class="tag ' + tagClass + '">' + campaignLabel + '</span>' +
@@ -623,11 +643,7 @@ function buildCard(ad) {
       '<div><div class="fb-name">BookedSolid Pro</div><div class="fb-sponsored">Sponsored</div></div>' +
     '</div>' +
     '<div class="ad-primary">' + ad.primary + '</div>' +
-    galleryHTML +
-    '<div class="ad-image-dropzone" ondragover="dzOver(event)" ondragleave="dzLeave(event)" ondrop="dzDrop(event,\'' + ad.id + '\')" onclick="dzClick(\'' + ad.id + '\')">' +
-      '<span>Drop image here or click to upload<span class="drop-hint">PNG, JPG, WebP</span></span>' +
-      '<input type="file" accept="image/*" multiple style="display:none" id="file-' + ad.id + '" onchange="handleFiles(this.files,\'' + ad.id + '\')" onclick="event.stopPropagation()">' +
-    '</div>' +
+    renderGallery(ad.id, ad.headline) +
     '<div class="ad-link-preview">' +
       '<div class="ad-headline">' + ad.headline + '</div>' +
       '<div class="ad-description">' + ad.description + '</div>' +
@@ -646,6 +662,42 @@ function buildCard(ad) {
   '</div>';
 }
 
+function renderGalleryHTML(imgs, id, headline) {
+  let html = '<div class="ad-image-gallery">';
+  if (imgs.length > 0) {
+    html += '<div class="gallery-images" id="gallery-' + id + '">';
+    imgs.forEach(function(src, i) {
+      html += '<div class="gallery-slide"><img src="' + src + '" alt="Creative ' + (i+1) + ' for ' + headline + '" /><button class="gallery-remove" onclick="event.stopPropagation();removeImage(\'' + id + '\',' + i + ')">Remove</button></div>';
+    });
+    html += '</div>';
+    if (imgs.length > 1) {
+      html += '<div class="gallery-dots">';
+      imgs.forEach(function(_, i) {
+        html += '<button class="gallery-dot ' + (i===0?'active':'') + '" onclick="scrollGallery(\'' + id + '\',' + i + ')"></button>';
+      });
+      html += '</div>';
+      html += '<div class="gallery-count">' + imgs.length + ' image' + (imgs.length>1?'s':'') + '</div>';
+    }
+  }
+  html += '<div class="ad-image-dropzone" id="dropzone-' + id + '" onclick="document.getElementById(\'upload-' + id + '\').click()">';
+  html += '<span>' + (imgs.length > 0 ? '+ Add More Images' : '+ Add Rendered Images') + '<span class="drop-hint">or drag &amp; drop</span></span>';
+  html += '<input type="file" id="upload-' + id + '" accept="image/*" multiple style="display:none" onchange="handleFiles(\'' + id + '\',this.files)" />';
+  html += '</div></div>';
+  return html;
+}
+
+function renderGallery(id, headline) {
+  setTimeout(async function() {
+    const imgs = await getImages(id);
+    const container = document.getElementById('gallery-container-'+id);
+    if (container) {
+      container.innerHTML = renderGalleryHTML(imgs, id, headline);
+      setupDropzones();
+    }
+  }, 0);
+  return '<div id="gallery-container-' + id + '">' + renderGalleryHTML([], id, headline) + '</div>';
+}
+
 function render() {
   const grid = document.getElementById('adGrid');
   const cards = ADS.map(ad => ({ html: buildCard(ad), show: matchesFilters(ad), ad }));
@@ -653,6 +705,7 @@ function render() {
   const cardEls = grid.querySelectorAll('.ad-card');
   cards.forEach((c, i) => { if (!c.show) cardEls[i].style.display = 'none'; });
   updateSummary();
+  setupDropzones();
 }
 
 function matchesFilters(ad) {
@@ -715,30 +768,54 @@ function copyPrompt(btn, e) {
   });
 }
 
-function dzOver(e) { e.preventDefault(); e.currentTarget.classList.add('dragover'); }
-function dzLeave(e) { e.currentTarget.classList.remove('dragover'); }
-function dzDrop(e, id) { e.preventDefault(); e.currentTarget.classList.remove('dragover'); handleFiles(e.dataTransfer.files, id); }
-function dzClick(id) { document.getElementById('file-' + id).click(); }
+function setupDropzones() {
+  document.querySelectorAll('.ad-image-dropzone').forEach(function(zone) {
+    zone.addEventListener('dragover', function(e) { e.preventDefault(); zone.classList.add('dragover'); });
+    zone.addEventListener('dragleave', function() { zone.classList.remove('dragover'); });
+    zone.addEventListener('drop', function(e) {
+      e.preventDefault();
+      zone.classList.remove('dragover');
+      const id = zone.id.replace('dropzone-', '');
+      if (e.dataTransfer.files.length) handleFiles(id, e.dataTransfer.files);
+    });
+  });
+}
 
-function handleFiles(files, id) {
+async function handleFiles(id, files) {
   if (!files.length) return;
-  if (!images[id]) images[id] = [];
+  const imgs = await getImages(id);
+  let loaded = 0;
+  const totalImages = Array.from(files).filter(function(f) { return f.type.startsWith('image/'); }).length;
   Array.from(files).forEach(function(file) {
-    var reader = new FileReader();
+    if (!file.type.startsWith('image/')) return;
+    const reader = new FileReader();
     reader.onload = function(e) {
-      images[id].push(e.target.result);
-      localStorage.setItem('bsp-roofing-images', JSON.stringify(images));
-      render();
+      const img = new Image();
+      img.onload = async function() {
+        const maxW = 800;
+        let w = img.width, h = img.height;
+        if (w > maxW) { h = Math.round(h * maxW / w); w = maxW; }
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        const ctx = canvas.getContext('2d');
+        ctx.drawImage(img, 0, 0, w, h);
+        imgs.push(canvas.toDataURL('image/jpeg', 0.85));
+        loaded++;
+        if (loaded === totalImages) {
+          await saveImages(id, imgs);
+          render();
+        }
+      };
+      img.src = e.target.result;
     };
     reader.readAsDataURL(file);
   });
 }
 
-function removeImage(id, index) {
-  if (!images[id]) return;
-  images[id].splice(index, 1);
-  if (images[id].length === 0) delete images[id];
-  localStorage.setItem('bsp-roofing-images', JSON.stringify(images));
+async function removeImage(id, index) {
+  const imgs = await getImages(id);
+  imgs.splice(index, 1);
+  await saveImages(id, imgs);
   render();
 }
 
@@ -753,6 +830,7 @@ function scrollGallery(id, index) {
 
 populateStyleFilters();
 render();
+setupDropzones();
 
 </script>
 </body>
