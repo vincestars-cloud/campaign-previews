@@ -1,0 +1,1399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Oma Organics — Deep Buyer Research</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Outfit', sans-serif; background: #FAF8F5; color: #1a1714; line-height: 1.6; }
+h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+
+/* Hero */
+.hero {
+  background: linear-gradient(135deg, #1a1714, #2a2520);
+  color: #FAF8F5;
+  padding: 60px 24px 48px;
+  text-align: center;
+}
+.hero h1 {
+  font-size: 2.6rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  margin-bottom: 8px;
+  color: #FAF8F5;
+}
+.hero .subtitle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  color: #bba96a;
+  margin-bottom: 36px;
+  letter-spacing: 0.04em;
+}
+.hero-stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.hero-stat {
+  text-align: center;
+}
+.hero-stat .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #9e8a4f;
+  display: block;
+}
+.hero-stat .label {
+  font-size: 0.78rem;
+  color: #bba96a;
+  font-weight: 400;
+  max-width: 160px;
+}
+.back-link {
+  display: inline-block;
+  margin-top: 18px;
+  color: #bba96a;
+  text-decoration: none;
+  font-size: 0.85rem;
+  border: 1px solid #bba96a;
+  padding: 8px 22px;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+}
+.back-link:hover { background: #bba96a; color: #1a1714; }
+
+/* Framing Box */
+.framing-box {
+  background: linear-gradient(135deg, #2a2520, #1a1714);
+  border-left: 4px solid #9e8a4f;
+  color: #FAF8F5;
+  padding: 36px 32px;
+  max-width: 900px;
+  margin: -1px auto 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+}
+.framing-box strong { color: #bba96a; }
+.framing-box .framing-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  margin-top: 16px;
+}
+.framing-box .framing-col p { margin-bottom: 10px; }
+.framing-label {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  color: #9e8a4f;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* Tab Navigation */
+.tab-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  padding: 20px 16px 0;
+  max-width: 1100px;
+  margin: 0 auto;
+  position: sticky;
+  top: 0;
+  background: #FAF8F5;
+  z-index: 100;
+  border-bottom: 1px solid #e8e4de;
+  padding-bottom: 14px;
+}
+.tab-btn {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.78rem;
+  font-weight: 500;
+  padding: 8px 16px;
+  border: 1px solid #d4cfc7;
+  background: #fff;
+  color: #7a7068;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.tab-btn:hover { border-color: #9e8a4f; color: #1a1714; }
+.tab-btn.active {
+  background: #1a1714;
+  color: #bba96a;
+  border-color: #1a1714;
+}
+
+/* Tab Content */
+.tab-content {
+  display: none;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 32px 20px 60px;
+}
+.tab-content.active { display: block; }
+.tab-content h2 {
+  font-size: 2rem;
+  color: #1a1714;
+  margin-bottom: 6px;
+}
+.tab-content h3 {
+  font-size: 1.45rem;
+  color: #1a1714;
+  margin: 28px 0 12px;
+}
+.tab-content h4 {
+  font-size: 1.15rem;
+  color: #7a7068;
+  margin: 20px 0 10px;
+}
+.tab-desc {
+  font-size: 0.9rem;
+  color: #7a7068;
+  margin-bottom: 28px;
+}
+
+/* Quote Cards */
+.quote-card {
+  background: #fff;
+  border-left: 4px solid #9e8a4f;
+  padding: 20px 24px;
+  margin-bottom: 16px;
+  border-radius: 0 6px 6px 0;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+.quote-card .quote-text {
+  font-style: italic;
+  color: #1a1714;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  line-height: 1.65;
+}
+.quote-card .quote-source {
+  font-size: 0.78rem;
+  color: #7a7068;
+  font-weight: 500;
+}
+
+/* Insight Box */
+.insight-box {
+  background: linear-gradient(135deg, #1a1714, #2a2520);
+  color: #FAF8F5;
+  padding: 22px 26px;
+  border-radius: 6px;
+  margin: 20px 0;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+.insight-box strong { color: #bba96a; }
+
+/* Severity Badges */
+.severity-badge {
+  display: inline-block;
+  padding: 3px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.severity-critical { background: #dc2626; }
+.severity-high { background: #ea580c; }
+.severity-medium { background: #ca8a04; }
+
+/* Section Header with severity */
+.section-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 28px 0 14px;
+}
+.section-header h3 { margin: 0; }
+
+/* Tables */
+.table-wrapper {
+  overflow-x: auto;
+  margin: 16px 0;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  min-width: 600px;
+}
+thead th {
+  background: #1a1714;
+  color: #bba96a;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  padding: 12px 14px;
+  text-align: left;
+  white-space: nowrap;
+}
+tbody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid #ede9e3;
+}
+tbody tr:nth-child(even) { background: #f5f2ed; }
+tbody tr:nth-child(odd) { background: #fff; }
+tbody tr.gold-row {
+  background: linear-gradient(90deg, rgba(158,138,79,0.12), rgba(187,169,106,0.08));
+  font-weight: 600;
+}
+tbody tr.gold-row td { color: #1a1714; border-bottom: 2px solid #9e8a4f; }
+
+/* Card Grid */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 16px;
+  margin: 16px 0;
+}
+.info-card {
+  background: #fff;
+  border: 1px solid #ede9e3;
+  border-radius: 6px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+.info-card h4 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  color: #9e8a4f;
+  margin: 0 0 10px;
+}
+.info-card ul {
+  list-style: none;
+  padding: 0;
+}
+.info-card li {
+  padding: 4px 0;
+  font-size: 0.88rem;
+  color: #1a1714;
+  position: relative;
+  padding-left: 16px;
+}
+.info-card li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  background: #9e8a4f;
+  border-radius: 50%;
+}
+
+/* Weapon cards */
+.weapon-card {
+  background: #fff;
+  border: 1px solid #ede9e3;
+  border-top: 3px solid #9e8a4f;
+  border-radius: 6px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+.weapon-card .weapon-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #9e8a4f;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.weapon-card h4 {
+  font-size: 1.15rem;
+  color: #1a1714;
+  margin: 0 0 10px;
+}
+.weapon-card p {
+  font-size: 0.9rem;
+  color: #7a7068;
+  margin-bottom: 8px;
+}
+.weapon-card .message {
+  background: rgba(158,138,79,0.08);
+  border-left: 3px solid #9e8a4f;
+  padding: 10px 14px;
+  font-style: italic;
+  font-size: 0.88rem;
+  color: #1a1714;
+  margin-top: 12px;
+}
+
+/* Segment cards */
+.segment-card {
+  background: #fff;
+  border: 1px solid #ede9e3;
+  border-radius: 6px;
+  padding: 22px;
+  margin-bottom: 16px;
+}
+.segment-card h4 {
+  color: #1a1714;
+  margin: 0 0 14px;
+  font-size: 1.15rem;
+}
+.segment-row {
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  gap: 4px 12px;
+  font-size: 0.88rem;
+  margin-bottom: 6px;
+}
+.segment-label {
+  font-weight: 600;
+  color: #9e8a4f;
+}
+
+/* Spending box */
+.spending-box {
+  background: linear-gradient(135deg, rgba(158,138,79,0.06), rgba(158,138,79,0.02));
+  border: 1px solid #d4cfc7;
+  border-radius: 6px;
+  padding: 22px;
+  margin: 20px 0;
+}
+.spending-box h4 { color: #9e8a4f; margin: 0 0 12px; }
+.spending-box ul { list-style: none; padding: 0; }
+.spending-box li {
+  padding: 5px 0;
+  font-size: 0.9rem;
+  border-bottom: 1px solid #ede9e3;
+}
+.spending-box li:last-child { border: none; font-weight: 600; color: #9e8a4f; }
+
+/* Numbered list */
+.numbered-list {
+  counter-reset: item;
+  list-style: none;
+  padding: 0;
+}
+.numbered-list li {
+  counter-increment: item;
+  padding: 12px 0 12px 44px;
+  position: relative;
+  font-size: 0.92rem;
+  border-bottom: 1px solid #ede9e3;
+}
+.numbered-list li::before {
+  content: counter(item);
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 30px;
+  height: 30px;
+  background: #1a1714;
+  color: #bba96a;
+  border-radius: 50%;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.numbered-list li strong { color: #1a1714; }
+
+/* Language section */
+.lang-section {
+  margin: 20px 0;
+}
+.lang-section h4 {
+  font-size: 1.05rem;
+  color: #1a1714;
+  margin-bottom: 12px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid #9e8a4f;
+  display: inline-block;
+}
+.lang-quotes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.lang-quote {
+  background: #fff;
+  border-left: 3px solid #9e8a4f;
+  padding: 10px 16px;
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #1a1714;
+  border-radius: 0 4px 4px 0;
+}
+
+/* Conversion path */
+.conversion-path {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 20px 0;
+}
+.conv-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 16px 0;
+  border-left: 2px solid #9e8a4f;
+  margin-left: 15px;
+  padding-left: 24px;
+  position: relative;
+}
+.conv-step::before {
+  content: attr(data-step);
+  position: absolute;
+  left: -16px;
+  top: 14px;
+  width: 30px;
+  height: 30px;
+  background: #9e8a4f;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.conv-step .step-title {
+  font-weight: 600;
+  color: #1a1714;
+  font-size: 0.92rem;
+}
+.conv-step .step-desc {
+  font-size: 0.85rem;
+  color: #7a7068;
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 40px 20px;
+  font-size: 0.78rem;
+  color: #7a7068;
+  border-top: 1px solid #ede9e3;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 1.8rem; }
+  .hero-stats { gap: 20px; }
+  .hero-stat .num { font-size: 1.6rem; }
+  .framing-box { padding: 24px 18px; }
+  .framing-box .framing-row { grid-template-columns: 1fr; gap: 16px; }
+  .tab-btn { font-size: 0.7rem; padding: 6px 10px; }
+  .tab-content { padding: 20px 14px 40px; }
+  .tab-content h2 { font-size: 1.5rem; }
+  .card-grid { grid-template-columns: 1fr; }
+  .segment-row { grid-template-columns: 1fr; }
+  table { font-size: 0.75rem; }
+  thead th, tbody td { padding: 8px 8px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Oma Organics — Deep Buyer Research</h1>
+  <p class="subtitle">Sabri Suby 10-Tab Framework &middot; Fragrance &amp; Body Care</p>
+  <div class="hero-stats">
+    <div class="hero-stat">
+      <span class="num">$13.6B</span>
+      <span class="label">Clean Fragrance Market</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">75%</span>
+      <span class="label">Prefer No Synthetic Fragrance</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">43%</span>
+      <span class="label">Extrait Sales Growth (2024)</span>
+    </div>
+    <div class="hero-stat">
+      <span class="num">10</span>
+      <span class="label">Research Tabs</span>
+    </div>
+  </div>
+  <a href="https://j2ze91-vg.myshopify.com" class="back-link">&larr; Back to Store</a>
+</section>
+
+<!-- FRAMING BOX -->
+<div class="framing-box">
+  <div class="framing-row">
+    <div class="framing-col">
+      <div class="framing-label">They are NOT thinking:</div>
+      <p>"I need perfume."</p>
+      <div class="framing-label" style="margin-top:14px;">They ARE thinking:</div>
+      <p>"I want to smell like something worth remembering &mdash; without putting chemicals on my skin."</p>
+    </div>
+    <div class="framing-col">
+      <div class="framing-label">We are NOT selling:</div>
+      <p>Bottles of fragrance.</p>
+      <div class="framing-label" style="margin-top:14px;">We ARE selling:</div>
+      <p>A complete sensorial ritual rooted in ancestral wisdom &mdash; with ingredients you can trust, scents that last, and a brand that actually means what it says.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TAB NAVIGATION -->
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="showTab(0)">1. What They Use</button>
+  <button class="tab-btn" onclick="showTab(1)">2. What They Love</button>
+  <button class="tab-btn" onclick="showTab(2)">3. What They Hate</button>
+  <button class="tab-btn" onclick="showTab(3)">4. Desired State</button>
+  <button class="tab-btn" onclick="showTab(4)">5. Their Language</button>
+  <button class="tab-btn" onclick="showTab(5)">6. Competitor Ratings</button>
+  <button class="tab-btn" onclick="showTab(6)">7. Frequency Analysis</button>
+  <button class="tab-btn" onclick="showTab(7)">8. Their Solutions</button>
+  <button class="tab-btn" onclick="showTab(8)">9. Buying Triggers</button>
+  <button class="tab-btn" onclick="showTab(9)">10. Oma Positioning</button>
+</nav>
+
+<!-- ======================== TAB 1: WHAT THEY USE ======================== -->
+<div class="tab-content active" id="tab-0">
+  <h2>What They Currently Use</h2>
+  <p class="tab-desc">Competitor landscape &mdash; what she's buying, what she pays, and where she's coming from.</p>
+
+  <h3>Indie / Clean Fragrance Brands (Direct Competitors)</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>Brand</th><th>Price Range</th><th>Sample Set</th><th>Key Positioning</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Phlur</td><td>$99/1.7oz EDP; mists $25-$38</td><td>Mini discovery sets</td><td>Viral TikTok, Ulta partnership, Chriselle Lim</td></tr>
+        <tr><td>Ellis Brooklyn</td><td>$105/EDP; mists ~$48</td><td>Discovery set available</td><td>"Clean luxury fragrance"</td></tr>
+        <tr><td>Skylar</td><td>$90/EDP; discovery $25 (5x1.5ml)</td><td>$25 discovery w/ credit</td><td>Hypoallergenic, vegan, Sephora</td></tr>
+        <tr><td>DedCool</td><td>Premium (varies)</td><td>Available</td><td>Genderless, non-toxic</td></tr>
+        <tr><td>Henry Rose</td><td>$35-$120/50mL; discovery $25-$46</td><td>$20 credit rebate model</td><td>EWG Verified, Cradle to Cradle Gold, 100% transparency</td></tr>
+        <tr><td>FORVR Mood</td><td>Sephora pricing</td><td>Mini sets</td><td>Jackie Aina, Black-owned luxury</td></tr>
+        <tr><td>Maison Louis Marie</td><td>$65/No.04</td><td>Travel sizes</td><td>70% Amazon growth Q1 2025</td></tr>
+        <tr><td>By Rosie Jane</td><td>$80</td><td>Discovery sets</td><td>Free of parabens, phthalates, sulfates</td></tr>
+        <tr><td>Clean Reserve</td><td>$110</td><td>Available</td><td>Bergamot, white flower, vetiver profiles</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Black-Owned Fragrance Competitors</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>Brand</th><th>Pricing</th><th>Differentiator</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>MOODEAUX</td><td>Premium</td><td>8x award-winning, first Black-owned at Credo + Urban Outfitters</td></tr>
+        <tr><td>Brown Girl Jane</td><td>Sephora pricing</td><td>First Black woman-owned fragrance at Sephora (2024)</td></tr>
+        <tr><td>Ourside</td><td>Mid-range</td><td>Bronx-founded, genderless, free from endocrine disruptors</td></tr>
+        <tr><td>La Botica</td><td>Premium</td><td>Afro-Dominican, fine perfumery meets contemporary art</td></tr>
+        <tr><td>FORVR Mood</td><td>Sephora</td><td>Jackie Aina, launched April 2024</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3>Mainstream Brands She's Leaving</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>Brand</th><th>Why She's Leaving</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Chanel, YSL, Lanc&ocirc;me</td><td>"Engineered for broad likability" &mdash; generic, synthetic, headache-inducing</td></tr>
+        <tr><td>Bath &amp; Body Works</td><td>"Too sweet, too artificial, too teenage"</td></tr>
+        <tr><td>Sephora "Clean" shelf</td><td>"Clean" label still allows phenoxyethanol, dimethicone, synthetic fragrance</td></tr>
+        <tr><td>Designer dupes/clones</td><td>"Cheap smell-alikes that fade in 30 minutes"</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="spending-box">
+    <h4>What She's Spending Now</h4>
+    <ul>
+      <li>$80&ndash;$120 on a full-size EDP from an indie brand</li>
+      <li>$20&ndash;$46 on discovery/sample sets</li>
+      <li>$15&ndash;$40/mo on Scentbird/subscription services</li>
+      <li>$30&ndash;$65 on "clean" body care (lotions, oils, body wash)</li>
+      <li>Total fragrance + body care spend: $150&ndash;$400/month across multiple brands</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ======================== TAB 2: WHAT THEY LOVE ======================== -->
+<div class="tab-content" id="tab-1">
+  <h2>What They Love</h2>
+  <p class="tab-desc">Positive review themes &mdash; what makes her stay with a brand, and what she expects as baseline.</p>
+
+  <h3>1. Ingredient Transparency</h3>
+  <div class="quote-card">
+    <div class="quote-text">"100% ingredient transparency. You can see EVERY ingredient, not just the 'hero' ones."</div>
+    <div class="quote-source">Henry Rose buyer</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"I feel good knowing what's on my skin."</div>
+    <div class="quote-source">Clean Reserve buyer</div>
+  </div>
+  <div class="insight-box">
+    <strong>Oma Edge:</strong> The GOODness Promise is Oma's version of this &mdash; and it's rare in fragrance. Most "clean" brands still hide behind "proprietary blend."
+  </div>
+
+  <h3>2. Founder Story / Heritage</h3>
+  <div class="quote-card">
+    <div class="quote-text">"Jackie Aina put her name AND face on it &mdash; she wouldn't sell something she didn't believe in."</div>
+    <div class="quote-source">FORVR Mood buyer</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"The Afro-Dominican heritage makes it feel like it has a SOUL."</div>
+    <div class="quote-source">La Botica buyer</div>
+  </div>
+  <div class="insight-box">
+    <strong>Oma Edge:</strong> Ijeoma's baby eczema origin story + Igbo ancestral wisdom = the deepest founder story in the space.
+  </div>
+
+  <h3>3. The Ritual Experience</h3>
+  <div class="quote-card">
+    <div class="quote-text">"Pour the oil into your palms. Warm it. Press it into your skin. Breathe."</div>
+    <div class="quote-source">Body oil buyer</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"It turns my shower into a spa moment."</div>
+    <div class="quote-source">Shower steamer buyer</div>
+  </div>
+  <div class="insight-box">
+    <strong>Oma Edge:</strong> The layering system (shower gel &rarr; body oil &rarr; cr&egrave;me &rarr; perfume) = full ritual, not just a product.
+  </div>
+
+  <h3>4. Unique Scent Profiles</h3>
+  <div class="quote-card">
+    <div class="quote-text">"I don't want to smell like everyone else."</div>
+    <div class="quote-source">Indie fragrance lover</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"I'm tired of designer scents that all smell the same."</div>
+    <div class="quote-source">r/fragrance</div>
+  </div>
+  <div class="insight-box">
+    <strong>Oma Edge:</strong> 7 perfumes spanning 4 distinct scent families &mdash; warm/earthy, fresh/botanical, rich/floral, clean/subtle.
+  </div>
+
+  <h3>5. Small-Batch Authenticity</h3>
+  <div class="quote-card">
+    <div class="quote-text">"When a brand says small-batch and means it, the quality difference is obvious."</div>
+    <div class="quote-source">Indie fragrance community</div>
+  </div>
+  <div class="insight-box">
+    <strong>Oma Edge:</strong> 200-bottle batch limits = scarcity is real, not manufactured. Spring Collection seasonal drops create urgency.
+  </div>
+
+  <h3>What Fragrance Buyers Expect (Baseline)</h3>
+  <ol class="numbered-list">
+    <li><strong>Longevity</strong> &mdash; "I need it to last at least 4-6 hours" (the #1 performance metric)</li>
+    <li><strong>Sillage</strong> &mdash; "I want people to notice, but not from across the room"</li>
+    <li><strong>Ingredient safety</strong> &mdash; "No headaches, no skin reactions"</li>
+    <li><strong>Unique scent</strong> &mdash; "Not something I can find at Macy's"</li>
+    <li><strong>Attractive packaging</strong> &mdash; "It should look beautiful on my vanity"</li>
+    <li><strong>Try-before-commit</strong> &mdash; "Let me sample before I spend $72+"</li>
+    <li><strong>Brand story</strong> &mdash; "Who makes this? Why? What do they stand for?"</li>
+  </ol>
+</div>
+
+<!-- ======================== TAB 3: WHAT THEY HATE ======================== -->
+<div class="tab-content" id="tab-2">
+  <h2>What They Hate</h2>
+  <p class="tab-desc">Negative review themes ranked by frequency &mdash; this is the gold. Every complaint is an Oma opportunity.</p>
+
+  <!-- #1 LONGEVITY -->
+  <div class="section-header">
+    <h3>#1: Longevity &mdash; "It Disappeared in 2 Hours"</h3>
+    <span class="severity-badge severity-critical">10/10 SEVERITY</span>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Ridiculously low longevity and no projection."</div>
+    <div class="quote-source">Phlur review</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Super low sillage... nobody further than six inches from skin can smell it, dissipating in a few hours."</div>
+    <div class="quote-source">DedCool Milk review</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Feeling marketed as fragrances but acting as body mists."</div>
+    <div class="quote-source">Skylar review</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Lasts up to 5 hours with ample spritzes... not bold enough for some."</div>
+    <div class="quote-source">Ellis Brooklyn review</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Fades within 2-3 hours."</div>
+    <div class="quote-source">Clean Reserve review</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Great everyday fragrances if you don't mind reapplying."</div>
+    <div class="quote-source">By Rosie Jane review</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Clean/natural perfumes tend to be lighter and more ephemeral than synthetic counterparts."</div>
+    <div class="quote-source">r/fragrance consensus</div>
+  </div>
+  <div class="insight-box">
+    <strong>Frequency: EVERY clean fragrance competitor. This is THE complaint.</strong><br><br>
+    <strong>Oma Opportunity:</strong> UT&Ograve; and UBI are rated "All Day" longevity. AHIHIA, IFURU, MOD, SOLAIRE are "Long Lasting." If these claims hold up, Oma demolishes the competition on the #1 pain point.
+  </div>
+
+  <!-- #2 GREENWASHING -->
+  <div class="section-header">
+    <h3>#2: "Clean" Is Meaningless Greenwashing</h3>
+    <span class="severity-badge severity-critical">9/10 SEVERITY</span>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"The term 'clean' has no agreed-upon standard in the industry."</div>
+    <div class="quote-source">r/fragrance</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"The terminology is not regulated, and is mostly misleading, if not outright greenwashing."</div>
+    <div class="quote-source">Beauty journalists</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Still allows phenoxyethanol, dimethicone, and synthetic fragrances."</div>
+    <div class="quote-source">Sephora "Clean at Sephora" critique</div>
+  </div>
+  <div class="insight-box">
+    <strong>Frequency: Growing rapidly.</strong> Trust erosion is industry-wide. Nearly 50% of clean beauty users ditched a brand over ingredient qualms, prizing proof over promises.
+  </div>
+
+  <!-- #3 HIDDEN INGREDIENTS -->
+  <div class="section-header">
+    <h3>#3: Hidden Ingredients &mdash; "Fragrance" Means Nothing</h3>
+    <span class="severity-badge severity-high">8/10 SEVERITY</span>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Fragrance products contain on average 14 hidden chemicals not listed on the label."</div>
+    <div class="quote-source">EWG</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Up to 50% of their formulas hidden behind the word 'fragrance.'"</div>
+    <div class="quote-source">Fragrance industry analysis</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Who's really behind your perfume? The Big 5 manufacturers &mdash; Givaudan, Firmenich, IFF, Symrise, Robertet."</div>
+    <div class="quote-source">r/fragrance</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Brands outsource formulation entirely while marketing as 'artisanal.'"</div>
+    <div class="quote-source">Industry exposé</div>
+  </div>
+
+  <!-- #4 BLIND BUY REGRET -->
+  <div class="section-header">
+    <h3>#4: Can't Smell It Online &mdash; "Blind Buy Regret"</h3>
+    <span class="severity-badge severity-high">8/10 SEVERITY</span>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"I blind bought a bottle, and it wasn't me at all."</div>
+    <div class="quote-source">Fragrance buyer</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"100ml of regret gathering dust."</div>
+    <div class="quote-source">r/fragrance</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"There are thousands of options &mdash; how do I even choose?"</div>
+    <div class="quote-source">Online fragrance shopper</div>
+  </div>
+  <div class="insight-box">
+    <strong>Key stat:</strong> 72% of consumers who receive samples plan to buy post-trial &mdash; but most brands don't offer samples. Oma's free discovery kit solves this.
+  </div>
+
+  <!-- #5 PRICE VS PERFORMANCE -->
+  <div class="section-header">
+    <h3>#5: Price vs. Performance Gap</h3>
+    <span class="severity-badge severity-high">7/10 SEVERITY</span>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Why is this tiny bottle so expensive if it doesn't last?"</div>
+    <div class="quote-source">Fragrance buyer</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Terrible longevity, disappearing from skin entirely after barely two hours."</div>
+    <div class="quote-source">DedCool Taunt review (at premium pricing)</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Hit or miss... most not lasting long and often having a plasticky, synthetic undertone."</div>
+    <div class="quote-source">Skylar review</div>
+  </div>
+  <div class="insight-box">
+    <strong>The gap:</strong> Indie brands cost MORE per mL than designer but often perform WORSE. Oma at $72/50mL undercuts the field while delivering superior longevity.
+  </div>
+
+  <!-- #6 ALLERGIES -->
+  <div class="section-header">
+    <h3>#6: Fragrance Allergies &amp; Reactions</h3>
+    <span class="severity-badge severity-high">7/10 SEVERITY</span>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"My dermatologist told me to stop using everything with fragrance."</div>
+    <div class="quote-source">Sensitive skin sufferer</div>
+  </div>
+  <div class="insight-box">
+    ~2.5 million Americans have fragrance allergies (AAD). Symptoms: headaches, migraines, nausea, contact dermatitis. EU now requires 80+ fragrance allergens to be disclosed &mdash; US lags behind. <strong>Oma's full INCI disclosure addresses this directly.</strong>
+  </div>
+
+  <!-- #7 SAMENESS -->
+  <div class="section-header">
+    <h3>#7: Everything Smells the Same</h3>
+    <span class="severity-badge severity-high">7/10 SEVERITY</span>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Designer fragrances are 'engineered for broad likability' through focus groups &mdash; intentionally uncomplicated."</div>
+    <div class="quote-source">Fragrance community</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Same fragrance, different house/bottle."</div>
+    <div class="quote-source">r/fragrance</div>
+  </div>
+  <div class="quote-card">
+    <div class="quote-text">"Many so-called niche brands are as mass-produced as anything at Sephora."</div>
+    <div class="quote-source">Industry analysis</div>
+  </div>
+  <div class="insight-box">
+    The industry is controlled by 5 manufacturers &mdash; most brands don't even make their own fragrance. <strong>Ijeoma is the master formulator at Oma. She makes it herself.</strong>
+  </div>
+</div>
+
+<!-- ======================== TAB 4: DESIRED STATE ======================== -->
+<div class="tab-content" id="tab-3">
+  <h2>What They Wish Existed</h2>
+  <p class="tab-desc">The ideal product and brand experience &mdash; pulled from both positive and negative reviews.</p>
+
+  <h3>From Positive Reviews &mdash; What They Value Most</h3>
+  <ol class="numbered-list">
+    <li><strong>A clean perfume that actually LASTS</strong> &mdash; the holy grail nobody has cracked at scale</li>
+    <li><strong>Full ingredient transparency</strong> &mdash; not "fragrance" or "proprietary blend" but every. single. ingredient.</li>
+    <li><strong>A try-before-you-commit option</strong> &mdash; discovery sets, samples, quiz-to-sample pipeline</li>
+    <li><strong>A complete ritual, not just one product</strong> &mdash; shower to scent, unified experience</li>
+    <li><strong>A founder who actually makes the products</strong> &mdash; not a celebrity licensing deal</li>
+    <li><strong>Cultural depth</strong> &mdash; heritage, ancestry, meaning behind the scent names</li>
+    <li><strong>Products safe for sensitive skin</strong> &mdash; no headaches, no allergic reactions</li>
+  </ol>
+
+  <h3>From Negative Reviews &mdash; What They're Begging For</h3>
+  <ol class="numbered-list">
+    <li><strong>"Give me clean fragrance that lasts more than 2 hours"</strong> &mdash; every competitor fails here</li>
+    <li><strong>"Stop calling yourself 'clean' and prove it with your ingredient list"</strong> &mdash; trust is broken</li>
+    <li><strong>"Let me try it before I spend $100+"</strong> &mdash; blind buy anxiety is real</li>
+    <li><strong>"Make something that doesn't smell like every other indie brand"</strong> &mdash; generic scent profiles</li>
+    <li><strong>"Tell me what's ACTUALLY in it &mdash; not 'proprietary blend'"</strong> &mdash; demand for transparency</li>
+    <li><strong>"I want a brand I can use for EVERYTHING &mdash; perfume, body, face"</strong> &mdash; product fatigue from multi-brand routines</li>
+    <li><strong>"If you say 'small batch,' mean it"</strong> &mdash; authenticity over marketing</li>
+  </ol>
+
+  <div class="insight-box">
+    <strong>Every single item on both lists maps directly to an Oma strength.</strong> This is not coincidence &mdash; it's product-market fit. The market is begging for exactly what Oma already offers.
+  </div>
+</div>
+
+<!-- ======================== TAB 5: THEIR LANGUAGE ======================== -->
+<div class="tab-content" id="tab-4">
+  <h2>Their Exact Language</h2>
+  <p class="tab-desc">Verbatim quotes from buyers, reviewers, and community members &mdash; ad copy gold. Use in headlines, agitation, and CTAs.</p>
+
+  <div class="lang-section">
+    <h4>Pain Language (Headlines / Problem Agitation)</h4>
+    <div class="lang-quotes">
+      <div class="lang-quote">"I blind bought a bottle, and it wasn't me at all"</div>
+      <div class="lang-quote">"100ml of regret gathering dust"</div>
+      <div class="lang-quote">"Ridiculously low longevity and no projection"</div>
+      <div class="lang-quote">"Feeling marketed as fragrances but acting as body mists"</div>
+      <div class="lang-quote">"The term 'clean' has no agreed-upon standard"</div>
+      <div class="lang-quote">"Fragrance products contain on average 14 hidden chemicals"</div>
+      <div class="lang-quote">"Your moisturizer has more ingredients than your dinner"</div>
+      <div class="lang-quote">"9 out of 10 women are frustrated with their skincare"</div>
+      <div class="lang-quote">"I've tried SO MANY products &mdash; nothing works for more than a week"</div>
+      <div class="lang-quote">"Every brand claims to be 'clean' &mdash; I can't tell who's lying"</div>
+      <div class="lang-quote">"My dermatologist told me to stop using everything with fragrance"</div>
+      <div class="lang-quote">"I threw away $400 worth of skincare last month"</div>
+    </div>
+  </div>
+
+  <div class="lang-section">
+    <h4>Desire Language (Solution / CTA)</h4>
+    <div class="lang-quotes">
+      <div class="lang-quote">"What are you USING? Your skin is GLOWING" &mdash; the compliment they crave</div>
+      <div class="lang-quote">"I stopped wearing foundation after 3 weeks"</div>
+      <div class="lang-quote">"Pour the oil into your palms. Warm it. Press it into your skin. Breathe."</div>
+      <div class="lang-quote">"I don't want to smell like everyone else"</div>
+      <div class="lang-quote">"I want a simple routine &mdash; 3 products max &mdash; that actually works"</div>
+      <div class="lang-quote">"It smells like you, but better"</div>
+      <div class="lang-quote">"Your grandmother didn't need a 12-step routine"</div>
+      <div class="lang-quote">"Your skin doesn't need more science. It needs wisdom that's already been proven."</div>
+    </div>
+  </div>
+
+  <div class="lang-section">
+    <h4>Fragrance-Specific Desire Language</h4>
+    <div class="lang-quotes">
+      <div class="lang-quote">"I want to be discovered up close, not announced from across the room" <span style="color:#9e8a4f;font-weight:600;">&mdash; UBI positioning</span></div>
+      <div class="lang-quote">"Campfires, old libraries, amber jewelry" <span style="color:#9e8a4f;font-weight:600;">&mdash; UT&Ograve; positioning</span></div>
+      <div class="lang-quote">"That exact moment after rain &mdash; when the air is clean" <span style="color:#9e8a4f;font-weight:600;">&mdash; IKUKU positioning</span></div>
+      <div class="lang-quote">"Evening in a bottle &mdash; when jasmine opens and the air turns warm" <span style="color:#9e8a4f;font-weight:600;">&mdash; IFURU positioning</span></div>
+      <div class="lang-quote">"Deliberately clean &mdash; not blank, not boring" <span style="color:#9e8a4f;font-weight:600;">&mdash; MOD positioning</span></div>
+    </div>
+  </div>
+
+  <div class="lang-section">
+    <h4>Frustration Language (Emotional Triggers)</h4>
+    <div class="lang-quotes">
+      <div class="lang-quote">"I can't smell it online &mdash; how am I supposed to know?"</div>
+      <div class="lang-quote">"Why is this tiny bottle so expensive if it doesn't last?"</div>
+      <div class="lang-quote">"Same fragrance, different house/bottle"</div>
+      <div class="lang-quote">"Brands outsource formulation entirely while marketing as 'artisanal'"</div>
+      <div class="lang-quote">"Nobody further than six inches from skin can smell it"</div>
+      <div class="lang-quote">"Terrible longevity, disappearing from skin entirely after barely two hours"</div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== TAB 6: COMPETITOR RATINGS ======================== -->
+<div class="tab-content" id="tab-5">
+  <h2>Competitor Ratings Summary</h2>
+  <p class="tab-desc">Head-to-head comparison across the key buying criteria. Oma highlighted at bottom.</p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>Competitor</th><th>Avg Rating</th><th>Longevity Complaint?</th><th>Transparency?</th><th>Sample Set?</th><th>Price/50mL</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Phlur</td><td>3.5-4/5</td><td>YES &mdash; major</td><td>Partial</td><td>Yes</td><td>~$99</td></tr>
+        <tr><td>Ellis Brooklyn</td><td>3.5/5</td><td>YES &mdash; moderate</td><td>Partial</td><td>Yes</td><td>~$105</td></tr>
+        <tr><td>Skylar</td><td>3/5</td><td>YES &mdash; major</td><td>Good</td><td>$25 discovery</td><td>~$90</td></tr>
+        <tr><td>DedCool</td><td>3/5</td><td>YES &mdash; severe</td><td>Good</td><td>Limited</td><td>Premium</td></tr>
+        <tr><td>Henry Rose</td><td>4/5</td><td>YES &mdash; moderate</td><td>BEST (EWG Verified)</td><td>$25-$46 rebate</td><td>~$120</td></tr>
+        <tr><td>FORVR Mood</td><td>4/5</td><td>Moderate</td><td>Good</td><td>Mini sets</td><td>Sephora</td></tr>
+        <tr><td>Maison Louis Marie</td><td>4/5</td><td>Moderate</td><td>Good</td><td>Travel sizes</td><td>~$65</td></tr>
+        <tr><td>By Rosie Jane</td><td>3.5/5</td><td>YES &mdash; major</td><td>Good</td><td>Discovery</td><td>~$80</td></tr>
+        <tr><td>Clean Reserve</td><td>3.5/5</td><td>YES &mdash; major</td><td>Good</td><td>Available</td><td>~$110</td></tr>
+        <tr class="gold-row"><td>Oma Organics</td><td>New</td><td>"All Day" to "Long Lasting"</td><td>FULL INCI lists</td><td>Free Discovery Kit</td><td>$72</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="insight-box">
+    <strong>Oma's advantage:</strong> Lower price point ($72 vs $90&ndash;$120), rated longevity above competitors, full INCI ingredient lists, AND a free discovery kit built into the purchase flow.
+  </div>
+</div>
+
+<!-- ======================== TAB 7: FREQUENCY ANALYSIS ======================== -->
+<div class="tab-content" id="tab-6">
+  <h2>Frequency Analysis</h2>
+  <p class="tab-desc">How common is each problem? Ranked by volume of mentions across all sources.</p>
+
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>Problem</th><th>Mentions</th><th>Verdict</th><th>Which Competitors</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Poor longevity / fades fast</td><td>200+</td><td><strong>#1 UNIVERSAL</strong></td><td>Phlur, Skylar, DedCool, Ellis Brooklyn, Clean Reserve, By Rosie Jane</td></tr>
+        <tr><td>"Clean" greenwashing / fake transparency</td><td>100+</td><td><strong>#2</strong></td><td>Sephora "Clean", most indie brands</td></tr>
+        <tr><td>Can't smell before buying / blind buy regret</td><td>80+</td><td><strong>#3</strong></td><td>All online-only fragrance brands</td></tr>
+        <tr><td>Hidden ingredients / "fragrance" catch-all</td><td>60+</td><td><strong>#4</strong></td><td>Mainstream + many "clean" brands</td></tr>
+        <tr><td>Price too high for performance</td><td>50+</td><td><strong>#5</strong></td><td>DedCool, Phlur, Clean Reserve</td></tr>
+        <tr><td>Headaches / allergic reactions</td><td>40+</td><td><strong>#6</strong></td><td>All synthetic/mainstream brands</td></tr>
+        <tr><td>Generic scent profiles / "smells like everything else"</td><td>30+</td><td><strong>#7</strong></td><td>Designer brands, some indie</td></tr>
+        <tr><td>Skincare trust crisis ("nothing works")</td><td>200+</td><td><strong>#8 (Body Care)</strong></td><td>CeraVe to Tatcha &mdash; full spectrum</td></tr>
+        <tr><td>Want a complete ritual, not 10 products</td><td>50+</td><td><strong>#9</strong></td><td>No one offers full shower-to-scent</td></tr>
+        <tr><td>No cultural depth / brand has no soul</td><td>Growing</td><td><strong>#10</strong></td><td>Corporate-backed "indie" brands</td></tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- ======================== TAB 8: THEIR SOLUTIONS ======================== -->
+<div class="tab-content" id="tab-7">
+  <h2>Their Solutions</h2>
+  <p class="tab-desc">What forum and Reddit users recommend to each other &mdash; and the gap that IS Oma's positioning.</p>
+
+  <h3>What Forum / Reddit Users Recommend</h3>
+  <ol class="numbered-list">
+    <li><strong>"Layer with an unscented lotion for better longevity"</strong> &mdash; r/fragrance (working around the problem, not solving it)</li>
+    <li><strong>"Buy discovery sets before committing"</strong> &mdash; universal advice, but few brands make this easy/free</li>
+    <li><strong>"Read the actual ingredient list, not the marketing"</strong> &mdash; growing consumer literacy</li>
+    <li><strong>"Try indie brands for unique scents"</strong> &mdash; but longevity complaints follow</li>
+    <li><strong>"Apply to pulse points and hair for longer wear"</strong> &mdash; application tips to compensate</li>
+    <li><strong>"Stick with oil-based perfume for sensitive skin"</strong> &mdash; oils outperform EDPs for some</li>
+    <li><strong>"Look for extrait de parfum concentration"</strong> &mdash; willing to pay more for lasting power (US extrait sales up 43% in 2024)</li>
+    <li><strong>"Find one brand for everything"</strong> &mdash; simplification desire, but nobody offers it</li>
+  </ol>
+
+  <h3>What They're NOT Finding</h3>
+  <div class="insight-box">
+    <strong>The gap IS Oma Organics' positioning:</strong><br><br>
+    &bull; <strong>Nobody recommends a clean fragrance brand with "All Day" longevity ratings</strong> &mdash; Oma has UT&Ograve; and UBI at that level<br><br>
+    &bull; <strong>Nobody mentions a brand with a full ritual system</strong> &mdash; shower gel &rarr; body oil &rarr; cr&egrave;me &rarr; perfume in matching scent families<br><br>
+    &bull; <strong>Nobody suggests a brand with BOTH full ingredient transparency AND heritage depth</strong><br><br>
+    &bull; <strong>No one mentions a free discovery kit included with non-perfume purchases</strong> &mdash; Oma's kit removes the try-before-you-buy barrier at zero cost<br><br>
+  </div>
+</div>
+
+<!-- ======================== TAB 9: BUYING TRIGGERS ======================== -->
+<div class="tab-content" id="tab-8">
+  <h2>Buying Triggers</h2>
+  <p class="tab-desc">When they leave competitors, what triggers the switch, and the seasonal timing of fragrance purchases.</p>
+
+  <h3>What Makes Them Leave a Competitor</h3>
+  <ol class="numbered-list">
+    <li><strong>Longevity disappointment</strong> &mdash; "I spent $99 on something that lasted 90 minutes"</li>
+    <li><strong>Discovered hidden ingredients</strong> &mdash; "I looked up 'fragrance' and found 14 chemicals"</li>
+    <li><strong>Allergic reaction / headache</strong> &mdash; "My dermatologist said stop using synthetic fragrance"</li>
+    <li><strong>Greenwashing betrayal</strong> &mdash; "They said 'clean' but it's not"</li>
+    <li><strong>Friend recommendation</strong> &mdash; "My friend smelled AMAZING and told me what she was wearing"</li>
+    <li><strong>The "what are you wearing?" moment</strong> &mdash; the compliment that makes someone a buyer</li>
+    <li><strong>Reformulation / brand sell-out</strong> &mdash; "Phlur changed after the acquisition"</li>
+    <li><strong>Brand discovery through content</strong> &mdash; Tabitha Brown feature, Instagram, TikTok</li>
+    <li><strong>Pregnancy / postpartum</strong> &mdash; ingredient awareness spikes sharply</li>
+    <li><strong>Milestone birthday</strong> &mdash; turning 30/40 triggers "what am I putting on my body?" awareness</li>
+  </ol>
+
+  <h3>When They Buy (Timing)</h3>
+  <div class="card-grid">
+    <div class="info-card">
+      <h4>Seasonal Peaks</h4>
+      <ul>
+        <li>Holiday gifting: Nov&ndash;Dec (gift sets, discovery kits)</li>
+        <li>Valentine's Day: Feb (self-purchase + gift)</li>
+        <li>Mother's Day: May (daughter&rarr;mother, partner&rarr;wife)</li>
+        <li>Birthday: Year-round (personal milestone)</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h4>Trigger Moments</h4>
+      <ul>
+        <li>Post-bad experience: Immediately after a reaction or wasted purchase</li>
+        <li>After content discovery: Seeing a trusted creator mention the brand</li>
+        <li>Seasonal transitions: Spring = fresh scents; Fall = warm scents</li>
+        <li>Market/pop-up encounters: In-person sampling &rarr; immediate conversion</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h4>Scent Seasonality</h4>
+      <ul>
+        <li>Spring/Summer: IKUKU, MOD, SOLAIRE (fresh)</li>
+        <li>Fall/Winter: UT&Ograve;, AHIHIA, IFURU (warm)</li>
+        <li>Year-round: UBI (versatile)</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>The Oma Conversion Path</h3>
+  <div class="conversion-path">
+    <div class="conv-step" data-step="1">
+      <div>
+        <div class="step-title">Discovery</div>
+        <div class="step-desc">Tabitha Brown feature / Instagram / market booth / friend referral</div>
+      </div>
+    </div>
+    <div class="conv-step" data-step="2">
+      <div>
+        <div class="step-title">Exploration</div>
+        <div class="step-desc">Takes scent quiz &rarr; gets matched to scent family</div>
+      </div>
+    </div>
+    <div class="conv-step" data-step="3">
+      <div>
+        <div class="step-title">Trust</div>
+        <div class="step-desc">Reads full ingredient list &rarr; sees GOODness Promise &rarr; "this is real"</div>
+      </div>
+    </div>
+    <div class="conv-step" data-step="4">
+      <div>
+        <div class="step-title">Try</div>
+        <div class="step-desc">Free Discovery Kit (2 samples) with non-perfume purchase, OR 10ml size ($32)</div>
+      </div>
+    </div>
+    <div class="conv-step" data-step="5">
+      <div>
+        <div class="step-title">Convert</div>
+        <div class="step-desc">Discovery Kit follow-up flow (Day 7/14/21 emails) &rarr; full-size purchase</div>
+      </div>
+    </div>
+    <div class="conv-step" data-step="6">
+      <div>
+        <div class="step-title">Ritual</div>
+        <div class="step-desc">Adds body oil &rarr; shower gel &rarr; cr&egrave;me &rarr; builds full scent ritual</div>
+      </div>
+    </div>
+    <div class="conv-step" data-step="7">
+      <div>
+        <div class="step-title">Advocate</div>
+        <div class="step-desc">"What are you wearing?" &rarr; shares / refers friends</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ======================== TAB 10: OMA POSITIONING ======================== -->
+<div class="tab-content" id="tab-9">
+  <h2>Oma Organics Positioning</h2>
+  <p class="tab-desc">How to win &mdash; the unfair advantages, message maps by segment, and market context.</p>
+
+  <h3>The 5 Weapons Only Oma Has</h3>
+
+  <div class="weapon-card">
+    <div class="weapon-num">01</div>
+    <h4>The Founder Origin</h4>
+    <p>Baby's eczema &rarr; Igbo grandmother's recipes &rarr; "if it's not safe for a baby with eczema, it doesn't go in the bottle." No competitor has this depth. Ijeoma is the master formulator &mdash; she makes it herself.</p>
+    <div class="message">"Made by a mother. From ancestral recipes. For your family."</div>
+  </div>
+
+  <div class="weapon-card">
+    <div class="weapon-num">02</div>
+    <h4>The Ritual System</h4>
+    <p>Shower gel &rarr; body oil &rarr; cr&egrave;me &rarr; perfume in matching scent families. Nobody else offers a complete, layered sensory experience.</p>
+    <p style="font-size:0.85rem;margin-top:8px;">
+      <strong style="color:#9e8a4f;">Warm &amp; Earthy:</strong> UT&Ograve; perfume + UT&Ograve; body oil + SAHEL cr&egrave;me<br>
+      <strong style="color:#9e8a4f;">Fresh &amp; Botanical:</strong> IKUKU/SOLAIRE + Amalfi Sunrise body oil + gel + steamers<br>
+      <strong style="color:#9e8a4f;">Rich &amp; Floral:</strong> IFURU + Imperial Garden body oil + GRACE face oil<br>
+      <strong style="color:#9e8a4f;">Clean &amp; Subtle:</strong> UBI/MOD + MOD body oil + RESOLVE face oil
+    </p>
+    <div class="message">"One brand. One ritual. From shower to scent."</div>
+  </div>
+
+  <div class="weapon-card">
+    <div class="weapon-num">03</div>
+    <h4>The Free Discovery Kit</h4>
+    <p>Auto-added to every non-perfume order. Zero cost to customer. 25&ndash;40% conversion rates from samples to full-size. Built-in 21-day email follow-up flow.</p>
+    <p style="font-size:0.85rem;margin-top:8px;"><strong>Industry data:</strong> Sample-to-purchase conversion rates range from 16% (SoPost) to 40%+ (Blackcart). Combined with a quiz, rates hit 25%+ (Fiole). Oma has BOTH the quiz AND the free kit.</p>
+    <div class="message">"Not sure about buying fragrance online? We'll send you 2 free samples with your order. Try them. Then choose."</div>
+  </div>
+
+  <div class="weapon-card">
+    <div class="weapon-num">04</div>
+    <h4>The Scent Quiz</h4>
+    <p>60+ deterministic recommendation sets across 2 paths (self + gift), with branching Q4 and experience routing. Data feeds Klaviyo for personalized lifecycle marketing.</p>
+    <div class="message">"Tell us what you love. We'll find your scent."</div>
+  </div>
+
+  <div class="weapon-card">
+    <div class="weapon-num">05</div>
+    <h4>Longevity Claims That Hold</h4>
+    <p>While every competitor gets destroyed on longevity reviews, Oma's perfumes are formulated for "Long Lasting" to "All Day" wear. If this holds in real-world use, it's the single biggest differentiator in clean fragrance.</p>
+    <p style="font-size:0.85rem;margin-top:8px;">
+      <strong style="color:#9e8a4f;">All Day:</strong> UT&Ograve;, UBI<br>
+      <strong style="color:#9e8a4f;">Long Lasting:</strong> AHIHIA, IFURU, MOD, SOLAIRE<br>
+      <strong style="color:#9e8a4f;">Moderate (layers well):</strong> IKUKU
+    </p>
+    <div class="message">"Clean fragrance that actually lasts. All day. Not 2 hours."</div>
+  </div>
+
+  <h3 style="margin-top:40px;">Additional Advantages</h3>
+  <div class="card-grid">
+    <div class="info-card">
+      <h4>Price Advantage</h4>
+      <ul>
+        <li>$72/50mL vs Henry Rose ($120)</li>
+        <li>vs Clean Reserve ($110)</li>
+        <li>vs Ellis Brooklyn ($105)</li>
+        <li>vs Phlur ($99)</li>
+        <li>vs Skylar ($90)</li>
+        <li>vs By Rosie Jane ($80)</li>
+        <li>10mL at $32 = low-commitment entry</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h4>Complete Transparency</h4>
+      <ul>
+        <li>Every ingredient listed (INCI-compliant)</li>
+        <li>GOODness Promise page</li>
+        <li>7-9 ingredients vs competitors' 30-40</li>
+        <li>No "fragrance" catch-all</li>
+        <li>No hidden proprietary blends</li>
+      </ul>
+    </div>
+    <div class="info-card">
+      <h4>200-Bottle Batch Limits</h4>
+      <ul>
+        <li>Not "limited edition" marketing</li>
+        <li>Actual production constraints</li>
+        <li>Spring Collection seasonal drops</li>
+        <li>Real scarcity = real urgency</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:40px;">Message Maps by Segment</h3>
+
+  <div class="segment-card">
+    <h4>Tier 1: The Ingredient-Conscious Woman (Maximum Resonance)</h4>
+    <div class="segment-row">
+      <span class="segment-label">Pain</span>
+      <span>70%+ consumers can't decode ingredient lists. "Fragrance" hides 14+ chemicals.</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Promise</span>
+      <span>Every ingredient listed. Every one pronounceable. INCI-compliant.</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Proof</span>
+      <span>GOODness Promise page. Compare our 7-9 ingredients to their 30-40.</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Price</span>
+      <span>vs. $80-$120 clean brands with hidden ingredients</span>
+    </div>
+  </div>
+
+  <div class="segment-card">
+    <h4>Tier 1: The Fragrance Lover Tired of Fading Scents</h4>
+    <div class="segment-row">
+      <span class="segment-label">Pain</span>
+      <span>Clean fragrance = 2-hour longevity. "Marketed as fragrances but acting as body mists."</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Promise</span>
+      <span>Rated "All Day" and "Long Lasting." Layer with matching body oil for full-day wear.</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Proof</span>
+      <span>Wear profile data on every perfume page. Sillage and longevity ratings.</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Price</span>
+      <span>vs. $99-$120 for scents that last 90 minutes</span>
+    </div>
+  </div>
+
+  <div class="segment-card">
+    <h4>Tier 1: The Gift Buyer (Seasonal)</h4>
+    <div class="segment-row">
+      <span class="segment-label">Pain</span>
+      <span>"I don't know what scent to pick for her."</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Promise</span>
+      <span>Quiz-matched recommendations. Discovery kit included. Beautiful packaging.</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Proof</span>
+      <span>Gift quiz path with 60+ recommendation sets. "We found something she'll love."</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Price</span>
+      <span>vs. generic department store gift set</span>
+    </div>
+  </div>
+
+  <div class="segment-card">
+    <h4>Tier 2: The "One Brand for Everything" Seeker</h4>
+    <div class="segment-row">
+      <span class="segment-label">Pain</span>
+      <span>10 products from 8 brands. $400/month. Overwhelmed.</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Promise</span>
+      <span>Shower &rarr; body oil &rarr; cr&egrave;me &rarr; perfume. One brand. One ritual.</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Proof</span>
+      <span>Matching scent families across product types. Layering guide in chatbot.</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Price</span>
+      <span>vs. $400/month multi-brand routine &rarr; under $150 for complete ritual</span>
+    </div>
+  </div>
+
+  <div class="segment-card">
+    <h4>Tier 2: The Sensitive Skin / Allergy Sufferer</h4>
+    <div class="segment-row">
+      <span class="segment-label">Pain</span>
+      <span>2.5M Americans with fragrance allergies. "My dermatologist said stop."</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Promise</span>
+      <span>Botanical ingredients only. No synthetic fragrance. INCI lists.</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Proof</span>
+      <span>Full ingredient disclosure. No hidden "fragrance" compounds.</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Price</span>
+      <span>vs. medical bills and thrown-out products</span>
+    </div>
+  </div>
+
+  <div class="segment-card">
+    <h4>Tier 2: The Culture-Seeking Buyer</h4>
+    <div class="segment-row">
+      <span class="segment-label">Pain</span>
+      <span>"Every brand feels the same. No depth. No soul."</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Promise</span>
+      <span>Igbo ancestral wisdom. Generations of botanical knowledge. "Oma" = good.</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Proof</span>
+      <span>Founder story. Heritage language. Scent names in Igbo.</span>
+    </div>
+    <div class="segment-row">
+      <span class="segment-label">Price</span>
+      <span>vs. celebrity-licensed "indie" brands with no real heritage</span>
+    </div>
+  </div>
+
+  <h3 style="margin-top:40px;">Market Context &mdash; Why NOW</h3>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr><th>Data Point</th><th>Implication for Oma</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Clean fragrance market: $13.6B &rarr; $33.4B by 2035 (9.4% CAGR)</td><td>Market is growing fast &mdash; get in now</td></tr>
+        <tr><td>Natural fragrance market: $4.8B &rarr; $10.3B by 2033 (10% CAGR)</td><td>Natural/botanical is the fastest segment</td></tr>
+        <tr><td>75% of consumers prefer brands that avoid synthetic fragrance</td><td>Oma's positioning is aligned with majority preference</td></tr>
+        <tr><td>US extrait sales up 43% in 2024</td><td>Consumers want LONGEVITY &mdash; willing to pay more for it</td></tr>
+        <tr><td>Niche fragrance sales grew 15%+ YoY</td><td>Indie is winning vs. designer</td></tr>
+        <tr><td>Online fragrance retail growing 9.2% CAGR</td><td>DTC model is viable and scaling</td></tr>
+        <tr><td>62% of consumers favor sustainable packaging</td><td>Refill pods (SAHEL) + glass bottles = competitive advantage</td></tr>
+        <tr><td>Gen Z driving premium fragrance spend</td><td>Younger demo willing to invest in scent = future growth</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="insight-box" style="margin-top:28px;">
+    <strong>Analysis based on:</strong> Existing Oma 10-tab skincare research, 30+ web sources including Reddit r/fragrance (1.2M members), r/Indiemakeupandmore, Thingtesting brand reviews, Fortune Business Insights market reports, BeautyMatter trends, EWG ingredient data, AAD allergy statistics, Glossy DTC sampling reports, and competitor review aggregation across Phlur, Ellis Brooklyn, Skylar, DedCool, Henry Rose, FORVR Mood, Maison Louis Marie, By Rosie Jane, and Clean Reserve.
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Oma Organics &mdash; Sabri Suby 10-Tab Deep Buyer Research &middot; Fragrance &amp; Body Care Edition &middot; May 2026
+</div>
+
+<!-- TAB JS -->
+<script>
+function showTab(index) {
+  var tabs = document.querySelectorAll('.tab-content');
+  var btns = document.querySelectorAll('.tab-btn');
+  for (var i = 0; i < tabs.length; i++) {
+    tabs[i].classList.remove('active');
+    btns[i].classList.remove('active');
+  }
+  tabs[index].classList.add('active');
+  btns[index].classList.add('active');
+  window.scrollTo({ top: document.querySelector('.tab-nav').offsetTop - 10, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
