@@ -300,11 +300,96 @@ h1, h2, h3, h4, h5, h6 { font-family: 'Cormorant Garamond', serif; }
 .email-body[contenteditable="true"] {
   outline: none;
   border-radius: 6px;
-  transition: background 0.2s;
+  transition: background 0.2s, box-shadow 0.3s;
 }
 .email-body[contenteditable="true"]:focus {
   background: rgba(158,138,79,0.04);
   box-shadow: inset 0 0 0 1px rgba(158,138,79,0.15);
+}
+/* EDIT MODE — gold border glow when editing */
+.email-body.editing {
+  background: rgba(158,138,79,0.04);
+  box-shadow: 0 0 0 2px rgba(158,138,79,0.35), 0 0 12px rgba(158,138,79,0.10);
+  border-radius: 6px;
+  padding: 0.8rem;
+}
+/* PENCIL BUTTON */
+.edit-pencil-btn {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  background: transparent;
+  border: 1px solid var(--clay);
+  border-radius: 4px;
+  color: var(--clay);
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.edit-pencil-btn:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+}
+.edit-pencil-btn .pencil-icon {
+  font-size: 0.85rem;
+  line-height: 1;
+}
+/* SAVE BUTTON */
+.save-edit-btn {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  background: var(--gold);
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  white-space: nowrap;
+  display: none;
+  align-items: center;
+  gap: 0.3rem;
+}
+.save-edit-btn:hover {
+  background: var(--gold-light);
+  border-color: var(--gold-light);
+}
+.save-edit-btn.visible {
+  display: inline-flex;
+}
+.save-edit-btn.saved {
+  background: #4a7c59;
+  border-color: #4a7c59;
+}
+/* SAVED TOAST */
+.saved-toast {
+  position: absolute;
+  top: 0.6rem;
+  right: 1.5rem;
+  background: #4a7c59;
+  color: white;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+  z-index: 10;
+}
+.saved-toast.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 .email-subject {
   font-family: 'Cormorant Garamond', serif;
@@ -4364,10 +4449,34 @@ function initEditable() {
   cards.forEach(card => {
     const emailId = card.dataset.emailId;
     const body = card.querySelector('.email-body');
-    if (!body) return;
+    const actions = card.querySelector('.header-actions');
+    if (!body || !actions) return;
 
     // Store original content in data attribute
     body.dataset.original = body.innerHTML;
+
+    // Start with editing disabled
+    body.setAttribute('contenteditable', 'false');
+
+    // Inject pencil button (before copy btn)
+    const pencilBtn = document.createElement('button');
+    pencilBtn.className = 'edit-pencil-btn';
+    pencilBtn.innerHTML = '<span class="pencil-icon">&#9998;</span> Edit';
+    pencilBtn.onclick = function() { toggleEditMode(card); };
+    actions.insertBefore(pencilBtn, actions.firstChild);
+
+    // Inject save button (after pencil, before reset)
+    const saveBtn = document.createElement('button');
+    saveBtn.className = 'save-edit-btn';
+    saveBtn.innerHTML = '&#10003; Save';
+    saveBtn.onclick = function() { saveEdit(card); };
+    actions.insertBefore(saveBtn, pencilBtn.nextSibling);
+
+    // Inject saved toast on the card
+    const toast = document.createElement('div');
+    toast.className = 'saved-toast';
+    toast.textContent = 'Saved!';
+    card.appendChild(toast);
 
     // Restore saved edits from localStorage
     const saved = localStorage.getItem('oma-email-' + emailId);
@@ -4376,7 +4485,7 @@ function initEditable() {
       showEditedState(card, true);
     }
 
-    // On blur, save edits
+    // On blur, auto-save as backup (but user should click Save)
     body.addEventListener('blur', function() {
       const current = body.innerHTML;
       const original = body.dataset.original;
@@ -4389,6 +4498,66 @@ function initEditable() {
       }
     });
   });
+}
+
+function toggleEditMode(card) {
+  const body = card.querySelector('.email-body');
+  const pencilBtn = card.querySelector('.edit-pencil-btn');
+  const saveBtn = card.querySelector('.save-edit-btn');
+  if (!body) return;
+
+  const isEditing = body.getAttribute('contenteditable') === 'true';
+
+  if (isEditing) {
+    // Exit edit mode without explicit save
+    body.setAttribute('contenteditable', 'false');
+    body.classList.remove('editing');
+    pencilBtn.innerHTML = '<span class="pencil-icon">&#9998;</span> Edit';
+    saveBtn.classList.remove('visible');
+  } else {
+    // Enter edit mode
+    body.setAttribute('contenteditable', 'true');
+    body.classList.add('editing');
+    body.focus();
+    pencilBtn.innerHTML = '<span class="pencil-icon">&#10005;</span> Cancel';
+    saveBtn.classList.add('visible');
+  }
+}
+
+function saveEdit(card) {
+  const emailId = card.dataset.emailId;
+  const body = card.querySelector('.email-body');
+  const pencilBtn = card.querySelector('.edit-pencil-btn');
+  const saveBtn = card.querySelector('.save-edit-btn');
+  const toast = card.querySelector('.saved-toast');
+  if (!body) return;
+
+  const current = body.innerHTML;
+  const original = body.dataset.original;
+
+  if (current !== original) {
+    localStorage.setItem('oma-email-' + emailId, current);
+    showEditedState(card, true);
+  } else {
+    localStorage.removeItem('oma-email-' + emailId);
+    showEditedState(card, false);
+  }
+
+  // Exit edit mode
+  body.setAttribute('contenteditable', 'false');
+  body.classList.remove('editing');
+  pencilBtn.innerHTML = '<span class="pencil-icon">&#9998;</span> Edit';
+  saveBtn.classList.remove('visible');
+
+  // Show saved toast
+  if (toast) {
+    toast.classList.add('show');
+    setTimeout(() => { toast.classList.remove('show'); }, 1800);
+  }
+
+  // Brief green flash on save button before it hides
+  saveBtn.classList.add('saved');
+  setTimeout(() => { saveBtn.classList.remove('saved'); }, 1800);
 }
 
 function showEditedState(card, isEdited) {
