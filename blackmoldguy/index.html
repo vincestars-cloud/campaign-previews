@@ -613,6 +613,46 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
 .footer-logo svg { width: 36px; height: 36px; }
 .footer-logo span { font-family: var(--font-display); font-size: 1.1rem; color: white; }
 
+/* SERVICE PICKER CARDS */
+.svc-pick {
+  background: var(--white); border: 2px solid var(--border); border-radius: 14px;
+  padding: 16px 10px; text-align: center; cursor: pointer; transition: all 0.25s;
+  position: relative;
+}
+.svc-pick:hover { border-color: var(--sage); background: var(--sage-light); }
+.svc-pick.selected { border-color: var(--sage-dark); background: var(--sage-light); }
+.svc-pick.selected::after {
+  content: '✓'; position: absolute; top: -6px; right: -6px; width: 20px; height: 20px;
+  background: var(--sage-dark); color: white; border-radius: 50%; font-size: 0.65rem;
+  display: flex; align-items: center; justify-content: center; font-weight: 700;
+}
+.svc-pick-icon { width: 40px; height: 40px; margin: 0 auto 8px; color: var(--sage-dark); }
+.svc-pick-icon svg { width: 100%; height: 100%; }
+.svc-pick.selected .svc-pick-icon { color: var(--sage-dark); }
+.svc-pick-label { font-size: 0.78rem; font-weight: 600; color: var(--ink); line-height: 1.3; }
+@media (max-width: 480px) {
+  #serviceGrid { grid-template-columns: repeat(2, 1fr) !important; }
+  #propGrid { grid-template-columns: repeat(2, 1fr) !important; }
+}
+
+/* PILL BUTTONS */
+.pill-btn {
+  display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px;
+  background: var(--white); border: 1.5px solid var(--border); border-radius: 100px;
+  font-family: var(--font-body); font-size: 0.82rem; font-weight: 500; color: var(--ink);
+  cursor: pointer; transition: all 0.2s; white-space: nowrap;
+}
+.pill-btn:hover { border-color: var(--sage); background: var(--sage-light); }
+.pill-btn.selected { background: var(--sage-dark); color: white; border-color: var(--sage-dark); }
+
+/* SUMMARY TAGS */
+.summary-tag {
+  display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px;
+  background: white; border: 1px solid var(--border); border-radius: 6px;
+  font-size: 0.75rem; font-weight: 500; color: var(--ink);
+}
+.summary-tag svg { width: 12px; height: 12px; stroke: var(--sage); }
+
 /* MOBILE CTA */
 .mobile-cta {
   display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
@@ -1203,163 +1243,176 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
 <section class="quote-section" id="quote">
   <div class="container-narrow">
     <div class="quote-wrapper">
-      <div class="quote-header">
-        <h2>Let's Get You Breathing Easy</h2>
-        <p>Answer a few quick questions — takes about 45 seconds.</p>
+      <!-- Header with branding bar -->
+      <div style="background:linear-gradient(135deg,#1a2e22,#2d4a3a);padding:16px 28px;border-radius:28px 28px 0 0;">
+        <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(232,239,233,0.5);margin-bottom:2px;">THE BLACK MOLD GUY</div>
+        <div style="font-family:var(--font-display);font-size:1.3rem;color:white;">Schedule Your Assessment</div>
       </div>
-      <div class="progress-bar" id="progressBar">
+
+      <!-- Summary bar (hidden initially, shown after step 1) -->
+      <div id="funnelSummary" style="display:none;padding:12px 28px;background:var(--sage-light);border-bottom:1px solid var(--border);font-size:0.8rem;color:var(--ink);">
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div style="font-weight:600;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:6px;">SUMMARY</div>
+          <button onclick="goToStep(1)" style="background:none;border:none;cursor:pointer;padding:2px;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+          </button>
+        </div>
+        <div id="summaryTags" style="display:flex;flex-wrap:wrap;gap:6px;"></div>
+      </div>
+
+      <div class="progress-bar" id="progressBar" style="margin:16px 28px 0;">
         <div class="progress-step active"></div>
         <div class="progress-step"></div>
         <div class="progress-step"></div>
         <div class="progress-step"></div>
         <div class="progress-step"></div>
         <div class="progress-step"></div>
-        <div class="progress-step"></div>
       </div>
-      <div class="step-counter" id="stepCounter">Step 1 of 7</div>
+      <div class="step-counter" id="stepCounter">Step 1 of 6</div>
       <div class="quote-body" id="quoteBody">
 
-        <!-- Step 1 -->
+        <!-- Step 1: Zip Code -->
         <div class="funnel-step active" data-step="1">
-          <h3 class="funnel-question">What brought you here today?</h3>
-          <p class="funnel-context">This helps me prepare the right solution before we even talk.</p>
-          <div class="option-grid option-single">
-            <div class="option-card" data-value="health" onclick="selectAndAdvance(this, 1)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
-              <div><div class="label">Health symptoms</div><div class="sublabel">Allergies, breathing issues, fatigue, or recurring illness</div></div>
-              <div class="check-circle"></div>
+          <div style="text-align:center;margin-bottom:24px;">
+            <div style="width:80px;height:80px;margin:0 auto 16px;background:var(--sage-light);border-radius:50%;display:flex;align-items:center;justify-content:center;">
+              <svg width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="var(--sage-dark)" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
             </div>
-            <div class="option-card" data-value="visible" onclick="selectAndAdvance(this, 1)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-              <div><div class="label">I can see or smell mold</div><div class="sublabel">Visible growth, dark spots, or a musty odor</div></div>
-              <div class="check-circle"></div>
-            </div>
-            <div class="option-card" data-value="water" onclick="selectAndAdvance(this, 1)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg></div>
-              <div><div class="label">Water damage or leak</div><div class="sublabel">Recent or ongoing moisture issue</div></div>
-              <div class="check-circle"></div>
-            </div>
-            <div class="option-card" data-value="proactive" onclick="selectAndAdvance(this, 1)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-              <div><div class="label">Prevention / peace of mind</div><div class="sublabel">Want to test or protect my home proactively</div></div>
-              <div class="check-circle"></div>
-            </div>
+            <h3 class="funnel-question">Where is your property?</h3>
+            <p class="funnel-context">Enter your zip code so we can confirm service in your area.</p>
           </div>
-          <div class="funnel-nav"><div></div></div>
+          <div class="form-group" style="max-width:320px;margin:0 auto;">
+            <label>Zip Code *</label>
+            <div style="position:relative;">
+              <input type="text" id="zipCode" placeholder="e.g. 30318" maxlength="5" inputmode="numeric" pattern="[0-9]*" style="font-size:1.1rem;padding:16px 50px 16px 18px;letter-spacing:0.05em;">
+              <div id="zipStatus" style="position:absolute;right:14px;top:50%;transform:translateY(-50%);display:none;"></div>
+            </div>
+            <div id="zipMessage" style="display:none;margin-top:10px;padding:12px 16px;border-radius:12px;font-size:0.85rem;line-height:1.5;"></div>
+          </div>
+          <div class="funnel-nav" style="max-width:320px;margin:24px auto 0;">
+            <div></div>
+            <button class="btn-next" id="zipNext" onclick="validateZip()" disabled style="opacity:0.5;cursor:not-allowed;">Confirm →</button>
+          </div>
         </div>
 
-        <!-- Step 2 -->
+        <!-- Step 2: What do you need help with? -->
         <div class="funnel-step" data-step="2">
-          <h3 class="funnel-question">What type of property?</h3>
-          <p class="funnel-context">Different properties need different approaches.</p>
-          <div class="option-grid">
-            <div class="option-card" data-value="house" onclick="selectAndAdvance(this, 2)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
-              <div><div class="label">House</div></div>
-              <div class="check-circle"></div>
+          <h3 class="funnel-question">What do you need help with?</h3>
+          <p class="funnel-context">Select the service that best matches your situation.</p>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;" id="serviceGrid">
+            <div class="svc-pick" data-value="inspection" onclick="selectService(this)">
+              <div class="svc-pick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+              <div class="svc-pick-label">Mold Inspection</div>
             </div>
-            <div class="option-card" data-value="apartment" onclick="selectAndAdvance(this, 2)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><path d="M9 18h6v4H9z"/></svg></div>
-              <div><div class="label">Apartment / Condo</div></div>
-              <div class="check-circle"></div>
+            <div class="svc-pick" data-value="testing" onclick="selectService(this)">
+              <div class="svc-pick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+              <div class="svc-pick-label">Mold Testing</div>
             </div>
-            <div class="option-card" data-value="townhouse" onclick="selectAndAdvance(this, 2)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M3 21V9l4-4 5 5 5-5 4 4v12"/><line x1="3" y1="21" x2="21" y2="21"/></svg></div>
-              <div><div class="label">Townhouse</div></div>
-              <div class="check-circle"></div>
+            <div class="svc-pick" data-value="remediation" onclick="selectService(this)">
+              <div class="svc-pick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+              <div class="svc-pick-label">Full Remediation</div>
             </div>
-            <div class="option-card" data-value="commercial" onclick="selectAndAdvance(this, 2)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg></div>
-              <div><div class="label">Commercial</div></div>
-              <div class="check-circle"></div>
+            <div class="svc-pick" data-value="prevention" onclick="selectService(this)">
+              <div class="svc-pick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div class="svc-pick-label">Prevention</div>
+            </div>
+            <div class="svc-pick" data-value="sanitization" onclick="selectService(this)">
+              <div class="svc-pick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+              <div class="svc-pick-label">Sanitization</div>
+            </div>
+            <div class="svc-pick" data-value="pre-purchase" onclick="selectService(this)">
+              <div class="svc-pick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg></div>
+              <div class="svc-pick-label">Pre-Purchase</div>
             </div>
           </div>
+
+          <!-- Sub-question: What's the issue? (pills) -->
+          <div id="issueSection" style="display:none;margin-top:24px;">
+            <h4 style="font-family:var(--font-display);font-size:1rem;margin-bottom:12px;">What's the main concern?</h4>
+            <div id="issuePills" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+          </div>
+
           <div class="funnel-nav"><button class="btn-back" onclick="prevStep()">← Back</button><div></div></div>
         </div>
 
-        <!-- Step 3 -->
+        <!-- Step 3: Property Type (compact visual grid) -->
         <div class="funnel-step" data-step="3">
-          <h3 class="funnel-question">How large is the property?</h3>
-          <p class="funnel-context">Helps me estimate scope and give you an accurate ballpark.</p>
-          <div class="option-grid">
-            <div class="option-card" data-value="under1000" onclick="selectAndAdvance(this, 3)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-              <div><div class="label">Under 1,000 sq ft</div></div>
-              <div class="check-circle"></div>
+          <h3 class="funnel-question">What type of property?</h3>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:20px;" id="propGrid">
+            <div class="svc-pick" data-value="house" onclick="selectProp(this)">
+              <div class="svc-pick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+              <div class="svc-pick-label">House</div>
             </div>
-            <div class="option-card" data-value="1000-2000" onclick="selectAndAdvance(this, 3)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-              <div><div class="label">1,000 – 2,000 sq ft</div></div>
-              <div class="check-circle"></div>
+            <div class="svc-pick" data-value="apartment" onclick="selectProp(this)">
+              <div class="svc-pick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><path d="M9 18h6v4H9z"/></svg></div>
+              <div class="svc-pick-label">Apt/Condo</div>
             </div>
-            <div class="option-card" data-value="2000-3500" onclick="selectAndAdvance(this, 3)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-              <div><div class="label">2,000 – 3,500 sq ft</div></div>
-              <div class="check-circle"></div>
+            <div class="svc-pick" data-value="townhouse" onclick="selectProp(this)">
+              <div class="svc-pick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V9l4-4 5 5 5-5 4 4v12"/><line x1="3" y1="21" x2="21" y2="21"/></svg></div>
+              <div class="svc-pick-label">Townhouse</div>
             </div>
-            <div class="option-card" data-value="over3500" onclick="selectAndAdvance(this, 3)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
-              <div><div class="label">Over 3,500 sq ft</div></div>
-              <div class="check-circle"></div>
+            <div class="svc-pick" data-value="commercial" onclick="selectProp(this)">
+              <div class="svc-pick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg></div>
+              <div class="svc-pick-label">Commercial</div>
             </div>
           </div>
+
+          <!-- Property size pills -->
+          <div id="sizeSection" style="display:none;margin-top:24px;">
+            <h4 style="font-family:var(--font-display);font-size:1rem;margin-bottom:12px;">Approximate size?</h4>
+            <div style="display:flex;flex-wrap:wrap;gap:8px;">
+              <button class="pill-btn" onclick="selectSize(this,'under1000')">Under 1,000 sf</button>
+              <button class="pill-btn" onclick="selectSize(this,'1000-2000')">1,000 – 2,000 sf</button>
+              <button class="pill-btn" onclick="selectSize(this,'2000-3500')">2,000 – 3,500 sf</button>
+              <button class="pill-btn" onclick="selectSize(this,'over3500')">Over 3,500 sf</button>
+            </div>
+          </div>
+
           <div class="funnel-nav"><button class="btn-back" onclick="prevStep()">← Back</button><div></div></div>
         </div>
 
-        <!-- Step 4 -->
+        <!-- Step 4: Urgency (pills) -->
         <div class="funnel-step" data-step="4">
           <h3 class="funnel-question">How urgent is this?</h3>
-          <p class="funnel-context">No judgment — I just want to prioritize families who need help now.</p>
+          <p class="funnel-context">No judgment — I prioritize families who need help now.</p>
           <div class="option-grid option-single">
             <div class="option-card" data-value="asap" onclick="selectAndAdvance(this, 4)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-              <div><div class="label">ASAP — someone in my home is sick</div></div>
+              <div class="option-icon" style="background:var(--accent-light);"><svg viewBox="0 0 24 24" style="stroke:var(--accent);"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+              <div><div class="label">ASAP — someone is sick</div><div class="sublabel">Health symptoms from mold exposure</div></div>
               <div class="check-circle"></div>
             </div>
             <div class="option-card" data-value="soon" onclick="selectAndAdvance(this, 4)">
               <div class="option-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
-              <div><div class="label">Within the next week or two</div></div>
+              <div><div class="label">Within 1-2 weeks</div><div class="sublabel">Not an emergency but want it handled</div></div>
               <div class="check-circle"></div>
             </div>
             <div class="option-card" data-value="exploring" onclick="selectAndAdvance(this, 4)">
               <div class="option-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
-              <div><div class="label">Just exploring my options</div></div>
+              <div><div class="label">Just exploring</div><div class="sublabel">Getting information and comparing options</div></div>
               <div class="check-circle"></div>
             </div>
           </div>
           <div class="funnel-nav"><button class="btn-back" onclick="prevStep()">← Back</button><div></div></div>
         </div>
 
-        <!-- Step 5 -->
+        <!-- Step 5: Where in the home? + Notes -->
         <div class="funnel-step" data-step="5">
-          <h3 class="funnel-question">Where is the property?</h3>
-          <p class="funnel-context">I serve Metro Atlanta and Miami-Dade.</p>
-          <div class="option-grid option-single">
-            <div class="option-card" data-value="atlanta" onclick="selectAndAdvance(this, 5)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-              <div><div class="label">Metro Atlanta, Georgia</div></div>
-              <div class="check-circle"></div>
-            </div>
-            <div class="option-card" data-value="miami" onclick="selectAndAdvance(this, 5)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
-              <div><div class="label">Miami-Dade, Florida</div></div>
-              <div class="check-circle"></div>
-            </div>
-            <div class="option-card" data-value="other" onclick="selectAndAdvance(this, 5)">
-              <div class="option-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
-              <div><div class="label">Somewhere else</div><div class="sublabel">I may still be able to help</div></div>
-              <div class="check-circle"></div>
-            </div>
+          <h3 class="funnel-question">Where are you seeing issues?</h3>
+          <p class="funnel-context">Select all that apply. Totally optional.</p>
+          <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px;" id="locationPills">
+            <button class="pill-btn pill-multi" onclick="togglePill(this)" data-value="bathroom">Bathroom</button>
+            <button class="pill-btn pill-multi" onclick="togglePill(this)" data-value="kitchen">Kitchen</button>
+            <button class="pill-btn pill-multi" onclick="togglePill(this)" data-value="basement">Basement</button>
+            <button class="pill-btn pill-multi" onclick="togglePill(this)" data-value="attic">Attic</button>
+            <button class="pill-btn pill-multi" onclick="togglePill(this)" data-value="bedroom">Bedroom</button>
+            <button class="pill-btn pill-multi" onclick="togglePill(this)" data-value="hvac">HVAC / Ducts</button>
+            <button class="pill-btn pill-multi" onclick="togglePill(this)" data-value="crawlspace">Crawlspace</button>
+            <button class="pill-btn pill-multi" onclick="togglePill(this)" data-value="garage">Garage</button>
+            <button class="pill-btn pill-multi" onclick="togglePill(this)" data-value="whole-home">Whole Home</button>
+            <button class="pill-btn pill-multi" onclick="togglePill(this)" data-value="not-sure">Not Sure</button>
           </div>
-          <div class="funnel-nav"><button class="btn-back" onclick="prevStep()">← Back</button><div></div></div>
-        </div>
-
-        <!-- Step 6 -->
-        <div class="funnel-step" data-step="6">
-          <h3 class="funnel-question">Anything else I should know?</h3>
-          <p class="funnel-context">Symptoms, timeline, past water damage — anything that helps me prepare. Totally optional.</p>
           <div class="form-group">
-            <textarea id="notes" placeholder="e.g. Recurring sinus infections for 6 months. Water damage in the bathroom last year. Two young kids at home..." rows="4"></textarea>
+            <label>Anything else I should know? <span style="color:var(--warm-gray);font-weight:400;">(optional)</span></label>
+            <textarea id="notes" placeholder="e.g. Water damage last year, recurring sinus infections, two young kids..." rows="3"></textarea>
           </div>
           <div class="funnel-nav">
             <button class="btn-back" onclick="prevStep()">← Back</button>
@@ -1367,24 +1420,34 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
           </div>
         </div>
 
-        <!-- Step 7 -->
-        <div class="funnel-step" data-step="7">
-          <h3 class="funnel-question">Where should I send your assessment?</h3>
-          <p class="funnel-context">I'll personally review your answers and reach out within 24 hours — usually much sooner.</p>
+        <!-- Step 6: Consent checkbox + preferred contact -->
+        <div class="funnel-step" data-step="6">
+          <h3 class="funnel-question">How should we reach you?</h3>
+          <p class="funnel-context">I'll personally review your answers and respond within 24 hours — usually much sooner.</p>
           <div class="form-row">
             <div class="form-group"><label>First Name *</label><input type="text" id="firstName" placeholder="First name" required></div>
-            <div class="form-group"><label>Last Name *</label><input type="text" id="lastName" placeholder="Last name" required></div>
+            <div class="form-group"><label>Last Name</label><input type="text" id="lastName" placeholder="Last name"></div>
           </div>
-          <div class="form-group"><label>Email *</label><input type="email" id="email" placeholder="you@email.com" required></div>
           <div class="form-group"><label>Phone *</label><input type="tel" id="phone" placeholder="(555) 123-4567" required></div>
+          <div class="form-group"><label>Email *</label><input type="email" id="email" placeholder="you@email.com" required></div>
+          <div style="margin-top:16px;">
+            <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:0.82rem;color:var(--warm-gray);line-height:1.5;">
+              <input type="checkbox" id="consent" checked style="margin-top:3px;accent-color:var(--sage-dark);width:16px;height:16px;flex-shrink:0;">
+              I agree to be contacted about my service request, promotions, and marketing purposes. *
+            </label>
+            <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;font-size:0.82rem;color:var(--warm-gray);line-height:1.5;margin-top:10px;">
+              <input type="checkbox" id="smsConsent" style="margin-top:3px;accent-color:var(--sage-dark);width:16px;height:16px;flex-shrink:0;">
+              Receive text messages about appointment
+            </label>
+          </div>
           <div class="funnel-nav">
             <button class="btn-back" onclick="prevStep()">← Back</button>
             <button class="btn-next" onclick="submitForm()" style="background:var(--accent);">Get My Free Assessment →</button>
           </div>
         </div>
 
-        <!-- Success -->
-        <div class="funnel-step" data-step="8">
+        <!-- Step 7: Success -->
+        <div class="funnel-step" data-step="7">
           <div class="success-state">
             <div class="success-icon">
               <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
@@ -1402,6 +1465,15 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
           </div>
         </div>
 
+      </div>
+
+      <!-- Persistent Call footer -->
+      <div id="funnelFooter" style="padding:12px 28px;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;background:white;border-radius:0 0 28px 28px;">
+        <a href="tel:3058490242" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:var(--sage-dark);font-weight:600;font-size:0.88rem;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--sage)" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          Call Us Now
+        </a>
+        <div style="font-size:0.72rem;color:var(--warm-gray);">Mon-Fri 9am-5pm EST</div>
       </div>
     </div>
   </div>
@@ -1575,21 +1647,136 @@ document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // FUNNEL
 let currentStep = 1;
+const totalSteps = 6;
 const answers = {};
 let isTransitioning = false;
+
+// Zip code service area validation
+const ATLANTA_ZIPS = ['30002','30003','30004','30005','30006','30008','30009','30010','30011','30012','30013','30014','30017','30019','30021','30022','30024','30026','30028','30030','30032','30033','30034','30035','30036','30038','30039','30043','30044','30045','30046','30047','30048','30049','30052','30058','30060','30062','30064','30066','30067','30068','30071','30072','30074','30075','30076','30078','30079','30080','30082','30083','30084','30087','30088','30090','30092','30093','30094','30096','30097','30098','30099','30101','30102','30106','30114','30115','30120','30127','30134','30135','30144','30152','30168','30180','30188','30189','30213','30214','30215','30228','30236','30238','30248','30250','30252','30253','30260','30265','30268','30269','30273','30274','30281','30288','30291','30294','30296','30297','30301','30302','30303','30304','30305','30306','30307','30308','30309','30310','30311','30312','30313','30314','30315','30316','30317','30318','30319','30320','30321','30324','30325','30326','30327','30328','30329','30330','30331','30332','30334','30336','30337','30338','30339','30340','30341','30342','30344','30345','30346','30348','30349','30350','30354','30360','30361','30363','30369','30374','30375','30377','30378','30380'];
+const MIAMI_ZIPS = ['33010','33011','33012','33013','33014','33015','33016','33017','33018','33019','33020','33021','33022','33023','33024','33025','33026','33027','33028','33029','33030','33031','33032','33033','33034','33035','33039','33054','33055','33056','33060','33062','33063','33064','33065','33066','33067','33068','33069','33071','33073','33076','33101','33109','33122','33125','33126','33127','33128','33129','33130','33131','33132','33133','33134','33135','33136','33137','33138','33139','33140','33141','33142','33143','33144','33145','33146','33147','33148','33149','33150','33154','33155','33156','33157','33158','33160','33161','33162','33165','33166','33167','33168','33169','33170','33172','33173','33174','33175','33176','33177','33178','33179','33180','33181','33182','33183','33184','33185','33186','33187','33189','33190','33193','33194','33196'];
+
+const zipInput = document.getElementById('zipCode');
+const zipNext = document.getElementById('zipNext');
+const zipStatus = document.getElementById('zipStatus');
+const zipMsg = document.getElementById('zipMessage');
+
+zipInput.addEventListener('input', function() {
+  const v = this.value.replace(/\D/g,'');
+  this.value = v;
+  zipStatus.style.display = 'none';
+  zipMsg.style.display = 'none';
+  zipNext.disabled = true;
+  zipNext.style.opacity = '0.5';
+  zipNext.style.cursor = 'not-allowed';
+  if (v.length === 5) validateZipLive(v);
+});
+zipInput.addEventListener('keydown', function(e) { if (e.key === 'Enter' && this.value.length === 5) validateZip(); });
+
+function validateZipLive(zip) {
+  const inAtlanta = ATLANTA_ZIPS.includes(zip);
+  const inMiami = MIAMI_ZIPS.includes(zip);
+  if (inAtlanta || inMiami) {
+    answers.zip = zip;
+    answers.location = inAtlanta ? 'Metro Atlanta, GA' : 'Miami-Dade, FL';
+    zipStatus.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#22c55e"/><polyline points="8 12 11 15 16 9" stroke="white" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+    zipStatus.style.display = 'block';
+    zipInput.style.borderColor = '#22c55e';
+    zipMsg.style.display = 'none';
+    zipNext.disabled = false;
+    zipNext.style.opacity = '1';
+    zipNext.style.cursor = 'pointer';
+  } else {
+    zipStatus.innerHTML = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" fill="#f59e0b"/><line x1="12" y1="9" x2="12" y2="13" stroke="white" stroke-width="2"/><circle cx="12" cy="16" r="1" fill="white"/></svg>';
+    zipStatus.style.display = 'block';
+    zipInput.style.borderColor = '#f59e0b';
+    zipMsg.innerHTML = '<div style="display:flex;align-items:flex-start;gap:10px;"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" style="flex-shrink:0;margin-top:1px;"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" fill="#f59e0b"/><line x1="12" y1="9" x2="12" y2="13" stroke="white" stroke-width="2"/><circle cx="12" cy="16" r="1" fill="white"/></svg><div><b>You may be out of our service area.</b><br>Contact us at 305-849-0242 to confirm availability.<br><a href="tel:3058490242" style="display:inline-flex;align-items:center;gap:6px;margin-top:8px;padding:6px 14px;background:white;border:1px solid var(--border);border-radius:8px;text-decoration:none;color:var(--ink);font-weight:600;font-size:0.82rem;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>Call</a></div></div>';
+    zipMsg.style.display = 'block';
+    zipMsg.style.background = '#fef3cd';
+    zipMsg.style.border = '1px solid #fde68a';
+    // Still allow them to proceed
+    answers.zip = zip;
+    answers.location = 'Other (' + zip + ')';
+    zipNext.disabled = false;
+    zipNext.style.opacity = '1';
+    zipNext.style.cursor = 'pointer';
+  }
+}
+
+function validateZip() {
+  if (zipInput.value.length === 5 && !zipNext.disabled) autoAdvance();
+}
+
+// Service issue mapping
+const issueMap = {
+  inspection: ['Visible mold', 'Musty smell', 'Water damage', 'Health concerns', 'Other / Not sure'],
+  testing: ['Air quality test', 'Surface swab', 'ERMI test', 'Post-remediation verify', 'Other / Not sure'],
+  remediation: ['Black mold', 'Widespread growth', 'HVAC contamination', 'After flooding', 'Other / Not sure'],
+  prevention: ['Post-remediation coating', 'Proactive protection', 'Humidity control', 'New home', 'Other / Not sure'],
+  sanitization: ['Post-illness deep clean', 'Allergen removal', 'Pet odor/dander', 'General air quality', 'Other / Not sure'],
+  'pre-purchase': ['Buying a home', 'Investment property', 'Selling prep', 'New construction', 'Other / Not sure']
+};
+
+function selectService(el) {
+  document.querySelectorAll('#serviceGrid .svc-pick').forEach(s => s.classList.remove('selected'));
+  el.classList.add('selected');
+  answers.service = el.dataset.value;
+  answers.serviceLabel = el.querySelector('.svc-pick-label').textContent;
+
+  // Show sub-question pills
+  const issues = issueMap[answers.service] || [];
+  const section = document.getElementById('issueSection');
+  const pills = document.getElementById('issuePills');
+  pills.innerHTML = '';
+  issues.forEach(issue => {
+    const btn = document.createElement('button');
+    btn.className = 'pill-btn';
+    btn.textContent = issue;
+    btn.onclick = () => {
+      pills.querySelectorAll('.pill-btn').forEach(p => p.classList.remove('selected'));
+      btn.classList.add('selected');
+      answers.issue = issue;
+      setTimeout(() => autoAdvance(), 350);
+    };
+    pills.appendChild(btn);
+  });
+  section.style.display = 'block';
+}
+
+function selectProp(el) {
+  document.querySelectorAll('#propGrid .svc-pick').forEach(s => s.classList.remove('selected'));
+  el.classList.add('selected');
+  answers.property = el.dataset.value;
+  answers.propertyLabel = el.querySelector('.svc-pick-label').textContent;
+
+  // Show size pills
+  document.getElementById('sizeSection').style.display = 'block';
+}
+
+function selectSize(btn, val) {
+  btn.parentElement.querySelectorAll('.pill-btn').forEach(p => p.classList.remove('selected'));
+  btn.classList.add('selected');
+  answers.size = val;
+  answers.sizeLabel = btn.textContent;
+  setTimeout(() => autoAdvance(), 350);
+}
+
+function togglePill(btn) {
+  btn.classList.toggle('selected');
+}
 
 function selectAndAdvance(card, step) {
   if (isTransitioning) return;
   const siblings = card.parentElement.querySelectorAll('.option-card');
   siblings.forEach(s => s.classList.remove('selected'));
   card.classList.add('selected');
-  answers[step] = card.dataset.value;
+  answers['urgency'] = card.dataset.value;
+  answers['urgencyLabel'] = card.querySelector('.label').textContent;
   isTransitioning = true;
   setTimeout(() => { autoAdvance(); isTransitioning = false; }, 400);
 }
 
 function autoAdvance() {
-  if (currentStep >= 7) return;
+  if (currentStep >= totalSteps) return;
   const currentEl = document.querySelector(`.funnel-step[data-step="${currentStep}"]`);
   currentEl.classList.add('exiting');
   setTimeout(() => {
@@ -1597,11 +1784,12 @@ function autoAdvance() {
     currentStep++;
     document.querySelector(`.funnel-step[data-step="${currentStep}"]`).classList.add('active');
     updateProgress();
+    updateSummary();
   }, 250);
 }
 
 function nextStep() {
-  if (currentStep >= 8) return;
+  if (currentStep >= totalSteps) return;
   const currentEl = document.querySelector(`.funnel-step[data-step="${currentStep}"]`);
   currentEl.classList.add('exiting');
   setTimeout(() => {
@@ -1609,6 +1797,7 @@ function nextStep() {
     currentStep++;
     document.querySelector(`.funnel-step[data-step="${currentStep}"]`).classList.add('active');
     updateProgress();
+    updateSummary();
   }, 250);
 }
 
@@ -1616,6 +1805,13 @@ function prevStep() {
   if (currentStep <= 1) return;
   document.querySelector(`.funnel-step[data-step="${currentStep}"]`).classList.remove('active');
   currentStep--;
+  document.querySelector(`.funnel-step[data-step="${currentStep}"]`).classList.add('active');
+  updateProgress();
+}
+
+function goToStep(step) {
+  document.querySelector(`.funnel-step[data-step="${currentStep}"]`).classList.remove('active');
+  currentStep = step;
   document.querySelector(`.funnel-step[data-step="${currentStep}"]`).classList.add('active');
   updateProgress();
 }
@@ -1628,38 +1824,60 @@ function updateProgress() {
     else if (i === currentStep - 1) s.classList.add('active');
   });
   const counter = document.getElementById('stepCounter');
-  if (currentStep <= 7) { counter.textContent = `Step ${currentStep} of 7`; counter.style.display = 'block'; }
+  if (currentStep <= totalSteps) { counter.textContent = `Step ${currentStep} of ${totalSteps}`; counter.style.display = 'block'; }
   else { counter.style.display = 'none'; }
+}
+
+function updateSummary() {
+  const summary = document.getElementById('funnelSummary');
+  const tags = document.getElementById('summaryTags');
+  const items = [];
+  if (answers.location) items.push(answers.location);
+  if (answers.serviceLabel) items.push(answers.serviceLabel);
+  if (answers.issue) items.push(answers.issue);
+  if (answers.propertyLabel) items.push(answers.propertyLabel);
+  if (answers.sizeLabel) items.push(answers.sizeLabel);
+  if (answers.urgencyLabel) items.push(answers.urgencyLabel);
+
+  if (items.length > 0 && currentStep > 1) {
+    tags.innerHTML = items.map(i => `<span class="summary-tag">${i}</span>`).join('');
+    summary.style.display = 'block';
+  } else {
+    summary.style.display = 'none';
+  }
 }
 
 function submitForm() {
   const firstName = document.getElementById('firstName').value.trim();
   const email = document.getElementById('email').value.trim();
   const phone = document.getElementById('phone').value.trim();
-  if (!firstName || !email || !phone) {
+  const consent = document.getElementById('consent').checked;
+  if (!firstName || !email || !phone || !consent) {
     if (!firstName) document.getElementById('firstName').style.borderColor = 'var(--accent)';
     if (!email) document.getElementById('email').style.borderColor = 'var(--accent)';
     if (!phone) document.getElementById('phone').style.borderColor = 'var(--accent)';
     return;
   }
-  answers.firstName = firstName;
-  answers.lastName = document.getElementById('lastName').value.trim();
-  answers.email = email;
-  answers.phone = phone;
-  answers.notes = document.getElementById('notes').value;
 
-  // Submit to Formspree (replace YOUR_FORM_ID with actual Formspree form ID)
+  // Gather location pills
+  const locPills = [];
+  document.querySelectorAll('#locationPills .pill-multi.selected').forEach(p => locPills.push(p.dataset.value));
+
   const formData = {
-    name: answers.firstName + ' ' + answers.lastName,
-    email: answers.email,
-    phone: answers.phone,
-    reason: answers[1] || '',
-    property_type: answers[2] || '',
-    property_size: answers[3] || '',
-    urgency: answers[4] || '',
-    location: answers[5] || '',
-    notes: answers.notes || '',
-    _subject: 'New Lead: ' + answers.firstName + ' — ' + (answers[4] === 'asap' ? 'URGENT' : 'Standard')
+    name: firstName + ' ' + document.getElementById('lastName').value.trim(),
+    email: email,
+    phone: phone,
+    zip: answers.zip || '',
+    location: answers.location || '',
+    service: answers.serviceLabel || '',
+    issue: answers.issue || '',
+    property: answers.propertyLabel || '',
+    size: answers.sizeLabel || '',
+    urgency: answers.urgencyLabel || '',
+    affected_areas: locPills.join(', '),
+    notes: document.getElementById('notes').value || '',
+    sms_consent: document.getElementById('smsConsent').checked ? 'Yes' : 'No',
+    _subject: 'New Lead: ' + firstName + ' — ' + (answers.urgency === 'asap' ? 'URGENT' : 'Standard') + ' — ' + (answers.location || '')
   };
 
   fetch('https://formspree.io/f/YOUR_FORM_ID', {
@@ -1672,12 +1890,13 @@ function submitForm() {
     console.log('Form submission error (endpoint not configured):', formData);
   });
 
-  // Show success regardless (UX shouldn't wait on network)
+  // Show success
   document.querySelector(`.funnel-step[data-step="${currentStep}"]`).classList.remove('active');
-  currentStep = 8;
-  document.querySelector('.funnel-step[data-step="8"]').classList.add('active');
+  currentStep = 7;
+  document.querySelector('.funnel-step[data-step="7"]').classList.add('active');
   document.querySelectorAll('.progress-bar .progress-step').forEach(s => { s.classList.remove('active'); s.classList.add('completed'); });
   document.getElementById('stepCounter').style.display = 'none';
+  document.getElementById('funnelFooter').style.display = 'none';
 }
 
 document.querySelectorAll('.form-group input').forEach(input => {
