@@ -740,10 +740,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
 .svc-pick-icon svg { width: 100%; height: 100%; }
 .svc-pick.selected .svc-pick-icon { color: var(--sage-dark); }
 .svc-pick-label { font-size: 0.78rem; font-weight: 600; color: var(--ink); line-height: 1.3; }
-@media (max-width: 480px) {
-  #serviceGrid { grid-template-columns: repeat(2, 1fr) !important; }
-  #propGrid { grid-template-columns: repeat(2, 1fr) !important; }
-}
+/* Moved to 768px breakpoint */
 
 /* PILL BUTTONS */
 .pill-btn {
@@ -787,7 +784,8 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
   .hero { padding: 110px 0 60px; }
   .hero h1 { font-size: 2.2rem; }
   .hero-sub { font-size: 1rem; }
-  .hero-stats { gap: 20px; flex-wrap: wrap; }
+  .hero-stats { gap: 16px; flex-wrap: wrap; }
+  .hero-stat { flex: 0 0 calc(50% - 8px); }
   .hero-stat .number { font-size: 1.6rem; }
   .hero-ctas { flex-direction: column; align-items: stretch; }
   .hero-ctas .btn-primary, .hero-ctas .btn-secondary { justify-content: center; }
@@ -796,17 +794,17 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
   .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   .option-grid, .form-row { grid-template-columns: 1fr; }
-  .quote-body { padding: 32px 24px 40px; }
-  .quote-header { padding: 36px 24px 0; }
+  .quote-body { padding: 32px 20px 40px; min-height: auto; }
+  .quote-header { padding: 36px 20px 0; }
   .quote-header h2 { font-size: 1.5rem; }
-  .progress-bar { margin: 24px 24px 0; }
-  .step-counter { margin-left: 24px; margin-right: 24px; }
+  .progress-bar { margin: 24px 20px 0; }
+  .step-counter { margin-left: 20px; margin-right: 20px; }
   .section-title { font-size: 1.8rem; }
   .section-header { margin-bottom: 48px; }
   .problem, .authority, .approach, .services, .reviews-section, .faq, .quote-section { padding: 80px 0; }
   .differentiators, .cta-banner, .locations { padding: 72px 0; }
-  .trust-inner { gap: 20px; justify-content: flex-start; }
-  .trust-item { font-size: 0.78rem; }
+  .trust-inner { gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .trust-item { font-size: 0.78rem; flex: 0 0 calc(50% - 8px); }
   .approach-card { padding: 28px 20px; }
   .approach-card-body h3 { font-size: 1.1rem; }
   .service-card { padding: 28px 24px; }
@@ -818,14 +816,65 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
   .funnel-question { font-size: 1.15rem; }
   .mobile-cta { display: block; }
   body { padding-bottom: 72px; }
+  /* Funnel grids: force 2 columns on tablets/phones */
+  #serviceGrid { grid-template-columns: repeat(2, 1fr) !important; }
+  #propGrid { grid-template-columns: repeat(2, 1fr) !important; }
+  /* Funnel inline padding overrides */
+  #funnelBrandBar { padding-left: 20px !important; padding-right: 20px !important; }
+  #funnelSummary { padding-left: 20px !important; padding-right: 20px !important; }
+  #progressBar { margin-left: 20px !important; margin-right: 20px !important; }
+  #funnelFooter { padding-left: 20px !important; padding-right: 20px !important; }
+}
+@media (max-width: 480px) {
+  .hero-stats { gap: 12px; }
+  .hero-stat .number { font-size: 1.4rem; }
+  .hero-stat .label { font-size: 0.72rem; }
+  .trust-item { flex: 0 0 calc(50% - 6px); font-size: 0.75rem; }
+  .quote-body { padding: 24px 16px 32px; }
+  .quote-header { padding: 28px 16px 0; }
+  .progress-bar { margin: 20px 16px 0; }
+  .step-counter { margin-left: 16px; margin-right: 16px; }
+  .funnel-question { font-size: 1.05rem; }
+  .funnel-context { font-size: 0.82rem; }
+  .svc-pick { padding: 12px 8px; }
+  .svc-pick-label { font-size: 0.72rem; }
+  .svc-pick-icon { width: 32px; height: 32px; }
+  .pill-btn { padding: 7px 12px; font-size: 0.78rem; }
+  .option-card { padding: 14px 12px; gap: 10px; }
+  .option-card .label { font-size: 0.84rem; }
+  .option-card .sublabel { font-size: 0.72rem; }
+  .option-icon { width: 36px; height: 36px; }
+  .check-circle { width: 20px; height: 20px; }
+  .form-group input, .form-group textarea, .form-group select { padding: 12px 14px; font-size: 0.9rem; }
+  .form-group label { font-size: 0.82rem; }
+  .btn-next { padding: 12px 24px; font-size: 0.9rem; }
+  .section-title { font-size: 1.5rem; }
+  .section-sub { font-size: 0.92rem; }
+  .approach-card { padding: 24px 18px; }
+  .approach-card-num { width: 40px; height: 40px; font-size: 0.95rem; }
+  .approach-card-body h3 { font-size: 1rem; }
+  .approach-card-body p { font-size: 0.85rem; }
+  .approach-card-body .detail-list li { font-size: 0.82rem; }
+  .service-card { padding: 24px 20px; }
+  .service-card h3 { font-size: 1.15rem; }
+  .service-card p { font-size: 0.85rem; }
+  .faq-question h3 { font-size: 0.95rem; }
+  .location-info { padding: 20px 24px; }
+  #funnelBrandBar { padding-left: 16px !important; padding-right: 16px !important; }
+  #funnelSummary { padding-left: 16px !important; padding-right: 16px !important; }
+  #progressBar { margin-left: 16px !important; margin-right: 16px !important; }
+  #funnelFooter { padding-left: 16px !important; padding-right: 16px !important; }
 }
 @media (max-width: 380px) {
-  .container, .container-narrow { padding: 0 16px; }
+  .container, .container-narrow { padding: 0 14px; }
   .hero h1 { font-size: 1.8rem; }
   .hero-badge { font-size: 0.7rem; padding: 6px 12px; }
-  .option-card { padding: 14px 16px; }
+  .option-card { padding: 12px 10px; }
   .btn-primary, .btn-secondary { padding: 12px 20px; font-size: 0.85rem; }
   .google-badge { flex-wrap: wrap; justify-content: center; gap: 6px; padding: 8px 14px; }
+  #serviceGrid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+  #propGrid { grid-template-columns: repeat(2, 1fr) !important; gap: 10px !important; }
+  .hero-stat .number { font-size: 1.2rem; }
 }
 </style>
 </head>
@@ -1372,13 +1421,13 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
   <div class="container-narrow">
     <div class="quote-wrapper">
       <!-- Header with branding bar -->
-      <div style="background:linear-gradient(135deg,#1a2e22,#2d4a3a);padding:16px 28px;border-radius:28px 28px 0 0;">
+      <div id="funnelBrandBar" style="background:linear-gradient(135deg,#1a2e22,#2d4a3a);padding:16px 28px;border-radius:28px 28px 0 0;">
         <div style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(232,239,233,0.5);margin-bottom:2px;">THE BLACK MOLD GUY</div>
         <div style="font-family:var(--font-display);font-size:1.3rem;color:white;">Schedule Your Assessment</div>
       </div>
 
       <!-- Summary bar (hidden initially, shown after step 1) -->
-      <div id="funnelSummary" style="display:none;padding:12px 28px;background:var(--sage-light);border-bottom:1px solid var(--border);font-size:0.8rem;color:var(--ink);">
+      <div id="funnelSummary" style="display:none;padding:12px 28px;background:var(--sage-light);border-bottom:1px solid var(--border);font-size:0.8rem;color:var(--ink);" class="funnel-summary">
         <div style="display:flex;align-items:center;justify-content:space-between;">
           <div style="font-weight:600;font-size:0.7rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:6px;">SUMMARY</div>
           <button onclick="goToStep(1)" style="background:none;border:none;cursor:pointer;padding:2px;">
@@ -2175,7 +2224,8 @@ autoScroll(document.querySelector('.reviews-scroll'), 0.5);
 .bmg-typing span:nth-child(2){animation-delay:.2s}
 .bmg-typing span:nth-child(3){animation-delay:.4s}
 @keyframes bmgT{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
-@media(max-width:480px){#bmg-chat-panel{width:calc(100vw - 16px);right:-12px;height:calc(100vh - 140px);border-radius:16px 16px 0 0}#bmg-chat-widget{bottom:80px;}}
+@media(max-width:768px){#bmg-chat-widget{bottom:84px !important;}#bmg-chat-toast{width:240px !important;}}
+@media(max-width:480px){#bmg-chat-panel{width:calc(100vw - 16px);right:-12px;height:calc(100vh - 140px);border-radius:16px 16px 0 0}#bmg-chat-widget{bottom:80px !important;}}
 </style>
 
 <script>
