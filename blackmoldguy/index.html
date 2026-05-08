@@ -828,6 +828,13 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
   #funnelSummary { padding-left: 20px !important; padding-right: 20px !important; }
   #progressBar { margin-left: 20px !important; margin-right: 20px !important; }
   #funnelFooter { padding-left: 20px !important; padding-right: 20px !important; }
+  /* Tighter form spacing on mobile */
+  .form-group { margin-bottom: 14px; }
+  .form-group label { margin-bottom: 5px; }
+  .form-group textarea { min-height: 70px; }
+  .funnel-nav { margin-top: 20px; }
+  /* Hide chat toast on mobile */
+  #bmg-chat-toast { display: none !important; }
 }
 @media (max-width: 480px) {
   .hero-stats { gap: 12px; }
@@ -1593,7 +1600,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
           </div>
           <div class="form-group">
             <label>Anything else I should know? <span style="color:var(--warm-gray);font-weight:400;">(optional)</span></label>
-            <textarea id="notes" placeholder="e.g. Water damage last year, recurring sinus infections, two young kids..." rows="3"></textarea>
+            <textarea id="notes" placeholder="e.g. Water damage last year, recurring sinus infections, two young kids..." rows="2"></textarea>
           </div>
           <div class="funnel-nav">
             <button class="btn-back" onclick="prevStep()">← Back</button>
@@ -2097,6 +2104,15 @@ function submitForm() {
 document.querySelectorAll('.form-group input').forEach(input => {
   input.addEventListener('focus', () => { input.style.borderColor = ''; });
 });
+
+// On mobile, scroll focused form fields into view so keyboard doesn't cover them
+if (window.innerWidth <= 768) {
+  document.querySelectorAll('#quoteBody input, #quoteBody textarea').forEach(el => {
+    el.addEventListener('focus', () => {
+      setTimeout(() => { el.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 300);
+    });
+  });
+}
 
 // FAQ
 function toggleFaq(el) {
