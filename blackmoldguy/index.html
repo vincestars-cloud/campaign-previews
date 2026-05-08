@@ -1704,5 +1704,234 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 </script>
+
+<!-- DEONCO CHAT WIDGET -->
+<div id="bmg-chat-widget" style="position:fixed;bottom:90px;right:20px;z-index:999999;font-family:var(--font-body,'DM Sans',sans-serif);">
+  <div id="bmg-chat-bubble" onclick="bmgChatToggle()" style="width:60px;height:60px;border-radius:30px;cursor:pointer;box-shadow:0 4px 16px rgba(0,0,0,0.2);transition:transform 0.3s,box-shadow 0.3s;position:relative;overflow:visible;background:linear-gradient(135deg,#2d4a3a,#4a6b5a);">
+    <svg id="bmg-bub-icon" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+    <svg id="bmg-bub-x" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="display:none;position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    <div id="bmg-bub-dot" style="position:absolute;bottom:1px;right:1px;width:15px;height:15px;border-radius:50%;background:#22c55e;border:2.5px solid white;transition:background 0.3s;"></div>
+  </div>
+
+  <div id="bmg-chat-toast" style="display:none;position:absolute;bottom:70px;right:0;width:280px;background:white;border-radius:12px;box-shadow:0 4px 15px rgba(0,0,0,0.12);padding:12px;border:1px solid #e2dfd8;cursor:pointer;opacity:0;transform:translateY(8px);transition:0.3s;" onclick="bmgChatToggle()">
+    <div style="display:flex;gap:10px;align-items:center;">
+      <div style="width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#2d4a3a,#4a6b5a);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div>
+      <div><p style="margin:0 0 1px;font-size:11px;font-weight:600;color:#2d4a3a;">Deonco</p><p style="margin:0;font-size:13px;color:#374151;line-height:1.4;">Got a mold question? I'm here to help.</p></div>
+      <button onclick="event.stopPropagation();document.getElementById('bmg-chat-toast').style.display='none';" style="background:none;border:none;color:#9ca3af;cursor:pointer;font-size:18px;padding:0;line-height:1;position:absolute;top:8px;right:10px;">&times;</button>
+    </div>
+  </div>
+
+  <div id="bmg-chat-panel" style="display:none;position:absolute;bottom:70px;right:0;width:370px;max-width:calc(100vw - 32px);height:520px;max-height:calc(100vh - 160px);background:#f7f5f0;border-radius:16px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.15);border:1px solid rgba(45,74,58,0.15);flex-direction:column;">
+    <div style="background:linear-gradient(135deg,#1a2e22,#2d4a3a);padding:14px 18px;display:flex;align-items:center;gap:10px;">
+      <div style="position:relative;">
+        <div style="width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#4a6b5a,#6b8f7a);display:flex;align-items:center;justify-content:center;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div id="bmg-hdr-dot" style="position:absolute;bottom:0;right:0;width:10px;height:10px;border-radius:50%;background:#eab308;border:2px solid #1a2e22;transition:background 1.5s;"></div>
+      </div>
+      <div style="flex:1;"><div style="color:#e8efe9;font-size:13.5px;font-weight:500;">Deonco — The Black Mold Guy</div><div id="bmg-hdr-status" style="color:#eab308;font-size:10.5px;transition:color 1.5s;">Connecting...</div></div>
+      <button onclick="bmgChatToggle()" style="background:none;border:none;color:rgba(232,239,233,0.5);cursor:pointer;padding:4px;"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"></polyline></svg></button>
+    </div>
+
+    <div id="bmg-chat-messages" style="flex:1;overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:10px;"></div>
+
+    <div style="padding:10px 14px;border-top:1px solid rgba(45,74,58,0.1);background:white;display:flex;gap:8px;align-items:center;">
+      <input id="bmg-chat-input" type="text" placeholder="Ask Deonco anything..." onkeydown="if(event.key==='Enter')bmgChatSend()" style="flex:1;border:1px solid rgba(45,74,58,0.2);border-radius:20px;padding:9px 14px;font-size:13px;outline:none;font-family:inherit;background:#f7f5f0;color:#0a0f0d;transition:border-color 0.2s;">
+      <button onclick="bmgChatSend()" style="width:34px;height:34px;border-radius:50%;border:none;background:linear-gradient(135deg,#2d4a3a,#4a6b5a);color:white;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg></button>
+    </div>
+    <div style="text-align:center;padding:4px;font-size:9.5px;color:#4a6b5a;opacity:0.4;">The Black Mold Guy</div>
+  </div>
+</div>
+
+<style>
+#bmg-chat-bubble:hover{transform:scale(1.06);box-shadow:0 6px 20px rgba(0,0,0,0.25)}
+#bmg-chat-input:focus{border-color:#2d4a3a}
+.bmg-qr{background:white;border:1px solid rgba(45,74,58,0.25);border-radius:16px;padding:6px 12px;font-size:11.5px;color:#2d4a3a;cursor:pointer;font-family:inherit;transition:all 0.2s;white-space:nowrap}
+.bmg-qr:hover{background:#2d4a3a;color:white;border-color:#2d4a3a}
+.bmg-msg-user{display:flex;justify-content:flex-end}
+.bmg-msg-user>div{background:linear-gradient(135deg,#2d4a3a,#4a6b5a);color:white;border-radius:12px 12px 2px 12px;padding:9px 14px;max-width:78%;font-size:13px;line-height:1.5}
+.bmg-bot-bubble{background:white;border-radius:2px 12px 12px 12px;padding:10px 14px;box-shadow:0 1px 3px rgba(0,0,0,0.05);max-width:78%;font-size:13px;line-height:1.55;color:#0a0f0d}
+.bmg-typing{display:flex;gap:4px;padding:10px 14px}
+.bmg-typing span{width:6px;height:6px;border-radius:50%;background:#4a6b5a;opacity:0.4;animation:bmgT 1.4s infinite}
+.bmg-typing span:nth-child(2){animation-delay:.2s}
+.bmg-typing span:nth-child(3){animation-delay:.4s}
+@keyframes bmgT{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
+@media(max-width:480px){#bmg-chat-panel{width:calc(100vw - 16px);right:-12px;height:calc(100vh - 140px);border-radius:16px 16px 0 0}#bmg-chat-widget{bottom:80px;}}
+</style>
+
+<script>
+(function(){
+let isOpen=false;
+
+window.bmgChatToggle=function(){
+  isOpen=!isOpen;
+  const p=document.getElementById('bmg-chat-panel'),t=document.getElementById('bmg-chat-toast');
+  const icon=document.getElementById('bmg-bub-icon'),x=document.getElementById('bmg-bub-x');
+  p.style.display=isOpen?'flex':'none';t.style.display='none';
+  icon.style.display=isOpen?'none':'block';x.style.display=isOpen?'block':'none';
+  if(isOpen){
+    document.getElementById('bmg-chat-input').focus();
+    if(!sessionStorage.getItem('bmg_connected')){
+      sessionStorage.setItem('bmg_connected','1');
+      const dot=document.getElementById('bmg-hdr-dot'),stat=document.getElementById('bmg-hdr-status');
+      dot.style.background='#eab308';stat.style.color='#eab308';stat.textContent='Connecting...';
+      setTimeout(()=>{dot.style.background='#22c55e';stat.style.color='#22c55e';stat.textContent='Online';},2000);
+    } else {
+      document.getElementById('bmg-hdr-dot').style.background='#22c55e';
+      document.getElementById('bmg-hdr-status').style.color='#22c55e';
+      document.getElementById('bmg-hdr-status').textContent='Online';
+    }
+    if(!window._bmgOpened){
+      window._bmgOpened=true;
+      showTyping();
+      setTimeout(()=>{hideTyping();botMsg("Hey there! I'm Deonco — The Black Mold Guy.");showTyping();},3000);
+      setTimeout(()=>{hideTyping();botMsg("Whether you've got a mold concern or just want peace of mind, I'm here to help. What's going on?");showTyping();},7000);
+      setTimeout(()=>{
+        hideTyping();
+        botMsg("Here are some common questions:");
+        const qr=document.createElement('div');qr.id='bmg-chat-quick';qr.style.cssText='display:flex;flex-wrap:wrap;gap:5px;padding-left:32px;';
+        ['I think I have mold','Health symptoms','How does treatment work?','What does it cost?','Do you serve my area?'].forEach(t=>{
+          const b=document.createElement('button');b.className='bmg-qr';b.textContent=t;b.onclick=()=>bmgChatSend(t);qr.appendChild(b);
+        });
+        document.getElementById('bmg-chat-messages').appendChild(qr);
+        document.getElementById('bmg-chat-messages').scrollTop=document.getElementById('bmg-chat-messages').scrollHeight;
+      },11000);
+    }
+  }
+};
+
+window.bmgChatSend=function(text){
+  const input=document.getElementById('bmg-chat-input');
+  const msg=text||input.value.trim();if(!msg)return;input.value='';
+  const qr=document.getElementById('bmg-chat-quick');if(qr)qr.remove();
+  userMsg(msg);
+  const delay=5000+Math.random()*3000;
+  showTyping();
+  setTimeout(()=>{hideTyping();botMsg(respond(msg));},delay);
+};
+
+function userMsg(t){const c=document.getElementById('bmg-chat-messages'),w=document.createElement('div');w.className='bmg-msg bmg-msg-user';const d=document.createElement('div');d.textContent=t;w.appendChild(d);c.appendChild(w);c.scrollTop=c.scrollHeight}
+
+function botMsg(html){const c=document.getElementById('bmg-chat-messages'),w=document.createElement('div');w.className='bmg-msg bmg-msg-bot';
+w.innerHTML='<div style="display:flex;gap:8px;align-items:flex-start;"><div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#2d4a3a,#4a6b5a);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="bmg-bot-bubble">'+html+'</div></div>';
+c.appendChild(w);c.scrollTop=c.scrollHeight}
+
+function showTyping(){const c=document.getElementById('bmg-chat-messages'),e=document.createElement('div');e.id='bmg-typing';e.className='bmg-msg bmg-msg-bot';
+e.innerHTML='<div style="display:flex;gap:8px;align-items:flex-start;"><div style="width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#2d4a3a,#4a6b5a);display:flex;align-items:center;justify-content:center;flex-shrink:0;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div><div class="bmg-bot-bubble" style="padding:6px 14px;"><div class="bmg-typing"><span></span><span></span><span></span></div></div></div>';
+c.appendChild(e);c.scrollTop=c.scrollHeight}
+function hideTyping(){const e=document.getElementById('bmg-typing');if(e)e.remove()}
+
+function has(l,words){const w=l.split(/\s+/);return words.some(target=>w.some(word=>{if(word===target||word.includes(target)||target.includes(word))return true;if(word.length<3)return false;let m=0;for(let i=0;i<Math.min(word.length,target.length);i++)if(word[i]===target[i])m++;return m/Math.max(word.length,target.length)>0.6;}));}
+
+function respond(msg){
+const l=msg.toLowerCase().replace(/[?!.,]+$/,'').trim();
+
+// Greetings
+if(l.match(/^(hi|hello|hey|yo|sup|hii|heyy|howdy|what's up|whats up)/))
+  return"Hey! Thanks for reaching out. What's going on with your home? I'm all ears.";
+
+// SUSPECT MOLD / I THINK I HAVE MOLD
+if(l.match(/i think|i have|i found|suspect|might have|could be|see mold|see black|found mold|found black|found some|spots|dark spots|growth|growing/))
+  return"Don't panic — you're in the right place. The first step is always an inspection so I can see exactly what we're dealing with.<br><br>Can you tell me a bit more? Where are you seeing it — bathroom, basement, attic, walls? And have you had any water damage or leaks recently?<br><br>Or if you're ready, <a href='#quote' style='color:#4a6b5a;font-weight:600;' onclick='bmgChatToggle()'>grab a free assessment here</a> and I'll personally review it.";
+
+// HEALTH SYMPTOMS
+if(has(l,['health','symptom','symptoms','sick','cough','coughing','asthma','allergy','allergies','wheeze','wheezing','headache','headaches','fatigue','tired','brain','fog','sinus','congestion','breathing','respiratory','nose','eyes','itchy','rash','rashes','skin']))
+  return"I hear this a lot — and it's the reason I do what I do. Mold exposure can cause all of those symptoms, especially in humid climates like Georgia and Florida.<br><br>The tricky part is that mold can be hidden — inside walls, in your HVAC, under flooring. The only way to know for sure is proper testing.<br><br>If someone in your home is experiencing symptoms, I'd recommend getting an inspection sooner rather than later. <a href='#quote' style='color:#4a6b5a;font-weight:600;' onclick='bmgChatToggle()'>Request your free assessment →</a>";
+
+// HOW TREATMENT WORKS / PROCESS
+if(l.match(/how.*work|how.*treat|process|what.*do you do|what.*involve|what.*happen|steps|procedure|remediat|how.*remove|how.*get rid|dry fog|fogging/))
+  return"Great question. My process is thorough but straightforward:<br><br><b>1. Inspection & Testing</b> — I use thermal imaging, moisture meters, and air sampling to find every trace.<br><br><b>2. Remediation</b> — Containment, removal of contaminated materials, sterilant fogging, and HEPA vacuuming. Often no demolition needed.<br><br><b>3. Prevention</b> — Antimicrobial coating on all surfaces that kills mold spores on contact, long-term.<br><br><b>4. Proof</b> — Post-treatment air testing sent to certified labs. You get a before-and-after report.<br><br>Most jobs are done in hours, not weeks. <a href='#approach' style='color:#4a6b5a;font-weight:600;' onclick='bmgChatToggle()'>See the full breakdown →</a>";
+
+// COST / PRICING
+if(l.match(/cost|price|pricing|how much|expensive|afford|budget|quote|estimate|pay|payment|financ|money/))
+  return"Every home is different, so I can't give a one-size-fits-all number — it depends on the size of your home, severity of the contamination, and what's needed.<br><br>What I can tell you: my process often avoids costly demolition and reconstruction, which saves most homeowners significantly compared to traditional remediation.<br><br>I also offer flexible payment plans — your health shouldn't wait because of budget.<br><br>The best way to get an accurate estimate is a free assessment: <a href='#quote' style='color:#4a6b5a;font-weight:600;' onclick='bmgChatToggle()'>Get your free quote →</a>";
+
+// SERVICE AREA / LOCATION
+if(l.match(/where.*serve|service area|location|do you come|do you serve|atlanta|georgia|miami|florida|my area|near me|come to me/))
+  return"I serve two metro areas:<br><br><b>Metro Atlanta, GA</b> — Marietta, Decatur, Alpharetta, Sandy Springs, Brookhaven, and surrounding areas.<br><br><b>Miami-Dade, FL</b> — Miami, South Beach, Coral Gables, Hialeah, Aventura, and surrounding areas.<br><br>If you're somewhere else, reach out anyway — I may still be able to help. <a href='tel:3058490242' style='color:#4a6b5a;font-weight:600;'>Call me: 305-849-0242</a>";
+
+// INSPECTION / TESTING
+if(has(l,['inspection','inspect','test','testing','air','sample','sampling','ermi','swab','check']))
+  return"An inspection is always step one. I do a comprehensive visual and instrument-based assessment — thermal imaging, moisture meters, air sampling, and surface swabs.<br><br>Samples go to certified labs so you get hard data on exactly what species you're dealing with and at what levels.<br><br>Want to schedule one? <a href='#quote' style='color:#4a6b5a;font-weight:600;' onclick='bmgChatToggle()'>Request your free assessment →</a>";
+
+// SAFE / CHEMICALS / EPA
+if(has(l,['safe','safety','chemical','chemicals','toxic','epa','pet','pets','kids','children','baby','pregnant','family']))
+  return"Absolutely — everything I use is on the EPA's Safer Chemical List. It's effective enough to destroy 99.9% of mold while being safe for children, pets, and people with chemical sensitivities.<br><br>No harsh residue, no dangerous fumes. Your family can return to normal activity shortly after treatment.";
+
+// GUARANTEE / WARRANTY
+if(has(l,['guarantee','warranty','come back','return','regrow','guaranteed','insurance','insured']))
+  return"Every treatment is backed by a 1-year workmanship guarantee. If mold returns in any area I treated within 12 months, I come back and re-treat at no cost.<br><br>I'm also fully insured, and every job ends with independent lab-verified results — proof in black and white that the mold is gone.";
+
+// BLACK MOLD SPECIFICALLY
+if(l.match(/black mold|stachybotrys|toxic mold|dangerous mold|deadly/))
+  return"Black mold (Stachybotrys) gets a lot of attention, and for good reason — it produces mycotoxins that can cause serious health issues.<br><br>But here's the thing: <b>all mold in your home deserves attention</b>. Many species cause health problems, and you can't identify species by color alone. That's why I do lab testing — so we know exactly what we're dealing with.<br><br>If you suspect black mold, don't disturb it. <a href='#quote' style='color:#4a6b5a;font-weight:600;' onclick='bmgChatToggle()'>Get an assessment →</a>";
+
+// DEMOLITION / TEAROUT
+if(has(l,['demolition','demolish','tear','tearout','rip','destroy','walls','drywall','reconstruction','rebuild']))
+  return"This is one of the biggest advantages of my approach — <b>often no demolition is needed</b>. My dry fog penetrates everywhere, including inside wall cavities, without tearing them open.<br><br>That said, if materials are severely water-damaged or compromised, removal is sometimes necessary. I'll always be upfront about what's needed and why.";
+
+// TIME / HOW LONG
+if(l.match(/how long|how fast|how quick|time.*take|duration|days|weeks|move out|leave.*house|stay.*somewhere/))
+  return"Most treatments are completed in 4-6 hours. For larger or more complex jobs, it may take 1-3 days.<br><br>The best part? You can usually return home the same day — no temporary housing needed. I'll give you an accurate timeline during the initial inspection.";
+
+// WATER DAMAGE / LEAK / FLOOD
+if(has(l,['water','leak','leaking','flood','flooding','pipe','burst','rain','hurricane','storm','moisture','humidity','humid','damp','wet','condensation']))
+  return"Water damage is the #1 cause of mold growth, especially here in the Southeast. If you've had a leak, flood, or persistent moisture — mold can start growing within 24-48 hours.<br><br>Even if you don't see mold yet, I'd recommend an inspection. Moisture mapping will tell us exactly what's going on behind the walls.<br><br><a href='#quote' style='color:#4a6b5a;font-weight:600;' onclick='bmgChatToggle()'>Request an assessment →</a>";
+
+// PREVENTION
+if(has(l,['prevent','prevention','preventive','proactive','protect','stop','avoid','keep','future']))
+  return"Prevention is a huge part of what I do. After remediation, I apply an antimicrobial coating to all interior surfaces that neutralizes mold spores on contact.<br><br>I also provide recommendations for ongoing moisture management — dehumidifiers, ventilation improvements, and habits that keep humidity in check.<br><br>Want to proactively protect your home? <a href='#quote' style='color:#4a6b5a;font-weight:600;' onclick='bmgChatToggle()'>Start with a free assessment →</a>";
+
+// HVAC / AIR / DUCT
+if(has(l,['hvac','duct','ducts','vent','vents','ventilation','air conditioner','ac','furnace','air handler']))
+  return"HVAC systems are one of the most common hiding spots for mold — and one of the most dangerous because they circulate spores throughout your entire home.<br><br>I've found mold in HVAC systems that was causing a family's health problems for months. My fogging treatment reaches inside the entire duct system.<br><br>If you suspect your HVAC might be the issue, let's take a look. <a href='#quote' style='color:#4a6b5a;font-weight:600;' onclick='bmgChatToggle()'>Get an assessment →</a>";
+
+// REAL ESTATE / BUYING A HOME
+if(l.match(/buy.*home|buying|real estate|realtor|new house|new home|pre.?purchase|before.*buy|investment|investor|seller|closing/))
+  return"Smart move asking about this. Standard home inspections often miss mold — especially when sellers have covered it with fresh paint or new drywall.<br><br>I've saved buyers from homes with six-figure remediation problems hiding behind cosmetics. A pre-purchase mold inspection is one of the best investments you can make.<br><br><a href='#quote' style='color:#4a6b5a;font-weight:600;' onclick='bmgChatToggle()'>Schedule a pre-purchase inspection →</a>";
+
+// BATHROOM / KITCHEN / BASEMENT / ATTIC / CRAWLSPACE
+if(has(l,['bathroom','shower','kitchen','basement','attic','crawl','crawlspace','garage','closet','laundry','bedroom','ceiling']))
+  return"Those are all common problem areas. Anywhere there's moisture and limited airflow is a breeding ground for mold.<br><br>What are you seeing exactly? Dark spots, discoloration, a musty smell? And how long has it been there?<br><br>A photo always helps — but the fastest route is an in-person inspection where I can check with thermal imaging and moisture meters.";
+
+// SMELL / MUSTY
+if(has(l,['smell','musty','odor','stink','stinks','funky','damp']))
+  return"A musty smell is one of the most reliable indicators of hidden mold. Even if you can't see it, the smell means spores are in your air.<br><br>Don't ignore it — the source could be behind walls, under flooring, or in your HVAC system. I use thermal imaging and moisture mapping to find exactly where it's coming from.<br><br><a href='#quote' style='color:#4a6b5a;font-weight:600;' onclick='bmgChatToggle()'>Let's find the source →</a>";
+
+// DIY / CAN I DO IT MYSELF
+if(l.match(/diy|myself|my own|home remedy|bleach|vinegar|clean.*myself|spray|can i just|should i/))
+  return"I get this question a lot. Here's the truth: surface cleaning (bleach, vinegar, sprays) only addresses what you can see. It doesn't reach mold inside walls, in your HVAC, or embedded in porous materials.<br><br>Worse — disturbing mold without proper containment can actually spread spores throughout your home and make the problem bigger.<br><br>For small surface spots on non-porous materials, a wipe-down is fine. But if you're seeing recurring mold, smelling something musty, or experiencing health symptoms — that's when you need professional remediation.";
+
+// INSURANCE
+if(has(l,['insurance','claim','covered','coverage','homeowner','homeowners']))
+  return"It depends on your policy and the cause. Some homeowner's insurance covers mold remediation if it resulted from a covered event (like a burst pipe). Gradual damage from neglected maintenance is usually excluded.<br><br>I can provide documentation and reports that help support insurance claims. Best bet is to check with your adjuster — and I'm happy to speak with them directly if needed.";
+
+// CONTACT / CALL / PHONE
+if(has(l,['contact','call','phone','talk','reach','email','text','number']))
+  return"You can reach me directly:<br><br><b>Phone:</b> <a href='tel:3058490242' style='color:#4a6b5a;font-weight:600;'>305-849-0242</a><br><br>Or fill out the <a href='#quote' style='color:#4a6b5a;font-weight:600;' onclick='bmgChatToggle()'>assessment form</a> and I'll personally review it and get back to you within 24 hours — usually much sooner.";
+
+// THANKS
+if(has(l,['thanks','thank','thx','ty','appreciate']))
+  return"Of course! I'm here whenever you need me. Don't hesitate to reach out if anything else comes up. Your family's health comes first.";
+
+// BYE
+if(has(l,['bye','goodbye','later','cya','goodnight']))
+  return"Take care! Remember — I'm just a message or call away. 305-849-0242";
+
+// YES / AFFIRMATIVE
+if(l.match(/^(yes|yeah|yep|yea|sure|ok|okay|yup|ya)$/))
+  return"Great! What would you like to know more about? I can help with inspections, treatment process, pricing, service areas — anything.";
+
+// NO
+if(l.match(/^(no|nah|nope|not really|no thanks|nty)$/))
+  return"No problem at all! I'm here whenever you're ready. Feel free to come back anytime.";
+
+// FALLBACK
+return"Good question. I handle everything mold-related — inspections, testing, remediation, and prevention across Metro Atlanta and Miami-Dade.<br><br>Could you tell me a bit more about your situation? Or feel free to:<br><br>• <a href='#quote' style='color:#4a6b5a;font-weight:600;' onclick='bmgChatToggle()'>Get a free assessment</a><br>• <a href='tel:3058490242' style='color:#4a6b5a;font-weight:600;'>Call me: 305-849-0242</a>";
+}
+
+// Proactive toast
+setTimeout(()=>{if(!isOpen&&!window._bmgOpened){const t=document.getElementById('bmg-chat-toast');t.style.display='block';setTimeout(()=>{t.style.opacity='1';t.style.transform='translateY(0)';},50);setTimeout(()=>{if(!isOpen){t.style.opacity='0';t.style.transform='translateY(8px)';setTimeout(()=>t.style.display='none',300);}},10000);}},5000);
+})();
+</script>
+
 </body>
 </html>
