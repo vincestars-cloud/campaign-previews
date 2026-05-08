@@ -780,6 +780,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
   .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--cream); flex-direction: column; padding: 24px; gap: 20px; border-bottom: 1px solid var(--border); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
   .nav-links.show { display: flex; }
   .nav-cta .nav-phone { display: none; }
+  .nav-cta .btn-primary { display: none; }
   .nav-toggle { display: flex; }
   .hero { padding: 110px 0 60px; }
   .hero h1 { font-size: 2.2rem; }
@@ -801,7 +802,10 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
   .step-counter { margin-left: 20px; margin-right: 20px; }
   .section-title { font-size: 1.8rem; }
   .section-header { margin-bottom: 48px; }
-  .problem, .authority, .approach, .services, .reviews-section, .faq, .quote-section { padding: 80px 0; }
+  .problem, .authority, .approach, .services, .reviews-section, .faq { padding: 80px 0; }
+  .quote-section { padding: 40px 0 80px; }
+  .quote-wrapper { border-radius: 20px; box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
+  #funnelBrandBar { border-radius: 20px 20px 0 0 !important; }
   .differentiators, .cta-banner, .locations { padding: 72px 0; }
   .trust-inner { gap: 16px; justify-content: center; flex-wrap: wrap; }
   .trust-item { font-size: 0.78rem; flex: 0 0 calc(50% - 8px); }
@@ -1917,6 +1921,8 @@ function selectService(el) {
     pills.appendChild(btn);
   });
   section.style.display = 'block';
+  // Scroll so the newly revealed pills are visible
+  setTimeout(() => { section.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
 }
 
 function selectProp(el) {
@@ -1926,7 +1932,10 @@ function selectProp(el) {
   answers.propertyLabel = el.querySelector('.svc-pick-label').textContent;
 
   // Show size pills
-  document.getElementById('sizeSection').style.display = 'block';
+  const sizeSection = document.getElementById('sizeSection');
+  sizeSection.style.display = 'block';
+  // Scroll so the newly revealed pills are visible
+  setTimeout(() => { sizeSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
 }
 
 function selectSize(btn, val) {
@@ -1952,6 +1961,13 @@ function selectAndAdvance(card, step) {
   setTimeout(() => { autoAdvance(); isTransitioning = false; }, 400);
 }
 
+function scrollFunnelIntoView() {
+  const wrapper = document.querySelector('.quote-wrapper');
+  if (wrapper && window.innerWidth <= 768) {
+    setTimeout(() => { wrapper.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+  }
+}
+
 function autoAdvance() {
   if (currentStep >= totalSteps) return;
   const currentEl = document.querySelector(`.funnel-step[data-step="${currentStep}"]`);
@@ -1962,6 +1978,7 @@ function autoAdvance() {
     document.querySelector(`.funnel-step[data-step="${currentStep}"]`).classList.add('active');
     updateProgress();
     updateSummary();
+    scrollFunnelIntoView();
   }, 250);
 }
 
@@ -1975,6 +1992,7 @@ function nextStep() {
     document.querySelector(`.funnel-step[data-step="${currentStep}"]`).classList.add('active');
     updateProgress();
     updateSummary();
+    scrollFunnelIntoView();
   }, 250);
 }
 
