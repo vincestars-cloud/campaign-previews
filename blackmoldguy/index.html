@@ -2084,6 +2084,46 @@ document.getElementById('phone').addEventListener('input', function() {
   else if (v.length >= 4) this.value = '(' + v.substring(0,3) + ') ' + v.substring(3);
   else if (v.length > 0) this.value = '(' + v;
 });
+
+// AUTO-SCROLL CAROUSELS
+function autoScroll(el, speed) {
+  if (!el) return;
+  let scrollPos = 0;
+  let paused = false;
+  let pauseTimeout;
+  const step = speed || 0.5;
+
+  function tick() {
+    if (!paused) {
+      scrollPos += step;
+      // Reset to start when we've scrolled past the midpoint (seamless loop)
+      if (scrollPos >= el.scrollWidth - el.clientWidth) {
+        scrollPos = 0;
+        el.scrollLeft = 0;
+      } else {
+        el.scrollLeft = scrollPos;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  // Pause on hover/touch
+  el.addEventListener('mouseenter', () => { paused = true; });
+  el.addEventListener('mouseleave', () => {
+    clearTimeout(pauseTimeout);
+    pauseTimeout = setTimeout(() => { scrollPos = el.scrollLeft; paused = false; }, 800);
+  });
+  el.addEventListener('touchstart', () => { paused = true; }, { passive: true });
+  el.addEventListener('touchend', () => {
+    clearTimeout(pauseTimeout);
+    pauseTimeout = setTimeout(() => { scrollPos = el.scrollLeft; paused = false; }, 2000);
+  });
+
+  requestAnimationFrame(tick);
+}
+
+autoScroll(document.querySelector('.video-scroll'), 0.4);
+autoScroll(document.querySelector('.reviews-scroll'), 0.5);
 </script>
 
 <!-- DEONCO CHAT WIDGET -->
