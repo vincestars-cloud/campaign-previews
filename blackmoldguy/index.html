@@ -1,0 +1,1679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Black Mold Guy — Health-First Mold Remediation</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0a0f0d;
+  --cream: #f7f5f0;
+  --sage: #4a6b5a;
+  --sage-light: #e8efe9;
+  --sage-dark: #2d4a3a;
+  --accent: #c4573a;
+  --accent-light: #f9ebe7;
+  --warm-gray: #8a8680;
+  --border: #e2dfd8;
+  --white: #ffffff;
+  --gold: #b8965a;
+  --font-display: 'DM Serif Display', Georgia, serif;
+  --font-body: 'DM Sans', -apple-system, sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--ink);
+  background: var(--cream);
+  line-height: 1.7;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.container-narrow { max-width: 800px; margin: 0 auto; padding: 0 24px; }
+
+/* ICON BASE */
+.icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.icon-wrap svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+@keyframes breathe {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+@keyframes slideOut {
+  to { opacity: 0; transform: translateX(-30px); }
+}
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(30px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+@keyframes checkmark {
+  0% { transform: scale(0) rotate(-45deg); opacity: 0; }
+  50% { transform: scale(1.2) rotate(-45deg); }
+  100% { transform: scale(1) rotate(0); opacity: 1; }
+}
+@keyframes shimmer {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+@keyframes confetti1 { to { transform: translate(-30px, -60px) rotate(200deg); opacity: 0; } }
+@keyframes confetti2 { to { transform: translate(40px, -50px) rotate(-150deg); opacity: 0; } }
+@keyframes confetti3 { to { transform: translate(-20px, -70px) rotate(300deg); opacity: 0; } }
+@keyframes confetti4 { to { transform: translate(30px, -40px) rotate(-200deg); opacity: 0; } }
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+.reveal-d4 { transition-delay: 0.4s; }
+.reveal-d5 { transition-delay: 0.5s; }
+
+.fade-up { animation: fadeUp 0.8s ease forwards; }
+.fade-up-d1 { animation: fadeUp 0.8s ease 0.1s forwards; opacity: 0; }
+.fade-up-d2 { animation: fadeUp 0.8s ease 0.2s forwards; opacity: 0; }
+.fade-up-d3 { animation: fadeUp 0.8s ease 0.3s forwards; opacity: 0; }
+.fade-up-d4 { animation: fadeUp 0.8s ease 0.4s forwards; opacity: 0; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; width: 100%; z-index: 1000;
+  background: rgba(247, 245, 240, 0.92);
+  backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+nav.scrolled { border-bottom-color: var(--border); box-shadow: 0 2px 30px rgba(0,0,0,0.06); }
+.nav-inner {
+  display: flex; align-items: center; justify-content: space-between;
+  height: 72px; max-width: 1200px; margin: 0 auto; padding: 0 24px;
+}
+.nav-logo { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+.nav-logo svg { width: 40px; height: 40px; }
+.nav-logo span { font-family: var(--font-display); font-size: 1.1rem; letter-spacing: -0.02em; }
+.nav-links { display: flex; align-items: center; gap: 32px; }
+.nav-links a {
+  text-decoration: none; color: var(--ink); font-size: 0.9rem; font-weight: 500;
+  position: relative; transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--sage); }
+.nav-links a::after {
+  content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px;
+  background: var(--sage); transition: width 0.3s;
+}
+.nav-links a:hover::after { width: 100%; }
+.nav-cta { display: flex; align-items: center; gap: 12px; }
+
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px;
+  background: var(--sage-dark); color: white; border: none; border-radius: 100px;
+  font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; text-decoration: none; transition: all 0.3s ease;
+}
+.btn-primary:hover { background: var(--ink); transform: translateY(-1px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px;
+  background: transparent; color: var(--ink); border: 1.5px solid var(--ink);
+  border-radius: 100px; font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
+  cursor: pointer; text-decoration: none; transition: all 0.3s ease;
+}
+.btn-secondary:hover { background: var(--ink); color: white; }
+.nav-phone { font-weight: 600; font-size: 0.9rem; color: var(--ink); text-decoration: none; letter-spacing: 0.02em; }
+.nav-toggle { display: none; background: none; border: none; cursor: pointer; padding: 8px; flex-direction: column; gap: 5px; }
+.nav-toggle span { display: block; width: 24px; height: 2px; background: var(--ink); transition: 0.3s; }
+
+/* HERO */
+.hero { padding: 140px 0 80px; position: relative; overflow: hidden; }
+.hero::before {
+  content: ''; position: absolute; top: -100px; right: -200px; width: 700px; height: 700px;
+  background: radial-gradient(circle, rgba(74,107,90,0.06) 0%, transparent 70%); border-radius: 50%;
+  animation: breathe 6s ease-in-out infinite;
+}
+.hero-grid { display: grid; grid-template-columns: 1fr; gap: 0; align-items: center; max-width: 680px; }
+.hero-content { position: relative; z-index: 2; }
+.hero-badge {
+  display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px;
+  background: var(--sage-light); border-radius: 100px; font-size: 0.8rem;
+  font-weight: 600; color: var(--sage-dark); letter-spacing: 0.05em; text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.hero-badge .dot { width: 8px; height: 8px; background: var(--sage); border-radius: 50%; animation: pulse 2s ease infinite; }
+.hero h1 { font-family: var(--font-display); font-size: clamp(2.8rem, 5vw, 4rem); line-height: 1.08; letter-spacing: -0.03em; margin-bottom: 24px; }
+.hero h1 em { font-style: italic; color: var(--sage); }
+.hero-sub { font-size: 1.15rem; color: var(--warm-gray); line-height: 1.7; margin-bottom: 36px; max-width: 480px; }
+.hero-ctas { display: flex; align-items: center; gap: 16px; margin-bottom: 48px; }
+.hero-stats { display: flex; gap: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
+.hero-stat .number { font-family: var(--font-display); font-size: 2.2rem; color: var(--ink); line-height: 1; margin-bottom: 4px; }
+.hero-stat .label { font-size: 0.8rem; color: var(--warm-gray); font-weight: 500; letter-spacing: 0.03em; }
+/* Hero image removed - using text-only hero */
+
+/* TRUST BAR */
+.trust-bar { padding: 40px 0; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.trust-inner { display: flex; align-items: center; justify-content: center; gap: 48px; flex-wrap: wrap; }
+.trust-item { display: flex; align-items: center; gap: 10px; font-size: 0.85rem; font-weight: 500; color: var(--warm-gray); }
+.trust-item svg { width: 20px; height: 20px; color: var(--sage); flex-shrink: 0; }
+
+/* SECTION COMMON */
+.section-header { text-align: center; margin-bottom: 72px; }
+.section-tag {
+  display: inline-block; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em;
+  text-transform: uppercase; color: var(--accent); margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 3.5vw, 2.8rem);
+  line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 20px;
+}
+.section-sub { font-size: 1.05rem; color: var(--warm-gray); max-width: 600px; margin: 0 auto; line-height: 1.7; }
+
+/* PROBLEM */
+.problem { padding: 120px 0; background: var(--white); }
+.symptom-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.symptom-card {
+  padding: 36px 32px; background: var(--cream); border-radius: 20px;
+  border: 1px solid var(--border); transition: all 0.4s ease; position: relative; overflow: hidden;
+}
+.symptom-card::before {
+  content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 0;
+  background: var(--accent); transition: height 0.4s ease;
+}
+.symptom-card:hover::before { height: 100%; }
+.symptom-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); border-color: transparent; }
+.symptom-icon {
+  width: 48px; height: 48px; background: var(--accent-light); border-radius: 14px;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 20px;
+}
+.symptom-icon svg { width: 24px; height: 24px; stroke: var(--accent); fill: none; stroke-width: 1.8; }
+.symptom-card h3 { font-family: var(--font-display); font-size: 1.2rem; margin-bottom: 10px; }
+.symptom-card p { font-size: 0.9rem; color: var(--warm-gray); line-height: 1.65; }
+
+/* AUTHORITY / WHY LISTEN */
+.authority { padding: 120px 0; background: var(--ink); color: white; position: relative; overflow: hidden; }
+.authority::after {
+  content: ''; position: absolute; bottom: -200px; left: -200px; width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(255,255,255,0.03) 0%, transparent 70%); border-radius: 50%;
+}
+.authority .section-tag { color: var(--gold); }
+.authority .section-title { color: white; }
+.authority .section-sub { color: rgba(255,255,255,0.55); }
+.authority-intro {
+  max-width: 700px; margin: 0 auto 64px; text-align: center;
+  font-size: 1.05rem; color: rgba(255,255,255,0.6); line-height: 1.75;
+}
+.credentials-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-bottom: 72px;
+}
+.credential-card {
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px; padding: 32px 28px; text-align: center; transition: all 0.3s;
+}
+.credential-card:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); transform: translateY(-3px); }
+.credential-icon {
+  width: 56px; height: 56px; margin: 0 auto 20px; background: rgba(184,150,90,0.15);
+  border-radius: 14px; display: flex; align-items: center; justify-content: center;
+}
+.credential-icon svg { width: 28px; height: 28px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
+.credential-card h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 8px; }
+.credential-card p { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+.video-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.video-card {
+  border-radius: 16px; overflow: hidden; background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08); transition: all 0.3s ease;
+}
+.video-card:hover { transform: translateY(-4px); border-color: rgba(255,255,255,0.15); }
+.video-thumb {
+  aspect-ratio: 16/9; background: rgba(255,255,255,0.08);
+  display: flex; align-items: center; justify-content: center; position: relative; cursor: pointer;
+}
+.play-btn {
+  width: 60px; height: 60px; background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(10px); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+}
+.play-btn::after {
+  content: ''; width: 0; height: 0; border-left: 18px solid white;
+  border-top: 11px solid transparent; border-bottom: 11px solid transparent; margin-left: 4px;
+}
+.video-card:hover .play-btn { background: var(--sage); transform: scale(1.1); }
+.video-card-body { padding: 20px 24px; }
+.video-card-body .cat { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--gold); margin-bottom: 8px; }
+.video-card-body h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 8px; color: white; }
+.video-card-body p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.55; }
+
+/* DIFFERENTIATORS */
+.differentiators { padding: 100px 0; background: var(--sage-dark); color: white; }
+.differentiators .section-tag { color: var(--gold); }
+.differentiators .section-title { color: white; }
+.differentiators .section-sub { color: rgba(255,255,255,0.55); }
+.diff-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+}
+.diff-card {
+  background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px; padding: 32px 24px; text-align: center; transition: all 0.3s;
+}
+.diff-card:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.15); transform: translateY(-3px); }
+.diff-icon {
+  width: 52px; height: 52px; margin: 0 auto 20px; background: rgba(184,150,90,0.12);
+  border-radius: 14px; display: flex; align-items: center; justify-content: center;
+}
+.diff-icon svg { width: 26px; height: 26px; stroke: var(--gold); fill: none; stroke-width: 1.8; }
+.diff-card h3 { font-family: var(--font-display); font-size: 1.05rem; margin-bottom: 10px; line-height: 1.3; }
+.diff-card p { font-size: 0.84rem; color: rgba(255,255,255,0.5); line-height: 1.6; }
+
+@media (max-width: 1024px) {
+  .diff-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+  .diff-grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+}
+
+/* APPROACH (HOW IT WORKS) - Stacked cards */
+.approach { padding: 120px 0; background: var(--white); position: relative; }
+.approach-cards { max-width: 900px; margin: 0 auto; display: flex; flex-direction: column; gap: 32px; }
+.approach-card {
+  display: grid; grid-template-columns: auto 1fr; gap: 32px; align-items: start;
+  background: var(--cream); border-radius: 20px; padding: 40px; border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+.approach-card:hover { border-color: var(--sage); box-shadow: 0 12px 40px rgba(0,0,0,0.05); }
+.approach-card-num {
+  width: 56px; height: 56px; border-radius: 50%; background: var(--sage-dark); color: white;
+  font-family: var(--font-display); font-size: 1.2rem; display: flex; align-items: center;
+  justify-content: center; flex-shrink: 0; box-shadow: 0 4px 16px rgba(45,74,58,0.25);
+}
+.approach-card-body h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 12px; }
+.approach-card-body p { font-size: 0.92rem; color: var(--warm-gray); line-height: 1.7; margin-bottom: 16px; }
+.approach-card-body .detail-list { list-style: none; margin-bottom: 16px; }
+.approach-card-body .detail-list li {
+  display: flex; align-items: flex-start; gap: 10px;
+  font-size: 0.88rem; color: var(--warm-gray); margin-bottom: 8px; line-height: 1.5;
+}
+.approach-card-body .detail-list li svg { width: 16px; height: 16px; stroke: var(--sage); flex-shrink: 0; margin-top: 3px; fill: none; stroke-width: 2; }
+.approach-card-body .step-cta { display: inline-flex; gap: 12px; }
+.approach-card-body .step-cta a { font-size: 0.85rem; }
+
+@media (max-width: 640px) {
+  .approach-card { grid-template-columns: 1fr; gap: 20px; padding: 28px 24px; }
+  .approach-card-num { width: 44px; height: 44px; font-size: 1rem; }
+}
+
+/* SERVICES */
+.services { padding: 120px 0; background: var(--cream); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.service-card {
+  background: var(--white); border-radius: 20px; padding: 40px 32px;
+  border: 1px solid var(--border); transition: all 0.4s ease; cursor: pointer; position: relative; overflow: hidden;
+}
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 25px 60px rgba(0,0,0,0.08); border-color: var(--sage); }
+.service-icon {
+  width: 56px; height: 56px; background: var(--sage-light); border-radius: 16px;
+  display: flex; align-items: center; justify-content: center; margin-bottom: 24px; transition: all 0.3s;
+}
+.service-icon svg { width: 28px; height: 28px; stroke: var(--sage-dark); fill: none; stroke-width: 1.8; transition: stroke 0.3s; }
+.service-card:hover .service-icon { background: var(--sage); }
+.service-card:hover .service-icon svg { stroke: white; }
+.service-card .tag {
+  font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+  letter-spacing: 0.1em; color: var(--sage); margin-bottom: 12px;
+}
+.service-card h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 12px; }
+.service-card .who {
+  font-size: 0.82rem; color: var(--sage); font-weight: 600;
+  margin-bottom: 12px; padding: 6px 12px; background: var(--sage-light); border-radius: 8px; display: inline-block;
+}
+.service-card p { font-size: 0.9rem; color: var(--warm-gray); line-height: 1.65; margin-bottom: 20px; }
+.service-link {
+  font-size: 0.88rem; font-weight: 600; color: var(--sage-dark); text-decoration: none;
+  display: inline-flex; align-items: center; gap: 6px; transition: gap 0.3s;
+}
+.service-link:hover { gap: 12px; }
+
+/* TESTIMONIALS - now using Google Reviews carousel */
+
+/* QUOTE FUNNEL */
+.quote-section { padding: 120px 0; background: linear-gradient(135deg, var(--cream) 0%, var(--sage-light) 100%); }
+.quote-wrapper {
+  max-width: 720px; margin: 0 auto; background: var(--white);
+  border-radius: 28px; box-shadow: 0 30px 80px rgba(0,0,0,0.08); overflow: hidden;
+}
+.quote-header { padding: 48px 48px 0; text-align: center; }
+.quote-header h2 { font-family: var(--font-display); font-size: 2rem; margin-bottom: 8px; }
+.quote-header p { color: var(--warm-gray); font-size: 0.95rem; }
+.progress-bar { margin: 32px 48px 0; display: flex; gap: 8px; }
+.progress-step {
+  flex: 1; height: 4px; border-radius: 4px; background: var(--border);
+  transition: background 0.5s ease; position: relative; overflow: hidden;
+}
+.progress-step.active { background: var(--sage); }
+.progress-step.completed { background: var(--sage-dark); }
+.progress-step.active::after {
+  content: ''; position: absolute; top: 0; left: 0; height: 100%; width: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  animation: shimmer 1.5s ease infinite;
+}
+.step-counter { text-align: center; margin-top: 16px; font-size: 0.78rem; color: var(--warm-gray); font-weight: 500; }
+.quote-body { padding: 40px 48px 48px; min-height: 380px; position: relative; }
+.funnel-step { display: none; position: relative; }
+.funnel-step.active { display: block; animation: slideIn 0.35s ease; }
+.funnel-step.exiting { animation: slideOut 0.25s ease forwards; }
+.funnel-question { font-family: var(--font-display); font-size: 1.35rem; margin-bottom: 8px; }
+.funnel-context { font-size: 0.88rem; color: var(--warm-gray); margin-bottom: 28px; line-height: 1.6; }
+.option-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.option-card {
+  padding: 18px 20px; border: 2px solid var(--border); border-radius: 14px;
+  cursor: pointer; transition: all 0.25s ease; display: flex; align-items: center;
+  gap: 14px; background: var(--white); user-select: none;
+}
+.option-card:hover { border-color: var(--sage); background: var(--sage-light); }
+.option-card.selected { border-color: var(--sage-dark); background: var(--sage-light); }
+.option-icon {
+  width: 40px; height: 40px; background: var(--sage-light); border-radius: 10px;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.option-card.selected .option-icon { background: var(--sage-dark); }
+.option-icon svg { width: 20px; height: 20px; stroke: var(--sage-dark); fill: none; stroke-width: 2; transition: stroke 0.3s; }
+.option-card.selected .option-icon svg { stroke: white; }
+.option-card .label { font-weight: 600; font-size: 0.9rem; line-height: 1.3; }
+.option-card .sublabel { font-size: 0.78rem; color: var(--warm-gray); margin-top: 2px; }
+.option-card .check-circle {
+  width: 24px; height: 24px; border-radius: 50%; border: 2px solid var(--border);
+  flex-shrink: 0; display: flex; align-items: center; justify-content: center;
+  transition: all 0.3s; margin-left: auto;
+}
+.option-card.selected .check-circle { background: var(--sage-dark); border-color: var(--sage-dark); }
+.option-card.selected .check-circle::after { content: '✓'; color: white; font-size: 0.7rem; font-weight: 700; animation: checkmark 0.3s ease; }
+.option-single { grid-template-columns: 1fr; }
+
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 8px; color: var(--ink); }
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%; padding: 14px 18px; border: 2px solid var(--border); border-radius: 14px;
+  font-family: var(--font-body); font-size: 0.95rem; color: var(--ink); background: var(--cream);
+  transition: all 0.3s; outline: none;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  border-color: var(--sage); background: var(--white); box-shadow: 0 0 0 4px rgba(74,107,90,0.1);
+}
+.form-group textarea { resize: vertical; min-height: 100px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.funnel-nav { display: flex; justify-content: space-between; align-items: center; margin-top: 32px; gap: 16px; }
+.btn-back {
+  padding: 12px 24px; background: transparent; border: none; font-family: var(--font-body);
+  font-size: 0.9rem; font-weight: 600; color: var(--warm-gray); cursor: pointer; transition: color 0.3s;
+}
+.btn-back:hover { color: var(--ink); }
+.btn-next {
+  padding: 14px 32px; background: var(--sage-dark); color: white; border: none;
+  border-radius: 100px; font-family: var(--font-body); font-size: 0.95rem;
+  font-weight: 600; cursor: pointer; transition: all 0.3s; margin-left: auto;
+}
+.btn-next:hover { background: var(--ink); transform: translateY(-1px); box-shadow: 0 8px 25px rgba(0,0,0,0.15); }
+
+.success-state { text-align: center; padding: 40px 0; }
+.success-icon {
+  width: 90px; height: 90px; background: var(--sage-light); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; margin: 0 auto 24px; position: relative;
+}
+.success-icon svg { width: 40px; height: 40px; stroke: var(--sage-dark); fill: none; stroke-width: 2; }
+.confetti { position: absolute; width: 8px; height: 8px; border-radius: 2px; }
+.confetti-1 { background: var(--gold); top: 10px; left: 10px; animation: confetti1 0.6s ease 0.3s forwards; }
+.confetti-2 { background: var(--sage); top: 5px; right: 10px; animation: confetti2 0.7s ease 0.4s forwards; }
+.confetti-3 { background: var(--accent); bottom: 15px; left: 5px; animation: confetti3 0.5s ease 0.35s forwards; }
+.confetti-4 { background: var(--sage-dark); bottom: 10px; right: 5px; animation: confetti4 0.65s ease 0.45s forwards; }
+.success-state h3 { font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 12px; }
+.success-state p { color: var(--warm-gray); font-size: 0.95rem; max-width: 420px; margin: 0 auto 28px; line-height: 1.65; }
+
+/* FAQ */
+.faq { padding: 120px 0; background: var(--cream); }
+.faq-list { max-width: 720px; margin: 0 auto; }
+.faq-item { border-bottom: 1px solid var(--border); overflow: hidden; }
+.faq-question {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 24px 0; cursor: pointer; user-select: none; gap: 16px; transition: color 0.3s;
+}
+.faq-question:hover { color: var(--sage); }
+.faq-question h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 400; }
+.faq-toggle {
+  width: 32px; height: 32px; border-radius: 50%; border: 1.5px solid var(--border);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  transition: all 0.3s; color: var(--warm-gray);
+}
+.faq-toggle svg { width: 16px; height: 16px; transition: transform 0.3s; }
+.faq-item.open .faq-toggle { background: var(--sage); border-color: var(--sage); color: white; }
+.faq-item.open .faq-toggle svg { transform: rotate(45deg); }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease; }
+.faq-item.open .faq-answer { max-height: 300px; }
+.faq-answer-inner { padding: 0 0 24px; font-size: 0.92rem; color: var(--warm-gray); line-height: 1.7; max-width: 600px; }
+
+/* CTA BANNER */
+.cta-banner { padding: 100px 0; background: var(--sage-dark); color: white; text-align: center; position: relative; overflow: hidden; }
+.cta-banner::before { content: ''; position: absolute; inset: 0; background: radial-gradient(ellipse at center, rgba(255,255,255,0.06) 0%, transparent 70%); }
+.cta-banner h2 { font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; margin-bottom: 20px; position: relative; }
+.cta-banner h2 em { color: var(--gold); font-style: italic; }
+.cta-banner p { color: rgba(255,255,255,0.6); max-width: 550px; margin: 0 auto 36px; font-size: 1.05rem; position: relative; }
+.cta-buttons { display: flex; align-items: center; justify-content: center; gap: 16px; position: relative; }
+.cta-banner .btn-primary { background: var(--gold); color: var(--ink); }
+.cta-banner .btn-primary:hover { background: white; }
+.cta-banner .btn-secondary { color: white; border-color: rgba(255,255,255,0.3); }
+.cta-banner .btn-secondary:hover { background: white; color: var(--ink); }
+
+/* LOCATIONS */
+.locations { padding: 100px 0; background: var(--white); }
+.locations-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.location-card {
+  background: var(--cream); border-radius: 20px; overflow: hidden;
+  border: 1px solid var(--border); transition: all 0.3s;
+}
+.location-card:hover { transform: translateY(-4px); box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
+.location-map { height: 220px; background: var(--sage-light); }
+.location-map iframe { width: 100%; height: 100%; border: 0; filter: grayscale(30%) contrast(1.05); }
+.location-info { padding: 28px 32px; }
+.location-info h3 { font-family: var(--font-display); font-size: 1.3rem; margin-bottom: 8px; }
+.location-info p { font-size: 0.88rem; color: var(--warm-gray); line-height: 1.6; }
+
+/* VIDEO HORIZONTAL SCROLL */
+.video-scroll-wrapper { position: relative; }
+.video-scroll {
+  display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; padding: 8px 0 24px; scrollbar-width: none;
+}
+.video-scroll::-webkit-scrollbar { display: none; }
+.video-scroll-card {
+  flex: 0 0 280px; scroll-snap-align: start; border-radius: 16px; overflow: hidden;
+  background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+  transition: all 0.3s ease; cursor: pointer;
+}
+.video-scroll-card:first-child { margin-left: 0; }
+.video-scroll-card:hover { border-color: rgba(255,255,255,0.2); transform: translateY(-3px); }
+.video-scroll-thumb {
+  aspect-ratio: 9/16; background: rgba(255,255,255,0.06); position: relative;
+  display: flex; align-items: center; justify-content: center;
+  background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.02) 100%);
+}
+.video-scroll-thumb .play-icon {
+  width: 52px; height: 52px; background: rgba(255,255,255,0.15); backdrop-filter: blur(8px);
+  border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s;
+}
+.video-scroll-thumb .play-icon::after {
+  content: ''; width: 0; height: 0; border-left: 16px solid white;
+  border-top: 10px solid transparent; border-bottom: 10px solid transparent; margin-left: 3px;
+}
+.video-scroll-card:hover .play-icon { background: var(--sage); transform: scale(1.1); }
+.video-scroll-thumb .video-label {
+  position: absolute; bottom: 12px; left: 12px; right: 12px;
+}
+.video-scroll-thumb .video-label .cat {
+  font-size: 0.65rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em;
+  color: var(--gold); margin-bottom: 4px;
+}
+.video-scroll-thumb .video-label h4 {
+  font-family: var(--font-display); font-size: 0.95rem; color: white; line-height: 1.3;
+}
+.scroll-hint {
+  display: flex; align-items: center; justify-content: flex-end; gap: 8px;
+  margin-top: 16px; font-size: 0.78rem; color: rgba(255,255,255,0.35); font-weight: 500;
+}
+.scroll-hint svg { width: 16px; height: 16px; stroke: rgba(255,255,255,0.35); fill: none; stroke-width: 2; }
+
+/* GOOGLE REVIEWS CAROUSEL */
+.reviews-section { padding: 120px 0; background: var(--white); }
+.reviews-header { text-align: center; margin-bottom: 16px; }
+.google-badge {
+  display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px;
+  background: var(--cream); border-radius: 100px; margin-bottom: 48px;
+  border: 1px solid var(--border);
+}
+.google-badge .g-icon { font-weight: 800; font-size: 1.1rem; }
+.google-badge .g-icon span:nth-child(1) { color: #4285F4; }
+.google-badge .g-icon span:nth-child(2) { color: #EA4335; }
+.google-badge .g-icon span:nth-child(3) { color: #FBBC05; }
+.google-badge .g-icon span:nth-child(4) { color: #4285F4; }
+.google-badge .g-icon span:nth-child(5) { color: #34A853; }
+.google-badge .g-icon span:nth-child(6) { color: #EA4335; }
+.google-badge .g-rating { font-weight: 700; font-size: 0.9rem; color: var(--ink); }
+.google-badge .g-stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 1px; }
+.google-badge .g-count { font-size: 0.8rem; color: var(--warm-gray); }
+
+.reviews-scroll-wrapper { position: relative; }
+.reviews-scroll {
+  display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch; padding: 8px 0 24px; scrollbar-width: none;
+}
+.reviews-scroll::-webkit-scrollbar { display: none; }
+.review-card {
+  flex: 0 0 340px; scroll-snap-align: start; background: var(--cream); border-radius: 16px;
+  padding: 28px 24px; border: 1px solid var(--border); transition: all 0.3s;
+}
+.review-card:hover { border-color: var(--sage); box-shadow: 0 8px 30px rgba(0,0,0,0.04); }
+.review-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+.review-avatar {
+  width: 40px; height: 40px; border-radius: 50%; background: var(--sage-light);
+  display: flex; align-items: center; justify-content: center; font-weight: 700;
+  font-size: 0.85rem; color: var(--sage-dark); flex-shrink: 0;
+}
+.review-meta .review-name { font-weight: 600; font-size: 0.88rem; }
+.review-meta .review-date { font-size: 0.75rem; color: var(--warm-gray); }
+.review-stars { color: var(--gold); font-size: 0.8rem; letter-spacing: 1px; margin-bottom: 12px; }
+.review-text { font-size: 0.88rem; color: var(--ink); line-height: 1.65; }
+.review-google-icon {
+  display: flex; align-items: center; justify-content: flex-end; margin-top: 16px; gap: 4px;
+  font-size: 0.7rem; color: var(--warm-gray);
+}
+.review-google-icon svg { width: 14px; height: 14px; }
+.reviews-scroll-hint {
+  display: flex; align-items: center; justify-content: flex-end; gap: 8px;
+  margin-top: 16px; font-size: 0.78rem; color: var(--warm-gray); font-weight: 500;
+}
+.reviews-scroll-hint svg { width: 16px; height: 16px; stroke: var(--warm-gray); fill: none; stroke-width: 2; }
+
+@media (max-width: 768px) {
+  .video-scroll-card { flex: 0 0 220px; }
+  .review-card { flex: 0 0 290px; }
+  .google-badge { margin-bottom: 32px; }
+}
+footer { padding: 80px 0 40px; background: var(--ink); color: white; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; }
+.footer-brand p { font-size: 0.9rem; color: rgba(255,255,255,0.5); margin-top: 16px; line-height: 1.65; max-width: 300px; }
+.footer-col h4 { font-size: 0.8rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 20px; }
+.footer-col a { display: block; color: rgba(255,255,255,0.7); text-decoration: none; font-size: 0.9rem; margin-bottom: 12px; transition: color 0.3s; }
+.footer-col a:hover { color: white; }
+.footer-bottom {
+  padding-top: 32px; border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex; justify-content: space-between; align-items: center;
+  font-size: 0.82rem; color: rgba(255,255,255,0.35);
+}
+.footer-logo { display: flex; align-items: center; gap: 12px; }
+.footer-logo svg { width: 36px; height: 36px; }
+.footer-logo span { font-family: var(--font-display); font-size: 1.1rem; color: white; }
+
+/* MOBILE CTA */
+.mobile-cta {
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+  padding: 12px 16px; background: rgba(247,245,240,0.95);
+  backdrop-filter: blur(16px); border-top: 1px solid var(--border); box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
+}
+.mobile-cta-inner { display: flex; gap: 10px; }
+.mobile-cta .btn-primary, .mobile-cta .btn-secondary { flex: 1; justify-content: center; padding: 14px 20px; font-size: 0.95rem; }
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 48px; }
+  .services-grid, .symptom-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid, .credentials-grid { grid-template-columns: 1fr 1fr; }
+  .video-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links, .nav-cta .nav-phone { display: none; }
+  .nav-toggle { display: flex; }
+  .hero { padding: 110px 0 60px; }
+  .hero-stats { gap: 24px; }
+  .hero-ctas { flex-direction: column; align-items: stretch; }
+  .hero-ctas .btn-primary, .hero-ctas .btn-secondary { justify-content: center; }
+  .services-grid, .symptom-grid, .credentials-grid { grid-template-columns: 1fr; }
+  .locations-grid, .video-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .option-grid, .form-row { grid-template-columns: 1fr; }
+  .quote-body { padding: 32px 24px 40px; }
+  .quote-header { padding: 36px 24px 0; }
+  .progress-bar { margin: 24px 24px 0; }
+  .step-counter { margin-left: 24px; margin-right: 24px; }
+  .section-title { font-size: 2rem; }
+  .mobile-cta { display: block; }
+  body { padding-bottom: 72px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <svg viewBox="0 0 40 40" fill="none"><path d="M20 4L34 14V30L20 36L6 30V14L20 4Z" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="20" cy="19" r="5" fill="currentColor"/><line x1="20" y1="8" x2="20" y2="14" stroke="currentColor" stroke-width="2"/><line x1="20" y1="24" x2="20" y2="30" stroke="currentColor" stroke-width="2"/><line x1="13" y1="16" x2="15" y2="18" stroke="currentColor" stroke-width="2"/><line x1="25" y1="20" x2="27" y2="22" stroke="currentColor" stroke-width="2"/></svg>
+      <span>The Black Mold Guy</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#approach">How It Works</a>
+      <a href="#authority">About</a>
+      <a href="#testimonials">Results</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <div class="nav-cta">
+      <a href="tel:8662434410" class="nav-phone">866-243-4410</a>
+      <a href="#quote" class="btn-primary">Free Assessment →</a>
+    </div>
+    <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge fade-up"><span class="dot"></span> Health-First Mold Specialist</div>
+        <h1 class="fade-up-d1">Your family deserves to <em>breathe easy</em> at home</h1>
+        <p class="hero-sub fade-up-d2">Mold doesn't just damage your home — it damages your health. I use EPA-approved, family-safe methods to eliminate 99.9% of mold and stop it from ever coming back.</p>
+        <div class="hero-ctas fade-up-d3">
+          <a href="#quote" class="btn-primary">Get Your Free Assessment →</a>
+          <a href="tel:8662434410" class="btn-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+            866-243-4410
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-inner">
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        EPA Safer Chemical List
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Whole Home Treatment
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        1-Year Guarantee
+      </div>
+      <div class="trust-item">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        Family & Pet Safe
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PROBLEM -->
+<section class="problem" id="about">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">The Silent Health Threat</div>
+      <h2 class="section-title">Mold is more than an eyesore</h2>
+      <p class="section-sub">Long-term mold exposure can cause respiratory problems, chronic fatigue, allergic reactions, and neurological symptoms. Georgia and Florida's humid climates make homes especially vulnerable. If any of these sound familiar, mold could be the cause.</p>
+    </div>
+    <div class="symptom-grid">
+      <div class="symptom-card reveal reveal-d1">
+        <div class="symptom-icon"><svg viewBox="0 0 24 24"><path d="M18.36 6.64A9 9 0 015.64 18.36M15.54 8.46A6 6 0 008.46 15.54"/><line x1="2" y1="2" x2="22" y2="22"/></svg></div>
+        <h3>Asthma & Wheezing</h3>
+        <p>Persistent coughing, wheezing, or shortness of breath — especially indoors. Kids and elderly are hit hardest by airborne mold spores.</p>
+      </div>
+      <div class="symptom-card reveal reveal-d2">
+        <div class="symptom-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <h3>Itchy, Watery Eyes</h3>
+        <p>Year-round congestion, sneezing, and itchy eyes that no medication can fix. Mold exposure mimics chronic allergies that never resolve.</p>
+      </div>
+      <div class="symptom-card reveal reveal-d3">
+        <div class="symptom-icon"><svg viewBox="0 0 24 24"><path d="M17 18a5 5 0 00-10 0"/><line x1="12" y1="2" x2="12" y2="9"/><line x1="4.22" y1="10.22" x2="5.64" y2="11.64"/><line x1="1" y1="18" x2="3" y2="18"/><line x1="21" y1="18" x2="23" y2="18"/><line x1="18.36" y1="11.64" x2="19.78" y2="10.22"/></svg></div>
+        <h3>Fatigue & Brain Fog</h3>
+        <p>Waking up tired, difficulty concentrating, and chronic headaches. Mold toxins accumulate in your body over time, draining your energy daily.</p>
+      </div>
+      <div class="symptom-card reveal reveal-d1">
+        <div class="symptom-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+        <h3>Chronic Sinus Infections</h3>
+        <p>Recurring sinus pressure, congestion, and infections that antibiotics can't seem to clear. Mold is one of the most common hidden triggers.</p>
+      </div>
+      <div class="symptom-card reveal reveal-d2">
+        <div class="symptom-icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg></div>
+        <h3>Persistent Coughing</h3>
+        <p>A cough that lingers for weeks or months, especially when you're at home. If it improves when you leave the house, mold is a likely culprit.</p>
+      </div>
+      <div class="symptom-card reveal reveal-d3">
+        <div class="symptom-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
+        <h3>Skin Irritation & Rashes</h3>
+        <p>Unexplained skin rashes, hives, or irritation. Mold spores can trigger immune responses that manifest on your skin, especially in children.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US / DIFFERENTIATORS -->
+<section class="differentiators">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Why Choose Us</div>
+      <h2 class="section-title">Not your typical mold company</h2>
+      <p class="section-sub">We've rethought every part of the remediation process to be faster, safer, and less disruptive for your family.</p>
+    </div>
+    <div class="diff-grid">
+      <div class="diff-card reveal reveal-d1">
+        <div class="diff-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h3>Often No Demolition Needed</h3>
+        <p>Keep your walls, floors, and belongings. Our dry fog penetrates everywhere without costly tearouts or reconstruction.</p>
+      </div>
+      <div class="diff-card reveal reveal-d2">
+        <div class="diff-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h3>Done in Hours, Not Weeks</h3>
+        <p>Most treatments completed in 4–6 hours. You can return home the same day — no temporary housing needed.</p>
+      </div>
+      <div class="diff-card reveal reveal-d3">
+        <div class="diff-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>Fully Insured & Guaranteed</h3>
+        <p>Every treatment is fully insured and backed by our workmanship guarantee — verified with independent lab testing.</p>
+      </div>
+      <div class="diff-card reveal reveal-d4">
+        <div class="diff-icon">
+          <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <h3>Safe for Family & Pets</h3>
+        <p>EPA Safer Chemical Ingredients with no harsh residue. Gentler for children, pets, and sensitive individuals.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AUTHORITY / WHY LISTEN TO ME (moved up before How It Works) -->
+<section class="authority" id="authority">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">The Black Mold Guy</div>
+      <h2 class="section-title">Why Listen To Me?</h2>
+    </div>
+    <div class="authority-intro reveal">
+      I'm a home health specialist. I work with all types of cases — from mold-sensitive individuals to out-of-control contaminations — using the cleanest, most effective treatment solutions available. I eradicate mold everywhere in the home and stop it coming back, permanently. With decades of experience alongside the biggest names in mold remediation, I've distilled every lesson, technique, and innovation into one bespoke service.
+    </div>
+    <div class="credentials-grid">
+      <div class="credential-card reveal reveal-d1">
+        <div class="credential-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 15a3 3 0 100-6 3 3 0 000 6z"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+        </div>
+        <h3>20+ Years Experience</h3>
+        <p>Trained alongside industry leaders before building a bespoke practice focused entirely on health outcomes.</p>
+      </div>
+      <div class="credential-card reveal reveal-d2">
+        <div class="credential-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h3>EPA-Approved Methods</h3>
+        <p>Exclusively using products on the EPA's Safer Chemical List — effective enough to destroy mold, safe enough for your family.</p>
+      </div>
+      <div class="credential-card reveal reveal-d3">
+        <div class="credential-icon">
+          <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        </div>
+        <h3>Lab-Verified Results</h3>
+        <p>Every job ends with post-treatment air testing. You get a report proving the mold is gone — in black and white.</p>
+      </div>
+    </div>
+    <div class="section-header reveal" style="margin-bottom:48px;">
+      <div class="section-tag" style="color:rgba(255,255,255,0.35);">Media & Interviews</div>
+      <h2 class="section-title" style="font-size:1.8rem;">Recent Appearances</h2>
+    </div>
+    <div class="video-scroll-wrapper">
+      <div class="video-scroll">
+        <div class="video-scroll-card reveal reveal-d1">
+          <div class="video-scroll-thumb">
+            <div class="play-icon"></div>
+            <div class="video-label">
+              <div class="cat">Mold & The Home</div>
+              <h4>Modern Buildings & Mold</h4>
+            </div>
+          </div>
+        </div>
+        <div class="video-scroll-card reveal reveal-d2">
+          <div class="video-scroll-thumb">
+            <div class="play-icon"></div>
+            <div class="video-label">
+              <div class="cat">Mold & The Home</div>
+              <h4>Is Your Home Making You Sick?</h4>
+            </div>
+          </div>
+        </div>
+        <div class="video-scroll-card reveal reveal-d3">
+          <div class="video-scroll-thumb">
+            <div class="play-icon"></div>
+            <div class="video-label">
+              <div class="cat">Mold & Health</div>
+              <h4>Detoxifying Your Body From Mold</h4>
+            </div>
+          </div>
+        </div>
+        <div class="video-scroll-card reveal">
+          <div class="video-scroll-thumb">
+            <div class="play-icon"></div>
+            <div class="video-label">
+              <div class="cat">Client Story</div>
+              <h4>Lucy's Coffee Shop Recovery</h4>
+            </div>
+          </div>
+        </div>
+        <div class="video-scroll-card reveal">
+          <div class="video-scroll-thumb">
+            <div class="play-icon"></div>
+            <div class="video-label">
+              <div class="cat">Expert Interview</div>
+              <h4>The Truth About Black Mold</h4>
+            </div>
+          </div>
+        </div>
+        <div class="video-scroll-card reveal">
+          <div class="video-scroll-thumb">
+            <div class="play-icon"></div>
+            <div class="video-label">
+              <div class="cat">Behind The Scenes</div>
+              <h4>Full Remediation Walkthrough</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-hint">
+        Scroll for more
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS (detailed timeline) -->
+<section class="approach" id="approach">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">How It Works</div>
+      <h2 class="section-title">A holistic approach — not a band-aid</h2>
+      <p class="section-sub">Most companies spray and pray. I investigate the root cause, eliminate every trace, and prevent it from returning. Here's exactly what to expect.</p>
+    </div>
+    <div class="approach-cards">
+
+      <div class="approach-card reveal">
+        <div class="approach-card-num">1</div>
+        <div class="approach-card-body">
+          <h3>Specialist Property Inspection & Testing</h3>
+          <p>Every home is different, and the cause of mold growth will be too. There is no "silver bullet" — I need to understand the unique circumstances in your home to tailor a remediation plan that actually works.</p>
+          <ul class="detail-list">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Comprehensive visual and thermal imaging inspection</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Air sampling to establish baseline levels</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Surface and dust sampling for species identification</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Moisture mapping to pinpoint the root cause</li>
+          </ul>
+          <div class="step-cta">
+            <a href="#quote" class="btn-primary" style="padding:10px 20px;font-size:0.85rem;">Get a Quote</a>
+            <a href="tel:8662434410" class="btn-secondary" style="padding:10px 20px;font-size:0.85rem;">866-243-4410</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="approach-card reveal">
+        <div class="approach-card-num">2</div>
+        <div class="approach-card-body">
+          <h3>Whole Home Mold Eradication</h3>
+          <p>Once I understand the causes, we begin comprehensive remediation tailored to your home. This isn't surface-level cleaning — it's systematic elimination of every trace.</p>
+          <ul class="detail-list">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Removal of contaminated materials</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Full containment protocols to prevent cross-contamination</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Sterilant fogging to destroy mold on every surface and in the air</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> HEPA vacuuming of all affected areas</li>
+          </ul>
+          <div class="step-cta">
+            <a href="#quote" class="btn-primary" style="padding:10px 20px;font-size:0.85rem;">Get a Quote</a>
+            <a href="tel:8662434410" class="btn-secondary" style="padding:10px 20px;font-size:0.85rem;">866-243-4410</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="approach-card reveal">
+        <div class="approach-card-num">3</div>
+        <div class="approach-card-body">
+          <h3>Future Mold Prevention</h3>
+          <p>Once the mold has been destroyed and contaminated materials removed, it's critical to future-proof your property so you never have a repeat situation.</p>
+          <ul class="detail-list">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Antimicrobial coating applied to all interior surfaces</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Eliminates new mold spores on contact</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Long-lasting protection against regrowth</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Recommendations for ongoing moisture management</li>
+          </ul>
+          <div class="step-cta">
+            <a href="#quote" class="btn-primary" style="padding:10px 20px;font-size:0.85rem;">Get a Quote</a>
+            <a href="tel:8662434410" class="btn-secondary" style="padding:10px 20px;font-size:0.85rem;">866-243-4410</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="approach-card reveal">
+        <div class="approach-card-num">4</div>
+        <div class="approach-card-body">
+          <h3>Proof of Success</h3>
+          <p>I take air samples after remediation is complete, allowing us to compare mold levels before and after treatment. You get hard proof — not just my word.</p>
+          <ul class="detail-list">
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Post-treatment air sampling sent to certified labs</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Side-by-side before-and-after comparison</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Formal post-treatment report for your records</li>
+            <li><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Documented proof for peace of mind</li>
+          </ul>
+          <div class="step-cta">
+            <a href="#quote" class="btn-primary" style="padding:10px 20px;font-size:0.85rem;">Get a Quote</a>
+            <a href="tel:8662434410" class="btn-secondary" style="padding:10px 20px;font-size:0.85rem;">866-243-4410</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">What We Offer</div>
+      <h2 class="section-title">Services built around your health</h2>
+      <p class="section-sub">Every service exists because families needed it. Each one solves a specific problem — not to pad a bill.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card reveal reveal-d1">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+        <div class="tag">Diagnosis</div>
+        <h3>Mold Inspection</h3>
+        <div class="who">For: Homeowners who suspect a problem</div>
+        <p>A comprehensive visual and instrument-based assessment using thermal imaging, moisture meters, and decades of experience to find mold others miss.</p>
+        <a href="#quote" class="service-link">Get started →</a>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <div class="tag">Lab-Verified</div>
+        <h3>Mold Testing</h3>
+        <div class="who">For: Families needing air quality answers</div>
+        <p>Air sampling, surface swabs, and ERMI testing sent to certified labs. Hard data on exactly what species you're dealing with and at what concentration.</p>
+        <a href="#quote" class="service-link">Get started →</a>
+      </div>
+      <div class="service-card reveal reveal-d3">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+        <div class="tag">Full Treatment</div>
+        <h3>Whole Home Remediation</h3>
+        <div class="who">For: Families ready to reclaim their health</div>
+        <p>My signature service. A bespoke whole-home treatment that addresses the root cause — containment, removal, fogging, and post-treatment lab verification.</p>
+        <a href="#quote" class="service-link">Get started →</a>
+      </div>
+      <div class="service-card reveal reveal-d1">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="tag">Long-Term Protection</div>
+        <h3>Mold Prevention</h3>
+        <div class="who">For: Humid climates & post-remediation</div>
+        <p>An antimicrobial coating applied to every surface that neutralizes mold spores on contact. Not a temporary fix — a permanent shield for your air.</p>
+        <a href="#quote" class="service-link">Get started →</a>
+      </div>
+      <div class="service-card reveal reveal-d2">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+        <div class="tag">Deep Clean</div>
+        <h3>Sanitization</h3>
+        <div class="who">For: Post-illness or immunocompromised</div>
+        <p>Hospital-grade treatment devastating to bacteria, viruses, and allergens. Ideal for recurring illness, pet owners, or anyone wanting truly clean air.</p>
+        <a href="#quote" class="service-link">Get started →</a>
+      </div>
+      <div class="service-card reveal reveal-d3">
+        <div class="service-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg></div>
+        <div class="tag">Real Estate</div>
+        <h3>Pre-Purchase Inspection</h3>
+        <div class="who">For: Homebuyers protecting their investment</div>
+        <p>Before you sign, know what you're buying. I've saved buyers from homes with six-figure remediation problems hiding behind fresh paint.</p>
+        <a href="#quote" class="service-link">Get started →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GOOGLE REVIEWS -->
+<section class="reviews-section" id="testimonials">
+  <div class="container">
+    <div class="reviews-header reveal">
+      <div class="section-tag">Real Results</div>
+      <h2 class="section-title">What people say about us</h2>
+      <p class="section-sub">Verified reviews from homeowners across Atlanta and Miami.</p>
+    </div>
+    <div style="text-align:center;" class="reveal">
+      <div class="google-badge">
+        <div class="g-icon"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div>
+        <div class="g-rating">5.0</div>
+        <div class="g-stars">★★★★★</div>
+        <div class="g-count">Based on 47 reviews</div>
+      </div>
+    </div>
+    <div class="reviews-scroll-wrapper reveal">
+      <div class="reviews-scroll">
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">DW</div>
+            <div class="review-meta">
+              <div class="review-name">Danielle W.</div>
+              <div class="review-date">3 weeks ago</div>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">From start to finish, Deonco was extremely knowledgeable and professional. He answered every single question with patience. My home feels completely different now — the air is crisp and clean. He deserves 10 stars.</div>
+          <div class="review-google-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Posted on Google
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">MR</div>
+            <div class="review-meta">
+              <div class="review-name">Maria R.</div>
+              <div class="review-date">1 month ago</div>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">Deonco is an absolute professional. He was kind and empathetic to my situation after having suffered months of mold exposure in my previous apartment in South Beach. The process was easy, quick, and very thorough. I highly recommend this service to anyone.</div>
+          <div class="review-google-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Posted on Google
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">KL</div>
+            <div class="review-meta">
+              <div class="review-name">Kevin L.</div>
+              <div class="review-date">2 months ago</div>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">They were very responsive and came to inspect the issue the same day I called. He put my mind at ease and created an efficient plan to remedy the problem. Would absolutely use them again and recommend to anyone dealing with mold.</div>
+          <div class="review-google-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Posted on Google
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">TJ</div>
+            <div class="review-meta">
+              <div class="review-name">Tanya J.</div>
+              <div class="review-date">2 months ago</div>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">I had mold in my bathroom for months and didn't know what to do. Deonco came out, explained everything clearly, and took care of it within two days. The follow-up air quality report was so reassuring. Truly a five-star experience from a five-star human.</div>
+          <div class="review-google-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Posted on Google
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">AP</div>
+            <div class="review-meta">
+              <div class="review-name">Anthony P.</div>
+              <div class="review-date">3 months ago</div>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">As a real estate investor, I've dealt with dozens of mold companies. None compare to Deonco's thoroughness. His before-and-after air testing gives me documentation I can show buyers with confidence. He's now my go-to for every property in the Atlanta area.</div>
+          <div class="review-google-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Posted on Google
+          </div>
+        </div>
+        <div class="review-card">
+          <div class="review-header">
+            <div class="review-avatar">SC</div>
+            <div class="review-meta">
+              <div class="review-name">Sandra C.</div>
+              <div class="review-date">3 months ago</div>
+            </div>
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <div class="review-text">My daughter had been having asthma flare-ups for almost a year. We had no idea it was mold in our HVAC system. Deonco found it, fixed it, and my daughter hasn't had an episode since. I'm so grateful — this man literally changed our quality of life.</div>
+          <div class="review-google-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Posted on Google
+          </div>
+        </div>
+      </div>
+      <div class="reviews-scroll-hint">
+        Scroll for more
+        <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUOTE FUNNEL -->
+<section class="quote-section" id="quote">
+  <div class="container-narrow">
+    <div class="quote-wrapper">
+      <div class="quote-header">
+        <h2>Let's Get You Breathing Easy</h2>
+        <p>Answer a few quick questions — takes about 45 seconds.</p>
+      </div>
+      <div class="progress-bar" id="progressBar">
+        <div class="progress-step active"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+        <div class="progress-step"></div>
+      </div>
+      <div class="step-counter" id="stepCounter">Step 1 of 7</div>
+      <div class="quote-body" id="quoteBody">
+
+        <!-- Step 1 -->
+        <div class="funnel-step active" data-step="1">
+          <h3 class="funnel-question">What brought you here today?</h3>
+          <p class="funnel-context">This helps me prepare the right solution before we even talk.</p>
+          <div class="option-grid option-single">
+            <div class="option-card" data-value="health" onclick="selectAndAdvance(this, 1)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div>
+              <div><div class="label">Health symptoms</div><div class="sublabel">Allergies, breathing issues, fatigue, or recurring illness</div></div>
+              <div class="check-circle"></div>
+            </div>
+            <div class="option-card" data-value="visible" onclick="selectAndAdvance(this, 1)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+              <div><div class="label">I can see or smell mold</div><div class="sublabel">Visible growth, dark spots, or a musty odor</div></div>
+              <div class="check-circle"></div>
+            </div>
+            <div class="option-card" data-value="water" onclick="selectAndAdvance(this, 1)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M12 2.69l5.66 5.66a8 8 0 11-11.31 0z"/></svg></div>
+              <div><div class="label">Water damage or leak</div><div class="sublabel">Recent or ongoing moisture issue</div></div>
+              <div class="check-circle"></div>
+            </div>
+            <div class="option-card" data-value="proactive" onclick="selectAndAdvance(this, 1)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+              <div><div class="label">Prevention / peace of mind</div><div class="sublabel">Want to test or protect my home proactively</div></div>
+              <div class="check-circle"></div>
+            </div>
+          </div>
+          <div class="funnel-nav"><div></div></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="funnel-step" data-step="2">
+          <h3 class="funnel-question">What type of property?</h3>
+          <p class="funnel-context">Different properties need different approaches.</p>
+          <div class="option-grid">
+            <div class="option-card" data-value="house" onclick="selectAndAdvance(this, 2)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div>
+              <div><div class="label">House</div></div>
+              <div class="check-circle"></div>
+            </div>
+            <div class="option-card" data-value="apartment" onclick="selectAndAdvance(this, 2)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><path d="M9 18h6v4H9z"/></svg></div>
+              <div><div class="label">Apartment / Condo</div></div>
+              <div class="check-circle"></div>
+            </div>
+            <div class="option-card" data-value="townhouse" onclick="selectAndAdvance(this, 2)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M3 21V9l4-4 5 5 5-5 4 4v12"/><line x1="3" y1="21" x2="21" y2="21"/></svg></div>
+              <div><div class="label">Townhouse</div></div>
+              <div class="check-circle"></div>
+            </div>
+            <div class="option-card" data-value="commercial" onclick="selectAndAdvance(this, 2)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg></div>
+              <div><div class="label">Commercial</div></div>
+              <div class="check-circle"></div>
+            </div>
+          </div>
+          <div class="funnel-nav"><button class="btn-back" onclick="prevStep()">← Back</button><div></div></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="funnel-step" data-step="3">
+          <h3 class="funnel-question">How large is the property?</h3>
+          <p class="funnel-context">Helps me estimate scope and give you an accurate ballpark.</p>
+          <div class="option-grid">
+            <div class="option-card" data-value="under1000" onclick="selectAndAdvance(this, 3)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+              <div><div class="label">Under 1,000 sq ft</div></div>
+              <div class="check-circle"></div>
+            </div>
+            <div class="option-card" data-value="1000-2000" onclick="selectAndAdvance(this, 3)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+              <div><div class="label">1,000 – 2,000 sq ft</div></div>
+              <div class="check-circle"></div>
+            </div>
+            <div class="option-card" data-value="2000-3500" onclick="selectAndAdvance(this, 3)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+              <div><div class="label">2,000 – 3,500 sq ft</div></div>
+              <div class="check-circle"></div>
+            </div>
+            <div class="option-card" data-value="over3500" onclick="selectAndAdvance(this, 3)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+              <div><div class="label">Over 3,500 sq ft</div></div>
+              <div class="check-circle"></div>
+            </div>
+          </div>
+          <div class="funnel-nav"><button class="btn-back" onclick="prevStep()">← Back</button><div></div></div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="funnel-step" data-step="4">
+          <h3 class="funnel-question">How urgent is this?</h3>
+          <p class="funnel-context">No judgment — I just want to prioritize families who need help now.</p>
+          <div class="option-grid option-single">
+            <div class="option-card" data-value="asap" onclick="selectAndAdvance(this, 4)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+              <div><div class="label">ASAP — someone in my home is sick</div></div>
+              <div class="check-circle"></div>
+            </div>
+            <div class="option-card" data-value="soon" onclick="selectAndAdvance(this, 4)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+              <div><div class="label">Within the next week or two</div></div>
+              <div class="check-circle"></div>
+            </div>
+            <div class="option-card" data-value="exploring" onclick="selectAndAdvance(this, 4)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+              <div><div class="label">Just exploring my options</div></div>
+              <div class="check-circle"></div>
+            </div>
+          </div>
+          <div class="funnel-nav"><button class="btn-back" onclick="prevStep()">← Back</button><div></div></div>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="funnel-step" data-step="5">
+          <h3 class="funnel-question">Where is the property?</h3>
+          <p class="funnel-context">I serve Metro Atlanta and Miami-Dade.</p>
+          <div class="option-grid option-single">
+            <div class="option-card" data-value="atlanta" onclick="selectAndAdvance(this, 5)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><div class="label">Metro Atlanta, Georgia</div></div>
+              <div class="check-circle"></div>
+            </div>
+            <div class="option-card" data-value="miami" onclick="selectAndAdvance(this, 5)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+              <div><div class="label">Miami-Dade, Florida</div></div>
+              <div class="check-circle"></div>
+            </div>
+            <div class="option-card" data-value="other" onclick="selectAndAdvance(this, 5)">
+              <div class="option-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div>
+              <div><div class="label">Somewhere else</div><div class="sublabel">I may still be able to help</div></div>
+              <div class="check-circle"></div>
+            </div>
+          </div>
+          <div class="funnel-nav"><button class="btn-back" onclick="prevStep()">← Back</button><div></div></div>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="funnel-step" data-step="6">
+          <h3 class="funnel-question">Anything else I should know?</h3>
+          <p class="funnel-context">Symptoms, timeline, past water damage — anything that helps me prepare. Totally optional.</p>
+          <div class="form-group">
+            <textarea id="notes" placeholder="e.g. Recurring sinus infections for 6 months. Water damage in the bathroom last year. Two young kids at home..." rows="4"></textarea>
+          </div>
+          <div class="funnel-nav">
+            <button class="btn-back" onclick="prevStep()">← Back</button>
+            <button class="btn-next" onclick="nextStep()">Almost done →</button>
+          </div>
+        </div>
+
+        <!-- Step 7 -->
+        <div class="funnel-step" data-step="7">
+          <h3 class="funnel-question">Where should I send your assessment?</h3>
+          <p class="funnel-context">I'll personally review your answers and reach out within 24 hours — usually much sooner.</p>
+          <div class="form-row">
+            <div class="form-group"><label>First Name *</label><input type="text" id="firstName" placeholder="First name" required></div>
+            <div class="form-group"><label>Last Name *</label><input type="text" id="lastName" placeholder="Last name" required></div>
+          </div>
+          <div class="form-group"><label>Email *</label><input type="email" id="email" placeholder="you@email.com" required></div>
+          <div class="form-group"><label>Phone *</label><input type="tel" id="phone" placeholder="(555) 123-4567" required></div>
+          <div class="funnel-nav">
+            <button class="btn-back" onclick="prevStep()">← Back</button>
+            <button class="btn-next" onclick="submitForm()" style="background:var(--accent);">Get My Free Assessment →</button>
+          </div>
+        </div>
+
+        <!-- Success -->
+        <div class="funnel-step" data-step="8">
+          <div class="success-state">
+            <div class="success-icon">
+              <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <div class="confetti confetti-1"></div>
+              <div class="confetti confetti-2"></div>
+              <div class="confetti confetti-3"></div>
+              <div class="confetti confetti-4"></div>
+            </div>
+            <h3>You're on the list!</h3>
+            <p>I'll personally review your situation and reach out within 24 hours. If it's urgent, expect a call much sooner.</p>
+            <a href="tel:8662434410" class="btn-primary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+              Can't wait? Call 866-243-4410
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Common Questions</div>
+      <h2 class="section-title">Everything you need to know</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>How is your approach different from other mold companies?</h3>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">Most companies treat the symptom — they wipe down what's visible and leave. I take a whole-home, health-first approach: identifying the root cause, eradicating mold from every surface and the air, applying antimicrobial protection, and proving the results with post-treatment lab testing. My goal isn't a cosmetic fix — it's permanent resolution.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>Are the chemicals you use safe for my family and pets?</h3>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">Absolutely. I exclusively use products on the EPA's Safer Chemical List. They're effective enough to destroy 99.9% of mold while being safe for children, pets, and individuals with chemical sensitivities. Your family can return to normal activity shortly after treatment.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>How long does the remediation process take?</h3>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">Most residential projects take 1-3 days depending on size and severity. I'll give you an accurate timeline during the initial inspection. My process is thorough but efficient — I respect your time and minimize disruption to your daily life.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>What does the 1-year guarantee cover?</h3>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">If mold returns in any area I treated within 12 months, I'll come back and re-treat at no cost. This guarantee is possible because my whole-home approach — including antimicrobial barriers — is designed to prevent regrowth, not just remove what's there today.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>Do you offer financing or payment plans?</h3>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">Yes. Your health shouldn't wait because of budget constraints. I offer flexible payment plans to make remediation accessible. We'll discuss options during your free consultation so there are no surprises.</div></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-question" onclick="toggleFaq(this)">
+          <h3>I'm buying a home — should I get a mold inspection first?</h3>
+          <div class="faq-toggle"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></div>
+        </div>
+        <div class="faq-answer"><div class="faq-answer-inner">100%. Standard home inspections often miss mold issues, especially when sellers have covered them with fresh paint or drywall. I've saved buyers from purchasing homes with massive hidden mold problems. Think of it as insurance for one of the biggest purchases of your life.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <div class="container">
+    <h2 class="reveal">Ready to enjoy the health benefits<br>of a <em>mold-free</em> home?</h2>
+    <p class="reveal">Stop guessing. Get a definitive answer — and a permanent solution.</p>
+    <div class="cta-buttons reveal">
+      <a href="#quote" class="btn-primary">Start Your Free Assessment →</a>
+      <a href="tel:8662434410" class="btn-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+        Call 866-243-4410
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATIONS -->
+<section class="locations">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">Service Areas</div>
+      <h2 class="section-title">Two cities. One mission.</h2>
+      <p class="section-sub">Bases of operation in Metro Atlanta and Miami-Dade — I come to you.</p>
+    </div>
+    <div class="locations-grid">
+      <div class="location-card reveal reveal-d1">
+        <div class="location-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d212270.5319786087!2d-84.42193945!3d33.7676931!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1709500000000" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <div class="location-info">
+          <h3>Metro Atlanta, Georgia</h3>
+          <p>Serving the greater Atlanta metro including Marietta, Decatur, Alpharetta, Sandy Springs, Brookhaven, and surrounding areas.</p>
+        </div>
+      </div>
+      <div class="location-card reveal reveal-d2">
+        <div class="location-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d229676.0122776484!2d-80.29949945!3d25.7823907!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sus!4v1709500000001" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+        <div class="location-info">
+          <h3>Miami-Dade, Florida</h3>
+          <p>Serving Miami, South Beach, Coral Gables, Hialeah, Miami Gardens, Aventura, and the greater Miami-Dade area.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="footer-logo">
+          <svg viewBox="0 0 40 40" fill="none"><path d="M20 4L34 14V30L20 36L6 30V14L20 4Z" stroke="white" stroke-width="2" fill="none"/><circle cx="20" cy="19" r="5" fill="white"/><line x1="20" y1="8" x2="20" y2="14" stroke="white" stroke-width="2"/><line x1="20" y1="24" x2="20" y2="30" stroke="white" stroke-width="2"/></svg>
+          <span>The Black Mold Guy</span>
+        </div>
+        <p>The health-first approach to mold remediation. Helping families breathe easy in Atlanta and Miami.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="#services">Services</a>
+        <a href="#approach">How It Works</a>
+        <a href="#authority">About</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#quote">Get a Quote</a>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <a href="#">Monday – Friday</a>
+        <a href="#">9am – 5pm EST</a>
+      </div>
+      <div class="footer-col">
+        <h4>Follow</h4>
+        <a href="https://www.tiktok.com/@theofficialblackmoldguy" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.instagram.com/theofficialblackmoldguy/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.youtube.com/@Theofficalblackmoldguy" target="_blank" rel="noopener">YouTube</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 The Black Mold Guy | All Rights Reserved</span>
+      <span>
+        <a href="#" style="color:inherit;text-decoration:none;">Privacy</a> &nbsp;
+        <a href="#" style="color:inherit;text-decoration:none;">Terms</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- STICKY MOBILE CTA -->
+<div class="mobile-cta">
+  <div class="mobile-cta-inner">
+    <a href="#quote" class="btn-primary">Free Assessment →</a>
+    <a href="tel:8662434410" class="btn-secondary">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+      Call Now
+    </a>
+  </div>
+</div>
+
+<script>
+// NAV
+window.addEventListener('scroll', () => {
+  document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 50);
+});
+
+// SCROLL REVEAL
+const revealObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+// FUNNEL
+let currentStep = 1;
+const answers = {};
+let isTransitioning = false;
+
+function selectAndAdvance(card, step) {
+  if (isTransitioning) return;
+  const siblings = card.parentElement.querySelectorAll('.option-card');
+  siblings.forEach(s => s.classList.remove('selected'));
+  card.classList.add('selected');
+  answers[step] = card.dataset.value;
+  isTransitioning = true;
+  setTimeout(() => { autoAdvance(); isTransitioning = false; }, 400);
+}
+
+function autoAdvance() {
+  if (currentStep >= 7) return;
+  const currentEl = document.querySelector(`.funnel-step[data-step="${currentStep}"]`);
+  currentEl.classList.add('exiting');
+  setTimeout(() => {
+    currentEl.classList.remove('active', 'exiting');
+    currentStep++;
+    document.querySelector(`.funnel-step[data-step="${currentStep}"]`).classList.add('active');
+    updateProgress();
+  }, 250);
+}
+
+function nextStep() {
+  if (currentStep >= 8) return;
+  const currentEl = document.querySelector(`.funnel-step[data-step="${currentStep}"]`);
+  currentEl.classList.add('exiting');
+  setTimeout(() => {
+    currentEl.classList.remove('active', 'exiting');
+    currentStep++;
+    document.querySelector(`.funnel-step[data-step="${currentStep}"]`).classList.add('active');
+    updateProgress();
+  }, 250);
+}
+
+function prevStep() {
+  if (currentStep <= 1) return;
+  document.querySelector(`.funnel-step[data-step="${currentStep}"]`).classList.remove('active');
+  currentStep--;
+  document.querySelector(`.funnel-step[data-step="${currentStep}"]`).classList.add('active');
+  updateProgress();
+}
+
+function updateProgress() {
+  const steps = document.querySelectorAll('.progress-bar .progress-step');
+  steps.forEach((s, i) => {
+    s.classList.remove('active', 'completed');
+    if (i < currentStep - 1) s.classList.add('completed');
+    else if (i === currentStep - 1) s.classList.add('active');
+  });
+  const counter = document.getElementById('stepCounter');
+  if (currentStep <= 7) { counter.textContent = `Step ${currentStep} of 7`; counter.style.display = 'block'; }
+  else { counter.style.display = 'none'; }
+}
+
+function submitForm() {
+  const firstName = document.getElementById('firstName').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const phone = document.getElementById('phone').value.trim();
+  if (!firstName || !email || !phone) {
+    if (!firstName) document.getElementById('firstName').style.borderColor = 'var(--accent)';
+    if (!email) document.getElementById('email').style.borderColor = 'var(--accent)';
+    if (!phone) document.getElementById('phone').style.borderColor = 'var(--accent)';
+    return;
+  }
+  answers.firstName = firstName;
+  answers.lastName = document.getElementById('lastName').value.trim();
+  answers.email = email;
+  answers.phone = phone;
+  answers.notes = document.getElementById('notes').value;
+
+  // Submit to Formspree (replace YOUR_FORM_ID with actual Formspree form ID)
+  const formData = {
+    name: answers.firstName + ' ' + answers.lastName,
+    email: answers.email,
+    phone: answers.phone,
+    reason: answers[1] || '',
+    property_type: answers[2] || '',
+    property_size: answers[3] || '',
+    urgency: answers[4] || '',
+    location: answers[5] || '',
+    notes: answers.notes || '',
+    _subject: 'New Lead: ' + answers.firstName + ' — ' + (answers[4] === 'asap' ? 'URGENT' : 'Standard')
+  };
+
+  fetch('https://formspree.io/f/YOUR_FORM_ID', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(formData)
+  }).then(r => {
+    console.log('Lead submitted:', formData);
+  }).catch(err => {
+    console.log('Form submission error (endpoint not configured):', formData);
+  });
+
+  // Show success regardless (UX shouldn't wait on network)
+  document.querySelector(`.funnel-step[data-step="${currentStep}"]`).classList.remove('active');
+  currentStep = 8;
+  document.querySelector('.funnel-step[data-step="8"]').classList.add('active');
+  document.querySelectorAll('.progress-bar .progress-step').forEach(s => { s.classList.remove('active'); s.classList.add('completed'); });
+  document.getElementById('stepCounter').style.display = 'none';
+}
+
+document.querySelectorAll('.form-group input').forEach(input => {
+  input.addEventListener('focus', () => { input.style.borderColor = ''; });
+});
+
+// FAQ
+function toggleFaq(el) {
+  const item = el.parentElement;
+  const wasOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+  if (!wasOpen) item.classList.add('open');
+}
+
+// SMOOTH SCROLL
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      const pos = target.getBoundingClientRect().top + window.pageYOffset - 80;
+      window.scrollTo({ top: pos, behavior: 'smooth' });
+    }
+  });
+});
+</script>
+</body>
+</html>
