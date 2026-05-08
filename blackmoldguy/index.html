@@ -763,11 +763,11 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
 /* MOBILE CTA */
 .mobile-cta {
   display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
-  padding: 12px 16px; background: rgba(247,245,240,0.95);
+  padding: 8px 12px; background: rgba(247,245,240,0.95);
   backdrop-filter: blur(16px); border-top: 1px solid var(--border); box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
 }
 .mobile-cta-inner { display: flex; gap: 10px; }
-.mobile-cta .btn-primary, .mobile-cta .btn-secondary { flex: 1; justify-content: center; padding: 14px 20px; font-size: 0.95rem; }
+.mobile-cta .btn-primary, .mobile-cta .btn-secondary { flex: 1; justify-content: center; padding: 11px 16px; font-size: 0.85rem; }
 
 /* RESPONSIVE */
 @media (max-width: 1024px) {
@@ -819,7 +819,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
   .cta-buttons .btn-primary, .cta-buttons .btn-secondary { width: 100%; justify-content: center; }
   .funnel-question { font-size: 1.15rem; }
   .mobile-cta { display: block; }
-  body { padding-bottom: 72px; }
+  body { padding-bottom: 58px; }
   /* Funnel grids: force 2 columns on tablets/phones */
   #serviceGrid { grid-template-columns: repeat(2, 1fr) !important; }
   #propGrid { grid-template-columns: repeat(2, 1fr) !important; }
@@ -1921,8 +1921,8 @@ function selectService(el) {
     pills.appendChild(btn);
   });
   section.style.display = 'block';
-  // Scroll so the newly revealed pills are visible
-  setTimeout(() => { section.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
+  // Scroll so the newly revealed pills are centered on screen
+  setTimeout(() => { section.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 50);
 }
 
 function selectProp(el) {
@@ -1934,8 +1934,8 @@ function selectProp(el) {
   // Show size pills
   const sizeSection = document.getElementById('sizeSection');
   sizeSection.style.display = 'block';
-  // Scroll so the newly revealed pills are visible
-  setTimeout(() => { sizeSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' }); }, 50);
+  // Scroll so the newly revealed pills are centered on screen
+  setTimeout(() => { sizeSection.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 50);
 }
 
 function selectSize(btn, val) {
