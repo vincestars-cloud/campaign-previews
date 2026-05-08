@@ -133,6 +133,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
+html, body { overflow-x: hidden; max-width: 100vw; }
 html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
@@ -140,7 +141,6 @@ body {
   color: var(--ink);
   background: var(--cream);
   line-height: 1.7;
-  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -2259,7 +2259,7 @@ autoScroll(document.querySelector('.reviews-scroll'), 0.5);
 .bmg-typing span:nth-child(3){animation-delay:.4s}
 @keyframes bmgT{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
 @media(max-width:768px){#bmg-chat-widget{bottom:84px !important;}#bmg-chat-toast{width:240px !important;}}
-@media(max-width:480px){#bmg-chat-panel{width:calc(100vw - 16px);right:-12px;height:calc(100vh - 140px);border-radius:16px 16px 0 0}#bmg-chat-widget{bottom:80px !important;}}
+@media(max-width:480px){#bmg-chat-panel{width:calc(100vw - 32px);right:0;height:calc(100vh - 140px);border-radius:16px 16px 0 0}#bmg-chat-widget{bottom:80px !important;}}
 </style>
 
 <script>
