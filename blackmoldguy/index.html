@@ -133,7 +133,7 @@
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
-html, body { overflow-x: hidden; max-width: 100vw; }
+html, body { overflow-x: hidden; }
 html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
@@ -609,10 +609,11 @@ nav.scrolled { border-bottom-color: var(--border); box-shadow: 0 2px 30px rgba(0
 .location-info p { font-size: 0.88rem; color: var(--warm-gray); line-height: 1.6; }
 
 /* VIDEO HORIZONTAL SCROLL */
-.video-scroll-wrapper { position: relative; }
+.video-scroll-wrapper { position: relative; width: 100%; overflow: hidden; }
 .video-scroll {
-  display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory;
+  display: flex; gap: 20px; overflow-x: scroll; scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch; padding: 8px 0 24px; scrollbar-width: none;
+  width: 100%;
 }
 .video-scroll::-webkit-scrollbar { display: none; }
 .video-scroll-card {
@@ -671,10 +672,11 @@ nav.scrolled { border-bottom-color: var(--border); box-shadow: 0 2px 30px rgba(0
 .google-badge .g-stars { color: var(--gold); font-size: 0.85rem; letter-spacing: 1px; }
 .google-badge .g-count { font-size: 0.8rem; color: var(--warm-gray); }
 
-.reviews-scroll-wrapper { position: relative; }
+.reviews-scroll-wrapper { position: relative; width: 100%; overflow: hidden; }
 .reviews-scroll {
-  display: flex; gap: 20px; overflow-x: auto; scroll-snap-type: x mandatory;
+  display: flex; gap: 20px; overflow-x: scroll; scroll-snap-type: x mandatory;
   -webkit-overflow-scrolling: touch; padding: 8px 0 24px; scrollbar-width: none;
+  width: 100%;
 }
 .reviews-scroll::-webkit-scrollbar { display: none; }
 .review-card {
