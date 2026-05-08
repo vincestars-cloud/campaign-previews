@@ -630,23 +630,52 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
   .video-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
-  .nav-links, .nav-cta .nav-phone { display: none; }
+  .nav-links { display: none; position: absolute; top: 72px; left: 0; right: 0; background: var(--cream); flex-direction: column; padding: 24px; gap: 20px; border-bottom: 1px solid var(--border); box-shadow: 0 8px 30px rgba(0,0,0,0.08); }
+  .nav-links.show { display: flex; }
+  .nav-cta .nav-phone { display: none; }
   .nav-toggle { display: flex; }
   .hero { padding: 110px 0 60px; }
-  .hero-stats { gap: 24px; }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-sub { font-size: 1rem; }
+  .hero-stats { gap: 20px; flex-wrap: wrap; }
+  .hero-stat .number { font-size: 1.6rem; }
   .hero-ctas { flex-direction: column; align-items: stretch; }
   .hero-ctas .btn-primary, .hero-ctas .btn-secondary { justify-content: center; }
   .services-grid, .symptom-grid, .credentials-grid { grid-template-columns: 1fr; }
   .locations-grid, .video-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
   .option-grid, .form-row { grid-template-columns: 1fr; }
   .quote-body { padding: 32px 24px 40px; }
   .quote-header { padding: 36px 24px 0; }
+  .quote-header h2 { font-size: 1.5rem; }
   .progress-bar { margin: 24px 24px 0; }
   .step-counter { margin-left: 24px; margin-right: 24px; }
-  .section-title { font-size: 2rem; }
+  .section-title { font-size: 1.8rem; }
+  .section-header { margin-bottom: 48px; }
+  .problem, .authority, .approach, .services, .reviews-section, .faq, .quote-section { padding: 80px 0; }
+  .differentiators, .cta-banner, .locations { padding: 72px 0; }
+  .trust-inner { gap: 20px; justify-content: flex-start; }
+  .trust-item { font-size: 0.78rem; }
+  .approach-card { padding: 28px 20px; }
+  .approach-card-body h3 { font-size: 1.1rem; }
+  .service-card { padding: 28px 24px; }
+  .credential-card { padding: 24px 20px; }
+  .location-map { height: 180px; }
+  .cta-banner h2 { font-size: 1.6rem; }
+  .cta-buttons { flex-direction: column; gap: 12px; }
+  .cta-buttons .btn-primary, .cta-buttons .btn-secondary { width: 100%; justify-content: center; }
+  .funnel-question { font-size: 1.15rem; }
   .mobile-cta { display: block; }
   body { padding-bottom: 72px; }
+}
+@media (max-width: 380px) {
+  .container, .container-narrow { padding: 0 16px; }
+  .hero h1 { font-size: 1.8rem; }
+  .hero-badge { font-size: 0.7rem; padding: 6px 12px; }
+  .option-card { padding: 14px 16px; }
+  .btn-primary, .btn-secondary { padding: 12px 20px; font-size: 0.85rem; }
+  .google-badge { flex-wrap: wrap; justify-content: center; gap: 6px; padding: 8px 14px; }
 }
 </style>
 </head>
@@ -667,7 +696,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-cta">
-      <a href="tel:8662434410" class="nav-phone">866-243-4410</a>
+      <a href="tel:3058490242" class="nav-phone">305-849-0242</a>
       <a href="#quote" class="btn-primary">Free Assessment →</a>
     </div>
     <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')">
@@ -686,9 +715,9 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
         <p class="hero-sub fade-up-d2">Mold doesn't just damage your home — it damages your health. I use EPA-approved, family-safe methods to eliminate 99.9% of mold and stop it from ever coming back.</p>
         <div class="hero-ctas fade-up-d3">
           <a href="#quote" class="btn-primary">Get Your Free Assessment →</a>
-          <a href="tel:8662434410" class="btn-secondary">
+          <a href="tel:3058490242" class="btn-secondary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-            866-243-4410
+            305-849-0242
           </a>
         </div>
       </div>
@@ -929,7 +958,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
           </ul>
           <div class="step-cta">
             <a href="#quote" class="btn-primary" style="padding:10px 20px;font-size:0.85rem;">Get a Quote</a>
-            <a href="tel:8662434410" class="btn-secondary" style="padding:10px 20px;font-size:0.85rem;">866-243-4410</a>
+            <a href="tel:3058490242" class="btn-secondary" style="padding:10px 20px;font-size:0.85rem;">305-849-0242</a>
           </div>
         </div>
       </div>
@@ -947,7 +976,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
           </ul>
           <div class="step-cta">
             <a href="#quote" class="btn-primary" style="padding:10px 20px;font-size:0.85rem;">Get a Quote</a>
-            <a href="tel:8662434410" class="btn-secondary" style="padding:10px 20px;font-size:0.85rem;">866-243-4410</a>
+            <a href="tel:3058490242" class="btn-secondary" style="padding:10px 20px;font-size:0.85rem;">305-849-0242</a>
           </div>
         </div>
       </div>
@@ -965,7 +994,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
           </ul>
           <div class="step-cta">
             <a href="#quote" class="btn-primary" style="padding:10px 20px;font-size:0.85rem;">Get a Quote</a>
-            <a href="tel:8662434410" class="btn-secondary" style="padding:10px 20px;font-size:0.85rem;">866-243-4410</a>
+            <a href="tel:3058490242" class="btn-secondary" style="padding:10px 20px;font-size:0.85rem;">305-849-0242</a>
           </div>
         </div>
       </div>
@@ -983,7 +1012,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
           </ul>
           <div class="step-cta">
             <a href="#quote" class="btn-primary" style="padding:10px 20px;font-size:0.85rem;">Get a Quote</a>
-            <a href="tel:8662434410" class="btn-secondary" style="padding:10px 20px;font-size:0.85rem;">866-243-4410</a>
+            <a href="tel:3058490242" class="btn-secondary" style="padding:10px 20px;font-size:0.85rem;">305-849-0242</a>
           </div>
         </div>
       </div>
@@ -1366,9 +1395,9 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
             </div>
             <h3>You're on the list!</h3>
             <p>I'll personally review your situation and reach out within 24 hours. If it's urgent, expect a call much sooner.</p>
-            <a href="tel:8662434410" class="btn-primary">
+            <a href="tel:3058490242" class="btn-primary">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-              Can't wait? Call 866-243-4410
+              Can't wait? Call 305-849-0242
             </a>
           </div>
         </div>
@@ -1439,9 +1468,9 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
     <p class="reveal">Stop guessing. Get a definitive answer — and a permanent solution.</p>
     <div class="cta-buttons reveal">
       <a href="#quote" class="btn-primary">Start Your Free Assessment →</a>
-      <a href="tel:8662434410" class="btn-secondary">
+      <a href="tel:3058490242" class="btn-secondary">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-        Call 866-243-4410
+        Call 305-849-0242
       </a>
     </div>
   </div>
@@ -1523,7 +1552,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
 <div class="mobile-cta">
   <div class="mobile-cta-inner">
     <a href="#quote" class="btn-primary">Free Assessment →</a>
-    <a href="tel:8662434410" class="btn-secondary">
+    <a href="tel:3058490242" class="btn-secondary">
       <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
       Call Now
     </a>
