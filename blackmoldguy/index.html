@@ -2298,12 +2298,16 @@ window.bmgChatToggle=function(){
     bubble.style.display=isOpen?'none':'flex';
     document.body.style.overflow=isOpen?'hidden':'';
     const mobileCta=document.querySelector('.mobile-cta');
-    if(mobileCta) mobileCta.style.display=isOpen?'none':'block';
+    if(mobileCta) mobileCta.style.visibility=isOpen?'hidden':'visible';
   }
   if(isOpen){
     // Don't auto-focus input on mobile so keyboard stays closed
-    if(!isMobile) document.getElementById('bmg-chat-input').focus();
-    else document.activeElement.blur();
+    if(!isMobile){ document.getElementById('bmg-chat-input').focus(); }
+    else {
+      document.getElementById('bmg-chat-input').setAttribute('readonly','readonly');
+      setTimeout(()=>{ document.getElementById('bmg-chat-input').removeAttribute('readonly'); },500);
+      if(document.activeElement) document.activeElement.blur();
+    }
     if(!sessionStorage.getItem('bmg_connected')){
       sessionStorage.setItem('bmg_connected','1');
       const dot=document.getElementById('bmg-hdr-dot'),stat=document.getElementById('bmg-hdr-status');
