@@ -2293,13 +2293,17 @@ window.bmgChatToggle=function(){
   const isMobile=window.innerWidth<=768;
   p.style.display=isOpen?'flex':'none';t.style.display='none';
   icon.style.display=isOpen?'none':'block';x.style.display=isOpen?'block':'none';
-  // On mobile, hide bubble and prevent body scroll when chat is fullscreen
+  // On mobile, hide bubble + sticky CTA, prevent body scroll when chat is fullscreen
   if(isMobile){
     bubble.style.display=isOpen?'none':'flex';
     document.body.style.overflow=isOpen?'hidden':'';
+    const mobileCta=document.querySelector('.mobile-cta');
+    if(mobileCta) mobileCta.style.display=isOpen?'none':'block';
   }
   if(isOpen){
-    document.getElementById('bmg-chat-input').focus();
+    // Don't auto-focus input on mobile so keyboard stays closed
+    if(!isMobile) document.getElementById('bmg-chat-input').focus();
+    else document.activeElement.blur();
     if(!sessionStorage.getItem('bmg_connected')){
       sessionStorage.setItem('bmg_connected','1');
       const dot=document.getElementById('bmg-hdr-dot'),stat=document.getElementById('bmg-hdr-status');
