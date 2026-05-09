@@ -764,7 +764,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
 
 /* MOBILE CTA */
 .mobile-cta {
-  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 999;
+  display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 1000000;
   padding: 8px 12px; background: rgba(247,245,240,0.95);
   backdrop-filter: blur(16px); border-top: 1px solid var(--border); box-shadow: 0 -4px 20px rgba(0,0,0,0.08);
 }
@@ -2133,6 +2133,8 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       const pos = target.getBoundingClientRect().top + window.pageYOffset - 80;
       window.scrollTo({ top: pos, behavior: 'smooth' });
     }
+    // Close mobile nav if open
+    document.querySelector('.nav-links').classList.remove('show');
   });
 });
 
@@ -2260,8 +2262,23 @@ autoScroll(document.querySelector('.reviews-scroll'), 0.5);
 .bmg-typing span:nth-child(2){animation-delay:.2s}
 .bmg-typing span:nth-child(3){animation-delay:.4s}
 @keyframes bmgT{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.2)}}
-@media(max-width:768px){#bmg-chat-widget{bottom:84px !important;}#bmg-chat-toast{width:240px !important;}}
-@media(max-width:480px){#bmg-chat-panel{width:calc(100vw - 32px);right:0;height:calc(100vh - 140px);border-radius:16px 16px 0 0}#bmg-chat-widget{bottom:80px !important;}}
+@media(max-width:768px){
+  #bmg-chat-widget{bottom:70px !important;}
+  #bmg-chat-toast{width:240px !important;}
+  #bmg-chat-panel{
+    position:fixed !important;
+    top:0 !important;
+    left:0 !important;
+    right:0 !important;
+    bottom:0 !important;
+    width:100% !important;
+    height:100% !important;
+    max-width:100% !important;
+    max-height:100% !important;
+    border-radius:0 !important;
+    z-index:9999999 !important;
+  }
+}
 </style>
 
 <script>
@@ -2272,8 +2289,15 @@ window.bmgChatToggle=function(){
   isOpen=!isOpen;
   const p=document.getElementById('bmg-chat-panel'),t=document.getElementById('bmg-chat-toast');
   const icon=document.getElementById('bmg-bub-icon'),x=document.getElementById('bmg-bub-x');
+  const bubble=document.getElementById('bmg-chat-bubble');
+  const isMobile=window.innerWidth<=768;
   p.style.display=isOpen?'flex':'none';t.style.display='none';
   icon.style.display=isOpen?'none':'block';x.style.display=isOpen?'block':'none';
+  // On mobile, hide bubble and prevent body scroll when chat is fullscreen
+  if(isMobile){
+    bubble.style.display=isOpen?'none':'flex';
+    document.body.style.overflow=isOpen?'hidden':'';
+  }
   if(isOpen){
     document.getElementById('bmg-chat-input').focus();
     if(!sessionStorage.getItem('bmg_connected')){
