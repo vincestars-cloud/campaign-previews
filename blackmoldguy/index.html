@@ -195,8 +195,8 @@ body {
 
 .reveal {
   opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.7s ease, transform 0.7s ease;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 .reveal-d1 { transition-delay: 0.1s; }
@@ -1002,7 +1002,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
     </div>
 
     <!-- VIDEO TESTIMONIALS -->
-    <div style="overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,black 60px,black calc(100% - 60px),transparent);mask-image:linear-gradient(to right,transparent,black 60px,black calc(100% - 60px),transparent);margin-bottom:40px;" class="reveal">
+    <div style="overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,black 60px,black calc(100% - 60px),transparent);mask-image:linear-gradient(to right,transparent,black 60px,black calc(100% - 60px),transparent);margin-bottom:40px;">
       <div class="testimonial-vid-track" id="testimonialVidTrack">
         <!-- SET 1 -->
         <div class="t-vid-card" onclick="playVidInline(this)">
@@ -1082,7 +1082,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
     </div>
 
     <!-- ROW 1: scrolls left -->
-    <div style="overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,black 60px,black calc(100% - 60px),transparent);mask-image:linear-gradient(to right,transparent,black 60px,black calc(100% - 60px),transparent);margin-bottom:16px;">
+    <div style="overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,black 40px,black calc(100% - 40px),transparent);mask-image:linear-gradient(to right,transparent,black 40px,black calc(100% - 40px),transparent);margin-bottom:16px;">
       <div class="review-row-left" id="reviewRow1">
         <div class="review-card">
           <div class="review-header"><div class="review-avatar">DW</div><div class="review-meta"><div class="review-name">Danielle W.</div><div class="review-date">3 weeks ago</div></div></div>
@@ -1124,7 +1124,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
     </div>
 
     <!-- ROW 2: scrolls right -->
-    <div style="overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,black 60px,black calc(100% - 60px),transparent);mask-image:linear-gradient(to right,transparent,black 60px,black calc(100% - 60px),transparent);">
+    <div style="overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,black 40px,black calc(100% - 40px),transparent);mask-image:linear-gradient(to right,transparent,black 40px,black calc(100% - 40px),transparent);">
       <div class="review-row-right" id="reviewRow2">
         <div class="review-card">
           <div class="review-header"><div class="review-avatar">JM</div><div class="review-meta"><div class="review-name">James M.</div><div class="review-date">1 month ago</div></div></div>
@@ -1904,7 +1904,7 @@ const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) { entry.target.classList.add('visible'); revealObserver.unobserve(entry.target); }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+}, { threshold: 0.05, rootMargin: '0px 0px 0px 0px' });
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // FUNNEL
