@@ -1005,7 +1005,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
     <div style="overflow:hidden;-webkit-mask-image:linear-gradient(to right,transparent,black 60px,black calc(100% - 60px),transparent);mask-image:linear-gradient(to right,transparent,black 60px,black calc(100% - 60px),transparent);margin-bottom:40px;" class="reveal">
       <div class="testimonial-vid-track" id="testimonialVidTrack">
         <!-- SET 1 -->
-        <div class="t-vid-card" onclick="openVidModal('videos/kyle-ponton.mp4')">
+        <div class="t-vid-card" onclick="playVidInline(this)">
           <div class="t-vid-thumb" style="background:linear-gradient(135deg,#1a3a2a,#0f2018);">
             <video src="videos/kyle-ponton.mp4" muted preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" onloadedmetadata="this.currentTime=1"></video>
             <div class="t-vid-play"><div class="t-vid-play-btn"><svg width="20" height="20" fill="#2d4a3a" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -1017,7 +1017,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
             <p class="t-vid-quote">"Finally breathable air in my home — this changed everything for my recovery."</p>
           </div>
         </div>
-        <div class="t-vid-card" onclick="openVidModal('videos/ben-azadi.mp4')">
+        <div class="t-vid-card" onclick="playVidInline(this)">
           <div class="t-vid-thumb" style="background:linear-gradient(135deg,#1e2e3a,#101820);">
             <video src="videos/ben-azadi.mp4" muted preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" onloadedmetadata="this.currentTime=1"></video>
             <div class="t-vid-play"><div class="t-vid-play-btn"><svg width="20" height="20" fill="#2d4a3a" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -1029,7 +1029,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
             <p class="t-vid-quote">"The most thorough mold remediation process I've seen — truly health-first."</p>
           </div>
         </div>
-        <div class="t-vid-card" onclick="openVidModal('videos/lucy-coffee-chill.mp4')">
+        <div class="t-vid-card" onclick="playVidInline(this)">
           <div class="t-vid-thumb" style="background:linear-gradient(135deg,#2a3a1e,#1a2610);">
             <video src="videos/lucy-coffee-chill.mp4" muted preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" onloadedmetadata="this.currentTime=1"></video>
             <div class="t-vid-play"><div class="t-vid-play-btn"><svg width="20" height="20" fill="#2d4a3a" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -1042,7 +1042,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
           </div>
         </div>
         <!-- SET 2 (seamless loop copy) -->
-        <div class="t-vid-card" onclick="openVidModal('videos/kyle-ponton.mp4')">
+        <div class="t-vid-card" onclick="playVidInline(this)">
           <div class="t-vid-thumb" style="background:linear-gradient(135deg,#1a3a2a,#0f2018);">
             <video src="videos/kyle-ponton.mp4" muted preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" onloadedmetadata="this.currentTime=1"></video>
             <div class="t-vid-play"><div class="t-vid-play-btn"><svg width="20" height="20" fill="#2d4a3a" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -1054,7 +1054,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
             <p class="t-vid-quote">"Finally breathable air in my home — this changed everything for my recovery."</p>
           </div>
         </div>
-        <div class="t-vid-card" onclick="openVidModal('videos/ben-azadi.mp4')">
+        <div class="t-vid-card" onclick="playVidInline(this)">
           <div class="t-vid-thumb" style="background:linear-gradient(135deg,#1e2e3a,#101820);">
             <video src="videos/ben-azadi.mp4" muted preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" onloadedmetadata="this.currentTime=1"></video>
             <div class="t-vid-play"><div class="t-vid-play-btn"><svg width="20" height="20" fill="#2d4a3a" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -1066,7 +1066,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
             <p class="t-vid-quote">"The most thorough mold remediation process I've seen — truly health-first."</p>
           </div>
         </div>
-        <div class="t-vid-card" onclick="openVidModal('videos/lucy-coffee-chill.mp4')">
+        <div class="t-vid-card" onclick="playVidInline(this)">
           <div class="t-vid-thumb" style="background:linear-gradient(135deg,#2a3a1e,#1a2610);">
             <video src="videos/lucy-coffee-chill.mp4" muted preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" onloadedmetadata="this.currentTime=1"></video>
             <div class="t-vid-play"><div class="t-vid-play-btn"><svg width="20" height="20" fill="#2d4a3a" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
@@ -1078,14 +1078,6 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
             <p class="t-vid-quote">"My coffee shop is thriving again. The air quality difference is night and day."</p>
           </div>
         </div>
-      </div>
-    </div>
-
-    <!-- VIDEO MODAL -->
-    <div id="vidModal" onclick="closeVidModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:99999;align-items:center;justify-content:center;padding:20px;">
-      <div onclick="event.stopPropagation()" style="position:relative;width:100%;max-width:800px;">
-        <button onclick="closeVidModal()" style="position:absolute;top:-40px;right:0;background:none;border:none;color:white;font-size:28px;cursor:pointer;line-height:1;">&times;</button>
-        <video id="vidModalPlayer" controls style="width:100%;border-radius:12px;display:block;"></video>
       </div>
     </div>
 
@@ -2301,24 +2293,55 @@ autoScroll(document.querySelector('.video-scroll'), 0.4);
   // video track is hard-coded with 2 sets — no JS duplication needed
 })();
 
-// Video modal
-function openVidModal(src) {
-  var modal = document.getElementById('vidModal');
-  var player = document.getElementById('vidModalPlayer');
-  player.src = src;
-  modal.style.display = 'flex';
-  document.body.style.overflow = 'hidden';
-  player.play();
+// Inline video playback
+var _activeCard = null, _activeVideo = null;
+
+function playVidInline(card) {
+  if (_activeCard) stopVidInline();
+  var video = card.querySelector('.t-vid-thumb video');
+  var overlay = card.querySelector('.t-vid-play');
+  var tag = card.querySelector('.t-vid-tag');
+  // pause all scroll tracks
+  document.querySelectorAll('.review-row-left,.review-row-right,.testimonial-vid-track').forEach(function(el){
+    el.style.animationPlayState = 'paused';
+  });
+  // hide overlay + tag
+  overlay.style.display = 'none';
+  if (tag) tag.style.display = 'none';
+  // make video full-screen within thumb, unmute, show controls
+  video.style.opacity = '1';
+  video.style.position = 'absolute';
+  video.style.inset = '0';
+  video.muted = false;
+  video.controls = true;
+  video.play();
+  _activeCard = card;
+  _activeVideo = video;
+  video.addEventListener('ended', stopVidInline, { once: true });
 }
-function closeVidModal() {
-  var modal = document.getElementById('vidModal');
-  var player = document.getElementById('vidModalPlayer');
-  player.pause();
-  player.src = '';
-  modal.style.display = 'none';
-  document.body.style.overflow = '';
+
+function stopVidInline() {
+  if (!_activeVideo) return;
+  var card = _activeCard;
+  var video = _activeVideo;
+  var overlay = card.querySelector('.t-vid-play');
+  var tag = card.querySelector('.t-vid-tag');
+  video.pause();
+  video.muted = true;
+  video.controls = false;
+  video.style.opacity = '0.55';
+  video.currentTime = 1;
+  overlay.style.display = '';
+  if (tag) tag.style.display = '';
+  // resume all scroll tracks
+  document.querySelectorAll('.review-row-left,.review-row-right,.testimonial-vid-track').forEach(function(el){
+    el.style.animationPlayState = '';
+  });
+  _activeCard = null;
+  _activeVideo = null;
 }
-document.addEventListener('keydown', function(e){ if(e.key === 'Escape') closeVidModal(); });
+
+document.addEventListener('keydown', function(e){ if(e.key === 'Escape') stopVidInline(); });
 </script>
 
 <!-- DEONCO CHAT WIDGET -->
