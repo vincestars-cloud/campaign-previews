@@ -47,7 +47,7 @@ body {
   background: var(--cream);
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
-  padding-bottom: 70px; /* space for sticky CTA */
+  padding-bottom: 0;
 }
 
 .container { max-width: 680px; margin: 0 auto; padding: 0 20px; }
@@ -443,17 +443,16 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
 
 
 <!-- HERO -->
-<section class="hero" style="padding:36px 0 0;">
+<section class="hero" style="padding:28px 0 0;">
   <div class="container">
     <h1>Book Your Free <em>18-Point</em><br>Mold Inspection</h1>
-    <p class="hero-sub">We come to your property — no obligation, no sales pitch. Just answers.</p>
   </div>
 </section>
 
 <!-- VIDEO -->
-<section class="vid-section" style="padding:16px 0 32px;">
+<section class="vid-section" style="padding:12px 0 16px;">
   <div class="container">
-    <div class="vid-label">Client Results — Kyle Ponton, Cold Life</div>
+    <div class="vid-label" style="display:none;"></div>
     <div class="vid-wrap">
       <video
         src="../blackmoldguy/videos/kyle-ponton.mp4"
@@ -476,7 +475,7 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
 </section>
 
 <!-- FORM -->
-<section class="form-section" id="form">
+<section class="form-section" id="form" style="padding:0 0 48px;">
   <div class="container">
     <div class="quote-wrapper reveal">
       <!-- Brand bar -->
@@ -962,14 +961,6 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
   <p>&copy; 2026 The Black Mold Guy &nbsp;|&nbsp; <a href="tel:3058490242">305-849-0242</a></p>
 </footer>
 
-<!-- STICKY MOBILE CTA -->
-<div class="mobile-cta">
-  <a href="#form">Book Free Inspection →</a>
-  <a href="tel:3058490242">
-    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-    Call Now
-  </a>
-</div>
 
 <script>
 
