@@ -434,11 +434,11 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
   #atf { padding-top: 8px !important; }
   #atfEyebrow { margin-bottom: 8px !important; font-size: 0.66rem; padding: 5px 12px; }
   #atfH1 { font-size: 1.75rem !important; line-height: 1.12 !important; margin-bottom: 8px !important; }
-  #atfSub { font-size: 0.9rem !important; margin-bottom: 10px !important; line-height: 1.5 !important; }
+  #atfSub { font-size: 0.9rem !important; margin-bottom: 10px !important; line-height: 1.5 !important; white-space: normal !important; }
   #atfGoogle { margin-bottom: 8px !important; }
   #atfGoogle .google-badge { padding: 7px 14px; font-size: 0.85rem; }
-  #atfVid { margin-bottom: 10px !important; }
-  #atfVid video { max-height: 190px; object-fit: cover; }
+  #atfVid { margin-bottom: 10px !important; max-width: 100% !important; }
+  #atfVid video { max-height: 175px; }
   #atfMicro { display: none; } /* hide micro-line on mobile to save space */
 
   /* ── Hero CTA ── */
@@ -602,7 +602,7 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
   <div class="container">
     <div class="hero-eyebrow" id="atfEyebrow" style="margin-bottom:14px;"><span class="dot"></span>For families who've been told "it's just allergies"</div>
     <h1 id="atfH1" style="font-family:var(--font-display);font-size:clamp(1.85rem,6vw,3rem);line-height:1.08;letter-spacing:-0.02em;margin-bottom:12px;color:var(--ink);">It's Not Allergies.<br><em style="color:var(--sage);">It's Your Home.</em></h1>
-    <p id="atfSub" style="font-size:1rem;color:var(--warm-gray);margin-bottom:20px;line-height:1.6;max-width:440px;margin-left:auto;margin-right:auto;">A free 18-point inspection finds what 12 months of doctor visits missed.</p>
+    <p id="atfSub" style="font-size:1rem;color:var(--warm-gray);margin-bottom:20px;line-height:1.6;white-space:nowrap;">A free 18-point inspection finds what 12 months of doctor visits missed.</p>
     <div id="atfGoogle" style="display:flex;justify-content:center;margin-bottom:10px;">
       <div class="google-badge" style="margin-bottom:0;">
         <div class="g-icon"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div>
@@ -611,14 +611,14 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
         <div class="g-count">47 reviews</div>
       </div>
     </div>
-    <div id="atfVid" class="vid-wrap" style="margin-bottom:12px;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.14);">
+    <div id="atfVid" class="vid-wrap" style="margin-bottom:12px;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.14);max-width:480px;margin-left:auto;margin-right:auto;">
       <video
         src="../blackmoldguy/videos/kyle-ponton.mp4"
         controls
         preload="metadata"
         onloadedmetadata="this.currentTime=1"
         playsinline
-        style="width:100%;display:block;">
+        style="width:100%;display:block;aspect-ratio:16/9;">
       </video>
     </div>
     <a href="#form" class="hero-cta" style="margin-bottom:8px;">Check If We Serve Your Area →</a>
