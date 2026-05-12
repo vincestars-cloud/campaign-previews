@@ -430,11 +430,21 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
 
 /* RESPONSIVE */
 @media (max-width: 480px) {
-  .hero { padding: 16px 0 4px; }
-  .hero h1 { font-size: 1.85rem; line-height: 1.25; }
-  .hero-sub { font-size: 0.88rem; margin-top: 6px; }
-  .hero-cta { padding: 13px 24px; font-size: 0.92rem; }
-  .hero-video { max-height: 220px; object-fit: cover; }
+  /* ── ATF spacing — compress so CTA is always above fold ── */
+  #atf { padding-top: 8px !important; }
+  #atfEyebrow { margin-bottom: 8px !important; font-size: 0.66rem; padding: 5px 12px; }
+  #atfH1 { font-size: 1.75rem !important; line-height: 1.12 !important; margin-bottom: 8px !important; }
+  #atfSub { font-size: 0.9rem !important; margin-bottom: 10px !important; line-height: 1.5 !important; }
+  #atfGoogle { margin-bottom: 8px !important; }
+  #atfGoogle .google-badge { padding: 7px 14px; font-size: 0.85rem; }
+  #atfVid { margin-bottom: 10px !important; }
+  #atfVid video { max-height: 190px; object-fit: cover; }
+  #atfMicro { display: none; } /* hide micro-line on mobile to save space */
+
+  /* ── Hero CTA ── */
+  .hero-cta { padding: 14px 24px; font-size: 0.92rem; margin-bottom: 0 !important; }
+
+  /* ── Form ── */
   .quote-body { padding: 24px 18px 28px; }
   #funnelBrandBar { padding: 14px 18px !important; }
   .progress-bar { margin: 14px 18px 0; }
@@ -444,15 +454,49 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
   .form-row { grid-template-columns: 1fr; }
   #serviceGrid { grid-template-columns: repeat(2,1fr) !important; }
   #propGrid { grid-template-columns: repeat(2,1fr) !important; }
-  .review-card { flex: 0 0 270px; }
-  .t-vid-card { width:270px; }
+
+  /* ── Funnel ── */
   .funnel-question { font-size: 1.2rem; }
+
+  /* ── Social proof ── */
+  .review-card { flex: 0 0 260px; }
+  .t-vid-card { width: 260px; }
+  .proof-section h2 { font-size: 1.35rem; }
+
+  /* ── Sections ── */
+  .locations-section h2,
+  .faq-section h2,
+  .how-title { font-size: 1.3rem; }
+  .stack-title { font-size: 1.1rem; }
+  .stack-item { flex-direction: column; gap: 4px; }
+  .stack-item-price { font-size: 0.74rem; }
+
+  /* ── Trust strip ── */
+  .trust-strip-grid { justify-content: flex-start; flex-wrap: nowrap; padding: 0 16px; }
+
+  /* ── PAS ── */
+  .pas-compare-grid { grid-template-columns: 1fr !important; }
+
+  /* ── Repeat CTA ── */
+  .repeat-cta-btn { padding: 13px 22px; font-size: 0.9rem; }
+
+  /* ── General ── */
   .hero-testimonials-grid { grid-template-columns: 1fr !important; }
+  .hero { padding: 16px 0 4px; }
+  .hero h1 { font-size: 1.85rem; line-height: 1.25; }
 }
+
 @media (max-width: 360px) {
   .nav-logo span { font-size: 0.85rem; }
   .nav-phone { font-size: 0.85rem; }
-  .hero h1 { font-size: 1.65rem; }
+  #atfH1 { font-size: 1.55rem !important; }
+  #atfVid video { max-height: 160px; }
+}
+
+/* iOS safe area for any fixed bars */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  .mobile-cta { padding-bottom: calc(10px + env(safe-area-inset-bottom)); }
+  footer { padding-bottom: calc(28px + env(safe-area-inset-bottom)); }
 }
 
 /* HERO SUB */
@@ -554,12 +598,12 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
 
 
 <!-- ATF -->
-<section style="padding:14px 0 0;text-align:center;">
+<section id="atf" style="padding:14px 0 0;text-align:center;">
   <div class="container">
-    <div class="hero-eyebrow" style="margin-bottom:14px;"><span class="dot"></span>For families who've been told "it's just allergies"</div>
-    <h1 style="font-family:var(--font-display);font-size:clamp(1.85rem,6vw,3rem);line-height:1.08;letter-spacing:-0.02em;margin-bottom:12px;color:var(--ink);">It's Not Allergies.<br><em style="color:var(--sage);">It's Your Home.</em></h1>
-    <p style="font-size:1rem;color:var(--warm-gray);margin-bottom:20px;line-height:1.6;max-width:440px;margin-left:auto;margin-right:auto;">A free 18-point inspection finds what 12 months of doctor visits missed.</p>
-    <div style="display:flex;justify-content:center;margin-bottom:10px;">
+    <div class="hero-eyebrow" id="atfEyebrow" style="margin-bottom:14px;"><span class="dot"></span>For families who've been told "it's just allergies"</div>
+    <h1 id="atfH1" style="font-family:var(--font-display);font-size:clamp(1.85rem,6vw,3rem);line-height:1.08;letter-spacing:-0.02em;margin-bottom:12px;color:var(--ink);">It's Not Allergies.<br><em style="color:var(--sage);">It's Your Home.</em></h1>
+    <p id="atfSub" style="font-size:1rem;color:var(--warm-gray);margin-bottom:20px;line-height:1.6;max-width:440px;margin-left:auto;margin-right:auto;">A free 18-point inspection finds what 12 months of doctor visits missed.</p>
+    <div id="atfGoogle" style="display:flex;justify-content:center;margin-bottom:10px;">
       <div class="google-badge" style="margin-bottom:0;">
         <div class="g-icon"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div>
         <div class="g-rating">5.0</div>
@@ -567,7 +611,7 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
         <div class="g-count">47 reviews</div>
       </div>
     </div>
-    <div class="vid-wrap" style="margin-bottom:12px;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.14);">
+    <div id="atfVid" class="vid-wrap" style="margin-bottom:12px;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.14);">
       <video
         src="../blackmoldguy/videos/kyle-ponton.mp4"
         controls
@@ -578,7 +622,7 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
       </video>
     </div>
     <a href="#form" class="hero-cta" style="margin-bottom:8px;">Check If We Serve Your Area →</a>
-    <p style="font-size:0.7rem;color:var(--warm-gray);margin-top:8px;margin-bottom:0;">No credit card &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; Written report included</p>
+    <p id="atfMicro" style="font-size:0.7rem;color:var(--warm-gray);margin-top:8px;margin-bottom:0;">No credit card &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; Written report included</p>
   </div>
 </section>
 
