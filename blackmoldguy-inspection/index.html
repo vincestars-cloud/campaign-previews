@@ -576,7 +576,7 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
         style="width:100%;display:block;">
       </video>
     </div>
-    <a href="#form" class="hero-cta" style="margin-bottom:8px;">Book My Free Inspection →</a>
+    <a href="#form" class="hero-cta" style="margin-bottom:8px;">Check If We Serve Your Area →</a>
     <p style="font-size:0.7rem;color:var(--warm-gray);margin-top:8px;margin-bottom:0;">No credit card &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; Written report included</p>
   </div>
 </section>
@@ -803,7 +803,7 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
           </div>
           <div class="funnel-nav">
             <button class="btn-back" onclick="prevStep()">← Back</button>
-            <button class="btn-next" onclick="submitForm()" style="background:var(--accent);">Book My Free Inspection →</button>
+            <button class="btn-next" onclick="submitForm()" style="background:var(--accent);">Confirm My Free Inspection →</button>
           </div>
           <p style="text-align:center;font-size:0.75rem;color:var(--warm-gray);margin-top:12px;line-height:1.5;">No credit card. No obligation. No sales pitch.</p>
         </div>
@@ -1007,7 +1007,7 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
   <div class="container">
     <div class="repeat-cta">
       <p class="repeat-cta-bridge">The first step is the same for everyone — one visit, no cost, written report included.</p>
-      <a href="#form" class="repeat-cta-btn">Book My Free Inspection →</a>
+      <a href="#form" class="repeat-cta-btn">Check If We Serve Your Area →</a>
       <p class="repeat-cta-note">No credit card &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; Written report included</p>
       <div style="display:inline-flex;align-items:center;gap:10px;margin-top:16px;background:var(--sage-light);border:1px solid rgba(45,74,58,0.2);border-radius:100px;padding:8px 18px;">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--sage-dark)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
@@ -1053,10 +1053,12 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
 </section>
 
 <!-- WHO THIS IS FOR -->
-<section class="for-section">
+<section class="for-section" style="background:var(--cream);">
   <div class="container">
+    <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);text-align:center;margin-bottom:8px;">Is this for you?</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,4vw,1.8rem);text-align:center;margin-bottom:20px;line-height:1.2;">This Inspection Was Built For Homeowners Who Are Done Guessing</h2>
     <div class="for-card">
-      <div class="for-title">This inspection was made for you if…</div>
+      <div class="for-title" style="display:none;">This inspection was made for you if…</div>
       <ul class="for-list">
         <li><div class="for-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>Someone in your home keeps getting sick and doctors keep saying "allergies" — but nothing changes</span></li>
         <li><div class="for-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div><span>You smell something musty but can't find where it's coming from</span></li>
@@ -1068,36 +1070,34 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
   </div>
 </section>
 
-<!-- CONFLICT-OF-INTEREST OBJECTION KILLER -->
-<section style="padding:24px 0 0;">
+<!-- OBJECTION: CONFLICT OF INTEREST -->
+<section style="padding:0 0 48px;background:var(--white);">
   <div class="container">
-    <div class="not-card" style="background:var(--sage-light);border:1.5px solid rgba(45,74,58,0.15);border-radius:20px;padding:24px 24px 20px;">
-      <p style="font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage-dark);margin-bottom:10px;">Why trust an inspector who also does remediation?</p>
-      <p style="font-size:0.9rem;color:var(--ink);line-height:1.7;margin-bottom:0;">
-        Most mold companies inspect <em>and</em> remediate — which means their report can be influenced by what they stand to sell you next.
-        Deonco separates the two completely. <strong>The inspection is independent.</strong> His written lab report will tell you if you need remediation, if you don't, and roughly what fair-market remediation costs — regardless of who does the work.
-        That's why families trust his findings. And why he has a 5-star average across 47 reviews.
+    <div style="background:var(--ink);border-radius:20px;padding:28px 24px;">
+      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:10px;">The skeptic's question — answered</div>
+      <h3 style="font-family:var(--font-display);font-size:1.25rem;color:white;margin-bottom:14px;line-height:1.25;">"If he does remediation too, why would his inspection report be honest?"</h3>
+      <p style="font-size:0.9rem;color:rgba(255,255,255,0.75);line-height:1.7;margin:0;">
+        Fair question. Most mold companies inspect <em>and</em> remediate — their report's influenced by what they stand to sell you next. Deonco separates the two completely. <strong style="color:white;">The inspection is structurally independent.</strong> His written lab report will tell you if you need remediation, if you don't, and what fair-market remediation costs — regardless of who does the work. That's why the 5-star average across 47 reviews holds. Families who didn't need remediation left those same reviews.
       </p>
     </div>
   </div>
 </section>
 
-<!-- HERO TESTIMONIALS: Sandra C. + Rachel B. -->
-<section style="padding:28px 0 0;">
+<!-- STANDOUT RESULTS -->
+<section style="padding:48px 0;background:var(--white);">
   <div class="container">
-    <p style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);text-align:center;margin-bottom:14px;">Real results, real names</p>
-    <div class="hero-testimonials-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
-      <div class="review-card" style="flex:none;">
-        <div class="review-header"><div class="review-avatar" style="background:var(--accent);">SC</div><div class="review-meta-top"><div class="review-name">Sandra C.</div><div class="review-date">3 months ago · Atlanta, GA</div></div></div>
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">"My daughter had asthma flare-ups for almost a year. Deonco found the mold in our HVAC, fixed it, and my daughter hasn't had an episode since. This man literally changed our quality of life."</div>
-        <div class="review-google-icon"><div class="g-dot"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div><span style="margin-left:4px;">Verified Review</span></div>
+    <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);text-align:center;margin-bottom:6px;">Real families. Specific results.</div>
+    <h2 style="font-family:var(--font-display);font-size:clamp(1.4rem,4vw,1.8rem);text-align:center;margin-bottom:24px;line-height:1.2;">The Inspection Answered What<br>12 Months of Doctors Couldn't</h2>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;" class="hero-testimonials-grid">
+      <div style="background:var(--cream);border-radius:20px;padding:22px 20px;border:1px solid var(--border);">
+        <div style="font-family:var(--font-display);font-size:1.1rem;color:var(--sage-dark);margin-bottom:4px;">Asthma-free — after 11 months of flare-ups</div>
+        <div style="font-size:0.78rem;color:var(--warm-gray);margin-bottom:14px;">Sandra C. · Atlanta, GA · Google Verified ★★★★★</div>
+        <div style="font-size:0.88rem;color:var(--ink);line-height:1.65;">"My daughter had asthma flare-ups for almost a year. Deonco found the mold in our HVAC, fixed it, and my daughter hasn't had an episode since. This man literally changed our quality of life."</div>
       </div>
-      <div class="review-card" style="flex:none;">
-        <div class="review-header"><div class="review-avatar" style="background:var(--gold);">RB</div><div class="review-meta-top"><div class="review-name">Rachel B.</div><div class="review-date">2 months ago · Miami, FL</div></div></div>
-        <div class="review-stars">★★★★★</div>
-        <div class="review-text">"Had chronic fatigue and brain fog for months — turns out it was mold in our crawlspace. Deonco identified it immediately, treated it completely. Six weeks later I feel like a different person."</div>
-        <div class="review-google-icon"><div class="g-dot"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div><span style="margin-left:4px;">Verified Review</span></div>
+      <div style="background:var(--cream);border-radius:20px;padding:22px 20px;border:1px solid var(--border);">
+        <div style="font-family:var(--font-display);font-size:1.1rem;color:var(--sage-dark);margin-bottom:4px;">Felt like a different person — in 6 weeks</div>
+        <div style="font-size:0.78rem;color:var(--warm-gray);margin-bottom:14px;">Rachel B. · Miami, FL · Google Verified ★★★★★</div>
+        <div style="font-size:0.88rem;color:var(--ink);line-height:1.65;">"Had chronic fatigue and brain fog for months — turns out it was mold in our crawlspace. Deonco identified it immediately, treated it completely. Six weeks later I feel like a different person."</div>
       </div>
     </div>
   </div>
@@ -1214,8 +1214,8 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
 <!-- FAQ -->
 <section class="faq-section">
   <div class="container">
-    <span class="section-tag">Common Questions</span>
-    <h2>Before you book — your questions, answered</h2>
+    <span class="section-tag">FAQ</span>
+    <h2>The questions skeptics ask — before they become believers</h2>
     <div class="faq-list">
       <div class="faq-item">
         <div class="faq-question" onclick="toggleFaq(this)">
@@ -1264,7 +1264,7 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
     <!-- REPEAT CTA 2 -->
     <div class="repeat-cta">
       <p class="repeat-cta-bridge">Still have questions? The inspection answers them all — in person, in writing, no cost.</p>
-      <a href="#form" class="repeat-cta-btn">Book My Free Inspection →</a>
+      <a href="#form" class="repeat-cta-btn">Check If We Serve Your Area →</a>
       <p class="repeat-cta-note">No credit card &nbsp;·&nbsp; No obligation &nbsp;·&nbsp; Written report included</p>
     </div>
   </div>
