@@ -430,9 +430,9 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
 
 /* RESPONSIVE */
 @media (max-width: 480px) {
-  /* ── ATF — viewport fill handles CTA visibility; tune font/gaps only ── */
-  #atf { padding: 16px 0 !important; }
-  #atfEyebrow { margin-bottom: 8px !important; font-size: 0.66rem; padding: 5px 12px; }
+  /* ── ATF — top-align on mobile (no dead space above), keep viewport fill ── */
+  #atf { align-items: flex-start !important; padding: 24px 0 20px !important; }
+  #atfEyebrow { margin-bottom: 8px !important; font-size: 0.64rem; letter-spacing: 0.04em; padding: 5px 12px; }
   #atfH1 { font-size: 1.75rem !important; line-height: 1.12 !important; margin-bottom: 8px !important; }
   #atfSub { font-size: 0.9rem !important; margin-bottom: 10px !important; line-height: 1.5 !important; white-space: normal !important; }
   #atfGoogle { margin-bottom: 8px !important; }
