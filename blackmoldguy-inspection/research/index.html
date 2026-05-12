@@ -64,13 +64,38 @@
   .badge-amber { background: rgba(245,158,11,0.15); color: var(--warn); border: 1px solid rgba(245,158,11,0.3); }
 
   /* TABS NAV */
-  .tabs-nav {
+  .tabs-nav-wrap {
     background: var(--mid);
     border-bottom: 1px solid var(--border);
+    position: relative;
+    display: flex;
+    align-items: stretch;
+  }
+  .tab-scroll-btn {
+    flex-shrink: 0;
+    width: 36px;
+    background: var(--mid);
+    border: none;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 16px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.15s;
+    z-index: 2;
+  }
+  .tab-scroll-btn:hover { color: var(--text); }
+  .tab-scroll-btn.visible { display: flex; }
+  .tab-scroll-btn.left { box-shadow: 4px 0 8px rgba(0,0,0,0.3); }
+  .tab-scroll-btn.right { box-shadow: -4px 0 8px rgba(0,0,0,0.3); }
+  .tabs-nav {
     display: flex;
     overflow-x: auto;
     scrollbar-width: none;
     gap: 0;
+    flex: 1;
+    scroll-behavior: smooth;
   }
   .tabs-nav::-webkit-scrollbar { display: none; }
   .tab-btn {
@@ -86,6 +111,7 @@
     transition: color 0.15s, border-color 0.15s;
     text-transform: uppercase;
     letter-spacing: 0.5px;
+    flex-shrink: 0;
   }
   .tab-btn:hover { color: var(--text); }
   .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
@@ -423,18 +449,22 @@
   </div>
 </header>
 
-<nav class="tabs-nav">
-  <button class="tab-btn active" onclick="showTab('t1',this)">1 · Fears</button>
-  <button class="tab-btn" onclick="showTab('t2',this)">2 · Hopes</button>
-  <button class="tab-btn" onclick="showTab('t3',this)">3 · Rel. Fears</button>
-  <button class="tab-btn" onclick="showTab('t4',this)">4 · Soundbites</button>
-  <button class="tab-btn" onclick="showTab('t5',this)">5 · Frustrations</button>
-  <button class="tab-btn" onclick="showTab('t6',this)">6 · Prev. Solutions</button>
-  <button class="tab-btn" onclick="showTab('t7',this)">7 · Sol. Soundbites</button>
-  <button class="tab-btn" onclick="showTab('t8',this)">8 · Outcomes</button>
-  <button class="tab-btn" onclick="showTab('t9',this)">9 · Typical Day</button>
-  <button class="tab-btn" onclick="showTab('t10',this)">10 · Buyer Summary</button>
-</nav>
+<div class="tabs-nav-wrap">
+  <button class="tab-scroll-btn left" id="scrollLeft" onclick="scrollTabs(-1)" aria-label="Scroll tabs left">&#8249;</button>
+  <nav class="tabs-nav" id="tabsNav">
+    <button class="tab-btn active" onclick="showTab('t1',this)">1 · Fears</button>
+    <button class="tab-btn" onclick="showTab('t2',this)">2 · Hopes</button>
+    <button class="tab-btn" onclick="showTab('t3',this)">3 · Rel. Fears</button>
+    <button class="tab-btn" onclick="showTab('t4',this)">4 · Soundbites</button>
+    <button class="tab-btn" onclick="showTab('t5',this)">5 · Frustrations</button>
+    <button class="tab-btn" onclick="showTab('t6',this)">6 · Prev. Solutions</button>
+    <button class="tab-btn" onclick="showTab('t7',this)">7 · Sol. Soundbites</button>
+    <button class="tab-btn" onclick="showTab('t8',this)">8 · Outcomes</button>
+    <button class="tab-btn" onclick="showTab('t9',this)">9 · Typical Day</button>
+    <button class="tab-btn" onclick="showTab('t10',this)">10 · Buyer Summary</button>
+  </nav>
+  <button class="tab-scroll-btn right" id="scrollRight" onclick="scrollTabs(1)" aria-label="Scroll tabs right">&#8250;</button>
+</div>
 
 <div class="content">
 
@@ -886,11 +916,36 @@
 </div><!-- /content -->
 
 <script>
+var tabsNav = document.getElementById('tabsNav');
+var scrollLeftBtn = document.getElementById('scrollLeft');
+var scrollRightBtn = document.getElementById('scrollRight');
+
+function updateScrollBtns() {
+  if (!tabsNav) return;
+  var atStart = tabsNav.scrollLeft <= 4;
+  var atEnd = tabsNav.scrollLeft >= tabsNav.scrollWidth - tabsNav.clientWidth - 4;
+  var hasOverflow = tabsNav.scrollWidth > tabsNav.clientWidth;
+  scrollLeftBtn.classList.toggle('visible', hasOverflow && !atStart);
+  scrollRightBtn.classList.toggle('visible', hasOverflow && !atEnd);
+}
+
+function scrollTabs(dir) {
+  tabsNav.scrollLeft += dir * 160;
+  setTimeout(updateScrollBtns, 200);
+}
+
+tabsNav.addEventListener('scroll', updateScrollBtns);
+window.addEventListener('resize', updateScrollBtns);
+updateScrollBtns();
+
 function showTab(id, btn) {
   document.querySelectorAll('.tab-pane').forEach(function(p){ p.classList.remove('active'); });
   document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
   document.getElementById(id).classList.add('active');
   btn.classList.add('active');
+  // scroll active tab into view
+  setTimeout(function(){ btn.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' }); }, 50);
+  setTimeout(updateScrollBtns, 300);
 }
 </script>
 </body>
