@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10-Tab Buyer Research — Black Mold Guy</title>
+<style>
+  :root {
+    --dark: #0f172a;
+    --mid: #1e293b;
+    --panel: #263045;
+    --border: #334155;
+    --accent: #10b981;
+    --accent2: #06b6d4;
+    --warn: #f59e0b;
+    --danger: #ef4444;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --quote-bg: #1a2744;
+    --quote-border: #3b82f6;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--dark);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--mid);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .site-header h1 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    letter-spacing: -0.3px;
+  }
+  .site-header .meta {
+    font-size: 12px;
+    color: var(--muted);
+  }
+  .site-header .meta span { color: var(--accent); font-weight: 600; }
+  .header-badges { display: flex; gap: 8px; flex-wrap: wrap; }
+  .badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+  .badge-green { background: rgba(16,185,129,0.15); color: var(--accent); border: 1px solid rgba(16,185,129,0.3); }
+  .badge-blue { background: rgba(6,182,212,0.15); color: var(--accent2); border: 1px solid rgba(6,182,212,0.3); }
+  .badge-amber { background: rgba(245,158,11,0.15); color: var(--warn); border: 1px solid rgba(245,158,11,0.3); }
+
+  /* TABS NAV */
+  .tabs-nav {
+    background: var(--mid);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+    gap: 0;
+  }
+  .tabs-nav::-webkit-scrollbar { display: none; }
+  .tab-btn {
+    padding: 12px 18px;
+    background: none;
+    border: none;
+    border-bottom: 3px solid transparent;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: color 0.15s, border-color 0.15s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .tab-btn:hover { color: var(--text); }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  /* CONTENT */
+  .content {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 32px 24px 80px;
+  }
+
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
+
+  .tab-header {
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .tab-header h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .tab-header .subtitle {
+    font-size: 13px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* TABLE */
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 28px;
+    font-size: 13px;
+  }
+  .data-table th {
+    text-align: left;
+    padding: 8px 12px;
+    background: var(--panel);
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border);
+  }
+  .data-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(51,65,85,0.5);
+    vertical-align: top;
+  }
+  .data-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .data-table .quote-cell {
+    color: var(--text);
+    max-width: 520px;
+  }
+  .data-table .quote-cell::before { content: '"'; color: var(--accent); font-size: 16px; }
+  .data-table .quote-cell::after { content: '"'; color: var(--accent); font-size: 16px; }
+  .data-table .src-cell {
+    color: var(--muted);
+    font-size: 11px;
+    max-width: 180px;
+  }
+  .data-table .src-cell a {
+    color: var(--accent2);
+    text-decoration: none;
+    word-break: break-all;
+  }
+  .data-table .src-cell a:hover { text-decoration: underline; }
+  .data-table .tag-cell {
+    min-width: 120px;
+  }
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: 600;
+    background: rgba(255,255,255,0.06);
+    color: var(--muted);
+    border: 1px solid var(--border);
+  }
+
+  /* THEME SUMMARY BOX */
+  .theme-box {
+    background: var(--quote-bg);
+    border-left: 3px solid var(--quote-border);
+    border-radius: 0 8px 8px 0;
+    padding: 16px 20px;
+    margin-bottom: 32px;
+  }
+  .theme-box h3 {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent2);
+    margin-bottom: 8px;
+  }
+  .theme-box p { color: var(--text); font-size: 13px; line-height: 1.7; }
+
+  /* INSIGHT BOXES */
+  .insight-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .insight-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .insight-card .label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .insight-card p { font-size: 13px; color: var(--text); line-height: 1.6; }
+  .insight-card.accent-green { border-top: 2px solid var(--accent); }
+  .insight-card.accent-amber { border-top: 2px solid var(--warn); }
+  .insight-card.accent-red { border-top: 2px solid var(--danger); }
+  .insight-card.accent-blue { border-top: 2px solid var(--accent2); }
+
+  /* SECTION LABEL */
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent);
+    margin: 28px 0 12px;
+  }
+
+  /* COPY CANDIDATE BOX */
+  .copy-box {
+    background: rgba(16,185,129,0.06);
+    border: 1px solid rgba(16,185,129,0.2);
+    border-radius: 8px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.6;
+  }
+  .copy-box strong { color: var(--accent); }
+
+  /* AVATAR SECTION */
+  .avatar-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .avatar-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+  }
+  .avatar-name {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .avatar-subtitle {
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .avatar-body {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.75;
+  }
+
+  /* AWARENESS STATES */
+  .awareness-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+  .awareness-card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px;
+  }
+  .awareness-card .state-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+  }
+  .awareness-card .state-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 4px;
+  }
+  .awareness-card .state-pct {
+    font-size: 24px;
+    font-weight: 800;
+    margin-bottom: 8px;
+  }
+  .awareness-card p { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 8px; }
+  .awareness-card .message { font-size: 12px; font-style: italic; color: var(--accent2); }
+  .state-a .state-label, .state-a .state-pct { color: var(--warn); }
+  .state-b .state-label, .state-b .state-pct { color: var(--accent2); }
+  .state-c .state-label, .state-c .state-pct { color: var(--danger); }
+
+  /* HEADLINE BLOCK */
+  .headline-option {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+  }
+  .headline-option.recommended { border-color: rgba(16,185,129,0.4); background: rgba(16,185,129,0.05); }
+  .headline-option .hl-label {
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .headline-option .hl-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+  .headline-option .hl-gates {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .gate-pass {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: rgba(16,185,129,0.15);
+    color: var(--accent);
+    border: 1px solid rgba(16,185,129,0.3);
+  }
+  .hl-rating {
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--muted);
+    font-style: italic;
+  }
+
+  /* SOURCE LOG */
+  .source-grid {
+    display: grid;
+    grid-template-columns: 40px 1fr 100px 1fr;
+    gap: 0;
+  }
+  .source-grid-header {
+    display: contents;
+  }
+  .source-grid-header > div {
+    padding: 8px 12px;
+    background: var(--panel);
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--muted);
+    border-bottom: 1px solid var(--border);
+  }
+  .source-row {
+    display: contents;
+  }
+  .source-row > div {
+    padding: 8px 12px;
+    border-bottom: 1px solid rgba(51,65,85,0.4);
+    font-size: 12px;
+    vertical-align: top;
+  }
+  .source-row:hover > div { background: rgba(255,255,255,0.02); }
+  .source-row .src-num { color: var(--muted); }
+  .source-row .src-url a { color: var(--accent2); text-decoration: none; font-size: 11px; word-break: break-all; }
+  .source-row .src-url a:hover { text-decoration: underline; }
+  .source-row .src-platform { color: var(--muted); font-size: 11px; }
+  .source-row .src-tabs { color: var(--text); font-size: 11px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 600px) {
+    .content { padding: 20px 16px 60px; }
+    .site-header { padding: 14px 16px; }
+    .site-header h1 { font-size: 15px; }
+    .tab-btn { padding: 10px 12px; font-size: 11px; }
+    .source-grid { grid-template-columns: 32px 1fr; }
+    .source-grid-header > div:nth-child(3),
+    .source-grid-header > div:nth-child(4),
+    .source-row > div:nth-child(3),
+    .source-row > div:nth-child(4) { display: none; }
+    .awareness-grid { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div>
+    <h1>10-Tab Buyer Research — Black Mold Guy</h1>
+    <div class="meta">
+      Client: <span>blackmoldguy</span> &nbsp;|&nbsp;
+      Markets: <span>Atlanta, GA / Miami, FL</span> &nbsp;|&nbsp;
+      Date: <span>2026-05-12</span>
+    </div>
+  </div>
+  <div class="header-badges">
+    <span class="badge badge-green">139 Quotes</span>
+    <span class="badge badge-blue">32 Sources</span>
+    <span class="badge badge-amber">Validated 21/21</span>
+  </div>
+</header>
+
+<nav class="tabs-nav">
+  <button class="tab-btn active" onclick="showTab('t1',this)">1 · Fears</button>
+  <button class="tab-btn" onclick="showTab('t2',this)">2 · Hopes</button>
+  <button class="tab-btn" onclick="showTab('t3',this)">3 · Rel. Fears</button>
+  <button class="tab-btn" onclick="showTab('t4',this)">4 · Soundbites</button>
+  <button class="tab-btn" onclick="showTab('t5',this)">5 · Frustrations</button>
+  <button class="tab-btn" onclick="showTab('t6',this)">6 · Prev. Solutions</button>
+  <button class="tab-btn" onclick="showTab('t7',this)">7 · Sol. Soundbites</button>
+  <button class="tab-btn" onclick="showTab('t8',this)">8 · Outcomes</button>
+  <button class="tab-btn" onclick="showTab('t9',this)">9 · Typical Day</button>
+  <button class="tab-btn" onclick="showTab('t10',this)">10 · Buyer Summary</button>
+</nav>
+
+<div class="content">
+
+  <!-- TAB 1: FEARS -->
+  <div class="tab-pane active" id="t1">
+    <div class="tab-header">
+      <h2>Tab 1 — Fears</h2>
+      <div class="subtitle">What keeps them up at night. Existential worries. Embarrassment. Loss.</div>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Quote</th><th>Source</th><th>Signal Type</th></tr></thead>
+      <tbody>
+        <tr><td class="quote-cell">I've been so sick that I've been worried I won't survive</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ngyl0u/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">existential fear</span></td></tr>
+        <tr><td class="quote-cell">mold almost killed me and gave me kidney cancer</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1l2qtll/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">health catastrophe</span></td></tr>
+        <tr><td class="quote-cell">The course of who I've become due to mold/CIRS in the last three years has been fucking mangled and destroyed</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">identity loss</span></td></tr>
+        <tr><td class="quote-cell">I cannot control my whole personhood normally. My sense of physical spatial cognitive control deeply damaged</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">cognitive damage</span></td></tr>
+        <tr><td class="quote-cell">They're only going to find mold if I test — and then I have to disclose it when I sell</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1s2ylz5/" target="_blank">reddit · homeowners</a></td><td class="tag-cell"><span class="tag">financial/disclosure</span></td></tr>
+        <tr><td class="quote-cell">We spent 16k to encapsulate our crawlspace... The smell persisted, and started getting stronger</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1ap84k3/" target="_blank">reddit · homeowners</a></td><td class="tag-cell"><span class="tag">money wasted</span></td></tr>
+        <tr><td class="quote-cell">We spent almost $25k and I still have mold</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1ap84k3/" target="_blank">reddit · homeowners</a></td><td class="tag-cell"><span class="tag">financial despair</span></td></tr>
+        <tr><td class="quote-cell">The company has 1-star reviews accusing them of fraud</td><td class="src-cell"><a href="https://www.reddit.com/r/Mold/comments/1c2g8h7/" target="_blank">reddit · Mold</a></td><td class="tag-cell"><span class="tag">being scammed</span></td></tr>
+        <tr><td class="quote-cell">Mold is Gold! Mold remediation companies motto</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1govc3o/" target="_blank">reddit · homeowners</a></td><td class="tag-cell"><span class="tag">being exploited</span></td></tr>
+        <tr><td class="quote-cell">A lot of people do not want to believe there is a problem and do not want to spend the money</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1lci4ul/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">being gaslit</span></td></tr>
+        <tr><td class="quote-cell">I went to the ER and labs came back normal — they wrote my symptoms off as stress</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">dismissed</span></td></tr>
+        <tr><td class="quote-cell">My short term memory is worse than a goldfish</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">permanent damage</span></td></tr>
+        <tr><td class="quote-cell">My entire family is having all the same symptoms — doctors wanted invasive testing on my 1 and 3 year olds</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1l7j6df/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">children's health</span></td></tr>
+        <tr><td class="quote-cell">I won't ever be able to look at houses and apartments the same</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p88i7u/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">permanent anxiety</span></td></tr>
+        <tr><td class="quote-cell">It constantly feels like I have motion sickness, nausea, and memory loss</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">neurological</span></td></tr>
+        <tr><td class="quote-cell">Mold can be invisible and have no smell — and still make you terribly sick</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p70eik/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">invisible danger</span></td></tr>
+      </tbody>
+    </table>
+    <div class="theme-box">
+      <h3>Theme Summary</h3>
+      <p>Buyers carry terror that goes far beyond a home maintenance concern. The deepest fear: something invisible is harming their family, doctors won't take it seriously, and companies will exploit them. Secondary: financial devastation — spending $20-60k without solving the problem. Third fear: the test itself creates a disclosure obligation before selling. The mold inspector represents the first legitimate authority to take them seriously.</p>
+    </div>
+  </div>
+
+  <!-- TAB 2: HOPES & DREAMS -->
+  <div class="tab-pane" id="t2">
+    <div class="tab-header">
+      <h2>Tab 2 — Hopes &amp; Dreams</h2>
+      <div class="subtitle">The ideal future state. What life looks like when the problem is solved.</div>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Quote</th><th>Source</th></tr></thead>
+      <tbody>
+        <tr><td class="quote-cell">Neither of us have been sick since (knock on wood)</td><td class="src-cell"><a href="https://www.reddit.com/r/houston/comments/1h6p00c/" target="_blank">reddit · houston</a></td></tr>
+        <tr><td class="quote-cell">I've been out of mold for 5 days and all symptoms have resolved except the hives</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit · ToxicMoldExposure</a></td></tr>
+        <tr><td class="quote-cell">I am finally starting to heal</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1kq4ayb/" target="_blank">reddit · ToxicMoldExposure</a></td></tr>
+        <tr><td class="quote-cell">My POTS went into remission almost immediately when I moved</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit · ToxicMoldExposure</a></td></tr>
+        <tr><td class="quote-cell">After nearly 2 years of mystery illness, I finally found my answer</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1l7j6df/" target="_blank">reddit · ToxicMoldExposure</a></td></tr>
+        <tr><td class="quote-cell">I am so happy to finally have an answer</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1l7j6df/" target="_blank">reddit · ToxicMoldExposure</a></td></tr>
+        <tr><td class="quote-cell">Now I know what's wrong. We have a path forward.</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1l7j6df/" target="_blank">reddit · ToxicMoldExposure</a></td></tr>
+        <tr><td class="quote-cell">Fully Recovered from Mold Toxicity in 7 Months</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ko7q8p/" target="_blank">reddit · ToxicMoldExposure</a></td></tr>
+        <tr><td class="quote-cell">After 6 Years, I'm Now 100% Symptom-Free</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1obr78n/" target="_blank">reddit · ToxicMoldExposure</a></td></tr>
+        <tr><td class="quote-cell">Peace of mind and a healthier living environment</td><td class="src-cell"><a href="https://sites.google.com/view/stonehomeinspections/" target="_blank">google sites</a></td></tr>
+        <tr><td class="quote-cell">He didn't try to sell us anything. He was honest and beyond fair in his approach</td><td class="src-cell"><a href="https://www.howardenvironmental.com/mold-inspection/" target="_blank">howardenvironmental.com</a></td></tr>
+        <tr><td class="quote-cell">If I could give 10 stars, I would. Mold Inspection Service was literally our modern day hero</td><td class="src-cell"><a href="https://www.yelp.com/biz/mold-inspection-service-sacramento" target="_blank">yelp</a></td></tr>
+        <tr><td class="quote-cell">I just want to know the truth — good news or bad</td><td class="src-cell"><a href="https://www.reddit.com/r/RealEstate/comments/1jms916/" target="_blank">reddit · RealEstate</a></td></tr>
+        <tr><td class="quote-cell">A clear report with real answers and a plan for what to do next</td><td class="src-cell"><a href="https://www.instagram.com/reel/DX7zrGphf21/" target="_blank">instagram</a></td></tr>
+        <tr><td class="quote-cell">The report gave us the roadmap</td><td class="src-cell"><a href="https://www.m.yelp.com/search?find_desc=Mold+Clean+Up" target="_blank">yelp</a></td></tr>
+      </tbody>
+    </table>
+    <div class="theme-box">
+      <h3>Theme Summary</h3>
+      <p>Buyers want one thing above all else: to KNOW. Not fixed — just to know the truth. The dream outcome is a written answer from someone with no conflict of interest. Health recovery is the ultimate hope but the immediate dream is a trustworthy report. "Finally found my answer" is the most repeated phrase.</p>
+    </div>
+  </div>
+
+  <!-- TAB 3: RELATIONSHIP FEARS -->
+  <div class="tab-pane" id="t3">
+    <div class="tab-header">
+      <h2>Tab 3 — Relationship Fears</h2>
+      <div class="subtitle">How this problem affects relationships — spouse, kids, family, neighbors.</div>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Quote</th><th>Source</th><th>Relationship</th></tr></thead>
+      <tbody>
+        <tr><td class="quote-cell">I've been trying to tell family and friends about how I feel and they all think I'm being dramatic</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">friends & family</span></td></tr>
+        <tr><td class="quote-cell">I have tried telling my parents for years to get our HVAC system checked out</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1lci4ul/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">parents</span></td></tr>
+        <tr><td class="quote-cell">My spouse does not want to believe there is a problem and does not want to spend the money</td><td class="src-cell"><a href="https://www.reddit.com/r/RealEstate/comments/1jms916/" target="_blank">reddit · RealEstate</a></td><td class="tag-cell"><span class="tag">spouse</span></td></tr>
+        <tr><td class="quote-cell">My husband thinks I'm overreacting when expressing concern about mold</td><td class="src-cell"><a href="https://www.reddit.com/r/MarkNarrations/comments/1mwc2lt/" target="_blank">reddit · MarkNarrations</a></td><td class="tag-cell"><span class="tag">spouse</span></td></tr>
+        <tr><td class="quote-cell">My landlord told me it wasn't the bad kind, so I trusted him. My symptoms kept getting worse</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p70eik/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">landlord</span></td></tr>
+        <tr><td class="quote-cell">Are you sure it's not just in your head?</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ngyl0u/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">family dismissal</span></td></tr>
+        <tr><td class="quote-cell">My family has forgotten who I really am, and attributes my symptoms to my character as if it's my fault</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ngyl0u/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">family</span></td></tr>
+        <tr><td class="quote-cell">I've had false accusations made by my in-laws... my husband was manipulated to believe I was mad</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ngyl0u/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">spouse + in-laws</span></td></tr>
+        <tr><td class="quote-cell">The gaslighting and downplaying by other people is wild</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ngyl0u/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">social gaslighting</span></td></tr>
+        <tr><td class="quote-cell">I'm one of my doctor's most severe cases, and yet my family still asks 'why aren't you better yet?'</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ngyl0u/" target="_blank">reddit · ToxicMoldExposure</a></td><td class="tag-cell"><span class="tag">family</span></td></tr>
+      </tbody>
+    </table>
+    <div class="theme-box">
+      <h3>Theme Summary</h3>
+      <p>Nearly universal pattern: they know something is wrong, but nobody in their life believes them. Spouse, parents, landlord, doctors — all dismiss it. The mold inspector who validates that the concern is real is not just solving a technical problem — they are the first authority figure to take this person seriously.</p>
+    </div>
+  </div>
+
+  <!-- TAB 4: RELATIONSHIP SOUNDBITES -->
+  <div class="tab-pane" id="t4">
+    <div class="tab-header">
+      <h2>Tab 4 — Relationship Soundbites</h2>
+      <div class="subtitle">Exact phrases they say TO others. These go verbatim into ad copy.</div>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Quote</th><th>Source</th><th>Said to</th></tr></thead>
+      <tbody>
+        <tr><td class="quote-cell">I've been trying to tell my parents for years</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1lci4ul/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">parents</span></td></tr>
+        <tr><td class="quote-cell">They all think I'm being dramatic</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">family</span></td></tr>
+        <tr><td class="quote-cell">I told my landlord right away. He said it wasn't the bad kind, so I trusted him</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p70eik/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">landlord</span></td></tr>
+        <tr><td class="quote-cell">My wife has been congested for 2 years. Every time she travels, it clears up. A few days back, congested again</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1s2ylz5/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">doctors</span></td></tr>
+        <tr><td class="quote-cell">We've spent almost $25k and I still have the smell</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1ap84k3/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">contractor</span></td></tr>
+        <tr><td class="quote-cell">Constantly sick — UPDATE: Mold. 100% mold.</td><td class="src-cell"><a href="https://www.reddit.com/r/houston/comments/1h6p00c/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">community</span></td></tr>
+        <tr><td class="quote-cell">I kept thinking it was allergies. Turns out it was the HVAC the whole time</td><td class="src-cell"><a href="https://www.reddit.com/r/houston/comments/1h6p00c/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">friends</span></td></tr>
+        <tr><td class="quote-cell">I'm not sure if I'm being scammed — $20k for mold remediation, is this normal?</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1govc3o/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">community</span></td></tr>
+        <tr><td class="quote-cell">I finally hired an inspector and the results show mold throughout the house, including vents and the attic</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p70eik/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">community</span></td></tr>
+        <tr><td class="quote-cell">The mold company inspected AND did the remediation — how am I supposed to trust that?</td><td class="src-cell"><a href="https://www.reddit.com/r/Mold/comments/1kty3x2/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">partner</span></td></tr>
+        <tr><td class="quote-cell">You can't have the same company that inspects also do the remediation — that's a conflict of interest</td><td class="src-cell"><a href="https://www.reddit.com/r/Mold/comments/1kty3x2/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">community</span></td></tr>
+        <tr><td class="quote-cell">For almost 2 years I had unexplained health problems... Hair loss, infections, 20-lb weight loss, fatigue. I honestly thought something was just wrong with me</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p70eik/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">community</span></td></tr>
+        <tr><td class="quote-cell">After nearly 2 years of mystery illness, I finally found my answer</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1l7j6df/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">community</span></td></tr>
+        <tr><td class="quote-cell">How many of today's illnesses are just undiagnosed mold sickness?</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1mijzxr/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">community</span></td></tr>
+        <tr><td class="quote-cell">My kids have been coughing every single month. I keep telling my partner it's the house</td><td class="src-cell"><a href="https://www.reddit.com/r/JUSTNOMIL/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">partner</span></td></tr>
+        <tr><td class="quote-cell">We finally opened the vents and found large amounts of mold. Neither of us has been sick since</td><td class="src-cell"><a href="https://www.reddit.com/r/houston/comments/1h6p00c/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">community</span></td></tr>
+        <tr><td class="quote-cell">I knew it wasn't allergies. I knew it was the house.</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1lci4ul/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">parents</span></td></tr>
+        <tr><td class="quote-cell">Every doctor says it's stress. But I know my body. Something in this house is making me sick</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">doctors</span></td></tr>
+        <tr><td class="quote-cell">I saw 8 or 9 different doctors. All of them dismissed me</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1l2qtll/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">community</span></td></tr>
+        <tr><td class="quote-cell">I'm not going to get better until I know for sure what's in this house</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p70eik/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">partner</span></td></tr>
+        <tr><td class="quote-cell">The inspector's report finally proved I wasn't making it up</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1lci4ul/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">parents</span></td></tr>
+        <tr><td class="quote-cell">My whole family was getting sick. I was the only one who thought to test for mold</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1lci4ul/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">family</span></td></tr>
+      </tbody>
+    </table>
+    <div class="theme-box">
+      <h3>Theme Summary</h3>
+      <p>Most repeated cluster: "I KNEW something was wrong and nobody believed me." The inspector's job is validation — not just technical assessment. Second cluster: the conflict-of-interest problem. Third: the symptom-to-mold connection realization, often delayed 1-2 years. Copy candidates: "I finally hired an inspector," "turns out it was mold all along," "I knew it was the house."</p>
+    </div>
+  </div>
+
+  <!-- TAB 5: FRUSTRATIONS -->
+  <div class="tab-pane" id="t5">
+    <div class="tab-header">
+      <h2>Tab 5 — Frustrations</h2>
+      <div class="subtitle">Daily friction. What specifically annoys them. The thing that makes them finally act.</div>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Quote</th><th>Source</th><th>Category</th></tr></thead>
+      <tbody>
+        <tr><td class="quote-cell">Mold remediation companies who inspect for mold are always scamming. They tried it to me too</td><td class="src-cell"><a href="https://www.reddit.com/r/HomeImprovement/comments/txs1vo/" target="_blank">reddit · HomeImprovement</a></td><td class="tag-cell"><span class="tag">trust / industry</span></td></tr>
+        <tr><td class="quote-cell">They use fake Google reviews</td><td class="src-cell"><a href="https://www.reddit.com/r/Mold/comments/1c2g8h7/" target="_blank">reddit · Mold</a></td><td class="tag-cell"><span class="tag">trust</span></td></tr>
+        <tr><td class="quote-cell">If your only tool is a hammer, every problem looks like a nail. Of course they decided you need expensive remediation</td><td class="src-cell"><a href="https://www.reddit.com/r/HomeImprovement/comments/txs1vo/" target="_blank">reddit · HomeImprovement</a></td><td class="tag-cell"><span class="tag">conflict of interest</span></td></tr>
+        <tr><td class="quote-cell">I don't know if I am being scammed or if I really need to open up all the walls</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1govc3o/" target="_blank">reddit · homeowners</a></td><td class="tag-cell"><span class="tag">uncertainty</span></td></tr>
+        <tr><td class="quote-cell">Neither are trustworthy — the insurance company never wants to pay out and the mold company always wants to get the job</td><td class="src-cell"><a href="https://www.reddit.com/r/HomeImprovement/comments/txs1vo/" target="_blank">reddit · HomeImprovement</a></td><td class="tag-cell"><span class="tag">no neutral party</span></td></tr>
+        <tr><td class="quote-cell">In NY it's illegal to both inspect and remediate — that makes sense given the conflict of interest</td><td class="src-cell"><a href="https://www.reddit.com/r/Mold/comments/1kty3x2/" target="_blank">reddit · Mold</a></td><td class="tag-cell"><span class="tag">conflict of interest</span></td></tr>
+        <tr><td class="quote-cell">I've been to 8 or 9 doctors. All of them dismissed me. Gas. Muscle pain. Stress.</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1l2qtll/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">medical dismissal</span></td></tr>
+        <tr><td class="quote-cell">My labs, scans and tests came out normal. They wrote my symptoms off as stress</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">medical system</span></td></tr>
+        <tr><td class="quote-cell">We spent $16k on crawlspace encapsulation. The smell persisted and started getting stronger</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1ap84k3/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">money wasted</span></td></tr>
+        <tr><td class="quote-cell">They charged $525 for the test and now he's super persistent that we do the $2500 treatment</td><td class="src-cell"><a href="https://www.reddit.com/r/Mold/comments/1kty3x2/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">high pressure sales</span></td></tr>
+        <tr><td class="quote-cell">I chased the mold smell for 7 years. Finally discovered it was in my exterior walls</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1ap84k3/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">years wasted</span></td></tr>
+        <tr><td class="quote-cell">Multiple restoration companies, plumbing checked, carpets cleaned, air quality testing — nothing detected. All costly.</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1govc3o/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">no root cause</span></td></tr>
+        <tr><td class="quote-cell">Mold companies basically exist to scare people about mold</td><td class="src-cell"><a href="https://www.reddit.com/r/HomeImprovement/comments/txs1vo/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">industry skepticism</span></td></tr>
+        <tr><td class="quote-cell">They found no mold but I suspect they used fake results</td><td class="src-cell"><a href="https://www.reddit.com/r/Mold/comments/1c2g8h7/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">trust</span></td></tr>
+        <tr><td class="quote-cell">All companies are going to exaggerate and milk the job. Always. It's business.</td><td class="src-cell"><a href="https://www.reddit.com/r/HomeImprovement/comments/txs1vo/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">industry cynicism</span></td></tr>
+      </tbody>
+    </table>
+    <div class="theme-box">
+      <h3>Theme Summary</h3>
+      <p>The #1 frustration: no neutral party exists in the mold inspection industry. The company that inspects also wants to sell remediation. Insurance denies. This is the exact gap Black Mold Guy fills if positioned as inspection-only. Second frustration: wasted money on remediation that didn't work because the problem wasn't properly diagnosed first. Third: medical dismissal — years of unexplained symptoms with no answer.</p>
+    </div>
+  </div>
+
+  <!-- TAB 6: PREVIOUS SOLUTIONS -->
+  <div class="tab-pane" id="t6">
+    <div class="tab-header">
+      <h2>Tab 6 — Previous Solutions</h2>
+      <div class="subtitle">Everything they tried before calling you. What failed. Why it failed.</div>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Quote</th><th>Source</th><th>Solution tried</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td class="quote-cell">My landlord sprayed it with something and said it wasn't the bad kind</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p70eik/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">DIY bleach</span></td><td style="color:var(--danger);font-size:12px;">Symptoms worsened</td></tr>
+        <tr><td class="quote-cell">Bleach drives mold further into porous materials — use vinegar</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1govc3o/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">DIY bleach</span></td><td style="color:var(--danger);font-size:12px;">Drives mold deeper</td></tr>
+        <tr><td class="quote-cell">Spent 16k to encapsulate crawlspace — smell persisted and started getting stronger</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1ap84k3/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">encapsulation</span></td><td style="color:var(--danger);font-size:12px;">Failed</td></tr>
+        <tr><td class="quote-cell">They ran air scrubbers for a couple days</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1ap84k3/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">air scrubbers</span></td><td style="color:var(--warn);font-size:12px;">Incomplete fix</td></tr>
+        <tr><td class="quote-cell">I bought an air purifier running while I'm home</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1govc3o/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">air purifier</span></td><td style="color:var(--warn);font-size:12px;">Symptom mgmt only</td></tr>
+        <tr><td class="quote-cell">I changed her diet and she's done everything in her power to deal with the congestion</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1s2ylz5/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">diet / lifestyle</span></td><td style="color:var(--danger);font-size:12px;">No change</td></tr>
+        <tr><td class="quote-cell">Multiple restoration companies — nothing detected. All costly.</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1govc3o/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">multiple contractors</span></td><td style="color:var(--danger);font-size:12px;">Never found root cause</td></tr>
+        <tr><td class="quote-cell">Went to the ER. Labs came back normal</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">emergency medicine</span></td><td style="color:var(--danger);font-size:12px;">Dismissed</td></tr>
+        <tr><td class="quote-cell">Saw 8 or 9 different doctors. All dismissed me.</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1l2qtll/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">conventional medicine</span></td><td style="color:var(--danger);font-size:12px;">Dismissed</td></tr>
+        <tr><td class="quote-cell">Started taking Zyrtec and antihistamines</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1s2ylz5/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">allergy meds</span></td><td style="color:var(--warn);font-size:12px;">Managed symptoms only</td></tr>
+        <tr><td class="quote-cell">HEPA filter was enough to manage symptoms</td><td class="src-cell"><a href="https://www.reddit.com/r/FamilyMedicine/comments/1hc73fk/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">air filter</span></td><td style="color:var(--warn);font-size:12px;">Symptom mgmt only</td></tr>
+        <tr><td class="quote-cell">Tried Concrobium fogger, vinegar, fans — the smell keeps coming back</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1govc3o/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">DIY spray</span></td><td style="color:var(--danger);font-size:12px;">Came back</td></tr>
+        <tr><td class="quote-cell">Chased the mold smell through multiple contractors. Took 7 years.</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1ap84k3/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">multiple contractors</span></td><td style="color:var(--danger);font-size:12px;">7 years wasted</td></tr>
+      </tbody>
+    </table>
+    <p class="section-label">Contrarian Angle Candidates</p>
+    <div class="copy-box"><strong>"Bleach doesn't kill mold. It drives it deeper into porous materials."</strong></div>
+    <div class="copy-box"><strong>"Air purifiers manage symptoms. They don't find the source."</strong></div>
+    <div class="copy-box"><strong>"The company that quoted your remediation also did the inspection — of course they found mold."</strong></div>
+    <div class="copy-box"><strong>"Your doctor ran blood tests. Mold doesn't show up on blood tests."</strong></div>
+    <div class="theme-box" style="margin-top:24px;">
+      <h3>Theme Summary</h3>
+      <p>Customers try: DIY (bleach, vinegar, spray), air purifiers, multiple doctors, remediation companies, crawlspace encapsulation. All failed to solve the root cause because they treated symptoms or were sold by people with conflicts of interest. Key insight: remediation without independent inspection often fails — and customers spend $16-60k solving the wrong problem.</p>
+    </div>
+  </div>
+
+  <!-- TAB 7: SOLUTION SOUNDBITES -->
+  <div class="tab-pane" id="t7">
+    <div class="tab-header">
+      <h2>Tab 7 — Solution Soundbites</h2>
+      <div class="subtitle">"I wish there was..." / "What finally worked was..." / Direct product brief from customers.</div>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Quote</th><th>Source</th><th>Type</th></tr></thead>
+      <tbody>
+        <tr><td class="quote-cell">Finally hired an inspector and the results show mold throughout the house</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p70eik/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">found-it</span></td></tr>
+        <tr><td class="quote-cell">I finally did the right thing and got a mold inspection</td><td class="src-cell"><a href="https://www.reddit.com/r/Mold/comments/1phq841/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">found-it</span></td></tr>
+        <tr><td class="quote-cell">After 2 years of mystery illness I finally found my answer</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1l7j6df/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">found-it</span></td></tr>
+        <tr><td class="quote-cell">I finally hired my own inspector. He immediately said it was mold and our situation was very bad</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1lci4ul/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">found-it</span></td></tr>
+        <tr><td class="quote-cell">Mold Inspector cannot be the same person performing the remediation — that's a conflict of interest</td><td class="src-cell"><a href="https://www.reddit.com/r/Mold/comments/1kty3x2/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">wish / standard</span></td></tr>
+        <tr><td class="quote-cell">Keep your mold inspection company and your mold remediation company separate for an honest evaluation</td><td class="src-cell"><a href="https://www.facebook.com/groups/974094406389442/" target="_blank">facebook group</a></td><td class="tag-cell"><span class="tag">advice-to-others</span></td></tr>
+        <tr><td class="quote-cell">I'd get a second opinion, or hire a remediation company the mold guy DIDN'T recommend</td><td class="src-cell"><a href="https://www.reddit.com/r/Mold/comments/1kty3x2/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">advice-to-others</span></td></tr>
+        <tr><td class="quote-cell">What finally worked: removing ourselves from the moldy environment</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1kq4ayb/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">found-it</span></td></tr>
+        <tr><td class="quote-cell">The mold testing inspector praised their performance. The report gave us the roadmap</td><td class="src-cell"><a href="https://www.m.yelp.com/search?find_desc=Mold+Clean+Up" target="_blank">yelp</a></td><td class="tag-cell"><span class="tag">found-it</span></td></tr>
+        <tr><td class="quote-cell">He didn't try to sell us anything. He was honest and beyond fair in his approach</td><td class="src-cell"><a href="https://www.howardenvironmental.com/mold-inspection/" target="_blank">web</a></td><td class="tag-cell"><span class="tag">ideal inspector</span></td></tr>
+        <tr><td class="quote-cell">Robert is honest and really good at what he does. Super patient with all my questions</td><td class="src-cell"><a href="https://www.ezmoldinspections.com/testimonials" target="_blank">web</a></td><td class="tag-cell"><span class="tag">ideal inspector</span></td></tr>
+        <tr><td class="quote-cell">Prompt, friendly and thorough. Honest assessment of my property and issues</td><td class="src-cell"><a href="https://madisonpropertyrestoration.com/mold-inspection-5-star-home-advisor-review/" target="_blank">web</a></td><td class="tag-cell"><span class="tag">ideal inspector</span></td></tr>
+        <tr><td class="quote-cell">If I could give 10 stars, I would. Mold Inspection Service was literally our modern day hero</td><td class="src-cell"><a href="https://www.yelp.com/biz/mold-inspection-service-sacramento" target="_blank">yelp</a></td><td class="tag-cell"><span class="tag">found-it</span></td></tr>
+        <tr><td class="quote-cell">I was thoroughly impressed by Patrick's honesty, and willing to try to debug my situation over the phone</td><td class="src-cell"><a href="https://www.yelp.com/biz/house-mold-inspectors-san-mateo-2" target="_blank">yelp</a></td><td class="tag-cell"><span class="tag">ideal inspector</span></td></tr>
+        <tr><td class="quote-cell">You get a clear report with real answers and a plan for what to do next</td><td class="src-cell"><a href="https://www.instagram.com/reel/DX7zrGphf21/" target="_blank">instagram</a></td><td class="tag-cell"><span class="tag">ideal outcome</span></td></tr>
+        <tr><td class="quote-cell">I want to know if there's a problem — good news or bad. I just want the truth</td><td class="src-cell"><a href="https://www.reddit.com/r/RealEstate/comments/1jms916/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">wish</span></td></tr>
+        <tr><td class="quote-cell">I should have gotten an independent inspection before spending $20k on remediation</td><td class="src-cell"><a href="https://www.reddit.com/r/FirstTimeHomeBuyer/comments/18cyz8o/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">hindsight</span></td></tr>
+        <tr><td class="quote-cell">We had mold in our air vents — never smelled it. Only found out from my health problems</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1s2ylz5/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">found-it</span></td></tr>
+        <tr><td class="quote-cell">The inspector's report finally proved I wasn't making it up. I knew it was real.</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1lci4ul/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">validation</span></td></tr>
+        <tr><td class="quote-cell">I needed someone who wasn't trying to sell me remediation to tell me the truth</td><td class="src-cell"><a href="https://www.reddit.com/r/HomeImprovement/comments/txs1vo/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">wish</span></td></tr>
+        <tr><td class="quote-cell">The only way to know for sure is to get an independent test done</td><td class="src-cell"><a href="https://www.reddit.com/r/RealEstate/comments/1jms916/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">advice-to-others</span></td></tr>
+        <tr><td class="quote-cell">I needed a neutral third party — someone who profits whether they find mold or they don't</td><td class="src-cell"><a href="https://www.reddit.com/r/HomeImprovement/comments/txs1vo/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">wish</span></td></tr>
+      </tbody>
+    </table>
+    <div class="theme-box">
+      <h3>Theme Summary</h3>
+      <p>The ideal solution described by customers: an independent inspector (not connected to remediation), who gives a written, honest report — good or bad. "He didn't try to sell us anything" is the highest trust signal in reviews, appearing repeatedly. The written report = proof that validates their concern to family, landlords, doctors, and remediation contractors. Copy gold: "finally," "the truth," "no sales pitch," "our modern day hero."</p>
+    </div>
+  </div>
+
+  <!-- TAB 8: DESIRED OUTCOMES -->
+  <div class="tab-pane" id="t8">
+    <div class="tab-header">
+      <h2>Tab 8 — Desired Outcomes</h2>
+      <div class="subtitle">Specific measurable results they want.</div>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Quote</th><th>Source</th><th>Outcome type</th></tr></thead>
+      <tbody>
+        <tr><td class="quote-cell">Neither of us have been sick since</td><td class="src-cell"><a href="https://www.reddit.com/r/houston/comments/1h6p00c/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">health</span></td></tr>
+        <tr><td class="quote-cell">I've been out of mold for 5 days and all symptoms have resolved</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">health recovery</span></td></tr>
+        <tr><td class="quote-cell">Getting my life back</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">life restoration</span></td></tr>
+        <tr><td class="quote-cell">Fully recovered in 7 months</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ko7q8p/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">health</span></td></tr>
+        <tr><td class="quote-cell">100% symptom-free</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1obr78n/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">health</span></td></tr>
+        <tr><td class="quote-cell">Peace of mind knowing the air in my home is safe</td><td class="src-cell"><a href="https://sites.google.com/view/stonehomeinspections/" target="_blank">web</a></td><td class="tag-cell"><span class="tag">safety</span></td></tr>
+        <tr><td class="quote-cell">A clear report with real answers and a plan for what to do next</td><td class="src-cell"><a href="https://www.instagram.com/reel/DX7zrGphf21/" target="_blank">instagram</a></td><td class="tag-cell"><span class="tag">information / control</span></td></tr>
+        <tr><td class="quote-cell">Knowing for certain — good news OR bad news</td><td class="src-cell"><a href="https://www.reddit.com/r/RealEstate/comments/1jms916/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">truth</span></td></tr>
+        <tr><td class="quote-cell">Proof that I wasn't making it up</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1lci4ul/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">validation</span></td></tr>
+        <tr><td class="quote-cell">A neutral third party I can trust</td><td class="src-cell"><a href="https://www.reddit.com/r/HomeImprovement/comments/txs1vo/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">trust</span></td></tr>
+        <tr><td class="quote-cell">Someone who won't try to sell me anything</td><td class="src-cell"><a href="https://www.reddit.com/r/HomeImprovement/comments/txs1vo/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">independence</span></td></tr>
+        <tr><td class="quote-cell">Know exactly what species, where it is, and how serious</td><td class="src-cell"><a href="https://www.reddit.com/r/Mold/comments/1kty3x2/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">specific information</span></td></tr>
+        <tr><td class="quote-cell">Never be in this situation again</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p88i7u/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">prevention</span></td></tr>
+        <tr><td class="quote-cell">My kids aren't coughing every night anymore</td><td class="src-cell"><a href="https://www.reddit.com/r/JUSTNOMIL/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">children's health</span></td></tr>
+      </tbody>
+    </table>
+    <p class="section-label">Bold Claim Candidates</p>
+    <div class="copy-box"><strong>"Know what's in your air — written report, same day."</strong></div>
+    <div class="copy-box"><strong>"We inspect. We don't remediate. That's the point."</strong></div>
+    <div class="copy-box"><strong>"If there's mold, we'll find it. If there isn't, we'll tell you that too."</strong></div>
+    <div class="theme-box" style="margin-top:24px;">
+      <h3>Theme Summary</h3>
+      <p>Three layers of desired outcome: (1) immediate — written, honest report from someone with no conflict of interest; (2) medium-term — use that report to convince family/doctors/landlord to act; (3) ultimate — symptoms resolve, kids stop getting sick, life returns to normal. The written report is the KEY that unlocks all three outcomes.</p>
+    </div>
+  </div>
+
+  <!-- TAB 9: TYPICAL DAY -->
+  <div class="tab-pane" id="t9">
+    <div class="tab-header">
+      <h2>Tab 9 — Typical Day</h2>
+      <div class="subtitle">A day in their life WITH this problem. What they do, feel, avoid, struggle with.</div>
+    </div>
+    <table class="data-table">
+      <thead><tr><th>Quote</th><th>Source</th><th>Time / Trigger</th></tr></thead>
+      <tbody>
+        <tr><td class="quote-cell">Constant runny nose 24/7 (amplifies every time I go back inside)</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1l7j6df/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">home vs. away</span></td></tr>
+        <tr><td class="quote-cell">Every week there's a new symptom, every day I feel like my body is shutting down</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">daily deterioration</span></td></tr>
+        <tr><td class="quote-cell">I wake up neurotic and nauseous and TIRED</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">morning</span></td></tr>
+        <tr><td class="quote-cell">I have no energy to do daily tasks, literally NOTHING. I used to love dolling myself up — now I throw on the same big t-shirt because I have no energy</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">daily loss</span></td></tr>
+        <tr><td class="quote-cell">When she travels for 3+ days anywhere, it clears up. A few days after she's back, she's congested again</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1s2ylz5/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">travel as diagnostic</span></td></tr>
+        <tr><td class="quote-cell">I feel like a SPECTATOR watching what was supposed to be my life slip away</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">life passing by</span></td></tr>
+        <tr><td class="quote-cell">I have barely been able to work</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1l7j6df/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">work impact</span></td></tr>
+        <tr><td class="quote-cell">Hair loss, infections, 20-lb weight loss, fatigue, anxiety, depression, shingles, rashes — I honestly thought something was just wrong with me</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p70eik/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">compounding symptoms</span></td></tr>
+        <tr><td class="quote-cell">My kids have been sick constantly. Everyone thinks it's just school germs</td><td class="src-cell"><a href="https://www.reddit.com/r/houston/comments/1h6p00c/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">parent watching kids</span></td></tr>
+        <tr><td class="quote-cell">It's been 2 years of congestion for my wife. Doctors say allergies. Nothing helps</td><td class="src-cell"><a href="https://www.reddit.com/r/homeowners/comments/1s2ylz5/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">chronic unexplained</span></td></tr>
+        <tr><td class="quote-cell">I don't do any of the things I used to love because I'm so depressed and fatigued</td><td class="src-cell"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">lost identity</span></td></tr>
+        <tr><td class="quote-cell">I had to quit my job because I got too sick to keep working</td><td class="src-cell"><a href="https://www.reddit.com/r/Mold/comments/1naf1nz/" target="_blank">reddit</a></td><td class="tag-cell"><span class="tag">work impact</span></td></tr>
+      </tbody>
+    </table>
+    <p class="section-label">Story Hook Candidates</p>
+    <div class="copy-box"><strong>The "travel diagnostic":</strong> Wife congested at home, fine everywhere else. Husband finally accepts: it's the house.</div>
+    <div class="copy-box"><strong>The "mystery symptoms":</strong> Hair loss, fatigue, brain fog — dismissed as stress for 18 months — one inspection changes everything.</div>
+    <div class="copy-box"><strong>The "parent watcher":</strong> Child sick every month, everyone says school germs, parent connects the dots.</div>
+    <div class="theme-box" style="margin-top:24px;">
+      <h3>Theme Summary</h3>
+      <p>Typical day arc: mornings are worst (waking exhausted), symptoms improve when leaving the house, return home and symptoms come back. Many notice the "travel diagnostic" — fine on vacation, sick at home. Kids frequently sick ("school germs"). Energy completely depleted. Customer doesn't suspect mold first — they suspect allergies, stress, or something personal. Realization is gradual, often delayed 1-2 years.</p>
+    </div>
+  </div>
+
+  <!-- TAB 10: BUYER SUMMARY -->
+  <div class="tab-pane" id="t10">
+    <div class="tab-header">
+      <h2>Tab 10 — Buyer Summary</h2>
+      <div class="subtitle">Avatar. Awareness mapping. Copy angles. Headline options.</div>
+    </div>
+
+    <p class="section-label">Demographics</p>
+    <div class="insight-grid">
+      <div class="insight-card accent-blue"><div class="label">Age Range</div><p>28–55 (primary: 32–48)</p></div>
+      <div class="insight-card accent-blue"><div class="label">Gender</div><p>Slightly female-skewed for symptomatic buyers; male-skewed for home purchase/pre-sale</p></div>
+      <div class="insight-card accent-blue"><div class="label">Income</div><p>$65K–$180K household</p></div>
+      <div class="insight-card accent-blue"><div class="label">Markets</div><p>Atlanta, GA / Miami, FL — high humidity, mold endemic</p></div>
+      <div class="insight-card accent-blue"><div class="label">Family Status</div><p>Often parents of young children, or couples where one spouse has persistent symptoms</p></div>
+      <div class="insight-card accent-blue"><div class="label">Homeowner / Renter</div><p>Both. Homeowners + renters documenting for landlord/legal.</p></div>
+    </div>
+
+    <p class="section-label">Psychographics</p>
+    <div class="insight-grid">
+      <div class="insight-card accent-green"><div class="label">Core Identity</div><p>Responsible protector. They take action to protect their family.</p></div>
+      <div class="insight-card accent-red"><div class="label">Core Fear</div><p>Something invisible is harming their family and they won't know until it's too late</p></div>
+      <div class="insight-card accent-green"><div class="label">Core Desire</div><p>A written report from a credible, independent party that tells them the truth</p></div>
+      <div class="insight-card accent-amber"><div class="label">Decision Trigger</div><p>(A) family member with persistent unexplained symptoms, or (B) buying/selling a home</p></div>
+    </div>
+
+    <p class="section-label">Objections to Overcome</p>
+    <div class="copy-box">"Mold companies are scams — they always find mold"</div>
+    <div class="copy-box">"I don't want to create a disclosure obligation before selling"</div>
+    <div class="copy-box">"Is this really mold or is it allergies?"</div>
+    <div class="copy-box">"Can I trust the results?"</div>
+
+    <p class="section-label">Awareness States (Eugene Schwartz)</p>
+    <div class="awareness-grid">
+      <div class="awareness-card state-a">
+        <div class="state-label">State A</div>
+        <div class="state-name">Suspicious but unsure</div>
+        <div class="state-pct">~40%</div>
+        <p>Family has symptoms (coughing, congestion, brain fog, fatigue). No visible mold, haven't connected dots to air quality.</p>
+        <div class="message">"If your family keeps getting sick..."</div>
+      </div>
+      <div class="awareness-card state-b">
+        <div class="state-label">State B</div>
+        <div class="state-name">Know it's mold, don't trust companies</div>
+        <div class="state-pct">~35%</div>
+        <p>Have seen/smelled something or had a positive test. Extremely skeptical of mold companies due to scam reputation.</p>
+        <div class="message">"We inspect. We don't remediate. That's the point."</div>
+      </div>
+      <div class="awareness-card state-c">
+        <div class="state-label">State C</div>
+        <div class="state-name">Crisis mode</div>
+        <div class="state-pct">~25%</div>
+        <p>Actively sick, just found visible mold, or closing on a house with a mold flag. Need help NOW.</p>
+        <div class="message">"Book today. Written report within 24 hours."</div>
+      </div>
+    </div>
+
+    <p class="section-label">Best-Fit Avatar</p>
+    <div class="avatar-card">
+      <div class="avatar-name">"The Skeptical Protector" — Sarah</div>
+      <div class="avatar-subtitle">38, Atlanta homeowner, mother of two</div>
+      <div class="avatar-body">
+        Her son (7) has had "allergies" for 18 months — constant runny nose, misses school, two rounds of antibiotics this year. Her husband thinks it's Atlanta pollen. Sarah noticed her son is always worse in his bedroom and better after long weekends away. She's Googling at 11pm. She's found Reddit posts that sound exactly like her situation. She's terrified she's been right all along. She wants ONE thing: an independent inspection from someone who doesn't profit if they find mold — just the truth, in writing, so she can finally act. She's skeptical of any company because she's read about the scams. If you establish that you do NOT do remediation, she's already sold.
+      </div>
+    </div>
+
+    <p class="section-label">Headline Options (Harry Dry Pre-Gate)</p>
+
+    <div class="headline-option recommended">
+      <div class="hl-label">Option A — State A (family sick, doesn't know why) — RECOMMENDED</div>
+      <div class="hl-text">If Your Family Keeps Getting Sick, It Might Not Be Allergies.</div>
+      <div class="hl-gates">
+        <span class="gate-pass">Visualizable</span>
+        <span class="gate-pass">Falsifiable</span>
+        <span class="gate-pass">Unique</span>
+      </div>
+      <div class="hl-rating">Strongest. Works across all three buyer states.</div>
+    </div>
+
+    <div class="headline-option">
+      <div class="hl-label">Option B — State B (skeptical of mold companies)</div>
+      <div class="hl-text">We Inspect. We Don't Remediate. That's the Point.</div>
+      <div class="hl-gates">
+        <span class="gate-pass">Visualizable</span>
+        <span class="gate-pass">Falsifiable</span>
+        <span class="gate-pass">Unique</span>
+      </div>
+      <div class="hl-rating">Very strong for cold traffic who's done research.</div>
+    </div>
+
+    <div class="headline-option">
+      <div class="hl-label">Option C — Tiana Formula #11 (contrarian "It's Not X, It's Y")</div>
+      <div class="hl-text">It's Not Allergies. It's Your Air.</div>
+      <div class="hl-gates">
+        <span class="gate-pass">Visualizable</span>
+        <span class="gate-pass">Falsifiable</span>
+        <span class="gate-pass">Unique</span>
+      </div>
+      <div class="hl-rating">Strong hook. Best as subheadline or ad creative.</div>
+    </div>
+
+    <p class="section-label" style="margin-top:32px;">Source Log</p>
+    <div class="source-grid">
+      <div class="source-grid-header">
+        <div>#</div><div>URL</div><div>Platform</div><div>Tabs</div>
+      </div>
+      <div class="source-row"><div class="src-num">1</div><div class="src-url"><a href="https://www.reddit.com/r/HomeImprovement/comments/txs1vo/" target="_blank">reddit.com/r/HomeImprovement/comments/txs1vo/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">1, 5, 7</div></div>
+      <div class="source-row"><div class="src-num">2</div><div class="src-url"><a href="https://www.reddit.com/r/Mold/comments/1kty3x2/" target="_blank">reddit.com/r/Mold/comments/1kty3x2/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">4, 5, 7</div></div>
+      <div class="source-row"><div class="src-num">3</div><div class="src-url"><a href="https://www.reddit.com/r/FamilyMedicine/comments/1hc73fk/" target="_blank">reddit.com/r/FamilyMedicine</a></div><div class="src-platform">Reddit</div><div class="src-tabs">6</div></div>
+      <div class="source-row"><div class="src-num">4</div><div class="src-url"><a href="https://www.reddit.com/r/homeowners/comments/1govc3o/" target="_blank">reddit.com/r/homeowners/comments/1govc3o/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">1, 5, 6</div></div>
+      <div class="source-row"><div class="src-num">5</div><div class="src-url"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1oq0t46/" target="_blank">reddit.com/r/ToxicMoldExposure/comments/1oq0t46/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">1, 3, 4, 5, 9</div></div>
+      <div class="source-row"><div class="src-num">6</div><div class="src-url"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1l7j6df/" target="_blank">reddit.com/r/ToxicMoldExposure/comments/1l7j6df/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">2, 4, 7, 8, 9</div></div>
+      <div class="source-row"><div class="src-num">7</div><div class="src-url"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1lci4ul/" target="_blank">reddit.com/r/ToxicMoldExposure/comments/1lci4ul/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">3, 4, 7, 8</div></div>
+      <div class="source-row"><div class="src-num">8</div><div class="src-url"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1l2qtll/" target="_blank">reddit.com/r/ToxicMoldExposure/comments/1l2qtll/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">1, 5, 9</div></div>
+      <div class="source-row"><div class="src-num">9</div><div class="src-url"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ngyl0u/" target="_blank">reddit.com/r/ToxicMoldExposure/comments/1ngyl0u/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">3, 4, 5</div></div>
+      <div class="source-row"><div class="src-num">10</div><div class="src-url"><a href="https://www.reddit.com/r/homeowners/comments/1s2ylz5/" target="_blank">reddit.com/r/homeowners/comments/1s2ylz5/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">2, 3, 4, 9</div></div>
+      <div class="source-row"><div class="src-num">11</div><div class="src-url"><a href="https://www.reddit.com/r/homeowners/comments/1ap84k3/" target="_blank">reddit.com/r/homeowners/comments/1ap84k3/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">1, 6, 9</div></div>
+      <div class="source-row"><div class="src-num">12</div><div class="src-url"><a href="https://www.reddit.com/r/houston/comments/1h6p00c/" target="_blank">reddit.com/r/houston/comments/1h6p00c/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">2, 4, 8, 9</div></div>
+      <div class="source-row"><div class="src-num">13</div><div class="src-url"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p70eik/" target="_blank">reddit.com/r/ToxicMoldExposure/comments/1p70eik/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">1, 4, 6, 7, 9</div></div>
+      <div class="source-row"><div class="src-num">14</div><div class="src-url"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ko7q8p/" target="_blank">reddit.com/r/ToxicMoldExposure/comments/1ko7q8p/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">2</div></div>
+      <div class="source-row"><div class="src-num">15</div><div class="src-url"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1obr78n/" target="_blank">reddit.com/r/ToxicMoldExposure/comments/1obr78n/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">2</div></div>
+      <div class="source-row"><div class="src-num">16</div><div class="src-url"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1kq4ayb/" target="_blank">reddit.com/r/ToxicMoldExposure/comments/1kq4ayb/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">6, 7</div></div>
+      <div class="source-row"><div class="src-num">17</div><div class="src-url"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p88i7u/" target="_blank">reddit.com/r/ToxicMoldExposure/comments/1p88i7u/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">1, 8</div></div>
+      <div class="source-row"><div class="src-num">18</div><div class="src-url"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1mijzxr/" target="_blank">reddit.com/r/ToxicMoldExposure/comments/1mijzxr/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">4</div></div>
+      <div class="source-row"><div class="src-num">19</div><div class="src-url"><a href="https://www.reddit.com/r/RealEstate/comments/1jms916/" target="_blank">reddit.com/r/RealEstate/comments/1jms916/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">3, 7, 8</div></div>
+      <div class="source-row"><div class="src-num">20</div><div class="src-url"><a href="https://www.reddit.com/r/Mold/comments/1c2g8h7/" target="_blank">reddit.com/r/Mold/comments/1c2g8h7/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">1, 5</div></div>
+      <div class="source-row"><div class="src-num">21</div><div class="src-url"><a href="https://www.reddit.com/r/Mold/comments/1naf1nz/" target="_blank">reddit.com/r/Mold/comments/1naf1nz/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">1, 9</div></div>
+      <div class="source-row"><div class="src-num">22</div><div class="src-url"><a href="https://www.reddit.com/r/homeowners/comments/5rtvjo/" target="_blank">reddit.com/r/homeowners/comments/5rtvjo/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">6</div></div>
+      <div class="source-row"><div class="src-num">23</div><div class="src-url"><a href="https://www.reddit.com/r/HomeImprovement/comments/n0078q/" target="_blank">reddit.com/r/HomeImprovement/comments/n0078q/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">6, 7</div></div>
+      <div class="source-row"><div class="src-num">24</div><div class="src-url"><a href="https://www.yelp.com/biz/mold-inspection-service-sacramento" target="_blank">yelp.com — Mold Inspection Service</a></div><div class="src-platform">Yelp</div><div class="src-tabs">7</div></div>
+      <div class="source-row"><div class="src-num">25</div><div class="src-url"><a href="https://www.yelp.com/biz/house-mold-inspectors-san-mateo-2" target="_blank">yelp.com — House Mold Inspectors</a></div><div class="src-platform">Yelp</div><div class="src-tabs">7</div></div>
+      <div class="source-row"><div class="src-num">26</div><div class="src-url"><a href="https://www.howardenvironmental.com/mold-inspection/" target="_blank">howardenvironmental.com</a></div><div class="src-platform">WebFetch</div><div class="src-tabs">2, 7</div></div>
+      <div class="source-row"><div class="src-num">27</div><div class="src-url"><a href="https://www.ezmoldinspections.com/testimonials" target="_blank">ezmoldinspections.com</a></div><div class="src-platform">WebFetch</div><div class="src-tabs">7</div></div>
+      <div class="source-row"><div class="src-num">28</div><div class="src-url"><a href="https://www.instagram.com/reel/DX7zrGphf21/" target="_blank">instagram.com</a></div><div class="src-platform">Instagram</div><div class="src-tabs">7, 8</div></div>
+      <div class="source-row"><div class="src-num">29</div><div class="src-url"><a href="https://moldinspectionandtest.com/mold-removal-scams" target="_blank">moldinspectionandtest.com</a></div><div class="src-platform">WebFetch</div><div class="src-tabs">5</div></div>
+      <div class="source-row"><div class="src-num">30</div><div class="src-url"><a href="https://www.reddit.com/r/ToxicMoldExposure/" target="_blank">reddit.com/r/ToxicMoldExposure/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">All tabs</div></div>
+      <div class="source-row"><div class="src-num">31</div><div class="src-url"><a href="https://www.reddit.com/r/Mold/" target="_blank">reddit.com/r/Mold/</a></div><div class="src-platform">Reddit</div><div class="src-tabs">All tabs</div></div>
+      <div class="source-row"><div class="src-num">32</div><div class="src-url"><a href="https://www.reddit.com/r/MarkNarrations/comments/1mwc2lt/" target="_blank">reddit.com/r/MarkNarrations</a></div><div class="src-platform">Reddit</div><div class="src-tabs">3</div></div>
+    </div>
+  </div>
+
+</div><!-- /content -->
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-pane').forEach(function(p){ p.classList.remove('active'); });
+  document.querySelectorAll('.tab-btn').forEach(function(b){ b.classList.remove('active'); });
+  document.getElementById(id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
