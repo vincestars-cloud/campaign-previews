@@ -1272,6 +1272,17 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
 
 <script>
 
+// ATF VIEWPORT FIT — JS-measured, cross-browser reliable
+function sizeATF() {
+  var nav = document.querySelector('nav');
+  var atf = document.getElementById('atf');
+  if (nav && atf) {
+    atf.style.minHeight = (window.innerHeight - nav.offsetHeight) + 'px';
+  }
+}
+sizeATF();
+window.addEventListener('resize', sizeATF);
+
 // SCROLL REVEAL
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
