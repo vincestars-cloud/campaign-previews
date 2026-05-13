@@ -599,6 +599,34 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
 }
 #atf .container { width: 100%; }
 
+/* VERTICAL VIDEO TESTIMONIALS */
+#testimonialVidTrack {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  animation: none !important;
+  max-width: 520px;
+  margin: 0 auto;
+  gap: 16px !important;
+  padding: 0 20px 8px !important;
+}
+#testimonialVidTrack .t-vid-card {
+  width: 100% !important;
+  flex-shrink: unset !important;
+}
+#testimonialVidTrack .t-vid-thumb {
+  height: auto !important;
+  aspect-ratio: 16/9;
+  position: relative;
+}
+#testimonialVidTrack .t-vid-thumb video {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+}
+
 /* REPEAT CTA */
 .repeat-cta { text-align: center; padding: 40px 0 8px; }
 .repeat-cta-bridge { font-size: 0.85rem; color: var(--warm-gray); line-height: 1.6; max-width: 380px; margin: 0 auto 20px; }
@@ -615,7 +643,7 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
   <div class="container">
     <div class="hero-eyebrow" id="atfEyebrow" style="margin-bottom:14px;"><span class="dot"></span>For families who've been told "it's just allergies"</div>
     <h1 id="atfH1" style="font-family:var(--font-display);font-size:clamp(1.85rem,6vw,3rem);line-height:1.08;letter-spacing:-0.02em;margin-bottom:12px;color:var(--ink);">It's Not Allergies.<br><em style="color:var(--sage);">It's Your Home.</em></h1>
-    <p id="atfSub" style="font-size:1rem;color:var(--warm-gray);margin-bottom:20px;line-height:1.6;white-space:nowrap;">Headaches. Sinus pressure. Fatigue you can't explain. You've seen the doctor, run the tests, tried the products. Nothing found it. Nothing fixed it.</p>
+    <p id="atfSub" style="font-size:1rem;color:var(--warm-gray);margin-bottom:20px;line-height:1.6;">Headaches. Sinus pressure. Fatigue you can't explain. You've seen the doctor, run the tests, tried the products. Nothing found it. Nothing fixed it.</p>
     <div id="atfGoogle" style="display:flex;justify-content:center;margin-bottom:10px;">
       <div class="google-badge" style="margin-bottom:0;">
         <div class="g-icon"><span>G</span><span>o</span><span>o</span><span>g</span><span>l</span><span>e</span></div>
@@ -901,13 +929,11 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
   </div>
 
   <!-- VIDEO TESTIMONIALS -->
-  <div style="overflow:hidden;margin-bottom:40px;padding-left:20px;">
+  <div style="margin-bottom:40px;">
     <div class="testimonial-vid-track" id="testimonialVidTrack">
-      <!-- SET 1 -->
-      <div class="t-vid-card" onclick="playVidInline(this)">
+      <div class="t-vid-card">
         <div class="t-vid-thumb" style="background:linear-gradient(135deg,#1a3a2a,#0f2018);">
-          <video src="../blackmoldguy/videos/kyle-ponton.mp4" muted preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" onloadedmetadata="this.currentTime=1"></video>
-          <div class="t-vid-play"><div class="t-vid-play-btn"><svg width="18" height="18" fill="#2d4a3a" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+          <video src="../blackmoldguy/videos/kyle-ponton.mp4" autoplay muted loop playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9;"></video>
           <div class="t-vid-tag">Client Story</div>
         </div>
         <div class="t-vid-body">
@@ -916,10 +942,9 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
           <p class="t-vid-quote">"Finally breathable air in my home — this changed everything for my recovery."</p>
         </div>
       </div>
-      <div class="t-vid-card" onclick="playVidInline(this)">
+      <div class="t-vid-card">
         <div class="t-vid-thumb" style="background:linear-gradient(135deg,#1e2e3a,#101820);">
-          <video src="../blackmoldguy/videos/ben-azadi.mp4" muted preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" onloadedmetadata="this.currentTime=1"></video>
-          <div class="t-vid-play"><div class="t-vid-play-btn"><svg width="18" height="18" fill="#2d4a3a" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+          <video src="../blackmoldguy/videos/ben-azadi.mp4" autoplay muted loop playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9;"></video>
           <div class="t-vid-tag">Expert Voice</div>
         </div>
         <div class="t-vid-body">
@@ -928,47 +953,9 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
           <p class="t-vid-quote">"The most thorough mold remediation process I've seen — truly health-first."</p>
         </div>
       </div>
-      <div class="t-vid-card" onclick="playVidInline(this)">
+      <div class="t-vid-card">
         <div class="t-vid-thumb" style="background:linear-gradient(135deg,#2a3a1e,#1a2610);">
-          <video src="../blackmoldguy/videos/lucy-coffee-chill.mp4" muted preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" onloadedmetadata="this.currentTime=1"></video>
-          <div class="t-vid-play"><div class="t-vid-play-btn"><svg width="18" height="18" fill="#2d4a3a" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-          <div class="t-vid-tag">Business Owner</div>
-        </div>
-        <div class="t-vid-body">
-          <div class="t-vid-name">Lucy</div>
-          <div class="t-vid-role">Co-Founder · Coffee &amp; Chill</div>
-          <p class="t-vid-quote">"My coffee shop is thriving again. The air quality difference is night and day."</p>
-        </div>
-      </div>
-      <!-- SET 2 (seamless loop) -->
-      <div class="t-vid-card" onclick="playVidInline(this)">
-        <div class="t-vid-thumb" style="background:linear-gradient(135deg,#1a3a2a,#0f2018);">
-          <video src="../blackmoldguy/videos/kyle-ponton.mp4" muted preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" onloadedmetadata="this.currentTime=1"></video>
-          <div class="t-vid-play"><div class="t-vid-play-btn"><svg width="18" height="18" fill="#2d4a3a" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-          <div class="t-vid-tag">Client Story</div>
-        </div>
-        <div class="t-vid-body">
-          <div class="t-vid-name">Kyle Ponton</div>
-          <div class="t-vid-role">Owner · Cold Life</div>
-          <p class="t-vid-quote">"Finally breathable air in my home — this changed everything for my recovery."</p>
-        </div>
-      </div>
-      <div class="t-vid-card" onclick="playVidInline(this)">
-        <div class="t-vid-thumb" style="background:linear-gradient(135deg,#1e2e3a,#101820);">
-          <video src="../blackmoldguy/videos/ben-azadi.mp4" muted preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" onloadedmetadata="this.currentTime=1"></video>
-          <div class="t-vid-play"><div class="t-vid-play-btn"><svg width="18" height="18" fill="#2d4a3a" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
-          <div class="t-vid-tag">Expert Voice</div>
-        </div>
-        <div class="t-vid-body">
-          <div class="t-vid-name">Ben Azadi</div>
-          <div class="t-vid-role">NY Times Best Selling Author</div>
-          <p class="t-vid-quote">"The most thorough mold remediation process I've seen — truly health-first."</p>
-        </div>
-      </div>
-      <div class="t-vid-card" onclick="playVidInline(this)">
-        <div class="t-vid-thumb" style="background:linear-gradient(135deg,#2a3a1e,#1a2610);">
-          <video src="../blackmoldguy/videos/lucy-coffee-chill.mp4" muted preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.55;" onloadedmetadata="this.currentTime=1"></video>
-          <div class="t-vid-play"><div class="t-vid-play-btn"><svg width="18" height="18" fill="#2d4a3a" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div></div>
+          <video src="../blackmoldguy/videos/lucy-coffee-chill.mp4" autoplay muted loop playsinline preload="metadata" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0.9;"></video>
           <div class="t-vid-tag">Business Owner</div>
         </div>
         <div class="t-vid-body">
