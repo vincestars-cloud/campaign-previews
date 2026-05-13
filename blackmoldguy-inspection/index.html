@@ -462,6 +462,10 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
   .t-vid-card { width: 260px; }
   .proof-section h2 { font-size: 1.35rem; }
 
+  /* ── PAS why-grid ── */
+  .pas-compare-grid { grid-template-columns: 1fr !important; }
+  .pas-why-grid { grid-template-columns: 1fr !important; }
+
   /* ── Sections ── */
   .locations-section h2,
   .faq-section h2,
@@ -661,7 +665,8 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
 <section class="form-section" id="form" style="padding:28px 0 48px;">
   <div class="container">
     <div class="form-intro">
-      <h2>Book Your Free 18-Point Inspection</h2>
+      <h2>Get the Investigation Nobody's Run Yet</h2>
+      <p style="font-size:0.9rem;color:var(--warm-gray);margin-top:8px;line-height:1.6;">18 high-risk zones. Written report. No remediation pitch.</p>
     </div>
     <div class="quote-wrapper reveal">
 
@@ -1077,29 +1082,41 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
     </div>
     <div class="pas-compare-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
       <div style="background:var(--white);border-radius:16px;padding:20px 18px;border:1px solid var(--border);">
-        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">Months of guessing</div>
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">What you've already been through</div>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
-          <li style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--warm-gray);"><span style="color:var(--accent);font-weight:700;">✕</span> Switched detergents. No change.</li>
-          <li style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--warm-gray);"><span style="color:var(--accent);font-weight:700;">✕</span> New HVAC filter. Still coughing.</li>
-          <li style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--warm-gray);"><span style="color:var(--accent);font-weight:700;">✕</span> Nasal spray. Brain fog stays.</li>
-          <li style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--warm-gray);"><span style="color:var(--accent);font-weight:700;">✕</span> Doctor says allergies. Again.</li>
-          <li style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:var(--warm-gray);"><span style="color:var(--accent);font-weight:700;">✕</span> Nothing changes. Life on hold.</li>
-          <li style="display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:var(--warm-gray);line-height:1.5;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;">✕</span> Everyone says it's stress. But you know your body.</li>
+          <li style="display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:var(--warm-gray);line-height:1.5;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;">✕</span> Headaches, sinus issues, unexplained coughing — for months.</li>
+          <li style="display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:var(--warm-gray);line-height:1.5;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;">✕</span> Only affects one person. "If it were mold, it would affect everyone."</li>
+          <li style="display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:var(--warm-gray);line-height:1.5;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;">✕</span> Home inspection passed. You moved in confident.</li>
+          <li style="display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:var(--warm-gray);line-height:1.5;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;">✕</span> Air quality test from someone on Google. Said no issues.</li>
+          <li style="display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:var(--warm-gray);line-height:1.5;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;">✕</span> Home Depot products. The smell came back.</li>
+          <li style="display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:var(--warm-gray);line-height:1.5;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;">✕</span> Paid an inspector. They found nothing, took the money, left.</li>
+          <li style="display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:var(--warm-gray);line-height:1.5;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;">✕</span> Doctor says allergies. Again. You know your body.</li>
         </ul>
       </div>
       <div style="background:var(--sage-dark);border-radius:16px;padding:20px 18px;">
-        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:10px;">One inspection changes this</div>
+        <div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.5);margin-bottom:10px;">One investigation changes this</div>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:8px;">
-          <li style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.9);"><span style="color:#4ade80;font-weight:700;">✓</span> Know exactly what's in your air</li>
-          <li style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.9);"><span style="color:#4ade80;font-weight:700;">✓</span> A written report you can show your doctor</li>
-          <li style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.9);"><span style="color:#4ade80;font-weight:700;">✓</span> Know if remediation is needed — and what it costs</li>
-          <li style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.9);"><span style="color:#4ade80;font-weight:700;">✓</span> Stop guessing. Start fixing.</li>
-          <li style="display:flex;align-items:center;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.9);"><span style="color:#4ade80;font-weight:700;">✓</span> An answer. Not another theory.</li>
+          <li style="display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.9);line-height:1.5;"><span style="color:#4ade80;font-weight:700;flex-shrink:0;">✓</span> Know exactly what's in your air — and inside your walls</li>
+          <li style="display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.9);line-height:1.5;"><span style="color:#4ade80;font-weight:700;flex-shrink:0;">✓</span> A written report you can finally show your doctor</li>
+          <li style="display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.9);line-height:1.5;"><span style="color:#4ade80;font-weight:700;flex-shrink:0;">✓</span> Know if remediation is needed — and exactly what it costs</li>
+          <li style="display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.9);line-height:1.5;"><span style="color:#4ade80;font-weight:700;flex-shrink:0;">✓</span> Stop guessing. Have a real answer for your family.</li>
+          <li style="display:flex;align-items:flex-start;gap:8px;font-size:0.85rem;color:rgba(255,255,255,0.9);line-height:1.5;"><span style="color:#4ade80;font-weight:700;flex-shrink:0;">✓</span> Someone who actually looks — and stays until they find it</li>
         </ul>
       </div>
     </div>
-    <p style="font-size:0.88rem;color:var(--ink);font-style:italic;text-align:center;margin-top:16px;line-height:1.6;max-width:440px;margin-left:auto;margin-right:auto;">The problem isn't mold. It's that no one neutral has ever looked.</p>
-    <p style="font-size:0.8rem;color:var(--warm-gray);text-align:center;margin-top:8px;line-height:1.6;">Mold grows behind walls, inside ductwork, under floors. Most families don't connect it for 6–12 months.</p>
+
+    <!-- WHY PREVIOUS TESTS MISSED IT -->
+    <div style="margin-top:24px;background:var(--white);border-radius:16px;padding:20px 20px;border:1px solid var(--border);">
+      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--warm-gray);margin-bottom:14px;">Why the previous tests found nothing</div>
+      <div class="pas-why-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+        <div style="font-size:0.82rem;color:var(--ink);line-height:1.6;"><strong>Air quality tests</strong> only capture what's floating in that one spot, at that moment. Mold lives inside walls, travels through ductwork, and moves. A clean test doesn't mean a clean home.</div>
+        <div style="font-size:0.82rem;color:var(--ink);line-height:1.6;"><strong>Home inspections</strong> look for visible damage — not hidden colonies. Even a brand new home can have mold from construction moisture or improper waterproofing. A passed inspection isn't a clean bill of health.</div>
+        <div style="font-size:0.82rem;color:var(--ink);line-height:1.6;"><strong>Symptoms in one person</strong> are common. People react differently based on biology, immune response, and where they spend time in the home. One person unaffected doesn't rule mold out.</div>
+        <div style="font-size:0.82rem;color:var(--ink);line-height:1.6;"><strong>Visible signs are easy to miss:</strong> baseboards pulling away, buckling floors, cracking walls, staining — these look cosmetic. They're moisture markers. And the mold is usually behind them.</div>
+      </div>
+    </div>
+
+    <p style="font-size:0.88rem;color:var(--ink);font-style:italic;text-align:center;margin-top:20px;line-height:1.6;max-width:480px;margin-left:auto;margin-right:auto;">The problem isn't that nothing's wrong. It's that no one neutral has looked in the right places.</p>
   </div>
 </section>
 
