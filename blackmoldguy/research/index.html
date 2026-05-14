@@ -4,26 +4,29 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>10-Tab Buyer Research — Black Mold Guy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --dark: #0f172a;
-    --mid: #1e293b;
-    --panel: #263045;
-    --border: #334155;
-    --accent: #10b981;
-    --accent2: #06b6d4;
-    --warn: #f59e0b;
-    --danger: #ef4444;
-    --text: #e2e8f0;
-    --muted: #94a3b8;
-    --quote-bg: #1a2744;
-    --quote-border: #3b82f6;
+    --dark: #0b1410;
+    --mid: #121f19;
+    --panel: #192b22;
+    --border: #243d2e;
+    --accent: #1a6b52;
+    --accent2: #b83222;
+    --warn: #b8965a;
+    --danger: #c0392b;
+    --text: #e4ece7;
+    --muted: #7a9283;
+    --quote-bg: #122018;
+    --quote-border: #1a6b52;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body {
     background: var(--dark);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
     font-size: 14px;
     line-height: 1.6;
   }
@@ -32,6 +35,7 @@
   .site-header {
     background: var(--mid);
     border-bottom: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
     padding: 20px 24px;
     display: flex;
     align-items: center;
@@ -40,10 +44,11 @@
     flex-wrap: wrap;
   }
   .site-header h1 {
+    font-family: 'DM Serif Display', Georgia, serif;
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 400;
     color: #fff;
-    letter-spacing: -0.3px;
+    letter-spacing: -0.2px;
   }
   .site-header .meta {
     font-size: 12px;
@@ -59,9 +64,9 @@
     font-weight: 600;
     letter-spacing: 0.3px;
   }
-  .badge-green { background: rgba(16,185,129,0.15); color: var(--accent); border: 1px solid rgba(16,185,129,0.3); }
-  .badge-blue { background: rgba(6,182,212,0.15); color: var(--accent2); border: 1px solid rgba(6,182,212,0.3); }
-  .badge-amber { background: rgba(245,158,11,0.15); color: var(--warn); border: 1px solid rgba(245,158,11,0.3); }
+  .badge-green { background: rgba(26,107,82,0.2); color: #4db896; border: 1px solid rgba(26,107,82,0.4); }
+  .badge-blue { background: rgba(184,150,90,0.15); color: var(--warn); border: 1px solid rgba(184,150,90,0.35); }
+  .badge-amber { background: rgba(184,150,90,0.15); color: var(--warn); border: 1px solid rgba(184,150,90,0.35); }
 
   /* TABS NAV */
   .tabs-nav-wrap {
@@ -132,8 +137,9 @@
     border-bottom: 1px solid var(--border);
   }
   .tab-header h2 {
+    font-family: 'DM Serif Display', Georgia, serif;
     font-size: 22px;
-    font-weight: 700;
+    font-weight: 400;
     color: #fff;
     margin-bottom: 4px;
   }
@@ -163,7 +169,7 @@
   }
   .data-table td {
     padding: 10px 12px;
-    border-bottom: 1px solid rgba(51,65,85,0.5);
+    border-bottom: 1px solid rgba(36,61,46,0.6);
     vertical-align: top;
   }
   .data-table tr:hover td { background: rgba(255,255,255,0.02); }
@@ -255,8 +261,8 @@
 
   /* COPY CANDIDATE BOX */
   .copy-box {
-    background: rgba(16,185,129,0.06);
-    border: 1px solid rgba(16,185,129,0.2);
+    background: rgba(26,107,82,0.08);
+    border: 1px solid rgba(26,107,82,0.25);
     border-radius: 8px;
     padding: 14px 18px;
     margin-bottom: 12px;
@@ -300,43 +306,6 @@
     line-height: 1.75;
   }
 
-  /* AWARENESS STATES */
-  .awareness-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 16px;
-    margin-bottom: 28px;
-  }
-  .awareness-card {
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 16px;
-  }
-  .awareness-card .state-label {
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.8px;
-    margin-bottom: 4px;
-  }
-  .awareness-card .state-name {
-    font-size: 15px;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 4px;
-  }
-  .awareness-card .state-pct {
-    font-size: 24px;
-    font-weight: 800;
-    margin-bottom: 8px;
-  }
-  .awareness-card p { font-size: 12px; color: var(--muted); line-height: 1.6; margin-bottom: 8px; }
-  .awareness-card .message { font-size: 12px; font-style: italic; color: var(--accent2); }
-  .state-a .state-label, .state-a .state-pct { color: var(--warn); }
-  .state-b .state-label, .state-b .state-pct { color: var(--accent2); }
-  .state-c .state-label, .state-c .state-pct { color: var(--danger); }
-
   /* HEADLINE BLOCK */
   .headline-option {
     background: var(--panel);
@@ -345,7 +314,7 @@
     padding: 16px 20px;
     margin-bottom: 12px;
   }
-  .headline-option.recommended { border-color: rgba(16,185,129,0.4); background: rgba(16,185,129,0.05); }
+  .headline-option.recommended { border-color: rgba(26,107,82,0.45); background: rgba(26,107,82,0.06); }
   .headline-option .hl-label {
     font-size: 10px;
     font-weight: 700;
@@ -370,9 +339,9 @@
     font-size: 11px;
     padding: 2px 8px;
     border-radius: 4px;
-    background: rgba(16,185,129,0.15);
-    color: var(--accent);
-    border: 1px solid rgba(16,185,129,0.3);
+    background: rgba(26,107,82,0.18);
+    color: #4db896;
+    border: 1px solid rgba(26,107,82,0.35);
   }
   .hl-rating {
     margin-top: 8px;
@@ -405,7 +374,7 @@
   }
   .source-row > div {
     padding: 8px 12px;
-    border-bottom: 1px solid rgba(51,65,85,0.4);
+    border-bottom: 1px solid rgba(36,61,46,0.5);
     font-size: 12px;
     vertical-align: top;
   }
@@ -427,7 +396,6 @@
     .source-grid-header > div:nth-child(4),
     .source-row > div:nth-child(3),
     .source-row > div:nth-child(4) { display: none; }
-    .awareness-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -435,11 +403,15 @@
 
 <header class="site-header">
   <div>
-    <h1>10-Tab Buyer Research — Black Mold Guy</h1>
+    <h1 style="display:flex;align-items:center;gap:10px;">
+      <span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;background:var(--accent);border-radius:6px;flex-shrink:0;">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+      </span>
+      10-Tab Buyer Research — Black Mold Guy
+    </h1>
     <div class="meta">
       Client: <span>blackmoldguy</span> &nbsp;|&nbsp;
-      Markets: <span>Atlanta, GA / Miami, FL</span> &nbsp;|&nbsp;
-      Date: <span>2026-05-12</span>
+      Markets: <span>Atlanta, GA / Miami, FL</span>
     </div>
   </div>
   <div class="header-badges">
@@ -803,31 +775,6 @@
     <div class="copy-box">"I don't want to create a disclosure obligation before selling"</div>
     <div class="copy-box">"Is this really mold or is it allergies?"</div>
     <div class="copy-box">"Can I trust the results?"</div>
-
-    <p class="section-label">Awareness States (Eugene Schwartz)</p>
-    <div class="awareness-grid">
-      <div class="awareness-card state-a">
-        <div class="state-label">State A</div>
-        <div class="state-name">Suspicious but unsure</div>
-        <div class="state-pct">~40%</div>
-        <p>Family has symptoms (coughing, congestion, brain fog, fatigue). No visible mold, haven't connected dots to air quality.</p>
-        <div class="message">"If your family keeps getting sick..."</div>
-      </div>
-      <div class="awareness-card state-b">
-        <div class="state-label">State B</div>
-        <div class="state-name">Know it's mold, don't trust companies</div>
-        <div class="state-pct">~35%</div>
-        <p>Have seen/smelled something or had a positive test. Extremely skeptical of mold companies due to scam reputation.</p>
-        <div class="message">"We inspect. We don't remediate. That's the point."</div>
-      </div>
-      <div class="awareness-card state-c">
-        <div class="state-label">State C</div>
-        <div class="state-name">Crisis mode</div>
-        <div class="state-pct">~25%</div>
-        <p>Actively sick, just found visible mold, or closing on a house with a mold flag. Need help NOW.</p>
-        <div class="message">"Book today. Written report within 24 hours."</div>
-      </div>
-    </div>
 
     <p class="section-label">Best-Fit Avatar</p>
     <div class="avatar-card">
