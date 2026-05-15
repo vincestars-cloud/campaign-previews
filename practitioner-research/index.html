@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Practitioner Owner Research — 10-Tab Deep Buyer Study</title>
+<style>
+  :root {
+    --black: #0f0f0f;
+    --white: #ffffff;
+    --gray-50: #fafafa;
+    --gray-100: #f4f4f4;
+    --gray-200: #e8e8e8;
+    --gray-400: #9a9a9a;
+    --gray-600: #4a4a4a;
+    --accent: #1a1a1a;
+    --red: #c0392b;
+    --blue: #1d4ed8;
+    --quote-border: #0f0f0f;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, sans-serif;
+    color: var(--black);
+    background: var(--white);
+    font-size: 15px;
+    line-height: 1.65;
+    overflow-x: hidden;
+  }
+  svg { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+
+  /* NAV */
+  .nav {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--black);
+    border-bottom: 1px solid #2a2a2a;
+    padding: 0 clamp(16px, 4vw, 40px);
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+  .nav-brand { color: var(--white); font-weight: 700; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; text-decoration: none; }
+  .nav-meta { color: var(--gray-400); font-size: 12px; }
+
+  /* HERO */
+  .hero {
+    background: var(--black);
+    padding: clamp(48px, 8vw, 80px) clamp(16px, 4vw, 40px);
+    text-align: center;
+  }
+  .hero-kicker {
+    display: inline-block;
+    background: #1a1a1a;
+    border: 1px solid #333;
+    color: var(--gray-400);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 40px;
+    margin-bottom: 24px;
+  }
+  .hero h1 {
+    font-size: clamp(28px, 5vw, 52px) !important;
+    font-weight: 800 !important;
+    color: var(--white) !important;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    max-width: 780px;
+    margin: 0 auto 20px;
+  }
+  .hero h1 span { color: #f0c040 !important; }
+  .hero-sub {
+    color: var(--gray-400);
+    font-size: clamp(14px, 2vw, 17px);
+    max-width: 560px;
+    margin: 0 auto 32px;
+  }
+  .hero-stats {
+    display: flex; flex-wrap: wrap; gap: 12px;
+    justify-content: center; margin-top: 32px;
+  }
+  .stat-pill {
+    background: #1c1c1c;
+    border: 1px solid #2e2e2e;
+    border-radius: 8px;
+    padding: 12px 20px;
+    color: var(--white);
+    font-size: 13px;
+  }
+  .stat-pill strong { display: block; font-size: 22px; font-weight: 700; color: #f0c040; }
+
+  /* OPENER CALLOUT */
+  .opener {
+    background: #f0c040;
+    padding: clamp(24px, 4vw, 40px) clamp(16px, 4vw, 40px);
+    text-align: center;
+  }
+  .opener p { font-size: clamp(16px, 2.5vw, 22px); font-weight: 700; color: var(--black); margin-bottom: 8px; }
+  .opener .sub { font-size: clamp(13px, 1.8vw, 16px); font-weight: 400; color: #444; }
+
+  /* CONTAINER */
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 clamp(16px, 4vw, 40px); }
+
+  /* SECTION */
+  section { padding: clamp(40px, 6vw, 72px) 0; border-bottom: 1px solid var(--gray-200); }
+  section:last-of-type { border-bottom: none; }
+
+  .section-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gray-400);
+    margin-bottom: 8px;
+  }
+  .section-title {
+    font-size: clamp(22px, 3.5vw, 34px);
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: var(--black);
+    line-height: 1.2;
+    margin-bottom: 24px;
+  }
+
+  /* DEAD ZONE DIAGRAM */
+  .dead-zone {
+    background: var(--black);
+    border-radius: 12px;
+    padding: clamp(24px, 4vw, 40px);
+    color: var(--white);
+    text-align: center;
+    margin: 32px 0;
+  }
+  .dz-row { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 12px; margin: 12px 0; }
+  .dz-box {
+    background: #1e1e1e;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 14px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--white);
+  }
+  .dz-box.danger {
+    background: #2a0a0a;
+    border-color: var(--red);
+    color: #ff6b6b;
+    font-style: italic;
+  }
+  .dz-arrow { color: var(--gray-400); font-size: 24px; }
+  .dz-caption { color: var(--gray-400); font-size: 13px; margin-top: 20px; max-width: 520px; margin-left: auto; margin-right: auto; }
+
+  /* FREQUENCY TABLE */
+  .freq-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .freq-table thead tr { background: var(--black); color: var(--white); }
+  .freq-table th { padding: 12px 16px; text-align: left; font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; }
+  .freq-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-200); vertical-align: top; }
+  .freq-table tr:nth-child(even) td { background: var(--gray-50); }
+  .rank-num { font-weight: 800; font-size: 18px; color: var(--gray-400); }
+  .source-count { font-weight: 700; color: var(--black); white-space: nowrap; }
+  .vertical-tags { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 4px; }
+  .tag {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 40px;
+    background: var(--gray-100);
+    color: var(--gray-600);
+    letter-spacing: 0.04em;
+  }
+
+  /* TABS */
+  .tab-nav {
+    display: flex; flex-wrap: wrap; gap: 4px;
+    border-bottom: 2px solid var(--gray-200);
+    margin-bottom: 32px;
+  }
+  .tab-btn {
+    padding: 10px 16px;
+    background: none;
+    border: none;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--gray-400);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -2px;
+    transition: color 0.15s, border-color 0.15s;
+    white-space: nowrap;
+  }
+  .tab-btn:hover { color: var(--black); }
+  .tab-btn.active { color: var(--black); border-bottom-color: var(--black); }
+  .tab-panel { display: none; }
+  .tab-panel.active { display: block; }
+
+  /* QUOTES */
+  .quote-grid { display: grid; gap: 16px; }
+  .quote-grid.cols-2 { grid-template-columns: repeat(auto-fill, minmax(440px, 1fr)); }
+  blockquote {
+    border-left: 4px solid var(--black);
+    padding: 16px 20px;
+    background: var(--gray-50);
+    border-radius: 0 8px 8px 0;
+  }
+  blockquote p { font-size: 15px; line-height: 1.6; color: var(--black); margin-bottom: 8px; font-style: italic; }
+  blockquote .source { font-size: 12px; color: var(--gray-400); font-style: normal; }
+  blockquote .source a { color: var(--gray-400); }
+
+  /* BULLET LISTS */
+  .bullet-list { list-style: none; display: grid; gap: 10px; }
+  .bullet-list li { padding-left: 20px; position: relative; font-size: 15px; color: var(--gray-600); }
+  .bullet-list li::before { content: "—"; position: absolute; left: 0; color: var(--gray-400); }
+
+  /* SALES MOTION */
+  .motion-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(480px, 1fr)); gap: 24px; }
+  .motion-card {
+    border: 1px solid var(--gray-200);
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  .motion-head {
+    background: var(--black);
+    padding: 16px 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .motion-head h3 { color: var(--white); font-size: 15px; font-weight: 700; }
+  .motion-body { padding: 20px; }
+  .motion-steps { list-style: none; display: grid; gap: 8px; }
+  .motion-steps li {
+    display: flex; gap: 12px; font-size: 13px;
+    padding: 8px 0; border-bottom: 1px solid var(--gray-200);
+  }
+  .motion-steps li:last-child { border-bottom: none; }
+  .step-num {
+    min-width: 24px; height: 24px;
+    background: var(--black); color: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px; font-weight: 700; flex-shrink: 0;
+  }
+  .step-break { font-size: 11px; color: var(--red); font-weight: 700; margin-top: 12px; padding-top: 8px; border-top: 1px dashed #e0b0b0; }
+
+  /* TECH STACK */
+  .tech-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+  .tech-card {
+    border: 1px solid var(--gray-200);
+    border-radius: 10px;
+    padding: 20px;
+  }
+  .tech-card h4 { font-size: 14px; font-weight: 700; margin-bottom: 12px; padding-bottom: 8px; border-bottom: 1px solid var(--gray-200); }
+  .tech-row { font-size: 13px; color: var(--gray-600); margin-bottom: 6px; }
+  .tech-row strong { color: var(--black); }
+
+  /* WISH GAP TABLE */
+  .gap-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .gap-table th { padding: 10px 14px; background: var(--black); color: var(--white); text-align: left; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
+  .gap-table td { padding: 12px 14px; border-bottom: 1px solid var(--gray-200); vertical-align: top; }
+  .gap-table tr:nth-child(even) td { background: var(--gray-50); }
+  .gap-table td:last-child { font-style: italic; color: var(--gray-600); font-size: 13px; }
+
+  /* DIAGNOSTIC QS */
+  .q-list { list-style: none; counter-reset: q-counter; display: grid; gap: 12px; }
+  .q-list li {
+    counter-increment: q-counter;
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 16px; background: var(--gray-50); border-radius: 8px; border: 1px solid var(--gray-200);
+  }
+  .q-list li::before {
+    content: counter(q-counter);
+    min-width: 32px; height: 32px;
+    background: var(--black); color: var(--white);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; flex-shrink: 0;
+  }
+  .q-text { font-size: 15px; color: var(--black); padding-top: 4px; }
+
+  /* ICP PRIORITY */
+  .icp-list { list-style: none; display: grid; gap: 12px; counter-reset: icp-counter; }
+  .icp-item {
+    counter-increment: icp-counter;
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 16px 20px; border-radius: 10px; border: 1px solid var(--gray-200);
+  }
+  .icp-item:first-child { border-color: #f0c040; background: #fffef0; }
+  .icp-rank {
+    min-width: 36px; height: 36px;
+    display: flex; align-items: center; justify-content: center;
+    background: var(--black); color: var(--white);
+    border-radius: 50%; font-weight: 800; font-size: 15px; flex-shrink: 0;
+  }
+  .icp-item:first-child .icp-rank { background: #f0c040; color: var(--black); }
+  .icp-info h4 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+  .icp-info p { font-size: 13px; color: var(--gray-600); }
+
+  /* BUILD MAP */
+  .build-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  .build-table th { padding: 10px 14px; background: var(--black); color: var(--white); text-align: left; font-size: 12px; letter-spacing: 0.05em; text-transform: uppercase; }
+  .build-table td { padding: 12px 14px; border-bottom: 1px solid var(--gray-200); vertical-align: top; }
+  .build-table tr:nth-child(even) td { background: var(--gray-50); }
+  .build-name { font-weight: 700; color: var(--black); }
+  .build-verbal { font-size: 11px; color: var(--gray-400); font-style: italic; }
+
+  /* HOOK BANK */
+  .hook-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 12px; }
+  .hook-card {
+    background: var(--black);
+    color: var(--white);
+    padding: 16px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.5;
+  }
+
+  /* GAPS */
+  .gap-item {
+    display: flex; gap: 12px; align-items: flex-start;
+    padding: 14px 16px; background: #fff8f8; border: 1px solid #f0d0d0;
+    border-radius: 8px; margin-bottom: 8px;
+  }
+  .gap-dot { width: 8px; height: 8px; min-width: 8px; background: var(--red); border-radius: 50%; margin-top: 6px; }
+
+  /* FOOTER */
+  footer {
+    background: var(--black);
+    color: var(--gray-400);
+    text-align: center;
+    padding: 32px clamp(16px, 4vw, 40px);
+    font-size: 13px;
+  }
+  footer a { color: var(--gray-400); }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .quote-grid.cols-2 { grid-template-columns: 1fr; }
+    .motion-grid { grid-template-columns: 1fr; }
+    .tech-grid { grid-template-columns: 1fr; }
+    .hook-grid { grid-template-columns: 1fr; }
+    .freq-table { font-size: 13px; }
+    .freq-table th, .freq-table td { padding: 10px 10px; }
+    .tab-btn { font-size: 12px; padding: 8px 10px; }
+  }
+  @media (max-width: 480px) {
+    .hero-stats { flex-direction: column; align-items: center; }
+    .dz-row { flex-direction: column; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="nav-brand">Practitioner Owner Research</a>
+  <span class="nav-meta">10-Tab Deep Study · 2026-05-14</span>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-kicker">Single-Location Practitioner Owners · 6 Verticals</div>
+  <h1>They're Getting Leads.<br><span>They're Just Not Turning Into Much.</span></h1>
+  <p class="hero-sub">10-tab deep buyer research on chiropractors, med spas, physical therapists, audiologists, weight loss clinics, and martial arts studios.</p>
+  <div class="hero-stats">
+    <div class="stat-pill"><strong>876</strong>lines of research</div>
+    <div class="stat-pill"><strong>75+</strong>verbatim quotes</div>
+    <div class="stat-pill"><strong>11</strong>Reddit threads (full)</div>
+    <div class="stat-pill"><strong>6</strong>practitioner verticals</div>
+    <div class="stat-pill"><strong>10</strong>research tabs</div>
+  </div>
+</section>
+
+<!-- OPENER -->
+<div class="opener">
+  <p>"You're getting leads. They're just not turning into much."</p>
+  <p class="sub">Bridge: "You don't have a lead problem. You have a between-the-lead-and-the-chair problem."</p>
+</div>
+
+<!-- DEAD ZONE -->
+<section>
+  <div class="container">
+    <div class="section-label">Universal Gap</div>
+    <h2 class="section-title">Where the Revenue Disappears</h2>
+    <div class="dead-zone">
+      <div class="dz-row">
+        <div class="dz-box">STRANGER<br><small style="font-weight:400;color:#888">ad / referral / DM / search</small></div>
+      </div>
+      <div class="dz-row"><span class="dz-arrow">↓</span></div>
+      <div class="dz-row">
+        <div class="dz-box danger">DEAD ZONE<br><small style="font-weight:400">no automation · slow follow-up · front desk guessing · missed calls</small></div>
+      </div>
+      <div class="dz-row"><span class="dz-arrow">↓</span></div>
+      <div class="dz-row">
+        <div class="dz-box">PATIENT IN EHR / PMS<br><small style="font-weight:400;color:#888">ChiroTouch · Jane App · WebPT · Mangomint · Mindbody</small></div>
+      </div>
+      <p class="dz-caption">The EHR handles clinical and billing on the right side. Nothing handles the dead zone. That's where 30–60% of revenue disappears.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FREQUENCY MAP -->
+<section>
+  <div class="container">
+    <div class="section-label">Frequency Map</div>
+    <h2 class="section-title">Top 10 Pain Points by Source Count</h2>
+    <table class="freq-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Pain Point</th>
+          <th>Sources</th>
+          <th>Verticals</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="rank-num">1</td><td><strong>No-shows / cancellations</strong></td><td class="source-count">20+</td><td><div class="vertical-tags"><span class="tag">All 6</span></div></td></tr>
+        <tr><td class="rank-num">2</td><td><strong>Leads don't convert / slow follow-up</strong></td><td class="source-count">16+</td><td><div class="vertical-tags"><span class="tag">Chiro</span><span class="tag">Med Spa</span><span class="tag">Weight Loss</span><span class="tag">MA</span></div></td></tr>
+        <tr><td class="rank-num">3</td><td><strong>Marketing spend with no ROI</strong></td><td class="source-count">14+</td><td><div class="vertical-tags"><span class="tag">All 6</span></div></td></tr>
+        <tr><td class="rank-num">4</td><td><strong>Front desk can't close / order-taker syndrome</strong></td><td class="source-count">12+</td><td><div class="vertical-tags"><span class="tag">Chiro</span><span class="tag">Med Spa</span><span class="tag">Audiology</span></div></td></tr>
+        <tr><td class="rank-num">5</td><td><strong>Owner is clinician + marketer + admin</strong></td><td class="source-count">12+</td><td><div class="vertical-tags"><span class="tag">All 6</span></div></td></tr>
+        <tr><td class="rank-num">6</td><td><strong>Staff turnover = institutional knowledge loss</strong></td><td class="source-count">10+</td><td><div class="vertical-tags"><span class="tag">Chiro</span><span class="tag">Med Spa</span><span class="tag">PT</span></div></td></tr>
+        <tr><td class="rank-num">7</td><td><strong>No reactivation system for lapsed patients</strong></td><td class="source-count">9+</td><td><div class="vertical-tags"><span class="tag">Chiro</span><span class="tag">PT</span><span class="tag">Weight Loss</span></div></td></tr>
+        <tr><td class="rank-num">8</td><td><strong>Software too expensive / no marketing tools</strong></td><td class="source-count">9+</td><td><div class="vertical-tags"><span class="tag">All 6</span></div></td></tr>
+        <tr><td class="rank-num">9</td><td><strong>Can't replicate owner's sales process in staff</strong></td><td class="source-count">8+</td><td><div class="vertical-tags"><span class="tag">Chiro</span><span class="tag">PT</span><span class="tag">Med Spa</span></div></td></tr>
+        <tr><td class="rank-num">10</td><td><strong>Income volatility / cash flow uncertainty</strong></td><td class="source-count">7+</td><td><div class="vertical-tags"><span class="tag">All 6</span></div></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 10 TABS -->
+<section>
+  <div class="container">
+    <div class="section-label">Sabri 10-Tab Deep Research</div>
+    <h2 class="section-title">All 10 Tabs</h2>
+    <div class="tab-nav">
+      <button class="tab-btn active" onclick="showTab('t1')">1. Fears</button>
+      <button class="tab-btn" onclick="showTab('t2')">2. Hopes & Dreams</button>
+      <button class="tab-btn" onclick="showTab('t3')">3. Relationship Fears</button>
+      <button class="tab-btn" onclick="showTab('t4')">4. Relationship Soundbites</button>
+      <button class="tab-btn" onclick="showTab('t5')">5. Frustrations</button>
+      <button class="tab-btn" onclick="showTab('t6')">6. Previous Solutions</button>
+      <button class="tab-btn" onclick="showTab('t7')">7. Solution Soundbites</button>
+      <button class="tab-btn" onclick="showTab('t8')">8. Desired Outcomes</button>
+      <button class="tab-btn" onclick="showTab('t9')">9. Typical Day</button>
+      <button class="tab-btn" onclick="showTab('t10')">10. Buyer Summary</button>
+    </div>
+
+    <!-- TAB 1 -->
+    <div id="t1" class="tab-panel active">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:20px">What Keeps Them Up at 3AM</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px">
+        <div>
+          <h4 style="font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#999;margin-bottom:12px">Financial / Existential</h4>
+          <ul class="bullet-list">
+            <li>The practice will fail and they'll have to go work for someone else (or The Joint)</li>
+            <li>The lease renews and they still can't break even</li>
+            <li>One bad month wipes out the cushion they've been building</li>
+            <li>Insurance reimbursements keep dropping — "Medicare cut ther-ex from $28 to $21"</li>
+            <li>They took out an SBA loan to open and they're bleeding every month</li>
+            <li>Retirement will never be funded because the practice won't sell for enough</li>
+            <li>A key staff member quits and takes years of tribal knowledge with them</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#999;margin-bottom:12px">Operational / Identity</h4>
+          <ul class="bullet-list">
+            <li>Becoming the admin and the marketer — never getting to just do clinical work</li>
+            <li>The schedule looking empty when they come in</li>
+            <li>Training someone for 3 weeks and watching them leave</li>
+            <li>Being the person who can close, and watching the front desk undo it</li>
+            <li>Patients falling off after symptom resolution and never coming back</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:#999;margin-bottom:12px">Competitive</h4>
+          <ul class="bullet-list">
+            <li>The Costco of their vertical taking price-sensitive patients they can't compete with on cost</li>
+            <li>Larger multi-location practices with full marketing departments dominating Google</li>
+            <li>Someone running $5K/month in ads while they do manual networking</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 2 -->
+    <div id="t2" class="tab-panel">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:20px">Their Ideal Future State</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px">
+        <div>
+          <h4 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#999;margin-bottom:12px">The Schedule</h4>
+          <ul class="bullet-list">
+            <li>Walking into the office and seeing a full schedule that filled itself</li>
+            <li>Being booked out 3–4 weeks without touching it</li>
+            <li>Having a waitlist instead of empty slots</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#999;margin-bottom:12px">The Business</h4>
+          <ul class="bullet-list">
+            <li>Building a practice with actual enterprise value — something that can be sold</li>
+            <li>Predictable month-to-month income (documented: $206K solo cash PT, $163K solo chiro yr 4)</li>
+            <li>Systems that work even when they're on vacation</li>
+            <li>Grossing $300K+ as a solo operator without burning out</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#999;margin-bottom:12px">The Patients</h4>
+          <ul class="bullet-list">
+            <li>Long-term relationships, not a revolving door</li>
+            <li>Patients who refer family and friends without being asked</li>
+            <li>A reactivation system that brings lapsed patients back automatically</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 3 -->
+    <div id="t3" class="tab-panel">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:20px">How the Practice Problem Affects Their Personal Life</h3>
+      <div class="quote-grid cols-2">
+        <blockquote><p>"My first year in practice I lost 40k. My second year I made 40k. I literally made 0 dollars in the first 2 years."</p><span class="source">Chiropractor (18 years in practice) · Reddit/r/Chiropractic · <a href="https://www.reddit.com/r/Chiropractic/comments/1q7ctxt/practice_failing/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"Had a crew of 3.5 years and all left for other jobs at the same time without much notice. Two weeks does not cover the hiring process."</p><span class="source">Chiropractor · Reddit/r/Chiropractic · <a href="https://www.reddit.com/r/Chiropractic/comments/1au2mfm/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"I call my clinic my fourth child. It's not for everyone and it is never easy."</p><span class="source">Chiropractor · Reddit/r/Chiropractic · <a href="https://www.reddit.com/r/Chiropractic/comments/1q7ctxt/practice_failing/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"I've hustled and wore myself thin my whole life, and practice life has become the same."</p><span class="source">Chiropractor (45 yrs old) · Reddit/r/Chiropractic · <a href="https://www.reddit.com/r/Chiropractic/comments/1k55bs0/" target="_blank">source</a></span></blockquote>
+      </div>
+    </div>
+
+    <!-- TAB 4 -->
+    <div id="t4" class="tab-panel">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:8px">How They Describe the Problem to Other People</h3>
+      <p style="color:#999;font-size:13px;margin-bottom:24px">Tab 4 = copy tab. These go verbatim into hooks, scripts, and ad headlines.</p>
+      <div class="quote-grid cols-2">
+        <blockquote><p>"Every no-show isn't just wasted time; it's a direct financial loss from an empty chair that could have been filled by a paying client."</p><span class="source">Med spa owner · Reddit/r/MedSpa · <a href="https://www.reddit.com/r/MedSpa/comments/1n8c53r/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"Someone googles medspa, tries calling, no answer, books at the place next door instead. We literally have no idea how many people tried to reach us and just gave up."</p><span class="source">Med spa owner · Reddit/r/MedSpa · <a href="https://www.reddit.com/r/MedSpa/comments/1rdeubp/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"We get slammed and the phone just keeps ringing... By end of day my front desk person is exhausted just from repeating herself. She hasn't even done the actual admin work yet."</p><span class="source">Med spa owner (3 staff) · Reddit/r/MedSpa · <a href="https://www.reddit.com/r/MedSpa/comments/1rdeubp/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"Almost all of them admit that they tend to lose leads not because they don't care, but because they're often coaching the gyms, managing staff, and doing whatever else is necessary to run the business."</p><span class="source">Martial arts researcher · Reddit/r/martialarts · <a href="https://www.reddit.com/r/martialarts/comments/1scj6gp/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"You need new leads, you need someone to contact those leads asap and then you need to convert those evals. 3 bottlenecks."</p><span class="source">Chiropractor · Reddit/r/Chiropractic · <a href="https://www.reddit.com/r/Chiropractic/comments/1q7ctxt/practice_failing/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"a patient who misses one appointment has around a 70% chance of never coming back. So the no-show problem and the retention problem you're describing are actually the same problem."</p><span class="source">Med spa tech founder · Reddit/r/MedSpa · <a href="https://www.reddit.com/r/MedSpa/comments/1n8c53r/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"That's the treadmill. That's the leaky bucket."</p><span class="source">Chiropractor educator · Reddit/r/Chiropractic · <a href="https://www.reddit.com/r/Chiropractic/comments/1ryjxuv/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"pouring money and energy into NP acquisition before you've fixed PVA and OVA is like filling a bucket with holes in it."</p><span class="source">Chiropractor educator · Reddit/r/Chiropractic · <a href="https://www.reddit.com/r/Chiropractic/comments/1ryjxuv/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"They charge you for every tiny thing, they constantly raise their prices, but their support is the worst of all of them."</p><span class="source">Chiropractor on ChiroTouch · Reddit/r/Chiropractic · <a href="https://www.reddit.com/r/Chiropractic/comments/1kuhww0/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"WebPT sucks. It feels like it's years behind and the additional cost for everything that is already baked in for other EMRs is ridiculous."</p><span class="source">PT on WebPT · Reddit/r/physicaltherapy · <a href="https://www.reddit.com/r/physicaltherapy/comments/1nkorqb/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"I became a chiropractor to help people, not to spend 3 [hours on admin]."</p><span class="source">Chiropractor · Reddit/r/Chiropractic · <a href="https://www.reddit.com/r/Chiropractic/comments/1r14te6/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"Some months I think, 'Oh, it's going great,' and then the next month, it's not."</p><span class="source">Chiro practice owner · Reddit/r/Chiropractic · <a href="https://www.reddit.com/r/Chiropractic/comments/1k55bs0/" target="_blank">source</a></span></blockquote>
+      </div>
+    </div>
+
+    <!-- TAB 5 -->
+    <div id="t5" class="tab-panel">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:20px">What Makes Them Angry</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:24px">
+        <div>
+          <h4 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#999;margin-bottom:12px">At the Problem</h4>
+          <ul class="bullet-list">
+            <li>Paying for ads and leads that don't show up</li>
+            <li>Being the best clinician in the area and still struggling to fill the schedule</li>
+            <li>Watching the clock tick on an empty chair when a patient no-shows</li>
+            <li>Patients who leave glowing reviews and then never come back</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#999;margin-bottom:12px">At Past Solutions</h4>
+          <ul class="bullet-list">
+            <li>Marketing agencies who promised leads and delivered volume without conversion</li>
+            <li>Hiring front desk and watching them answer the phone wrong</li>
+            <li>Investing in EHR software that solves documentation but doesn't touch revenue</li>
+            <li>Getting better at clinical work but not getting better business results</li>
+          </ul>
+        </div>
+        <div>
+          <h4 style="font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:#999;margin-bottom:12px">At the Structural Reality</h4>
+          <ul class="bullet-list">
+            <li>Being physically in a room with a patient and unavailable when a lead calls</li>
+            <li>Staff who are order-takers when the owner needs closers</li>
+            <li>Tribal knowledge that walks out the door when a staff member quits</li>
+            <li>Software companies charging extra for features that should be included</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAB 6 -->
+    <div id="t6" class="tab-panel">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:20px">What They've Already Tried (and Why It Failed)</h3>
+      <table class="freq-table">
+        <thead><tr><th>Solution</th><th>What They Did</th><th>Why It Failed</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Marketing agency</strong></td><td>$1,500–$3,000/mo Facebook/Google leads</td><td>Got leads, conversion didn't change — same front desk, same process</td></tr>
+          <tr><td><strong>Hired front desk</strong></td><td>Added $16–$20/hr staff for phones</td><td>Wrong profile for a closer role; trained wrong; left within 18 months</td></tr>
+          <tr><td><strong>EHR upgrade</strong></td><td>Switched from ChiroTouch to Jane App</td><td>Improved documentation; zero impact on leads, follow-up, close rate</td></tr>
+          <tr><td><strong>One-time sales training</strong></td><td>Brought in sales trainer for staff</td><td>Didn't stick; no reinforcement; staff reverted within 60 days</td></tr>
+          <tr><td><strong>Bought leads / volume ads</strong></td><td>Facebook ads or purchased list</td><td>Got volume; follow-up still manual; nobody called back fast enough</td></tr>
+          <tr><td><strong>Manual spreadsheet follow-up</strong></td><td>Google Sheets lead tracker</td><td>Worked until someone got busy or quit; completely inconsistent</td></tr>
+          <tr><td><strong>Social media posting</strong></td><td>Instagram 2–3x per week</td><td>Built some awareness; no direct bookings; exhausting to maintain</td></tr>
+          <tr><td><strong>"I just need more new patients"</strong></td><td>Focused all energy on lead acquisition</td><td>Ignored retention and PVA; kept filling a leaky bucket</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TAB 7 -->
+    <div id="t7" class="tab-panel">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:8px">"I Wish There Was..." Quotes</h3>
+      <p style="color:#999;font-size:13px;margin-bottom:24px">Tab 7 = copy tab. These become hooks, landing page headlines, and cold message openers.</p>
+      <div class="quote-grid cols-2">
+        <blockquote><p>"I wish there was a feature that when it's been 30 days since Bob has been in, a text is sent that says 'Hey Bob we haven't seen you for awhile. Give us a call or click here to book.'"</p><span class="source">Chiropractor on Jane App · Reddit/r/Chiropractic · <a href="https://www.reddit.com/r/Chiropractic/comments/1ohnbbd/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"I need something that follows up with leads while I'm in with a patient."</p><span class="source">Chiropractor · Reddit/r/Chiropractic · <a href="https://www.reddit.com/r/Chiropractic/comments/1orobnw/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"Auto-text within 30 seconds of form submission — 'Hi [name], thanks for your enquiry. We'll call you within 5 minutes.' This alone reduces ghosting by 40-60%."</p><span class="source">Aesthetics marketing specialist · Reddit/r/MedSpa · <a href="https://www.reddit.com/r/MedSpa/comments/1rdeubp/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"Retarget your inactive patients with SMS, not email. Most practices are sitting on a database full of patients who came in 6, 9, 12 months ago and never returned."</p><span class="source">Med spa AI software founder · Reddit/r/MedSpa · <a href="https://www.reddit.com/r/MedSpa/comments/1n8c53r/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"You already paid to acquire that patient. You already have their trust. Bringing them back costs almost nothing compared to running ads for strangers."</p><span class="source">Med spa software founder · Reddit/r/MedSpa · <a href="https://www.reddit.com/r/MedSpa/comments/1n8c53r/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"When you build a proper system — scripts, automated responses, booking flows — new staff step into a structure that already works. The system carries them while they learn."</p><span class="source">Med spa marketing consultant · Reddit/r/MedSpa · <a href="https://www.reddit.com/r/MedSpa/comments/1rdeubp/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"Scenario 1: NP Chaser — 30 patients, PVA 4. $3,600 revenue. You spent $5,000 to make $3,600. You are literally paying to work. Scenario 2: Systems Doc — 10 patients, PVA 20. $14,000 revenue."</p><span class="source">Chiropractor educator · Reddit/r/Chiropractic · <a href="https://www.reddit.com/r/Chiropractic/comments/1ryjxuv/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"500 leads sitting in his CRM, yet they had zero follow-up."</p><span class="source">Chiro marketing consultant · Reddit/r/Chiropractic · <a href="https://www.reddit.com/r/Chiropractic/comments/1q7ctxt/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"When I set it up to work for me — it doesn't get distracted by TikTok or call in sick. I get more consistency out of my software than from staff sometimes."</p><span class="source">Med spa owner · Reddit/r/MedSpa · <a href="https://www.reddit.com/r/MedSpa/comments/1rdeubp/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"The number one medspa growth challenge isn't leads, but how ineffective medspas are with lead engagement."</p><span class="source">Medspa marketing strategist · Reddit/r/MedSpa · <a href="https://www.reddit.com/r/MedSpa/comments/1lkc0ar/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"I want a feature that I could click a button and text everyone that hasn't been in for 400 days, custom to their name and last visit date."</p><span class="source">Chiropractor · Reddit/r/Chiropractic · <a href="https://www.reddit.com/r/Chiropractic/comments/1ohnbbd/" target="_blank">source</a></span></blockquote>
+        <blockquote><p>"The provider MUST tell them an exact time they want to see them again. Never: 'Would you like to reschedule?'"</p><span class="source">Massage practice owner (100% rebooking rate) · Reddit/r/MedSpa · <a href="https://www.reddit.com/r/MedSpa/comments/1n8c53r/" target="_blank">source</a></span></blockquote>
+      </div>
+    </div>
+
+    <!-- TAB 8 -->
+    <div id="t8" class="tab-panel">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:20px">The Life They Want After the Problem Is Solved</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:20px">
+        <div style="padding:20px;border:1px solid #e8e8e8;border-radius:10px"><h4 style="font-size:14px;font-weight:700;margin-bottom:12px">Practice</h4><ul class="bullet-list"><li>Runs on systems, not heroics</li><li>Revenue doesn't drop when they're out</li><li>Schedule fills with less effort</li><li>Can take a week off without worrying</li></ul></div>
+        <div style="padding:20px;border:1px solid #e8e8e8;border-radius:10px"><h4 style="font-size:14px;font-weight:700;margin-bottom:12px">Financial (Documented Real Numbers)</h4><ul class="bullet-list"><li>$206K take-home as solo cash PT</li><li>$163K take-home as solo chiro year 4</li><li>$295K gross solo cash PT year 3</li><li>Predictable monthly revenue — no feast/famine</li></ul></div>
+        <div style="padding:20px;border:1px solid #e8e8e8;border-radius:10px"><h4 style="font-size:14px;font-weight:700;margin-bottom:12px">Patients</h4><ul class="bullet-list"><li>Long-term relationships — "28 years with same patients"</li><li>Referral engine driven by results, not ad spend</li><li>Reactivation happening automatically</li><li>Patients who feel known, not processed</li></ul></div>
+      </div>
+    </div>
+
+    <!-- TAB 9 -->
+    <div id="t9" class="tab-panel">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:20px">What a Day With This Unsolved Problem Actually Looks Like</h3>
+      <div style="display:grid;gap:12px;max-width:680px">
+        <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #eee"><div style="min-width:72px;font-weight:700;font-size:13px;color:#999">6:45 AM</div><div style="font-size:15px;color:#333">Wakes up, checks schedule on phone. Two cancellations overnight. One is the 9 AM slot they counted on. Texts the front desk. Doesn't expect it to get filled.</div></div>
+        <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #eee"><div style="min-width:72px;font-weight:700;font-size:13px;color:#999">7:30 AM</div><div style="font-size:15px;color:#333">Arrives early for backed-up admin. Checks Instagram DMs — 3 people asked about pricing overnight. No one responded. One already booked somewhere else.</div></div>
+        <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #eee"><div style="min-width:72px;font-weight:700;font-size:13px;color:#999">9 AM–12 PM</div><div style="font-size:15px;color:#333">Sees patients. Phone rings 3 times. Front desk picks up one, misses two. One missed call is a new lead. The lead hears voicemail and hangs up.</div></div>
+        <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #eee"><div style="min-width:72px;font-weight:700;font-size:13px;color:#999">12–1 PM</div><div style="font-size:15px;color:#333">Lunch = admin. Returns the missed call. Lead already booked somewhere else. Checks email: a patient on a care plan hasn't been in for 6 weeks. Zero outreach has happened.</div></div>
+        <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #eee"><div style="min-width:72px;font-weight:700;font-size:13px;color:#999">2:30 PM</div><div style="font-size:15px;color:#333">No-show. Wasted 45 minutes. Sends a text manually. No response.</div></div>
+        <div style="display:flex;gap:16px;padding:14px 0;border-bottom:1px solid #eee"><div style="min-width:72px;font-weight:700;font-size:13px;color:#999">5:15 PM</div><div style="font-size:15px;color:#333">Sits down for SOAP notes. Thinks about the two missed calls and the no-show. Does the math on what today produced vs. what it could have.</div></div>
+        <div style="display:flex;gap:16px;padding:14px 0"><div style="min-width:72px;font-weight:700;font-size:13px;color:#999">At Home</div><div style="font-size:15px;color:#333">Mentions to their partner it was a rough day. Doesn't go into detail — the conversation about "the practice" is already a loaded topic.</div></div>
+      </div>
+    </div>
+
+    <!-- TAB 10 -->
+    <div id="t10" class="tab-panel">
+      <h3 style="font-size:18px;font-weight:700;margin-bottom:20px">Demographic + Psychographic + Buying Trigger Profile</h3>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px">
+        <div style="padding:20px;border:1px solid #e8e8e8;border-radius:10px">
+          <h4 style="font-size:14px;font-weight:700;margin-bottom:12px">Demographics</h4>
+          <ul class="bullet-list">
+            <li>Age 28–52 (peak: 32–45)</li>
+            <li>Med spa skews female owner; chiro/PT/MA skews male</li>
+            <li>Years in practice: 2–7 (sweet spot)</li>
+            <li>Revenue: $80K–$400K gross</li>
+            <li>Staff: 1–3 total including owner</li>
+          </ul>
+        </div>
+        <div style="padding:20px;border:1px solid #e8e8e8;border-radius:10px">
+          <h4 style="font-size:14px;font-weight:700;margin-bottom:12px">Psychographics</h4>
+          <ul class="bullet-list">
+            <li>Identity-driven: bad business = personal failure</li>
+            <li>Skeptical — burned by agencies and coaches before</li>
+            <li>Results-only: specific numbers, not vague promises</li>
+            <li>Time-poor: "how long will this take me to manage?"</li>
+            <li>Community-oriented: cares about local reputation</li>
+          </ul>
+        </div>
+        <div style="padding:20px;border:1px solid #e8e8e8;border-radius:10px">
+          <h4 style="font-size:14px;font-weight:700;margin-bottom:12px">Buying Triggers</h4>
+          <ul class="bullet-list">
+            <li>A bad month that forces the conversation</li>
+            <li>A competitor doing something visible they're not</li>
+            <li>A specific quantifiable loss ("3 leads went next door")</li>
+            <li>A staff person leaving and the system collapsing</li>
+            <li>A peer or mentor recommending a specific tool</li>
+            <li>Finding Reddit/Facebook community with their exact problem</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /container -->
+</section>
+
+<!-- ICP PRIORITY -->
+<section style="background:#fafafa">
+  <div class="container">
+    <div class="section-label">Who to Target First</div>
+    <h2 class="section-title">ICP Priority Ranking</h2>
+    <ul class="icp-list">
+      <li class="icp-item"><div class="icp-rank">1</div><div class="icp-info"><h4>Chiropractors</h4><p>Most vocal, most organized community, most mature pain awareness. Largest training/coaching market = most conditioned to buy systems. Report of Findings (Day 2 close) is the clearest build entry point.</p></div></li>
+      <li class="icp-item"><div class="icp-rank">2</div><div class="icp-info"><h4>Med Spas / Aesthetics</h4><p>Fastest growth vertical, highest no-show pain (30–40% average), already spending on marketing agencies with poor ROI. Urgency is high and explicit.</p></div></li>
+      <li class="icp-item"><div class="icp-rank">3</div><div class="icp-info"><h4>Martial Arts / Fitness Studios</h4><p>Speed-to-lead problem is extreme and quantifiable: 9x conversion for 5-minute response vs. 30-minute. Solo owner is structurally unable to respond fast enough. Clear before/after story.</p></div></li>
+      <li class="icp-item"><div class="icp-rank">4</div><div class="icp-info"><h4>Physical Therapy (Cash-Pay)</h4><p>Growing vertical, high ambition, knows the leaky bucket problem. Discharged patients are the most underutilized warm lead asset in healthcare.</p></div></li>
+      <li class="icp-item"><div class="icp-rank">5</div><div class="icp-info"><h4>Weight Loss Clinics</h4><p>Hot due to GLP-1 wave. Follow-up problem is severe. Needs more direct VOC — owners underrepresented on Reddit compared to other verticals.</p></div></li>
+      <li class="icp-item"><div class="icp-rank">6</div><div class="icp-info"><h4>Audiology</h4><p>Highest per-sale value ($2K–$6K+). Most resistant to change. Must position on outcome + relationship, not product. Costco comparison is their biggest sales blocker.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- SALES MOTIONS -->
+<section>
+  <div class="container">
+    <div class="section-label">Supplementary A</div>
+    <h2 class="section-title">Sales Motion by Vertical — Where It Breaks Down</h2>
+    <div class="motion-grid">
+
+      <div class="motion-card">
+        <div class="motion-head"><h3>Chiropractors</h3></div>
+        <div class="motion-body">
+          <ol class="motion-steps">
+            <li><span class="step-num">1</span><div>Lead — Google (pain), referral, social ad</div></li>
+            <li><span class="step-num">2</span><div>Phone call — front desk order-takes, doesn't close. 8 touch points needed for non-immediate leads.</div></li>
+            <li><span class="step-num">3</span><div>Day 1 Exam — setup only, NOT the close</div></li>
+            <li><span class="step-num">4</span><div><strong>Day 2 ROF (Report of Findings) — THE CLOSE.</strong> 70%+ of revenue won or lost here.</div></li>
+            <li><span class="step-num">5</span><div>Care Plan (12–24 visits). PVA determines revenue more than NP count.</div></li>
+            <li><span class="step-num">6</span><div>Maintenance — most practices never convert. Largest missed revenue opportunity.</div></li>
+            <li><span class="step-num">7</span><div>Reactivation — zero system. Manual if it happens at all.</div></li>
+          </ol>
+          <div class="step-break">Where it breaks: Price shock on Day 2 (no financial consult before ROF). Day 1 → Day 2 drop-off (no pre-commitment). Zero reactivation of lapsed patients.</div>
+        </div>
+      </div>
+
+      <div class="motion-card">
+        <div class="motion-head"><h3>Med Spa / Aesthetics</h3></div>
+        <div class="motion-body">
+          <ol class="motion-steps">
+            <li><span class="step-num">1</span><div>Lead — Instagram DM, Google, Meta/Google ad</div></li>
+            <li><span class="step-num">2</span><div>Inquiry response — speed determines conversion. 30–40% no-show average reflects broken inquiry management.</div></li>
+            <li><span class="step-num">3</span><div>Consultation or direct booking</div></li>
+            <li><span class="step-num">4</span><div>First treatment — determines if they return</div></li>
+            <li><span class="step-num">5</span><div>Retention — "Client ecstatic, leaves glowing review, disappears." No rebook at checkout.</div></li>
+            <li><span class="step-num">6</span><div>Reactivation — near zero. 80% of budget chasing new patients; 0% on existing database.</div></li>
+          </ol>
+          <div class="step-break">Injectable clients need quarterly return. Most get no outreach and don't self-schedule. 90-day drop-off is the revenue gap.</div>
+        </div>
+      </div>
+
+      <div class="motion-card">
+        <div class="motion-head"><h3>Martial Arts / Fitness</h3></div>
+        <div class="motion-body">
+          <ol class="motion-steps">
+            <li><span class="step-num">1</span><div>Lead — Instagram DM, Facebook/Google ad, referral</div></li>
+            <li><span class="step-num">2</span><div>Inquiry response — owner is coaching. Lead arrives while unavailable.</div></li>
+            <li><span class="step-num">3</span><div>Intro class / trial period — the conversion opportunity</div></li>
+            <li><span class="step-num">4</span><div>Enrollment close — owner uncomfortable; avoids or rushes it</div></li>
+            <li><span class="step-num">5</span><div>Retention — no systematic follow-up for missed classes</div></li>
+          </ol>
+          <div class="step-break">9x conversion: 5-min response vs. 30-min. Structurally impossible without automation for solo owner on the floor.</div>
+        </div>
+      </div>
+
+      <div class="motion-card">
+        <div class="motion-head"><h3>Physical Therapy (Cash-Pay)</h3></div>
+        <div class="motion-body">
+          <ol class="motion-steps">
+            <li><span class="step-num">1</span><div>Lead — physician referral or self-referral</div></li>
+            <li><span class="step-num">2</span><div>Intake call — pricing conversation most fumble (trained as clinician, not salesperson)</div></li>
+            <li><span class="step-num">3</span><div>Initial evaluation — clinical + sets care plan</div></li>
+            <li><span class="step-num">4</span><div>Plan of care — no explicit patient commitment → disappear when "good enough"</div></li>
+            <li><span class="step-num">5</span><div>Discharge — no conversion to ongoing care</div></li>
+            <li><span class="step-num">6</span><div>Reactivation — near zero. Warmest leads going cold daily.</div></li>
+          </ol>
+          <div class="step-break">Discharged patients = warmest leads in PT. No practice has a system to reactivate them.</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TECH STACK -->
+<section style="background:#fafafa">
+  <div class="container">
+    <div class="section-label">Supplementary B</div>
+    <h2 class="section-title">Tech Stack They Use vs. What They Wish They Had</h2>
+    <div class="tech-grid">
+      <div class="tech-card">
+        <h4>Chiropractors</h4>
+        <div class="tech-row"><strong>EHR:</strong> ChiroTouch (common, disliked), Jane App (growing), ChiroFusion</div>
+        <div class="tech-row"><strong>CRM:</strong> Almost none — most track leads in a spreadsheet</div>
+        <div class="tech-row"><strong>Texting:</strong> Podium, Weave, Klara — not integrated with EHR</div>
+        <div class="tech-row"><strong>Reactivation:</strong> Manual or entirely absent</div>
+      </div>
+      <div class="tech-card">
+        <h4>Physical Therapists</h4>
+        <div class="tech-row"><strong>EHR:</strong> WebPT (dominant, hated), Raintree, Jane App, SimplePractice</div>
+        <div class="tech-row"><strong>CRM:</strong> None — zero lead tracking in most small PT practices</div>
+        <div class="tech-row"><strong>Marketing:</strong> Physician relationship management is manual (lunch visits, card drops)</div>
+      </div>
+      <div class="tech-card">
+        <h4>Med Spas</h4>
+        <div class="tech-row"><strong>PMS:</strong> Mangomint, Vagaro, Jane App, Mindbody, Boulevard, Zenoti</div>
+        <div class="tech-row"><strong>CRM:</strong> GHL if they have an agency; more often nothing</div>
+        <div class="tech-row"><strong>Communication:</strong> Weave, Podium, or personal phone texts</div>
+      </div>
+      <div class="tech-card">
+        <h4>Martial Arts / Fitness</h4>
+        <div class="tech-row"><strong>Studio Management:</strong> Mindbody, Zen Planner, Jackrabbit, Pike13</div>
+        <div class="tech-row"><strong>CRM:</strong> None or generic</div>
+        <div class="tech-row"><strong>Communication:</strong> Personal phone texts only</div>
+      </div>
+      <div class="tech-card">
+        <h4>Audiology</h4>
+        <div class="tech-row"><strong>EHR/PMS:</strong> Noah system, Blueprint OMS, Sycle</div>
+        <div class="tech-row"><strong>Marketing:</strong> Almost none — referral-dependent</div>
+      </div>
+      <div class="tech-card">
+        <h4>Weight Loss Clinics</h4>
+        <div class="tech-row"><strong>PMS:</strong> Kareo, DrChrono, Jane App — no vertical-specific software dominates</div>
+        <div class="tech-row"><strong>CRM:</strong> HubSpot (too complex), Keap (too expensive), or nothing</div>
+      </div>
+    </div>
+
+    <h3 style="font-size:18px;font-weight:700;margin:40px 0 20px">What They Wish They Had (Verbatim-Sourced)</h3>
+    <table class="gap-table">
+      <thead><tr><th>Gap</th><th>Their Words</th><th>Verticals</th></tr></thead>
+      <tbody>
+        <tr><td>Auto-response within 60s of form fill</td><td>"Reduces ghosting by 40-60%"</td><td>All 6</td></tr>
+        <tr><td>Missed call text-back</td><td>"Second a call goes unanswered, automatically sends a text"</td><td>Chiro, Med Spa, MA</td></tr>
+        <tr><td>Reactivation SMS at 30/60/90 days</td><td>"Custom to their name and last visit date"</td><td>All 6</td></tr>
+        <tr><td>Staff script = owner's words</td><td>"I want my front desk to sound like me on the phone"</td><td>Chiro, Med Spa, Audiology</td></tr>
+        <tr><td>Day 2 care plan generator</td><td>Implied from ROF failure pattern across all chiro threads</td><td>Chiro</td></tr>
+        <tr><td>Post-treatment 72hr check-in</td><td>"Hey Sarah, day 3 post-treatment. You might notice some settling."</td><td>Med Spa, PT</td></tr>
+        <tr><td>Force rebook at checkout</td><td>"The provider MUST tell them an exact time they want to see them again"</td><td>All 6</td></tr>
+        <tr><td>CRM connected to EHR</td><td>"I would love an integration with my VOIP"</td><td>All 6</td></tr>
+        <tr><td>Google review routing</td><td>5-star → Google public; below 5 → internal only</td><td>All 6</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- DIAGNOSTIC QS -->
+<section>
+  <div class="container">
+    <div class="section-label">Sales Call Openers</div>
+    <h2 class="section-title">8 Diagnostic Questions</h2>
+    <p style="color:#666;margin-bottom:24px;font-size:15px">They already know the answer. These questions just name what they haven't been able to articulate.</p>
+    <ol class="q-list">
+      <li><span class="q-text">What happens when a lead fills out your form at 7pm on a Friday?</span></li>
+      <li><span class="q-text">How many patients in your system haven't been in for 90+ days?</span></li>
+      <li><span class="q-text">When someone calls and the front desk is with a patient — what happens to that call?</span></li>
+      <li><span class="q-text">What does your front desk say when a patient asks about price?</span></li>
+      <li><span class="q-text">How many visits does your average new patient complete?</span></li>
+      <li><span class="q-text">When a patient finishes their care plan, what's your process for bringing them back?</span></li>
+      <li><span class="q-text">How long does it take your team to respond to a new inquiry?</span></li>
+      <li><span class="q-text">If you took a week off — would the schedule look the same when you got back?</span></li>
+    </ol>
+  </div>
+</section>
+
+<!-- HOOK BANK -->
+<section style="background:#fafafa">
+  <div class="container">
+    <div class="section-label">Content Hook Bank</div>
+    <h2 class="section-title">Hook-Ready Phrases — Verbatim From Practitioners</h2>
+    <div class="hook-grid">
+      <div class="hook-card">"That's the treadmill. That's the leaky bucket."</div>
+      <div class="hook-card">"You are literally paying to work."</div>
+      <div class="hook-card">"I get leads. It doesn't turn into much."</div>
+      <div class="hook-card">"I call my clinic my fourth child."</div>
+      <div class="hook-card">"When a good one leaves you're completely screwed."</div>
+      <div class="hook-card">"I became a [practitioner] to help people."</div>
+      <div class="hook-card">"Some months it's going great. Next month, it's not."</div>
+      <div class="hook-card">"We literally have no idea how many people tried to reach us and just gave up."</div>
+      <div class="hook-card">"I know exactly how many clients we're losing to this."</div>
+      <div class="hook-card">"Plug the holes first. Then pour."</div>
+      <div class="hook-card">"The system carries them while they learn instead of you carrying the system."</div>
+      <div class="hook-card">"The number one medspa growth challenge isn't leads, it's lead engagement."</div>
+    </div>
+  </div>
+</section>
+
+<!-- GAPS -->
+<section>
+  <div class="container">
+    <div class="section-label">Still Needed</div>
+    <h2 class="section-title">Research Gaps</h2>
+    <div class="gap-item"><div class="gap-dot"></div><div><strong>Audiology</strong> — private practice owner voice is thin. Run Apify on r/audiology or Facebook groups.</div></div>
+    <div class="gap-item"><div class="gap-dot"></div><div><strong>Weight loss clinic owners</strong> — underrepresented on Reddit. Search "GLP-1 clinic owner problems" via SerpAPI.</div></div>
+    <div class="gap-item"><div class="gap-dot"></div><div><strong>Capterra/G2 reviews blocked</strong> — ChiroTouch, WebPT, Jane App negative reviews would add 50+ quotes. Run Apify <code>powerai~g2-review-scraper</code>.</div></div>
+    <div class="gap-item"><div class="gap-dot"></div><div><strong>Report of Findings mechanics</strong> — Day 2 close failure specifics need a dedicated deep thread from r/Chiropractic.</div></div>
+  </div>
+</section>
+
+<footer>
+  <p>Practitioner Owner Research · ScalingSOS / OpenClaw · 2026-05-14</p>
+  <p style="margin-top:8px"><a href="https://github.com/vincestars-cloud/openclaw-config/blob/main/shared/skills/practitioner-pain-points/SKILL.md">View OpenClaw Skill on GitHub</a></p>
+</footer>
+
+<script>
+  function showTab(id) {
+    document.querySelectorAll('.tab-panel').forEach(function(p) { p.classList.remove('active'); });
+    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.getElementById(id).classList.add('active');
+    event.target.classList.add('active');
+  }
+</script>
+</body>
+</html>
