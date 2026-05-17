@@ -3,616 +3,180 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Leave a Review &mdash; The Black Mold Guy</title>
+<title>Rate Your Experience — The Black Mold Guy</title>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f0;min-height:100vh;display:flex;flex-direction:column}
+.header{background:#1a3a2a;padding:20px;text-align:center}
+.header-name{color:white;font-size:18px;font-weight:700}
+.header-tagline{color:rgba(255,255,255,0.6);font-size:13px;margin-top:2px}
+.main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{background:white;border-radius:20px;box-shadow:0 4px 32px rgba(0,0,0,0.10);padding:40px 32px;max-width:440px;width:100%;text-align:center}
+h1{font-size:24px;font-weight:800;color:#1a1a1a;margin-bottom:8px}
+.sub{color:#6b7280;font-size:15px;line-height:1.6;margin-bottom:32px}
+.stars-row{display:flex;justify-content:center;gap:12px;margin-bottom:8px}
+.star{font-size:56px;cursor:pointer;transition:transform 0.15s;filter:grayscale(1);opacity:0.4;line-height:1;user-select:none}
+.star.active{filter:none;opacity:1;transform:scale(1.08)}
+.star:hover{filter:none;opacity:1;transform:scale(1.12)}
+.rating-label{height:24px;color:#6b7280;font-size:15px;font-weight:600;margin-bottom:24px;transition:all 0.2s}
+.feedback-section{margin-bottom:24px}
+.feedback-label{font-size:13px;color:#6b7280;margin-bottom:8px;text-align:left}
+textarea{width:100%;padding:14px;border:1.5px solid #e5e7eb;border-radius:12px;font-size:14px;font-family:inherit;resize:none;height:100px;outline:none;transition:border 0.2s}
+textarea:focus{border-color:#1a3a2a}
+.submit-btn{width:100%;padding:18px;background:#1a3a2a;color:white;border:none;border-radius:12px;font-size:17px;font-weight:700;cursor:pointer;font-family:inherit;transition:background 0.2s;display:flex;align-items:center;justify-content:center;gap:8px}
+.submit-btn:hover{background:#0f2318}
+.submit-btn:disabled{background:#9ca3af;cursor:not-allowed}
+.spinner{width:20px;height:20px;border:2.5px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.8s linear infinite;display:none}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-  :root {
-    --green-dark: #1a3a2a;
-    --green-mid: #2d5a3d;
-    --green-light: #e8f0eb;
-    --amber: #f59e0b;
-    --amber-hover: #d97706;
-    --gray-inactive: #d1d5db;
-    --gray-text: #6b7280;
-    --gray-border: #e5e7eb;
-    --bg: #f5f5f0;
-    --white: #ffffff;
-    --error: #dc2626;
-    --radius: 16px;
-  }
+/* SUCCESS STATES */
+.success-high, .success-low{display:none}
+.success-icon{font-size:64px;margin-bottom:16px}
+.success-title{font-size:24px;font-weight:800;color:#1a1a1a;margin-bottom:12px}
+.success-body{color:#6b7280;font-size:15px;line-height:1.7;margin-bottom:28px}
+.google-btn{display:block;background:#1a3a2a;color:white;text-decoration:none;padding:18px 32px;border-radius:12px;font-size:17px;font-weight:700;margin-bottom:16px;transition:background 0.2s}
+.google-btn:hover{background:#0f2318}
+.google-btn-sub{font-size:13px;color:#6b7280}
+.call-btn{display:block;background:#f0fdf4;border:2px solid #86efac;color:#15803d;text-decoration:none;padding:16px 32px;border-radius:12px;font-size:16px;font-weight:700;margin-bottom:12px}
+.promise-box{background:#f9f9f9;border-radius:12px;padding:20px;border-left:4px solid #1a3a2a;text-align:left;margin-bottom:8px}
+.promise-box p{font-size:14px;color:#374151;line-height:1.6}
+.promise-box strong{color:#1a3a2a}
 
-  html, body {
-    min-height: 100%;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--bg);
-    color: #1f2937;
-  }
-
-  svg { fill: none; stroke-linecap: round; stroke-linejoin: round; }
-
-  .header {
-    background: var(--green-dark);
-    padding: 18px 24px;
-    text-align: center;
-  }
-  .header-logo {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .header-icon {
-    width: 44px;
-    height: 44px;
-    background: var(--amber);
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .header-icon svg {
-    width: 26px;
-    height: 26px;
-    stroke: var(--green-dark);
-    stroke-width: 2;
-  }
-  .header-name {
-    color: var(--white);
-    font-size: 1.2rem;
-    font-weight: 700;
-    text-align: left;
-  }
-  .header-tagline {
-    color: rgba(255,255,255,0.55);
-    font-size: 0.72rem;
-    text-align: left;
-    margin-top: 2px;
-  }
-
-  .page {
-    min-height: calc(100vh - 82px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 32px 16px 48px;
-  }
-
-  .card {
-    background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: 0 4px 24px rgba(0,0,0,0.09), 0 1px 4px rgba(0,0,0,0.04);
-    padding: 40px 36px;
-    width: 100%;
-    max-width: 480px;
-  }
-
-  .card-eyebrow {
-    font-size: 0.72rem;
-    font-weight: 700;
-    letter-spacing: 0.09em;
-    text-transform: uppercase;
-    color: var(--green-mid);
-    margin-bottom: 8px;
-  }
-  .card-headline {
-    font-size: 1.55rem;
-    font-weight: 700;
-    color: var(--green-dark);
-    line-height: 1.2;
-    margin-bottom: 6px;
-  }
-  .card-subline {
-    font-size: 0.9rem;
-    color: var(--gray-text);
-    line-height: 1.55;
-    margin-bottom: 30px;
-  }
-
-  .field-label {
-    display: block;
-    font-size: 0.85rem;
-    font-weight: 600;
-    color: #374151;
-    margin-bottom: 10px;
-  }
-
-  .stars-row {
-    display: flex;
-    gap: 6px;
-    margin-bottom: 10px;
-  }
-  .star-btn {
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 3px;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    -webkit-tap-highlight-color: transparent;
-    touch-action: manipulation;
-    transition: transform 0.1s;
-  }
-  .star-btn:hover  { transform: scale(1.12); }
-  .star-btn:active { transform: scale(0.94); }
-  .star-btn svg {
-    width: 62px;
-    height: 62px;
-    stroke: none;
-    fill: var(--gray-inactive);
-    transition: fill 0.13s;
-  }
-  .star-btn.lit     svg { fill: var(--amber); }
-  .star-btn.hovered svg { fill: var(--amber-hover); }
-
-  .rating-label {
-    font-size: 0.83rem;
-    color: var(--gray-text);
-    min-height: 18px;
-    margin-bottom: 22px;
-    font-weight: 500;
-    transition: color 0.15s;
-  }
-  .rating-label.active { color: var(--green-mid); font-weight: 600; }
-
-  .star-required {
-    font-size: 0.78rem;
-    color: var(--error);
-    margin-top: -18px;
-    margin-bottom: 14px;
-    display: none;
-  }
-  .star-required.show { display: block; }
-
-  .opt-note {
-    font-weight: 400;
-    color: var(--gray-text);
-    font-size: 0.78rem;
-  }
-
-  textarea {
-    width: 100%;
-    border: 1.5px solid var(--gray-border);
-    border-radius: 10px;
-    padding: 12px 14px;
-    font-family: inherit;
-    font-size: 0.9rem;
-    color: #1f2937;
-    resize: vertical;
-    min-height: 108px;
-    max-height: 220px;
-    transition: border-color 0.15s;
-    background: #fafafa;
-    margin-bottom: 4px;
-  }
-  textarea:focus {
-    outline: none;
-    border-color: var(--green-mid);
-    background: var(--white);
-  }
-  .char-count {
-    font-size: 0.73rem;
-    color: var(--gray-text);
-    text-align: right;
-    margin-bottom: 24px;
-  }
-  .char-count.warn { color: var(--amber-hover); }
-  .char-count.max  { color: var(--error); }
-
-  .error-banner {
-    background: #fef2f2;
-    border: 1px solid #fecaca;
-    border-radius: 8px;
-    padding: 12px 14px;
-    font-size: 0.84rem;
-    color: var(--error);
-    margin-bottom: 16px;
-    display: none;
-    align-items: flex-start;
-    gap: 8px;
-    line-height: 1.4;
-  }
-  .error-banner.show { display: flex; }
-  .error-banner svg {
-    width: 16px;
-    height: 16px;
-    stroke: var(--error);
-    stroke-width: 2;
-    flex-shrink: 0;
-    margin-top: 1px;
-  }
-
-  .btn-submit {
-    width: 100%;
-    background: var(--green-dark);
-    color: var(--white);
-    border: none;
-    border-radius: 10px;
-    padding: 15px 24px;
-    font-size: 1rem;
-    font-weight: 700;
-    cursor: pointer;
-    transition: background 0.15s, transform 0.1s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    touch-action: manipulation;
-  }
-  .btn-submit:hover:not(:disabled)  { background: var(--green-mid); }
-  .btn-submit:active:not(:disabled) { transform: scale(0.98); }
-  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
-
-  .spinner {
-    width: 18px;
-    height: 18px;
-    border: 2.5px solid rgba(255,255,255,0.3);
-    border-top-color: #fff;
-    border-radius: 50%;
-    animation: spin 0.65s linear infinite;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  /* Success */
-  #state-success { display: none; text-align: center; }
-  #state-success.show { display: block; }
-
-  .success-icon {
-    width: 76px;
-    height: 76px;
-    border-radius: 50%;
-    margin: 0 auto 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .success-icon.high { background: #d1fae5; }
-  .success-icon.low  { background: #fef3c7; }
-  .success-icon svg {
-    width: 40px;
-    height: 40px;
-    stroke-width: 2.5;
-  }
-  .success-icon.high svg { stroke: #059669; }
-  .success-icon.low  svg { stroke: #d97706; }
-
-  .success-headline {
-    font-size: 1.55rem;
-    font-weight: 700;
-    color: var(--green-dark);
-    line-height: 1.2;
-    margin-bottom: 14px;
-  }
-  .success-body {
-    font-size: 0.95rem;
-    color: #374151;
-    line-height: 1.65;
-    margin-bottom: 28px;
-    max-width: 360px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .btn-google {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
-    background: var(--green-dark);
-    color: var(--white);
-    text-decoration: none;
-    border-radius: 10px;
-    padding: 16px 28px;
-    font-size: 1rem;
-    font-weight: 700;
-    transition: background 0.15s, transform 0.1s;
-    touch-action: manipulation;
-  }
-  .btn-google:hover  { background: var(--green-mid); }
-  .btn-google:active { transform: scale(0.98); }
-  .btn-google svg {
-    width: 20px;
-    height: 20px;
-    stroke: var(--white);
-    stroke-width: 2;
-    flex-shrink: 0;
-  }
-
-  hr.divider {
-    border: none;
-    border-top: 1px solid var(--gray-border);
-    margin: 26px 0;
-  }
-
-  .low-sub {
-    font-size: 0.88rem;
-    color: var(--gray-text);
-    margin-bottom: 8px;
-  }
-  .phone-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 7px;
-    color: var(--green-dark);
-    font-weight: 700;
-    font-size: 1.1rem;
-    text-decoration: none;
-  }
-  .phone-link:hover { text-decoration: underline; }
-  .phone-link svg {
-    width: 18px;
-    height: 18px;
-    stroke: var(--green-dark);
-    stroke-width: 2;
-  }
-
-  .promise-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: var(--green-light);
-    color: var(--green-dark);
-    font-size: 0.78rem;
-    font-weight: 700;
-    border-radius: 20px;
-    padding: 7px 16px;
-    margin-top: 22px;
-  }
-  .promise-badge svg {
-    width: 14px;
-    height: 14px;
-    stroke: var(--green-dark);
-    stroke-width: 2.5;
-  }
-
-  @media (max-width: 500px) {
-    .card { padding: 28px 20px; }
-    .star-btn svg { width: 54px; height: 54px; }
-    .card-headline { font-size: 1.35rem; }
-  }
-  @media (max-width: 380px) {
-    .stars-row { gap: 3px; }
-    .star-btn svg { width: 48px; height: 48px; }
-  }
+/* No selection yet */
+.submit-btn.disabled-look{opacity:0.5;cursor:not-allowed}
 </style>
 </head>
 <body>
 
-<header class="header">
-  <div class="header-logo">
-    <div class="header-icon">
-      <svg viewBox="0 0 24 24" width="26" height="26">
-        <path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9z" stroke="#1a3a2a" stroke-width="2" fill="none"/>
-        <path d="M9 10h.01M15 10h.01" stroke="#1a3a2a" stroke-width="2.5" stroke-linecap="round"/>
-        <path d="M8 14s1.5 2 4 2 4-2 4-2" stroke="#1a3a2a" stroke-width="2" stroke-linecap="round"/>
-      </svg>
+<div class="header">
+  <div class="header-name">The Black Mold Guy</div>
+  <div class="header-tagline">305-849-0242 · Atlanta & Miami</div>
+</div>
+
+<div class="main">
+  <div class="card" id="rate-card">
+    <h1>How was your experience?</h1>
+    <p class="sub" id="greeting-sub">We'd love to hear how we did.</p>
+
+    <div class="stars-row" id="stars-row">
+      <span class="star" data-val="1" onclick="selectStar(1)" onmouseover="hoverStar(1)" onmouseout="resetHover()">★</span>
+      <span class="star" data-val="2" onclick="selectStar(2)" onmouseover="hoverStar(2)" onmouseout="resetHover()">★</span>
+      <span class="star" data-val="3" onclick="selectStar(3)" onmouseover="hoverStar(3)" onmouseout="resetHover()">★</span>
+      <span class="star" data-val="4" onclick="selectStar(4)" onmouseover="hoverStar(4)" onmouseout="resetHover()">★</span>
+      <span class="star" data-val="5" onclick="selectStar(5)" onmouseover="hoverStar(5)" onmouseout="resetHover()">★</span>
     </div>
-    <div>
-      <div class="header-name">The Black Mold Guy</div>
-      <div class="header-tagline">Mold Remediation Specialists</div>
+    <div class="rating-label" id="rating-label">Tap a star to rate</div>
+
+    <div class="feedback-section">
+      <div class="feedback-label">Anything you'd like to share? (optional)</div>
+      <textarea id="feedback" placeholder="Tell us about your experience..."></textarea>
     </div>
+
+    <button class="submit-btn disabled-look" id="submit-btn" onclick="submitReview()" disabled>
+      <span id="btn-text">Submit My Rating</span>
+      <div class="spinner" id="spinner"></div>
+    </button>
   </div>
-</header>
 
-<main class="page">
-  <div class="card">
-
-    <!-- Form State -->
-    <div id="state-form">
-      <div class="card-eyebrow">Share Your Experience</div>
-      <h1 class="card-headline" id="form-headline">How did we do?</h1>
-      <p class="card-subline">Your honest feedback helps us improve and helps other families know they&rsquo;re in good hands.</p>
-
-      <label class="field-label">Tap to rate your experience</label>
-      <div class="stars-row" id="stars-row" role="radiogroup" aria-label="Star rating 1 to 5"></div>
-      <div class="rating-label" id="rating-label"></div>
-      <div class="star-required" id="star-req">Please select a star rating to continue.</div>
-
-      <label class="field-label" for="feedback-ta">
-        Tell us more <span class="opt-note">(optional)</span>
-      </label>
-      <textarea id="feedback-ta" placeholder="What went well? Anything we could improve?" maxlength="500"></textarea>
-      <div class="char-count" id="char-count">0 / 500</div>
-
-      <div class="error-banner" id="error-banner" role="alert">
-        <svg viewBox="0 0 24 24">
-          <circle cx="12" cy="12" r="10" stroke-width="2"/>
-          <line x1="12" y1="8" x2="12" y2="12" stroke-width="2"/>
-          <circle cx="12" cy="16" r="0.5" fill="#dc2626" stroke-width="0"/>
-        </svg>
-        <span id="error-msg">Something went wrong. Please try again or call us at 305-849-0242.</span>
-      </div>
-
-      <button class="btn-submit" id="btn-submit" onclick="submitReview()">
-        <span id="btn-text">Submit My Review</span>
-      </button>
-    </div>
-
-    <!-- Success State -->
-    <div id="state-success">
-
-      <!-- High rating -->
-      <div id="high-state" style="display:none">
-        <div class="success-icon high">
-          <svg viewBox="0 0 24 24">
-            <polyline points="20 6 9 17 4 12" stroke-width="2.5"/>
-          </svg>
-        </div>
-        <h2 class="success-headline" id="high-headline">Thank you!</h2>
-        <p class="success-body">
-          We&rsquo;re so glad we could help you and your family breathe easier. Your experience matters &mdash; would you mind sharing it on Google? It takes 30 seconds and helps other families find us.
-        </p>
-        <a class="btn-google" href="https://g.page/r/CexMD0Bk9e8HEAE/review" target="_blank" rel="noopener noreferrer">
-          <svg viewBox="0 0 24 24">
-            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke-width="2"/>
-          </svg>
-          Leave a Google Review &rarr;
-        </a>
-      </div>
-
-      <!-- Low rating -->
-      <div id="low-state" style="display:none">
-        <div class="success-icon low">
-          <svg viewBox="0 0 24 24">
-            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke-width="2"/>
-          </svg>
-        </div>
-        <h2 class="success-headline">Thank you for being honest.</h2>
-        <p class="success-body">
-          We&rsquo;re sorry we didn&rsquo;t hit the mark. This feedback goes directly to our owner and we want to make it right. Please expect a call from us within 24 hours.
-        </p>
-        <hr class="divider">
-        <p class="low-sub">Or reach us directly:</p>
-        <a class="phone-link" href="tel:3058490242">
-          <svg viewBox="0 0 24 24">
-            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke-width="2"/>
-          </svg>
-          305-849-0242
-        </a>
-        <div>
-          <span class="promise-badge">
-            <svg viewBox="0 0 24 24">
-              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke-width="2.5"/>
-            </svg>
-            We&rsquo;ll make it right
-          </span>
-        </div>
-      </div>
-
-    </div>
-
+  <!-- HIGH RATING SUCCESS -->
+  <div class="card" id="success-high" style="display:none">
+    <div class="success-icon">🙏</div>
+    <div class="success-title">Thank you, <span id="high-name">friend</span>!</div>
+    <p class="success-body">We're so glad we could help you and your family breathe easier. Your experience matters — would you mind sharing it on Google? It helps other families in Atlanta and Miami find an inspector they can trust.</p>
+    <a class="google-btn" id="google-link" href="https://g.page/r/CexMD0Bk9e8HEAE/review" target="_blank">⭐ Leave a Google Review</a>
+    <p class="google-btn-sub">Takes about 30 seconds. Thank you for trusting us.</p>
   </div>
-</main>
+
+  <!-- LOW RATING SUCCESS -->
+  <div class="card" id="success-low" style="display:none">
+    <div class="success-icon">💚</div>
+    <div class="success-title">Thank you for being honest.</div>
+    <p class="success-body">We're sorry we didn't fully hit the mark. Your feedback goes directly to our owner and we take it seriously. We want to make this right.</p>
+    <div class="promise-box">
+      <p>Expect a call from us <strong>within 24 hours</strong>. Or reach us directly now — we'll personally make sure your concerns are addressed.</p>
+    </div>
+    <a class="call-btn" href="tel:3058490242">📞 Call Now: 305-849-0242</a>
+    <p class="google-btn-sub" style="color:#9ca3af">Your feedback was kept private. Thank you for giving us the chance to do better.</p>
+  </div>
+</div>
 
 <script>
-(function () {
-  'use strict';
+let selectedRating = 0;
+const LABELS = ['','Very Dissatisfied','Unsatisfied','It Was OK','Really Good!','Amazing — 5 Stars!'];
+const N8N = 'https://n8n.americanlifeteam.com/webhook';
 
-  var LABELS = ['', 'Poor', 'Fair', 'Good', 'Great', 'Excellent'];
-  var selectedStars = 0;
-  var hoveredStars = 0;
-  var submitting = false;
+// Pre-fill name from URL
+const params = new URLSearchParams(window.location.search);
+const customerName = params.get('name') || '';
+if (customerName) {
+  document.getElementById('greeting-sub').textContent = `Hi ${customerName}! How did we do?`;
+}
 
-  // Pre-fill name from URL param
-  var params = new URLSearchParams(window.location.search);
-  var customerName = (params.get('name') || '').trim().replace(/[<>"&]/g, '');
-  if (customerName) {
-    document.getElementById('form-headline').textContent = 'Hi ' + customerName + ', how did we do?';
-  }
-
-  // Build stars
-  var row = document.getElementById('stars-row');
-  for (var i = 1; i <= 5; i++) {
-    (function (val) {
-      var btn = document.createElement('button');
-      btn.type = 'button';
-      btn.className = 'star-btn';
-      btn.setAttribute('aria-label', val + ' star' + (val > 1 ? 's' : ''));
-      btn.setAttribute('role', 'radio');
-      btn.dataset.v = val;
-      btn.innerHTML = '<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26" stroke="none"/></svg>';
-
-      btn.addEventListener('mouseenter', function () { hoveredStars = val; paint(); });
-      btn.addEventListener('mouseleave', function () { hoveredStars = 0; paint(); });
-      btn.addEventListener('click', function () { pick(val); });
-      btn.addEventListener('touchend', function (e) { e.preventDefault(); pick(val); }, { passive: false });
-
-      row.appendChild(btn);
-    }(i));
-  }
-
-  function pick(val) {
-    selectedStars = val;
-    hoveredStars = 0;
-    paint();
-    var lbl = document.getElementById('rating-label');
-    lbl.textContent = LABELS[val] + ' \u2014 ' + val + ' star' + (val > 1 ? 's' : '');
-    lbl.classList.add('active');
-    document.getElementById('star-req').classList.remove('show');
-  }
-
-  function paint() {
-    var active = hoveredStars || selectedStars;
-    var btns = row.querySelectorAll('.star-btn');
-    btns.forEach(function (b, idx) {
-      var v = idx + 1;
-      b.classList.toggle('lit', v <= active && hoveredStars === 0 && selectedStars > 0);
-      b.classList.toggle('hovered', v <= active && hoveredStars > 0);
-    });
-  }
-
-  // Char counter
-  var ta = document.getElementById('feedback-ta');
-  var cc = document.getElementById('char-count');
-  ta.addEventListener('input', function () {
-    var n = ta.value.length;
-    cc.textContent = n + ' / 500';
-    cc.className = 'char-count' + (n >= 500 ? ' max' : n >= 400 ? ' warn' : '');
+function hoverStar(val) {
+  document.querySelectorAll('.star').forEach((s, i) => {
+    s.classList.toggle('active', i < val);
   });
+  document.getElementById('rating-label').textContent = LABELS[val];
+}
 
-  // Submit
-  window.submitReview = function () {
-    if (submitting) return;
+function resetHover() {
+  document.querySelectorAll('.star').forEach((s, i) => {
+    s.classList.toggle('active', i < selectedRating);
+  });
+  document.getElementById('rating-label').textContent = selectedRating ? LABELS[selectedRating] : 'Tap a star to rate';
+}
 
-    if (!selectedStars) {
-      document.getElementById('star-req').classList.add('show');
-      row.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      return;
-    }
+function selectStar(val) {
+  selectedRating = val;
+  document.querySelectorAll('.star').forEach((s, i) => {
+    s.classList.toggle('active', i < val);
+  });
+  document.getElementById('rating-label').textContent = LABELS[val];
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = false;
+  btn.classList.remove('disabled-look');
+}
 
-    submitting = true;
-    var btn = document.getElementById('btn-submit');
-    var txt = document.getElementById('btn-text');
-    btn.disabled = true;
-    txt.textContent = 'Submitting\u2026';
-    var sp = document.createElement('div');
-    sp.className = 'spinner';
-    btn.insertBefore(sp, txt);
-    document.getElementById('error-banner').classList.remove('show');
+async function submitReview() {
+  if (!selectedRating) return;
+  const btn = document.getElementById('submit-btn');
+  btn.disabled = true;
+  document.getElementById('btn-text').style.display = 'none';
+  document.getElementById('spinner').style.display = 'block';
 
-    var payload = {
-      stars: selectedStars,
-      customer_name: customerName || 'Customer',
-      feedback: ta.value.trim()
-    };
+  const feedback = document.getElementById('feedback').value.trim();
 
-    fetch('https://n8n.americanlifeteam.com/webhook/bmg-review-intake', {
+  try {
+    const res = await fetch(`${N8N}/bmg-review-intake`, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload)
-    })
-    .then(function (res) {
-      return res.json().then(function (data) {
-        return { ok: res.ok, data: data };
-      }).catch(function () {
-        return { ok: res.ok, data: {} };
-      });
-    })
-    .catch(function () {
-      return { ok: false, data: {}, networkErr: true };
-    })
-    .then(function (result) {
-      submitting = false;
-      var isHigh = result.data.redirect === 'google' || selectedStars >= 4;
-
-      document.getElementById('state-form').style.display = 'none';
-      var suc = document.getElementById('state-success');
-      suc.style.display = 'block';
-      suc.classList.add('show');
-
-      if (isHigh) {
-        var h = customerName ? 'Thank you, ' + customerName + '!' : 'Thank you!';
-        document.getElementById('high-headline').textContent = h;
-        document.getElementById('high-state').style.display = 'block';
-      } else {
-        document.getElementById('low-state').style.display = 'block';
-      }
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        stars: selectedRating,
+        customer_name: customerName || 'Customer',
+        feedback: feedback
+      })
     });
-  };
-}());
+    const data = await res.json();
+
+    document.getElementById('rate-card').style.display = 'none';
+
+    if (data.redirect === 'google' || selectedRating >= 4) {
+      document.getElementById('high-name').textContent = customerName || 'friend';
+      document.getElementById('success-high').style.display = 'block';
+    } else {
+      document.getElementById('success-low').style.display = 'block';
+    }
+  } catch(e) {
+    // Even if network fails, show the appropriate screen
+    document.getElementById('rate-card').style.display = 'none';
+    if (selectedRating >= 4) {
+      document.getElementById('high-name').textContent = customerName || 'friend';
+      document.getElementById('success-high').style.display = 'block';
+    } else {
+      document.getElementById('success-low').style.display = 'block';
+    }
+  }
+}
 </script>
 </body>
 </html>
