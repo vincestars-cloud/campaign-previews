@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rate your experience — The Black Mold Guy</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--sage:#2d4a3a;--sage-2:#4a6b5a;--gold:#b08d3a;--cream:#f7f5f0;--ink:#0a0f0d;--mute:#7a8275;--line:#e5e2db}
+*{box-sizing:border-box}
+body{margin:0;background:var(--cream);font-family:'Inter',-apple-system,sans-serif;color:var(--ink);min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px}
+.card{background:#fff;border:1px solid var(--line);border-radius:20px;max-width:520px;width:100%;padding:44px 36px;box-shadow:0 12px 40px rgba(0,0,0,.05);text-align:center}
+.brand{font-family:'Spectral',Georgia,serif;font-size:20px;color:var(--sage);margin-bottom:4px}
+.tag{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--sage-2);font-weight:600;margin-bottom:30px}
+h1{font-family:'Spectral',Georgia,serif;font-size:28px;margin:0 0 12px;line-height:1.25}
+p{font-size:15.5px;color:#374151;margin:0 0 24px;line-height:1.6}
+.stars{display:flex;justify-content:center;gap:8px;margin:30px 0}
+.star{font-size:44px;cursor:pointer;color:#d6d2c8;transition:color .15s,transform .15s;user-select:none}
+.star:hover,.star.lit{color:var(--gold)}
+.star:hover{transform:scale(1.15)}
+textarea{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:14px;font:15px 'Inter';resize:vertical;min-height:120px;outline:none;font-family:inherit}
+textarea:focus{border-color:var(--sage-2)}
+button{background:var(--sage);color:#fff;border:none;padding:15px 32px;border-radius:12px;font:600 15px 'Inter';cursor:pointer;width:100%;margin-top:18px;transition:all .15s}
+button:hover{background:var(--sage-2)}
+button:disabled{opacity:.5;cursor:wait}
+.pane{display:none}
+.pane.on{display:block}
+.thanks h1 span{color:var(--sage)}
+.foot{font-size:12.5px;color:var(--mute);margin-top:30px}
+.foot a{color:var(--mute)}
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="brand">The Black Mold Guy</div>
+  <div class="tag">A Quick Favor — 60 Seconds</div>
+
+  <!-- Step 1: Star picker -->
+  <div class="pane on" id="step-stars">
+    <h1>How did Deonco do?</h1>
+    <p>Your honest rating helps me keep getting better. Tap a star to start.</p>
+    <div class="stars" id="starRow">
+      <span class="star" data-v="1">★</span>
+      <span class="star" data-v="2">★</span>
+      <span class="star" data-v="3">★</span>
+      <span class="star" data-v="4">★</span>
+      <span class="star" data-v="5">★</span>
+    </div>
+    <p style="font-size:13px;color:var(--mute)">Tap the stars above.</p>
+  </div>
+
+  <!-- Step 2a: 5+ stars — encourage Google -->
+  <div class="pane" id="step-high">
+    <h1>Wow — thank you. 🙌</h1>
+    <p>Tap below to share a quick review on Google. It takes less than a minute and helps more families find an honest mold operator.</p>
+    <textarea id="commentHigh" placeholder="Anything you want to add? (Optional — we'll pre-fill your Google review)"></textarea>
+    <button id="submitHigh" onclick="submit(true)">Share on Google →</button>
+    <p class="foot">Or <a href="#" onclick="event.preventDefault(); submit(true, true)">just submit privately</a></p>
+  </div>
+
+  <!-- Step 2b: Sub-4 stars — collect privately -->
+  <div class="pane" id="step-low">
+    <h1>I want to make this right.</h1>
+    <p>I'm sorry it wasn't a 5-star experience. Tell me what happened and I'll personally call you within 24 hours.</p>
+    <textarea id="commentLow" placeholder="What didn't meet your expectations?" autofocus></textarea>
+    <button id="submitLow" onclick="submit(false)">Send to Deonco directly</button>
+    <p class="foot">This goes straight to Deonco's inbox — not public, not on Google.</p>
+  </div>
+
+  <!-- Step 3: Thanks -->
+  <div class="pane thanks" id="step-done">
+    <h1>Thank you. <span>Sincerely.</span></h1>
+    <p id="thanksMsg">We got it.</p>
+    <p class="foot">— Deonco · 305-849-0242</p>
+  </div>
+</div>
+
+<script type="module">
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+const SUPABASE_URL  = "REPLACE_WITH_YOUR_SUPABASE_URL";
+const SUPABASE_ANON = "REPLACE_WITH_YOUR_ANON_KEY";
+const sb = createClient(SUPABASE_URL, SUPABASE_ANON);
+
+const params = new URLSearchParams(location.search);
+const jobId = params.get('job');
+let stars = 0;
+
+document.querySelectorAll('.star').forEach(s => {
+  s.onclick = () => {
+    stars = +s.dataset.v;
+    document.querySelectorAll('.star').forEach(x => x.classList.toggle('lit', +x.dataset.v <= stars));
+    setTimeout(() => show(stars >= 4 ? 'high' : 'low'), 400);
+  };
+  s.onmouseover = () => document.querySelectorAll('.star').forEach(x => x.classList.toggle('lit', +x.dataset.v <= +s.dataset.v));
+  s.onmouseout  = () => document.querySelectorAll('.star').forEach(x => x.classList.toggle('lit', +x.dataset.v <= stars));
+});
+
+function show(id) {
+  document.querySelectorAll('.pane').forEach(p => p.classList.remove('on'));
+  document.getElementById('step-' + id).classList.add('on');
+}
+
+window.submit = async (isHigh, privateOnly = false) => {
+  const btn = document.getElementById(isHigh ? 'submitHigh' : 'submitLow');
+  btn.disabled = true; btn.textContent = 'Sending…';
+  const comment = document.getElementById(isHigh ? 'commentHigh' : 'commentLow').value.trim();
+  const res = await fetch(`${SUPABASE_URL}/functions/v1/submit-review`, {
+    method:'POST',
+    headers:{ 'Content-Type':'application/json', apikey: SUPABASE_ANON, Authorization:`Bearer ${SUPABASE_ANON}` },
+    body: JSON.stringify({ job_id: jobId, stars, comment })
+  });
+  const r = await res.json();
+  if (r.ok) {
+    if (isHigh && r.redirect && !privateOnly) {
+      document.getElementById('thanksMsg').textContent = "Opening Google… you're the best.";
+      show('done');
+      setTimeout(() => location.href = r.redirect + (comment ? '?text=' + encodeURIComponent(comment) : ''), 1200);
+    } else if (isHigh) {
+      document.getElementById('thanksMsg').textContent = "Submitted privately. Thank you for the 5 stars.";
+      show('done');
+    } else {
+      document.getElementById('thanksMsg').textContent = "Deonco will personally reach out within 24 hours.";
+      show('done');
+    }
+  } else {
+    alert("Couldn't submit: " + (r.error || 'unknown'));
+    btn.disabled = false; btn.textContent = isHigh ? 'Share on Google →' : 'Send to Deonco directly';
+  }
+};
+</script>
+</body>
+</html>

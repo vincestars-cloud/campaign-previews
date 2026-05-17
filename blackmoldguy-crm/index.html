@@ -1,0 +1,625 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>CRM — The Black Mold Guy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Spectral:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --sage:#2d4a3a; --sage-2:#4a6b5a; --sage-3:#86a293;
+  --cream:#f7f5f0; --paper:#fdfcf9;
+  --ink:#0a0f0d; --mute:#7a8275; --line:#e5e2db;
+  --new:#3b82f6; --contact:#a855f7; --sched:#0ea5e9; --quote:#f59e0b;
+  --won:#10b981; --lost:#94a3b8; --follow:#ec4899;
+  --shadow:0 4px 24px rgba(0,0,0,.05);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{background:var(--cream);color:var(--ink);font-family:'Inter',-apple-system,Segoe UI,Roboto,sans-serif;font-size:14.5px;line-height:1.5}
+.hidden{display:none!important}
+
+/* ===== topbar ===== */
+.top{background:var(--sage);color:#fff;padding:14px 24px;display:flex;align-items:center;gap:20px;position:sticky;top:0;z-index:50;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+.brand{font-family:'Spectral',Georgia,serif;font-size:18px;font-weight:600;letter-spacing:.3px}
+.brand small{display:block;font-family:'Inter';font-size:10px;letter-spacing:2px;text-transform:uppercase;opacity:.75;font-weight:600;margin-top:2px}
+.tabs{display:flex;gap:4px;flex:1;margin-left:32px;overflow:auto}
+.tab{background:transparent;color:rgba(255,255,255,.7);border:none;padding:9px 14px;border-radius:8px;font:600 13.5px 'Inter';cursor:pointer;white-space:nowrap;transition:all .15s}
+.tab:hover{color:#fff;background:rgba(255,255,255,.08)}
+.tab.active{background:rgba(255,255,255,.15);color:#fff}
+.tab .count{display:inline-block;background:rgba(255,255,255,.2);padding:1px 8px;border-radius:99px;font-size:11px;margin-left:6px}
+.user{display:flex;align-items:center;gap:10px;font-size:13px}
+.user .em{opacity:.85}
+.btn{background:#fff;color:var(--sage);border:none;padding:8px 14px;border-radius:8px;font:600 13px 'Inter';cursor:pointer;transition:all .15s}
+.btn:hover{transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.18)}
+
+/* ===== stats row ===== */
+.stats{display:grid;grid-template-columns:repeat(6,1fr);gap:14px;padding:20px 24px 4px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:14px 16px;box-shadow:var(--shadow)}
+.stat .l{font-size:11.5px;letter-spacing:1.2px;text-transform:uppercase;color:var(--mute);font-weight:600}
+.stat .n{font-family:'Spectral',Georgia,serif;font-size:30px;font-weight:600;margin-top:4px;color:var(--ink)}
+.stat .d{font-size:11.5px;color:var(--mute);margin-top:2px}
+.stat.new .n{color:var(--new)}
+.stat.contact .n{color:var(--contact)}
+.stat.sched .n{color:var(--sched)}
+.stat.quote .n{color:var(--quote)}
+.stat.won .n{color:var(--won)}
+.stat.follow .n{color:var(--follow)}
+
+/* ===== content ===== */
+.page{padding:20px 24px 60px}
+.pane{display:none}
+.pane.active{display:block}
+.pane-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.pane-head h2{font-family:'Spectral',Georgia,serif;font-size:24px;margin:0;font-weight:600}
+.pane-head .actions{display:flex;gap:8px}
+.btn-primary{background:var(--sage);color:#fff;border:none;padding:10px 18px;border-radius:10px;font:600 13.5px 'Inter';cursor:pointer}
+.btn-primary:hover{background:var(--sage-2)}
+.btn-soft{background:#fff;color:var(--sage);border:1.5px solid var(--line);padding:10px 16px;border-radius:10px;font:600 13.5px 'Inter';cursor:pointer}
+
+/* ===== board (kanban) ===== */
+.board{display:grid;grid-template-columns:repeat(7,minmax(220px,1fr));gap:12px;overflow-x:auto;padding-bottom:8px}
+.col{background:#efece4;border-radius:14px;padding:10px;display:flex;flex-direction:column;min-height:300px}
+.col-h{display:flex;align-items:center;justify-content:space-between;padding:6px 8px 10px;border-bottom:1px solid #e5e2db;margin-bottom:8px}
+.col-h .name{font:700 12.5px 'Inter';letter-spacing:.6px;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+.col-h .pip{width:9px;height:9px;border-radius:99px}
+.col-h .count{background:#fff;padding:2px 9px;border-radius:99px;font-size:11.5px;font-weight:600;color:var(--mute)}
+.col[data-status=new] .pip,.stat.new .pip{background:var(--new)}
+.col[data-status=contacted] .pip{background:var(--contact)}
+.col[data-status=scheduled] .pip{background:var(--sched)}
+.col[data-status=quoted] .pip{background:var(--quote)}
+.col[data-status=won] .pip{background:var(--won)}
+.col[data-status=lost] .pip{background:var(--lost)}
+.col[data-status=follow-up] .pip{background:var(--follow)}
+.col-body{flex:1;display:flex;flex-direction:column;gap:8px;overflow:auto;max-height:65vh}
+.card-lead{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px 12px;cursor:pointer;transition:all .15s}
+.card-lead:hover{border-color:var(--sage-3);transform:translateY(-1px);box-shadow:0 4px 12px rgba(0,0,0,.04)}
+.card-lead .name{font-weight:600;font-size:14px;display:flex;align-items:center;gap:6px}
+.card-lead .name .badge{font-size:10px;font-weight:600;padding:1px 7px;border-radius:99px;background:#f1ede4;color:var(--mute);text-transform:uppercase;letter-spacing:.5px}
+.card-lead .name .badge.urgent{background:#fde8e8;color:#b91c1c}
+.card-lead .meta{font-size:12px;color:var(--mute);margin-top:3px;display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.card-lead .meta b{color:#374151;font-weight:600}
+.card-lead .preview{font-size:12.5px;color:#4b5563;margin-top:7px;background:#f7f5f0;padding:7px 9px;border-radius:6px;border-left:2px solid var(--sage-3);line-height:1.5}
+.card-lead .src{display:inline-block;font-size:10.5px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;padding:1px 7px;border-radius:99px;margin-top:6px}
+.card-lead .src.landing{background:#dbeafe;color:#1e40af}
+.card-lead .src.manychat{background:#fce7f3;color:#9d174d}
+.card-lead .src.chat-widget{background:#dcf5e1;color:#166534}
+.card-lead .src.phone{background:#fef3c7;color:#92400e}
+.card-lead .age{font-size:10.5px;color:var(--mute);margin-top:6px}
+
+/* ===== drawer ===== */
+.drawer{position:fixed;top:0;right:0;width:480px;max-width:100vw;height:100vh;background:#fff;border-left:1px solid var(--line);box-shadow:-10px 0 40px rgba(0,0,0,.08);z-index:100;transform:translateX(100%);transition:transform .25s cubic-bezier(.16,1,.3,1);display:flex;flex-direction:column}
+.drawer.open{transform:translateX(0)}
+.drawer-h{padding:18px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:flex-start}
+.drawer-h h3{font-family:'Spectral',Georgia,serif;font-size:22px;margin:0;line-height:1.2}
+.drawer-h .x{background:transparent;border:none;font-size:24px;color:var(--mute);cursor:pointer;line-height:1}
+.drawer-body{flex:1;overflow:auto;padding:0}
+.drawer-section{padding:18px 22px;border-bottom:1px solid var(--line)}
+.drawer-section h4{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--mute);font-weight:700;margin:0 0 12px}
+.kv{display:grid;grid-template-columns:90px 1fr;gap:8px 14px;font-size:14px}
+.kv .k{color:var(--mute);font-weight:500}
+.kv .v{color:var(--ink);word-break:break-word}
+.kv .v a{color:var(--sage);text-decoration:none;font-weight:600}
+.status-pick{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px}
+.status-pick button{padding:8px 4px;border:1.5px solid var(--line);background:#fff;border-radius:8px;cursor:pointer;font:600 11.5px 'Inter';color:var(--mute);text-transform:uppercase;letter-spacing:.4px}
+.status-pick button:hover{border-color:var(--sage-3)}
+.status-pick button.on{border-color:transparent;color:#fff}
+.status-pick button.on[data-s=new]{background:var(--new)}
+.status-pick button.on[data-s=contacted]{background:var(--contact)}
+.status-pick button.on[data-s=scheduled]{background:var(--sched)}
+.status-pick button.on[data-s=quoted]{background:var(--quote)}
+.status-pick button.on[data-s=won]{background:var(--won)}
+.status-pick button.on[data-s=lost]{background:var(--lost)}
+.status-pick button.on[data-s="follow-up"]{background:var(--follow)}
+.note-input{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;font:14px 'Inter';resize:vertical;min-height:60px;outline:none}
+.note-input:focus{border-color:var(--sage-2)}
+.timeline{display:flex;flex-direction:column;gap:10px}
+.event{display:flex;gap:10px;align-items:flex-start;font-size:13px}
+.event .dot{width:8px;height:8px;border-radius:99px;background:var(--sage-3);margin-top:6px;flex-shrink:0}
+.event .body{flex:1}
+.event .title{font-weight:600;color:#1f2937;font-size:13px}
+.event .when{font-size:11.5px;color:var(--mute)}
+.event .note{font-size:13px;color:#374151;background:#f7f5f0;padding:7px 10px;border-radius:7px;margin-top:4px;border-left:2px solid var(--sage-3)}
+.chat{display:flex;flex-direction:column;gap:7px;max-height:300px;overflow:auto;padding:4px 0}
+.msg{max-width:85%;padding:8px 12px;border-radius:12px;font-size:13.5px;line-height:1.45}
+.msg.user{background:#f0f0f0;color:#1f2937;align-self:flex-start;border-bottom-left-radius:2px}
+.msg.bot{background:var(--sage);color:#fff;align-self:flex-end;border-bottom-right-radius:2px}
+.msg .when{display:block;font-size:10px;opacity:.65;margin-top:3px}
+.action-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.action-row button{flex:1;min-width:120px}
+.btn-success{background:var(--won);color:#fff;border:none;padding:12px;border-radius:10px;font:700 13.5px 'Inter';cursor:pointer;transition:all .15s}
+.btn-success:hover{background:#059669}
+.btn-warn{background:#fff;color:#1f2937;border:1.5px solid var(--line);padding:11px;border-radius:10px;font:600 13.5px 'Inter';cursor:pointer}
+.btn-danger{background:#fff;color:#b91c1c;border:1.5px solid #fecaca;padding:11px;border-radius:10px;font:600 13.5px 'Inter';cursor:pointer}
+
+/* ===== conversations pane ===== */
+.conv-grid{display:grid;grid-template-columns:300px 1fr;gap:0;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;height:calc(100vh - 230px);min-height:500px}
+.conv-list{border-right:1px solid var(--line);overflow:auto}
+.conv-item{padding:14px 16px;border-bottom:1px solid var(--line);cursor:pointer;transition:background .15s}
+.conv-item:hover,.conv-item.active{background:var(--cream)}
+.conv-item .nm{font-weight:600;font-size:14px}
+.conv-item .pv{font-size:12.5px;color:var(--mute);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.conv-item .ch{display:inline-block;font-size:10px;padding:1px 6px;border-radius:99px;background:#f1ede4;color:var(--mute);margin-top:4px;text-transform:uppercase;letter-spacing:.5px;font-weight:600}
+.conv-detail{padding:20px;overflow:auto}
+.conv-detail .empty{display:flex;align-items:center;justify-content:center;height:100%;color:var(--mute);font-size:14px}
+
+/* ===== reviews ===== */
+.review-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px;display:flex;gap:16px;align-items:flex-start}
+.review-card .stars{font-size:18px;color:var(--quote);letter-spacing:2px;flex-shrink:0}
+.review-card.low{border-left:4px solid #b91c1c}
+.review-card.high{border-left:4px solid var(--won)}
+.review-card .body{flex:1}
+.review-card .who{font-weight:600;font-size:14px}
+.review-card .when{font-size:11.5px;color:var(--mute);margin-top:2px}
+.review-card .comm{margin-top:8px;font-size:14px;color:#374151;background:#f7f5f0;padding:10px 12px;border-radius:8px;border-left:2px solid var(--sage-3);line-height:1.5}
+
+/* ===== emails ===== */
+.email-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.email-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+.email-card .key{font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--mute);font-weight:600}
+.email-card .sub{font-family:'Spectral',Georgia,serif;font-size:17px;margin-top:6px;line-height:1.3}
+.email-card .desc{font-size:13px;color:var(--mute);margin-top:8px;line-height:1.5}
+.email-card .btn-soft{margin-top:10px;font-size:12px;padding:7px 12px}
+
+/* ===== empty state ===== */
+.empty-state{text-align:center;padding:60px 20px;color:var(--mute)}
+.empty-state h3{font-family:'Spectral',Georgia,serif;font-size:24px;color:var(--ink);margin:0 0 8px}
+.empty-state p{margin:0 0 20px;max-width:380px;margin-left:auto;margin-right:auto}
+
+/* ===== mobile ===== */
+@media (max-width:880px){
+  .stats{grid-template-columns:repeat(3,1fr)}
+  .board{grid-template-columns:repeat(2,minmax(260px,1fr))}
+  .conv-grid{grid-template-columns:1fr;height:auto}
+  .conv-list{max-height:300px}
+  .drawer{width:100vw}
+  .top{padding:12px 16px}
+  .page{padding:16px}
+  .pane-head h2{font-size:20px}
+}
+
+/* ===== gate (pre-config / not signed in) ===== */
+.gate{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px}
+.gate .card{max-width:480px;background:#fff;padding:34px;border-radius:18px;border:1px solid var(--line);box-shadow:var(--shadow)}
+.gate h1{font-family:'Spectral',Georgia,serif;font-size:24px;margin:0 0 8px}
+.gate p{color:var(--mute);margin:0 0 18px;line-height:1.6}
+.gate .btn-primary{display:inline-block;text-decoration:none;text-align:center;padding:13px 24px}
+</style>
+</head>
+
+<body>
+
+<!-- =================== NOT SIGNED IN STATE =================== -->
+<div id="gate" class="gate hidden">
+  <div class="card">
+    <h1>You need to sign in.</h1>
+    <p>This is the CRM for The Black Mold Guy. Sign in with your operator email to continue.</p>
+    <a class="btn-primary" href="./login/">Go to sign in →</a>
+  </div>
+</div>
+
+<!-- =================== AUTHED APP =================== -->
+<div id="app" class="hidden">
+
+<div class="top">
+  <div class="brand">The Black Mold Guy<small>CRM Dashboard</small></div>
+  <div class="tabs">
+    <button class="tab active" data-pane="leads">Leads <span class="count" id="cnt-leads">0</span></button>
+    <button class="tab" data-pane="conversations">Conversations <span class="count" id="cnt-conv">0</span></button>
+    <button class="tab" data-pane="reviews">Reviews <span class="count" id="cnt-rev">0</span></button>
+    <button class="tab" data-pane="emails">Email automations</button>
+  </div>
+  <div class="user">
+    <span class="em" id="meEmail"></span>
+    <button class="btn-ghost" onclick="signOut()">Sign out</button>
+  </div>
+</div>
+
+<!-- ===== Stats ===== -->
+<div class="stats" id="statsRow"></div>
+
+<div class="page">
+
+<!-- ===== Leads pane ===== -->
+<section class="pane active" data-pane="leads">
+  <div class="pane-head">
+    <h2>Leads</h2>
+    <div class="actions">
+      <button class="btn-soft" onclick="refreshAll()">↻ Refresh</button>
+    </div>
+  </div>
+  <div class="board" id="board"></div>
+</section>
+
+<!-- ===== Conversations pane ===== -->
+<section class="pane" data-pane="conversations">
+  <div class="pane-head">
+    <h2>Conversations</h2>
+    <div class="actions"><span style="font-size:13px;color:var(--mute)">Every ManyChat + chat-widget message</span></div>
+  </div>
+  <div class="conv-grid">
+    <div class="conv-list" id="convList"></div>
+    <div class="conv-detail" id="convDetail"><div class="empty">Click a conversation</div></div>
+  </div>
+</section>
+
+<!-- ===== Reviews pane ===== -->
+<section class="pane" data-pane="reviews">
+  <div class="pane-head">
+    <h2>Reviews</h2>
+    <div class="actions"><span style="font-size:13px;color:var(--mute)">Sub-4-star reviews stay private. 5-star goes to Google.</span></div>
+  </div>
+  <div id="reviewList"></div>
+</section>
+
+<!-- ===== Emails pane ===== -->
+<section class="pane" data-pane="emails">
+  <div class="pane-head">
+    <h2>Email automations</h2>
+    <div class="actions"><a class="btn-soft" href="./emails/" target="_blank">Preview library →</a></div>
+  </div>
+  <div class="email-list" id="emailList"></div>
+</section>
+
+</div>
+</div>
+
+<!-- ===== Lead drawer ===== -->
+<aside class="drawer" id="drawer">
+  <div class="drawer-h">
+    <div>
+      <h3 id="dName">—</h3>
+      <div id="dSub" style="color:var(--mute);font-size:13px;margin-top:4px"></div>
+    </div>
+    <button class="x" onclick="closeDrawer()">×</button>
+  </div>
+
+  <div class="drawer-body">
+
+    <div class="drawer-section">
+      <h4>Status</h4>
+      <div class="status-pick" id="statusPick"></div>
+    </div>
+
+    <div class="drawer-section">
+      <h4>Details</h4>
+      <div class="kv" id="kv"></div>
+    </div>
+
+    <div class="drawer-section">
+      <h4>Quick actions</h4>
+      <div class="action-row">
+        <button class="btn-success" onclick="completeJob()">Mark job complete</button>
+        <button class="btn-warn" onclick="triggerReactivation()">Send reactivation</button>
+      </div>
+      <div class="action-row">
+        <button class="btn-warn" onclick="logCall()">Log call</button>
+        <button class="btn-danger" onclick="archiveLead()">Archive</button>
+      </div>
+    </div>
+
+    <div class="drawer-section">
+      <h4>Add a note</h4>
+      <textarea id="noteInput" class="note-input" placeholder="What just happened?"></textarea>
+      <button class="btn-primary" style="margin-top:8px;width:100%" onclick="saveNote()">Save note</button>
+    </div>
+
+    <div class="drawer-section">
+      <h4>Conversation</h4>
+      <div class="chat" id="dChat"><div style="color:var(--mute);font-size:13px">No messages yet.</div></div>
+    </div>
+
+    <div class="drawer-section">
+      <h4>Activity</h4>
+      <div class="timeline" id="dTimeline"></div>
+    </div>
+
+  </div>
+</aside>
+
+<script type="module">
+import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
+
+// ====================================================================
+// CONFIG  — replace these two before deploying.
+// ====================================================================
+const SUPABASE_URL  = "REPLACE_WITH_YOUR_SUPABASE_URL";
+const SUPABASE_ANON = "REPLACE_WITH_YOUR_ANON_KEY";
+
+const STATUSES = ["new","contacted","scheduled","quoted","won","lost","follow-up"];
+const STATUS_LABEL = { "new":"New", "contacted":"Contacted", "scheduled":"Scheduled", "quoted":"Quoted", "won":"Won", "lost":"Lost", "follow-up":"Follow-up" };
+
+let sb, me = null, leads = [], currentLead = null;
+
+// ====================================================================
+// AUTH
+// ====================================================================
+async function boot() {
+  if (SUPABASE_URL.startsWith("REPLACE_")) {
+    document.body.innerHTML = `<div class="gate"><div class="card"><h1>Setup not complete.</h1><p>Open <code>index.html</code> in the CRM repo and paste your Supabase URL and anon key. See <code>setup/setup-guide.md</code>.</p></div></div>`;
+    return;
+  }
+  sb = createClient(SUPABASE_URL, SUPABASE_ANON);
+  const { data: { session } } = await sb.auth.getSession();
+  if (!session) { document.getElementById('gate').classList.remove('hidden'); return; }
+
+  // Verify operator
+  const { data: op } = await sb.from("operators").select("*").eq("email", session.user.email).maybeSingle();
+  if (!op) {
+    document.body.innerHTML = `<div class="gate"><div class="card"><h1>Not authorized.</h1><p>${session.user.email} is not on the operator list. Ask Vince to add you.</p><button class="btn-primary" onclick="window.signOutHard()">Sign out</button></div></div>`;
+    window.signOutHard = async () => { await sb.auth.signOut(); location.reload(); };
+    return;
+  }
+
+  me = session.user;
+  document.getElementById('meEmail').textContent = me.email;
+  document.getElementById('app').classList.remove('hidden');
+  setupTabs();
+  await refreshAll();
+}
+
+window.signOut = async () => { await sb.auth.signOut(); location.reload(); };
+
+// ====================================================================
+// DATA
+// ====================================================================
+async function refreshAll() {
+  await Promise.all([loadLeads(), loadConversations(), loadReviews(), loadEmailTemplates()]);
+  renderStats(); renderBoard();
+}
+
+async function loadLeads() {
+  const { data } = await sb.from("v_leads_dashboard").select("*").order("created_at", { ascending:false }).limit(500);
+  leads = data || [];
+}
+
+async function loadConversations() {
+  // group most recent message per lead
+  const { data } = await sb.from("chat_messages").select("*, leads(first_name, last_name)").order("created_at", { ascending:false }).limit(200);
+  window._conv = data || [];
+  renderConvList();
+}
+
+async function loadReviews() {
+  const { data } = await sb.from("reviews").select("*").order("created_at", { ascending:false }).limit(100);
+  window._reviews = data || [];
+  renderReviews();
+}
+
+async function loadEmailTemplates() {
+  const { data } = await sb.from("email_templates").select("*").order("key");
+  window._tpls = data || [];
+  renderEmails();
+}
+
+// ====================================================================
+// RENDER
+// ====================================================================
+function setupTabs() {
+  document.querySelectorAll('.tab').forEach(t => t.onclick = () => {
+    document.querySelectorAll('.tab').forEach(x => x.classList.toggle('active', x===t));
+    document.querySelectorAll('.pane').forEach(p => p.classList.toggle('active', p.dataset.pane === t.dataset.pane));
+  });
+}
+
+function renderStats() {
+  const counts = Object.fromEntries(STATUSES.map(s => [s, leads.filter(l => l.status===s).length]));
+  const week = leads.filter(l => new Date(l.created_at) > new Date(Date.now() - 7*86400_000)).length;
+  document.getElementById('statsRow').innerHTML = `
+    <div class="stat new"><div class="l">New</div><div class="n">${counts.new}</div><div class="d">awaiting first contact</div></div>
+    <div class="stat contact"><div class="l">Contacted</div><div class="n">${counts.contacted}</div><div class="d">spoke with</div></div>
+    <div class="stat sched"><div class="l">Scheduled</div><div class="n">${counts.scheduled}</div><div class="d">on the calendar</div></div>
+    <div class="stat quote"><div class="l">Quoted</div><div class="n">${counts.quoted}</div><div class="d">awaiting decision</div></div>
+    <div class="stat won"><div class="l">Won this wk</div><div class="n">${leads.filter(l => l.status==='won' && new Date(l.updated_at) > new Date(Date.now() - 7*86400_000)).length}</div><div class="d">jobs booked</div></div>
+    <div class="stat follow"><div class="l">Follow-up</div><div class="n">${counts["follow-up"]}</div><div class="d">on auto-sequence</div></div>
+  `;
+  document.getElementById('cnt-leads').textContent = leads.length;
+}
+
+function renderBoard() {
+  const cols = STATUSES.map(s => {
+    const items = leads.filter(l => l.status === s);
+    return `<div class="col" data-status="${s}">
+      <div class="col-h">
+        <div class="name"><span class="pip"></span>${STATUS_LABEL[s]}</div>
+        <div class="count">${items.length}</div>
+      </div>
+      <div class="col-body">
+        ${items.map(leadCard).join('') || `<div style="color:var(--mute);font-size:12.5px;text-align:center;padding:12px">No leads</div>`}
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('board').innerHTML = cols;
+  document.querySelectorAll('.card-lead').forEach(c => c.onclick = () => openDrawer(c.dataset.id));
+}
+
+function leadCard(l) {
+  const age = ago(l.created_at);
+  const isUrgent = (l.tags||[]).includes('urgent-health') || (l.tags||[]).includes('water-event') || l.severity === 'urgent';
+  const preview = l.last_message_at ? `<div class="preview">💬 ${escape(window._conv?.find(m => m.lead_id===l.id)?.body || '').slice(0,90)}…</div>` : '';
+  return `<div class="card-lead" data-id="${l.id}">
+    <div class="name">${escape(l.first_name || 'Unknown')} ${escape(l.last_name||'')}${isUrgent ? '<span class="badge urgent">urgent</span>' : ''}</div>
+    <div class="meta">${l.zip ? `<span><b>${escape(l.zip)}</b></span>` : ''}${l.service ? `<span>${escape(l.service)}</span>` : ''}${l.phone ? `<span>📞</span>` : ''}</div>
+    ${preview}
+    <span class="src ${l.source}">${escape(l.source||'')}</span>
+    <div class="age">${age}</div>
+  </div>`;
+}
+
+function renderConvList() {
+  // unique by lead_id, keep most recent message
+  const seen = new Set(); const items = [];
+  for (const m of window._conv) {
+    if (!m.lead_id || seen.has(m.lead_id)) continue;
+    seen.add(m.lead_id); items.push(m);
+  }
+  document.getElementById('cnt-conv').textContent = items.length;
+  document.getElementById('convList').innerHTML = items.map(m => {
+    const n = m.leads ? `${m.leads.first_name||''} ${m.leads.last_name||''}`.trim() : '(anon)';
+    return `<div class="conv-item" data-lead="${m.lead_id}" onclick="openConv('${m.lead_id}')">
+      <div class="nm">${escape(n||'(anonymous)')}</div>
+      <div class="pv">${escape((m.body||'').slice(0,80))}</div>
+      <span class="ch">${escape(m.channel||'')}</span>
+    </div>`;
+  }).join('') || `<div style="padding:20px;color:var(--mute);font-size:13px">No conversations yet.</div>`;
+}
+
+window.openConv = async (leadId) => {
+  document.querySelectorAll('.conv-item').forEach(i => i.classList.toggle('active', i.dataset.lead===leadId));
+  const { data } = await sb.from("chat_messages").select("*").eq("lead_id", leadId).order("created_at");
+  const html = (data||[]).map(m => `<div class="msg ${m.sender==='user'?'user':'bot'}">${escape(m.body||'')}<span class="when">${escape(m.channel||'')} · ${ago(m.created_at)}</span></div>`).join('');
+  document.getElementById('convDetail').innerHTML = `<div class="chat" style="max-height:none">${html||'<div class="empty">No messages.</div>'}</div>`;
+};
+
+function renderReviews() {
+  document.getElementById('cnt-rev').textContent = window._reviews.length;
+  const list = window._reviews.map(r => {
+    const cls = r.stars >= 4 ? 'high' : 'low';
+    return `<div class="review-card ${cls}">
+      <div class="stars">${'★'.repeat(r.stars)}${'☆'.repeat(5-r.stars)}</div>
+      <div class="body">
+        <div class="who">${escape(r.customer_name||'Customer')} · routed to <b>${r.routed_to}</b></div>
+        <div class="when">${ago(r.created_at)} · ${escape(r.customer_email||'')}</div>
+        ${r.comment ? `<div class="comm">${escape(r.comment)}</div>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+  document.getElementById('reviewList').innerHTML = list || `<div class="empty-state"><h3>No reviews yet.</h3><p>When you mark a job complete, the customer is asked to rate. Anything under 4 stars stays here for you to fix. 5-star reviews are auto-routed to Google.</p></div>`;
+}
+
+function renderEmails() {
+  const list = (window._tpls||[]).map(t => `<div class="email-card">
+    <div class="key">${escape(t.key)}</div>
+    <div class="sub">${escape(t.subject)}</div>
+    <div class="desc">${escape(t.description||'')}</div>
+    <a class="btn-soft" href="./emails/?k=${encodeURIComponent(t.key)}" target="_blank">Preview</a>
+  </div>`).join('');
+  document.getElementById('emailList').innerHTML = list;
+}
+
+// ====================================================================
+// DRAWER
+// ====================================================================
+async function openDrawer(id) {
+  currentLead = leads.find(l => l.id === id);
+  if (!currentLead) return;
+  const l = currentLead;
+  document.getElementById('dName').textContent = `${l.first_name||''} ${l.last_name||''}`.trim() || '(no name)';
+  document.getElementById('dSub').textContent = `${l.email||''} ${l.phone?'· '+l.phone:''} · ${l.source||''}`;
+  document.getElementById('kv').innerHTML = `
+    <div class="k">Email</div><div class="v">${l.email ? `<a href="mailto:${l.email}">${escape(l.email)}</a>` : '—'}</div>
+    <div class="k">Phone</div><div class="v">${l.phone ? `<a href="tel:${l.phone}">${escape(l.phone)}</a>` : '—'}</div>
+    <div class="k">Zip</div><div class="v">${escape(l.zip||'—')}</div>
+    <div class="k">Service</div><div class="v">${escape(l.service||'—')}</div>
+    <div class="k">Severity</div><div class="v">${escape(l.severity||'—')}</div>
+    <div class="k">Tags</div><div class="v">${(l.tags||[]).join(', ') || '—'}</div>
+    <div class="k">Source</div><div class="v">${escape(l.source||'—')}</div>
+    <div class="k">Created</div><div class="v">${ago(l.created_at)}</div>
+    <div class="k">Notes</div><div class="v" style="white-space:pre-wrap">${escape(l.notes||'—')}</div>
+  `;
+  document.getElementById('statusPick').innerHTML = STATUSES.map(s =>
+    `<button data-s="${s}" class="${l.status===s?'on':''}" onclick="setStatus('${s}')">${STATUS_LABEL[s]}</button>`
+  ).join('');
+  // chat
+  const { data: msgs } = await sb.from("chat_messages").select("*").eq("lead_id", l.id).order("created_at");
+  document.getElementById('dChat').innerHTML = (msgs||[]).map(m =>
+    `<div class="msg ${m.sender==='user'?'user':'bot'}">${escape(m.body||'')}<span class="when">${escape(m.channel)} · ${ago(m.created_at)}</span></div>`
+  ).join('') || `<div style="color:var(--mute);font-size:13px">No messages yet.</div>`;
+  // timeline
+  const { data: events } = await sb.from("lead_events").select("*").eq("lead_id", l.id).order("created_at", { ascending:false });
+  document.getElementById('dTimeline').innerHTML = (events||[]).map(e =>
+    `<div class="event"><div class="dot"></div><div class="body"><div class="title">${escape(e.event_type.replace(/_/g,' '))}</div><div class="when">${ago(e.created_at)}</div>${e.data?.note?`<div class="note">${escape(e.data.note)}</div>`:''}${e.data?.from?`<div class="note">${e.data.from} → ${e.data.to}</div>`:''}</div></div>`
+  ).join('') || `<div style="color:var(--mute);font-size:13px">No activity yet.</div>`;
+  document.getElementById('drawer').classList.add('open');
+}
+window.closeDrawer = () => document.getElementById('drawer').classList.remove('open');
+
+window.setStatus = async (s) => {
+  if (!currentLead) return;
+  await sb.from('leads').update({ status: s, last_contacted_at: ['contacted','scheduled','quoted'].includes(s) ? new Date().toISOString() : currentLead.last_contacted_at }).eq('id', currentLead.id);
+  currentLead.status = s;
+  document.querySelectorAll('.status-pick button').forEach(b => b.classList.toggle('on', b.dataset.s===s));
+  await refreshAll();
+};
+
+window.saveNote = async () => {
+  const v = document.getElementById('noteInput').value.trim();
+  if (!v || !currentLead) return;
+  await sb.from('lead_events').insert({ lead_id: currentLead.id, event_type: 'note', data: { note: v } });
+  const cur = currentLead.notes || '';
+  await sb.from('leads').update({ notes: (cur ? cur + '\n— ' : '') + v }).eq('id', currentLead.id);
+  document.getElementById('noteInput').value = '';
+  await openDrawer(currentLead.id);
+};
+
+window.logCall = async () => {
+  if (!currentLead) return;
+  const note = prompt("What did you talk about? (1 line)");
+  if (!note) return;
+  await sb.from('lead_events').insert({ lead_id: currentLead.id, event_type:'call_logged', data:{ note } });
+  await sb.from('leads').update({ status: 'contacted', last_contacted_at: new Date().toISOString() }).eq('id', currentLead.id);
+  await openDrawer(currentLead.id); await refreshAll();
+};
+
+window.completeJob = async () => {
+  if (!currentLead) return;
+  if (!confirm("Mark this job complete? This will text + email the customer asking for a review.")) return;
+  const { data: { session } } = await sb.auth.getSession();
+  const res = await fetch(`${SUPABASE_URL}/functions/v1/complete-job`, {
+    method:'POST',
+    headers:{ 'Content-Type':'application/json', Authorization:`Bearer ${session.access_token}` },
+    body: JSON.stringify({ lead_id: currentLead.id, service_type:'remediation' })
+  });
+  const r = await res.json();
+  if (r.ok) { alert("Job marked complete. Review request sent."); await refreshAll(); await openDrawer(currentLead.id); }
+  else alert("Error: " + (r.error || 'unknown'));
+};
+
+window.triggerReactivation = async () => {
+  if (!currentLead) return;
+  if (!confirm("Send the 6-email Hormozi reactivation sequence to this lead?")) return;
+  // enqueue all 6 steps locally
+  const seq = (await sb.from('sequences').select('*').eq('key', 'reactivation_hormozi').single()).data;
+  if (!seq) return alert('Reactivation sequence not configured.');
+  const now = new Date();
+  const rows = seq.steps.map(s => ({
+    lead_id: currentLead.id,
+    template_key: s.template_key,
+    scheduled_for: new Date(now.getTime() + s.delay_hours*3600_000).toISOString()
+  }));
+  await sb.from('email_queue').insert(rows);
+  await sb.from('lead_events').insert({ lead_id: currentLead.id, event_type:'note', data:{ note: 'Reactivation sequence queued (6 emails)' } });
+  alert("Reactivation sequence queued. First email goes out within 15 minutes.");
+  await openDrawer(currentLead.id);
+};
+
+window.archiveLead = async () => {
+  if (!currentLead) return;
+  if (!confirm("Mark as Lost and archive?")) return;
+  await sb.from('leads').update({ status: 'lost' }).eq('id', currentLead.id);
+  closeDrawer(); await refreshAll();
+};
+
+// ====================================================================
+// UTIL
+// ====================================================================
+function escape(s) { return String(s||'').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
+function ago(t) {
+  if (!t) return '';
+  const d = (Date.now() - new Date(t).getTime())/1000;
+  if (d < 60) return 'just now';
+  if (d < 3600) return Math.floor(d/60)+'m ago';
+  if (d < 86400) return Math.floor(d/3600)+'h ago';
+  if (d < 86400*30) return Math.floor(d/86400)+'d ago';
+  return new Date(t).toLocaleDateString();
+}
+
+window.refreshAll = refreshAll;
+boot();
+</script>
+</body>
+</html>
