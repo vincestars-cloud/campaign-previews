@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Email Sequences — The Black Mold Guy</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f0;color:#1a1a1a}
+.header{background:#1a3a2a;padding:24px 32px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px}
+.header-left h1{color:white;font-size:22px;font-weight:800}
+.header-left p{color:rgba(255,255,255,0.6);font-size:13px;margin-top:4px}
+.seq-tabs{display:flex;gap:8px}
+.seq-tab{padding:8px 18px;border-radius:20px;border:2px solid rgba(255,255,255,0.25);color:rgba(255,255,255,0.7);font-size:13px;font-weight:600;cursor:pointer;background:none;font-family:inherit;transition:all 0.15s}
+.seq-tab.active{background:white;color:#1a3a2a;border-color:white}
+.intro-bar{background:#fff8e7;border-bottom:1px solid #fde68a;padding:16px 32px;font-size:14px;color:#92400e;line-height:1.6}
+.intro-bar strong{font-weight:700}
+.container{max-width:720px;margin:0 auto;padding:32px 20px}
+.sequence-section{display:none}
+.sequence-section.active{display:block}
+.seq-title{font-size:11px;font-weight:700;letter-spacing:1px;color:#9ca3af;text-transform:uppercase;margin-bottom:24px}
+.email-card{background:white;border-radius:16px;box-shadow:0 1px 6px rgba(0,0,0,0.08);margin-bottom:20px;overflow:hidden}
+.email-card-header{padding:20px 24px;border-bottom:1px solid #f3f4f6;display:flex;align-items:flex-start;gap:16px}
+.email-number{width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;flex-shrink:0;color:white}
+.email-meta{flex:1}
+.email-timing{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px}
+.email-subject{font-size:17px;font-weight:700;color:#1a1a1a;line-height:1.3}
+.email-preview{font-size:13px;color:#9ca3af;margin-top:4px;font-style:italic}
+.email-body{padding:24px;font-size:15px;color:#374151;line-height:1.85}
+.email-body p{margin-bottom:16px}
+.email-body p:last-child{margin-bottom:0}
+.email-body .salutation{font-weight:600;color:#1a1a1a}
+.email-body .highlight{background:#fef9c3;border-radius:4px;padding:1px 5px}
+.email-body .bold{font-weight:700;color:#1a1a1a}
+.email-body .sig{color:#6b7280;font-size:14px;margin-top:24px;border-top:1px solid #f3f4f6;padding-top:16px}
+.email-body blockquote{border-left:3px solid #4a8c5c;padding:12px 16px;background:#f0f9f4;border-radius:0 8px 8px 0;margin:16px 0;font-style:italic;color:#374151}
+.tag-row{display:flex;gap:8px;padding:12px 24px;background:#f9fafb;flex-wrap:wrap}
+.tag{padding:4px 12px;border-radius:12px;font-size:12px;font-weight:600;background:#e5e7eb;color:#374151}
+.tag.trigger{background:#dbeafe;color:#1d4ed8}
+.tag.goal{background:#d1fae5;color:#065f46}
+.reactivation-banner{background:#dc2626;color:white;padding:12px 24px;text-align:center;font-size:13px;font-weight:600;letter-spacing:0.3px}
+.hormozi-badge{display:inline-flex;align-items:center;gap:6px;background:#1a3a2a;color:white;padding:4px 12px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:0.5px}
+@media(max-width:600px){
+  .header{padding:20px}
+  .container{padding:20px 16px}
+  .email-card-header{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <h1>Email Automation Sequences</h1>
+    <p>The Black Mold Guy · 2 active sequences · 10 total emails</p>
+  </div>
+  <div class="seq-tabs">
+    <button class="seq-tab active" onclick="showSeq('nosale', this)">No-Sale Follow-Up</button>
+    <button class="seq-tab" onclick="showSeq('reactivation', this)">Reactivation</button>
+  </div>
+</div>
+
+<div class="intro-bar">
+  <strong>How these work:</strong> When a consult call doesn't convert, the "No-Sale Follow-Up" sequence starts automatically. After 30 days of silence, the "Reactivation" sequence fires. Every email is pre-loaded — you never have to write from scratch. Just review, personalize the name, and send.
+</div>
+
+<div class="container">
+
+  <!-- SEQUENCE 1: NO-SALE FOLLOW-UP -->
+  <div class="sequence-section active" id="seq-nosale">
+    <div class="seq-title">Sequence 1 — No-Sale Follow-Up &nbsp;·&nbsp; 6 Emails &nbsp;·&nbsp; Trigger: Consult call done, no booking</div>
+
+    <!-- EMAIL 1 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-number" style="background:#2563eb">1</div>
+        <div class="email-meta">
+          <div class="email-timing" style="color:#2563eb">Day 2 after consult</div>
+          <div class="email-subject">"Checking in after we talked"</div>
+          <div class="email-preview">No pressure — just wanted to follow up on our conversation...</div>
+        </div>
+      </div>
+      <div class="email-body">
+        <p class="salutation">Hi [First Name],</p>
+        <p>Just wanted to check in after we talked. I know this isn't a small decision — you're not just hiring someone to clean a wall. You're making a call about your family's health.</p>
+        <p>That deserves some thought.</p>
+        <p>What I <span class="bold">can</span> tell you is this: mold doesn't wait while we're thinking. If it's there, it's still spreading and still affecting your air quality every day.</p>
+        <p>I'm not going anywhere. If you have questions — about what I found, about the process, about cost — reply to this email. I personally respond to every one.</p>
+        <div class="sig">— The Black Mold Guy<br>305-849-0242</div>
+      </div>
+      <div class="tag-row">
+        <span class="tag trigger">Trigger: Status → Consult Done</span>
+        <span class="tag goal">Goal: Keep warm, no pressure</span>
+      </div>
+    </div>
+
+    <!-- EMAIL 2 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-number" style="background:#4a8c5c">2</div>
+        <div class="email-meta">
+          <div class="email-timing" style="color:#4a8c5c">Day 5</div>
+          <div class="email-subject">"Why bleach doesn't actually fix mold"</div>
+          <div class="email-preview">The honest answer most contractors won't give you...</div>
+        </div>
+      </div>
+      <div class="email-body">
+        <p class="salutation">Hi [First Name],</p>
+        <p>One of the most common things I see: a homeowner scrubs the mold with bleach, it disappears... and then comes back 3 weeks later in the same spot. I want to explain why, because most people think they did something wrong.</p>
+        <p>They didn't. Bleach is the wrong tool.</p>
+        <p>Here's the science in plain English: Bleach is 94% water. On porous surfaces — drywall, wood, grout, concrete — the <span class="bold">water soaks in but the bleach evaporates before it penetrates</span>. The surface looks clean. The mold root system (called hyphae) survives below the surface and regrows.</p>
+        <blockquote>"I scrubbed it with bleach twice. Two weeks later it was back, bigger than before."<br><span style="font-size:13px;color:#6b7280">— Real homeowner, Reddit</span></blockquote>
+        <p>This is also why many remediation jobs fail the first time — if the underlying moisture source isn't addressed and the right chemistry isn't used, mold comes back.</p>
+        <p>When you're ready to do this right the first time, I'm here.</p>
+        <div class="sig">— The Black Mold Guy<br>305-849-0242</div>
+      </div>
+      <div class="tag-row">
+        <span class="tag trigger">Day 5 from consult</span>
+        <span class="tag goal">Goal: Educate, build authority, address DIY attempt</span>
+      </div>
+    </div>
+
+    <!-- EMAIL 3 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-number" style="background:#7c3aed">3</div>
+        <div class="email-meta">
+          <div class="email-timing" style="color:#7c3aed">Day 10</div>
+          <div class="email-subject">"What chemicals are actually used in mold treatment"</div>
+          <div class="email-preview">Pulling back the curtain on what really works...</div>
+        </div>
+      </div>
+      <div class="email-body">
+        <p class="salutation">Hi [First Name],</p>
+        <p>I get a lot of questions about what we actually use during remediation. People are nervous about chemicals in their home — especially if they have kids or are sensitive to smells. Totally fair.</p>
+        <p>Here's the honest answer:</p>
+        <p><span class="bold">For surface treatment:</span> We use EPA-registered antimicrobial solutions that are specifically formulated for mold — not bleach, not vinegar, not off-the-shelf sprays. These penetrate porous materials where mold hides.</p>
+        <p><span class="bold">For air:</span> HEPA air scrubbers that filter particles down to 0.3 microns. Mold spores are typically 2-10 microns. Everything gets captured.</p>
+        <p><span class="bold">For contaminated materials:</span> Removal and proper disposal — not covering up or painting over.</p>
+        <p>The goal isn't to make it look better. It's to eliminate the source and make sure it stays gone.</p>
+        <p>If you have specific questions about your situation, reply and I'll answer directly.</p>
+        <div class="sig">— The Black Mold Guy<br>305-849-0242</div>
+      </div>
+      <div class="tag-row">
+        <span class="tag trigger">Day 10 from consult</span>
+        <span class="tag goal">Goal: Reduce fear, demystify process, build trust</span>
+      </div>
+    </div>
+
+    <!-- EMAIL 4 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-number" style="background:#c2410c">4</div>
+        <div class="email-meta">
+          <div class="email-timing" style="color:#c2410c">Day 15</div>
+          <div class="email-subject">"What most people forget to ask a mold company"</div>
+          <div class="email-preview">5 questions every homeowner should ask before hiring anyone...</div>
+        </div>
+      </div>
+      <div class="email-body">
+        <p class="salutation">Hi [First Name],</p>
+        <p>If you're comparing options or getting multiple quotes, I want to make sure you're protected. The mold industry has a serious conflict-of-interest problem that most people don't know about until after they've been burned.</p>
+        <p>Here are <span class="bold">5 questions to ask any mold company</span> before hiring them:</p>
+        <p><span class="bold">1. "Do you also do remediation?"</span><br>If yes — and they're the ones inspecting — that's a conflict of interest. They profit more if they find mold. Several states have made this illegal.</p>
+        <p><span class="bold">2. "Are your results from a third-party lab?"</span><br>In-house testing can be manipulated. Legitimate results go to an independent certified lab.</p>
+        <p><span class="bold">3. "Will you provide a written report I keep regardless of whether I hire you?"</span><br>Any reputable inspector says yes.</p>
+        <p><span class="bold">4. "What training or certifications do you have?"</span><br>Look for IICRC certification (mold remediation standard).</p>
+        <p><span class="bold">5. "Can I see reviews where customers describe your results — not just your communication?"</span><br>Communication reviews are easy. Results reviews prove the work actually held.</p>
+        <p>We pass all five. Happy to show you our certifications and lab reports from past jobs.</p>
+        <div class="sig">— The Black Mold Guy<br>305-849-0242</div>
+      </div>
+      <div class="tag-row">
+        <span class="tag trigger">Day 15 from consult</span>
+        <span class="tag goal">Goal: Position as the honest option, raise competitor risk</span>
+      </div>
+    </div>
+
+    <!-- EMAIL 5 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-number" style="background:#92400e">5</div>
+        <div class="email-meta">
+          <div class="email-timing" style="color:#92400e">Day 21</div>
+          <div class="email-subject">"A client who waited 4 months — and what happened"</div>
+          <div class="email-preview">This isn't a scare tactic. It's just the truth about mold and time...</div>
+        </div>
+      </div>
+      <div class="email-body">
+        <p class="salutation">Hi [First Name],</p>
+        <p>I want to share a story — not to scare you, just to be honest with you.</p>
+        <p>Earlier this year, a client in Atlanta reached out. She'd noticed a musty smell in her basement in January but decided to wait until spring to deal with it. By April, what started as surface mold on one wall had spread to the subfloor joists and into the HVAC trunk line.</p>
+        <p>What would have been a $1,200 job in January became a $4,800 job in April.</p>
+        <p><span class="bold">Mold doubles every 24-48 hours in the right conditions.</span> Behind walls, in crawl spaces, and inside HVAC systems where it's warm and dark — those are the right conditions.</p>
+        <p>I'm not telling you to panic. But I am saying: every week you wait is a week it has to grow.</p>
+        <p>If timing or cost is the concern, let's talk. There may be options.</p>
+        <div class="sig">— The Black Mold Guy<br>305-849-0242</div>
+      </div>
+      <div class="tag-row">
+        <span class="tag trigger">Day 21 from consult</span>
+        <span class="tag goal">Goal: Urgency without fear-mongering — cost of delay</span>
+      </div>
+    </div>
+
+    <!-- EMAIL 6 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-number" style="background:#1a3a2a">6</div>
+        <div class="email-meta">
+          <div class="email-timing" style="color:#1a3a2a">Day 30</div>
+          <div class="email-subject">"What got me into this business"</div>
+          <div class="email-preview">The real reason I do what I do — and why it matters for your family...</div>
+        </div>
+      </div>
+      <div class="email-body">
+        <p class="salutation">Hi [First Name],</p>
+        <p>I don't talk about this a lot, but I want to share why I started The Black Mold Guy.</p>
+        <p>A few years back, my daughter started getting sick constantly. Headaches. Congestion that never fully cleared. Fatigue that her pediatrician kept calling "seasonal allergies." We tried everything.</p>
+        <p>It wasn't until a friend suggested mold that we tested our home. The HVAC system was covered in it. Had been for who knows how long. We'd been breathing it every day.</p>
+        <p>What I remember most isn't the mold. It's how quickly her symptoms cleared once we fixed it. Within two weeks, she was herself again.</p>
+        <p>That's why I do this. Not for the business. For the family sitting in their house right now not knowing why everyone keeps getting sick.</p>
+        <p>If that's you — or someone you know — I'd genuinely love to help. No pitch. Just honest answers.</p>
+        <div class="sig">— The Black Mold Guy<br>305-849-0242</div>
+      </div>
+      <div class="tag-row">
+        <span class="tag trigger">Day 30 from consult</span>
+        <span class="tag goal">Goal: Personal story, emotional trust, final soft CTA</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEQUENCE 2: REACTIVATION -->
+  <div class="sequence-section" id="seq-reactivation">
+    <div class="reactivation-banner">⚡ Hormozi-Style Reactivation — These go to leads that went completely cold (30+ days no response)</div>
+    <div class="seq-title" style="margin-top:24px">Sequence 2 — Reactivation Campaign &nbsp;·&nbsp; 4 Emails &nbsp;·&nbsp; Trigger: 30+ days, no response</div>
+
+    <!-- REACTIVATION EMAIL 1 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-number" style="background:#dc2626">1</div>
+        <div class="email-meta">
+          <div class="email-timing" style="color:#dc2626">Day 1 &nbsp;<span class="hormozi-badge">Hormozi Pattern</span></div>
+          <div class="email-subject">"I owe you an apology"</div>
+          <div class="email-preview">We dropped the ball. I want to make it right — at no cost to you...</div>
+        </div>
+      </div>
+      <div class="email-body">
+        <p class="salutation">Hi [First Name],</p>
+        <p>I'm going to be straight with you: <span class="bold">I dropped the ball.</span></p>
+        <p>We connected a while back about your mold situation, and I didn't follow up the way I should have. That's on me, not you. And I want to make it right.</p>
+        <p>If you're still dealing with the issue we discussed — or if it's gotten worse — I'd like to offer you a <span class="highlight"><strong>free 15-minute phone consultation, at no cost to you</strong></span> to talk through your options and answer any questions you have.</p>
+        <p>No sales pitch. No pressure. I just want to give you real answers.</p>
+        <p>Reply to this email with "I'm in" and I'll personally reach out within a few hours to find a time that works for you.</p>
+        <div class="sig">— The Black Mold Guy<br>305-849-0242</div>
+        <p style="font-size:13px;color:#9ca3af;margin-top:12px">P.S. If your situation has already been resolved, I'm genuinely happy for you. Just reply and let me know — I'd love to hear how it went.</p>
+      </div>
+      <div class="tag-row">
+        <span class="tag trigger">Trigger: 30+ days cold lead</span>
+        <span class="tag goal">Goal: Re-open conversation with accountability + free value</span>
+      </div>
+    </div>
+
+    <!-- REACTIVATION EMAIL 2 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-number" style="background:#ea580c">2</div>
+        <div class="email-meta">
+          <div class="email-timing" style="color:#ea580c">Day 4</div>
+          <div class="email-subject">"The allergy-vs-mold confusion (most doctors get this wrong)"</div>
+          <div class="email-preview">Pollen season is here — but what if it's not pollen?</div>
+        </div>
+      </div>
+      <div class="email-body">
+        <p class="salutation">Hi [First Name],</p>
+        <p>Allergy season. Every year, millions of people attribute their congestion, headaches, and fatigue to pollen, dust, or mildew in the air outside.</p>
+        <p>Sometimes it is allergies. But here's the tell that most doctors miss:</p>
+        <blockquote>Do your symptoms get <strong>noticeably better</strong> when you're away from home for 2-3 days? And come back when you return?</blockquote>
+        <p>Pollen follows you wherever you go. <span class="bold">Mold stays in your house.</span></p>
+        <p>If you feel better on vacation and worse at home — that's your body telling you something. Not allergies. Environment.</p>
+        <p>I've had clients who saw 8 or 9 different doctors. All of them said "allergies." One independent mold test changed everything.</p>
+        <p>If this sounds familiar, I'd like to help you get clarity. Reply and we'll set up that free consultation I mentioned.</p>
+        <div class="sig">— The Black Mold Guy<br>305-849-0242</div>
+      </div>
+      <div class="tag-row">
+        <span class="tag trigger">Day 4 in reactivation</span>
+        <span class="tag goal">Goal: Educational, symptom reframe, re-engage curious leads</span>
+      </div>
+    </div>
+
+    <!-- REACTIVATION EMAIL 3 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-number" style="background:#d97706">3</div>
+        <div class="email-meta">
+          <div class="email-timing" style="color:#d97706">Day 9</div>
+          <div class="email-subject">"A family saved $18,000 by doing this one thing first"</div>
+          <div class="email-preview">An independent inspection literally paid for itself 15 times over...</div>
+        </div>
+      </div>
+      <div class="email-body">
+        <p class="salutation">Hi [First Name],</p>
+        <p>Quick story from earlier this year.</p>
+        <p>A family in Miami got a quote from a remediation company for $23,400. It was a big job — they wanted to open multiple walls, replace flooring, treat the HVAC system. The family was panicked and ready to sign.</p>
+        <p>Before they did, they called me for a second opinion — an independent inspection with no connection to the remediation quote.</p>
+        <p>What I found: two of the four areas they quoted were dry and clean. One area had surface mold that didn't require wall removal — just proper treatment. Only one area matched what they'd proposed.</p>
+        <p>The job that actually needed doing: <span class="bold">$5,200.</span></p>
+        <p>They saved $18,000 by getting an independent inspection first.</p>
+        <p>This is the whole point of "we inspect, we don't remediate on the same job." You deserve an honest second opinion.</p>
+        <p>Want to schedule yours? Reply and let's find a time.</p>
+        <div class="sig">— The Black Mold Guy<br>305-849-0242</div>
+      </div>
+      <div class="tag-row">
+        <span class="tag trigger">Day 9 in reactivation</span>
+        <span class="tag goal">Goal: Specific case study, financial proof, conversion push</span>
+      </div>
+    </div>
+
+    <!-- REACTIVATION EMAIL 4 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-number" style="background:#6b7280">4</div>
+        <div class="email-meta">
+          <div class="email-timing" style="color:#6b7280">Day 16 — Final</div>
+          <div class="email-subject">"Come back — I'll make it worth it"</div>
+          <div class="email-preview">Last email from me. Here's what I'm offering...</div>
+        </div>
+      </div>
+      <div class="email-body">
+        <p class="salutation">Hi [First Name],</p>
+        <p>This is my last email — I don't want to fill your inbox if now isn't the right time.</p>
+        <p>But before I go, I want to make you a real offer:</p>
+        <p><span class="bold">If you book an inspection in the next 7 days:</span><br>
+        — Priority scheduling (I'll fit you in within 48 hours)<br>
+        — Direct cell number (text me anytime with questions)<br>
+        — Written lab report delivered same day as inspection</p>
+        <p>No games. No pressure. Just the most straightforward path to an honest answer about what's in your home.</p>
+        <p>Reply to this email or call/text me directly: <span class="bold">305-849-0242</span></p>
+        <p>I respond personally. Usually within the hour.</p>
+        <div class="sig">— The Black Mold Guy<br>305-849-0242</div>
+        <p style="font-size:13px;color:#9ca3af;margin-top:12px">P.S. If this situation has resolved, that's great — truly. Reply and let me know. I'd love to hear your story.</p>
+      </div>
+      <div class="tag-row">
+        <span class="tag trigger">Day 16 — Final email</span>
+        <span class="tag goal">Goal: Last attempt with real offer, personal close</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+function showSeq(id, el) {
+  document.querySelectorAll('.sequence-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.seq-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('seq-' + id).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+</script>
+</body>
+</html>
