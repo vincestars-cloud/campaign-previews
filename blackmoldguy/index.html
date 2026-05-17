@@ -2160,8 +2160,8 @@ function submitForm() {
   // === CRM hook: posts to Supabase submit-lead edge function ===
   // Replace BMG_SUPABASE_URL and BMG_SUBMIT_SECRET in setup. Until configured,
   // this silently logs to console — the form still appears to submit successfully.
-  const BMG_SUPABASE_URL = "REPLACE_WITH_YOUR_SUPABASE_URL";
-  const BMG_SUBMIT_SECRET = "REPLACE_WITH_LANDING_FORM_SECRET";
+  const BMG_SUPABASE_URL = "https://n8n.americanlifeteam.com/webhook";
+  const BMG_SUBMIT_SECRET = "bmg-live-2024";
   const crmPayload = {
     first_name: firstName,
     last_name: document.getElementById('lastName').value.trim(),
@@ -2183,7 +2183,7 @@ function submitForm() {
     consent_email: true
   };
   if (!BMG_SUPABASE_URL.startsWith('REPLACE_')) {
-    fetch(BMG_SUPABASE_URL + '/functions/v1/submit-lead', {
+    fetch('https://n8n.americanlifeteam.com/webhook/bmg-lead-intake', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', 'x-bmg-secret': BMG_SUBMIT_SECRET },
       body: JSON.stringify(crmPayload)
@@ -2496,12 +2496,12 @@ window.bmgChatToggle=function(){
 };
 
 // === CRM logging hook for chat widget ===
-const BMG_CHAT_SUPABASE_URL = "REPLACE_WITH_YOUR_SUPABASE_URL";
-const BMG_CHAT_SECRET = "REPLACE_WITH_LANDING_FORM_SECRET";
+const BMG_CHAT_SUPABASE_URL = "https://n8n.americanlifeteam.com/webhook";
+const BMG_CHAT_SECRET = "bmg-live-2024";
 function bmgChatLog(sender, body){
   if (BMG_CHAT_SUPABASE_URL.startsWith('REPLACE_')) return;
   if (!sessionStorage.getItem('bmg_sid')) sessionStorage.setItem('bmg_sid', 'web_' + Math.random().toString(36).slice(2));
-  fetch(BMG_CHAT_SUPABASE_URL + '/functions/v1/log-chat-message', {
+  fetch('https://n8n.americanlifeteam.com/webhook/bmg-lead-intake', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', 'x-bmg-secret': BMG_CHAT_SECRET },
     body: JSON.stringify({ sender, body, channel: 'web-widget', session_id: sessionStorage.getItem('bmg_sid') })
@@ -2649,5 +2649,8 @@ setTimeout(()=>{if(!isOpen&&!window._bmgOpened){const t=document.getElementById(
 })();
 </script>
 
+<div style="text-align:center;padding:20px;border-top:1px solid #e5e7eb;margin-top:0">
+  <a href="crm-login.html" style="color:#9ca3af;font-size:12px;text-decoration:none">Owner Login</a>
+</div>
 </body>
 </html>
