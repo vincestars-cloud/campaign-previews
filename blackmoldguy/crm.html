@@ -291,6 +291,8 @@ function logout() {
 
 // ─── API ─────────────────────────────────────────────────────────────
 const N8N = 'https://n8n.americanlifeteam.com/webhook';
+// Google Apps Script backend — paste your deployed Web App URL below
+const APPS_SCRIPT = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
 let allLeads = [];
 let currentFilter = 'all';
 let activeLeadId = null;
@@ -300,7 +302,7 @@ let reviewTargetLead = null;
 async function loadLeads() {
   document.getElementById('leads-list').innerHTML = '<div class="loading"><div class="spinner"></div>Loading your leads...</div>';
   try {
-    const res = await fetch(`${N8N}/bmg-get-leads`);
+    const res = await fetch(`${APPS_SCRIPT}?action=getLeads`);
     const data = await res.json();
     allLeads = (data.results || []).map(parseLead);
     renderStats();
@@ -310,26 +312,25 @@ async function loadLeads() {
   }
 }
 
-function parseLead(page) {
-  const p = page.properties || {};
+function parseLead(r) {
   return {
-    id: page.id,
-    name: p.Name?.title?.[0]?.plain_text || 'Unknown',
-    email: p.Email?.email || '',
-    phone: p.Phone?.phone_number || '',
-    status: p.Status?.select?.name || 'New Lead',
-    service: p.Service?.rich_text?.[0]?.plain_text || '',
-    location: p.Location?.rich_text?.[0]?.plain_text || '',
-    urgency: p.Urgency?.select?.name || '',
-    issue: p.Issue?.rich_text?.[0]?.plain_text || '',
-    notes: p.Notes?.rich_text?.[0]?.plain_text || '',
-    zip: p.Zip?.rich_text?.[0]?.plain_text || '',
-    property: p['Property Type']?.rich_text?.[0]?.plain_text || '',
-    areas: p['Affected Areas']?.rich_text?.[0]?.plain_text || '',
-    chatLog: p['AI Chat Log']?.rich_text?.[0]?.plain_text || '',
-    reviewScore: p['Review Score']?.number,
-    reviewSent: p['Review Sent']?.checkbox || false,
-    created: page.created_time,
+    id:       r.id || r.ID || '',
+    name:     r.name || r.Name || 'Unknown',
+    email:    r.email || r.Email || '',
+    phone:    r.phone || r.Phone || '',
+    status:   r.status || r.Status || 'New Lead',
+    service:  r.service || r.Service || '',
+    location: r.location || r.Location || '',
+    urgency:  r.urgency || r.Urgency || '',
+    issue:    r.notes || r.Notes || '',
+    notes:    r.notes || r.Notes || '',
+    zip:      r.zip || r.Zip || '',
+    property: r.property || '',
+    areas:    r.areas || '',
+    chatLog:  '',
+    reviewScore: null,
+    reviewSent: false,
+    created:  r.created || r.Created || new Date().toISOString(),
   };
 }
 
@@ -490,10 +491,10 @@ async function updateStatus(leadId, newStatus) {
   if (lead) lead.status = newStatus;
   renderStats();
   try {
-    await fetch(`${N8N}/bmg-update-status`, {
+    await fetch(APPS_SCRIPT, {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({page_id: leadId, status: newStatus})
+      body: JSON.stringify({action:'updateStatus', id: leadId, status: newStatus})
     });
     showToast('Status updated', 'success');
   } catch(e) {
@@ -507,10 +508,10 @@ async function saveNotes(leadId) {
   const lead = allLeads.find(l => l.id === leadId);
   if (lead) lead.notes = notes;
   try {
-    await fetch(`${N8N}/bmg-update-status`, {
+    await fetch(APPS_SCRIPT, {
       method:'POST',
       headers:{'Content-Type':'application/json'},
-      body: JSON.stringify({page_id: leadId, status: lead.status, notes: notes})
+      body: JSON.stringify({action:'saveNotes', id: leadId, notes: notes})
     });
     showToast('Notes saved', 'success');
   } catch(e) {
