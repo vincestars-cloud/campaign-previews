@@ -9,41 +9,56 @@
 body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f0;min-height:100vh;display:flex;flex-direction:column}
 .header{background:#1a3a2a;padding:20px;text-align:center}
 .header-name{color:white;font-size:18px;font-weight:700}
-.header-tagline{color:rgba(255,255,255,0.6);font-size:13px;margin-top:2px}
+.header-tagline{color:rgba(255,255,255,0.55);font-size:13px;margin-top:2px}
 .main{flex:1;display:flex;align-items:center;justify-content:center;padding:24px}
-.card{background:white;border-radius:20px;box-shadow:0 4px 32px rgba(0,0,0,0.10);padding:40px 32px;max-width:440px;width:100%;text-align:center}
-h1{font-size:24px;font-weight:800;color:#1a1a1a;margin-bottom:8px}
+
+/* RATING CARD */
+.card{background:white;border-radius:20px;box-shadow:0 4px 32px rgba(0,0,0,0.10);padding:40px 32px;max-width:420px;width:100%;text-align:center}
+h1{font-size:22px;font-weight:800;color:#1a1a1a;margin-bottom:8px}
 .sub{color:#6b7280;font-size:15px;line-height:1.6;margin-bottom:32px}
-.stars-row{display:flex;justify-content:center;gap:12px;margin-bottom:8px}
-.star{font-size:56px;cursor:pointer;transition:transform 0.15s;filter:grayscale(1);opacity:0.4;line-height:1;user-select:none}
-.star.active{filter:none;opacity:1;transform:scale(1.08)}
-.star:hover{filter:none;opacity:1;transform:scale(1.12)}
-.rating-label{height:24px;color:#6b7280;font-size:15px;font-weight:600;margin-bottom:24px;transition:all 0.2s}
-.feedback-section{margin-bottom:24px}
-.feedback-label{font-size:13px;color:#6b7280;margin-bottom:8px;text-align:left}
-textarea{width:100%;padding:14px;border:1.5px solid #e5e7eb;border-radius:12px;font-size:14px;font-family:inherit;resize:none;height:100px;outline:none;transition:border 0.2s}
-textarea:focus{border-color:#1a3a2a}
-.submit-btn{width:100%;padding:18px;background:#1a3a2a;color:white;border:none;border-radius:12px;font-size:17px;font-weight:700;cursor:pointer;font-family:inherit;transition:background 0.2s;display:flex;align-items:center;justify-content:center;gap:8px}
-.submit-btn:hover{background:#0f2318}
-.submit-btn:disabled{background:#9ca3af;cursor:not-allowed}
-.spinner{width:20px;height:20px;border:2.5px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.8s linear infinite;display:none}
+.stars-row{display:flex;justify-content:center;gap:10px;margin-bottom:10px}
+.star{font-size:52px;cursor:pointer;line-height:1;user-select:none;transition:transform 0.1s;color:#d1d5db;-webkit-tap-highlight-color:transparent}
+.star.lit{color:#f59e0b}
+.star:active{transform:scale(0.9)}
+.rating-hint{height:22px;font-size:14px;font-weight:600;color:#9ca3af;margin-bottom:28px;transition:color 0.15s}
+.rating-hint.visible{color:#374151}
+
+/* INTERNAL FEEDBACK FORM (4 stars and below — styled like Google) */
+.google-card{background:white;border-radius:20px;box-shadow:0 4px 32px rgba(0,0,0,0.10);padding:32px;max-width:440px;width:100%;display:none}
+.google-header{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.google-logo{width:40px;height:40px;border-radius:50%;background:#1a3a2a;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.google-biz{font-size:15px;font-weight:700;color:#1a1a1a;line-height:1.3}
+.google-rating-row{display:flex;align-items:center;gap:4px;margin-bottom:20px}
+.google-stars{display:flex;gap:3px}
+.google-star{font-size:28px;color:#f59e0b}
+.google-rating-label{font-size:14px;color:#5f6368;margin-left:6px}
+.google-label{font-size:14px;color:#3c4043;font-weight:500;margin-bottom:8px;text-align:left}
+.google-textarea{width:100%;padding:14px;border:1px solid #dadce0;border-radius:8px;font-size:14px;font-family:inherit;resize:none;min-height:120px;outline:none;color:#3c4043;transition:border 0.15s;line-height:1.6}
+.google-textarea:focus{border-color:#1a73e8;border-width:2px}
+.google-textarea::placeholder{color:#9aa0a6}
+.google-post-btn{width:100%;padding:14px;background:#1a73e8;color:white;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;font-family:inherit;margin-top:16px;transition:background 0.15s;display:flex;align-items:center;justify-content:center;gap:8px}
+.google-post-btn:hover{background:#1557b0}
+.google-post-btn:disabled{background:#9aa0a6;cursor:not-allowed}
+.google-skip{text-align:center;margin-top:12px;font-size:13px;color:#1a73e8;cursor:pointer;font-weight:500}
+.google-skip:hover{text-decoration:underline}
+
+/* SPINNER */
+.btn-spinner{width:18px;height:18px;border:2px solid rgba(255,255,255,0.4);border-top-color:white;border-radius:50%;animation:spin 0.7s linear infinite;display:none}
 @keyframes spin{to{transform:rotate(360deg)}}
 
 /* SUCCESS STATES */
-.success-high, .success-low{display:none}
-.success-icon{font-size:64px;margin-bottom:16px}
-.success-title{font-size:24px;font-weight:800;color:#1a1a1a;margin-bottom:12px}
-.success-body{color:#6b7280;font-size:15px;line-height:1.7;margin-bottom:28px}
-.google-btn{display:block;background:#1a3a2a;color:white;text-decoration:none;padding:18px 32px;border-radius:12px;font-size:17px;font-weight:700;margin-bottom:16px;transition:background 0.2s}
-.google-btn:hover{background:#0f2318}
-.google-btn-sub{font-size:13px;color:#6b7280}
-.call-btn{display:block;background:#f0fdf4;border:2px solid #86efac;color:#15803d;text-decoration:none;padding:16px 32px;border-radius:12px;font-size:16px;font-weight:700;margin-bottom:12px}
-.promise-box{background:#f9f9f9;border-radius:12px;padding:20px;border-left:4px solid #1a3a2a;text-align:left;margin-bottom:8px}
-.promise-box p{font-size:14px;color:#374151;line-height:1.6}
-.promise-box strong{color:#1a3a2a}
+.success-high,.success-low{display:none}
+.success-icon{font-size:56px;margin-bottom:16px}
+.success-title{font-size:22px;font-weight:800;color:#1a1a1a;margin-bottom:10px}
+.success-body{color:#6b7280;font-size:15px;line-height:1.7;margin-bottom:24px}
+.call-link{display:block;background:#f0fdf4;border:2px solid #86efac;color:#15803d;text-decoration:none;padding:14px;border-radius:10px;font-size:15px;font-weight:700;margin-bottom:10px;text-align:center}
+.divider-line{border:none;border-top:1px solid #f0f0f0;margin:20px 0}
+.small-note{font-size:13px;color:#9ca3af}
 
-/* No selection yet */
-.submit-btn.disabled-look{opacity:0.5;cursor:not-allowed}
+@media(max-width:480px){
+  .card,.google-card{padding:28px 20px}
+  .star{font-size:46px}
+}
 </style>
 </head>
 <body>
@@ -54,128 +69,158 @@ textarea:focus{border-color:#1a3a2a}
 </div>
 
 <div class="main">
+
+  <!-- STEP 1: RATING STARS -->
   <div class="card" id="rate-card">
     <h1>How was your experience?</h1>
-    <p class="sub" id="greeting-sub">We'd love to hear how we did.</p>
+    <p class="sub" id="greeting-sub">We'd love to hear from you.</p>
 
     <div class="stars-row" id="stars-row">
-      <span class="star" data-val="1" onclick="selectStar(1)" onmouseover="hoverStar(1)" onmouseout="resetHover()">★</span>
-      <span class="star" data-val="2" onclick="selectStar(2)" onmouseover="hoverStar(2)" onmouseout="resetHover()">★</span>
-      <span class="star" data-val="3" onclick="selectStar(3)" onmouseover="hoverStar(3)" onmouseout="resetHover()">★</span>
-      <span class="star" data-val="4" onclick="selectStar(4)" onmouseover="hoverStar(4)" onmouseout="resetHover()">★</span>
-      <span class="star" data-val="5" onclick="selectStar(5)" onmouseover="hoverStar(5)" onmouseout="resetHover()">★</span>
+      <span class="star" data-val="1">★</span>
+      <span class="star" data-val="2">★</span>
+      <span class="star" data-val="3">★</span>
+      <span class="star" data-val="4">★</span>
+      <span class="star" data-val="5">★</span>
     </div>
-    <div class="rating-label" id="rating-label">Tap a star to rate</div>
+    <div class="rating-hint" id="rating-hint">Tap a star to rate</div>
+  </div>
 
-    <div class="feedback-section">
-      <div class="feedback-label">Anything you'd like to share? (optional)</div>
-      <textarea id="feedback" placeholder="Tell us about your experience..."></textarea>
+  <!-- STEP 2A: INTERNAL FEEDBACK (4 stars and below — looks like Google) -->
+  <div class="google-card" id="google-internal-card">
+    <div class="google-header">
+      <div class="google-logo">🌿</div>
+      <div class="google-biz">The Black Mold Guy<br><span style="font-size:12px;color:#5f6368;font-weight:400">Mold Inspection & Remediation</span></div>
     </div>
-
-    <button class="submit-btn disabled-look" id="submit-btn" onclick="submitReview()" disabled>
-      <span id="btn-text">Submit My Rating</span>
-      <div class="spinner" id="spinner"></div>
+    <div class="google-rating-row">
+      <div class="google-stars" id="google-stars-display"></div>
+      <span class="google-rating-label" id="google-rating-label"></span>
+    </div>
+    <div class="google-label">Share your experience</div>
+    <textarea class="google-textarea" id="internal-feedback" placeholder="Tell us what we could have done better..."></textarea>
+    <button class="google-post-btn" id="internal-post-btn" onclick="submitInternal()">
+      <span id="internal-btn-text">Post</span>
+      <div class="btn-spinner" id="internal-spinner"></div>
     </button>
+    <div class="google-skip" onclick="submitInternal(true)">Skip for now</div>
   </div>
 
-  <!-- HIGH RATING SUCCESS -->
+  <!-- SUCCESS: HIGH (5 stars — Google redirect success) -->
   <div class="card" id="success-high" style="display:none">
-    <div class="success-icon">🙏</div>
-    <div class="success-title">Thank you, <span id="high-name">friend</span>!</div>
-    <p class="success-body">We're so glad we could help you and your family breathe easier. Your experience matters — would you mind sharing it on Google? It helps other families in Atlanta and Miami find an inspector they can trust.</p>
-    <a class="google-btn" id="google-link" href="https://g.page/r/CexMD0Bk9e8HEAE/review" target="_blank">⭐ Leave a Google Review</a>
-    <p class="google-btn-sub">Takes about 30 seconds. Thank you for trusting us.</p>
+    <div class="success-icon">🌟</div>
+    <div class="success-title">Redirecting to Google...</div>
+    <p class="success-body">Taking you to Google now. Your review makes a huge difference for other families looking for someone they can trust.</p>
+    <div class="small-note">If you're not redirected automatically, <a href="https://g.page/r/CexMD0Bk9e8HEAE/review" style="color:#1a3a2a;font-weight:600">click here</a>.</div>
   </div>
 
-  <!-- LOW RATING SUCCESS -->
+  <!-- SUCCESS: LOW (1-4 stars — internal) -->
   <div class="card" id="success-low" style="display:none">
     <div class="success-icon">💚</div>
     <div class="success-title">Thank you for being honest.</div>
-    <p class="success-body">We're sorry we didn't fully hit the mark. Your feedback goes directly to our owner and we take it seriously. We want to make this right.</p>
-    <div class="promise-box">
-      <p>Expect a call from us <strong>within 24 hours</strong>. Or reach us directly now — we'll personally make sure your concerns are addressed.</p>
-    </div>
-    <a class="call-btn" href="tel:3058490242">📞 Call Now: 305-849-0242</a>
-    <p class="google-btn-sub" style="color:#9ca3af">Your feedback was kept private. Thank you for giving us the chance to do better.</p>
+    <p class="success-body">Your feedback goes directly to our owner. We genuinely want to make this right — expect a personal call from us within 24 hours.</p>
+    <a class="call-link" href="tel:3058490242">📞 Call Now: 305-849-0242</a>
+    <div class="small-note">Your feedback was kept private. We appreciate you giving us the chance to do better.</div>
   </div>
+
 </div>
 
 <script>
-let selectedRating = 0;
-const LABELS = ['','Very Dissatisfied','Unsatisfied','It Was OK','Really Good!','Amazing — 5 Stars!'];
 const N8N = 'https://n8n.americanlifeteam.com/webhook';
+const GOOGLE_REVIEW_URL = 'https://g.page/r/CexMD0Bk9e8HEAE/review';
+const HINT_LABELS = ['', 'Very Dissatisfied', 'Unsatisfied', 'It Was OK', 'Really Good!', 'Amazing!'];
 
-// Pre-fill name from URL
 const params = new URLSearchParams(window.location.search);
 const customerName = params.get('name') || '';
 if (customerName) {
-  document.getElementById('greeting-sub').textContent = `Hi ${customerName}! How did we do?`;
+  document.getElementById('greeting-sub').textContent = `Hi ${customerName.split(' ')[0]}! How did we do?`;
 }
 
-function hoverStar(val) {
-  document.querySelectorAll('.star').forEach((s, i) => {
-    s.classList.toggle('active', i < val);
-  });
-  document.getElementById('rating-label').textContent = LABELS[val];
+let selectedStars = 0;
+
+// Star interaction
+const stars = document.querySelectorAll('#stars-row .star');
+stars.forEach(star => {
+  const val = parseInt(star.dataset.val);
+
+  function highlight(upTo) {
+    stars.forEach((s, i) => s.classList.toggle('lit', i < upTo));
+    document.getElementById('rating-hint').textContent = upTo ? HINT_LABELS[upTo] : 'Tap a star to rate';
+    document.getElementById('rating-hint').classList.toggle('visible', upTo > 0);
+  }
+
+  star.addEventListener('mouseover', () => { if (!selectedStars) highlight(val); });
+  star.addEventListener('mouseout', () => { if (!selectedStars) highlight(0); });
+  star.addEventListener('click', () => selectStars(val));
+  star.addEventListener('touchend', e => { e.preventDefault(); selectStars(val); });
+});
+
+function selectStars(val) {
+  selectedStars = val;
+  stars.forEach((s, i) => s.classList.toggle('lit', i < val));
+  document.getElementById('rating-hint').textContent = HINT_LABELS[val];
+  document.getElementById('rating-hint').classList.add('visible');
+
+  // Route immediately on selection
+  setTimeout(() => {
+    if (val === 5) {
+      // 5 stars → Google
+      routeToGoogle();
+    } else {
+      // 4 stars and below → Google-lookalike internal form
+      showInternalForm(val);
+    }
+  }, 300); // Brief pause so they see their star selection
 }
 
-function resetHover() {
-  document.querySelectorAll('.star').forEach((s, i) => {
-    s.classList.toggle('active', i < selectedRating);
-  });
-  document.getElementById('rating-label').textContent = selectedRating ? LABELS[selectedRating] : 'Tap a star to rate';
+function routeToGoogle() {
+  // Log the 5-star to n8n (fire and forget)
+  fetch(`${N8N}/bmg-review-intake`, {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({stars: 5, customer_name: customerName || 'Customer', feedback: '5 stars — routed to Google'})
+  }).catch(() => {});
+
+  // Show redirect screen
+  document.getElementById('rate-card').style.display = 'none';
+  document.getElementById('success-high').style.display = 'block';
+
+  // Redirect to Google after brief moment
+  setTimeout(() => {
+    window.location.href = GOOGLE_REVIEW_URL;
+  }, 1200);
 }
 
-function selectStar(val) {
-  selectedRating = val;
-  document.querySelectorAll('.star').forEach((s, i) => {
-    s.classList.toggle('active', i < val);
-  });
-  document.getElementById('rating-label').textContent = LABELS[val];
-  const btn = document.getElementById('submit-btn');
-  btn.disabled = false;
-  btn.classList.remove('disabled-look');
+function showInternalForm(stars) {
+  document.getElementById('rate-card').style.display = 'none';
+
+  // Build the Google-style star display
+  const starsHTML = Array.from({length: 5}, (_, i) =>
+    `<span class="google-star">${i < stars ? '★' : '☆'}</span>`
+  ).join('');
+  document.getElementById('google-stars-display').innerHTML = starsHTML;
+  document.getElementById('google-rating-label').textContent = HINT_LABELS[stars];
+
+  document.getElementById('google-internal-card').style.display = 'block';
 }
 
-async function submitReview() {
-  if (!selectedRating) return;
-  const btn = document.getElementById('submit-btn');
+async function submitInternal(skip = false) {
+  const stars = selectedStars;
+  const feedback = skip ? '' : document.getElementById('internal-feedback').value.trim();
+
+  const btn = document.getElementById('internal-post-btn');
   btn.disabled = true;
-  document.getElementById('btn-text').style.display = 'none';
-  document.getElementById('spinner').style.display = 'block';
-
-  const feedback = document.getElementById('feedback').value.trim();
+  document.getElementById('internal-btn-text').style.display = 'none';
+  document.getElementById('internal-spinner').style.display = 'block';
 
   try {
-    const res = await fetch(`${N8N}/bmg-review-intake`, {
+    await fetch(`${N8N}/bmg-review-intake`, {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        stars: selectedRating,
-        customer_name: customerName || 'Customer',
-        feedback: feedback
-      })
+      body: JSON.stringify({stars, customer_name: customerName || 'Customer', feedback})
     });
-    const data = await res.json();
+  } catch(e) {}
 
-    document.getElementById('rate-card').style.display = 'none';
-
-    if (data.redirect === 'google' || selectedRating >= 4) {
-      document.getElementById('high-name').textContent = customerName || 'friend';
-      document.getElementById('success-high').style.display = 'block';
-    } else {
-      document.getElementById('success-low').style.display = 'block';
-    }
-  } catch(e) {
-    // Even if network fails, show the appropriate screen
-    document.getElementById('rate-card').style.display = 'none';
-    if (selectedRating >= 4) {
-      document.getElementById('high-name').textContent = customerName || 'friend';
-      document.getElementById('success-high').style.display = 'block';
-    } else {
-      document.getElementById('success-low').style.display = 'block';
-    }
-  }
+  document.getElementById('google-internal-card').style.display = 'none';
+  document.getElementById('success-low').style.display = 'block';
 }
 </script>
 </body>
