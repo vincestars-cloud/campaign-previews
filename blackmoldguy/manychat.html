@@ -28,14 +28,16 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f0;color:#1a
 .where-tag.green{background:#d1fae5;color:#065f46}
 .where-tag.orange{background:#ffedd5;color:#c2410c}
 .where-tag.purple{background:#ede9fe;color:#6d28d9}
+.where-tag.gray{background:#f3f4f6;color:#374151}
 .copy-btn{padding:8px 16px;background:#1a3a2a;color:white;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;flex-shrink:0;transition:background 0.15s}
 .copy-btn:hover{background:#0f2318}
 .copy-btn.copied{background:#15803d}
-.prompt-content{padding:20px;background:#fafafa;font-size:14px;color:#374151;line-height:1.8;white-space:pre-wrap;font-family:'Courier New',monospace;font-size:13px;max-height:none}
+.prompt-content{padding:20px;background:#fafafa;font-size:13px;color:#374151;line-height:1.8;white-space:pre-wrap;font-family:'Courier New',monospace;max-height:none}
 .flow-steps{padding:20px}
 .flow-step{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start}
 .flow-step:last-child{margin-bottom:0}
 .step-bubble{width:28px;height:28px;border-radius:50%;background:#1a3a2a;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0;margin-top:2px}
+.step-bubble.gray{background:#6b7280}
 .step-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#9ca3af;margin-bottom:3px}
 .step-text{font-size:14px;color:#374151;line-height:1.6}
 .step-text strong{color:#1a1a1a}
@@ -52,10 +54,32 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f0;color:#1a
 .ig-tag{background:#e0f2fe;color:#0369a1;padding:3px 10px;border-radius:8px;font-size:11px;font-weight:700}
 .tiktok-tag{background:#fce7f3;color:#9d174d;padding:3px 10px;border-radius:8px;font-size:11px;font-weight:700}
 
+/* SETUP GUIDE STYLES */
+.setup-phase{background:white;border-radius:14px;box-shadow:0 1px 6px rgba(0,0,0,0.08);margin-bottom:20px;overflow:hidden}
+.setup-phase-header{padding:16px 20px;border-bottom:1px solid #f3f4f6;display:flex;align-items:center;gap:12px}
+.phase-num{width:36px;height:36px;border-radius:50%;background:#1a3a2a;color:white;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:15px;flex-shrink:0}
+.phase-title{font-size:16px;font-weight:700;color:#1a1a1a}
+.phase-sub{font-size:13px;color:#6b7280;margin-top:2px}
+.setup-steps{padding:20px;display:flex;flex-direction:column;gap:14px}
+.setup-step{display:flex;gap:14px;align-items:flex-start}
+.setup-step-num{width:26px;height:26px;border-radius:50%;background:#f0f9f4;border:2px solid #86efac;color:#065f46;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0;margin-top:1px}
+.setup-step-body{}
+.setup-step-action{font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:3px}
+.setup-step-path{font-size:13px;color:#6b7280;line-height:1.5}
+.path-tag{background:#1a3a2a;color:#a7f3d0;padding:2px 8px;border-radius:4px;font-size:12px;font-family:monospace;font-weight:600}
+.setup-step-note{background:#fef9c3;border-left:3px solid #f59e0b;padding:8px 12px;border-radius:0 6px 6px 0;font-size:13px;color:#78350f;margin-top:6px;line-height:1.5}
+.setup-done-bar{background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:10px;margin-top:4px}
+.done-check{font-size:20px}
+.done-text{font-size:14px;color:#065f46;font-weight:600}
+.checklist-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:0 20px 20px}
+.check-item{display:flex;gap:8px;align-items:flex-start;background:#f9fafb;border-radius:8px;padding:10px 12px}
+.check-box{width:18px;height:18px;border-radius:4px;border:2px solid #d1fae5;background:#d1fae5;color:#15803d;font-size:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.check-label{font-size:13px;color:#374151;line-height:1.4}
+
 @media(max-width:600px){
   .header{padding:20px}
   .container{padding:20px 16px}
-  .qr-grid{grid-template-columns:1fr}
+  .qr-grid,.checklist-grid{grid-template-columns:1fr}
   .nav-bar{padding:0 16px}
 }
 </style>
@@ -65,11 +89,12 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f0;color:#1a
 <div class="header">
   <div class="header-badge">MANYCHAT AI STARTER PACK</div>
   <h1>The Black Mold Guy</h1>
-  <p>Paste these directly into ManyChat. Each section is labeled with exactly where it goes.</p>
+  <p>Step-by-step ManyChat setup + every prompt, flow, and script you need.</p>
 </div>
 
 <div class="nav-bar">
-  <div class="nav-item active" onclick="showSection('system', this)">1. System Prompt</div>
+  <div class="nav-item active" onclick="showSection('setup', this)">0. Setup Guide</div>
+  <div class="nav-item" onclick="showSection('system', this)">1. System Prompt</div>
   <div class="nav-item" onclick="showSection('flows', this)">2. Conversation Flows</div>
   <div class="nav-item" onclick="showSection('quickreplies', this)">3. Quick Replies</div>
   <div class="nav-item" onclick="showSection('comments', this)">4. Comment Scripts</div>
@@ -77,8 +102,305 @@ body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f0;color:#1a
 
 <div class="container">
 
+  <!-- SECTION 0: SETUP GUIDE -->
+  <div class="section active" id="sec-setup">
+    <div class="section-intro">
+      <strong>Start here.</strong> This guide walks you through exactly where to click in ManyChat to get your AI bot live — from zero. Do these in order. It takes about 30 minutes the first time.
+    </div>
+
+    <!-- PHASE 1 -->
+    <div class="setup-phase">
+      <div class="setup-phase-header">
+        <div class="phase-num">1</div>
+        <div>
+          <div class="phase-title">Enable ManyChat AI (AI Assistant)</div>
+          <div class="phase-sub">Turn on the AI and connect it to your Instagram/Facebook</div>
+        </div>
+      </div>
+      <div class="setup-steps">
+        <div class="setup-step">
+          <div class="setup-step-num">1</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Go to your ManyChat dashboard</div>
+            <div class="setup-step-path">Log in at <span class="path-tag">app.manychat.com</span> → select your page (The Black Mold Guy)</div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">2</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Open AI Settings</div>
+            <div class="setup-step-path">Left sidebar → <span class="path-tag">Settings</span> → scroll to <span class="path-tag">AI Assistant</span> section</div>
+            <div class="setup-step-note">If you don't see "AI Assistant" in Settings, you may need to enable it: go to Settings → Features and toggle on "AI Assistant"</div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">3</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Toggle AI Assistant ON</div>
+            <div class="setup-step-path">Click the toggle next to "Enable AI Assistant" to turn it green</div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">4</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Paste the System Prompt</div>
+            <div class="setup-step-path">You'll see a large text field labeled "System Prompt" or "AI Instructions." Click tab <strong>1. System Prompt</strong> above, copy the full prompt, and paste it here.</div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">5</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Save</div>
+            <div class="setup-step-path">Click <span class="path-tag">Save</span> at the bottom of the page</div>
+          </div>
+        </div>
+        <div class="setup-done-bar">
+          <div class="done-check">✅</div>
+          <div class="done-text">Your AI is now live. Anyone who DMs your Instagram or Facebook page will get AI-powered responses using your system prompt.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 2 -->
+    <div class="setup-phase">
+      <div class="setup-phase-header">
+        <div class="phase-num">2</div>
+        <div>
+          <div class="phase-title">Create Keyword Flows (the 5 scripts)</div>
+          <div class="phase-sub">Each flow fires when someone DMs a specific word — like "price" or "free inspection"</div>
+        </div>
+      </div>
+      <div class="setup-steps">
+        <div class="setup-step">
+          <div class="setup-step-num">1</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Open the Flows section</div>
+            <div class="setup-step-path">Left sidebar → <span class="path-tag">Automation</span> → <span class="path-tag">Flows</span></div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">2</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Create a new flow</div>
+            <div class="setup-step-path">Click <span class="path-tag">+ New Flow</span> (top right) → name it "Flow 1 — Free Inspection"</div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">3</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Set the trigger (keyword)</div>
+            <div class="setup-step-path">In the flow builder, click on the starting block → choose <span class="path-tag">Keyword</span> as trigger → type each keyword from the flow (e.g. FREE INSPECTION, FREE CHECK). Add each one with Enter.</div>
+            <div class="setup-step-note">Set it to match "Contains" not "Is" — this way it fires even if someone types "Can I get a free inspection?"</div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">4</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Add the bot messages</div>
+            <div class="setup-step-path">Click the <span class="path-tag">+ Add Step</span> button → choose <span class="path-tag">Send Message</span> → paste the message from tab <strong>2. Conversation Flows</strong>. Add Quick Reply buttons for each option listed.</div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">5</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Publish and repeat for all 5 flows</div>
+            <div class="setup-step-path">Click <span class="path-tag">Publish</span> in the top right. Then create flows 2, 3, 4, and 5 the same way using the scripts in tab 2.</div>
+          </div>
+        </div>
+        <div class="setup-done-bar">
+          <div class="done-check">✅</div>
+          <div class="done-text">5 flows created. Now your bot responds instantly when people ask about prices, health symptoms, free inspections, or submit your form.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 3 -->
+    <div class="setup-phase">
+      <div class="setup-phase-header">
+        <div class="phase-num">3</div>
+        <div>
+          <div class="phase-title">Set Up Saved Replies (your quick-response library)</div>
+          <div class="phase-sub">These are for YOU to use — one tap sends a full script from your phone</div>
+        </div>
+      </div>
+      <div class="setup-steps">
+        <div class="setup-step">
+          <div class="setup-step-num">1</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Open Saved Replies</div>
+            <div class="setup-step-path">Left sidebar → <span class="path-tag">Live Chat</span> → <span class="path-tag">Saved Replies</span></div>
+            <div class="setup-step-note">On mobile: open the ManyChat app → any conversation → tap the lightning bolt icon ⚡ to access saved replies while chatting</div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">2</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Add each reply from tab 3</div>
+            <div class="setup-step-path">Click <span class="path-tag">+ Add Saved Reply</span> → give it a short name (e.g. "Can't Afford", "Bleach", "Scheduling") → paste the script</div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">3</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">How to use while chatting</div>
+            <div class="setup-step-path">In any DM conversation, type <span class="path-tag">/</span> in the reply box → your saved replies appear → select the right one → send. Or tap the ⚡ icon on mobile.</div>
+          </div>
+        </div>
+        <div class="setup-done-bar">
+          <div class="done-check">✅</div>
+          <div class="done-text">10 saved replies loaded. Now when someone DMs you personally, you can respond with a perfect script in one tap.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 4 -->
+    <div class="setup-phase">
+      <div class="setup-phase-header">
+        <div class="phase-num">4</div>
+        <div>
+          <div class="phase-title">Set Up Comment Automation (auto-DM from comments)</div>
+          <div class="phase-sub">When someone comments specific words on your posts, they automatically get a DM</div>
+        </div>
+      </div>
+      <div class="setup-steps">
+        <div class="setup-step">
+          <div class="setup-step-num">1</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Open Growth Tools</div>
+            <div class="setup-step-path">Left sidebar → <span class="path-tag">Growth Tools</span> → <span class="path-tag">Comment Growth Tool</span> (sometimes listed as "Comments")</div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">2</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Create a new Comment Automation</div>
+            <div class="setup-step-path">Click <span class="path-tag">+ New Comment Growth Tool</span> → choose <span class="path-tag">Instagram</span> or <span class="path-tag">Facebook</span></div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">3</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Set the trigger keywords</div>
+            <div class="setup-step-path">Choose "When someone comments containing..." → add: <span class="path-tag">FREE</span>, <span class="path-tag">INSPECT</span>, <span class="path-tag">HELP</span>, <span class="path-tag">DM ME</span>, <span class="path-tag">INFO</span></div>
+            <div class="setup-step-note">Also set up a public reply to the comment: "Sent you a DM with all the info! 🌿" — this keeps the conversation visible to others and shows you're responsive.</div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">4</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Connect to your Flow 1</div>
+            <div class="setup-step-path">Under "Send DM" → select <span class="path-tag">Connect to Flow</span> → choose "Flow 1 — Free Inspection". This sends the full booking script automatically.</div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">5</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Apply to posts</div>
+            <div class="setup-step-path">Choose: <span class="path-tag">All Posts</span> (recommended) or specific posts. Click <span class="path-tag">Publish</span>.</div>
+          </div>
+        </div>
+        <div class="setup-done-bar">
+          <div class="done-check">✅</div>
+          <div class="done-text">Now every time someone comments "info" or "DM me" on your Reels, they automatically get your booking flow in their DMs — while you sleep.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PHASE 5 -->
+    <div class="setup-phase">
+      <div class="setup-phase-header">
+        <div class="phase-num">5</div>
+        <div>
+          <div class="phase-title">Set Up the 24-Hour Follow-Up Sequence</div>
+          <div class="phase-sub">Automatically re-engages people who DM'd but didn't book</div>
+        </div>
+      </div>
+      <div class="setup-steps">
+        <div class="setup-step">
+          <div class="setup-step-num">1</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Open Flow 4 (24-Hour Re-Engagement)</div>
+            <div class="setup-step-path">Go to <span class="path-tag">Automation</span> → <span class="path-tag">Flows</span> → open "Flow 4 — 24-Hour Re-Engagement"</div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">2</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Set the trigger to "First interaction"</div>
+            <div class="setup-step-path">Set trigger to <span class="path-tag">First Interaction with Page</span> → then add a <span class="path-tag">Delay</span> step of 24 hours → then add the re-engagement message from tab 2.</div>
+          </div>
+        </div>
+        <div class="setup-step">
+          <div class="setup-step-num">3</div>
+          <div class="setup-step-body">
+            <div class="setup-step-action">Add a condition (don't message if already booked)</div>
+            <div class="setup-step-path">Add an <span class="path-tag">Condition</span> before the message: check if the user has a custom field "booked = yes" — if yes, skip the message. (Set this field via a button in your booking confirmation flow.)</div>
+          </div>
+        </div>
+        <div class="setup-done-bar">
+          <div class="done-check">✅</div>
+          <div class="done-text">24-hour follow-up active. People who ghost you get a gentle nudge automatically the next day.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- QUICK CHECKLIST -->
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <div>
+          <div class="prompt-title">Final Setup Checklist</div>
+          <div class="prompt-sub">Confirm all 5 phases are complete before going live</div>
+        </div>
+        <span class="where-tag gray">Pre-Launch</span>
+      </div>
+      <div class="checklist-grid">
+        <div class="check-item">
+          <div class="check-box">✓</div>
+          <div class="check-label">AI Assistant toggled ON in Settings</div>
+        </div>
+        <div class="check-item">
+          <div class="check-box">✓</div>
+          <div class="check-label">System Prompt pasted and saved</div>
+        </div>
+        <div class="check-item">
+          <div class="check-box">✓</div>
+          <div class="check-label">Flow 1 — Free Inspection keywords set</div>
+        </div>
+        <div class="check-item">
+          <div class="check-box">✓</div>
+          <div class="check-label">Flow 2 — Health Symptoms keywords set</div>
+        </div>
+        <div class="check-item">
+          <div class="check-box">✓</div>
+          <div class="check-label">Flow 3 — Price keywords set</div>
+        </div>
+        <div class="check-item">
+          <div class="check-box">✓</div>
+          <div class="check-label">Flow 4 — 24hr follow-up with delay</div>
+        </div>
+        <div class="check-item">
+          <div class="check-box">✓</div>
+          <div class="check-label">All 10 Saved Replies added</div>
+        </div>
+        <div class="check-item">
+          <div class="check-box">✓</div>
+          <div class="check-label">Comment Automation set to All Posts</div>
+        </div>
+        <div class="check-item">
+          <div class="check-box">✓</div>
+          <div class="check-label">Test: DM your own page "free inspection"</div>
+        </div>
+        <div class="check-item">
+          <div class="check-box">✓</div>
+          <div class="check-label">Test: Comment "INFO" on a post</div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /setup -->
+
   <!-- SECTION 1: SYSTEM PROMPT -->
-  <div class="section active" id="sec-system">
+  <div class="section" id="sec-system">
     <div class="section-intro">
       <strong>Where to paste this:</strong> ManyChat → Settings → AI Assistant → "System Prompt" field. This is the master instruction that controls how your AI bot thinks and responds to every conversation.
     </div>
@@ -155,7 +477,7 @@ MARKETS: Metro Atlanta, GA and Miami-Dade, FL</div>
   <!-- SECTION 2: FLOWS -->
   <div class="section" id="sec-flows">
     <div class="section-intro">
-      <strong>Where to set these up:</strong> ManyChat → Flows. Create a new Flow for each one. Set the trigger keyword under "Keywords" tab in each flow. These are scripts your bot follows when someone DMs a specific phrase.
+      <strong>Where to set these up:</strong> ManyChat → Automation → Flows → + New Flow. Create one flow per script below. Set the trigger keywords shown (use "Contains" match, not exact). Copy-paste each message directly into the flow builder.
     </div>
 
     <!-- FLOW 1 -->
@@ -268,7 +590,14 @@ MARKETS: Metro Atlanta, GA and Miami-Dade, FL</div>
         <div class="flow-step">
           <div class="step-bubble">1</div>
           <div>
-            <div class="step-label">Auto-send 24h after first contact (no booking)</div>
+            <div class="step-label">Setup: Trigger = First Interaction → Delay 24hrs → Condition (not booked) → Send</div>
+            <div class="step-text">In ManyChat: Trigger = <strong>First Interaction with Page</strong> → add Delay block (24 hours) → add Condition block (check custom field "booked" is not "yes") → then send this message:</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-bubble">2</div>
+          <div>
+            <div class="step-label">Auto-send message</div>
             <div class="step-text">"Hey! Just checking in — did you get a chance to look at the form? Happy to answer any questions first, no pressure at all. If timing's an issue, I can also do a quick 5-minute call before you decide anything. Just reply here. 🌿"</div>
           </div>
         </div>
@@ -288,7 +617,14 @@ MARKETS: Metro Atlanta, GA and Miami-Dade, FL</div>
         <div class="flow-step">
           <div class="step-bubble">1</div>
           <div>
-            <div class="step-label">Fires when someone submits the assessment form</div>
+            <div class="step-label">Setup: Automation → Flows → New Flow → Trigger = External Request (Webhook)</div>
+            <div class="step-text">In ManyChat: Create new flow → Trigger = <strong>External Request (Webhook)</strong> → copy the webhook URL → paste it into your n8n "bmg-lead-intake" workflow as an additional HTTP Request step after form submission.</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-bubble">2</div>
+          <div>
+            <div class="step-label">Message sent after form submit</div>
             <div class="step-text">"Hey {{first_name}}! Got your form — thank you for reaching out. [Owner] personally reviews every submission and will be in touch within a few hours (usually much sooner).
 <br><br>In the meantime, any questions? I'm here. 🌿"</div>
           </div>
@@ -300,7 +636,7 @@ MARKETS: Metro Atlanta, GA and Miami-Dade, FL</div>
   <!-- SECTION 3: QUICK REPLIES -->
   <div class="section" id="sec-quickreplies">
     <div class="section-intro">
-      <strong>Where to set these up:</strong> ManyChat → Saved Replies. Add these as saved responses so you can send them with one tap from your phone when someone DMs you directly. These are for when YOU are responding, not the bot.
+      <strong>Where to set these up:</strong> ManyChat → Live Chat → Saved Replies → + Add Saved Reply. Name each one something short (e.g. "Bleach", "Afford", "Scheduling"). When chatting, type <strong>/</strong> in the reply box to search your saved replies, or tap ⚡ on mobile.
     </div>
 
     <div class="qr-grid">
@@ -350,7 +686,7 @@ MARKETS: Metro Atlanta, GA and Miami-Dade, FL</div>
   <!-- SECTION 4: COMMENT SCRIPTS -->
   <div class="section" id="sec-comments">
     <div class="section-intro">
-      <strong>Where to use these:</strong> When replying to comments on your Instagram and TikTok videos. Copy and personalize slightly for each person. ManyChat can also auto-DM anyone who comments specific keywords — set up a Comment Automation to send people your Flow 1 or Flow 2 automatically.
+      <strong>Where to use these:</strong> When replying to comments on your Instagram and TikTok videos. Copy and personalize slightly for each person. To automate: ManyChat → Growth Tools → Comment Growth Tool → set trigger keywords → connect to Flow 1 or Flow 2.
     </div>
 
     <div class="comment-card">
@@ -404,8 +740,8 @@ MARKETS: Metro Atlanta, GA and Miami-Dade, FL</div>
     </div>
 
     <div style="background:#f0f9f4;border:1px solid #86efac;border-radius:12px;padding:16px 20px;margin-top:20px">
-      <strong style="color:#065f46;font-size:14px">Pro tip: Set up a ManyChat Comment Automation</strong>
-      <p style="font-size:14px;color:#374151;margin-top:8px;line-height:1.6">In ManyChat → Growth Tools → Comment Automation. When someone comments "FREE", "INSPECT", "HELP", or "DM ME" on your videos — automatically send them Flow 1 in a DM. This runs 24/7 even while you sleep.</p>
+      <strong style="color:#065f46;font-size:14px">Automating comment responses in ManyChat</strong>
+      <p style="font-size:14px;color:#374151;margin-top:8px;line-height:1.6">ManyChat → Growth Tools → Comment Growth Tool. When someone comments "FREE", "INSPECT", "HELP", or "DM ME" on your videos — automatically send them Flow 1 in a DM. Also set a public reply to the comment: "Sent you a DM! 🌿" so others see you're responsive. This runs 24/7.</p>
     </div>
   </div>
 
