@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRM Setup Guide — The Black Mold Guy</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f0;color:#1a1a1a;padding-bottom:60px}
+.header{background:#1a3a2a;padding:28px 32px}
+.header h1{color:white;font-size:22px;font-weight:800;margin-bottom:4px}
+.header p{color:rgba(255,255,255,0.6);font-size:14px}
+.container{max-width:760px;margin:0 auto;padding:32px 20px}
+.intro{background:white;border-radius:14px;box-shadow:0 1px 6px rgba(0,0,0,0.08);padding:24px;margin-bottom:24px}
+.intro h2{font-size:18px;font-weight:700;margin-bottom:10px;color:#1a1a1a}
+.intro p{font-size:14px;color:#374151;line-height:1.7}
+.phase{background:white;border-radius:14px;box-shadow:0 1px 6px rgba(0,0,0,0.08);margin-bottom:20px;overflow:hidden}
+.phase-header{padding:20px 24px;border-bottom:1px solid #f3f4f6;display:flex;align-items:center;gap:14px}
+.phase-num{width:38px;height:38px;border-radius:50%;background:#1a3a2a;color:white;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px;flex-shrink:0}
+.phase-title{font-size:16px;font-weight:700;color:#1a1a1a}
+.phase-sub{font-size:13px;color:#6b7280;margin-top:2px}
+.steps{padding:20px 24px;display:flex;flex-direction:column;gap:16px}
+.step{display:flex;gap:14px;align-items:flex-start}
+.step-n{width:26px;height:26px;border-radius:50%;border:2px solid #d1fae5;background:#f0fdf4;color:#065f46;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;flex-shrink:0;margin-top:1px}
+.step-body{}
+.step-action{font-size:14px;font-weight:700;color:#1a1a1a;margin-bottom:3px}
+.step-detail{font-size:13px;color:#6b7280;line-height:1.6}
+.path{background:#1a3a2a;color:#a7f3d0;padding:2px 8px;border-radius:4px;font-size:12px;font-family:monospace;font-weight:600}
+.note{background:#fef9c3;border-left:3px solid #f59e0b;padding:8px 12px;border-radius:0 6px 6px 0;font-size:13px;color:#78350f;margin-top:6px;line-height:1.5}
+.code-block{background:#1a1a1a;color:#a7f3d0;border-radius:10px;padding:16px 20px;margin:16px 0;font-family:'Courier New',monospace;font-size:13px;line-height:1.7;white-space:pre;overflow-x:auto}
+.copy-btn{display:inline-block;margin-top:10px;padding:8px 16px;background:#1a3a2a;color:white;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit}
+.copy-btn.copied{background:#15803d}
+.done-bar{background:#f0fdf4;border:1px solid #86efac;border-radius:10px;padding:14px 18px;display:flex;align-items:center;gap:10px;margin-top:16px}
+.done-check{font-size:20px}
+.done-text{font-size:14px;color:#065f46;font-weight:600}
+.url-input-section{background:#dbeafe;border:1px solid #93c5fd;border-radius:12px;padding:20px;margin:24px 0}
+.url-input-section h3{font-size:15px;font-weight:700;color:#1e40af;margin-bottom:10px}
+.url-input{width:100%;padding:12px;border:1.5px solid #93c5fd;border-radius:8px;font-size:14px;font-family:monospace;color:#1e40af;background:white;margin-bottom:10px}
+.file-link{display:block;background:#1a3a2a;color:white;text-align:center;padding:14px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;margin-top:16px}
+.file-link:hover{background:#0f2318}
+@media(max-width:600px){
+  .header{padding:20px}
+  .container{padding:20px 16px}
+  .steps{padding:16px}
+  .phase-header{padding:16px}
+}
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>CRM Setup Guide</h1>
+  <p>The Black Mold Guy — One-time Google Sheets setup (15 minutes)</p>
+</div>
+
+<div class="container">
+
+  <div class="intro">
+    <h2>What this does</h2>
+    <p>Your CRM stores lead data in <strong>your own Google Sheet</strong> — not anyone else's system. Once set up, all leads from your website go directly into your Sheet. The CRM dashboard reads from that Sheet.</p>
+    <p style="margin-top:10px">This means: your data is yours. You can see leads in Google Sheets any time, share it with a VA, export it to Excel, or keep it forever — independent of anyone else.</p>
+  </div>
+
+  <!-- PHASE 1 -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num">1</div>
+      <div>
+        <div class="phase-title">Create Your Google Sheet</div>
+        <div class="phase-sub">The spreadsheet that will store all your leads</div>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div class="step-body">
+          <div class="step-action">Go to Google Sheets</div>
+          <div class="step-detail">Open <span class="path">sheets.google.com</span> and log in with your Google account (e.g. theblackmoldguy@gmail.com)</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div class="step-body">
+          <div class="step-action">Create a new blank spreadsheet</div>
+          <div class="step-detail">Click <span class="path">+ Blank</span> → rename it "Black Mold Guy CRM" at the top</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div class="step-body">
+          <div class="step-action">Rename the first sheet tab to "Leads"</div>
+          <div class="step-detail">Right-click on <span class="path">Sheet1</span> at the bottom → Rename → type <span class="path">Leads</span> → press Enter</div>
+          <div class="note">The Apps Script will automatically add headers and formatting the first time it runs. You don't need to add any columns manually.</div>
+        </div>
+      </div>
+      <div class="done-bar"><div class="done-check">✅</div><div class="done-text">Sheet created. Leave this tab open.</div></div>
+    </div>
+  </div>
+
+  <!-- PHASE 2 -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num">2</div>
+      <div>
+        <div class="phase-title">Add the Apps Script Backend</div>
+        <div class="phase-sub">This turns your Sheet into a live database your CRM can read and write</div>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div class="step-body">
+          <div class="step-action">Open Apps Script from your Sheet</div>
+          <div class="step-detail">In your Google Sheet → top menu → <span class="path">Extensions</span> → <span class="path">Apps Script</span>. This opens a new tab.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div class="step-body">
+          <div class="step-action">Delete the existing code and paste the backend script</div>
+          <div class="step-detail">Select all code in the editor (Ctrl+A) → delete it → paste the full script below. Then click the floppy disk icon (Save) or press Ctrl+S.</div>
+        </div>
+      </div>
+
+      <div>
+        <div style="font-size:13px;font-weight:700;color:#374151;margin-bottom:6px">Apps Script Code — copy and paste into the editor:</div>
+        <button class="copy-btn" onclick="copyScript(this)">Copy Script</button>
+        <div class="code-block" id="apps-script-code">// THE BLACK MOLD GUY — CRM Backend
+// Paste this in Extensions → Apps Script, then Deploy as Web App
+
+const SHEET_NAME = 'Leads';
+const COL = { ID:1, CREATED:2, NAME:3, EMAIL:4, PHONE:5, STATUS:6, SERVICE:7, SOURCE:8, NOTES:9, SEQ_NAME:10, SEQ_START:11, NEXT_EMAIL:12, EMAIL_STEP:13 };
+
+function getSheet() {
+  const ss = SpreadsheetApp.getActiveSpreadsheet();
+  let sheet = ss.getSheetByName(SHEET_NAME);
+  if (!sheet) {
+    sheet = ss.insertSheet(SHEET_NAME);
+    sheet.getRange(1,1,1,13).setValues([['ID','Created','Name','Email','Phone','Status','Service','Source','Notes','Seq Name','Seq Start','Next Email','Email Step']]);
+    sheet.setFrozenRows(1);
+    sheet.getRange(1,1,1,13).setBackground('#1a3a2a').setFontColor('white').setFontWeight('bold');
+    sheet.setColumnWidth(1,180); sheet.setColumnWidth(2,160); sheet.setColumnWidth(3,140);
+  }
+  return sheet;
+}
+
+function doGet(e) {
+  const action = e.parameter.action || 'getLeads';
+  try {
+    if (action === 'getLeads') return respond(getLeads());
+    if (action === 'addLead') return respond(addLead(e.parameter));
+    if (action === 'updateStatus') return respond(updateStatus(e.parameter));
+    return respond({error: 'Unknown action'});
+  } catch(err) { return respond({error: err.toString()}); }
+}
+
+function doPost(e) {
+  try {
+    const data = JSON.parse(e.postData.contents);
+    if (data.action === 'addLead') return respond(addLead(data));
+    if (data.action === 'updateStatus') return respond(updateStatus(data));
+    if (data.action === 'saveNotes') return respond(saveNotes(data));
+    return respond({error: 'Unknown action'});
+  } catch(err) { return respond({error: err.toString()}); }
+}
+
+function respond(data) {
+  return ContentService.createTextOutput(JSON.stringify(data)).setMimeType(ContentService.MimeType.JSON);
+}
+
+function getLeads() {
+  const sheet = getSheet();
+  const lastRow = sheet.getLastRow();
+  if (lastRow <= 1) return {results: []};
+  const rows = sheet.getRange(2,1,lastRow-1,13).getValues();
+  const leads = rows.filter(r=>r[0]).map(r=>({
+    id:r[0], created:r[1], name:r[2], email:r[3], phone:r[4],
+    status:r[5]||'New Lead', service:r[6], source:r[7], notes:r[8],
+    seq_name:r[9], seq_start:r[10], next_email:r[11], email_step:r[12]
+  }));
+  return {results: leads};
+}
+
+function addLead(data) {
+  const sheet = getSheet();
+  const id = Utilities.getUuid();
+  const now = new Date().toISOString();
+  sheet.appendRow([id,now,data.name||'',data.email||'',data.phone||'','New Lead',data.service||'',data.source||'Website',data.notes||data.message||'','','','',0]);
+  return {success:true, id, created:now};
+}
+
+function updateStatus(data) {
+  const sheet = getSheet();
+  const lastRow = sheet.getLastRow();
+  if (lastRow<=1) return {error:'No leads'};
+  const ids = sheet.getRange(2,1,lastRow-1,1).getValues();
+  const idx = ids.findIndex(r=>r[0]===data.id);
+  if (idx===-1) return {error:'Not found'};
+  const row = idx+2;
+  sheet.getRange(row,6).setValue(data.status);
+  if (data.notes!==undefined) sheet.getRange(row,9).setValue(data.notes);
+  if (data.status==='No Sale - Follow Up') {
+    const today=new Date(), next=new Date(today);
+    next.setDate(today.getDate()+2);
+    sheet.getRange(row,10).setValue('No Sale Follow Up');
+    sheet.getRange(row,11).setValue(today.toISOString().split('T')[0]);
+    sheet.getRange(row,12).setValue(next.toISOString().split('T')[0]);
+    sheet.getRange(row,13).setValue(1);
+  }
+  return {success:true};
+}
+
+function saveNotes(data) {
+  const sheet = getSheet();
+  const lastRow = sheet.getLastRow();
+  if (lastRow<=1) return {error:'No leads'};
+  const ids = sheet.getRange(2,1,lastRow-1,1).getValues();
+  const idx = ids.findIndex(r=>r[0]===data.id);
+  if (idx===-1) return {error:'Not found'};
+  sheet.getRange(idx+2,9).setValue(data.notes);
+  return {success:true};
+}</div>
+      </div>
+
+      <div class="step">
+        <div class="step-n">3</div>
+        <div class="step-body">
+          <div class="step-action">Set up a daily email trigger (optional — for automated follow-up emails)</div>
+          <div class="step-detail">In Apps Script → left sidebar → <span class="path">Triggers (clock icon)</span> → <span class="path">+ Add Trigger</span> → choose function <span class="path">runEmailScheduler</span> → Time-driven → Day timer → 9am. Click Save.</div>
+          <div class="note">This runs every morning and automatically sends follow-up emails to "No Sale" leads on the right schedule. Skip this step if you don't want automated emails yet.</div>
+        </div>
+      </div>
+      <div class="done-bar"><div class="done-check">✅</div><div class="done-text">Script saved. Now deploy it.</div></div>
+    </div>
+  </div>
+
+  <!-- PHASE 3 -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num">3</div>
+      <div>
+        <div class="phase-title">Deploy as Web App</div>
+        <div class="phase-sub">This gives you the URL that connects your CRM to the Sheet</div>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div class="step-body">
+          <div class="step-action">Click Deploy → New Deployment</div>
+          <div class="step-detail">In the Apps Script editor → top right → <span class="path">Deploy</span> button → <span class="path">New Deployment</span></div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div class="step-body">
+          <div class="step-action">Configure the deployment settings</div>
+          <div class="step-detail">
+            Click the gear icon next to "Select type" → choose <span class="path">Web App</span><br><br>
+            <strong>Execute as:</strong> <span class="path">Me</span> (your Google account)<br>
+            <strong>Who has access:</strong> <span class="path">Anyone</span><br><br>
+            Click <span class="path">Deploy</span>
+          </div>
+          <div class="note">When prompted, click "Authorize access" and follow the prompts. Google will ask you to review the permissions — click "Allow." This is required for the script to read/write your Sheet.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">3</div>
+        <div class="step-body">
+          <div class="step-action">Copy the Web App URL</div>
+          <div class="step-detail">After deploying, you'll see a URL that starts with <span class="path">https://script.google.com/macros/s/...</span> — copy it. This is your CRM's backend URL.</div>
+        </div>
+      </div>
+      <div class="done-bar"><div class="done-check">✅</div><div class="done-text">You have your Web App URL. One more step.</div></div>
+    </div>
+  </div>
+
+  <!-- PHASE 4 -->
+  <div class="phase">
+    <div class="phase-header">
+      <div class="phase-num">4</div>
+      <div>
+        <div class="phase-title">Connect the URL to Your CRM</div>
+        <div class="phase-sub">This activates the live connection between your dashboard and your Sheet</div>
+      </div>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-n">1</div>
+        <div class="step-body">
+          <div class="step-action">Send your Web App URL to your setup team</div>
+          <div class="step-detail">Email or message the URL to <strong>vince@inleap.ai</strong> with the subject "BMG Apps Script URL". They'll update your CRM dashboard in 15 minutes and send you a confirmation.</div>
+          <div class="note">Once the URL is in place, your CRM dashboard will load leads from your Sheet automatically. New form submissions will also go directly into your Sheet.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-n">2</div>
+        <div class="step-body">
+          <div class="step-action">Test it — open your CRM and check for your Sheet</div>
+          <div class="step-detail">Go to your CRM dashboard → <span class="path">vincestars-cloud.github.io/campaign-previews/blackmoldguy/crm.html</span> → log in → if you see "No leads yet" (not an error), the connection is working.</div>
+        </div>
+      </div>
+      <div class="done-bar"><div class="done-check">✅</div><div class="done-text">Setup complete. Your leads now live in your Google Sheet forever.</div></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function copyScript(btn) {
+  const code = document.getElementById('apps-script-code').textContent;
+  navigator.clipboard.writeText(code).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 2500);
+  });
+}
+</script>
+</body>
+</html>
