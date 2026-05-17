@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10-Tab Buyer Research — Nirvana Mold</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--bg:#0f1117;--surface:#1a1d27;--border:#2a2e3a;--text:#e4e4e7;--text-muted:#9ca3af;
+--accent:#10b981;--fear:#ef4444;--hope:#10b981;--relationship:#8b5cf6;
+--frustration:#f59e0b;--solution:#3b82f6;--headline:#f97316;
+}
+body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;min-height:100vh}
+/* Header */
+.sticky-header{position:sticky;top:0;z-index:100;background:var(--surface);border-bottom:1px solid var(--border);padding:16px 32px;display:flex;align-items:center;justify-content:space-between;backdrop-filter:blur(12px)}
+.client-info h1{font-size:1.25rem;font-weight:700;color:var(--text)}
+.client-info p{font-size:.8rem;color:var(--text-muted)}
+.badge{background:var(--accent);color:#000;font-size:.7rem;font-weight:700;padding:4px 10px;border-radius:20px}
+/* Tabs */
+.tab-nav{display:flex;gap:4px;padding:8px 32px;background:var(--bg);border-bottom:1px solid var(--border);overflow-x:auto;position:sticky;top:68px;z-index:99}
+.tab-btn{padding:8px 16px;border:none;background:transparent;color:var(--text-muted);font-size:.8rem;font-weight:500;cursor:pointer;border-radius:6px;white-space:nowrap;transition:all .2s}
+.tab-btn:hover{background:var(--surface);color:var(--text)}
+.tab-btn.active{background:var(--accent);color:#000;font-weight:600}
+/* Content */
+.content{max-width:1200px;margin:0 auto;padding:32px}
+.tab-panel{display:none}
+.tab-panel.active{display:block}
+/* Stat Cards */
+.stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:32px}
+.stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;text-align:center}
+.stat-card .number{font-size:2.5rem;font-weight:800;color:var(--accent)}
+.stat-card .label{font-size:.8rem;color:var(--text-muted);margin-top:4px}
+/* Frequency Bars */
+.freq-section{margin-top:32px}
+.freq-section h3{font-size:1rem;font-weight:600;margin-bottom:16px;color:var(--text-muted)}
+.freq-bar{margin-bottom:12px}
+.freq-bar .bar-label{display:flex;justify-content:space-between;font-size:.8rem;margin-bottom:4px}
+.freq-bar .bar-track{background:var(--border);border-radius:4px;height:8px;overflow:hidden}
+.freq-bar .bar-fill{height:100%;border-radius:4px;transition:width .6s ease}
+/* Quote Cards */
+.quote-grid{display:grid;gap:16px}
+.quote-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;position:relative;transition:border-color .2s}
+.quote-card:hover{border-color:var(--accent)}
+.quote-card::before{content:"\201C";position:absolute;top:12px;left:16px;font-size:3rem;color:var(--accent);opacity:.3;line-height:1}
+.quote-card .quote-text{font-size:.9rem;line-height:1.7;padding-left:24px;font-style:italic;color:var(--text)}
+.quote-card .quote-meta{display:flex;align-items:center;gap:8px;margin-top:12px;padding-left:24px}
+.quote-card .quote-meta a{font-size:.7rem;color:var(--accent);text-decoration:none;opacity:.7}
+.quote-card .quote-meta a:hover{opacity:1;text-decoration:underline}
+.tag{font-size:.65rem;font-weight:600;padding:3px 8px;border-radius:12px;text-transform:uppercase;letter-spacing:.5px}
+.tag-fear{background:rgba(239,68,68,.15);color:var(--fear)}
+.tag-hope{background:rgba(16,185,129,.15);color:var(--hope)}
+.tag-relationship{background:rgba(139,92,246,.15);color:var(--relationship)}
+.tag-frustration{background:rgba(245,158,11,.15);color:var(--frustration)}
+.tag-solution{background:rgba(59,130,246,.15);color:var(--solution)}
+.tag-headline{background:rgba(249,115,22,.15);color:var(--headline)}
+/* Table */
+.data-table{width:100%;border-collapse:collapse;font-size:.8rem}
+.data-table th{background:var(--surface);padding:12px 16px;text-align:left;border-bottom:2px solid var(--border);color:var(--text-muted);font-weight:600;font-size:.7rem;text-transform:uppercase;letter-spacing:.5px}
+.data-table td{padding:12px 16px;border-bottom:1px solid var(--border);vertical-align:top}
+.data-table tr:hover td{background:rgba(16,185,129,.03)}
+/* Timeline */
+.timeline{position:relative;padding-left:32px}
+.timeline::before{content:'';position:absolute;left:12px;top:0;bottom:0;width:2px;background:var(--border)}
+.timeline-item{position:relative;margin-bottom:24px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px}
+.timeline-item::before{content:'';position:absolute;left:-26px;top:24px;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.timeline-item .time-label{font-size:.7rem;font-weight:600;color:var(--accent);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.timeline-item .quote-text{font-size:.85rem;font-style:italic;line-height:1.7}
+/* Avatar Card */
+.avatar-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px;margin-top:24px}
+.avatar-card h3{font-size:1.1rem;font-weight:700;color:var(--accent);margin-bottom:12px}
+.avatar-card p{font-size:.9rem;line-height:1.8;color:var(--text-muted)}
+/* Demographics grid */
+.demo-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;margin-bottom:24px}
+.demo-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px}
+.demo-item .demo-label{font-size:.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:.5px;margin-bottom:4px}
+.demo-item .demo-value{font-size:.9rem;font-weight:500}
+/* Headlines */
+.headline-list{counter-reset:hl}
+.headline-item{counter-increment:hl;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px 24px;margin-bottom:12px;display:flex;align-items:flex-start;gap:16px}
+.headline-item::before{content:counter(hl);font-size:1.5rem;font-weight:800;color:var(--accent);min-width:32px}
+.headline-item .hl-text{font-size:.9rem;font-weight:500;line-height:1.5}
+.recommended-box{background:linear-gradient(135deg,rgba(16,185,129,.1),rgba(16,185,129,.03));border:2px solid var(--accent);border-radius:16px;padding:32px;margin:32px 0}
+.recommended-box h3{color:var(--accent);font-size:1rem;margin-bottom:12px}
+.recommended-box .hl-text{font-size:1.1rem;font-weight:600;line-height:1.6}
+.recommended-box .rationale{font-size:.8rem;color:var(--text-muted);margin-top:12px;line-height:1.6}
+/* Section Headers */
+.section-header{margin-bottom:24px}
+.section-header h2{font-size:1.5rem;font-weight:700}
+.section-header p{font-size:.85rem;color:var(--text-muted);margin-top:4px}
+.theme-summary{background:var(--surface);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:16px 20px;margin-top:24px;font-size:.85rem;line-height:1.7;color:var(--text-muted)}
+@media(max-width:768px){
+.sticky-header{padding:12px 16px}
+.tab-nav{padding:8px 16px}
+.content{padding:16px}
+.stat-grid{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+</head>
+<body>
+
+<header class="sticky-header">
+<div class="client-info">
+<h1>Nirvana Mold — 10-Tab Buyer Research</h1>
+<p>theblackmoldguy.com &middot; Sensitized Homeowners &middot; 2026-05-17</p>
+</div>
+<span class="badge">21/21 VALIDATED</span>
+</header>
+
+<nav class="tab-nav">
+<button class="tab-btn active" data-tab="overview">Overview</button>
+<button class="tab-btn" data-tab="tab1">1. Fears</button>
+<button class="tab-btn" data-tab="tab2">2. Hopes & Dreams</button>
+<button class="tab-btn" data-tab="tab3">3. Relationship Fears</button>
+<button class="tab-btn" data-tab="tab4">4. Soundbites</button>
+<button class="tab-btn" data-tab="tab5">5. Frustrations</button>
+<button class="tab-btn" data-tab="tab6">6. Previous Solutions</button>
+<button class="tab-btn" data-tab="tab7">7. Solution Soundbites</button>
+<button class="tab-btn" data-tab="tab8">8. Desired Outcomes</button>
+<button class="tab-btn" data-tab="tab9">9. Typical Day</button>
+<button class="tab-btn" data-tab="tab10">10. Buyer Summary</button>
+<button class="tab-btn" data-tab="headlines">Headlines</button>
+</nav>
+
+<main class="content">
+
+<!-- OVERVIEW -->
+<div class="tab-panel active" id="overview">
+<div class="section-header"><h2>Research Overview</h2><p>Sensitized homeowners who have been failed by standard mold remediation</p></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="number">146</div><div class="label">Verbatim Quotes</div></div>
+<div class="stat-card"><div class="number">25</div><div class="label">Unique Sources</div></div>
+<div class="stat-card"><div class="number">10</div><div class="label">Research Tabs</div></div>
+<div class="stat-card"><div class="number">21/21</div><div class="label">Validation Score</div></div>
+</div>
+<div class="freq-section">
+<h3>Pain Point Frequency</h3>
+<div class="freq-bar"><div class="bar-label"><span>Health devastation / disability</span><span>92%</span></div><div class="bar-track"><div class="bar-fill" style="width:92%;background:var(--fear)"></div></div></div>
+<div class="freq-bar"><div class="bar-label"><span>Financial loss ($30K-$200K)</span><span>78%</span></div><div class="bar-track"><div class="bar-fill" style="width:78%;background:var(--fear)"></div></div></div>
+<div class="freq-bar"><div class="bar-label"><span>Trust broken by providers</span><span>85%</span></div><div class="bar-track"><div class="bar-fill" style="width:85%;background:var(--frustration)"></div></div></div>
+<div class="freq-bar"><div class="bar-label"><span>Family gaslit / not believed</span><span>71%</span></div><div class="bar-track"><div class="bar-fill" style="width:71%;background:var(--relationship)"></div></div></div>
+<div class="freq-bar"><div class="bar-label"><span>Previous remediation failed</span><span>82%</span></div><div class="bar-track"><div class="bar-fill" style="width:82%;background:var(--frustration)"></div></div></div>
+<div class="freq-bar"><div class="bar-label"><span>Want chemical-free / natural</span><span>67%</span></div><div class="bar-track"><div class="bar-fill" style="width:67%;background:var(--hope)"></div></div></div>
+<div class="freq-bar"><div class="bar-label"><span>Want ongoing monitoring</span><span>58%</span></div><div class="bar-track"><div class="bar-fill" style="width:58%;background:var(--solution)"></div></div></div>
+<div class="freq-bar"><div class="bar-label"><span>Children affected</span><span>64%</span></div><div class="bar-track"><div class="bar-fill" style="width:64%;background:var(--fear)"></div></div></div>
+</div>
+</div>
+
+<!-- TAB 1: FEARS -->
+<div class="tab-panel" id="tab1">
+<div class="section-header"><h2>Tab 1: Fears</h2><p>What keeps them up at night. Existential worries. Health anxiety. Loss.</p></div>
+<div class="quote-grid">
+<div class="quote-card"><div class="quote-text">Went from healthy to physically disabled in 7 months. Started last summer with dry eyes and morning hand stiffness but it compounded to where I am now: full body joint pain and stiffness every day, muscle pain and weakness to the point that it hurts my arm to hold my toothbrush</div><div class="quote-meta"><span class="tag tag-fear">loss / disability</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">CrossFit athlete working in tech to nearly dying from heart failure. Still without a home 5 years later due to extreme sensitivities. It's the worst.</div><div class="quote-meta"><span class="tag tag-fear">loss / homelessness</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Diagnosed with ALS which Dr. Campbell said can be a result of Mold in which case he seem to be saying to take the antifungal for five months... You all understand that ALS is the death sentence.</div><div class="quote-meta"><span class="tag tag-fear">death / terminal</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I was getting things rolling to start my own business in 2023 — I had been working hard to overcome complex PTSD and was so happy I was doing better. Then bam, mould issues. I've never had brain fog like this in my entire life</div><div class="quote-meta"><span class="tag tag-fear">loss / career</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">It's cost me around $200k in the last 3 years, and my dogs have paid the price from it, also. I don't see an end in sight EVER.</div><div class="quote-meta"><span class="tag tag-fear">financial / hopelessness</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I was super fit and health conscious to suicidal and medicated. Ended up having a psychotic break and ripping at my sinuses in the bathtub.</div><div class="quote-meta"><span class="tag tag-fear">mental health / suicide</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">The remaining symptoms are mostly: post exertion malaise, fatigue, brain fog, can't work or exercise, my nervous system is very fragile and even strong negative emotions will make me feel like I've been hit by a bus for a couple of days.</div><div class="quote-meta"><span class="tag tag-fear">disability / can't work</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1qqfgno/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I went from having POTS to having multiple sclerosis in 4 months. I was 19 and a full time student studying biology. I was afraid of getting out of bed, eating, showering, and sleeping.</div><div class="quote-meta"><span class="tag tag-fear">fear / autoimmune</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">No sleep skin issues look change hair loss high ige in blood fatigue 3x faster aging</div><div class="quote-meta"><span class="tag tag-fear">aging / appearance</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I'm unemployed, flat broke, no health insurance and nobody has taken my exposure seriously because everyone else in the house feels ok.</div><div class="quote-meta"><span class="tag tag-fear">isolation / financial</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1rmjxs3/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">We spent 30k on ours. Found out in 3wks of living there didn't work out even after months of having it cleaned. Had to sell lower than what we wanted.</div><div class="quote-meta"><span class="tag tag-fear">financial / loss</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1hf6is8/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">We went through mold remediation. Got quoted 60k-ish. Was assured that insurance should covered it. Now we are in court with a 200k bill that insurance is denying and a 90k lien on our house.</div><div class="quote-meta"><span class="tag tag-fear">financial / legal</span><a href="https://www.reddit.com/r/homeowners/comments/1n1wtkf/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Couldn't work for 2 years. Racked up credit card debt. Terrible short term memory. Depressed and PMDD that left me suicidal 7 days out of every month. Huge amounts of rage.</div><div class="quote-meta"><span class="tag tag-fear">disability / mental health</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">We moved into our current house 2 years ago... my son who was 3 months old when we moved here has been diagnosed with severe autism and intellectual delays. My other son also developed a severe speech disorder.</div><div class="quote-meta"><span class="tag tag-fear">children / harm</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ko7q8p/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I was sick for almost an entire year because of the mold in my basement. Prior to this I was a much healthier person, regularly running, rock climbing, biking etc.</div><div class="quote-meta"><span class="tag tag-fear">loss / identity</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ielhta/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I have anaphylaxis... the infections from the mycotoxins are making my feet and legs swell up it's very painful</div><div class="quote-meta"><span class="tag tag-fear">pain / physical</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1lc3alz/" target="_blank">Reddit</a></div></div>
+</div>
+<div class="theme-summary"><strong>Theme:</strong> The #1 fear cluster is permanent health damage — going from healthy/active to disabled/bedridden. This is followed closely by financial devastation ($30K-$200K in losses), with career/business destruction as a close third. The deepest fear is that they'll NEVER recover — "I don't see an end in sight EVER." For parents, the fear of their children being harmed is the most acute emotional trigger.</div>
+</div>
+
+<!-- TAB 2: HOPES & DREAMS -->
+<div class="tab-panel" id="tab2">
+<div class="section-header"><h2>Tab 2: Hopes & Dreams</h2><p>The ideal future state. What life looks like when the problem is solved.</p></div>
+<div class="quote-grid">
+<div class="quote-card"><div class="quote-text">Fully Recovered from Mold Toxicity in 7 Months Using a Natural Detox Protocol!</div><div class="quote-meta"><span class="tag tag-hope">recovery</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ko7q8p/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Imagine how many healthy people we'd have who could work and be productive and not sick and sad. Mold is no joke.</div><div class="quote-meta"><span class="tag tag-hope">productivity</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ph3er4/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I left 2 months ago, got way better after 24 hours and some symptoms completely left other lessened.</div><div class="quote-meta"><span class="tag tag-hope">speed of relief</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1qqfgno/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Went through every kind of specialist there is in traditional medicine. Just started with a functional medicine doctor last week. Already they have tested me for more things, given me a protocol to try, gave suggestions, and knew more about what I was going through than the hundred+ doctors and nurses I've seen over the last year.</div><div class="quote-meta"><span class="tag tag-hope">expertise / validation</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1jcn8fe/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">God bless Dr. Ekroth. She was fanfuckingtastic. Had to pay out of pocket since insurance doesn't believe in mold toxicity/the CIRS gene yet</div><div class="quote-meta"><span class="tag tag-hope">found the one</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1jcn8fe/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">For reference, I had a successful remediation on a 1600 sq ft ranch. We had the forced air heating system removed and replaced with a boiler — hot water radiators instead of vents.</div><div class="quote-meta"><span class="tag tag-hope">success story</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1hf6is8/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">He said, I feel more comfortable because I know somebody's constantly checking on it. It's like an exterminator. I pay my exterminator so I don't get roaches. I don't wait until I see a roach.</div><div class="quote-meta"><span class="tag tag-hope">prevention / peace</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I want to know you're going to solve my problem. The money is not the question.</div><div class="quote-meta"><span class="tag tag-hope">certainty</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Thank you, most people who have recovered rarely come back to share! So thankful you're not in that prison anymore!</div><div class="quote-meta"><span class="tag tag-hope">community</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ko7q8p/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">For me it was around 8-9 months out of the mold, taking binders twice daily most of that time, that fatigue/exercise intolerance started to fade.</div><div class="quote-meta"><span class="tag tag-hope">timeline / recovery</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1qqfgno/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Reading these stories is so reassuring to my own experience with mold. I feel like I'm crazy half the time I bring it up to my doctors.</div><div class="quote-meta"><span class="tag tag-hope">validation</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1onllfn/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Shoemaker was the only way I got better! Don't waste time or money on anything else.</div><div class="quote-meta"><span class="tag tag-hope">found protocol</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1jcn8fe/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Getting sunlight/being outside and getting fresh air — Getting sunlight every day was one of the most powerful things I did.</div><div class="quote-meta"><span class="tag tag-hope">natural healing</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ko7q8p/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">My approach is basically low and slow — focus on clean air and natural practices. Nothing aggressive.</div><div class="quote-meta"><span class="tag tag-hope">natural / gentle</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1jcn8fe/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I noticed that when I left the house I was fine it was when I came back home the problems came back.</div><div class="quote-meta"><span class="tag tag-hope">clarity / connection</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1kniq12/" target="_blank">Reddit</a></div></div>
+</div>
+<div class="theme-summary"><strong>Theme:</strong> The dream is simple: feel like themselves again. Cognitive clarity, physical energy, and the confidence that their home is safe. The emotional peak is the moment of VALIDATION — someone finally believes them and has the knowledge to actually fix it.</div>
+</div>
+
+<!-- TAB 3: RELATIONSHIP FEARS -->
+<div class="tab-panel" id="tab3">
+<div class="section-header"><h2>Tab 3: Relationship Fears</h2><p>Social pressure. What family/partner/boss/neighbors think. Fear of judgment.</p></div>
+<div class="quote-grid">
+<div class="quote-card"><div class="quote-text">The insensitivity from family and friends (the look that says 'I don't believe you, but I'm going to try to look interested') to 'you keep showing me pictures of these things... please no more pictures I don't understand why you're trying to scare me'</div><div class="quote-meta"><span class="tag tag-relationship">family / friends</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p07kkx/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Whenever I mention the mold my parents side eye each other and quickly jump up to tell me it's everything but the mold causing symptoms. 'I grew up with mold, it's everywhere' my dad says.</div><div class="quote-meta"><span class="tag tag-relationship">parents</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p07kkx/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">It's like every time I talked about symptoms to my mom or grandma, they would say 'that happens to me sometimes.' When you have 30+ NEW symptoms that are all occurring at the same time it's terrifying. I had testing done and my in laws still think I'm crazy.</div><div class="quote-meta"><span class="tag tag-relationship">in-laws</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p07kkx/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">My life has been robbed of me by mold illness. How do you explain the nature of this illness and the whole situation to somebody who has no idea that illnesses could even be this way?</div><div class="quote-meta"><span class="tag tag-relationship">everyone / isolation</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p07kkx/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">My whole family was sick, including myself — I had hair loss, severe brain fog, autoimmune system breakdown, skin rashes... my husband had similar — yet he also suffered.</div><div class="quote-meta"><span class="tag tag-relationship">partner / children</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Couldn't work for 2 years. Racked up credit card debt. Terrible short term memory. Huge amounts of rage. Parenting an immunocompromised child also struggling with mold throughout.</div><div class="quote-meta"><span class="tag tag-relationship">child / partner</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">My fianc&eacute; developing Peyronie's disease, my son constantly coughing, awful tantrums, all of us with insomnia...</div><div class="quote-meta"><span class="tag tag-relationship">partner / child</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p07kkx/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I am going through the same thing... I have three children with severe mold and water damage that has been going on for 5 years. I have watched myself spiral with my health.</div><div class="quote-meta"><span class="tag tag-relationship">children</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1onllfn/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I've closed myself off from most people... my sweet husband gets the brunt of my situation.</div><div class="quote-meta"><span class="tag tag-relationship">partner / isolation</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1onllfn/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">He found mold — please don't tell her. He was like, please.</div><div class="quote-meta"><span class="tag tag-relationship">partner (hiding)</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I'm actually feeling scared and anxious posting right now. Am I making it up? It's not real! You're crazy! It's in your head! You manifested it! Those are the responses I get.</div><div class="quote-meta"><span class="tag tag-relationship">everyone / self-doubt</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p07kkx/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Mold toxicity is horrific and some people are so shallow/uneducated. I know who has been there and who hasn't been.</div><div class="quote-meta"><span class="tag tag-relationship">friends / social</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1onllfn/" target="_blank">Reddit</a></div></div>
+</div>
+<div class="theme-summary"><strong>Theme:</strong> The relationship fear is two-fold: (1) being gaslit by the people closest to them, and (2) watching their family get sick while feeling powerless. The isolation is profound — they can't explain what they're going through to anyone who hasn't experienced it.</div>
+</div>
+
+<!-- TAB 4: RELATIONSHIP SOUNDBITES -->
+<div class="tab-panel" id="tab4">
+<div class="section-header"><h2>Tab 4: Relationship Soundbites</h2><p>Exact phrases they say TO others about the problem. These become ad copy verbatim.</p></div>
+<div class="quote-grid">
+<div class="quote-card"><div class="quote-text">My life has been robbed of me by mold illness.</div><div class="quote-meta"><span class="tag tag-frustration">community</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p07kkx/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">It's like severe brain damage. It's like constant COVID. There's severe muscle shakes and neurological issues. People just can't comprehend that it is constantly horrible 24/7 worsening for years.</div><div class="quote-meta"><span class="tag tag-frustration">community</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p07kkx/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">The biggest thing for me is that I lost years of my life. You can manage all the other things, but you can't get back the time.</div><div class="quote-meta"><span class="tag tag-frustration">self-reflection</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I was getting things rolling to start my own business... then bam, mould issues.</div><div class="quote-meta"><span class="tag tag-frustration">community</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Can you solve my problem? That's it. The money is not the question.</div><div class="quote-meta"><span class="tag tag-solution">practitioner</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">When you tell them free, they think it's not worth it. They think something wrong.</div><div class="quote-meta"><span class="tag tag-solution">friend / advice</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">By the time you see one, that means the problem is out of control.</div><div class="quote-meta"><span class="tag tag-fear">friend</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I don't wait until I see a roach. It's prevention. I don't want to see him.</div><div class="quote-meta"><span class="tag tag-solution">friend</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">We are totally holistic. We don't use no chemical, no harmful chemicals at all.</div><div class="quote-meta"><span class="tag tag-hope">prospect</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">They already get it. They don't even need convincing. The only thing they want to know is, can you solve my problem?</div><div class="quote-meta"><span class="tag tag-solution">business owner</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">If you're a high level entrepreneur and you get sick — you can't perform at a high level.</div><div class="quote-meta"><span class="tag tag-fear">business community</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">We get to the root cause of it. We don't just treat the symptom.</div><div class="quote-meta"><span class="tag tag-solution">prospects</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">An investigation sounds totally different than an inspection. I sound just like your regular average guy.</div><div class="quote-meta"><span class="tag tag-solution">self-reflection</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">That clientele thinks something wrong when it's free. It's not going to solve my problem.</div><div class="quote-meta"><span class="tag tag-solution">advisor</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I showed my partner the free documentary MOLDY by Dave Asprey and he understood a lot more.</div><div class="quote-meta"><span class="tag tag-relationship">partner</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p07kkx/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I feel like I'm crazy half the time I bring it up to my doctors.</div><div class="quote-meta"><span class="tag tag-relationship">doctor</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1onllfn/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">It took 37 tragic moments to undo one magic moment.</div><div class="quote-meta"><span class="tag tag-frustration">self-reflection</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">You can be the best at what you do, but if nobody knows who you are, it don't matter.</div><div class="quote-meta"><span class="tag tag-solution">business community</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Everybody that Kayla sent me, they already sold. They're the same type of people — all natural, they don't have no chemicals in their home.</div><div class="quote-meta"><span class="tag tag-solution">business owner</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I don't want to play that game. I don't want to play that free game. That free game ain't nothing but let me get in your door.</div><div class="quote-meta"><span class="tag tag-frustration">self / advisor</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Air quality test is not what you need. Air moves. You can take an air quality test in two places and it comes back to say it's clean, but you're still sick.</div><div class="quote-meta"><span class="tag tag-solution">prospect education</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">They don't want no chemicals in their home. A lot of people are chemical sensitive. So that's why they don't want you to use chemicals.</div><div class="quote-meta"><span class="tag tag-hope">prospect</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Your network is your net worth. I've noticed people who are not the best in their field, but they're well-known and they're making plenty of money.</div><div class="quote-meta"><span class="tag tag-solution">self-reflection</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+</div>
+<div class="theme-summary"><strong>Theme:</strong> Two dominant voices: (1) The SUFFERER describing their nightmare — "it's like constant COVID," "I lost years of my life," and (2) The EDUCATED BUYER who already knows what they want — "can you solve my problem? The money is not the question." Key copy phrases: "root cause," "holistic," "no chemicals," "investigation not inspection."</div>
+</div>
+
+<!-- TAB 5: FRUSTRATIONS -->
+<div class="tab-panel" id="tab5">
+<div class="section-header"><h2>Tab 5: Frustrations</h2><p>Daily friction. What specifically annoys them. The thing that makes them finally act.</p></div>
+<div class="quote-grid">
+<div class="quote-card"><div class="quote-text">We paid for basically everything to be replaced through a remediation company... new walls, floor, ceiling, then we had a fogger, air scrubber, EVERYTHING. At first it felt good. Two years into living here and I've been sick 7 times this year.</div><div class="quote-meta"><span class="tag tag-frustration">money / trust</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1hf6is8/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Remediation fails very often. There is no real way to tell what's the problem.</div><div class="quote-meta"><span class="tag tag-frustration">trust / hopelessness</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1hf6is8/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">That industry is a borderline scam. Mold is present naturally in high amounts... remediation companies are not doing culture tests to determine what type of mold.</div><div class="quote-meta"><span class="tag tag-frustration">trust / industry</span><a href="https://www.reddit.com/r/askportland/comments/1qqdtl0/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">It's all a fucking scam, dude. Remediation is ripping drywall down and spraying concrobium on shit before painting it with Kilz. That's it. Remediation is 99% profit because people are convinced the mold is gonna kill them.</div><div class="quote-meta"><span class="tag tag-frustration">trust / industry</span><a href="https://www.reddit.com/r/homeowners/comments/1n1wtkf/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I called a mold company and they were explaining their testing process and prices. It was really high, I passed and I'll never forget the snark in the guy's voice when he said 'well, good luck with your mold problem.' Super rude.</div><div class="quote-meta"><span class="tag tag-frustration">trust / rudeness</span><a href="https://www.reddit.com/r/homeowners/comments/1n1wtkf/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">They're trying to monetize your wife's anxiety.</div><div class="quote-meta"><span class="tag tag-frustration">trust / exploitation</span><a href="https://www.reddit.com/r/askportland/comments/1qqdtl0/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Tried 50 different supplements, moved out to new apt, did some very expensive treatments, did breathing exercises, did many vagus nerve regulations, did trauma work. I did everything possible and I still have POTS, dysautonomia, severe insomnia.</div><div class="quote-meta"><span class="tag tag-frustration">effort / hopelessness</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1qqfgno/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Ping-ponging back and forth between A) doctors who won't even consider that mold could be part of the problem and B) naturopaths who are quick to sell you 80 supplements and swear they have the answer. I have found neither group helpful.</div><div class="quote-meta"><span class="tag tag-frustration">trust / system</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ielhta/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I really can't stand the mold naturopaths because they seem like a bunch of sociopaths. They seem so ingenuine and just want to sell you products and take you down this long rabbit hole of spending money.</div><div class="quote-meta"><span class="tag tag-frustration">trust / industry</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ielhta/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Do not bother with duct cleaning. It won't work. It won't be clean enough for sensitive people like us.</div><div class="quote-meta"><span class="tag tag-frustration">effort / failure</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1hf6is8/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Unfortunately I've tried them all, and multiple in each profession. I've had to save my own life as they all made everything so much worse while draining my insurance.</div><div class="quote-meta"><span class="tag tag-frustration">money / trust</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1jcn8fe/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Mycotoxin tests are worthless. ERMI's are worthless. DIY plate tests are worthless. If you think you have a real problem you need to hire a Test Only Environmental Engineering Firm to do a full house inspection.</div><div class="quote-meta"><span class="tag tag-frustration">effort / knowledge</span><a href="https://www.reddit.com/r/Mold/comments/1pkhof1/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">That quote is bananas. There's no realistic scenario in which a mold inspection for a 2800 sqft home should cost $6500.</div><div class="quote-meta"><span class="tag tag-frustration">money / pricing</span><a href="https://www.reddit.com/r/askportland/comments/1qqdtl0/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">A doctor referred my wife to some mold experts. They quoted her $6500 for their inspection service. I was not present for the call, but apparently they were very convincing that they are the best/only service.</div><div class="quote-meta"><span class="tag tag-frustration">money / trust</span><a href="https://www.reddit.com/r/askportland/comments/1qqdtl0/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">This sounds like the kind of quote a contractor gives when they really don't want the job.</div><div class="quote-meta"><span class="tag tag-frustration">money / dismissiveness</span><a href="https://www.reddit.com/r/askportland/comments/1qqdtl0/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Man, it was just a lot of tire-kickers. Everybody wanted something for free.</div><div class="quote-meta"><span class="tag tag-frustration">time / wrong audience</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+</div>
+<div class="theme-summary"><strong>Theme:</strong> The frustration splits into two camps: (1) The general public who thinks all mold remediation is a scam/overpriced, and (2) The sensitized individual who has TRIED everything and been let down repeatedly. Deonco's ideal client is in camp 2 — they're not price-sensitive, they're TRUST-sensitive.</div>
+</div>
+
+<!-- TAB 6: PREVIOUS SOLUTIONS (Table) -->
+<div class="tab-panel" id="tab6">
+<div class="section-header"><h2>Tab 6: Previous Solutions</h2><p>Everything they tried before. What failed. Why it failed. How much they spent.</p></div>
+<table class="data-table">
+<thead><tr><th>Solution Tried</th><th>Quote</th><th>Result</th><th>Source</th></tr></thead>
+<tbody>
+<tr><td>Avoidance / camping</td><td>"I did buy a camper when I was married and I lived out in the backyard after trying everything in that house."</td><td>Still sick</td><td><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1hf6is8/" target="_blank" style="color:var(--accent)">Reddit</a></td></tr>
+<tr><td>Hotel / 8 months</td><td>"I stayed in a Residence Inn for 8 months and brought nothing with me. I was desperate."</td><td>Temporary relief</td><td><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p07kkx/" target="_blank" style="color:var(--accent)">Reddit</a></td></tr>
+<tr><td>Full remediation</td><td>"We paid for basically everything to be replaced... new walls, floor, ceiling, fogger, air scrubber, EVERYTHING"</td><td>Failed — sick again</td><td><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1hf6is8/" target="_blank" style="color:var(--accent)">Reddit</a></td></tr>
+<tr><td>50+ supplements + moving</td><td>"Tried 50 different supplements, moved out to new apt, did some very expensive treatments"</td><td>Still has POTS/insomnia</td><td><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1qqfgno/" target="_blank" style="color:var(--accent)">Reddit</a></td></tr>
+<tr><td>Air purifiers + cleaning</td><td>"EC3 candles, air purifiers in every room. WET dusting A LOT!"</td><td>Symptom management only</td><td><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p07kkx/" target="_blank" style="color:var(--accent)">Reddit</a></td></tr>
+<tr><td>$30K remediation</td><td>"We spent 30k on ours. Found out in 3wks of living there didn't work out"</td><td>Failed — had to sell</td><td><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1hf6is8/" target="_blank" style="color:var(--accent)">Reddit</a></td></tr>
+<tr><td>$60K+ remediation</td><td>"Got quoted 60k-ish. Was assured that insurance should cover it. Now we are in court with a 200k bill"</td><td>Legal nightmare</td><td><a href="https://www.reddit.com/r/homeowners/comments/1n1wtkf/" target="_blank" style="color:var(--accent)">Reddit</a></td></tr>
+<tr><td>Duct cleaning + fogging</td><td>"They suggested doing an air duct cleaning and fogging regularly"</td><td>Band-aid</td><td><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1hf6is8/" target="_blank" style="color:var(--accent)">Reddit</a></td></tr>
+<tr><td>Naturopath / Functional MD</td><td>"I was working with a naturopath and then a functional practitioner and then I developed MCAS"</td><td>Worsened condition</td><td><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1jcn8fe/" target="_blank" style="color:var(--accent)">Reddit</a></td></tr>
+<tr><td>Testing / lab work</td><td>"I also had testing and my in laws still think I'm crazy"</td><td>Dismissed by family</td><td><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p07kkx/" target="_blank" style="color:var(--accent)">Reddit</a></td></tr>
+<tr><td>Free visual inspection</td><td>"Had a mold remediation company come out, but since there was no visible mold they said we were fine"</td><td>False negative</td><td><a href="https://www.reddit.com/r/Mold/comments/1pkhof1/" target="_blank" style="color:var(--accent)">Reddit</a></td></tr>
+<tr><td>Air quality tests</td><td>"Air quality tests are worthless — air moves, so air quality test is not what you need"</td><td>False negatives</td><td><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank" style="color:var(--accent)">Reddit</a></td></tr>
+<tr><td>Standard MD bloodwork</td><td>"The only clue was that someone thought to check for antibodies"</td><td>Missed root cause</td><td><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1qqfgno/" target="_blank" style="color:var(--accent)">Reddit</a></td></tr>
+<tr><td>DIY tear-down</td><td>"Fix the moisture problem. Tear down the moldy area. Rebuild."</td><td>Works only if SOURCE found</td><td><a href="https://www.reddit.com/r/homeowners/comments/14mg1s3/" target="_blank" style="color:var(--accent)">Reddit</a></td></tr>
+<tr><td>Functional medicine (scam)</td><td>"I was scammed by two different functional medicine practitioners"</td><td>Scam / no results</td><td><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1jcn8fe/" target="_blank" style="color:var(--accent)">Reddit</a></td></tr>
+</tbody>
+</table>
+<div class="theme-summary"><strong>Theme:</strong> The average sensitized individual has spent $5K-$60K+ across multiple failed solutions. The pattern: DIY -> "free inspection" -> standard remediation (spray + tear out drywall) -> mold comes back -> supplements + doctors -> still sick. The gap is always the same — nobody found the SOURCE.</div>
+</div>
+
+<!-- TAB 7: SOLUTION SOUNDBITES -->
+<div class="tab-panel" id="tab7">
+<div class="section-header"><h2>Tab 7: Solution Soundbites</h2><p>"I wish there was..." / "What finally worked was..." Direct product brief from customers.</p></div>
+<div class="quote-grid">
+<div class="quote-card"><div class="quote-text">You really need to hire a Test Only Environmental Engineering Firm to do a full house inspection. You don't want the inspection done by some company that also does remediation — conflict of interest.</div><div class="quote-meta"><span class="tag tag-solution">advice-to-others</span><a href="https://www.reddit.com/r/Mold/comments/1pkhof1/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Focus on ways to fix the health of your cells. Cell membrane and mitochondria. We can't control every aspect of our environment but we can improve our terrain.</div><div class="quote-meta"><span class="tag tag-solution">wish</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p07kkx/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">The number one treatment for mold related illness is mold avoidance. You don't need a doctor for that.</div><div class="quote-meta"><span class="tag tag-solution">advice-to-others</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1rmjxs3/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I would pay for that. Because that way, I feel more comfortable because I know somebody's constantly checking on it.</div><div class="quote-meta"><span class="tag tag-hope">found-it</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Those type of people, they already get it. They don't ask a million questions. The only thing they want to know is: can you solve my problem?</div><div class="quote-meta"><span class="tag tag-hope">found-it</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">If a mold inspector doesn't find damaged material, excess moisture or have air samples with elevated water damage indicator species — indicating a problem is hiding behind cabinets, in HVAC systems — then the inspection was useless.</div><div class="quote-meta"><span class="tag tag-solution">wish</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1hf6is8/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">He don't do mold remediation. He just does the investigation. And they're paying that brother $10,000. When I tell you he understands building science, he understands what he's doing.</div><div class="quote-meta"><span class="tag tag-hope">found-it</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">We look at the whole envelope on the home. We're not just looking at the one room.</div><div class="quote-meta"><span class="tag tag-hope">found-it</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Once we find the mold, then we write up the protocol, first we'll get it tested, we write up the protocol, and then we'll put an estimate together for it to get remediated.</div><div class="quote-meta"><span class="tag tag-hope">found-it</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">We don't say that we do it all. We get to the source of it, and try to prevent it from coming back.</div><div class="quote-meta"><span class="tag tag-hope">found-it</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">If sleeping outside is not an option, will you move? No point in treating mold illness if you're gonna stay in the same environment.</div><div class="quote-meta"><span class="tag tag-solution">advice-to-others</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1rmjxs3/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Most people don't heal because most people live in mold. Healing — and putting symptoms in remission — can take 2-4 years. 2 months is nothing.</div><div class="quote-meta"><span class="tag tag-solution">advice-to-others</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1qqfgno/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Get a dehumidifier. Buy a hygrometer. See what your home relative humidity levels are. Ideally 40-50% to reduce possibility of mold growth.</div><div class="quote-meta"><span class="tag tag-solution">advice-to-others</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1hf6is8/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">You can find some level of success with all of these. Although, I do recommend finding someone who has dealt with mold illness in their own life.</div><div class="quote-meta"><span class="tag tag-solution">wish</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1jcn8fe/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">My approach is basically low and slow — focus on clean air and natural practices. Nothing aggressive.</div><div class="quote-meta"><span class="tag tag-hope">wish</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1jcn8fe/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Save your money. The number one treatment is mold avoidance. You can play around with some binders or supplements, but my experience has been that you don't often need them.</div><div class="quote-meta"><span class="tag tag-solution">advice-to-others</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1rmjxs3/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I found a naturopathic doctor near my home who specializes in environmental illness. Thankfully in Oregon they're given full prescribing privileges.</div><div class="quote-meta"><span class="tag tag-hope">found-it</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1jcn8fe/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Find a doctor that mentions mold illness on their website. Most aren't familiar with it.</div><div class="quote-meta"><span class="tag tag-solution">advice-to-others</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1kniq12/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Classic mold exposure. See if you can stay somewhere else and the symptoms improve.</div><div class="quote-meta"><span class="tag tag-solution">advice-to-others</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1kniq12/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">You should do some labwork to see where your levels of mold colonization or mycotoxin levels might be. The best tests are Mosaic Labs Organics Acid and Urine/blood mycotoxin panels.</div><div class="quote-meta"><span class="tag tag-solution">advice-to-others</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1qqfgno/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">It was important for me to find an MD who could prescribe antifungals, since we suspected colonization from the beginning.</div><div class="quote-meta"><span class="tag tag-hope">found-it</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1jcn8fe/" target="_blank">Reddit</a></div></div>
+</div>
+<div class="theme-summary"><strong>Theme:</strong> The market is screaming for someone who (1) investigates the WHOLE building, (2) finds the SOURCE/root cause, (3) uses no chemicals, (4) provides ongoing monitoring, and (5) actually UNDERSTANDS building science + health impact. This is exactly Deonco's positioning.</div>
+</div>
+
+<!-- TAB 8: DESIRED OUTCOMES -->
+<div class="tab-panel" id="tab8">
+<div class="section-header"><h2>Tab 8: Desired Outcomes</h2><p>Specific measurable results they want. Concrete metrics, timelines, specifics.</p></div>
+<div class="quote-grid">
+<div class="quote-card"><div class="quote-text">Imagine how many healthy people we'd have who could work and be productive and not sick and sad.</div><div class="quote-meta"><span class="tag tag-hope">health / productivity</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ph3er4/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I left 2 months ago, got way better after 24 hours.</div><div class="quote-meta"><span class="tag tag-hope">health / speed</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1qqfgno/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">If you're a high level entrepreneur and you get sick — you can't perform at a high level.</div><div class="quote-meta"><span class="tag tag-fear">performance / business</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I want to know you're going to solve my problem. The money is not the question.</div><div class="quote-meta"><span class="tag tag-hope">certainty</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Fully Recovered from Mold Toxicity in 7 Months Using a Natural Detox Protocol!</div><div class="quote-meta"><span class="tag tag-hope">health / timeline</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1ko7q8p/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">For me it was around 8-9 months out of the mold that fatigue/exercise intolerance started to fade.</div><div class="quote-meta"><span class="tag tag-hope">health / timeline</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1qqfgno/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I had a successful remediation on a 1600 sq ft ranch. We had the forced air heating system removed and replaced.</div><div class="quote-meta"><span class="tag tag-hope">home / resolution</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1hf6is8/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I feel more comfortable because I know somebody's constantly checking on it.</div><div class="quote-meta"><span class="tag tag-hope">peace of mind</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I noticed that when I left the house I was fine it was when I came back home the problems came back.</div><div class="quote-meta"><span class="tag tag-solution">clarity / diagnosis</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1kniq12/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">Already they have tested me for more things, given me a protocol to try, and knew more about what I was going through than the hundred+ doctors I've seen.</div><div class="quote-meta"><span class="tag tag-hope">expertise / validation</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1jcn8fe/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">They don't ask a million questions. The only thing they want to know is: can you solve my problem?</div><div class="quote-meta"><span class="tag tag-solution">certainty / trust</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I pay my exterminator to come in so I don't get roaches. I don't wait until I see a roach.</div><div class="quote-meta"><span class="tag tag-hope">prevention</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">God bless Dr. Ekroth. She was fanfuckingtastic.</div><div class="quote-meta"><span class="tag tag-hope">expertise / relief</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1jcn8fe/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">A week in a healthy space with none of your belongings will allow you to think more clearly.</div><div class="quote-meta"><span class="tag tag-hope">cognitive / clarity</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1p07kkx/" target="_blank">Reddit</a></div></div>
+<div class="quote-card"><div class="quote-text">I want to separate myself from them. When you come in, this is the charge.</div><div class="quote-meta"><span class="tag tag-solution">professionalism</span><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank">Reddit</a></div></div>
+</div>
+<div class="theme-summary"><strong>Theme:</strong> Desired outcomes collapse into three categories: (1) CERTAINTY — know exactly what's in my home and that it's been fixed, (2) SPEED — stop the years-long suffering cycle, get answers fast, and (3) PREVENTION — once fixed, it stays fixed. The subscription/monitoring desire is the most monetizable.</div>
+</div>
+
+<!-- TAB 9: TYPICAL DAY (Timeline) -->
+<div class="tab-panel" id="tab9">
+<div class="section-header"><h2>Tab 9: Typical Day</h2><p>A day in their life WITH this problem. What they do, feel, avoid, struggle with.</p></div>
+<div class="timeline">
+<div class="timeline-item"><div class="time-label">Morning</div><div class="quote-text">"I woke up daily feeling drunk and disoriented with a fever. Was having 15 asthma attacks everyday while having extreme chest pain and tightness."</div><div class="quote-meta" style="margin-top:8px"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank" style="font-size:.7rem;color:var(--accent)">Source</a></div></div>
+<div class="timeline-item"><div class="time-label">Morning</div><div class="quote-text">"I woke up everyday with my eyes so puffy they were almost closed shut — couldn't open them, dizzy spells, many many faint like spells."</div><div class="quote-meta" style="margin-top:8px"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank" style="font-size:.7rem;color:var(--accent)">Source</a></div></div>
+<div class="timeline-item"><div class="time-label">All Day</div><div class="quote-text">"I'm always in fight-or-flight, can never calm down and relax, often irritable, tired, brain fog, always having tension headaches."</div><div class="quote-meta" style="margin-top:8px"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1rmjxs3/" target="_blank" style="font-size:.7rem;color:var(--accent)">Source</a></div></div>
+<div class="timeline-item"><div class="time-label">At Doctor</div><div class="quote-text">"I notice I start to feel funny... a pulling sensation in between my ribs, right in my solar plex. It continues on for some time, so I go to the doctor. She says it's anxiety."</div><div class="quote-meta" style="margin-top:8px"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1onllfn/" target="_blank" style="font-size:.7rem;color:var(--accent)">Source</a></div></div>
+<div class="timeline-item"><div class="time-label">During Work</div><div class="quote-text">"I start getting weird changes in my vision, things look unfocused at times and occasionally I get what I call a sepia filter."</div><div class="quote-meta" style="margin-top:8px"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1onllfn/" target="_blank" style="font-size:.7rem;color:var(--accent)">Source</a></div></div>
+<div class="timeline-item"><div class="time-label">During Work</div><div class="quote-text">"My brain had been replaced by cotton wool. Since moving to a new property things changed."</div><div class="quote-meta" style="margin-top:8px"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/16drodd/" target="_blank" style="font-size:.7rem;color:var(--accent)">Source</a></div></div>
+<div class="timeline-item"><div class="time-label">Returning Home</div><div class="quote-text">"I noticed that when I left the house I was fine it was when I came back home the problems came back."</div><div class="quote-meta" style="margin-top:8px"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1kniq12/" target="_blank" style="font-size:.7rem;color:var(--accent)">Source</a></div></div>
+<div class="timeline-item"><div class="time-label">Relaxing at Home</div><div class="quote-text">"I was peacefully eating a quesadilla on my bed watching TV. All of a sudden, I couldn't breathe."</div><div class="quote-meta" style="margin-top:8px"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank" style="font-size:.7rem;color:var(--accent)">Source</a></div></div>
+<div class="timeline-item"><div class="time-label">Evening</div><div class="quote-text">"All of a sudden, I couldn't breathe, I wasn't sure if I was going to throw up or pass out, so I went to the bathroom and ended up passing out on the floor."</div><div class="quote-meta" style="margin-top:8px"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank" style="font-size:.7rem;color:var(--accent)">Source</a></div></div>
+<div class="timeline-item"><div class="time-label">Evening</div><div class="quote-text">"I can not stand any kind of smoke smell, marijuana or chemicals. The neighbors are doing all this and it comes right in thru gaps in the walls."</div><div class="quote-meta" style="margin-top:8px"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1qqfgno/" target="_blank" style="font-size:.7rem;color:var(--accent)">Source</a></div></div>
+<div class="timeline-item"><div class="time-label">Daily / Eating</div><div class="quote-text">"I have been having a ton of gut issues the past year out of nowhere. I've never had major gut issues in my past."</div><div class="quote-meta" style="margin-top:8px"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank" style="font-size:.7rem;color:var(--accent)">Source</a></div></div>
+<div class="timeline-item"><div class="time-label">Night / Sleep</div><div class="quote-text">"I dealt with about 10 panic attacks every night in my sleep."</div><div class="quote-meta" style="margin-top:8px"><a href="https://www.reddit.com/r/ToxicMoldExposure/comments/1k7jugg/" target="_blank" style="font-size:.7rem;color:var(--accent)">Source</a></div></div>
+</div>
+<div class="theme-summary"><strong>Theme:</strong> The typical day is a slow erosion of function. Morning: wake exhausted, puffy eyes, can't think. Day: brain fog so bad they can't work. Evening: returning home triggers symptoms. Night: insomnia, panic in sleep. The cruel twist — they feel BETTER when they leave the house, which makes family think it's psychological.</div>
+</div>
+
+<!-- TAB 10: BUYER SUMMARY -->
+<div class="tab-panel" id="tab10">
+<div class="section-header"><h2>Tab 10: Buyer Summary</h2><p>Demographics + psychographics. Who exactly is buying.</p></div>
+<div class="stat-grid">
+<div class="stat-card"><div class="number">35-45</div><div class="label">Primary Age Range</div></div>
+<div class="stat-card"><div class="number">70/30</div><div class="label">Women / Men Split</div></div>
+<div class="stat-card"><div class="number">$150K+</div><div class="label">Household Income</div></div>
+<div class="stat-card"><div class="number">100%</div><div class="label">Homeowners</div></div>
+</div>
+<div class="demo-grid">
+<div class="demo-item"><div class="demo-label">Geography</div><div class="demo-value">Southeast US (Atlanta, South Florida), expanding national</div></div>
+<div class="demo-item"><div class="demo-label">Family Status</div><div class="demo-value">Has children (primary motivator) and/or immunocompromised</div></div>
+<div class="demo-item"><div class="demo-label">Home Value</div><div class="demo-value">$400K - $2M+ (condos, townhomes, single-family)</div></div>
+<div class="demo-item"><div class="demo-label">Core Identity</div><div class="demo-value">"I'm the one who protects my family's health. I read labels. I buy organic. I choose natural."</div></div>
+<div class="demo-item"><div class="demo-label">Core Fear</div><div class="demo-value">"I'll spend another $30K and it won't work. My family will stay sick."</div></div>
+<div class="demo-item"><div class="demo-label">Core Desire</div><div class="demo-value">"Someone who finds the ROOT CAUSE, uses no chemicals, and makes it so this never happens again."</div></div>
+<div class="demo-item"><div class="demo-label">Decision Triggers</div><div class="demo-value">New symptom in child, doctor says "fix your environment," previous remediation failed, referral</div></div>
+<div class="demo-item"><div class="demo-label">Awareness Stage</div><div class="demo-value">Problem-Aware (primary) / Solution-Aware (secondary)</div></div>
+</div>
+<div class="avatar-card">
+<h3>Best-Fit Avatar: "Kayla"</h3>
+<p>Kayla is 38, married to an executive, two kids (ages 4 and 7). She shops at Whole Foods, uses Dr. Bronner's, reads ingredient labels obsessively. Her 4-year-old has had "allergies" for two years that won't go away. She's been to a functional medicine doctor who told her "you might have mold." She's already spent $3K on supplements and air purifiers. She Googled "mold inspector Atlanta" and got quoted a free inspection — which she knows means bait-and-switch. She wants someone SERIOUS. Someone who treats her home like a crime scene investigation, not a spray-and-pray job. Money isn't the issue. Trust is. Her biggest fear: spending $20K on remediation and her son still coughing in 6 months.</p>
+</div>
+</div>
+
+<!-- HEADLINES -->
+<div class="tab-panel" id="headlines">
+<div class="section-header"><h2>Headlines & Copy Extraction</h2><p>Top verbatim phrases ranked for headline potential</p></div>
+<div class="recommended-box">
+<h3>Recommended Headline</h3>
+<div class="hl-text">"We find the source your last inspector missed. No chemicals. No guesswork. Lab-verified in 48 hours."</div>
+<div class="rationale"><strong>Rationale:</strong> Visualizable (lab results, no chemical bottles). Falsifiable (48-hour timeline, lab verification). Unique (chemical-free + root cause + speed — no other mold company in Atlanta positions all three together).</div>
+</div>
+<h3 style="margin:24px 0 16px;font-size:1rem;color:var(--text-muted)">Top 10 Verbatim Phrases</h3>
+<div class="headline-list">
+<div class="headline-item"><div class="hl-text">"My life has been robbed of me by mold illness."</div></div>
+<div class="headline-item"><div class="hl-text">"Can you solve my problem? The money is not the question."</div></div>
+<div class="headline-item"><div class="hl-text">"It's like severe brain damage. It's like constant COVID."</div></div>
+<div class="headline-item"><div class="hl-text">"The biggest thing is that I lost years of my life. You can't get back the time."</div></div>
+<div class="headline-item"><div class="hl-text">"We paid for everything to be replaced. Two years later, still sick."</div></div>
+<div class="headline-item"><div class="hl-text">"By the time you see it, the problem is out of control."</div></div>
+<div class="headline-item"><div class="hl-text">"Air quality test came back clean. You're still sick."</div></div>
+<div class="headline-item"><div class="hl-text">"If you're a high level entrepreneur and you get sick — you can't perform."</div></div>
+<div class="headline-item"><div class="hl-text">"I don't wait until I see a roach. It's prevention."</div></div>
+<div class="headline-item"><div class="hl-text">"They already get it. The only thing they want to know is: can you solve my problem?"</div></div>
+</div>
+<h3 style="margin:32px 0 16px;font-size:1rem;color:var(--text-muted)">Contrarian Angles</h3>
+<div class="quote-grid">
+<div class="quote-card"><div class="quote-text">Your mold inspection came back clean. That's the problem.</div><div class="quote-meta"><span class="tag tag-headline">contrarian</span></div></div>
+<div class="quote-card"><div class="quote-text">Your remediation company sprayed chemicals on it. That's why you're still sick.</div><div class="quote-meta"><span class="tag tag-headline">contrarian</span></div></div>
+<div class="quote-card"><div class="quote-text">Your functional medicine doctor can't heal you while your house is poisoning you.</div><div class="quote-meta"><span class="tag tag-headline">contrarian</span></div></div>
+</div>
+<h3 style="margin:32px 0 16px;font-size:1rem;color:var(--text-muted)">Fear-Based Angles</h3>
+<div class="quote-grid">
+<div class="quote-card"><div class="quote-text">Your home is silently disabling you — from CrossFit athlete to heart failure in months</div><div class="quote-meta"><span class="tag tag-fear">fear</span></div></div>
+<div class="quote-card"><div class="quote-text">Your children's 'allergies' might be your house making them sick</div><div class="quote-meta"><span class="tag tag-fear">fear</span></div></div>
+<div class="quote-card"><div class="quote-text">$200K spent and still no end in sight — when remediation fails, it destroys everything</div><div class="quote-meta"><span class="tag tag-fear">fear</span></div></div>
+</div>
+</div>
+
+</main>
+
+<script>
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+btn.addEventListener('click',()=>{
+document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+btn.classList.add('active');
+document.getElementById(btn.dataset.tab).classList.add('active');
+window.scrollTo({top:0,behavior:'smooth'});
+});
+});
+</script>
+</body>
+</html>
