@@ -3,556 +3,282 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Black Mold Guy — My Leads</title>
+<title>My Leads — The Black Mold Guy</title>
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  svg { fill: none; stroke-linecap: round; stroke-linejoin: round; }
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{font-family:system-ui,-apple-system,BlinkMacSystemFont,sans-serif;background:#f5f5f0;min-height:100vh;color:#1a1a1a}
 
-  :root {
-    --primary: #1a3a2a;
-    --primary-light: #2a5a40;
-    --accent: #4a8c5c;
-    --accent-light: #6aac7c;
-    --bg: #f5f5f0;
-    --card: #ffffff;
-    --border: #e2e8e4;
-    --text: #1a1a1a;
-    --text-muted: #6b7280;
-    --text-light: #9ca3af;
-    --radius: 12px;
-    --shadow: 0 1px 4px rgba(0,0,0,0.08), 0 4px 16px rgba(0,0,0,0.06);
-    --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
-  }
+/* HEADER */
+.header{background:#1a3a2a;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px;position:sticky;top:0;z-index:100}
+.header-left{display:flex;align-items:center;gap:12px}
+.header-logo{font-size:20px}
+.header-title{color:white;font-weight:700;font-size:16px;line-height:1.2}
+.header-sub{color:rgba(255,255,255,0.55);font-size:11px;display:block}
+.header-actions{display:flex;align-items:center;gap:8px}
+.btn-refresh{background:rgba(255,255,255,0.12);border:none;color:white;padding:8px 14px;border-radius:8px;font-size:13px;cursor:pointer;font-family:inherit;display:flex;align-items:center;gap:6px}
+.btn-refresh:hover{background:rgba(255,255,255,0.2)}
+.btn-logout{background:none;border:none;color:rgba(255,255,255,0.5);font-size:13px;cursor:pointer;font-family:inherit;padding:8px}
+.btn-logout:hover{color:white}
 
-  body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--bg);
-    color: var(--text);
-    min-height: 100vh;
-    font-size: 15px;
-    line-height: 1.5;
-  }
+/* STATS ROW */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:16px 20px;max-width:900px;margin:0 auto}
+.stat-card{background:white;border-radius:12px;padding:14px 16px;box-shadow:0 1px 4px rgba(0,0,0,0.07)}
+.stat-num{font-size:26px;font-weight:800;color:#1a3a2a;line-height:1}
+.stat-label{font-size:11px;color:#9ca3af;margin-top:4px;font-weight:500}
+.stat-card.urgent .stat-num{color:#dc2626}
 
-  /* ── Header ── */
-  .header {
-    background: var(--primary);
-    color: white;
-    padding: 0 16px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  }
-  .header-brand {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .header-logo {
-    width: 32px;
-    height: 32px;
-    background: var(--accent);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .header-title { font-weight: 700; font-size: 15px; line-height: 1.2; }
-  .header-subtitle { font-size: 11px; opacity: 0.7; font-weight: 400; }
-  .header-actions { display: flex; align-items: center; gap: 8px; }
-  .btn-icon {
-    background: rgba(255,255,255,0.12);
-    border: none;
-    color: white;
-    border-radius: 8px;
-    width: 38px;
-    height: 38px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: background 0.15s;
-  }
-  .btn-icon:hover { background: rgba(255,255,255,0.2); }
-  .btn-logout {
-    background: rgba(255,255,255,0.12);
-    border: none;
-    color: white;
-    border-radius: 8px;
-    padding: 0 14px;
-    height: 38px;
-    cursor: pointer;
-    font-size: 13px;
-    font-weight: 500;
-    transition: background 0.15s;
-  }
-  .btn-logout:hover { background: rgba(255,255,255,0.2); }
+/* FILTER TABS */
+.filter-wrap{padding:0 20px 12px;max-width:900px;margin:0 auto}
+.filter-scroll{display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;scrollbar-width:none}
+.filter-scroll::-webkit-scrollbar{display:none}
+.filter-tab{flex-shrink:0;padding:8px 16px;border-radius:20px;font-size:13px;font-weight:600;cursor:pointer;border:none;font-family:inherit;background:#e5e7eb;color:#6b7280;transition:all 0.15s}
+.filter-tab.active{background:#1a3a2a;color:white}
 
-  /* ── Main content ── */
-  .main { max-width: 680px; margin: 0 auto; padding: 16px; }
+/* LEADS LIST */
+.leads-wrap{padding:0 20px 40px;max-width:900px;margin:0 auto;display:flex;flex-direction:column;gap:10px}
 
-  /* ── Stats row ── */
-  .stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin-bottom: 16px; }
-  @media (min-width: 480px) { .stats { grid-template-columns: repeat(4, 1fr); } }
-  .stat-card {
-    background: var(--card);
-    border-radius: var(--radius);
-    padding: 14px;
-    box-shadow: var(--shadow-sm);
-    text-align: center;
-  }
-  .stat-number { font-size: 28px; font-weight: 800; color: var(--primary); line-height: 1; }
-  .stat-label { font-size: 11px; color: var(--text-muted); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.04em; font-weight: 500; }
-  .stat-card.highlight .stat-number { color: #dc2626; }
+/* LEAD CARD */
+.lead-card{background:white;border-radius:14px;box-shadow:0 1px 4px rgba(0,0,0,0.07);overflow:hidden;transition:box-shadow 0.15s}
+.lead-card:hover{box-shadow:0 4px 16px rgba(0,0,0,0.10)}
+.lead-header{padding:16px;display:flex;align-items:center;gap:12px;cursor:pointer;user-select:none}
+.lead-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0;color:white}
+.lead-main{flex:1;min-width:0}
+.lead-name{font-weight:700;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lead-meta{font-size:13px;color:#6b7280;margin-top:2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.lead-right{display:flex;flex-direction:column;align-items:flex-end;gap:6px;flex-shrink:0}
+.lead-time{font-size:11px;color:#9ca3af}
+.lead-chevron{color:#d1d5db;font-size:16px;transition:transform 0.2s}
+.lead-card.open .lead-chevron{transform:rotate(90deg)}
 
-  /* ── Filter tabs ── */
-  .filter-bar {
-    display: flex;
-    gap: 6px;
-    overflow-x: auto;
-    padding-bottom: 2px;
-    margin-bottom: 14px;
-    scrollbar-width: none;
-  }
-  .filter-bar::-webkit-scrollbar { display: none; }
-  .filter-tab {
-    background: var(--card);
-    border: 1px solid var(--border);
-    color: var(--text-muted);
-    border-radius: 20px;
-    padding: 6px 14px;
-    font-size: 13px;
-    font-weight: 500;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: all 0.15s;
-    flex-shrink: 0;
-    height: 34px;
-    display: flex;
-    align-items: center;
-  }
-  .filter-tab.active {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: white;
-  }
-  .filter-tab:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
+/* STATUS BADGE */
+.badge{display:inline-block;padding:3px 10px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:0.3px;white-space:nowrap}
+.badge-new{background:#dbeafe;color:#1d4ed8}
+.badge-contacted{background:#fef3c7;color:#92400e}
+.badge-booked{background:#ffedd5;color:#c2410c}
+.badge-done{background:#ede9fe;color:#6d28d9}
+.badge-sold{background:#dcfce7;color:#15803d}
+.badge-nosale{background:#fee2e2;color:#b91c1c}
+.badge-complete{background:#d1fae5;color:#065f46}
+.badge-review{background:#f3f4f6;color:#6b7280}
+.badge-asap{background:#dc2626;color:white}
 
-  /* ── Lead cards ── */
-  .leads-list { display: flex; flex-direction: column; gap: 10px; }
+/* LEAD DETAIL (EXPANDED) */
+.lead-detail{display:none;border-top:1px solid #f3f4f6;padding:16px}
+.lead-card.open .lead-detail{display:block}
+.detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px}
+.detail-item{}
+.detail-label{font-size:11px;color:#9ca3af;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:2px}
+.detail-value{font-size:14px;color:#1a1a1a;font-weight:500}
+.detail-value a{color:#1a3a2a;text-decoration:none;font-weight:700}
 
-  .lead-card {
-    background: var(--card);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-sm);
-    overflow: hidden;
-    border: 1px solid var(--border);
-    transition: box-shadow 0.15s;
-  }
-  .lead-card:hover { box-shadow: var(--shadow); }
+/* ACTIONS */
+.actions-section{margin-bottom:16px}
+.actions-title{font-size:11px;color:#9ca3af;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:8px}
 
-  .lead-card-header {
-    padding: 14px 16px;
-    cursor: pointer;
-    user-select: none;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-  }
-  .lead-avatar {
-    width: 44px;
-    height: 44px;
-    background: var(--primary);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    font-weight: 700;
-    font-size: 16px;
-    flex-shrink: 0;
-  }
-  .lead-info { flex: 1; min-width: 0; }
-  .lead-top { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 4px; }
-  .lead-name { font-weight: 700; font-size: 16px; color: var(--text); }
-  .lead-phone {
-    display: block;
-    color: var(--primary);
-    font-weight: 600;
-    font-size: 16px;
-    text-decoration: none;
-    margin-bottom: 2px;
-  }
-  .lead-phone:hover { text-decoration: underline; }
-  .lead-email { font-size: 13px; color: var(--text-muted); }
-  .lead-meta { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; margin-top: 6px; }
-  .lead-service { font-size: 12px; color: var(--text-muted); }
-  .lead-time { font-size: 12px; color: var(--text-light); }
-  .lead-chevron {
-    color: var(--text-light);
-    transition: transform 0.2s;
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-  .lead-card.open .lead-chevron { transform: rotate(90deg); }
+/* STATUS DROPDOWN */
+.status-select{width:100%;padding:12px 16px;border:1.5px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;cursor:pointer;background:white;font-weight:600;margin-bottom:12px;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center;padding-right:36px}
+.status-select:focus{outline:none;border-color:#1a3a2a}
 
-  /* ── Status badges ── */
-  .badge {
-    display: inline-flex;
-    align-items: center;
-    border-radius: 20px;
-    padding: 2px 10px;
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
-  }
-  .badge-new      { background: #dbeafe; color: #1d4ed8; }
-  .badge-contacted  { background: #fef3c7; color: #92400e; }
-  .badge-booked   { background: #ffedd5; color: #9a3412; }
-  .badge-done     { background: #ede9fe; color: #5b21b6; }
-  .badge-sold     { background: #dcfce7; color: #15803d; }
-  .badge-followup { background: #fee2e2; color: #991b1b; }
-  .badge-complete { background: #d1fae5; color: #065f46; }
-  .badge-review   { background: #f3f4f6; color: #4b5563; }
-  .badge-urgency  { background: #fef2f2; color: #dc2626; border: 1px solid #fca5a5; }
+/* QUICK ACTION BUTTONS */
+.quick-actions{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+.qbtn{padding:10px 16px;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;border:none;font-family:inherit;flex:1;min-width:0;white-space:nowrap;transition:all 0.15s}
+.qbtn-outline{background:white;border:1.5px solid #e5e7eb;color:#374151}
+.qbtn-outline:hover{border-color:#1a3a2a;color:#1a3a2a}
+.qbtn-green{background:#1a3a2a;color:white}
+.qbtn-green:hover{background:#0f2318}
+.qbtn-red{background:#fef2f2;color:#dc2626;border:1.5px solid #fecaca}
+.qbtn-red:hover{background:#fee2e2}
 
-  /* ── Lead detail panel ── */
-  .lead-detail {
-    display: none;
-    border-top: 1px solid var(--border);
-    padding: 16px;
-    background: #fafafa;
-  }
-  .lead-card.open .lead-detail { display: block; }
+/* NOTES */
+.notes-area{width:100%;padding:12px;border:1.5px solid #e5e7eb;border-radius:10px;font-size:14px;font-family:inherit;resize:vertical;min-height:80px;margin-bottom:8px}
+.notes-area:focus{outline:none;border-color:#1a3a2a}
+.save-notes-btn{padding:10px 20px;background:#1a3a2a;color:white;border:none;border-radius:8px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit}
 
-  .detail-section { margin-bottom: 16px; }
-  .detail-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); margin-bottom: 6px; }
-  .detail-value { font-size: 14px; color: var(--text); }
+/* CHAT LOG */
+.chat-log-box{background:#f9f9f9;border:1px solid #e5e7eb;border-radius:10px;padding:12px;max-height:160px;overflow-y:auto;font-size:13px;color:#374151;white-space:pre-wrap;line-height:1.6;margin-top:8px}
+.chat-log-label{font-size:11px;color:#9ca3af;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:6px}
 
-  .detail-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
-  @media (max-width: 380px) { .detail-row { grid-template-columns: 1fr; } }
+/* EMAIL MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;align-items:flex-end;justify-content:center}
+.modal-overlay.open{display:flex}
+.modal{background:white;border-radius:16px 16px 0 0;padding:24px;width:100%;max-width:560px;max-height:80vh;overflow-y:auto}
+.modal-title{font-size:18px;font-weight:700;margin-bottom:4px}
+.modal-sub{font-size:13px;color:#6b7280;margin-bottom:20px}
+.modal-close{float:right;background:none;border:none;font-size:20px;cursor:pointer;color:#9ca3af;margin-top:-4px}
+.email-subject-input{width:100%;padding:12px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;font-family:inherit;margin-bottom:10px}
+.email-subject-input:focus{outline:none;border-color:#1a3a2a}
+.email-body-area{width:100%;padding:12px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;font-family:inherit;min-height:140px;resize:vertical;margin-bottom:16px}
+.email-body-area:focus{outline:none;border-color:#1a3a2a}
+.modal-actions{display:flex;gap:10px}
+.btn-send{flex:1;padding:14px;background:#1a3a2a;color:white;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer}
+.btn-cancel{padding:14px 20px;background:#f3f4f6;color:#374151;border:none;border-radius:10px;font-size:15px;font-weight:600;cursor:pointer}
 
-  /* Status dropdown */
-  .status-select {
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: 10px;
-    border: 2px solid var(--border);
-    font-size: 15px;
-    font-weight: 600;
-    background: white;
-    cursor: pointer;
-    appearance: none;
-    -webkit-appearance: none;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
-    background-repeat: no-repeat;
-    background-position: right 12px center;
-    padding-right: 36px;
-    transition: border-color 0.15s;
-  }
-  .status-select:focus { outline: none; border-color: var(--accent); }
+/* EMAIL TEMPLATE PILLS */
+.template-pills{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px}
+.tpill{padding:6px 12px;border-radius:16px;font-size:12px;font-weight:600;cursor:pointer;border:1.5px solid #e5e7eb;background:white;color:#374151;font-family:inherit;transition:all 0.1s}
+.tpill:hover{border-color:#1a3a2a;color:#1a3a2a}
 
-  /* Notes area */
-  .notes-area {
-    width: 100%;
-    border: 2px solid var(--border);
-    border-radius: 10px;
-    padding: 10px 12px;
-    font-size: 14px;
-    font-family: inherit;
-    resize: vertical;
-    min-height: 70px;
-    transition: border-color 0.15s;
-  }
-  .notes-area:focus { outline: none; border-color: var(--accent); }
+/* REVIEW MODAL */
+.review-form{padding:20px 0 0}
+.review-inputs{display:flex;flex-direction:column;gap:10px;margin-bottom:16px}
+.review-row{display:flex;gap:10px}
+.rinput{flex:1;padding:12px;border:1.5px solid #e5e7eb;border-radius:8px;font-size:14px;font-family:inherit}
+.rinput:focus{outline:none;border-color:#1a3a2a}
 
-  /* Buttons */
-  .btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 6px;
-    border: none;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 600;
-    cursor: pointer;
-    min-height: 44px;
-    padding: 0 16px;
-    transition: all 0.15s;
-    width: 100%;
-    font-family: inherit;
-  }
-  .btn-primary { background: var(--primary); color: white; }
-  .btn-primary:hover { background: var(--primary-light); }
-  .btn-secondary { background: #f3f4f6; color: var(--text); }
-  .btn-secondary:hover { background: #e5e7eb; }
-  .btn-success { background: #16a34a; color: white; }
-  .btn-success:hover { background: #15803d; }
-  .btn-email { background: #1d4ed8; color: white; }
-  .btn-email:hover { background: #1e40af; }
-  .btn-sm { min-height: 38px; font-size: 13px; padding: 0 12px; }
-  .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+/* TOAST */
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(100px);background:#1a1a1a;color:white;padding:12px 20px;border-radius:10px;font-size:14px;font-weight:500;z-index:300;transition:transform 0.3s;white-space:nowrap}
+.toast.show{transform:translateX(-50%) translateY(0)}
+.toast.success{background:#15803d}
+.toast.error{background:#dc2626}
 
-  .email-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-  .email-btns .btn { font-size: 12px; min-height: 40px; padding: 0 10px; }
+/* EMPTY STATE */
+.empty-state{text-align:center;padding:60px 20px}
+.empty-icon{font-size:48px;margin-bottom:16px}
+.empty-title{font-size:18px;font-weight:700;margin-bottom:8px;color:#374151}
+.empty-sub{font-size:14px;color:#9ca3af}
 
-  /* Chat log */
-  .chat-log {
-    background: #f9fafb;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 10px 12px;
-    font-size: 13px;
-    color: var(--text-muted);
-    max-height: 160px;
-    overflow-y: auto;
-    white-space: pre-wrap;
-    line-height: 1.6;
-  }
+/* LOADING */
+.loading{text-align:center;padding:60px 20px;color:#9ca3af}
+.spinner{width:32px;height:32px;border:3px solid #e5e7eb;border-top-color:#1a3a2a;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto 16px}
+@keyframes spin{to{transform:rotate(360deg)}}
 
-  /* ── Loading & Empty states ── */
-  .loading-screen {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-    gap: 16px;
-    color: var(--text-muted);
-  }
-  .spinner {
-    width: 36px;
-    height: 36px;
-    border: 3px solid var(--border);
-    border-top-color: var(--accent);
-    border-radius: 50%;
-    animation: spin 0.7s linear infinite;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
+/* REVIEW BUTTON (only shows on Job Complete) */
+.review-cta{background:#15803d;color:white;border:none;border-radius:10px;padding:14px;width:100%;font-size:15px;font-weight:700;cursor:pointer;font-family:inherit;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:8px}
+.review-cta:hover{background:#166534}
 
-  .empty-state {
-    text-align: center;
-    padding: 60px 20px;
-    color: var(--text-muted);
-  }
-  .empty-icon {
-    width: 64px;
-    height: 64px;
-    background: #f3f4f6;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 16px;
-  }
-  .empty-title { font-size: 17px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
-  .empty-desc { font-size: 14px; line-height: 1.6; }
-
-  /* ── Toast notifications ── */
-  .toast-container {
-    position: fixed;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 8px;
-    z-index: 9999;
-    pointer-events: none;
-    width: calc(100% - 32px);
-    max-width: 400px;
-  }
-  .toast {
-    background: #1a1a1a;
-    color: white;
-    padding: 12px 18px;
-    border-radius: 10px;
-    font-size: 14px;
-    font-weight: 500;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.25);
-    animation: slideUp 0.25s ease;
-    pointer-events: all;
-    width: 100%;
-    text-align: center;
-  }
-  .toast.success { background: #15803d; }
-  .toast.error   { background: #dc2626; }
-  @keyframes slideUp {
-    from { opacity: 0; transform: translateY(12px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-
-  /* ── Divider ── */
-  .divider { height: 1px; background: var(--border); margin: 14px 0; }
-
-  /* ── Spinning refresh indicator ── */
-  .refreshing .header-title::after { content: ' …'; opacity: 0.5; }
-
-  /* ── Section header ── */
-  .section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
-  }
-  .section-count { font-size: 13px; color: var(--text-muted); }
-
-  /* ── No sale / review button prominence ── */
-  .review-btn-wrap { margin-top: 14px; }
-  .btn-review-big {
-    background: linear-gradient(135deg, #15803d, #16a34a);
-    color: white;
-    font-size: 15px;
-    font-weight: 700;
-    padding: 0 20px;
-    min-height: 52px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(21,128,61,0.35);
-  }
-  .btn-review-big:hover { background: linear-gradient(135deg, #166534, #15803d); }
+@media(max-width:500px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .detail-grid{grid-template-columns:1fr}
+  .header-title .header-sub{display:none}
+}
 </style>
 </head>
 <body>
 
-<header class="header" id="appHeader">
-  <div class="header-brand">
-    <div class="header-logo">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
-        <polyline points="9 22 9 12 15 12 15 22"/>
-      </svg>
-    </div>
+<!-- HEADER -->
+<div class="header">
+  <div class="header-left">
+    <span class="header-logo">🌿</span>
     <div>
-      <div class="header-title">The Black Mold Guy</div>
-      <div class="header-subtitle">My Leads</div>
+      <div class="header-title">My Leads<span class="header-sub">The Black Mold Guy</span></div>
     </div>
   </div>
   <div class="header-actions">
-    <button class="btn-icon" id="refreshBtn" onclick="refreshLeads()" title="Refresh leads">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="23 4 23 10 17 10"/>
-        <path d="M20.49 15a9 9 0 11-2.12-9.36L23 10"/>
-      </svg>
-    </button>
-    <button class="btn-logout" onclick="logout()">Log out</button>
+    <button class="btn-refresh" onclick="loadLeads()">↻ Refresh</button>
+    <button class="btn-logout" onclick="logout()">Logout</button>
   </div>
-</header>
+</div>
 
-<div class="main" id="mainApp">
-  <!-- Stats row -->
-  <div class="stats" id="statsRow">
-    <div class="stat-card">
-      <div class="stat-number" id="statTotal">–</div>
-      <div class="stat-label">Total Leads</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number" id="statToday">–</div>
-      <div class="stat-label">New Today</div>
-    </div>
-    <div class="stat-card">
-      <div class="stat-number" id="statSold">–</div>
-      <div class="stat-label">Jobs Sold</div>
-    </div>
-    <div class="stat-card highlight">
-      <div class="stat-number" id="statFollowup">–</div>
-      <div class="stat-label">Follow-ups</div>
-    </div>
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-card">
+    <div class="stat-num" id="stat-total">—</div>
+    <div class="stat-label">Total Leads</div>
   </div>
-
-  <!-- Filter tabs -->
-  <div class="filter-bar" id="filterBar">
-    <button class="filter-tab active" data-filter="all" onclick="setFilter('all', this)">All</button>
-    <button class="filter-tab" data-filter="new" onclick="setFilter('new', this)">New</button>
-    <button class="filter-tab" data-filter="booked" onclick="setFilter('booked', this)">Booked</button>
-    <button class="filter-tab" data-filter="sold" onclick="setFilter('sold', this)">Sold</button>
-    <button class="filter-tab" data-filter="followup" onclick="setFilter('followup', this)">Follow Up</button>
-    <button class="filter-tab" data-filter="complete" onclick="setFilter('complete', this)">Complete</button>
+  <div class="stat-card">
+    <div class="stat-num" id="stat-new">—</div>
+    <div class="stat-label">New This Week</div>
   </div>
+  <div class="stat-card">
+    <div class="stat-num" id="stat-sold">—</div>
+    <div class="stat-label">Jobs Sold</div>
+  </div>
+  <div class="stat-card urgent">
+    <div class="stat-num" id="stat-followup">—</div>
+    <div class="stat-label">Need Follow-up</div>
+  </div>
+</div>
 
-  <!-- Leads list -->
-  <div id="leadsContainer">
-    <div class="loading-screen">
-      <div class="spinner"></div>
-      <div>Loading your leads…</div>
+<!-- FILTER TABS -->
+<div class="filter-wrap">
+  <div class="filter-scroll">
+    <button class="filter-tab active" data-filter="all" onclick="setFilter('all',this)">All</button>
+    <button class="filter-tab" data-filter="New Lead" onclick="setFilter('New Lead',this)">🔵 New</button>
+    <button class="filter-tab" data-filter="Contacted" onclick="setFilter('Contacted',this)">Contacted</button>
+    <button class="filter-tab" data-filter="Consult Booked" onclick="setFilter('Consult Booked',this)">📅 Booked</button>
+    <button class="filter-tab" data-filter="Job Sold" onclick="setFilter('Job Sold',this)">✅ Sold</button>
+    <button class="filter-tab" data-filter="No Sale - Follow Up" onclick="setFilter('No Sale - Follow Up',this)">🔴 Follow Up</button>
+    <button class="filter-tab" data-filter="Job Complete" onclick="setFilter('Job Complete',this)">Done</button>
+  </div>
+</div>
+
+<!-- LEADS LIST -->
+<div class="leads-wrap" id="leads-list">
+  <div class="loading">
+    <div class="spinner"></div>
+    Loading your leads...
+  </div>
+</div>
+
+<!-- EMAIL MODAL -->
+<div class="modal-overlay" id="email-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('email-modal')">✕</button>
+    <div class="modal-title">Send Email</div>
+    <div class="modal-sub">To: <span id="email-to-name"></span> &lt;<span id="email-to-addr"></span>&gt;</div>
+    <div style="margin-bottom:10px">
+      <div style="font-size:12px;color:#9ca3af;font-weight:600;margin-bottom:6px">QUICK TEMPLATES</div>
+      <div class="template-pills">
+        <button class="tpill" onclick="loadTemplate('followup')">No-Sale Follow-Up</button>
+        <button class="tpill" onclick="loadTemplate('checkin')">Check-In</button>
+        <button class="tpill" onclick="loadTemplate('confirm')">Booking Confirm</button>
+        <button class="tpill" onclick="loadTemplate('bleach')">Why Bleach Fails</button>
+        <button class="tpill" onclick="loadTemplate('reactivate')">Re-Activate</button>
+      </div>
+    </div>
+    <input type="text" class="email-subject-input" id="email-subject" placeholder="Subject line...">
+    <textarea class="email-body-area" id="email-body" placeholder="Write your message here..."></textarea>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeModal('email-modal')">Cancel</button>
+      <button class="btn-send" onclick="sendEmail()">Send Email</button>
     </div>
   </div>
 </div>
 
-<!-- Toast container -->
-<div class="toast-container" id="toastContainer"></div>
+<!-- REVIEW REQUEST MODAL -->
+<div class="modal-overlay" id="review-modal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal('review-modal')">✕</button>
+    <div class="modal-title">Request a Review</div>
+    <div class="modal-sub">We'll send <span id="review-customer-name"></span> an email with a one-click review link. 4+ stars go to Google. 3 and below come to you privately.</div>
+    <div class="review-form">
+      <div class="review-inputs">
+        <input class="rinput" id="review-email-input" type="email" placeholder="Customer email address">
+        <input class="rinput" id="review-name-input" type="text" placeholder="Customer name">
+      </div>
+      <div class="modal-actions">
+        <button class="btn-cancel" onclick="closeModal('review-modal')">Cancel</button>
+        <button class="btn-send" onclick="sendReviewRequest()">Send Request</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
 
 <script>
-// ── Constants ──────────────────────────────────────────────────────────────
-const WEBHOOKS = {
-  getLeads:      'https://n8n.americanlifeteam.com/webhook/bmg-get-leads',
-  updateStatus:  'https://n8n.americanlifeteam.com/webhook/bmg-update-status',
-  sendEmail:     'https://n8n.americanlifeteam.com/webhook/bmg-send-email',
-  reviewRequest: 'https://n8n.americanlifeteam.com/webhook/bmg-review-request',
-};
-
+// ─── AUTH ───────────────────────────────────────────────────────────
+const SECRET = 'BMGowner2024!';
 const SESSION_KEY = 'bmg_session';
-const ACCESS_CODE = 'BMGowner2024!';
-const REFRESH_INTERVAL = 5 * 60 * 1000; // 5 minutes
 
-const STATUS_ORDER = [
-  'New Lead',
-  'Contacted',
-  'Consult Booked',
-  'Consult Done',
-  'Job Sold',
-  'No Sale - Follow Up',
-  'Job Complete',
-  'Review Sent',
-];
-
-const STATUS_BADGES = {
-  'New Lead':           'badge-new',
-  'Contacted':          'badge-contacted',
-  'Consult Booked':     'badge-booked',
-  'Consult Done':       'badge-done',
-  'Job Sold':           'badge-sold',
-  'No Sale - Follow Up':'badge-followup',
-  'Job Complete':       'badge-complete',
-  'Review Sent':        'badge-review',
-};
-
-const STATUS_COLORS = {
-  'New Lead':           '#2563eb',
-  'Contacted':          '#d97706',
-  'Consult Booked':     '#ea580c',
-  'Consult Done':       '#7c3aed',
-  'Job Sold':           '#16a34a',
-  'No Sale - Follow Up':'#dc2626',
-  'Job Complete':       '#15803d',
-  'Review Sent':        '#6b7280',
-};
-
-// ── State ──────────────────────────────────────────────────────────────────
-let allLeads = [];
-let currentFilter = 'all';
-let openCardId = null;
-let refreshTimer = null;
-
-// ── Auth ───────────────────────────────────────────────────────────────────
-function initAuth() {
+function checkAuth() {
   const params = new URLSearchParams(window.location.search);
   const accessParam = params.get('access');
-  if (accessParam === ACCESS_CODE) {
-    localStorage.setItem(SESSION_KEY, ACCESS_CODE);
-    // Clean URL without reloading
-    const cleanUrl = window.location.pathname;
-    window.history.replaceState({}, '', cleanUrl);
+  if (accessParam) {
+    try {
+      const decoded = atob(decodeURIComponent(accessParam));
+      if (decoded.endsWith(':' + SECRET)) {
+        localStorage.setItem(SESSION_KEY, SECRET);
+        // Clean URL
+        const url = new URL(window.location);
+        url.searchParams.delete('access');
+        window.history.replaceState({}, '', url.toString());
+      }
+    } catch(e) {}
   }
-  if (localStorage.getItem(SESSION_KEY) !== ACCESS_CODE) {
-    window.location.href = 'crm-login.html';
+  if (localStorage.getItem(SESSION_KEY) !== SECRET) {
+    window.location.replace('crm-login.html');
     return false;
   }
   return true;
@@ -560,523 +286,411 @@ function initAuth() {
 
 function logout() {
   localStorage.removeItem(SESSION_KEY);
-  window.location.href = 'crm-login.html';
+  window.location.replace('crm-login.html');
 }
 
-// ── Data parsing ───────────────────────────────────────────────────────────
+// ─── API ─────────────────────────────────────────────────────────────
+const N8N = 'https://n8n.americanlifeteam.com/webhook';
+let allLeads = [];
+let currentFilter = 'all';
+let activeLeadId = null;
+let emailTargetLead = null;
+let reviewTargetLead = null;
+
+async function loadLeads() {
+  document.getElementById('leads-list').innerHTML = '<div class="loading"><div class="spinner"></div>Loading your leads...</div>';
+  try {
+    const res = await fetch(`${N8N}/bmg-get-leads`);
+    const data = await res.json();
+    allLeads = (data.results || []).map(parseLead);
+    renderStats();
+    renderLeads();
+  } catch(e) {
+    document.getElementById('leads-list').innerHTML = '<div class="empty-state"><div class="empty-icon">⚠️</div><div class="empty-title">Could not load leads</div><div class="empty-sub">Check your internet and try refreshing.</div></div>';
+  }
+}
+
 function parseLead(page) {
+  const p = page.properties || {};
   return {
-    id:         page.id,
-    name:       page.properties?.Name?.title?.[0]?.plain_text || 'Unknown',
-    email:      page.properties?.Email?.email || '',
-    phone:      page.properties?.Phone?.phone_number || '',
-    status:     page.properties?.Status?.select?.name || 'New Lead',
-    service:    page.properties?.Service?.rich_text?.[0]?.plain_text || '',
-    location:   page.properties?.Location?.rich_text?.[0]?.plain_text || '',
-    urgency:    page.properties?.Urgency?.select?.name || '',
-    notes:      page.properties?.Notes?.rich_text?.[0]?.plain_text || '',
-    issue:      page.properties?.Issue?.rich_text?.[0]?.plain_text || '',
-    aiChatLog:  page.properties?.['AI Chat Log']?.rich_text?.[0]?.plain_text || '',
-    reviewScore:page.properties?.['Review Score']?.number ?? null,
-    created:    page.created_time,
+    id: page.id,
+    name: p.Name?.title?.[0]?.plain_text || 'Unknown',
+    email: p.Email?.email || '',
+    phone: p.Phone?.phone_number || '',
+    status: p.Status?.select?.name || 'New Lead',
+    service: p.Service?.rich_text?.[0]?.plain_text || '',
+    location: p.Location?.rich_text?.[0]?.plain_text || '',
+    urgency: p.Urgency?.select?.name || '',
+    issue: p.Issue?.rich_text?.[0]?.plain_text || '',
+    notes: p.Notes?.rich_text?.[0]?.plain_text || '',
+    zip: p.Zip?.rich_text?.[0]?.plain_text || '',
+    property: p['Property Type']?.rich_text?.[0]?.plain_text || '',
+    areas: p['Affected Areas']?.rich_text?.[0]?.plain_text || '',
+    chatLog: p['AI Chat Log']?.rich_text?.[0]?.plain_text || '',
+    reviewScore: p['Review Score']?.number,
+    reviewSent: p['Review Sent']?.checkbox || false,
+    created: page.created_time,
   };
 }
 
-// ── Fetch leads ────────────────────────────────────────────────────────────
-async function fetchLeads(silent = false) {
-  if (!silent) {
-    document.getElementById('leadsContainer').innerHTML = `
-      <div class="loading-screen">
-        <div class="spinner"></div>
-        <div>Loading your leads…</div>
-      </div>`;
-  }
-  try {
-    const res = await fetch(WEBHOOKS.getLeads);
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    const data = await res.json();
-    const pages = data.results || data || [];
-    allLeads = pages
-      .map(parseLead)
-      .sort((a, b) => new Date(b.created) - new Date(a.created));
-    updateStats();
-    renderLeads();
-    if (silent) showToast('Leads refreshed', 'success');
-  } catch (err) {
-    console.error('Fetch error:', err);
-    if (!silent) {
-      document.getElementById('leadsContainer').innerHTML = `
-        <div class="empty-state">
-          <div class="empty-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
-            </svg>
-          </div>
-          <div class="empty-title">Couldn't load leads</div>
-          <div class="empty-desc">Check your internet connection and try refreshing.</div>
-          <br>
-          <button class="btn btn-primary btn-sm" style="width:auto;margin:0 auto;" onclick="refreshLeads()">Try Again</button>
-        </div>`;
-    } else {
-      showToast('Could not refresh — check connection', 'error');
-    }
-  }
+// ─── STATS ───────────────────────────────────────────────────────────
+function renderStats() {
+  const total = allLeads.length;
+  const weekAgo = new Date(Date.now() - 7*24*60*60*1000);
+  const newThis = allLeads.filter(l => new Date(l.created) > weekAgo).length;
+  const sold = allLeads.filter(l => l.status === 'Job Sold').length;
+  const followup = allLeads.filter(l => l.status === 'No Sale - Follow Up').length;
+  document.getElementById('stat-total').textContent = total;
+  document.getElementById('stat-new').textContent = newThis;
+  document.getElementById('stat-sold').textContent = sold;
+  document.getElementById('stat-followup').textContent = followup;
 }
 
-async function refreshLeads() {
-  const btn = document.getElementById('refreshBtn');
-  btn.style.opacity = '0.5';
-  btn.disabled = true;
-  await fetchLeads(true);
-  btn.style.opacity = '';
-  btn.disabled = false;
-}
-
-// ── Stats ──────────────────────────────────────────────────────────────────
-function updateStats() {
-  const today = new Date();
-  today.setHours(0,0,0,0);
-
-  document.getElementById('statTotal').textContent    = allLeads.length;
-  document.getElementById('statToday').textContent    = allLeads.filter(l => new Date(l.created) >= today).length;
-  document.getElementById('statSold').textContent     = allLeads.filter(l => l.status === 'Job Sold' || l.status === 'Job Complete').length;
-  document.getElementById('statFollowup').textContent = allLeads.filter(l => l.status === 'No Sale - Follow Up').length;
-}
-
-// ── Filter ─────────────────────────────────────────────────────────────────
-const FILTER_MAP = {
-  all:      null,
-  new:      ['New Lead', 'Contacted'],
-  booked:   ['Consult Booked', 'Consult Done'],
-  sold:     ['Job Sold'],
-  followup: ['No Sale - Follow Up'],
-  complete: ['Job Complete', 'Review Sent'],
-};
-
-function setFilter(filter, btn) {
-  currentFilter = filter;
+// ─── FILTER ──────────────────────────────────────────────────────────
+function setFilter(f, el) {
+  currentFilter = f;
   document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
-  btn.classList.add('active');
+  el.classList.add('active');
   renderLeads();
 }
 
-function getFilteredLeads() {
-  const statuses = FILTER_MAP[currentFilter];
-  if (!statuses) return allLeads;
-  return allLeads.filter(l => statuses.includes(l.status));
+// ─── RENDER LEADS ────────────────────────────────────────────────────
+const STATUS_CLASSES = {
+  'New Lead':'badge-new','Contacted':'badge-contacted','Consult Booked':'badge-booked',
+  'Consult Done':'badge-done','Job Sold':'badge-sold','No Sale - Follow Up':'badge-nosale',
+  'Job Complete':'badge-complete','Review Sent':'badge-review'
+};
+const AVATAR_COLORS = ['#1a3a2a','#2563eb','#7c3aed','#c2410c','#b91c1c','#065f46','#92400e'];
+
+function timeAgo(iso) {
+  const diff = Date.now() - new Date(iso).getTime();
+  const m = Math.floor(diff/60000);
+  if (m < 60) return `${m}m ago`;
+  const h = Math.floor(m/60);
+  if (h < 24) return `${h}h ago`;
+  const d = Math.floor(h/24);
+  return `${d}d ago`;
 }
 
-// ── Render leads ───────────────────────────────────────────────────────────
-function renderLeads() {
-  const filtered = getFilteredLeads();
-  const container = document.getElementById('leadsContainer');
+function initials(name) {
+  return name.split(' ').slice(0,2).map(w=>w[0]||'').join('').toUpperCase() || '?';
+}
 
-  if (filtered.length === 0) {
-    const msg = currentFilter === 'all'
-      ? 'No leads yet — they\'ll show up here when people fill out your form.'
-      : 'No leads match this filter right now.';
-    container.innerHTML = `
-      <div class="empty-state">
-        <div class="empty-icon">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#9ca3af" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/>
-            <path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
-          </svg>
-        </div>
-        <div class="empty-title">No leads here</div>
-        <div class="empty-desc">${msg}</div>
-      </div>`;
+function renderLeads() {
+  const filtered = currentFilter === 'all' ? allLeads : allLeads.filter(l => l.status === currentFilter);
+  if (!filtered.length) {
+    document.getElementById('leads-list').innerHTML = '<div class="empty-state"><div class="empty-icon">📋</div><div class="empty-title">' + (currentFilter === 'all' ? 'No leads yet' : 'No leads in this category') + '</div><div class="empty-sub">' + (currentFilter === 'all' ? 'When people fill out your form, they\'ll show up here automatically.' : 'Try a different filter.') + '</div></div>';
     return;
   }
-
-  container.innerHTML = `
-    <div class="section-header">
-      <span class="section-count">${filtered.length} lead${filtered.length !== 1 ? 's' : ''}</span>
-    </div>
-    <div class="leads-list" id="leadsList">
-      ${filtered.map(lead => renderLeadCard(lead)).join('')}
-    </div>`;
-
-  // Re-open previously open card if still in filtered set
-  if (openCardId) {
-    const card = document.getElementById(`card-${openCardId}`);
-    if (card) card.classList.add('open');
-  }
+  document.getElementById('leads-list').innerHTML = filtered.map(l => leadCard(l)).join('');
 }
 
-function renderLeadCard(lead) {
-  const badgeClass = STATUS_BADGES[lead.status] || 'badge-new';
-  const initials = lead.name.split(' ').map(w=>w[0]).join('').toUpperCase().slice(0,2);
-  const urgencyBadge = (lead.urgency === 'ASAP' || lead.urgency === 'Emergency')
-    ? `<span class="badge badge-urgency">${lead.urgency}</span>` : '';
-  const timeAgo = formatTimeAgo(lead.created);
+function leadCard(l) {
+  const badgeClass = STATUS_CLASSES[l.status] || 'badge-new';
+  const avatarColor = AVATAR_COLORS[l.name.charCodeAt(0) % AVATAR_COLORS.length];
+  const urgentBadge = l.urgency === 'ASAP' ? '<span class="badge badge-asap">ASAP</span>' : '';
+  const isOpen = activeLeadId === l.id;
 
-  const reviewBtnHtml = lead.status === 'Job Complete' ? `
-    <div class="review-btn-wrap">
-      <button class="btn btn-review-big" onclick="sendReviewRequest('${lead.id}', event)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-        </svg>
-        Send Review Request
-      </button>
-    </div>` : '';
-
-  const chatLogHtml = lead.aiChatLog ? `
-    <div class="detail-section">
-      <div class="detail-label">Conversation from Website</div>
-      <div class="chat-log">${escapeHtml(lead.aiChatLog)}</div>
-    </div>` : '';
-
-  const selectOptions = STATUS_ORDER.map(s =>
-    `<option value="${s}" ${lead.status === s ? 'selected' : ''}>${s}</option>`
-  ).join('');
-
-  return `
-  <div class="lead-card" id="card-${lead.id}">
-    <div class="lead-card-header" onclick="toggleCard('${lead.id}')">
-      <div class="lead-avatar">${initials}</div>
-      <div class="lead-info">
-        <div class="lead-top">
-          <span class="lead-name">${escapeHtml(lead.name)}</span>
-          <span class="badge ${badgeClass}">${lead.status}</span>
-          ${urgencyBadge}
-        </div>
-        <a class="lead-phone" href="tel:${lead.phone}" onclick="event.stopPropagation()">${formatPhone(lead.phone)}</a>
-        <div class="lead-email">${escapeHtml(lead.email)}</div>
+  return `<div class="lead-card ${isOpen ? 'open' : ''}" id="card-${l.id}">
+    <div class="lead-header" onclick="toggleCard('${l.id}')">
+      <div class="lead-avatar" style="background:${avatarColor}">${initials(l.name)}</div>
+      <div class="lead-main">
+        <div class="lead-name">${l.name}</div>
         <div class="lead-meta">
-          ${lead.service ? `<span class="lead-service">${escapeHtml(lead.service)}</span>` : ''}
-          ${lead.service && timeAgo ? `<span class="lead-time">·</span>` : ''}
-          <span class="lead-time">${timeAgo}</span>
+          ${urgentBadge}
+          ${l.service ? `<span>${l.service}</span>` : ''}
+          ${l.location ? `<span>${l.location}</span>` : ''}
         </div>
       </div>
-      <svg class="lead-chevron" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="9 18 15 12 9 6"/>
-      </svg>
+      <div class="lead-right">
+        <span class="badge ${badgeClass}">${l.status}</span>
+        <span class="lead-time">${timeAgo(l.created)}</span>
+      </div>
+      <span class="lead-chevron">›</span>
     </div>
+    <div class="lead-detail" id="detail-${l.id}">
+      <div class="detail-grid">
+        <div class="detail-item">
+          <div class="detail-label">Phone</div>
+          <div class="detail-value"><a href="tel:${l.phone.replace(/\D/g,'')}">${l.phone || '—'}</a></div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Email</div>
+          <div class="detail-value" style="font-size:13px;word-break:break-all">${l.email || '—'}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Issue</div>
+          <div class="detail-value">${l.issue || '—'}</div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Property</div>
+          <div class="detail-value">${l.property || '—'}</div>
+        </div>
+        ${l.areas ? `<div class="detail-item" style="grid-column:1/-1"><div class="detail-label">Affected Areas</div><div class="detail-value">${l.areas}</div></div>` : ''}
+      </div>
 
-    <div class="lead-detail" id="detail-${lead.id}">
-
-      <!-- Status change -->
-      <div class="detail-section">
-        <div class="detail-label">Status</div>
-        <select class="status-select" id="status-${lead.id}"
-          onchange="updateStatus('${lead.id}', this.value)"
-          style="color: ${STATUS_COLORS[lead.status]}; border-color: ${STATUS_COLORS[lead.status]}40;">
-          ${selectOptions}
+      <div class="actions-section">
+        <div class="actions-title">Update Status</div>
+        <select class="status-select" id="status-${l.id}" onchange="updateStatus('${l.id}', this.value)">
+          ${['New Lead','Contacted','Consult Booked','Consult Done','Job Sold','No Sale - Follow Up','Job Complete','Review Sent'].map(s =>
+            `<option value="${s}" ${l.status === s ? 'selected' : ''}>${s}</option>`
+          ).join('')}
         </select>
       </div>
 
-      <!-- Contact details -->
-      <div class="detail-row">
-        ${lead.location ? `<div>
-          <div class="detail-label">Location</div>
-          <div class="detail-value">${escapeHtml(lead.location)}</div>
-        </div>` : ''}
-        ${lead.issue ? `<div>
-          <div class="detail-label">Issue</div>
-          <div class="detail-value">${escapeHtml(lead.issue)}</div>
-        </div>` : ''}
-      </div>
-
-      ${lead.notes ? `
-      <div class="detail-section">
-        <div class="detail-label">Notes from Lead</div>
-        <div class="detail-value">${escapeHtml(lead.notes)}</div>
-      </div>` : ''}
-
-      ${chatLogHtml}
-
-      <div class="divider"></div>
-
-      <!-- Quick notes -->
-      <div class="detail-section">
-        <div class="detail-label">Add a Note</div>
-        <textarea class="notes-area" id="notesInput-${lead.id}" placeholder="Type a note…"></textarea>
-        <br><br>
-        <button class="btn btn-secondary btn-sm" onclick="saveNote('${lead.id}')">Save Note</button>
-      </div>
-
-      <div class="divider"></div>
-
-      <!-- Email buttons -->
-      ${lead.email ? `
-      <div class="detail-section">
-        <div class="detail-label">Send Email</div>
-        <div class="email-btns">
-          <button class="btn btn-email btn-sm" onclick="sendEmail('confirmation', '${lead.id}', event)">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22 6 12 13 2 6"/>
-            </svg>
-            Send Confirmation
-          </button>
-          <button class="btn btn-email btn-sm" onclick="sendEmail('followup', '${lead.id}', event)">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 14 4 9 9 4"/><path d="M20 20v-7a4 4 0 00-4-4H4"/>
-            </svg>
-            Send Follow-up
-          </button>
-          <button class="btn btn-email btn-sm" onclick="sendEmail('checkin', '${lead.id}', event)" style="grid-column:1/-1;">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-            </svg>
-            Send Check-in
-          </button>
+      <div class="actions-section">
+        <div class="actions-title">Quick Actions</div>
+        <div class="quick-actions">
+          <button class="qbtn qbtn-outline" onclick="openEmailModal('${l.id}')">✉ Send Email</button>
+          ${l.phone ? `<button class="qbtn qbtn-outline" onclick="window.location='tel:${l.phone.replace(/\D/g,'')}'">📞 Call</button>` : ''}
         </div>
-      </div>` : ''}
+        ${l.status === 'Job Complete' || l.status === 'Review Sent' ? `
+        <button class="review-cta" onclick="openReviewModal('${l.id}')">
+          ⭐ Send Review Request
+        </button>
+        ` : ''}
+      </div>
 
-      ${reviewBtnHtml}
+      <div class="actions-section">
+        <div class="actions-title">Notes</div>
+        <textarea class="notes-area" id="notes-${l.id}" placeholder="Add a note...">${l.notes}</textarea>
+        <button class="save-notes-btn" onclick="saveNotes('${l.id}')">Save Notes</button>
+      </div>
 
+      ${l.chatLog ? `
+      <div>
+        <div class="chat-log-label">Chat from Website</div>
+        <div class="chat-log-box">${l.chatLog}</div>
+      </div>
+      ` : ''}
     </div>
   </div>`;
 }
 
-// ── Card toggle ────────────────────────────────────────────────────────────
+// ─── TOGGLE CARD ─────────────────────────────────────────────────────
 function toggleCard(id) {
-  const card = document.getElementById(`card-${id}`);
-  const isOpen = card.classList.contains('open');
-  // Close previously open
-  if (openCardId && openCardId !== id) {
-    const prev = document.getElementById(`card-${openCardId}`);
-    if (prev) prev.classList.remove('open');
-  }
-  if (isOpen) {
-    card.classList.remove('open');
-    openCardId = null;
+  if (activeLeadId === id) {
+    activeLeadId = null;
   } else {
-    card.classList.add('open');
-    openCardId = id;
+    activeLeadId = id;
+  }
+  renderLeads();
+  if (activeLeadId) {
+    setTimeout(() => {
+      const card = document.getElementById(`card-${id}`);
+      if (card) card.scrollIntoView({behavior:'smooth', block:'nearest'});
+    }, 50);
   }
 }
 
-// ── Status update ──────────────────────────────────────────────────────────
-async function updateStatus(id, newStatus) {
-  // Optimistic UI
-  const lead = allLeads.find(l => l.id === id);
-  if (!lead) return;
-  const oldStatus = lead.status;
-  lead.status = newStatus;
-
-  // Update select border color
-  const sel = document.getElementById(`status-${id}`);
-  if (sel) {
-    sel.style.color = STATUS_COLORS[newStatus] || '#1a1a1a';
-    sel.style.borderColor = (STATUS_COLORS[newStatus] || '#e2e8e4') + '40';
-  }
-
-  // Update badge in header
-  const card = document.getElementById(`card-${id}`);
-  if (card) {
-    const badgeEl = card.querySelector('.badge:not(.badge-urgency)');
-    if (badgeEl) {
-      badgeEl.className = `badge ${STATUS_BADGES[newStatus] || 'badge-new'}`;
-      badgeEl.textContent = newStatus;
-    }
-  }
-
-  // Show/hide review button
-  refreshReviewBtn(id, lead);
-
-  updateStats();
-
+// ─── UPDATE STATUS ───────────────────────────────────────────────────
+async function updateStatus(leadId, newStatus) {
+  // Optimistic update
+  const lead = allLeads.find(l => l.id === leadId);
+  if (lead) lead.status = newStatus;
+  renderStats();
   try {
-    const res = await fetch(WEBHOOKS.updateStatus, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ page_id: id, status: newStatus }),
+    await fetch(`${N8N}/bmg-update-status`, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({page_id: leadId, status: newStatus})
     });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    showToast('Status updated!', 'success');
-  } catch (err) {
-    // Roll back
-    lead.status = oldStatus;
-    if (sel) {
-      sel.value = oldStatus;
-      sel.style.color = STATUS_COLORS[oldStatus] || '#1a1a1a';
-    }
-    updateStats();
-    showToast('Could not update status. Try again.', 'error');
+    showToast('Status updated', 'success');
+  } catch(e) {
+    showToast('Could not save — check connection', 'error');
   }
 }
 
-function refreshReviewBtn(id, lead) {
-  const detail = document.getElementById(`detail-${id}`);
-  if (!detail) return;
-  let wrap = detail.querySelector('.review-btn-wrap');
-  if (lead.status === 'Job Complete') {
-    if (!wrap) {
-      wrap = document.createElement('div');
-      wrap.className = 'review-btn-wrap';
-      wrap.innerHTML = `<button class="btn btn-review-big" onclick="sendReviewRequest('${id}', event)">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-        </svg>
-        Send Review Request
-      </button>`;
-      detail.appendChild(wrap);
-    }
-  } else {
-    if (wrap) wrap.remove();
+// ─── SAVE NOTES ──────────────────────────────────────────────────────
+async function saveNotes(leadId) {
+  const notes = document.getElementById(`notes-${leadId}`).value;
+  const lead = allLeads.find(l => l.id === leadId);
+  if (lead) lead.notes = notes;
+  try {
+    await fetch(`${N8N}/bmg-update-status`, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({page_id: leadId, status: lead.status, notes: notes})
+    });
+    showToast('Notes saved', 'success');
+  } catch(e) {
+    showToast('Could not save notes', 'error');
   }
 }
 
-// ── Save note ──────────────────────────────────────────────────────────────
-function saveNote(id) {
-  const inp = document.getElementById(`notesInput-${id}`);
-  if (!inp || !inp.value.trim()) { showToast('Type a note first', ''); return; }
-  const lead = allLeads.find(l => l.id === id);
-  const combined = lead.notes ? `${lead.notes}\n---\n${inp.value.trim()}` : inp.value.trim();
-  lead.notes = combined;
-  inp.value = '';
-  showToast('Note saved locally', 'success');
+// ─── EMAIL MODAL ─────────────────────────────────────────────────────
+function openEmailModal(leadId) {
+  emailTargetLead = allLeads.find(l => l.id === leadId);
+  if (!emailTargetLead) return;
+  document.getElementById('email-to-name').textContent = emailTargetLead.name;
+  document.getElementById('email-to-addr').textContent = emailTargetLead.email;
+  document.getElementById('email-subject').value = '';
+  document.getElementById('email-body').value = '';
+  document.getElementById('email-modal').classList.add('open');
 }
 
-// ── Email sending ──────────────────────────────────────────────────────────
 const EMAIL_TEMPLATES = {
-  confirmation: (name) => ({
-    subject: `Your inspection request — The Black Mold Guy`,
-    html: `<div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:24px">
-      <h2 style="color:#1a3a2a;margin-bottom:16px">Hi ${name || 'there'},</h2>
-      <p style="line-height:1.7;color:#374151">Thanks for reaching out to The Black Mold Guy. We've received your request and we'll be in touch shortly to get your inspection scheduled.</p>
-      <p style="line-height:1.7;color:#374151">In the meantime, if you have any urgent questions, feel free to reply to this email or give us a call.</p>
-      <p style="line-height:1.7;color:#374151">We know mold issues can be stressful — we're here to help you get it handled fast.</p>
-      <p style="margin-top:24px;color:#374151">Talk soon,<br><strong>The Black Mold Guy Team</strong></p>
-    </div>`,
-  }),
-  followup: (name) => ({
-    subject: `Following up — The Black Mold Guy`,
-    html: `<div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:24px">
-      <h2 style="color:#1a3a2a;margin-bottom:16px">Hi ${name || 'there'},</h2>
-      <p style="line-height:1.7;color:#374151">Just wanted to follow up after our recent conversation. No pressure at all — we totally understand that these decisions take time.</p>
-      <p style="line-height:1.7;color:#374151">Just so you know: about 60% of our clients don't move forward right away, and that's completely okay. Whenever you're ready, we'll be here.</p>
-      <p style="line-height:1.7;color:#374151">If you have any lingering questions about the process, the cost, or what to expect, just reply to this email. Happy to help.</p>
-      <p style="line-height:1.7;color:#374151">Wishing you the best,<br><strong>The Black Mold Guy Team</strong></p>
-    </div>`,
-  }),
-  checkin: (name) => ({
-    subject: `Checking in on your mold situation — The Black Mold Guy`,
-    html: `<div style="font-family:sans-serif;max-width:560px;margin:0 auto;padding:24px">
-      <h2 style="color:#1a3a2a;margin-bottom:16px">Hi ${name || 'there'},</h2>
-      <p style="line-height:1.7;color:#374151">Just wanted to check in and see how things are going with your mold situation.</p>
-      <p style="line-height:1.7;color:#374151">If you still have questions or you're ready to move forward, just hit reply — we'll get you taken care of quickly.</p>
-      <p style="line-height:1.7;color:#374151">We're here whenever you need us.</p>
-      <p style="margin-top:24px;color:#374151">Best,<br><strong>The Black Mold Guy Team</strong></p>
-    </div>`,
-  }),
+  followup: {
+    subject: 'Following up from our conversation',
+    body: `Hi [Name],
+
+Just wanted to check in after we talked. Making a decision about your home is not something anyone takes lightly — and I completely understand if you're still processing things.
+
+What I can tell you is this: mold doesn't wait while we think about it. If it's there, it's still spreading and still affecting your air.
+
+No pressure from me. But if you have any questions — about the process, the cost, what to expect — I'm happy to talk it through. Just reply to this email or call me directly.
+
+The Black Mold Guy
+305-849-0242`
+  },
+  checkin: {
+    subject: 'Just checking in',
+    body: `Hi [Name],
+
+Hope you're doing well. I wanted to check in and see if you've had a chance to think things over.
+
+If anything has come up — new symptoms, new questions, or you're just ready to move forward — I'm here.
+
+Happy to jump on a quick call if that's easier than email.
+
+The Black Mold Guy
+305-849-0242`
+  },
+  confirm: {
+    subject: 'Confirmed: Your inspection with The Black Mold Guy',
+    body: `Hi [Name],
+
+Just confirming our appointment — I'm looking forward to getting you some real answers.
+
+What to expect:
+- I'll do a full visual inspection + thermal imaging
+- Air and surface samples go to the lab same day
+- Written report with lab results within 24-48 hours
+- I'll walk you through everything I find — good or bad
+
+See you soon.
+
+The Black Mold Guy
+305-849-0242`
+  },
+  bleach: {
+    subject: 'Why bleach doesn\'t actually fix mold (the real answer)',
+    body: `Hi [Name],
+
+One of the most common things I see: people scrub mold with bleach and it comes back in weeks. I wanted to share why — because it's not your fault.
+
+Bleach is mostly water. On porous surfaces like drywall, wood, and grout, the water soaks in... but the bleach evaporates before it penetrates. The visible surface looks clean. The mold root system (called "hyphae") stays untouched and regrows.
+
+The only way to actually eliminate mold is:
+1. Find the moisture source
+2. Remove affected materials where needed
+3. Apply the right chemistry — not bleach
+
+This is exactly why so many people spend thousands on remediation that doesn't stick.
+
+When you're ready to do this right, I'm here.
+
+The Black Mold Guy
+305-849-0242`
+  },
+  reactivate: {
+    subject: 'I owe you an apology',
+    body: `Hi [Name],
+
+I want to be straight with you: I dropped the ball. We talked a while back and I didn't follow up the way I should have.
+
+That's on me. And I'd like to make it right.
+
+If you're still dealing with the mold concern we discussed, I'd like to offer you a free 15-minute phone consultation — at no cost to you — to talk through your options and answer any questions.
+
+No sales pitch. Just honest answers.
+
+Reply to this email or call me directly and I'll make sure we connect this week.
+
+The Black Mold Guy
+305-849-0242`
+  }
 };
 
-async function sendEmail(type, leadId, event) {
-  event.stopPropagation();
-  const lead = allLeads.find(l => l.id === leadId);
-  if (!lead || !lead.email) { showToast('No email on file for this lead', 'error'); return; }
+function loadTemplate(key) {
+  const t = EMAIL_TEMPLATES[key];
+  if (!t || !emailTargetLead) return;
+  document.getElementById('email-subject').value = t.subject;
+  document.getElementById('email-body').value = t.body.replace('[Name]', emailTargetLead.name.split(' ')[0]);
+}
 
-  const tmpl = EMAIL_TEMPLATES[type](lead.name);
-  const btn = event.target.closest('button');
-  btn.disabled = true;
-  const origText = btn.innerHTML;
-  btn.innerHTML = '<div class="spinner" style="width:16px;height:16px;border-width:2px;margin:0 auto"></div>';
-
+async function sendEmail() {
+  if (!emailTargetLead) return;
+  const subject = document.getElementById('email-subject').value.trim();
+  const body = document.getElementById('email-body').value.trim();
+  if (!subject || !body) { showToast('Add a subject and message', 'error'); return; }
+  const html = body.replace(/\n/g,'<br>');
   try {
-    const res = await fetch(WEBHOOKS.sendEmail, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ to_email: lead.email, subject: tmpl.subject, html: tmpl.html }),
+    await fetch(`${N8N}/bmg-send-email`, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({to_email: emailTargetLead.email, subject, html})
     });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
+    closeModal('email-modal');
     showToast('Email sent!', 'success');
-  } catch (err) {
-    showToast('Email failed to send. Try again.', 'error');
+  } catch(e) {
+    showToast('Could not send email', 'error');
   }
-  btn.disabled = false;
-  btn.innerHTML = origText;
 }
 
-// ── Review request ─────────────────────────────────────────────────────────
-async function sendReviewRequest(leadId, event) {
-  event.stopPropagation();
-  const lead = allLeads.find(l => l.id === leadId);
-  if (!lead || !lead.email) { showToast('No email on file for this lead', 'error'); return; }
+// ─── REVIEW MODAL ────────────────────────────────────────────────────
+function openReviewModal(leadId) {
+  reviewTargetLead = allLeads.find(l => l.id === leadId);
+  if (!reviewTargetLead) return;
+  document.getElementById('review-customer-name').textContent = reviewTargetLead.name;
+  document.getElementById('review-email-input').value = reviewTargetLead.email;
+  document.getElementById('review-name-input').value = reviewTargetLead.name;
+  document.getElementById('review-modal').classList.add('open');
+}
 
-  const btn = event.target.closest('button');
-  btn.disabled = true;
-  const origText = btn.innerHTML;
-  btn.innerHTML = '<div class="spinner" style="width:20px;height:20px;border-width:3px;margin:0 auto"></div>';
-
+async function sendReviewRequest() {
+  const email = document.getElementById('review-email-input').value.trim();
+  const name = document.getElementById('review-name-input').value.trim();
+  if (!email) { showToast('Enter customer email', 'error'); return; }
   try {
-    const res = await fetch(WEBHOOKS.reviewRequest, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ customer_email: lead.email, customer_name: lead.name }),
+    await fetch(`${N8N}/bmg-review-request`, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body: JSON.stringify({customer_email: email, customer_name: name})
     });
-    if (!res.ok) throw new Error(`HTTP ${res.status}`);
-    showToast('Review request sent! Updating status…', 'success');
-    await updateStatus(leadId, 'Review Sent');
-    // Update the dropdown UI
-    const sel = document.getElementById(`status-${leadId}`);
-    if (sel) sel.value = 'Review Sent';
-  } catch (err) {
-    showToast('Could not send review request. Try again.', 'error');
-    btn.disabled = false;
-    btn.innerHTML = origText;
+    // Update status to Review Sent
+    if (reviewTargetLead) {
+      await updateStatus(reviewTargetLead.id, 'Review Sent');
+    }
+    closeModal('review-modal');
+    showToast('Review request sent!', 'success');
+    setTimeout(loadLeads, 1500);
+  } catch(e) {
+    showToast('Could not send request', 'error');
   }
 }
 
-// ── Toast ──────────────────────────────────────────────────────────────────
-function showToast(message, type = '') {
-  const container = document.getElementById('toastContainer');
-  const toast = document.createElement('div');
-  toast.className = `toast ${type}`;
-  toast.textContent = message;
-  container.appendChild(toast);
-  setTimeout(() => {
-    toast.style.opacity = '0';
-    toast.style.transition = 'opacity 0.3s';
-    setTimeout(() => toast.remove(), 300);
-  }, 3000);
+// ─── HELPERS ─────────────────────────────────────────────────────────
+function closeModal(id) {
+  document.getElementById(id).classList.remove('open');
+}
+document.querySelectorAll('.modal-overlay').forEach(m => {
+  m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
+});
+
+function showToast(msg, type='') {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.className = `toast ${type} show`;
+  setTimeout(() => t.classList.remove('show'), 3000);
 }
 
-// ── Helpers ────────────────────────────────────────────────────────────────
-function formatTimeAgo(isoStr) {
-  if (!isoStr) return '';
-  const diff = Date.now() - new Date(isoStr).getTime();
-  const m = Math.floor(diff / 60000);
-  const h = Math.floor(m / 60);
-  const d = Math.floor(h / 24);
-  if (m < 1)  return 'just now';
-  if (m < 60) return `${m} min ago`;
-  if (h < 24) return `${h} hour${h !== 1 ? 's' : ''} ago`;
-  if (d < 7)  return `${d} day${d !== 1 ? 's' : ''} ago`;
-  return new Date(isoStr).toLocaleDateString('en-US', { month:'short', day:'numeric' });
+// ─── INIT ────────────────────────────────────────────────────────────
+if (checkAuth()) {
+  loadLeads();
+  // Auto-refresh every 5 minutes
+  setInterval(loadLeads, 5 * 60 * 1000);
 }
-
-function formatPhone(phone) {
-  if (!phone) return '';
-  const digits = phone.replace(/\D/g, '');
-  if (digits.length === 10) return `(${digits.slice(0,3)}) ${digits.slice(3,6)}-${digits.slice(6)}`;
-  if (digits.length === 11 && digits[0] === '1') return `(${digits.slice(1,4)}) ${digits.slice(4,7)}-${digits.slice(7)}`;
-  return phone;
-}
-
-function escapeHtml(str) {
-  if (!str) return '';
-  return String(str)
-    .replace(/&/g,'&amp;')
-    .replace(/</g,'&lt;')
-    .replace(/>/g,'&gt;')
-    .replace(/"/g,'&quot;');
-}
-
-// ── Auto-refresh ───────────────────────────────────────────────────────────
-function startAutoRefresh() {
-  if (refreshTimer) clearInterval(refreshTimer);
-  refreshTimer = setInterval(() => fetchLeads(true), REFRESH_INTERVAL);
-}
-
-// ── Init ───────────────────────────────────────────────────────────────────
-(function init() {
-  if (!initAuth()) return;
-  fetchLeads(false);
-  startAutoRefresh();
-})();
 </script>
 </body>
 </html>
