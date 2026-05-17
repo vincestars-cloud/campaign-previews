@@ -2182,15 +2182,29 @@ function submitForm() {
     consent_sms: document.getElementById('smsConsent').checked,
     consent_email: true
   };
-  if (!BMG_SUPABASE_URL.startsWith('REPLACE_')) {
-    fetch('https://n8n.americanlifeteam.com/webhook/bmg-lead-intake', {
+  // Send to n8n for owner email notification
+  fetch('https://n8n.americanlifeteam.com/webhook/bmg-lead-intake', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(crmPayload)
+  }).catch(() => {});
+
+  // Send to Google Sheets (Apps Script backend)
+  const APPS_SCRIPT_URL = 'PASTE_YOUR_APPS_SCRIPT_URL_HERE';
+  if (!APPS_SCRIPT_URL.startsWith('PASTE_')) {
+    fetch(APPS_SCRIPT_URL, {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'x-bmg-secret': BMG_SUBMIT_SECRET },
-      body: JSON.stringify(crmPayload)
-    }).then(r => r.json()).then(r => console.log('CRM lead:', r))
-      .catch(err => console.log('CRM submit error:', err));
-  } else {
-    console.log('CRM not configured. Lead payload:', crmPayload);
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        action: 'addLead',
+        name: crmPayload.name,
+        email: crmPayload.email,
+        phone: crmPayload.phone,
+        service: crmPayload.service_interest || '',
+        source: 'Website',
+        notes: crmPayload.issue_description || ''
+      })
+    }).catch(() => {});
   }
 
   // Show success
