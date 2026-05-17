@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ManyChat AI Starter Pack — The Black Mold Guy</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:system-ui,-apple-system,sans-serif;background:#f5f5f0;color:#1a1a1a}
+.header{background:#1a3a2a;padding:28px 32px}
+.header h1{color:white;font-size:24px;font-weight:800;margin-bottom:4px}
+.header p{color:rgba(255,255,255,0.6);font-size:14px}
+.header-badge{display:inline-block;background:rgba(255,255,255,0.15);color:white;padding:4px 12px;border-radius:12px;font-size:11px;font-weight:700;letter-spacing:0.5px;margin-bottom:12px}
+.nav-bar{background:white;border-bottom:1px solid #e5e7eb;padding:0 32px;display:flex;gap:0;overflow-x:auto;scrollbar-width:none;position:sticky;top:0;z-index:50}
+.nav-bar::-webkit-scrollbar{display:none}
+.nav-item{padding:14px 20px;font-size:14px;font-weight:600;color:#6b7280;border-bottom:2.5px solid transparent;cursor:pointer;white-space:nowrap;transition:all 0.15s;flex-shrink:0}
+.nav-item.active{color:#1a3a2a;border-bottom-color:#1a3a2a}
+.container{max-width:800px;margin:0 auto;padding:32px 20px}
+.section{display:none}
+.section.active{display:block}
+.section-intro{background:#f0f9f4;border:1px solid #86efac;border-radius:12px;padding:16px 20px;margin-bottom:24px;font-size:14px;color:#374151;line-height:1.6}
+.section-intro strong{color:#065f46}
+.prompt-block{background:white;border-radius:14px;box-shadow:0 1px 6px rgba(0,0,0,0.08);margin-bottom:20px;overflow:hidden}
+.prompt-header{padding:16px 20px;border-bottom:1px solid #f3f4f6;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.prompt-title{font-size:15px;font-weight:700;color:#1a1a1a}
+.prompt-sub{font-size:13px;color:#6b7280;margin-top:2px}
+.where-tag{background:#dbeafe;color:#1d4ed8;padding:4px 12px;border-radius:12px;font-size:12px;font-weight:700}
+.where-tag.green{background:#d1fae5;color:#065f46}
+.where-tag.orange{background:#ffedd5;color:#c2410c}
+.where-tag.purple{background:#ede9fe;color:#6d28d9}
+.copy-btn{padding:8px 16px;background:#1a3a2a;color:white;border:none;border-radius:8px;font-size:12px;font-weight:600;cursor:pointer;font-family:inherit;flex-shrink:0;transition:background 0.15s}
+.copy-btn:hover{background:#0f2318}
+.copy-btn.copied{background:#15803d}
+.prompt-content{padding:20px;background:#fafafa;font-size:14px;color:#374151;line-height:1.8;white-space:pre-wrap;font-family:'Courier New',monospace;font-size:13px;max-height:none}
+.flow-steps{padding:20px}
+.flow-step{display:flex;gap:12px;margin-bottom:16px;align-items:flex-start}
+.flow-step:last-child{margin-bottom:0}
+.step-bubble{width:28px;height:28px;border-radius:50%;background:#1a3a2a;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:12px;flex-shrink:0;margin-top:2px}
+.step-label{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:0.5px;color:#9ca3af;margin-bottom:3px}
+.step-text{font-size:14px;color:#374151;line-height:1.6}
+.step-text strong{color:#1a1a1a}
+.step-text em{color:#6b7280;font-size:13px}
+.keyword-box{background:#1a3a2a;color:#a7f3d0;padding:8px 14px;border-radius:8px;font-size:13px;font-family:monospace;display:inline-block;margin-bottom:12px}
+.qr-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:20px}
+.qr-card{background:white;border:1.5px solid #e5e7eb;border-radius:10px;padding:14px}
+.qr-title{font-size:13px;font-weight:700;color:#1a1a1a;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.qr-num{width:22px;height:22px;border-radius:50%;background:#1a3a2a;color:white;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;flex-shrink:0}
+.qr-body{font-size:13px;color:#6b7280;line-height:1.6}
+.comment-card{background:white;border-radius:14px;box-shadow:0 1px 6px rgba(0,0,0,0.08);margin-bottom:14px;overflow:hidden}
+.comment-scenario{background:#f9fafb;padding:12px 20px;border-bottom:1px solid #f3f4f6;font-size:13px;font-weight:700;color:#374151;display:flex;align-items:center;gap:8px}
+.comment-body{padding:16px 20px;font-size:14px;color:#374151;line-height:1.65}
+.ig-tag{background:#e0f2fe;color:#0369a1;padding:3px 10px;border-radius:8px;font-size:11px;font-weight:700}
+.tiktok-tag{background:#fce7f3;color:#9d174d;padding:3px 10px;border-radius:8px;font-size:11px;font-weight:700}
+
+@media(max-width:600px){
+  .header{padding:20px}
+  .container{padding:20px 16px}
+  .qr-grid{grid-template-columns:1fr}
+  .nav-bar{padding:0 16px}
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-badge">MANYCHAT AI STARTER PACK</div>
+  <h1>The Black Mold Guy</h1>
+  <p>Paste these directly into ManyChat. Each section is labeled with exactly where it goes.</p>
+</div>
+
+<div class="nav-bar">
+  <div class="nav-item active" onclick="showSection('system', this)">1. System Prompt</div>
+  <div class="nav-item" onclick="showSection('flows', this)">2. Conversation Flows</div>
+  <div class="nav-item" onclick="showSection('quickreplies', this)">3. Quick Replies</div>
+  <div class="nav-item" onclick="showSection('comments', this)">4. Comment Scripts</div>
+</div>
+
+<div class="container">
+
+  <!-- SECTION 1: SYSTEM PROMPT -->
+  <div class="section active" id="sec-system">
+    <div class="section-intro">
+      <strong>Where to paste this:</strong> ManyChat → Settings → AI Assistant → "System Prompt" field. This is the master instruction that controls how your AI bot thinks and responds to every conversation.
+    </div>
+
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <div>
+          <div class="prompt-title">Master AI System Prompt</div>
+          <div class="prompt-sub">ManyChat → Settings → AI Assistant → System Prompt</div>
+        </div>
+        <div style="display:flex;gap:8px;align-items:center">
+          <span class="where-tag">AI Settings</span>
+          <button class="copy-btn" onclick="copyBlock(this, 'sys-prompt')">Copy</button>
+        </div>
+      </div>
+      <div class="prompt-content" id="sys-prompt">You are the AI assistant for The Black Mold Guy, a mold inspection and remediation specialist serving Metro Atlanta and Miami-Dade.
+
+YOUR ROLE: Be warm, educational, and trustworthy. You are NOT a salesperson — you are a helpful expert who genuinely cares about people's health.
+
+CORE IDENTITY:
+- We inspect homes AND we do remediation — but we NEVER recommend remediation on an inspection visit. This eliminates the conflict of interest that most mold companies have.
+- Health-first approach: Most clients come because they suspect something is making their family sick.
+- Independent inspector: Our inspection results go to a third-party certified lab. You get the honest truth — good or bad.
+
+TONE:
+- Warm, direct, caring — like a trusted neighbor who happens to be an expert.
+- Never pushy. Never sales-y. We let the truth do the selling.
+- Use "we" to refer to the business.
+- ALWAYS validate their concern — most people have felt dismissed by doctors and contractors.
+- If someone mentions health symptoms, acknowledge them with genuine empathy before anything else.
+
+WHAT YOU HELP WITH:
+1. Answering questions about mold, symptoms, the inspection process
+2. Explaining the difference between mold types (surface vs. black mold vs. HVAC)
+3. Helping people understand if their symptoms could be mold-related
+4. Booking assessments (direct them to theblackmoldguy.com or 305-849-0242)
+5. Pricing ballparks: Inspection starts at $299. Remediation varies by scope.
+
+WHAT YOU NEVER DO:
+- Diagnose medical conditions
+- Give specific remediation prices without an inspection
+- Make guarantees about health outcomes
+- Recommend they just "use bleach" — explain why bleach doesn't work on porous surfaces
+
+HANDLING BOOKING REQUESTS:
+"The fastest way is to fill out the quick form at theblackmoldguy.com — takes 2 minutes and [the owner] personally reviews every submission and gets back to you same day. Or you can call/text directly: 305-849-0242."
+
+HANDLING "IS THIS MOLD?":
+Validate concern → explain you can't diagnose remotely → invite inspection. Say: "I can't say for sure without seeing it — mold can look different depending on type and age. What I can tell you is that what you're describing is worth taking seriously. Can you tell me more about where it is and how long you've noticed it?"
+
+HANDLING "HOW MUCH?":
+Give ballpark ($299 inspection), explain every situation is different, offer free phone consult. ALWAYS mention: "One thing people appreciate about how we work: the inspection is completely separate from any remediation quote. We won't recommend remediation work on the same visit — that's how you know you're getting an honest answer."
+
+HANDLING "I ALREADY HAD SOMEONE LOOK AT IT":
+Gently raise the conflict of interest. Say: "Did the same company that inspected also offer to do the remediation? If so, I'd recommend getting a second opinion from an independent inspector. In New York it's actually illegal for the same company to do both — for exactly this reason. I'd be happy to give you an honest second look."
+
+HANDLING HEALTH SYMPTOMS:
+If someone mentions persistent coughing, brain fog, fatigue, congestion that clears when they leave home, or kids always being sick — this is high priority. Respond with empathy first, then: "What you're describing — especially symptoms improving when you're away from home — is one of the most reliable signs of environmental exposure. Mold symptoms are misdiagnosed as allergies constantly. An air quality test would give you a definitive answer. Want me to connect you with [owner] directly?"
+
+CLOSING EVERY CONVERSATION:
+End with one of:
+- "Would it help to hop on a quick call? It's completely free and I'll give you honest answers."
+- "Fill out the 2-minute form at theblackmoldguy.com and we'll reach out same day."
+- "Happy to answer more questions — just keep them coming."
+
+NEVER end a conversation without one of these CTAs.
+
+PHONE: 305-849-0242
+WEBSITE: theblackmoldguy.com
+MARKETS: Metro Atlanta, GA and Miami-Dade, FL</div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: FLOWS -->
+  <div class="section" id="sec-flows">
+    <div class="section-intro">
+      <strong>Where to set these up:</strong> ManyChat → Flows. Create a new Flow for each one. Set the trigger keyword under "Keywords" tab in each flow. These are scripts your bot follows when someone DMs a specific phrase.
+    </div>
+
+    <!-- FLOW 1 -->
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <div>
+          <div class="prompt-title">Flow 1 — Free Inspection</div>
+          <div class="prompt-sub">Fires when someone DMs about a free inspection or free check</div>
+        </div>
+        <span class="where-tag green">Keywords Trigger</span>
+      </div>
+      <div class="flow-steps">
+        <div style="margin-bottom:14px">
+          <div class="keyword-box">FREE INSPECTION · FREE CHECK · FREE ESTIMATE · FREE ASSESSMENT</div>
+        </div>
+        <div class="flow-step">
+          <div class="step-bubble">1</div>
+          <div>
+            <div class="step-label">Bot sends immediately</div>
+            <div class="step-text">"Hey! Yes — we do offer free assessments for qualifying situations. Tell me a bit about what you're seeing or experiencing so I can point you in the right direction?"
+            <br><br><em>Add Quick Reply buttons: "I see visible mold" | "Family has symptoms" | "Buying a home" | "Musty smell"</em></div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-bubble">2</div>
+          <div>
+            <div class="step-label">After they respond (any button or text)</div>
+            <div class="step-text">"Got it — that's exactly the kind of thing we help with every day. Here's the fastest way to get started: fill out our quick 2-minute form and [owner] personally reviews it and gets back to you same day. → theblackmoldguy.com
+            <br><br>Or if you prefer, you can call/text directly: 305-849-0242. Either way, no automated systems — real person, real answers."</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLOW 2 -->
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <div>
+          <div class="prompt-title">Flow 2 — Health Symptoms</div>
+          <div class="prompt-sub">High-priority. Someone is connecting symptoms to their home.</div>
+        </div>
+        <span class="where-tag orange">Keywords Trigger</span>
+      </div>
+      <div class="flow-steps">
+        <div style="margin-bottom:14px">
+          <div class="keyword-box">SICK · SYMPTOMS · COUGHING · CONGESTION · BRAIN FOG · HEADACHES · ALLERGIES · TIRED · FATIGUE</div>
+        </div>
+        <div class="flow-step">
+          <div class="step-bubble">1</div>
+          <div>
+            <div class="step-label">Bot sends immediately</div>
+            <div class="step-text">"I hear you — and I want you to know, what you're describing sounds very familiar to many families we've helped. Before anything else: one question that tells us a lot — <strong>do your symptoms ever improve when you're away from home for a few days?</strong>"
+            <br><br><em>Add Quick Reply buttons: "Yes, better when I'm away" | "Not sure" | "No, same either way"</em></div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-bubble">2A</div>
+          <div>
+            <div class="step-label">If "Yes, better when away"</div>
+            <div class="step-text">"That's actually one of the most reliable signs that something in your home is the trigger — not seasonal allergies. Mold symptoms typically improve when you leave the exposure source. This is worth taking seriously. Want me to connect you directly with [owner] for a quick free call? He can tell you within 5 minutes whether an inspection makes sense for your situation."</div>
+          </div>
+        </div>
+        <div class="flow-step">
+          <div class="step-bubble">2B</div>
+          <div>
+            <div class="step-label">If "Not sure" or "No"</div>
+            <div class="step-text">"That doesn't rule it out — some molds release mycotoxins that can affect you even after you've left the environment. The only way to know for sure is an air quality test. It takes about an hour, and you get a written lab report within 24 hours. Want to know more about how the process works?"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLOW 3 -->
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <div>
+          <div class="prompt-title">Flow 3 — Price / Cost Question</div>
+          <div class="prompt-sub">Fires when someone asks about cost or pricing</div>
+        </div>
+        <span class="where-tag purple">Keywords Trigger</span>
+      </div>
+      <div class="flow-steps">
+        <div style="margin-bottom:14px">
+          <div class="keyword-box">PRICE · HOW MUCH · COST · PRICING · RATES · EXPENSIVE · AFFORD · QUOTE</div>
+        </div>
+        <div class="flow-step">
+          <div class="step-bubble">1</div>
+          <div>
+            <div class="step-label">Bot response</div>
+            <div class="step-text">"Great question — and I want to give you a real answer, not a runaround.
+<br><br>Inspection starts at $299 for a standard home — that includes air sampling, moisture mapping, thermal imaging, and a written lab report. Most homeowners are in and out in about 60-90 minutes.
+<br><br>Remediation cost depends entirely on what the inspection finds — scope, area affected, materials involved. That's why the inspection always comes first.
+<br><br>One thing that matters: we never recommend remediation work on the same visit as the inspection. That's how you know our numbers aren't inflated. We have no reason to find problems that aren't there.
+<br><br>Want to schedule an inspection? → theblackmoldguy.com or 305-849-0242"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLOW 4 -->
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <div>
+          <div class="prompt-title">Flow 4 — 24-Hour Re-Engagement</div>
+          <div class="prompt-sub">Sent automatically 24 hours after first DM if no booking</div>
+        </div>
+        <span class="where-tag">Auto Follow-Up</span>
+      </div>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="step-bubble">1</div>
+          <div>
+            <div class="step-label">Auto-send 24h after first contact (no booking)</div>
+            <div class="step-text">"Hey! Just checking in — did you get a chance to look at the form? Happy to answer any questions first, no pressure at all. If timing's an issue, I can also do a quick 5-minute call before you decide anything. Just reply here. 🌿"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FLOW 5 -->
+    <div class="prompt-block">
+      <div class="prompt-header">
+        <div>
+          <div class="prompt-title">Flow 5 — After Form Submit (Webhook)</div>
+          <div class="prompt-sub">Connect to your website form via ManyChat webhook integration</div>
+        </div>
+        <span class="where-tag green">Webhook Trigger</span>
+      </div>
+      <div class="flow-steps">
+        <div class="flow-step">
+          <div class="step-bubble">1</div>
+          <div>
+            <div class="step-label">Fires when someone submits the assessment form</div>
+            <div class="step-text">"Hey {{first_name}}! Got your form — thank you for reaching out. [Owner] personally reviews every submission and will be in touch within a few hours (usually much sooner).
+<br><br>In the meantime, any questions? I'm here. 🌿"</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 3: QUICK REPLIES -->
+  <div class="section" id="sec-quickreplies">
+    <div class="section-intro">
+      <strong>Where to set these up:</strong> ManyChat → Saved Replies. Add these as saved responses so you can send them with one tap from your phone when someone DMs you directly. These are for when YOU are responding, not the bot.
+    </div>
+
+    <div class="qr-grid">
+      <div class="qr-card">
+        <div class="qr-title"><div class="qr-num">1</div> Scheduling a Consultation</div>
+        <div class="qr-body">"Great! I have availability this week. Quickest way to lock in a time: fill out the form at theblackmoldguy.com (takes 2 min) and I'll personally reach back within a few hours. Or text me directly: 305-849-0242."</div>
+      </div>
+      <div class="qr-card">
+        <div class="qr-title"><div class="qr-num">2</div> "Is This Mold?"</div>
+        <div class="qr-body">"I can't say for certain without seeing it — mold can look like different things depending on type and moisture levels. What I can say is that what you're describing is worth checking. Can you tell me where it is and how long it's been there?"</div>
+      </div>
+      <div class="qr-card">
+        <div class="qr-title"><div class="qr-num">3</div> "Can't Afford It Right Now"</div>
+        <div class="qr-body">"Totally understand. Here's what I'd say: an inspection now vs. a remediation job 6 months from now is usually the difference between $299 and $4,000+. Mold spreads fast in warm/humid conditions. But I get it — let's talk options. Reply and we'll figure something out."</div>
+      </div>
+      <div class="qr-card">
+        <div class="qr-title"><div class="qr-num">4</div> Smell Came Back After Remediation</div>
+        <div class="qr-body">"That usually means one of two things: the moisture source wasn't found and fixed, or the remediation didn't fully address the material. This is frustratingly common. I'd want to do an independent assessment — not to throw the other company under the bus, just to find out what's actually happening. Interested?"</div>
+      </div>
+      <div class="qr-card">
+        <div class="qr-title"><div class="qr-num">5</div> Tenant / Landlord Situation</div>
+        <div class="qr-body">"If your landlord won't act, a written inspection report from a certified inspector is your best tool. It documents the condition of the property, what was found, and what the health implications are. Many tenants use this for legal action or lease termination. Want to talk through your options?"</div>
+      </div>
+      <div class="qr-card">
+        <div class="qr-title"><div class="qr-num">6</div> Pre-Purchase Inspection</div>
+        <div class="qr-body">"Smart. Standard home inspections almost never catch mold — especially when sellers paint over it or it's behind walls. A pre-purchase mold inspection is one of the best investments before closing. I've saved buyers from homes with $40k+ in hidden remediation needs. Want to schedule before your closing date?"</div>
+      </div>
+      <div class="qr-card">
+        <div class="qr-title"><div class="qr-num">7</div> "I'll Just Use Bleach"</div>
+        <div class="qr-body">"I hear that a lot — and I want to be honest with you: bleach is mostly water. On porous surfaces (drywall, wood, grout), the water soaks in but the bleach evaporates before penetrating. The visible surface looks clean, but the mold root system survives and regrows. For small spots on non-porous surfaces (like tile), a wipe-down is fine. But for anything recurring or larger — bleach won't hold."</div>
+      </div>
+      <div class="qr-card">
+        <div class="qr-title"><div class="qr-num">8</div> HVAC / Duct Mold</div>
+        <div class="qr-body">"HVAC mold is actually the most dangerous type because it circulates spores through your entire home every time the system runs. I use a fogging treatment that reaches inside the duct system — not just the vents you can see. If you've had persistent symptoms even after surface mold was treated, the HVAC is worth checking."</div>
+      </div>
+      <div class="qr-card">
+        <div class="qr-title"><div class="qr-num">9</div> Kids with Symptoms</div>
+        <div class="qr-body">"Kids are often hit harder by mold exposure because their immune systems are still developing. If your child has had recurring coughs, congestion, or fatigue that doctors keep calling allergies — especially if it improves when they're away from home — I'd take it seriously. Getting the air tested takes 60 minutes and gives you a definitive answer either way. Want to schedule?"</div>
+      </div>
+      <div class="qr-card">
+        <div class="qr-title"><div class="qr-num">10</div> Closing — Get Them to Book</div>
+        <div class="qr-body">"Here's what I'd suggest: let's just schedule the inspection. You'll have a written lab report in your hands within 24 hours of the visit — good news or bad. If everything is fine, you'll have peace of mind. If something is there, you'll finally know what you're dealing with and have a real plan. Either outcome is better than not knowing. Ready to book?"</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 4: COMMENT SCRIPTS -->
+  <div class="section" id="sec-comments">
+    <div class="section-intro">
+      <strong>Where to use these:</strong> When replying to comments on your Instagram and TikTok videos. Copy and personalize slightly for each person. ManyChat can also auto-DM anyone who comments specific keywords — set up a Comment Automation to send people your Flow 1 or Flow 2 automatically.
+    </div>
+
+    <div class="comment-card">
+      <div class="comment-scenario">
+        <span class="ig-tag">IG</span><span class="tiktok-tag">TikTok</span>
+        When someone says "I think I have this problem" or "this is my house"
+      </div>
+      <div class="comment-body">
+        "DM me — this is exactly what I help with every day. Tell me what you're seeing (or smelling) and I'll give you a straight answer. No sales pitch, just honest advice. 🌿"
+      </div>
+    </div>
+
+    <div class="comment-card">
+      <div class="comment-scenario">
+        <span class="ig-tag">IG</span><span class="tiktok-tag">TikTok</span>
+        When someone asks "how much does this cost"
+      </div>
+      <div class="comment-body">
+        "Inspection starts at $299 — that's air sampling, moisture mapping, and a written lab report. Remediation depends on what we find. DM me with your situation and I'll give you a realistic ballpark. No runaround."
+      </div>
+    </div>
+
+    <div class="comment-card">
+      <div class="comment-scenario">
+        <span class="ig-tag">IG</span><span class="tiktok-tag">TikTok</span>
+        When someone says "my landlord won't fix it"
+      </div>
+      <div class="comment-body">
+        "A written inspection report from a certified inspector changes the conversation. It's documentation your landlord can't ignore — and if they still don't act, it's what you take to a lawyer. DM me, I've helped a lot of tenants in this exact situation."
+      </div>
+    </div>
+
+    <div class="comment-card">
+      <div class="comment-scenario">
+        <span class="ig-tag">IG</span><span class="tiktok-tag">TikTok</span>
+        When someone says "I tried bleach and it came back"
+      </div>
+      <div class="comment-body">
+        "That's actually really common — and it's not your fault. Bleach doesn't penetrate porous materials so the mold root system survives and regrows. DM me and I'll explain what actually works and whether your situation needs a pro."
+      </div>
+    </div>
+
+    <div class="comment-card">
+      <div class="comment-scenario">
+        <span class="ig-tag">IG</span><span class="tiktok-tag">TikTok</span>
+        When someone tags a friend
+      </div>
+      <div class="comment-body">
+        "Hey [tagged person]! If you're dealing with something like this, DM me — I serve Atlanta and Miami and I'll give you honest answers. No sales pressure. 🌿"
+      </div>
+    </div>
+
+    <div style="background:#f0f9f4;border:1px solid #86efac;border-radius:12px;padding:16px 20px;margin-top:20px">
+      <strong style="color:#065f46;font-size:14px">Pro tip: Set up a ManyChat Comment Automation</strong>
+      <p style="font-size:14px;color:#374151;margin-top:8px;line-height:1.6">In ManyChat → Growth Tools → Comment Automation. When someone comments "FREE", "INSPECT", "HELP", or "DM ME" on your videos — automatically send them Flow 1 in a DM. This runs 24/7 even while you sleep.</p>
+    </div>
+  </div>
+
+</div>
+
+<script>
+function showSection(id, el) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('sec-' + id).classList.add('active');
+  el.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+}
+
+function copyBlock(btn, id) {
+  const content = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(content).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = orig;
+      btn.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+</body>
+</html>
