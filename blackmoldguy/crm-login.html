@@ -15,10 +15,10 @@ h1{font-size:22px;font-weight:700;color:#1a1a1a;margin-bottom:8px}
 label{display:block;font-size:13px;font-weight:600;color:#374151;margin-bottom:6px}
 input{width:100%;padding:14px 16px;border:1.5px solid #e5e7eb;border-radius:10px;font-size:16px;font-family:inherit;outline:none;transition:border-color 0.2s}
 input:focus{border-color:#1a3a2a}
-.btn{width:100%;padding:16px;background:#1a3a2a;color:white;border:none;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer;transition:background 0.2s;margin-top:8px}
+.btn{width:100%;padding:16px;background:#1a3a2a;color:white;border:none;border-radius:10px;font-size:16px;font-weight:600;cursor:pointer;transition:background 0.2s;margin-top:8px;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:10px}
 .btn:hover{background:#0f2318}
 .btn:disabled{background:#9ca3af;cursor:not-allowed}
-.spinner{display:none;width:20px;height:20px;border:2.5px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.8s linear infinite;margin:0 auto}
+.spinner{width:20px;height:20px;border:2.5px solid rgba(255,255,255,0.3);border-top-color:white;border-radius:50%;animation:spin 0.8s linear infinite;display:none;flex-shrink:0}
 @keyframes spin{to{transform:rotate(360deg)}}
 .success-state{display:none}
 .success-icon{font-size:48px;margin-bottom:16px}
@@ -34,13 +34,13 @@ input:focus{border-color:#1a3a2a}
 <div class="card">
   <div class="logo">🌿</div>
   <h1>Owner Dashboard</h1>
-  <p class="subtitle">Enter your email to get a secure login link sent to your inbox.</p>
+  <p class="subtitle">Enter your email to receive a secure login link.</p>
 
   <div id="login-form">
     <div class="error-msg" id="error-msg"></div>
     <div class="form-group">
       <label for="email">Your Email Address</label>
-      <input type="email" id="email" placeholder="you@example.com" autocomplete="email">
+      <input type="email" id="email" placeholder="starsvince@gmail.com" autocomplete="email">
     </div>
     <button class="btn" id="submit-btn" onclick="sendMagicLink()">
       <span id="btn-text">Send Login Link</span>
@@ -52,25 +52,27 @@ input:focus{border-color:#1a3a2a}
 
   <div class="success-state" id="success-state">
     <div class="success-icon">📧</div>
-    <div class="success-title">Check your email!</div>
-    <p class="success-body">We sent a secure login link to <strong id="sent-email"></strong>. Click the link in that email — it's valid for 24 hours.</p>
+    <div class="success-title">Check your inbox!</div>
+    <p class="success-body">Login link sent to <strong id="sent-email"></strong>. Check your email and click the button — it's valid for 24 hours.</p>
     <hr class="divider">
     <p class="help-text">Didn't get it? <a href="#" onclick="reset()">Try again</a></p>
   </div>
 </div>
 
 <script>
-// Check if already has session — redirect to CRM
-const session = localStorage.getItem('bmg_session');
-if (session === 'BMGowner2024!') {
+// Authorized owner emails
+const AUTHORIZED_EMAILS = [
+  'starsvince@gmail.com',
+  'vince@inleap.ai',
+  'theblackmoldguy@gmail.com'
+];
+
+const SECRET = 'BMGowner2024!';
+
+// If already logged in, go straight to CRM
+if (localStorage.getItem('bmg_session') === SECRET) {
   window.location.replace('crm.html');
 }
-
-// Simple owner email validation
-const OWNER_EMAILS = ['vince@inleap.ai', 'theblackmoldguy@gmail.com', 'blackmoldguy305@gmail.com'];
-
-// Magic link uses a simple token derived from email + secret
-const SECRET = 'BMGowner2024!';
 
 function sendMagicLink() {
   const email = document.getElementById('email').value.trim().toLowerCase();
@@ -83,47 +85,49 @@ function sendMagicLink() {
     return;
   }
 
-  // Show loading
+  // Validate it's an authorized email
+  if (!AUTHORIZED_EMAILS.includes(email)) {
+    errEl.textContent = 'This email is not authorized. Use your owner email address.';
+    errEl.style.display = 'block';
+    return;
+  }
+
   const btn = document.getElementById('submit-btn');
   btn.disabled = true;
   document.getElementById('btn-text').style.display = 'none';
   document.getElementById('spinner').style.display = 'block';
 
-  // Build the magic link — the CRM page validates this token
   const token = btoa(email + ':' + SECRET);
   const magicLink = `https://vincestars-cloud.github.io/campaign-previews/blackmoldguy/crm.html?access=${encodeURIComponent(token)}`;
 
-  // Send via n8n email webhook
   fetch('https://n8n.americanlifeteam.com/webhook/bmg-send-email', {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
     body: JSON.stringify({
       to_email: email,
-      subject: 'Your Black Mold Guy Dashboard Login Link',
+      subject: 'Your Black Mold Guy Dashboard — Login Link',
       html: `<div style="font-family:sans-serif;max-width:520px;margin:0 auto;padding:32px">
         <div style="background:#1a3a2a;padding:24px;border-radius:12px 12px 0 0;text-align:center">
+          <div style="font-size:28px;margin-bottom:8px">🌿</div>
           <h2 style="color:white;margin:0;font-size:20px">The Black Mold Guy</h2>
-          <p style="color:rgba(255,255,255,0.7);margin:4px 0 0;font-size:14px">Owner Dashboard</p>
+          <p style="color:rgba(255,255,255,0.6);margin:4px 0 0;font-size:13px">Owner Dashboard</p>
         </div>
         <div style="background:white;padding:32px;border-radius:0 0 12px 12px;border:1px solid #e5e7eb;border-top:none">
-          <h3 style="color:#1a1a1a;margin-bottom:12px">Here's your login link</h3>
-          <p style="color:#6b7280;margin-bottom:24px">Click the button below to access your dashboard. This link is valid for 24 hours.</p>
-          <a href="${magicLink}" style="display:block;text-align:center;background:#1a3a2a;color:white;padding:16px;border-radius:10px;text-decoration:none;font-weight:600;font-size:16px">Open My Dashboard</a>
-          <p style="color:#9ca3af;font-size:13px;margin-top:24px;text-align:center">If you didn't request this, ignore this email.</p>
+          <h3 style="color:#1a1a1a;margin:0 0 8px">Here's your login link</h3>
+          <p style="color:#6b7280;margin:0 0 28px;font-size:14px;line-height:1.6">Click the button below to open your dashboard. This link works for 24 hours.</p>
+          <a href="${magicLink}" style="display:block;text-align:center;background:#1a3a2a;color:white;padding:16px;border-radius:10px;text-decoration:none;font-weight:700;font-size:16px">Open My Dashboard →</a>
+          <p style="color:#9ca3af;font-size:12px;margin:20px 0 0;text-align:center">If you didn't request this, you can ignore it.</p>
         </div>
       </div>`
     })
   })
   .then(() => {
-    // Show success state
     document.getElementById('login-form').style.display = 'none';
     document.getElementById('sent-email').textContent = email;
     document.getElementById('success-state').style.display = 'block';
   })
   .catch(() => {
-    // Fallback: for demo, open directly (for owner convenience)
-    // In production this would show an error
-    errEl.textContent = 'Could not send email. If this keeps happening, use your saved dashboard link.';
+    errEl.textContent = 'Could not send email. Try again or use your saved dashboard link.';
     errEl.style.display = 'block';
     btn.disabled = false;
     document.getElementById('btn-text').style.display = 'block';
@@ -141,8 +145,7 @@ function reset() {
   document.getElementById('spinner').style.display = 'none';
 }
 
-// Allow Enter key
-document.getElementById('email').addEventListener('keydown', function(e) {
+document.getElementById('email').addEventListener('keydown', e => {
   if (e.key === 'Enter') sendMagicLink();
 });
 </script>
