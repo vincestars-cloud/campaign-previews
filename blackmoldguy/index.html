@@ -377,6 +377,41 @@ nav.scrolled { border-bottom-color: var(--border); box-shadow: 0 2px 30px rgba(0
 .video-card-body h3 { font-family: var(--font-display); font-size: 1.1rem; margin-bottom: 8px; color: white; }
 .video-card-body p { font-size: 0.82rem; color: rgba(255,255,255,0.5); line-height: 1.55; }
 
+/* INVESTIGATION STACK */
+.investigation-stack { padding: 100px 0; background: var(--white); }
+.stack-card {
+  max-width: 680px; margin: 0 auto; background: var(--cream); border: 1px solid var(--border);
+  border-radius: 20px; overflow: hidden;
+}
+.stack-header {
+  background: var(--sage-dark); padding: 28px 32px; text-align: center;
+}
+.stack-header h3 { font-family: var(--font-display); font-size: 1.4rem; color: white; margin-bottom: 4px; }
+.stack-header p { font-size: 0.85rem; color: rgba(255,255,255,0.55); }
+.stack-list { padding: 28px 32px; }
+.stack-item {
+  display: flex; align-items: flex-start; gap: 14px; padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+}
+.stack-item:last-child { border-bottom: none; }
+.stack-check {
+  width: 24px; height: 24px; border-radius: 6px; background: var(--sage-light);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
+}
+.stack-check svg { width: 14px; height: 14px; stroke: var(--sage-dark); fill: none; stroke-width: 2.5; }
+.stack-text { flex: 1; }
+.stack-text .stack-label { font-weight: 600; font-size: 0.92rem; color: var(--ink); margin-bottom: 2px; }
+.stack-text .stack-desc { font-size: 0.82rem; color: var(--warm-gray); line-height: 1.5; }
+.stack-footer { padding: 20px 32px; text-align: center; border-top: 1px solid var(--border); }
+.stack-footer p { font-size: 0.85rem; color: var(--warm-gray); line-height: 1.5; }
+.stack-footer strong { color: var(--sage-dark); }
+@media (max-width: 640px) {
+  .stack-header { padding: 24px 20px; }
+  .stack-header h3 { font-size: 1.2rem; }
+  .stack-list { padding: 20px 20px; }
+  .stack-footer { padding: 16px 20px; }
+}
+
 /* DIFFERENTIATORS */
 .differentiators { padding: 100px 0; background: var(--sage-dark); color: white; }
 .differentiators .section-tag { color: var(--gold); }
@@ -1003,7 +1038,7 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
       <div class="hero-content">
         <div class="hero-badge fade-up"><span class="dot"></span> Health-First Mold Specialist</div>
         <h1 class="fade-up-d1">Your family deserves to <em>breathe easy</em> at home</h1>
-        <p class="hero-sub fade-up-d2">If you're sensitive to mold, standard remediation isn't enough. I take a holistic, science-based approach — treating your entire home ecosystem to reduce the toxic burden and help you breathe easy again.</p>
+        <p class="hero-sub fade-up-d2">Headaches. Brain fog. Fatigue your supplement stack can't touch. If you feel better on vacation than at home, that's not relaxation — that's your house. One investigation tells you the truth. One team fixes it. Lab-verified results you can share with your doctor.</p>
         <div class="hero-ctas fade-up-d3">
           <a href="#quote" class="btn-primary">Book Investigation →</a>
           <a href="tel:3058490242" class="btn-secondary">
@@ -1021,8 +1056,8 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
             <div class="label">Experience</div>
           </div>
           <div class="hero-stat">
-            <div class="number" data-target="99" data-suffix=".9%">0</div>
-            <div class="label">Mold Eliminated</div>
+            <div class="number" data-target="24" data-suffix="hr">0</div>
+            <div class="label">Investigation</div>
           </div>
           <div class="hero-stat">
             <div class="number" data-target="1" data-suffix="-Year">0</div>
@@ -1280,6 +1315,84 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
         <div class="symptom-icon"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg></div>
         <h3>Skin Irritation & Rashes</h3>
         <p>Unexplained skin rashes, hives, or irritation. Mold spores can trigger immune responses that manifest on your skin, especially in children.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVESTIGATION STACK -->
+<section class="investigation-stack">
+  <div class="container">
+    <div class="section-header reveal">
+      <div class="section-tag">What's Included</div>
+      <h2 class="section-title">Everything in one investigation</h2>
+      <p class="section-sub">Most companies investigate OR remediate. You'd need two vendors, two invoices, and zero accountability. We do both — and prove it worked.</p>
+    </div>
+    <div class="stack-card reveal">
+      <div class="stack-header">
+        <h3>Environmental Mold Investigation</h3>
+        <p>All of this happens in a single visit</p>
+      </div>
+      <div class="stack-list">
+        <div class="stack-item">
+          <div class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="stack-text">
+            <div class="stack-label">Heat-Map Scan of Every Wall & Ceiling</div>
+            <div class="stack-desc">Thermal imaging reveals moisture hiding behind drywall, under floors, and inside ceilings — invisible to the naked eye.</div>
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="stack-text">
+            <div class="stack-label">Room-by-Room Moisture Mapping</div>
+            <div class="stack-desc">Pinpoint readings across 18 zones — bathrooms, HVAC, crawlspace, attic, wall cavities — to find where moisture is feeding growth.</div>
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="stack-text">
+            <div class="stack-label">Lab-Verified Air Quality Testing (ERMI)</div>
+            <div class="stack-desc">Samples sent to a certified lab — not a DIY kit. You get species identification, concentration levels, and a score you can track over time.</div>
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="stack-text">
+            <div class="stack-label">Written Report You Can Share With Your Doctor</div>
+            <div class="stack-desc">A documented report with photos, findings, and plain-English explanations — designed to be shared with your functional medicine provider or allergist.</div>
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="stack-text">
+            <div class="stack-label">Clear Remediation Plan With Fixed Pricing</div>
+            <div class="stack-desc">If treatment is needed, you'll know exactly what it costs and why — before deciding anything. No surprise invoices. No upsells.</div>
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="stack-text">
+            <div class="stack-label">Same Team Investigates AND Remediates</div>
+            <div class="stack-desc">No handoff to a second company. One team, one point of accountability, one guarantee. The people who find it are the people who fix it.</div>
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="stack-text">
+            <div class="stack-label">Chemical-Free Methods — Safe for Sensitive Individuals</div>
+            <div class="stack-desc">Every product on the EPA's Safer Chemical List. No bleach, no biocides, no harsh fumes. Safe for MCS, autoimmune, kids, and pets.</div>
+          </div>
+        </div>
+        <div class="stack-item">
+          <div class="stack-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
+          <div class="stack-text">
+            <div class="stack-label">1-Year Guarantee — Backed by Post-Treatment ERMI</div>
+            <div class="stack-desc">If mold returns in any treated area within 12 months, we re-treat at zero cost. ERMI scores before AND after prove it worked — not just our word.</div>
+          </div>
+        </div>
+      </div>
+      <div class="stack-footer">
+        <p><strong>You get all of this from one team, in one visit.</strong> No second vendors. No finger-pointing. No gaps.</p>
       </div>
     </div>
   </div>
