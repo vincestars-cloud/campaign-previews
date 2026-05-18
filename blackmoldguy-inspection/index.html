@@ -539,12 +539,6 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
 .trust-label { font-size: 0.78rem; font-weight: 600; color: var(--ink); line-height: 1.3; }
 .trust-sub { font-size: 0.62rem; font-weight: 400; color: var(--warm-gray); line-height: 1.3; margin-top: 2px; }
 
-/* PAS comparison grid — stays side-by-side on mobile, tighter text */
-@media (max-width: 480px) {
-  .pas-compare-grid { gap: 8px !important; }
-  .pas-compare-grid li { font-size: 0.78rem !important; }
-  .pas-compare-grid > div { padding: 14px 12px !important; }
-}
 
 /* PAS BLOCK */
 .pas-block { padding: 28px 0 4px; }
@@ -559,15 +553,79 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
 .for-check { width: 20px; height: 20px; border-radius: 50%; background: var(--sage-light); display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px; }
 .for-check svg { width: 10px; height: 10px; stroke: var(--sage-dark); fill: none; stroke-width: 2.5; }
 
-/* HOW IT WORKS */
-.how-section { padding: 36px 0 0; }
-.how-title { font-family: var(--font-display); font-size: clamp(1.3rem, 4vw, 1.7rem); text-align: center; margin-bottom: 24px; line-height: 1.2; }
-.how-steps { display: flex; flex-direction: column; gap: 0; }
-.how-step { display: flex; align-items: flex-start; gap: 16px; padding: 18px 0; border-bottom: 1px solid var(--border); }
-.how-step:last-child { border-bottom: none; }
-.how-num { width: 36px; height: 36px; border-radius: 50%; background: var(--sage-dark); color: white; font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.how-body h4 { font-weight: 700; font-size: 0.95rem; margin-bottom: 4px; color: var(--ink); }
-.how-body p { font-size: 0.86rem; color: var(--warm-gray); line-height: 1.55; }
+/* HOW IT WORKS — card grid */
+.how-section { padding: 48px 0; }
+.how-header { text-align: center; margin-bottom: 32px; }
+.how-tag { display: inline-flex; align-items: center; gap: 6px; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sage); margin-bottom: 12px; }
+.how-tag .dot { width: 7px; height: 7px; background: var(--sage); border-radius: 50%; }
+.how-title { font-family: var(--font-display); font-size: clamp(1.5rem, 4vw, 2rem); text-align: center; margin-bottom: 0; line-height: 1.2; }
+.how-title em { font-style: italic; color: var(--sage); }
+.how-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.how-card {
+  background: var(--white); border-radius: 20px; padding: 28px 24px;
+  border: 1px solid var(--border);
+}
+.how-card-num {
+  width: 40px; height: 40px; border-radius: 50%; background: var(--sage-light);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 16px;
+  font-family: var(--font-display); font-style: italic; font-size: 1rem; color: var(--sage-dark);
+}
+.how-card h4 { font-weight: 700; font-size: 1rem; margin-bottom: 8px; color: var(--ink); line-height: 1.3; }
+.how-card p { font-size: 0.85rem; color: var(--warm-gray); line-height: 1.6; }
+@media (max-width: 768px) { .how-cards { grid-template-columns: 1fr; gap: 12px; } }
+
+/* PAS COMPARE — two-panel cards */
+.pas-panels { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.pas-panel {
+  border-radius: 20px; padding: 28px 24px;
+}
+.pas-panel-light { background: var(--white); border: 1px solid var(--border); }
+.pas-panel-dark { background: var(--sage-dark); }
+.pas-panel-header {
+  display: flex; align-items: center; gap: 8px; margin-bottom: 20px;
+  padding-bottom: 14px; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase;
+}
+.pas-panel-header::before { content: ''; width: 20px; height: 2px; flex-shrink: 0; }
+.pas-panel-light .pas-panel-header { color: var(--warm-gray); border-bottom: 1px solid var(--border); }
+.pas-panel-light .pas-panel-header::before { background: var(--warm-gray); }
+.pas-panel-dark .pas-panel-header { color: rgba(255,255,255,0.5); border-bottom: 1px solid rgba(255,255,255,0.1); }
+.pas-panel-dark .pas-panel-header::before { background: rgba(255,255,255,0.3); }
+.pas-items { display: flex; flex-direction: column; gap: 16px; }
+.pas-item { display: flex; align-items: flex-start; gap: 12px; }
+.pas-item-icon { flex-shrink: 0; margin-top: 2px; }
+.pas-x { color: var(--warm-gray); font-size: 0.75rem; font-weight: 600; }
+.pas-check {
+  width: 22px; height: 22px; border-radius: 50%; background: rgba(255,255,255,0.12);
+  display: flex; align-items: center; justify-content: center;
+}
+.pas-check svg { width: 12px; height: 12px; stroke: #a8d4bc; fill: none; stroke-width: 2.5; }
+.pas-item-text { font-size: 0.85rem; line-height: 1.55; }
+.pas-panel-light .pas-item-text { color: var(--ink); }
+.pas-panel-dark .pas-item-text { color: rgba(255,255,255,0.9); }
+.pas-item + .pas-item { padding-top: 16px; border-top: 1px solid var(--border); }
+.pas-panel-dark .pas-item + .pas-item { border-top-color: rgba(255,255,255,0.08); }
+@media (max-width: 640px) {
+  .pas-panels { grid-template-columns: 1fr; }
+  .pas-panel { padding: 24px 20px; }
+}
+
+/* WHY TESTS FAILED — single card with left-border items */
+.why-failed-card {
+  background: var(--white); border-radius: 20px; padding: 32px 28px;
+  border: 1px solid var(--border); margin-top: 32px;
+}
+.why-failed-title {
+  font-family: var(--font-display); font-style: italic; font-size: clamp(1.2rem, 3.5vw, 1.6rem);
+  color: var(--ink); margin-bottom: 24px; line-height: 1.3;
+}
+.why-failed-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.why-failed-item { padding-left: 16px; border-left: 3px solid var(--border); }
+.why-failed-item h5 { font-size: 0.88rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.why-failed-item p { font-size: 0.82rem; color: var(--warm-gray); line-height: 1.6; }
+@media (max-width: 640px) {
+  .why-failed-card { padding: 24px 20px; }
+  .why-failed-grid { grid-template-columns: 1fr; }
+}
 
 /* VALUE STACK */
 .stack-section { padding: 28px 0 0; }
@@ -1104,55 +1162,52 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
       <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--sage);margin-bottom:12px;">Sound familiar?</div>
       <h2 style="font-family:var(--font-display);font-size:clamp(1.5rem,4vw,2rem);line-height:1.2;margin-bottom:0;">You've Done Everything Right.<br>They're Still Getting Sick.</h2>
     </div>
-    <table class="pas-compare-grid" style="width:100%;border-collapse:collapse;background:var(--white);border-radius:16px;overflow:hidden;border:1px solid var(--border);table-layout:fixed;">
-      <!-- Headers -->
-      <tr>
-        <td style="padding:14px 18px;background:rgba(184,50,34,0.06);border-bottom:1px solid var(--border);border-right:1px solid var(--border);width:50%;"><div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);">What you've been through</div></td>
-        <td style="padding:14px 18px;background:rgba(26,107,82,0.08);border-bottom:1px solid var(--border);width:50%;"><div style="font-size:0.7rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--sage-dark);">One investigation changes this</div></td>
-      </tr>
-      <!-- Row 1 -->
-      <tr>
-        <td style="padding:10px 18px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);vertical-align:top;"><div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;font-size:0.8rem;">&#10005;</span><span style="font-size:0.82rem;color:var(--warm-gray);line-height:1.5;">Headaches, sinus issues, unexplained coughing — for months.</span></div></td>
-        <td style="padding:10px 18px;border-bottom:1px solid var(--border);vertical-align:top;"><div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#16a34a;font-weight:700;flex-shrink:0;font-size:0.8rem;">&#10003;</span><span style="font-size:0.82rem;color:var(--ink);line-height:1.5;">We find what's causing it — behind walls, inside ducts, in every place no one's checked</span></div></td>
-      </tr>
-      <!-- Row 2 -->
-      <tr>
-        <td style="padding:10px 18px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);vertical-align:top;"><div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;font-size:0.8rem;">&#10005;</span><span style="font-size:0.82rem;color:var(--warm-gray);line-height:1.5;">They think you're being dramatic. But your kids get better every time you leave the house.</span></div></td>
-        <td style="padding:10px 18px;border-bottom:1px solid var(--border);vertical-align:top;"><div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#16a34a;font-weight:700;flex-shrink:0;font-size:0.8rem;">&#10003;</span><span style="font-size:0.82rem;color:var(--ink);line-height:1.5;">A documented answer you can hand to anyone who said you were overreacting</span></div></td>
-      </tr>
-      <!-- Row 3 -->
-      <tr>
-        <td style="padding:10px 18px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);vertical-align:top;"><div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;font-size:0.8rem;">&#10005;</span><span style="font-size:0.82rem;color:var(--warm-gray);line-height:1.5;">Every doctor says it's stress. But you know your body.</span></div></td>
-        <td style="padding:10px 18px;border-bottom:1px solid var(--border);vertical-align:top;"><div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#16a34a;font-weight:700;flex-shrink:0;font-size:0.8rem;">&#10003;</span><span style="font-size:0.82rem;color:var(--ink);line-height:1.5;">Doctors test your body. We test your home. That's the piece that's been missing.</span></div></td>
-      </tr>
-      <!-- Row 4 -->
-      <tr>
-        <td style="padding:10px 18px;border-bottom:1px solid var(--border);border-right:1px solid var(--border);vertical-align:top;"><div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;font-size:0.8rem;">&#10005;</span><span style="font-size:0.82rem;color:var(--warm-gray);line-height:1.5;">Went on vacation — felt allergy-free. Kids' behavior was so much better. Came home. It all came back.</span></div></td>
-        <td style="padding:10px 18px;border-bottom:1px solid var(--border);vertical-align:top;"><div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#16a34a;font-weight:700;flex-shrink:0;font-size:0.8rem;">&#10003;</span><span style="font-size:0.82rem;color:var(--ink);line-height:1.5;">Your family shouldn't have to leave home to feel healthy. We find it, fix it, and prove it's gone.</span></div></td>
-      </tr>
-      <!-- Row 5 -->
-      <tr>
-        <td style="padding:10px 18px;border-right:1px solid var(--border);vertical-align:top;"><div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:var(--accent);font-weight:700;flex-shrink:0;font-size:0.8rem;">&#10005;</span><span style="font-size:0.82rem;color:var(--warm-gray);line-height:1.5;">You've cleaned everything you can see. The coughing didn't stop.</span></div></td>
-        <td style="padding:10px 18px;vertical-align:top;"><div style="display:flex;align-items:flex-start;gap:10px;"><span style="color:#16a34a;font-weight:700;flex-shrink:0;font-size:0.8rem;">&#10003;</span><span style="font-size:0.82rem;color:var(--ink);line-height:1.5;">We go where cleaning can't — inside walls, under floors, through your HVAC. Then we verify it's eliminated.</span></div></td>
-      </tr>
-    </table>
-
-    <!-- WHY PREVIOUS TESTS MISSED IT -->
-    <div style="margin-top:32px;text-align:center;">
-      <div style="font-size:0.72rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;">Why your previous tests found nothing</div>
+    <!-- PAS Two-Panel Cards -->
+    <div class="pas-panels">
+      <!-- Left panel (light) -->
+      <div class="pas-panel pas-panel-light">
+        <div class="pas-panel-header">What you've been through</div>
+        <div class="pas-items">
+          <div class="pas-item"><div class="pas-item-icon pas-x">&#10005;</div><div class="pas-item-text">Headaches, sinus issues, unexplained coughing — for months.</div></div>
+          <div class="pas-item"><div class="pas-item-icon pas-x">&#10005;</div><div class="pas-item-text">They think you're being dramatic. But your kids get better every time you leave the house.</div></div>
+          <div class="pas-item"><div class="pas-item-icon pas-x">&#10005;</div><div class="pas-item-text">Every doctor says it's stress. But you know your body.</div></div>
+          <div class="pas-item"><div class="pas-item-icon pas-x">&#10005;</div><div class="pas-item-text">Went on vacation — felt allergy-free. Kids' behavior was so much better. Came home. It all came back.</div></div>
+          <div class="pas-item"><div class="pas-item-icon pas-x">&#10005;</div><div class="pas-item-text">You've cleaned everything you can see. The coughing didn't stop.</div></div>
+        </div>
+      </div>
+      <!-- Right panel (dark) -->
+      <div class="pas-panel pas-panel-dark">
+        <div class="pas-panel-header">One investigation changes this</div>
+        <div class="pas-items">
+          <div class="pas-item"><div class="pas-item-icon"><div class="pas-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="pas-item-text">We find what's causing it — behind walls, inside ducts, in every place no one's checked.</div></div>
+          <div class="pas-item"><div class="pas-item-icon"><div class="pas-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="pas-item-text">A documented answer you can hand to anyone who said you were overreacting.</div></div>
+          <div class="pas-item"><div class="pas-item-icon"><div class="pas-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="pas-item-text">Doctors test your body. We test your home. That's the piece that's been missing.</div></div>
+          <div class="pas-item"><div class="pas-item-icon"><div class="pas-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="pas-item-text">Your family shouldn't have to leave home to feel healthy. We find it, fix it, and prove it's gone.</div></div>
+          <div class="pas-item"><div class="pas-item-icon"><div class="pas-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div></div><div class="pas-item-text">We go where cleaning can't — inside walls, under floors, through your HVAC. Then we verify it's eliminated.</div></div>
+        </div>
+      </div>
     </div>
-    <div class="pas-why-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
-      <div style="background:var(--white);border-radius:14px;padding:18px 18px;border:1px solid var(--border);">
-        <div style="font-size:0.82rem;color:var(--ink);line-height:1.6;"><strong>The air quality test you ran</strong> came back normal — because it only captures what's floating at that moment. Mold hides inside walls and ductwork. A "normal" result doesn't mean a clean home.</div>
-      </div>
-      <div style="background:var(--white);border-radius:14px;padding:18px 18px;border:1px solid var(--border);">
-        <div style="font-size:0.82rem;color:var(--ink);line-height:1.6;"><strong>The doctors and specialists</strong> tested YOUR body — blood panels, allergy tests, imaging. But none of them can test your house. The source of your family's symptoms isn't in your bloodwork.</div>
-      </div>
-      <div style="background:var(--white);border-radius:14px;padding:18px 18px;border:1px solid var(--border);">
-        <div style="font-size:0.82rem;color:var(--ink);line-height:1.6;"><strong>The last company you hired</strong> either found the mold and told you to call someone else, or sprayed chemicals and said it was done. Either way — the symptoms came back. Because finding it and fixing it require different expertise, and most companies only do one.</div>
-      </div>
-      <div style="background:var(--white);border-radius:14px;padding:18px 18px;border:1px solid var(--border);">
-        <div style="font-size:0.82rem;color:var(--ink);line-height:1.6;"><strong>The cleaning you've done yourself</strong> — scrubbing, bleach, Concrobium, vinegar — treats what you can see. But mold growing behind drywall, inside your HVAC, or under subflooring doesn't care about surface cleaning. The source keeps growing.</div>
+
+    <!-- WHY PREVIOUS TESTS — single card with left-border items -->
+    <div class="why-failed-card">
+      <div class="why-failed-title">Why your previous tests found nothing</div>
+      <div class="why-failed-grid">
+        <div class="why-failed-item">
+          <h5>The air quality test you ran</h5>
+          <p>It came back normal — because it only captures what's floating at that moment. Mold hides inside walls and ductwork. A "normal" result doesn't mean a clean home.</p>
+        </div>
+        <div class="why-failed-item">
+          <h5>The doctors and specialists</h5>
+          <p>They tested YOUR body — blood panels, allergy tests, imaging. But none of them can test your house. The source of your family's symptoms isn't in your bloodwork.</p>
+        </div>
+        <div class="why-failed-item">
+          <h5>The last company you hired</h5>
+          <p>They either found the mold and told you to call someone else, or sprayed chemicals and said it was done. Either way — the symptoms came back.</p>
+        </div>
+        <div class="why-failed-item">
+          <h5>The cleaning you've done yourself</h5>
+          <p>Scrubbing, bleach, Concrobium, vinegar — it treats what you can see. But mold behind drywall, inside your HVAC, or under subflooring doesn't care about surface cleaning.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -1170,28 +1225,25 @@ footer a { color:var(--sage-dark); text-decoration:none; font-weight:600; }
 <!-- HOW IT WORKS -->
 <section class="how-section">
   <div class="container">
-    <h2 class="how-title">Three steps. No surprises.</h2>
-    <div class="how-steps">
-      <div class="how-step">
-        <div class="how-num">1</div>
-        <div class="how-body">
-          <h4>Confirm your area</h4>
-          <p>Enter your zip code. We'll verify we cover your area and reach out to schedule.</p>
-        </div>
+    <div class="how-header">
+      <div class="how-tag"><span class="dot"></span> How it works</div>
+      <h2 class="how-title">Three steps. <em>No surprises.</em></h2>
+    </div>
+    <div class="how-cards">
+      <div class="how-card">
+        <div class="how-card-num">01</div>
+        <h4>Confirm your area</h4>
+        <p>Enter your zip code. We'll verify we cover your area and reach out to schedule.</p>
       </div>
-      <div class="how-step">
-        <div class="how-num">2</div>
-        <div class="how-body">
-          <h4>Forensic investigation — we use instruments to check the 18+ places mold actually hides</h4>
-          <p>We check behind walls, inside ductwork, under floors, in the attic and crawlspace — every place previous inspectors didn't look. If it's there, we find it.</p>
-        </div>
+      <div class="how-card">
+        <div class="how-card-num">02</div>
+        <h4>Forensic investigation</h4>
+        <p>We use instruments to check the 18+ places mold actually hides — behind walls, inside ductwork, under floors, in the attic and crawlspace. Every place previous inspectors didn't look. If it's there, we find it.</p>
       </div>
-      <div class="how-step">
-        <div class="how-num">3</div>
-        <div class="how-body">
-          <h4>A written report you can show your doctor — and your family</h4>
-          <p>A documented report with lab-verified findings, photos, and a clear remediation plan. If treatment is needed, the same team handles it — no handoff required.</p>
-        </div>
+      <div class="how-card">
+        <div class="how-card-num">03</div>
+        <h4>A report you can show your doctor</h4>
+        <p>A documented report with lab-verified findings, photos, and a clear remediation plan. If treatment is needed, the same team handles it — no handoff required.</p>
       </div>
     </div>
   </div>
