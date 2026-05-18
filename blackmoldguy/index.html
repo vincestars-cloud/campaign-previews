@@ -1747,8 +1747,8 @@ footer { padding: 80px 0 40px; background: var(--ink); color: white; }
             <button class="pill-btn pill-multi" onclick="togglePill(this)" data-value="not-sure">Not Sure</button>
           </div>
 
-          <!-- Photo Upload -->
-          <div style="margin-bottom:20px;">
+          <!-- Photo Upload (hidden until location selected) -->
+          <div id="photoUploadSection" style="display:none;margin-bottom:20px;">
             <label style="display:block;font-size:0.85rem;font-weight:600;margin-bottom:8px;color:var(--ink);">Have photos of the issue? <span style="color:var(--warm-gray);font-weight:400;">(optional)</span></label>
             <p style="font-size:0.78rem;color:var(--warm-gray);margin-bottom:10px;line-height:1.5;">If you have any photos of current issues, you may upload them here. PDF files such as test results and past reports will be collected once services begin.</p>
             <div class="upload-zone" id="uploadZone">
@@ -2211,6 +2211,13 @@ function selectSize(btn, val) {
 
 function togglePill(btn) {
   btn.classList.toggle('selected');
+  // Show upload section once any location pill is selected
+  const anySelected = document.querySelectorAll('#locationPills .pill-multi.selected').length > 0;
+  const uploadSection = document.getElementById('photoUploadSection');
+  if (anySelected && uploadSection.style.display === 'none') {
+    uploadSection.style.display = 'block';
+    setTimeout(() => { uploadSection.scrollIntoView({ behavior: 'smooth', block: 'center' }); }, 50);
+  }
 }
 
 function selectAndAdvance(card, step) {
