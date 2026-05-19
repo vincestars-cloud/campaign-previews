@@ -1,0 +1,1716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ScalingSOS — Deep Buyer Research (13-Tab ICP)</title>
+<style>
+  :root {
+    --brand: #0a2540;
+    --accent: #e85d26;
+    --accent-light: #fff3ee;
+    --green: #1a6b3c;
+    --green-light: #e8f5e9;
+    --red: #c62828;
+    --red-light: #ffebee;
+    --gold: #d97706;
+    --gold-light: #fffbeb;
+    --dark: #111827;
+    --gray: #f8f9fa;
+    --mid: #6b7280;
+    --border: #e5e7eb;
+    --text: #1f2937;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); background: #f9fafb; line-height: 1.65; overflow-x: hidden; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, var(--brand) 0%, #1a3a60 100%); color: white; padding: 52px 24px 44px; text-align: center; }
+  .hero .badge { display: inline-block; background: var(--accent); color: white; font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; }
+  .hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 10px; line-height: 1.2; }
+  .hero .sub { font-size: 1rem; opacity: 0.8; max-width: 660px; margin: 0 auto 20px; }
+  .hero .meta-row { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; font-size: 0.8rem; opacity: 0.6; }
+  .hero .meta-row span::before { content: '· '; }
+
+  /* TAB NAV */
+  .tab-nav { background: white; border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+  .tab-nav-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; padding: 0 8px; }
+  .tab-btn { padding: 11px 14px; font-size: 0.78rem; font-weight: 600; color: var(--mid); cursor: pointer; border: none; background: none; border-bottom: 3px solid transparent; white-space: nowrap; transition: all 0.18s; }
+  .tab-btn:hover { color: var(--accent); }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); background: var(--accent-light); }
+
+  /* SCROLLABLE CONTENT AREA */
+  .tab-panel { display: none; min-height: calc(100vh - 200px); }
+  .tab-panel.active { display: block; }
+  .container { max-width: 960px; margin: 0 auto; padding: 44px 24px 80px; }
+
+  /* HEADINGS */
+  .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  h2 { font-size: 1.8rem; color: var(--brand); margin-bottom: 6px; }
+  .section-desc { color: var(--mid); font-size: 0.93rem; margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  h3 { font-size: 0.82rem; font-weight: 700; color: var(--dark); margin: 28px 0 12px; text-transform: uppercase; letter-spacing: 0.5px; border-left: 3px solid var(--accent); padding-left: 10px; }
+
+  /* QUOTE BLOCK */
+  .quote { background: white; border-left: 4px solid var(--accent); padding: 14px 18px; margin: 12px 0; border-radius: 0 8px 8px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+  .quote p { font-size: 0.95rem; font-style: italic; color: #2d2d2d; margin: 0 0 10px; line-height: 1.6; }
+  .quote .meta-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .quote .src { font-size: 0.78rem; color: var(--mid); font-style: normal; flex: 1; min-width: 0; }
+  .quote .src a { color: var(--accent); text-decoration: none; }
+  .quote .src a:hover { text-decoration: underline; }
+
+  /* BADGES */
+  .badge-freq { display: inline-flex; align-items: center; gap: 4px; background: #f0f4ff; color: var(--brand); font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; border: 1px solid #c7d7f8; }
+  .badge-freq::before { content: '\21BB'; font-style: normal; }
+  .badge-upvote { display: inline-flex; align-items: center; gap: 4px; background: #fff8f0; color: var(--accent); font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; border: 1px solid #fcd9c0; }
+  .badge-upvote::before { content: '\2191'; font-style: normal; }
+  .badge-comments { display: inline-flex; align-items: center; gap: 3px; background: #f5f5f5; color: var(--mid); font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 20px; white-space: nowrap; border: 1px solid #e0e0e0; }
+  .badge-comments::before { content: '\1F4AC'; font-size: 0.65rem; }
+  .badge-source { display: inline-flex; align-items: center; gap: 3px; background: #f0faf4; color: var(--green); font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 20px; white-space: nowrap; border: 1px solid #a7d7b8; }
+
+  /* QUOTE GRID */
+  .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 680px) { .quote-grid { grid-template-columns: 1fr; } }
+
+  /* STAT CARDS */
+  .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin: 22px 0; }
+  .stat-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+  .stat-card .num { font-size: 2rem; font-weight: 800; color: var(--accent); line-height: 1; }
+  .stat-card .lbl { font-size: 0.78rem; color: var(--mid); margin-top: 6px; line-height: 1.4; }
+
+  /* ALERTS */
+  .alert { padding: 14px 18px; border-radius: 8px; margin: 18px 0; font-size: 0.91rem; line-height: 1.6; }
+  .alert-red { background: var(--red-light); border-left: 4px solid var(--red); }
+  .alert-green { background: var(--green-light); border-left: 4px solid var(--green); }
+  .alert-gold { background: var(--gold-light); border-left: 4px solid var(--gold); }
+  .alert-brand { background: #e8f0fb; border-left: 4px solid var(--brand); }
+  .alert strong { display: block; margin-bottom: 4px; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin: 18px 0; }
+  th { background: var(--brand); color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:nth-child(even) td { background: var(--gray); }
+  .top-rank td:first-child { color: var(--accent); font-weight: 700; font-size: 1rem; }
+
+  /* SCENE BLOCKS */
+  .scene { background: var(--brand); color: rgba(255,255,255,0.9); border-radius: 12px; padding: 22px 26px; margin: 18px 0; }
+  .scene .scene-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #f97316; margin-bottom: 10px; }
+  .scene p { margin-bottom: 10px; line-height: 1.7; font-size: 0.92rem; }
+  .scene .verbatim { border-left: 3px solid #f97316; padding-left: 14px; font-style: italic; margin-top: 14px; color: rgba(255,255,255,0.72); font-size: 0.88rem; line-height: 1.6; }
+
+  /* SEGMENTATION */
+  .seg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 22px 0; }
+  @media (max-width: 620px) { .seg-grid { grid-template-columns: 1fr; } }
+  .seg-card { border-radius: 12px; padding: 22px; }
+  .seg-card.excluded { background: var(--red-light); border: 1px solid #fca5a5; }
+  .seg-card.target { background: var(--green-light); border: 1px solid #86efac; }
+  .seg-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 12px; }
+  .seg-card.excluded h4 { color: var(--red); }
+  .seg-card.target h4 { color: var(--green); }
+  .seg-card ul { margin-left: 18px; font-size: 0.86rem; line-height: 1.9; }
+
+  /* HEADLINE LIST */
+  .headline-row { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .headline-rank { font-size: 1.3rem; font-weight: 800; color: #ddd; width: 30px; flex-shrink: 0; padding-top: 2px; }
+  .headline-text { font-size: 0.94rem; font-style: italic; color: var(--text); line-height: 1.5; margin-bottom: 6px; }
+  .headline-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  p { margin-bottom: 12px; }
+  ul { margin: 8px 0 14px 20px; }
+  li { margin-bottom: 6px; font-size: 0.91rem; line-height: 1.6; }
+  strong { font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">Internal Research Document</div>
+  <h1>ScalingSOS &mdash; Deep Buyer Research</h1>
+  <p class="sub">Service business owners ($500K&ndash;$5M) with diagnosed constraints &middot; The Diagnosed Builder &middot; Trades, Insurance, Financial, B2B Services</p>
+  <div class="meta-row">
+    <span>May 19, 2026</span>
+    <span>Reddit (8 full threads, 150+ comments)</span>
+    <span>Apify Reddit Scraper</span>
+    <span>Hormozi Transcripts (20 case studies)</span>
+    <span>523 Lines</span>
+  </div>
+</div>
+
+<!-- TAB NAV -->
+<div class="tab-nav">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active"  onclick="showTab('fears',this)">1 &middot; Fears</button>
+    <button class="tab-btn"         onclick="showTab('hopes',this)">2 &middot; Hopes &amp; Dreams</button>
+    <button class="tab-btn"         onclick="showTab('relfears',this)">3 &middot; Relationship Fears</button>
+    <button class="tab-btn"         onclick="showTab('soundbites',this)">4 &middot; Soundbites &#9733;</button>
+    <button class="tab-btn"         onclick="showTab('frustrations',this)">5 &middot; Frustrations</button>
+    <button class="tab-btn"         onclick="showTab('solutions',this)">6 &middot; Previous Solutions</button>
+    <button class="tab-btn"         onclick="showTab('solsound',this)">7 &middot; Solution Soundbites &#9733;</button>
+    <button class="tab-btn"         onclick="showTab('outcomes',this)">8 &middot; Desired Outcomes</button>
+    <button class="tab-btn"         onclick="showTab('typday',this)">9 &middot; Typical Day</button>
+    <button class="tab-btn"         onclick="showTab('summary',this)">10 &middot; Buyer Summary</button>
+    <button class="tab-btn"         onclick="showTab('headlines',this)">&#8599; Headlines</button>
+    <button class="tab-btn"         onclick="showTab('freq',this)">&#8599; Frequency</button>
+    <button class="tab-btn"         onclick="showTab('awareness',this)">&#9889; Awareness &#8594; Offer Map</button>
+  </div>
+</div>
+
+<!-- TAB 1 — FEARS -->
+<div id="tab-fears" class="tab-panel active">
+<div class="container">
+  <div class="section-label">Tab 1</div>
+  <h2>Fears</h2>
+  <p class="section-desc">What keeps service business owners up at 3am: wasting money on vendors who don't deliver, being trapped in a business that owns them, and scaling wrong.</p>
+
+  <div class="stat-row">
+    <div class="stat-card"><div class="num">8x</div><div class="lbl">Fear of wasting money on vendors/agencies</div></div>
+    <div class="stat-card"><div class="num">6x</div><div class="lbl">Fear of being stuck &mdash; business is a job, not an asset</div></div>
+    <div class="stat-card"><div class="num">5x</div><div class="lbl">Fear of not finding competent help</div></div>
+  </div>
+
+  <div class="quote">
+    <p>"I had him running my socials for 2 months and did not acquire anything. He also had his 'friend' reach out for service on the same day to make it seem like his 'work' was paying off... why are there people out there like this? I've been busting my ass the last 3 years to earn the business."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1geu8kk/marketing_agency_scam/" target="_blank">r/smallbusiness &middot; Marketing Agency Scam</a></span>
+      <span class="badge-freq">8x &mdash; vendor trust</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"My last experiment cost me 15k but brought very little back in. They at least knew what they were talking about though so sounded plausible. All the others I have tried have been completely useless. I wouldn't touch another agency with a barge pole."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1issf4o/i_have_talked_to_some_business_owners_and_every/" target="_blank">r/smallbusiness &middot; Business owners hate agencies</a></span>
+      <span class="badge-freq">8x &mdash; vendor trust</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"95% of the people you interact with b2b are trying to scam you."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1geu8kk/marketing_agency_scam/" target="_blank">r/smallbusiness &middot; Marketing Agency Scam</a></span>
+      <span class="badge-freq">8x &mdash; vendor trust</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"If you're making $800K revenue but working 70-hour weeks and never see your kids, that's not success. That's a trap."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Businessowners/comments/1tbz0sp/if_youre_busy_but_broke_heres_what_i_do_and_how/" target="_blank">r/Businessowners &middot; Busy but broke</a></span>
+      <span class="badge-freq">6x &mdash; trapped in the business</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"My brother runs a 'business'. He has 3 or 4 employees and a high employee attrition rate. He does everything because no one is 'good enough'. He hardly sleeps. He is either answering calls or replying to emails or screaming at the top of his lungs to make sure employees do the work. Never takes a day off because there is too much work. Never attended any school events because he is 'busy'. Outcome? He can't quit. He is a slave to his own business. It's worse than a job."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneur/comments/1ls9tdb/the_biggest_reason_small_businesses_stay_small/" target="_blank">r/Entrepreneur &middot; Biggest reason small businesses stay small</a></span>
+      <span class="badge-freq">6x &mdash; trapped in the business</span>
+    </div>
+  </div>
+
+  <h3>Secondary Fears</h3>
+
+  <div class="quote">
+    <p>"Without high enough margins you can't even afford the cost of labor to expand. The thing with margins though, is you could keep reducing it to product, positioning, marketing, strategy, etc. Like if margins are the issue, why can't you get higher margins? The business model is flawed somewhere and that's why you can't grow."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneur/comments/1ls9tdb/the_biggest_reason_small_businesses_stay_small/" target="_blank">r/Entrepreneur &middot; Biggest reason small businesses stay small</a></span>
+      <span class="badge-freq">4x &mdash; scaling wrong</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"They want risk free money (don't we all) so as a small business they are to be avoided as they are just a noose around your neck."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1issf4o/i_have_talked_to_some_business_owners_and_every/" target="_blank">r/smallbusiness &middot; Business owners hate agencies</a></span>
+      <span class="badge-freq">8x &mdash; vendor trust</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Businesses typically get stuck in the 5-10 employee range. A good income for the owner and decent salaries for the staff, but not enough to attract and retain qualified Directors and VPs. The owner is working like crazy, but can't afford to pay a management team."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneur/comments/1ls9tdb/the_biggest_reason_small_businesses_stay_small/" target="_blank">r/Entrepreneur &middot; Biggest reason small businesses stay small</a></span>
+      <span class="badge-freq">5x &mdash; can't find help</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"The trouble with that is I couldn't find anyone who could do what I did. So I worked over 90 hours per week, put in 5 years, then retired."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneur/comments/1ls9tdb/the_biggest_reason_small_businesses_stay_small/" target="_blank">r/Entrepreneur &middot; Biggest reason small businesses stay small</a></span>
+      <span class="badge-freq">5x &mdash; can't find help</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 2 — HOPES & DREAMS -->
+<div id="tab-hopes" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 2</div>
+  <h2>Hopes &amp; Dreams</h2>
+  <p class="section-desc">Their ideal future: a business that runs without them as the bottleneck, revenue growth past the current ceiling, systems that handle things automatically, and time back with family.</p>
+
+  <div class="quote">
+    <p>"I feel like the market is there for us to grab, but something is holding us back."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/business/comments/1fxnire/stuck_at_50kmonth_in_my_vehicle_wrap_business/" target="_blank">r/business &middot; Stuck at $50K/month</a></span>
+      <span class="badge-freq">7x &mdash; remove bottleneck</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I know there's a lot more potential here, I just need to figure out how to unlock it."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/business/comments/1fxnire/stuck_at_50kmonth_in_my_vehicle_wrap_business/" target="_blank">r/business &middot; Stuck at $50K/month</a></span>
+      <span class="badge-freq">6x &mdash; revenue growth</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Do you want your weekends back? Do you want to stop doing quotes at 10pm on a Tuesday?"</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Businessowners/comments/1tbz0sp/if_youre_busy_but_broke_heres_what_i_do_and_how/" target="_blank">r/Businessowners &middot; Busy but broke</a></span>
+      <span class="badge-freq">5x &mdash; time back</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"we have a click button real estate company."</p>
+    <div class="meta-row">
+      <span class="src">Georgia PPG &middot; After systems built</span>
+      <span class="badge-source">First-party client data</span>
+      <span class="badge-freq">5x &mdash; systems automation</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"If you got half your time back, could you double the business?" &mdash; "That's the game."</p>
+    <div class="meta-row">
+      <span class="src">Alex Hormozi to Tanner (HVAC, $1.5M)</span>
+      <span class="badge-source">Hormozi Extended</span>
+      <span class="badge-freq">7x &mdash; remove bottleneck</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"The businesses growing the fastest are usually the ones that: Follow up consistently, Respond quickly, Stay organized, Create smoother customer experiences"</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneurs/comments/1t8ne4b/most_service_businesses_arent_losing_customers/" target="_blank">r/Entrepreneurs &middot; Service businesses losing customers</a></span>
+      <span class="badge-freq">5x &mdash; systems automation</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"What does success look like for you? Is it selling it in five years? Handing it to your kids? Just making enough to stop stressing about money?"</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Businessowners/comments/1tbz0sp/if_youre_busy_but_broke_heres_what_i_do_and_how/" target="_blank">r/Businessowners &middot; Busy but broke</a></span>
+      <span class="badge-freq">3x &mdash; exit / sell</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"18 months later they hit $2.2M, with $600k profit."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/DigitalMarketing/comments/1o0lxs0/took_a_roofing_startup_from_0_to_22m_revenue_in/" target="_blank">r/DigitalMarketing &middot; Roofing $0 to $2.2M</a></span>
+      <span class="badge-freq">6x &mdash; revenue growth</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 3 — RELATIONSHIP FEARS -->
+<div id="tab-relfears" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 3</div>
+  <h2>Relationship Fears</h2>
+  <p class="section-desc">How the unsolved problem bleeds into their personal life: missing kids' events, spouse tension from always being on the phone, employees who can't be trusted, and the business feeling like a prison.</p>
+
+  <div class="quote">
+    <p>"Never attended any school events because he is 'busy'."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneur/comments/1ls9tdb/the_biggest_reason_small_businesses_stay_small/" target="_blank">r/Entrepreneur &middot; Biggest reason small businesses stay small</a></span>
+      <span class="badge-freq">5x &mdash; missing family</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"He hardly sleeps. He is either answering calls or replying to emails or screaming at the top of his lungs to make sure employees do the work."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneur/comments/1ls9tdb/the_biggest_reason_small_businesses_stay_small/" target="_blank">r/Entrepreneur &middot; Same thread</a></span>
+      <span class="badge-freq">4x &mdash; spouse tension</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"If you're making $800K revenue but working 70-hour weeks and never see your kids, that's not success. That's a trap."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Businessowners/comments/1tbz0sp/" target="_blank">r/Businessowners &middot; Busy but broke</a></span>
+      <span class="badge-freq">5x &mdash; missing family</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Do you want to stop doing quotes at 10pm on a Tuesday?"</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Businessowners/comments/1tbz0sp/" target="_blank">r/Businessowners &middot; Busy but broke</a></span>
+      <span class="badge-freq">4x &mdash; spouse tension</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I want to know where you actually want this business to go... Are you trying to provide for a family at home?"</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Businessowners/comments/1tbz0sp/" target="_blank">r/Businessowners &middot; Busy but broke</a></span>
+      <span class="badge-freq">5x &mdash; missing family</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Sold a business due to this. But it's like a lawn business. You get it going, clients love you and the service, hire help and then they either need to get paid more than you can afford or they quit or they ruin the quality."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneur/comments/1ls9tdb/the_biggest_reason_small_businesses_stay_small/" target="_blank">r/Entrepreneur &middot; Biggest reason small businesses stay small</a></span>
+      <span class="badge-freq">4x &mdash; employee trust</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"He can't quit. He is a slave to his own business. It's worse than a job."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneur/comments/1ls9tdb/the_biggest_reason_small_businesses_stay_small/" target="_blank">r/Entrepreneur &middot; Biggest reason small businesses stay small</a></span>
+      <span class="badge-freq">3x &mdash; business is prison</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 4 — SOUNDBITES -->
+<div id="tab-soundbites" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 4 &mdash; Use These Verbatim in Copy</div>
+  <h2>Soundbites &#9733;</h2>
+  <p class="section-desc">Exact quotes about how they describe this problem TO OTHER PEOPLE. These are the buyer's own words &mdash; use them verbatim in headlines, hooks, and body copy.</p>
+
+  <div class="alert alert-gold">
+    <strong>&#9733; How to use soundbites:</strong> Pull these exact phrases into ad headlines, email subject lines, landing page H1s, and VSL scripts. The buyer recognizes their own language and feels seen. Do not paraphrase &mdash; use the verbatim quote.
+  </div>
+
+  <h3>Highest-Impact Soundbites (test these first)</h3>
+
+  <div class="quote">
+    <p>"The thing that sucks is that I know what needs to be done and could execute about 85-90%, but I don't have the time to do it."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1issf4o/i_have_talked_to_some_business_owners_and_every/" target="_blank">r/smallbusiness &middot; Business owners hate agencies</a></span>
+      <span class="badge-freq">5x &mdash; know but can't execute</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I wasn't losing leads because people weren't interested, but because my follow-up process was inconsistent."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1qdg9f9/i_realised_i_was_losing_leads_because_my_followup/" target="_blank">r/smallbusiness &middot; Losing leads from follow-up</a></span>
+      <span class="badge-freq">10x &mdash; leads falling through</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I had notes in different places, reminders scattered, and things slipping through the cracks."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1qdg9f9/" target="_blank">r/smallbusiness &middot; Follow-up thread</a></span>
+      <span class="badge-freq">10x &mdash; leads falling through</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"dude, you're sending a third of them to voicemail. You don't need more calls, you need to answer the ones you're getting."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1ratahy/talked_to_3_clients_this_month_who_all_thought/" target="_blank">r/smallbusiness &middot; Thought they needed more marketing</a></span>
+      <span class="badge-freq">10x &mdash; leads falling through</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I keep seeing this pattern where business owners jump straight to 'I need more marketing' when the actual problem is everything that happens after someone reaches out. Slow follow up, missed calls, no system for tracking who contacted you."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1ratahy/" target="_blank">r/smallbusiness &middot; Thought they needed more marketing</a></span>
+      <span class="badge-freq">10x &mdash; leads falling through</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"This is so real. The #1 thing that separates service businesses doing $500K+ from the ones stuck at $150K isn't marketing, it's their follow-up system."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1ratahy/" target="_blank">r/smallbusiness &middot; Comment</a></span>
+      <span class="badge-freq">10x &mdash; leads falling through</span>
+    </div>
+  </div>
+
+  <h3>Secondary Soundbites</h3>
+
+  <div class="quote">
+    <p>"They're all scammers. DIY is the only way. But DIY sucks to both learn and implement."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1issf4o/" target="_blank">r/smallbusiness &middot; Business owners hate agencies</a></span>
+      <span class="badge-freq">12x &mdash; wasted on vendors</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"One of the biggest things that bothers me is that most agencies treat all businesses the same. They basically have cut and paste templates they put all their clients into and think it will work the same for everyone."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1issf4o/" target="_blank">r/smallbusiness &middot; Business owners hate agencies</a></span>
+      <span class="badge-freq">5x &mdash; cookie-cutter</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"We've hit a plateau, and I'm struggling to figure out why we can't break past this $50k/month ceiling."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/business/comments/1fxnire/" target="_blank">r/business &middot; Stuck at $50K/month</a></span>
+      <span class="badge-freq">7x &mdash; revenue plateau</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I also wonder if my manager/receptionist is taking on too much, which might be limiting our growth, but I can't afford to bring in additional staff until we hit around $100,000/month in revenue."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/business/comments/1fxnire/" target="_blank">r/business &middot; Stuck at $50K/month</a></span>
+      <span class="badge-freq">9x &mdash; owner bottleneck</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Leads scattered across emails, phones, sticky notes. No structured follow-up process. 60-80% of leads never contacted again."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/EntrepreneurRideAlong/comments/1lcui9p/" target="_blank">r/EntrepreneurRideAlong &middot; Operational audit</a></span>
+      <span class="badge-freq">10x &mdash; leads falling through</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Most founders know these issues exist, but they underestimate the cost of not fixing them."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/EntrepreneurRideAlong/comments/1lcui9p/" target="_blank">r/EntrepreneurRideAlong &middot; Comment</a></span>
+      <span class="badge-freq">5x &mdash; know but can't execute</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"A lot of business owners are not actually lazy or unproductive. They are just stuck doing low leverage work that feels busy but never compounds."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Businessowners/comments/1tbz0sp/" target="_blank">r/Businessowners &middot; Busy but broke</a></span>
+      <span class="badge-freq">9x &mdash; owner bottleneck</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I find where you're bleeding money (usually $30K-$80K you don't know about), show you how to fix it, then either help you build it or do it for you."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Businessowners/comments/1tbz0sp/" target="_blank">r/Businessowners &middot; Busy but broke</a></span>
+      <span class="badge-freq">6x &mdash; no attribution</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I basically built a turnkey marketing department. Meanwhile, I made less than a part-time fast-food worker."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/DigitalMarketing/comments/1o0lxs0/" target="_blank">r/DigitalMarketing &middot; Roofing $0 to $2.2M</a></span>
+      <span class="badge-freq">5x &mdash; no systems</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Every single business &mdash; no matter the industry or size &mdash; was missing the same 5 core systems."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/EntrepreneurRideAlong/comments/1lcui9p/" target="_blank">r/EntrepreneurRideAlong &middot; Operational audit</a></span>
+      <span class="badge-freq">5x &mdash; no systems</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"The Google Sheet approach works until it doesn't, and the breaking point is usually around 50-75 active leads."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1qdg9f9/" target="_blank">r/smallbusiness &middot; Follow-up thread</a></span>
+      <span class="badge-freq">10x &mdash; leads falling through</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"checked his inbox together and there were leads from 3 days ago that nobody responded to."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1ratahy/" target="_blank">r/smallbusiness &middot; Gym owner case</a></span>
+      <span class="badge-freq">10x &mdash; leads falling through</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Gut-based pricing. Undercharging for complex work."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/EntrepreneurRideAlong/comments/1lcui9p/" target="_blank">r/EntrepreneurRideAlong &middot; Operational audit</a></span>
+      <span class="badge-freq">5x &mdash; no systems</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"What's your bottleneck? You can figure out that answer by breaking down each step in your business process chain."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/business/comments/1fxnire/" target="_blank">r/business &middot; Stuck at $50K/month comment</a></span>
+      <span class="badge-freq">9x &mdash; owner bottleneck</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 5 — FRUSTRATIONS -->
+<div id="tab-frustrations" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 5</div>
+  <h2>Frustrations</h2>
+  <p class="section-desc">What has made them angry: agencies that overpromise and underdeliver, no way to measure ROI, leads falling through cracks, and cookie-cutter solutions.</p>
+
+  <div class="quote">
+    <p>"80-90% 'marketing agencies' are a hoax"</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/marketing/comments/qghi4j/8090_marketing_agencies_are_a_hoax/" target="_blank">r/marketing &middot; Agencies are a hoax</a></span>
+      <span class="badge-freq">9x &mdash; agencies overpromise</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Overpromise and under-deliver. Long contracts that the company can't get out of. The retainer pricing model."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1issf4o/" target="_blank">r/smallbusiness &middot; Business owners hate agencies</a></span>
+      <span class="badge-freq">4x &mdash; locked in contracts</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Very difficult to gauge return on investment from any of this. Advertising included. Nothing besides word-of-mouth from one happy client to the next ever did anything for our business. Complete waste of money."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1issf4o/" target="_blank">r/smallbusiness &middot; Business owners hate agencies</a></span>
+      <span class="badge-freq">6x &mdash; no ROI measurement</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Every SEO marketer that calls me wants me to let them redo my entire website, and pay them something like $350-500 a month for very objective results while I give up all control."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1issf4o/" target="_blank">r/smallbusiness &middot; Business owners hate agencies</a></span>
+      <span class="badge-freq">9x &mdash; agencies overpromise</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"What people hate the most is so many people set up marketing agencies who don't actually have much of a clue about marketing."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1issf4o/" target="_blank">r/smallbusiness &middot; Business owners hate agencies</a></span>
+      <span class="badge-freq">9x &mdash; agencies overpromise</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I had someone stop by our business requesting a 'trade' for marketing services. $10k worth of our product for 3 months of social media posts. Not even the ads. It was terrible"</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1geu8kk/" target="_blank">r/smallbusiness &middot; Marketing Agency Scam</a></span>
+      <span class="badge-freq">9x &mdash; agencies overpromise</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"We have numbers, but they're not useful."</p>
+    <div class="meta-row">
+      <span class="src">Luis (railing store, $2.5M) &middot; Hormozi Helping Strangers</span>
+      <span class="badge-source">Hormozi Transcript</span>
+      <span class="badge-freq">6x &mdash; no ROI measurement</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"You're showing LTV to CAC of 41 to one, which makes zero sense."</p>
+    <div class="meta-row">
+      <span class="src">Hormozi diagnosing Luis's broken attribution</span>
+      <span class="badge-source">Hormozi Transcript</span>
+      <span class="badge-freq">6x &mdash; no ROI measurement</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Knowledge stuck in the founder's head. No repeatable workflows. Team couldn't take over anything."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/EntrepreneurRideAlong/comments/1lcui9p/" target="_blank">r/EntrepreneurRideAlong &middot; Operational audit</a></span>
+      <span class="badge-freq">6x &mdash; leads falling through</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Verbal agreements with no clear documentation. No standard kickoff or scope. Constant 'quick tweaks' destroying profit margins."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/EntrepreneurRideAlong/comments/1lcui9p/" target="_blank">r/EntrepreneurRideAlong &middot; Operational audit</a></span>
+      <span class="badge-freq">4x &mdash; cookie-cutter</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Client communication mess. Scattered email chains. No centralized client history. Reactive instead of proactive communication."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/EntrepreneurRideAlong/comments/1lcui9p/" target="_blank">r/EntrepreneurRideAlong &middot; Operational audit</a></span>
+      <span class="badge-freq">6x &mdash; leads falling through</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 6 — PREVIOUS SOLUTIONS -->
+<div id="tab-solutions" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 6</div>
+  <h2>Previous Solutions</h2>
+  <p class="section-desc">Everything they've tried: marketing agencies ($500-$15K wasted), Google Sheets that break at 50 leads, CRM tools they abandoned, DIY ads with no attribution, and consultants who gave strategy decks they couldn't implement. Understanding what they've already tried prevents you from recommending the same thing that failed.</p>
+
+  <div class="alert alert-red">
+    <strong>Positioning Rule:</strong> Never position yourself as "another consultant/agency/coach." Explicitly differentiate from whatever failed them before. If they burned money on vendors who gave advice without building &mdash; lead with "we build the thing."
+  </div>
+
+  <div class="quote">
+    <p>"I had him running my socials for 2 months and did not acquire anything."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1geu8kk/" target="_blank">r/smallbusiness &middot; Marketing Agency Scam</a></span>
+      <span class="badge-freq">12x &mdash; wasted on vendors</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"My last experiment cost me 15k but brought very little back in."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1issf4o/" target="_blank">r/smallbusiness &middot; Business owners hate agencies</a></span>
+      <span class="badge-freq">12x &mdash; wasted on vendors</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I looked at a few CRMs, but for where I'm at they felt like more overhead than help."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1qdg9f9/" target="_blank">r/smallbusiness &middot; Follow-up thread</a></span>
+      <span class="badge-freq">5x &mdash; CRM abandoned</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"So I simplified everything into a single Google Sheet."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1qdg9f9/" target="_blank">r/smallbusiness &middot; Follow-up thread</a></span>
+      <span class="badge-freq">10x &mdash; manual systems</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"He drafted up the most ridiculous proposal I've ever seen. 20% of the company to: answer phones when available, respond to emails and run ads."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1geu8kk/" target="_blank">r/smallbusiness &middot; Marketing Agency Scam</a></span>
+      <span class="badge-freq">12x &mdash; wasted on vendors</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"We tried Jobber and GoHighLevel"</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneurs/comments/1t8ne4b/" target="_blank">r/Entrepreneurs &middot; Losing customers thread</a></span>
+      <span class="badge-freq">5x &mdash; CRM abandoned</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"we've been spending 40K [on ads] and our revenue has doubled... But it's not being tracked. And so that allows us to do zero optimization."</p>
+    <div class="meta-row">
+      <span class="src">Luis (railing, $2.5M) via Hormozi</span>
+      <span class="badge-source">Hormozi Transcript</span>
+      <span class="badge-freq">6x &mdash; no attribution</span>
+    </div>
+  </div>
+
+  <h3>First-Party Client Data (Vince's Body of Work)</h3>
+
+  <div class="quote">
+    <p>"Initially the client has a very basic and winging it script"</p>
+    <div class="meta-row">
+      <span class="src">Narrowgate Financial &middot; Before Vince built systems</span>
+      <span class="badge-source">First-party client data</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"They had a very manual process on onboarding new agents"</p>
+    <div class="meta-row">
+      <span class="src">FFL Uncommon Way &middot; Before Vince built systems</span>
+      <span class="badge-source">First-party client data</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"They were manually mailing out pieces to the credit bureaus"</p>
+    <div class="meta-row">
+      <span class="src">Real Credit Club &middot; Before Vince built systems</span>
+      <span class="badge-source">First-party client data</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Before we met, their process was onboard a roofer, hiring 3 phone reps who can make outbound calls"</p>
+    <div class="meta-row">
+      <span class="src">TLMR Tech &middot; Before Vince built systems</span>
+      <span class="badge-source">First-party client data</span>
+    </div>
+  </div>
+
+  <div class="alert alert-gold">
+    <strong>Previous solutions attempted (synthesis):</strong>
+    1. Hired marketing agency &mdash; got social media posts, no results ($500-$15K wasted)<br>
+    2. Google Sheets / sticky notes for lead tracking &mdash; works until 50+ leads, then breaks<br>
+    3. CRM tools (GHL, Jobber, HubSpot) &mdash; felt like overhead, too complex, abandoned<br>
+    4. DIY ads &mdash; spending money but no attribution, can't optimize<br>
+    5. Hired VAs &mdash; inconsistent, required constant management<br>
+    6. Consultants &mdash; got strategy deck, couldn't implement
+  </div>
+</div>
+</div>
+
+<!-- TAB 7 — SOLUTION SOUNDBITES -->
+<div id="tab-solsound" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 7 &mdash; Use in Offer &amp; Outcome Copy</div>
+  <h2>Solution Soundbites &#9733;</h2>
+  <p class="section-desc">"I wish there was..." quotes. What they imagine the perfect solution looks like. These are the words buyers use when they describe what success looks like. Mirror these exactly in your offer language.</p>
+
+  <div class="alert alert-green">
+    <strong>&#9733; How to use solution soundbites:</strong> These describe the outcome state the buyer wants. Use them in your offer headline, bullet points, and close. When the buyer reads their own desired outcome in your copy, resistance drops.
+  </div>
+
+  <div class="quote">
+    <p>"The thing that sucks is that I know what needs to be done and could execute about 85-90%, but I don't have the time to do it."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1issf4o/" target="_blank">r/smallbusiness &middot; Business owners hate agencies</a></span>
+      <span class="badge-freq">5x &mdash; know but can't execute</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Fix your internal systems first &mdash; then scale."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/EntrepreneurRideAlong/comments/1lcui9p/" target="_blank">r/EntrepreneurRideAlong &middot; Operational audit</a></span>
+      <span class="badge-freq">5x &mdash; systems first</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Most small businesses try to: Work longer hours, Hire more people, Try new marketing tricks. But the truth is: Fix your internal systems first."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/EntrepreneurRideAlong/comments/1lcui9p/" target="_blank">r/EntrepreneurRideAlong &middot; Operational audit</a></span>
+      <span class="badge-freq">5x &mdash; systems first</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I find where you're bleeding money, show you how to fix it, then either help you build it or do it for you."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Businessowners/comments/1tbz0sp/" target="_blank">r/Businessowners &middot; Busy but broke</a></span>
+      <span class="badge-freq">5x &mdash; build not advise</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"one shared inbox, strict rules on first response time, and pre-written answers for the 10 same questions they got every day"</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneurs/comments/1t8ne4b/" target="_blank">r/Entrepreneurs &middot; Losing customers thread</a></span>
+      <span class="badge-freq">10x &mdash; follow-up system</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"a simple CRM where every inquiry gets logged with a follow-up date, and a templated 'thanks for reaching out' text within 5 minutes of a missed call"</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1ratahy/" target="_blank">r/smallbusiness &middot; Thought they needed more marketing</a></span>
+      <span class="badge-freq">10x &mdash; follow-up system</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"For solo ops honestly a simple system you'll actually use beats fancy CRM software you'll abandon after two weeks"</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1qdg9f9/" target="_blank">r/smallbusiness &middot; Follow-up thread</a></span>
+      <span class="badge-freq">5x &mdash; simple systems</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"You don't need an AI agent. You need to stop doing the same 11 tasks manually every Monday morning."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/AI_Agents/comments/1slvy0o/" target="_blank">r/AI_Agents &middot; What you actually need</a></span>
+      <span class="badge-freq">5x &mdash; simple systems</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Almost every time someone messages me saying 'I need an AI agent,' what they actually need is way more boring than that."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/AI_Agents/comments/1slvy0o/" target="_blank">r/AI_Agents &middot; What you actually need</a></span>
+      <span class="badge-freq">5x &mdash; simple systems</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"The most important system to build is the revenue generation machine. Systems are great and all, but small businesses stay small usually because they don't generate enough revenue."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneur/comments/1ls9tdb/" target="_blank">r/Entrepreneur &middot; Biggest reason small businesses stay small</a></span>
+      <span class="badge-freq">7x &mdash; revenue plateau</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Central lead database. Automated follow-up templates. Conversion tracking by source."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/EntrepreneurRideAlong/comments/1lcui9p/" target="_blank">r/EntrepreneurRideAlong &middot; Operational audit</a></span>
+      <span class="badge-freq">10x &mdash; follow-up system</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I work with one trade per area. If you're a plumber in Geelong and we work together, I won't touch another plumber in Geelong."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Businessowners/comments/1tbz0sp/" target="_blank">r/Businessowners &middot; Busy but broke</a></span>
+      <span class="badge-freq">5x &mdash; exclusivity / trust</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Don't overpromise, because we don't promise. We tell the client what we're going to do."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1issf4o/" target="_blank">r/smallbusiness &middot; Agency owner comment</a></span>
+      <span class="badge-freq">9x &mdash; agencies overpromise</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Cleaning up the systemization of intake, or sometimes creating the system in the first place, is crucial to do before cranking up advertising."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1ratahy/" target="_blank">r/smallbusiness &middot; Thought they needed more marketing</a></span>
+      <span class="badge-freq">5x &mdash; systems first</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I basically built a turnkey marketing department."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/DigitalMarketing/comments/1o0lxs0/" target="_blank">r/DigitalMarketing &middot; Roofing $0 to $2.2M</a></span>
+      <span class="badge-freq">5x &mdash; build not advise</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"What helped wasn't more leads, but reacting less."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1qdg9f9/" target="_blank">r/smallbusiness &middot; Follow-up thread comment</a></span>
+      <span class="badge-freq">5x &mdash; simple systems</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"If you don't learn to delegate, your business can't grow. One person can't wear all the hats."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneur/comments/1ls9tdb/" target="_blank">r/Entrepreneur &middot; Biggest reason small businesses stay small</a></span>
+      <span class="badge-freq">9x &mdash; owner bottleneck</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 8 — DESIRED OUTCOMES -->
+<div id="tab-outcomes" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 8</div>
+  <h2>Desired Outcomes</h2>
+  <p class="section-desc">The specific end state they want &mdash; not features, the LIFE they want after the problem is solved.</p>
+
+  <div class="stat-row">
+    <div class="stat-card"><div class="num">#1</div><div class="lbl">Revenue growth past current ceiling</div></div>
+    <div class="stat-card"><div class="num">#2</div><div class="lbl">Business runs without owner as bottleneck</div></div>
+    <div class="stat-card"><div class="num">#3</div><div class="lbl">Stop working evenings and weekends</div></div>
+  </div>
+
+  <h3>Functional Outcomes (tangible / measurable)</h3>
+  <div class="quote">
+    <p>"Stop stressing about money"</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Businessowners/comments/1tbz0sp/" target="_blank">r/Businessowners &middot; Busy but broke</a></span>
+      <span class="badge-freq">7x &mdash; revenue growth</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I feel like the market is there for us to grab"</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/business/comments/1fxnire/" target="_blank">r/business &middot; Stuck at $50K/month</a></span>
+      <span class="badge-freq">7x &mdash; revenue growth</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"A click button real estate company"</p>
+    <div class="meta-row">
+      <span class="src">Georgia PPG &middot; After Vince built systems</span>
+      <span class="badge-source">First-party client data</span>
+      <span class="badge-freq">5x &mdash; automation</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Still a custom presentation for each client but takes 60 seconds to create vs having to manually review the illustration"</p>
+    <div class="meta-row">
+      <span class="src">Narrowgate Financial &middot; After Vince built systems</span>
+      <span class="badge-source">First-party client data</span>
+      <span class="badge-freq">5x &mdash; automation</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Put the roofers in the driver's seat as far as the appointments that they're getting"</p>
+    <div class="meta-row">
+      <span class="src">Roofly &middot; After Vince built systems</span>
+      <span class="badge-source">First-party client data</span>
+      <span class="badge-freq">9x &mdash; remove bottleneck</span>
+    </div>
+  </div>
+
+  <h3>Emotional Outcomes (identity / status)</h3>
+  <div class="quote">
+    <p>"Weekends back"</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Businessowners/comments/1tbz0sp/" target="_blank">r/Businessowners &middot; Busy but broke</a></span>
+      <span class="badge-freq">6x &mdash; time back</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Stop doing quotes at 10pm on a Tuesday"</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Businessowners/comments/1tbz0sp/" target="_blank">r/Businessowners &middot; Busy but broke</a></span>
+      <span class="badge-freq">6x &mdash; time back</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Selling it in five years. Handing it to your kids."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Businessowners/comments/1tbz0sp/" target="_blank">r/Businessowners &middot; Busy but broke</a></span>
+      <span class="badge-freq">3x &mdash; exit / sell</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"All new agents get the same consistent experience when they're being on boarded"</p>
+    <div class="meta-row">
+      <span class="src">FFL Uncommon Way &middot; After Vince built systems</span>
+      <span class="badge-source">First-party client data</span>
+      <span class="badge-freq">5x &mdash; automation</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"The owner of the real credit Club company didn't have to manually go to the Post Office send out mail track it"</p>
+    <div class="meta-row">
+      <span class="src">Real Credit Club &middot; After Vince built systems</span>
+      <span class="badge-source">First-party client data</span>
+      <span class="badge-freq">5x &mdash; automation</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 9 — TYPICAL DAY -->
+<div id="tab-typday" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 9</div>
+  <h2>Typical Day</h2>
+  <p class="section-desc">What a day with this unsolved problem actually looks like &mdash; scattered leads, missed calls, evening quote sessions, and the constant feeling that something slipped through. Use this to understand when they consume content, what emotional state they're in, and what's competing for their attention.</p>
+
+  <div class="scene">
+    <div class="scene-title">A Day in the Life &mdash; The Diagnosed Builder ($1M-$3M Service Business Owner)</div>
+    <p>6:30 AM &mdash; Wake up, check phone. 3 missed calls from yesterday, 2 DMs unanswered. Make mental note to respond. 7:00 AM &mdash; Head to first job site. Phone buzzes with new lead inquiry. Can't answer &mdash; hands dirty. 9:30 AM &mdash; Between jobs, try to return calls. One lead already hired competitor. Another doesn't answer.</p>
+    <p>12:00 PM &mdash; Quick lunch. Try to update Google Sheet with today's leads. Forget one. 2:00 PM &mdash; Afternoon jobs. Two more leads come in via website form. Sit in inbox. 5:30 PM &mdash; Done with jobs. Check emails &mdash; 4 leads from today, 2 from yesterday still unanswered. 7:00 PM &mdash; Dinner with family. Phone keeps buzzing. Try to respond to DMs while eating. 9:30 PM &mdash; Kids in bed. Open laptop to do quotes, update spreadsheet, respond to Facebook messages. 11:00 PM &mdash; Finally done. Know there are at least 2-3 leads that slipped through cracks today.</p>
+    <div class="verbatim">"Most small business owners already know this &mdash; the problem is they physically can't respond fast enough while they're out doing jobs all day."</div>
+  </div>
+
+  <h3>Morning</h3>
+  <p>Wakes to missed calls and unanswered messages from previous day. Immediately in reactive mode. Drives to first job or opens the shop with a mental backlog of follow-ups that never happened. New inquiries stack up while hands are occupied.</p>
+
+  <div class="quote">
+    <p>"I run a small solo operation and noticed something frustrating &mdash; I had notes in different places, reminders scattered, and things slipping through the cracks."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1qdg9f9/" target="_blank">r/smallbusiness &middot; Follow-up thread</a></span>
+      <span class="badge-freq">10x &mdash; leads falling through</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"checked his inbox together and there were leads from 3 days ago that nobody responded to."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1ratahy/" target="_blank">r/smallbusiness &middot; Gym owner case</a></span>
+      <span class="badge-freq">10x &mdash; leads falling through</span>
+    </div>
+  </div>
+
+  <h3>Midday</h3>
+  <p>Between jobs or during lunch, tries to return calls. Some leads already went to competitors. Updates a spreadsheet or CRM but skips entries because there's no time. Knows leads are leaking but can't stop the bleeding while doing the work.</p>
+
+  <div class="quote">
+    <p>"You're sending a third of them to voicemail. You don't need more calls, you need to answer the ones you're getting."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/smallbusiness/comments/1ratahy/" target="_blank">r/smallbusiness &middot; Plumber client case</a></span>
+      <span class="badge-freq">10x &mdash; leads falling through</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Missed DMs. Slow quote responses. Losing leads during busy work day. Spending hours answering repetitive questions."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneurs/comments/1t8ne4b/" target="_blank">r/Entrepreneurs &middot; Losing customers</a></span>
+      <span class="badge-freq">10x &mdash; leads falling through</span>
+    </div>
+  </div>
+
+  <h3>Evening</h3>
+  <p>Dinner with family is interrupted by buzzing phone. After kids go to bed, opens laptop for the "second shift" &mdash; quotes, spreadsheets, Facebook messages, emails. Knows 2-3 leads slipped today. Falls asleep stressed, wakes up to do it again.</p>
+
+  <div class="quote">
+    <p>"Working 70-hour weeks. Doing quotes at 10pm on a Tuesday."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Businessowners/comments/1tbz0sp/" target="_blank">r/Businessowners &middot; Busy but broke</a></span>
+      <span class="badge-freq">6x &mdash; time back</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"The owner does everything. Sales, service, operations, even posting on social media. At some point, they're not running the business &mdash; the business is running them."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneur/comments/1ls9tdb/" target="_blank">r/Entrepreneur &middot; Biggest reason small businesses stay small</a></span>
+      <span class="badge-freq">9x &mdash; owner bottleneck</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"His 'system' was basically voicemail and random texts."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.reddit.com/r/Entrepreneurs/comments/1t8ne4b/" target="_blank">r/Entrepreneurs &middot; Home services client</a></span>
+      <span class="badge-freq">5x &mdash; no systems</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Revenue goes up, margins compress, until you're eventually putting money in and getting money back out. Then you run a very large, very high-liability nonprofit and it sucks."</p>
+    <div class="meta-row">
+      <span class="src">Hormozi on the Direct Response Doom Loop</span>
+      <span class="badge-source">Hormozi Extended</span>
+      <span class="badge-freq">7x &mdash; revenue plateau</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"One tech absent = owner back in the van."</p>
+    <div class="meta-row">
+      <span class="src">Cory's Electrical ($1.6M) &middot; Hormozi Extended</span>
+      <span class="badge-source">Hormozi Extended</span>
+      <span class="badge-freq">9x &mdash; owner bottleneck</span>
+    </div>
+  </div>
+
+  <div class="alert alert-brand">
+    <strong>Content timing insight:</strong> Best time to reach them is 6:30-7:00 AM (phone check before first job), 12:00-12:30 PM (lunch scroll), and 9:30-11:00 PM (second shift laptop time). They consume business content on YouTube and podcasts during commute/drive. Evening is when frustration peaks and they're most likely to click an ad or search for solutions.
+  </div>
+</div>
+</div>
+
+<!-- TAB 10 — BUYER SUMMARY -->
+<div id="tab-summary" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 10 &mdash; Synthesis</div>
+  <h2>Buyer Summary</h2>
+  <p class="section-desc">Synthesized ICP profile. Who this person is, what they believe, what stops them, and how to reach them.</p>
+
+  <div class="alert alert-brand">
+    <strong>The One-Line ICP:</strong> "The Diagnosed Builder" &mdash; a service business owner doing $1M-$3M who has consumed enough content to know exactly what's broken, has been burned by at least one vendor, and needs someone who builds infrastructure, not someone who gives advice.
+  </div>
+
+  <h3>Who They Are</h3>
+  <ul>
+    <li>Age 32-55 (peak: 38-48), ~80% male for trades/home services, more balanced for insurance/financial</li>
+    <li>Revenue $500K-$5M (sweet spot: $1M-$3M &mdash; "the swamp"), team of 3-25 employees</li>
+    <li>Identity: "I built this from nothing." Pride in the business. Hustle-oriented. Doer, not a delegator.</li>
+    <li>Content consumption: Hormozi, Dan Henry, business podcasts, YouTube at night. Decision style: skeptical of vendors, needs proof, has been burned.</li>
+  </ul>
+
+  <h3>What They Believe (That Is Wrong)</h3>
+  <ul>
+    <li>"I need more leads" &mdash; when the real problem is they're losing 60-80% of leads they already get through poor follow-up</li>
+    <li>"I need a better marketing agency" &mdash; when the real problem is they have no systems to convert the traffic they already have</li>
+    <li>"I can't afford to hire help yet" &mdash; when the real problem is they're doing $30K-$80K worth of low-leverage manual work that should be automated</li>
+  </ul>
+
+  <h3>What Actually Stops Them</h3>
+  <ul>
+    <li>Burned by 2-3 vendors already &mdash; trust is at zero. They assume everyone is a scammer until proven otherwise.</li>
+    <li>They know what to do but don't have time to implement. The gap isn't knowledge, it's execution capacity.</li>
+    <li>CRM tools feel like overhead. They tried GHL/Jobber/HubSpot and abandoned them because learning the tool was another job.</li>
+  </ul>
+
+  <h3>How to Reach Them</h3>
+  <p>They scroll Reddit at night venting about agencies. They watch Hormozi and Dan Henry. They search "marketing agency scam" and "how to grow my [trade] business." They respond to content that validates their frustration with the status quo. Lead with proof (case studies, before/after numbers, live builds) &mdash; not promises. The positioning that works: "We build the thing. You've spent money on advice. You've never spent money on someone who builds."</p>
+
+  <h3>Included / Excluded Segments</h3>
+  <div class="seg-grid">
+    <div class="seg-card target">
+      <h4>&#10003; Target &mdash; Include</h4>
+      <ul>
+        <li>Service businesses $500K-$5M with diagnosed constraints (follow-up, conversion, systems)</li>
+        <li>Owners who have tried at least one vendor/agency and been burned</li>
+        <li>Businesses with 3-25 employees stuck in "the swamp" &mdash; too big to DIY, too small for enterprise</li>
+      </ul>
+    </div>
+    <div class="seg-card excluded">
+      <h4>&#10007; Excluded &mdash; Do Not Target</h4>
+      <ul>
+        <li>Startups pre-revenue &mdash; no diagnosed constraint yet, just guessing</li>
+        <li>Enterprise ($10M+) &mdash; already has management team, different problem set</li>
+        <li>Owners who want "more marketing" but refuse to fix internal systems first</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>The Buying Trigger</h3>
+  <p>A specific painful event: lost a big lead they know they should have closed, got another agency proposal that felt like BS, hit the same revenue number for the 6th month in a row, spouse said "something has to change," watched a Hormozi video and thought "that's literally my business."</p>
+
+  <div class="alert alert-gold">
+    <strong>The Sales Frame That Works:</strong> "You've spent money on advice. You've never spent money on someone who builds." &mdash; Position as infrastructure builder, not consultant. Lead with proof (live builds, before/after numbers). Never promise results &mdash; show what you've built for others and let them connect the dots.
+  </div>
+</div>
+</div>
+
+<!-- TAB 11 — HEADLINES -->
+<div id="tab-headlines" class="tab-panel">
+<div class="container">
+  <div class="section-label">Ad Testing</div>
+  <h2>Top Quotes for Headline Testing</h2>
+  <p class="section-desc">Ranked by emotional punch and research frequency. Test from top down &mdash; highest-frequency, highest-upvote first.</p>
+
+  <div class="headline-row">
+    <div class="headline-rank">1</div>
+    <div>
+      <div class="headline-text">"The thing that sucks is that I know what needs to be done but I don't have the time to do it."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">5x &mdash; know but can't execute</span>
+        <span class="src">r/smallbusiness</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">2</div>
+    <div>
+      <div class="headline-text">"I wasn't losing leads because people weren't interested &mdash; my follow-up process was inconsistent."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">10x &mdash; leads falling through</span>
+        <span class="src">r/smallbusiness</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">3</div>
+    <div>
+      <div class="headline-text">"They're all scammers. DIY is the only way. But DIY sucks to both learn and implement."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">12x &mdash; vendor distrust</span>
+        <span class="src">r/smallbusiness</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">4</div>
+    <div>
+      <div class="headline-text">"I keep seeing this pattern where business owners jump to 'I need more marketing' when the problem is everything after someone reaches out."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">10x &mdash; leads falling through</span>
+        <span class="src">r/smallbusiness</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">5</div>
+    <div>
+      <div class="headline-text">"Checked his inbox and there were leads from 3 days ago that nobody responded to."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">10x &mdash; leads falling through</span>
+        <span class="src">r/smallbusiness</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">6</div>
+    <div>
+      <div class="headline-text">"The #1 thing that separates service businesses doing $500K+ from the ones stuck at $150K isn't marketing &mdash; it's their follow-up system."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">10x &mdash; follow-up system</span>
+        <span class="src">r/smallbusiness</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">7</div>
+    <div>
+      <div class="headline-text">"Fix your internal systems first &mdash; then scale."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">5x &mdash; systems first</span>
+        <span class="src">r/EntrepreneurRideAlong</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">8</div>
+    <div>
+      <div class="headline-text">"If you're making $800K revenue but working 70-hour weeks and never see your kids, that's not success. That's a trap."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">6x &mdash; trapped in business</span>
+        <span class="src">r/Businessowners</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">9</div>
+    <div>
+      <div class="headline-text">"Most agencies treat all businesses the same. They have cut and paste templates."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">5x &mdash; cookie-cutter</span>
+        <span class="src">r/smallbusiness</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">10</div>
+    <div>
+      <div class="headline-text">"Every single business &mdash; no matter the industry or size &mdash; was missing the same 5 core systems."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">5x &mdash; no systems</span>
+        <span class="src">r/EntrepreneurRideAlong</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">11</div>
+    <div>
+      <div class="headline-text">"A lot of business owners are not actually lazy or unproductive. They are just stuck doing low leverage work that feels busy but never compounds."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">9x &mdash; owner bottleneck</span>
+        <span class="src">r/Businessowners</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">12</div>
+    <div>
+      <div class="headline-text">"My last experiment cost me 15k but brought very little back in."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">12x &mdash; wasted on vendors</span>
+        <span class="src">r/smallbusiness</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">13</div>
+    <div>
+      <div class="headline-text">"He can't quit. He is a slave to his own business. It's worse than a job."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">6x &mdash; trapped in business</span>
+        <span class="src">r/Entrepreneur</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">14</div>
+    <div>
+      <div class="headline-text">"Leads scattered across emails, phones, sticky notes. No structured follow-up process. 60-80% of leads never contacted again."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">10x &mdash; leads falling through</span>
+        <span class="src">r/EntrepreneurRideAlong</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 12 — FREQUENCY RANKING -->
+<div id="tab-freq" class="tab-panel">
+<div class="container">
+  <div class="section-label">Analysis</div>
+  <h2>Frequency Ranking</h2>
+  <p class="section-desc">Pain points ranked by mention count across all sources. Higher count = more universal = higher priority for copy and targeting.</p>
+
+  <table>
+    <tr><th>#</th><th>Pain Point / Theme</th><th>Count</th><th>Primary Sources</th></tr>
+    <tr class="top-rank"><td>1</td><td>Wasted money on agencies/vendors that didn't deliver</td><td>12</td><td>Tabs 1, 5, 6 &mdash; r/smallbusiness, r/marketing</td></tr>
+    <tr class="top-rank"><td>2</td><td>Leads falling through cracks / no follow-up system</td><td>10</td><td>Tabs 4, 5, 9 &mdash; r/smallbusiness, r/Entrepreneurs, r/EntrepreneurRideAlong</td></tr>
+    <tr class="top-rank"><td>3</td><td>Owner is the bottleneck &mdash; can't delegate, can't scale</td><td>9</td><td>Tabs 1, 3, 9 &mdash; r/Entrepreneur, r/Businessowners, Hormozi Extended</td></tr>
+    <tr><td>4</td><td>Revenue plateau &mdash; stuck at a ceiling</td><td>7</td><td>Tabs 2, 4 &mdash; r/business, r/Entrepreneur</td></tr>
+    <tr><td>5</td><td>No attribution / can't measure what works</td><td>6</td><td>Tabs 5, 6 &mdash; r/smallbusiness, Hormozi Helping Strangers</td></tr>
+    <tr><td>6</td><td>Working too many hours / no personal time</td><td>6</td><td>Tabs 3, 8, 9 &mdash; r/Businessowners, r/Entrepreneur</td></tr>
+    <tr><td>7</td><td>Cookie-cutter solutions that don't fit</td><td>5</td><td>Tabs 4, 5 &mdash; r/smallbusiness</td></tr>
+    <tr><td>8</td><td>Know what to do but can't execute / no time to implement</td><td>5</td><td>Tabs 4, 7 &mdash; r/smallbusiness</td></tr>
+    <tr><td>9</td><td>No systems / everything manual</td><td>5</td><td>Tabs 7, 9 &mdash; r/EntrepreneurRideAlong, r/AI_Agents</td></tr>
+    <tr><td>10</td><td>Fear of scaling and breaking what works</td><td>4</td><td>Tab 1 &mdash; r/Entrepreneur</td></tr>
+  </table>
+
+  <div class="alert alert-brand">
+    <strong>Top 3 are your ad strategy:</strong> (1) Vendor distrust is the #1 emotional driver &mdash; lead with "we build, not advise" and proof over promises. (2) Leads falling through cracks is the #1 operational pain &mdash; show the before/after of a follow-up system. (3) Owner as bottleneck is the #1 identity crisis &mdash; they built this thing and now it owns them. Address all three in every campaign.
+  </div>
+</div>
+</div>
+
+<!-- TAB 13 — AWARENESS LEVELS / OFFER MAP -->
+<div id="tab-awareness" class="tab-panel">
+<div class="container" style="max-width:960px">
+
+  <h2 style="margin-top:0">Eugene Schwartz Awareness Levels &mdash; Applied to ScalingSOS ICP</h2>
+  <p style="color:var(--mid);margin-top:-8px;margin-bottom:28px">Each level describes where a buyer <em>actually is</em> in their mind. Messaging, entry offers, and progression offers must match the level, or the prospect bounces.</p>
+
+  <div class="alert alert-brand" style="margin-bottom:32px">
+    <strong>The core rule from Schwartz:</strong> If you pitch solution-aware copy to an unaware prospect, you lose them. If you pitch unaware copy to a product-aware prospect, you insult them. The awareness level determines your entry point.
+  </div>
+
+  <!-- LEVEL 1 — UNAWARE -->
+  <div style="border:2px solid #e8ecf4;border-radius:12px;margin-bottom:32px;overflow:hidden">
+    <div style="background:linear-gradient(90deg,#1a1f3c,#2d3561);padding:18px 24px;display:flex;align-items:center;gap:14px">
+      <span style="background:#ff6b35;color:#fff;font-weight:800;font-size:1.1rem;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</span>
+      <div>
+        <div style="color:#fff;font-weight:700;font-size:1.05rem">UNAWARE</div>
+        <div style="color:#a0a8cc;font-size:0.82rem;margin-top:2px">They feel something is wrong. They haven't named it yet.</div>
+      </div>
+    </div>
+    <div style="padding:24px">
+      <h4 style="color:var(--brand);margin-top:0;margin-bottom:8px">Where They Are</h4>
+      <p>Business is "fine" on paper but the owner feels exhausted. Revenue looks okay but margins are thin and there's no time left. They haven't articulated that their systems are broken &mdash; they just feel busy and stuck.</p>
+      <div class="quote">
+        <p>"A lot of business owners are not actually lazy or unproductive. They are just stuck doing low leverage work that feels busy but never compounds."</p>
+        <div class="meta-row">
+          <span class="src">r/Businessowners</span>
+          <span class="badge-freq">9x &mdash; owner bottleneck</span>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:10px">Messaging That Works at This Level</h4>
+      <p style="color:var(--mid);font-size:0.85rem;margin-bottom:14px">Don't sell solutions. Paint the picture of their life and let them self-identify. Use story-based content, day-in-the-life scenarios, and questions that make them think "wait, that's me."</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px">
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">"If you're making $800K but working 70-hour weeks and never see your kids &mdash; that's not success."</div>
+        </div>
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">"He can't quit. He is a slave to his own business. It's worse than a job."</div>
+        </div>
+      </div>
+      <div style="background:#fff8f0;border-left:4px solid var(--accent);padding:14px;border-radius:6px;margin-bottom:20px">
+        <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Content / Long-Form Body</div>
+        <div style="line-height:1.6">Day-in-the-life story: wake up to missed calls, return calls between jobs, lose leads to competitors by afternoon, do quotes at 10pm. Let the reader recognize themselves. End with "Sound familiar?" &mdash; no CTA to buy, just CTA to consume more content.</div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:14px">Offer Structure at Level 1</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+        <div style="border:1.5px solid #c7d7f8;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin-bottom:8px">DIY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">"5 Systems Every $1M Business Is Missing" (Free Guide)</div>
+          <p style="font-size:0.83rem;color:var(--mid);margin-bottom:10px">Lead magnet that names the 5 broken systems. They self-diagnose.</p>
+          <div style="font-size:0.78rem;background:#f0f4ff;padding:10px;border-radius:6px;line-height:1.5"><strong>Standalone value:</strong> Even if they never buy, they can audit their own business and find the leaks.</div>
+        </div>
+        <div style="border:1.5px solid #fcd9c0;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:8px">DWY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Free Business Audit Call (30 min)</div>
+          <p style="font-size:0.83rem;color:var(--mid);margin-bottom:10px">Walk through their business and identify where money is leaking. No pitch &mdash; just diagnosis.</p>
+          <div style="font-size:0.78rem;background:#fff8f0;padding:10px;border-radius:6px;line-height:1.5"><strong>Why it converts:</strong> They get value even if they don't buy. The diagnosis itself is worth $5K+ because it names the $30K-$80K they're losing.</div>
+        </div>
+        <div style="border:1.5px solid #d4edda;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#2d8b4e;margin-bottom:8px">DFY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Not offered at this level</div>
+          <p style="font-size:0.83rem;color:var(--mid);margin-bottom:10px">They don't know what's broken yet. Selling DFY here is premature.</p>
+          <div style="font-size:0.78rem;background:#f0fff4;padding:10px;border-radius:6px;line-height:1.5"><strong>What makes this DFY:</strong> N/A &mdash; move them to Level 2 first through content and diagnosis.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 2 — PROBLEM AWARE -->
+  <div style="border:2px solid #e8ecf4;border-radius:12px;margin-bottom:32px;overflow:hidden">
+    <div style="background:linear-gradient(90deg,#1a1f3c,#2d3561);padding:18px 24px;display:flex;align-items:center;gap:14px">
+      <span style="background:#e85d4a;color:#fff;font-weight:800;font-size:1.1rem;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</span>
+      <div>
+        <div style="color:#fff;font-weight:700;font-size:1.05rem">PROBLEM AWARE</div>
+        <div style="color:#a0a8cc;font-size:0.82rem;margin-top:2px">They've named it. But they don't know what the solution looks like.</div>
+      </div>
+    </div>
+    <div style="padding:24px">
+      <h4 style="color:var(--brand);margin-top:0;margin-bottom:8px">Where They Are</h4>
+      <p>They know leads are falling through cracks. They know they're the bottleneck. They know they've wasted money on agencies. But they think the answer is "more marketing" or "a better agency" &mdash; not "build internal systems first."</p>
+      <div class="quote">
+        <p>"I keep seeing this pattern where business owners jump straight to 'I need more marketing' when the actual problem is everything that happens after someone reaches out."</p>
+        <div class="meta-row">
+          <span class="src">r/smallbusiness</span>
+          <span class="badge-freq">10x &mdash; leads falling through</span>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:10px">Messaging That Works at This Level</h4>
+      <p style="color:var(--mid);font-size:0.85rem;margin-bottom:14px">Agitate the problem with specificity. Use their exact language. Show the cost of the problem &mdash; "you're losing $30K-$80K you don't know about." Then introduce the reframe: "it's not a marketing problem, it's a systems problem."</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">"You don't need more leads. You need to stop losing the ones you already have."</div>
+        </div>
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">"60-80% of your leads are never contacted again. That's not a marketing problem."</div>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:14px">Offer Structure at Level 2</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+        <div style="border:1.5px solid #c7d7f8;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin-bottom:8px">DIY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Follow-Up System Blueprint (Free)</div>
+          <p style="font-size:0.83rem;color:var(--mid)">Step-by-step guide to building a basic follow-up system. Google Sheet template + automated text template.</p>
+        </div>
+        <div style="border:1.5px solid #fcd9c0;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:8px">DWY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Revenue Leak Audit ($500)</div>
+          <p style="font-size:0.83rem;color:var(--mid)">2-hour deep dive: map every step from lead to close, find the $30K-$80K leak, deliver a fix-it roadmap with priorities.</p>
+        </div>
+        <div style="border:1.5px solid #d4edda;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#2d8b4e;margin-bottom:8px">DFY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Quick-Win System Build ($2,500)</div>
+          <p style="font-size:0.83rem;color:var(--mid)">Build their #1 priority system (usually follow-up automation) in 2 weeks. Scoped, fixed price, no retainer.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 3 — SOLUTION AWARE -->
+  <div style="border:2px solid #e8ecf4;border-radius:12px;margin-bottom:32px;overflow:hidden">
+    <div style="background:linear-gradient(90deg,#1a1f3c,#2d3561);padding:18px 24px;display:flex;align-items:center;gap:14px">
+      <span style="background:#1a6b3c;color:#fff;font-weight:800;font-size:1.1rem;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</span>
+      <div>
+        <div style="color:#fff;font-weight:700;font-size:1.05rem">SOLUTION AWARE</div>
+        <div style="color:#a0a8cc;font-size:0.82rem;margin-top:2px">They know solutions exist. Haven't found the right one or provider yet.</div>
+      </div>
+    </div>
+    <div style="padding:24px">
+      <h4 style="color:var(--brand);margin-top:0;margin-bottom:8px">Where They Are</h4>
+      <p>They know they need systems, CRM, automation, or an operations overhaul. They've tried GHL, Jobber, maybe hired a VA. They know the category of solution but haven't found someone they trust to build it right.</p>
+      <div class="quote">
+        <p>"I looked at a few CRMs, but for where I'm at they felt like more overhead than help."</p>
+        <div class="meta-row">
+          <span class="src">r/smallbusiness</span>
+          <span class="badge-freq">5x &mdash; CRM abandoned</span>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:10px">Messaging That Works at This Level</h4>
+      <p style="color:var(--mid);font-size:0.85rem;margin-bottom:14px">Show proof that you've built this before. Case studies, before/after numbers, live demos. Differentiate from the tools they abandoned ("it's not about the CRM &mdash; it's about the system around it"). Address their burned-vendor trust gap directly.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">"You've spent money on advice. You've never spent money on someone who builds."</div>
+        </div>
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">"Every business we work with was missing the same 5 systems. Here's what we built."</div>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:14px">Offer Structure at Level 3</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+        <div style="border:1.5px solid #c7d7f8;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin-bottom:8px">DIY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Case Study Library (Free)</div>
+          <p style="font-size:0.83rem;color:var(--mid)">13 real builds with before/after: Georgia PPG, Narrowgate, FFL, TLMR, Roofly. Let them see what "done" looks like.</p>
+        </div>
+        <div style="border:1.5px solid #fcd9c0;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:8px">DWY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Systems Roadmap + First Build ($5,000)</div>
+          <p style="font-size:0.83rem;color:var(--mid)">Full audit + priority roadmap + build the #1 system. Owner participates in design, we build and deploy.</p>
+        </div>
+        <div style="border:1.5px solid #d4edda;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#2d8b4e;margin-bottom:8px">DFY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Full Revenue Infrastructure Build ($10K-$25K)</div>
+          <p style="font-size:0.83rem;color:var(--mid)">All 5 core systems built, tested, and deployed in 60-90 days. CRM, follow-up, intake, attribution, automation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 4 — PRODUCT AWARE -->
+  <div style="border:2px solid #e8ecf4;border-radius:12px;margin-bottom:32px;overflow:hidden">
+    <div style="background:linear-gradient(90deg,#1a1f3c,#2d3561);padding:18px 24px;display:flex;align-items:center;gap:14px">
+      <span style="background:#1565c0;color:#fff;font-weight:800;font-size:1.1rem;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0">4</span>
+      <div>
+        <div style="color:#fff;font-weight:700;font-size:1.05rem">PRODUCT AWARE</div>
+        <div style="color:#a0a8cc;font-size:0.82rem;margin-top:2px">They know you or your type. Comparing you vs. alternatives.</div>
+      </div>
+    </div>
+    <div style="padding:24px">
+      <h4 style="color:var(--brand);margin-top:0;margin-bottom:8px">Where They Are</h4>
+      <p>They've seen ScalingSOS content, maybe downloaded a resource or attended a webinar. They're comparing: hire an in-house ops person ($60K+/yr), use another agency, or work with ScalingSOS. They need proof of ROI and risk reversal.</p>
+      <div class="quote">
+        <p>"They're all scammers. DIY is the only way. But DIY sucks to both learn and implement."</p>
+        <div class="meta-row">
+          <span class="src">r/smallbusiness</span>
+          <span class="badge-freq">12x &mdash; vendor distrust</span>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:10px">Messaging That Works at This Level</h4>
+      <p style="color:var(--mid);font-size:0.85rem;margin-bottom:14px">Comparison content, ROI calculators, and guarantee language. Show why ScalingSOS is different from the agency they fired. Fixed-scope, no retainer, you own everything we build. Address the "all scammers" belief directly.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">"We don't promise results. We show you what we built for 13 other businesses exactly like yours."</div>
+        </div>
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">"No retainer. No long contract. Fixed scope. You own everything we build."</div>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:14px">Offer Structure at Level 4</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+        <div style="border:1.5px solid #c7d7f8;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin-bottom:8px">DIY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">ROI Calculator + Comparison Guide</div>
+          <p style="font-size:0.83rem;color:var(--mid)">Interactive tool: input revenue, close rate, lead volume. Shows exactly what fixing follow-up is worth per month.</p>
+        </div>
+        <div style="border:1.5px solid #fcd9c0;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:8px">DWY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Strategy + Build Sprint ($7,500)</div>
+          <p style="font-size:0.83rem;color:var(--mid)">4-week sprint: full systems audit, custom roadmap, first 2 systems deployed and running. Weekly check-ins.</p>
+        </div>
+        <div style="border:1.5px solid #d4edda;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#2d8b4e;margin-bottom:8px">DFY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Full Revenue Machine ($15K-$30K)</div>
+          <p style="font-size:0.83rem;color:var(--mid)">Complete infrastructure: CRM, automation, follow-up, attribution, AI receptionist, onboarding flow. 90-day build + 30-day optimization.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 5 — MOST AWARE -->
+  <div style="border:2px solid #e8ecf4;border-radius:12px;margin-bottom:32px;overflow:hidden">
+    <div style="background:linear-gradient(90deg,#1a1f3c,#2d3561);padding:18px 24px;display:flex;align-items:center;gap:14px">
+      <span style="background:#6a1b9a;color:#fff;font-weight:800;font-size:1.1rem;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0">5</span>
+      <div>
+        <div style="color:#fff;font-weight:700;font-size:1.05rem">MOST AWARE</div>
+        <div style="color:#a0a8cc;font-size:0.82rem;margin-top:2px">They want it. Stop selling. Remove friction. Make it easy to say yes.</div>
+      </div>
+    </div>
+    <div style="padding:24px">
+      <h4 style="color:var(--brand);margin-top:0;margin-bottom:8px">Where They Are</h4>
+      <p>They've consumed the content, seen the case studies, maybe done the audit call. They want to work with ScalingSOS. The only remaining friction is logistics: when do we start, what's the first step, what exactly happens in week 1.</p>
+      <div class="quote">
+        <p>"I know what needs to be done and could execute about 85-90%, but I don't have the time to do it."</p>
+        <div class="meta-row">
+          <span class="src">r/smallbusiness</span>
+          <span class="badge-freq">5x &mdash; know but can't execute</span>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:10px">Messaging That Works at This Level</h4>
+      <p style="color:var(--mid);font-size:0.85rem;margin-bottom:14px">Stop selling. Remove friction. Show the exact first step, timeline, and what week 1 looks like. Make the next action trivially easy. Guarantee removes last objection.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px">
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Walk-Through Close</div>
+          <div style="font-weight:600;line-height:1.45">"Here's exactly what happens in week 1: we map your lead flow, build the first automation, and you see it working before you pay anything else."</div>
+        </div>
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Risk Reversal</div>
+          <div style="font-weight:600;line-height:1.45">"If the first system we build doesn't save you at least 10 hours/month within 30 days, we refund the build fee. You keep everything we built."</div>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:14px">Offer Structure at Level 5</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+        <div style="border:1.5px solid #c7d7f8;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin-bottom:8px">DIY &mdash; Entry</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Quick-Start Package ($2,500)</div>
+          <p style="font-size:0.83rem;color:var(--mid)">Audit + 1 core system built. Gets them a win in 2 weeks so they can see the approach works before committing to more.</p>
+        </div>
+        <div style="border:1.5px solid #fcd9c0;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:8px">DWY &mdash; Accelerated</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Full Build Sprint ($10K-$15K)</div>
+          <p style="font-size:0.83rem;color:var(--mid)">All 5 systems in 60 days. Weekly syncs, owner participates in decisions, we build and deploy everything.</p>
+        </div>
+        <div style="border:1.5px solid #d4edda;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#2d8b4e;margin-bottom:8px">DFY &mdash; Full Engagement</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Revenue Machine + Ongoing ($25K + $2K/mo)</div>
+          <p style="font-size:0.83rem;color:var(--mid)">Complete build + monthly optimization, new automations, creative refresh, attribution reporting. The "click button" outcome.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER PROGRESSION LADDER -->
+  <div style="background:var(--brand);border-radius:12px;padding:28px;color:#fff;margin-bottom:32px">
+    <h3 style="margin-top:0;color:#fff">The Offer Progression Ladder</h3>
+    <p style="color:#a0a8cc;margin-bottom:20px">Each level's offer feeds the next. No level is a dead end &mdash; each delivers real value AND makes the next step obvious.</p>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px">
+      <div style="text-align:center;padding:14px;background:rgba(255,255,255,0.08);border-radius:8px">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:.06em;color:#a0a8cc;margin-bottom:6px">Level 1</div>
+        <div style="font-weight:700;font-size:0.82rem;margin-bottom:4px">Free Guide</div>
+        <div style="font-size:0.72rem;color:#a0a8cc">Self-diagnosis</div>
+      </div>
+      <div style="text-align:center;padding:14px;background:rgba(255,255,255,0.08);border-radius:8px">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:.06em;color:#a0a8cc;margin-bottom:6px">Level 2</div>
+        <div style="font-weight:700;font-size:0.82rem;margin-bottom:4px">Audit ($500)</div>
+        <div style="font-size:0.72rem;color:#a0a8cc">Find the leak</div>
+      </div>
+      <div style="text-align:center;padding:14px;background:rgba(255,255,255,0.08);border-radius:8px">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:.06em;color:#a0a8cc;margin-bottom:6px">Level 3</div>
+        <div style="font-weight:700;font-size:0.82rem;margin-bottom:4px">Roadmap + Build ($5K)</div>
+        <div style="font-size:0.72rem;color:#a0a8cc">First system live</div>
+      </div>
+      <div style="text-align:center;padding:14px;background:rgba(255,255,255,0.08);border-radius:8px">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:.06em;color:#a0a8cc;margin-bottom:6px">Level 4</div>
+        <div style="font-weight:700;font-size:0.82rem;margin-bottom:4px">Full Build ($15K+)</div>
+        <div style="font-size:0.72rem;color:#a0a8cc">Revenue machine</div>
+      </div>
+      <div style="text-align:center;padding:14px;background:rgba(255,255,255,0.08);border-radius:8px">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:.06em;color:#a0a8cc;margin-bottom:6px">Level 5</div>
+        <div style="font-weight:700;font-size:0.82rem;margin-bottom:4px">Ongoing ($2K/mo)</div>
+        <div style="font-size:0.72rem;color:#a0a8cc">Click-button business</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-brand">
+    <strong>Key principle from Schwartz:</strong> The awareness level determines the entry point &mdash; not the budget, not the business size, not the sophistication. Map the conversation to where they are, not where you wish they were.
+  </div>
+
+</div>
+</div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  if (btn) btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
