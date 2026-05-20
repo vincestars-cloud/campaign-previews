@@ -46,35 +46,19 @@
     font-size: 18px;
   }
 
-  .logo-text {
-    font-size: 17px;
-    font-weight: 600;
-    color: #f0f0f0;
-    letter-spacing: -0.3px;
-  }
+  .logo-text { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
 
-  h1 {
-    font-size: 26px;
-    font-weight: 700;
-    letter-spacing: -0.5px;
-    margin-bottom: 6px;
-    line-height: 1.2;
-  }
+  h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 6px; }
 
-  .subtitle {
-    color: #888;
-    font-size: 14px;
-    margin-bottom: 32px;
-    line-height: 1.5;
-  }
+  .subtitle { color: #888; font-size: 14px; margin-bottom: 32px; line-height: 1.5; }
 
   label {
     display: block;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
-    color: #aaa;
-    margin-bottom: 8px;
-    letter-spacing: 0.3px;
+    color: #888;
+    margin-bottom: 7px;
+    letter-spacing: 0.4px;
     text-transform: uppercase;
   }
 
@@ -91,30 +75,17 @@
     font-family: inherit;
   }
 
-  input[type="url"]:focus, input[type="number"]:focus {
-    border-color: #ff4444;
-  }
-
-  input[type="url"]::placeholder {
-    color: #444;
-  }
-
-  .field-group {
-    margin-bottom: 20px;
-  }
+  input[type="url"]:focus, input[type="number"]:focus { border-color: #ff4444; }
+  input[type="url"]::placeholder { color: #404040; }
 
   .field-row {
     display: grid;
-    grid-template-columns: 1fr 120px;
+    grid-template-columns: 1fr 110px;
     gap: 12px;
     margin-bottom: 20px;
   }
 
-  .hint {
-    font-size: 12px;
-    color: #555;
-    margin-top: 6px;
-  }
+  .hint { font-size: 11px; color: #555; margin-top: 5px; }
 
   .btn-submit {
     width: 100%;
@@ -128,219 +99,187 @@
     cursor: pointer;
     transition: background 0.2s, transform 0.1s;
     font-family: inherit;
-    letter-spacing: 0.2px;
   }
 
   .btn-submit:hover:not(:disabled) { background: #e01e1e; }
   .btn-submit:active:not(:disabled) { transform: scale(0.99); }
-  .btn-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+  .btn-submit:disabled { opacity: 0.45; cursor: not-allowed; }
 
   /* Status panel */
-  #status-panel {
-    display: none;
-    margin-top: 28px;
-  }
+  #status-panel { display: none; margin-top: 28px; }
 
-  .status-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 14px;
-  }
+  .status-header { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
 
   .status-dot {
-    width: 10px;
-    height: 10px;
+    width: 9px; height: 9px;
     border-radius: 50%;
     background: #ff9900;
     flex-shrink: 0;
   }
-
   .status-dot.running { animation: pulse 1.2s ease-in-out infinite; }
   .status-dot.success { background: #22cc66; animation: none; }
   .status-dot.error   { background: #ff4444; animation: none; }
 
   @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.8); }
+    50%       { opacity: 0.4; transform: scale(0.75); }
   }
 
-  .status-label {
-    font-size: 14px;
-    font-weight: 500;
-    color: #ccc;
-  }
+  .status-label { font-size: 14px; font-weight: 500; color: #ccc; }
 
   /* Progress bar */
   .progress-track {
-    background: #2a2a2a;
+    background: #222;
     border-radius: 99px;
-    height: 6px;
+    height: 5px;
     overflow: hidden;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .progress-fill {
     height: 100%;
     border-radius: 99px;
-    background: linear-gradient(90deg, #ff2222, #ff6666);
-    transition: width 1s linear;
+    background: linear-gradient(90deg, #cc1111, #ff5555);
     width: 0%;
+    transition: width 0.8s linear;
+    position: relative;
   }
 
-  .progress-fill.indeterminate {
-    width: 40% !important;
-    animation: slide 1.5s ease-in-out infinite;
-    background: linear-gradient(90deg, transparent, #ff4444, transparent);
+  .progress-fill::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
   }
 
-  @keyframes slide {
-    0%   { transform: translateX(-200%); }
-    100% { transform: translateX(350%); }
+  .progress-fill.done::after { display: none; }
+
+  @keyframes shimmer {
+    0%   { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
   }
 
-  .progress-text {
-    font-size: 12px;
-    color: #666;
-    text-align: right;
+  .progress-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
   }
+  .elapsed { font-size: 12px; color: #555; }
+  .progress-pct { font-size: 12px; color: #555; }
 
   /* Steps */
-  .steps {
-    margin-top: 18px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
+  .steps { display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px; }
 
   .step {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: 13px;
-    color: #555;
+    color: #444;
     transition: color 0.3s;
   }
-
-  .step.active { color: #ccc; }
+  .step.active { color: #bbb; }
   .step.done   { color: #22cc66; }
-  .step.failed { color: #ff4444; }
+  .step.failed { color: #ff5555; }
 
   .step-icon {
-    width: 20px;
-    height: 20px;
+    width: 20px; height: 20px;
     border-radius: 50%;
-    border: 1.5px solid #333;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 10px;
-    flex-shrink: 0;
+    border: 1.5px solid #2a2a2a;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; flex-shrink: 0;
     transition: all 0.3s;
   }
-
   .step.active .step-icon {
     border-color: #ff4444;
-    background: rgba(255,68,68,0.1);
-    animation: spin 1.5s linear infinite;
+    background: rgba(255,68,68,0.08);
+    animation: rotate 2s linear infinite;
   }
-
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-
   .step.done .step-icon {
     border-color: #22cc66;
     background: rgba(34,204,102,0.1);
     color: #22cc66;
   }
+  .step.failed .step-icon { border-color: #ff5555; background: rgba(255,85,85,0.1); color: #ff5555; }
 
-  .step.failed .step-icon {
-    border-color: #ff4444;
-    background: rgba(255,68,68,0.1);
-    color: #ff4444;
-  }
+  @keyframes rotate { to { transform: rotate(360deg); } }
 
-  /* Result box */
+  /* Result */
   .result-box {
+    background: #0f1f0f;
+    border: 1px solid #1e3a1e;
+    border-radius: 12px;
+    padding: 18px;
     display: none;
-    background: #1a2a1a;
-    border: 1px solid #2a3e2a;
-    border-radius: 10px;
-    padding: 16px;
-    margin-top: 16px;
   }
 
   .result-box.error-box {
-    background: #2a1a1a;
-    border-color: #3e2a2a;
+    background: #1f0f0f;
+    border-color: #3a1e1e;
   }
 
   .result-title {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 600;
     color: #22cc66;
-    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
   }
+  .result-box.error-box .result-title { color: #ff5555; }
 
-  .result-box.error-box .result-title { color: #ff4444; }
+  .result-filename {
+    font-size: 13px;
+    color: #888;
+    margin-bottom: 12px;
+    word-break: break-all;
+    font-family: 'SF Mono', 'Consolas', monospace;
+    background: #0a1a0a;
+    border-radius: 6px;
+    padding: 8px 10px;
+    border: 1px solid #1a2e1a;
+  }
 
   .result-link {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: #0d1a0d;
-    border: 1px solid #2a3e2a;
+    background: #1a3a1a;
+    border: 1px solid #2a4a2a;
     border-radius: 8px;
-    padding: 10px 12px;
+    padding: 11px 14px;
     text-decoration: none;
-    color: #55cc77;
+    color: #44dd88;
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
     transition: background 0.2s;
-    word-break: break-all;
   }
+  .result-link:hover { background: #1f4a1f; }
 
-  .result-link:hover { background: #142214; }
-
-  .result-link svg { flex-shrink: 0; }
-
-  .error-msg {
-    font-size: 13px;
-    color: #cc6666;
-    line-height: 1.5;
-  }
-
-  .divider {
-    border: none;
-    border-top: 1px solid #222;
-    margin: 28px 0;
-  }
+  .error-msg { font-size: 13px; color: #cc6666; line-height: 1.6; }
 
   .btn-reset {
     background: none;
-    border: 1px solid #2e2e2e;
-    color: #888;
+    border: 1px solid #2a2a2a;
+    color: #777;
     border-radius: 8px;
     font-size: 13px;
     padding: 8px 16px;
     cursor: pointer;
     font-family: inherit;
     transition: all 0.2s;
-    margin-top: 14px;
+    margin-top: 16px;
+    display: block;
   }
-
   .btn-reset:hover { border-color: #444; color: #ccc; }
 
-  .elapsed {
-    font-size: 12px;
-    color: #555;
-    margin-top: 4px;
-  }
+  .poll-note { font-size: 11px; color: #444; margin-top: 10px; text-align: center; }
 </style>
 </head>
 <body>
-
 <div class="card">
   <div class="logo">
     <div class="logo-icon">&#9654;</div>
@@ -348,7 +287,7 @@
   </div>
 
   <h1>Extract Insights</h1>
-  <p class="subtitle">Paste a YouTube video URL or channel URL. Transcripts, frameworks, hooks, and quotes are extracted via GPT-4o and saved to Google Drive.</p>
+  <p class="subtitle">Paste a video or channel URL. GPT-4o extracts transcripts, frameworks, quotes, and hooks — saved as a markdown file to Google Drive.</p>
 
   <div id="form-section">
     <div class="field-row">
@@ -361,33 +300,30 @@
       <div>
         <label for="limit-input">Limit</label>
         <input type="number" id="limit-input" value="10" min="1" max="50" />
-        <div class="hint">Videos (channel only)</div>
+        <div class="hint">Videos (channels)</div>
       </div>
     </div>
-
-    <button class="btn-submit" id="submit-btn" onclick="submitJob()">
-      Start Extraction
-    </button>
+    <button class="btn-submit" id="submit-btn" onclick="submitJob()">Start Extraction</button>
   </div>
 
   <div id="status-panel">
     <div class="status-header">
       <div class="status-dot running" id="status-dot"></div>
-      <div class="status-label" id="status-label">Submitting job...</div>
+      <div class="status-label" id="status-label">Submitting...</div>
     </div>
 
     <div class="progress-track">
-      <div class="progress-fill indeterminate" id="progress-fill"></div>
+      <div class="progress-fill" id="progress-fill" style="width:2%"></div>
     </div>
-    <div style="display:flex; justify-content:space-between; align-items:center;">
-      <div class="elapsed" id="elapsed-text"></div>
-      <div class="progress-text" id="progress-pct"></div>
+    <div class="progress-meta">
+      <div class="elapsed" id="elapsed-text">0s</div>
+      <div class="progress-pct" id="progress-pct"></div>
     </div>
 
     <div class="steps" id="steps-list">
       <div class="step" id="step-fetch">
         <div class="step-icon">1</div>
-        <span>Fetching video metadata from YouTube</span>
+        <span>Fetching video metadata</span>
       </div>
       <div class="step" id="step-transcript">
         <div class="step-icon">2</div>
@@ -405,12 +341,13 @@
 
     <div class="result-box" id="result-box">
       <div class="result-title">Extraction Complete</div>
+      <div class="result-filename" id="result-filename"></div>
       <a class="result-link" id="result-link" href="#" target="_blank" rel="noopener">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
-          <polyline points="14 2 14 8 20 8"/>
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+          <polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/>
         </svg>
-        <span id="result-filename">Open in Google Drive</span>
+        Open file in Google Drive
       </a>
     </div>
 
@@ -420,189 +357,214 @@
     </div>
 
     <button class="btn-reset" onclick="resetForm()">Start New Extraction</button>
+    <div class="poll-note" id="poll-note">Checking for completion every 5 seconds...</div>
   </div>
 </div>
 
 <script>
-const WEBHOOK = 'https://n8n.americanlifeteam.com/webhook/youtube-intelligence';
-const DRIVE_FOLDER = 'https://drive.google.com/drive/folders/1CQcfZl_yudXIRezfv0gNT-PEGRohAHfn';
+const WEBHOOK    = 'https://n8n.americanlifeteam.com/webhook/youtube-intelligence';
+const STATUS_URL = 'https://raw.githubusercontent.com/vincestars-cloud/campaign-previews/main/youtube-intel/status.json';
+const FOLDER_URL = 'https://drive.google.com/drive/folders/1CQcfZl_yudXIRezfv0gNT-PEGRohAHfn';
 
-// Step timing: [start_pct, end_pct, start_sec, duration_sec]
-// For single video: ~60s. For channel: ~120s. We estimate 120s for safety.
-const STEPS = [
-  { id: 'step-fetch',      label: 'Fetching video metadata',       start: 0,  dur: 30  },
-  { id: 'step-transcript', label: 'Extracting transcript',          start: 30, dur: 30  },
-  { id: 'step-ai',         label: 'AI analysis with GPT-4o',        start: 60, dur: 40  },
-  { id: 'step-save',       label: 'Saving to Google Drive',         start: 100, dur: 15 }
-];
+// Step trigger points (% of estimated progress)
+const STEP_IDS    = ['step-fetch', 'step-transcript', 'step-ai', 'step-save'];
+const STEP_AT_PCT = [5, 30, 60, 88];
 
-let startTime, elapsedTimer, progressTimer, totalDuration;
+let startTime, elapsedTimer, progressTimer, pollTimer;
+let jobSubmittedAt; // ISO timestamp just before POST
 
 function isChannelUrl(url) {
   return !(/youtube\.com\/watch\?v=|youtu\.be\//.test(url));
 }
 
 async function submitJob() {
-  const url = document.getElementById('url-input').value.trim();
+  const url   = document.getElementById('url-input').value.trim();
   const limit = parseInt(document.getElementById('limit-input').value) || 10;
+  if (!url) { document.getElementById('url-input').focus(); return; }
 
-  if (!url) {
-    document.getElementById('url-input').focus();
-    return;
-  }
-
-  // Determine expected duration
-  const isChannel = isChannelUrl(url);
-  totalDuration = isChannel ? Math.max(90, limit * 12) : 70;
-
-  // Switch UI
   document.getElementById('form-section').style.display = 'none';
-  const panel = document.getElementById('status-panel');
-  panel.style.display = 'block';
-
+  document.getElementById('status-panel').style.display = 'block';
+  document.getElementById('submit-btn').disabled = true;
   setStatus('running', 'Submitting job...');
 
-  let response;
+  jobSubmittedAt = new Date().toISOString();
+
+  let resp;
   try {
-    response = await fetch(WEBHOOK, {
+    resp = await fetch(WEBHOOK, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ url, limit })
     });
   } catch (err) {
-    showError('Network error: ' + err.message + '. Check your connection and try again.');
+    showError('Network error: ' + err.message);
     return;
   }
 
-  if (!response.ok) {
-    showError('Webhook returned HTTP ' + response.status + '. Check that the n8n workflow is active.');
+  if (!resp.ok) {
+    showError('Webhook error HTTP ' + resp.status + ' — make sure the n8n workflow is active.');
     return;
   }
 
-  const data = await response.json();
+  const data = await resp.json();
   if (!data.message) {
     showError('Unexpected response: ' + JSON.stringify(data));
     return;
   }
 
-  // Job accepted — start progress simulation
-  startTime = Date.now();
-  setStatus('running', 'Processing' + (isChannel ? ' channel (' + limit + ' videos)' : ' video') + '...');
+  const isChannel = isChannelUrl(url);
+  const estDur    = isChannel ? Math.max(90, limit * 15) : 75;
 
-  startProgress();
+  setStatus('running', 'Processing' + (isChannel ? ' channel (' + limit + ' videos)' : ' video') + '...');
+  startTime = Date.now();
+
   startElapsed();
+  startProgressAnim(estDur);
+  startPolling();
 }
 
-function startProgress() {
-  const fill = document.getElementById('progress-fill');
-  fill.classList.remove('indeterminate');
-  fill.style.width = '2%';
+// ── Elapsed timer ──────────────────────────────────────────
+function startElapsed() {
+  elapsedTimer = setInterval(() => {
+    const s = Math.round((Date.now() - startTime) / 1000);
+    document.getElementById('elapsed-text').textContent = s + 's';
+  }, 1000);
+}
 
-  let pct = 2;
-  const stepsOrder = ['step-fetch', 'step-transcript', 'step-ai', 'step-save'];
+// ── Animated progress (purely visual estimate) ─────────────
+function startProgressAnim(estDur) {
+  const fill = document.getElementById('progress-fill');
 
   progressTimer = setInterval(() => {
     const elapsed = (Date.now() - startTime) / 1000;
-    const rawPct = Math.min(98, (elapsed / totalDuration) * 100);
-    pct = rawPct;
+    // Ease towards 95% but never reach it until poll confirms done
+    const raw = (elapsed / estDur) * 100;
+    const pct = Math.min(95, raw < 80 ? raw : 80 + (raw - 80) * 0.3);
 
     fill.style.width = pct.toFixed(1) + '%';
     document.getElementById('progress-pct').textContent = Math.round(pct) + '%';
 
-    // Activate steps based on progress
-    const stepPcts = [5, 30, 60, 88];
-    stepsOrder.forEach((sid, i) => {
+    // Activate step indicators
+    STEP_IDS.forEach((sid, i) => {
       const el = document.getElementById(sid);
-      if (pct >= stepPcts[i] && pct < (stepPcts[i + 1] || 100)) {
-        // Mark previous steps done
-        stepsOrder.slice(0, i).forEach(prev => {
-          document.getElementById(prev).className = 'step done';
-          document.getElementById(prev).querySelector('.step-icon').textContent = checkmark();
-        });
-        el.className = 'step active';
+      if (pct >= STEP_AT_PCT[i]) {
+        if (pct < (STEP_AT_PCT[i + 1] || 100)) {
+          // Mark previous as done
+          STEP_IDS.slice(0, i).forEach(prev => markStep(prev, 'done'));
+          markStep(sid, 'active');
+        }
       }
     });
-
-    // If we've hit 98% and still no result, just sit at 98%
-    if (elapsed >= totalDuration * 1.1) {
-      setStatus('running', 'Still processing — almost done...');
-    }
-  }, 800);
+  }, 700);
 }
 
-function checkmark() { return '\u2713'; }
-
-function startElapsed() {
-  elapsedTimer = setInterval(() => {
-    const sec = Math.round((Date.now() - startTime) / 1000);
-    document.getElementById('elapsed-text').textContent = sec + 's elapsed';
-  }, 1000);
-
-  // After estimated duration, show Drive link
-  const checkAfter = totalDuration * 1000 + 5000;
-  setTimeout(() => showComplete(), checkAfter);
+function markStep(sid, state) {
+  const el = document.getElementById(sid);
+  const icon = el.querySelector('.step-icon');
+  if (state === 'done') {
+    el.className = 'step done';
+    icon.textContent = '\u2713';
+  } else if (state === 'active') {
+    el.className = 'step active';
+    icon.textContent = '\u25CB';
+  } else if (state === 'failed') {
+    el.className = 'step failed';
+    icon.textContent = '\u2717';
+  }
 }
 
-function showComplete() {
+// ── Polling ─────────────────────────────────────────────────
+function startPolling() {
+  // Poll immediately after 5s, then every 5s
+  pollTimer = setInterval(checkStatus, 5000);
+}
+
+async function checkStatus() {
+  let data;
+  try {
+    // Cache-bust with timestamp
+    const res = await fetch(STATUS_URL + '?t=' + Date.now(), { cache: 'no-store' });
+    if (!res.ok) return;
+    data = await res.json();
+  } catch (e) {
+    return; // Network hiccup — keep polling
+  }
+
+  if (!data || !data.completedAt) return;
+
+  // Only trigger if this completion is AFTER our job submission
+  if (data.completedAt <= jobSubmittedAt) return;
+
+  if (data.status === 'complete') {
+    showComplete(data.filename, data.driveUrl || FOLDER_URL);
+  } else if (data.status === 'error' && data.error) {
+    showError('n8n error: ' + data.error);
+  }
+}
+
+// ── Completion ───────────────────────────────────────────────
+function showComplete(filename, driveUrl) {
   clearInterval(progressTimer);
   clearInterval(elapsedTimer);
+  clearInterval(pollTimer);
 
-  // Mark all steps done
-  ['step-fetch', 'step-transcript', 'step-ai', 'step-save'].forEach(sid => {
-    const el = document.getElementById(sid);
-    el.className = 'step done';
-    el.querySelector('.step-icon').textContent = checkmark();
-  });
+  STEP_IDS.forEach(sid => markStep(sid, 'done'));
 
-  document.getElementById('progress-fill').style.width = '100%';
+  const fill = document.getElementById('progress-fill');
+  fill.style.width = '100%';
+  fill.classList.add('done');
   document.getElementById('progress-pct').textContent = '100%';
+
+  const elapsed = Math.round((Date.now() - startTime) / 1000);
+  document.getElementById('elapsed-text').textContent = elapsed + 's total';
+  document.getElementById('poll-note').style.display = 'none';
 
   setStatus('success', 'Complete');
 
-  // Show result box with Drive folder link
   const box = document.getElementById('result-box');
-  const link = document.getElementById('result-link');
-  const fname = document.getElementById('result-filename');
+  document.getElementById('result-filename').textContent = filename || 'File saved to Drive';
+  document.getElementById('result-link').href = driveUrl;
   box.style.display = 'block';
-  link.href = DRIVE_FOLDER;
-  fname.textContent = 'Open Google Drive folder to find your file';
-
-  document.getElementById('elapsed-text').textContent =
-    Math.round((Date.now() - startTime) / 1000) + 's total';
 }
 
+// ── Error ─────────────────────────────────────────────────────
 function showError(msg) {
   clearInterval(progressTimer);
   clearInterval(elapsedTimer);
+  clearInterval(pollTimer);
 
   setStatus('error', 'Failed');
-
-  document.getElementById('progress-fill').classList.remove('indeterminate');
-  document.getElementById('progress-fill').style.background = '#cc3333';
+  document.getElementById('progress-fill').style.background = '#882222';
+  document.getElementById('poll-note').style.display = 'none';
 
   document.getElementById('error-box').style.display = 'block';
   document.getElementById('error-msg').textContent = msg;
 }
 
 function setStatus(state, label) {
-  const dot = document.getElementById('status-dot');
-  dot.className = 'status-dot ' + state;
+  document.getElementById('status-dot').className = 'status-dot ' + state;
   document.getElementById('status-label').textContent = label;
 }
 
+// ── Reset ─────────────────────────────────────────────────────
 function resetForm() {
   clearInterval(progressTimer);
   clearInterval(elapsedTimer);
+  clearInterval(pollTimer);
 
   document.getElementById('status-panel').style.display = 'none';
   document.getElementById('result-box').style.display = 'none';
   document.getElementById('error-box').style.display = 'none';
   document.getElementById('form-section').style.display = 'block';
-  document.getElementById('progress-fill').style.width = '0%';
+  document.getElementById('submit-btn').disabled = false;
+  document.getElementById('progress-fill').style.width = '2%';
+  document.getElementById('progress-fill').classList.remove('done');
+  document.getElementById('progress-fill').style.background = '';
   document.getElementById('progress-pct').textContent = '';
-  document.getElementById('elapsed-text').textContent = '';
+  document.getElementById('elapsed-text').textContent = '0s';
+  document.getElementById('poll-note').style.display = 'block';
 
-  ['step-fetch', 'step-transcript', 'step-ai', 'step-save'].forEach((sid, i) => {
+  STEP_IDS.forEach((sid, i) => {
     const el = document.getElementById(sid);
     el.className = 'step';
     el.querySelector('.step-icon').textContent = i + 1;
