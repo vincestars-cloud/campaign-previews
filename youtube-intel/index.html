@@ -363,7 +363,8 @@
 
 <script>
 const WEBHOOK    = 'https://n8n.americanlifeteam.com/webhook/youtube-intelligence';
-const STATUS_URL = 'https://raw.githubusercontent.com/vincestars-cloud/campaign-previews/main/youtube-intel/status.json';
+// Use Contents API (not raw.githubusercontent.com) — Contents API bypasses CDN cache, always fresh
+const STATUS_URL = 'https://api.github.com/repos/vincestars-cloud/campaign-previews/contents/youtube-intel/status.json';
 const FOLDER_URL = 'https://drive.google.com/drive/folders/1CQcfZl_yudXIRezfv0gNT-PEGRohAHfn';
 
 // Step trigger points (% of estimated progress)
@@ -475,17 +476,24 @@ function markStep(sid, state) {
 
 // ── Polling ─────────────────────────────────────────────────
 function startPolling() {
-  // Poll immediately after 5s, then every 5s
-  pollTimer = setInterval(checkStatus, 5000);
+  // Poll every 3s — Contents API is not cached so we can poll aggressively
+  pollTimer = setInterval(checkStatus, 3000);
 }
 
 async function checkStatus() {
   let data;
   try {
-    // Cache-bust with timestamp
-    const res = await fetch(STATUS_URL + '?t=' + Date.now(), { cache: 'no-store' });
+    // GitHub Contents API — no CDN cache, always returns the live file
+    // Must add cache-busting header to prevent browser caching the API response
+    const res = await fetch(STATUS_URL, {
+      cache: 'no-store',
+      headers: { 'Accept': 'application/vnd.github.v3+json' }
+    });
     if (!res.ok) return;
-    data = await res.json();
+    const meta = await res.json();
+    // Contents API returns file content as base64
+    const decoded = atob(meta.content.replace(/\n/g, ''));
+    data = JSON.parse(decoded);
   } catch (e) {
     return; // Network hiccup — keep polling
   }
