@@ -21,15 +21,15 @@ svg path,svg line,svg circle,svg rect,svg polyline,svg polygon,svg ellipse{fill:
 .wrap{max-width:var(--mw);margin:0 auto;padding:0 var(--pad)}
 
 /* PREVIEW BAR — scrolls away, does not stay sticky */
-#preview-bar{background:#EA580C;color:#fff;text-align:center;padding:9px 16px;font-size:12px;font-weight:700;letter-spacing:.02em;line-height:1.4}
+#preview-bar{background:#EA580C;color:#fff;text-align:center;padding:9px 16px;font-size:12px;font-weight:700;letter-spacing:.02em;line-height:1.4;position:sticky;top:0;z-index:202}
 #preview-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px}
 
 /* URGENCY BAR */
-#urg{background:var(--ink);color:rgba(255,255,255,.75);text-align:center;padding:9px 16px;font-size:12px;font-weight:600;letter-spacing:.04em;position:sticky;top:0;z-index:201}
+#urg{background:var(--ink);color:rgba(255,255,255,.75);text-align:center;padding:9px 16px;font-size:12px;font-weight:600;letter-spacing:.04em;position:relative;z-index:1}
 #urg strong{color:#93C5FD}
 
 /* NAV */
-#nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:36px;z-index:200;transition:box-shadow .25s}
+#nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:36px;z-index:200;transition:box-shadow .25s}/* top overridden by JS to match preview-bar height */
 #nav.on{box-shadow:0 1px 20px rgba(0,0,0,.09)}
 .nav-i{height:62px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:nowrap}
 .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
@@ -51,7 +51,7 @@ svg path,svg line,svg circle,svg rect,svg polyline,svg polygon,svg ellipse{fill:
 /* ───── HERO — FULL-BLEED PHOTO (like index.html) ───── */
 .hero{
   position:relative;
-  min-height:calc(100vh - 36px - 62px);
+  min-height:calc(100vh - 36px - 36px - 62px);
   background-image:url('https://images.unsplash.com/photo-1562524742-6c9ba4b59eba?auto=format&fit=crop&w=1600&q=80');
   background-size:cover;background-position:center right;background-color:#0D1521;
   display:flex;align-items:center;
@@ -169,7 +169,7 @@ svg path,svg line,svg circle,svg rect,svg polyline,svg polygon,svg ellipse{fill:
 @media(max-width:380px){.county-grid{grid-template-columns:1fr}}
 
 /* BOOKING FORM */
-.booking{padding:72px 0;background:#fff;scroll-margin-top:98px}
+.booking{padding:72px 0;background:#fff;scroll-margin-top:108px}
 .booking-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .booking-copy h2{font-size:clamp(24px,3.5vw,38px);font-weight:800;color:var(--ink);margin-bottom:12px;line-height:1.2}
 .booking-copy p{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:24px}
@@ -647,6 +647,15 @@ document.querySelectorAll('.fade').forEach(f=>fIO.observe(f));
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('on',scrollY>10));
 
+// Keep nav pinned directly beneath the sticky orange preview bar (handles mobile wrap)
+function syncNavTop(){
+  const pv=document.getElementById('preview-bar');
+  if(pv&&nav)nav.style.top=pv.offsetHeight+'px';
+}
+syncNavTop();
+window.addEventListener('resize',syncNavTop);
+window.addEventListener('load',syncNavTop);
+
 // FAQ
 document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');const open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0';});if(!open){item.classList.add('open');item.querySelector('.faq-a').style.maxHeight=item.querySelector('.faq-a').scrollHeight+'px';}});});
 
@@ -710,9 +719,9 @@ document.querySelectorAll('.book-link').forEach(link=>{
   link.addEventListener('click',e=>{
     e.preventDefault();
     const sec=document.getElementById('booking');
-    const urgH=document.getElementById('urg').offsetHeight;
+    const prevH=document.getElementById('preview-bar').offsetHeight;
     const navH=nav.offsetHeight;
-    window.scrollTo({top:sec.getBoundingClientRect().top+scrollY-urgH-navH-16,behavior:'smooth'});
+    window.scrollTo({top:sec.getBoundingClientRect().top+scrollY-prevH-navH-16,behavior:'smooth'});
     setTimeout(()=>{
       const fw=document.getElementById('formWrap');
       fw.classList.add('glow');
