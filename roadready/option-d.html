@@ -20,12 +20,16 @@ svg path,svg line,svg circle,svg rect,svg polyline,svg polygon,svg ellipse{fill:
 }
 .wrap{max-width:var(--mw);margin:0 auto;padding:0 var(--pad)}
 
+/* PREVIEW BAR */
+#preview-bar{background:#EA580C;color:#fff;text-align:center;padding:9px 16px;font-size:12px;font-weight:700;letter-spacing:.02em;position:sticky;top:0;z-index:202;line-height:1.4}
+#preview-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+
 /* URGENCY BAR */
-#urg{background:var(--ink);color:rgba(255,255,255,.7);text-align:center;padding:9px 16px;font-size:12px;font-weight:500;letter-spacing:.06em;position:sticky;top:0;z-index:201}
+#urg{background:var(--ink);color:rgba(255,255,255,.7);text-align:center;padding:9px 16px;font-size:12px;font-weight:500;letter-spacing:.06em;position:sticky;top:36px;z-index:201}
 #urg strong{color:var(--gold-l);font-weight:600}
 
 /* NAV */
-#nav{background:var(--cream);border-bottom:1px solid var(--border);position:sticky;top:36px;z-index:200;transition:box-shadow .3s}
+#nav{background:var(--cream);border-bottom:1px solid var(--border);position:sticky;top:72px;z-index:200;transition:box-shadow .3s}
 #nav.on{box-shadow:0 2px 20px rgba(0,0,0,.06)}
 .nav-i{height:66px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:nowrap}
 .nav-logo{display:flex;align-items:center;gap:12px;flex-shrink:0}
@@ -152,7 +156,7 @@ svg path,svg line,svg circle,svg rect,svg polyline,svg polygon,svg ellipse{fill:
 @media(max-width:380px){.county-grid{grid-template-columns:1fr}}
 
 /* BOOKING */
-.booking{padding:72px 0;background:var(--cream-d);scroll-margin-top:102px}
+.booking{padding:72px 0;background:var(--cream-d);scroll-margin-top:138px}
 .booking-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .booking-copy h2{font-family:'DM Serif Display',serif;font-size:clamp(24px,3.5vw,40px);color:var(--ink);margin-bottom:12px;line-height:1.2}
 .booking-copy h2 em{font-style:italic;color:var(--gold)}
@@ -253,6 +257,7 @@ footer{background:#141210;padding:44px 0 26px;color:rgba(255,255,255,.35)}
 </head>
 <body>
 
+<div id="preview-bar">To Launch to Your Site &mdash; Call or Text <a href="tel:7867676791">(786) 767-6791</a> &mdash; There&rsquo;s No Monthly Fees for the Site</div>
 <div id="urg">Same-day availability &mdash; Same-Day Car Repair &middot; <span id="urg-location">Atlanta, GA</span></div>
 
 <nav id="nav">
@@ -663,9 +668,10 @@ document.querySelectorAll('.book-link').forEach(link=>{
   link.addEventListener('click',e=>{
     e.preventDefault();
     const sec=document.getElementById('booking');
+    const prevH=document.getElementById('preview-bar').offsetHeight;
     const urgH=document.getElementById('urg').offsetHeight;
     const navH=nav.offsetHeight;
-    window.scrollTo({top:sec.getBoundingClientRect().top+scrollY-urgH-navH-16,behavior:'smooth'});
+    window.scrollTo({top:sec.getBoundingClientRect().top+scrollY-prevH-urgH-navH-16,behavior:'smooth'});
     setTimeout(()=>{
       const fw=document.getElementById('formWrap');
       fw.classList.add('glow');
