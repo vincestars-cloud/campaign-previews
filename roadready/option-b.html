@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>RoadReady — Same-Day Car Repair in Atlanta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#111827;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+svg path,svg line,svg circle,svg rect,svg polyline,svg polygon,svg ellipse{fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+
+:root{
+  --ink:#0D1117;--blue:#1D4ED8;--blue-l:#2563EB;--sky:#EFF6FF;
+  --green:#15803D;--green-l:#DCFCE7;--muted:#6B7280;--border:#E5E7EB;
+  --light:#F9FAFB;--pad:clamp(16px,4vw,56px);--mw:1160px;
+}
+.wrap{max-width:var(--mw);margin:0 auto;padding:0 var(--pad)}
+
+/* URGENCY BAR */
+#urg{background:var(--ink);color:rgba(255,255,255,.75);text-align:center;padding:9px 16px;font-size:12px;font-weight:600;letter-spacing:.04em;position:sticky;top:0;z-index:201}
+#urg strong{color:#93C5FD}
+
+/* NAV */
+#nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:36px;z-index:200;transition:box-shadow .25s}
+#nav.on{box-shadow:0 1px 20px rgba(0,0,0,.09)}
+.nav-i{height:62px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:nowrap}
+.nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.logo-mark{width:34px;height:34px;background:var(--blue);border-radius:7px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.logo-mark svg{width:18px;height:18px;stroke:#fff;stroke-width:2.2}
+.logo-name{font-size:15px;font-weight:800;color:var(--ink);white-space:nowrap}
+.logo-name small{display:block;font-size:9px;font-weight:600;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.nav-links{display:flex;gap:clamp(10px,2vw,24px);list-style:none;flex-shrink:1}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);white-space:nowrap;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-r{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.nav-ph{font-size:13px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:5px;white-space:nowrap}
+.nav-ph svg{width:13px;height:13px;stroke:var(--blue)}
+.btn-nav{background:var(--blue);color:#fff;border-radius:6px;padding:10px 20px;font-size:13px;font-weight:700;white-space:nowrap;transition:opacity .2s}
+.btn-nav:hover{opacity:.88}
+@media(max-width:820px){.nav-links{display:none}}
+@media(max-width:560px){.nav-ph{display:none}}
+
+/* ───── HERO — FULL-BLEED PHOTO (like index.html) ───── */
+.hero{
+  position:relative;
+  min-height:calc(100vh - 37px - 62px);
+  background-image:url('https://images.unsplash.com/photo-1562524742-6c9ba4b59eba?auto=format&fit=crop&w=1600&q=80');
+  background-size:cover;background-position:center right;background-color:#0D1521;
+  display:flex;align-items:center;
+}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(5,10,22,.92) 0%,rgba(5,10,22,.78) 45%,rgba(5,10,22,.22) 100%)}
+.hero-content{position:relative;z-index:1;padding:60px 0;max-width:600px}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:100px;padding:6px 14px;font-size:12px;font-weight:600;color:rgba(255,255,255,.85);margin-bottom:24px;backdrop-filter:blur(4px)}
+.hero-pill-dot{width:8px;height:8px;background:#4ADE80;border-radius:50%;flex-shrink:0}
+.hero-h1{font-size:clamp(38px,6vw,70px);font-weight:900;line-height:1.06;color:#fff;letter-spacing:-.02em;margin-bottom:22px}
+.hero-h1 .ul{position:relative;display:inline-block}
+.hero-h1 .ul::after{content:'';position:absolute;bottom:-4px;left:0;right:0;height:4px;background:var(--blue);border-radius:2px}
+.hero-checks{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+.hero-checks li{display:flex;align-items:center;gap:12px;font-size:clamp(14px,1.8vw,17px);font-weight:500;color:rgba(255,255,255,.88)}
+.check-circle{width:24px;height:24px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.check-circle svg{width:12px;height:12px;stroke:#fff;stroke-width:2.5}
+.btn-hero{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--ink);border-radius:6px;padding:14px 28px;font-size:15px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;margin-bottom:28px;transition:opacity .2s}
+.btn-hero:hover{opacity:.92}
+.hero-trust{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.hero-trust-item{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.55)}
+.hero-trust-item svg{width:14px;height:14px;stroke:rgba(255,255,255,.4)}
+@media(max-width:560px){.hero{min-height:auto;padding:60px 0 40px}.hero-content{padding:0}}
+
+/* STATS BAR */
+.stats{background:var(--ink);padding:0}
+.stats-row{display:flex;align-items:stretch;justify-content:center;flex-wrap:wrap}
+.stat{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px 40px;position:relative}
+.stat+.stat::before{content:'';position:absolute;left:0;top:20%;height:60%;width:1px;background:rgba(255,255,255,.1)}
+.stat-num{font-size:clamp(22px,3vw,36px);font-weight:900;color:#fff;line-height:1;letter-spacing:-.01em}
+.stat-num sup{font-size:.5em;vertical-align:super}
+.stat-lbl{font-size:11px;font-weight:600;color:rgba(255,255,255,.4);margin-top:4px;letter-spacing:.06em;text-transform:uppercase}
+@media(max-width:500px){.stat{padding:14px 18px}}
+
+/* TICKER */
+.ticker-wrap{background:var(--sky);border-top:1px solid #DBEAFE;border-bottom:1px solid #DBEAFE;padding:11px 0;overflow:hidden;position:relative}
+.ticker-wrap::before,.ticker-wrap::after{content:'';position:absolute;top:0;width:60px;height:100%;z-index:2;pointer-events:none}
+.ticker-wrap::before{left:0;background:linear-gradient(to right,var(--sky),transparent)}
+.ticker-wrap::after{right:0;background:linear-gradient(to left,var(--sky),transparent)}
+.ticker-track{display:flex;gap:48px;width:max-content;animation:tick 28s linear infinite}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tick-item{display:flex;align-items:center;gap:8px;white-space:nowrap;font-size:12.5px;font-weight:700;color:#1E40AF}
+.tick-item svg{width:14px;height:14px;stroke:#1E40AF;flex-shrink:0}
+
+/* SERVICES */
+.services{padding:72px 0;background:#fff}
+.sec-label{font-size:11px;font-weight:700;color:var(--blue);letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.sec-h2{font-size:clamp(24px,3.5vw,40px);font-weight:800;color:var(--ink);margin-bottom:28px;line-height:1.15}
+.tab-nav{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:28px;background:var(--sky);border-radius:10px;padding:4px;width:fit-content}
+.tab-btn{border:none;background:none;padding:8px 16px;font-family:inherit;font-size:13px;font-weight:600;color:var(--muted);cursor:pointer;border-radius:7px;white-space:nowrap;transition:all .2s}
+.tab-btn.active{background:#fff;color:var(--ink);box-shadow:0 1px 4px rgba(0,0,0,.1)}
+.tab-panels .panel{display:none;animation:fadeIn .3s ease}
+.tab-panels .panel.active{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.svc-card{background:#fff;border:1.5px solid var(--border);border-radius:14px;overflow:hidden;transition:box-shadow .2s,transform .2s}
+.svc-card:hover{box-shadow:0 6px 24px rgba(0,0,0,.09);transform:translateY(-2px)}
+.svc-photo{height:140px;background-size:cover;background-position:center;background-color:var(--ink)}
+.svc-body{padding:18px}
+.svc-icon{width:36px;height:36px;background:var(--sky);border-radius:8px;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.svc-icon svg{width:18px;height:18px;stroke:var(--blue)}
+.svc-card h3{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:5px;line-height:1.3}
+.svc-card p{font-size:12.5px;color:var(--muted);line-height:1.6}
+@media(max-width:700px){.tab-panels .panel.active{grid-template-columns:1fr 1fr}}
+@media(max-width:420px){.tab-panels .panel.active{grid-template-columns:1fr}}
+
+/* PHOTO BREAK */
+.photo-break{display:grid;grid-template-columns:2fr 1fr 1fr;height:240px;gap:6px}
+.photo-break-item{background-size:cover;background-position:center;background-color:var(--ink)}
+@media(max-width:560px){.photo-break{grid-template-columns:1fr 1fr;height:180px}.photo-break-item:last-child{display:none}}
+
+/* HOW IT WORKS */
+.how{padding:72px 0;background:var(--light)}
+.how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+.how-card{background:#fff;border-radius:14px;padding:28px;border:1px solid var(--border)}
+.how-num{width:42px;height:42px;background:var(--blue);color:#fff;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;margin-bottom:16px}
+.how-card h3{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:7px}
+.how-card p{font-size:13.5px;color:var(--muted);line-height:1.7}
+@media(max-width:640px){.how-grid{grid-template-columns:1fr}}
+
+/* COMPARISON TABLE */
+.compare{padding:72px 0;background:#fff}
+.compare-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:40px}
+.compare-table{width:100%;min-width:500px;border-collapse:collapse;border:1.5px solid var(--border);border-radius:14px;overflow:hidden}
+.compare-table th{padding:14px 18px;text-align:left;font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.07em;text-transform:uppercase;background:var(--light)}
+.compare-table th:nth-child(2){background:var(--blue);color:#fff;text-align:center}
+.compare-table th:nth-child(3){text-align:center}
+.compare-table td{padding:13px 18px;border-bottom:1px solid var(--border);font-size:14px;color:var(--ink);font-weight:500}
+.compare-table td:nth-child(2){background:rgba(29,78,216,.04);text-align:center;font-weight:700;color:var(--green)}
+.compare-table td:nth-child(3){text-align:center;color:var(--muted)}
+.compare-table tbody tr:last-child td{border-bottom:none}
+.chk svg{width:16px;height:16px;stroke:var(--green);stroke-width:2.5;vertical-align:middle}
+.no svg{width:16px;height:16px;stroke:#EF4444;stroke-width:2.5;vertical-align:middle}
+
+/* SOCIAL PROOF */
+.proof{padding:72px 0;background:var(--ink);overflow:hidden}
+.proof-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.proof-quote{color:#fff}
+.proof-stars{color:#F59E0B;font-size:18px;letter-spacing:2px;margin-bottom:18px}
+.proof-text{font-size:clamp(17px,2.2vw,26px);font-weight:700;line-height:1.45;margin-bottom:20px}
+.proof-author{font-size:13px;color:rgba(255,255,255,.45);font-weight:500}
+.proof-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.proof-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:10px;padding:16px 18px}
+.proof-card .mini-stars{color:#F59E0B;font-size:10px;margin-bottom:7px;letter-spacing:1px}
+.proof-card p{font-size:12.5px;color:rgba(255,255,255,.7);line-height:1.6;margin-bottom:8px}
+.proof-card small{font-size:11px;color:rgba(255,255,255,.32);font-weight:600}
+@media(max-width:720px){.proof-inner{grid-template-columns:1fr}.proof-grid{display:none}}
+
+/* COUNTIES */
+.areas{padding:72px 0;background:var(--light)}
+.county-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:32px}
+.county-card{background:#fff;border:1.5px solid var(--border);border-radius:12px;padding:16px;transition:border-color .2s}
+.county-card:hover{border-color:var(--blue)}
+.county-card svg{width:18px;height:18px;stroke:var(--blue);margin-bottom:6px}
+.county-name{font-size:13.5px;font-weight:700;color:var(--ink)}
+.county-cities{font-size:11px;color:var(--muted);margin-top:3px;line-height:1.45}
+@media(max-width:640px){.county-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:380px){.county-grid{grid-template-columns:1fr}}
+
+/* BOOKING FORM */
+.booking{padding:72px 0;background:#fff;scroll-margin-top:98px}
+.booking-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.booking-copy h2{font-size:clamp(24px,3.5vw,38px);font-weight:800;color:var(--ink);margin-bottom:12px;line-height:1.2}
+.booking-copy p{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:24px}
+.booking-perks{display:flex;flex-direction:column;gap:10px}
+.perk{display:flex;align-items:center;gap:9px;font-size:14px;font-weight:500;color:var(--ink)}
+.perk svg{width:16px;height:16px;stroke:var(--green);stroke-width:2.5;flex-shrink:0}
+.form-wrap{background:var(--light);border:1.5px solid var(--border);border-radius:18px;padding:28px;box-shadow:0 4px 28px rgba(0,0,0,.05);transition:box-shadow .4s}
+.form-wrap.glow{box-shadow:0 0 0 3px var(--blue),0 4px 28px rgba(0,0,0,.08)}
+
+/* STEP INDICATORS */
+.step-indicator{display:flex;align-items:center;margin-bottom:24px}
+.step-dot{width:26px;height:26px;border-radius:50%;background:var(--border);color:var(--muted);font-size:11px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:all .3s}
+.step-dot.done{background:var(--green);color:#fff}
+.step-dot.active{background:var(--blue);color:#fff}
+.step-line{flex:1;height:2px;background:var(--border);transition:background .3s}
+.step-line.done{background:var(--green)}
+.form-step{display:none}
+.form-step.active{display:block;animation:fadeIn .3s ease}
+.form-step-title{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.form-step-sub{font-size:12.5px;color:var(--muted);margin-bottom:18px}
+
+/* CHECKBOX SERVICE GRID */
+.svc-check-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px}
+.svc-check{display:flex;align-items:center;gap:8px;border:1.5px solid var(--border);border-radius:8px;padding:9px 11px;cursor:pointer;font-size:12.5px;font-weight:500;color:var(--ink);transition:all .2s;user-select:none}
+.svc-check:has(input:checked){border-color:var(--blue);background:var(--sky);color:var(--blue)}
+.svc-check input{display:none}
+.cb{width:15px;height:15px;border:1.5px solid var(--border);border-radius:3px;flex-shrink:0;display:flex;align-items:center;justify-content:center;background:#fff;transition:all .2s}
+.svc-check:has(input:checked) .cb{background:var(--blue);border-color:var(--blue)}
+.svc-check:has(input:checked) .cb::after{content:'';width:7px;height:4px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translate(1px,-1px);display:block}
+.svc-check.full{grid-column:span 2}
+.form-error{font-size:12px;color:#EF4444;margin-top:4px;display:none}
+.form-error.show{display:block}
+
+/* FIELDS */
+.field{display:flex;flex-direction:column;gap:5px;margin-bottom:12px}
+.field label{font-size:11.5px;font-weight:600;color:var(--ink);letter-spacing:.02em}
+.field label .req{color:#EF4444}
+.field input,.field select,.field textarea{width:100%;padding:10px 13px;border:1.5px solid var(--border);border-radius:8px;font-family:inherit;font-size:13.5px;color:var(--ink);background:#fff;transition:border-color .2s}
+.field input:focus,.field select:focus,.field textarea:focus{outline:none;border-color:var(--blue)}
+.field input.err,.field select.err{border-color:#EF4444}
+.field select{-webkit-appearance:none;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%236B7280' stroke-width='2'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 12px center}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.btn-next,.btn-submit-form{width:100%;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:13px;font-family:inherit;font-size:14.5px;font-weight:700;cursor:pointer;transition:opacity .2s;margin-top:6px}
+.btn-next:hover,.btn-submit-form:hover{opacity:.88}
+.btn-back{background:none;border:none;font-family:inherit;font-size:12.5px;font-weight:600;color:var(--muted);cursor:pointer;padding:9px 0;display:block;margin-top:4px}
+.btn-back:hover{color:var(--ink)}
+.form-success{display:none;text-align:center;padding:16px 0}
+.form-success svg{width:48px;height:48px;stroke:var(--green);margin:0 auto 14px}
+.form-success h3{font-size:19px;font-weight:700;color:var(--ink);margin-bottom:7px}
+.form-success p{font-size:13.5px;color:var(--muted);line-height:1.65}
+@media(max-width:720px){.booking-inner{grid-template-columns:1fr}}
+@media(max-width:480px){.field-row{grid-template-columns:1fr}.svc-check-grid{grid-template-columns:1fr}.svc-check.full{grid-column:span 1}}
+
+/* FAQ */
+.faq{padding:72px 0;background:var(--light)}
+.faq-list{max-width:680px;margin-top:40px;display:flex;flex-direction:column;gap:4px}
+.faq-item{background:#fff;border:1px solid var(--border);border-radius:10px;overflow:hidden}
+.faq-q{width:100%;background:none;border:none;padding:16px 20px;font-family:inherit;font-size:14.5px;font-weight:600;color:var(--ink);text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.faq-q svg{width:15px;height:15px;stroke:var(--muted);flex-shrink:0;transition:transform .3s}
+.faq-item.open .faq-q svg{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-a-inner{padding:0 20px 16px;font-size:13.5px;color:var(--muted);line-height:1.72}
+
+/* CTA */
+.cta-block{background:var(--blue);padding:72px 0;text-align:center}
+.cta-block h2{font-size:clamp(24px,4vw,46px);font-weight:900;color:#fff;margin-bottom:10px;letter-spacing:-.02em}
+.cta-block p{font-size:16px;color:rgba(255,255,255,.8);margin-bottom:32px}
+.cta-btns{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.btn-cta-w{background:#fff;color:var(--blue);border-radius:8px;padding:13px 30px;font-size:15px;font-weight:700;transition:opacity .2s}
+.btn-cta-w:hover{opacity:.92}
+.btn-cta-o{border:2px solid rgba(255,255,255,.5);color:#fff;border-radius:8px;padding:13px 28px;font-size:15px;font-weight:600;transition:border-color .2s}
+.btn-cta-o:hover{border-color:#fff}
+
+/* FOOTER */
+footer{background:var(--ink);padding:44px 0 26px;color:rgba(255,255,255,.4)}
+.footer-inner{display:grid;grid-template-columns:2fr 1fr 1fr;gap:40px;margin-bottom:32px}
+.ft-brand h3{font-size:15px;font-weight:800;color:#fff;margin-bottom:7px}
+.ft-brand p{font-size:13px;line-height:1.7;max-width:260px}
+.ft-col h4{font-size:10.5px;font-weight:700;color:rgba(255,255,255,.22);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.ft-col ul{list-style:none;display:flex;flex-direction:column;gap:8px}
+.ft-col li a{font-size:13px;color:rgba(255,255,255,.4);transition:color .2s}
+.ft-col li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:20px;display:flex;justify-content:space-between;font-size:11.5px;flex-wrap:wrap;gap:8px}
+@media(max-width:600px){.footer-inner{grid-template-columns:1fr}}
+
+/* MOBILE STICKY BAR */
+.mob-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:#fff;border-top:1.5px solid var(--border);padding:10px 14px;gap:8px}
+.mob-call{flex:1;background:var(--light);color:var(--ink);border:1.5px solid var(--border);border-radius:8px;padding:11px 8px;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;text-align:center;display:flex;align-items:center;justify-content:center;gap:5px;white-space:nowrap;text-decoration:none}
+.mob-call svg{width:13px;height:13px;stroke:var(--ink);flex-shrink:0}
+.mob-book{flex:1.6;background:var(--blue);color:#fff;border:none;border-radius:8px;padding:11px 8px;font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;white-space:nowrap;text-align:center;text-decoration:none;display:flex;align-items:center;justify-content:center}
+@media(max-width:768px){.mob-bar{display:flex};body{padding-bottom:68px}}
+
+.fade{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+.fade.in{opacity:1;transform:none}
+.d1{transition-delay:.1s}.d2{transition-delay:.2s}.d3{transition-delay:.3s}
+</style>
+</head>
+<body>
+
+<div id="urg">Same-day mobile mechanic service &mdash; Same-Day Car Repair &middot; <span id="urg-location">Atlanta, GA</span></div>
+
+<nav id="nav">
+  <div class="wrap nav-i">
+    <a href="#" class="nav-logo">
+      <div class="logo-mark"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg></div>
+      <div class="logo-name">RoadReady<small>Mobile Mechanics</small></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#reviews">Reviews</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-r">
+      <a href="tel:4045550192" class="nav-ph"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(404) 555-0192</a>
+      <a href="#booking" class="btn-nav book-link">Book Service</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO: FULL-BLEED PHOTO -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="wrap">
+    <div class="hero-content">
+      <div class="hero-pill"><span class="hero-pill-dot"></span>Same-Day Car Repair &middot; Atlanta, GA</div>
+      <h1 class="hero-h1">Your Mechanic<br>Comes to <span class="ul">You.</span><br>Same-Day Service.</h1>
+      <ul class="hero-checks">
+        <li><span class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>No waiting rooms &mdash; we come to your home or office</li>
+        <li><span class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Upfront pricing before we touch your car</li>
+        <li><span class="check-circle"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>3-year / 36,000-mile parts &amp; labor warranty</li>
+      </ul>
+      <a href="#booking" class="btn-hero book-link">Book a Mechanic Today &rarr;</a>
+      <div class="hero-trust">
+        <div class="hero-trust-item"><svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>4.9-star Google rating</div>
+        <div class="hero-trust-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>ASE Certified</div>
+        <div class="hero-trust-item"><svg viewBox="0 0 24 24"><rect x="1" y="3" width="15" height="13" rx="2"/><path d="M16 8h4l3 5v3h-7V8z"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>500+ Vehicles Serviced</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats">
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num" data-target="500">0<sup>+</sup></div><div class="stat-lbl">Jobs Completed</div></div>
+    <div class="stat"><div class="stat-num">4.9<sup>&#9733;</sup></div><div class="stat-lbl">Google Rating</div></div>
+    <div class="stat"><div class="stat-num">Same Day</div><div class="stat-lbl">Service Available</div></div>
+    <div class="stat"><div class="stat-num">3-Year</div><div class="stat-lbl">Warranty</div></div>
+  </div>
+</div>
+
+<!-- TICKER -->
+<div class="ticker-wrap">
+  <div class="ticker-track">
+    <div class="tick-item"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>ASE Certified Mechanics</div>
+    <div class="tick-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>3-Year / 36K Mile Warranty</div>
+    <div class="tick-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Same-Day Appointments</div>
+    <div class="tick-item"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Upfront Flat-Rate Pricing</div>
+    <div class="tick-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Metro Atlanta Coverage</div>
+    <div class="tick-item"><svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>ASE Certified Mechanics</div>
+    <div class="tick-item"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>3-Year / 36K Mile Warranty</div>
+    <div class="tick-item"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Same-Day Appointments</div>
+    <div class="tick-item"><svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>Upfront Flat-Rate Pricing</div>
+    <div class="tick-item"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Metro Atlanta Coverage</div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <p class="sec-label fade">What We Fix</p>
+    <h2 class="sec-h2 fade d1">Same-Day Car Repair,<br>At Your Location.</h2>
+    <div class="tab-nav">
+      <button class="tab-btn active" data-tab="all">All Services</button>
+      <button class="tab-btn" data-tab="common">Most Common</button>
+      <button class="tab-btn" data-tab="diagnostic">Diagnostics</button>
+    </div>
+    <div class="tab-panels">
+      <div class="panel active" id="tab-all">
+        <div class="svc-card fade"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1635273051982-ee52e74e8e41?auto=format&fit=crop&w=500&q=70');background-color:#0d1f2d"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 0 0 6.99 3.34l.01.01A10 10 0 0 0 2.93 16.9a10 10 0 1 0 16.14-11.97z"/></svg></div><h3>Oil &amp; Filter Change</h3><p>Full synthetic or conventional at your address. Old oil properly disposed of.</p></div></div>
+        <div class="svc-card fade d1"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=500&q=70');background-color:#2a1010"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><h3>Brake Inspection &amp; Repair</h3><p>Pads, rotors, calipers &mdash; diagnosed and repaired on the spot.</p></div></div>
+        <div class="svc-card fade d2"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1609205807107-884cf0a0c3e4?auto=format&fit=crop&w=500&q=70');background-color:#102a10"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/><line x1="12" y1="12" x2="12" y2="16"/><line x1="10" y1="14" x2="14" y2="14"/></svg></div><h3>Battery Test &amp; Replace</h3><p>Test under load, confirm, swap in under 30 min wherever you park.</p></div></div>
+        <div class="svc-card fade"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=500&q=70');background-color:#10102a"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Check Engine Diagnostics</h3><p>Codes pulled, explained plainly, honest estimate before work begins.</p></div></div>
+        <div class="svc-card fade d1"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1580274455191-1c62238fa333?auto=format&fit=crop&w=500&q=70');background-color:#102a28"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div><h3>AC Recharge &amp; Repair</h3><p>Refrigerant recharge and leak detection in your driveway or lot.</p></div></div>
+        <div class="svc-card fade d2"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=500&q=70');background-color:#2a2810"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Pre-Purchase Inspection</h3><p>We meet you at the seller&rsquo;s location and inspect before you buy.</p></div></div>
+        <div class="svc-card fade"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=500&q=70');background-color:#1a1a1a"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h3>Alternator Replacement</h3><p>Failing alternator drains your battery. We diagnose and replace on-site.</p></div></div>
+        <div class="svc-card fade d1"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=500&q=70');background-color:#261a0d"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/></svg></div><h3>Spark Plug Replacement</h3><p>Worn plugs hurt fuel economy and performance. We replace at your location.</p></div></div>
+        <div class="svc-card fade d2"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1635273051982-ee52e74e8e41?auto=format&fit=crop&w=500&q=70');background-color:#0d2620"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg></div><h3>Coolant Flush &amp; Radiator Service</h3><p>Prevent overheating. We flush and refill your cooling system on-site.</p></div></div>
+        <div class="svc-card fade"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=500&q=70');background-color:#1f1a10"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div><h3>Starter Replacement</h3><p>Car cranks but won&rsquo;t start? Likely the starter. We diagnose and fix it.</p></div></div>
+        <div class="svc-card fade d1"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1580274455191-1c62238fa333?auto=format&fit=crop&w=500&q=70');background-color:#100d1f"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg></div><h3>Serpentine Belt Replacement</h3><p>A broken belt stops everything. We replace it before you&rsquo;re stranded.</p></div></div>
+        <div class="svc-card fade d2"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1609205807107-884cf0a0c3e4?auto=format&fit=crop&w=500&q=70');background-color:#1a100d"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Air &amp; Cabin Filter Replacement</h3><p>Engine and cabin air filters replaced at your location in minutes.</p></div></div>
+      </div>
+      <div class="panel" id="tab-common">
+        <div class="svc-card"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1635273051982-ee52e74e8e41?auto=format&fit=crop&w=500&q=70');background-color:#0d1f2d"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93A10 10 0 0 0 6.99 3.34l.01.01A10 10 0 0 0 2.93 16.9a10 10 0 1 0 16.14-11.97z"/></svg></div><h3>Oil &amp; Filter Change</h3><p>Most booked. Full synthetic or conventional at your driveway.</p></div></div>
+        <div class="svc-card"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=500&q=70');background-color:#2a1010"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></div><h3>Brake Repair</h3><p>Pads, rotors, calipers replaced wherever you park.</p></div></div>
+        <div class="svc-card"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1609205807107-884cf0a0c3e4?auto=format&fit=crop&w=500&q=70');background-color:#102a10"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg></div><h3>Battery Replacement</h3><p>Dead battery? 30-minute swap at your door.</p></div></div>
+        <div class="svc-card"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=500&q=70');background-color:#1a1a1a"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="8"/></svg></div><h3>Spark Plug Replacement</h3><p>Restore performance and fuel economy in one visit.</p></div></div>
+        <div class="svc-card"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1609205807107-884cf0a0c3e4?auto=format&fit=crop&w=500&q=70');background-color:#1a100d"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h3>Air &amp; Cabin Filter</h3><p>Engine and cabin air filters swapped in minutes at your address.</p></div></div>
+      </div>
+      <div class="panel" id="tab-diagnostic">
+        <div class="svc-card"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=500&q=70');background-color:#10102a"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><h3>Check Engine Diagnostics</h3><p>OBD codes pulled and explained. Honest estimate before anything is touched.</p></div></div>
+        <div class="svc-card"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=500&q=70');background-color:#2a2810"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><h3>Pre-Purchase Inspection</h3><p>We meet you where the car is and inspect before you sign.</p></div></div>
+        <div class="svc-card"><div class="svc-photo" style="background-image:url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=500&q=70');background-color:#1f1a10"></div><div class="svc-body"><div class="svc-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div><h3>No-Start Diagnosis</h3><p>Battery, starter, alternator, fuel pump &mdash; we diagnose and fix most no-start issues on-site.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO BREAK -->
+<div class="photo-break">
+  <div class="photo-break-item" style="background-image:url('https://images.unsplash.com/photo-1625047509168-a7026f36de04?auto=format&fit=crop&w=900&q=70');background-color:#0d1520"></div>
+  <div class="photo-break-item" style="background-image:url('https://images.unsplash.com/photo-1487754180451-c456f719a1fc?auto=format&fit=crop&w=500&q=70');background-color:#1a1218"></div>
+  <div class="photo-break-item" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=500&q=70');background-color:#1a1212"></div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="how" id="how">
+  <div class="wrap">
+    <p class="sec-label fade">The Process</p>
+    <h2 class="sec-h2 fade d1">Fixed in 3 Simple Steps.</h2>
+    <div class="how-grid">
+      <div class="how-card fade"><div class="how-num">1</div><h3>Book in 60 Seconds</h3><p>Tell us your vehicle, the issue, and your address. We confirm availability &mdash; usually same day &mdash; and lock your slot.</p></div>
+      <div class="how-card fade d1"><div class="how-num">2</div><h3>We Come to Your Driveway</h3><p>Your ASE-certified mechanic arrives on time with all tools and parts. No towing. No drop-off. You stay put.</p></div>
+      <div class="how-card fade d2"><div class="how-num">3</div><h3>Approve &amp; Pay When Done</h3><p>You see the flat-rate quote and approve before we start. When it&rsquo;s fixed, you pay exactly what was quoted. Zero surprises.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON TABLE -->
+<section class="compare" id="compare">
+  <div class="wrap">
+    <p class="sec-label fade">Why Choose Us</p>
+    <h2 class="sec-h2 fade d1">Mobile vs. Traditional Shop.</h2>
+    <div class="compare-scroll">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>What You Get</th>
+            <th>RoadReady Mobile</th>
+            <th>Traditional Shop</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Mechanic comes to you</td><td class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Always</td><td class="no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Never</td></tr>
+          <tr><td>Same-day availability</td><td class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Usually</td><td class="no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Rarely</td></tr>
+          <tr><td>Upfront flat-rate pricing</td><td class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Always</td><td class="no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Often Not</td></tr>
+          <tr><td>No waiting room</td><td class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Yes</td><td class="no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> No</td></tr>
+          <tr><td>No tow truck needed</td><td class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Yes</td><td class="no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Often Required</td></tr>
+          <tr><td>3-Year / 36K Mile Warranty</td><td class="chk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg> Included</td><td class="no"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg> Varies</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL PROOF -->
+<section class="proof" id="reviews">
+  <div class="wrap">
+    <div class="proof-inner">
+      <div class="proof-quote">
+        <div class="proof-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p class="proof-text">&ldquo;I called at 9am. The mechanic was at my door by noon. Changed my brakes in my parking garage. I cannot believe this service exists.&rdquo;</p>
+        <div class="proof-author">Marcus T. &mdash; Buckhead, Fulton County &middot; Brake Service</div>
+      </div>
+      <div class="proof-grid">
+        <div class="proof-card"><div class="mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Same-day oil change and they caught that my brakes were dangerously low. Saved me.&rdquo;</p><small>David K. &mdash; Sandy Springs</small></div>
+        <div class="proof-card"><div class="mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;No waiting room, no shuttle, no hassle. Fixed my car in my driveway.&rdquo;</p><small>Jennifer P. &mdash; Decatur</small></div>
+        <div class="proof-card"><div class="mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Finally a mechanic I trust. Showed me what was wrong before touching anything.&rdquo;</p><small>Ashley R. &mdash; Midtown</small></div>
+        <div class="proof-card"><div class="mini-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>&ldquo;Arrived early, fixed my battery in 30 minutes. My shop would&rsquo;ve kept the car all day.&rdquo;</p><small>Carlos M. &mdash; Smyrna</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COUNTIES -->
+<section class="areas" id="areas">
+  <div class="wrap">
+    <p class="sec-label fade">Coverage</p>
+    <h2 class="sec-h2 fade d1">Serving Metro Atlanta Counties.</h2>
+    <div class="county-grid">
+      <div class="county-card fade"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div class="county-name">Fulton County</div><div class="county-cities">Atlanta, Buckhead, Midtown, Sandy Springs, Alpharetta</div></div>
+      <div class="county-card fade d1"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div class="county-name">DeKalb County</div><div class="county-cities">Decatur, Tucker, Brookhaven, Stone Mountain</div></div>
+      <div class="county-card fade d2"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div class="county-name">Cobb County</div><div class="county-cities">Marietta, Smyrna, Kennesaw, Acworth</div></div>
+      <div class="county-card fade d3"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div class="county-name">Gwinnett County</div><div class="county-cities">Lawrenceville, Duluth, Norcross, Suwanee</div></div>
+      <div class="county-card fade"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div class="county-name">Cherokee County</div><div class="county-cities">Canton, Holly Springs, Woodstock, Ball Ground</div></div>
+      <div class="county-card fade d1"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div class="county-name">Clayton County</div><div class="county-cities">Jonesboro, College Park, Forest Park, Morrow</div></div>
+      <div class="county-card fade d2"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div class="county-name">Henry County</div><div class="county-cities">McDonough, Stockbridge, Hampton, Locust Grove</div></div>
+      <div class="county-card fade d3"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div class="county-name">Fayette County</div><div class="county-cities">Fayetteville, Peachtree City, Tyrone, Brooks</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKING -->
+<section class="booking" id="booking">
+  <div class="wrap">
+    <div class="booking-inner">
+      <div class="booking-copy">
+        <p class="sec-label">Book Your Appointment</p>
+        <h2>Same-Day Service,<br>Your Driveway.</h2>
+        <p>Takes about 60 seconds. We confirm your slot and call to go over details before coming out.</p>
+        <div class="booking-perks">
+          <div class="perk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>We come to your home, office, or parking lot</div>
+          <div class="perk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Flat-rate quote you approve before we start</div>
+          <div class="perk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>ASE-certified, 3-year warranty on all repairs</div>
+          <div class="perk"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>Not sure what&rsquo;s wrong? We diagnose on the spot</div>
+        </div>
+      </div>
+      <div class="form-wrap" id="formWrap">
+        <div class="step-indicator">
+          <div class="step-dot active" id="dot1">1</div>
+          <div class="step-line" id="line1"></div>
+          <div class="step-dot" id="dot2">2</div>
+          <div class="step-line" id="line2"></div>
+          <div class="step-dot" id="dot3">3</div>
+        </div>
+
+        <!-- STEP 1: Service (checkboxes) -->
+        <div class="form-step active" id="step1">
+          <div class="form-step-title">What do you need?</div>
+          <div class="form-step-sub">Step 1 of 3 &mdash; Select all that apply</div>
+          <div class="svc-check-grid">
+            <label class="svc-check"><input type="checkbox" name="svc" value="oil"><span class="cb"></span>Oil &amp; Filter Change</label>
+            <label class="svc-check"><input type="checkbox" name="svc" value="brakes"><span class="cb"></span>Brake Inspection / Repair</label>
+            <label class="svc-check"><input type="checkbox" name="svc" value="battery"><span class="cb"></span>Battery Test &amp; Replace</label>
+            <label class="svc-check"><input type="checkbox" name="svc" value="engine"><span class="cb"></span>Check Engine Light</label>
+            <label class="svc-check"><input type="checkbox" name="svc" value="ac"><span class="cb"></span>AC Recharge &amp; Repair</label>
+            <label class="svc-check"><input type="checkbox" name="svc" value="inspect"><span class="cb"></span>Pre-Purchase Inspection</label>
+            <label class="svc-check"><input type="checkbox" name="svc" value="alt"><span class="cb"></span>Alternator</label>
+            <label class="svc-check"><input type="checkbox" name="svc" value="spark"><span class="cb"></span>Spark Plugs</label>
+            <label class="svc-check"><input type="checkbox" name="svc" value="coolant"><span class="cb"></span>Coolant / Radiator</label>
+            <label class="svc-check"><input type="checkbox" name="svc" value="belt"><span class="cb"></span>Serpentine Belt</label>
+            <label class="svc-check full"><input type="checkbox" name="svc" value="notsure" id="svc-notsure"><span class="cb"></span>Not Sure &mdash; Need a Diagnosis</label>
+          </div>
+          <div class="field" id="other-wrap" style="display:none">
+            <label>Describe what&rsquo;s happening</label>
+            <textarea rows="2" placeholder="e.g. Car won't start, strange noise when braking, light just came on..."></textarea>
+          </div>
+          <div class="form-error" id="svc-error">Please select at least one service to continue.</div>
+          <button class="btn-next" onclick="goNext(1)">Continue &rarr;</button>
+        </div>
+
+        <!-- STEP 2: Vehicle -->
+        <div class="form-step" id="step2">
+          <div class="form-step-title">Tell us about your vehicle</div>
+          <div class="form-step-sub">Step 2 of 3 &mdash; Vehicle information</div>
+          <div class="field-row">
+            <div class="field">
+              <label>Year <span class="req">*</span></label>
+              <input type="number" id="f-year" placeholder="2019" min="1990" max="2026" required>
+            </div>
+            <div class="field">
+              <label>Make <span class="req">*</span></label>
+              <select id="f-make" required>
+                <option value="">Select make...</option>
+                <option>Acura</option><option>Audi</option><option>BMW</option><option>Buick</option>
+                <option>Cadillac</option><option>Chevrolet</option><option>Chrysler</option><option>Dodge</option>
+                <option>Ford</option><option>GMC</option><option>Honda</option><option>Hyundai</option>
+                <option>Infiniti</option><option>Jeep</option><option>Kia</option><option>Lexus</option>
+                <option>Lincoln</option><option>Mazda</option><option>Mercedes-Benz</option><option>Mini</option>
+                <option>Mitsubishi</option><option>Nissan</option><option>Ram</option><option>Subaru</option>
+                <option>Tesla</option><option>Toyota</option><option>Volkswagen</option><option>Volvo</option>
+                <option>Other</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label>Model <span class="req">*</span></label>
+            <input type="text" id="f-model" placeholder="e.g. Camry, F-150, Accord" required>
+          </div>
+          <div class="field">
+            <label>Where will the car be? <span class="req">*</span></label>
+            <select id="f-location" required>
+              <option value="">Select location type...</option>
+              <option>Home / Driveway</option>
+              <option>Office / Work Parking Lot</option>
+              <option>Apartment Complex Parking</option>
+              <option>Street Parking</option>
+              <option>Other Location</option>
+            </select>
+          </div>
+          <div class="form-error" id="veh-error">Please fill in all vehicle fields to continue.</div>
+          <button class="btn-next" onclick="goNext(2)">Continue &rarr;</button>
+          <button class="btn-back" onclick="goBack(2)">&#8592; Back</button>
+        </div>
+
+        <!-- STEP 3: Contact -->
+        <div class="form-step" id="step3">
+          <div class="form-step-title">How do we reach you?</div>
+          <div class="form-step-sub">Step 3 of 3 &mdash; Contact &amp; scheduling</div>
+          <div class="field"><label>Full Name <span class="req">*</span></label><input type="text" id="f-fname" placeholder="Marcus Thompson" required></div>
+          <div class="field"><label>Phone Number <span class="req">*</span></label><input type="tel" id="f-phone" placeholder="(404) 555-0000" required></div>
+          <div class="field"><label>Street Address or Zip Code <span class="req">*</span></label><input type="text" id="f-address" placeholder="123 Peachtree St or 30305" required></div>
+          <div class="field">
+            <label>Preferred Date &amp; Time</label>
+            <select>
+              <option>Today &mdash; As Soon As Possible</option>
+              <option>Tomorrow Morning (8am&ndash;12pm)</option>
+              <option>Tomorrow Afternoon (12pm&ndash;5pm)</option>
+              <option>Another Day &mdash; Call Me to Schedule</option>
+            </select>
+          </div>
+          <div class="form-error" id="contact-error">Please fill in your name, phone, and address.</div>
+          <button class="btn-submit-form" onclick="submitForm()">Request My Appointment &rarr;</button>
+          <button class="btn-back" onclick="goBack(3)">&#8592; Back</button>
+        </div>
+
+        <!-- SUCCESS -->
+        <div class="form-success" id="form-success">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+          <h3>You&rsquo;re all set!</h3>
+          <p>We&rsquo;ll call you within 15 minutes to confirm your slot and go over any details. Same-day service is usually available.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq" id="faq">
+  <div class="wrap">
+    <p class="sec-label fade">Common Questions</p>
+    <h2 class="sec-h2 fade d1">Got Questions?</h2>
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q">How does the cost compare to a shop? <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-inner">Our pricing typically runs 20&ndash;40% below traditional shops because we carry no physical overhead &mdash; that savings goes to you. Factor in no towing, no rental car, and no lost work time, and mobile service often costs significantly less overall.</div></div></div>
+      <div class="faq-item"><button class="faq-q">What types of vehicles do you service? <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-inner">Most passenger cars, trucks, SUVs, and minivans &mdash; domestic and import. We don&rsquo;t service large commercial trucks, RVs, or motorcycles. Not sure? Call before booking and we&rsquo;ll confirm right away.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Do you bring your own parts? <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-inner">Yes. We stock the most common parts. For less common parts, we source same-day from a local supplier and return within hours. You&rsquo;ll know the plan and price before we leave.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Can you fix a car that won&rsquo;t start? <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-inner">Yes &mdash; one of the most common calls we get. Battery, starter, alternator, fuel pump &mdash; we diagnose and fix most no-start issues on-site with no tow. If it needs a lift or specialty equipment, we&rsquo;ll tell you honestly.</div></div></div>
+      <div class="faq-item"><button class="faq-q">How does the 3-year warranty work? <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-inner">Every repair comes with a 3-year / 36,000-mile parts and labor warranty. If anything we repaired fails within that window, we fix it at no charge. You&rsquo;ll receive a digital warranty card via email right after service.</div></div></div>
+      <div class="faq-item"><button class="faq-q">Do I need to be home during the repair? <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-inner">Not necessarily &mdash; just be reachable by phone to authorize the repair. Most customers keep working while we fix their car outside. We send text updates and call when done.</div></div></div>
+      <div class="faq-item"><button class="faq-q">What if the repair needs a shop lift? <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></button><div class="faq-a"><div class="faq-a-inner">We&rsquo;ll tell you honestly and help you find a trusted local shop. You are never charged for work we cannot complete on-site.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-block">
+  <div class="wrap">
+    <h2>Ready? We Have Slots Today.</h2>
+    <p>Same-day mobile mechanic service throughout Metro Atlanta.</p>
+    <div class="cta-btns">
+      <a href="tel:4045550192" class="btn-cta-w">Call (404) 555-0192</a>
+      <a href="#booking" class="btn-cta-o book-link">Book Service</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-inner">
+      <div class="ft-brand"><h3>RoadReady Mobile Mechanics</h3><p>ASE-certified mobile mechanics serving Metro Atlanta. We come to your home, office, or wherever your car is parked.</p></div>
+      <div class="ft-col"><h4>Services</h4><ul><li><a href="#">Oil Change</a></li><li><a href="#">Brake Service</a></li><li><a href="#">Battery</a></li><li><a href="#">Diagnostics</a></li><li><a href="#">AC Service</a></li></ul></div>
+      <div class="ft-col"><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Service Areas</a></li><li><a href="#">Reviews</a></li><li><a href="#">Contact</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2025 RoadReady Mobile Mechanics</span><span>Licensed &middot; Insured &middot; ASE Certified</span></div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY BAR -->
+<div class="mob-bar">
+  <a href="tel:4045550192" class="mob-call"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.6 1.18h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.84a16 16 0 0 0 6.29 6.29l.96-.96a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call (404) 555-0192</a>
+  <a href="#booking" class="mob-book book-link">Book Same-Day Service</a>
+</div>
+
+<script>
+// Count-up
+new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){const el=e.target,t=+el.dataset.target;let c=0;const s=t/60,tm=setInterval(()=>{c+=s;if(c>=t){el.textContent=t+'+';clearInterval(tm);}else el.textContent=Math.floor(c)+'+'},20);e.target._io?.unobserve?.(el);}});},{threshold:.3}).observe(document.querySelector('[data-target]'));
+
+// Fade in
+const fIO=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');fIO.unobserve(e.target);}});},{threshold:.1});
+document.querySelectorAll('.fade').forEach(f=>fIO.observe(f));
+
+// Nav shadow
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>nav.classList.toggle('on',scrollY>10));
+
+// FAQ
+document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');const open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-a').style.maxHeight='0';});if(!open){item.classList.add('open');item.querySelector('.faq-a').style.maxHeight=item.querySelector('.faq-a').scrollHeight+'px';}});});
+
+// Service tabs
+document.querySelectorAll('.tab-btn').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));btn.classList.add('active');document.getElementById('tab-'+btn.dataset.tab).classList.add('active');});});
+
+// "Not Sure" textarea toggle
+document.getElementById('svc-notsure').addEventListener('change',function(){
+  document.getElementById('other-wrap').style.display=this.checked?'block':'none';
+});
+
+// Multi-step form validation
+function goNext(from){
+  if(from===1){
+    const checked=document.querySelectorAll('.svc-check-grid input:checked');
+    const err=document.getElementById('svc-error');
+    if(checked.length===0){err.classList.add('show');return;}
+    err.classList.remove('show');
+  }
+  if(from===2){
+    const y=document.getElementById('f-year').value;
+    const m=document.getElementById('f-make').value;
+    const mo=document.getElementById('f-model').value;
+    const l=document.getElementById('f-location').value;
+    const err=document.getElementById('veh-error');
+    if(!y||!m||!mo||!l){err.classList.add('show');return;}
+    err.classList.remove('show');
+  }
+  document.getElementById('step'+from).classList.remove('active');
+  document.getElementById('dot'+from).classList.remove('active');
+  document.getElementById('dot'+from).classList.add('done');
+  document.getElementById('line'+from).classList.add('done');
+  const next=from+1;
+  document.getElementById('step'+next).classList.add('active');
+  document.getElementById('dot'+next).classList.add('active');
+}
+function goBack(from){
+  document.getElementById('step'+from).classList.remove('active');
+  document.getElementById('dot'+from).classList.remove('active');
+  const prev=from-1;
+  document.getElementById('step'+prev).classList.add('active');
+  document.getElementById('dot'+prev).classList.remove('done');
+  document.getElementById('dot'+prev).classList.add('active');
+  document.getElementById('line'+prev).classList.remove('done');
+}
+function submitForm(){
+  const fn=document.getElementById('f-fname').value;
+  const ph=document.getElementById('f-phone').value;
+  const ad=document.getElementById('f-address').value;
+  const err=document.getElementById('contact-error');
+  if(!fn||!ph||!ad){err.classList.add('show');return;}
+  err.classList.remove('show');
+  document.getElementById('step3').classList.remove('active');
+  document.getElementById('dot3').classList.remove('active');
+  document.getElementById('dot3').classList.add('done');
+  document.getElementById('form-success').style.display='block';
+}
+
+// Booking links: smooth scroll + highlight form
+document.querySelectorAll('.book-link').forEach(link=>{
+  link.addEventListener('click',e=>{
+    e.preventDefault();
+    const sec=document.getElementById('booking');
+    const urgH=document.getElementById('urg').offsetHeight;
+    const navH=nav.offsetHeight;
+    window.scrollTo({top:sec.getBoundingClientRect().top+scrollY-urgH-navH-16,behavior:'smooth'});
+    setTimeout(()=>{
+      const fw=document.getElementById('formWrap');
+      fw.classList.add('glow');
+      setTimeout(()=>fw.classList.remove('glow'),1600);
+    },500);
+  });
+});
+
+// Geolocation: detect city and update announcement bar
+(function detectCity(){
+  const ATLANTA_METRO=new Set(['Atlanta','Buckhead','Midtown','Lithonia','Decatur','Sandy Springs','Marietta','Smyrna','Kennesaw','Roswell','Alpharetta','Duluth','Norcross','Lawrenceville','Tucker','Stone Mountain','College Park','East Point','Forest Park','McDonough','Stockbridge','Jonesboro','Fayetteville','Peachtree City','Canton','Acworth','Woodstock','Brookhaven','Dunwoody','Union City','Morrow','Hampton','Locust Grove','Holly Springs','Ball Ground','Suwanee','Buford','Dacula','Grayson','Snellville','Lilburn','Doraville','Chamblee','Clarkston','Avondale Estates','Conyers','Covington','Austell','Powder Springs','Villa Rica','Douglasville','Hiram','Calhoun','Cartersville']);
+  const MAJOR_CITIES={
+    'GA':{'Atlanta Metro':ATLANTA_METRO,'Savannah':new Set(['Savannah','Garden City','Pooler','Rincon','Richmond Hill','Hinesville','Springfield','Guyton']),'Augusta':new Set(['Augusta','Evans','Martinez','Grovetown','North Augusta','Harlem']),'Columbus':new Set(['Columbus','Phenix City','Fort Mitchell','Fortson']),'Macon':new Set(['Macon','Warner Robins','Centerville','Perry','Byron','Gray'])}
+  };
+  function resolveCity(city,state){
+    if(!city||!state)return null;
+    const regions=MAJOR_CITIES[state];
+    if(regions){for(const[major,towns]of Object.entries(regions)){if(towns.has(city))return major+', '+state;}}
+    return city+', '+state;
+  }
+  fetch('https://ipapi.co/json/')
+    .then(r=>r.json())
+    .then(d=>{
+      const resolved=resolveCity(d.city,d.region_code)||'Atlanta, GA';
+      const el=document.getElementById('urg-location');
+      if(el)el.textContent=resolved;
+    })
+    .catch(()=>{}); // fail silently, default "Atlanta, GA" stays
+})();
+</script>
+</body>
+</html>
