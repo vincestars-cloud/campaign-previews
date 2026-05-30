@@ -20,12 +20,16 @@ svg path,svg line,svg circle,svg rect,svg polyline,svg polygon,svg ellipse{fill:
 }
 .wrap{max-width:var(--mw);margin:0 auto;padding:0 var(--pad)}
 
+/* PREVIEW BAR */
+#preview-bar{background:#EA580C;color:#fff;text-align:center;padding:9px 16px;font-size:12px;font-weight:700;letter-spacing:.02em;position:sticky;top:0;z-index:202;line-height:1.4}
+#preview-bar a{color:#fff;text-decoration:underline;text-underline-offset:2px}
+
 /* URGENCY BAR */
-#urg{background:var(--ink);color:rgba(255,255,255,.75);text-align:center;padding:9px 16px;font-size:12px;font-weight:600;letter-spacing:.04em;position:sticky;top:0;z-index:201}
+#urg{background:var(--ink);color:rgba(255,255,255,.75);text-align:center;padding:9px 16px;font-size:12px;font-weight:600;letter-spacing:.04em;position:sticky;top:36px;z-index:201}
 #urg strong{color:#93C5FD}
 
 /* NAV */
-#nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:36px;z-index:200;transition:box-shadow .25s}
+#nav{background:#fff;border-bottom:1px solid var(--border);position:sticky;top:72px;z-index:200;transition:box-shadow .25s}
 #nav.on{box-shadow:0 1px 20px rgba(0,0,0,.09)}
 .nav-i{height:62px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:nowrap}
 .nav-logo{display:flex;align-items:center;gap:10px;flex-shrink:0}
@@ -47,7 +51,7 @@ svg path,svg line,svg circle,svg rect,svg polyline,svg polygon,svg ellipse{fill:
 /* ───── HERO — FULL-BLEED PHOTO (like index.html) ───── */
 .hero{
   position:relative;
-  min-height:calc(100vh - 37px - 62px);
+  min-height:calc(100vh - 36px - 36px - 62px);
   background-image:url('https://images.unsplash.com/photo-1562524742-6c9ba4b59eba?auto=format&fit=crop&w=1600&q=80');
   background-size:cover;background-position:center right;background-color:#0D1521;
   display:flex;align-items:center;
@@ -165,7 +169,7 @@ svg path,svg line,svg circle,svg rect,svg polyline,svg polygon,svg ellipse{fill:
 @media(max-width:380px){.county-grid{grid-template-columns:1fr}}
 
 /* BOOKING FORM */
-.booking{padding:72px 0;background:#fff;scroll-margin-top:98px}
+.booking{padding:72px 0;background:#fff;scroll-margin-top:134px}
 .booking-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
 .booking-copy h2{font-size:clamp(24px,3.5vw,38px);font-weight:800;color:var(--ink);margin-bottom:12px;line-height:1.2}
 .booking-copy p{font-size:15px;color:var(--muted);line-height:1.7;margin-bottom:24px}
@@ -265,6 +269,7 @@ footer{background:var(--ink);padding:44px 0 26px;color:rgba(255,255,255,.4)}
 </head>
 <body>
 
+<div id="preview-bar">To Launch to Your Site &mdash; Call or Text <a href="tel:7867676791">(786) 767-6791</a> &mdash; There&rsquo;s No Monthly Fees for the Site</div>
 <div id="urg">Same-day mobile mechanic service &mdash; Same-Day Car Repair &middot; <span id="urg-location">Atlanta, GA</span></div>
 
 <nav id="nav">
@@ -705,9 +710,10 @@ document.querySelectorAll('.book-link').forEach(link=>{
   link.addEventListener('click',e=>{
     e.preventDefault();
     const sec=document.getElementById('booking');
+    const prevH=document.getElementById('preview-bar').offsetHeight;
     const urgH=document.getElementById('urg').offsetHeight;
     const navH=nav.offsetHeight;
-    window.scrollTo({top:sec.getBoundingClientRect().top+scrollY-urgH-navH-16,behavior:'smooth'});
+    window.scrollTo({top:sec.getBoundingClientRect().top+scrollY-prevH-urgH-navH-16,behavior:'smooth'});
     setTimeout(()=>{
       const fw=document.getElementById('formWrap');
       fw.classList.add('glow');
