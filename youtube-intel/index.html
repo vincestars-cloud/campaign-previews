@@ -32,24 +32,59 @@
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 28px;
+    margin-bottom: 20px;
   }
 
   .logo-icon {
-    width: 36px;
-    height: 36px;
+    width: 36px; height: 36px;
     background: linear-gradient(135deg, #ff0000, #cc0000);
     border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     font-size: 18px;
   }
 
   .logo-text { font-size: 17px; font-weight: 600; letter-spacing: -0.3px; }
 
-  h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 6px; }
+  /* Tab switcher */
+  .tabs {
+    display: flex;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 4px;
+    margin-bottom: 24px;
+    gap: 4px;
+  }
 
+  .tab-btn {
+    flex: 1;
+    padding: 9px 12px;
+    border-radius: 7px;
+    border: none;
+    background: transparent;
+    color: #555;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .tab-btn.active {
+    background: #262626;
+    color: #f0f0f0;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+  }
+
+  .tab-btn:hover:not(.active) { color: #aaa; }
+
+  .tab-icon { font-size: 14px; }
+
+  h1 { font-size: 26px; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 6px; }
   .subtitle { color: #888; font-size: 14px; margin-bottom: 32px; line-height: 1.5; }
 
   label {
@@ -62,7 +97,7 @@
     text-transform: uppercase;
   }
 
-  input[type="url"], input[type="number"] {
+  input[type="url"], input[type="text"], input[type="number"] {
     width: 100%;
     background: #1e1e1e;
     border: 1px solid #2e2e2e;
@@ -75,8 +110,8 @@
     font-family: inherit;
   }
 
-  input[type="url"]:focus, input[type="number"]:focus { border-color: #ff4444; }
-  input[type="url"]::placeholder { color: #404040; }
+  input[type="url"]:focus, input[type="text"]:focus, input[type="number"]:focus { border-color: #ff4444; }
+  input::placeholder { color: #404040; }
 
   .field-row {
     display: grid;
@@ -85,7 +120,23 @@
     margin-bottom: 20px;
   }
 
+  .field-row-full { margin-bottom: 20px; }
+
   .hint { font-size: 11px; color: #555; margin-top: 5px; }
+
+  .shorts-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    background: rgba(255,68,68,0.1);
+    border: 1px solid rgba(255,68,68,0.2);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 11px;
+    color: #ff6666;
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
 
   .btn-submit {
     width: 100%;
@@ -127,7 +178,6 @@
 
   .status-label { font-size: 14px; font-weight: 500; color: #ccc; }
 
-  /* Progress bar */
   .progress-track {
     background: #222;
     border-radius: 99px;
@@ -170,7 +220,6 @@
   .elapsed { font-size: 12px; color: #555; }
   .progress-pct { font-size: 12px; color: #555; }
 
-  /* Steps */
   .steps { display: flex; flex-direction: column; gap: 7px; margin-bottom: 20px; }
 
   .step {
@@ -193,21 +242,12 @@
     font-size: 10px; flex-shrink: 0;
     transition: all 0.3s;
   }
-  .step.active .step-icon {
-    border-color: #ff4444;
-    background: rgba(255,68,68,0.08);
-    animation: rotate 2s linear infinite;
-  }
-  .step.done .step-icon {
-    border-color: #22cc66;
-    background: rgba(34,204,102,0.1);
-    color: #22cc66;
-  }
+  .step.active .step-icon { border-color: #ff4444; background: rgba(255,68,68,0.08); animation: rotate 2s linear infinite; }
+  .step.done .step-icon   { border-color: #22cc66; background: rgba(34,204,102,0.1); color: #22cc66; }
   .step.failed .step-icon { border-color: #ff5555; background: rgba(255,85,85,0.1); color: #ff5555; }
 
   @keyframes rotate { to { transform: rotate(360deg); } }
 
-  /* Result */
   .result-box {
     background: #0f1f0f;
     border: 1px solid #1e3a1e;
@@ -216,10 +256,7 @@
     display: none;
   }
 
-  .result-box.error-box {
-    background: #1f0f0f;
-    border-color: #3a1e1e;
-  }
+  .result-box.error-box { background: #1f0f0f; border-color: #3a1e1e; }
 
   .result-title {
     font-size: 12px;
@@ -230,6 +267,21 @@
     margin-bottom: 12px;
   }
   .result-box.error-box .result-title { color: #ff5555; }
+
+  .result-stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 14px;
+  }
+  .stat-chip {
+    background: #0a1a0a;
+    border: 1px solid #1a2e1a;
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 12px;
+    color: #66bb88;
+    font-family: 'SF Mono', 'Consolas', monospace;
+  }
 
   .result-filename {
     font-size: 13px;
@@ -286,24 +338,58 @@
     <span class="logo-text">YouTube Intelligence</span>
   </div>
 
-  <h1>Extract Insights</h1>
-  <p class="subtitle">Paste a video or channel URL. GPT-4o extracts transcripts, frameworks, quotes, and hooks — saved as a markdown file to Google Drive.</p>
+  <div class="tabs">
+    <button class="tab-btn active" id="tab-channel" onclick="switchMode('channel')">
+      <span class="tab-icon">&#128250;</span> Channel / Video
+    </button>
+    <button class="tab-btn" id="tab-shorts" onclick="switchMode('shorts')">
+      <span class="tab-icon">&#9889;</span> Shorts
+    </button>
+  </div>
 
   <div id="form-section">
-    <div class="field-row">
-      <div>
-        <label for="url-input">YouTube URL</label>
-        <input type="url" id="url-input"
-          placeholder="https://youtube.com/watch?v=... or @channel"
-          autocomplete="off" spellcheck="false" />
+
+    <!-- Channel / Video form -->
+    <div id="channel-form">
+      <h1>Extract Insights</h1>
+      <p class="subtitle">Paste a video or channel URL. GPT-4o extracts transcripts, frameworks, quotes, and hooks — saved as a markdown file to Google Drive.</p>
+      <div class="field-row">
+        <div>
+          <label for="channel-url">YouTube URL</label>
+          <input type="url" id="channel-url"
+            placeholder="https://youtube.com/watch?v=... or @channel"
+            autocomplete="off" spellcheck="false" />
+        </div>
+        <div>
+          <label for="channel-limit">Limit</label>
+          <input type="number" id="channel-limit" value="10" min="1" max="50" />
+          <div class="hint">Videos (channels)</div>
+        </div>
       </div>
-      <div>
-        <label for="limit-input">Limit</label>
-        <input type="number" id="limit-input" value="10" min="1" max="50" />
-        <div class="hint">Videos (channels)</div>
-      </div>
+      <button class="btn-submit" id="channel-submit-btn" onclick="submitJob()">Start Extraction</button>
     </div>
-    <button class="btn-submit" id="submit-btn" onclick="submitJob()">Start Extraction</button>
+
+    <!-- Shorts form -->
+    <div id="shorts-form" style="display:none">
+      <h1>Shorts Vault</h1>
+      <p class="subtitle">Extract full transcripts with timestamps from a channel's top Shorts. Collects IDs automatically — saved as a master markdown file to Google Drive.</p>
+      <div class="shorts-badge">&#9889; Timedtext extraction &bull; Full timestamps &bull; Up to 125 Shorts</div>
+      <div class="field-row">
+        <div>
+          <label for="shorts-url">Channel Shorts URL</label>
+          <input type="url" id="shorts-url"
+            placeholder="https://youtube.com/@channel/shorts"
+            autocomplete="off" spellcheck="false" />
+        </div>
+        <div>
+          <label for="shorts-limit">Limit</label>
+          <input type="number" id="shorts-limit" value="50" min="1" max="125" />
+          <div class="hint">Shorts (max 125)</div>
+        </div>
+      </div>
+      <button class="btn-submit" id="shorts-submit-btn" onclick="submitJob()">Start Extraction</button>
+    </div>
+
   </div>
 
   <div id="status-panel">
@@ -320,27 +406,11 @@
       <div class="progress-pct" id="progress-pct"></div>
     </div>
 
-    <div class="steps" id="steps-list">
-      <div class="step" id="step-fetch">
-        <div class="step-icon">1</div>
-        <span>Fetching video metadata</span>
-      </div>
-      <div class="step" id="step-transcript">
-        <div class="step-icon">2</div>
-        <span>Extracting transcript</span>
-      </div>
-      <div class="step" id="step-ai">
-        <div class="step-icon">3</div>
-        <span>AI analysis with GPT-4o</span>
-      </div>
-      <div class="step" id="step-save">
-        <div class="step-icon">4</div>
-        <span>Saving to Google Drive</span>
-      </div>
-    </div>
+    <div class="steps" id="steps-list"></div>
 
     <div class="result-box" id="result-box">
       <div class="result-title">Extraction Complete</div>
+      <div class="result-stats" id="result-stats" style="display:none"></div>
       <div class="result-filename" id="result-filename"></div>
       <a class="result-link" id="result-link" href="#" target="_blank" rel="noopener">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -362,40 +432,120 @@
 </div>
 
 <script>
-const WEBHOOK    = 'https://n8n.americanlifeteam.com/webhook/youtube-intelligence';
-// Use Contents API (not raw.githubusercontent.com) — Contents API bypasses CDN cache, always fresh
-const STATUS_URL = 'https://api.github.com/repos/vincestars-cloud/campaign-previews/contents/youtube-intel/status.json';
 const FOLDER_URL = 'https://drive.google.com/drive/folders/1CQcfZl_yudXIRezfv0gNT-PEGRohAHfn';
 
-// Step trigger points (% of estimated progress)
-const STEP_IDS    = ['step-fetch', 'step-transcript', 'step-ai', 'step-save'];
-const STEP_AT_PCT = [5, 30, 60, 88];
+const MODES = {
+  channel: {
+    webhook: 'https://n8n.americanlifeteam.com/webhook/youtube-intelligence',
+    statusUrl: 'https://api.github.com/repos/vincestars-cloud/campaign-previews/contents/youtube-intel/status.json',
+    steps: [
+      { id: 'step-fetch',      label: 'Fetching video metadata' },
+      { id: 'step-transcript', label: 'Extracting transcript' },
+      { id: 'step-ai',         label: 'AI analysis with GPT-4o' },
+      { id: 'step-save',       label: 'Saving to Google Drive' }
+    ],
+    stepAt: [5, 30, 60, 88],
+    getPayload: () => {
+      const url   = document.getElementById('channel-url').value.trim();
+      const limit = parseInt(document.getElementById('channel-limit').value) || 10;
+      return { url, limit };
+    },
+    validate: () => {
+      const url = document.getElementById('channel-url').value.trim();
+      if (!url) { document.getElementById('channel-url').focus(); return false; }
+      return true;
+    },
+    estDur: () => {
+      const url   = document.getElementById('channel-url').value.trim();
+      const limit = parseInt(document.getElementById('channel-limit').value) || 10;
+      const isChannel = !(/youtube\.com\/watch\?v=|youtu\.be\//.test(url));
+      return isChannel ? Math.max(90, limit * 15) : 75;
+    },
+    statusLabel: () => {
+      const url   = document.getElementById('channel-url').value.trim();
+      const limit = parseInt(document.getElementById('channel-limit').value) || 10;
+      const isChannel = !(/youtube\.com\/watch\?v=|youtu\.be\//.test(url));
+      return 'Processing' + (isChannel ? ' channel (' + limit + ' videos)' : ' video') + '...';
+    }
+  },
+  shorts: {
+    webhook: 'https://n8n.americanlifeteam.com/webhook/shorts-intelligence',
+    statusUrl: 'https://api.github.com/repos/vincestars-cloud/campaign-previews/contents/youtube-intel/shorts-status.json',
+    steps: [
+      { id: 'step-collect',    label: 'Collecting Shorts IDs from channel' },
+      { id: 'step-transcript', label: 'Extracting transcripts (batch)' },
+      { id: 'step-build',      label: 'Building master document' },
+      { id: 'step-save',       label: 'Saving to Google Drive' }
+    ],
+    stepAt: [8, 35, 82, 93],
+    getPayload: () => {
+      const url   = document.getElementById('shorts-url').value.trim();
+      const limit = parseInt(document.getElementById('shorts-limit').value) || 50;
+      return { url, limit };
+    },
+    validate: () => {
+      const url = document.getElementById('shorts-url').value.trim();
+      if (!url) { document.getElementById('shorts-url').focus(); return false; }
+      return true;
+    },
+    estDur: () => {
+      const limit = parseInt(document.getElementById('shorts-limit').value) || 50;
+      return Math.max(120, limit * 8);
+    },
+    statusLabel: () => {
+      const limit = parseInt(document.getElementById('shorts-limit').value) || 50;
+      return 'Processing Shorts (up to ' + limit + ')...';
+    }
+  }
+};
 
+let currentMode = 'channel';
 let startTime, elapsedTimer, progressTimer, pollTimer;
-let jobSubmittedAt; // ISO timestamp just before POST
+let jobSubmittedAt;
 
-function isChannelUrl(url) {
-  return !(/youtube\.com\/watch\?v=|youtu\.be\//.test(url));
+// ── Token (obfuscated) ─────────────────────────────────────────
+const _t = () => new TextDecoder().decode(new Uint8Array([103,105,116,104,117,98,95,112,97,116,95,49,49,66,83,89,71,85,68,81,48,90,83,86,121,76,70,120,116,120,83,117,73,95,68,112,57,77,78,76,81,67,81,86,108,108,53,83,104,68,69,65,104,72,103,104,49,107,100,105,97,85,79,75,117,105,100,75,80,76,109,66,99,120,118,81,101,52,86,81,84,65,67,85,65,67,100,55,102,118,121,90,84]));
+
+// ── Mode switching ─────────────────────────────────────────────
+function switchMode(mode) {
+  currentMode = mode;
+  document.getElementById('tab-channel').classList.toggle('active', mode === 'channel');
+  document.getElementById('tab-shorts').classList.toggle('active', mode === 'shorts');
+  document.getElementById('channel-form').style.display = mode === 'channel' ? 'block' : 'none';
+  document.getElementById('shorts-form').style.display  = mode === 'shorts'  ? 'block' : 'none';
 }
 
+// ── Render steps ───────────────────────────────────────────────
+function renderSteps(steps) {
+  const list = document.getElementById('steps-list');
+  list.innerHTML = steps.map((s, i) =>
+    '<div class="step" id="' + s.id + '">' +
+      '<div class="step-icon">' + (i + 1) + '</div>' +
+      '<span>' + s.label + '</span>' +
+    '</div>'
+  ).join('');
+}
+
+// ── Submit ─────────────────────────────────────────────────────
 async function submitJob() {
-  const url   = document.getElementById('url-input').value.trim();
-  const limit = parseInt(document.getElementById('limit-input').value) || 10;
-  if (!url) { document.getElementById('url-input').focus(); return; }
+  const cfg = MODES[currentMode];
+  if (!cfg.validate()) return;
+
+  const payload = cfg.getPayload();
 
   document.getElementById('form-section').style.display = 'none';
   document.getElementById('status-panel').style.display = 'block';
-  document.getElementById('submit-btn').disabled = true;
-  setStatus('running', 'Submitting job...');
 
+  renderSteps(cfg.steps);
+  setStatus('running', 'Submitting job...');
   jobSubmittedAt = new Date().toISOString();
 
   let resp;
   try {
-    resp = await fetch(WEBHOOK, {
+    resp = await fetch(cfg.webhook, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ url, limit })
+      body: JSON.stringify(payload)
     });
   } catch (err) {
     showError('Network error: ' + err.message);
@@ -413,18 +563,15 @@ async function submitJob() {
     return;
   }
 
-  const isChannel = isChannelUrl(url);
-  const estDur    = isChannel ? Math.max(90, limit * 15) : 75;
-
-  setStatus('running', 'Processing' + (isChannel ? ' channel (' + limit + ' videos)' : ' video') + '...');
+  const estDur = cfg.estDur();
+  setStatus('running', cfg.statusLabel());
   startTime = Date.now();
-
   startElapsed();
-  startProgressAnim(estDur);
-  startPolling();
+  startProgressAnim(estDur, cfg.steps.map(s => s.id), cfg.stepAt);
+  startPolling(cfg.statusUrl);
 }
 
-// ── Elapsed timer ──────────────────────────────────────────
+// ── Elapsed timer ──────────────────────────────────────────────
 function startElapsed() {
   elapsedTimer = setInterval(() => {
     const s = Math.round((Date.now() - startTime) / 1000);
@@ -432,26 +579,19 @@ function startElapsed() {
   }, 1000);
 }
 
-// ── Animated progress (purely visual estimate) ─────────────
-function startProgressAnim(estDur) {
+// ── Progress animation ─────────────────────────────────────────
+function startProgressAnim(estDur, stepIds, stepAt) {
   const fill = document.getElementById('progress-fill');
-
   progressTimer = setInterval(() => {
     const elapsed = (Date.now() - startTime) / 1000;
-    // Ease towards 95% but never reach it until poll confirms done
     const raw = (elapsed / estDur) * 100;
     const pct = Math.min(95, raw < 80 ? raw : 80 + (raw - 80) * 0.3);
-
     fill.style.width = pct.toFixed(1) + '%';
     document.getElementById('progress-pct').textContent = Math.round(pct) + '%';
-
-    // Activate step indicators
-    STEP_IDS.forEach((sid, i) => {
-      const el = document.getElementById(sid);
-      if (pct >= STEP_AT_PCT[i]) {
-        if (pct < (STEP_AT_PCT[i + 1] || 100)) {
-          // Mark previous as done
-          STEP_IDS.slice(0, i).forEach(prev => markStep(prev, 'done'));
+    stepIds.forEach((sid, i) => {
+      if (pct >= stepAt[i]) {
+        if (pct < (stepAt[i + 1] || 100)) {
+          stepIds.slice(0, i).forEach(prev => markStep(prev, 'done'));
           markStep(sid, 'active');
         }
       }
@@ -461,66 +601,47 @@ function startProgressAnim(estDur) {
 
 function markStep(sid, state) {
   const el = document.getElementById(sid);
+  if (!el) return;
   const icon = el.querySelector('.step-icon');
-  if (state === 'done') {
-    el.className = 'step done';
-    icon.textContent = '\u2713';
-  } else if (state === 'active') {
-    el.className = 'step active';
-    icon.textContent = '\u25CB';
-  } else if (state === 'failed') {
-    el.className = 'step failed';
-    icon.textContent = '\u2717';
-  }
+  if (state === 'done')   { el.className = 'step done';   icon.textContent = '✓'; }
+  else if (state === 'active') { el.className = 'step active'; icon.textContent = '○'; }
+  else if (state === 'failed') { el.className = 'step failed'; icon.textContent = '✗'; }
 }
 
-// ── Polling ─────────────────────────────────────────────────
-function startPolling() {
-  // Poll every 3s — Contents API is not cached so we can poll aggressively
-  pollTimer = setInterval(checkStatus, 5000);
+// ── Polling ────────────────────────────────────────────────────
+function startPolling(statusUrl) {
+  pollTimer = setInterval(() => checkStatus(statusUrl), 5000);
 }
 
-async function checkStatus() {
+async function checkStatus(statusUrl) {
   let data;
   try {
-    // GitHub Contents API — no CDN cache, always returns the live file
-    // Token required to avoid 60 req/hr unauthenticated rate limit (poll fires every 5s = 720/hr)
-    const _t = new TextDecoder().decode(new Uint8Array([103,105,116,104,117,98,95,112,97,116,95,49,49,66,83,89,71,85,68,81,48,90,83,86,121,76,70,120,116,120,83,117,73,95,68,112,57,77,78,76,81,67,81,86,108,108,53,83,104,68,69,65,104,72,103,104,49,107,100,105,97,85,79,75,117,105,100,75,80,76,109,66,99,120,118,81,101,52,86,81,84,65,67,85,65,67,100,55,102,118,121,90,84]));
-    const res = await fetch(STATUS_URL, {
+    const res = await fetch(statusUrl, {
       cache: 'no-store',
-      headers: {
-        'Accept': 'application/vnd.github.v3+json',
-        'Authorization': 'token ' + _t
-      }
+      headers: { 'Accept': 'application/vnd.github.v3+json', 'Authorization': 'token ' + _t() }
     });
     if (!res.ok) return;
     const meta = await res.json();
-    // Contents API returns file content as base64
     const decoded = atob(meta.content.replace(/\n/g, ''));
     data = JSON.parse(decoded);
-  } catch (e) {
-    return; // Network hiccup — keep polling
-  }
+  } catch (e) { return; }
 
   if (!data || !data.completedAt) return;
-
-  // Only trigger if this completion is AFTER our job submission
   if (data.completedAt <= jobSubmittedAt) return;
 
   if (data.status === 'complete') {
-    showComplete(data.filename, data.driveUrl || FOLDER_URL);
+    showComplete(data.filename, data.driveUrl || FOLDER_URL, data.videoCount, data.successCount);
   } else if (data.status === 'error' && data.error) {
     showError('n8n error: ' + data.error);
   }
 }
 
-// ── Completion ───────────────────────────────────────────────
-function showComplete(filename, driveUrl) {
-  clearInterval(progressTimer);
-  clearInterval(elapsedTimer);
-  clearInterval(pollTimer);
+// ── Completion ─────────────────────────────────────────────────
+function showComplete(filename, driveUrl, videoCount, successCount) {
+  clearInterval(progressTimer); clearInterval(elapsedTimer); clearInterval(pollTimer);
 
-  STEP_IDS.forEach(sid => markStep(sid, 'done'));
+  const cfg = MODES[currentMode];
+  cfg.steps.forEach(s => markStep(s.id, 'done'));
 
   const fill = document.getElementById('progress-fill');
   fill.style.width = '100%';
@@ -530,25 +651,30 @@ function showComplete(filename, driveUrl) {
   const elapsed = Math.round((Date.now() - startTime) / 1000);
   document.getElementById('elapsed-text').textContent = elapsed + 's total';
   document.getElementById('poll-note').style.display = 'none';
-
   setStatus('success', 'Complete');
 
-  const box = document.getElementById('result-box');
+  // Show stats for shorts
+  const statsEl = document.getElementById('result-stats');
+  if (currentMode === 'shorts' && videoCount) {
+    statsEl.style.display = 'flex';
+    statsEl.innerHTML =
+      '<div class="stat-chip">' + videoCount + ' Shorts</div>' +
+      (successCount ? '<div class="stat-chip">' + successCount + ' transcripts</div>' : '');
+  } else {
+    statsEl.style.display = 'none';
+  }
+
   document.getElementById('result-filename').textContent = filename || 'File saved to Drive';
   document.getElementById('result-link').href = driveUrl;
-  box.style.display = 'block';
+  document.getElementById('result-box').style.display = 'block';
 }
 
-// ── Error ─────────────────────────────────────────────────────
+// ── Error ──────────────────────────────────────────────────────
 function showError(msg) {
-  clearInterval(progressTimer);
-  clearInterval(elapsedTimer);
-  clearInterval(pollTimer);
-
+  clearInterval(progressTimer); clearInterval(elapsedTimer); clearInterval(pollTimer);
   setStatus('error', 'Failed');
   document.getElementById('progress-fill').style.background = '#882222';
   document.getElementById('poll-note').style.display = 'none';
-
   document.getElementById('error-box').style.display = 'block';
   document.getElementById('error-msg').textContent = msg;
 }
@@ -558,29 +684,19 @@ function setStatus(state, label) {
   document.getElementById('status-label').textContent = label;
 }
 
-// ── Reset ─────────────────────────────────────────────────────
+// ── Reset ──────────────────────────────────────────────────────
 function resetForm() {
-  clearInterval(progressTimer);
-  clearInterval(elapsedTimer);
-  clearInterval(pollTimer);
-
+  clearInterval(progressTimer); clearInterval(elapsedTimer); clearInterval(pollTimer);
   document.getElementById('status-panel').style.display = 'none';
   document.getElementById('result-box').style.display = 'none';
   document.getElementById('error-box').style.display = 'none';
   document.getElementById('form-section').style.display = 'block';
-  document.getElementById('submit-btn').disabled = false;
   document.getElementById('progress-fill').style.width = '2%';
   document.getElementById('progress-fill').classList.remove('done');
   document.getElementById('progress-fill').style.background = '';
   document.getElementById('progress-pct').textContent = '';
   document.getElementById('elapsed-text').textContent = '0s';
   document.getElementById('poll-note').style.display = 'block';
-
-  STEP_IDS.forEach((sid, i) => {
-    const el = document.getElementById(sid);
-    el.className = 'step';
-    el.querySelector('.step-icon').textContent = i + 1;
-  });
 }
 </script>
 </body>
