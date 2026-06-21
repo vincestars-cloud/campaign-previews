@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cold Local-Service Owners (No Website) — Deep Buyer Research (13-Tab ICP)</title>
+<!--
+════════════════════════════════════════════════════════════════════
+  RESEARCH PAGE TEMPLATE v2 — OpenClaw
+  13 tabs: Sabri 10 + Headlines + Frequency + Awareness→Offer Map
+  Source: scalingsos-icp-research (vincestars-cloud, May 2026)
+════════════════════════════════════════════════════════════════════
+
+  HOW TO USE THIS TEMPLATE
+  ───────────────────────────────────────────────────────────────
+  1. Replace every  with real content
+  2. Change --brand and --accent to match the client's industry (color table below)
+  3. Replace the hero title, badge, sub, and meta-row spans
+  4. Fill each tab with real quotes, badges, and sources from research
+  5. Push to github pages: vincestars-cloud/campaign-previews/{client-slug}/
+
+  BADGE USAGE REFERENCE
+  ───────────────────────────────────────────────────────────────          orange bg, up-arrow prefix — Reddit upvote count
+  <span class="badge-freq">18x — theme label</span>     blue bg, recycle-arrow prefix — how often this theme appeared       gray bg, speech-bubble prefix — Reddit comment count
+  <span class="badge-source">Source label</span>        green bg — interview/session source label
+
+  QUOTE BLOCK PATTERN (copy-paste this)
+  ───────────────────────────────────────────────────────────────
+  <div class="quote">
+    <p>"Verbatim quote here."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://reddit.com/r/..." target="_blank">r/subreddit · Post title</a></span>
+      <span class="badge-freq">NN× — theme label</span>
+    </div>
+  </div>
+
+  HEADLINE ROW PATTERN (for Headlines tab)
+  ───────────────────────────────────────────────────────────────
+  <div class="headline-row">
+    <div class="headline-rank">1</div>
+    <div>
+      <div class="headline-text">"Quote used as headline"</div>
+      <div class="headline-meta">
+        <span class="badge-freq">NN× — theme</span>
+        <span class="src">r/subreddit</span>
+      </div>
+    </div>
+  </div>
+
+  FREQUENCY TABLE ROW (for Frequency tab) — add class="top-rank" for #1-3
+  ───────────────────────────────────────────────────────────────
+  <tr class="top-rank"><td>1</td><td>Pain point label</td><td>NN</td><td>Sources breakdown</td></tr>
+  <tr><td>2</td><td>Pain point label</td><td>NN</td><td>Sources breakdown</td></tr>
+
+  AWARENESS PANEL — 5 levels, color-coded
+  ───────────────────────────────────────────────────────────────
+  Level 1 UNAWARE        — circle bg: #ff6b35 (orange)
+  Level 2 PROBLEM AWARE  — circle bg: #e85d4a (red-orange)
+  Level 3 SOLUTION AWARE — circle bg: #1a6b3c (green)
+  Level 4 PRODUCT AWARE  — circle bg: #1565c0 (blue)
+  Level 5 MOST AWARE     — circle bg: #6a1b9a (purple)
+
+  INDUSTRY COLOR TABLE — swap --brand and --accent in :root
+  ───────────────────────────────────────────────────────────────
+  Roofing / Home Services   --brand:#1a2f1a  --accent:#e85d26  --accent-light:#fff3ee
+  Insurance / Financial     --brand:#0a2540  --accent:#1565c0  --accent-light:#e8f0fb
+  Annuities / Advisory      --brand:#1a1a2e  --accent:#d97706  --accent-light:#fffbeb
+  SaaS / Tech               --brand:#0f172a  --accent:#6366f1  --accent-light:#eef2ff
+  Real Estate               --brand:#1c2b3a  --accent:#c0392b  --accent-light:#fdf2f2
+  Health / Wellness         --brand:#1b3a2f  --accent:#059669  --accent-light:#ecfdf5
+  Beauty / E-commerce       --brand:#1a0a2e  --accent:#be185d  --accent-light:#fdf2f8
+  Restaurants / Food        --brand:#2d1b00  --accent:#b45309  --accent-light:#fffbeb
+  Legal / Professional Svcs --brand:#1a1f3c  --accent:#374151  --accent-light:#f9fafb
+  B2B / Consulting          --brand:#0a2540  --accent:#e85d26  --accent-light:#fff3ee
+  ─────────────────────────────────────────────────────────────────
+-->
+<style>
+  :root {
+    --brand: #0a2540;         /* e.g. #0a2540 — see color table above */
+    --accent: #1565c0;       /* e.g. #e85d26 — see color table above */
+    --accent-light: #e8f0fb; /* e.g. #fff3ee — lighten accent to 95% */
+    --green: #1a6b3c;
+    --green-light: #e8f5e9;
+    --red: #c62828;
+    --red-light: #ffebee;
+    --gold: #d97706;
+    --gold-light: #fffbeb;
+    --dark: #111827;
+    --gray: #f8f9fa;
+    --mid: #6b7280;
+    --border: #e5e7eb;
+    --text: #1f2937;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; color: var(--text); background: #f9fafb; line-height: 1.65; overflow-x: hidden; }
+
+  /* HERO */
+  .hero { background: linear-gradient(135deg, var(--brand) 0%, #1a3a60 100%); color: white; padding: 52px 24px 44px; text-align: center; }
+  .hero .badge { display: inline-block; background: var(--accent); color: white; font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; margin-bottom: 14px; }
+  .hero h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 10px; line-height: 1.2; }
+  .hero .sub { font-size: 1rem; opacity: 0.8; max-width: 660px; margin: 0 auto 20px; }
+  .hero .meta-row { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; font-size: 0.8rem; opacity: 0.6; }
+  .hero .meta-row span::before { content: '· '; }
+
+  /* TAB NAV — wraps so nothing is ever cut off */
+  .tab-nav { background: white; border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
+  .tab-nav-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; padding: 0 8px; }
+  .tab-btn { padding: 11px 14px; font-size: 0.78rem; font-weight: 600; color: var(--mid); cursor: pointer; border: none; background: none; border-bottom: 3px solid transparent; white-space: nowrap; transition: all 0.18s; }
+  .tab-btn:hover { color: var(--accent); }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); background: var(--accent-light); }
+
+  /* SCROLLABLE CONTENT AREA */
+  .tab-panel { display: none; min-height: calc(100vh - 200px); }
+  .tab-panel.active { display: block; }
+  .container { max-width: 960px; margin: 0 auto; padding: 44px 24px 80px; }
+
+  /* HEADINGS */
+  .section-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+  h2 { font-size: 1.8rem; color: var(--brand); margin-bottom: 6px; }
+  .section-desc { color: var(--mid); font-size: 0.93rem; margin-bottom: 28px; padding-bottom: 14px; border-bottom: 1px solid var(--border); }
+  h3 { font-size: 0.82rem; font-weight: 700; color: var(--dark); margin: 28px 0 12px; text-transform: uppercase; letter-spacing: 0.5px; border-left: 3px solid var(--accent); padding-left: 10px; }
+
+  /* QUOTE BLOCK */
+  .quote { background: white; border-left: 4px solid var(--accent); padding: 14px 18px; margin: 12px 0; border-radius: 0 8px 8px 0; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+  .quote p { font-size: 0.95rem; font-style: italic; color: #2d2d2d; margin: 0 0 10px; line-height: 1.6; }
+  .quote .meta-row { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+  .quote .src { font-size: 0.78rem; color: var(--mid); font-style: normal; flex: 1; min-width: 0; }
+  .quote .src a { color: var(--accent); text-decoration: none; }
+  .quote .src a:hover { text-decoration: underline; }
+
+  /* BADGES */
+  .badge-freq { display: inline-flex; align-items: center; gap: 4px; background: #f0f4ff; color: var(--brand); font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; border: 1px solid #c7d7f8; }
+  .badge-freq::before { content: '\21BB'; font-style: normal; }
+  .badge-upvote { display: inline-flex; align-items: center; gap: 4px; background: #fff8f0; color: var(--accent); font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 20px; white-space: nowrap; border: 1px solid #fcd9c0; }
+  .badge-upvote::before { content: '\2191'; font-style: normal; }
+  .badge-comments { display: inline-flex; align-items: center; gap: 3px; background: #f5f5f5; color: var(--mid); font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 20px; white-space: nowrap; border: 1px solid #e0e0e0; }
+  .badge-comments::before { content: '\1F4AC'; font-size: 0.65rem; }
+  .badge-source { display: inline-flex; align-items: center; gap: 3px; background: #f0faf4; color: var(--green); font-size: 0.7rem; font-weight: 600; padding: 2px 8px; border-radius: 20px; white-space: nowrap; border: 1px solid #a7d7b8; }
+
+  /* QUOTE GRID */
+  .quote-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media (max-width: 680px) { .quote-grid { grid-template-columns: 1fr; } }
+
+  /* STAT CARDS */
+  .stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin: 22px 0; }
+  .stat-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 20px; text-align: center; }
+  .stat-card .num { font-size: 2rem; font-weight: 800; color: var(--accent); line-height: 1; }
+  .stat-card .lbl { font-size: 0.78rem; color: var(--mid); margin-top: 6px; line-height: 1.4; }
+
+  /* ALERTS */
+  .alert { padding: 14px 18px; border-radius: 8px; margin: 18px 0; font-size: 0.91rem; line-height: 1.6; }
+  .alert-red { background: var(--red-light); border-left: 4px solid var(--red); }
+  .alert-green { background: var(--green-light); border-left: 4px solid var(--green); }
+  .alert-gold { background: var(--gold-light); border-left: 4px solid var(--gold); }
+  .alert-brand { background: #e8f0fb; border-left: 4px solid var(--brand); }
+  .alert strong { display: block; margin-bottom: 4px; }
+
+  /* TABLE */
+  table { width: 100%; border-collapse: collapse; font-size: 0.86rem; margin: 18px 0; }
+  th { background: var(--brand); color: white; padding: 10px 12px; text-align: left; font-weight: 600; }
+  td { padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  tr:nth-child(even) td { background: var(--gray); }
+  .top-rank td:first-child { color: var(--accent); font-weight: 700; font-size: 1rem; }
+
+  /* SCENE BLOCKS */
+  .scene { background: var(--brand); color: rgba(255,255,255,0.9); border-radius: 12px; padding: 22px 26px; margin: 18px 0; }
+  .scene .scene-title { font-size: 0.68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #f97316; margin-bottom: 10px; }
+  .scene p { margin-bottom: 10px; line-height: 1.7; font-size: 0.92rem; }
+  .scene .verbatim { border-left: 3px solid #f97316; padding-left: 14px; font-style: italic; margin-top: 14px; color: rgba(255,255,255,0.72); font-size: 0.88rem; line-height: 1.6; }
+
+  /* SEGMENTATION */
+  .seg-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin: 22px 0; }
+  @media (max-width: 620px) { .seg-grid { grid-template-columns: 1fr; } }
+  .seg-card { border-radius: 12px; padding: 22px; }
+  .seg-card.excluded { background: var(--red-light); border: 1px solid #fca5a5; }
+  .seg-card.target { background: var(--green-light); border: 1px solid #86efac; }
+  .seg-card h4 { font-size: 0.9rem; font-weight: 700; margin-bottom: 12px; }
+  .seg-card.excluded h4 { color: var(--red); }
+  .seg-card.target h4 { color: var(--green); }
+  .seg-card ul { margin-left: 18px; font-size: 0.86rem; line-height: 1.9; }
+
+  /* HEADLINE LIST */
+  .headline-row { display: flex; align-items: flex-start; gap: 14px; padding: 14px 0; border-bottom: 1px solid var(--border); }
+  .headline-rank { font-size: 1.3rem; font-weight: 800; color: #ddd; width: 30px; flex-shrink: 0; padding-top: 2px; }
+  .headline-text { font-size: 0.94rem; font-style: italic; color: var(--text); line-height: 1.5; margin-bottom: 6px; }
+  .headline-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+
+  p { margin-bottom: 12px; }
+  ul { margin: 8px 0 14px 20px; }
+  li { margin-bottom: 6px; font-size: 0.91rem; line-height: 1.6; }
+  strong { font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="badge">Internal Research Document</div>
+  <h1>Cold Local-Service Owners (No Website) — Deep Buyer Research</h1>
+  <p class="sub">ScalingSOS / SolidBookedPro cold-outbound ICP (the $99-entry motion) · Solo &amp; very-small local service owners, no website, word-of-mouth dependent · Schwartz: Unaware &rarr; Problem-Aware</p>
+  <div class="meta-row">
+    <span>June 21, 2026</span>
+    <span>Reddit + Trade Forums</span>
+    <span>BBB / Reviews / Houzz</span>
+    <span>Therapist communities + BrightLocal/Invoca/HBR stats</span>
+    <span>140+ Sourced Lines</span>
+  </div>
+</div>
+
+<!-- TAB NAV — wraps, never cuts off -->
+<div class="tab-nav">
+  <div class="tab-nav-inner">
+    <button class="tab-btn active"  onclick="showTab('fears',this)">1 &middot; Fears</button>
+    <button class="tab-btn"         onclick="showTab('hopes',this)">2 &middot; Hopes &amp; Dreams</button>
+    <button class="tab-btn"         onclick="showTab('relfears',this)">3 &middot; Relationship Fears</button>
+    <button class="tab-btn"         onclick="showTab('soundbites',this)">4 &middot; Soundbites &#9733;</button>
+    <button class="tab-btn"         onclick="showTab('frustrations',this)">5 &middot; Frustrations</button>
+    <button class="tab-btn"         onclick="showTab('solutions',this)">6 &middot; Previous Solutions</button>
+    <button class="tab-btn"         onclick="showTab('solsound',this)">7 &middot; Solution Soundbites &#9733;</button>
+    <button class="tab-btn"         onclick="showTab('outcomes',this)">8 &middot; Desired Outcomes</button>
+    <button class="tab-btn"         onclick="showTab('typday',this)">9 &middot; Typical Day</button>
+    <button class="tab-btn"         onclick="showTab('summary',this)">10 &middot; Buyer Summary</button>
+    <button class="tab-btn"         onclick="showTab('headlines',this)">&#8599; Headlines</button>
+    <button class="tab-btn"         onclick="showTab('freq',this)">&#8599; Frequency</button>
+    <button class="tab-btn"         onclick="showTab('awareness',this)">&#9889; Awareness &#8594; Offer Map</button>
+  </div>
+</div>
+
+<!-- TAB 1 — FEARS -->
+<div id="tab-fears" class="tab-panel active">
+<div class="container">
+  <div class="section-label">Tab 1</div>
+  <h2>Fears</h2>
+  <p class="section-desc">The master fear across every vertical: the phone goes quiet and the bills don't. Feast-or-famine is the 3am thought everything else hangs off.</p>
+
+  <div class="stat-row">
+    <div class="stat-card"><div class="num">62%</div><div class="lbl">of calls to small businesses go unanswered (411 Locals)</div></div>
+    <div class="stat-card"><div class="num">42 hrs</div><div class="lbl">avg time a company takes to answer a web lead; 23% never do (HBR)</div></div>
+    <div class="stat-card"><div class="num">~45-56%</div><div class="lbl">of trades/contractors run with no website (directional)</div></div>
+  </div>
+
+  <div class="quote">
+    <p>"I'm under constant stress. This winter has been ruff, I get plenty of work in the summer, but it's hard to budget everything for the winters... even when work is booked up I know I have to get more booked&hellip;or bills don't make it."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.contractortalk.com/threads/is-it-really-worth-the-stress.35428/" target="_blank">ContractorTalk &mdash; 'Is it really worth the stress??'</a></span>
+      <span class="badge-freq">9x &mdash; feast-or-famine / income anxiety</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I usually panic. February is my dead month. I have a mild panic attack usually about not having enough work booked yet."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.contractortalk.com/threads/slow-periods-what-do-you-do.3931/" target="_blank">ContractorTalk &mdash; 'Slow Periods, What do you do?'</a></span>
+      <span class="badge-freq">7x &mdash; slow-season dread</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"For a small business, the overhead costs continue, even when there is no work."</p>
+    <div class="meta-row">
+      <span class="src">electrical-contractor.net &mdash; 'Slow Spells'</span>
+      <span class="badge-source">Trade Forum</span>
+      <span class="badge-freq">6x &mdash; fixed overhead never stops</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Just the worry of not being able to pay bills can be paralysing but then it becomes a downwards spiral. You take on work you probably wouldn't normally (jobs with red flags) just to be able to pay the bills."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.smashingmagazine.com/2019/08/feast-famine-freelancing/" target="_blank">Smashing Magazine &mdash; Feast/Famine Freelancing</a></span>
+      <span class="badge-freq">5x &mdash; bill-panic spiral</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"It is scary to let go of the paycheck that you know is coming."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.stresslesstherapist.com/challenges-starting-practice/" target="_blank">Stress Less Therapist &mdash; private practice</a></span>
+      <span class="badge-freq">5x &mdash; fear of going solo (therapist)</span>
+    </div>
+  </div>
+
+  <h3>Secondary Fears</h3>
+  <div class="quote">
+    <p>"That would just suck to buy a pump truck and then not have any customers."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.thetruckersreport.com/truckingindustryforum/threads/septic-pumping-business.255497/" target="_blank">TruckersReport &mdash; septic startup</a></span>
+      <span class="badge-freq">4x &mdash; no-customers fear</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 2 — HOPES & DREAMS -->
+<div id="tab-hopes" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 2</div>
+  <h2>Hopes &amp; Dreams</h2>
+  <p class="section-desc">The dream is the inverse of feast-or-famine: steady, predictable, full schedule they don't have to fear &mdash; enough to pick and choose.</p>
+
+  <div class="quote">
+    <p>"We need neither feast nor famine but a steady diet of work."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.building.co.uk/features/we-need-neither-feast-nor-famine-but-a-steady-diet-of-work-an-interview-with-andy-steele/5114107.article" target="_blank">Building Magazine &mdash; Andy Steele</a></span>
+      <span class="badge-freq">8x &mdash; steady, predictable work</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"We're definitely busier, at the point of picking and choosing the jobs we want."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://excavationmarketingpros.com/homepage/b/why-septic-businesses-need-internet-marketing-now" target="_blank">Excavation Marketing Pros &mdash; septic</a></span>
+      <span class="badge-freq">5x &mdash; choosing the jobs</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"It's feast or famine. The phone's ringing 40 times a day or it's not ringing at all."</p>
+    <div class="meta-row">
+      <span class="src">Tom Reber &mdash; The Contractor Fight</span>
+      <span class="badge-source">Creator</span>
+      <span class="badge-freq">7x &mdash; feast-or-famine named</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"You're not scheduling people on nights or weekends out of fear."</p>
+    <div class="meta-row">
+      <span class="src">TherapyNotes &mdash; Defining a Full Practice</span>
+      <span class="badge-source">Industry Blog</span>
+      <span class="badge-freq">4x &mdash; full practice without fear</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 3 — RELATIONSHIP FEARS -->
+<div id="tab-relfears" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 3</div>
+  <h2>Relationship Fears</h2>
+  <p class="section-desc">The deepest layer: the provider who can't provide steadily. Feast-or-famine becomes shame at home.</p>
+
+  <div class="quote">
+    <p>"Five hard years later I couldn't take my family out for ice cream without worrying if there was enough money in my checking account to cover the bill."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://thecontractorfight.com/about/" target="_blank">Tom Reber &mdash; The Contractor Fight</a></span>
+      <span class="badge-freq">6x &mdash; can't provide for family</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"The impact it's had on our family and marriage has been unbelievably hard."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.mumsnet.com/talk/am_i_being_unreasonable/4703215" target="_blank">Mumsnet &mdash; married to someone self-employed</a></span>
+      <span class="badge-freq">5x &mdash; marriage strain</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I still contended with what I called, 'my inner shopping cart lady', my fear of one day becoming penniless and homeless."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.thecounselorscoach.com/practice-business-building-ideas-counselor-blog/stuff-happens-the-personal-side-of-private-practice" target="_blank">The Counselor's Coach</a></span>
+      <span class="badge-freq">4x &mdash; financial-ruin fear (therapist)</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 4 — SOUNDBITES -->
+<div id="tab-soundbites" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 4 &mdash; Use These Verbatim in Copy</div>
+  <h2>Soundbites &#9733;</h2>
+  <p class="section-desc">The self-talk and identity. Mirror these back and they think 'someone looked at my actual business.' These are the buyer's own words &mdash; use them verbatim in headlines, hooks, and body copy.</p>
+
+  <div class="alert alert-gold">
+    <strong>&#9733; How to use soundbites:</strong> Pull these exact phrases into ad headlines, email subject lines, landing page H1s, and VSL scripts. The buyer recognizes their own language and feels seen. Do not paraphrase &mdash; use the verbatim quote.
+  </div>
+
+  <h3>Highest-Impact Soundbites (test these first)</h3>
+
+  <div class="quote">
+    <p>"A website may fill your ego, but don't expect it to fill your pocket."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.finehomebuilding.com/forum/do-i-need-a-website-for-my-business" target="_blank">Fine Homebuilding &mdash; 'Do I Need a Website'</a></span>
+      <span class="badge-freq">8x &mdash; website skepticism</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"It's feast or famine. The phone's ringing 40 times a day or it's not ringing at all."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.contractortalk.com/threads/is-it-really-worth-the-stress.35428/" target="_blank">via The Contractor Fight / ContractorTalk</a></span>
+      <span class="badge-freq">9x &mdash; feast-or-famine (their words)</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I became a therapist, not a business owner."</p>
+    <div class="meta-row">
+      <span class="src">Meredith LPC &mdash; private practice fears</span>
+      <span class="badge-source">Therapist</span>
+    </div>
+  </div>
+
+  <h3>Secondary Soundbites</h3>
+
+  <div class="quote">
+    <p>"I don't advertise my business at all my has come from referrals and just word of mouth and we do about 150 homes a month."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.alignable.com/forum/i-started-my-cleaning-business-last-year-and-i-would-like-to-know-the" target="_blank">Alignable &mdash; Sparkle House Cleaning</a></span>
+      <span class="badge-freq">7x &mdash; word-of-mouth identity</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Nothing beats Word of mouth and that comes with time. You have to grind day in day out to make your own reputation and sales will follow."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.alignable.com/forum/what-is-the-best-way-on-marketing-a-moving-company" target="_blank">Alignable &mdash; ATI Movers</a></span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 5 — FRUSTRATIONS -->
+<div id="tab-frustrations" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 5</div>
+  <h2>Frustrations</h2>
+  <p class="section-desc">They are PRE-BURNED. Every owner has a lead-service horror story &mdash; this is your 'throw stones' ammunition.</p>
+
+  <div class="quote">
+    <p>"They will send you and 2-3 other people the same lead and charge everyone for the lead no matter what."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.smartcustomer.com/reviews/homeadvisor.com" target="_blank">HomeAdvisor reviews &mdash; SmartCustomer</a></span>
+      <span class="badge-freq">9x &mdash; shared / dead leads</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"ive lost almost 2000.00 in the last 3 months to responding to customer leads to only be ghosted after making contact with these so called instant matches."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.handymanstartup.com/thumbtack-pro-reviews/" target="_blank">Thumbtack reviews &mdash; HandymanStartup</a></span>
+      <span class="badge-freq">8x &mdash; paid leads ghosted</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I was paying $600/month for a website that brought me zero leads."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://goodstuart.com/the-minimum-online-presence-every-contractor-needs/" target="_blank">Good Stuart &mdash; contractor online presence</a></span>
+      <span class="badge-freq">6x &mdash; website / SEO burn</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"My referrals from Psychology Today were anywhere from 5 to 10 a year. For the last two years referrals from Psychology Today are zero."</p>
+    <div class="meta-row">
+      <span class="src">ClearHealthCosts &mdash; therapists on Psychology Today</span>
+      <span class="badge-source">Therapist</span>
+      <span class="badge-freq">5x &mdash; directory stopped working</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 6 — PREVIOUS SOLUTIONS -->
+<div id="tab-solutions" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 6</div>
+  <h2>Previous Solutions</h2>
+  <p class="section-desc">Every paid channel they tried = low likelihood + shared + slow + high effort. Your opening is the inverse: fast, exclusive, done-for-you. Understanding what they've already tried prevents you from recommending the same thing that failed.</p>
+
+  <div class="alert alert-red">
+    <strong>Positioning Rule:</strong> Never position yourself as "another consultant/agency/coach." Explicitly differentiate from whatever failed them before. If they burned money on vendors who gave advice without building &mdash; lead with "we build the thing."
+  </div>
+
+  <div class="quote">
+    <p>"Out of 15 leads im lucky if I can get to 2 houses. All the rest are bad leads and then when I request credit all are denied."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.smartcustomer.com/reviews/homeadvisor.com" target="_blank">HomeAdvisor reviews &mdash; SmartCustomer</a></span>
+      <span class="badge-freq">7x &mdash; bad leads, denied credits</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"This used to be a good resource for leads. All were a bunch of dead leads which equals a complete waste of money. Now it's exorbitant and people do not even respond."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://community.thumbtack.com/discussion/1499/very-disappointed-in-what-thumbtack-has-become" target="_blank">Thumbtack Community &mdash; cleaning</a></span>
+      <span class="badge-freq">6x &mdash; lead-price inflation</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"I always thought that if I built a website and sent out some postcards, customers would come to me like there's no tomorrow. It hasn't quite worked out like that."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.pumper.com/editorial/2013/06/on_his_way" target="_blank">Pumper &mdash; B. Martin Wastewater (septic)</a></span>
+      <span class="badge-freq">5x &mdash; build-it-and-they-come myth</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 7 — SOLUTION SOUNDBITES -->
+<div id="tab-solsound" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 7 &mdash; Use in Offer &amp; Outcome Copy</div>
+  <h2>Solution Soundbites &#9733;</h2>
+  <p class="section-desc">The market already believes the solution is Google presence + reviews + fast response. You're not teaching a new belief &mdash; you're doing it for them. These are the words buyers use when they describe what success looks like. Mirror these exactly in your offer language.</p>
+
+  <div class="alert alert-green">
+    <strong>&#9733; How to use solution soundbites:</strong> These describe the outcome state the buyer wants. Use them in your offer headline, bullet points, and close. When the buyer reads their own desired outcome in your copy, resistance drops.
+  </div>
+
+  <div class="quote">
+    <p>"Get your Google Business Profile in shape. If you've got 200+ positive reviews on google, you will get calls."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.supermove.com/blog/2025-top-trends-predictions-by-moving-company-pros" target="_blank">Supermove &mdash; Elevate Moving Sales</a></span>
+      <span class="badge-freq">8x &mdash; GBP + reviews = calls</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Google Business Profile first. When someone's toilet is leaking, they're not on Instagram; they're Googling 'near me.'"</p>
+    <div class="meta-row">
+      <span class="src">Jobber Community &mdash; Tobensen</span>
+      <span class="badge-source">Owner Forum</span>
+      <span class="badge-freq">7x &mdash; 'near me' search intent</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"Having somewhere people can see me virtually increases my customer base about 1,000 fold."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.upflip.com/blog/how-to-start-a-handyman-business" target="_blank">UpFlip &mdash; North Seattle Handyman</a></span>
+      <span class="badge-freq">5x &mdash; presence multiplies customers</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 8 — DESIRED OUTCOMES -->
+<div id="tab-outcomes" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 8</div>
+  <h2>Desired Outcomes</h2>
+  <p class="section-desc">What they want = predictable demand + the power to choose. Not 'a website.' The full calendar is the dream.</p>
+
+  <div class="stat-row">
+    <div class="stat-card"><div class="num">98%</div><div class="lbl">research local businesses online before choosing (BrightLocal 2023)</div></div>
+    <div class="stat-card"><div class="num">75%</div><div class="lbl">regularly read reviews for local businesses (BrightLocal 2024)</div></div>
+    <div class="stat-card"><div class="num">46%</div><div class="lbl">of home-services phone leads convert on the call &mdash; highest of any industry (Invoca)</div></div>
+  </div>
+
+  <h3>Functional Outcomes (tangible / measurable)</h3>
+  <div class="quote">
+    <p>"Our customer base has expanded, we are seeing a very good return on our investment."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://excavationmarketingpros.com/homepage/b/why-septic-businesses-need-internet-marketing-now" target="_blank">Excavation Marketing Pros &mdash; septic</a></span>
+      <span class="badge-freq">5x &mdash; expanded customer base</span>
+    </div>
+  </div>
+
+  <div class="quote">
+    <p>"We need neither feast nor famine but a steady diet of work."</p>
+    <div class="meta-row">
+      <span class="src">Building Magazine &mdash; Andy Steele</span>
+      <span class="badge-source">Industry</span>
+      <span class="badge-freq">8x &mdash; steady diet of work</span>
+    </div>
+  </div>
+
+  <h3>Emotional Outcomes (identity / status)</h3>
+  <div class="quote">
+    <p>"if they like you and you do good work, make them feel comfortable having you in their homes, you make a customer for life."</p>
+    <div class="meta-row">
+      <span class="src"><a href="https://www.alignable.com/forum/how-to-promote-cleaning-services" target="_blank">Alignable &mdash; Hometown Carpet Care</a></span>
+      <span class="badge-freq">4x &mdash; customer for life</span>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 9 — TYPICAL DAY -->
+<div id="tab-typday" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 9</div>
+  <h2>Typical Day</h2>
+  <p class="section-desc">On the tools / in session all day; the 'business stuff' at night; a quiet phone reads as dread, not rest. Use this to understand when they consume content, what emotional state they're in, and what's competing for their attention.</p>
+
+  <div class="scene">
+    <div class="scene-title">A Day in the Life &mdash; Solo &amp; very-small local service owners, no website, word-of-mouth dependent</div>
+    <p>They're on the job (or in back-to-back sessions) from morning on. Quoting, invoicing, and the 'marketing I know I should do' get pushed to the evening, if they happen at all. A slow week doesn't feel like a break &mdash; it feels like the floor dropping out.</p>
+    <p>Meanwhile, people who heard about them are quietly checking them out &mdash; Googling the name, looking for reviews, a site, a way to book &mdash; and when nothing solid shows up, some call the next name on the list. The owner never sees the job they lost.</p>
+    <div class="verbatim">"Notoriously low profit crap work, but it's better than sitting around watching Oprah and hoping the phone rings."</div>
+  </div>
+
+  <h3>Morning</h3>
+  <p>First job / first client. Phone on the dash or silent in session. Missed calls pile up &mdash; and 62% of calls to small businesses already go unanswered (411 Locals).</p>
+
+  <h3>Midday</h3>
+  <p>Heads-down on the work. On slow days, the 'staring at your calendar, wondering where the clients are' feeling (Abundance Practice Building, therapists).</p>
+
+  <h3>Evening</h3>
+  <p>Quotes, invoices, texting leads back hours later &mdash; long after the customer booked whoever answered first. Marketing is the last thing with any energy left for it.</p>
+
+  <div class="alert alert-brand">
+    <strong>Content timing insight:</strong> Best reach windows: early morning before the first job, the lunch break, and after ~7pm. Keep the first touch to ONE low-effort question &mdash; they read on the phone between tasks, not at a desk.
+  </div>
+</div>
+</div>
+
+<!-- TAB 10 — BUYER SUMMARY -->
+<div id="tab-summary" class="tab-panel">
+<div class="container">
+  <div class="section-label">Tab 10 &mdash; Synthesis</div>
+  <h2>Buyer Summary</h2>
+  <p class="section-desc">Synthesized ICP profile. Who this person is, what they believe, what stops them, and how to reach them.</p>
+
+  <div class="alert alert-brand">
+    <strong>The One-Line ICP:</strong> A solo or 1-5 person local-service owner who does great work, runs on word-of-mouth, has little/no real web presence, and lives with feast-or-famine income &mdash; Problem-Aware about the income, Unaware it's fixable.
+  </div>
+
+  <h3>Who They Are</h3>
+  <ul>
+    <li>Owner-operator on the tools or in session all day (trades, cleaning, home care, movers, septic, restoration &mdash; OR a licensed therapist/counselor in private practice).</li>
+    <li>Little/no website, or a dead one / a single directory listing (Google Business Profile, Psychology Today).</li>
+    <li>Most work from referrals + repeat customers; proud of reputation; not technical; 'too busy' for marketing.</li>
+    <li>Pitched weekly by agencies/cold-callers; burned by Angi / HomeAdvisor / Thumbtack / Bark / Care.com / SEO / Yelp / Psychology Today.</li>
+  </ul>
+
+  <h3>What They Believe (That Is Wrong)</h3>
+  <ul>
+    <li>'A website is just a fancy business card &mdash; I've gotten jobs without one, so it doesn't matter.'</li>
+    <li>'I have enough work' &mdash; a coping story; the lived reality is feast-or-famine.</li>
+    <li>'Marketing is something done TO me by scammers,' so any pitch trips the alarm (therapists: 'marketing is icky / unethical').</li>
+  </ul>
+
+  <h3>What Actually Stops Them</h3>
+  <ul>
+    <li>Word-of-mouth has a ceiling they can feel but can't name &mdash; referrals are capped and unpredictable.</li>
+    <li>People who hear about them can't find or verify them online, so winnable jobs leak to whoever shows up first.</li>
+    <li>The inbound that does come gets missed or followed up too slowly (62% of calls unanswered; first responder wins).</li>
+  </ul>
+
+  <h3>How to Reach Them</h3>
+  <p>Cold SMS/DM that opens with THEIR outcome ('still taking new [jobs/clients]?'), never your category. Mirror feast-or-famine in their words; redirect to a finished, no-call object framed around getting booked. Swap the noun per vertical. Soften hard for therapists (no 'sell/beat the competition').</p>
+
+  <h3>Included / Excluded Segments</h3>
+  <div class="seg-grid">
+    <div class="seg-card target">
+      <h4>&#10003; Target &mdash; Include</h4>
+      <ul>
+        <li>Solo / 1-5 person local service businesses with no (or dead) website but a decent reputation/reviews to build on.</li>
+        <li>Owners with a 'pulse' (reply 'yes, taking new clients') and a real, servable area.</li>
+        <li>Verticals: therapists/counselors, mobile mechanic, cleaning, fencing, home care, landscaping, mold/restoration, movers, plumbing, remodeling/GC, roofing, septic, tree service.</li>
+      </ul>
+    </div>
+    <div class="seg-card excluded">
+      <h4>&#10007; Excluded &mdash; Do Not Target</h4>
+      <ul>
+        <li>Large firms / franchises with marketing departments or an existing agency.</li>
+        <li>Businesses with no reputation/reviews yet (nothing for the trust-check to convert) or pure no-pulse ghost leads.</li>
+        <li>Verticals where the buyer isn't reachable by your channel, or where compliance blocks cold SMS.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>The Buying Trigger</h3>
+  <p>A slow stretch + the reminder that work isn't guaranteed; OR losing a job to a competitor who showed up online; OR a customer saying 'I couldn't find you.'</p>
+
+  <div class="alert alert-gold">
+    <strong>The Sales Frame That Works:</strong> Build around THEIR noun (more booked jobs/clients), not yours (website). Echo &rarr; Expose &rarr; Redirect. Meet them at Problem-Aware. Price only after trust, with a reason-why. Sell the receptionist AFTER visibility makes missed calls felt.
+  </div>
+</div>
+</div>
+
+<!-- TAB 11 — HEADLINES -->
+<div id="tab-headlines" class="tab-panel">
+<div class="container">
+  <div class="section-label">Ad Testing</div>
+  <h2>Top Quotes for Headline Testing</h2>
+  <p class="section-desc">Ranked by emotional punch and research frequency. Test from top down &mdash; highest-frequency, highest-upvote first.</p>
+
+  <div class="headline-row">
+    <div class="headline-rank">1</div>
+    <div>
+      <div class="headline-text">"It's feast or famine &mdash; the phone's ringing 40 times a day or it's not ringing at all."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">9x &mdash; master-pain mirror</span>
+        <span class="src">Tom Reber / ContractorTalk</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">2</div>
+    <div>
+      <div class="headline-text">"A website may fill your ego, but don't expect it to fill your pocket."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">8x &mdash; echo the skeptic</span>
+        <span class="src">Fine Homebuilding</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">3</div>
+    <div>
+      <div class="headline-text">"I was paying $600/month for a website that brought me zero leads."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">6x &mdash; throw stones: website</span>
+        <span class="src">Good Stuart</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">4</div>
+    <div>
+      <div class="headline-text">"They send you and 2-3 other people the same lead and charge everyone."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">9x &mdash; throw stones: shared leads</span>
+        <span class="src">HomeAdvisor reviews</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">5</div>
+    <div>
+      <div class="headline-text">"When someone's toilet is leaking, they're not on Instagram &mdash; they're Googling 'near me.'"</div>
+      <div class="headline-meta">
+        <span class="badge-freq">7x &mdash; mechanism, their words</span>
+        <span class="src">Jobber Community</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">6</div>
+    <div>
+      <div class="headline-text">"If you've got 200+ positive reviews on Google, you will get calls."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">8x &mdash; mechanism = proof</span>
+        <span class="src">Supermove / mover</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">7</div>
+    <div>
+      <div class="headline-text">"Staring at your calendar, wondering where the clients are."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">6x &mdash; therapist hook</span>
+        <span class="src">Abundance Practice Building</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">8</div>
+    <div>
+      <div class="headline-text">"Real therapists like me can't be found."</div>
+      <div class="headline-meta">
+        <span class="badge-freq">5x &mdash; therapist hook</span>
+        <span class="src">ClearHealthCosts</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">9</div>
+    <div>
+      <div class="headline-text">"We need neither feast nor famine, but a steady diet of work."</div>
+      <div class="headline-meta">
+        <span class="badge-source">Industry</span>
+        <span class="badge-freq">8x &mdash; the dream, stated</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="headline-row">
+    <div class="headline-rank">10</div>
+    <div>
+      <div class="headline-text">"Are you still taking on new [jobs/clients]?"</div>
+      <div class="headline-meta">
+        <span class="badge-freq">9x &mdash; control winner &mdash; keep it</span>
+        <span class="src">your msg-1 (Dean Jackson 9-word)</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- TAB 12 — FREQUENCY RANKING -->
+<div id="tab-freq" class="tab-panel">
+<div class="container">
+  <div class="section-label">Analysis</div>
+  <h2>Frequency Ranking</h2>
+  <p class="section-desc">Pain points ranked by mention count across all sources. Higher count = more universal = higher priority for copy and targeting.</p>
+
+  <table>
+    <tr><th>#</th><th>Pain Point / Theme</th><th>Count</th><th>Primary Sources</th></tr>
+    <tr class="top-rank"><td>1</td><td>Inconsistent income / feast-or-famine / 'where's the next job'</td><td>All verticals</td><td>ContractorTalk, electrical-contractor.net, Smashing, Pumper, therapist blogs</td></tr>
+    <tr class="top-rank"><td>2</td><td>Burned by shared / dead-lead services</td><td>11+</td><td>HomeAdvisor, Thumbtack, Bark, Networx, Care.com reviews; BBB; FTC actions</td></tr>
+    <tr class="top-rank"><td>3</td><td>Fixed overhead doesn't stop when work does</td><td>6</td><td>electrical-contractor.net, ContractorTalk</td></tr>
+    <tr><td>4</td><td>Word-of-mouth ceiling (capped, unpredictable)</td><td>8</td><td>Fine Homebuilding, Alignable, Pumper, UpFlip</td></tr>
+    <tr><td>5</td><td>'I'm not a marketer / too busy / not techy' identity block</td><td>9</td><td>Practice of Therapy, Stress Less Therapist, Fine Homebuilding</td></tr>
+    <tr><td>6</td><td>Wasted money on SEO / a website / Yelp</td><td>7</td><td>Good Stuart, raymondfong, drjarodcarter, ClearHealthCosts</td></tr>
+    <tr><td>7</td><td>Missed calls &amp; slow follow-up (leads go cold)</td><td>8</td><td>411 Locals, Invoca, HBR, Houzz, Fine Homebuilding</td></tr>
+    <tr><td>8</td><td>Family / relationship strain from income instability</td><td>5</td><td>The Contractor Fight, Mumsnet, Counselor's Coach</td></tr>
+    <tr><td>9</td><td>Directory saturation (therapists / Psychology Today)</td><td>5</td><td>ClearHealthCosts, Stress Less Therapist</td></tr>
+    <tr><td>10</td><td>Slow response loses the job to whoever answers first</td><td>6</td><td>Houzz, Fine Homebuilding, HBR, MIT/InsideSales</td></tr>
+  </table>
+
+  <div class="alert alert-brand">
+    <strong>Top 3 are your ad strategy:</strong> Lead with feast-or-famine (the universal pain), throw stones at shared-lead services (the universal scar), and name the silent leak (overhead burning + winnable jobs lost). All three are in their own words &mdash; mirror, don't invent.
+  </div>
+</div>
+</div>
+
+<!-- TAB 13 — AWARENESS LEVELS / OFFER MAP -->
+<div id="tab-awareness" class="tab-panel">
+<div class="container" style="max-width:960px">
+
+  <h2 style="margin-top:0">Eugene Schwartz Awareness Levels &mdash; Applied to Cold Local-Service Owners (No Website) ICP</h2>
+  <p style="color:var(--mid);margin-top:-8px;margin-bottom:28px">Each level describes where a buyer <em>actually is</em> in their mind. Messaging, entry offers, and progression offers must match the level, or the prospect bounces.</p>
+
+  <div class="alert alert-brand" style="margin-bottom:32px">
+    <strong>The core rule from Schwartz:</strong> If you pitch solution-aware copy to an unaware prospect, you lose them. If you pitch unaware copy to a product-aware prospect, you insult them. The awareness level determines your entry point.
+  </div>
+
+  <!-- LEVEL 1 — UNAWARE -->
+  <div style="border:2px solid #e8ecf4;border-radius:12px;margin-bottom:32px;overflow:hidden">
+    <div style="background:linear-gradient(90deg,#1a1f3c,#2d3561);padding:18px 24px;display:flex;align-items:center;gap:14px">
+      <span style="background:#ff6b35;color:#fff;font-weight:800;font-size:1.1rem;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</span>
+      <div>
+        <div style="color:#fff;font-weight:700;font-size:1.05rem">UNAWARE</div>
+        <div style="color:#a0a8cc;font-size:0.82rem;margin-top:2px">They feel something is wrong. They haven't named it yet.</div>
+      </div>
+    </div>
+    <div style="padding:24px">
+      <h4 style="color:var(--brand);margin-top:0;margin-bottom:8px">Where They Are</h4>
+      <p>The 'I have enough work' copers. Busy enough day-to-day that they've told themselves demand is fine; they haven't named feast-or-famine as a fixable problem.</p>
+      <div class="quote">
+        <p>"I have never spent a dollar on advertising. Every client you have is a marketing machine if you do it right."</p>
+        <div class="meta-row">
+          <span class="src">Alignable &mdash; Shoreline Building</span>
+          <span class="badge-freq">6x &mdash; word-of-mouth identity</span>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:10px">Messaging That Works at This Level</h4>
+      <p style="color:var(--mid);font-size:0.85rem;margin-bottom:14px">Don't pitch. Don't invent a problem. Open a curiosity loop in their own outcome language.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px">
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">Are you still taking on new [jobs/clients] this season?</div>
+        </div>
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">Quick one &mdash; booked out right now, or still got room this month?</div>
+        </div>
+      </div>
+      <div style="background:#fff8f0;border-left:4px solid var(--accent);padding:14px;border-radius:6px;margin-bottom:20px">
+        <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Content / Long-Form Body</div>
+        <div style="line-height:1.6">Light, situational content: 'the quiet way good [trades] lose work they never knew they had' &mdash; referrals who Googled them and found nothing solid. No claim, just a mirror they recognize.</div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:14px">Offer Structure at Level 1</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+        <div style="border:1.5px solid #c7d7f8;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin-bottom:8px">DIY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Free 'Get-Found' Check</div>
+          <p style="font-size:0.83rem;color:var(--mid);margin-bottom:10px">A 60-second look at what shows up when someone Googles their name.</p>
+          <div style="font-size:0.78rem;background:#f0f4ff;padding:10px;border-radius:6px;line-height:1.5"><strong>Standalone value:</strong> Pure value, no ask; surfaces the gap they can't see.</div>
+        </div>
+        <div style="border:1.5px solid #fcd9c0;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:8px">DWY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Screenshot Mockup (no call)</div>
+          <p style="font-size:0.83rem;color:var(--mid);margin-bottom:10px">A finished example of their page / Google card, sent unsolicited.</p>
+          <div style="font-size:0.78rem;background:#fff8f0;padding:10px;border-radius:6px;line-height:1.5"><strong>Why it converts:</strong> A concrete object beats a pitch; they react to seeing themselves.</div>
+        </div>
+        <div style="border:1.5px solid #d4edda;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#2d8b4e;margin-bottom:8px">DFY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Done-for-you 'Get Found' setup</div>
+          <p style="font-size:0.83rem;color:var(--mid);margin-bottom:10px">We build it and set it live; they do nothing.</p>
+          <div style="font-size:0.78rem;background:#f0fff4;padding:10px;border-radius:6px;line-height:1.5"><strong>What makes this DFY:</strong> Zero effort matches a busy owner who won't self-serve.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 2 — PROBLEM AWARE -->
+  <div style="border:2px solid #e8ecf4;border-radius:12px;margin-bottom:32px;overflow:hidden">
+    <div style="background:linear-gradient(90deg,#1a1f3c,#2d3561);padding:18px 24px;display:flex;align-items:center;gap:14px">
+      <span style="background:#e85d4a;color:#fff;font-weight:800;font-size:1.1rem;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</span>
+      <div>
+        <div style="color:#fff;font-weight:700;font-size:1.05rem">PROBLEM AWARE</div>
+        <div style="color:#a0a8cc;font-size:0.82rem;margin-top:2px">They've named it. But they don't know what the solution looks like.</div>
+      </div>
+    </div>
+    <div style="padding:24px">
+      <h4 style="color:var(--brand);margin-top:0;margin-bottom:8px">Where They Are</h4>
+      <p>MOST of them. They feel feast-or-famine and know they 'should do something online,' but don't know what good looks like and are wary of being sold.</p>
+      <div class="quote">
+        <p>"It's feast or famine. The phone's ringing 40 times a day or it's not ringing at all."</p>
+        <div class="meta-row">
+          <span class="src">Tom Reber / ContractorTalk</span>
+          <span class="badge-freq">9x &mdash; feast-or-famine</span>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:10px">Messaging That Works at This Level</h4>
+      <p style="color:var(--mid);font-size:0.85rem;margin-bottom:14px">Mirror the pain in their words; expose the leak (referrals cap out, searchers can't find you, calls go cold); redirect to a low-risk, concrete fix.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">Phone rings 40x a day or not at all? Here's the quiet leak that makes the famine worse.</div>
+        </div>
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">Most of your new work is referrals &mdash; but a chunk of them Google you first. Here's what they see.</div>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:14px">Offer Structure at Level 2</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+        <div style="border:1.5px solid #c7d7f8;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin-bottom:8px">DIY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Get-Found Checklist</div>
+          <p style="font-size:0.83rem;color:var(--mid)">The 5 things that make searchers pick you (or skip you).</p>
+        </div>
+        <div style="border:1.5px solid #fcd9c0;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:8px">DWY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Get Found &amp; Get Chosen ($99)</div>
+          <p style="font-size:0.83rem;color:var(--mid)">Site hub + Google Business Profile + review engine, live this week.</p>
+        </div>
+        <div style="border:1.5px solid #d4edda;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#2d8b4e;margin-bottom:8px">DFY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Booked-Out Setup</div>
+          <p style="font-size:0.83rem;color:var(--mid)">We build and run the whole get-found layer end-to-end.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 3 — SOLUTION AWARE -->
+  <div style="border:2px solid #e8ecf4;border-radius:12px;margin-bottom:32px;overflow:hidden">
+    <div style="background:linear-gradient(90deg,#1a1f3c,#2d3561);padding:18px 24px;display:flex;align-items:center;gap:14px">
+      <span style="background:#1a6b3c;color:#fff;font-weight:800;font-size:1.1rem;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</span>
+      <div>
+        <div style="color:#fff;font-weight:700;font-size:1.05rem">SOLUTION AWARE</div>
+        <div style="color:#a0a8cc;font-size:0.82rem;margin-top:2px">They know solutions exist. Haven't found the right one or provider yet.</div>
+      </div>
+    </div>
+    <div style="padding:24px">
+      <h4 style="color:var(--brand);margin-top:0;margin-bottom:8px">Where They Are</h4>
+      <p>A minority &mdash; know they need 'more online presence/marketing,' but cynical from being burned by Angi/SEO/Yelp/Psychology Today.</p>
+      <div class="quote">
+        <p>"This used to be a good resource for leads. All were a bunch of dead leads which equals a complete waste of money."</p>
+        <div class="meta-row">
+          <span class="src">Thumbtack Community &mdash; cleaning</span>
+          <span class="badge-freq">7x &mdash; burned, cynical</span>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:10px">Messaging That Works at This Level</h4>
+      <p style="color:var(--mid);font-size:0.85rem;margin-bottom:14px">Throw stones at the alternatives in their own words; show the unique mechanism &mdash; fast, exclusive (not shared), you own it, done-for-you.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">Not Angi. Not a 6-month SEO bill. Not a shared lead sold to 5 of your competitors.</div>
+        </div>
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">You own it, it's live this week, and the leads are yours &mdash; not rented.</div>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:14px">Offer Structure at Level 3</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+        <div style="border:1.5px solid #c7d7f8;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin-bottom:8px">DIY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Compare-the-Options Guide</div>
+          <p style="font-size:0.83rem;color:var(--mid)">Why shared leads &amp; slow SEO fail small operators.</p>
+        </div>
+        <div style="border:1.5px solid #fcd9c0;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:8px">DWY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Get Found &amp; Get Chosen + Guarantee</div>
+          <p style="font-size:0.83rem;color:var(--mid)">$99, live in 7 days or it's free.</p>
+        </div>
+        <div style="border:1.5px solid #d4edda;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#2d8b4e;margin-bottom:8px">DFY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Booked-Out + Never-Miss</div>
+          <p style="font-size:0.83rem;color:var(--mid)">Get-found layer + AI receptionist & instant follow-up.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 4 — PRODUCT AWARE -->
+  <div style="border:2px solid #e8ecf4;border-radius:12px;margin-bottom:32px;overflow:hidden">
+    <div style="background:linear-gradient(90deg,#1a1f3c,#2d3561);padding:18px 24px;display:flex;align-items:center;gap:14px">
+      <span style="background:#1565c0;color:#fff;font-weight:800;font-size:1.1rem;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0">4</span>
+      <div>
+        <div style="color:#fff;font-weight:700;font-size:1.05rem">PRODUCT AWARE</div>
+        <div style="color:#a0a8cc;font-size:0.82rem;margin-top:2px">They know you or your type. Comparing you vs. alternatives.</div>
+      </div>
+    </div>
+    <div style="padding:24px">
+      <h4 style="color:var(--brand);margin-top:0;margin-bottom:8px">Where They Are</h4>
+      <p>Warm / referred &mdash; comparing you to other providers: 'is your thing legit, and how are you different or cheaper?'</p>
+      <div class="quote">
+        <p>"My tactic has been to spend a bunch of time reading reviews... then I'm much more likely to hire them."</p>
+        <div class="meta-row">
+          <span class="src">Hacker News &mdash; how buyers vet trades</span>
+          <span class="badge-freq">5x &mdash; reviews drive the choice</span>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:10px">Messaging That Works at This Level</h4>
+      <p style="color:var(--mid);font-size:0.85rem;margin-bottom:14px">Proof + a mockup of THEIR business + 'you own it forever' + speed. Show local examples at their scale.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px">
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">Here's exactly what yours would look like &mdash; live this week, $99, yours to keep.</div>
+        </div>
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Hook / Ad Headline</div>
+          <div style="font-weight:600;line-height:1.45">Built these for [city] [trades] already &mdash; here's one.</div>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:14px">Offer Structure at Level 4</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+        <div style="border:1.5px solid #c7d7f8;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin-bottom:8px">DIY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">$99 Self-Start</div>
+          <p style="font-size:0.83rem;color:var(--mid)">Template + setup guide if they want to DIY.</p>
+        </div>
+        <div style="border:1.5px solid #fcd9c0;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:8px">DWY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">$99 Done-With-You</div>
+          <p style="font-size:0.83rem;color:var(--mid)">We set it up with their photos, reviews & service area.</p>
+        </div>
+        <div style="border:1.5px solid #d4edda;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#2d8b4e;margin-bottom:8px">DFY</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">Setup + Never-Miss</div>
+          <p style="font-size:0.83rem;color:var(--mid)">Add the AI receptionist + follow-up once volume justifies it.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEVEL 5 — MOST AWARE -->
+  <div style="border:2px solid #e8ecf4;border-radius:12px;margin-bottom:32px;overflow:hidden">
+    <div style="background:linear-gradient(90deg,#1a1f3c,#2d3561);padding:18px 24px;display:flex;align-items:center;gap:14px">
+      <span style="background:#6a1b9a;color:#fff;font-weight:800;font-size:1.1rem;border-radius:50%;width:36px;height:36px;display:flex;align-items:center;justify-content:center;flex-shrink:0">5</span>
+      <div>
+        <div style="color:#fff;font-weight:700;font-size:1.05rem">MOST AWARE</div>
+        <div style="color:#a0a8cc;font-size:0.82rem;margin-top:2px">They want it. Stop selling. Remove friction. Make it easy to say yes.</div>
+      </div>
+    </div>
+    <div style="padding:24px">
+      <h4 style="color:var(--brand);margin-top:0;margin-bottom:8px">Where They Are</h4>
+      <p>Said yes / ready. Stop selling, remove friction, and book the next step right now.</p>
+      <div class="quote">
+        <p>"I can breathe now, it has helped the calls come in, we have all the key components in place and are super busy."</p>
+        <div class="meta-row">
+          <span class="src">Excavation Marketing Pros &mdash; septic</span>
+          <span class="badge-freq">4x &mdash; the after-state</span>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:10px">Messaging That Works at This Level</h4>
+      <p style="color:var(--mid);font-size:0.85rem;margin-bottom:14px">Confirm the decision, set it up immediately, and book the next layer during onboarding (BAMFAM).</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:8px">
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Walk-Through Close</div>
+          <div style="font-weight:600;line-height:1.45">I can have it live by Friday &mdash; want me to start today? Send your logo/photos and I'll handle the rest.</div>
+        </div>
+        <div style="background:#f8f9ff;border-left:4px solid var(--brand);padding:14px;border-radius:6px">
+          <div style="font-size:0.72rem;color:var(--mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px">Risk Reversal</div>
+          <div style="font-weight:600;line-height:1.45">Live in 7 days or it's free. You own everything either way.</div>
+        </div>
+      </div>
+      <h4 style="color:var(--brand);margin-top:24px;margin-bottom:14px">Offer Structure at Level 5</h4>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px">
+        <div style="border:1.5px solid #c7d7f8;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--brand);margin-bottom:8px">DIY &mdash; Entry</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">$99 Get Found &amp; Get Chosen</div>
+          <p style="font-size:0.83rem;color:var(--mid)">The attraction entry &mdash; site hub + GBP + reviews.</p>
+        </div>
+        <div style="border:1.5px solid #fcd9c0;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:8px">DWY &mdash; Accelerated</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">+ Never Miss a Customer</div>
+          <p style="font-size:0.83rem;color:var(--mid)">AI receptionist + 5-min follow-up + database reactivation.</p>
+        </div>
+        <div style="border:1.5px solid #d4edda;border-radius:10px;padding:18px">
+          <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#2d8b4e;margin-bottom:8px">DFY &mdash; Full Engagement</div>
+          <div style="font-weight:700;font-size:0.95rem;margin-bottom:8px;line-height:1.3">+ Demand on Tap</div>
+          <p style="font-size:0.83rem;color:var(--mid)">FB/Google ads with AI intake &mdash; scale beyond word-of-mouth.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFER PROGRESSION LADDER -->
+  <div style="background:var(--brand);border-radius:12px;padding:28px;color:#fff;margin-bottom:32px">
+    <h3 style="margin-top:0;color:#fff">The Offer Progression Ladder</h3>
+    <p style="color:#a0a8cc;margin-bottom:20px">Each level's offer feeds the next. No level is a dead end &mdash; each delivers real value AND makes the next step obvious.</p>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px">
+      <div style="text-align:center;padding:14px;background:rgba(255,255,255,0.08);border-radius:8px">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:.06em;color:#a0a8cc;margin-bottom:6px">Level 1</div>
+        <div style="font-weight:700;font-size:0.82rem;margin-bottom:4px">Get-Found Check</div>
+        <div style="font-size:0.72rem;color:#a0a8cc">free / curiosity</div>
+      </div>
+      <div style="text-align:center;padding:14px;background:rgba(255,255,255,0.08);border-radius:8px">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:.06em;color:#a0a8cc;margin-bottom:6px">Level 2</div>
+        <div style="font-weight:700;font-size:0.82rem;margin-bottom:4px">Get Found &amp; Get Chosen</div>
+        <div style="font-size:0.72rem;color:#a0a8cc">$99 attraction</div>
+      </div>
+      <div style="text-align:center;padding:14px;background:rgba(255,255,255,0.08);border-radius:8px">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:.06em;color:#a0a8cc;margin-bottom:6px">Level 3</div>
+        <div style="font-weight:700;font-size:0.82rem;margin-bottom:4px">+ Guarantee</div>
+        <div style="font-size:0.72rem;color:#a0a8cc">de-risked entry</div>
+      </div>
+      <div style="text-align:center;padding:14px;background:rgba(255,255,255,0.08);border-radius:8px">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:.06em;color:#a0a8cc;margin-bottom:6px">Level 4</div>
+        <div style="font-weight:700;font-size:0.82rem;margin-bottom:4px">Never Miss a Customer</div>
+        <div style="font-size:0.72rem;color:#a0a8cc">receptionist + follow-up</div>
+      </div>
+      <div style="text-align:center;padding:14px;background:rgba(255,255,255,0.08);border-radius:8px">
+        <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:.06em;color:#a0a8cc;margin-bottom:6px">Level 5</div>
+        <div style="font-weight:700;font-size:0.82rem;margin-bottom:4px">Demand on Tap</div>
+        <div style="font-size:0.72rem;color:#a0a8cc">ads + AI intake (scale)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="alert alert-brand">
+    <strong>Key principle from Schwartz:</strong> The awareness level determines the entry point &mdash; not the budget, not the business size, not the sophistication. Map the conversation to where they are, not where you wish they were.
+  </div>
+
+</div>
+</div>
+
+<script>
+function showTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  if (btn) btn.classList.add('active');
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
