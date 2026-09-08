@@ -300,7 +300,54 @@ body.nav-active .navbar-mobile .brand-wordmark, .navbar-mobile.is-active .brand-
 h2.c-heading__title > span.nowrap { font-weight: inherit; }
 .m-banner h1.h1-two-lines { font-size: clamp(3.2rem, 3.7vw, 5.4rem); width: max-content; max-width: none; }
 .m-banner .c-heading, .m-banner .c-banner__content, .m-banner__content { overflow: visible; }
-@media (max-width: 767px) { .m-banner h1.h1-two-lines { width: auto; } .m-banner h1.h1-two-lines .nowrap { white-space: normal; } }
+@media (max-width: 767px) { .m-banner h1.h1-two-lines { width: auto; font-size: 52px !important; } .m-banner h1.h1-two-lines .nowrap { white-space: normal; display: inline-block; max-width: 5.6em; } }
+@media (max-width: 360px) { .m-banner h1.h1-two-lines { font-size: 46px !important; } }
+/* logo lockup: the house-and-heart mark + wordmark */
+.brand-lockup { display: inline-flex; align-items: center; gap: 10px; }
+.brand-lockup .logo-mark { width: 34px; height: 28px; color: #fff; flex: 0 0 auto; }
+.site-header.is-sticky .brand-lockup .logo-mark, .site-footer .brand-lockup .logo-mark, .navbar-mobile.is-active .brand-lockup .logo-mark, body.nav-active .brand-lockup .logo-mark { color: var(--primary-color1, #3B2F8F); }
+.site-footer .brand-lockup .logo-mark { width: 40px; height: 33px; }
+/* the six-card care section */
+.svc-sec { padding: 6rem 0 4rem; }
+.svc-head { padding-bottom: 0 !important; }
+.svc-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px; max-width: 1120px; margin: 3rem auto 0; padding: 0 2.4rem; }
+@media (max-width: 1024px) { .svc-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) { .svc-grid { grid-template-columns: 1fr; } }
+.svc-grid .c-image::before { content: none !important; }
+.svc-grid .c-image__media { position: static !important; }
+.svc-grid article.c-block { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 24px rgba(46,36,112, .12); height: 100%; }
+.svc-grid .c-image { aspect-ratio: 16 / 10; overflow: hidden; }
+.svc-grid .c-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.svc-grid .c-block__body { padding: 20px 22px 24px; }
+.svc-grid h3 { font-size: 2rem; margin-bottom: 8px; }
+.svc-grid .c-block__description p { font-size: 1.5rem; line-height: 1.55; color: #555; }
+/* the multi-step form in the hero card */
+.quiz { width: 100%; text-align: left; }
+.quiz__top { display: flex; justify-content: space-between; align-items: center; font-size: 1.3rem; font-weight: 700; color: var(--primary-color1, #3B2F8F); margin-bottom: 8px; }
+.quiz__back { background: none; border: 0; padding: 4px 0; color: var(--primary-color1, #3B2F8F); font: inherit; font-weight: 700; cursor: pointer; }
+.quiz__bar { height: 6px; background: #ECE7F8; border-radius: 6px; overflow: hidden; margin-bottom: 18px; }
+.quiz__bar span { display: block; height: 100%; width: 20%; background: var(--primary-color1, #3B2F8F); border-radius: 6px; }
+.quiz__q { font-size: 2.4rem; line-height: 1.15; color: var(--primary-color1, #3B2F8F); margin: 0 0 6px; font-weight: 800; }
+.quiz__hint { font-size: 1.4rem; color: #555; margin: 0 0 14px; }
+.quiz__opts { display: flex; flex-direction: column; gap: 10px; }
+.q-opt { display: flex; align-items: center; justify-content: space-between; gap: 12px; width: 100%; text-align: left; background: #fff; border: 1.5px solid var(--primary-color1, #3B2F8F); border-radius: 60px; padding: 12px 18px; cursor: pointer; font: inherit; font-size: 1.5rem; font-weight: 700; color: var(--primary-color1, #3B2F8F); }
+.q-opt small { display: block; font-weight: 400; font-size: 1.3rem; color: #555; margin-top: 2px; }
+.q-opt.is-multi { border-radius: 14px; }
+.q-opt.is-selected { background: #ECE7F8; }
+.q-opt__check { width: 22px; height: 22px; border-radius: 50%; border: 1.5px solid var(--primary-color1, #3B2F8F); flex: 0 0 auto; position: relative; }
+.q-opt.is-selected .q-opt__check { background: var(--primary-color1, #3B2F8F); }
+.q-opt.is-selected .q-opt__check::after { content: ""; position: absolute; left: 7px; top: 3px; width: 5px; height: 10px; border: solid #fff; border-width: 0 2px 2px 0; transform: rotate(45deg); }
+.quiz__field { display: block; margin-bottom: 12px; }
+.quiz__field span { display: block; font-size: 1.3rem; font-weight: 700; color: var(--primary-color1, #3B2F8F); margin-bottom: 5px; }
+.quiz__field input, .quiz__field select { width: 100%; padding: 11px 16px; font: inherit; font-size: 1.5rem; border: 1.5px solid var(--primary-color1, #3B2F8F); border-radius: 60px; background: #fff; color: #222; }
+.quiz .c-btn { width: 100%; justify-content: center; margin-top: 8px; border: 0; cursor: pointer; font-family: var(--btn-font-family, inherit); }
+.quiz__note { font-size: 1.2rem; color: #666; margin: 10px 0 0; }
+.quiz__done .quiz__q { color: var(--primary-color1, #3B2F8F); }
+.m-banner .loc-search-form-wrapper, .m-banner .c-banner__form { max-width: 48rem; }
+.quiz { background: #fff; border-radius: 14px; border-top: 5px solid #F36437; padding: 20px 24px 22px; box-shadow: 0 20px 40px rgba(0,0,0,.18); max-width: 52rem; }
+.m-banner.m-banner--medium { height: auto; min-height: 80.3rem; }
+.m-banner .quiz { margin-bottom: 4rem; }
+@media (max-width: 991px) { #site-footer .brand-lockup { flex-wrap: wrap; max-width: 100%; } #site-footer .brand-wordmark { white-space: normal; } }
 </style></head>
 <body class="home wp-singular page-template-default page page-id-739 wp-theme-digitalexpress fixed-header" data-aos-easing="ease" data-aos-duration="800" data-aos-delay="0">
               
@@ -327,7 +374,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
 					
 						
 <div class="site-header__widget">
-	        <a href="#top" class="site-header__logo"><span class="brand-wordmark">A Promise to Mom</span></a>
+	        <a href="#top" class="site-header__logo"><span class="brand-lockup"><svg class="logo-mark" aria-hidden="true" viewBox="0 0 240 195" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M236.8,87.5L221.5,76c-0.2-0.1-0.3-0.3-0.5-0.4l-14.3-10.8V14.5c0-2.5-2-4.5-4.5-4.5h-35.7 c-2.5,0-4.5,2-4.5,4.5v16.7L122.2,1c-0.5-0.4-1-0.6-1.6-0.8c-1.4-0.5-3-0.3-4.2,0.7L17.6,75.5c-0.2,0.1-0.3,0.2-0.5,0.4L1.8,87.4 c-2,1.5-2.4,4.3-0.9,6.3c0.9,1.2,2.2,1.8,3.6,1.8c1,0,1.9-0.3,2.7-0.9l8.2-6.2v101.5c0,0,0,0,0,0.1c0,0,0,0,0,0.1 c0,2.5,2,4.5,4.5,4.5c0,0,0,0,0,0c2.3,0,56.6-0.9,99.3-24.9c42.7,24.1,96.9,24.9,99.3,24.9c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0 c0,0,0,0,0,0c0.3,0,0.6,0,0.9-0.1c0.2,0,0.4-0.1,0.7-0.2c0.1,0,0.1,0,0.2-0.1c0.2-0.1,0.4-0.2,0.6-0.3c0.1,0,0.1-0.1,0.2-0.1 c0.2-0.1,0.3-0.2,0.5-0.4c0.1-0.1,0.2-0.1,0.2-0.2c0.1-0.1,0.2-0.3,0.4-0.4c0.1-0.1,0.1-0.2,0.2-0.2c0.1-0.1,0.2-0.3,0.3-0.5 c0.1-0.1,0.1-0.2,0.2-0.3c0.1-0.2,0.1-0.3,0.2-0.5c0-0.1,0.1-0.2,0.1-0.3c0-0.2,0-0.3,0.1-0.5c0-0.1,0-0.2,0-0.4c0,0,0,0,0,0 c0,0,0,0,0,0V88.6l8.2,6.2c0.8,0.6,1.8,0.9,2.7,0.9c1.4,0,2.7-0.6,3.6-1.8C239.2,91.9,238.8,89.1,236.8,87.5z M119.2,10.1 l44.5,33.7c1.4,1,3.2,1.2,4.8,0.4c1.5-0.8,2.5-2.3,2.5-4.1V19h26.6v48.1c0,0.1,0,0.2,0,0.3c0,0.2,0,0.3,0,0.5 c0,0.1,0.1,0.3,0.1,0.4c0,0.1,0.1,0.3,0.1,0.4c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.2,0.3,0.4 c0.1,0.1,0.2,0.2,0.3,0.3c0.1,0.1,0.2,0.2,0.4,0.3c0.1,0.1,0.1,0.1,0.2,0.2l14.7,11.1v103.6c-13.2-0.7-52.9-4.2-85.8-21.2 c0.6-0.4,1.3-0.8,1.9-1.3c13.3-9,24.9-19.3,34.4-30.8c9.7-11.7,19.9-27.3,13.1-45c-5-12.9-16.8-21.9-30-22.7 c-0.8-0.1-1.6-0.1-2.4-0.1c-10,0-19.5,4.4-26,11.7c-6.5-7.4-16-11.7-26-11.7c-0.8,0-1.6,0-2.4,0.1c-13.2,0.9-25,9.8-30,22.7 c-6.9,17.6,3.4,33.3,13.1,45c9.5,11.5,21.1,21.8,34.4,30.8c0.6,0.4,1.3,0.8,1.9,1.3c-32.9,16.9-72.6,20.5-85.8,21.2V81.6 L119.2,10.1z M113.5,155.4c-12.6-8.5-23.5-18.3-32.5-29.1c-8.6-10.4-16.7-22.7-11.6-35.9c3.7-9.5,12.6-16.3,22.1-17 c0.6,0,1.2-0.1,1.8-0.1c9.1,0,17.4,4.7,22.1,12.6c0,0.1,0.1,0.1,0.1,0.2c0.1,0.1,0.2,0.3,0.3,0.4c0.1,0.1,0.2,0.2,0.3,0.3 c0.1,0.1,0.2,0.2,0.3,0.3c0.1,0.1,0.3,0.2,0.4,0.3c0.1,0,0.1,0.1,0.2,0.1c0.1,0,0.1,0.1,0.2,0.1c0.1,0.1,0.3,0.1,0.4,0.2 c0.1,0.1,0.3,0.1,0.4,0.1c0.1,0,0.3,0.1,0.4,0.1c0.1,0,0.3,0.1,0.4,0.1c0.1,0,0.3,0,0.4,0c0.1,0,0.3,0,0.4,0c0.1,0,0.3,0,0.4-0.1 c0.1,0,0.3-0.1,0.4-0.1c0.1,0,0.3-0.1,0.4-0.1c0.1-0.1,0.3-0.1,0.4-0.2c0.1,0,0.1-0.1,0.2-0.1c0.1,0,0.1-0.1,0.2-0.1 c0.1-0.1,0.3-0.2,0.4-0.3c0.1-0.1,0.2-0.2,0.3-0.3c0.1-0.1,0.2-0.2,0.3-0.3c0.1-0.1,0.2-0.3,0.3-0.4c0-0.1,0.1-0.1,0.1-0.2 c4.7-7.9,13-12.6,22.1-12.6c0.6,0,1.2,0,1.8,0.1c9.5,0.6,18.4,7.5,22.2,17c5.1,13.1-3,25.5-11.6,35.9c-9,10.8-19.9,20.6-32.5,29.1 c-1.9,1.3-3.9,2.5-5.8,3.7C117.3,157.9,115.4,156.7,113.5,155.4z"></path></svg><span class="brand-wordmark">A Promise to Mom</span></span></a>
 	</div>
 
 					
@@ -416,7 +463,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
 
     
 <div class="site-header__widget">
-	        <a href="#top" class="site-header__logo"><span class="brand-wordmark">A Promise to Mom</span></a>
+	        <a href="#top" class="site-header__logo"><span class="brand-lockup"><svg class="logo-mark" aria-hidden="true" viewBox="0 0 240 195" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M236.8,87.5L221.5,76c-0.2-0.1-0.3-0.3-0.5-0.4l-14.3-10.8V14.5c0-2.5-2-4.5-4.5-4.5h-35.7 c-2.5,0-4.5,2-4.5,4.5v16.7L122.2,1c-0.5-0.4-1-0.6-1.6-0.8c-1.4-0.5-3-0.3-4.2,0.7L17.6,75.5c-0.2,0.1-0.3,0.2-0.5,0.4L1.8,87.4 c-2,1.5-2.4,4.3-0.9,6.3c0.9,1.2,2.2,1.8,3.6,1.8c1,0,1.9-0.3,2.7-0.9l8.2-6.2v101.5c0,0,0,0,0,0.1c0,0,0,0,0,0.1 c0,2.5,2,4.5,4.5,4.5c0,0,0,0,0,0c2.3,0,56.6-0.9,99.3-24.9c42.7,24.1,96.9,24.9,99.3,24.9c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0 c0,0,0,0,0,0c0.3,0,0.6,0,0.9-0.1c0.2,0,0.4-0.1,0.7-0.2c0.1,0,0.1,0,0.2-0.1c0.2-0.1,0.4-0.2,0.6-0.3c0.1,0,0.1-0.1,0.2-0.1 c0.2-0.1,0.3-0.2,0.5-0.4c0.1-0.1,0.2-0.1,0.2-0.2c0.1-0.1,0.2-0.3,0.4-0.4c0.1-0.1,0.1-0.2,0.2-0.2c0.1-0.1,0.2-0.3,0.3-0.5 c0.1-0.1,0.1-0.2,0.2-0.3c0.1-0.2,0.1-0.3,0.2-0.5c0-0.1,0.1-0.2,0.1-0.3c0-0.2,0-0.3,0.1-0.5c0-0.1,0-0.2,0-0.4c0,0,0,0,0,0 c0,0,0,0,0,0V88.6l8.2,6.2c0.8,0.6,1.8,0.9,2.7,0.9c1.4,0,2.7-0.6,3.6-1.8C239.2,91.9,238.8,89.1,236.8,87.5z M119.2,10.1 l44.5,33.7c1.4,1,3.2,1.2,4.8,0.4c1.5-0.8,2.5-2.3,2.5-4.1V19h26.6v48.1c0,0.1,0,0.2,0,0.3c0,0.2,0,0.3,0,0.5 c0,0.1,0.1,0.3,0.1,0.4c0,0.1,0.1,0.3,0.1,0.4c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.2,0.3,0.4 c0.1,0.1,0.2,0.2,0.3,0.3c0.1,0.1,0.2,0.2,0.4,0.3c0.1,0.1,0.1,0.1,0.2,0.2l14.7,11.1v103.6c-13.2-0.7-52.9-4.2-85.8-21.2 c0.6-0.4,1.3-0.8,1.9-1.3c13.3-9,24.9-19.3,34.4-30.8c9.7-11.7,19.9-27.3,13.1-45c-5-12.9-16.8-21.9-30-22.7 c-0.8-0.1-1.6-0.1-2.4-0.1c-10,0-19.5,4.4-26,11.7c-6.5-7.4-16-11.7-26-11.7c-0.8,0-1.6,0-2.4,0.1c-13.2,0.9-25,9.8-30,22.7 c-6.9,17.6,3.4,33.3,13.1,45c9.5,11.5,21.1,21.8,34.4,30.8c0.6,0.4,1.3,0.8,1.9,1.3c-32.9,16.9-72.6,20.5-85.8,21.2V81.6 L119.2,10.1z M113.5,155.4c-12.6-8.5-23.5-18.3-32.5-29.1c-8.6-10.4-16.7-22.7-11.6-35.9c3.7-9.5,12.6-16.3,22.1-17 c0.6,0,1.2-0.1,1.8-0.1c9.1,0,17.4,4.7,22.1,12.6c0,0.1,0.1,0.1,0.1,0.2c0.1,0.1,0.2,0.3,0.3,0.4c0.1,0.1,0.2,0.2,0.3,0.3 c0.1,0.1,0.2,0.2,0.3,0.3c0.1,0.1,0.3,0.2,0.4,0.3c0.1,0,0.1,0.1,0.2,0.1c0.1,0,0.1,0.1,0.2,0.1c0.1,0.1,0.3,0.1,0.4,0.2 c0.1,0.1,0.3,0.1,0.4,0.1c0.1,0,0.3,0.1,0.4,0.1c0.1,0,0.3,0.1,0.4,0.1c0.1,0,0.3,0,0.4,0c0.1,0,0.3,0,0.4,0c0.1,0,0.3,0,0.4-0.1 c0.1,0,0.3-0.1,0.4-0.1c0.1,0,0.3-0.1,0.4-0.1c0.1-0.1,0.3-0.1,0.4-0.2c0.1,0,0.1-0.1,0.2-0.1c0.1,0,0.1-0.1,0.2-0.1 c0.1-0.1,0.3-0.2,0.4-0.3c0.1-0.1,0.2-0.2,0.3-0.3c0.1-0.1,0.2-0.2,0.3-0.3c0.1-0.1,0.2-0.3,0.3-0.4c0-0.1,0.1-0.1,0.1-0.2 c4.7-7.9,13-12.6,22.1-12.6c0.6,0,1.2,0,1.8,0.1c9.5,0.6,18.4,7.5,22.2,17c5.1,13.1-3,25.5-11.6,35.9c-9,10.8-19.9,20.6-32.5,29.1 c-1.9,1.3-3.9,2.5-5.8,3.7C117.3,157.9,115.4,156.7,113.5,155.4z"></path></svg><span class="brand-wordmark">A Promise to Mom</span></span></a>
 	</div>
 
             <div class="nav-main__btn js-mobileNav js-menu-switcher -mobile" role="button" aria-expanded="false">
@@ -667,20 +714,16 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
 
         
         
-                    <div class="loc-search-form" id="finder" novalidate="">
-    <div class="search-fields-wrapper">
-        <label class="loc-search-form_label" for="loc-search-form-1">Zip, City or State</label>
-        <input type="text" class="js-search-address-field search-field pac-target-input" value="" id="loc-search-form-1" placeholder="Zip, City or State" name="city">
-                    <div class="js-search-form-errors error">Location not found. Please try a different address or zip code.</div>
-            </div>
-    <button type="submit" id="finder-go" class="c-btn -primary -small cta_1 has-icon icon-right locations-filter-search-btn">
-        <span class="c-btn__txt">Find Care Near You</span>
-        <span class="c-btn__ico">
-                    <svg width="30" height="30" class="icon icon-lib-icon-arrow1 icon " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg>		</span>
-    </button>
-    
-
-</div>            </div>
+                    <div class="quiz" id="finder" data-steps="5">
+    <div class="quiz__top"><button type="button" class="quiz__back" hidden="">◀ Back</button><span class="quiz__step">Step 1 of 5</span></div>
+    <div class="quiz__bar"><span></span></div>
+    <section class="quiz__panel" data-step="1"><h3 class="quiz__q">Who is the care for?</h3><p class="quiz__hint">Find the right care with a no-pressure, free consultation.</p><div class="quiz__opts"><button type="button" class="q-opt" data-name="who" data-value="My parent(s)"><span class="q-opt__text"><b>My parent(s)</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="who" data-value="My spouse"><span class="q-opt__text"><b>My spouse</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="who" data-value="Myself"><span class="q-opt__text"><b>Myself</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="who" data-value="Someone else"><span class="q-opt__text"><b>Someone else</b></span><span class="q-opt__check" aria-hidden="true"></span></button></div></section>
+    <section class="quiz__panel" data-step="2" hidden=""><h3 class="quiz__q">What can we help with?</h3><p class="quiz__hint">Choose everything that applies. You can add details when we talk.</p><div class="quiz__opts"><button type="button" class="q-opt is-multi" data-name="help" data-value="Daily living tasks"><span class="q-opt__text"><b>Daily living tasks</b><small>Light housekeeping, meal prep and medication reminders</small></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt is-multi" data-name="help" data-value="Memory support"><span class="q-opt__text"><b>Memory support</b><small>Alzheimer's and other forms of dementia</small></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt is-multi" data-name="help" data-value="Condition-specific care"><span class="q-opt__text"><b>Condition-specific care</b><small>Arthritis, diabetes, after a hospital stay, end-of-life care</small></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt is-multi" data-name="help" data-value="Other types of support"><span class="q-opt__text"><b>Other types of support</b><small>Errands, transportation, companionship</small></span><span class="q-opt__check" aria-hidden="true"></span></button></div><button type="button" class="c-btn -primary -small quiz__next">Continue</button></section>
+    <section class="quiz__panel" data-step="3" hidden=""><h3 class="quiz__q">How soon is care needed?</h3><p class="quiz__hint">Whether it is an unexpected need or long-term care, we are here to help.</p><div class="quiz__opts"><button type="button" class="q-opt" data-name="when" data-value="Right away"><span class="q-opt__text"><b>Right away</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="when" data-value="Within a few weeks"><span class="q-opt__text"><b>Within a few weeks</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="when" data-value="Just planning ahead"><span class="q-opt__text"><b>Just planning ahead</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="when" data-value="I'm not sure"><span class="q-opt__text"><b>I'm not sure</b></span><span class="q-opt__check" aria-hidden="true"></span></button></div></section>
+    <section class="quiz__panel" data-step="4" hidden=""><h3 class="quiz__q">Where is care needed?</h3><p class="quiz__hint">So we can match you with a caregiver nearby.</p><label class="quiz__field"><span>ZIP / Postal code</span><input type="text" name="zip" inputmode="numeric" placeholder="30303" autocomplete="postal-code"></label><label class="quiz__field"><span>Best time for us to call</span><select name="calltime"><option>Morning (8am–12pm)</option><option>Afternoon (12pm–4pm)</option><option>Evening (4pm–8pm)</option></select></label><button type="button" class="c-btn -primary -small quiz__next">Continue</button></section>
+    <section class="quiz__panel" data-step="5" hidden=""><h3 class="quiz__q">Almost done!</h3><p class="quiz__hint">Fill in your contact details and a care advisor will reach out at the time you chose.</p><form class="quiz__form" novalidate=""><label class="quiz__field"><span>First name</span><input type="text" name="first" autocomplete="given-name" required=""></label><label class="quiz__field"><span>Last name</span><input type="text" name="last" autocomplete="family-name"></label><label class="quiz__field"><span>Email address</span><input type="email" name="email" autocomplete="email"></label><label class="quiz__field"><span>Phone number</span><input type="tel" name="phone" autocomplete="tel" required=""></label><button type="submit" class="c-btn -primary -small quiz__submit">Contact me with care options</button><p class="quiz__note">No obligation. We never share your information.</p></form></section>
+    <section class="quiz__panel quiz__done" data-step="6" hidden=""><h3 class="quiz__q">Thank you.</h3><p class="quiz__hint">A care advisor will call at the time you chose. Nobody else will.</p></section>
+  </div>            </div>
 </div>
 
 
@@ -1125,7 +1168,233 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
     </div>
 
 	
+</div><div class="m-block gt-s svc-sec" id="care"><div class="m-block gt-s gb -version-3 l-content-simple-1 svc-head" style="">
+
+	
+	
+    <div class="m-block__container container" style="">
+		
+<div class="l-heading text-left l-heading-v1">
+
+	    <div class="c-heading -h2 "><div class="c-heading__pre">In-home care for seniors</div>
+        
+        
+        
+                    <h2 class="c-heading__title">The kind of care <span>you'd want for your own.</span></h2>        
+            </div>
+    <div class="c-heading__description is-wysiwyg"><p>Whether it's a few hours a week or around-the-clock support, we tailor everything to your loved one.</p></div>
+
+
+
+
+
+	        <div class="c-block__btn c-btn-bar">
+                    
+            </div>
+    
 </div>
+    </div>
+
+	
+</div><div class="svc-grid"><article class="c-block  c-block-v1 is-vertical text-left align-top" style="">
+    
+    
+        <div class="c-block__media">
+                                        <a class="c-block__link-full" href="#finder">
+                        <div class="c-image">
+        <div class="c-image__media c-image__primary">
+            
+                <img decoding="async" class="c-image__src" loading="eager" src="img/svc-1.jpg" alt="">
+
+            
+        </div>
+    </div>
+                </a>
+                    </div>
+
+    
+    <div class="c-block__body">
+
+        
+        
+                                    <a class="c-block__link-full" href="#finder">
+                        <div class="-h4">
+                <h3 class="c-block__title">Personal Care</h3>            </div><div class="c-block__description"><p>Compassionate, hands-on help with bathing, dressing, grooming and meal prep, so daily life stays safe and dignified.</p></div>
+                            </a>
+                    
+        
+                            <div class="c-block__btn c-btn-bar">
+                    <a href="#finder" class="c-btn -small -link has-icon icon-right " aria-label="Read more about blog post: Blood Sugar Changes in Older Adults: Warning Signs Families Should Know"><span class="c-btn__txt">Learn more</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
+            </div>
+            
+    </div>
+
+</article><article class="c-block  c-block-v1 is-vertical text-left align-top" style="">
+    
+    
+        <div class="c-block__media">
+                                        <a class="c-block__link-full" href="#finder">
+                        <div class="c-image">
+        <div class="c-image__media c-image__primary">
+            
+                <img decoding="async" class="c-image__src" loading="eager" src="img/svc-2.jpg" alt="">
+
+            
+        </div>
+    </div>
+                </a>
+                    </div>
+
+    
+    <div class="c-block__body">
+
+        
+        
+                                    <a class="c-block__link-full" href="#finder">
+                        <div class="-h4">
+                <h3 class="c-block__title">Companionship</h3>            </div><div class="c-block__description"><p>Conversation, errands, hobbies and a friendly presence that keeps loneliness away and spirits up.</p></div>
+                            </a>
+                    
+        
+                            <div class="c-block__btn c-btn-bar">
+                    <a href="#finder" class="c-btn -small -link has-icon icon-right " aria-label="Read more about blog post: Blood Sugar Changes in Older Adults: Warning Signs Families Should Know"><span class="c-btn__txt">Learn more</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
+            </div>
+            
+    </div>
+
+</article><article class="c-block  c-block-v1 is-vertical text-left align-top" style="">
+    
+    
+        <div class="c-block__media">
+                                        <a class="c-block__link-full" href="#finder">
+                        <div class="c-image">
+        <div class="c-image__media c-image__primary">
+            
+                <img decoding="async" class="c-image__src" loading="eager" src="img/svc-3.jpg" alt="">
+
+            
+        </div>
+    </div>
+                </a>
+                    </div>
+
+    
+    <div class="c-block__body">
+
+        
+        
+                                    <a class="c-block__link-full" href="#finder">
+                        <div class="-h4">
+                <h3 class="c-block__title">Respite Care</h3>            </div><div class="c-block__description"><p>You need rest too. We step in for a few hours, a weekend or longer so family caregivers can recharge.</p></div>
+                            </a>
+                    
+        
+                            <div class="c-block__btn c-btn-bar">
+                    <a href="#finder" class="c-btn -small -link has-icon icon-right " aria-label="Read more about blog post: Blood Sugar Changes in Older Adults: Warning Signs Families Should Know"><span class="c-btn__txt">Learn more</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
+            </div>
+            
+    </div>
+
+</article><article class="c-block  c-block-v1 is-vertical text-left align-top" style="">
+    
+    
+        <div class="c-block__media">
+                                        <a class="c-block__link-full" href="#finder">
+                        <div class="c-image">
+        <div class="c-image__media c-image__primary">
+            
+                <img decoding="async" class="c-image__src" loading="eager" src="img/svc-4.jpg" alt="">
+
+            
+        </div>
+    </div>
+                </a>
+                    </div>
+
+    
+    <div class="c-block__body">
+
+        
+        
+                                    <a class="c-block__link-full" href="#finder">
+                        <div class="-h4">
+                <h3 class="c-block__title">24-Hour &amp; Live-In Care</h3>            </div><div class="c-block__description"><p>Steady, around-the-clock support and a reassuring presence, practical help and peace of mind day and night.</p></div>
+                            </a>
+                    
+        
+                            <div class="c-block__btn c-btn-bar">
+                    <a href="#finder" class="c-btn -small -link has-icon icon-right " aria-label="Read more about blog post: Blood Sugar Changes in Older Adults: Warning Signs Families Should Know"><span class="c-btn__txt">Learn more</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
+            </div>
+            
+    </div>
+
+</article><article class="c-block  c-block-v1 is-vertical text-left align-top" style="">
+    
+    
+        <div class="c-block__media">
+                                        <a class="c-block__link-full" href="#finder">
+                        <div class="c-image">
+        <div class="c-image__media c-image__primary">
+            
+                <img decoding="async" class="c-image__src" loading="eager" src="img/svc-5.jpg" alt="">
+
+            
+        </div>
+    </div>
+                </a>
+                    </div>
+
+    
+    <div class="c-block__body">
+
+        
+        
+                                    <a class="c-block__link-full" href="#finder">
+                        <div class="-h4">
+                <h3 class="c-block__title">Dementia &amp; Alzheimer's Care</h3>            </div><div class="c-block__description"><p>Specially trained caregivers provide structure, gentle guidance and calm, familiar routines tailored to each stage.</p></div>
+                            </a>
+                    
+        
+                            <div class="c-block__btn c-btn-bar">
+                    <a href="#finder" class="c-btn -small -link has-icon icon-right " aria-label="Read more about blog post: Blood Sugar Changes in Older Adults: Warning Signs Families Should Know"><span class="c-btn__txt">Learn more</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
+            </div>
+            
+    </div>
+
+</article><article class="c-block  c-block-v1 is-vertical text-left align-top" style="">
+    
+    
+        <div class="c-block__media">
+                                        <a class="c-block__link-full" href="#finder">
+                        <div class="c-image">
+        <div class="c-image__media c-image__primary">
+            
+                <img decoding="async" class="c-image__src" loading="eager" src="img/svc-6.jpg" alt="">
+
+            
+        </div>
+    </div>
+                </a>
+                    </div>
+
+    
+    <div class="c-block__body">
+
+        
+        
+                                    <a class="c-block__link-full" href="#finder">
+                        <div class="-h4">
+                <h3 class="c-block__title">Post-Operative Care</h3>            </div><div class="c-block__description"><p>Recovery support after a hospital stay or surgery: medication reminders, mobility help and a smoother healing at home.</p></div>
+                            </a>
+                    
+        
+                            <div class="c-block__btn c-btn-bar">
+                    <a href="#finder" class="c-btn -small -link has-icon icon-right " aria-label="Read more about blog post: Blood Sugar Changes in Older Adults: Warning Signs Families Should Know"><span class="c-btn__txt">Learn more</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
+            </div>
+            
+    </div>
+
+</article></div></div>
 
 
 <div class="m-block gt-s -version-1 l-content-2 " style="" id="careers">
@@ -2318,7 +2587,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
                 <div class="col-xs-12 footer-top__col info  col-sm-3">
 
                     
-                                                    <div class="footer-logo__wrap"><span class="brand-wordmark">A Promise to Mom</span></div>
+                                                    <div class="footer-logo__wrap"><span class="brand-lockup"><svg class="logo-mark" aria-hidden="true" viewBox="0 0 240 195" xmlns="http://www.w3.org/2000/svg"><path fill="currentColor" d="M236.8,87.5L221.5,76c-0.2-0.1-0.3-0.3-0.5-0.4l-14.3-10.8V14.5c0-2.5-2-4.5-4.5-4.5h-35.7 c-2.5,0-4.5,2-4.5,4.5v16.7L122.2,1c-0.5-0.4-1-0.6-1.6-0.8c-1.4-0.5-3-0.3-4.2,0.7L17.6,75.5c-0.2,0.1-0.3,0.2-0.5,0.4L1.8,87.4 c-2,1.5-2.4,4.3-0.9,6.3c0.9,1.2,2.2,1.8,3.6,1.8c1,0,1.9-0.3,2.7-0.9l8.2-6.2v101.5c0,0,0,0,0,0.1c0,0,0,0,0,0.1 c0,2.5,2,4.5,4.5,4.5c0,0,0,0,0,0c2.3,0,56.6-0.9,99.3-24.9c42.7,24.1,96.9,24.9,99.3,24.9c0,0,0,0,0,0c0,0,0,0,0,0c0,0,0,0,0,0 c0,0,0,0,0,0c0.3,0,0.6,0,0.9-0.1c0.2,0,0.4-0.1,0.7-0.2c0.1,0,0.1,0,0.2-0.1c0.2-0.1,0.4-0.2,0.6-0.3c0.1,0,0.1-0.1,0.2-0.1 c0.2-0.1,0.3-0.2,0.5-0.4c0.1-0.1,0.2-0.1,0.2-0.2c0.1-0.1,0.2-0.3,0.4-0.4c0.1-0.1,0.1-0.2,0.2-0.2c0.1-0.1,0.2-0.3,0.3-0.5 c0.1-0.1,0.1-0.2,0.2-0.3c0.1-0.2,0.1-0.3,0.2-0.5c0-0.1,0.1-0.2,0.1-0.3c0-0.2,0-0.3,0.1-0.5c0-0.1,0-0.2,0-0.4c0,0,0,0,0,0 c0,0,0,0,0,0V88.6l8.2,6.2c0.8,0.6,1.8,0.9,2.7,0.9c1.4,0,2.7-0.6,3.6-1.8C239.2,91.9,238.8,89.1,236.8,87.5z M119.2,10.1 l44.5,33.7c1.4,1,3.2,1.2,4.8,0.4c1.5-0.8,2.5-2.3,2.5-4.1V19h26.6v48.1c0,0.1,0,0.2,0,0.3c0,0.2,0,0.3,0,0.5 c0,0.1,0.1,0.3,0.1,0.4c0,0.1,0.1,0.3,0.1,0.4c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.1,0.3,0.2,0.4c0.1,0.1,0.2,0.2,0.3,0.4 c0.1,0.1,0.2,0.2,0.3,0.3c0.1,0.1,0.2,0.2,0.4,0.3c0.1,0.1,0.1,0.1,0.2,0.2l14.7,11.1v103.6c-13.2-0.7-52.9-4.2-85.8-21.2 c0.6-0.4,1.3-0.8,1.9-1.3c13.3-9,24.9-19.3,34.4-30.8c9.7-11.7,19.9-27.3,13.1-45c-5-12.9-16.8-21.9-30-22.7 c-0.8-0.1-1.6-0.1-2.4-0.1c-10,0-19.5,4.4-26,11.7c-6.5-7.4-16-11.7-26-11.7c-0.8,0-1.6,0-2.4,0.1c-13.2,0.9-25,9.8-30,22.7 c-6.9,17.6,3.4,33.3,13.1,45c9.5,11.5,21.1,21.8,34.4,30.8c0.6,0.4,1.3,0.8,1.9,1.3c-32.9,16.9-72.6,20.5-85.8,21.2V81.6 L119.2,10.1z M113.5,155.4c-12.6-8.5-23.5-18.3-32.5-29.1c-8.6-10.4-16.7-22.7-11.6-35.9c3.7-9.5,12.6-16.3,22.1-17 c0.6,0,1.2-0.1,1.8-0.1c9.1,0,17.4,4.7,22.1,12.6c0,0.1,0.1,0.1,0.1,0.2c0.1,0.1,0.2,0.3,0.3,0.4c0.1,0.1,0.2,0.2,0.3,0.3 c0.1,0.1,0.2,0.2,0.3,0.3c0.1,0.1,0.3,0.2,0.4,0.3c0.1,0,0.1,0.1,0.2,0.1c0.1,0,0.1,0.1,0.2,0.1c0.1,0.1,0.3,0.1,0.4,0.2 c0.1,0.1,0.3,0.1,0.4,0.1c0.1,0,0.3,0.1,0.4,0.1c0.1,0,0.3,0.1,0.4,0.1c0.1,0,0.3,0,0.4,0c0.1,0,0.3,0,0.4,0c0.1,0,0.3,0,0.4-0.1 c0.1,0,0.3-0.1,0.4-0.1c0.1,0,0.3-0.1,0.4-0.1c0.1-0.1,0.3-0.1,0.4-0.2c0.1,0,0.1-0.1,0.2-0.1c0.1,0,0.1-0.1,0.2-0.1 c0.1-0.1,0.3-0.2,0.4-0.3c0.1-0.1,0.2-0.2,0.3-0.3c0.1-0.1,0.2-0.2,0.3-0.3c0.1-0.1,0.2-0.3,0.3-0.4c0-0.1,0.1-0.1,0.1-0.2 c4.7-7.9,13-12.6,22.1-12.6c0.6,0,1.2,0,1.8,0.1c9.5,0.6,18.4,7.5,22.2,17c5.1,13.1-3,25.5-11.6,35.9c-9,10.8-19.9,20.6-32.5,29.1 c-1.9,1.3-3.9,2.5-5.8,3.7C117.3,157.9,115.4,156.7,113.5,155.4z"></path></svg><span class="brand-wordmark">A Promise to Mom</span></span></div>
                         
                         <div class="footer-block">
                                                             <div class="footer-title">REQUEST A CONSULTATION</div>
@@ -2676,7 +2945,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
 
 
 
-<p id="a11y-speak-intro-text" class="a11y-speak-intro-text" style="position:absolute;margin:-1px;padding:0;height:1px;width:1px;overflow:hidden;clip-path:inset(50%);border:0;word-wrap:normal !important;word-break:normal !important;" hidden="">Notifications</p><div id="a11y-speak-assertive" class="a11y-speak-region" style="position:absolute;margin:-1px;padding:0;height:1px;width:1px;overflow:hidden;clip-path:inset(50%);border:0;word-wrap:normal !important;word-break:normal !important;" aria-live="assertive" aria-relevant="additions text" aria-atomic="true"></div><div id="a11y-speak-polite" class="a11y-speak-region" style="position:absolute;margin:-1px;padding:0;height:1px;width:1px;overflow:hidden;clip-path:inset(50%);border:0;word-wrap:normal !important;word-break:normal !important;" aria-live="polite" aria-relevant="additions text" aria-atomic="true"></div><div class="pac-container pac-logo" style="display: none;"></div><div><div class="grecaptcha-badge" data-style="bottomright" style="width: 256px; height: 60px; display: block; transition: right 0.3s; position: fixed; bottom: 14px; right: -186px; box-shadow: gray 0px 0px 5px; border-radius: 2px; overflow: hidden;"><div class="grecaptcha-logo"></div><div class="grecaptcha-error"></div><textarea id="g-recaptcha-response-100000" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;"></textarea></div></div><script>window.PTM_FORM_ENDPOINT = window.PTM_FORM_ENDPOINT || "";</script><script>(function(){
+<p id="a11y-speak-intro-text" class="a11y-speak-intro-text" style="position:absolute;margin:-1px;padding:0;height:1px;width:1px;overflow:hidden;clip-path:inset(50%);border:0;word-wrap:normal !important;word-break:normal !important;" hidden="">Notifications</p><div id="a11y-speak-assertive" class="a11y-speak-region" style="position:absolute;margin:-1px;padding:0;height:1px;width:1px;overflow:hidden;clip-path:inset(50%);border:0;word-wrap:normal !important;word-break:normal !important;" aria-live="assertive" aria-relevant="additions text" aria-atomic="true"></div><div id="a11y-speak-polite" class="a11y-speak-region" style="position:absolute;margin:-1px;padding:0;height:1px;width:1px;overflow:hidden;clip-path:inset(50%);border:0;word-wrap:normal !important;word-break:normal !important;" aria-live="polite" aria-relevant="additions text" aria-atomic="true"></div><div class="pac-container pac-logo" style="display: none;"></div><div></div><script>window.PTM_FORM_ENDPOINT = window.PTM_FORM_ENDPOINT || "";</script><script>(function(){
   var $=function(s,r){return (r||document).querySelector(s)}; var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
   var header=$('.site-header'); function sticky(){ if(!header) return; header.classList.toggle('is-sticky', window.scrollY>10); } sticky(); window.addEventListener('scroll',sticky,{passive:true});
   /* mobile menu */
@@ -2694,11 +2963,11 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
   $$('.js-sticky-form-trigger').forEach(function(t){ t.addEventListener('click',function(){ modal.classList.contains('is-active')?closeM():openM(); }); });
   $$('.js-sticky-form-close, .sticky-form__close').forEach(function(t){ t.addEventListener('click',closeM); }); if(overlay) overlay.addEventListener('click',closeM); document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeM(); });
   /* social rail toggle */
-  var soc=$('.js-sticky-socials'); $$('.js-sticky-socials-toggle, .js-sticky-socials-close').forEach(function(t){ t.addEventListener('click',function(){ soc.classList.toggle('is-active'); }); });
+  var soc=$('.js-sticky-socials'); if (soc && window.innerWidth < 768) soc.classList.remove('is-active'); $$('.js-sticky-socials-toggle, .js-sticky-socials-close').forEach(function(t){ t.addEventListener('click',function(){ soc.classList.toggle('is-active'); }); });
   /* slider arrows */
   $$('.m-slider').forEach(function(sl){ var w=$('.swiper-wrapper',sl); $$('.swiper-button-prev, .js-slider-prev, [class*=prev]',sl).forEach(function(b){ b.addEventListener('click',function(e){ e.preventDefault(); w.scrollBy({left:-348,behavior:'smooth'}); }); }); $$('.swiper-button-next, .js-slider-next, [class*=next]',sl).forEach(function(b){ b.addEventListener('click',function(e){ e.preventDefault(); w.scrollBy({left:348,behavior:'smooth'}); }); }); });
   /* finder → consultation form */
-  var finder=$('#finder'); if(finder){ var fi=$('input',finder); if(fi){ fi.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); finder.dispatchEvent(new Event('submit',{cancelable:true})); } }); } var goBtn=$('#finder-go'); if(goBtn){ goBtn.addEventListener('click',function(e){ e.preventDefault(); finder.dispatchEvent(new Event('submit',{cancelable:true})); }); } finder.addEventListener('submit',function(e){ e.preventDefault(); var v=($('input',finder)||{}).value||''; var t=$('#talk'); var ctx=$('#talk-form textarea[name=context]'); if(ctx&&v) ctx.value='City or zip: '+v; if(t) t.scrollIntoView({block:'start'}); var ph=$('#talk-form input[name=phone]'); if(ph) setTimeout(function(){ph.focus()},50); }); }
+  var finder=$('#finder:not(.quiz)'); if(finder){ var fi=$('input',finder); if(fi){ fi.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); finder.dispatchEvent(new Event('submit',{cancelable:true})); } }); } var goBtn=$('#finder-go'); if(goBtn){ goBtn.addEventListener('click',function(e){ e.preventDefault(); finder.dispatchEvent(new Event('submit',{cancelable:true})); }); } finder.addEventListener('submit',function(e){ e.preventDefault(); var v=($('input',finder)||{}).value||''; var t=$('#talk'); var ctx=$('#talk-form textarea[name=context]'); if(ctx&&v) ctx.value='City or zip: '+v; if(t) t.scrollIntoView({block:'start'}); var ph=$('#talk-form input[name=phone]'); if(ph) setTimeout(function(){ph.focus()},50); }); }
   /* forms: two-step (phone → best time) for the section form, single-step for the modal */
   function store(data){ data.page=location.pathname; data.brand=document.title; data.ts=new Date().toISOString(); var ep=window.PTM_FORM_ENDPOINT; if(ep){ return fetch(ep,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).catch(function(){}); } try{ var arr=JSON.parse(localStorage.getItem('ptm_submissions')||'[]'); arr.push(data); localStorage.setItem('ptm_submissions',JSON.stringify(arr)); }catch(err){} return Promise.resolve(); }
   $$('form.talk-form').forEach(function(form){ form.addEventListener('submit',function(e){ e.preventDefault(); var phone=$('input[name=phone]',form); if(!phone||!phone.value.trim()){ if(phone){ phone.focus(); phone.style.borderColor='#c0392b'; } return; }
@@ -2707,5 +2976,20 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
     store(data).then(function(){ $$('.gform-body, .gform_body, .gform_footer, .gform-footer, .talk-note, .talk-step2',form).forEach(function(el){ el.hidden=true; }); var ok=$('.talk-ok',form); if(ok) ok.hidden=false; }); }); });
   /* every internal href resolves */
   $$('a[href^="#"]').forEach(function(a){ var h=a.getAttribute('href'); if(h.length>1&&!document.querySelector(h)) a.setAttribute('href','#talk'); });
+})();
+(function(){
+  var $=function(s,r){return (r||document).querySelector(s)}; var $$=function(s,r){return Array.prototype.slice.call((r||document).querySelectorAll(s))};
+  var quiz=$('#finder.quiz'); if(!quiz) return; var total=5, step=1, data={help:[]};
+  var panels=$$('.quiz__panel',quiz), bar=$('.quiz__bar span',quiz), label=$('.quiz__step',quiz), back=$('.quiz__back',quiz);
+  function show(n){ step=n; panels.forEach(function(p){ p.hidden=(+p.getAttribute('data-step')!==n); }); if(n<=total){ label.textContent='Step '+n+' of '+total; bar.style.width=(n/total*100)+'%'; label.hidden=false; } else { label.hidden=true; bar.style.width='100%'; } back.hidden=(n===1||n>total); var f=$('.quiz__panel[data-step="'+n+'"] input, .quiz__panel[data-step="'+n+'"] .q-opt',quiz); if(f&&n>1) setTimeout(function(){ try{ f.focus({preventScroll:true}); }catch(e){} },30); }
+  back.addEventListener('click',function(){ if(step>1) show(step-1); });
+  $$('.q-opt',quiz).forEach(function(b){ b.addEventListener('click',function(){ var name=b.getAttribute('data-name'), v=b.getAttribute('data-value');
+    if(b.classList.contains('is-multi')){ b.classList.toggle('is-selected'); data.help=$$('.q-opt.is-multi.is-selected',quiz).map(function(x){return x.getAttribute('data-value')}); return; }
+    $$('.q-opt[data-name="'+name+'"]',quiz).forEach(function(x){ x.classList.remove('is-selected'); }); b.classList.add('is-selected'); data[name]=v; setTimeout(function(){ show(step+1); },160); }); });
+  $$('.quiz__next',quiz).forEach(function(btn){ btn.addEventListener('click',function(){ if(step===2&&!data.help.length){ var first=$('.quiz__panel[data-step="2"] .q-opt',quiz); first.focus(); return; } if(step===4){ var z=$('input[name=zip]',quiz); if(!z.value.trim()){ z.focus(); z.style.borderColor='#c0392b'; return; } data.zip=z.value.trim(); data.calltime=$('select[name=calltime]',quiz).value; } show(step+1); }); });
+  var form=$('.quiz__form',quiz); form.addEventListener('submit',function(e){ e.preventDefault(); var ph=$('input[name=phone]',form), fn=$('input[name=first]',form); if(!fn.value.trim()){ fn.focus(); fn.style.borderColor='#c0392b'; return; } if(!ph.value.trim()){ ph.focus(); ph.style.borderColor='#c0392b'; return; }
+    $$('input',form).forEach(function(i){ data[i.name]=i.value.trim(); }); data.page=location.pathname; data.brand=document.title; data.ts=new Date().toISOString();
+    var done=function(){ show(6); }; var ep=window.PTM_FORM_ENDPOINT; if(ep){ fetch(ep,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)}).then(done).catch(done); } else { try{ var arr=JSON.parse(localStorage.getItem('ptm_submissions')||'[]'); arr.push(data); localStorage.setItem('ptm_submissions',JSON.stringify(arr)); }catch(err){} done(); } });
+  show(1);
 })();
 </script></body></html>
