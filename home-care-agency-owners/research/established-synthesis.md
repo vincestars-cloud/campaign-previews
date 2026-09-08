@@ -30,3 +30,32 @@
 - **Solution-Aware:** evaluating how to grow + retain. → **Hook:** "One engine that fills census AND fills your caregiver pipeline." **Offer:** done-for-you client + caregiver acquisition with retention analytics.
 - **Product-Aware:** comparing coaches/agencies/software/selling. → **Hook:** "Build the agency a PE buyer pays 6–8× for — diversified referrals, stable census, runs without you." **Offer:** growth + operating-systems engagement, benchmarked to valuation drivers.
 - **Most-Aware / exit-planning:** → **Offer:** value-build sprint (census stability + payor/referral diversification + management layer) tied to a target multiple and timeline.
+
+## Retention at Scale — the #1 established pain AND valuation driver
+For the established owner, caregiver retention is not an HR nicety — it is the growth ceiling and the valuation lever. **139 corpus docs** touch it; the M&A data says agencies below **50% turnover** (vs. the **60–80%** industry norm) command premium multiples, and each lost caregiver costs **$2,600–$5,000** to replace (Carevoyant / Activated Insights). You cannot scale census you cannot staff.
+
+### The killer insight (why they actually leave)
+> "Home care isn't a medical business; it's a logistics and HR business… The moat isn't your branding or your bedside manner — it's your scheduling density. If you can give a caregiver 40 hours a week within a 5-mile radius, they stay. If you give them 20 hours with a 30-minute commute between clients, they go to Target. The 79% turnover is usually a symptom of fragmented schedules rather than just low hourly."
+> — r/Entrepreneur operator · ↑7
+
+> "Places are offering $25 an hour and still can't find staff. Part of the problem is the pay but also how they are treated… Many are just leaving healthcare altogether no matter how much they raise the wages."
+> — r/nursing · ↑6
+
+> "Wages for home care workers are abysmal, fast food now pays better."
+> — r/nursing · ↑120
+
+### The retention levers (from operators + the coach playbooks)
+1. **Scheduling density** — cluster hours near the caregiver's home; full-time-equivalent hours in a tight radius beat a higher wage spread across a 30-minute commute.
+2. **The first week** — *"a disorganized first week actively erodes their confidence in your agency's competence."* Structured onboarding/orientation is a retention act, not paperwork.
+3. **PRN / float team** — a texted, first-come pool for coverage so a call-off doesn't burn your full-timers (and doesn't cost you 40 guaranteed hours).
+4. **A real scheduler** — *"the scheduler position is very critical… has to be on top of everything."* At scale, scheduling IS retention.
+5. **Pay + daily pay** — competitive wage floor plus earned-wage-access (Tapcheck/daily pay) to beat the fast-food alternative.
+6. **Recognition & matching** — caregiver-client matching and being treated as more than "a number" (the recurring VOC complaint).
+
+### The retention/recruiting vendors competitors sell to owners (inLeap's adjacent set)
+- **Training / onboarding:** CareAcademy, Nevvon, learn2care
+- **Earned-wage-access / daily pay:** Tapcheck, and payroll add-ons
+- **Recruiting / RPO / job boards:** Apploi, myCNAjobs, Indeed, ZipRecruiter, Hireline
+- **AI / matching / monitoring:** Sensi.AI, scheduling-density tooling inside WellSky / AxisCare / AlayaCare
+- **Coaches with retention programs:** Home Care Evolution (Hurricane), Justin Currie, Candyce Slusher, Jedi Calventas ("Stop Losing Caregivers")
+**inLeap's angle:** the same acquisition engine that fills census also fills the caregiver pipeline — and pairing acquisition with scheduling-density + retention analytics is what turns turnover (the valuation killer) into the differentiator that raises the multiple.
