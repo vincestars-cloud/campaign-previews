@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-    <meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="description" content="Dependable in-home care for your mom, from finding the right person to keeping you informed once care begins.">
+    <meta charset="UTF-8"><meta name="robots" content="noindex,nofollow"><meta name="description" content="When you're already carrying the appointments, the medications, the errands and everything in between, finding help shouldn't become another thing to manage.">
 
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -356,6 +356,38 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
 .quiz__bar span{background:#C2386E}
 .quiz__step{color:#C2386E}
 .quiz{border-top-color:#C2386E!important}
+
+/* tabs: six across on desktop, clear of the social rail */
+@media (min-width: 992px) { .m-side-nav .c-anchor-nav { flex-wrap: nowrap; width: 100%; max-width: 1240px; margin: 0 auto; padding: 0 64px; } .c-anchor-nav__item { flex: 1 1 0; min-width: 0; } .c-anchor-nav__label { min-width: 0 !important; padding: 12px 10px !important; font-size: 14px !important; } }
+/* slider arrows: the swiper sheet is gone, restore the round button */
+.m-slider__arrows { width: 54px !important; height: 54px !important; min-width: 54px !important; border-radius: 50% !important; display: inline-flex; align-items: center; justify-content: center; }
+.m-slider__arrows .arrow-icon { width: 22px; height: 22px; }
+/* services: photo grid, uneven, Mom's face never covered */
+.svc-grid--uneven { grid-template-columns: repeat(12, minmax(0, 1fr)); margin-top: 0; }
+.svc-grid--uneven article:nth-child(1) { grid-column: span 7; }
+.svc-grid--uneven article:nth-child(2) { grid-column: span 5; }
+.svc-grid--uneven article:nth-child(3) { grid-column: span 5; }
+.svc-grid--uneven article:nth-child(4) { grid-column: span 7; }
+.svc-grid--uneven article:nth-child(1) .c-image, .svc-grid--uneven article:nth-child(4) .c-image { aspect-ratio: 16 / 9; }
+.svc-grid--uneven article:nth-child(2) .c-image, .svc-grid--uneven article:nth-child(3) .c-image { aspect-ratio: 4 / 3; }
+@media (max-width: 1024px) { .svc-grid--uneven { grid-template-columns: 1fr 1fr; } .svc-grid--uneven article:nth-child(n) { grid-column: auto; } .svc-grid--uneven article .c-image { aspect-ratio: 16 / 10; } }
+@media (max-width: 640px) { .svc-grid--uneven { grid-template-columns: 1fr; } }
+.svc-notsure { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; max-width: 1120px; margin: 24px auto 0; padding: 22px 28px; background: #F8F3F5; border-radius: 12px; }
+.svc-notsure strong { display: block; font-size: 2rem; font-weight: 800; color: var(--primary-color1); }
+.svc-notsure span { display: block; font-size: 1.5rem; color: #555; margin-top: 2px; }
+.svc-notsure .c-btn { border: 0; width: auto; min-width: 0; padding: 0 30px; white-space: nowrap; } .svc-notsure .c-btn .c-btn__txt { color: #fff; }
+#services .m-block__content { min-height: 64rem; }
+@media (max-width: 1024px) { #services .m-block__content { min-height: 0; } }
+.svc-sec--services { padding-top: 0 !important; }
+.svc-grid--uneven article { box-shadow: 0 12px 30px rgba(59,35,64,.14); }
+/* trust badges + testimonials */
+.pg-testi { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; max-width: 1120px; margin: 3rem auto 0; }
+@media (max-width: 900px) { .pg-testi { grid-template-columns: 1fr; } }
+.pg-testi__card { margin: 0; background: #fff; border-radius: 12px; padding: 22px 24px; box-shadow: 0 8px 24px rgba(59,35,64,.10); border-top: 4px solid #C2386E; }
+.pg-testi__card p { font-size: 1.7rem; line-height: 1.5; color: var(--primary-color1); font-weight: 700; margin: 0 0 12px; }
+.pg-testi__card footer { font-size: 1.3rem; color: #8a7a85; }
+/* modal: who-is-care-for select */
+.gfield--who select { width: 100%; padding: 10px 14px; font: inherit; border: 1px solid #ccc; border-radius: 6px; }
 </style></head>
 <body class="home wp-singular page-template-default page page-id-739 wp-theme-digitalexpress fixed-header" data-aos-easing="ease" data-aos-duration="800" data-aos-delay="0">
               
@@ -564,7 +596,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
                             <p class="gform_title">Request a free consultation.</p>
                             <p class="gform_description">Tell us what's hardest right now. A Pink Glove coordinator will reach out the way you ask.</p>
                         </div><form method="post" enctype="multipart/form-data" target="gform_ajax_frame_1" id="talk-modal" class="ds-contact-us recaptcha-v3-initialized talk-form modal-form" data-formid="1" novalidate="">
-                        <div class="gform-body gform_body"><div id="gform_fields_1" class="gform_fields top_label form_sublabel_below description_below validation_below"><div id="field_1_1" class="gfield gfield--type-text gfield--input-type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"><label class="gfield_label gform-field-label" for="input_1_1">Your name</label><div class="ginput_container ginput_container_text"><input name="name" id="input_1_1" type="text" value="" class="large" maxlength="26" tabindex="-1" placeholder="Your name" aria-required="true" aria-invalid="false"><div class="charleft ginput_counter gfield_description" aria-live="polite">0 of 26 max characters</div></div></div><div id="field_1_3" class="gfield gfield--type-email gfield--input-type-email gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"><label class="gfield_label gform-field-label" for="input_1_3">Best time to call</label><div class="ginput_container ginput_container_email">
+                        <div class="gform-body gform_body"><div id="gform_fields_1" class="gform_fields top_label form_sublabel_below description_below validation_below"><div class="gfield gfield--who"><label class="gfield_label">Who is care for?</label><div class="ginput_container"><select name="who"><option>My mom</option><option>My dad</option><option>Both of my parents</option><option>Someone else</option></select></div></div><div id="field_1_1" class="gfield gfield--type-text gfield--input-type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"><label class="gfield_label gform-field-label" for="input_1_1">Your name</label><div class="ginput_container ginput_container_text"><input name="name" id="input_1_1" type="text" value="" class="large" maxlength="26" tabindex="-1" placeholder="Your name" aria-required="true" aria-invalid="false"><div class="charleft ginput_counter gfield_description" aria-live="polite">0 of 26 max characters</div></div></div><div id="field_1_3" class="gfield gfield--type-email gfield--input-type-email gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"><label class="gfield_label gform-field-label" for="input_1_3">Best time to call</label><div class="ginput_container ginput_container_email">
                             <input name="when" id="input_1_3" type="text" value="" class="large" tabindex="-1" placeholder="Best time to call" aria-required="true" aria-invalid="false">
                         </div></div><div id="field_1_4" class="gfield gfield--type-phone gfield--input-type-phone gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"><label class="gfield_label gform-field-label" for="input_1_4">Your phone</label><div class="ginput_container ginput_container_phone"><input name="phone" id="input_1_4" type="tel" value="" class="large" tabindex="-1" placeholder="Your phone" aria-required="true" aria-invalid="false"></div></div><div id="field_1_8" class="gfield gfield--type-text gfield--input-type-text gfield--width-half gfield_contains_required field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"><label class="gfield_label gform-field-label" for="input_1_8">City or zip</label><div class="ginput_container ginput_container_text"><input name="city" id="input_1_8" type="text" value="" class="large" tabindex="-1" placeholder="City or zip" aria-required="true" aria-invalid="false"></div></div><div id="field_1_7" class="gfield gfield--type-textarea gfield--input-type-textarea field_sublabel_below gfield--no-description field_description_below field_validation_below gfield_visibility_visible"><label class="gfield_label gform-field-label" for="input_1_7">Tell us a little about your loved one</label><div class="ginput_container ginput_container_textarea"><textarea name="context" id="input_1_7" class="textarea medium" tabindex="-1" placeholder="Tell us a little about your loved one" aria-invalid="false" rows="10" cols="50"></textarea></div></div></div></div>
         <div class="gform-footer gform_footer top_label"><button type="submit" class="c-btn -primary -small has-icon icon-right"><span class="c-btn__txt">Let's Talk About Care</span></button><p class="talk-note">Your information stays with Pink Glove Care. We're a care provider, not a referral marketplace.</p><p class="talk-ok" hidden="">Got it. A Pink Glove coordinator will reach out the way you asked.</p></div>
@@ -655,7 +687,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
 							<h1 class="c-heading__title h1-two-lines">Be her daughter.<br><span>We'll help carry the care.</span></h1>			
 			        </div>
 
-		            <div class="c-banner__description is-wysiwyg"><p>Dependable in-home care for your mom, from finding the right person to keeping you informed once care begins.</p></div>
+		            <div class="c-banner__description is-wysiwyg"><p>When you're already carrying the appointments, the medications, the errands and everything in between, finding help shouldn't become another thing to manage.</p></div>
 		    </div>
 
         
@@ -663,7 +695,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
                     <div class="quiz" id="finder" data-steps="5">
     <div class="quiz__top"><button type="button" class="quiz__back" hidden="">◀ Back</button><span class="quiz__step">Step 1 of 5</span></div>
     <div class="quiz__bar"><span></span></div>
-    <section class="quiz__panel" data-step="1"><h3 class="quiz__q">Who is the care for?</h3><p class="quiz__hint">About 60 seconds. Your information stays with Pink Glove Care.</p><div class="quiz__opts"><button type="button" class="q-opt" data-name="who" data-value="My mom"><span class="q-opt__text"><b>My mom</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="who" data-value="My dad"><span class="q-opt__text"><b>My dad</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="who" data-value="Both of my parents"><span class="q-opt__text"><b>Both of my parents</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="who" data-value="Someone else"><span class="q-opt__text"><b>Someone else</b></span><span class="q-opt__check" aria-hidden="true"></span></button></div></section>
+    <section class="quiz__panel" data-step="1"><h3 class="quiz__q">Who is care for?</h3><p class="quiz__hint">About 60 seconds. Your information stays with Pink Glove Care.</p><div class="quiz__opts"><button type="button" class="q-opt" data-name="who" data-value="My mom"><span class="q-opt__text"><b>My mom</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="who" data-value="My dad"><span class="q-opt__text"><b>My dad</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="who" data-value="Both of my parents"><span class="q-opt__text"><b>Both of my parents</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="who" data-value="Someone else"><span class="q-opt__text"><b>Someone else</b></span><span class="q-opt__check" aria-hidden="true"></span></button></div></section>
     <section class="quiz__panel" data-step="2" hidden=""><h3 class="quiz__q">What kind of help would make life easier?</h3><p class="quiz__hint">Tap one. You can change your mind later.</p><div class="quiz__opts"><button type="button" class="q-opt" data-name="help" data-value="Respite care"><span class="q-opt__text"><b>Respite care</b><small>Protected time for you: work, rest, errands, sleep</small></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="help" data-value="Personal care"><span class="q-opt__text"><b>Personal care</b><small>Bathing, dressing, grooming, toileting, mobility</small></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="help" data-value="Companionship"><span class="q-opt__text"><b>Companionship</b><small>Conversation, meals, a game, a less lonely day</small></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="help" data-value="Dementia &amp; memory support"><span class="q-opt__text"><b>Dementia &amp; memory support</b><small>Confusion, wandering, more supervision</small></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="help" data-value="I'm not sure yet"><span class="q-opt__text"><b>I'm not sure yet</b><small>That's okay. We'll help you figure it out</small></span><span class="q-opt__check" aria-hidden="true"></span></button></div></section>
     <section class="quiz__panel" data-step="3" hidden=""><h3 class="quiz__q">What's hardest right now?</h3><p class="quiz__hint">Pick the one that's closest. We'll start there.</p><div class="quiz__opts"><button type="button" class="q-opt" data-name="hardest" data-value="I haven't had a real break in months"><span class="q-opt__text"><b>I haven't had a real break in months</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="hardest" data-value="I can't leave her alone while I work"><span class="q-opt__text"><b>I can't leave her alone while I work</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="hardest" data-value="It's the mornings and evenings"><span class="q-opt__text"><b>It's the mornings and evenings</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="hardest" data-value="Honestly, I'm not sure what I need"><span class="q-opt__text"><b>Honestly, I'm not sure what I need</b></span><span class="q-opt__check" aria-hidden="true"></span></button></div></section>
     <section class="quiz__panel" data-step="4" hidden=""><h3 class="quiz__q">When would you like care to begin?</h3><p class="quiz__hint">There's no wrong answer, and nothing is locked in.</p><div class="quiz__opts"><button type="button" class="q-opt" data-name="when" data-value="As soon as possible"><span class="q-opt__text"><b>As soon as possible</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="when" data-value="In the next few weeks"><span class="q-opt__text"><b>In the next few weeks</b></span><span class="q-opt__check" aria-hidden="true"></span></button><button type="button" class="q-opt" data-name="when" data-value="I'm still exploring"><span class="q-opt__text"><b>I'm still exploring</b></span><span class="q-opt__check" aria-hidden="true"></span></button></div></section>
@@ -690,7 +722,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
 
 	
 	    
-            <a href="#care">
+            <a href="#care-respite">
 
         
     
@@ -705,7 +737,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
 
 	
 	    
-            <a href="#care">
+            <a href="#care-personal">
 
         
     
@@ -720,7 +752,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
 
 	
 	    
-            <a href="#care">
+            <a href="#care-companion">
 
         
     
@@ -735,7 +767,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
 
 	
 	    
-            <a href="#care">
+            <a href="#care-memory">
 
         
     
@@ -993,128 +1025,145 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
 		
     </div>
 
-    <div class="l-rcbl l-rcbl-v5 " style="--l-block-col: 5;--l-block-gap-vertical: 20px;--l-block-gap-horizontal: 0px;">
-
-        
-                            <div class="l-rcbl__col">
-                    
-<article class="c-block  c-block-v1 is-vertical has-shadow text-left align-top" style="--c-block-radius:20px;">
     
-    
-    <div class="c-block__body">
-
-        
-        
-                                <div class="-h4">
-                <h3 class="c-block__title">Respite Care</h3>            </div>
-                    
-                    <div class="c-block__description"><p>A caregiver steps in while you work, rest, run errands or sleep. As much or as little as helps</p></div>
-        
-                            <div class="c-block__btn c-btn-bar">
-                    <a href="#talk" class="c-btn -normal -link has-icon icon-right " aria-label="Read more about blog post: In-Home Care"><span class="c-btn__txt">Learn more</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
-            </div>
-            
-    </div>
-
-</article>
-                </div>
-                                <div class="l-rcbl__col">
-                    
-<article class="c-block  c-block-v1 is-vertical has-shadow text-left align-top" style="--c-block-radius:20px;">
-    
-    
-    <div class="c-block__body">
-
-        
-        
-                                <div class="-h4">
-                <h3 class="c-block__title">Personal Care</h3>            </div>
-                    
-                    <div class="c-block__description"><p>Help with the everyday things that have become difficult: bathing, dressing, grooming, toileting and mobility</p></div>
-        
-                            <div class="c-block__btn c-btn-bar">
-                    <a href="#talk" class="c-btn -normal -link has-icon icon-right " aria-label="Read more about blog post: Senior Living Referral Services"><span class="c-btn__txt">Learn more</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
-            </div>
-            
-    </div>
-
-</article>
-                </div>
-                                <div class="l-rcbl__col">
-                    
-<article class="c-block  c-block-v1 is-vertical has-shadow text-left align-top" style="--c-block-radius:20px;">
-    
-    
-    <div class="c-block__body">
-
-        
-        
-                                <div class="-h4">
-                <h3 class="c-block__title">Companionship</h3>            </div>
-                    
-                    <div class="c-block__description"><p>Someone to talk with, share a meal with, play a game with, or simply make the day feel less lonely</p></div>
-        
-                            <div class="c-block__btn c-btn-bar">
-                    <a href="#talk" class="c-btn -normal -link has-icon icon-right " aria-label="Read more about blog post: Skilled Home Health"><span class="c-btn__txt">Learn more</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
-            </div>
-            
-    </div>
-
-</article>
-                </div>
-                                <div class="l-rcbl__col">
-                    
-<article class="c-block  c-block-v1 is-vertical has-shadow text-left align-top" style="--c-block-radius:20px;">
-    
-    
-    <div class="c-block__body">
-
-        
-        
-                                <div class="-h4">
-                <h3 class="c-block__title">Dementia &amp; Memory Support</h3>            </div>
-                    
-                    <div class="c-block__description"><p>For memory loss, confusion, wandering, and the supervision that comes with cognitive decline</p></div>
-        
-                            <div class="c-block__btn c-btn-bar">
-                    <a href="#talk" class="c-btn -normal -link has-icon icon-right " aria-label="Read more about blog post: Special Care Services"><span class="c-btn__txt">Learn more</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
-            </div>
-            
-    </div>
-
-</article>
-                </div>
-                                <div class="l-rcbl__col">
-                    
-<article class="c-block  c-block-v1 is-vertical has-shadow text-left align-top" style="--c-block-radius:20px;">
-    
-    
-    <div class="c-block__body">
-
-        
-        
-                                <div class="-h4">
-                <h3 class="c-block__title">Not Sure Yet</h3>            </div>
-                    
-                    <div class="c-block__description"><p>That's okay. Tell us what's hardest right now and we'll help you figure it out</p></div>
-        
-                            <div class="c-block__btn c-btn-bar">
-                    <a href="#talk" class="c-btn -normal -link has-icon icon-right " aria-label="Read more about blog post: Veterans Assistance Program"><span class="c-btn__txt">Learn more</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
-            </div>
-            
-    </div>
-
-</article>
-                </div>
-                
-        
-    </div>
 
     </div>
     </div>
 
 	
-</div><div class="m-block gt-s svc-sec" id="care"><div class="m-block gt-s gb -version-3 l-content-simple-1 svc-head" style="">
+</div><div class="m-block svc-sec svc-sec--services"><div class="svc-grid svc-grid--uneven"><article class="c-block  c-block-v1 is-vertical text-left align-top" style="" id="care-respite">
+    
+    
+        <div class="c-block__media">
+                                        <a class="c-block__link-full" href="#finder">
+                        <div class="c-image">
+        <div class="c-image__media c-image__primary">
+            
+                <img decoding="async" class="c-image__src" loading="eager" src="img/care-1.jpg" alt="Respite Care">
+
+            
+        </div>
+    </div>
+                </a>
+                    </div>
+
+    
+    <div class="c-block__body">
+
+        
+        
+                                    <a class="c-block__link-full" href="#finder">
+                        <div class="-h4">
+                <h3 class="c-block__title">Respite Care</h3>            </div><div class="c-block__description"><p>A caregiver steps in while you work, rest, run errands or sleep. As much or as little as helps.</p></div>
+                            </a>
+                    
+        
+                            <div class="c-block__btn c-btn-bar">
+                    <a href="#finder" class="c-btn -small -link has-icon icon-right " aria-label="Read more about blog post: Blood Sugar Changes in Older Adults: Warning Signs Families Should Know"><span class="c-btn__txt">Ask about respite care</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
+            </div>
+            
+    </div>
+
+</article><article class="c-block  c-block-v1 is-vertical text-left align-top" style="" id="care-personal">
+    
+    
+        <div class="c-block__media">
+                                        <a class="c-block__link-full" href="#finder">
+                        <div class="c-image">
+        <div class="c-image__media c-image__primary">
+            
+                <img decoding="async" class="c-image__src" loading="eager" src="img/care-2.jpg" alt="Personal Care">
+
+            
+        </div>
+    </div>
+                </a>
+                    </div>
+
+    
+    <div class="c-block__body">
+
+        
+        
+                                    <a class="c-block__link-full" href="#finder">
+                        <div class="-h4">
+                <h3 class="c-block__title">Personal Care</h3>            </div><div class="c-block__description"><p>Help with the everyday things that have become difficult: bathing, dressing, grooming, toileting and mobility.</p></div>
+                            </a>
+                    
+        
+                            <div class="c-block__btn c-btn-bar">
+                    <a href="#finder" class="c-btn -small -link has-icon icon-right " aria-label="Read more about blog post: Blood Sugar Changes in Older Adults: Warning Signs Families Should Know"><span class="c-btn__txt">Ask about personal care</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
+            </div>
+            
+    </div>
+
+</article><article class="c-block  c-block-v1 is-vertical text-left align-top" style="" id="care-companion">
+    
+    
+        <div class="c-block__media">
+                                        <a class="c-block__link-full" href="#finder">
+                        <div class="c-image">
+        <div class="c-image__media c-image__primary">
+            
+                <img decoding="async" class="c-image__src" loading="eager" src="img/care-3.jpg" alt="Companionship">
+
+            
+        </div>
+    </div>
+                </a>
+                    </div>
+
+    
+    <div class="c-block__body">
+
+        
+        
+                                    <a class="c-block__link-full" href="#finder">
+                        <div class="-h4">
+                <h3 class="c-block__title">Companionship</h3>            </div><div class="c-block__description"><p>Someone to talk with, share a meal with, play a game with, or simply make the day feel less lonely.</p></div>
+                            </a>
+                    
+        
+                            <div class="c-block__btn c-btn-bar">
+                    <a href="#finder" class="c-btn -small -link has-icon icon-right " aria-label="Read more about blog post: Blood Sugar Changes in Older Adults: Warning Signs Families Should Know"><span class="c-btn__txt">Ask about companionship</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
+            </div>
+            
+    </div>
+
+</article><article class="c-block  c-block-v1 is-vertical text-left align-top" style="" id="care-memory">
+    
+    
+        <div class="c-block__media">
+                                        <a class="c-block__link-full" href="#finder">
+                        <div class="c-image">
+        <div class="c-image__media c-image__primary">
+            
+                <img decoding="async" class="c-image__src" loading="eager" src="img/care-4.jpg" alt="Dementia &amp; Memory Support">
+
+            
+        </div>
+    </div>
+                </a>
+                    </div>
+
+    
+    <div class="c-block__body">
+
+        
+        
+                                    <a class="c-block__link-full" href="#finder">
+                        <div class="-h4">
+                <h3 class="c-block__title">Dementia &amp; Memory Support</h3>            </div><div class="c-block__description"><p>For memory loss, confusion, wandering, and the supervision that comes with cognitive decline.</p></div>
+                            </a>
+                    
+        
+                            <div class="c-block__btn c-btn-bar">
+                    <a href="#finder" class="c-btn -small -link has-icon icon-right " aria-label="Read more about blog post: Blood Sugar Changes in Older Adults: Warning Signs Families Should Know"><span class="c-btn__txt">Ask about dementia &amp; memory support</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
+            </div>
+            
+    </div>
+
+</article></div><div class="svc-notsure"><div><strong>Not sure what you need? That's okay.</strong><span>We'll help you figure it out. One conversation, no home-care vocabulary required.</span></div><a href="#finder" class="c-btn -normal -primary has-icon icon-right " mobile-title="FIND OUT MORE"><span class="c-btn__txt">Let's figure it out together</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a></div></div><div class="m-block gt-s svc-sec" id="care"><div class="m-block gt-s gb -version-3 l-content-simple-1 svc-head" style="">
 
 	
 	
@@ -1231,7 +1280,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
         
                                     <a class="c-block__link-full" href="#finder">
                         <div class="-h4">
-                <h3 class="c-block__title">You Won't Be Left Wondering</h3>            </div><div class="c-block__description"><p>If a caregiver is delayed, unavailable or a schedule needs attention, our job is to communicate first, not wait for you to discover the problem.</p></div>
+                <h3 class="c-block__title">The Gentle Start</h3>            </div><div class="c-block__description"><p>Sometimes Mom needs to get comfortable with help before she'll accept help. You can be there for the introduction, care can begin with less intimate tasks, and Mom gets a say.</p></div>
                             </a>
                     
         
@@ -1297,7 +1346,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
         
                                     <a class="c-block__link-full" href="#finder">
                         <div class="-h4">
-                <h3 class="c-block__title">Pink Glove Care Notes</h3>            </div><div class="c-block__description"><p>After each visit, something concise: "Mom ate lunch and was in good spirits. Nothing unusual to report." Or: "We noticed something today and wanted you to know."</p></div>
+                <h3 class="c-block__title">You Won't Be Left Wondering</h3>            </div><div class="c-block__description"><p>If a caregiver is delayed, unavailable or a schedule needs attention, our job is to communicate first, not wait for you to discover the problem.</p></div>
                             </a>
                     
         
@@ -1330,7 +1379,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
         
                                     <a class="c-block__link-full" href="#finder">
                         <div class="-h4">
-                <h3 class="c-block__title">The Gentle Start</h3>            </div><div class="c-block__description"><p>Sometimes Mom needs to get comfortable with help before she'll accept help. You can be there for the introduction, care can begin with less intimate tasks, and Mom gets a say.</p></div>
+                <h3 class="c-block__title">Pink Glove Care Notes</h3>            </div><div class="c-block__description"><p>After each visit, something concise: "Mom ate lunch and was in good spirits. Nothing unusual to report." Or: "We noticed something today and wanted you to know."</p></div>
                             </a>
                     
         
@@ -1340,7 +1389,160 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
             
     </div>
 
-</article></div></div>
+</article></div></div><div class="m-block -version-6 l-content-1 " style="--l-container-width: 1600px;" id="care">
+
+	    <a id="all-services"></a>
+
+	
+    <div class="m-block__container container-custom" style="--l-container-width: 1600px">
+		<div class="m-block__content" style="--title-container-max-width: 62.6rem; --desc-container-max-width: 45rem;">
+        <div class="c-heading -h2 ">
+                    <div class="c-heading__preamble">
+                <span>HOW IT WORKS</span>
+            </div>
+        
+        
+                    <div class="c-heading__pre">The steps we take</div>
+        
+                    <h2 class="c-heading__title"><span>How we get Mom care</span></h2>        
+            </div>
+    <div class="c-heading__description is-wysiwyg"><p>Nothing here requires you to chase anybody. That's the point.</p></div>
+
+
+
+
+
+        <div class="c-image front-h-left front-v-top main-h-left main-v-bottom main-c-not-cropped r-1x1 has-overlay">
+
+		            <div class="c-image__media c-image__primary">
+                <img decoding="async" class="c-image__src" src="img/steps.png" loading="eager" alt="">
+            </div>
+		
+		
+    </div>
+
+    <div class="l-rcbl l-rcbl-v5 " style="--l-block-col: 5;--l-block-gap-vertical: 20px;--l-block-gap-horizontal: 0px;">
+
+        
+                            <div class="l-rcbl__col">
+                    
+<article class="c-block  c-block-v1 is-vertical has-shadow text-left align-top" style="--c-block-radius:20px;">
+    
+    
+    <div class="c-block__body">
+
+        
+        
+                                <div class="-h4">
+                <h3 class="c-block__title">Tell us what's hardest</h3>            </div>
+                    
+                    <div class="c-block__description"><p>A few taps online or one phone call. "I haven't had a real break in months" is a complete answer</p></div>
+        
+                            <div class="c-block__btn c-btn-bar">
+                    <a href="#finder" class="c-btn -normal -link has-icon icon-right " aria-label="Read more about blog post: In-Home Care"><span class="c-btn__txt">Get Care</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
+            </div>
+            
+    </div>
+
+</article>
+                </div>
+                                <div class="l-rcbl__col">
+                    
+<article class="c-block  c-block-v1 is-vertical has-shadow text-left align-top" style="--c-block-radius:20px;">
+    
+    
+    <div class="c-block__body">
+
+        
+        
+                                <div class="-h4">
+                <h3 class="c-block__title">We listen and plan</h3>            </div>
+                    
+                    <div class="c-block__description"><p>Your coordinator talks through a hard week and what Mom would want. Schedule, rates and minimums go in writing</p></div>
+        
+                            <div class="c-block__btn c-btn-bar">
+                    <a href="#finder" class="c-btn -normal -link has-icon icon-right " aria-label="Read more about blog post: Senior Living Referral Services"><span class="c-btn__txt">Get Care</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
+            </div>
+            
+    </div>
+
+</article>
+                </div>
+                                <div class="l-rcbl__col">
+                    
+<article class="c-block  c-block-v1 is-vertical has-shadow text-left align-top" style="--c-block-radius:20px;">
+    
+    
+    <div class="c-block__body">
+
+        
+        
+                                <div class="-h4">
+                <h3 class="c-block__title">Meet &amp; Match</h3>            </div>
+                    
+                    <div class="c-block__description"><p>You and Mom meet the caregiver before regular care begins. Ask questions. Decide whether it feels right</p></div>
+        
+                            <div class="c-block__btn c-btn-bar">
+                    <a href="#finder" class="c-btn -normal -link has-icon icon-right " aria-label="Read more about blog post: Skilled Home Health"><span class="c-btn__txt">Get Care</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
+            </div>
+            
+    </div>
+
+</article>
+                </div>
+                                <div class="l-rcbl__col">
+                    
+<article class="c-block  c-block-v1 is-vertical has-shadow text-left align-top" style="--c-block-radius:20px;">
+    
+    
+    <div class="c-block__body">
+
+        
+        
+                                <div class="-h4">
+                <h3 class="c-block__title">Care begins gently</h3>            </div>
+                    
+                    <div class="c-block__description"><p>You can be there for the first visits. Care can start with less intimate tasks. Mom gets a say</p></div>
+        
+                            <div class="c-block__btn c-btn-bar">
+                    <a href="#finder" class="c-btn -normal -link has-icon icon-right " aria-label="Read more about blog post: Special Care Services"><span class="c-btn__txt">Get Care</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
+            </div>
+            
+    </div>
+
+</article>
+                </div>
+                                <div class="l-rcbl__col">
+                    
+<article class="c-block  c-block-v1 is-vertical has-shadow text-left align-top" style="--c-block-radius:20px;">
+    
+    
+    <div class="c-block__body">
+
+        
+        
+                                <div class="-h4">
+                <h3 class="c-block__title">You stay informed</h3>            </div>
+                    
+                    <div class="c-block__description"><p>Care Notes after visits at the cadence you choose. If anything changes, you hear from us first</p></div>
+        
+                            <div class="c-block__btn c-btn-bar">
+                    <a href="#finder" class="c-btn -normal -link has-icon icon-right " aria-label="Read more about blog post: Veterans Assistance Program"><span class="c-btn__txt">Get Care</span><span class="c-btn__ico"><svg width="30" height="30" class="icon icon-lib-icon-arrow1 " aria-hidden="true" role="img"><use xlink:href="#lib-icon-arrow1"></use></svg></span></a>
+            </div>
+            
+    </div>
+
+</article>
+                </div>
+                
+        
+    </div>
+
+    </div>
+    </div>
+
+	
+</div>
 
 
 <div class="m-block gt-s -version-1 l-content-2 " style="" id="careers">
@@ -1903,7 +2105,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
         
                                     <a class="c-block__link-full" href="#talk">
                         <div class="-h4">
-                <h3 class="c-block__title">The Gentle Start: when Mom says she doesn't need help</h3>            </div>
+                <h3 class="c-block__title">What in-home care costs, and what changes the bill</h3>            </div>
                             </a>
                     
         
@@ -1947,7 +2149,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
         
                                     <a class="c-block__link-full" href="#talk">
                         <div class="-h4">
-                <h3 class="c-block__title">What a Pink Glove Care Note looks like</h3>            </div>
+                <h3 class="c-block__title">How families pay for in-home care</h3>            </div>
                             </a>
                     
         
@@ -1991,7 +2193,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
         
                                     <a class="c-block__link-full" href="#talk">
                         <div class="-h4">
-                <h3 class="c-block__title">Respite care: how a real break actually works</h3>            </div>
+                <h3 class="c-block__title">Understanding your care options: respite, personal care, companionship, memory support</h3>            </div>
                             </a>
                     
         
@@ -2035,7 +2237,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
         
                                     <a class="c-block__link-full" href="#talk">
                         <div class="-h4">
-                <h3 class="c-block__title">How families pay for in-home care</h3>            </div>
+                <h3 class="c-block__title">The Gentle Start: when Mom says she doesn't need help</h3>            </div>
                             </a>
                     
         
@@ -2079,7 +2281,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
         
                                     <a class="c-block__link-full" href="#talk">
                         <div class="-h4">
-                <h3 class="c-block__title">Home care vs. home health care: what is the difference?</h3>            </div>
+                <h3 class="c-block__title">Respite care: how a real break actually works</h3>            </div>
                             </a>
                     
         
@@ -2123,7 +2325,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
         
                                     <a class="c-block__link-full" href="#talk">
                         <div class="-h4">
-                <h3 class="c-block__title">Keeping Mom safe in the kitchen: a room-by-room list</h3>            </div>
+                <h3 class="c-block__title">Home care vs. home health care: what is the difference?</h3>            </div>
                             </a>
                     
         
@@ -2167,7 +2369,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
         
                                     <a class="c-block__link-full" href="#talk">
                         <div class="-h4">
-                <h3 class="c-block__title">What to expect at the Meet &amp; Match</h3>            </div>
+                <h3 class="c-block__title">Home care or assisted living: how families decide</h3>            </div>
                             </a>
                     
         
@@ -2211,7 +2413,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
         
                                     <a class="c-block__link-full" href="#talk">
                         <div class="-h4">
-                <h3 class="c-block__title">Memory loss at home: routines that reduce confusion</h3>            </div>
+                <h3 class="c-block__title">Keeping Mom safe in the kitchen: a room-by-room list</h3>            </div>
                             </a>
                     
         
@@ -2255,7 +2457,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
         
                                     <a class="c-block__link-full" href="#talk">
                         <div class="-h4">
-                <h3 class="c-block__title">Talking with siblings about Mom's care</h3>            </div>
+                <h3 class="c-block__title">Memory loss at home: routines that reduce confusion</h3>            </div>
                             </a>
                     
         
@@ -2299,7 +2501,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
         
                                     <a class="c-block__link-full" href="#talk">
                         <div class="-h4">
-                <h3 class="c-block__title">When mornings and evenings are the hardest</h3>            </div>
+                <h3 class="c-block__title">When siblings don't help: getting care without waiting for them</h3>            </div>
                             </a>
                     
         
@@ -2343,7 +2545,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
         
                                     <a class="c-block__link-full" href="#talk">
                         <div class="-h4">
-                <h3 class="c-block__title">You can love your mom without doing everything yourself</h3>            </div>
+                <h3 class="c-block__title">Long-term care insurance and veterans benefits that help pay for care</h3>            </div>
                             </a>
                     
         
@@ -2479,9 +2681,9 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
         
         
         
-                    <h3 class="c-heading__title">The Pink Glove Standard</h3>        
+                    <h3 class="c-heading__title">Licensed, insured and accountable</h3>        
             </div>
-    <div class="c-heading__description is-wysiwyg"><p>Background screened, interviewed, matched and introduced before care begins. Costs and schedule in writing. Care Notes after visits.</p></div>
+    <div class="c-heading__description is-wysiwyg"><p>The table stakes, in one place. The rest of this page is what makes them mean something.</p></div>
 
 
 
@@ -2504,7 +2706,7 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
     
     
     
-    <div class="std-row"><div class="std-badge">Background screened</div><div class="std-badge">Interviewed in person</div><div class="std-badge">Meet &amp; Match</div><div class="std-badge">Familiar faces</div><div class="std-badge">Care Notes after visits</div><div class="std-badge">Clear costs in writing</div><div class="std-badge">Coordinator 7 days a week</div></div>
+    <div class="std-row"><div class="std-badge">State licensed</div><div class="std-badge">Bonded &amp; insured</div><div class="std-badge">Background screened</div><div class="std-badge">Reference checked</div><div class="std-badge">Trained caregivers</div><div class="std-badge">Meet &amp; Match before care</div><div class="std-badge">Coordinator 7 days a week</div></div><div class="pg-testi"><blockquote class="pg-testi__card"><p>“I can finally breathe. Mom is safe, and I got to be her daughter again instead of her nurse.”</p><footer>Placeholder testimonial. Replace with a real family's words before launch.</footer></blockquote><blockquote class="pg-testi__card"><p>“The first night I slept through, I cried. Nobody had told me that was allowed.”</p><footer>Placeholder testimonial. Replace with a real family's words before launch.</footer></blockquote><blockquote class="pg-testi__card"><p>“One call. No phone bombardment, no repeating myself. They remembered everything I told them.”</p><footer>Placeholder testimonial. Replace with a real family's words before launch.</footer></blockquote></div>
 
                         
                             
@@ -2537,7 +2739,11 @@ h2.c-heading__title > span.nowrap { font-weight: inherit; }
                         
                         <div class="footer-block">
                                                             <div class="footer-title">REQUEST A CONSULTATION</div>
-                                                        <ul class="contact-info"><li class="contact-info__item"><a class="contact-info__link" href="tel:+14045550134">(404) 555-0134</a></li></ul>
+                                                        <ul class="contact-info">
+                                                                    <li class="contact-info__item">
+                                        <a class="contact-info__link" href="tel: (404) 555-0134" data-wpel-link="internal" data-ctm-watch-id="1" data-ctm-tracked="1" data-observe="1" data-observer-id="0"> (404) 555-0134</a>
+                                    </li>
+                                                            </ul>
                         </div>
                         
                                         <div class="footer-block socials-privacy">
