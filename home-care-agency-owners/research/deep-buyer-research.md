@@ -453,20 +453,19 @@ Top owner phrases by distinct documents: **home care agency · home health agenc
 11. "The franchise wanted a $150 thousand franchise fee."
 12. "Hospitals are the hardest referral source — 8–9 months to develop."
 
-## Frequency Ranking (owner pains by distinct documents, complaint-specific patterns)
-1. Licensing / accreditation / compliance — 86
-2. How to start / consultant / is it worth it — 59
-3. Reimbursement / Medicaid / private-pay rates — 58
-4. Marketing: ads / digital / SEO / website — 43
-5. Scheduling / software / EVV — 43
-6. Caregiver pay / can't compete on wages — 36
-7. Referral / placement-agent dependence — 35
-8. Franchise vs independent — 34
-9. Can't find / hire / recruit caregivers — 30
-10. Caregiver turnover / no-show — 27
-11. Can't get clients / low census — 21
-12. Cash flow / payroll — 15 · Owner burnout — 15 · Sales/networking — 15
-**Combined clusters:** Demand/lead-gen = 37 docs · Staffing = 23 docs → owner's #1 job = get clients, #2 = staff. = inLeap's two-pronged offer.
+## Frequency Ranking (ESTABLISHED-owner pains, by distinct documents across the corpus)
+1. Caregiver retention at scale (turnover caps growth AND valuation) — 139
+2. Owner-operator treadmill (build management/systems, step back) — 71
+3. Exit / valuation / EBITDA multiple / selling the agency — 29
+4. Census stability & growth (predictable clients to scale) — 28
+5. Reimbursement / Medicaid / private-pay rates — 58
+6. Scheduling / software / operations at scale — 43
+7. Caregiver pay / can't compete on wages — 36
+8. Referral / payor concentration risk (de-risk the multiple) — 13
+9. PE roll-ups & consolidation (compete or get bought) — 12
+10. Scaling past the revenue plateau — 7
+**Combined clusters:** Retention+staffing (the #1 valuation driver) dominates; growth/census + exit/valuation + de-risking form the established owner's real agenda — not licensing or a first client.
+
 
 ## Tab 13 — Awareness → Offer Map (Schwartz)
 - **Unaware / Problem-Aware (most):** "not enough clients," "can't keep caregivers." → **Hook:** name the referral-dependence trap + the 79% turnover leaky bucket. **Offer:** free "License-to-first-10-clients" guide / audit.
