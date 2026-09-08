@@ -479,3 +479,21 @@ Competitor ad-creative sweep (D1a): Meta Ad Library — Home Instead, Visiting A
 
 ## Self-Audit (protocol A–AB)
 A tab names ✓ · B density ~138 quotes ✓ · C source URLs on every quote ✓ · E Reddit via logged-in browser ✓ · J verbatim/no-fabrication ✓ (agents constrained to corpus text) · L source matrix ≥10 sources ✓ (Reddit, YouTube comments, coach transcripts, forums, Quora, agingcare, FB groups; FB-ads/competitor-ads deferred) · M Go-Deeper ≥5 cards ✓ (6) · N vocab ledger ✓ · P tool status logged ✓ · Q refresh date ✓. **Open (honest):** Tab 3 + Tab 9 owner-scenes thin; competitor ad creatives + reviews-by-star + Profile Pivot = 09-23 backfill.
+
+## Competitor Marketing Agencies (D1b) — inLeap's DIRECT competitive set
+
+These are the senior-care / home-care marketing agencies that sell lead-gen to agency owners. inLeap competes with THESE, not with the lead directories.
+
+| Agency | Services | Positioning / Guarantee |
+|---|---|---|
+| Approved Senior Network (Hurricane) | SEO, website, social media, content, reputation, review |  |
+| Grow Senior Care Marketing | SEO, Google Ads, website, social media, content, reputation | #1 In Your Area ![5 1](data:image/png;base6 |
+| corecubed | SEO, Google Ads, content, review, branding | Women-Owned and Operated ## Simplify Success With c |
+| uforocks.com | SEO, PPC, website, content, branding, email |  |
+| Sagapixel | SEO, PPC, website, social media, content |  |
+| ChoiceLocal | SEO, website, social media, content, reputation, review | $18 in new customer revenue for every $1 |
+| Cardinal Digital | SEO, Google Ads, PPC, website, content |  |
+
+**Also in the set (discovered, not yet profiled):** homecaremarketing.com, turnthepagenational.com, curisdigital.com, seniorcaremarketingmax.com, carezano.com, approvedseniornetwork.com.
+
+**Read of the field:** the incumbents (corecubed — women-owned, award-winning; Approved Senior Network / Steve 'the Hurricane' Weiss) sell *coaching + done-for-you channels*; the performance players (ChoiceLocal — *"$18 revenue per $1"* ROI guarantee, franchise-focused; Cardinal, Sagapixel, Grow Senior Care) sell SEO/PPC. **Gap for inLeap:** almost all sell *channels* (SEO/PPC/website); few sell an **exclusive-lead + intake-conversion system that also produces caregiver applicants**, and the ROI-guarantee lane (ChoiceLocal) is franchise-tilted — leaving independent owners underserved.
