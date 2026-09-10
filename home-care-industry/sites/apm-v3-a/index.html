@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>A Promise to Mom | In-Home Care for Seniors</title>
+<meta name="description" content="Trusted in-home support that helps Mom stay cared for, comfortable and connected, while giving you room to be her daughter again.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1b1830; --ink-soft:#5c5a6e; --purple:#3b2f8f; --purple-deep:#2e2470;
+  --paper:#ffffff; --tint:#f4f6ff; --tint-2:#e1ebf8; --line:#e4e2ee;
+  --radius:14px; --ease:cubic-bezier(0.23,1,0.32,1);
+  --section:clamp(64px,9vw,120px); --gutter:clamp(20px,4vw,40px);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;color:var(--ink);background:var(--paper);line-height:1.6;font-size:16px;overflow-x:hidden}
+img{max-width:100%;display:block}
+svg{fill:none;stroke-linecap:round;stroke-linejoin:round}
+a{color:inherit}
+::selection{background:var(--tint-2);color:var(--purple-deep)}
+:focus-visible{outline:3px solid var(--purple);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 var(--gutter)}
+h1,h2,h3{line-height:1.12;letter-spacing:-0.022em;text-wrap:balance}
+p{text-wrap:pretty}
+.sub{color:var(--ink-soft)}
+
+/* ---------- nav ---------- */
+.nav{position:sticky;top:0;z-index:90;background:var(--paper);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-weight:800;font-size:19px;letter-spacing:-0.02em;text-decoration:none;white-space:nowrap}
+.logo span{color:var(--purple)}
+.nav-links{display:flex;gap:clamp(14px,2.4vw,30px);list-style:none;align-items:center}
+.nav-links a{text-decoration:none;font-size:15px;font-weight:600;color:var(--ink-soft);transition:color .15s var(--ease)}
+.nav-links a:hover{color:var(--purple-deep)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--purple);color:#fff !important;font-weight:700;font-size:16px;padding:14px 26px;border-radius:10px;text-decoration:none;border:0;cursor:pointer;transition:background .15s var(--ease),transform .12s var(--ease);white-space:nowrap}
+.btn:hover{background:var(--purple-deep)}
+.btn:active{transform:translateY(1px)}
+.btn-ghost{background:transparent;color:var(--purple-deep) !important;border:2px solid var(--line)}
+.btn-ghost:hover{background:var(--tint);border-color:var(--tint-2)}
+.nav .btn{padding:11px 20px;font-size:15px}
+.burger{display:none;background:none;border:0;width:44px;height:44px;cursor:pointer}
+.burger svg{stroke:var(--ink);width:26px;height:26px;margin:auto}
+.m-menu{display:none;position:fixed;inset:68px 0 0 0;background:var(--paper);z-index:89;padding:28px var(--gutter);flex-direction:column;gap:6px}
+.m-menu.open{display:flex}
+.m-menu a{text-decoration:none;font-size:19px;font-weight:700;padding:13px 4px;border-bottom:1px solid var(--line)}
+
+/* ---------- hero ---------- */
+.hero{background:linear-gradient(180deg,var(--tint) 0%,#fff 100%);padding:clamp(40px,6vw,76px) 0 clamp(48px,6vw,80px)}
+.hero-grid{display:grid;grid-template-columns:1.05fr 0.95fr;gap:clamp(28px,5vw,72px);align-items:center}
+.hero h1{font-size:clamp(34px,4.6vw,58px);font-weight:800}
+.hero h1 .l1,.hero h1 .l2{display:block;white-space:nowrap}
+.hero h1 .l2{color:var(--purple)}
+.hero .sub{font-size:clamp(17px,1.6vw,19px);max-width:34em;margin:20px 0 28px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+.hero-visual{position:relative}
+.hero-visual>img{border-radius:var(--radius);width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;box-shadow:0 24px 48px -20px rgba(27,24,48,.28)}
+.finder{position:relative;margin:-72px 0 0 clamp(16px,3vw,44px);background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 18px 44px -18px rgba(27,24,48,.25);padding:24px 24px 22px;max-width:430px}
+.finder h3{font-size:17px;font-weight:800;margin-bottom:4px}
+.finder .fnote{font-size:13.5px;color:var(--ink-soft);margin-bottom:14px}
+.f-opts{display:grid;gap:8px}
+.f-opt{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:10px;padding:11px 14px;font-size:14.5px;font-weight:600;cursor:pointer;background:#fff;text-align:left;transition:border-color .12s var(--ease),background .12s var(--ease);color:var(--ink)}
+.f-opt:hover{border-color:var(--purple);background:var(--tint)}
+.f-opt.sel{border-color:var(--purple);background:var(--tint);color:var(--purple-deep)}
+.f-opt .dot{width:16px;height:16px;border-radius:50%;border:2px solid var(--line);flex:0 0 16px;transition:all .12s}
+.f-opt.sel .dot{border-color:var(--purple);background:var(--purple);box-shadow:inset 0 0 0 3px #fff}
+.f-row{display:flex;gap:10px;margin-top:14px}
+.f-row .btn{flex:1}
+.f-back{background:none;border:0;color:var(--ink-soft);font-weight:600;font-size:14px;cursor:pointer;padding:10px 6px}
+.f-input{width:100%;border:1.5px solid var(--line);border-radius:10px;padding:12px 14px;font:inherit;font-size:15px;color:var(--ink);background:#fff}
+.f-input:focus{border-color:var(--purple);outline:none}
+.f-label{display:block;font-size:13px;font-weight:700;margin:12px 0 6px;color:var(--ink)}
+.f-progress{display:flex;gap:5px;margin-bottom:14px}
+.f-progress i{height:4px;flex:1;border-radius:2px;background:var(--line)}
+.f-progress i.on{background:var(--purple)}
+.f-thanks{text-align:center;padding:14px 4px}
+.f-thanks h4{font-size:18px;font-weight:800;margin-bottom:8px}
+.f-thanks p{font-size:14.5px;color:var(--ink-soft)}
+.f-err{color:#a03030;font-size:13px;margin-top:8px;display:none}
+
+/* ---------- promise narrative ---------- */
+.story{padding:var(--section) 0}
+.story .wrap{max-width:840px}
+.story h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;margin-bottom:26px}
+.story p{font-size:clamp(16.5px,1.5vw,18.5px);color:var(--ink-soft);margin-bottom:18px;max-width:62ch}
+.story p strong{color:var(--ink);font-weight:700}
+.story .turn{border-left:3px solid var(--purple);padding:6px 0 6px 22px;margin:30px 0;font-size:clamp(18px,1.9vw,22px);font-weight:700;color:var(--ink);line-height:1.4}
+
+/* ---------- care services ---------- */
+.care{background:var(--tint);padding:var(--section) 0}
+.care h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;max-width:16em}
+.care .lead{margin:14px 0 40px;max-width:44em;font-size:17px}
+.care-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;grid-auto-flow:dense}
+.c-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;display:flex;flex-direction:column;transition:box-shadow .18s var(--ease),transform .18s var(--ease);cursor:pointer}
+.c-card:hover{box-shadow:0 16px 36px -16px rgba(27,24,48,.22);transform:translateY(-2px)}
+.c-card .say{font-size:clamp(19px,1.9vw,23px);font-weight:800;line-height:1.25;margin-bottom:4px}
+.c-card .name{color:var(--purple);font-weight:700;font-size:14.5px;margin-bottom:12px}
+.c-card p{font-size:15.5px;color:var(--ink-soft);flex:1}
+.c-card .more{margin-top:16px;font-size:13.5px;font-weight:700;color:var(--purple)}
+.c-card:hover .more{text-decoration:underline}
+.c-photo{grid-row:span 2;border-radius:var(--radius);overflow:hidden;min-height:320px;position:relative}
+.c-photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.care-list{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:18px}
+.cl-item{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;cursor:pointer;transition:border-color .12s}
+.cl-item:hover{border-color:var(--purple)}
+.cl-item .t{font-weight:700;font-size:15px}
+.cl-item .d{font-size:13.5px;color:var(--ink-soft);margin-top:3px}
+.cl-item .more{font-size:12.5px;font-weight:700;color:var(--purple);margin-top:8px}
+
+/* ---------- three ways ---------- */
+.ways{padding:var(--section) 0}
+.ways-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:clamp(28px,5vw,72px);align-items:center}
+.ways h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;margin-bottom:10px}
+.ways .lead{margin-bottom:30px;font-size:17px;max-width:36em}
+.way{display:flex;gap:20px;padding:22px 0;border-top:1px solid var(--line);align-items:baseline}
+.way:last-of-type{border-bottom:1px solid var(--line)}
+.way .n{font-weight:800;font-size:15px;color:var(--purple);flex:0 0 26px}
+.way h3{font-size:19px;font-weight:800;margin-bottom:4px}
+.way p{font-size:15.5px;color:var(--ink-soft)}
+.ways-photo img{border-radius:var(--radius);width:100%;height:auto;aspect-ratio:4/5;object-fit:cover}
+
+/* ---------- promise standard ---------- */
+.standard{background:var(--purple-deep);color:#fff;padding:var(--section) 0}
+.standard h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;color:#fff;max-width:18em}
+.standard .lead{color:rgba(255,255,255,.72);margin:14px 0 44px;font-size:17px;max-width:40em;letter-spacing:.006em;line-height:1.65}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(18px,3vw,36px);counter-reset:step}
+.step{border-top:2px solid rgba(255,255,255,.22);padding-top:20px}
+.step h3{font-size:clamp(19px,1.9vw,23px);font-weight:800;color:#fff;margin-bottom:8px}
+.step p{font-size:15.5px;color:rgba(255,255,255,.72);letter-spacing:.006em;line-height:1.65}
+.ongoing{margin-top:44px;border:1px solid rgba(255,255,255,.18);border-radius:var(--radius);padding:24px 28px;display:flex;gap:clamp(18px,4vw,54px);flex-wrap:wrap}
+.ongoing .o{flex:1;min-width:200px}
+.ongoing .o h4{font-size:16px;font-weight:800;color:#cdeaec;margin-bottom:5px}
+.ongoing .o p{font-size:14.5px;color:rgba(255,255,255,.7);letter-spacing:.006em}
+
+/* ---------- circle ---------- */
+.circle{padding:var(--section) 0}
+.circle-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.circle h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;margin-bottom:16px}
+.circle p{font-size:16.5px;color:var(--ink-soft);margin-bottom:16px;max-width:34em}
+.circle p strong{color:var(--ink)}
+.diagram{background:var(--tint);border-radius:var(--radius);padding:clamp(28px,4vw,48px);text-align:center}
+.diagram .mom{display:inline-flex;flex-direction:column;align-items:center;background:#fff;border:2px solid var(--purple);border-radius:14px;padding:14px 34px;font-weight:800;font-size:18px;margin-bottom:8px}
+.diagram .mom small{font-weight:600;font-size:12.5px;color:var(--ink-soft)}
+.diagram .lines{height:34px;position:relative;margin:0 auto;max-width:420px}
+.diagram .lines svg{position:absolute;inset:0;width:100%;height:100%}
+.diagram .ppl{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;max-width:460px;margin:0 auto}
+.diagram .p{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 8px}
+.diagram .p b{display:block;font-size:15px}
+.diagram .p span{font-size:12.5px;color:var(--ink-soft)}
+.meet{margin-top:26px;background:var(--tint);border-radius:var(--radius);padding:24px 26px}
+.meet h3{font-size:19px;font-weight:800;margin-bottom:8px}
+.meet p{font-size:15.5px;margin-bottom:0}
+
+/* ---------- known ---------- */
+.known{background:var(--tint);padding:var(--section) 0}
+.known-grid{display:grid;grid-template-columns:0.9fr 1.1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.known h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;margin-bottom:16px}
+.known .big{font-size:clamp(18px,2vw,22px);font-weight:700;color:var(--ink);line-height:1.45;margin-bottom:14px}
+.known p{font-size:16px;color:var(--ink-soft);max-width:34em}
+.profile{background:#fff;border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 18px 44px -18px rgba(27,24,48,.18);padding:26px 28px}
+.profile .ph{display:flex;align-items:center;gap:14px;border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:16px}
+.profile .ph img{width:52px;height:52px;border-radius:50%;object-fit:cover}
+.profile .ph b{font-size:17px}
+.profile .ph span{display:block;font-size:13px;color:var(--ink-soft)}
+.profile ul{list-style:none;display:grid;gap:11px}
+.profile li{font-size:15px;display:flex;gap:10px;align-items:baseline}
+.profile li svg{width:15px;height:15px;stroke:var(--purple);stroke-width:2.5;flex:0 0 15px;transform:translateY(2px)}
+
+/* ---------- why ---------- */
+.why{padding:var(--section) 0}
+.why h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;max-width:16em;margin-bottom:44px}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,4vw,56px) clamp(28px,5vw,72px)}
+.w-item h3{font-size:20px;font-weight:800;margin-bottom:8px}
+.w-item p{font-size:15.5px;color:var(--ink-soft);max-width:34em}
+
+/* ---------- for mom ---------- */
+.formom{background:var(--tint-2);padding:var(--section) 0}
+.formom .wrap{max-width:820px;text-align:center}
+.formom h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;margin-bottom:8px}
+.formom .to{font-size:15px;font-weight:700;color:var(--purple-deep);margin-bottom:26px}
+.formom ul{list-style:none;display:grid;gap:12px;max-width:520px;margin:0 auto 26px;text-align:left}
+.formom li{background:#fff;border-radius:10px;padding:14px 18px;font-size:16px;font-weight:600;display:flex;gap:12px;align-items:baseline}
+.formom li svg{width:16px;height:16px;stroke:var(--purple);stroke-width:2.5;flex:0 0 16px;transform:translateY(2px)}
+.formom .close{font-size:clamp(17px,1.8vw,20px);font-weight:700;max-width:30em;margin:0 auto}
+
+/* ---------- resources ---------- */
+.res{padding:var(--section) 0}
+.res h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;margin-bottom:8px}
+.res .lead{margin-bottom:36px;font-size:16.5px}
+.res-rail{display:grid;gap:12px}
+.r-item{display:flex;justify-content:space-between;align-items:center;gap:18px;border:1px solid var(--line);border-radius:12px;padding:20px 24px;text-decoration:none;transition:border-color .12s,background .12s}
+.r-item:hover{border-color:var(--purple);background:var(--tint)}
+.r-item .t{font-size:17px;font-weight:700}
+.r-item .d{font-size:14px;color:var(--ink-soft);margin-top:2px}
+.r-item svg{width:20px;height:20px;stroke:var(--purple);stroke-width:2.5;flex:0 0 20px}
+
+/* ---------- faq ---------- */
+.faq{background:var(--tint);padding:var(--section) 0}
+.faq .wrap{max-width:860px}
+.faq h2{font-size:clamp(28px,3.4vw,42px);font-weight:800;margin-bottom:36px}
+.q{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:10px;overflow:hidden}
+.q button{width:100%;background:none;border:0;font:inherit;font-size:16.5px;font-weight:700;color:var(--ink);text-align:left;padding:19px 54px 19px 22px;cursor:pointer;position:relative}
+.q button::after{content:"";position:absolute;right:22px;top:50%;width:10px;height:10px;border-right:2.5px solid var(--purple);border-bottom:2.5px solid var(--purple);transform:translateY(-70%) rotate(45deg);transition:transform .18s var(--ease)}
+.q.open button::after{transform:translateY(-30%) rotate(225deg)}
+.q .a{max-height:0;overflow:hidden;transition:max-height .28s var(--ease)}
+.q .a p{padding:0 22px 20px;font-size:15.5px;color:var(--ink-soft);max-width:64ch}
+
+/* ---------- final cta ---------- */
+.final{padding:var(--section) 0}
+.final-band{background:var(--purple-deep);border-radius:var(--radius);padding:clamp(40px,6vw,72px) clamp(24px,5vw,72px);display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center}
+.final h2{color:#fff;font-size:clamp(26px,3.2vw,40px);font-weight:800;margin-bottom:10px}
+.final p{color:rgba(255,255,255,.72);font-size:16.5px;max-width:32em;letter-spacing:.006em;line-height:1.65}
+.final .btn{background:#fff;color:var(--purple-deep) !important;justify-self:start}
+.final .btn:hover{background:var(--tint-2)}
+.final-cta{display:flex;flex-direction:column;gap:14px;align-items:flex-start}
+.final .tag{color:#cdeaec;font-weight:700;font-size:15px}
+.careers{margin-top:22px;text-align:center;font-size:15px;color:var(--ink-soft)}
+.careers a{color:var(--purple-deep);font-weight:700}
+
+/* ---------- footer ---------- */
+footer{background:var(--ink);color:rgba(255,255,255,.75);padding:clamp(48px,6vw,72px) 0 32px}
+.f-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:clamp(24px,4vw,48px);margin-bottom:44px}
+.f-brand .logo{color:#fff;font-size:20px}
+.f-brand p{font-size:14.5px;margin-top:12px;max-width:26em;color:rgba(255,255,255,.62);letter-spacing:.006em;line-height:1.65}
+footer h4{color:#fff;font-size:14px;font-weight:800;letter-spacing:.02em;margin-bottom:14px}
+footer ul{list-style:none;display:grid;gap:9px}
+footer ul a{text-decoration:none;font-size:14.5px;color:rgba(255,255,255,.72);letter-spacing:.006em}
+footer ul a:hover{color:#fff}
+.f-legal{border-top:1px solid rgba(255,255,255,.14);padding-top:22px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;font-size:13px;color:rgba(255,255,255,.55);letter-spacing:.006em}
+
+
+/* ---------- responsive ---------- */
+@media (max-width:960px){
+  .nav-links{display:none}
+  .nav .btn{display:none}
+  .burger{display:block}
+  .hero-grid,.ways-grid,.circle-grid,.known-grid{grid-template-columns:1fr}
+  .hero h1 .l1,.hero h1 .l2{white-space:normal}
+  .finder{margin:-56px auto 0;max-width:520px}
+  .care-grid{grid-template-columns:1fr 1fr}
+  .care-list{grid-template-columns:repeat(2,1fr)}
+  .steps{grid-template-columns:1fr}
+  .final-band{grid-template-columns:1fr}
+  .f-grid{grid-template-columns:1fr 1fr}
+  .ways-photo{order:-1}
+  .ways-photo img{aspect-ratio:3/2}
+}
+@media (max-width:400px){
+  .diagram{padding:20px 10px}
+  .diagram .ppl{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+  .diagram .p{padding:12px 4px}
+  .diagram .p span{font-size:11.5px}
+  .diagram .mom{padding:12px 24px}
+}
+@media (max-width:640px){
+  .care-grid{grid-template-columns:1fr}
+  .c-photo{grid-row:auto;min-height:220px}
+  .care-list{grid-template-columns:1fr}
+  .why-grid{grid-template-columns:1fr}
+  .hero-ctas .btn{width:100%}
+  .f-grid{grid-template-columns:1fr}
+  .hero{padding-top:24px}
+}
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="wrap nav-in">
+    <a class="logo" href="#top">A Promise to <span>Mom</span></a>
+    <ul class="nav-links">
+      <li><a href="#care">Care Services</a></li>
+      <li><a href="#standard">How Care Works</a></li>
+      <li><a href="#formom">For Mom</a></li>
+      <li><a href="#faq">FAQs</a></li>
+    </ul>
+    <a class="btn" href="#finder">Request a free consultation</a>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('mmenu').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+  </div>
+</nav>
+<div class="m-menu" id="mmenu">
+  <a href="#care" onclick="mm()">Care Services</a>
+  <a href="#standard" onclick="mm()">How Care Works</a>
+  <a href="#formom" onclick="mm()">For Mom</a>
+  <a href="#faq" onclick="mm()">FAQs</a>
+  <a href="#finder" onclick="mm()">Request a free consultation</a>
+</div>
+
+<header class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <h1><span class="l1">One promise.</span><span class="l2">Three ways to keep it.</span></h1>
+      <p class="sub">Trusted in-home support that helps Mom stay cared for, comfortable and connected, while giving you room to be her daughter again.</p>
+      <div class="hero-ctas">
+        <a class="btn" href="#finder">Request a free consultation</a>
+        <a class="btn btn-ghost" href="#care">Explore care services</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <img src="img/hero-7232037.jpg" alt="A mother and daughter laughing together at home" width="1536" height="1024" fetchpriority="high">
+      <div class="finder" id="finder" aria-label="Care consultation form"></div>
+    </div>
+  </div>
+</header>
+
+<section class="story">
+  <div class="wrap">
+    <h2>It probably didn't start like this.</h2>
+    <p>At first, maybe Mom just needed a ride. Then help picking up groceries. Then reminders, appointments, more calls. Then someone had to be nearby more often. And somewhere along the way, <strong>"I'll help Mom"</strong> became <strong>"everything depends on me."</strong></p>
+    <p>You didn't break the promise. The care needs changed. So the way you keep it can change too.</p>
+    <div class="turn">Caring for Mom and personally doing all of Mom's care are not the same thing. Hiring help is care. Finding someone she trusts is care. Staying healthy enough to keep showing up is care.</div>
+    <p>The promise was never that you'd do it alone. The promise was that she wouldn't be.</p>
+  </div>
+</section>
+
+<section class="care" id="care">
+  <div class="wrap">
+    <h2>Care that starts with what you need</h2>
+    <p class="lead sub">You don't have to know the industry terms. Start with the sentence that sounds like you, and we'll take it from there.</p>
+    <div class="care-grid">
+      <div class="c-card" onclick="location.href='#finder'">
+        <div class="say">"I just need a break."</div>
+        <div class="name">Respite Care</div>
+        <p>Someone dependable can stay with Mom while you sleep, work, spend time with your family, or simply have a few hours that don't belong to caregiving.</p>
+        <div class="more">Talk about respite care</div>
+      </div>
+      <div class="c-photo"><img src="img/when-34913372.jpg" alt="Three generations of one family together indoors" loading="lazy"></div>
+      <div class="c-card" onclick="location.href='#finder'">
+        <div class="say">"Mom needs help with things I can't do myself."</div>
+        <div class="name">Personal Care</div>
+        <p>Bathing, dressing, grooming, mobility and everyday routines can become deeply personal. Loving your mother doesn't require becoming comfortable performing every one of them yourself.</p>
+        <div class="more">Talk about personal care</div>
+      </div>
+      <div class="c-card" onclick="location.href='#finder'">
+        <div class="say">"I worry about her being alone."</div>
+        <div class="name">Companion Care</div>
+        <p>Someone there. A meal. Conversation. A walk. A watchful presence. And one less part of your day spent wondering whether Mom is okay.</p>
+        <div class="more">Talk about companion care</div>
+      </div>
+      <div class="c-card" onclick="location.href='#finder'">
+        <div class="say">"Mom's memory is changing."</div>
+        <div class="name">Memory Support</div>
+        <p>More supervision, familiar routines, and someone who understands that repeating, wandering and confusion aren't behaviors Mom can choose to stop.</p>
+        <div class="more">Talk about memory support</div>
+      </div>
+    </div>
+    <div class="care-list">
+      <div class="cl-item" onclick="location.href='#finder'"><div class="t">24-Hour &amp; Overnight Care</div><div class="d">Around-the-clock presence when nights are the hard part.</div><div class="more">Learn more</div></div>
+      <div class="cl-item" onclick="location.href='#finder'"><div class="t">Hospital-to-Home Care</div><div class="d">Support that starts around discharge, when everything changes at once.</div><div class="more">Learn more</div></div>
+      <div class="cl-item" onclick="location.href='#finder'"><div class="t">Aging-in-Place Safety</div><div class="d">Practical changes that help Mom's home keep working for her.</div><div class="more">Learn more</div></div>
+      <div class="cl-item" onclick="location.href='#finder'"><div class="t">Placement Guidance</div><div class="d">If home stops being the right answer, honest help finding what is.</div><div class="more">Learn more</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="ways">
+  <div class="wrap ways-grid">
+    <div>
+      <h2>The promise isn't a place. It's a standard of care.</h2>
+      <p class="lead sub">She never made you promise you'd do it all yourself. She made you promise she wouldn't be abandoned. However her needs change, there's a way to keep it.</p>
+      <div class="way"><div class="n">1</div><div><h3>Keep it at home</h3><p>Aging-in-place changes and in-home support that let Mom stay where everything is familiar.</p></div></div>
+      <div class="way"><div class="n">2</div><div><h3>Keep it with help</h3><p>Dependable caregivers who take on the tasks that are exhausting you, so you still have something left when you're with her.</p></div></div>
+      <div class="way"><div class="n">3</div><div><h3>Keep it somewhere new</h3><p>If more care is needed than home can hold, guidance to a place where she'll be known and looked after.</p></div></div>
+    </div>
+    <div class="ways-photo"><img src="img/ways-6939467.jpg" alt="Two women laughing while working on a puzzle together" loading="lazy"></div>
+  </div>
+</section>
+
+<section class="standard" id="standard">
+  <div class="wrap">
+    <h2>How care begins: The Promise Standard</h2>
+    <p class="lead">You aren't just hiring someone to complete tasks. You're trusting someone with part of a promise you take very seriously. So we treat the beginning with the weight it deserves.</p>
+    <div class="steps">
+      <div class="step"><h3>The Promise Call&trade;</h3><p>A real conversation about what's happening with Mom, what you've been carrying, and what would actually help. No pressure, no script.</p></div>
+      <div class="step"><h3>The Promise Match&trade;</h3><p>We match Mom with a caregiver based on who she is, not just what's on the schedule. Personality, routines, and what she'd never tolerate all count.</p></div>
+      <div class="step"><h3>The Promise Visit&trade;</h3><p>Before ongoing care begins, Mom and the caregiver meet. See how they interact. Let Mom ask questions. If the fit isn't right, tell us and we'll make a change.</p></div>
+    </div>
+    <div class="ongoing">
+      <div class="o"><h4>The Promise Plan&trade;</h4><p>Her personalized care plan, built from her routines and preferences.</p></div>
+      <div class="o"><h4>The Promise Circle&trade;</h4><p>The small, consistent team around Mom, introduced before they're needed.</p></div>
+      <div class="o"><h4>Promise Updates&trade;</h4><p>You hear how visits went without having to chase anyone for answers.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="circle">
+  <div class="wrap circle-grid">
+    <div>
+      <h2>It shouldn't take a revolving door of strangers to keep one promise.</h2>
+      <p>Mom's Promise Circle is small and consistent: a <strong>primary caregiver</strong> who handles most scheduled care, a <strong>familiar backup</strong> introduced before she's ever needed, and a <strong>care coordinator</strong> who already knows what's happening when you call.</p>
+      <div class="meet">
+        <h3>Meet her before Mom depends on her.</h3>
+        <p>See how they interact. Let Mom ask questions. Let the caregiver learn about her. If the fit isn't right, tell us. We'll make a change.</p>
+      </div>
+    </div>
+    <div class="diagram" role="img" aria-label="Diagram: Mom at the center, supported by Angela the primary caregiver, Denise the familiar backup, and Rachel the family care coordinator">
+      <div class="mom">Mom<small>at the center</small></div>
+      <div class="lines"><svg viewBox="0 0 420 34" preserveAspectRatio="none"><path d="M210 0 L210 34 M210 0 L70 34 M210 0 L350 34" stroke="#3b2f8f" stroke-width="1.5" opacity=".45"/></svg></div>
+      <div class="ppl">
+        <div class="p"><b>Angela</b><span>Primary caregiver</span></div>
+        <div class="p"><b>Denise</b><span>Familiar backup</span></div>
+        <div class="p"><b>Rachel</b><span>Care coordinator</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="known">
+  <div class="wrap known-grid">
+    <div>
+      <h2>To us, she's not "female, 87, needs assistance."</h2>
+      <p class="big">She's Mom.</p>
+      <p>Before care begins, we learn the things a chart never captures, because the difference between care and good care lives in those details. The caregiver walking in the door should already know them.</p>
+    </div>
+    <div class="profile">
+      <div class="ph">
+        <img src="img/res2-36578169.jpg" alt="An elderly woman sharing a moment with her adult daughter" loading="lazy">
+        <div><b>The Mom We Should Know</b><span>part of every Promise Plan</span></div>
+      </div>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>She likes her coffee made one particular way.</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>She hates being called "sweetie."</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>She was a teacher for 38 years.</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>She loves Motown.</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>She gets nervous when people rush her.</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Don't reorganize her kitchen.</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>Her husband was James.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <h2>Why families choose A Promise to Mom</h2>
+    <div class="why-grid">
+      <div class="w-item"><h3>A face she knows, not a rotation</h3><p>We schedule for consistency and introduce a familiar backup early, so care doesn't arrive as a stranger.</p></div>
+      <div class="w-item"><h3>You meet the caregiver first</h3><p>The Promise Visit happens before ongoing care begins. If the fit isn't right, we change it.</p></div>
+      <div class="w-item"><h3>A plan built around who she is</h3><p>Her routines, her preferences, her history. The Mom We Should Know shapes every visit.</p></div>
+      <div class="w-item"><h3>You stay in the loop</h3><p>Promise Updates after visits mean you remain involved without carrying the checklist.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="formom" id="formom">
+  <div class="wrap">
+    <h2>Something you can show Mom</h2>
+    <p class="to">This part is written for her.</p>
+    <ul>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>You stay home. You keep your routines.</li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>You have a say in who's coming, and you meet them first.</li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>You tell us what you want help with, and what you'd rather keep doing yourself.</li>
+      <li><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>This isn't about taking over your life. It's about helping you keep more of it.</li>
+    </ul>
+    <p class="close">Your daughter isn't going anywhere. She's just getting another pair of hands.</p>
+  </div>
+</section>
+
+<section class="res">
+  <div class="wrap">
+    <h2>Resources for getting started</h2>
+    <p class="lead sub">The questions families actually ask, answered plainly.</p>
+    <div class="res-rail">
+      <a class="r-item" href="#faq" onclick="openFaq(0)"><div><div class="t">"I promised Mom I'd never put her in a nursing home. What now?"</div><div class="d">What the promise really asked of you, and how to keep it as needs change.</div></div><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="r-item" href="#faq" onclick="openFaq(2)"><div><div class="t">How do I talk to Mom about getting help?</div><div class="d">Starting the conversation without a fight, and what to do when she says "I only want you."</div></div><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      <a class="r-item" href="#faq" onclick="openFaq(5)"><div><div class="t">How much care can I give without burning out?</div><div class="d">An honest look at limits, respite, and why staying well is part of the promise.</div></div><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <h2>Questions families ask us</h2>
+    <div id="faqlist"></div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div class="final-band">
+      <div>
+        <h2>Keep the promise. Share the care.</h2>
+        <p>Tell us what's happening with Mom. We'll listen first, then walk you through what your real options are. It costs nothing to talk.</p>
+      </div>
+      <div class="final-cta">
+        <div class="tag">A Promise to Mom</div>
+        <a class="btn" href="#finder">Request a free consultation</a>
+      </div>
+    </div>
+    <p class="careers">Caregivers and CNAs: families like Mom's are why this work matters. <a href="#finder" onclick="careerCtx()">Ask about caregiving roles</a></p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a class="logo" href="#top">A Promise to <span style="color:#cdeaec">Mom</span></a>
+        <p>In-home support that helps Mom stay cared for, comfortable and connected, while giving you room to be her daughter again.</p>
+      </div>
+      <div>
+        <h4>Care Services</h4>
+        <ul>
+          <li><a href="#care">Respite Care</a></li>
+          <li><a href="#care">Personal Care</a></li>
+          <li><a href="#care">Companion Care</a></li>
+          <li><a href="#care">Memory Support</a></li>
+          <li><a href="#care">24-Hour &amp; Overnight Care</a></li>
+          <li><a href="#care">Hospital-to-Home Care</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#standard">How Care Works</a></li>
+          <li><a href="#formom">For Mom</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#finder" onclick="careerCtx()">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Get Started</h4>
+        <ul>
+          <li><a href="#finder">Request a free consultation</a></li>
+          <li><a href="#faq">Cost &amp; planning questions</a></li>
+          <li><a href="#care">Explore care services</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="f-legal">
+      <span>&copy; 2026 A Promise to Mom. All rights reserved.</span>
+      <span>Serving Georgia families.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+function mm(){document.getElementById('mmenu').classList.remove('open')}
+
+/* ---------- FAQ ---------- */
+var FAQS=[
+ ["“I promised Mom I’d never put her in a nursing home. What now?”","Start with what the promise was really about. She wasn’t asking you to do every task with your own hands; she was asking not to be abandoned. In-home care keeps her home, keeps you in her life, and keeps that promise. And if her needs ever outgrow home, keeping the promise means finding a place where she’ll be known and cared for, with you still beside her."],
+ ["Does hiring a caregiver mean I’m giving up?","No. Hiring the right help can be how you keep the promise. Building a safe schedule is care. Finding someone she trusts is care. Making sure you’re healthy enough to keep showing up is care. Getting help doesn’t mean stepping away; it means you can come over for dinner instead of coming over to do laundry."],
+ ["How do I talk to Mom about getting help?","Gently, and not as a takeover. Frame it around what she keeps: her home, her routines, her say in who comes. Let her meet the caregiver before anything is decided, and let her set what she’d rather keep doing herself. Many families show her our “For Mom” note above as a starting point."],
+ ["Mom says she only wants me.","That’s love talking, and it’s also a lot to carry alone. It usually softens once the caregiver stops being an idea and becomes a person: someone she has met, who knows how she takes her coffee and doesn’t rush her. That’s why the introduction happens before ongoing care ever begins."],
+ ["“I love my mother. I don’t want to bathe her.”","That feeling is common, and it doesn’t make you a bad daughter. Bathing, dressing and toileting are deeply personal. Loving your mother doesn’t require becoming comfortable doing every one of them yourself. A trained caregiver can carry those tasks with dignity, and you get to stay her daughter."],
+ ["How much help can I realistically provide without burning out?","Less than the situation is currently demanding of you, if you’re honest. Burnout doesn’t announce itself; it shows up as exhaustion, resentment and your own health slipping. Respite care exists exactly for this: regular, dependable relief so the care doesn’t consume the relationship."],
+ ["What if Mom fires every caregiver?","Then we haven’t found the right person yet, and that’s ours to fix. The Promise Match starts from who she is, the Promise Visit lets her meet the caregiver first, and if the fit isn’t right you tell us and we make a change. Consistency matters too: one familiar face, not a rotation of strangers."],
+ ["What does respite actually look like?","A dependable caregiver stays with Mom while you sleep, work, travel, or simply have a few hours that don’t belong to caregiving. It can be one evening a week or a full weekend. Mom keeps her routine; you come back with something left to give."],
+ ["How do siblings split caregiving when one person is doing everything?","Rarely evenly, and pretending otherwise breeds resentment. What helps: name the real workload out loud, put a care plan in writing so “helping” has a definition, and let a coordinator carry the scheduling so every request stops routing through you. Shared updates keep everyone honest about what’s being done."],
+ ["What if I live hours away?","Distance doesn’t break the promise. A consistent caregiver becomes your eyes and hands, the coordinator becomes the person you call who already knows what’s happening, and updates after visits mean you’re not relying on Mom’s “I’m fine.” You stay involved; you just stop being the only line of defense."]
+];
+var fl=document.getElementById('faqlist');
+FAQS.forEach(function(f,i){
+  var d=document.createElement('div');d.className='q';d.id='q'+i;
+  d.innerHTML='<button aria-expanded="false">'+f[0]+'</button><div class="a"><p>'+f[1]+'</p></div>';
+  d.querySelector('button').addEventListener('click',function(){toggleFaq(i)});
+  fl.appendChild(d);
+});
+function toggleFaq(i){
+  var q=document.getElementById('q'+i),a=q.querySelector('.a'),open=q.classList.contains('open');
+  document.querySelectorAll('.q.open').forEach(function(o){o.classList.remove('open');o.querySelector('.a').style.maxHeight=0;o.querySelector('button').setAttribute('aria-expanded','false')});
+  if(!open){q.classList.add('open');a.style.maxHeight=a.scrollHeight+'px';q.querySelector('button').setAttribute('aria-expanded','true')}
+}
+function openFaq(i){setTimeout(function(){toggleFaq(i)},350)}
+
+/* ---------- finder quiz ---------- */
+window.PTM_FORM_ENDPOINT=window.PTM_FORM_ENDPOINT||'';
+var F={step:1,data:{}};
+var fEl=document.querySelector('.finder');
+function fRender(){
+  var h='<div class="f-progress">';
+  for(var i=1;i<=5;i++)h+='<i class="'+(i<=F.step?'on':'')+'"></i>';
+  h+='</div>';
+  if(F.step===1){
+    h+='<h3>A gentle beginning</h3><div class="fnote">What matters most right now?</div><div class="f-opts">';
+    ['Keeping Mom safely at home','Getting a little time back','Finding someone Mom will accept','Having help I can actually depend on',"I'm not sure yet"].forEach(function(o){
+      h+='<button type="button" class="f-opt'+(F.data.matters===o?' sel':'')+'" onclick="fPick(\'matters\',this)"><span class="dot"></span>'+o+'</button>';
+    });
+    h+='</div><div class="f-err" id="ferr">Choose the one that’s closest.</div><div class="f-row"><button class="btn" onclick="fNext(\'matters\')">Continue</button></div>';
+  }else if(F.step===2){
+    h+='<h3>What kind of help would matter?</h3><div class="fnote">Choose any that apply.</div><div class="f-opts">';
+    ['A few hours so I can rest','Personal care, like bathing and dressing','Someone to keep her company','Memory support','Help after a hospital stay','Not sure yet'].forEach(function(o){
+      var on=(F.data.help||[]).indexOf(o)>-1;
+      h+='<button type="button" class="f-opt'+(on?' sel':'')+'" onclick="fMulti(\'help\',this)"><span class="dot"></span>'+o+'</button>';
+    });
+    h+='</div><div class="f-err" id="ferr">Pick at least one, or “Not sure yet.”</div><div class="f-row"><button class="f-back" onclick="fBack()">Back</button><button class="btn" onclick="fNextMulti(\'help\')">Continue</button></div>';
+  }else if(F.step===3){
+    h+='<h3>How soon would help make a difference?</h3><div class="f-opts">';
+    ['This week','In the next month','We’re planning ahead','Right after a hospital stay'].forEach(function(o){
+      h+='<button type="button" class="f-opt'+(F.data.when===o?' sel':'')+'" onclick="fPick(\'when\',this)"><span class="dot"></span>'+o+'</button>';
+    });
+    h+='</div><div class="f-err" id="ferr">Choose the one that’s closest.</div><div class="f-row"><button class="f-back" onclick="fBack()">Back</button><button class="btn" onclick="fNext(\'when\')">Continue</button></div>';
+  }else if(F.step===4){
+    h+='<h3>Where is Mom’s home?</h3><label class="f-label" for="fzip">ZIP code</label><input class="f-input" id="fzip" inputmode="numeric" autocomplete="postal-code" maxlength="5" value="'+(F.data.zip||'')+'" placeholder="30305">';
+    h+='<div class="f-err" id="ferr">Enter a 5-digit ZIP code.</div><div class="f-row"><button class="f-back" onclick="fBack()">Back</button><button class="btn" onclick="fZip()">Continue</button></div>';
+  }else if(F.step===5){
+    h+='<h3>Where should we reach you?</h3>'
+      +'<label class="f-label" for="fname">First name</label><input class="f-input" id="fname" autocomplete="given-name" value="'+(F.data.name||'')+'">'
+      +'<label class="f-label" for="fphone">Phone</label><input class="f-input" id="fphone" inputmode="tel" autocomplete="tel" value="'+(F.data.phone||'')+'">'
+      +'<label class="f-label">How do you prefer we reach out?</label><div class="f-opts" style="grid-template-columns:1fr 1fr">'
+      +['Call me','Text me'].map(function(o){return '<button type="button" class="f-opt'+(F.data.pref===o?' sel':'')+'" onclick="fPick(\'pref\',this)"><span class="dot"></span>'+o+'</button>'}).join('')
+      +'</div><div class="f-err" id="ferr">Add your name, phone, and how to reach you.</div>'
+      +'<div class="f-row"><button class="f-back" onclick="fBack()">Back</button><button class="btn" onclick="fSubmit()">Send my request</button></div>';
+  }else{
+    h='<div class="f-thanks"><h4>Thank you'+(F.data.name?', '+F.data.name:'')+'.</h4><p>We’ve got it from here. We’ll reach out the way you asked, listen first, and walk you through what your real options are.</p></div>';
+  }
+  fEl.innerHTML=h;
+}
+function fPick(k,el){F.data[k]=el.textContent;el.parentNode.querySelectorAll('.f-opt').forEach(function(o){o.classList.remove('sel')});el.classList.add('sel')}
+function fMulti(k,el){F.data[k]=F.data[k]||[];var v=el.textContent,ix=F.data[k].indexOf(v);if(ix>-1){F.data[k].splice(ix,1);el.classList.remove('sel')}else{F.data[k].push(v);el.classList.add('sel')}}
+function fErr(s){var e=document.getElementById('ferr');if(e)e.style.display=s?'block':'none'}
+function fNext(k){if(!F.data[k]){fErr(1);return}F.step++;fRender()}
+function fNextMulti(k){if(!(F.data[k]&&F.data[k].length)){fErr(1);return}F.step++;fRender()}
+function fBack(){F.step--;fRender()}
+function fZip(){var z=document.getElementById('fzip').value.trim();if(!/^\d{5}$/.test(z)){fErr(1);return}F.data.zip=z;F.step++;fRender()}
+function fSubmit(){
+  F.data.name=document.getElementById('fname').value.trim();
+  F.data.phone=document.getElementById('fphone').value.trim();
+  if(!F.data.name||F.data.phone.replace(/\D/g,'').length<10||!F.data.pref){fErr(1);return}
+  var rec=Object.assign({ts:new Date().toISOString(),site:'apm-v3-a'},F.data);
+  try{var s=JSON.parse(localStorage.getItem('ptm_submissions')||'[]');s.push(rec);localStorage.setItem('ptm_submissions',JSON.stringify(s))}catch(e){}
+  if(window.PTM_FORM_ENDPOINT){try{fetch(window.PTM_FORM_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(rec)})}catch(e){}}
+  F.step=6;fRender();
+}
+function careerCtx(){F.step=1;F.data={context:'career'};fRender()}
+fRender();
+
+</script>
+</body>
+</html>
