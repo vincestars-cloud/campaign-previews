@@ -1,0 +1,91 @@
+/* Landing page only. Loads after refine.css.
+   The site's own theme: Satoshi, the rose palette, the lowercase wordmark. No second
+   display face, no ticker, no decoration. One photograph, one form, and the few answers
+   a cold visitor actually needs.
+   One rule per selector -- a second rule cannot unset the first. */
+
+body.lp{overflow-x:hidden;background:#fff}
+
+/* Header: the mark and the phone. No navigation, because every link is a way out. */
+.lp-head{border-bottom:none;background:transparent;position:absolute;top:0;left:0;right:0;z-index:10}
+.lp-head-in{display:flex;align-items:center;justify-content:space-between;gap:20px;height:92px}
+.lp-head .brand{display:flex;align-items:center;min-height:44px;color:#fff}
+.lp-head .brand-name{color:#fff}
+.lp-head .brand small{color:rgba(255,255,255,.72)}
+.lp-call{display:flex;align-items:center;gap:9px;min-height:44px;text-decoration:none;color:#fff;font-size:16px;font-weight:500}
+.lp-call svg{width:19px;height:19px}
+
+/* Hero: one photograph, the promise, the form. Nothing between her and the action. */
+.lp-hero{position:relative;isolation:isolate;min-height:760px;display:flex;align-items:center;
+  padding:120px 0 clamp(64px,7vw,96px)}
+.lp-hero-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:70% 38%;z-index:-2}
+.lp-hero-veil{position:absolute;inset:0;z-index:-1;background:
+  linear-gradient(100deg,rgba(35,26,31,.9) 0%,rgba(35,26,31,.74) 34%,rgba(35,26,31,.3) 62%,rgba(35,26,31,.12) 100%)}
+.lp-hero-in{display:grid;grid-template-columns:1.06fr .94fr;gap:clamp(40px,5vw,88px);align-items:center}
+.lp-hero-copy h1{margin:0;color:#fff;font-weight:500;font-size:clamp(46px,5.6vw,86px);line-height:.98;letter-spacing:-.055em}
+.lp-hero-copy p{margin:26px 0 0;font-size:18px;line-height:1.6;color:#e9dee3;max-width:40ch}
+
+/* Form card */
+.lp-card{border-radius:12px;box-shadow:0 30px 70px rgba(24,16,20,.36),0 6px 18px rgba(24,16,20,.18)}
+.lp-progress-track{height:5px;background:#f0e7eb;border-radius:3px;overflow:hidden;margin-bottom:22px}
+.lp-progress-fill{height:100%;background:var(--rose);border-radius:3px;transition:width .4s var(--ease)}
+.lp-card input,.lp-card select{font-size:16px}
+.lp-card .btn{width:100%;justify-content:center;gap:14px;min-height:54px}
+.lp-reassure{margin:12px 0 0;font-size:13px;line-height:1.5;color:var(--muted);text-align:center}
+
+/* What she gets back */
+.lp-offer{padding:clamp(64px,7vw,96px) 0;background:#fff}
+.lp-offer h2{margin:0 0 40px;font-size:clamp(30px,3.4vw,46px);line-height:1.08;letter-spacing:-.035em}
+.lp-offer-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);
+  border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.lp-offer-grid article{background:#fff;padding:clamp(24px,2.4vw,32px)}
+.lp-offer-grid h3{margin:0 0 10px;font-size:19px;line-height:1.3;letter-spacing:-.02em}
+.lp-offer-grid p{margin:0;font-size:16px;line-height:1.6;color:var(--muted)}
+.lp-offer-note{margin:26px 0 0;font-size:16px;line-height:1.6;color:var(--muted);max-width:60ch}
+
+/* FAQ */
+.lp-faq{padding:clamp(64px,7vw,96px) 0;background:var(--surface)}
+.lp-faq-in{display:grid;grid-template-columns:.78fr 1.22fr;gap:clamp(30px,4vw,70px);align-items:start}
+.lp-faq-in h2{margin:0;font-size:clamp(30px,3.4vw,46px);line-height:1.08;letter-spacing:-.035em}
+.lp-faq-list details{background:#fff;border:1px solid #e4d9de;border-radius:10px;margin-bottom:10px;overflow:hidden}
+.lp-faq-list summary{display:flex;align-items:center;justify-content:space-between;gap:18px;cursor:pointer;
+  padding:19px 22px;font-size:17px;font-weight:500;line-height:1.35;letter-spacing:-.01em;list-style:none}
+.lp-faq-list summary::-webkit-details-marker{display:none}
+.lp-chev{width:19px;height:19px;color:var(--rose-dark);flex:none;transition:transform .22s var(--ease)}
+.lp-faq-list details[open] .lp-chev{transform:rotate(180deg)}
+.lp-faq-list details>div{border-top:1px solid #f1e8ec;padding:16px 22px 20px}
+.lp-faq-list details p{margin:0;font-size:16px;line-height:1.7;color:var(--muted)}
+
+/* Close */
+.lp-close{padding:clamp(56px,6vw,84px) 0;background:#fff;text-align:center}
+.lp-close h2{margin:0;font-size:clamp(28px,3vw,40px);line-height:1.1;letter-spacing:-.03em}
+.lp-close p{margin:14px 0 0;font-size:17px;color:var(--muted)}
+.lp-close .btn{margin-top:26px}
+
+/* Footer */
+.lp-footer{background:#fff;border-top:1px solid var(--line)}
+.lp-foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;padding:24px 0 28px;font-size:14px;color:var(--muted)}
+.lp-foot a{color:inherit;display:inline-flex;align-items:center;min-height:44px}
+
+/* Sticky mobile bar appears only once the hero form is out of view. */
+.mobile-actions{transition:transform .25s var(--ease)}
+.mobile-actions.is-hidden{transform:translateY(120%);pointer-events:none}
+@media(prefers-reduced-motion:reduce){.mobile-actions{transition:none}}
+
+@media(max-width:1000px){
+  .lp-hero-in{grid-template-columns:1fr;gap:34px}
+  .lp-hero{min-height:0;padding:110px 0 56px}
+  .lp-hero-copy p{max-width:none}
+  .lp-offer-grid{grid-template-columns:1fr}
+  .lp-faq-in{grid-template-columns:1fr}
+}
+@media(max-width:680px){
+  .lp-head-in{height:76px}
+  .lp-call span{display:none}
+  .lp-hero{padding:96px 0 44px}
+  .lp-hero-photo{object-position:64% 34%}
+  .lp-hero-copy h1{font-size:clamp(38px,10.5vw,50px)}
+  .lp-hero-copy p{font-size:16.5px;margin-top:20px}
+  .lp-close .btn{width:100%}
+  .lp-foot{padding:16px 0 20px}
+}

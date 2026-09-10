@@ -1,0 +1,333 @@
+/* Pink Glove Care — refinement layer (loads after styles.css + elevate.css).
+   Polish inside the existing system: one type scale, one spacing scale, larger reading sizes
+   for a 50–90 audience, consistent controls, and a few structural tidy-ups.
+   Nothing here changes the palette, the wordmark, the copy, or the approved hero opening. */
+
+:root{
+  --d2:clamp(49px,6vw,88px);      /* the one signature line: "Her life. Your life." */
+  --d3:clamp(42px,5vw,66px);      /* chapter headings on the home page */
+  --d4:clamp(38px,3.8vw,52px);    /* supporting headings: FAQ, guides, service body */
+  --d5:clamp(30px,2.6vw,36px);    /* small headings: strips, steps, articles */
+  --section:clamp(64px,8vw,96px);
+  --section-lg:clamp(72px,9vw,112px);
+  --track-display:-.045em;
+}
+
+/* ---------- Reading sizes ---------- */
+body{font-size:18px;line-height:1.6}
+h1,h2{letter-spacing:var(--track-display)}
+h3{letter-spacing:-.03em}
+.hero-copy h1{letter-spacing:-.05em}
+.life-heading h2,.match-copy h2,.inquiry-copy h2,.subhero h1{letter-spacing:var(--track-display)}
+
+/* One scale for the home-page chapters (they ranged 49–72px before). */
+.care-intro h2,.match-copy h2,.circle-copy h2,.inquiry-copy h2,.standard-heading h2{font-size:var(--d3)}
+.faq h2,.resource-heading h2,.service-body h2,.service-pull h2,.guide-feature-copy h2,.application-layout>aside h2{font-size:var(--d4)}
+.careers-strip h2,.process-steps h2,.article h2{font-size:var(--d5)}
+.resource-card h3{font-size:24px}
+.circle-person h3{font-size:21px}
+
+/* Secondary paragraphs move from 15–16px to 17px; captions to 15px; fine print to 14px. */
+.life-detail p,.care-description p,.faq details p,.match-copy p,.standard-heading p,.commitments p,
+.process-steps p,.care-intro p,.service-match p,.guide-question p,.sample-note p,.hero-description{font-size:17px}
+.article p{font-size:18px}
+.aside p{font-size:16px}
+.life-heading p{font-size:18px}
+.life-conclusion,.circle-thought{font-size:16px}
+.circle-copy .circle-thought{font-size:17px}
+.care-index-image p,.notes-photo p,.circle-person p,.quick-start p,.form-card .intro{font-size:15px}
+.circle-center small{font-size:14px}
+.hero-bottom,.hero-bottom a,.privacy-note,.breadcrumb,.guide-ungated,.preview-note,.footer-bottom{font-size:14px}
+.related-links a{font-size:15px}
+.form-meta{font-size:13px}
+.form-meta span:first-child{font-size:12px;letter-spacing:.06em}
+.footer-col strong{font-size:14px}
+.footer-col a{font-size:16px;margin:12px 0}
+.nav-links a{font-size:16px}
+.call-link{font-size:15px}
+
+/* ---------- Controls: 16px labels, 52px+ targets ---------- */
+.btn{font-size:16px;padding:15px 22px}
+.nav-actions .btn{min-height:50px}
+.quick-options button{font-size:16px;min-height:54px;padding:14px 18px}
+.quiet-button{font-size:15px;min-height:44px}
+.care-description .text-link,.resource-card .text-link,.sample-note .text-link,.aside .btn{font-size:16px}
+.form-card .choice,.choice{font-size:16px;min-height:54px}
+.life-tabs button{font-size:16px}
+.faq summary{font-size:18px}
+.care-disclosures summary{font-size:26px}
+.life-conclusion,.circle-copy .circle-thought{border-left-width:1px}
+
+/* ---------- Spacing: one scale ---------- */
+.section{padding:var(--section) 0}
+.care-index-section,.circle-section,.inquiry,.notes-section{padding:var(--section) 0}
+.life-section{padding:var(--section-lg) 0}
+.careers-strip{padding:clamp(44px,5vw,60px) 0}
+.nav{height:80px}
+.header.scrolled .nav{height:68px}
+html{scroll-padding-top:100px}
+
+/* Care index: the lead sits under its heading instead of floating top-right. */
+.care-intro{display:block}
+.care-intro p{max-width:520px;margin-top:22px;padding-bottom:0}
+
+/* Care Notes: the headline keeps its three lines at every width. */
+.notes-layout h2{font-size:clamp(40px,4.5vw,64px)}
+@media(min-width:681px){.notes-layout{grid-template-columns:1.15fr 1fr;gap:64px}}
+
+/* Care Circle: the ring reads at a glance, the roles need no numbers. */
+.circle-figure{justify-self:center;width:100%;max-width:680px}
+.care-circle{max-width:none}
+.circle-orbit{border-color:#c98fa8}
+.circle-orbit:after{border-color:#d9b6c4}
+.role-number{display:none}
+.figure-caption{font-size:15px;color:var(--muted);text-align:center;margin-top:20px}
+
+/* Sample note disclaimer as plain fine print, not a label. */
+.sample-note .note-kind{display:block;font-size:14px;color:var(--muted);margin-bottom:20px}
+
+/* Care page: a photo per service instead of an icon grid. */
+.care-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:44px 32px;margin-top:8px}
+.care-tile{display:block;text-decoration:none}
+.care-tile img{aspect-ratio:4/3;height:auto;border-radius:4px;transition:filter .2s}
+.care-tile[data-slug="24-hour"] img{object-position:38% center}
+.care-tile[data-slug="respite"] img{object-position:center 40%}
+.care-tile h3{font-size:26px;margin:22px 0 10px}
+.care-tile p{font-size:17px;color:var(--muted);max-width:400px}
+.care-tile .text-link{margin-top:18px;font-size:16px}
+@media(hover:hover) and (pointer:fine){
+  .care-tile:hover img{filter:brightness(.96)}
+  .care-tile:hover h3{color:var(--rose-dark)}
+}
+
+/* Footer: a way to reach us, next to the links. */
+.footer-main{grid-template-columns:1.5fr 1fr 1fr 1fr 1fr}
+.footer-col a[data-call] span:empty{display:none}
+
+/* ---------- Breakpoints ---------- */
+@media(max-width:1200px){
+  .care-tiles{grid-template-columns:repeat(2,1fr)}
+  .footer-main{grid-template-columns:1.3fr 1fr 1fr 1fr 1fr;gap:28px}
+}
+@media(max-width:960px){
+  .footer-main{grid-template-columns:1fr 1fr 1fr 1fr;gap:32px 24px}
+  .footer-brand{grid-column:1/5}
+  .footer-col:last-child{grid-column:auto}
+  .care-tiles{gap:36px 24px}
+}
+@media(max-width:680px){
+  body{font-size:17px}
+  .nav{height:74px}
+  .header.scrolled .nav{height:66px}
+  .nav-actions .btn{font-size:14px}
+  .hero-copy .btn{font-size:16px;min-height:54px}
+  .hero-description{font-size:16px}
+  .hero-bottom a{font-size:13px}
+  .quick-options button{font-size:16px;min-height:52px}
+  .life-detail p,.care-description p,.commitments p,.faq details p,.match-copy p,.standard-heading p,.article p,.service-body p,.service-pull p,.process-steps p{font-size:17px}
+  .faq summary{font-size:17px}
+  .care-disclosures summary{font-size:23px}
+  .care-description .text-link,.care-description .quiet-button{font-size:15px}
+  .choice,.form-card .choice{font-size:16px;min-height:52px}
+  .circle-person p{font-size:14px}
+  .circle-person h3{font-size:16px}
+  .circle-center small{font-size:13px}
+  .figure-caption{font-size:14px;margin-top:14px}
+  .care-tiles{grid-template-columns:1fr;gap:34px}
+  .care-tile h3{font-size:25px}
+  .footer-main{grid-template-columns:1fr 1fr}
+  .footer-brand{grid-column:1/3}
+  .footer-col a{font-size:15px}
+  .footer-col strong{font-size:13px}
+  .footer-bottom{font-size:13px}
+  .breadcrumb{font-size:13px}
+  .subhero .btn{font-size:16px}
+  .form-meta span:first-child{font-size:11px}
+  .form-meta span:last-child{font-size:13px}
+}
+@media(max-width:380px){
+  .care-tile h3{font-size:23px}
+}
+
+/* ---------- Finish-review fixes (2026-09-09) ---------- */
+/* 3. The Care Circle is a circle, not an ellipse. */
+.circle-orbit{width:auto;height:62%;aspect-ratio:1;left:50%;top:50%;transform:translate(-50%,-50%)}
+/* 11. Circle roles: room for a full line before wrapping. */
+.circle-person{width:220px}
+/* 4. The wordmark's descender stays above the footer rule. */
+.footer-wordmark{padding-bottom:.22em}
+/* 5. Focus rings readable on the dark chapters. */
+.scene-hero :focus-visible,.match-chapter :focus-visible{outline-color:var(--rose)}
+/* 8. FAQ rows: the whole row is the tap target; same circled mark as the other disclosures. */
+.faq details{padding:0}
+.faq summary{padding:23px 0}
+.faq summary:after{content:'+';width:27px;height:27px;border:1px solid #b9a9b1;border-radius:50%;display:grid;place-items:center;font-size:21px;line-height:1;font-weight:400}
+.faq details[open] summary:after{content:'−'}
+/* 12. Guide cards: the link lines up across the row. */
+.resource-card{display:flex;flex-direction:column;align-items:flex-start}
+.resource-card img{width:100%}
+.resource-card h3{flex:1 0 auto}
+.resource-card .text-link{margin-top:auto}
+/* 13. Form control edges at 3:1. */
+.choice,.field input:not([type=range]),select,textarea{border-color:#a7969f}
+.selection-check{border-color:#a7969f}
+/* 14. Secondary disclosure action shares the text-link size. */
+.quiet-button{font-size:16px;gap:20px}
+.quiet-button svg{width:18px;height:18px}
+/* 10. Form card label at 14px, sentence case (set in forms.js / careers.js). */
+.form-meta{font-size:14px}
+.form-meta span:first-child{font-size:14px;letter-spacing:0;text-transform:none}
+/* 7. Inline errors sit above the button, and a failing field is marked. */
+.error:empty{display:none}
+.error{margin:0 0 14px}
+[aria-invalid="true"]{border-color:#963048!important;box-shadow:0 0 0 1px #963048}
+/* 15. Footer tagline holds two lines at laptop widths. */
+@media(max-width:1200px){.footer-tag{font-size:19px}}
+@media(max-width:1150px){.circle-person{width:180px}}
+/* 2 + 9. Tablet: both faces stay in the hero; the quick-start chips keep one line each. */
+@media(min-width:681px) and (max-width:960px){
+  .scene-media img{object-position:62% 45%}
+  .hero-copy{width:52%}
+  .hero-copy h1{font-size:80px}
+  .quick-options button{text-align:left;white-space:nowrap;gap:16px;flex:auto}
+}
+/* 6. Phones: one "Get care" in the chrome (the sticky bar), and a Menu button with room. */
+@media(max-width:680px){
+  .nav-actions .btn{display:none}
+  .menu-toggle{font-size:15px;padding:10px 12px;margin-right:-12px}
+  .faq summary{padding:21px 0}
+  .circle-person{width:118px}
+  .field-pair .field:last-child{margin-bottom:0}
+  .field-pair{margin-bottom:20px}
+  .form-meta span:first-child{font-size:14px}
+  .form-meta span:last-child{font-size:14px}
+}
+@media(max-width:380px){.circle-person{width:104px}}
+
+/* ---------- Depth pass (from the reference videos: planes, overlap, one interaction per section) ---------- */
+/* Hero: background plate, subject cut-out, foreground plant. Copy sits between plate and plant. */
+.scene-hero{overflow:visible}
+.scene-media{inset:0;overflow:hidden;border-radius:6px;z-index:-2;will-change:auto}
+.scene-media img{position:absolute;left:0;right:0;top:-25px;width:100%;height:calc(100% + 50px);object-fit:cover;object-position:center 45%;will-change:transform}
+.scene-media .scene-plate{transform:scale(1.04);transform-origin:center;filter:saturate(.96)}
+.scene-front-clip{position:absolute;inset:0;overflow:hidden;border-radius:6px;z-index:3;pointer-events:none;display:none}
+@media(min-width:1200px){.scene-front-clip{display:block}}
+.scene-front{position:absolute;left:clamp(330px,25vw,370px);bottom:-30px;width:clamp(240px,19vw,290px);height:auto;filter:blur(.8px) saturate(.82) brightness(.93) drop-shadow(0 22px 22px rgba(30,18,24,.4));will-change:transform}
+.scene-hero:after{border-radius:6px}
+@media(max-width:680px){
+  .scene-media{position:relative;inset:auto;height:320px;overflow:hidden;border-radius:0}
+  .scene-media img{position:absolute;top:0;height:100%;width:165%;max-width:none;transform:translateX(-36%)!important}
+  .scene-media .scene-plate{transform:translateX(-36%)!important}
+  .scene-front-clip{display:none}
+}
+@media(prefers-reduced-motion:reduce){[data-plane]{transform:none!important}.scene-media .scene-plate{transform:scale(1.04)!important}}
+/* dark chapters read as lit rooms, not flat fills */
+.scene-hero:before,.match-chapter:before{content:'';position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.05;background-image:url("data:image/png;base64,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");background-size:96px 96px;border-radius:inherit}
+.match-chapter{position:relative}
+.match-chapter>*{position:relative;z-index:2}
+/* Care index: the photograph follows the open service */
+.care-index-image img{transition:opacity .18s ease-out}
+.care-index-image img.is-changing{opacity:0}
+/* Care Notes feed: the sample notes are the picture */
+.notes-key{margin-top:22px;font-size:16px;line-height:2;color:var(--muted);max-width:440px}
+.notes-layout>div>.text-link{margin-top:22px}
+.notes-feed{background:#fff;border-radius:14px;padding:22px 22px 18px;box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 30px 60px -32px rgba(58,34,56,.4),0 2px 6px rgba(58,34,56,.06);border:1px solid #EAD9E0;transform:rotate(-.6deg);margin-right:8px}
+.notes-feed-head{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:0 4px 16px;border-bottom:1px solid var(--line);margin-bottom:14px}
+.notes-feed-head img{width:150px;height:auto;flex:none}
+.notes-feed-head span{font-size:14px;color:var(--muted)}
+.note{border-radius:10px;padding:16px 18px 18px;margin-top:10px;background:var(--rose-light)}
+.note header{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:8px}
+.note-when{font-size:14px;color:var(--muted)}
+.note p{font-size:17px;line-height:1.55;color:var(--ink)}
+.note-tag{display:inline-block;font-size:13px;font-weight:700;letter-spacing:.01em;padding:5px 10px;border-radius:999px;line-height:1;white-space:nowrap}
+.note-tag-good{background:var(--rose);color:var(--ink)}
+.note-tag-concern{background:#B23A3A;color:#fff}
+.note-concern{background:#FBEAEA;border:1px solid #F1C9C9}
+.note-concern p{color:#4A1F1F}
+.notes-feed-foot{font-size:13px;color:var(--muted);margin-top:14px;padding:0 4px}
+.notes-key .note-tag{vertical-align:middle;margin-right:2px}
+/* Circle name, bold */
+.figure-caption{font-weight:700;color:var(--ink);font-size:16px}
+/* Careers page strip */
+.careers-strip-page{background:var(--surface);border-top:0}
+/* Photo tiles and guide cards respond to the pointer */
+.care-tile img,.resource-card img{transition:transform .7s cubic-bezier(.23,1,.32,1),filter .2s}
+.care-tile,.resource-card{overflow:visible}
+.care-tile>img,.resource-card>img{display:block}
+@media(hover:hover) and (pointer:fine){
+  .care-tile:hover img,.resource-card:hover img{transform:scale(1.025);filter:brightness(.97)}
+}
+/* Cards catch light on their top edge */
+.form-card{box-shadow:0 1px 0 rgba(255,255,255,.8) inset,0 24px 60px -30px rgba(58,34,56,.35),0 2px 6px rgba(58,34,56,.05)}
+@media(max-width:680px){
+  .notes-feed{transform:none;margin-right:0;padding:18px 16px 14px}
+  .note p{font-size:16px}
+  .notes-feed-head img{width:130px}
+}
+
+/* The request card breaks the edge of its section on the home page (overlap = depth). */
+@media(min-width:961px){
+  body:has(.scene-hero) .inquiry{padding-top:56px}
+  body:has(.scene-hero) .inquiry-grid{align-items:start}
+  body:has(.scene-hero) .inquiry-copy{padding-top:40px}
+  body:has(.scene-hero) .inquiry .form-card{margin-top:-120px;position:relative;z-index:2}
+}
+
+/* Careers strip sits on the tan surface so it reads as its own section above the footer. */
+.careers-strip{background:var(--surface);border-top:0;padding:clamp(56px,6vw,80px) 0}
+.notes-key{margin-bottom:0}
+/* Careers strip is centred wherever it appears, button below the line. */
+.careers-strip>.container{display:block;text-align:center}
+.careers-strip h2{margin:0 auto}
+.careers-strip p{margin:18px auto 0;max-width:520px}
+.careers-strip .btn{margin-top:28px}
+/* On the resources page the grid is the whole list; no self-link. */
+body:has(.nav-links a[aria-current=page][href="resources.html"]) .resource-heading>.text-link{display:none}
+
+/* Photographs inside a guide. */
+.article-figure{margin:40px 0 44px}
+.article-figure img{width:100%;height:auto;border-radius:6px}
+.article-figure figcaption{font-size:15px;color:var(--muted);margin-top:14px;line-height:1.6;max-width:560px}
+
+@media(max-width:680px){
+  .article-figure{margin:32px 0 34px}
+  .article-figure figcaption{font-size:14px;margin-top:12px}
+}
+
+/* The hero footer line stays visible now that the pill has been removed. */
+@media(max-width:680px){.hero-bottom>span{display:block}}
+
+/* Careers hero holds a three-person scene: keep the frame near the photo's own 3:2 so nobody is sliced. */
+body:has(.application-section) .service-hero>img{height:auto;aspect-ratio:3/2;object-position:center}
+
+/* Small supporting photo inside the Standard heading column: grouped with the paragraph it
+   belongs to, captioned like every other figure on the site, never cropped. */
+.standard-photo{margin:26px 0 0;max-width:300px}
+.standard-photo img{width:100%;height:auto;aspect-ratio:3/2;border-radius:6px}
+.standard-photo figcaption{font-size:15px;line-height:1.6;color:var(--muted);margin-top:12px}
+.standard-heading .text-link{margin-top:28px}
+@media(max-width:680px){.standard-photo{max-width:340px;margin-top:22px}.standard-photo figcaption{font-size:14px}}
+
+/* Any button that spans its container centres its label; the arrow rides just after it.
+   Left-label / far-right-arrow only reads well on a button sized to its own text. */
+.form-card .btn,.form-card form>.btn,.application-layout .form-card .btn,
+.aside .btn,.mobile-actions .btn{justify-content:center;gap:14px}
+@media(max-width:680px){.hero-copy .btn,.subhero .btn,.careers-strip .btn{justify-content:center;gap:14px}}
+
+/* Certificate rows: the remove control is an x, and only when there is more than one row. */
+.cert-remove{align-self:center;justify-self:end;width:38px;height:38px;border:1px solid var(--line);background:#fff;border-radius:50%;font-size:20px;line-height:1;color:var(--muted);cursor:pointer;padding:0}
+.cert-remove:hover{border-color:var(--rose-dark);color:var(--rose-dark)}
+.credential-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center}
+.credential-row:has(.cert-remove){grid-template-columns:1fr 1fr 38px}
+.credential-row .field{margin-top:0;margin-bottom:0}
+
+/* Clearing hours: the whole grid on a computer, the chosen day on a phone. */
+.clear-actions .clear-day{display:none}
+@media(max-width:680px){
+  .clear-actions .clear-all{display:none}
+  .clear-actions .clear-day{display:flex}
+  .credential-row{grid-template-columns:1fr}
+  .credential-row:has(.cert-remove){grid-template-columns:1fr 38px}
+  .credential-row:has(.cert-remove) .field{grid-column:1}
+  .credential-row:has(.cert-remove) .cert-remove{grid-row:1/3}
+}
