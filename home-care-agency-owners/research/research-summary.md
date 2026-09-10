@@ -1,60 +1,66 @@
-# Senior-Care Operators — 10-Tab Buyer Research (owner-voice rebuild, 2026-09-09)
-**Buyer:** the operator who needs more clients, patients, residents or move-ins — home care · home health · hospice · assisted living / RAL · memory care · independent & senior living / CCRC / SNF · adult day · placement & referral agencies · independent referral agents (senior transition specialists, SRES realtors, move managers) · in-home ABA practices.
-**Researched:** 2026-09-08 → 2026-09-09 · **Refresh due:** 2027-03-09
-**Corpus:** 14,451 documents, of which **1,868 are buyer voice** (speaker gate D1m: 1,525 operating owners / administrators + 343 pre-launch operators). Employee (1,067), family (952), vendor (296), trade press (818) and unmarked (9,450) documents stay in the corpus for the ladder, reviews and vendor layers but never enter a buyer tab.
-**Rule of every list:** operators first, pre-launch second, then engagement (upvotes / likes / reactions), then length. Theme counts are buyer documents whose sentence holds the theme; badges = themes = voices (one pattern each).
-**TL;DR (plain language):** the operator who needs more clients has already paid someone for them and been burned. In their own groups the recurring story is A Place for Mom and the other referral sites: a prepaid block of referrals ($50–68 per lead, $580 for ten), the same lead sold to three to ten other agencies, billed whether or not the family signs, hard to cancel, credits refused. A minority say it worked ("closed 2 of 10, made more than I paid", "3 clients through them, it's about how you market yourself"), always with the caveat "call the second it comes in". The alternative every group recommends is legwork: discharge planners, social workers, rehabs, senior centers, word of mouth. Nobody in the buyer voice describes owning an inbound system; the few who run ads report caregivers applying instead of families calling. That gap, "families finding me instead of me renting them from a directory", is the lane. Facilities say the same thing with different words (empty units at $4,000–6,000 a month, tours, occupancy); ABA owners say it as credentialing, insurance panels and a waitlist they cannot staff; independent placement and transition agents ask how to get their first families at all.
-## D0 — Tool status (checked 2026-09-07/08)
-- **Ladder expansion (09-08 afternoon)** — Reddit `.json` through the browser rate-limits at ~100 requests / 10 min (429 at 12:36); re-paced to ~1 request / 6.5 s with backoff. YouTube Data API: the brief's key is invalid, the key in `reference_research_accounts` works (free). supadata free. Indeed and Glassdoor read through the browser at human pace; both wall after ~3 fast loads. Apify $0 on every account — unused.
-- **Reddit** — logged-in research browser (Own-Clerk-6667), free/unlimited via in-page `.json`. Primary VOC.
-- **YouTube Data API v3** — free; 960 owner-comment records across 45 coach videos.
-- **Supadata** — free; 56 coach transcripts (580K chars).
-- **Tavily** — Researcher plan, ~880 credits left; forum/Quora discovery + extract.
-- **Facebook** — logged in (Angela); 9 owner groups joined. Cold-feed yield thin (new-account behavior); warms over 1–2 weeks.
-- **Apify** — ~$0.94 across accounts; used ~$0.62 on the initial Reddit calibration before the browser path replaced it. Competitor **ad-creative** sweep deferred to the 09-23 reset (see Backfill).
-- **SerpAPI** — 0/250 (dead until Oct 1).
+# Senior-Care Operators — Buyer Research (summary of the live page)
 
-## D1 — Source Matrix (what was pulled)
-<!-- LADDER:d1note -->
-**Corpus now 7,401 documents after the 2026-09-08 operator-ladder expansion (see D1l below for what was added per vertical). The paragraph that follows describes the first home-care-only pull of 09-08 morning and is kept as the baseline.**
-<!-- /LADDER:d1note -->
-Corpus = **850 entries**, 565 with real engagement scores. Reddit 395 (r/RunAHomeCareAgency 116 owner core; r/nursing 101 + r/CNA 85 + r/caregivers 54 labor; r/Entrepreneur/buyingabusiness/smallbusiness industry; Go-Deeper entity spin-offs care.com / A Place for Mom / franchise). YouTube owner-comments 359. agingcare (client-side staffing symptom, focused) 49. allnurses/Quora forums 45. FB owner groups 2. Plus a **56-video coach transcript corpus** (Justin Currie / Master of Home Care, Steve "The Hurricane" / Home Care Evolution, Sagapixel, Homecare Owners Corner, Aaron Bogle, RealScottMcKenzie, Coach Michele, +14) for the expert/Previous-Solutions/vendor layer.
-**Honest gaps:** r/homehealth is a dead sub (not usable). Owner *emotional* content (Tab 3, Tab 9 owner-scenes) is thin — the owner sub is tactical, not confessional. Competitor ad creatives = 09-23 Apify backfill.
+Generated 2026-09-10 from the same files that build https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/ . Every quote carries its source link. Numbers come from measured counts, never estimates; hypotheses are labeled.
+
+## TLDR
+
+- **Who the buyer is:** the owner or administrator of a senior-care business across the whole ladder — home care, home health, hospice, assisted living / residential care homes, memory care, senior living, adult day, placement agencies, in-home ABA. Corpus: 14,451 documents read, **1,868 in the buyer's own voice (1,525 spoken by operating owners)**; sources are owner Facebook groups first, then owner subreddits, YouTube, provider reviews and trade press (chapter "Who the buyer is").
+- **What they are trying to buy:** the phone ringing without renting families from a directory. A Place for Mom is the most-discussed paid source (42 buyer documents): $50–68 a lead, the same family sold to several agencies, billed whether or not it converts; the second job is hiring and keeping caregivers (chapters "Lead Sources", "Frustrations", "Previous Solutions").
+- **What they have already tried:** hospital and discharge-planner relationships (trusted, slow), the directories (shared), Facebook ads that brought caregivers instead of clients, coaches and licensing consultants. Nobody in buyer voice describes an inbound system they own (chapter "Previous Solutions").
+- **Who sells to them today:** 95 advertisers with 233 live ads (203 to running businesses, 30 to would-be owners). The lane leaders sell *exclusive booked tours or assessments under your own brand, called back in minutes, guaranteed in 90 days* — Occupancy Partners, HomecareGrow, OBB, PatientsPipeline, Wisdom First, Census Home. Cleaned 2026-09-10: consumer and recruiting ads are out of the B2B set, adjacent-practice vendors are set aside (chapter "Competitor Ads").
+- **The lane for inLeap:** families finding *you* instead of the directory — owned inbound plus intake, exclusive, priced on the result, with the caregiver-applicant by-product the same campaigns produce (chapters "Why They Buy", "Awareness → Offer Map").
+- **Decision:** treat the "Why They Buy" chapter as the ad brief and build the offer + landing page from it next; the cost of waiting is that the six vendors above are already teaching this buyer what to expect.
+
+## Contents
+
+1. [Who the buyer is (Tab 10 — Buyer Summary, measured)](#who-the-buyer-is-tab-10-buyer-summary-measured)
+2. [Tab 1 — Fears](#tab-1-fears)
+3. [Tab 2 — Hopes & Dreams](#tab-2-hopes-dreams)
+4. [Tab 3 — Relationship Fears](#tab-3-relationship-fears)
+5. [Tab 4 — Relationship Soundbites *(COPY TAB — how they say it to others)*](#tab-4-relationship-soundbites-copy-tab-how-they-say-it-to-ot)
+6. [Tab 5 — Frustrations](#tab-5-frustrations)
+7. [Tab 6 — Previous Solutions](#tab-6-previous-solutions)
+8. [Tab 7 — Solution Soundbites *(COPY TAB — hooks)*](#tab-7-solution-soundbites-copy-tab-hooks)
+9. [Tab 8 — Desired Outcomes](#tab-8-desired-outcomes)
+10. [Tab 9 — Typical Day](#tab-9-typical-day)
+11. [Lead Sources — what they have paid for and what it returned (first 6 voices per source; all 12 are on the page)](#lead-sources-what-they-have-paid-for-and-what-it-returned-fi)
+12. [Why They Buy — the five answers an ad needs (Ad Brief)](#why-they-buy-the-five-answers-an-ad-needs-ad-brief)
+13. [Competitor Ads across the operator ladder (cleaned 2026-09-10)](#competitor-ads-across-the-operator-ladder-cleaned-2026-09-10)
+14. [Landing pages (B2B only)](#landing-pages-b2b-only)
+15. [Reviews by Star — buyer-side voice](#reviews-by-star-buyer-side-voice)
+16. [Trade press & owner surveys (numbers with URLs)](#trade-press-owner-surveys-numbers-with-urls)
+17. [Competitor marketing agencies — inLeap's direct set](#competitor-marketing-agencies-inleap-s-direct-set)
+18. [Vendor / competitor map](#vendor-competitor-map)
+19. [Go-deeper thread cards](#go-deeper-thread-cards)
+20. [Headline candidates (Tab 11)](#headline-candidates-tab-11)
+21. [Frequency ranking (buyer-voice complaint patterns)](#frequency-ranking-buyer-voice-complaint-patterns)
+22. [Vocabulary ledger](#vocabulary-ledger)
+23. [Awareness → Offer Map](#awareness-offer-map)
+24. [Operator ladder, speaker gate and sources](#operator-ladder-speaker-gate-and-sources)
+25. [Self-audit and backfill](#self-audit-and-backfill)
+
+
 
 ---
 
-<!-- LADDER:d1l -->
-## D1l — Per-vertical pulls (kept from 09-08) (the operator ladder, 2026-09-08)
+## Who the buyer is (Tab 10 — Buyer Summary, measured)
 
-Every corpus entry carries a **pull scope** (the subreddit, keyword, channel, brand or file it came from — stated per file, never inferred from the speaker) and the **verticals its text names** (word-bounded regex). Counts are documents. *Before* = the 09-08 morning corpus (home-care pulls only, 3,679 documents); *after* = this expansion (7,401 documents). Documents containing the word "occupancy": 0 → **25**.
+**Who is speaking (measured, whole corpus 14,451):** other 9,450, owner 1,525, employee 1,067, family 952, press 818, aspirant 343, vendor 296. Buyer voice = 1,868 (13% of the corpus): 1,525 operating and 343 pre-launch.
+**Stage (buyer documents):** owner (operating) 1525, aspirant (pre-launch) 343, owner: brand new / first year 46, owner: established (years / revenue / locations) 19. The pre-launch share is a property of the sources (how-to-start videos, the startup subreddits), not a claim about the market; the tabs rank operating owners first so the copy is written to them.
+**Vertical named in the text (buyer documents, multi-count):** home care (non-medical) 296, assisted living / RAL / care home 178, home health (skilled) 118, senior living / IL / CCRC / SNF 97, ABA / autism services 61, placement / referral agency 40, hospice 32, memory care 30, adult day 17, independent referral (realtor / transition / move manager) 8.
+**Payer named:** private pay 104, Medicaid / waiver 89, commercial insurance (ABA) 42, Medicare 26, VA 6, LTC insurance 2. **Structure:** franchise 12, independent / from scratch 43.
+**Owner size statements (operating owners):** names a client / resident / patient count 41, names revenue / run-rate 20, solo / owner-operator 13, names a caregiver / staff count 9, multiple locations / buildings 8, years in business stated 1.
+**Background stated:** nurse / RN / LPN 9, corporate / other-industry 5, BCBA / therapist 4, CNA / caregiver first 2, realtor / real estate 1. **Gender markers:** female 9, male 10.
+**Geography (self-stated):** Florida 32, California 30, Texas 29, Ohio 12, Houston 12, Georgia 11, Virginia 11, Canada 11, Michigan 9, Missouri 8, Indiana 7, New York 7, New Jersey 7, Wisconsin 7, Illinois 6.
+**Lead sources they name (buyer documents, from the Lead Sources ledger):** Hospital / SNF / discharge planner referral relationships 128, Coaches, courses, consultants 91, Networking / BNI / chamber / senior centers / community events 62, SEO / website / Google Business Profile 58, A Place for Mom 42, Placement agents / referral agencies 39, Insurance panels / pediatricians / schools 25, Google Ads / LSA / PPC 17, VA / Medicaid waiver / LTC insurance contracts 16, Franchise systems 13.
+**Top buyer-voice pain themes (frequency, complaint-specific patterns):** How to start / consultant / is it worth it 249, Reimbursement / Medicaid / private pay rates 149, Referral sources & placement agents: dependence, fees, how to get them 135, Marketing: ads / digital / SEO / website 113, Referral relationships: hospitals, discharge planners, SNFs, physicians 109, Licensing / accreditation / compliance / regs (agency or facility license, not a personal one) 103, Can't get clients / low census / need leads 90, ABA: credentialing, insurance panels, waitlists, referrals 88, Google Ads / Facebook ads / SEO / website that didn't pay 76, Franchise vs independent 70.
+**Read (synthesis; every number above is measured, this paragraph is the reading):** the buyer is an operator-owner, most often a nurse, CNA or BCBA who went out on her own, running one location and doing the marketing herself. The pre-launch share of the corpus is large because the sources are large (how-to-start videos, the startup subreddits, the "Homecare for newbies" and "START A HOME CARE AGENCY" groups); the operating owners are the ones the tabs rank first. Their job, in their words, is *clients* (home care), *referrals / patients* (home health, hospice, ABA), *residents / beds / occupancy / tours / move-ins* (assisted living, RCFE, adult family home, senior living, nursing home), and *families* (placement and transition agents). They have a Google Business Profile and a website, they have visited the hospitals, and when the phone does not ring they ask the group two questions in this order: "has anyone used A Place for Mom / Caring.com / CareInHomes?" and "does anyone know a good marketer who knows home care?" The answers they get are warnings about shared leads and a chorus of vendors. **Awareness:** problem-aware to solution-aware; they know they need inquiries, they equate marketing with directories, ads or a marketer, and they have no model of an owned inbound engine. **Buying trigger:** a call from A Place for Mom's sales rep, an empty unit, a first month with zero clients after licensing, or a referral source drying up ("lead quality dropped in the last 18 months and the cost per converted client stopped pencilling out"). **What they will not buy:** anything that looks like a directory, shared leads, a retainer without a number attached, or a cold vendor DM in the group. **Line that would stop the scroll (hypothesis, from the voices):** "Stop paying A Place for Mom for the family who was going to call you anyway." **Targeting (hypothesis):** members of the owner groups named on this page; page admins and engaged commenters; interests HCAOA, Home Care Pulse, AxisCare/WellSky/AlayaCare, RAL Academy, CentralReach; job titles owner / administrator / executive director / BCBA-owner; lookalikes of the feed advertisers' engagers (Occupancy Partners, Phoebe, Plena).
 
-| Vertical | Pulled (this expansion) | Docs by pull scope, before → after | Docs naming it, before → after | Gaps (honest) |
-|---|---|---|---|---|
-| Home care | r/RunAHomeCareAgency deepened (scheduler/intake, recruiting, census/private pay/VA/LTC, sold/exit/PE/burnout, pay-per-lead/agencies/ads); Ad Library 'home care agencies', 'caregiver applicants', 'hire more caregivers', 'recruit caregivers', 'home care leads', 'schedulers', 'scheduler'; feed advertisers by name; TrustPilot ClearCare (71) + AlayaCare (1); Indeed/Glassdoor Home Instead + BrightStar; r/cna + r/nursing brand searches | 2,494 → **2,689** | 697 → **816** | r/homehealth dead; AxisCare / WellSky / Alora have no TrustPilot page |
-| Home health | r/Entrepreneur, r/smallbusiness, r/buyingabusiness 'home health agency'; r/RunAHomeCareAgency Medicare/PDGM/OASIS/skilled; r/homehealthcare + r/healthcareadmin (sup pass); YouTube 2 operator videos + 27 transcripts (referrals, sales, OASIS, Medicaid rates, franchise); Ad Library 'home health agency owners', 'home health agencies/agency', 'grow your census', 'census'; Indeed/Glassdoor Amedisys + LHC; trade press HHCN, McKnight's Home Care, WellSky/Luna referral-acceptance numbers | 136 → **440** | 294 → **421** | r/HealthcareAdministration returns 404 (the live sub is r/healthcareadmin, added in the sup pass); r/homehealth dead; 'increase census' and 'home health referrals' phrases return 0 ads |
-| Hospice | r/hospice owner/administrator/census/admissions/liaison/'my hospice'/for-profit/ADC (owner-only filter in build_halo), r/Entrepreneur + r/smallbusiness + r/buyingabusiness 'hospice'; YouTube 10 operator videos (start a hospice, license, $3M hospice, sales) + 4 transcripts; Ad Library 'hospice owners/admissions/marketing/agencies/agency/providers', 'more admissions', 'hospice referrals'; Indeed/Glassdoor VITAS; Hospice News (VITAS Q1 census + admissions, 30-minute referral response, 2026 trends); r/cna + r/nursing 'VITAS' | 4 → **419** | 65 → **354** | r/hospice is families and nurses first — operator voice is the minority even after the owner filter; 'hospice growth' phrase 0 ads |
-| Assisted living / RAL | r/AssistedLiving five owner/occupancy/marketing/staffing/licensing searches + r/Entrepreneur, r/smallbusiness, r/buyingabusiness, r/realestateinvesting, r/sweatystartup 'assisted living / RAL / personal care home / group home'; YouTube 16 RAL-operator videos (RAL Academy, Assisted Living Investing, 'How to start an ALF', $12K/month) + 4 transcripts; Ad Library 18 phrases (owners, operators, RAL, move-ins, booked tours, waitlist, fill your beds, empty beds/rooms, more tours, facilities, business...); Indeed/Glassdoor Sunrise; Feed: Dr. Mark Stevens, Wisdom First, Searchlift, Occupancy Partners | 98 → **1,541** | 186 → **864** | r/AssistedLiving is mostly families and line staff; owner voice comes from the general subs and YouTube; 'assisted living marketing/leads' phrases return 0 ads |
-| Memory care | r/AssistedLiving 'memory care' owner/occupancy/staffing/marketing/census; r/SeniorLivingMarketing; r/Entrepreneur 'memory care' (0 posts); YouTube 6 videos + 4 transcripts; Ad Library 'memory care communities/community' (60 ads), 'memory care marketing' (0); Indeed/Glassdoor Silverado; r/cna + r/nursing 'Silverado' | 1 → **235** | 25 → **144** | the one memory-care operator-marker document in the corpus is a family member with an admin background; memory-care operators speak as assisted-living operators (same buildings) — treat memory care as a wing of AL/senior living in copy, not a separate buyer voice |
-| Independent living | r/AssistedLiving 'independent living'; r/realestateinvesting 'independent living / 55+'; r/SeniorLivingMarketing (sup); YouTube 1 operator video (63 comments) + 1 transcript (91K chars); Ad Library 'independent living communities/community' (57 ads), 'independent living community marketing' (0); trade press NIC occupancy 91.3% | 0 → **146** | 24 → **99** | r/seniorliving does not exist (404) — three planned searches replaced by r/AssistedLiving + r/SeniorLivingMarketing (67 members); the IL operator voice online is the 'group home / ILF for veterans' starter, not the 55+ community operator |
-| Senior living / CCRC / SNF | r/nursinghome administrator/census/occupancy/staffing/survey/marketing; r/Entrepreneur, r/smallbusiness, r/buyingabusiness 'senior living / nursing home / senior housing'; r/AssistedLiving + r/SeniorLivingMarketing sales/occupancy/ED searches (sup); YouTube 4 videos + 4 transcripts; Ad Library 'senior living communities/operators/sales/industry', 'occupancy', 'occupancy rate', 'increase occupancy' (132 ads); Indeed/Glassdoor Brookdale + Atria; Senior Housing News, McKnight's Senior Living (Brookdale 82.4% occupancy), NIC, Argentum workforce; r/cna + r/nursing 'Brookdale', 'Atria' | 0 → **449** | 111 → **428** | r/seniorliving 404; 'senior living directors/marketing/leads' phrases return 0 ads — the vendors say 'occupancy', not 'leads' |
-| Adult day | r/Entrepreneur, r/smallbusiness, r/RunAHomeCareAgency, r/AssistedLiving 'adult day' + all-reddit 'adult day care owner/start/census'; YouTube 11 operator videos (Adult Day Care Academy, VA/Medicaid enrollment, NY $400M) + 4 transcripts; Ad Library 'adult day center/care center/centers' (52 ads), 'adult day center marketing' (0); Indeed SarahCare | 0 → **296** | 14 → **100** | no adult-day subreddit exists; the voice is YouTube comments under one coach's channel — a single-source risk, said so |
-| Placement / referral agency | r/Entrepreneur, r/smallbusiness, r/AssistedLiving, r/SeniorLivingMarketing, r/RunAHomeCareAgency 'placement agent/agency/referral fee/A Place for Mom' + all-reddit 'senior placement business'; YouTube 8 operator videos (start a senior placement agency, 5 hard truths, day in the life) + 4 transcripts; Ad Library 'placement agency' (30), 'senior placement' (18), 'referral agency', 'placement agents', 'senior placement agency'; TrustPilot A Place for Mom + Caring.com (from the first run); Indeed/Glassdoor A Place for Mom; McKnight's (Five Star: APFM move-ins under 5%) | 163 → **278** | 83 → **141** | placement-agent owners are few and post little; 'senior care leads' and 'pay per lead senior care' phrases return 0 ads (VERVE, the pay-per-lead advertiser in the feed, was found by name only) |
-| Multi-location medical | r/healthcareadmin (sup pass; r/HealthcareAdministration 404), r/Entrepreneur 'medical practice / clinic multiple locations'; YouTube 5 healthcare-marketing videos + 4 transcripts; Ad Library 'multi-location medical' (25), 'multi-location practices', 'multiple locations', 'practice owners' (94 ads, mostly dental/med-spa vendors); Feed: Lukrah ('Multi-Location Medical Care Agencies'), ureDocs/7FigureDocs | 0 → **125** | 25 → **141** | the 'medical care agency' phrase is Lukrah's own coinage — the corpus has no operator using it; the multi-location voice is dental/med-spa practice owners, adjacent to the senior-care ladder, kept but tagged |
-| Cross-vertical | labor subs (r/cna, r/nursing, r/caregivers, r/HomeHealthAides) from the first run + brand searches; family boards; forums | 783 → **783** | 0 → **0** |  |
 
-**Sources added in this expansion, each pulled once (D1 matrix):** Reddit per-vertical searches through the logged-in browser (reddit-read2.mjs, ~1 request / 6.5 s after the 429 at 12:36; 10 target files + 4 supplemental + 20 employer-brand searches on r/cna and r/nursing); YouTube Data API per-vertical operator videos as full threads with replies (73 pulled, 10 pruned by title as job-seeker / family-facing / nurse-vlog, list in yt_ladder_pruned.json); supadata transcripts of 57 operator-education videos (815K chars, creator_transcripts_ladder.json); Meta Ad Library through the logged-in browser — 23 feed advertisers by name (exact phrase) + 61 ladder phrases in three passes (ADLIB_ladder_names.json 316, ADLIB_ladder_phrases.json 1,031); Indeed + Glassdoor employer reviews of 11 operators (employer-reviews2.mjs); TrustPilot of the software vendors (tp-pull.mjs); trade press read in full through the browser (16 articles, press_articles.json) plus 18 hand-logged numbers with URLs (trade_press_ladder.json).
-
-**What could not be pulled and why:** Apify ($0 on every account until 09-19) — not used. Facebook owner groups — the research account is 3 days old and the group feeds render empty; nothing captured, nothing posted. r/seniorliving, r/HealthcareAdministration, r/homehealth — do not exist or are dead (404), replaced where a live sub existed. Indeed star-filter pages — the bot wall closes after ~3 fast loads; the three sorted pages per brand (default / lowest / highest) were read instead, so the 2–4★ columns are thin. Glassdoor — 3 reviews per brand before the login wall (the aggregate rating and count were captured). AxisCare, WellSky, Eldermark, Axxess, CareVoyant, Home Care Pulse / Activated Insights — no TrustPilot page; yardi.com resolves to an unrelated Yardi product (dropped). Ad Library impressions numbers — the Library hides US impression counts; the impressions SORT was used and each card carries its position in that sort. Video transcription of ad creatives (faster-whisper) — not run in this pass; the card text and the feed OCR are what was classified.
-<!-- /LADDER:d1l -->
-
-## D1m — The speaker gate and the owner sources (added 2026-09-09; the reason this page was rebuilt)
-The 09-08 page ranked every theme's voices by engagement over a corpus in which about one document in twenty was spoken by an operator, so nurses, family caregivers, an MBA guide and a realtor's revenge story led the owner's tabs (24% of the first five voices per theme were operators; the family-caregiver page runs at 81%). This rebuild stamps a **speaker** on every document from first-person role markers in the text and the pull's stated scope — owner / pre-launch operator / employee / family / vendor / press / unmarked — and lets only owner and pre-launch documents into Tabs 1–9, the theme voices, the frequency ranking, the ledger and the headline candidates. Every list sorts operators first, then engagement. The classifier was precision-read three times; the corrections are in `raw/speaker.py` (an RBT's "my clients", a family's "we hired aides", a group admin selling medical supplies and a marketing agency's case study all counted as operators on the first pass and do not now).
-
-**Sources added for the operator (each pulled once, files in raw/):** Facebook owner groups found by Tavily (`FB_disc.json`, ~200 searches across home care, home health, hospice, assisted living / RCFE / adult family home, memory care, senior living, independent living, adult day, placement, independent referral agents and in-home ABA) and read two ways — logged-out extract (`FB_TAVILY.json`, post + top comments, about one URL in five renders) and the logged-in research Chrome (`FB_BROWSER.json`, every comment and reply); the whole of r/RunAHomeCareAgency, r/SeniorLivingMarketing and r/HomeCareOwners by listing plus scoped vendor-name and owner-phrase searches in the business, ABA, realtor and facility subs (`REDDIT_owner2.json`; the all-reddit search was tried, returned r/ProRevenge and r/dropshipping, and was removed); YouTube threads with replies on vendor / marketing / placement / transition-specialist / ABA-business videos (`youtube_comments_owner3.json`, ten off-topic videos pruned by id in `yt_owner3_pruned.json`); forum and review pages from the vendor discovery (`FORUM3_extract.json`: BiggerPockets, Quora, unhappyfranchisee, allnurses, Yelp, TrustPilot brand pages, trade press); Ad Library phrases for ABA, senior living leads, home care leads and the referral-training vendors (`ADLIB_owner3.json`). Apify was not used ($0 on every account until 09-19); Tavily credits were the only spend.
-
-**What could not be pulled:** LinkedIn (senior-living sales directors' posts; Tavily returns 404 on post URLs and the research Chrome is not logged in), Capterra / G2 owner reviews and BBB complaints (bot-walled for Tavily; queued for the browser), the private Facebook groups Angela has not been admitted to, and the Reddit profile pivot for the new authors (throwaways).
+---
 
 ## Tab 1 — Fears
+
 **Themes, measured (buyer documents; operators / pre-launch):** Dependent on placement agents / A Place for Mom for every client 50 (48/2) · Getting scammed / bleeding money on leads 26 (25/1) · Waitlist, credentialing and insurance panels (ABA) 24 (23/1) · No clients / can't land the first one 23 (21/2) · Paid a referral site and the leads went to four other agencies 15 (15/0) · Going under / very close to giving up 6 (6/0) · The phone isn't ringing: no leads, no inquiries, empty pipeline 5 (5/0)
 
 ### DEPENDENT ON PLACEMENT AGENTS / A PLACE FOR MOM FOR EVERY CLIENT — 50 buyer documents
@@ -113,7 +119,11 @@ The 09-08 page ranked every theme's voices by engagement over a corpus in which 
 > "Struggling to get referrals for ABA company?. Hi everyone, I could really use some insight from those of you who’ve been through the early stages of building your ABA company. I’ve been up and running for about a year now and I’m feeling a bit stuck when it comes to referrals. I’m credentialed with all the insurance companies that currently have their panels open, and I’ve tried to be proactive with outreach. I’ve gone in person to doctor’s offices with brochures and small goodie bags, sent out emails wherever I could find contacts, and I’ve been running Instagram, Facebook, and Google ads. Despite all of that, I’m still sitting at zero clients. I did have one child ready to start, but they ended up choosing a center last minute. At this point I’m paying my BCBA out of pocket with no incoming revenue, so I really want to make sure I’m not missing something obvious or doing this the hard way. For those of you who are getting steady referrals: What actually worked for you in the beginning? Where do most of your referrals come from now? Is there something you did that made a big difference that I might not be thinking of? I’m open to any honest feedback or suggestions. I know this takes time, but I just want to make sure I’m moving in the right direction. Thank you in advance"
 > — Non-BCBA Owners ABA Business Collabrative · Anonymous participant (operator) · ↑3 reactions · https://www.facebook.com/groups/1081018657046251/posts/1430528132095300
 
+
+---
+
 ## Tab 2 — Hopes & Dreams
+
 **Themes, measured (buyer documents; operators / pre-launch):** Be my own boss / make my dream real 21 (5/16) · Give back / help seniors 20 (13/7) · Build, scale, sell 8 (5/3)
 
 ### BE MY OWN BOSS / MAKE MY DREAM REAL — 21 buyer documents
@@ -140,7 +150,11 @@ The 09-08 page ranked every theme's voices by engagement over a corpus in which 
 > "Jelena Jeca Hey, good morning! Did you read the item description or click the link to the product? This list is vendors and commercial companies that actually send you clients once you’re credentialed with them. It’s literally my own research from trial and error — my success blueprint from the companies I used to grow my agency. Think of it like me giving you a list of all the jobs hiring in your area so you don’t have to waste time searching. I’m giving you a roadmap of vendors and commercial companies you can contract with to get clients"
 > — Private Pay Clients looking for Affordable Home Care Services. · Toya TK to Jelena Jeca's reply (operator) · ↑1 reactions · https://www.facebook.com/groups/2018920001893909/posts/2346931662426073
 
+
+---
+
 ## Tab 3 — Relationship Fears
+
 **Themes, measured (buyer documents; operators / pre-launch):** Marriage & family pulled into the business 10 (6/4) · Burnout / on-call / the grind wears you down 9 (6/3)
 
 ### MARRIAGE & FAMILY PULLED INTO THE BUSINESS — 10 buyer documents
@@ -159,7 +173,11 @@ The 09-08 page ranked every theme's voices by engagement over a corpus in which 
 > "Royal Citizen Ind honestly it's not all about money. There are a lot of entrepreneurs who don't know about the conference, so I was giving them a chance to be in the room for other valuable info as well. When I first started and was looking and researching information I noticed groups and ppl only tell you bits and pieces and that's where I come in giving the full recipe instead of crumbs. Some ppl are burnout and they want the info as some would rather gsin the info in person. Wish you the best"
 > — HOME CARE BUSINESS OWNERS · Kakila Taylor to Royal Citizen Ind's reply (operator) · ↑2 reactions · https://www.facebook.com/groups/2156388261379184/posts/2732245613793443
 
+
+---
+
 ## Tab 4 — Relationship Soundbites *(COPY TAB — how they say it to others)*
+
 **Themes, measured (buyer documents; operators / pre-launch):** Starting out / hold my hand 201 (76/125) · How do I get referrals? 183 (167/16) · Placement agents, referral fees, A Place for Mom 83 (78/5) · How do I start, license, partner, buy an existing license? 67 (27/40) · How do I get referrals from hospitals, discharge planners, doctors? 53 (50/3) · How do I get clients? 37 (31/6) · How do I hire / keep caregivers? 20 (19/1) · How do I bill / get paid? 13 (9/4) · Is RAL / a facility worth it? Is it profitable? 10 (3/7) · I'm not landing any leads / clients — what am I doing wrong? 8 (6/2) · How do I get clients as an independent placement / transition specialist? 8 (8/0)
 
 ### STARTING OUT / HOLD MY HAND — 201 buyer documents
@@ -272,7 +290,11 @@ The 09-08 page ranked every theme's voices by engagement over a corpus in which 
 > "I’m an SRES broker in Oregon, I provide services to all of Bend, Redmond, Prineville, Madras, La Pine, and Sunriver. I also specialize in probate sales and work with local hospice programs and attorneys for probates, estate planning, downsizing, etc. happy to help any clients!"
 > — Real Estate Agent Referral Network & Marketing Tips · Catherine Emert (operator) · ↑1 reactions · https://www.facebook.com/groups/therealestateagentreferralnetwork/posts/1753495695518507
 
+
+---
+
 ## Tab 5 — Frustrations
+
 **Themes, measured (buyer documents; operators / pre-launch):** Leads & referral sources that wasted money or ghosted 29 (27/2) · Red tape / compliance / working capital 29 (25/4) · ABA: insurance won't credential me, authorizations, the waitlist I can't serve 27 (26/1) · Placement agents take a month's rent / commission and own the family 24 (21/3) · Referral sites sell the same lead to five agencies and still charge 13 (13/0) · Caregiver turnover / no-show / quit (the leaky bucket) 12 (12/0) · Medicaid rates, private pay, slow pay, wages, nickel-and-dime 10 (7/3) · No leads, no referrals, hospitals and rehabs say no 9 (8/1) · Quotas, tour metrics and 'sign today' pressure from corporate 4 (4/0)
 
 ### LEADS & REFERRAL SOURCES THAT WASTED MONEY OR GHOSTED — 29 buyer documents
@@ -347,7 +369,11 @@ The 09-08 page ranked every theme's voices by engagement over a corpus in which 
 > "I own an assisted living and we do not have a sales department.....there is no need for one. Plus these are difficult decisions for a family therefore we do not allow anyone to push families into any kind of decision.."
 > — r/AssistedLiving (operator) · ↑3 upvotes · https://www.reddit.com/r/AssistedLiving/comments/18p1j1x/how_does_the_salesmarketing_work_to_get_someone/ker4hlv/
 
+
+---
+
 ## Tab 6 — Previous Solutions
+
 **Themes, measured (buyer documents; operators / pre-launch):** Referral sources: hospitals, discharge planners, SNF, rehabs, funeral homes 152 (136/16) · Google Ads / Facebook ads / SEO / website / brochures 128 (116/12) · Placement agents, A Place for Mom, referral agencies 89 (86/3) · Franchise / consultant / scheduling software 69 (57/12) · Insurance panels, pediatrician referrals, school contracts (ABA) 55 (44/11) · Lead directories (Care.com, A Place for Mom) 49 (45/4) · A Place for Mom / Caring.com / Care.com / CareInHomes: what it cost, what it returned 49 (46/3) · Software, EMR, pendants, AI (PCC, EVV, AIRA) 23 (23/0) · RAL courses, consultants, administrator certification, Facebook groups 22 (17/5) · Networking / BNI / chamber 13 (13/0) · Pay-per-lead vendors and lead-gen companies 11 (11/0)
 
 ### REFERRAL SOURCES: HOSPITALS, DISCHARGE PLANNERS, SNF, REHABS, FUNERAL HOMES — 152 buyer documents
@@ -438,7 +464,11 @@ The 09-08 page ranked every theme's voices by engagement over a corpus in which 
 > "Another question for my fellow agency owners: Have any of you used a referral source or lead generation company for private pay clients that you found to be effective and reasonably priced? I’m looking for recommendations that don’t cost an arm and a leg. I’d love to hear what has worked for you and what you’d avoid."
 > — HOME CARE BUSINESS OWNERS (operator) · ↑7 reactions · https://www.facebook.com/groups/2156388261379184/posts/2867692060248797
 
+
+---
+
 ## Tab 7 — Solution Soundbites *(COPY TAB — hooks)*
+
 **Themes, measured (buyer documents; operators / pre-launch):** I wish / what I need 82 (71/11) · Attract, don't beg: add value to referral partners 19 (16/3) · What finally worked 13 (13/0) · I'd pay for results, not a retainer 9 (8/1) · If someone would just show me a system that brings clients predictably 6 (6/0) · The key is / predictable (the market's promise) 4 (4/0)
 
 ### I WISH / WHAT I NEED — 82 buyer documents
@@ -501,7 +531,11 @@ The 09-08 page ranked every theme's voices by engagement over a corpus in which 
 > "Reviewing a few assisted living businesses today — If you’re relying on referrals or inconsistent inquiries, I can usually point out exactly what’s missing and how to get more steady inbound. Where are you at right now?"
 > — Residential Assisted Living Homes of Texas (operator) · https://www.facebook.com/groups/795881234867455/posts/1469163360872569
 
+
+---
+
 ## Tab 8 — Desired Outcomes
+
 **Themes, measured (buyer documents; operators / pre-launch):** A full building: 90% occupancy, a wait list 11 (10/1) · Full census / full caseload / every bed filled 6 (6/0) · Predictable clients / full census 4 (3/1) · Referrals and leads I own, not a placement agent's 4 (4/0)
 
 ### A FULL BUILDING: 90% OCCUPANCY, A WAIT LIST — 11 buyer documents
@@ -536,7 +570,11 @@ The 09-08 page ranked every theme's voices by engagement over a corpus in which 
 > "GoDaddy website builder is okay. But not for everyone, you are service provider. You need consistent clients & growth. If yoy want this you should focus on Wordpress CMS. I’d definitely recommend going with WordPress. It gives you much more control, better SEO potential, and flexibility as your homecare agency grows. It might take a bit more setup, but it’s far more effective long-term for getting consistent leads from Google. Are you planning to build it yourself or get help?"
 > — HOME CARE BUSINESS OWNERS · Kabir Mahbub (operator) · ↑1 reactions · https://www.facebook.com/groups/2156388261379184/posts/2809987946019209
 
+
+---
+
 ## Tab 9 — Typical Day
+
 **Themes, measured (buyer documents; operators / pre-launch):** The hands-on licensee-administrator running two facilities 11 (11/0) · The phone / scheduling never stops (24/7) 6 (6/0)
 
 ### THE HANDS-ON LICENSEE-ADMINISTRATOR RUNNING TWO FACILITIES — 11 buyer documents
@@ -555,19 +593,11 @@ The 09-08 page ranked every theme's voices by engagement over a corpus in which 
 > "This is a good question. My gut tells me that a nursing home administrator would pay more than an assisted living administrator because it's a higher level of care, but I also think it depends on the size of the facility. One thing you want to be aware of for both, is as the administrator, you are responsible for everything going on at the facility and you need to make sure people (staff and residents) are following all the rules. You'll need to be great at communicating, and also make sure you stay on top of all the rules and regulations. You're also required to cover any shifts that get dropped, and you'll be on call 24/7. It can be a very demanding job. As the administrator though, you are in charge and can have a huge impact on the staff and residents and it can be extremely rewarding. I hope that helps!"
 > — youtube · @assistedlivinginvesting · DAY IN THE LIFE OF AN ASSISTED LIVING FACILITY ADMINISTRATOR (operator) · ↑2 likes · https://www.youtube.com/watch?v=GWgKaNjsG_s&lc=Ugy6dgpU6Qa323zIHS14AaABAg.9wIWcQ2GSf79wJEzUOfaXe
 
-## Tab 10 — Buyer Summary
-**Who is speaking (measured, whole corpus 14,451):** other 9,450, owner 1,525, employee 1,067, family 952, press 818, aspirant 343, vendor 296. Buyer voice = 1,868 (13% of the corpus): 1,525 operating and 343 pre-launch.
-**Stage (buyer documents):** owner (operating) 1525, aspirant (pre-launch) 343, owner: brand new / first year 46, owner: established (years / revenue / locations) 19. The pre-launch share is a property of the sources (how-to-start videos, the startup subreddits), not a claim about the market; the tabs rank operating owners first so the copy is written to them.
-**Vertical named in the text (buyer documents, multi-count):** home care (non-medical) 296, assisted living / RAL / care home 178, home health (skilled) 118, senior living / IL / CCRC / SNF 97, ABA / autism services 61, placement / referral agency 40, hospice 32, memory care 30, adult day 17, independent referral (realtor / transition / move manager) 8.
-**Payer named:** private pay 104, Medicaid / waiver 89, commercial insurance (ABA) 42, Medicare 26, VA 6, LTC insurance 2. **Structure:** franchise 12, independent / from scratch 43.
-**Owner size statements (operating owners):** names a client / resident / patient count 41, names revenue / run-rate 20, solo / owner-operator 13, names a caregiver / staff count 9, multiple locations / buildings 8, years in business stated 1.
-**Background stated:** nurse / RN / LPN 9, corporate / other-industry 5, BCBA / therapist 4, CNA / caregiver first 2, realtor / real estate 1. **Gender markers:** female 9, male 10.
-**Geography (self-stated):** Florida 32, California 30, Texas 29, Ohio 12, Houston 12, Georgia 11, Virginia 11, Canada 11, Michigan 9, Missouri 8, Indiana 7, New York 7, New Jersey 7, Wisconsin 7, Illinois 6.
-**Lead sources they name (buyer documents, from the Lead Sources ledger):** Hospital / SNF / discharge planner referral relationships 128, Coaches, courses, consultants 91, Networking / BNI / chamber / senior centers / community events 62, SEO / website / Google Business Profile 58, A Place for Mom 42, Placement agents / referral agencies 39, Insurance panels / pediatricians / schools 25, Google Ads / LSA / PPC 17, VA / Medicaid waiver / LTC insurance contracts 16, Franchise systems 13.
-**Top buyer-voice pain themes (frequency, complaint-specific patterns):** How to start / consultant / is it worth it 249, Reimbursement / Medicaid / private pay rates 149, Referral sources & placement agents: dependence, fees, how to get them 135, Marketing: ads / digital / SEO / website 113, Referral relationships: hospitals, discharge planners, SNFs, physicians 109, Licensing / accreditation / compliance / regs (agency or facility license, not a personal one) 103, Can't get clients / low census / need leads 90, ABA: credentialing, insurance panels, waitlists, referrals 88, Google Ads / Facebook ads / SEO / website that didn't pay 76, Franchise vs independent 70.
-**Read (synthesis; every number above is measured, this paragraph is the reading):** the buyer is an operator-owner, most often a nurse, CNA or BCBA who went out on her own, running one location and doing the marketing herself. The pre-launch share of the corpus is large because the sources are large (how-to-start videos, the startup subreddits, the "Homecare for newbies" and "START A HOME CARE AGENCY" groups); the operating owners are the ones the tabs rank first. Their job, in their words, is *clients* (home care), *referrals / patients* (home health, hospice, ABA), *residents / beds / occupancy / tours / move-ins* (assisted living, RCFE, adult family home, senior living, nursing home), and *families* (placement and transition agents). They have a Google Business Profile and a website, they have visited the hospitals, and when the phone does not ring they ask the group two questions in this order: "has anyone used A Place for Mom / Caring.com / CareInHomes?" and "does anyone know a good marketer who knows home care?" The answers they get are warnings about shared leads and a chorus of vendors. **Awareness:** problem-aware to solution-aware; they know they need inquiries, they equate marketing with directories, ads or a marketer, and they have no model of an owned inbound engine. **Buying trigger:** a call from A Place for Mom's sales rep, an empty unit, a first month with zero clients after licensing, or a referral source drying up ("lead quality dropped in the last 18 months and the cost per converted client stopped pencilling out"). **What they will not buy:** anything that looks like a directory, shared leads, a retainer without a number attached, or a cold vendor DM in the group. **Line that would stop the scroll (hypothesis, from the voices):** "Stop paying A Place for Mom for the family who was going to call you anyway." **Targeting (hypothesis):** members of the owner groups named on this page; page admins and engaged commenters; interests HCAOA, Home Care Pulse, AxisCare/WellSky/AlayaCare, RAL Academy, CentralReach; job titles owner / administrator / executive director / BCBA-owner; lookalikes of the feed advertisers' engagers (Occupancy Partners, Phoebe, Plena).
 
-## Lead Sources — what they have paid for and what it returned (Vince, 2026-09-09)
+---
+
+## Lead Sources — what they have paid for and what it returned (first 6 voices per source; all 12 are on the page)
+
 Every lead source or vendor an operator names, counted on the buyer corpus. *Worked* / *burned* / *asking* are language matches in the same document — a sort for reading, not a verdict. Dollar figures are the ones written in the sentence that names the source.
 
 | lead source | buyer docs | operators | all docs | worked | burned | asking | dollar figures quoted |
@@ -793,318 +823,111 @@ Named far less than A Place for Mom; the tone is the same ('washed up leads', 't
 > "Has anyone had experience hiring hourly caregivers through Care.com? Care recommends that families start communicating via the messaging tool on their website before taking the conversation offline with a caregiver-Ive messaged 2 caregivers who either asked for my number right away or gave me theirs to communicate via text-wondering if others have had this experience? Is this because they're busy or dont want to use Care's messaging tool-maybe it doesnt matter-since they have Care profiles, I should still be able to run a paid background check on them. Has anyone paid to use Care's background checks? I know all caregivers get a basic check when making their profile I believe, but I'm looking into the most extensive one called Premium check, as well as possibly the Continuous check for ongoing monitoring. I think the caregiver must agree to these checks in advance. Has anyone had experience checking credentials (such as if the caregiver says that are a CNA or HHA)? Care apparently doesnt check/verify credentials and says the family must do this. I dont even know what a valid certificaiton looks like! If anyone has hired thru Care, what were your steps? Did you ask for references and/or a resume (not sure how many folks have a formal resume made up for home caregiver roles?) before asking for a phone/video or in person interview? Did you do the background checks after checking (how many?) references and conducting one interview? Just trying to get a sense of the best steps/process for hiring as it's all on the family if not going thru an Agency. Did anyone add specific insurance (such as bodily injury protection) to their home owners (apartment renters insurance for us) insurance, to protect yourself from liability if the caregiver got hurt while on the job? We also have cameras set up and those will be running-but it's a new experience for us to hire a stranger from online. We'd much prefer word of mouth recommendations (& didnt like going thru agencies due to quality of care we experienced & agencies promising one type of skill/experience but us not getting it-like hoyer lift experience)-but havent had luck with this. Thanks!"
 > — agingcare (pre-launch) · https://www.agingcare.com/questions/carecom-reviewsexperiences-with-private-payprivate-duty-hourly-caregivers-and-process-for-vettingscr-495155.htm
 
-## Go-Deeper Thread Cards (D2)
-One card per lead source the buyer names at least 5 times; quotes are cut from the corpus (verbatim by construction); 'love' = worked / worth-it language, 'hate' = burned language, both inside the buyer voice. The implication line is a hypothesis, labeled.
-
-### Thread: Hospital / SNF / discharge planner referral relationships  (depth 1 · came up 128× in buyer voice, 115 operators · 698 docs corpus-wide)
-Why it came up: "What Should You Send to Hospitals, Social Workers, Case Managers, Discharge Planners, and Physician Offices When Introducing Your Home Care Agency?" — https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 · "Build strong personal connections with local hospitals to become their provider of choice." — https://www.facebook.com/groups/nursinghomeadmin/posts/7799100300143684
-Love (baseline to match): "Your fastest path to a first client is almost always warm referrals — hospital discharge planners, social workers, and senior living advisors who personally hand you a name." — https://www.facebook.com/groups/2156388261379184/posts/2848193632198640 · "Start with: * Social workers & hospital discharge teams (visit in person if you can) * Local GP surgeries * Community groups / churches Also, word of mouth becomes your biggest asset, so even 1–2 clients done really well can snowball." — https://www.facebook.com/groups/1971829479945179/posts/2503465966781525
-Hate (the opening): "I've worked in SNFs for 11 years as a therapist." — https://www.reddit.com/r/healthcareadmin/comments/sych6p/any_insight_on_lic_nursing_home_administrator_and/ · "What are your top 2 referral sources?" — https://www.facebook.com/groups/706524484973799/posts/976062864686625
-Paid / effort (figures written next to the name): $500.00, $10, $20, $12, $25K
-Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried Hospital / SNF / discharge planner referral relationships…"
-Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
-
-### Thread: Coaches, courses, consultants (RAL Academy, Homecare 101, Mom's House, CSA, SRES)  (depth 1 · came up 91× in buyer voice, 58 operators · 860 docs corpus-wide)
-Why it came up: "Case Manager: Of course." — https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 · "or even just training courses online without certification?" — https://www.reddit.com/r/healthcareadmin/comments/rqk1re/certifications_that_are_worthwhile/
-Love (baseline to match): "Selena Mack you need a coach/mentor to help you get back on track." — https://www.facebook.com/groups/2156388261379184/posts/2797195840631753
-Paid / effort (figures written next to the name): $1000 (3×), $484.80 (2×), $750/week, $30
-Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried Coaches, courses, consultants…"
-Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
-
-### Thread: Networking / BNI / chamber / senior centers / community events  (depth 1 · came up 62× in buyer voice, 59 operators · 211 docs corpus-wide)
-Why it came up: "Don’t be afraid to hand out your flyers at places like Goodwill stores and other community locations where your target audience and their families may visit." — https://www.facebook.com/groups/2156388261379184/posts/2884206921930644 · "Healthcare referral sources: * Home health agencies * Hospices * Assisted living facilities * Continuing care retirement communities * Hospital discharge planners * Doctors offices * Skilled nursing facilities * Independent living facilities * House call physicians * Rehab centers (outpatient) * Rehab facilities (inpatient) * Pharmacies * Other home care agencies * Diagnosis-specific support groups * Neurologists Other non-healthcare professional referral sources: * Social service agencies * Workers compensation providers/case managers * Bank trust officers * Real estate agencies * CPAs * VA programs * Financial planners * Geriatric care managers * Adult day care centers * Churches/clergy * Occupational therapists * Funeral directors * Fiduciaries * Elder law attorneys * Estate planners * Country clubs * House cleaning services * Senior communities * Social workers * Care management agents * Placement agencies * Independent living * Hair salons **Don't forget past/current clients and their loved ones.**" — https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/
-Love (baseline to match): "I’m blessed to have a wonderful support system at my church." — https://www.facebook.com/groups/2156388261379184/posts/2896708240680512 · "Hi Jenny Jen Congrats on getting licensed — the fact that you've already mailed 4,000 flyers and are working referral leads tells me you're serious, which is more than most." — https://www.facebook.com/groups/2156388261379184/posts/2848193632198640 · "Start with: * Social workers & hospital discharge teams (visit in person if you can) * Local GP surgeries * Community groups / churches Also, word of mouth becomes your biggest asset, so even 1–2 clients done really well can snowball." — https://www.facebook.com/groups/1971829479945179/posts/2503465966781525
-Hate (the opening): "You’re better off going into hospitals and nursing homes, handing out business cards to social workers or nurses on each floor." — https://www.facebook.com/groups/2018920001893909/posts/2346931662426073
-Paid / effort (figures written next to the name): $250, $2500, $500, $600, $400
-Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried Networking / BNI / chamber / senior centers / community events…"
-Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
-
-### Thread: SEO / website / Google Business Profile  (depth 1 · came up 58× in buyer voice, 53 operators · 258 docs corpus-wide)
-Why it came up: "Do not put “home health” anywhere on your website." — https://www.facebook.com/groups/706524484973799/posts/1016591983967046 · "Besides the in person stuff, we have our website, some social media (looking at having it professionally managed)." — https://www.reddit.com/r/RunAHomeCareAgency/comments/1d6v0n4/looking_for_marketing_ideas/
-Love (baseline to match): "I’m looking for someone who can help with Google SEO, Google Ads, getting my agency to rank higher on Google, improving my Google Business Profile, and bringing in more qualified leads." — https://www.facebook.com/groups/2156388261379184/posts/2911408609210475 · "I’d also suggest checking your Google presence (reviews + local SEO) as families often search there first now." — https://www.facebook.com/groups/1971829479945179/posts/2503465966781525 · "Does your website focus on SEO?" — https://www.facebook.com/groups/2156388261379184/posts/2848193632198640
-Paid / effort (figures written next to the name): $250, $2500, $500, $600, $400, $20,000 per month, $30m
-Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried SEO / website / Google Business Profile…"
-Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
-
-### Thread: A Place for Mom  (depth 1 · came up 42× in buyer voice, 40 operators · 351 docs corpus-wide)
-Why it came up: "LONG RANT WARNING: We spent a lot of money on APFM and then we landed a 24 hr client from one of their leads." — https://www.facebook.com/groups/706524484973799/posts/1130570192569224 · "Has anyone ever had a A Place for Mom actually reach out to them?" — https://www.facebook.com/groups/706524484973799/posts/1061369272822650
-Love (baseline to match): "Don’t use a place for mom!" — https://www.facebook.com/groups/2156388261379184/posts/2848193632198640 · "I am a home Care agency in central Nebraska and I do use a place for Mom they do help find clients it's worked out for me" — https://www.facebook.com/groups/2018920001893909/posts/2346931662426073
-Hate (the opening): "A Place For Mom...." — https://www.facebook.com/groups/2156388261379184/posts/2828223997528937 · "I used place for mom and care in homes." — https://www.facebook.com/groups/706524484973799/posts/1061369272822650 · "We have wasted time and money with A Place for Mom." — https://www.facebook.com/groups/706524484973799/posts/976062864686625
-Paid / effort (figures written next to the name): $25 per lead, $600, $68 per lead
-Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried A Place for Mom…"
-Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
-
-### Thread: Placement agents / referral agencies (CarePatrol, ALL, Oasis, independents)  (depth 1 · came up 39× in buyer voice, 38 operators · 174 docs corpus-wide)
-Why it came up: "Healthcare referral sources: * Home health agencies * Hospices * Assisted living facilities * Continuing care retirement communities * Hospital discharge planners * Doctors offices * Skilled nursing facilities * Independent living facilities * House call physicians * Rehab centers (outpatient) * Rehab facilities (inpatient) * Pharmacies * Other home care agencies * Diagnosis-specific support groups * Neurologists Other non-healthcare professional referral sources: * Social service agencies * Workers compensation providers/case managers * Bank trust officers * Real estate agencies * CPAs * VA programs * Financial planners * Geriatric care managers * Adult day care centers * Churches/clergy * Occupational therapists * Funeral directors * Fiduciaries * Elder law attorneys * Estate planners * Country clubs * House cleaning services * Senior communities * Social workers * Care management agents * Placement agencies * Independent living * Hair salons **Don't forget past/current clients and their loved ones.**" — https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ · "There are 5 modules everything from email domination for placement agents that got me 3 placement agents ( I sent it to 36 agent total), how to hire caregivers and all the marketing things I did." — https://www.reddit.com/r/RunAHomeCareAgency/comments/18j3pm9/finally_licensed/
-Love (baseline to match): "As the Director of Sales and Marketing, I use my network of healthcare personnel and work closely with the community, senior placement agencies, CCA, social workers, discharging nurses, case managers, Administrators/Executive Directors, Skill Nursing Facilities, Hospitals, and other healthcare industry organizations to bring in new ALWP and private pay residents to Senior Living / Assisted Living and Memory Care Facilities and increase facility’s census." — https://www.facebook.com/groups/assistedlivingfacilities/posts/3896882633857337
-Paid / effort (figures written next to the name): $1.1 m
-Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried Placement agents / referral agencies…"
-Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
-
-### Thread: Insurance panels / pediatricians / schools (ABA)  (depth 1 · came up 25× in buyer voice, 23 operators · 104 docs corpus-wide)
-Why it came up: "I do all the aspects of business and clinical myself - including credentialing, billing, marketing, and provide all clinical services myself." — https://www.reddit.com/r/bcba/comments/1dkhd7e/i_started_a_private_practice_ama/ · "Update insurance contracts to accept a wider range of plans." — https://www.facebook.com/groups/nursinghomeadmin/posts/7799100300143684
-Hate (the opening): "I’m credentialed with all the insurance companies that currently have their panels open, and I’ve tried to be proactive with outreach." — https://www.facebook.com/groups/669886889110965/posts/942369488529369 · "I’m credentialed with all the insurance companies that currently have their panels open, and I’ve tried to be proactive with outreach." — https://www.facebook.com/groups/1081018657046251/posts/1430528132095300 · "This list is vendors and commercial companies that actually send you clients once you’re credentialed with them." — https://www.facebook.com/groups/2018920001893909/posts/2346931662426073
-Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried Insurance panels / pediatricians / schools…"
-Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
-
-### Thread: Google Ads / LSA / PPC  (depth 1 · came up 17× in buyer voice, 16 operators · 49 docs corpus-wide)
-Why it came up: "Continue running a small ad in Google Ads- say $3 a day." — https://www.facebook.com/groups/2447813518868667/posts/4399609403689059 · "Will be opening my non-medical home care business in a month and will start with Facebook advertising and targeted google ads in my area." — https://www.reddit.com/r/HomeCareOwners/comments/1i6q4vl/tips_on_how_to_find_clients/
-Love (baseline to match): "I’m looking for someone who can help with Google SEO, Google Ads, getting my agency to rank higher on Google, improving my Google Business Profile, and bringing in more qualified leads." — https://www.facebook.com/groups/2156388261379184/posts/2911408609210475 · "One thing I’ve seen working with home care agencies is that many invest heavily in Google Ads before fixing the foundation." — https://www.facebook.com/groups/2156388261379184/posts/2911408609210475 · "We've seen a lot of success for our Senior Living clients with a combined strategy of local SEO, PPC, Performance Max and a combination of Facebook Ads and Facebook Retargeting!" — https://www.reddit.com/r/SeniorLivingMarketing/comments/1l4a6ip/how_to_market_a_senior_living_facility/n8nkvve/
-Hate (the opening): "I’ve gone in person to doctor’s offices with brochures and small goodie bags, sent out emails wherever I could find contacts, and I’ve been running Instagram, Facebook, and Google ads." — https://www.facebook.com/groups/669886889110965/posts/942369488529369 · "I’ve gone in person to doctor’s offices with brochures and small goodie bags, sent out emails wherever I could find contacts, and I’ve been running Instagram, Facebook, and Google ads." — https://www.facebook.com/groups/1081018657046251/posts/1430528132095300
-Paid / effort (figures written next to the name): $3 a day, $15, $2, $1,700 per month
-Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried Google Ads / LSA / PPC…"
-Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
-
-### Thread: VA / Medicaid waiver / LTC insurance contracts  (depth 1 · came up 16× in buyer voice, 14 operators · 89 docs corpus-wide)
-Why it came up: "Healthcare referral sources: * Home health agencies * Hospices * Assisted living facilities * Continuing care retirement communities * Hospital discharge planners * Doctors offices * Skilled nursing facilities * Independent living facilities * House call physicians * Rehab centers (outpatient) * Rehab facilities (inpatient) * Pharmacies * Other home care agencies * Diagnosis-specific support groups * Neurologists Other non-healthcare professional referral sources: * Social service agencies * Workers compensation providers/case managers * Bank trust officers * Real estate agencies * CPAs * VA programs * Financial planners * Geriatric care managers * Adult day care centers * Churches/clergy * Occupational therapists * Funeral directors * Fiduciaries * Elder law attorneys * Estate planners * Country clubs * House cleaning services * Senior communities * Social workers * Care management agents * Placement agencies * Independent living * Hair salons **Don't forget past/current clients and their loved ones.**" — https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ · "Which is the medicaid waivers for IDD and AMI and Seniors." — https://www.facebook.com/groups/706524484973799/posts/1052048583754719
-Love (baseline to match): "If there is compensation, what does that normally look like for private pay vs Medicaid waiver residents?" — https://www.facebook.com/groups/2886092941628251/posts/4514277078809821
-Paid / effort (figures written next to the name): $750/week
-Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried VA / Medicaid waiver / LTC insurance contracts…"
-Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
-
-### Thread: Franchise systems (Home Instead, Visiting Angels, Right at Home, CarePatrol...)  (depth 1 · came up 13× in buyer voice, 11 operators · 248 docs corpus-wide)
-Why it came up: "We are not certified with Medicaid and we are part of a franchise." — https://www.reddit.com/r/Entrepreneur/comments/1rqjot3/pe_is_dumping_billions_into_home_care_despite_79/oa5rbrq/ · "I’d be curious what franchise…." — https://www.facebook.com/groups/2156388261379184/posts/2944130392604963
-Love (baseline to match): "> As being one of the first franchisees with CarePatrol I totally disagree with the comments made by the anonymous submission posted on Sunday, August 1, 2010." — https://www.unhappyfranchisee.com/carepatrol-franchisees-praise-the-carepatrol-franchise
-Hate (the opening): "We're required to use ClearCare within our home care franchise system." — https://www.trustpilot.com/reviews/56b24d800000ff000937464f · "Unfortunately mistakes can happen and this is sad but there are good facilities out there that care for seniors and Home Instead is a good company." — https://www.unhappyfranchisee.com/home-instead-senior-care-franchise
-Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried Franchise systems…"
-Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
-
-## Vendor / Competitor Map (D1b) — who else sells growth to these owners
-
-**What owners spend on (vendor ledger, docs):** Referral marketing 126 · Coaches/consultants/franchises 82 · SEO/website/GMB 33 · Lead directories (Care.com/APFM/Caring.com) 18 · Agency-management/scheduling software 18 · Recruiting/job boards 14 · Payroll/billing/EVV 12 · Caregiver training/retention 10 · Google Ads/PPC 6.
-
-**inLeap's competitive set (the "who sells to owners" landscape):**
-- **Coaches / communities:** Justin Currie (Master of Home Care, Skool), Steve "The Hurricane" Weiss (Home Care Evolution/HME), Homecare Owners Corner, Aaron Bogle, Coach Michele, HomeCarePulse/Activated Insights. *Angle: teach owners to do it themselves.*
-- **Marketing agencies:** Sagapixel (SEO/PPC, "$950–4k/mo"), corecubed, generic Google Ads shops. *Angle: done-for-you channels.*
-- **Lead sellers:** A Place for Mom, Care.com, Caring.com, ElderCareLink, HomeAdvisor. *Angle: buy leads (resented — non-exclusive, upfront, low convert).*
-- **Franchises:** Home Instead, Visiting Angels, Comfort Keepers, Right at Home, Senior Helpers. *Angle: buy the brand + playbook for $80–150k.*
-- **AI up-and-comers:** SilverCare AI and similar (the "lead-gen problem" framing in Homecare Owners Corner).
-
-**Where inLeap wins (positioning gap):** owners are burned by (a) non-exclusive bought leads and (b) traffic that doesn't convert. The open lane = **exclusive, owned lead flow + an intake/conversion system that books assessments**, positioned against referral dependence — *and* a caregiver-recruiting engine (same ad machine already produces caregiver applicants: "I ran ads and got a ton of caregivers"). Two-in-one (clients + caregivers) is the differentiator no single competitor above bundles.
-
-**Competitor AD-CREATIVE sweep: DEFERRED to 09-23** (Apify caps). Backfill: Meta Ad Library for Home Instead / Visiting Angels / A Place for Mom / Care.com + the coaches, ranked by longevity, with transcripts — per D1a.
 
 ---
 
-## Vocabulary Ledger (D3) — repeated phrases in buyer voice (verbatim, use in copy)
-# Vocabulary Ledger — 1868 documents
+## Why They Buy — the five answers an ad needs (Ad Brief)
 
-Counts are DISTINCT documents mentioning the phrase (not raw occurrences). `top source` = highest-scored document containing it.
+Every line below points at evidence on this page: a measured theme count (buyer-voice documents), a verbatim voice with its URL, or an ad / landing page from the Competitor Ads tab. Nothing here was assumed; where a line is a recommendation it says so.
 
-## Three-word phrases (min 4 docs)
+### 1. Why they buy
+- **The phone is not ringing after the licence. Owners open, hand out cards, visit facilities, and sit at zero clients for months; the first two years are described as the hardest.**
+  - ‘I am still not landing any leads for my Private Home Care Provider Agency. I have given out my business cards, brochures, sent emails, and gone to outreach community functions…’ (HOME CARE BUSINESS OWNERS, 21 reactions) — https://www.facebook.com/groups/2156388261379184/posts/2654180034933335
+  - ‘Your first two years will be your hardest. I know agencies that opened 2 years now and still no clients.’ — https://www.facebook.com/groups/2156388261379184/posts/2830219730662697
+  - Theme ‘No clients / can’t land the first one’ and ‘The phone isn’t ringing’ on Tab 1
+- **They are renting clients from someone else and want to own the inquiry: placement agents, A Place for Mom, a referral partner who goes quiet. Dependence is the fear; ‘families finding me’ is the wish.**
+  - ‘I’ve become way too dependent on the placement agents that have been bringing me clients.’ (r/RunAHomeCareAgency) — https://www.reddit.com/r/RunAHomeCareAgency/comments/1ffa065/anyone_know_how_to_digital_market_for_senior_care/
+  - Frequency: ‘Referral sources & placement agents: dependence, fees, how to get them’ is the #3 buyer-voice theme
+  - Occupancy Partners’ page sells exactly this: ‘You don’t need more leads. You need more move-ins… Exclusive families, never shared’
+- **They have already paid for shared leads and been burned, so ‘exclusive’ and ‘never shared’ are the words that move them.**
+  - ‘$58 per “possible” lead, that is sent to 4 other agencies is a complete scam’ (51 reactions, 39 comments) — https://www.facebook.com/groups/2156388261379184/posts/2828223997528937
+  - ‘Out of 25 referrals the last two months we were able to onboard 2. This month 15 leads and not one closed.’ — https://www.facebook.com/groups/2018920001893909/posts/2346931662426073
+  - 25 of 241 operator-facing ads already lead with ‘exclusive / never shared / vs A Place for Mom’ (Competitor Ads → hook patterns)
+- **An empty unit or an empty caseload has a number on it, and the vendors who win say the number. Facilities: $4,000–6,000 a month per empty unit, $120K lifetime value of a move-in. Home care: ‘five clients last month, this month nothing’.**
+  - Occupancy Partners feed ad: ‘EVERY EMPTY UNIT is $4,000 to $6,000 a month GONE’ (Vince’s feed, IMG_2806)
+  - PatientsPipeline landing page: ‘You signed five clients last month. This month? Nothing.’
+  - ‘Today, as I write this, all 94 of our beds are full and we have a wait list’ — the desired state, in an RCFE owner’s words (28 reactions) — https://www.facebook.com/groups/352285274494478/posts/976832502039749
+- **They want the relationship route (discharge planners, social workers) kept, not replaced; they will buy the thing that fills the gaps between referrals.**
+  - Lead Sources: ‘Hospital / SNF / discharge planner referral relationships’ is the most-named source and the one owners credit for first clients
+  - ‘Most owners shifted into discharge planner relationships at the local hospitals, that still works.’ — https://www.facebook.com/groups/2156388261379184/posts/2835614276789909
 
-| # docs | phrase | top source |
-|---|---|---|
-| 37 | place for mom | https://www.facebook.com/groups/2156388261379184/posts/2828223997528937 |
-| 21 | assisted living facility | https://www.facebook.com/groups/352285274494478/posts/976832502039749 |
-| 17 | word of mouth | https://www.facebook.com/groups/2018920001893909/posts/2391522307967008 |
-| 11 | assisted living communities | https://www.facebook.com/groups/2156388261379184/posts/2884206921930644 |
-| 11 | assisted living facilities | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
-| 11 | google business profile | https://www.facebook.com/groups/2156388261379184/posts/2911408609210475 |
-| 11 | residential assisted living | https://www.reddit.com/r/realestateinvesting/comments/uujosm/is_residential_assisted_living_worth_looking_into/ |
-| 9 | policies and procedures | https://www.reddit.com/r/RunAHomeCareAgency/comments/1b5d8qo/is_a_consultant_worth_it/ |
-| 8 | elder law attorneys | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
-| 7 | process of opening | https://www.facebook.com/groups/201561673732649/posts/1978369336051865 |
-| 6 | chamber of commerce | https://www.facebook.com/groups/2156388261379184/posts/2896708240680512 |
-| 6 | hospitals rehab centers | https://www.facebook.com/groups/2156388261379184/posts/2763660403985297 |
-| 6 | independent living facilities | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
-| 6 | trying to figure | https://www.reddit.com/r/smallbusiness/comments/1hr7ffg/looking_to_start_a_home_health_agency/ |
-| 5 | aba business owners | https://www.facebook.com/groups/669886889110965/posts/975664455199872 |
-| 5 | able to find | https://www.facebook.com/groups/1079987009361321/posts/1852012652158749 |
-| 5 | free to reach | https://www.facebook.com/groups/2156388261379184/posts/2884206921930644 |
-| 5 | geriatric care managers | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
-| 5 | happy to share | https://www.facebook.com/groups/2156388261379184/posts/2848193632198640 |
-| 5 | hospital discharge planners | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
-| 5 | meet our needs | https://www.reddit.com/r/RunAHomeCareAgency/comments/1dbg9dl/scheduling_software_for_247_home_care/ |
-| 5 | peace of mind | https://www.reddit.com/r/AssistedLiving/comments/1kyorry/years_of_working_in_a_assisted_living_facility/ |
-| 5 | senior living marketing | https://www.reddit.com/r/SeniorLivingMarketing/comments/1q9p8wm/who_i_am_why_i_care_about_senior_living_marketing/ |
-| 5 | sent you message | https://www.facebook.com/groups/2156388261379184/posts/2732245613793443 |
-| 5 | skilled nursing facilities | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
-| 5 | trying to understand | https://www.facebook.com/groups/352285274494478/posts/922500650806268 |
-| 4 | appreciate any insights | https://www.reddit.com/r/RunAHomeCareAgency/comments/1dfnzpx/mental_health_platform_for_home_care_customers/ |
-| 4 | assisted living community | https://www.reddit.com/r/SeniorLivingMarketing/comments/1jan007/how_ive_gotten_more_leads_at_my_assisted_living/ |
-| 4 | back and forth | https://www.reddit.com/r/RunAHomeCareAgency/comments/1dbg9dl/scheduling_software_for_247_home_care/ |
-| 4 | below and i'll | https://www.facebook.com/groups/448686879807645/posts/1645042436838744 |
-| 4 | case my message | https://www.facebook.com/groups/352285274494478/posts/976832502039749 |
-| 4 | centers assisted living | https://www.facebook.com/groups/2156388261379184/posts/2763660403985297 |
-| 4 | continue providing valuable | https://www.reddit.com/r/RunAHomeCareAgency/comments/18j3pm9/finally_licensed/ |
-| 4 | domination for placement | https://www.reddit.com/r/RunAHomeCareAgency/comments/18j3pm9/finally_licensed/ |
-| 4 | eekc homecare concierge | https://www.facebook.com/groups/2018920001893909/posts/2391522307967008 |
-| 4 | everything from email | https://www.reddit.com/r/RunAHomeCareAgency/comments/18j3pm9/finally_licensed/ |
-| 4 | facebook sometimes sends | https://www.facebook.com/groups/352285274494478/posts/976832502039749 |
-| 4 | group recently joined | https://www.facebook.com/groups/assistedlivingfacilities/posts/4479853425560252 |
-| 4 | happy to chat | https://www.facebook.com/groups/1081018657046251/posts/1504909001323879 |
-| 4 | hard we worked | https://www.facebook.com/groups/352285274494478/posts/976832502039749 |
+### 2. Recurring problems and frustrations
+- **Paid referral sites: prepaid blocks, billed per referral whether or not the family signs, same family sent to several agencies, aggressive reps, credits refused, hard to cancel.**
+  - ‘They send you referrals and bill you per referral whether you sign them up or not; that bill grows quickly. Never again.’ — https://www.facebook.com/groups/2018920001893909/posts/2346931662426073
+  - Lead Sources ledger: A Place for Mom — burned language in 9 of 42 buyer documents, worked in 8
+- **Marketing spend with nothing to show: ads that produced caregivers instead of clients, agencies and coaches that took money, ‘the most expensive and least effective’.**
+  - ‘I started running ads and even though I have not gotten a single client I got a ton of caregivers.’ — https://www.reddit.com/r/RunAHomeCareAgency/comments/1ffa065/anyone_know_how_to_digital_market_for_senior_care/
+  - Tab 6 theme ‘Google Ads / Facebook ads / SEO / website’ and Tab 5 ‘Leads & referral sources that wasted money or ghosted’
+- **Feast or famine: a referral partner sends two families then goes quiet; three or four big clients carry the agency and one passes away.**
+  - PatientsPipeline page (the vendor wrote the owner’s story): ‘a referral partner who sends two families, then goes quiet for a quarter… running on word of mouth and three or four big clients — not a system’
+  - Tab 7 theme ‘If someone would just show me a system that brings clients predictably’
+- **The owner is the only one selling and doing everything else too: scheduling, compliance, the 24/7 phone, payroll.**
+  - Tab 9 themes ‘The hands-on licensee-administrator’ and ‘The phone / scheduling never stops’
+  - OBB’s self-diagnosis section names it back to them: ‘I’m the only one selling — owner as bottleneck’
+- **Vertical-specific versions: ABA owners are credentialed and still have no referrals, or have a waitlist they cannot staff; facilities carry tour quotas and ratios; placement agents ask how to get their first families.**
+  - ‘I’m credentialed with all the insurance companies that currently have their panels open… I’m still sitting at zero clients.’ (ABA Business Owners) — https://www.facebook.com/groups/669886889110965/posts/942369488529369
+  - Tab 5 theme ‘ABA: insurance won’t credential me, authorizations, the waitlist I can’t serve’
 
-## Two-word phrases (min 4 docs)
+### 3. Common questions and objections that stop them buying
+- **‘Has anyone actually used this? Is it worth it?’ — every vendor gets asked in the group before the owner replies to the rep. Proof from a named peer beats any claim.**
+  - Tab 4 theme ‘Has anyone used A Place for Mom / Caring.com / Care.com for clients?’ and ‘What lead companies actually work for private pay?’
+  - ‘Anyone received a call from a place for mom? What are your thoughts’ (13 reactions, 48 comments) — https://www.facebook.com/groups/2156388261379184/posts/2916145245403478
+- **‘The leads won’t answer / they’re shared / they’re old.’ The owner assumes any lead is a shared lead until told otherwise.**
+  - ‘They give “fake clients”, nobody ever answered.’ (9 likes) — https://www.facebook.com/groups/2156388261379184/posts/2881316548886348
+  - Home Care Pipeline ad: ‘if you’ve tried ads before and got nothing but clicks and form fills from people who never answer…’ — the objection written into the ad
+- **‘I’m not paying for something I can do myself’ and ‘no ad or marketing is guaranteed’ — the DIY and the fatalist. Both are answered by a result-based term (booked assessments, guarantee floor), not by a retainer.**
+  - ‘I’m sorry but I’m not paying anyone for something I can do myself.’ — https://www.facebook.com/groups/2156388261379184/posts/2887577081593628
+  - ‘You must spend money to make money; no ad or marketing is guaranteed.’ — https://www.facebook.com/groups/2156388261379184/posts/2828223997528937
+  - Tab 7 theme ‘I’d pay for results, not a retainer’
+- **‘Do you only run Facebook ads?’ ‘What if we already get referrals?’ ‘How long before we see results?’ — the three questions the vendors put in their own FAQs because they hear them on every call.**
+  - PatientsPipeline FAQ (landing page) and OBB ‘How fast will I see results?’ / ‘See the 90-day climb’
+- **‘I can’t afford it / I’m too small’ — the vendors pre-empt it with a floor (‘owners above $70k/month’, ‘$1M+/yr’, ‘20 to 80 unit communities’); the smaller owner reads that as ‘not for me’.**
+  - Plena feed ad: ‘Home care agency owners above $70k/month’; HomecareGrow ads: ‘Home care owners $1M+/yr’; Occupancy Partners: ‘built for 20 to 80 unit communities’
+  - 39 of 241 operator-facing ads open with a named-audience qualifier (hook patterns)
+- **Cancellation and credit fear: ‘they make cancelling so hard’, ‘I had to block them’, ‘get my money back through my bank’. A visible pause / cancel term removes it.**
+  - ‘I was with A Place for Mom and wasn’t getting anywhere with them. I had to block them paying for something…’ — https://www.facebook.com/groups/2156388261379184/posts/2833282093689794
+  - VERVE landing page answers it: ‘Pause or Resume Anytime · Zero Setup Fees’
 
-| # docs | phrase | top source |
-|---|---|---|
-| 106 | assisted living | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
-| 97 | private pay | https://www.facebook.com/groups/1154838852454654/posts/1589096935695508 |
-| 38 | non medical | https://www.facebook.com/groups/1154838852454654/posts/1621142212490980 |
-| 36 | senior living | https://www.facebook.com/groups/2156388261379184/posts/2848193632198640 |
-| 32 | case managers | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
-| 30 | hi everyone | https://www.facebook.com/groups/1154838852454654/posts/1589096935695508 |
-| 29 | feel free | https://www.facebook.com/groups/2156388261379184/posts/2848193632198640 |
-| 29 | social workers | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
-| 26 | living facility | https://www.reddit.com/r/AssistedLiving/comments/1kyorry/years_of_working_in_a_assisted_living_facility/ |
-| 26 | referral sources | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
-| 23 | discharge planners | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
-| 21 | social media | https://www.reddit.com/r/RunAHomeCareAgency/comments/1d6v0n4/looking_for_marketing_ideas/ |
-| 18 | anonymous participant | https://www.facebook.com/groups/2156388261379184/posts/2855824171435586 |
-| 18 | greatly appreciated | https://www.reddit.com/r/Entrepreneur/comments/1alxdam/nonmedical_home_care_service_business/ |
-| 17 | hello everyone | https://www.reddit.com/r/RunAHomeCareAgency/comments/1dfnzpx/mental_health_platform_for_home_care_customers/ |
-| 17 | mental health | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
-| 17 | real estate | https://www.reddit.com/r/realestateinvesting/comments/uujosm/is_residential_assisted_living_worth_looking_into/ |
-| 16 | independent living | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
-| 16 | insurance companies | https://www.youtube.com/watch?v=zvtl029wKTU&lc=Ugznprtsa1TsTp-QrY14AaABAg |
-| 16 | living facilities | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
-| 14 | nursing homes | https://www.facebook.com/groups/2156388261379184/posts/2848193632198640 |
-| 13 | google ads | https://www.facebook.com/groups/2156388261379184/posts/2911408609210475 |
-| 13 | living communities | https://www.facebook.com/groups/2156388261379184/posts/2884206921930644 |
-| 13 | long term | https://www.reddit.com/r/realestateinvesting/comments/14u5xo2/im_looking_into_leasing_to_residential_assisted/ |
-| 12 | loved ones | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
-| 12 | referral relationships | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
-| 12 | rehab centers | https://www.reddit.com/r/eldercare/comments/1g5gzvc/looking_for_some_feedback_and_advice/ |
-| 12 | senior communities | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
-| 11 | elder law | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
-| 11 | family members | https://www.youtube.com/watch?v=JUTV80jUHSI&lc=Ugy13Junh1QtpbZQUw54AaABAg |
-| 11 | health agencies | https://www.facebook.com/groups/nursinghomeadmin/posts/7799100300143684 |
-| 11 | placement agents | https://www.reddit.com/r/RunAHomeCareAgency/comments/18j3pm9/finally_licensed/ |
-| 11 | private practice | https://www.reddit.com/r/bcba/comments/1dkhd7e/i_started_a_private_practice_ama/ |
-| 11 | residential assisted | https://www.reddit.com/r/realestateinvesting/comments/uujosm/is_residential_assisted_living_worth_looking_into/ |
-| 10 | i'll send | https://www.facebook.com/groups/2156388261379184/posts/2848193632198640 |
-| 10 | mattie gaffney | https://www.facebook.com/groups/706524484973799/posts/941816754777903 |
-| 10 | owner operator | https://www.reddit.com/r/healthcareadmin/comments/sych6p/any_insight_on_lic_nursing_home_administrator_and/ |
-| 10 | placement agencies | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
-| 10 | senior placement | https://www.facebook.com/groups/304213569931127/posts/2515117858840676 |
-| 10 | skilled nursing | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
+### 4. Common hooks and visual formats
+- **Named-audience qualifier as the first words: ‘Home care agency owners…’, ‘Read this if you run an assisted living facility with apartments sitting empty’, ‘ABA owners…’. The most common opening in the operator-facing ads (39 of 241).**
+  - Home Care Breakthrough Solutions (103 days): ‘Home care agency owners doing $1M to $3M+ in annual revenue often hit the same frustrating wall…’
+  - Wisdom First Marketing (77 days): ‘Read this if you run an assisted living facility with apartments sitting empty.’
+- **Question hooks (41 of 241): ‘Are you paying a salesperson who’s not even bringing in $10K a week?’, ‘If your sales rep left tomorrow, would your referrals actually drop?’**
+  - Home Care Breakthrough Solutions, two ads
+- **Number + timeframe + guarantee: ‘60 qualified assessments in 90 days. Guaranteed.’, ‘$150,000 in new revenue in 90 days. Or we work for free.’, ‘20 booked, confirmed tours in 90 days’, ‘Araceli added 19 clients last week with 1 simple ad campaign’.**
+  - Plena / PatientsPipeline feed ad (451 reactions); OBB landing page; Occupancy Partners feed ad; HomecareGrow ads (86 days)
+- **Against-the-directory positioning: ‘A shared lead isn’t a lead. It’s a race you already lost.’, ‘Exclusive families, never shared’, ‘Stop paying for leads. Stop sharing them with 5 competitors.’**
+  - OBB landing page; Occupancy Partners; CareXroads group post — https://www.facebook.com/groups/2156388261379184/posts/2884452378572761
+- **Speed-to-lead as the proof mechanic: ‘75% of families choose the first community that responds — 47 hours vs five minutes’, ‘we call every inquiry within 2 min’.**
+  - Occupancy Partners landing page; OBB stat bar
+- **Visual formats that carry these hooks: talking-head founder video on location (Occupancy Partners, Plena, Advanced Agent Marketing in the feed), a stat bar or ‘90-day climb’ chart, a calendar filled with booked assessments/tours, a named-client before/after, and the plain ‘Fill Your Assisted Living Units’ headline card. 102 of the 241 operator-facing ads are video, 139 static.**
+  - Competitor Ads → formats and hook patterns; Vince’s feed section (IMG_2787, 2794, 2806)
 
-## Single words (min 4 docs)
+### 5. Features and benefits we can and should demonstrate in an ad
+- **Exclusive inquiries on the owner’s own brand, never shared. Demonstrate it: show the inquiry arriving with the agency’s name on it and no other agency on the thread; contrast with the ‘sent to 4 other agencies’ voice.**
+  - Owner voice: ‘sent to 4 other agencies’; vendor proof that it sells: OBB ‘100% run on your brand, never shared’, VERVE ‘1-to-1 lead ownership’
+- **Booked, confirmed assessments or tours on the calendar, not ‘leads’. Demonstrate it: a calendar view filling up, the confirmation text to the family, the count per week.**
+  - Occupancy Partners ‘20 booked, confirmed tours in 90 days’; Plena ‘60 qualified in-home assessments in 90 days’; OBB ‘we book qualified assessments onto your calendar’
+- **Speed to lead: the call-back within minutes, at night and on weekends. Demonstrate it: a stopwatch or timestamped screen of an inquiry answered in under five minutes, against the ‘47-hour’ industry number.**
+  - Occupancy Partners page; owners’ own complaint that paid leads ‘never answered’ is the same problem seen from the family’s side
+- **Intake handled, not just leads delivered: qualification (private pay, hours, location) before the owner sees it. Demonstrate it: the qualification questions on screen, the disqualified inquiry that never reached the owner.**
+  - Owners: ‘some are just looking, curious, or only wanted info’ (Private Pay Clients group); PatientsPipeline ‘from inquiry to the booked in-home assessment’
+- **Result-based terms: a guarantee floor, pay on booked assessments, pause any time, no setup fee. Demonstrate it: the one-line term on screen, and the credit/cancel policy the referral sites refuse.**
+  - Tab 7 ‘I’d pay for results, not a retainer’; OBB ‘or we work for free’; VERVE ‘Pause or Resume Anytime · Zero Setup Fees’
+- **Reporting that reads as move-ins, clients or admissions, not impressions. Demonstrate it: a one-screen report with cost per booked assessment and cost per client.**
+  - Occupancy Partners: ‘We report move-ins, not impressions’; owners’ question ‘what did you spend that you felt you got a good value for?’ (r/RunAHomeCareAgency) — https://www.reddit.com/r/RunAHomeCareAgency/comments/1chu7jm/marketing_best_practices/
+- **Keeps their referral relationships and adds a second channel. Demonstrate it: the discharge planner is still in the picture; the engine fills the weeks they go quiet.**
+  - Lead Sources: hospital / discharge planner relationships are the most-named source; ‘that still works’ — https://www.facebook.com/groups/2156388261379184/posts/2835614276789909
+- **By-product the owner already noticed: the same ads bring caregiver applicants. Demonstrate it as a bonus, not the promise.**
+  - ‘I have not gotten a single client, I got a ton of caregivers and everyone in our community started to recognize us.’ — https://www.reddit.com/r/RunAHomeCareAgency/comments/1ffa065/anyone_know_how_to_digital_market_for_senior_care/
 
-| # docs | phrase | top source |
-|---|---|---|
-| 163 | living | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
-| 147 | marketing | https://www.reddit.com/r/bcba/comments/1dkhd7e/i_started_a_private_practice_ama/ |
-| 146 | private | https://www.reddit.com/r/bcba/comments/1dkhd7e/i_started_a_private_practice_ama/ |
-| 143 | well | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
-| 140 | health | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
-| 139 | first | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
-| 137 | community | https://www.facebook.com/groups/2156388261379184/posts/2828223997528937 |
-| 127 | services | https://www.reddit.com/r/bcba/comments/1dkhd7e/i_started_a_private_practice_ama/ |
-| 126 | find | https://www.reddit.com/r/nursing/comments/1qijhrs/got_a_text_about_being_at_work_10_minutes_before/o0s1gkk/ |
-| 119 | senior | https://www.reddit.com/r/eldercare/comments/1g5gzvc/looking_for_some_feedback_and_advice/ |
-| 119 | you're | https://www.reddit.com/r/RealEstate/comments/16dcpic/how_i_see_the_bubble_already_popping/jzrdycn/ |
-| 116 | agencies | https://www.facebook.com/groups/2156388261379184/posts/2828223997528937 |
-| 115 | referral | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
-| 111 | referrals | https://www.facebook.com/groups/2156388261379184/posts/2828223997528937 |
-| 110 | doing | https://www.reddit.com/r/eldercare/comments/1g5gzvc/looking_for_some_feedback_and_advice/ |
-| 109 | assisted | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
-| 105 | call | https://www.facebook.com/groups/2156388261379184/posts/2828223997528937 |
-| 103 | everyone | https://www.facebook.com/groups/352285274494478/posts/976832502039749 |
-| 103 | take | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
-| 99 | working | https://www.facebook.com/groups/248675758568554/posts/6929343677168362 |
-| 98 | experience | https://www.reddit.com/r/eldercare/comments/1g5gzvc/looking_for_some_feedback_and_advice/ |
-| 97 | company | https://www.reddit.com/r/ABA/comments/1i2h1sq/i_passed/ |
-| 96 | through | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
-| 94 | family | https://www.reddit.com/r/eldercare/comments/1g5gzvc/looking_for_some_feedback_and_advice/ |
-| 93 | leads | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
-| 93 | money | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
-| 91 | state | https://www.reddit.com/r/eldercare/comments/1g5gzvc/looking_for_some_feedback_and_advice/ |
-| 90 | information | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
-| 90 | open | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
-| 89 | trying | https://www.facebook.com/groups/2156388261379184/posts/2828223997528937 |
-| 86 | free | https://www.facebook.com/groups/2156388261379184/posts/2797195840631753 |
-| 84 | facility | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
-| 84 | families | https://www.facebook.com/groups/2156388261379184/posts/2828223997528937 |
-| 83 | process | https://www.reddit.com/r/realestateinvesting/comments/uujosm/is_residential_assisted_living_worth_looking_into/ |
-| 82 | area | https://www.reddit.com/r/realestateinvesting/comments/uujosm/is_residential_assisted_living_worth_looking_into/ |
-| 81 | feel | https://www.reddit.com/r/ABA/comments/1i2h1sq/i_passed/ |
-| 80 | building | https://www.reddit.com/r/eldercare/comments/1g5gzvc/looking_for_some_feedback_and_advice/ |
-| 80 | place | https://www.reddit.com/r/eldercare/comments/1g5gzvc/looking_for_some_feedback_and_advice/ |
-| 77 | medicaid | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
-| 77 | needs | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
+**Caveat:** Hypotheses are the ‘demonstrate it’ clauses; the facts are the counts, the voices and the ads. Two things the research does not yet show: how an operator reacts to a price, and which of the vendors above actually deliver (no owner in the corpus reports a result from HomecareGrow, OBB, Plena or Occupancy Partners; the only outcome voices are about A Place for Mom, CareInHomes and Caring.com).
 
-## Tab 11 — Top Quotes for Headline Testing
-Ranked: operators first, then engagement. Each is the theme-matched sentence of a buyer voice, verbatim.
 
-1. "I do all the aspects of business and clinical myself - including credentialing, billing, marketing, and provide all clinical services myself." (↑66) · https://www.reddit.com/r/bcba/comments/1dkhd7e/i_started_a_private_practice_ama/
-2. "I am concerned about the high staff turnover rate in childcare." (↑50) · https://www.facebook.com/groups/248675758568554/posts/6929343677168362
-3. "My name is Obi, and I'm the Administrator of De-Mondek Home Care Provider Services LLC." (↑48) · https://www.facebook.com/groups/2156388261379184/posts/2909828769368459
-4. "Today, as I write this, all 94 of our beds are full and we have a wait list." (↑28) · https://www.facebook.com/groups/352285274494478/posts/976832502039749
-5. "I’m starting out with private pay clients only." (↑27) · https://www.facebook.com/groups/1154838852454654/posts/1589096935695508
-6. "I put together a pretty extensive list of potential referral partners." (↑24) · https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/
-7. "I am still not landing any leads for my Private Home Care Provider Agency." (↑21) · https://www.facebook.com/groups/2156388261379184/posts/2654180034933335
-8. "LONG RANT WARNING: We spent a lot of money on APFM and then we landed a 24 hr client from one of their leads." (↑13) · https://www.facebook.com/groups/706524484973799/posts/1130570192569224
-9. "What are your thoughts they said they found my business on the licensing web and want to see if I need clients" (↑13) · https://www.facebook.com/groups/2156388261379184/posts/2731921950492476
-10. "I got my first private pay client that turned into 24HR care." (↑11) · https://www.facebook.com/groups/706524484973799/posts/1061369272822650
-11. "I have a referral list where you can connect and foster relationships so they’ll send them your way." (↑11) · https://www.facebook.com/groups/1429922527043737/posts/9818187854883787
-12. "I was hopeful they would add my agency to their referral list, but I’ve been ignored." (↑11) · https://www.facebook.com/groups/2156388261379184/posts/2896708240680512
-13. "It took me over a YEAR to start and submit because I literally trusted no one." (↑11) · https://www.reddit.com/r/RunAHomeCareAgency/comments/1cejzsp/start_your_home_care_agency/
-14. "I’m wanting to get some insight from a BCBA who has started their own LLC." (↑11) · https://www.facebook.com/groups/7447177152061328/posts/23880566488295801
-15. "Your first two years will be your hardest I know agencies that opened 2 years now and still no clients." (↑11) · https://www.facebook.com/groups/2156388261379184/posts/2830219730662697
-16. "Finally licensed here in Sacramento, Roseville area and hired my first two caregivers." (↑10) · https://www.reddit.com/r/RunAHomeCareAgency/comments/18j3pm9/finally_licensed/
-17. "It has worked for me this way for years.." (↑10) · https://www.facebook.com/groups/706524484973799/posts/1008111701481741
-18. "I’m a Virtual Assistant, and I can help market your home care business by emailing and calling potential referral sources on your behalf." (↑9) · https://www.facebook.com/groups/2156388261379184/posts/2884206921930644
-19. "My ads typically cost me around $6 per lead and my close rate is pretty high." (↑9) · https://www.facebook.com/groups/2156388261379184/posts/2882296035455066
-20. "Wasted my time and money." (↑8) · https://www.facebook.com/groups/2018920001893909/posts/2346931662426073
-21. "Hi, I got my first nursing home gig and I do not understand PPD at all." (↑7) · https://www.facebook.com/groups/nursinghomeadmin/posts/9289206004466432
-22. "I am looking for great ideas on how to get my first clients." (↑7) · https://www.reddit.com/r/RunAHomeCareAgency/comments/1d6v0n4/looking_for_marketing_ideas/
-23. "I had one person looking for someone to take his family member to their house on the weekends." (↑7) · https://www.facebook.com/groups/706524484973799/posts/738060561820191
-24. "I have tried them and it was a waste.They send you referrals and bill you per referral whether you sign them up or not that bill grows quickly..never again" (↑7) · https://www.facebook.com/groups/2018920001893909/posts/2346931662426073
-25. "I personally dont like using referral agents because some can be very greedy." (↑7) · https://www.facebook.com/groups/2447813518868667/posts/4025897427726927
+---
 
-## Frequency Ranking (buyer-voice documents, complaint-specific patterns; corpus 14,451, buyer 1,868)
-1. How to start / consultant / is it worth it — 249 (whole corpus 685)
-2. Reimbursement / Medicaid / private pay rates — 149 (whole corpus 887)
-3. Referral sources & placement agents: dependence, fees, how to get them — 135 (whole corpus 618)
-4. Marketing: ads / digital / SEO / website — 113 (whole corpus 551)
-5. Referral relationships: hospitals, discharge planners, SNFs, physicians — 109 (whole corpus 491)
-6. Licensing / accreditation / compliance / regs (agency or facility license, not a personal one) — 103 (whole corpus 646)
-7. Can't get clients / low census / need leads — 90 (whole corpus 357)
-8. ABA: credentialing, insurance panels, waitlists, referrals — 88 (whole corpus 972)
-9. Google Ads / Facebook ads / SEO / website that didn't pay — 76 (whole corpus 308)
-10. Franchise vs independent — 70 (whole corpus 557)
-11. Scheduling / software / operations / EVV — 69 (whole corpus 415)
-12. Starting a facility: cost to start, existing license, administrator, partner — 64 (whole corpus 242)
-13. Facility economics per bed: private pay vs Medicaid, cash flow, margins — 62 (whole corpus 250)
-14. Sales / networking / building referral relationships — 62 (whole corpus 223)
-15. Licensing, the state survey, the ombudsman, deficiencies (facility side) — 60 (whole corpus 356)
-16. Caregiver retention at scale (turnover caps growth AND valuation) — 55 (whole corpus 618)
-17. A Place for Mom / Caring.com / Care.com: paid referral sites — 51 (whole corpus 529)
-18. Placement agents / referral fees / commission — 48 (whole corpus 165)
-19. Owner-operator treadmill (build management/systems, step back) — 44 (whole corpus 399)
-20. Census stability & growth (predictable clients to SCALE) — 37 (whole corpus 209)
-21. Owner burnout / wearing all hats / on-call — 27 (whole corpus 286)
-22. Exit / valuation / EBITDA multiple / selling the agency — 22 (whole corpus 231)
-23. Occupancy / census pressure: empty beds, quotas, wait list — 22 (whole corpus 83)
-24. Caregiver turnover / no-show / can't retain — 18 (whole corpus 222)
-25. Caregiver pay / wages / can't compete on pay — 18 (whole corpus 204)
-26. Cash flow / payroll / making payroll — 16 (whole corpus 118)
-27. Shared leads that don't convert / pay-per-lead burn — 15 (whole corpus 46)
-28. Admissions / referral response (hospice, home health, liaison) — 14 (whole corpus 120)
-29. Can't find / hire / recruit caregivers — 13 (whole corpus 180)
-30. Independent referral agent: how do I get clients (transition specialist, SRES, placement) — 8 (whole corpus 63)
-31. Referral / payor concentration risk (de-risk the multiple) — 7 (whole corpus 31)
-32. Chronic understaffing at facilities: ratios, call-ins, agency staff — 7 (whole corpus 154)
-33. Corporate / PE ownership vs family-owned: quotas from corporate — 6 (whole corpus 77)
-34. Scaling past the revenue plateau — 5 (whole corpus 51)
-35. Competition / saturated market — 4 (whole corpus 31)
-36. Marketing agencies / consultants that burned them — 4 (whole corpus 27)
-37. Tour metrics and 'sign the first visit' sales pressure — 4 (whole corpus 17)
-38. Lender / funding / capital for a facility — 3 (whole corpus 78)
-39. PE roll-ups & consolidation (compete or get bought) — 2 (whole corpus 62)
-40. Client churn from unreliable staffing (client-side) — 0 (whole corpus 7)
-41. Family price shock: $7–8k a month and 'is this what we get' — 0 (whole corpus 41)
+## Competitor Ads across the operator ladder (cleaned 2026-09-10)
 
-**Precision (20-hit random reads, buyer corpus):** 'How to start / consultant' 17 of 20 on topic (one TV-commercial post, one family review, one vendor). 'Referral sources & placement agents' 17 of 20 (two vendor comments, one aspirant question). 'Licensing' was 13 of 20 on the first pattern (a realtor's licence, a job posting, a mental-health platform leaked); the pattern now requires an agency/facility licence object and the count fell accordingly. Counts are ranks, not pain-point sizes; 'how to start' is the largest because the sources are start-up heavy, and it is the aspirant's theme, not the operating owner's. **Random-40 split of the buyer corpus (seed 2026, read 2026-09-09):** 12 support the client-acquisition pain narrative (no clients after licensing, paid A Place for Mom and got nothing, dependent on placement agents, 'what has worked best for finding residents'), 3 contradict it (a referral site that produced a first 24-hour client, praise for scheduling software, joy at the licence), 25 neutral (one-line replies inside group threads, exam prep, a partnership offer). The neutral majority is the shape of group conversation, not a sign the pain is rare; the tabs sort the 12 kind to the top and the reader can open every theme to see the rest.
-
-## Tab 13 — Awareness → Offer Map (Schwartz)
-Rendered on the page. Hooks are verbatim buyer sentences from the theme voices; the DIY / done-with-you / done-for-you offers at each level are hypotheses derived from the Lead Sources ledger (what they have paid for and what burned them), labeled as such.
-
-<!-- LADDER:ads -->
-## Competitor Ads across the operator ladder (D1a + D1l, 2026-09-08; cleaned 2026-09-10)
 
 **Cleanup 2026-09-10 (Vince's review: "some of the ads aren't B2B — ads looking for caregivers, nurses, employees, and ads looking for clients").** Every card is now classified by WHO it talks to before any product word counts: an ad that names the operator as its audience sells to operators; an ad that recruits workers ("now hiring", "$21–23/hr", "join our team") or talks to the family ("is it the right time for memory care?", "no waitlist", "your loved one") is the operator's own ad whatever else it says; a B2B ad that names no senior-care vertical (doctors, vets, therapists, PT clinics, generic hourly hiring) is an adjacent-practice ad kept aside as a format reference; a lead-gen vendor's own family-facing ad is its ghost funnel. Thirteen residual cards are hand-read overrides (`raw/ads_overrides.json`, each with its reason). Before the cleanup the "sells to operators" set was 264 and contained ~30 consumer or recruiting ads and ~25 adjacent-practice ads; three real B2B ads (Census Home ×2, Wisdom First) were hiding in the own-ads bucket. Precision after the cleanup, random 30 read one by one: 30 of 30 B2B-to-senior-care-operators on a fresh random 30 (seed 911) read one by one after the 2026-09-10 audience-first cleanup; the 09-08 rules had scored 28 of 30 on their own sample while still admitting ~30 consumer/recruiting ads and ~25 adjacent-practice ads, which is why the sample number alone was not enough (Vince caught it by reading the tab).
 
@@ -1212,10 +1035,105 @@ Rendered on the page. Hooks are verbatim buyer sentences from the theme voices; 
 | Treasured Hearts ABA, LLC | https://www.facebook.com/treasuredheartsaba/ | 1 | 78d | operators | Multi-location medical, In-home ABA |  |
 
 **Read of the field across the ladder (from the ads, hypotheses labeled):** Across the ladder the vendors sell four things: (a) occupancy / move-ins / booked tours to assisted living and senior living operators — Wisdom First ('6 MONTH WAIT LIST', '50+ facilities trust us', 30-second quiz), Occupancy Partners ('How much of your census depends on referral sources you don't own? One discharge planner moves on...'), Searchlift ('15 more family inquiries a month'), Grow Your Occupancy (sales-leader training), Rilla (mystery-shop AI for sales counselors); (b) caregiver / CNA recruiting to home care, home health and senior living — Talroo ('If you hire 50+ caregivers, CNAs, or home health aides a month, the big job boards can't keep your pipeline full'), JT Media, Hireline, ClearDesk (offshore schedulers and recruiters 'built for Home Care', HIPAA); (c) AI intake / scheduling / referral processing — Phoebe ('Don't Hire Another Scheduler'), CareIntake (feed only), Homerun Health ('intake in minutes, not days... AI agents that process referrals'), Integrated Hire ('you don't need another $90K RN'); (d) the pay-per-lead / we-pay-for-ads guarantee lane — VERVE ('5+ in-home elder care leads in 7 days, no ad spend'), HomecareGrow ('We Pay For Ads. You Get Home Care Clients', owners doing $1M+/yr), Home Care Pipeline, Premiere Destiny ('Your Referrals Aren't Random'). The starter lane is its own market: RAL Academy, Assisted Living Investing, The RAL Room, Adult Day Care Academy, hospice-license consultants, Florida ALF consulting — courses and licensing, not growth. **Gap for inLeap (hypothesis):** nobody in the 267 operator-facing ads sells one engine that fills census AND the caregiver pipeline across more than one rung; the occupancy vendors stop at AL/senior living, the recruiting vendors stop at job ads, and the pay-per-lead vendors stop at home care. The words that recur in the winners: 'empty', 'wait list', 'booked tours', 'referral sources you don't own', 'we pay for ads', 'don't hire another scheduler'.
-<!-- /LADDER:ads -->
 
-<!-- LADDER:levels -->
-## Reviews by Star — buyer-side voice only: the lead sellers, franchises and software operators pay for (D1i; rebuilt 2026-09-10)
+
+---
+
+## Landing pages (B2B only)
+
+
+Eye reviews of the pages that matter (full-page screenshots are in `creatives/lp/` and on the page's Competitor Ads tab):
+
+- **https://homecare.aplaceformom.com** — Eye review: the provider-side door is a five-field form (name, company, email, phone, state) under 'Trusted by families. Built for home care growth.' with 'How our program works' and 'Included in Your Partnership' below, no price on the page; 'a team member will reach out within 1–2 business days' — the sales call the owners in the groups describe ($50–68 per lead, $580 prepaid for 10) happens after this form, not on it. A portal login sits top-right: the relationship is a managed account, not self-serve.
+- **https://www.caring.com/partners** — Eye review: Caring.com's provider page is 'Claim Your Free Caring.com Listing' — the directory model: free listing first, 'Get Referrals' as a nav CTA, separate 'Home Care Partner Sign In' and 'Senior Living Partner Sign In'. The page sells the listing, not the lead price; owners learn the per-lead cost inside.
+- **https://homecaregrow.io** — Eye review: the purest owner-facing pitch in the set. H1 'Home Care Agencies: Add $150,000 New Revenue In 16 Weeks With Exclusive Leads', a guarantee ('or we work with you for free until you do'), a named client proof ('Araceli from Love N Care adds 12–19 new clients per week'), a 20-minute 'Agency Growth Call' as the only CTA, 'proud partner of franchisees'. It sells exactly against the group complaint: 'Are low quality leads limiting your agency's growth?' → exclusive, fresh, Meta-ads system.
+- **https://onlinebizbuilders.com** — Eye review: OBB / Home Care Hero — '$150,000 in new revenue in 90 days. Or we work for free.' 'A shared lead isn't a lead. It's a race you already lost.' 'We don't sell you leads. We book qualified assessments onto your calendar.' Stat bar: 2-minute call-back, 100% run on your brand never shared, 0.22% dispute rate since 2019. A self-diagnosis section ('Where are you stuck? feast or famine / owner as bottleneck / my leads don't book') mirrors the group threads word for word. CTA is APPLY (qualification), not buy.
+- **https://occupancypartners.io** — Eye review: senior living version of the same offer, 'for independently owned senior living communities' (20–80 units). H1 'You don't need more leads. You need more move-ins.' Argument: 75% of families choose the first community that responds, 47-hour average response vs five minutes, $120K lifetime value of one move-in, 88% industry occupancy. 'We book the tours. We report move-ins, not impressions. Exclusive families, never shared.' CTA: book a strategy call.
+- **https://get.patientspipeline.com** — Eye review: 'Built exclusively for non-medical home care agencies.' H1 'More in-home assessments. More new clients. Less guesswork.' The problem section is the owner's own story: 'You signed five clients last month. This month? Nothing… a referral partner who sends two families, then goes quiet for a quarter… running on word of mouth and three or four big clients — not a system.' Disqualifier ('isn't for every home care agency'; the feed ad says owners above $70k/month), FAQ answers 'Do you only run Facebook ads?' and 'What if we're already getting referrals?'. CTA: free growth assessment.
+- **https://www.momshouse.com** — Eye review: the referral-training vendor for the independent agent. H1 sells 'the Silver Tsunami as your endless revenue source for referral fees and real estate deals'; three certifications (Senior Living Placement 6 weeks, Real Estate Investing 8 weeks, Downsizing Specialist 6 weeks), 'Get Certified to Unlock Access', bundle pricing on the page ($47 entry, $6,000 / $18,000 / $216,000 income framing). The buyer it creates is the realtor-turned-placement-agent who then needs families — the same acquisition gap, one rung down.
+- **https://vervecarepartners.com** — Eye review: pay-per-lead for placement agents and providers: 'Connect with Local Families Actively Seeking Senior Care', 'Launch in <7 days · 1-to-1 Lead Ownership · Zero Setup Fees', 'Every lead is yours — no sharing, no overlap', phone number as the CTA. The 'exclusive' claim is the direct answer to the A Place for Mom complaint; no price on the page.
+- **https://www.phoebe.work** — Eye review: not a lead vendor — the scheduling AI from Vince's feed (895 reactions). H1 'The AI teammate that keeps your home care agency running 24/7', '75% of shifts filled in under 15 minutes', 'Book a Demo'. It sells the other job (staffing) to the same owner; useful as the proof that the owner audience buys from Meta ads when the pain is named precisely.
+- **https://www.careinhomes.com** — Eye review: the directory the owners rate as cheaper ($25 a lead in the groups): family-facing matching page with a 'Provider Login' and 'Featured Home Care Near [zip]' listings; the provider offer is not on the page.
+- **https://www.seniorly.com/agents** — Eye review: Seniorly (now CareScout) sells the family the agent: 'Seniorly Partner Agents are commissioned by the senior living community you choose only when you move in' — the placement-agent economics the RCFE owners resent, stated to the family as '100% free'.
+
+| Advertiser / page | URL | H1 | CTAs | Forms |
+|---|---|---|---|---|
+| A Place for Mom — home care partner page | https://homecare.aplaceformom.com/ | Trusted by families. Built for home care growth. | Get started | 1 |
+| Caring.com — partners | https://www.caring.com/partners/get-listed | Claim Your Free Caring.com Listing | The Free Senior Living Advisors, Start a Free Consultation, Starting The Convers | 3 |
+| CareInHomes | https://www.careinhomes.com/ | Need help? Use our home care matching service, check out options here | Contact Us, See More Listings, Get Started | 1 |
+| Seniorly — partners | https://www.seniorly.com/partners/communities |  | Sign In, Learn more, Contact | 0 |
+| HomecareGrow.io | https://homecaregrow.io/ | Home Care Agencies: Add $150,000 New Revenue In 16 Weeks With Exclusive Leads |  | 0 |
+| Phoebe AI scheduling (feed) | https://withcoral.com/ | The data engine for enterprise AI | Contact, See the full methodology and results., Contact us | 0 |
+| Home Care Breakthrough Solutions | https://homecarebreakthrough.com/ | HOME CARE BUSINESS COACHING | Get More Clients, Find and Keep More Caregivers, START HERE | 0 |
+| Mom's House (referral training) | https://www.momshouse.com/ | ...And How The Silver Tsunami Can Be Your Endless Revenue Source For Referral Fees And Real Estate Deals Over The Next 2 | Contact, Free Webinar, Get Certified | 1 |
+| CarePatrol franchise | https://carepatrol.com/franchising/research-carepatrol/ | CarePatrol Senior Care Advisors | Facebook (opens in new tab), Request Info, Referral Partners | 1 |
+| Care.com for business | https://www.care.com/benefits/ |  | Get benefits, Learn more, Talk to our team | 0 |
+| Occupancy Partners (feed) | https://occupancypartners.io/ | You don't need more leads. You need more move-ins. | Occupancy Partners, BOOK A CALL, BOOK A STRATEGY CALL | 0 |
+| Plena / PatientsPipeline (feed) | https://get.patientspipeline.com/ | More in-home assessments. More new clients. Less guesswork. | Get My Free Growth Assessment, I'm ready to get more patients., Do you only run  | 0 |
+| Phoebe AI scheduling (feed) | https://www.phoebe.work/ | The AI teammate that keeps your home care agency running 24/7. | Get Started, Hear Phoebe Talking, Book a Demo | 0 |
+| Assisted Living Locators franchise | https://www.assistedlivinglocatorsfranchise.com/ | Assisted Living Locators Franchise Opportunity | Request Info & Download, GET STARTED!, Disclaimer | 2 |
+| VERVE Care Partners pay-per-lead (feed) | https://vervecarepartners.com/ | Connect with Local Families Actively Seeking Senior Care | Contact Us, Call or Text: 385-402-8683, Book Consult Now | 0 |
+| Wisdom First Marketing (feed) | https://wisdomfirstmarketing.com/ | Better Leads Start With Trust. | LET'S TALK, Call Tracking, Free Resources | 0 |
+| Seniorly — for placement agents | https://www.seniorly.com/agents | Find your local senior living agent | Sign In, Learn more, Contact | 1 |
+| OBB Home Care Growth (Online Biz Builders) | https://onlinebizbuilders.com/ | The go-to marketing company for home care agencies. | APPLY NOW, APPLY FOR THE HOME CARE HERO PROGRAM, SEE HOW IT WORKS | 0 |
+| Talroo caregiver hiring (feed) | https://www.talroo.com/ | Candidates You Can’t Get Anywhere Else. | Apply Intelligence, Channel Partners, Learn more | 0 |
+| A Place for Mom — partners portal | https://partnercentral.aplaceformom.com/ |  | Contact Us, OUR PARTNERSHIP, GETTING STARTED | 2 |
+| Home Care Pulse (Activated Insights) — operator vendor | https://activatedinsights.com/ | Uplift the Care Experience | Contact Us, CONTACT US, Learn More | 0 |
+| AxisCare (software vendor ads found 09-08) | https://axiscare.com/ | Home Care Is Complex. How You Manage It Shouldn’t Be. | Vital Signs, AI Call Transcription, Learn More | 1 |
+| Approved Senior Network / Hurricane Marketing (09-08 ads) | https://www.approvedseniornetwork.com/ | Approved Senior Network Find Care Anywhere | Providers Contact Us, Senior Care Businesses - Get Listed Today, Join Our Site T | 2 |
+| ChoiceLocal home care marketing | https://choicelocal.com/home-care-marketing/home-care-advertising-ideas/ | ChoiceLocal Home Care Advertising Ideas Built Around Better Customer Decisions | Contact Us, Schedule A Consultation, Get Started | 2 |
+| corecubed home care marketing | https://corecubed.com/ | Elevate Your Home Care Marketing With corecubed | Core Partners, Website Design, Request a Consultation | 2 |
+| Senior Living Mastery lead gen | https://seniorlivingmastery.com/services/senior-living-lead-generation/ | Senior Living Lead Generation | Book A Call, Contact Us, 1-On-1 Booking Call | 0 |
+| Waypoint Converts senior living leads | https://www.waypointconverts.com/ |  | Register free →, CallRail Integration, Learn | 0 |
+| Further (senior living AI leads) | https://www.talkfurther.com/ | The leading AI Sales & Marketing platform for Care Communities | Tour SchedulingSeamlessly schedule tours., AnalyticsGet actionable insights., Le | 0 |
+| SageCare AI intake | https://www.sagecare.ai/ | The modern home care agency front office. | Schedule a demo, Get access, Learn more | 0 |
+| Horst Construction | https://www.horstconstruction.com/ | BUILDING WHAT MATTERS TO YOU® | PARTNERS, DESIGN-BUILD, AUDITORIUM DESIGN & THEATER CONSTRUCTION | 2 |
+| BrightStar Care Bryan / College Station | https://www.brightstarcare.com/blog/senior-care-after-surgery/ | Home Health Care for Seniors After Surgery | Contact Us, Call Us 24/7 844.518.0420, FIND CARE NEAR YOU | 1 |
+| ELITE HealthCare Consulting | https://homecareconsultancy.com/ | Welcome to ELITE HealthCare Consulting | STARTUP SERVICES, Non-Medical Home Care Business Startup, Home Health Care Busin | 1 |
+| The Kensington | https://tools.roobrik.com/agemark/kensingtoncumberland/seniorliving/start?roobrikroute=ken | Is it the right time for senior living? |  | 1 |
+| Kingston Bay Senior Living | https://tools.roobrik.com/agemark/kingstonbay/memorycare/start?roobrikroute=kingstonbay&se | Is it the right time for memory care? |  | 1 |
+| Applaud Autism Services - ABA Therapy | https://www.applaudautism.com/ | A child with autism is a full-time occupation. | Contact Us, Schedule a callback, See all ABA services | 6 |
+| Familiar Surroundings Home Care | https://asnjobs.com/FamiliarSurroundingsHomeCare |  | Apply Now | 0 |
+| Colorado Behavior and Learning Group | https://www.coloradobehavior.com/ | Licensed ABA Therapy, On-Site Experts: Your Child's Growth Starts Here | Join Us, Referral Partners, Contact | 1 |
+| Comfort Keepers Home Office | https://www.comfortkeepers.com/b2b-referral/ | Meaningful in-home care for your patients | Apply | 1 |
+| Certified Homecare Consulting | https://www.certifiedhomecareconsulting.com/ |  | Licensing & Startup, Start a Home Care Business, Start a Home Health Care Busine | 2 |
+| Nathan Littauer Hospital and Nursing Home | https://secure7.saashr.com/ta/6101323.careers?full_apply=&jobid=554125584&CareersSearch=&I | Apply for Job |  | 0 |
+| Nicole McCance | https://mccancemethod.com/the-psychology-today-template/ | The Psychology Today Template | Free Masterclass, Book A Free Call, Download Now! | 1 |
+| Medbridge | https://www.medbridge.com/care/remote-therapeutic-monitoring | REMOTE THERAPEUTIC MONITORING | Contact sales about something else., contact page, Contact Sales | 1 |
+| The RAL Room: Assisted Living Mastermind | https://offers.theralroom.com/webinar-b | High Income Professionals: Invest in the Nation's Most In-Demand Housing Sector: | Reserve Your Seat - Free Live Webinar, Sign me up! | 0 |
+| Home Care Breakthrough Solutions | https://go.homecarebreakthrough.com/register | Revealed Live: The 3-Step Home Care Revenue Breakthrough System Agencies Use To Scale To 10M+ In Revenue | Save My FREE Seat… Tuesday at 1pm EST | 0 |
+| AxisCare | https://axiscare.com/white-papers/understanding-evv-2/ | Understanding Electronic Visit Verification (EVV) | Vital Signs, AI Call Transcription, Learn More | 1 |
+| Grow Senior Care Marketing | https://growseniorcaremarketing.com/grow-your-home-care-agency/ | Watch The Video Below To Learn The Digital Marketing Secrets We Used To Grow My Choice By Over 400% | SCHEDULE A FREE STRATEGY SESSION, SCHEDULE YOUR STRATEGY SESSION | 0 |
+| LaKeysha Cobbs Hayes - Coach Key | https://practicereadyaba.com/free-resources | Pick Your Free Guide. | GET FULL ACCESS, GET MY FREE GUIDE →, FIND MY TOP OPPORTUNITIES → | 0 |
+| ABA Business Coach | https://ababusinesscoach.com/start-up-blueprint | Start-Up Blueprint | GET THE ABA START-UP BLUEPRINT!, keyboard_arrow_right I WANT TO JOIN!, settings  | 2 |
+| Premiere Destiny Home Care Success | https://premierehomecaresuccess.com/referral-guidev2 | 7 Hidden Breakdowns Costing You Clients (and How to Fix Them) |  | 0 |
+| Scale My Niche | https://go.scalemyniche.com/learn-more-senior |  |  | 1 |
+| GreenOak Accounting | https://www.greenoakaccounting.com/webinar |  | FREE CONSULTATION, Free Consultation, Contact Us | 0 |
+| Cory Boldroff- The Real Estate Planner | https://docs.google.com/forms/d/e/1FAIpQLSd2BNOw7Zwi2e0NhYLza1_LEnWigdSVaq2ZoaYcBwqTsZDYsw |  | Sign in to Google, Learn more | 1 |
+| RN Pad | https://www.rnpad.com/ | RN Pad is the solution to fast and efficient nursing assessments | Free Tools, Contact Us, Schedule a demo | 0 |
+| Griffin Mallas | https://www.grouppracticebuilders.com/growth-levers/get-free-gp-growth-levers-long |  | Contact | 0 |
+| Accushield | https://accushield.com/take-a-tour/ | Your Personalized Tour Awaits | LEARN MORE, Get Started, Sign-in Options | 1 |
+| MTCS Business Finance | https://tools.mtcsbusinessfinance.com/ | Grow Your Mental Health Practice's Impact And Income. | Get My Free Access, Use the Free Calculator | 1 |
+| OBB - Home Care Growth | https://go.onlinebizbuilders.com/home-care-hero-wp | We'll Implement Our 'Home Care Hero' Program & Guarantee You $150,000 in New Revenue in 90 Days or We Work For Free Unti | See if your agency qualifies →, See If You Qualify | 0 |
+| Phillip Vincent | https://www.momshouse.com/start | ...And How The Silver Tsunami Can Be Your Endless Revenue Source For Referral Fees And Real Estate Deals Over The Next 2 |  | 2 |
+| Evolve Healthcare Marketing | https://ehmresults.com/ | Full Funnel Patient Acquisition for Mid-Market Healthcare Practices | Contact Us, Let's Talk, call attribution | 0 |
+| CarDon Senior Living | https://cardon.us/communities/bell-trace/rehabilitation/ | Rehabilitation | Start Now, Contact, Facebook Search | 0 |
+| ClearDesk | https://usa.cleardesk.com/book-discovery-call/ | "My VA made a huge impact in just three months." — Kayla S. | Book discovery call →, Book my discovery call → | 0 |
+| HomecareGrow.io | https://homecaregrow.io/150k-guarantee | Home Care Agencies: Add $150,000 New Revenue In 16 Weeks With Exclusive Leads |  | 0 |
+| Carla Brown, EA - Accounting & Tax Solutions for Physicians | https://browntax.co/7loopholes | Download Your Free | YES! Give Me My Free eBook! | 0 |
+| Bigageenergy | https://caregivingmasterclass.com/ | You don't have to figure caregiving out alone | JOIN NOW, Join the Masterclass now, SIGN UP TODAY | 0 |
+| Nurse Next Door | https://www.facebook.com/nursenextdoor/ | Nurse Next Door | See all photos | 2 |
+| Wisdom First Marketing | https://go.wisdomfirstmarketing.com/assisted/ |  | See how it works | 0 |
+| Home Care Pipeline | https://www.homecarepipeline.com/b | 3–5 New Private-Pay Clients | SEE IF I QUALIFY →, SEE IF I QUALIFY | 0 |
+| Nomia HQ | https://nomiahq.com/contact-us/ | Get in touch | Contact, Contact Us | 0 |
+| Florida Assisted Living Consulting LLC with alfcaregivercon | https://www.floridaassistedlivingconsulting.com/assisted-living-and-caregivers-conference | The #1 Conference for Caregivers, Assisted Living Operators & Senior Housing Professionals in Florida! | Get Your Ticket Now, Get Your Access Ticket Now, See More Reviews | 1 |
+| TruBlue Franchise Opportunities | https://www.trubluefranchise.com/first-time-business-owner-segment | Why Franchising is the Best Choice for First-Time Business Owners | Schedule Now, Schedule a brief 10-minute call, Download Now | 4 |
+
+
+---
+
+## Reviews by Star — buyer-side voice
+
 
 **Cleanup 2026-09-10 (Vince: 'your Reviews by Star are comparing the B2C brands').** The 487 TrustPilot reviews of A Place for Mom, Care.com, Home Instead, Right at Home, Comfort Keepers and Visiting Angels were re-read one by one: 4 are written by an agency owner or franchisee and stand below; the rest are families and workers and are excluded from this B2B page (they belong to the family-caregiver research page). What replaces them is the owner voice about each lead source from the Lead Sources ledger, shown beside the provider-side reviews.
 
@@ -1266,269 +1184,42 @@ I spoke directly with Mallory Hoskinson, Senior Director of Growth and Engagemen
   > "Hi Chelsey. I’d be happy to speak with you more. Feel free to complete our franchise form online and we can schedule a call!" — YouTube · @KrisChana · owner · https://www.youtube.com/watch?v=Ws6nhEzQvEw&lc=Ugz6l2duHQvQ4jwDwVB4AaABAg.9d0gXzLDSQ69d0qSX3qNu4
   > "Nice Try - But falls far short of minimum needs for Home Care businesses. We're required to use ClearCare within our home care franchise system. We used to use another very good software called HomeTrak. We embraced ClearCare about 2 years ago when our franchiser told us that they had tested it and " — trustpilot · owner · https://www.trustpilot.com/reviews/56b24d800000ff000937464f
 
-### The employer side (Indeed + Glassdoor) — employee voice about the largest operators (hiring-pain evidence, not the buyer; collapsed on the page)
+### The employer side (Indeed + Glassdoor) — condensed to the per-brand synthesis; every review is on the page
 
 **How pulled:** Indeed through the research browser at human pace (3 pages per brand: default, lowest-rated, highest-rated — Indeed's bot wall closes after ~3 fast loads, so star-filter pages were not available; Indeed truncates review text at ~300 characters with a link to the full review) and Glassdoor (URL resolved through Google; the first page's 3 reviews plus the aggregate rating — page 2 is a login wall). 572 employer reviews across 11 brands. Star = the reviewer's own rating.
-
 ### Brookdale Senior Living (Senior living / CCRC / SNF) — 65 read · 1★ 28 · 2★ 5 · 3★ 5 · 4★ 4 · 5★ 23 · Glassdoor aggregate 3.1 over 5418 reviews
-- **1★ (28)** — Likes: the residents, nothing else. Pains: 'meetings about meetings', every weekend, commissions paid late (Sales Manager); an Executive Director's day 'spent reacting to staffing shortages rather than leading… covering gaps, calming frustrated families'; 'Build census great! Low census, get rid of good employees'; extra charges for a room tray. Their asks: accountability, a regional that supports instead of blames, staffing before census.
-  > "Zero work life balance !: Meetings about meetings every day, Toxic, unprofessional, commissions, not paid on time, expected to work every weekend -no work life balance horrible culture. HR doesnt care, even if you make your #s they will still micromanage everything , interview process misleading ...Show more" — indeed · Sales Manager · https://www.indeed.com/cmp/Brookdale-Senior-Living/reviews/zero-work-life-balance?id=7a85356698bb4926
-  > "Toxic culture, chronic understaffing, and unsupportive upper management: As Executive Director at a Brookdale community ia typical day was spent reacting to staffing shortages rather than leading. The building was woefully understaffed, so most of my time went to covering gaps, calming frustrated families, and trying to keep basic care on track.
-
-I learned that even a committed...Show more" — indeed · Executive Director · https://www.indeed.com/cmp/Brookdale-Senior-Living/reviews/toxic-culture-chronic-understaffing-and-unsupportive-upper-management?id=f7f213bf8790791f
-- **2★ (5)** — Likes: co-workers and residents. Pains: 'the door is constantly revolving', a Business Office Coordinator whose day is 'returning calls, recruiting caregivers, payroll, checking billing and long term care insurance' — the recruiting sits with the office. Asks: structure, time off.
-  > "Management ruins it: Loved my residents but the upper management ruins it for them. Anytime you get a good solid employee in, upper management ruins it and the door is constantly revolving. ...Show more" — indeed · Resident Care Coordinator · https://www.indeed.com/cmp/Brookdale-Senior-Living/reviews/management-ruins-it?id=ddb013cd09906b3d
-  > "dont go there: co workers are great so are the residents.. high turn over of staff and management. Hard to request time off. promotions are unlikely.
-
-I enjoyed interacting with families and residents. A typical day: answer phones, greet visitors, escort visitors, deliver mail/packages to residents, deliver messages...Show more" — indeed · Front Desk Concierge · https://www.indeed.com/cmp/Brookdale-Senior-Living/reviews/dont-go-there?id=082f53814cfaae18
-- **3★ (5)** — Likes: the residents, a large activities budget. Pains: 'pretty much always short staffed', cuts to program assistants, 'schedule appts, call pcp/pharmacys… staff schedules/pto/call-outs' as the wellness director's real day. Asks: more hands, fewer cuts.
-  > "Alright: Pretty much always short staffed, making it difficult to get time off. Don’t let people move around between shifts very often, will tell them that shift is full until they put in their 2 weeks then there’s magically space. Overworked and underpaid, but the staff for the most part are pleasant to work...Show more" — indeed · RA · https://www.indeed.com/cmp/Brookdale-Senior-Living/reviews/alright?id=243e593bcd52e3b4
-  > "Realistic view: Address concerns, speak with families about care plans/change of conditions with residents, schedule appts, call pcp/pharmacys. Enter orders, document everything. Plan and work on staff schedules/pto/call-outs. Address staff concerns. Go out to do assessments on new potentials, for your community or...Show more" — indeed · Health and Wellness Director · https://www.indeed.com/cmp/Brookdale-Senior-Living/reviews/realistic-view?id=4f9d1b53a5251613
-- **4★ (4)** — Likes: meaningful work, 'management takes care of employees' at some buildings. The unsold desire: 'I've never had a scheduler for more than 4 months consecutively' — the scheduler seat is the churn point. Asks: a stable scheduler and manager.
-  > "Enjoyable and Meaningful: Meaningful work, management takes care of employees, some coworkers hard to work with and you can get burnt out quickly. But overall it was a wonderful place to work." — indeed · Caregiver · https://www.indeed.com/cmp/Brookdale-Senior-Living/reviews/enjoyable-and-meaningful?id=748f76a52cae9446
-  > "Nice facility and nice residents: I honestly really enjoyed working here and it was a great facilities. Enjoyed working with the residents and their families. Got a little hectic at times due to understaffing" — indeed · Certified Nursing Assistant (CNA) · https://www.indeed.com/cmp/Brookdale-Senior-Living/reviews/nice-facility-and-nice-residents?id=402c61047d9446f6
-- **5★ (23)** — Likes: the residents, a good building-level team, 'loyal to a fault'. What they praise is local (my ED, my team), never corporate.
-  > "Featured review: This job was the best job I have had. I enjoyed this job very much because not only are you helping others but you feel good doing it. This job is hard work but if you put yourself to it you can make it feel like a home." — indeed · RCA/ Certified Medication Technician · https://www.indeed.com/cmp/Brookdale-Senior-Living/reviews/the-best-place-to-work-at?id=42f42b08a58eecaa
-  > "Brookdale is a wonderful place to work for: I just recently started here but I really like the place the people are very kind management is very helpful the hours that I get each week could improve full time should be 5 days a week instead of 4 days a week but at this point of time I seem to be able to pick up that extra day until they hire someone...Show more" — indeed · Gna · https://www.indeed.com/cmp/Brookdale-Senior-Living/reviews/brookdale-is-a-wonderful-place-to-work-for?id=c42ad5b4d7b350b5
 - **Claude suggestion / what should change:** The operator-side lesson is in the 1★ and 4★ columns together: census drives staffing decisions and the scheduler turns over first. A growth engine sold to a Brookdale-type operator has to promise hiring ahead of move-ins and a stable scheduler/intake seat, or it just adds move-ins to a building that will 'get rid of good employees' at the next low-census month (feasibility aside).
-
 ### A Place for Mom (Placement / referral agency) — 62 read · 1★ 21 · 2★ 3 · 3★ 1 · 4★ 1 · 5★ 36 · Glassdoor aggregate 3.8 over 1429 reviews
-- **1★ (21)** — Senior Living Advisors on the placement business from the inside: 'Management cut pay in half for bonuses… Teams are too large with not enough leads to make any money'; 'quotas came out of nowhere'; 'a highly metric-driven environment with constantly changing expectations'; 'be happy with the leads you are given'; 'You have to climb a mountain every month'; 'churn and burn'. The advisor's own ask: enough leads per advisor and a stable comp plan.
-  > ": appreciated many of my early years with this company; however, over time I felt director level leadership became increasingly out of touch with the front line and how they actually operate. Promotions often seemed based more on popularity than demonstrated skill, and strong sales managers appeared limited" — indeed · Senior Learning & Development Specialist · https://www.indeed.com/cmp/A-Place-For-Mom/reviews/reflection-of-my-time-at-apfm?id=b74fbb20910f7531
-  > ": Management cut pay in half for bonuses. . Heavily micro managed. Teams are to large with not enough leads to make any money. They don't care about their employees and they treat you poorly. A" — indeed · Senior Living Advisor · https://www.indeed.com/cmp/A-Place-For-Mom/reviews/low-pay?id=029495b4e0b9ba4e
-- **2★ (3)** — 'It can be difficult when families have financial limitations that restrict their options' (Glassdoor) — the advisor steering to communities that pay; high turnover, repetitive training.
-  > ": The salary is probably one of the better things about working here, but the culture leaves a lot to be desired. There are some good people who make the job easier, but the overall environment can be frustrating depending on the team and management. The pay is decent enough to keep people around, but...Show more" — indeed · Anonymous · https://www.indeed.com/cmp/A-Place-For-Mom/reviews/salary-and-culture?id=552a2884db0824da
-  > "employees feel disposable Senior living advisor Current employee, more than 1 year Roanoke: Pros: The position gives you the opportunity to make a meaningful difference in people's lives. Cons: It can be difficult when families have financial limitations that restrict their options." — glassdoor · employees feel disposable Senior living  · https://www.glassdoor.com/Reviews/A-Place-for-Mom-Reviews-E240285.htm
-- **3★ (1)** — 'felt a lot of pressure to pitch places blind. Very heavy on the system of sales without as much room for the heart of helping.'
-  > ": Learned a lot but went through a lot of managers and felt a lot of pressure to pitch places blind. Very heavy on the system of sales without as much room for the heart of helping." — indeed · Senior Living Advisor · https://www.indeed.com/cmp/A-Place-For-Mom/reviews/high-pressure-quotas?id=3e0cb5304abf6053
-- **4★ (1)** — one row: fair place, respectful management.
-  > ": Fair enough, good place, I would recommend, great HR, respectful management" — indeed · Manager · https://www.indeed.com/cmp/A-Place-For-Mom/reviews/overall-good?id=2aec7d45a63c2553
-- **5★ (36)** — Thirty-six near-identical 'meaningful… rewarding… supportive team' reviews from 'Manager' and 'Eldercare Advisor' posted recently — the 5★ column reads as a review-prompt campaign (say so); the one specific 5★ ask: 'The hours… could have been better'.
-  > ": I really enjoyed the opportunity to help families help their loved ones. The hours, however, probably could have been better. But the work was enjoyable....Show more" — indeed · Sales Representative · https://www.indeed.com/cmp/A-Place-For-Mom/reviews/meaningful-work-helping-families?id=fd6f1cf748a6a519
-  > ": Working as an Elder Care Advisor at A Place for Mom has been a genuinely wondrous experience because I get to help families during moments that can be confusing and emotional. Some conversations are difficult, especially when someone is trying to make a care decision for a parent while feeling overwhelmed...Show more" — indeed · Eldercare Advisor · https://www.indeed.com/cmp/A-Place-For-Mom/reviews/wondrous-lessons-from-meaningful-conversations?id=ae7bf666830408dd
 - **Claude suggestion / what should change:** For the operator buyer this is the referral source seen from inside: APFM advisors are on quota with 'not enough leads' and pitch 'places blind', which is why operators on the ladder say the placement lead is 'the same lead sent to 50 agencies' and Five Star reports APFM move-ins under 5%. An offer that gives an operator inquiries it owns competes with this machine on the operator's side, not the advisor's.
-
 ### Atria Senior Living (Senior living / CCRC / SNF) — 59 read · 1★ 26 · 2★ 3 · 3★ 3 · 4★ 6 · 5★ 21 · Glassdoor aggregate 2.7 over 1646 reviews
-- **1★ (26)** — Pains: 'All about sales. Hard work does not matter' (Manager); 10+ hour days as an office manager doing a personal assistant's job; hostile kitchens; HR that 'does absolutely nothing'. Asks: leadership that resolves, hours that exist.
-  > ": worked there for nearly five years, and while I had high hopes when I joined, my experience ultimately led to disappointment and my decision to resign.
-
-Pros:
-Meaningful Relationships: I enjoyed building connections with residents and some coworkers, which made my work fulfilling on a personal level." — indeed · Hospitality Manager · https://www.indeed.com/cmp/Atria-Senior-Living/reviews/toxic-work-environment-with-lack-of-support?id=2a3baaced5c843da
-  > ": All mattered who I worked with almost everyone tells as if they are a child that part was the worst in my opinion other then that my experience was good . I learned how cool old ppl are" — indeed · Server/Waiter · https://www.indeed.com/cmp/Atria-Senior-Living/reviews/residents-made-the-experience-good-a-few-good-co-workers?id=dfff7c8e0102ef2c
-- **2★ (3)** — Pains: management 'made the work environment exhausting… walking on eggshells'; sick days punished. Asks: consistency.
-  > ": The location where I worked was not great. The supervisors did not know how to handle certain situations well and the work environment was not good. Did not really care for their workers ...Show more" — indeed · MED Tech RMA · https://www.indeed.com/cmp/Atria-Senior-Living/reviews/its-not-great?id=3ca75df583f2a269
-  > ": The residents were honestly the best part of the job. I met some great coworkers too, but management made the work environment exhausting. It constantly felt like you were walking on eggshells. Communication was inconsistent, expectations seemed to change all the time, and there was a lot of gossip and" — indeed · Staff · https://www.indeed.com/cmp/Atria-Senior-Living/reviews/i-wouldn-t-recommend?id=931babd7e247b1f0
-- **3★ (3)** — Likes: good pay for servers, community feeling. Pains: favoritism; residents who 'belong in a skilled nursing facility' (LVN) — the same acuity-creep complaint as Sunrise.
-  > ": I would say I loved working here, but there is a lot I mean A LOT of favoritism in this job. The residents are amazing but some definitely belong in a skilled nursing facility rather than an Assisted Living/ Independent facility in my opinion." — indeed · LVN · https://www.indeed.com/cmp/Atria-Senior-Living/reviews/loved-working-here?id=fa8009e8a0943add
-  > ": Good pay. Management just wasn’t available when needed unless something bad happened. Overall, it is a decent job. Pays the bills but you will get tired working here after a year." — indeed · Server · https://www.indeed.com/cmp/Atria-Senior-Living/reviews/benefit-good-pay-only?id=fc0138c81962962f
-- **4★ (6)** — Likes: fair compensation, room to advance, 'depending on which building you work in'. Unsold desire: benefits.
-  > ": I had a positive experience working at Atria Senior Living. As a Maintenance Director, every day brought different challenges and responsibilities, from preventive maintenance and inspections to responding to emergencies and supporting residents and staff. I learned a lot about managing a large senior...Show more" — indeed · Facility Maintenance Director · https://www.indeed.com/cmp/Atria-Senior-Living/reviews/great-experience-with-a-strong-team-and-opportunities-to-grow?id=d4e262f3d1c5fa3e
-  > ": Greeted and assisted visitors, residents, and families in a friendly and professional manner.
-Answered phone calls, directed inquiries, and provided general information.
-Maintained an organized and welcoming front-desk environment.
-Assisted with scheduling, paperwork, and basic administrative tasks." — indeed · Receptionist · https://www.indeed.com/cmp/Atria-Senior-Living/reviews/fun-just-busy?id=62a6aef439e7fb0a
-- **5★ (21)** — Likes: career advancement, paid training, reviews every 6 months with raises, laid-back managers who work with scheduling.
-  > ": The 401k match could be better, but the company stands out for career advancement and career development. They give you plenty of opportunity. It's a great place to work." — indeed · Maintenance Director · https://www.indeed.com/cmp/Atria-Senior-Living/reviews/great-place?id=cde5e9a8dd19c1a6
-  > ": Everyday is different because the residents have different needs but the culture allows me to be close with my coworkers, management, and the residents. I didn’t find work too difficult but it sometimes gets overwhelming." — indeed · Medication Aide · https://www.indeed.com/cmp/Atria-Senior-Living/reviews/chill-workplace?id=101ea9fa86e00ebf
 - **Claude suggestion / what should change:** Atria's 1★ 'All about sales' and 3★ 'belong in a skilled nursing facility' are the corporate-sales-quota culture the r/AssistedLiving sales manager described; the operator buyer here is regional/corporate, and copy that promises 'more move-ins' will be heard as more quota unless it promises qualified inquiries and staffing.
-
 ### Sunrise Senior Living (Assisted living / RAL) — 56 read · 1★ 20 · 2★ 4 · 3★ 1 · 4★ 4 · 5★ 27 · Glassdoor aggregate 3.4 over 3023 reviews
-- **1★ (20)** — Pains: 'Overworked, underpaid, understaffed, unappreciated'; 'They bring people in that aren't qualified to be in assisted living. It becomes more of skilled nursing' (LPN) — admissions pushed past the care level to fill beds; 4 maintenance people in 2 years; no days off. Asks: staff to census, honest acuity at move-in.
-  > ": Everyday was stressful which is typical with caregiving work but I had a lot of added stress with management and my coworkers. Coworkers were rude and lazy with no correction from management. There was a lot of favoritism between management and coworkers. Situations with residents were almost always" — indeed · Caregiver · https://www.indeed.com/cmp/Sunrise-Senior-Living/reviews/not-a-good-company?id=c922977d80f6ddca
-  > ": Stay away from this job , work load , training, inspections, staff unsaportive , you are doomed for failure , 4- maintenance personnel in 2-yrs that should tell you something, you will work hard with no rewards or recognition . If you like 200lb bags of garbage, dirty diapers falling out of bags onto...Show more" — indeed · Maintenance Coordinator · https://www.indeed.com/cmp/Sunrise-Senior-Living/reviews/stay-far-away-from-this-job?id=a068ced2a595461d
-- **2★ (4)** — Pains: 'always short staffed. Every single day'; AL staff pulled into memory care with no extra pay; Care Managers 'at most $3 above MINIMUM WAGE' (Glassdoor). Asks: pay that clears fast food, one job at a time.
-  > ": We were always short staffed. Every single day. Was hired for an assisted living position but spent duel time in memory care as well because we had no help. No extra compensation for extra work. Was expected to bounce back and fourth all day through the community with constant micromanaging. Management" — indeed · Activities · https://www.indeed.com/cmp/Sunrise-Senior-Living/reviews/burnout-and-lack-of-professionalism?id=00c914a86332b7e9
-  > ": The residents were the only good thing about working at Sunrise. When you have time to actually engage with them it is very rewarding. Care managers have too much responsibility with management's expectations being unrealistic. I had seven managers in 5 1/2 years. On-floor staff turnover was also quite" — indeed · Lead Care Manager · https://www.indeed.com/cmp/Sunrise-Senior-Living/reviews/overworked-and-underpaid-co-workers-challenging?id=d7bf40ea4855edc3
-- **3★ (1)** — Friendly people, poor pay and benefits.
-  > "Friendly people, but poor pay and benefits Activity assistant Current employee, more than : Pros: People Friendly, and get along well with some of the residents. Cons: pay, benefits, hours, environment, and career opportunities." — glassdoor · iendly people, but poor pay and benefits · https://www.glassdoor.com/Reviews/Sunrise-Senior-Living-Reviews-E6023.htm
-- **4★ (4)** — Likes: 'my management and executive director were top of the line'; a culture with work/life balance. The unsold desire: an HR that does not fire on the spot ('high turnover').
-  > ": Housekeeping, Santa bathrooms, vacuuming, dusting communicate with residence what else needs to be done? Kept all supplies in bathrooms needed vacuumed, rooms, hallways, cleaned bathrooms, and all supplies on carts and storage room when needed helped out in other areas when help is needed in communicate....Show more" — indeed · Housekeeper · https://www.indeed.com/cmp/Sunrise-Senior-Living/reviews/3-supervisors-in-two-years-didn-t-communicate-problems-pointed-out-a-piece-of-paper-what-was-wrong-not-showing-and-dismissed-me?id=e7e1823e84a99c00
-  > ": I enjoyed my time at Sunrise Senior Living. HR department had a back for firing people on the spot which I thought was unethical as well as high turnover. The Assisted Living was much more organized and sought out to be a growing community with residents needing all ranges of daily care. The Memory Care" — indeed · Care Manager · https://www.indeed.com/cmp/Sunrise-Senior-Living/reviews/good-raises-and-ability-to-grow?id=0a14950a244c61ef
-- **5★ (27)** — Likes: 'a place that I feel at home', purpose, training that was clear, Spanish-language gratitude for the opportunity. The 5★ is the building team, not the brand.
-  > ": Absolutely a place that I feel at home. Families, Staff, Residents and head Supervisors all make this place what it is, I feel like myself and Sunrise has helped me find a purpose in what I do on a day to day basis. Appreciation is always shown. Hard days are the best days, you leave work feeling accomplished...Show mo" — indeed · Caregiver, Dishwasher, Server, Dining Ro · https://www.indeed.com/cmp/Sunrise-Senior-Living/reviews/amazing-place-to-work?id=0e8a82398f858d1b
-  > ": It ls not going to be easier or always good, but if you have a group of coworkers helping you it will make it way smoother, just keep the good work and eventually will be recognized" — indeed · Staff Dining Services · https://www.indeed.com/cmp/Sunrise-Senior-Living/reviews/i-really-enjoy-the-atmosphere?id=31114fedbe04c415
 - **Claude suggestion / what should change:** Sunrise's own 1★ LPN names the occupancy trap ('bring people in that aren't qualified… becomes more of skilled nursing'): move-ins beyond the care level are a staffing problem next quarter. For inLeap this is a proof point that an occupancy offer must qualify inquiries by acuity, not just book tours.
-
 ### Amedisys (Home health) — 55 read · 1★ 21 · 2★ 6 · 3★ 2 · 4★ 3 · 5★ 23 · Glassdoor aggregate 3.2 over 2246 reviews
-- **1★ (21)** — Pains: 'zero scheduling flexibility for patients', 'the turnover here is alarming', mileage that does not cover the driving, an Admissions Nurse expected 'to maintain a quota of patients… go on patient visits in addition to admitting patients', a hospice clinical manager 'with no say'. Asks: realistic caseloads, training, drive time counted.
-  > ": I would never work here again. The corporate portion of this company is run so poorly and it trickles down. There was zero scheduling flexibility for patients, and the planning was so poor. For an RN in home health they pay on the lower end compared to competitors....Show more" — indeed · RN Hospice Case Manager · https://www.indeed.com/cmp/Amedisys/reviews/horrible-environment?id=5cfbd057954fbbd0
-  > ": Normal HHC day just added stress of everytime you have a meeting watching to see who’s coming or going depending on who the top dogs like that week . ...Show more" — indeed · LPN (Licensed Practical Nurse) · https://www.indeed.com/cmp/Amedisys/reviews/you-gotta-be-in-their-click-or-they-will-find-a-way-to-get-rid-of-you?id=d7e4eb34af288c60
-- **2★ (6)** — Pains: on-call and holiday admissions bundled into case management, 'as referral volume decreased… the company was reducing' (Glassdoor), post-buyout deterioration. The referral-volume line is the home-health owner's census problem seen from the nurse's side.
-  > ": I loved the work itself and getting to care for end of life patients and their families, but the company itself made me uneasy. Not enough support, I felt like I was thrown into a lot of situations that I was never trained for, and the work life balance was minimal. I hope that these were just temporary" — indeed · RN Case Manager · https://www.indeed.com/cmp/Amedisys/reviews/not-enough-support?id=e061973d73cc0400
-  > ": The answers to those questions depend on which office and which Director you work under. Some are horrible people and some were great to work with. The workload with all the daily conference calls were hard to get everything done." — indeed · RN-Clinical Manager/Field RN · https://www.indeed.com/cmp/Amedisys/reviews/the-day-would-be-great-until-certain-upper-management-came-that-did-nothing-but-micromanage-in-a-negative-manner?id=35d9bcd05884e51b
-- **3★ (2)** — Pains: PPV documentation-heavy visits, micromanagement, no raises 'due to UHC buyout'.
-  > ": Pay is decent, PPV model with high point values. Mostly doing documentation heavy visits with follow up visits going to physical therapy assistants. Management is strict, often trying to micromanage and threaten with random audits and it lead to a toxic workplace. They used HCHB for EMR which is not" — indeed · Physical Therapist · https://www.indeed.com/cmp/Amedisys/reviews/micromanagement-culture-decent-pay?id=f741887e388ad6a7
-  > "Caring office culture hindered by upper management's secrecy Front office staff Current em: Pros: Pay is decent although no raises this year due to UHC buyout. Office staff works well together and we do care about each other. Clinical Managers are very smart and very approachable. Office is flexible about medical and other appointments we have to make for ourselves. Cons: Amedisys upper management is a slave " — glassdoor · e hindered by upper management's secrecy · https://www.glassdoor.com/Reviews/Amedisys-Reviews-E5124.htm
-- **4★ (3)** — Likes: flexibility for parents, autonomy. The unsold desire in one sentence: 'census can be super low at times which means you don't get paid since it's PPV… usually a high turnover rate'.
-  > ": Job is busy some days, other times it can be slow. Involves a lot of sitting and office work. But if you like your coworkers it can be an enjoyable experience" — indeed · Clinical Manager · https://www.indeed.com/cmp/Amedisys/reviews/great-stable-job?id=3b9a9826d0f00966
-  > ": Good work/ life balance. Good opportunity for people who wanna work but have kids. As long as meet productivity can for the most part see as many patients as you like. When people are off you can get an overwhelming amount of patients" — indeed · RN Case Manager Home Health · https://www.indeed.com/cmp/Amedisys/reviews/good-work-life-balance?id=2e73bc6271377c9e
-- **5★ (23)** — Likes: autonomy with support, a manager 'always available', 'people above profits' at the regional level, honest onboarding.
-  > ": The Knoxville home health office offers lots of autonomy with readily available support when needed. My manger is supportive and always available when needed. The hard work that home health requires is compensated well." — indeed · Registered Nurse (RN) · https://www.indeed.com/cmp/Amedisys/reviews/best-team-for-home-health-in-knoxville?id=50dd7bf63fe5a433
-  > ": I was given the expectations and job description before I agreed to my role and sign my job description, since then there was a time I was second guessing myself; as learning new things can be challenging and it is easier to do something you know… I stuck in the was able to lean on my team and we are" — indeed · RN Case Manager · https://www.indeed.com/cmp/Amedisys/reviews/loyalty?id=52d1caa86e3955d9
 - **Claude suggestion / what should change:** Home health pays clinicians per visit, so low census is a pay cut and turnover follows; the admissions nurse under a patient quota is the intake bottleneck the trade press measures (referral acceptance under 35%). An intake/admissions offer to a home-health operator lands on both the census and the retention pain at once.
-
 ### LHC Group (Home health) — 55 read · 1★ 21 · 2★ 6 · 3★ 4 · 4★ 2 · 5★ 22 · Glassdoor aggregate 3.5 over 2111 reviews
-- **1★ (21)** — Note: LHC's Indeed page is merged into Optum after the UHC acquisition; most rows are Optum call-center and corporate staff. The home-health rows: 'discouraging to go to work every day to try to drive growth and be told no' (Account Executive), disorganized leadership, low pay.
-  > ": Toxic and Disorganized leadership. Low pay. Work life balance non existent. Quick to blame their own mistakes to others. ....Show more" — indeed · Anyonymous Employee · https://www.indeed.com/cmp/Optum/reviews/toxic-management-run?id=5107fb574b631530
-  > ": Each location runs differently but the particular office I was employed at didn’t have any culture or engagement with employees. It was discouraging to go to work every day to try to drive growth and be told no that the clinical leader didn’t want to accept. Often staffing was used as an excuse and instead" — indeed · Account Executive · https://www.indeed.com/cmp/Optum/reviews/isolating-and-just-a-number?id=24c9a7fa51b78b7c
-- **2★ (6)** — Pains: 60–70 hour weeks in finance, layoffs by a muted Teams call, 'metrics and numbers'.
-  > ": Hired as a Finance Director.
-Very excited to join the organization.
-Worklife is very poor. You will end up working 60-70 hours a week, on duplicative work. There’s no way around it. Every level of executives what a different month end package. ...Show more" — indeed · Associate Director of Finance · https://www.indeed.com/cmp/Optum/reviews/great-company-poor-worklife?id=bd48175d8c8c9db6
-  > ": You're brought in with the hope of being able to make a positive change to the healthcare system, but soon realize everything is all about the bottom line (money) and not the customers. My coworkers were great, but management was terrible. There were constant reorgs and layoffs." — indeed · UX Engineer · https://www.indeed.com/cmp/Optum/reviews/constant-re-orgs-bad-management?id=e3234f674ce97dd6
-- **3★ (4)** — Likes: branch leadership, coworkers. Pains: 'Senior Leadership not in touch with branch workings', pressure on productivity.
-  > ": When I left, many other were clinicians were leaving. Like many companies, the focus is on profit and not appreciating employees. It does not take much effort to show appreciation to your employees. There were too many managers and too few clinicians. Disappointing." — indeed · Physician · https://www.indeed.com/cmp/Optum/reviews/too-many-managers?id=3d40cbc57ad77839
-  > ": Workload here is manageable and decent work life balance. However pay is laughable, especially for anyone hired before COVID. Key issues stem with senior leaders embodied by Peter principle to your left and right." — indeed · Sr Manager Data Engineering · https://www.indeed.com/cmp/Optum/reviews/balanced-workload?id=f9a32b700255e0da
-- **4★ (2)** — Thin; not home-health specific.
-  > ": I'm fortunate to have a career I enjoy. Over my 36 years working in healthcare, this position has been my favorite.
-I feel I contribute to community wellness and they my actions are recognized. ...Show more" — indeed · Registered Sleep Technologist · https://www.indeed.com/cmp/Optum/reviews/i-ve-enjoyed-my-time-here?id=14bec8f6f189603e
-  > ": So when I was there, they SECRETLY did a lateral move around within the company while doing MY daily job I was pulled into a group teams call and was informed because I had such a "happy bubbly personality" that I was being moved from the payment posting team to a new CSR team whether I liked it or not." — indeed · Payment Rep · https://www.indeed.com/cmp/Optum/reviews/kind-of-focused-on-what-you-cant-do-vs-what-you-can?id=f86369c017023558
-- **5★ (22)** — Likes (home health rows): 'Best Home Health Agency to work for… work family', 24/7 telephone triage, rural home-bound care with an easy manager.
-  > ": Trabajaba atendiendo proveedores, suplidores y asegurados en los Estados Unidos de dierentes companias de seguro, Hospitales, medicos y asegurados. Aprendi a Navegar unos 22 programas de computador. La gerencia es muy comprensiva y estimulante. La gerencia y cultura es inclusiva y muy directa. Lo mas" — indeed · Supervisor Birla Ramos Service Advocate  · https://www.indeed.com/cmp/Optum/reviews/service-advocate?id=4aa304ad7971e816
-  > ": Providing care for rural home bound patients. Coordination of various disciplines.
-Has 24/7 telephone triage dedicated staff.
-Management is easy to work with.
-A lot of patient / caregiver teaching in mostly English and/or Spanish.
-Medical chart reviews.
-Hardest part is sometimes the oncall weekends." — indeed · Registered Nurse (RN) · https://www.indeed.com/cmp/Optum/reviews/flexible?id=4b0beaac82e81019
 - **Claude suggestion / what should change:** Read LHC as 'branch good, corporate far away': the growth AE told no is the operator-side signal that at a consolidated agency the buyer of growth is the branch/regional, and the objection is corporate approval, not need.
-
 ### VITAS Healthcare (Hospice) — 53 read · 1★ 20 · 2★ 2 · 3★ 4 · 4★ 4 · 5★ 23 · Glassdoor aggregate 3.5 over 1622 reviews
-- **1★ (20)** — Pains: 'hamster wheel effect without work/life balance', IDG meetings without structure, one social worker per team for all patients, 'patient loads too high', a call center that writes you up for a power cut. Asks: manageable caseloads, a documentation system, managers who are clinicians.
-  > ": Unprofessional work environment. Hamster wheel effect without work/life balance. IDG meetings without structure. Disregard for the social work profession and workflow. Unsupportive management. They rather have you wondering than give you directions. Medicare guidelines ignored, for example restrictions" — indeed · Medical Social Worker · https://www.indeed.com/cmp/Vitas-Healthcare/reviews/unethical-unprofessional-practices-no-work-life-balance?id=cc4dff851bf07c2b
-  > ": At the team's level, social workers are not supported and represented equally by team managers. One social worker per team managing all patients from the team. Nurses and Team Managers unrealistic expectations constantly interrupting social worker's work flow. Nurses expect to visit their patients 5" — indeed · Social Worker · https://www.indeed.com/cmp/Vitas-Healthcare/reviews/unprofessional-work-environment?id=de0ea6c2180c128e
-- **2★ (2)** — 'nurse case loads are unmanageable… Poor documentation system. Pay is low for the work expected.'
-  > ": The work is rewarding but nurse case loads are unmanageable. Management is unreasonable when their expectations can't be met. Poor documentation system. Pay is low for the work expected." — indeed · RN Staff Nurse · https://www.indeed.com/cmp/Vitas-Healthcare/reviews/rewarding-work-understaffed-and-unappreciated?id=9f8e1eb602a85436
-  > ": I worked there in 2021 as a medical records clerk. The training was poor also the other staff members in the department was cliqued up together. I quit after 1-2 weeks." — indeed · Medical Records Clerk · https://www.indeed.com/cmp/Vitas-Healthcare/reviews/unorganized-clique-ish-and-poor-training?id=369d738b11f3332b
-- **3★ (4)** — 'My day would start with urgent phone calls at 8am… My schedule was always interrupted'; Community Outreach & Sales: 'With each change of management came a new direction of focus… inconsistent in their messaging to representatives' — the liaison's own account of a hospice sales team without a stable playbook.
-  > ": It's possible to get stuff done here, however responsibilities for jobs are constantly shifting. Additionally, management is very quick in shifting the blame to others." — indeed · Medicare/Medicaid Specialist · https://www.indeed.com/cmp/Vitas-Healthcare/reviews/productive-workplace-questionable-management?id=33c90ede6ec169fa
-  > ": My day would start with urgent phone calls at 8am before I could have a chance to check emails and set my visits for the day. My schedule was always interrupted. Benefits were pretty good and my managers were okay. I just feel that my version of work/life balance was not the same as theirs." — indeed · Hospice Nurse Case Manager · https://www.indeed.com/cmp/Vitas-Healthcare/reviews/an-okay-place-to-work-the-workload-was-not-for-me?id=43ca752cf59c9efd
-- **4★ (4)** — Likes: mission, learning, cross-training. Unsold desires: 'you have to work every weekend' even part-time; 'very lean in all Central Support roles'.
-  > ": Good staff. Fast paced but pay could be better. Learned a lot here and met a lot of great people along the way. Annual raises are nothing you can live off of." — indeed · Medical Supply Specialist · https://www.indeed.com/cmp/Vitas-Healthcare/reviews/a-good-stepping-stone?id=d7c7e65a55a3bd94
-  > ": Great place to work but the schedule sucks honestly. You have to work a set schedule and you have to work every weekend. Even if your work part time you still are required to work every weekend. Besides the schedule this was a great place to work. Pay is decent and co-workers were nice." — indeed · Triage Nurse · https://www.indeed.com/cmp/Vitas-Healthcare/reviews/schedule-sucks?id=3b7ef6af0970dcbd
-- **5★ (23)** — Likes: 'one of the greatest companies in terms of hospice care', education, benefits, 'emotional and spiritual support for its staff', supportive direct supervision for an Admission Nurse.
-  > ": What is the best part of working at the company?
-Vitas is one of the greatest companies in terms of hospice care in the US
-
-What is the most stressful part about working at the company?
-There is no stress about working at Vitas Healthcare
-
-What is the work environment and culture like at the company?...Show more" — indeed · CNA Hospice Care · https://www.indeed.com/cmp/Vitas-Healthcare/reviews/great-experience-at-vitas-healthcare?id=75cc530c186e5a6f
-  > ": VITAS Hospice fosters professionalism, teamwork, and continuous growth through ongoing education, excellent benefits, and emotional and spiritual support for its staff. I had the opportunity to provide compassionate hospice care, supporting patients and their families, managing symptoms, coordinating" — indeed · Registered Nurse · https://www.indeed.com/cmp/Vitas-Healthcare/reviews/i-m-registered-nurse?id=f160bc609ed8bf7c
 - **Claude suggestion / what should change:** The hospice operator's growth lever in these reviews is the admissions/liaison layer: the 3★ sales rep describes messaging that changes with every manager, the 1★ nurses describe caseloads that cannot absorb more admissions. A hospice growth offer that adds admissions without adding intake/caseload capacity lands in the 1★ column (hypothesis from the reviews).
-
 ### Home Instead (Home care) — 52 read · 1★ 22 · 2★ 3 · 3★ 1 · 4★ 4 · 5★ 22 · Glassdoor aggregate 3.3 over 3508 reviews
-- **1★ (22)** — Pains: '$50 for background check… THE salary is low', 'the owners absolutely do not value good employees', no raises, 'rude office staff, no support', an office with 'extremely high staff turnover and low morale' (Office Staff). Asks: pay, training, an office that answers.
-  > ": They make you pay$ 50 for background check .That tells you how cheap they are.They can write that off on taxes..THE salary is low and you won't be able to live off that.Jobs are too far away. Duties are all the same regardless of job title. Expect you to be available 24/7.Paid every 2 weeks." — indeed · CNA/Caregiver · https://www.indeed.com/cmp/Home-Instead/reviews/make-you-pay-for-own-background-check?id=d341b7cd120db8e6
-  > ": The families i worked with were almost always Great, but the management is terrible. Employees never get heard or seen, get a bunch of responsibilities dumped on them with no communication and the pay is terrible. Would recommend stay as far from this company as u can." — indeed · In Home Caregiver · https://www.indeed.com/cmp/Home-Instead/reviews/terrible-managment?id=c3c4b3dadf6dd540
-- **2★ (3)** — 'your schedule will change ALL THE TIME', 'scheduling is a mess, always asked to cover for clients when another PCA calls out', 'heading down the tunnel of Ai'.
-  > ": I learned a lot and was also mistreated. Clients who were a threat were not addressed, and your schedule will change ALL THE TIME. So be prepared to not have a life outside of here. Also,if you're sick,too bad. Kids have a game ? Too bad. No reason is good. Just keep working and filling their pockets" — indeed · Caregiver · https://www.indeed.com/cmp/Home-Instead/reviews/prepare-to-travel?id=7cc14eda3ed3b508
-  > "It’s a job Anonymous employee Former employee, less than 1 year Aug 29, 2026 Recommend CEO: Pros: The clients are the best part of your day. Cons: Poor communication and heading down the tunnel of Ai" — glassdoor · It’s a job Anonymous employee  · https://www.glassdoor.com/Reviews/Home-Instead-Reviews-E592979.htm
-- **3★ (1)** — 'I have to call every week to verify if I'm getting full time hours' — the hours problem from the caregiver's side.
-  > ": My schedule was charged without proper notice. I don’t have a consistent schedule. I have to call every week to verify if I’m getting full time hours ...Show more" — indeed · CNA - Certified Nursing Assistant · https://www.indeed.com/cmp/Home-Instead/reviews/schedule?id=0926fef0bb190818
-- **4★ (4)** — 'Each Home Instead franchise is independently owned so I can only speak to mine' — the reviewer names the franchise structure; 'They will tell you their clients write their paychecks'. Unsold desire: consistent hours and a supportive local office.
-  > ": Home Instead doesnt.support their caregivers
-They will tell you their clients write their paychecks so no reason to complain about issues you may have with clients....Show more" — indeed · Caregiver · https://www.indeed.com/cmp/Home-Instead/reviews/home-instead-the-good-and-bad?id=a81e0509fe48f6dd
-  > ": Each Home Instead franchise is independently owned so I can only speak to mine but I always felt very supported by my bosses and the work was very emotionally fulfilling." — indeed · Personal Care Assistant · https://www.indeed.com/cmp/Home-Instead/reviews/supportive-office-staff-and-very-rewarding?id=f1e558e2b3ea7ef8
-- **5★ (22)** — Likes: 'Your potential for growth is limitless' (Service Coordinator → GM), 'I can accept or decline clients. Plenty of hours available', 'health insurance plan is one of the best', days off when requested early, parties and awards. The 5★ names the local office team, the 1★ names 'the owners'.
-  > ": Your potential for growth is limitless. I started as the Service Coordinator and have grown to the General Manager role. The company and culture are growing and improving with the help of an amazing team." — indeed · General Manager · https://www.indeed.com/cmp/Home-Instead/reviews/career-growth-is-amazing?id=bb7bc0dec9a2ee13
-  > ": I love BHC3 and Home Instead! Wonderful company with a great mission, vision and supportive environment. This company also has great opportunities for leadership development & community involvement!" — indeed · General Manager · https://www.indeed.com/cmp/Home-Instead/reviews/amazing-work-place?id=ce222cf537742deb
 - **Claude suggestion / what should change:** Home Instead's columns are the franchise map: the same brand is 1★ or 5★ depending on the owner. For inLeap the independent owner's recruiting pitch competes with a franchise office that can offer 'plenty of hours' — hours, not applicants, are what the 3★ and 4★ caregivers ask for, which is a scheduling-density problem, i.e., a census problem.
-
 ### BrightStar Care (Home care) — 50 read · 1★ 22 · 2★ 1 · 3★ 3 · 4★ 4 · 5★ 20 · Glassdoor aggregate 3.2 over 1299 reviews
-- **1★ (22)** — Pains: 'onboard you same day after cold calling you… one day of training and then be sent on your way', an RN whose 'IV job' is care plans for LTC-insurance clients, a Recruiter: 'the franchise was very out of touch with corporate process', a Community Liaison: 'the goal posts change on a daily basis', 'communication and scheduling were inconsistent… limited transparency around shifts and raises'.
-  > ": It is not an IV job. Its a careplan making job that occasionally has iv clients. You go to peoples houses that have long-term care insurance that need caregivers and you make a care plan for the caregiver to fulfill. You have to do a reassessment every three months as well as a supervisor visit and supervisor...Show mo" — indeed · Registered Nurse · https://www.indeed.com/cmp/Brightstar-Care/reviews/poor-communication?id=27671a5e1e9d071e
-  > ": I was a bit surprised and disappointed at the experience I had. The franchise was very out of touch with "corporate" process and culture, which was frustrating because they would likely have had more success had they adopted some of that strategy. Very reluctant to bring their IT game up to speed, invest" — indeed · Recruiter · https://www.indeed.com/cmp/Brightstar-Care/reviews/caveat-emptor?id=2fc16ade758cdf4d
-- **2★ (1)** — pay and flexibility good, manager kind, workload manageable.
-  > ": What is the best part of working at the company?
-The best part of working here was the pay and the flexibility. Trinia was also kind and pleasant to work with. The workload was manageable, although there were limited opportunities for overtime.
-
-What is the most stressful part about working at the company?" — indeed · Registered Nurse (RN) · https://www.indeed.com/cmp/Brightstar-Care/reviews/disorganized-management-and-poor-communication-made-the-experience-more-stressful-than-it-needed-to-be?id=705950e9be0f4850
-- **3★ (3)** — 'They had a high overturn rate. Never knew who I was to ask' (office staff turnover); random patients and locations all over the valley.
-  > ": It was really great for a first job just being a great attitude and a bright smile and be open to listening to what they are asking and be a genuine" — indeed · Inventory Associate · https://www.indeed.com/cmp/Brightstar-Care/reviews/cool-i-guess?id=2bfcb5bee09e66ed
-  > ": It truly does depend on what you're looking for. My issue was with the office staff. They had a high overturn rate. Never knew who I was to ask or speak to regarding patient information. I was there for less than six months and I had about 3-4 different supervisors." — indeed · PDN · https://www.indeed.com/cmp/Brightstar-Care/reviews/decent?id=245d4c75dc6901e8
-- **4★ (4)** — Likes: flexibility, 'always shifts to cover so getting hours is not a problem', owners who care. Unsold desire: 'They try hard to match you with a long term client… No one checks to see if they are doing their job correctly'.
-  > ": This job is what you make of it. There are always new cases and clients you can take on, depending on your availability and the hours you need. Pay is on par with the field, but here in SoCal, it's barely a living income." — indeed · Caregiver · https://www.indeed.com/cmp/Brightstar-Care/reviews/decent-hours-if-you-want-them?id=dd7b66ca78899667
-  > ": Super flexible workplace and always shifts to cover so getting hours is not a problem. Clients and families are always welcoming and understanding of being new." — indeed · CNA - Certified Nursing Assistant · https://www.indeed.com/cmp/Brightstar-Care/reviews/flexible-and-reliable?id=b3b32001eea7355e
-- **5★ (20)** — Likes: 'you could choose your hours around your family time. You always have a back up', office support for scheduling and training, a Sr. Recruiter's day 'sourcing and screening candidates… managing the owner's schedule', a Branch Manager: 'treat every employee… as if that employee is the first customer'.
-  > ": Great company great hours you could choose your hours around your family time. You always have a back up if you need to go. The managers help you out and make sure you have everything you need for the job. They help when you need it....Show more" — indeed · Home Health Aide · https://www.indeed.com/cmp/Brightstar-Care/reviews/great-company?id=b3d72c52c485549c
-  > ": Working for brightstar isn't bad it just hard to get the hours. But the office staff gave great support for scheduling needs, training and the do make sure your comfortable with the system they have" — indeed · CNA - Certified Nursing Assistant · https://www.indeed.com/cmp/Brightstar-Care/reviews/cna?id=4ebe34b426d82069
 - **Claude suggestion / what should change:** BrightStar's 1★ liaison and recruiter describe the two seats an owner outsources first (business development and recruiting) turning over because targets move daily; the 5★ recruiter is doing the owner's calendar. The operator buyer's hiring pain here is process, not applicant volume — a recruiting offer sold as 'more applicants' answers the wrong review.
-
 ### Silverado (Memory care) — 39 read · 1★ 12 · 2★ 5 · 3★ 3 · 4★ 10 · 5★ 9 · Glassdoor aggregate 4 over 540 reviews
-- **1★ (12)** — Pains: 'Understaffed. Often 20/1 ratio. Sometimes 40/1 or MORE!' (Caregiver), hostility and favoritism, 'Great place to work surveys are HEAVILY…' (an activities assistant on the review-prompt culture), uniform rules over care. Asks: ratios, consistency.
-  > ": Toxic and hostile work environment. No room for career growth. Management does not care about its employees, but they do clearly show favoritism for the workers they do relatively care about. Too much for little pay." — indeed · CNA - Certified Nursing Assistant · https://www.indeed.com/cmp/Silverado/reviews/terrible-place-to-work?id=3968f2ee9002f8e6
-  > ": Number 1 you cant work unless you have a dry clean uniform a small wrinkle is not an acceptation they will never tolerate it there gonna make you endure working there they add new rules for you as you keep on working it becomes a trap the more your there" — indeed · Server & Food Runner · https://www.indeed.com/cmp/Silverado/reviews/quit-as-soon-as-you-can?id=50d1c01cc03471b9
-- **2★ (5)** — Liaison: 'Sales management is out of touch with market, unrealistic expectations caused by major communication delays. Great support from admin and nursing' — the memory-care sales seat under quota again; a leadership team 'all brand new'.
-  > ": Micromanagement and zero work life balance. Sales management is out of touch with market, unrealistic expectations caused by major communication delays. Great support from admin and nursing staff. Low job security." — indeed · Liaison · https://www.indeed.com/cmp/Silverado/reviews/poor-upper-management?id=ed40433143d02546
-  > ": Fair pay and good benefits with flexible work hours and schedules and promotions are wanted and pushed for and people are helpful and understanding
-." — indeed · Volunteer · https://www.indeed.com/cmp/Silverado/reviews/fun?id=36dd3f64322d59ff
-- **3★ (3)** — 'standard expectations… job responsibilities were clear'; caregivers 'territorial'.
-  > ": Must be patient and willing to learn. “Decent place to work with standard expectations. Management and coworkers were fine, and the job responsibilities were clear and consistent." — indeed · CNA - Certified Nursing Assistant · https://www.indeed.com/cmp/Silverado/reviews/good-learning?id=7c9660a0520f548f
-  > ": No tengo mucho que decir solo que gracias y pues que seguir con nuestras caminos" — indeed · Cocinero de linea · https://www.indeed.com/cmp/Silverado/reviews/gracias?id=34b224276b696517
-- **4★ (10)** — Likes: 'Best assisted/memory care facility I've ever worked in… the hospice team is amazing' (new-grad LVN), flexible 4-hour shifts, managers who care. Unsold desire: 'Resigned due to new management' — stability.
-  > ": Overall experience was great especially as a new grad nurse! Best assisted/memory care facility I’ve ever worked in. The hospice team is amazing and the med techs and CNAs are awesome." — indeed · Charge Nurse LVN · https://www.indeed.com/cmp/Silverado/reviews/beautiful-memory-care-facility?id=7dadba893bcb2600
-  > ": Very chill workplace, nice managers and also very flexible shifts. Often 4 hour increments but allow double shifts when needed. Most of the time the managers will give you free food." — indeed · Food Runner · https://www.indeed.com/cmp/Silverado/reviews/productive-and-fun-workplace?id=5b721ead5072bbd7
-- **5★ (9)** — Likes: the care model, regional support, a Family Ambassador: 'Sales can be difficult, but when you believe in the company… it can be the best'; a Wellness Nurse: 'some higher acuity residents get admitted that shouldn't' — the acuity-creep note appears even in a 5★.
-  > ": Worked with my schedule and over all was welcoming I enjoyed the residents that lived there and my coworkers in the engagements department . Most enjoyable part of the job was making a difference in people’s lives." — indeed · Receptionist · https://www.indeed.com/cmp/Silverado/reviews/good-company?id=dc26123d6d08fe2a
-  > ": What first drew me to Silverado was their model of care that they provide to their residents. The work culture is excellent and the support from Regionals is exceptional! They really invest in their employees and give every resource to be successful. They recognize and promote within the company and" — indeed · DHS · https://www.indeed.com/cmp/Silverado/reviews/exemplary-model-of-care-and-support-system?id=481b4466f88e2158
 - **Claude suggestion / what should change:** Memory care's employer reviews repeat the senior-living pattern (sales seat under pressure, acuity creep at admission, ratios) with a memory-care-specific number: 20:1 to 40:1. An occupancy offer to a memory-care operator must carry the acuity qualification, or the 5★ nurse's 'admitted that shouldn't' becomes the 1★ caregiver's ratio.
-
 ### SarahCare Adult Day Services (Adult day) — 26 read · 1★ 5 · 2★ 4 · 3★ 6 · 4★ 1 · 5★ 10 · Glassdoor aggregate 2.5 over 13 reviews
-- **1★ (5)** — 'This company needs an extreme renovation. The idea is great but it is being executed poorly' (a mechanic at the Dallas center).
-  > ": This company needs an extreme renovation. The idea is great but it is being executed poorly. The only thing that makes it worth it is the appreciation from the participants. ...Show more" — indeed · Mechanic · https://www.indeed.com/cmp/Sarahcare/reviews/not-for-me?id=cf8c6f06e43182ba
-  > ": Long day for below average pay, not enough staff members for acuity level of clients. Very little appreciation of staff members by the owner. Lack of staff training." — indeed · Staff · https://www.indeed.com/cmp/Sarahcare/reviews/low-pay?id=9a6983fe5534c277
-- **2★ (4)** — an HHA pleased with pay and benefits.
-  > ": at sarahcare I was very please the with the compensation and benefits of the jobs. I established and cultivated a great relationship with my clients. maintaining a health living environment for my client." — indeed · Home Health Aide · https://www.indeed.com/cmp/Sarahcare/reviews/compensation-and-benifits-were-good?id=e430232754a568f6
-  > ": I was the field supervisor and I made my own schedule but no one knew where I would be at during the day. It seemed they did not care, just wanted their paperwork signed. Some people and their homes were unsafe for me and the clients." — indeed · Registered Nurse Supervisor · https://www.indeed.com/cmp/Sarahcare/reviews/unsafe?id=5e22acb294dfd9b8
-- **3★ (6)** — a summer-program worker, fair treatment.
-  > ": I Didn't Really Work Here Long Enough To Give A Review. This Was Just A Summer Job Through A Summer Program. But While I Was Working Here I Did Get Treated Fairly Well." — indeed · Kitchen Crew/Participant Helper · https://www.indeed.com/cmp/Sarahcare/reviews/fair-working-enviornment?id=27cde9f118843f16
-  > ": It’s a alright company . the company works with you it’s has 2 parts to the company. You have to request for overtime. If you have a client that gets 30 hrs they won’t let you get another client to make your hours be 40 ." — indeed · Home Health Care Aide (HHA) · https://www.indeed.com/cmp/Sarahcare/reviews/it-s-nice?id=1f69fee673d615dc
-- **4★ (1)** — (read: see raw/reading/employer)
-  > ": very professional nice staff and eventhough I dont work in the office it still gives me the opportunity to meet new people and that experience alone makes me appreciate my job even more." — indeed · Home Health Aide · https://www.indeed.com/cmp/Sarahcare/reviews/working-for-sarahcare?id=4b90317cb0150149
-- **5★ (10)** — van drivers and an activities assistant: 'bring joy and purpose to the elderly within a fun atmosphere', 'AND IF you see the need for change…' — the adult-day center's staff are drivers, kitchen and activities, not CNAs; the hiring pain is a different labor pool.
-  > ": I love being able to intermingle with the participants. Staff are caring and nurturing. We make sure to involve each and every participant. Sometimes it requires one on one support. ...Show more" — indeed · Van Driver · https://www.indeed.com/cmp/Sarahcare/reviews/fun-place-to-work-participants-are-great-in-joining-in-on-fun-activities?id=0211ddbe27f1208b
-  > ": WORKING FOR Sarah Care is rewarding because of the ability to bring joy and purpose to the elderly within a fun atmosphere. AND IF you see the need for change or improvement management listens with a positive ear....Show more" — indeed · Van Driver · https://www.indeed.com/cmp/Sarahcare/reviews/rewarding?id=a078e8edc2ff5130
 - **Claude suggestion / what should change:** 26 rows across ~10 franchised centers; the adult-day operator's staffing problem is drivers and activities staff plus transport, which the caregiver-recruiting vendors in the Ad Library do not address (gap, hypothesis).
-
 ### AlayaCare (software vendor, TrustPilot) — 1 read · 1★ 1 · 2★ 0 · 3★ 0 · 4★ 0 · 5★ 0 · site score 3.2 over 1 reviews
-- **1★ (1)** — a single, itemised 1★: 'Cannot Produce Compliant, Consolidated Invoices… cannot combine billed care hours' (documented non-conformities).
-  > "Documented System Limitations and Non-Conformities in AlayaCareSummary: Summary: What AlayaCare Cannot Do (Based on Actual Use and Evidence)
-1. Cannot Produce Compliant, Consolidated Invoices:
--Cannot combine billed care hours and pass-through expenses (e.g., accommodation, travel) on a single, client-ready invoice.
--Forces manual invoice splitting, reconciliation, and external workarounds" — TrustPilot · https://www.trustpilot.com/reviews/69651c2c4362909a33101767
 - **Claude suggestion / what should change:** one review; not enough to synthesize beyond 'billing/invoicing is where agency software fails owners'.
-
 ### ClearCare Online (software vendor, TrustPilot) — 71 read · 1★ 16 · 2★ 7 · 3★ 1 · 4★ 7 · 5★ 40 · site score 1.6 over 73 reviews
-- **1★ (16)** — (2021–2026, the WellSky era) 'WellSky system is falling apart… invoices and payments frequently stuck in the export queue… SUPER SLOW'; passwords that never work; a caregiver app that 'doesnt work properly' so clients' phones are used to clock in; 'they will take your money… try Axiscare or Sandata'. One 1★ is a misplaced product review (waterproofing) and was ignored.
-  > "System Falling Apart: WellSky system is falling apart. 
-On the accounting side:
-
-1. Invoices and payments are frequently "stuck" in the export queue. 
-
-2. This week and last week, invoices were emailed out multiple times to the same recipients or in some cases none at all. 
-
-3. The system is often times SUPER SLOW just to process minor task" — TrustPilot · https://www.trustpilot.com/reviews/69b1dc9b54dc314d0edd592b
-  > "Absolutely rubbish: Absolutely rubbish, password changes never work, takes far to long to load anything. Way too much details have to be processed before you get anywhere. More than anything, it it a nightmare to use and very frustrating in all. Who ever runs the programming of this system needs to simplify it, it is far too complicated a" — TrustPilot · https://www.trustpilot.com/reviews/67c0fc65334d5c3af2c60676
-- **2★ (7)** — 'when we do payroll or billing the system does not always calculate the math correctly' (10-year user); reduced My-Task functionality; a crash on New Year's Eve with the office closed and 'no backup plan'; 'not robust enough to support an agency that does over $5M'; 'terrible reporting… if you care about tracking your Sales Reps'.
-  > "Computers Don't Make Mathmatecial Errors: I have been using WellSky for going on 10 years.  Overall the systems works fairly good until you have an issue, Customer Support is lacking.  The biggest complaint that I have is when we do payroll or billing the system does not always calculate the math correctly.  It has the number of hours worked or billed and the " — TrustPilot · https://www.trustpilot.com/reviews/6a064134525eadd3329983ed
-  > "ClearCare impacting efficiency with reducing functionality: ClearCare, as a company, recently made changes and reduced the "My Task" functionality. This prevents users from independently viewing and managing their delegated tasks. The company reduced the ability to work independently and efficiently.  We now have to review "every task for all employees (pages) to "find" individ" — TrustPilot · https://www.trustpilot.com/reviews/601068f6679d9701d079688f
-- **3★ (1)** — one review, mixed.
-  > "Relatively intuitive platform for…: Relatively intuitive platform for caregiver management. Can be difficult to use or slow at times" — TrustPilot · https://www.trustpilot.com/reviews/5dd465bac845450a34ec364a
-- **4★ (7)** — (2015) 'Makes running our company a snap', 'opened up time for us to focus on growing the business'; the asks then: match applicants to clients before conversion (Carefinder), reporting.
-  > "Very Efficient: Clear Care is a very efficient tool for scheduling, tracking, and communicating with caregivers. They are constantly working on improvements and expansions which is much appreciated. The user interface is very easy to learn for everyone with access." — TrustPilot · https://www.trustpilot.com/reviews/5512d0c50000ff0002d7c5ee
-  > "Makes Running Our Company a Snap: ClearCare has really helped us manage not only our business functions, but it has opened up time for us to focus on growing the business. Payroll and billing are done effectively and efficiently. Additionally, the support that ClearCare offers (thank you Emma C. and Jenny A.) is unmatched. We are very happy with all th" — TrustPilot · https://www.trustpilot.com/reviews/551087100000ff0002d74868
-- **5★ (40)** — (2015–2021, mostly review-prompt dated) 'the best choice for HomeCare', drag-and-drop scheduling, 'a vendor that takes an interest in their clients', customer support 'unmatched'; one 5★ is a family praising a caregiver, not the software.
-  > "A Super  Outstanding Caregiver: Hello this is Ms. Corker and the family. We would like to give a good review on Shaneika Wimby. She is a great caregiver to my father. She always on time, and get my father situated  with everything he needs. We really  appreciate all the hard work she comes in and assist my father with. Shaneika  shows good Leadership" — TrustPilot · https://www.trustpilot.com/reviews/60dcabbaf9f487073c6f7a2f
-  > "We have used Clearcare for 2 businesses…: We have used Clearcare for 2 businesses now, over 6 years and love the functionality and most of all, the level of customer service. I personally have never found a better customer support team in any industry. When we call for assistance, no matter what rep is assigned to the call, they are always experts and find a s" — TrustPilot · https://www.trustpilot.com/reviews/5e543f0f3c93ae0bc4095912
 - **Claude suggestion / what should change:** The star columns are two eras: ClearCare 2015–16 (5★) vs WellSky 2021–26 (1–2★). The operator's unmet asks are the ones Vince's feed advertisers now sell around: scheduling that works on the caregiver's phone, billing/payroll math that is right, sales-rep tracking and reporting — the AI-scheduler and intake vendors (Phoebe, ClearDesk, CareIntake) are selling into WellSky's 1★ column.
-
 **No TrustPilot page:** AxisCare, WellSky (Personal Care / ClearCare is the only WellSky product with a page), Eldermark, Axxess, CareVoyant, Home Care Pulse / Activated Insights — no TrustPilot page; yardi.com resolves to CondoCafe (unrelated, dropped).
-<!-- /LADDER:levels -->
 
-<!-- LADDER:press -->
 
-## Trade press & owner surveys across the ladder (numbers with URLs)
+---
+
+## Trade press & owner surveys (numbers with URLs)
+
 
 - **Home care** — Results from investments in experience management and staff engagement have also shown a positive trend, with turnover rates dropping to 75%, the lowest level reported in the past five years. — Activated Insights (Home Care Pulse) 2025 Benchmarking Report press release · https://activatedinsights.com/latest-news/activated-insights-releases-2025-benchmarking-report-unveiling-key-drivers-of-retention-and-revenue-in-home-based-care-industry/
 - **Home care** — Agencies offering at least eight hours of onboarding and 12 hours of ongoing training, including compliance-focused content, reported an average annual revenue increase of nearly $350,000 — Activated Insights 2025 Benchmarking Report press release · https://activatedinsights.com/latest-news/activated-insights-releases-2025-benchmarking-report-unveiling-key-drivers-of-retention-and-revenue-in-home-based-care-industry/
@@ -1550,9 +1241,12 @@ On the accounting side:
 - **Assisted living / RAL** — A Place for Mom released a 2026 Costs of Long-Term Care and Senior Living Report based on a December survey of 820 family caregivers who had moved a loved one into a senior living community or hired in-home care. The report showed that assisted living rates in — McKnight's Senior Living on A Place for Mom 2026 Costs of Long-Term Care and Senior Living Report (search summary; 820 family caregivers surveyed) · https://www.mcknightsseniorliving.com/news/providers-must-educate-prospects-to-cut-gap-between-expectations-realities-of-senior-living-rates-report
 
 16 full articles were read through the research browser (press_articles.json); their numbered paragraphs are in the corpus as `trade_press` (151 entries).
-<!-- /LADDER:press -->
 
-## Competitor Marketing Agencies (D1b) — inLeap's DIRECT competitive set
+
+---
+
+## Competitor marketing agencies — inLeap's direct set
+
 
 These are the senior-care / home-care marketing agencies that sell lead-gen to agency owners. inLeap competes with THESE, not with the lead directories.
 
@@ -1570,241 +1264,387 @@ These are the senior-care / home-care marketing agencies that sell lead-gen to a
 
 **Read of the field:** the incumbents (corecubed — women-owned, award-winning; Approved Senior Network / Steve 'the Hurricane' Weiss) sell *coaching + done-for-you channels*; the performance players (ChoiceLocal — *"$18 revenue per $1"* ROI guarantee, franchise-focused; Cardinal, Sagapixel, Grow Senior Care) sell SEO/PPC. **Gap for inLeap:** almost all sell *channels* (SEO/PPC/website); few sell an **exclusive-lead + intake-conversion system that also produces caregiver applicants**, and the ROI-guarantee lane (ChoiceLocal) is franchise-tilted — leaving independent owners underserved.
 
-## Profile Pivot (D4) — where the top authors also post
-Pulled the public Reddit profiles of the highest-engagement authors (logged-in browser; public data only, no private info stored). **9 of 22 resolved** (owner-operators post less and several use throwaway accounts — a real limit of the Profile Pivot for this B2B audience).
-**Aggregate adjacency (author count):** r/cna 3 · r/nursing 3 · r/antiwork 2 · r/LifeProTips 2 · r/AskReddit 2 · r/OutOfTheLoop 2 — plus general-internet/meme subs (noise).
-**The one real signal:** the resolvable authors cluster in **r/cna + r/nursing** — corroborating the measured firmographic that a large share of these owners come from a **CNA / nurse background** (the "I was a CNA for 30 years and started my own agency" pipeline). Meta targeting implication (hypothesis): layer healthcare-worker / CNA / nursing interests + "aspiring business owner" behaviors, not generic small-business.
 
-## Backfill (post 09-23 Apify reset)
-Competitor ad-creative sweep (D1a): Meta Ad Library — Home Instead, Visiting Angels, Comfort Keepers, A Place for Mom, Care.com, + coaches; rank by longevity; transcribe video; Competitor Desire Map. Plus: r/nursing "crisis in home care" full labor thread, TrustPilot/Indeed/Glassdoor reviews-by-star of franchises + software (Reviews-by-Star tab), Profile Pivot (D4) on the top owner authors, and the now-warming FB owner groups.
+---
 
-## Why They Buy — the five answers an ad needs (Ad Brief, D1o, 2026-09-09)
-Every line below points at evidence on this page: a measured theme count (buyer-voice documents), a verbatim voice with its URL, or an ad / landing page from the Competitor Ads tab. Nothing here was assumed; where a line is a recommendation it says so.
+## Vendor / competitor map
 
-### 1. Why they buy
-- **The phone is not ringing after the licence. Owners open, hand out cards, visit facilities, and sit at zero clients for months; the first two years are described as the hardest.**
-  - ‘I am still not landing any leads for my Private Home Care Provider Agency. I have given out my business cards, brochures, sent emails, and gone to outreach community functions…’ (HOME CARE BUSINESS OWNERS, 21 reactions) — https://www.facebook.com/groups/2156388261379184/posts/2654180034933335
-  - ‘Your first two years will be your hardest. I know agencies that opened 2 years now and still no clients.’ — https://www.facebook.com/groups/2156388261379184/posts/2830219730662697
-  - Theme ‘No clients / can’t land the first one’ and ‘The phone isn’t ringing’ on Tab 1
-- **They are renting clients from someone else and want to own the inquiry: placement agents, A Place for Mom, a referral partner who goes quiet. Dependence is the fear; ‘families finding me’ is the wish.**
-  - ‘I’ve become way too dependent on the placement agents that have been bringing me clients.’ (r/RunAHomeCareAgency) — https://www.reddit.com/r/RunAHomeCareAgency/comments/1ffa065/anyone_know_how_to_digital_market_for_senior_care/
-  - Frequency: ‘Referral sources & placement agents: dependence, fees, how to get them’ is the #3 buyer-voice theme
-  - Occupancy Partners’ page sells exactly this: ‘You don’t need more leads. You need more move-ins… Exclusive families, never shared’
-- **They have already paid for shared leads and been burned, so ‘exclusive’ and ‘never shared’ are the words that move them.**
-  - ‘$58 per “possible” lead, that is sent to 4 other agencies is a complete scam’ (51 reactions, 39 comments) — https://www.facebook.com/groups/2156388261379184/posts/2828223997528937
-  - ‘Out of 25 referrals the last two months we were able to onboard 2. This month 15 leads and not one closed.’ — https://www.facebook.com/groups/2018920001893909/posts/2346931662426073
-  - 25 of 241 operator-facing ads already lead with ‘exclusive / never shared / vs A Place for Mom’ (Competitor Ads → hook patterns)
-- **An empty unit or an empty caseload has a number on it, and the vendors who win say the number. Facilities: $4,000–6,000 a month per empty unit, $120K lifetime value of a move-in. Home care: ‘five clients last month, this month nothing’.**
-  - Occupancy Partners feed ad: ‘EVERY EMPTY UNIT is $4,000 to $6,000 a month GONE’ (Vince’s feed, IMG_2806)
-  - PatientsPipeline landing page: ‘You signed five clients last month. This month? Nothing.’
-  - ‘Today, as I write this, all 94 of our beds are full and we have a wait list’ — the desired state, in an RCFE owner’s words (28 reactions) — https://www.facebook.com/groups/352285274494478/posts/976832502039749
-- **They want the relationship route (discharge planners, social workers) kept, not replaced; they will buy the thing that fills the gaps between referrals.**
-  - Lead Sources: ‘Hospital / SNF / discharge planner referral relationships’ is the most-named source and the one owners credit for first clients
-  - ‘Most owners shifted into discharge planner relationships at the local hospitals, that still works.’ — https://www.facebook.com/groups/2156388261379184/posts/2835614276789909
 
-### 2. Recurring problems and frustrations
-- **Paid referral sites: prepaid blocks, billed per referral whether or not the family signs, same family sent to several agencies, aggressive reps, credits refused, hard to cancel.**
-  - ‘They send you referrals and bill you per referral whether you sign them up or not; that bill grows quickly. Never again.’ — https://www.facebook.com/groups/2018920001893909/posts/2346931662426073
-  - Lead Sources ledger: A Place for Mom — burned language in 9 of 42 buyer documents, worked in 8
-- **Marketing spend with nothing to show: ads that produced caregivers instead of clients, agencies and coaches that took money, ‘the most expensive and least effective’.**
-  - ‘I started running ads and even though I have not gotten a single client I got a ton of caregivers.’ — https://www.reddit.com/r/RunAHomeCareAgency/comments/1ffa065/anyone_know_how_to_digital_market_for_senior_care/
-  - Tab 6 theme ‘Google Ads / Facebook ads / SEO / website’ and Tab 5 ‘Leads & referral sources that wasted money or ghosted’
-- **Feast or famine: a referral partner sends two families then goes quiet; three or four big clients carry the agency and one passes away.**
-  - PatientsPipeline page (the vendor wrote the owner’s story): ‘a referral partner who sends two families, then goes quiet for a quarter… running on word of mouth and three or four big clients — not a system’
-  - Tab 7 theme ‘If someone would just show me a system that brings clients predictably’
-- **The owner is the only one selling and doing everything else too: scheduling, compliance, the 24/7 phone, payroll.**
-  - Tab 9 themes ‘The hands-on licensee-administrator’ and ‘The phone / scheduling never stops’
-  - OBB’s self-diagnosis section names it back to them: ‘I’m the only one selling — owner as bottleneck’
-- **Vertical-specific versions: ABA owners are credentialed and still have no referrals, or have a waitlist they cannot staff; facilities carry tour quotas and ratios; placement agents ask how to get their first families.**
-  - ‘I’m credentialed with all the insurance companies that currently have their panels open… I’m still sitting at zero clients.’ (ABA Business Owners) — https://www.facebook.com/groups/669886889110965/posts/942369488529369
-  - Tab 5 theme ‘ABA: insurance won’t credential me, authorizations, the waitlist I can’t serve’
+**What owners spend on (vendor ledger, docs):** Referral marketing 126 · Coaches/consultants/franchises 82 · SEO/website/GMB 33 · Lead directories (Care.com/APFM/Caring.com) 18 · Agency-management/scheduling software 18 · Recruiting/job boards 14 · Payroll/billing/EVV 12 · Caregiver training/retention 10 · Google Ads/PPC 6.
 
-### 3. Common questions and objections that stop them buying
-- **‘Has anyone actually used this? Is it worth it?’ — every vendor gets asked in the group before the owner replies to the rep. Proof from a named peer beats any claim.**
-  - Tab 4 theme ‘Has anyone used A Place for Mom / Caring.com / Care.com for clients?’ and ‘What lead companies actually work for private pay?’
-  - ‘Anyone received a call from a place for mom? What are your thoughts’ (13 reactions, 48 comments) — https://www.facebook.com/groups/2156388261379184/posts/2916145245403478
-- **‘The leads won’t answer / they’re shared / they’re old.’ The owner assumes any lead is a shared lead until told otherwise.**
-  - ‘They give “fake clients”, nobody ever answered.’ (9 likes) — https://www.facebook.com/groups/2156388261379184/posts/2881316548886348
-  - Home Care Pipeline ad: ‘if you’ve tried ads before and got nothing but clicks and form fills from people who never answer…’ — the objection written into the ad
-- **‘I’m not paying for something I can do myself’ and ‘no ad or marketing is guaranteed’ — the DIY and the fatalist. Both are answered by a result-based term (booked assessments, guarantee floor), not by a retainer.**
-  - ‘I’m sorry but I’m not paying anyone for something I can do myself.’ — https://www.facebook.com/groups/2156388261379184/posts/2887577081593628
-  - ‘You must spend money to make money; no ad or marketing is guaranteed.’ — https://www.facebook.com/groups/2156388261379184/posts/2828223997528937
-  - Tab 7 theme ‘I’d pay for results, not a retainer’
-- **‘Do you only run Facebook ads?’ ‘What if we already get referrals?’ ‘How long before we see results?’ — the three questions the vendors put in their own FAQs because they hear them on every call.**
-  - PatientsPipeline FAQ (landing page) and OBB ‘How fast will I see results?’ / ‘See the 90-day climb’
-- **‘I can’t afford it / I’m too small’ — the vendors pre-empt it with a floor (‘owners above $70k/month’, ‘$1M+/yr’, ‘20 to 80 unit communities’); the smaller owner reads that as ‘not for me’.**
-  - Plena feed ad: ‘Home care agency owners above $70k/month’; HomecareGrow ads: ‘Home care owners $1M+/yr’; Occupancy Partners: ‘built for 20 to 80 unit communities’
-  - 39 of 241 operator-facing ads open with a named-audience qualifier (hook patterns)
-- **Cancellation and credit fear: ‘they make cancelling so hard’, ‘I had to block them’, ‘get my money back through my bank’. A visible pause / cancel term removes it.**
-  - ‘I was with A Place for Mom and wasn’t getting anywhere with them. I had to block them paying for something…’ — https://www.facebook.com/groups/2156388261379184/posts/2833282093689794
-  - VERVE landing page answers it: ‘Pause or Resume Anytime · Zero Setup Fees’
+**inLeap's competitive set (the "who sells to owners" landscape):**
+- **Coaches / communities:** Justin Currie (Master of Home Care, Skool), Steve "The Hurricane" Weiss (Home Care Evolution/HME), Homecare Owners Corner, Aaron Bogle, Coach Michele, HomeCarePulse/Activated Insights. *Angle: teach owners to do it themselves.*
+- **Marketing agencies:** Sagapixel (SEO/PPC, "$950–4k/mo"), corecubed, generic Google Ads shops. *Angle: done-for-you channels.*
+- **Lead sellers:** A Place for Mom, Care.com, Caring.com, ElderCareLink, HomeAdvisor. *Angle: buy leads (resented — non-exclusive, upfront, low convert).*
+- **Franchises:** Home Instead, Visiting Angels, Comfort Keepers, Right at Home, Senior Helpers. *Angle: buy the brand + playbook for $80–150k.*
+- **AI up-and-comers:** SilverCare AI and similar (the "lead-gen problem" framing in Homecare Owners Corner).
 
-### 4. Common hooks and visual formats
-- **Named-audience qualifier as the first words: ‘Home care agency owners…’, ‘Read this if you run an assisted living facility with apartments sitting empty’, ‘ABA owners…’. The most common opening in the operator-facing ads (39 of 241).**
-  - Home Care Breakthrough Solutions (103 days): ‘Home care agency owners doing $1M to $3M+ in annual revenue often hit the same frustrating wall…’
-  - Wisdom First Marketing (77 days): ‘Read this if you run an assisted living facility with apartments sitting empty.’
-- **Question hooks (41 of 241): ‘Are you paying a salesperson who’s not even bringing in $10K a week?’, ‘If your sales rep left tomorrow, would your referrals actually drop?’**
-  - Home Care Breakthrough Solutions, two ads
-- **Number + timeframe + guarantee: ‘60 qualified assessments in 90 days. Guaranteed.’, ‘$150,000 in new revenue in 90 days. Or we work for free.’, ‘20 booked, confirmed tours in 90 days’, ‘Araceli added 19 clients last week with 1 simple ad campaign’.**
-  - Plena / PatientsPipeline feed ad (451 reactions); OBB landing page; Occupancy Partners feed ad; HomecareGrow ads (86 days)
-- **Against-the-directory positioning: ‘A shared lead isn’t a lead. It’s a race you already lost.’, ‘Exclusive families, never shared’, ‘Stop paying for leads. Stop sharing them with 5 competitors.’**
-  - OBB landing page; Occupancy Partners; CareXroads group post — https://www.facebook.com/groups/2156388261379184/posts/2884452378572761
-- **Speed-to-lead as the proof mechanic: ‘75% of families choose the first community that responds — 47 hours vs five minutes’, ‘we call every inquiry within 2 min’.**
-  - Occupancy Partners landing page; OBB stat bar
-- **Visual formats that carry these hooks: talking-head founder video on location (Occupancy Partners, Plena, Advanced Agent Marketing in the feed), a stat bar or ‘90-day climb’ chart, a calendar filled with booked assessments/tours, a named-client before/after, and the plain ‘Fill Your Assisted Living Units’ headline card. 102 of the 241 operator-facing ads are video, 139 static.**
-  - Competitor Ads → formats and hook patterns; Vince’s feed section (IMG_2787, 2794, 2806)
+**Where inLeap wins (positioning gap):** owners are burned by (a) non-exclusive bought leads and (b) traffic that doesn't convert. The open lane = **exclusive, owned lead flow + an intake/conversion system that books assessments**, positioned against referral dependence — *and* a caregiver-recruiting engine (same ad machine already produces caregiver applicants: "I ran ads and got a ton of caregivers"). Two-in-one (clients + caregivers) is the differentiator no single competitor above bundles.
 
-### 5. Features and benefits we can and should demonstrate in an ad
-- **Exclusive inquiries on the owner’s own brand, never shared. Demonstrate it: show the inquiry arriving with the agency’s name on it and no other agency on the thread; contrast with the ‘sent to 4 other agencies’ voice.**
-  - Owner voice: ‘sent to 4 other agencies’; vendor proof that it sells: OBB ‘100% run on your brand, never shared’, VERVE ‘1-to-1 lead ownership’
-- **Booked, confirmed assessments or tours on the calendar, not ‘leads’. Demonstrate it: a calendar view filling up, the confirmation text to the family, the count per week.**
-  - Occupancy Partners ‘20 booked, confirmed tours in 90 days’; Plena ‘60 qualified in-home assessments in 90 days’; OBB ‘we book qualified assessments onto your calendar’
-- **Speed to lead: the call-back within minutes, at night and on weekends. Demonstrate it: a stopwatch or timestamped screen of an inquiry answered in under five minutes, against the ‘47-hour’ industry number.**
-  - Occupancy Partners page; owners’ own complaint that paid leads ‘never answered’ is the same problem seen from the family’s side
-- **Intake handled, not just leads delivered: qualification (private pay, hours, location) before the owner sees it. Demonstrate it: the qualification questions on screen, the disqualified inquiry that never reached the owner.**
-  - Owners: ‘some are just looking, curious, or only wanted info’ (Private Pay Clients group); PatientsPipeline ‘from inquiry to the booked in-home assessment’
-- **Result-based terms: a guarantee floor, pay on booked assessments, pause any time, no setup fee. Demonstrate it: the one-line term on screen, and the credit/cancel policy the referral sites refuse.**
-  - Tab 7 ‘I’d pay for results, not a retainer’; OBB ‘or we work for free’; VERVE ‘Pause or Resume Anytime · Zero Setup Fees’
-- **Reporting that reads as move-ins, clients or admissions, not impressions. Demonstrate it: a one-screen report with cost per booked assessment and cost per client.**
-  - Occupancy Partners: ‘We report move-ins, not impressions’; owners’ question ‘what did you spend that you felt you got a good value for?’ (r/RunAHomeCareAgency) — https://www.reddit.com/r/RunAHomeCareAgency/comments/1chu7jm/marketing_best_practices/
-- **Keeps their referral relationships and adds a second channel. Demonstrate it: the discharge planner is still in the picture; the engine fills the weeks they go quiet.**
-  - Lead Sources: hospital / discharge planner relationships are the most-named source; ‘that still works’ — https://www.facebook.com/groups/2156388261379184/posts/2835614276789909
-- **By-product the owner already noticed: the same ads bring caregiver applicants. Demonstrate it as a bonus, not the promise.**
-  - ‘I have not gotten a single client, I got a ton of caregivers and everyone in our community started to recognize us.’ — https://www.reddit.com/r/RunAHomeCareAgency/comments/1ffa065/anyone_know_how_to_digital_market_for_senior_care/
+**Competitor AD-CREATIVE sweep: DEFERRED to 09-23** (Apify caps). Backfill: Meta Ad Library for Home Instead / Visiting Angels / A Place for Mom / Care.com + the coaches, ranked by longevity, with transcripts — per D1a.
 
-**Caveat:** Hypotheses are the ‘demonstrate it’ clauses; the facts are the counts, the voices and the ads. Two things the research does not yet show: how an operator reacts to a price, and which of the vendors above actually deliver (no owner in the corpus reports a result from HomecareGrow, OBB, Plena or Occupancy Partners; the only outcome voices are about A Place for Mom, CareInHomes and Caring.com).
+---
 
-## Landing pages of the vendors selling to operators and the referral sites' partner pages (B2B only; 111 pages, screenshots in creatives/lp/)
-- **HomecareGrow.io** — https://homecaregrow.io/150k-guarantee — H1: Home Care Agencies: Add $150,000 New Revenue In 16 Weeks With Exclusive Leads — CTAs:  — forms 0 — on the page: $150,000 — screenshot creatives/lp/05796291fcd0.jpg
-  - Eye review: the purest owner-facing pitch in the set. H1 'Home Care Agencies: Add $150,000 New Revenue In 16 Weeks With Exclusive Leads', a guarantee ('or we work with you for free until you do'), a named client proof ('Araceli from Love N Care adds 12–19 new clients per week'), a 20-minute 'Agency Growth Call' as the only CTA, 'proud partner of franchisees'. It sells exactly against the group complaint: 'Are low quality leads limiting your agency's growth?' → exclusive, fresh, Meta-ads system.
-- **Phoebe** — https://www.phoebe.work/clock-in-out-landing — H1: Catch Every Missed Clock-In Before It Costs You — CTAs: Get Started, Will caregivers mind getting these texts? — forms 0 — screenshot creatives/lp/f1b728b67102.jpg
-  - Eye review: not a lead vendor — the scheduling AI from Vince's feed (895 reactions). H1 'The AI teammate that keeps your home care agency running 24/7', '75% of shifts filled in under 15 minutes', 'Book a Demo'. It sells the other job (staffing) to the same owner; useful as the proof that the owner audience buys from Meta ads when the pain is named precisely.
-- **A Place for Mom — home care partner page** — https://homecare.aplaceformom.com/ — H1: Trusted by families. Built for home care growth. — CTAs: Get started — forms 1 — screenshot creatives/lp/b6cd5589a1a9.jpg
-  - Eye review: the provider-side door is a five-field form (name, company, email, phone, state) under 'Trusted by families. Built for home care growth.' with 'How our program works' and 'Included in Your Partnership' below, no price on the page; 'a team member will reach out within 1–2 business days' — the sales call the owners in the groups describe ($50–68 per lead, $580 prepaid for 10) happens after this form, not on it. A portal login sits top-right: the relationship is a managed account, not self-serve.
-- **Caring.com — partners** — https://www.caring.com/partners/get-listed — H1: Claim Your Free Caring.com Listing — CTAs: The Free Senior Living Advisors, Start a Free Consultation, Starting The Conversation, How To Find Senior Living — forms 3 — screenshot creatives/lp/7a705f8e65e7.jpg
-  - Eye review: Caring.com's provider page is 'Claim Your Free Caring.com Listing' — the directory model: free listing first, 'Get Referrals' as a nav CTA, separate 'Home Care Partner Sign In' and 'Senior Living Partner Sign In'. The page sells the listing, not the lead price; owners learn the per-lead cost inside.
-- **CareInHomes** — https://www.careinhomes.com/ — H1: Need help? Use our home care matching service, check out options here — CTAs: Contact Us, See More Listings, Get Started, Contact — forms 1 — screenshot creatives/lp/3359c9998456.jpg
-  - Eye review: the directory the owners rate as cheaper ($25 a lead in the groups): family-facing matching page with a 'Provider Login' and 'Featured Home Care Near [zip]' listings; the provider offer is not on the page.
-- **HomecareGrow.io** — https://homecaregrow.io/ — H1: Home Care Agencies: Add $150,000 New Revenue In 16 Weeks With Exclusive Leads — CTAs:  — forms 0 — on the page: $150,000 — screenshot creatives/lp/d6a458196319.jpg
-  - Eye review: the purest owner-facing pitch in the set. H1 'Home Care Agencies: Add $150,000 New Revenue In 16 Weeks With Exclusive Leads', a guarantee ('or we work with you for free until you do'), a named client proof ('Araceli from Love N Care adds 12–19 new clients per week'), a 20-minute 'Agency Growth Call' as the only CTA, 'proud partner of franchisees'. It sells exactly against the group complaint: 'Are low quality leads limiting your agency's growth?' → exclusive, fresh, Meta-ads system.
-- **Mom's House (referral training)** — https://www.momshouse.com/ — H1: ...And How The Silver Tsunami Can Be Your Endless Revenue Source For Referral Fees And Real Estate Deals Over The Next 20 Years! — CTAs: Contact, Free Webinar, Get Certified, Start Your Application — forms 1 — on the page: $6,000, $18,000, $216,000, $47, $240K — screenshot creatives/lp/28b7e0cad256.jpg
-  - Eye review: the referral-training vendor for the independent agent. H1 sells 'the Silver Tsunami as your endless revenue source for referral fees and real estate deals'; three certifications (Senior Living Placement 6 weeks, Real Estate Investing 8 weeks, Downsizing Specialist 6 weeks), 'Get Certified to Unlock Access', bundle pricing on the page ($47 entry, $6,000 / $18,000 / $216,000 income framing). The buyer it creates is the realtor-turned-placement-agent who then needs families — the same acquisition gap, one rung down.
-- **Occupancy Partners (feed)** — https://occupancypartners.io/ — H1: You don't need more leads. You need more move-ins. — CTAs: Occupancy Partners, BOOK A CALL, BOOK A STRATEGY CALL, SEE HOW IT WORKS — forms 0 — on the page: $120K, $0K, $0, $120,000, $6,000 — screenshot creatives/lp/b428073d468a.jpg
-  - Eye review: senior living version of the same offer, 'for independently owned senior living communities' (20–80 units). H1 'You don't need more leads. You need more move-ins.' Argument: 75% of families choose the first community that responds, 47-hour average response vs five minutes, $120K lifetime value of one move-in, 88% industry occupancy. 'We book the tours. We report move-ins, not impressions. Exclusive families, never shared.' CTA: book a strategy call.
-- **Plena / PatientsPipeline (feed)** — https://get.patientspipeline.com/ — H1: More in-home assessments. More new clients. Less guesswork. — CTAs: Get My Free Growth Assessment, I'm ready to get more patients., Do you only run Facebook ads? +, What if we're already getting referrals? + — forms 0 — screenshot creatives/lp/e89842d57833.jpg
-  - Eye review: 'Built exclusively for non-medical home care agencies.' H1 'More in-home assessments. More new clients. Less guesswork.' The problem section is the owner's own story: 'You signed five clients last month. This month? Nothing… a referral partner who sends two families, then goes quiet for a quarter… running on word of mouth and three or four big clients — not a system.' Disqualifier ('isn't for every home care agency'; the feed ad says owners above $70k/month), FAQ answers 'Do you only run Facebook ads?' and 'What if we're already getting referrals?'. CTA: free growth assessment.
-- **Phoebe AI scheduling (feed)** — https://www.phoebe.work/ — H1: The AI teammate that keeps your home care agency running 24/7. — CTAs: Get Started, Hear Phoebe Talking, Book a Demo, 2 Phoebe checks the playbook — forms 0 — on the page: $9.5 — screenshot creatives/lp/572cd9f87ba5.jpg
-  - Eye review: not a lead vendor — the scheduling AI from Vince's feed (895 reactions). H1 'The AI teammate that keeps your home care agency running 24/7', '75% of shifts filled in under 15 minutes', 'Book a Demo'. It sells the other job (staffing) to the same owner; useful as the proof that the owner audience buys from Meta ads when the pain is named precisely.
-- **VERVE Care Partners pay-per-lead (feed)** — https://vervecarepartners.com/ — H1: Connect with Local Families Actively Seeking Senior Care — CTAs: Contact Us, Call or Text: 385-402-8683, Book Consult Now, Call Now: 385-402-8683 — forms 0 — screenshot creatives/lp/43bb18fd1ee2.jpg
-  - Eye review: pay-per-lead for placement agents and providers: 'Connect with Local Families Actively Seeking Senior Care', 'Launch in <7 days · 1-to-1 Lead Ownership · Zero Setup Fees', 'Every lead is yours — no sharing, no overlap', phone number as the CTA. The 'exclusive' claim is the direct answer to the A Place for Mom complaint; no price on the page.
-- **Seniorly — for placement agents** — https://www.seniorly.com/agents — H1: Find your local senior living agent — CTAs: Sign In, Learn more, Contact, Business Partners — forms 1 — screenshot creatives/lp/e9212515d932.jpg
-  - Eye review: Seniorly (now CareScout) sells the family the agent: 'Seniorly Partner Agents are commissioned by the senior living community you choose only when you move in' — the placement-agent economics the RCFE owners resent, stated to the family as '100% free'.
-- **OBB Home Care Growth (Online Biz Builders)** — https://onlinebizbuilders.com/ — H1: The go-to marketing company for home care agencies. — CTAs: APPLY NOW, APPLY FOR THE HOME CARE HERO PROGRAM, SEE HOW IT WORKS, See the 90-day climb — forms 0 — on the page: $150,000, $150K, $0, $4,000 per month, $72,000 — screenshot creatives/lp/9acebf61af0b.jpg
-  - Eye review: OBB / Home Care Hero — '$150,000 in new revenue in 90 days. Or we work for free.' 'A shared lead isn't a lead. It's a race you already lost.' 'We don't sell you leads. We book qualified assessments onto your calendar.' Stat bar: 2-minute call-back, 100% run on your brand never shared, 0.22% dispute rate since 2019. A self-diagnosis section ('Where are you stuck? feast or famine / owner as bottleneck / my leads don't book') mirrors the group threads word for word. CTA is APPLY (qualification), not buy.
-- **Horst Construction** — https://www.horstconstruction.com/ — H1: BUILDING WHAT MATTERS TO YOU® — CTAs: PARTNERS, DESIGN-BUILD, AUDITORIUM DESIGN & THEATER CONSTRUCTION, SENIOR LIVING DESIGN & CONSTRUCTION — forms 2 — screenshot creatives/lp/cff04c0514a8.jpg
-- **BrightStar Care Bryan / College Station** — https://www.brightstarcare.com/blog/senior-care-after-surgery/ — H1: Home Health Care for Seniors After Surgery — CTAs: Contact Us, Call Us 24/7 844.518.0420, FIND CARE NEAR YOU, Business Partnerships — forms 1 — screenshot creatives/lp/367086cc9f70.jpg
-- **ELITE HealthCare Consulting** — https://homecareconsultancy.com/ — H1: Welcome to ELITE HealthCare Consulting — CTAs: STARTUP SERVICES, Non-Medical Home Care Business Startup, Home Health Care Business Startup, Start A Non-Medical Transportation Business — forms 1 — screenshot creatives/lp/5ba0228df7e8.jpg
-- **The Kensington** — https://tools.roobrik.com/agemark/kensingtoncumberland/seniorliving/start?roobrikroute=kensingtoncumberland&sessionid=1amc7dplxnvbq0nh73vo — H1: Is it the right time for senior living? — CTAs:  — forms 1 — screenshot creatives/lp/f6fcbca68911.jpg
-- **Kingston Bay Senior Living** — https://tools.roobrik.com/agemark/kingstonbay/memorycare/start?roobrikroute=kingstonbay&sessionid=gtubnqwi4mug5cavt6eb — H1: Is it the right time for memory care? — CTAs:  — forms 1 — screenshot creatives/lp/583286ad8028.jpg
-- **Familiar Surroundings Home Care** — https://asnjobs.com/FamiliarSurroundingsHomeCare — H1:  — CTAs: Apply Now — forms 0 — screenshot creatives/lp/ac397002eb37.jpg
-- **Colorado Behavior and Learning Group** — https://www.coloradobehavior.com/ — H1: Licensed ABA Therapy, On-Site Experts: Your Child's Growth Starts Here — CTAs: Join Us, Referral Partners, Contact, Contact Us Today to Schedule a Consultation — forms 1 — screenshot creatives/lp/ca4386afd9ba.jpg
-- **Comfort Keepers Home Office** — https://www.comfortkeepers.com/b2b-referral/ — H1: Meaningful in-home care for your patients — CTAs: Apply — forms 1 — screenshot creatives/lp/13c611a8ce90.jpg
-- **Certified Homecare Consulting** — https://www.certifiedhomecareconsulting.com/ — H1:  — CTAs: Licensing & Startup, Start a Home Care Business, Start a Home Health Care Business, Start a Hospice Business — forms 2 — screenshot creatives/lp/01738d14ea2e.jpg
-- **Nathan Littauer Hospital and Nursing Home** — https://secure7.saashr.com/ta/6101323.careers?full_apply=&jobid=554125584&CareersSearch=&InFrameset=1&HostedBy=www.nlh.org&lang=en-US — H1: Apply for Job — CTAs:  — forms 0 — screenshot creatives/lp/fbce925edbca.jpg
-- **Nicole McCance** — https://mccancemethod.com/the-psychology-today-template/ — H1: The Psychology Today Template — CTAs: Free Masterclass, Book A Free Call, Download Now! — forms 1 — screenshot creatives/lp/ad4d8fd8f053.jpg
-- **Medbridge** — https://www.medbridge.com/care/remote-therapeutic-monitoring — H1: REMOTE THERAPEUTIC MONITORING — CTAs: Contact sales about something else., contact page, Contact Sales, Cohort Learning — forms 1 — on the page: $50, $20,000 — screenshot creatives/lp/fe1c29d23dac.jpg
-- **The RAL Room: Assisted Living Mastermind** — https://offers.theralroom.com/webinar-b — H1: High Income Professionals: Invest in the Nation's Most In-Demand Housing Sector: — CTAs: Reserve Your Seat - Free Live Webinar, Sign me up! — forms 0 — on the page: $50k — screenshot creatives/lp/b68fbf32a522.jpg
-- **Home Care Breakthrough Solutions** — https://go.homecarebreakthrough.com/register — H1: Revealed Live: The 3-Step Home Care Revenue Breakthrough System Agencies Use To Scale To 10M+ In Revenue — CTAs: Save My FREE Seat… Tuesday at 1pm EST — forms 0 — on the page: $1, $4, $3, $10, $20 — screenshot creatives/lp/35b1cbd1e8ab.jpg
-- **AxisCare** — https://axiscare.com/white-papers/understanding-evv-2/ — H1: Understanding Electronic Visit Verification (EVV) — CTAs: Vital Signs, AI Call Transcription, Learn More, Schedulers — forms 1 — screenshot creatives/lp/92dd5470e215.jpg
-- **Grow Senior Care Marketing** — https://growseniorcaremarketing.com/grow-your-home-care-agency/ — H1: Watch The Video Below To Learn The Digital Marketing Secrets We Used To Grow My Choice By Over 400% — CTAs: SCHEDULE A FREE STRATEGY SESSION, SCHEDULE YOUR STRATEGY SESSION — forms 0 — on the page: $500 — screenshot creatives/lp/8c1bcbf0d266.jpg
-- **LaKeysha Cobbs Hayes - Coach Key** — https://practicereadyaba.com/free-resources — H1: Pick Your Free Guide. — CTAs: GET FULL ACCESS, GET MY FREE GUIDE →, FIND MY TOP OPPORTUNITIES →, BOOK A CALL — forms 0 — on the page: $500K, $67/mo, $50K, $127/mo, $297/mo — screenshot creatives/lp/fccc5136b6d4.jpg
-- **ABA Business Coach** — https://ababusinesscoach.com/start-up-blueprint — H1: Start-Up Blueprint — CTAs: GET THE ABA START-UP BLUEPRINT!, keyboard_arrow_right I WANT TO JOIN!, settings GET THE START-UP BLUEPRINT! — forms 2 — screenshot creatives/lp/c8c834ff1331.jpg
-- **Premiere Destiny Home Care Success** — https://premierehomecaresuccess.com/referral-guidev2 — H1: 7 Hidden Breakdowns Costing You Clients (and How to Fix Them) — CTAs:  — forms 0 — screenshot creatives/lp/d5efc4cefb45.jpg
-- **Scale My Niche** — https://go.scalemyniche.com/learn-more-senior — H1:  — CTAs:  — forms 1 — screenshot creatives/lp/db6fe33ed65a.jpg
-- **GreenOak Accounting** — https://www.greenoakaccounting.com/webinar — H1:  — CTAs: FREE CONSULTATION, Free Consultation, Contact Us — forms 0 — screenshot creatives/lp/3b582ff5186d.jpg
-- **Cory Boldroff- The Real Estate Planner** — https://docs.google.com/forms/d/e/1FAIpQLSd2BNOw7Zwi2e0NhYLza1_LEnWigdSVaq2ZoaYcBwqTsZDYsw/viewform — H1:  — CTAs: Sign in to Google, Learn more — forms 1 — screenshot creatives/lp/39ee4b87a2b2.jpg
-- **RN Pad** — https://www.rnpad.com/ — H1: RN Pad is the solution to fast and efficient nursing assessments — CTAs: Free Tools, Contact Us, Schedule a demo, Sign in — forms 0 — screenshot creatives/lp/0eaae6d24179.jpg
-- **Griffin Mallas** — https://www.grouppracticebuilders.com/growth-levers/get-free-gp-growth-levers-long — H1:  — CTAs: Contact — forms 0 — on the page: $250K, $3, $300K, $500K, $1 — screenshot creatives/lp/1b1d34abbd7c.jpg
-- **Accushield** — https://accushield.com/take-a-tour/ — H1: Your Personalized Tour Awaits — CTAs: LEARN MORE, Get Started, Sign-in Options, How we create Google reviews (watch video) — forms 1 — screenshot creatives/lp/4492b99df250.jpg
-- **MTCS Business Finance** — https://tools.mtcsbusinessfinance.com/ — H1: Grow Your Mental Health Practice's Impact And Income. — CTAs: Get My Free Access, Use the Free Calculator — forms 1 — on the page: $
-150, $
-68,000, $100K, $250K, $500K — screenshot creatives/lp/6f2a7175ec80.jpg
-- **OBB - Home Care Growth** — https://go.onlinebizbuilders.com/home-care-hero-wp — H1: We'll Implement Our 'Home Care Hero' Program & Guarantee You $150,000 in New Revenue in 90 Days or We Work For Free Until We Do... — CTAs: See if your agency qualifies →, See If You Qualify — forms 0 — on the page: $150,000, $150K, $2.5, $3.42, $4,800/mo — screenshot creatives/lp/907c8b5ec5d9.jpg
-- **Phillip Vincent** — https://www.momshouse.com/start — H1: ...And How The Silver Tsunami Can Be Your Endless Revenue Source For Referral Fees And Real Estate Deals Over The Next 20 Years! — CTAs:  — forms 2 — on the page: $10,000, $300 — screenshot creatives/lp/75adaa7abb0c.jpg
-- **Evolve Healthcare Marketing** — https://ehmresults.com/ — H1: Full Funnel Patient Acquisition for Mid-Market Healthcare Practices — CTAs: Contact Us, Let's Talk, call attribution, See all testimonials — forms 0 — screenshot creatives/lp/aabfc53d4e57.jpg
-- **CarDon Senior Living** — https://cardon.us/communities/bell-trace/rehabilitation/ — H1: Rehabilitation — CTAs: Start Now, Contact, Facebook Search, CONTACT — forms 0 — screenshot creatives/lp/520b5f7ed2d5.jpg
-- **ClearDesk** — https://usa.cleardesk.com/book-discovery-call/ — H1: "My VA made a huge impact in just three months." — Kayla S. — CTAs: Book discovery call →, Book my discovery call → — forms 0 — on the page: $2,250, $5,500,, $7,000, $2,250,, $2,500 — screenshot creatives/lp/f4591e2d8826.jpg
-- **Carla Brown, EA - Accounting & Tax Solutions for Physicians** — https://browntax.co/7loopholes — H1: Download Your Free — CTAs: YES! Give Me My Free eBook! — forms 0 — on the page: $15,000, $25k, $100k — screenshot creatives/lp/f8cbf5c16a8e.jpg
-- **Bigageenergy** — https://caregivingmasterclass.com/ — H1: You don't have to figure caregiving out alone — CTAs: JOIN NOW, Join the Masterclass now, SIGN UP TODAY — forms 0 — screenshot creatives/lp/7895e8527c4e.jpg
-- **Nurse Next Door** — https://www.facebook.com/nursenextdoor/ — H1: Nurse Next Door — CTAs: See all photos — forms 2 — screenshot creatives/lp/5861cbc289a3.jpg
-- **Wisdom First Marketing** — https://go.wisdomfirstmarketing.com/assisted/ — H1:  — CTAs: See how it works — forms 0 — screenshot creatives/lp/43984a60f0eb.jpg
-- **Home Care Pipeline** — https://www.homecarepipeline.com/b — H1: 3–5 New Private-Pay Clients — CTAs: SEE IF I QUALIFY →, SEE IF I QUALIFY — forms 0 — on the page: $100K, $150K — screenshot creatives/lp/d211d439d162.jpg
-- **Nomia HQ** — https://nomiahq.com/contact-us/ — H1: Get in touch — CTAs: Contact, Contact Us — forms 0 — screenshot creatives/lp/b36bedc3aa73.jpg
-- **Florida Assisted Living Consulting LLC with alfcaregivercon** — https://www.floridaassistedlivingconsulting.com/assisted-living-and-caregivers-conference — H1: The #1 Conference for Caregivers, Assisted Living Operators & Senior Housing Professionals in Florida! — CTAs: Get Your Ticket Now, Get Your Access Ticket Now, See More Reviews, Click here to learn more — forms 1 — on the page: $1, $140.8, $1,500, $150, $2,940 — screenshot creatives/lp/34cfa881daed.jpg
-- **TruBlue Franchise Opportunities** — https://www.trubluefranchise.com/first-time-business-owner-segment — H1: Why Franchising is the Best Choice for First-Time Business Owners — CTAs: Schedule Now, Schedule a brief 10-minute call, Download Now, Schedule A Call — forms 4 — screenshot creatives/lp/17103448ad00.jpg
-- **Welton Hong** — https://www.seniorcaremarketingmax.com/learning-center/ — H1:  — CTAs: Learning Center, Contact Us, Books, See More — forms 4 — screenshot creatives/lp/e4c1b39f257c.jpg
-- **Medical Recruitment Services NYC** — https://www.recruitmentnyc.com/ — H1: Home Care Staffing & OPWDD Support Across New York — CTAs: Apply Now, Apply for a Job, Get OPWDD Help, Learn More — forms 1 — screenshot creatives/lp/c0e6c99ede79.jpg
-- **TherapyLake** — https://therapylake.com/ — H1: The All-in-One ABA Platform Practice Management + Data Collection — CTAs: Sign In, Request a Demo, Contact Us — forms 0 — screenshot creatives/lp/bdf6bd0baa6a.jpg
-- **Residential Assisted Living Academy** — https://residentialassistedlivingacademy.com/how-to-start-a-residential-assisted-living-home/ — H1: How To Start a Residential Assisted Living Home — CTAs: Get It Now, Join Our Team, Books, Where Should I Start? — forms 4 — on the page: $5k, $15k, $25,000, $75,000, $15,000 — screenshot creatives/lp/1af12751f39a.jpg
-- **Measure Practice Management** — https://measurepm.com/demo — H1: Everything Your ABA Practice Needs – Book a Free ABA Software Demo — CTAs: Book Demo, Book My Demo, Get a Demo of MeasurePM in Action ↑, Contact Us — forms 1 — screenshot creatives/lp/c5a0e1d39175.jpg
-- **Boston Magazine** — https://www.bostonmagazine.com/find-a-doctor/ — H1: Find a Doctor in Your Area — CTAs: List Your Business On Find It Boston, Find, Apply — forms 1 — screenshot creatives/lp/d845eb22c75f.jpg
-- **Response Technologies** — https://anywhere.response-technologies.com/ — H1: ONE TOUCH. TWO SECONDS. HELP IS ON THE WAY. — CTAs: Learn more > — forms 0 — screenshot creatives/lp/61be1c047ffd.jpg
-- **SMEED CPA SWAT** — https://decide-now.com/ — H1: Keep more of what you’ve built. — CTAs: FREE RESOURCES + TAX CALCULATOR, BOOK A STRATEGY CALL, CONTACT MICHAEL — forms 0 — screenshot creatives/lp/a1b511dd40cd.jpg
-- **PointClickCare** — https://pointclickcare.com/resource/senior-living-software/solution-sheets/ehr-for-senior-living/?pcc_utm=2026-DEMAND-PAIDSOCIAL-SL-META-US-EHRFORSENIORLIVING — H1: EHR for Senior Living –Solution Sheet — CTAs: Request a Demo, Marketplace and Partnerships, Become a Preferred Provider in your Network, Learn how we support Skilled Nursing — forms 1 — screenshot creatives/lp/1cc4cba2af47.jpg
-- **Ali Nafees, CPA - Tax Planning, Accounting and CFO Advisory ** — https://www.alinafeescpa.com/7loopholes — H1:  — CTAs: YES! Gimme My Free eBook! — forms 1 — on the page: $15,000, $25k, $100k — screenshot creatives/lp/e0cc2de7107e.jpg
-- **Dietrich Institute** — https://info.dietrichinstitute.com/start-here — H1: FREE TRAINING FOR MARRIED MEN — CTAs:  — forms 0 — screenshot creatives/lp/12febc21da86.jpg
-- **Sage Health NYC** — https://www.sagehealth.com/lp/fall-management-nurse-call — H1: Fall management designed to reduce risk — CTAs: Learn more, Nurse call — forms 0 — screenshot creatives/lp/9bf711b4e15b.jpg
-- **Assisted Living Locators Franchise** — https://www.assistedlivinglocatorsfranchise.com/ — H1: Assisted Living Locators Franchise Opportunity — CTAs: Request Info & Download, GET STARTED!, Disclaimer, Contact — forms 2 — on the page: $83, $74,235, $94,459, $49,900 — screenshot creatives/lp/573985e18b22.jpg
-- **Holy Angels Academy** — https://laholyangels.apscareerportal.com/jobs/2914192/apps/new — H1: ABA Registered Line Tech- Holy Angels Academy — CTAs:  — forms 1 — on the page: $17.00 — screenshot creatives/lp/f9e7fc5f03cd.jpg
-- **Sensi.AI** — https://www.sensi.ai/demo/ — H1: Who are you representing? — CTAs: Contact Us, Book a Demo — forms 0 — screenshot creatives/lp/b7a173ae84e4.jpg
-- **Occupancy Partners** — https://go.occupancypartners.io/opt-in — H1: 20 Booked, Confirmed Private-Pay Tours On Your Calendar In Your First 90 Days. Or You Don't Pay Until We Do. — CTAs:  — forms 0 — screenshot creatives/lp/0de4db714805.jpg
-- **Annapolis Pediatrics** — https://annapolispediatrics.com/?cam=soc-tp-m272808-c995495-g- — H1:  — CTAs: CONTACT US, LEARN MORE HERE., Contact Us — forms 2 — screenshot creatives/lp/d9222f493c4a.jpg
-- **Calivus Labs** — https://www.calivuslabs.com/vsl-beyond-statics — H1:  — CTAs: Apply Now — forms 0 — screenshot creatives/lp/6988399668da.jpg
-- **HomeCare Agency Academy** — https://homecarescales.com/remote-home-care-method — H1: Home Care Agencies, Medical Professionals, And Business Owners: — CTAs:  — forms 0 — on the page: $13k, $243k, $7, $10, $40 — screenshot creatives/lp/506710140f3f.jpg
-- **Talroo** — https://www.talroo.com/start — H1: Access Applicants You Can’t Find Anywhere Else. — CTAs: Apply Intelligence, Channel Partners, Learn more, See All Industries — forms 1 — on the page: $2,000, $5,000, $20,000 — screenshot creatives/lp/c516c06e1aaa.jpg
-- **Digital Champions** — https://homecarechampionsexperience.com/ — H1: Premier Home Care Owners Event — CTAs: Speakers, Earning Disclaimer — forms 0 — on the page: $1,400 — screenshot creatives/lp/0e0e9070eacc.jpg
-- **TroutLeads** — https://go.troutleads.com/guarantee-page — H1: WE'LL GUARANTEE YOU 90 BOOKED TOURS IN 90 DAYS — CTAs: Disclaimer — forms 0 — on the page: $50K — screenshot creatives/lp/56ac6b32396d.jpg
-- **Right at Home - Franchise Development** — https://www.rightathomefranchise.com/ — H1: Franchise With the Best in Senior Care — CTAs: Contact, Disclaimers, Contact Us — forms 2 — on the page: $150,000, $1,836,498 — screenshot creatives/lp/f867ef39cd0b.jpg
-- **Calhoun Bhella Hospice Lawyers** — https://calhounbhellahospice.com/ — H1: Have you Been Audited, Suspended, or Revoked by Medicare? — CTAs: Request a Confidential Consultation, Call, Call (716) 575-3773, Call Now — forms 2 — screenshot creatives/lp/100356a0c646.jpg
-- **Homecare 101** — https://www.homehealthcare101.com/free-class — H1: How Health Professionals Are Launching $15K–$30K/Month Home Care Agencies — CTAs: Get my free ticket FREE, Get my free ticket — Sunday @ 7 PM EST, Get my free ticket Sunday · 7 PM EST → — forms 0 — on the page: $15K, $30K, $50 — screenshot creatives/lp/6b665220587c.jpg
-- **JT Media** — https://info.carestaffpro.com/p/veteran-generation — H1: Get More Veteran Home Care Clients for Your Agency — CTAs:  — forms 0 — screenshot creatives/lp/ce4d3a8c3c5d.jpg
-- **Home Care Evolution** — https://homecareevolution.com/millionaires-boot-camp-2026/ — H1: Grow Beyond the Plateau — CTAs: Start A Home Care Agency, Contact, Get Started, Speakers — forms 0 — screenshot creatives/lp/1d103a5ab695.jpg
-- **Searchlift AI** — https://liftsearch.ai/booking-wf — H1: 👇 See If You Qualify For Our Program 👇 — CTAs:  — forms 0 — screenshot creatives/lp/2e429cfbc0a8.jpg
-- **(unknown)** — https://www.7figuredocs.co/guarantee-patient — H1: 30-DAY MONEY BACK — CTAs:  — forms 0 — on the page: $100,000, $3,000, $32,000, $1,300, $10 per lead — screenshot creatives/lp/889fcae4321f.jpg
-- **Vitable Health** — https://learn.vitablehealth.com/health-benefits-built-for-home-care-agencies — H1: Health Benefits Built for Home Care Agencies — CTAs: TALK TO AN EXPERT, GET A QUOTE — forms 1 — on the page: $0 — screenshot creatives/lp/534d2938e217.jpg
-- **CloseRate.io** — https://meridianhlth.com/ — H1: Meridian Health Group — CTAs: Contact, Request Evaluation, Get Evaluation, See If Your Facility Is a Fit — forms 0 — screenshot creatives/lp/d320aa52a37a.jpg
-- **Grow Your Occupancy** — https://go.growyouroccupancy.com/crm-move — H1: Is Your Next Move-In Hiding in Your CRM? — CTAs: Book My Free 30-Minute Call, Talk Through My CRM Challenges, Learn How We Can Help, Contact — forms 1 — on the page: $80 — screenshot creatives/lp/fb0fa012d506.jpg
-- **Lukrah** — https://start.lukrah.com/book-call-page-2 — H1: BOOK A CALL BELOW — CTAs:  — forms 0 — screenshot creatives/lp/3a021a5ef3d7.jpg
-- **Hospice Care Marketing** — https://www.hospicecaremarketing.com/schedule — H1:  — CTAs:  — forms 0 — screenshot creatives/lp/035319be840e.jpg
-- **ALF Boss** — https://alfboss.com/cemp/?mktg=mktg_cmshtknrm08gksgnxuh90z1fe_cmshtmpnv08gpsgnxvcjf62u3 — H1: Professional CEMP Support for Florida Assisted Living Facilities — CTAs: BOOKS, Get Started — $450 →, Contact Us — forms 5 — on the page: $450, $375, $
-450, $
-375 — screenshot creatives/lp/a5beb53dedc6.jpg
-- **Shavitz Law Group** — https://www.myhealthcarewages.com/ — H1: YOUR EMPLOYER MAY BE STEALING YOUR TIME — AND YOUR PAY — CTAs: FREE CASE REVIEW, GET A FREE CASE REVIEW, SUBMIT — GET MY FREE REVIEW, Contact Us — forms 1 — on the page: $900, $0 — screenshot creatives/lp/f908094f04e1.jpg
-- **Allen Chaney Home Care Business Coaching** — https://allenchaney.com/collections/frontpage/products/start-with-placement — H1: Start With Placement — CTAs: Facebook, Share Share on Facebook — forms 2 — on the page: $97.00, $47.00, $497.00, $297.00, $197.00 — screenshot creatives/lp/6c69745a74c3.jpg
-- **VERVE Care Partners** — https://vervecarepartners.online/opt-in-page — H1: ATTENTION: SENIOR HOME CARE BUSINESSES — CTAs: BOOK YOUR STRATEGY CALL, BOOK A STRATEGY CALL — forms 1 — screenshot creatives/lp/46edda259cbf.jpg
-- **Homerun Health** — https://homerun.health/book — H1: Faster growth and better margins powered by Homerun Health — CTAs:  — forms 1 — screenshot creatives/lp/1cc9fcda4089.jpg
-- **Rilla** — https://www.rilla.com/lp/all — H1: See How Rilla Transforms Sales Coaching with AI — CTAs: Schedule Your Demo — forms 0 — screenshot creatives/lp/099f052e8687.jpg
-- **Hireline for Business** — https://hireline.com/ — H1: The #1 Social Media Recruitment Platform — CTAs: Speak to Sales, Contact Us, Request a Demo, Sign In — forms 0 — on the page: $40 — screenshot creatives/lp/6afa6772e6ac.jpg
-- **Seniorly — partners** — https://www.seniorly.com/partners/communities — H1:  — CTAs: Sign In, Learn more, Contact, Business Partners — forms 0 — screenshot creatives/lp/dc6d91132a42.jpg
-- **Phoebe AI scheduling (feed)** — https://withcoral.com/ — H1: The data engine for enterprise AI — CTAs: Contact, See the full methodology and results., Contact us, See more in Docs — forms 0 — screenshot creatives/lp/139cb89b534a.jpg
-- **Home Care Breakthrough Solutions** — https://homecarebreakthrough.com/ — H1: HOME CARE BUSINESS COACHING — CTAs: Get More Clients, Find and Keep More Caregivers, START HERE, FREE RESOURCES — forms 0 — on the page: $30, $340 — screenshot creatives/lp/0b88617d6209.jpg
-- **CarePatrol franchise** — https://carepatrol.com/franchising/research-carepatrol/ — H1: CarePatrol Senior Care Advisors — CTAs: Facebook (opens in new tab), Request Info, Referral Partners, Senior Housing Guidebook — forms 1 — on the page: $156.28, $96.8, $136,000 — screenshot creatives/lp/70dc772704da.jpg
-- **Care.com for business** — https://www.care.com/benefits/ — H1:  — CTAs: Get benefits, Learn more, Talk to our team, Care Talks — forms 0 — screenshot creatives/lp/ebf8f2a71397.jpg
-- **Assisted Living Locators franchise** — https://www.assistedlivinglocatorsfranchise.com/ — H1: Assisted Living Locators Franchise Opportunity — CTAs: Request Info & Download, GET STARTED!, Disclaimer, Contact — forms 2 — on the page: $83, $74,235, $94,459, $49,900 — screenshot creatives/lp/8f2c89ced648.jpg
-- **Wisdom First Marketing (feed)** — https://wisdomfirstmarketing.com/ — H1: Better Leads Start With Trust. — CTAs: LET'S TALK, Call Tracking, Free Resources, START A CONVERSATION — forms 0 — screenshot creatives/lp/b6000ba95f6f.jpg
-- **Talroo caregiver hiring (feed)** — https://www.talroo.com/ — H1: Candidates You Can’t Get Anywhere Else. — CTAs: Apply Intelligence, Channel Partners, Learn more, See All Industries — forms 0 — screenshot creatives/lp/b8b2d21a89a9.jpg
-- **A Place for Mom — partners portal** — https://partnercentral.aplaceformom.com/ — H1:  — CTAs: Contact Us, OUR PARTNERSHIP, GETTING STARTED, PARTNERSHIP BASICS — forms 2 — screenshot creatives/lp/465d21d61cec.jpg
-- **Home Care Pulse (Activated Insights) — operator vendor** — https://activatedinsights.com/ — H1: Uplift the Care Experience — CTAs: Contact Us, CONTACT US, Learn More, Start My Free Trial — forms 0 — screenshot creatives/lp/ca9b8ca90304.jpg
-- **AxisCare (software vendor ads found 09-08)** — https://axiscare.com/ — H1: Home Care Is Complex. How You Manage It Shouldn’t Be. — CTAs: Vital Signs, AI Call Transcription, Learn More, Schedulers — forms 1 — screenshot creatives/lp/7d5410533114.jpg
-- **Approved Senior Network / Hurricane Marketing (09-08 ads)** — https://www.approvedseniornetwork.com/ — H1: Approved Senior Network Find Care Anywhere — CTAs: Providers Contact Us, Senior Care Businesses - Get Listed Today, Join Our Site Today, Get listed today » — forms 2 — screenshot creatives/lp/62d9693fee15.jpg
-- **ChoiceLocal home care marketing** — https://choicelocal.com/home-care-marketing/home-care-advertising-ideas/ — H1: ChoiceLocal Home Care Advertising Ideas Built Around Better Customer Decisions — CTAs: Contact Us, Schedule A Consultation, Get Started, Franchisees — forms 2 — screenshot creatives/lp/860a75d36e13.jpg
-- **corecubed home care marketing** — https://corecubed.com/ — H1: Elevate Your Home Care Marketing With corecubed — CTAs: Core Partners, Website Design, Request a Consultation — forms 2 — screenshot creatives/lp/c0af5065dfad.jpg
-- **Senior Living Mastery lead gen** — https://seniorlivingmastery.com/services/senior-living-lead-generation/ — H1: Senior Living Lead Generation — CTAs: Book A Call, Contact Us, 1-On-1 Booking Call, Book Strategy Call — forms 0 — on the page: $431, $100, $5,500, $6,300,, $66,000 — screenshot creatives/lp/ad500b0d7b93.jpg
-- **Waypoint Converts senior living leads** — https://www.waypointconverts.com/ — H1:  — CTAs: Register free →, CallRail Integration, Learn, Agency Partner Program — forms 0 — on the page: $0 — screenshot creatives/lp/d78821fd02d5.jpg
-- **Further (senior living AI leads)** — https://www.talkfurther.com/ — H1: The leading AI Sales & Marketing platform for Care Communities — CTAs: Tour SchedulingSeamlessly schedule tours., AnalyticsGet actionable insights., Learn more, CareersJoin us, transform senior living. — forms 0 — screenshot creatives/lp/0397cb9f2c5a.jpg
-- **SageCare AI intake** — https://www.sagecare.ai/ — H1: The modern home care agency front office. — CTAs: Schedule a demo, Get access, Learn more, Referral Strategy Playbook — forms 0 — screenshot creatives/lp/eb503926c315.jpg
 
-## Self-Audit (protocol A–AF; A–AD run 2026-09-09 after the owner-voice rebuild, AF added 2026-09-10 after Vince's review)
+---
+
+## Go-deeper thread cards
+
+One card per lead source the buyer names at least 5 times; quotes are cut from the corpus (verbatim by construction); 'love' = worked / worth-it language, 'hate' = burned language, both inside the buyer voice. The implication line is a hypothesis, labeled.
+
+### Thread: Hospital / SNF / discharge planner referral relationships  (depth 1 · came up 128× in buyer voice, 115 operators · 698 docs corpus-wide)
+Why it came up: "What Should You Send to Hospitals, Social Workers, Case Managers, Discharge Planners, and Physician Offices When Introducing Your Home Care Agency?" — https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 · "Build strong personal connections with local hospitals to become their provider of choice." — https://www.facebook.com/groups/nursinghomeadmin/posts/7799100300143684
+Love (baseline to match): "Your fastest path to a first client is almost always warm referrals — hospital discharge planners, social workers, and senior living advisors who personally hand you a name." — https://www.facebook.com/groups/2156388261379184/posts/2848193632198640 · "Start with: * Social workers & hospital discharge teams (visit in person if you can) * Local GP surgeries * Community groups / churches Also, word of mouth becomes your biggest asset, so even 1–2 clients done really well can snowball." — https://www.facebook.com/groups/1971829479945179/posts/2503465966781525
+Hate (the opening): "I've worked in SNFs for 11 years as a therapist." — https://www.reddit.com/r/healthcareadmin/comments/sych6p/any_insight_on_lic_nursing_home_administrator_and/ · "What are your top 2 referral sources?" — https://www.facebook.com/groups/706524484973799/posts/976062864686625
+Paid / effort (figures written next to the name): $500.00, $10, $20, $12, $25K
+Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried Hospital / SNF / discharge planner referral relationships…"
+Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
+
+### Thread: Coaches, courses, consultants (RAL Academy, Homecare 101, Mom's House, CSA, SRES)  (depth 1 · came up 91× in buyer voice, 58 operators · 860 docs corpus-wide)
+Why it came up: "Case Manager: Of course." — https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 · "or even just training courses online without certification?" — https://www.reddit.com/r/healthcareadmin/comments/rqk1re/certifications_that_are_worthwhile/
+Love (baseline to match): "Selena Mack you need a coach/mentor to help you get back on track." — https://www.facebook.com/groups/2156388261379184/posts/2797195840631753
+Paid / effort (figures written next to the name): $1000 (3×), $484.80 (2×), $750/week, $30
+Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried Coaches, courses, consultants…"
+Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
+
+### Thread: Networking / BNI / chamber / senior centers / community events  (depth 1 · came up 62× in buyer voice, 59 operators · 211 docs corpus-wide)
+Why it came up: "Don’t be afraid to hand out your flyers at places like Goodwill stores and other community locations where your target audience and their families may visit." — https://www.facebook.com/groups/2156388261379184/posts/2884206921930644 · "Healthcare referral sources: * Home health agencies * Hospices * Assisted living facilities * Continuing care retirement communities * Hospital discharge planners * Doctors offices * Skilled nursing facilities * Independent living facilities * House call physicians * Rehab centers (outpatient) * Rehab facilities (inpatient) * Pharmacies * Other home care agencies * Diagnosis-specific support groups * Neurologists Other non-healthcare professional referral sources: * Social service agencies * Workers compensation providers/case managers * Bank trust officers * Real estate agencies * CPAs * VA programs * Financial planners * Geriatric care managers * Adult day care centers * Churches/clergy * Occupational therapists * Funeral directors * Fiduciaries * Elder law attorneys * Estate planners * Country clubs * House cleaning services * Senior communities * Social workers * Care management agents * Placement agencies * Independent living * Hair salons **Don't forget past/current clients and their loved ones.**" — https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/
+Love (baseline to match): "I’m blessed to have a wonderful support system at my church." — https://www.facebook.com/groups/2156388261379184/posts/2896708240680512 · "Hi Jenny Jen Congrats on getting licensed — the fact that you've already mailed 4,000 flyers and are working referral leads tells me you're serious, which is more than most." — https://www.facebook.com/groups/2156388261379184/posts/2848193632198640 · "Start with: * Social workers & hospital discharge teams (visit in person if you can) * Local GP surgeries * Community groups / churches Also, word of mouth becomes your biggest asset, so even 1–2 clients done really well can snowball." — https://www.facebook.com/groups/1971829479945179/posts/2503465966781525
+Hate (the opening): "You’re better off going into hospitals and nursing homes, handing out business cards to social workers or nurses on each floor." — https://www.facebook.com/groups/2018920001893909/posts/2346931662426073
+Paid / effort (figures written next to the name): $250, $2500, $500, $600, $400
+Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried Networking / BNI / chamber / senior centers / community events…"
+Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
+
+### Thread: SEO / website / Google Business Profile  (depth 1 · came up 58× in buyer voice, 53 operators · 258 docs corpus-wide)
+Why it came up: "Do not put “home health” anywhere on your website." — https://www.facebook.com/groups/706524484973799/posts/1016591983967046 · "Besides the in person stuff, we have our website, some social media (looking at having it professionally managed)." — https://www.reddit.com/r/RunAHomeCareAgency/comments/1d6v0n4/looking_for_marketing_ideas/
+Love (baseline to match): "I’m looking for someone who can help with Google SEO, Google Ads, getting my agency to rank higher on Google, improving my Google Business Profile, and bringing in more qualified leads." — https://www.facebook.com/groups/2156388261379184/posts/2911408609210475 · "I’d also suggest checking your Google presence (reviews + local SEO) as families often search there first now." — https://www.facebook.com/groups/1971829479945179/posts/2503465966781525 · "Does your website focus on SEO?" — https://www.facebook.com/groups/2156388261379184/posts/2848193632198640
+Paid / effort (figures written next to the name): $250, $2500, $500, $600, $400, $20,000 per month, $30m
+Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried SEO / website / Google Business Profile…"
+Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
+
+### Thread: A Place for Mom  (depth 1 · came up 42× in buyer voice, 40 operators · 351 docs corpus-wide)
+Why it came up: "LONG RANT WARNING: We spent a lot of money on APFM and then we landed a 24 hr client from one of their leads." — https://www.facebook.com/groups/706524484973799/posts/1130570192569224 · "Has anyone ever had a A Place for Mom actually reach out to them?" — https://www.facebook.com/groups/706524484973799/posts/1061369272822650
+Love (baseline to match): "Don’t use a place for mom!" — https://www.facebook.com/groups/2156388261379184/posts/2848193632198640 · "I am a home Care agency in central Nebraska and I do use a place for Mom they do help find clients it's worked out for me" — https://www.facebook.com/groups/2018920001893909/posts/2346931662426073
+Hate (the opening): "A Place For Mom...." — https://www.facebook.com/groups/2156388261379184/posts/2828223997528937 · "I used place for mom and care in homes." — https://www.facebook.com/groups/706524484973799/posts/1061369272822650 · "We have wasted time and money with A Place for Mom." — https://www.facebook.com/groups/706524484973799/posts/976062864686625
+Paid / effort (figures written next to the name): $25 per lead, $600, $68 per lead
+Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried A Place for Mom…"
+Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
+
+### Thread: Placement agents / referral agencies (CarePatrol, ALL, Oasis, independents)  (depth 1 · came up 39× in buyer voice, 38 operators · 174 docs corpus-wide)
+Why it came up: "Healthcare referral sources: * Home health agencies * Hospices * Assisted living facilities * Continuing care retirement communities * Hospital discharge planners * Doctors offices * Skilled nursing facilities * Independent living facilities * House call physicians * Rehab centers (outpatient) * Rehab facilities (inpatient) * Pharmacies * Other home care agencies * Diagnosis-specific support groups * Neurologists Other non-healthcare professional referral sources: * Social service agencies * Workers compensation providers/case managers * Bank trust officers * Real estate agencies * CPAs * VA programs * Financial planners * Geriatric care managers * Adult day care centers * Churches/clergy * Occupational therapists * Funeral directors * Fiduciaries * Elder law attorneys * Estate planners * Country clubs * House cleaning services * Senior communities * Social workers * Care management agents * Placement agencies * Independent living * Hair salons **Don't forget past/current clients and their loved ones.**" — https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ · "There are 5 modules everything from email domination for placement agents that got me 3 placement agents ( I sent it to 36 agent total), how to hire caregivers and all the marketing things I did." — https://www.reddit.com/r/RunAHomeCareAgency/comments/18j3pm9/finally_licensed/
+Love (baseline to match): "As the Director of Sales and Marketing, I use my network of healthcare personnel and work closely with the community, senior placement agencies, CCA, social workers, discharging nurses, case managers, Administrators/Executive Directors, Skill Nursing Facilities, Hospitals, and other healthcare industry organizations to bring in new ALWP and private pay residents to Senior Living / Assisted Living and Memory Care Facilities and increase facility’s census." — https://www.facebook.com/groups/assistedlivingfacilities/posts/3896882633857337
+Paid / effort (figures written next to the name): $1.1 m
+Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried Placement agents / referral agencies…"
+Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
+
+### Thread: Insurance panels / pediatricians / schools (ABA)  (depth 1 · came up 25× in buyer voice, 23 operators · 104 docs corpus-wide)
+Why it came up: "I do all the aspects of business and clinical myself - including credentialing, billing, marketing, and provide all clinical services myself." — https://www.reddit.com/r/bcba/comments/1dkhd7e/i_started_a_private_practice_ama/ · "Update insurance contracts to accept a wider range of plans." — https://www.facebook.com/groups/nursinghomeadmin/posts/7799100300143684
+Hate (the opening): "I’m credentialed with all the insurance companies that currently have their panels open, and I’ve tried to be proactive with outreach." — https://www.facebook.com/groups/669886889110965/posts/942369488529369 · "I’m credentialed with all the insurance companies that currently have their panels open, and I’ve tried to be proactive with outreach." — https://www.facebook.com/groups/1081018657046251/posts/1430528132095300 · "This list is vendors and commercial companies that actually send you clients once you’re credentialed with them." — https://www.facebook.com/groups/2018920001893909/posts/2346931662426073
+Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried Insurance panels / pediatricians / schools…"
+Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
+
+### Thread: Google Ads / LSA / PPC  (depth 1 · came up 17× in buyer voice, 16 operators · 49 docs corpus-wide)
+Why it came up: "Continue running a small ad in Google Ads- say $3 a day." — https://www.facebook.com/groups/2447813518868667/posts/4399609403689059 · "Will be opening my non-medical home care business in a month and will start with Facebook advertising and targeted google ads in my area." — https://www.reddit.com/r/HomeCareOwners/comments/1i6q4vl/tips_on_how_to_find_clients/
+Love (baseline to match): "I’m looking for someone who can help with Google SEO, Google Ads, getting my agency to rank higher on Google, improving my Google Business Profile, and bringing in more qualified leads." — https://www.facebook.com/groups/2156388261379184/posts/2911408609210475 · "One thing I’ve seen working with home care agencies is that many invest heavily in Google Ads before fixing the foundation." — https://www.facebook.com/groups/2156388261379184/posts/2911408609210475 · "We've seen a lot of success for our Senior Living clients with a combined strategy of local SEO, PPC, Performance Max and a combination of Facebook Ads and Facebook Retargeting!" — https://www.reddit.com/r/SeniorLivingMarketing/comments/1l4a6ip/how_to_market_a_senior_living_facility/n8nkvve/
+Hate (the opening): "I’ve gone in person to doctor’s offices with brochures and small goodie bags, sent out emails wherever I could find contacts, and I’ve been running Instagram, Facebook, and Google ads." — https://www.facebook.com/groups/669886889110965/posts/942369488529369 · "I’ve gone in person to doctor’s offices with brochures and small goodie bags, sent out emails wherever I could find contacts, and I’ve been running Instagram, Facebook, and Google ads." — https://www.facebook.com/groups/1081018657046251/posts/1430528132095300
+Paid / effort (figures written next to the name): $3 a day, $15, $2, $1,700 per month
+Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried Google Ads / LSA / PPC…"
+Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
+
+### Thread: VA / Medicaid waiver / LTC insurance contracts  (depth 1 · came up 16× in buyer voice, 14 operators · 89 docs corpus-wide)
+Why it came up: "Healthcare referral sources: * Home health agencies * Hospices * Assisted living facilities * Continuing care retirement communities * Hospital discharge planners * Doctors offices * Skilled nursing facilities * Independent living facilities * House call physicians * Rehab centers (outpatient) * Rehab facilities (inpatient) * Pharmacies * Other home care agencies * Diagnosis-specific support groups * Neurologists Other non-healthcare professional referral sources: * Social service agencies * Workers compensation providers/case managers * Bank trust officers * Real estate agencies * CPAs * VA programs * Financial planners * Geriatric care managers * Adult day care centers * Churches/clergy * Occupational therapists * Funeral directors * Fiduciaries * Elder law attorneys * Estate planners * Country clubs * House cleaning services * Senior communities * Social workers * Care management agents * Placement agencies * Independent living * Hair salons **Don't forget past/current clients and their loved ones.**" — https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ · "Which is the medicaid waivers for IDD and AMI and Seniors." — https://www.facebook.com/groups/706524484973799/posts/1052048583754719
+Love (baseline to match): "If there is compensation, what does that normally look like for private pay vs Medicaid waiver residents?" — https://www.facebook.com/groups/2886092941628251/posts/4514277078809821
+Paid / effort (figures written next to the name): $750/week
+Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried VA / Medicaid waiver / LTC insurance contracts…"
+Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
+
+### Thread: Franchise systems (Home Instead, Visiting Angels, Right at Home, CarePatrol...)  (depth 1 · came up 13× in buyer voice, 11 operators · 248 docs corpus-wide)
+Why it came up: "We are not certified with Medicaid and we are part of a franchise." — https://www.reddit.com/r/Entrepreneur/comments/1rqjot3/pe_is_dumping_billions_into_home_care_despite_79/oa5rbrq/ · "I’d be curious what franchise…." — https://www.facebook.com/groups/2156388261379184/posts/2944130392604963
+Love (baseline to match): "> As being one of the first franchisees with CarePatrol I totally disagree with the comments made by the anonymous submission posted on Sunday, August 1, 2010." — https://www.unhappyfranchisee.com/carepatrol-franchisees-praise-the-carepatrol-franchise
+Hate (the opening): "We're required to use ClearCare within our home care franchise system." — https://www.trustpilot.com/reviews/56b24d800000ff000937464f · "Unfortunately mistakes can happen and this is sad but there are good facilities out there that care for seniors and Home Instead is a good company." — https://www.unhappyfranchisee.com/home-instead-senior-care-franchise
+Feeds: Tab 5 · Tab 6 · Lead Sources tab · copy line: "You've probably tried Franchise systems…"
+Stopped: depth 2 not run this pass (the vendor's own reviews are in Reviews by Star where a page exists).
+
+
+---
+
+## Headline candidates (Tab 11)
+
+Ranked: operators first, then engagement. Each is the theme-matched sentence of a buyer voice, verbatim.
+
+1. "I do all the aspects of business and clinical myself - including credentialing, billing, marketing, and provide all clinical services myself." (↑66) · https://www.reddit.com/r/bcba/comments/1dkhd7e/i_started_a_private_practice_ama/
+2. "I am concerned about the high staff turnover rate in childcare." (↑50) · https://www.facebook.com/groups/248675758568554/posts/6929343677168362
+3. "My name is Obi, and I'm the Administrator of De-Mondek Home Care Provider Services LLC." (↑48) · https://www.facebook.com/groups/2156388261379184/posts/2909828769368459
+4. "Today, as I write this, all 94 of our beds are full and we have a wait list." (↑28) · https://www.facebook.com/groups/352285274494478/posts/976832502039749
+5. "I’m starting out with private pay clients only." (↑27) · https://www.facebook.com/groups/1154838852454654/posts/1589096935695508
+6. "I put together a pretty extensive list of potential referral partners." (↑24) · https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/
+7. "I am still not landing any leads for my Private Home Care Provider Agency." (↑21) · https://www.facebook.com/groups/2156388261379184/posts/2654180034933335
+8. "LONG RANT WARNING: We spent a lot of money on APFM and then we landed a 24 hr client from one of their leads." (↑13) · https://www.facebook.com/groups/706524484973799/posts/1130570192569224
+9. "What are your thoughts they said they found my business on the licensing web and want to see if I need clients" (↑13) · https://www.facebook.com/groups/2156388261379184/posts/2731921950492476
+10. "I got my first private pay client that turned into 24HR care." (↑11) · https://www.facebook.com/groups/706524484973799/posts/1061369272822650
+11. "I have a referral list where you can connect and foster relationships so they’ll send them your way." (↑11) · https://www.facebook.com/groups/1429922527043737/posts/9818187854883787
+12. "I was hopeful they would add my agency to their referral list, but I’ve been ignored." (↑11) · https://www.facebook.com/groups/2156388261379184/posts/2896708240680512
+13. "It took me over a YEAR to start and submit because I literally trusted no one." (↑11) · https://www.reddit.com/r/RunAHomeCareAgency/comments/1cejzsp/start_your_home_care_agency/
+14. "I’m wanting to get some insight from a BCBA who has started their own LLC." (↑11) · https://www.facebook.com/groups/7447177152061328/posts/23880566488295801
+15. "Your first two years will be your hardest I know agencies that opened 2 years now and still no clients." (↑11) · https://www.facebook.com/groups/2156388261379184/posts/2830219730662697
+16. "Finally licensed here in Sacramento, Roseville area and hired my first two caregivers." (↑10) · https://www.reddit.com/r/RunAHomeCareAgency/comments/18j3pm9/finally_licensed/
+17. "It has worked for me this way for years.." (↑10) · https://www.facebook.com/groups/706524484973799/posts/1008111701481741
+18. "I’m a Virtual Assistant, and I can help market your home care business by emailing and calling potential referral sources on your behalf." (↑9) · https://www.facebook.com/groups/2156388261379184/posts/2884206921930644
+19. "My ads typically cost me around $6 per lead and my close rate is pretty high." (↑9) · https://www.facebook.com/groups/2156388261379184/posts/2882296035455066
+20. "Wasted my time and money." (↑8) · https://www.facebook.com/groups/2018920001893909/posts/2346931662426073
+21. "Hi, I got my first nursing home gig and I do not understand PPD at all." (↑7) · https://www.facebook.com/groups/nursinghomeadmin/posts/9289206004466432
+22. "I am looking for great ideas on how to get my first clients." (↑7) · https://www.reddit.com/r/RunAHomeCareAgency/comments/1d6v0n4/looking_for_marketing_ideas/
+23. "I had one person looking for someone to take his family member to their house on the weekends." (↑7) · https://www.facebook.com/groups/706524484973799/posts/738060561820191
+24. "I have tried them and it was a waste.They send you referrals and bill you per referral whether you sign them up or not that bill grows quickly..never again" (↑7) · https://www.facebook.com/groups/2018920001893909/posts/2346931662426073
+25. "I personally dont like using referral agents because some can be very greedy." (↑7) · https://www.facebook.com/groups/2447813518868667/posts/4025897427726927
+
+
+---
+
+## Frequency ranking (buyer-voice complaint patterns)
+
+1. How to start / consultant / is it worth it — 249 (whole corpus 685)
+2. Reimbursement / Medicaid / private pay rates — 149 (whole corpus 887)
+3. Referral sources & placement agents: dependence, fees, how to get them — 135 (whole corpus 618)
+4. Marketing: ads / digital / SEO / website — 113 (whole corpus 551)
+5. Referral relationships: hospitals, discharge planners, SNFs, physicians — 109 (whole corpus 491)
+6. Licensing / accreditation / compliance / regs (agency or facility license, not a personal one) — 103 (whole corpus 646)
+7. Can't get clients / low census / need leads — 90 (whole corpus 357)
+8. ABA: credentialing, insurance panels, waitlists, referrals — 88 (whole corpus 972)
+9. Google Ads / Facebook ads / SEO / website that didn't pay — 76 (whole corpus 308)
+10. Franchise vs independent — 70 (whole corpus 557)
+11. Scheduling / software / operations / EVV — 69 (whole corpus 415)
+12. Starting a facility: cost to start, existing license, administrator, partner — 64 (whole corpus 242)
+13. Facility economics per bed: private pay vs Medicaid, cash flow, margins — 62 (whole corpus 250)
+14. Sales / networking / building referral relationships — 62 (whole corpus 223)
+15. Licensing, the state survey, the ombudsman, deficiencies (facility side) — 60 (whole corpus 356)
+16. Caregiver retention at scale (turnover caps growth AND valuation) — 55 (whole corpus 618)
+17. A Place for Mom / Caring.com / Care.com: paid referral sites — 51 (whole corpus 529)
+18. Placement agents / referral fees / commission — 48 (whole corpus 165)
+19. Owner-operator treadmill (build management/systems, step back) — 44 (whole corpus 399)
+20. Census stability & growth (predictable clients to SCALE) — 37 (whole corpus 209)
+21. Owner burnout / wearing all hats / on-call — 27 (whole corpus 286)
+22. Exit / valuation / EBITDA multiple / selling the agency — 22 (whole corpus 231)
+23. Occupancy / census pressure: empty beds, quotas, wait list — 22 (whole corpus 83)
+24. Caregiver turnover / no-show / can't retain — 18 (whole corpus 222)
+25. Caregiver pay / wages / can't compete on pay — 18 (whole corpus 204)
+26. Cash flow / payroll / making payroll — 16 (whole corpus 118)
+27. Shared leads that don't convert / pay-per-lead burn — 15 (whole corpus 46)
+28. Admissions / referral response (hospice, home health, liaison) — 14 (whole corpus 120)
+29. Can't find / hire / recruit caregivers — 13 (whole corpus 180)
+30. Independent referral agent: how do I get clients (transition specialist, SRES, placement) — 8 (whole corpus 63)
+31. Referral / payor concentration risk (de-risk the multiple) — 7 (whole corpus 31)
+32. Chronic understaffing at facilities: ratios, call-ins, agency staff — 7 (whole corpus 154)
+33. Corporate / PE ownership vs family-owned: quotas from corporate — 6 (whole corpus 77)
+34. Scaling past the revenue plateau — 5 (whole corpus 51)
+35. Competition / saturated market — 4 (whole corpus 31)
+36. Marketing agencies / consultants that burned them — 4 (whole corpus 27)
+37. Tour metrics and 'sign the first visit' sales pressure — 4 (whole corpus 17)
+38. Lender / funding / capital for a facility — 3 (whole corpus 78)
+39. PE roll-ups & consolidation (compete or get bought) — 2 (whole corpus 62)
+40. Client churn from unreliable staffing (client-side) — 0 (whole corpus 7)
+41. Family price shock: $7–8k a month and 'is this what we get' — 0 (whole corpus 41)
+
+**Precision (20-hit random reads, buyer corpus):** 'How to start / consultant' 17 of 20 on topic (one TV-commercial post, one family review, one vendor). 'Referral sources & placement agents' 17 of 20 (two vendor comments, one aspirant question). 'Licensing' was 13 of 20 on the first pattern (a realtor's licence, a job posting, a mental-health platform leaked); the pattern now requires an agency/facility licence object and the count fell accordingly. Counts are ranks, not pain-point sizes; 'how to start' is the largest because the sources are start-up heavy, and it is the aspirant's theme, not the operating owner's. **Random-40 split of the buyer corpus (seed 2026, read 2026-09-09):** 12 support the client-acquisition pain narrative (no clients after licensing, paid A Place for Mom and got nothing, dependent on placement agents, 'what has worked best for finding residents'), 3 contradict it (a referral site that produced a first 24-hour client, praise for scheduling software, joy at the licence), 25 neutral (one-line replies inside group threads, exam prep, a partnership offer). The neutral majority is the shape of group conversation, not a sign the pain is rare; the tabs sort the 12 kind to the top and the reader can open every theme to see the rest.
+
+
+---
+
+## Vocabulary ledger
+
+
+### Three-word phrases (min 4 docs)
+| # docs | phrase | top source |
+|---|---|---|
+| 37 | place for mom | https://www.facebook.com/groups/2156388261379184/posts/2828223997528937 |
+| 21 | assisted living facility | https://www.facebook.com/groups/352285274494478/posts/976832502039749 |
+| 17 | word of mouth | https://www.facebook.com/groups/2018920001893909/posts/2391522307967008 |
+| 11 | assisted living communities | https://www.facebook.com/groups/2156388261379184/posts/2884206921930644 |
+| 11 | assisted living facilities | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
+| 11 | google business profile | https://www.facebook.com/groups/2156388261379184/posts/2911408609210475 |
+| 11 | residential assisted living | https://www.reddit.com/r/realestateinvesting/comments/uujosm/is_residential_assisted_living_worth_looking_into/ |
+| 9 | policies and procedures | https://www.reddit.com/r/RunAHomeCareAgency/comments/1b5d8qo/is_a_consultant_worth_it/ |
+| 8 | elder law attorneys | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
+| 7 | process of opening | https://www.facebook.com/groups/201561673732649/posts/1978369336051865 |
+| 6 | chamber of commerce | https://www.facebook.com/groups/2156388261379184/posts/2896708240680512 |
+| 6 | hospitals rehab centers | https://www.facebook.com/groups/2156388261379184/posts/2763660403985297 |
+| 6 | independent living facilities | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
+| 6 | trying to figure | https://www.reddit.com/r/smallbusiness/comments/1hr7ffg/looking_to_start_a_home_health_agency/ |
+| 5 | aba business owners | https://www.facebook.com/groups/669886889110965/posts/975664455199872 |
+| 5 | able to find | https://www.facebook.com/groups/1079987009361321/posts/1852012652158749 |
+| 5 | free to reach | https://www.facebook.com/groups/2156388261379184/posts/2884206921930644 |
+| 5 | geriatric care managers | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
+| 5 | happy to share | https://www.facebook.com/groups/2156388261379184/posts/2848193632198640 |
+| 5 | hospital discharge planners | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
+| 5 | meet our needs | https://www.reddit.com/r/RunAHomeCareAgency/comments/1dbg9dl/scheduling_software_for_247_home_care/ |
+| 5 | peace of mind | https://www.reddit.com/r/AssistedLiving/comments/1kyorry/years_of_working_in_a_assisted_living_facility/ |
+| 5 | senior living marketing | https://www.reddit.com/r/SeniorLivingMarketing/comments/1q9p8wm/who_i_am_why_i_care_about_senior_living_marketing/ |
+| 5 | sent you message | https://www.facebook.com/groups/2156388261379184/posts/2732245613793443 |
+| 5 | skilled nursing facilities | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
+
+### Two-word phrases (min 4 docs)
+| # docs | phrase | top source |
+|---|---|---|
+| 106 | assisted living | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
+| 97 | private pay | https://www.facebook.com/groups/1154838852454654/posts/1589096935695508 |
+| 38 | non medical | https://www.facebook.com/groups/1154838852454654/posts/1621142212490980 |
+| 36 | senior living | https://www.facebook.com/groups/2156388261379184/posts/2848193632198640 |
+| 32 | case managers | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
+| 30 | hi everyone | https://www.facebook.com/groups/1154838852454654/posts/1589096935695508 |
+| 29 | feel free | https://www.facebook.com/groups/2156388261379184/posts/2848193632198640 |
+| 29 | social workers | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
+| 26 | living facility | https://www.reddit.com/r/AssistedLiving/comments/1kyorry/years_of_working_in_a_assisted_living_facility/ |
+| 26 | referral sources | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
+| 23 | discharge planners | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
+| 21 | social media | https://www.reddit.com/r/RunAHomeCareAgency/comments/1d6v0n4/looking_for_marketing_ideas/ |
+| 18 | anonymous participant | https://www.facebook.com/groups/2156388261379184/posts/2855824171435586 |
+| 18 | greatly appreciated | https://www.reddit.com/r/Entrepreneur/comments/1alxdam/nonmedical_home_care_service_business/ |
+| 17 | hello everyone | https://www.reddit.com/r/RunAHomeCareAgency/comments/1dfnzpx/mental_health_platform_for_home_care_customers/ |
+| 17 | mental health | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
+| 17 | real estate | https://www.reddit.com/r/realestateinvesting/comments/uujosm/is_residential_assisted_living_worth_looking_into/ |
+| 16 | independent living | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
+| 16 | insurance companies | https://www.youtube.com/watch?v=zvtl029wKTU&lc=Ugznprtsa1TsTp-QrY14AaABAg |
+| 16 | living facilities | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
+| 14 | nursing homes | https://www.facebook.com/groups/2156388261379184/posts/2848193632198640 |
+| 13 | google ads | https://www.facebook.com/groups/2156388261379184/posts/2911408609210475 |
+| 13 | living communities | https://www.facebook.com/groups/2156388261379184/posts/2884206921930644 |
+| 13 | long term | https://www.reddit.com/r/realestateinvesting/comments/14u5xo2/im_looking_into_leasing_to_residential_assisted/ |
+| 12 | loved ones | https://www.reddit.com/r/RunAHomeCareAgency/comments/zzgxyl/i_put_together_a_pretty_extensive_list_of/ |
+
+### Single words (min 4 docs)
+| # docs | phrase | top source |
+|---|---|---|
+| 163 | living | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
+| 147 | marketing | https://www.reddit.com/r/bcba/comments/1dkhd7e/i_started_a_private_practice_ama/ |
+| 146 | private | https://www.reddit.com/r/bcba/comments/1dkhd7e/i_started_a_private_practice_ama/ |
+| 143 | well | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
+| 140 | health | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
+| 139 | first | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
+| 137 | community | https://www.facebook.com/groups/2156388261379184/posts/2828223997528937 |
+| 127 | services | https://www.reddit.com/r/bcba/comments/1dkhd7e/i_started_a_private_practice_ama/ |
+| 126 | find | https://www.reddit.com/r/nursing/comments/1qijhrs/got_a_text_about_being_at_work_10_minutes_before/o0s1gkk/ |
+| 119 | senior | https://www.reddit.com/r/eldercare/comments/1g5gzvc/looking_for_some_feedback_and_advice/ |
+| 119 | you're | https://www.reddit.com/r/RealEstate/comments/16dcpic/how_i_see_the_bubble_already_popping/jzrdycn/ |
+| 116 | agencies | https://www.facebook.com/groups/2156388261379184/posts/2828223997528937 |
+| 115 | referral | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
+| 111 | referrals | https://www.facebook.com/groups/2156388261379184/posts/2828223997528937 |
+| 110 | doing | https://www.reddit.com/r/eldercare/comments/1g5gzvc/looking_for_some_feedback_and_advice/ |
+| 109 | assisted | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
+| 105 | call | https://www.facebook.com/groups/2156388261379184/posts/2828223997528937 |
+| 103 | everyone | https://www.facebook.com/groups/352285274494478/posts/976832502039749 |
+| 103 | take | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
+| 99 | working | https://www.facebook.com/groups/248675758568554/posts/6929343677168362 |
+| 98 | experience | https://www.reddit.com/r/eldercare/comments/1g5gzvc/looking_for_some_feedback_and_advice/ |
+| 97 | company | https://www.reddit.com/r/ABA/comments/1i2h1sq/i_passed/ |
+| 96 | through | https://www.reddit.com/r/AgingParents/comments/1ujtemb/he_wouldnt_inconvenience_himself_to_go_to_the/ouqhll3/ |
+| 94 | family | https://www.reddit.com/r/eldercare/comments/1g5gzvc/looking_for_some_feedback_and_advice/ |
+| 93 | leads | https://www.facebook.com/groups/2156388261379184/posts/2909828769368459 |
+
+
+---
+
+## Awareness → Offer Map
+
+
+### 1. PROBLEM-AWARE
+**Where they are:** Operators who know the phone is not ringing enough: 'I need clients', 'census is down', 'I'm way too dependent on placement agents' — and still equate marketing with visiting facilities and word of mouth.
+
+> "I've become way too dependent on the placement agents that have been bringing me clients."
+
+**Messaging that works here:** "The families are searching tonight. Are they finding you, or A Place for Mom?" · "You do not have a marketing problem. You have a phone-not-ringing problem."
+
+- **DIY:** Free teardown: where your next 10 clients / residents / patients are actually going to come from, from your market's own search and ad data.
+- **DWY:** We build the inbound engine; you keep your referral relationships and answer the phone.
+- **DFY:** Done-for-you client acquisition: ads + landing page + intake, so the family calls you and only you.
+
+### 2. SOLUTION-AWARE
+**Where they are:** They have tried a referral site, a placement agent or an ads vendor and know a system is what is missing — they are asking the group 'what lead companies actually work for private pay?'
+
+> "$58 per 'possible' lead, sent to 4 other agencies, is a complete scam."
+
+**Messaging that works here:** "Leads that are yours. Not shared with four other agencies." · "Stop renting families from A Place for Mom. Own the inquiry."
+
+- **DIY:** The exclusive-lead playbook: what the shared-lead sites charge vs. what an owned inquiry costs.
+- **DWY:** We run acquisition on your own brand; you see every call and every cost.
+- **DFY:** Exclusive inquiries, intake handled, cost per admission reported weekly.
+
+### 3. PRODUCT-AWARE
+**Where they are:** Comparing agencies, pay-per-lead vendors, coaches and DIY Google Ads. They want proof before a retainer.
+
+> "I'd pay for results, not a retainer."
+
+**Messaging that works here:** "Pay for admissions, not impressions." · "Show me the cost per move-in before I sign anything."
+
+- **DIY:** Comparison sheet: pay-per-lead vs. agency retainer vs. owned engine, on your numbers.
+- **DWY:** 90-day pilot on one service line or one building; scale on the measured cost per client.
+- **DFY:** Performance-priced acquisition tied to booked assessments, tours or admissions.
+
+### 4. MOST AWARE
+**Where they are:** Operators with a full building or a full caseload who want the next one, the second location, or a sale at a better multiple.
+
+> "Occupancy up, then refinance or sell at a higher valuation."
+
+**Messaging that works here:** "Fill the next building before the lender asks." · "Census you own is census a buyer pays for."
+
+- **DIY:** Expansion checklist: what a second location needs from day one.
+- **DWY:** Pre-opening waitlist campaign for the next building.
+- **DFY:** Multi-location acquisition engine with per-building reporting.
+
+
+---
+
+## Operator ladder, speaker gate and sources
+
+- **Ladder expansion (09-08 afternoon)** — Reddit `.json` through the browser rate-limits at ~100 requests / 10 min (429 at 12:36); re-paced to ~1 request / 6.5 s with backoff. YouTube Data API: the brief's key is invalid, the key in `reference_research_accounts` works (free). supadata free. Indeed and Glassdoor read through the browser at human pace; both wall after ~3 fast loads. Apify $0 on every account — unused.
+- **Reddit** — logged-in research browser (Own-Clerk-6667), free/unlimited via in-page `.json`. Primary VOC.
+- **YouTube Data API v3** — free; 960 owner-comment records across 45 coach videos.
+- **Supadata** — free; 56 coach transcripts (580K chars).
+- **Tavily** — Researcher plan, ~880 credits left; forum/Quora discovery + extract.
+- **Facebook** — logged in (Angela); 9 owner groups joined. Cold-feed yield thin (new-account behavior); warms over 1–2 weeks.
+- **Apify** — ~$0.94 across accounts; used ~$0.62 on the initial Reddit calibration before the browser path replaced it. Competitor **ad-creative** sweep deferred to the 09-23 reset (see Backfill).
+- **SerpAPI** — 0/250 (dead until Oct 1).
+
+## D1 — Source Matrix (what was pulled)
+**Corpus now 7,401 documents after the 2026-09-08 operator-ladder expansion (see D1l below for what was added per vertical). The paragraph that follows describes the first home-care-only pull of 09-08 morning and is kept as the baseline.**
+Corpus = **850 entries**, 565 with real engagement scores. Reddit 395 (r/RunAHomeCareAgency 116 owner core; r/nursing 101 + r/CNA 85 + r/caregivers 54 labor; r/Entrepreneur/buyingabusiness/smallbusiness industry; Go-Deeper entity spin-offs care.com / A Place for Mom / franchise). YouTube owner-comments 359. agingcare (client-side staffing symptom, focused) 49. allnurses/Quora forums 45. FB owner groups 2. Plus a **56-video coach transcript corpus** (Justin Currie / Master of Home Care, Steve "The Hurricane" / Home Care Evolution, Sagapixel, Homecare Owners Corner, Aaron Bogle, RealScottMcKenzie, Coach Michele, +14) for the expert/Previous-Solutions/vendor layer.
+**Honest gaps:** r/homehealth is a dead sub (not usable). Owner *emotional* content (Tab 3, Tab 9 owner-scenes) is thin — the owner sub is tactical, not confessional. Competitor ad creatives = 09-23 Apify backfill.
+
+---
+
+## D1l — Per-vertical pulls (kept from 09-08) (the operator ladder, 2026-09-08)
+
+Every corpus entry carries a **pull scope** (the subreddit, keyword, channel, brand or file it came from — stated per file, never inferred from the speaker) and the **verticals its text names** (word-bounded regex). Counts are documents. *Before* = the 09-08 morning corpus (home-care pulls only, 3,679 documents); *after* = this expansion (7,401 documents). Documents containing the word "occupancy": 0 → **25**.
+
+| Vertical | Pulled (this expansion) | Docs by pull scope, before → after | Docs naming it, before → after | Gaps (honest) |
+|---|---|---|---|---|
+| Home care | r/RunAHomeCareAgency deepened (scheduler/intake, recruiting, census/private pay/VA/LTC, sold/exit/PE/burnout, pay-per-lead/agencies/ads); Ad Library 'home care agencies', 'caregiver applicants', 'hire more caregivers', 'recruit caregivers', 'home care leads', 'schedulers', 'scheduler'; feed advertisers by name; TrustPilot ClearCare (71) + AlayaCare (1); Indeed/Glassdoor Home Instead + BrightStar; r/cna + r/nursing brand searches | 2,494 → **2,689** | 697 → **816** | r/homehealth dead; AxisCare / WellSky / Alora have no TrustPilot page |
+| Home health | r/Entrepreneur, r/smallbusiness, r/buyingabusiness 'home health agency'; r/RunAHomeCareAgency Medicare/PDGM/OASIS/skilled; r/homehealthcare + r/healthcareadmin (sup pass); YouTube 2 operator videos + 27 transcripts (referrals, sales, OASIS, Medicaid rates, franchise); Ad Library 'home health agency owners', 'home health agencies/agency', 'grow your census', 'census'; Indeed/Glassdoor Amedisys + LHC; trade press HHCN, McKnight's Home Care, WellSky/Luna referral-acceptance numbers | 136 → **440** | 294 → **421** | r/HealthcareAdministration returns 404 (the live sub is r/healthcareadmin, added in the sup pass); r/homehealth dead; 'increase census' and 'home health referrals' phrases return 0 ads |
+| Hospice | r/hospice owner/administrator/census/admissions/liaison/'my hospice'/for-profit/ADC (owner-only filter in build_halo), r/Entrepreneur + r/smallbusiness + r/buyingabusiness 'hospice'; YouTube 10 operator videos (start a hospice, license, $3M hospice, sales) + 4 transcripts; Ad Library 'hospice owners/admissions/marketing/agencies/agency/providers', 'more admissions', 'hospice referrals'; Indeed/Glassdoor VITAS; Hospice News (VITAS Q1 census + admissions, 30-minute referral response, 2026 trends); r/cna + r/nursing 'VITAS' | 4 → **419** | 65 → **354** | r/hospice is families and nurses first — operator voice is the minority even after the owner filter; 'hospice growth' phrase 0 ads |
+| Assisted living / RAL | r/AssistedLiving five owner/occupancy/marketing/staffing/licensing searches + r/Entrepreneur, r/smallbusiness, r/buyingabusiness, r/realestateinvesting, r/sweatystartup 'assisted living / RAL / personal care home / group home'; YouTube 16 RAL-operator videos (RAL Academy, Assisted Living Investing, 'How to start an ALF', $12K/month) + 4 transcripts; Ad Library 18 phrases (owners, operators, RAL, move-ins, booked tours, waitlist, fill your beds, empty beds/rooms, more tours, facilities, business...); Indeed/Glassdoor Sunrise; Feed: Dr. Mark Stevens, Wisdom First, Searchlift, Occupancy Partners | 98 → **1,541** | 186 → **864** | r/AssistedLiving is mostly families and line staff; owner voice comes from the general subs and YouTube; 'assisted living marketing/leads' phrases return 0 ads |
+| Memory care | r/AssistedLiving 'memory care' owner/occupancy/staffing/marketing/census; r/SeniorLivingMarketing; r/Entrepreneur 'memory care' (0 posts); YouTube 6 videos + 4 transcripts; Ad Library 'memory care communities/community' (60 ads), 'memory care marketing' (0); Indeed/Glassdoor Silverado; r/cna + r/nursing 'Silverado' | 1 → **235** | 25 → **144** | the one memory-care operator-marker document in the corpus is a family member with an admin background; memory-care operators speak as assisted-living operators (same buildings) — treat memory care as a wing of AL/senior living in copy, not a separate buyer voice |
+| Independent living | r/AssistedLiving 'independent living'; r/realestateinvesting 'independent living / 55+'; r/SeniorLivingMarketing (sup); YouTube 1 operator video (63 comments) + 1 transcript (91K chars); Ad Library 'independent living communities/community' (57 ads), 'independent living community marketing' (0); trade press NIC occupancy 91.3% | 0 → **146** | 24 → **99** | r/seniorliving does not exist (404) — three planned searches replaced by r/AssistedLiving + r/SeniorLivingMarketing (67 members); the IL operator voice online is the 'group home / ILF for veterans' starter, not the 55+ community operator |
+| Senior living / CCRC / SNF | r/nursinghome administrator/census/occupancy/staffing/survey/marketing; r/Entrepreneur, r/smallbusiness, r/buyingabusiness 'senior living / nursing home / senior housing'; r/AssistedLiving + r/SeniorLivingMarketing sales/occupancy/ED searches (sup); YouTube 4 videos + 4 transcripts; Ad Library 'senior living communities/operators/sales/industry', 'occupancy', 'occupancy rate', 'increase occupancy' (132 ads); Indeed/Glassdoor Brookdale + Atria; Senior Housing News, McKnight's Senior Living (Brookdale 82.4% occupancy), NIC, Argentum workforce; r/cna + r/nursing 'Brookdale', 'Atria' | 0 → **449** | 111 → **428** | r/seniorliving 404; 'senior living directors/marketing/leads' phrases return 0 ads — the vendors say 'occupancy', not 'leads' |
+| Adult day | r/Entrepreneur, r/smallbusiness, r/RunAHomeCareAgency, r/AssistedLiving 'adult day' + all-reddit 'adult day care owner/start/census'; YouTube 11 operator videos (Adult Day Care Academy, VA/Medicaid enrollment, NY $400M) + 4 transcripts; Ad Library 'adult day center/care center/centers' (52 ads), 'adult day center marketing' (0); Indeed SarahCare | 0 → **296** | 14 → **100** | no adult-day subreddit exists; the voice is YouTube comments under one coach's channel — a single-source risk, said so |
+| Placement / referral agency | r/Entrepreneur, r/smallbusiness, r/AssistedLiving, r/SeniorLivingMarketing, r/RunAHomeCareAgency 'placement agent/agency/referral fee/A Place for Mom' + all-reddit 'senior placement business'; YouTube 8 operator videos (start a senior placement agency, 5 hard truths, day in the life) + 4 transcripts; Ad Library 'placement agency' (30), 'senior placement' (18), 'referral agency', 'placement agents', 'senior placement agency'; TrustPilot A Place for Mom + Caring.com (from the first run); Indeed/Glassdoor A Place for Mom; McKnight's (Five Star: APFM move-ins under 5%) | 163 → **278** | 83 → **141** | placement-agent owners are few and post little; 'senior care leads' and 'pay per lead senior care' phrases return 0 ads (VERVE, the pay-per-lead advertiser in the feed, was found by name only) |
+| Multi-location medical | r/healthcareadmin (sup pass; r/HealthcareAdministration 404), r/Entrepreneur 'medical practice / clinic multiple locations'; YouTube 5 healthcare-marketing videos + 4 transcripts; Ad Library 'multi-location medical' (25), 'multi-location practices', 'multiple locations', 'practice owners' (94 ads, mostly dental/med-spa vendors); Feed: Lukrah ('Multi-Location Medical Care Agencies'), ureDocs/7FigureDocs | 0 → **125** | 25 → **141** | the 'medical care agency' phrase is Lukrah's own coinage — the corpus has no operator using it; the multi-location voice is dental/med-spa practice owners, adjacent to the senior-care ladder, kept but tagged |
+| Cross-vertical | labor subs (r/cna, r/nursing, r/caregivers, r/HomeHealthAides) from the first run + brand searches; family boards; forums | 783 → **783** | 0 → **0** |  |
+
+**Sources added in this expansion, each pulled once (D1 matrix):** Reddit per-vertical searches through the logged-in browser (reddit-read2.mjs, ~1 request / 6.5 s after the 429 at 12:36; 10 target files + 4 supplemental + 20 employer-brand searches on r/cna and r/nursing); YouTube Data API per-vertical operator videos as full threads with replies (73 pulled, 10 pruned by title as job-seeker / family-facing / nurse-vlog, list in yt_ladder_pruned.json); supadata transcripts of 57 operator-education videos (815K chars, creator_transcripts_ladder.json); Meta Ad Library through the logged-in browser — 23 feed advertisers by name (exact phrase) + 61 ladder phrases in three passes (ADLIB_ladder_names.json 316, ADLIB_ladder_phrases.json 1,031); Indeed + Glassdoor employer reviews of 11 operators (employer-reviews2.mjs); TrustPilot of the software vendors (tp-pull.mjs); trade press read in full through the browser (16 articles, press_articles.json) plus 18 hand-logged numbers with URLs (trade_press_ladder.json).
+
+**What could not be pulled and why:** Apify ($0 on every account until 09-19) — not used. Facebook owner groups — the research account is 3 days old and the group feeds render empty; nothing captured, nothing posted. r/seniorliving, r/HealthcareAdministration, r/homehealth — do not exist or are dead (404), replaced where a live sub existed. Indeed star-filter pages — the bot wall closes after ~3 fast loads; the three sorted pages per brand (default / lowest / highest) were read instead, so the 2–4★ columns are thin. Glassdoor — 3 reviews per brand before the login wall (the aggregate rating and count were captured). AxisCare, WellSky, Eldermark, Axxess, CareVoyant, Home Care Pulse / Activated Insights — no TrustPilot page; yardi.com resolves to an unrelated Yardi product (dropped). Ad Library impressions numbers — the Library hides US impression counts; the impressions SORT was used and each card carries its position in that sort. Video transcription of ad creatives (faster-whisper) — not run in this pass; the card text and the feed OCR are what was classified.
+
+## D1m — The speaker gate and the owner sources (added 2026-09-09; the reason this page was rebuilt)
+The 09-08 page ranked every theme's voices by engagement over a corpus in which about one document in twenty was spoken by an operator, so nurses, family caregivers, an MBA guide and a realtor's revenge story led the owner's tabs (24% of the first five voices per theme were operators; the family-caregiver page runs at 81%). This rebuild stamps a **speaker** on every document from first-person role markers in the text and the pull's stated scope — owner / pre-launch operator / employee / family / vendor / press / unmarked — and lets only owner and pre-launch documents into Tabs 1–9, the theme voices, the frequency ranking, the ledger and the headline candidates. Every list sorts operators first, then engagement. The classifier was precision-read three times; the corrections are in `raw/speaker.py` (an RBT's "my clients", a family's "we hired aides", a group admin selling medical supplies and a marketing agency's case study all counted as operators on the first pass and do not now).
+
+**Sources added for the operator (each pulled once, files in raw/):** Facebook owner groups found by Tavily (`FB_disc.json`, ~200 searches across home care, home health, hospice, assisted living / RCFE / adult family home, memory care, senior living, independent living, adult day, placement, independent referral agents and in-home ABA) and read two ways — logged-out extract (`FB_TAVILY.json`, post + top comments, about one URL in five renders) and the logged-in research Chrome (`FB_BROWSER.json`, every comment and reply); the whole of r/RunAHomeCareAgency, r/SeniorLivingMarketing and r/HomeCareOwners by listing plus scoped vendor-name and owner-phrase searches in the business, ABA, realtor and facility subs (`REDDIT_owner2.json`; the all-reddit search was tried, returned r/ProRevenge and r/dropshipping, and was removed); YouTube threads with replies on vendor / marketing / placement / transition-specialist / ABA-business videos (`youtube_comments_owner3.json`, ten off-topic videos pruned by id in `yt_owner3_pruned.json`); forum and review pages from the vendor discovery (`FORUM3_extract.json`: BiggerPockets, Quora, unhappyfranchisee, allnurses, Yelp, TrustPilot brand pages, trade press); Ad Library phrases for ABA, senior living leads, home care leads and the referral-training vendors (`ADLIB_owner3.json`). Apify was not used ($0 on every account until 09-19); Tavily credits were the only spend.
+
+**What could not be pulled:** LinkedIn (senior-living sales directors' posts; Tavily returns 404 on post URLs and the research Chrome is not logged in), Capterra / G2 owner reviews and BBB complaints (bot-walled for Tavily; queued for the browser), the private Facebook groups Angela has not been admitted to, and the Reddit profile pivot for the new authors (throwaways).
+
+
+---
+
+## Self-audit and backfill
+
 | # | Check | Result |
 |---|---|---|
 | A | Tab names | ✓ all ten, unchanged |
@@ -1839,3 +1679,6 @@ Every line below points at evidence on this page: a measured theme count (buyer-
 | AE | Why They Buy tab (D1o) | ✓ five sections, every item with an evidence link, hook counts from ad_hooks_b2b.json over 241 operator-facing ads, caveat stated |
 | AD | Speaker gate (D1m) | ✓ speaker on every document, buyer-only tabs, operators-first sort, speaker split printed per tab and by source, Lead Sources ledger, all-reddit search removed |
 | AF | **B2C noise out of the B2B page (Vince, 2026-09-10: 'some of the ads aren't B2B', 'Reviews by Star are comparing the B2C brands', 'competitor URLs weren't clickable', 'can't see the feed images')** | ✓ Competitor Ads classified audience-first: 233 ads from 95 advertisers sell to senior-care operators (203 to running businesses, 30 to would-be owners); 27 adjacent-practice ads set aside as format references; 45 lead-seller consumer funnels; 625 operators' own ads (64 recruiting staff) collapsed; random 30 read = 30 of 30. Reviews by Star rebuilt provider-side only (4 of 487 TrustPilot reviews are owners or franchisees; family and worker reviews excluded; owner voice per lead source from the ledger; employer reviews collapsed and labeled). Every feed row shows its screenshot (creatives/feed/) and a verified site link; every ad card and advertiser row links to its landing page or Facebook page and to the Ad Library; creatives cached in creatives/ads/. |
+
+## Backfill (post 09-23 Apify reset)
+Competitor ad-creative sweep (D1a): Meta Ad Library — Home Instead, Visiting Angels, Comfort Keepers, A Place for Mom, Care.com, + coaches; rank by longevity; transcribe video; Competitor Desire Map. Plus: r/nursing "crisis in home care" full labor thread, TrustPilot/Indeed/Glassdoor reviews-by-star of franchises + software (Reviews-by-Star tab), Profile Pivot (D4) on the top owner authors, and the now-warming FB owner groups.
