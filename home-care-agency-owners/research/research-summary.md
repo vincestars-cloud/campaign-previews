@@ -25,19 +25,21 @@ Generated 2026-09-10 from the same files that build https://vincestars-cloud.git
 10. [Tab 9 — Typical Day](#tab-9-typical-day)
 11. [Lead Sources — what they have paid for and what it returned (first 6 voices per source; all 12 are on the page)](#lead-sources-what-they-have-paid-for-and-what-it-returned-fi)
 12. [Why They Buy — the five answers an ad needs (Ad Brief)](#why-they-buy-the-five-answers-an-ad-needs-ad-brief)
-13. [Competitor Ads across the operator ladder (cleaned 2026-09-10)](#competitor-ads-across-the-operator-ladder-cleaned-2026-09-10)
-14. [Landing pages (B2B only)](#landing-pages-b2b-only)
-15. [Reviews by Star — buyer-side voice](#reviews-by-star-buyer-side-voice)
-16. [Trade press & owner surveys (numbers with URLs)](#trade-press-owner-surveys-numbers-with-urls)
-17. [Competitor marketing agencies — inLeap's direct set](#competitor-marketing-agencies-inleap-s-direct-set)
-18. [Vendor / competitor map](#vendor-competitor-map)
-19. [Go-deeper thread cards](#go-deeper-thread-cards)
-20. [Headline candidates (Tab 11)](#headline-candidates-tab-11)
-21. [Frequency ranking (buyer-voice complaint patterns)](#frequency-ranking-buyer-voice-complaint-patterns)
-22. [Vocabulary ledger](#vocabulary-ledger)
-23. [Awareness → Offer Map](#awareness-offer-map)
-24. [Operator ladder, speaker gate and sources](#operator-ladder-speaker-gate-and-sources)
-25. [Self-audit and backfill](#self-audit-and-backfill)
+13. [Economics, Valuation & Exit — what the established buyer scores by](#economics-valuation-exit-what-the-established-buyer-scores-b)
+14. [Retention at Scale — the growth ceiling and the valuation lever](#retention-at-scale-the-growth-ceiling-and-the-valuation-leve)
+15. [Competitor Ads across the operator ladder (cleaned 2026-09-10)](#competitor-ads-across-the-operator-ladder-cleaned-2026-09-10)
+16. [Landing pages (B2B only)](#landing-pages-b2b-only)
+17. [Reviews by Star — buyer-side voice](#reviews-by-star-buyer-side-voice)
+18. [Trade press & owner surveys (numbers with URLs)](#trade-press-owner-surveys-numbers-with-urls)
+19. [Competitor marketing agencies — inLeap's direct set](#competitor-marketing-agencies-inleap-s-direct-set)
+20. [Vendor / competitor map](#vendor-competitor-map)
+21. [Go-deeper thread cards](#go-deeper-thread-cards)
+22. [Headline candidates (Tab 11)](#headline-candidates-tab-11)
+23. [Frequency ranking (buyer-voice complaint patterns)](#frequency-ranking-buyer-voice-complaint-patterns)
+24. [Vocabulary ledger](#vocabulary-ledger)
+25. [Awareness → Offer Map](#awareness-offer-map)
+26. [Operator ladder, speaker gate and sources](#operator-ladder-speaker-gate-and-sources)
+27. [Self-audit and backfill](#self-audit-and-backfill)
 
 
 
@@ -926,6 +928,68 @@ Every line below points at evidence on this page: a measured theme count (buyer-
 
 ---
 
+## Economics, Valuation & Exit — what the established buyer scores by
+
+**What this buyer scores by.** The established owner runs the business by the numbers a buyer will pay for. Sources: Breakwater M&A valuation guide 2026, Carevoyant / Activated Insights benchmarking, HomeCarePulse, Home Health Care News M&A.
+
+| $9–12M | $2,600–5,000 | 12–24 mo | Record |
+|---|---|---|---|
+| 6–8× exit at $1.5M EBITDA | Cost to replace one caregiver | Census stability buyers require | PE home-care acquisitions 2024–25 |
+
+### Established pain hierarchy (measured across the corpus)
+*Ordered by document count over the 2026-09-08 ladder corpus (7,401 documents, all ten verticals); the number in parentheses is the same pattern on the morning home-care-only corpus (3,679 documents). A document is counted once per pattern.*
+1. **Caregiver retention at scale — 329 docs (home-care-only baseline 139).** The dominant pain. Turnover both *caps growth* (can't staff the cases you win) and *destroys valuation* (buyers discount hard for high turnover). Industry turnover runs **60–80%**; agencies below **50%** command premium multiples. Losing one caregiver costs **$2,600–$5,000** in recruit + train (Carevoyant/Activated Insights).
+2. **Owner-operator treadmill — 228 docs (home-care-only baseline 71).** Can't step off the day-to-day; no management layer, no systems. The business can't run — or sell — without them. *"One major task in being a business owner is HR and payroll… wearing so many hats."*
+3. **Exit / valuation / EBITDA — 87 docs (home-care-only baseline 29).** What's my agency worth, how do I sell, what raises the multiple.
+4. **Census stability & growth — 76 docs (home-care-only baseline 28).** Predictable client flow to *scale*, not survive; volatile census = valuation discount.
+5. **PE roll-ups & consolidation — 32 docs (home-care-only baseline 12).** Addus, BrightSpring, Help at Home are buying up their markets; compete, partner, or sell.
+6. **Scaling past the revenue plateau — 28 docs (home-care-only baseline 7).** Stuck at $Xm, can't break to the next tier.
+7. **Referral / payor concentration risk — 21 docs (home-care-only baseline 13).** Over-reliant on one payor or a few referral feeders = fragile revenue + valuation discount.
+
+
+### The economics that matter to this buyer (industry benchmarks)
+- **Valuation multiples (Breakwater M&A, 2026):** a small **owner-dependent** non-medical agency at ~$300K EBITDA sells **3–4× ($900K–$1.5M)**; one with **$1.5M+ EBITDA, diversified referrals + professional management commands 6–8× ($9M–$12M)**. Medicare-certified home health commands **1.5–2× higher** than non-certified at similar EBITDA. Small owner-operated deals often valued on **SDE** (adds back owner salary).
+- **What drives the multiple UP:** low caregiver turnover (<50%), stable/growing census over 12–24 months, diversified payor mix, diversified referral sources, strong star ratings, clean survey history, **management that runs it without the owner**.
+- **What drives it DOWN:** high owner dependency, declining/volatile census, single-payor or single-referral concentration, past deficiencies/sanctions.
+- **Deal structure:** typically cash + **10–20% seller note** (2–4 yrs) + **10–20% earnout** tied to *census retention and key referral-relationship retention* post-sale.
+- **The market:** PE-backed consolidators completed record home care acquisitions in 2024–25; hospitals are pushing patients out of facilities into home-based care (demand tailwind). "PE is dumping billions into home care despite 79% caregiver turnover" (r/Entrepreneur, ↑314).
+
+
+---
+
+## Retention at Scale — the growth ceiling and the valuation lever
+
+For the established owner, caregiver retention is not an HR nicety — it is the growth ceiling and the valuation lever. **329 corpus docs** (ladder corpus; 139 on the home-care-only baseline) touch it; the M&A data says agencies below **50% turnover** (vs. the **60–80%** industry norm) command premium multiples, and each lost caregiver costs **$2,600–$5,000** to replace (Carevoyant / Activated Insights). You cannot scale census you cannot staff.
+
+### The killer insight (why they actually leave)
+> "Home care isn't a medical business; it's a logistics and HR business… The moat isn't your branding or your bedside manner — it's your scheduling density. If you can give a caregiver 40 hours a week within a 5-mile radius, they stay. If you give them 20 hours with a 30-minute commute between clients, they go to Target. The 79% turnover is usually a symptom of fragmented schedules rather than just low hourly."
+> — r/Entrepreneur operator · ↑7
+
+> "Places are offering $25 an hour and still can't find staff. Part of the problem is the pay but also how they are treated… Many are just leaving healthcare altogether no matter how much they raise the wages."
+> — r/nursing · ↑6
+
+> "Wages for home care workers are abysmal, fast food now pays better."
+> — r/nursing · ↑120
+
+### The retention levers (from operators + the coach playbooks)
+1. **Scheduling density** — cluster hours near the caregiver's home; full-time-equivalent hours in a tight radius beat a higher wage spread across a 30-minute commute.
+2. **The first week** — *"a disorganized first week actively erodes their confidence in your agency's competence."* Structured onboarding/orientation is a retention act, not paperwork.
+3. **PRN / float team** — a texted, first-come pool for coverage so a call-off doesn't burn your full-timers (and doesn't cost you 40 guaranteed hours).
+4. **A real scheduler** — *"the scheduler position is very critical… has to be on top of everything."* At scale, scheduling IS retention.
+5. **Pay + daily pay** — competitive wage floor plus earned-wage-access (Tapcheck/daily pay) to beat the fast-food alternative.
+6. **Recognition & matching** — caregiver-client matching and being treated as more than "a number" (the recurring VOC complaint).
+
+### The retention/recruiting vendors competitors sell to owners (inLeap's adjacent set)
+- **Training / onboarding:** CareAcademy, Nevvon, learn2care
+- **Earned-wage-access / daily pay:** Tapcheck, and payroll add-ons
+- **Recruiting / RPO / job boards:** Apploi, myCNAjobs, Indeed, ZipRecruiter, Hireline
+- **AI / matching / monitoring:** Sensi.AI, scheduling-density tooling inside WellSky / AxisCare / AlayaCare
+- **Coaches with retention programs:** Home Care Evolution (Hurricane), Justin Currie, Candyce Slusher, Jedi Calventas ("Stop Losing Caregivers")
+**inLeap's angle:** the same acquisition engine that fills census also fills the caregiver pipeline — and pairing acquisition with scheduling-density + retention analytics is what turns turnover (the valuation killer) into the differentiator that raises the multiple.
+
+
+---
+
 ## Competitor Ads across the operator ladder (cleaned 2026-09-10)
 
 
@@ -941,30 +1005,30 @@ Every line below points at evidence on this page: a measured theme count (buyer-
 
 | Feed advertiser | Screenshot | Site | Vertical addressed | Hook (OCR) | Found in the Library? |
 |---|---|---|---|---|---|
-| Phoebe | creatives/feed/IMG_2782.jpg | https://www.phoebe.work/ | home care agency | Scheduling headaches holding you back? Home Care Agencies: Don't Hire Another Scheduler. We built you a better option. | yes — 9 ads, longest 210d, Ad Library (name search) |
+| Phoebe | creatives/feed/IMG_2782.jpg | https://jobs.phoebe.org | home care agency | Scheduling headaches holding you back? Home Care Agencies: Don't Hire Another Scheduler. We built you a better option. | yes — 9 ads, longest 210d, Ad Library (name search) |
 | Dr. Mark Stevens | creatives/feed/IMG_2786.jpg | — | assisted living | Assisted living owners — quick question… Assisted Living Owners with 30+ Residents | FEED ONLY — not findable by keyword or by advertiser name in the Library (2026-09-08) |
-| Wisdom First Marketing | creatives/feed/IMG_2784.jpg | https://wisdomfirstmarketing.com/ | assisted living / senior living | For assisted living community operators… 6 MONTH WAIT LIST. We help you build a six month waitlist. Need more booked tours? | yes — 7 ads, longest 77d, Ad Library (name search) |
+| Wisdom First Marketing | creatives/feed/IMG_2784.jpg | https://go.wisdomfirstmarketing.com/assisted/ | assisted living / senior living | For assisted living community operators… 6 MONTH WAIT LIST. We help you build a six month waitlist. Need more booked tours? | yes — 7 ads, longest 77d, Ad Library (name search) |
 | Whatsnap.ai | creatives/feed/IMG_2784.jpg | — | marketers / operators | $40 Leads Became $9 Leads When I Deleted The Landing Page | yes — 2 ads, longest 12d, Ad Library (name search) |
-| Occupancy Partners | creatives/feed/IMG_2788.jpg | https://occupancypartners.io/ | assisted living / independent living | (video) "you know every empty unit…"; comment "What about independent living?" — "yes!" | yes — 21 ads, longest 22d, Ad Library (name search) |
+| Occupancy Partners | creatives/feed/IMG_2788.jpg | https://go.occupancypartners.io/opt-in | assisted living / independent living | (video) "you know every empty unit…"; comment "What about independent living?" — "yes!" | yes — 21 ads, longest 22d, Ad Library (name search) |
 | Nathan Mummert | creatives/feed/IMG_2789.jpg | — | hospice | "Some months, 90 Hospice admissions, some months, 45." Hospice Owners & Administrators trying to grow. | FEED ONLY — not findable by keyword or by advertiser name in the Library (2026-09-08) |
 | ureDocs | creatives/feed/IMG_2790.jpg | https://www.7figuredocs.co/guaranteed-patients | medical practices (adjacent) | Hey Doctors! I'm Sophie, an AI… 30 Patients in 30 Days with AI | yes — 6 ads, longest 8d, Ad Library (name search) |
-| Home Care Breakthrough Solutions | creatives/feed/IMG_2795.jpg | https://homecarebreakthrough.com/ | home care agency | Home care owners — are you paying a sales rep under $10K/week in revenue results? Our system guarantees ROI or we work for free | yes — 15 ads, longest 464d, Ad Library (name search) |
+| Home Care Breakthrough Solutions | creatives/feed/IMG_2795.jpg | https://go.homecarebreakthrough.com/register | home care agency | Home care owners — are you paying a sales rep under $10K/week in revenue results? Our system guarantees ROI or we work for free | yes — 15 ads, longest 464d, Ad Library (name search) |
 | Lukrah | creatives/feed/IMG_2791.jpg | https://start.lukrah.com/book-call-page-2 | multi-location medical care agencies | Multi-Location Medical Care Agencies… (talking head, "consultation") | yes — 4 ads, longest 23d, Ad Library (name search) |
 | Home Care Pipeline | creatives/feed/IMG_2793.jpg | https://www.homecarepipeline.com/b | home care agency | Home care agency owners — if you've… Take the HomeCare Assessment | yes — 3 ads, longest 72d, Ad Library (name search) |
-| Mint CRO | creatives/feed/IMG_2793.jpg | — | marketers (adjacent) | Mint CRO Conversion Rate | yes — 11 ads, longest 65d, Ad Library (name search) |
+| Mint CRO | creatives/feed/IMG_2793.jpg | https://get.mintcro.com | marketers (adjacent) | Mint CRO Conversion Rate | yes — 11 ads, longest 65d, Ad Library (name search) |
 | Searchlift AI | creatives/feed/IMG_2792.jpg | https://liftsearch.ai/booking-wf | assisted living | 15 more family inquiries a month… Assisted Living Owners Get More Move-Ins From Google & AI WITHOUT ADS For $297/mo. No retainers, no ad spe | yes — 6 ads, longest 8d, Ad Library (name search) |
 | Premiere Destiny Home Care Success | creatives/feed/IMG_2798.jpg | https://premierehomecaresuccess.com/referral-guidev2 | home care agency | If your referrals are inconsistent… Your Referrals Aren't Random, They're Broken | yes — 3 ads, longest 135d, Ad Library (name search) |
-| Talroo | creatives/feed/IMG_2799.jpg | https://www.talroo.com/ | home care / staffing (50+ caregivers) | If you hire 50+ caregivers, CNAs, or h… How Finish'd Filled Caregiver Roles Faster | yes — 29 ads, longest 13d, Ad Library (name search) |
+| Talroo | creatives/feed/IMG_2799.jpg | https://www.talroo.com/start | home care / staffing (50+ caregivers) | If you hire 50+ caregivers, CNAs, or h… How Finish'd Filled Caregiver Roles Faster | yes — 29 ads, longest 13d, Ad Library (name search) |
 | Nextdoor (Advertise on Nextdoor) | creatives/feed/IMG_2799.jpg | — | local business | Most of my new clients now come straight from Nextdoor. | FEED ONLY — not findable by keyword or by advertiser name in the Library (2026-09-08) |
 | Elias Benedith – Senior Care Growth Consultant (CareIntake AI) | creatives/feed/IMG_2743.jpg | — | senior living directors + home care | Senior Living Directors & Home C… How CareIntake AI Works: family calls → booked appointment → reminder call/text → logs conversation & noti | FEED ONLY — not findable by keyword or by advertiser name in the Library (2026-09-08) |
 | Michael Porche | creatives/feed/IMG_2746.jpg | — | residential assisted living investing | I almost didn't do this because I thought I wasn't ready. No cash. No plan B. Still closed two senior care homes. I got my plan here — THE O | FEED ONLY — not findable by keyword or by advertiser name in the Library (2026-09-08) |
 | ClearDesk | creatives/feed/IMG_2742.jpg | https://usa.cleardesk.com/book-discovery-call | home care owners | FOR HOME CARE OWNERS: Schedulers, recruiters, built for Home Care. HIPAA-trained, WellSky-fluent placements at $2,250–$2,500/mo all-in, abou | yes — 4 ads, longest 92d, Ad Library (name search) |
-| HomecareGrow.io | creatives/feed/IMG_2722.jpg | https://homecaregrow.io/ | home care agency ($1M+/yr) | Home care owners doing $1M+/yr… We Pay For Ads. You Get Home Care Clients | yes — 23 ads, longest 86d, Ad Library (name search) |
+| HomecareGrow.io | creatives/feed/IMG_2722.jpg | https://homecaregrow.io/150k-guarantee | home care agency ($1M+/yr) | Home care owners doing $1M+/yr… We Pay For Ads. You Get Home Care Clients | yes — 23 ads, longest 86d, Ad Library (name search) |
 | Age Safe America | creatives/feed/IMG_2722.jpg | — | home safety training (adjacent) | Professional training in home safety, made simple. Equip yourself with the skills to create safer homes and support independent living. | yes — 3 ads, longest 35d, Ad Library (name search) |
-| VERVE Care Partners | creatives/feed/IMG_2741.jpg | https://vervecarepartners.com/ | in-home senior care agencies | PAY PER LEAD = GET 5+ IN HOME ELDER CARE LEADS IN 7 DAYS. No ad spend. No setup fee. High-intent leads. | yes — 19 ads, longest 106d, Ad Library (name search) |
+| VERVE Care Partners | creatives/feed/IMG_2741.jpg | https://vervecarepartners.online/opt-in-page | in-home senior care agencies | PAY PER LEAD = GET 5+ IN HOME ELDER CARE LEADS IN 7 DAYS. No ad spend. No setup fee. High-intent leads. | yes — 19 ads, longest 106d, Ad Library (name search) |
 | (YouTube search: "home care leads") | creatives/feed/IMG_2780.jpg | — | coaches | Justin Currie — Secrets for Home Care Agencies; Aaron Bogle — How To Get 22 Private Pay Home Care Leads FAST (Case Study) | yes — 1 ads, longest 15d, Ad Library (phrase search) |
-| Occupancy Partners | creatives/feed/IMG_2787.jpg | https://occupancypartners.io/ | assisted living | 20 booked, confirmed private-pay tours… 'money down the drain' (video subtitle) · Fill Your Assisted Living Units | yes — 21 ads, longest 22d, Ad Library (name search) |
-| Occupancy Partners | creatives/feed/IMG_2806.jpg | https://occupancypartners.io/ | assisted living / senior living | EVERY EMPTY UNIT is $4,000 to $6,000 a month GONE. We fill them for you by giving you exclusive leads generated and booked onto your calenda | yes — 21 ads, longest 22d, Ad Library (name search) |
+| Occupancy Partners | creatives/feed/IMG_2787.jpg | https://go.occupancypartners.io/opt-in | assisted living | 20 booked, confirmed private-pay tours… 'money down the drain' (video subtitle) · Fill Your Assisted Living Units | yes — 21 ads, longest 22d, Ad Library (name search) |
+| Occupancy Partners | creatives/feed/IMG_2806.jpg | https://go.occupancypartners.io/opt-in | assisted living / senior living | EVERY EMPTY UNIT is $4,000 to $6,000 a month GONE. We fill them for you by giving you exclusive leads generated and booked onto your calenda | yes — 21 ads, longest 22d, Ad Library (name search) |
 | Plena: PatientsPipeline | creatives/feed/IMG_2794.jpg | https://get.patientspipeline.com/ | home care agency | Home care agency owners above $70k/month: we'll book you 60 qualified in-home assessments in 90 days. Guaranteed. | yes — 1 ads, longest 14d, Ad Library (phrase search) |
 | Georgia Behavior Associates | creatives/feed/IMG_2802.jpg | — | in-home ABA (operator's own consumer ad) | In-home ABA therapy is available for… Ages 18 months to 21 years · No Waitlist · Insurance Covered · Katie Beckett Waiver Accepted · Persona | yes — 2 ads, longest 184d, Ad Library (phrase search) |
 | Advanced Agent Marketing (Instagram) | creatives/feed/IMG_2800.jpg | — | annuity / IUL agents — NOT senior care; format reference only | Can You Handle 15-20 Qualified… 'Take the consultation' (talking head over a Zoom-grid B-roll) | FEED ONLY — not findable by keyword or by advertiser name in the Library (2026-09-08) |
@@ -1002,11 +1066,11 @@ Every line below points at evidence on this page: a measured theme count (buyer-
 | Florida Assisted Living Consulting LLC with alfcaregivercon | https://www.floridaassistedlivingconsulting.com/assisted-living-and-caregivers-conference | 2 | 68d | both | Assisted living / RAL, Senior living / CCRC / SNF, Home health, Placement / referral agency |  |
 | WholesaleTablets.com | https://www.facebook.com/wholesaletablets/ | 2 | 61d | operators | In-home ABA, Multi-location medical |  |
 | Caring Senior Service Franchise | https://www.facebook.com/CaringFranchise/ | 2 | 41d | would-be owners | Home care, Cross-vertical |  |
-| Hospice Care Owners Network | https://www.facebook.com/61592304660174/ | 2 | 36d | operators | Hospice |  |
+| Hospice Care Owners Network | https://moonsethealth.com | 2 | 36d | operators | Hospice |  |
 | Hospice Care Marketing | https://www.hospicecaremarketing.com/schedule | 2 | 35d | operators | Hospice |  |
-| Kiro Farid | https://www.facebook.com/61567543605077/ | 2 | 22d | operators | Multi-location medical, In-home ABA |  |
+| Kiro Farid | https://grow.caregenius.co | 2 | 22d | operators | Multi-location medical, In-home ABA |  |
 | Patheown | https://www.facebook.com/61584957968788/ | 2 | 18d | operators | Home health, Hospice |  |
-| Alora Home Health Software | https://www.facebook.com/HomeHealthCareSoftware/ | 2 | 15d | operators | Home health, Home care |  |
+| Alora Home Health Software | https://alorahealth.com | 2 | 15d | operators | Home health, Home care |  |
 | HCPA | https://www.facebook.com/hcpa.official/ | 2 | 14d | would-be owners | Home care, Home health |  |
 | Optic Growth | https://www.facebook.com/61553310292857/ | 2 | 14d | operators | Home care, Cross-vertical |  |
 | JT Media | https://info.carestaffpro.com/p/veteran-generation | 2 | 9d | operators | Home care |  |
