@@ -1029,7 +1029,7 @@ For the established owner, caregiver retention is not an HR nicety — it is the
 | (YouTube search: "home care leads") | creatives/feed/IMG_2780.jpg | — | coaches | Justin Currie — Secrets for Home Care Agencies; Aaron Bogle — How To Get 22 Private Pay Home Care Leads FAST (Case Study) | yes — 1 ads, longest 15d, Ad Library (phrase search) |
 | Occupancy Partners | creatives/feed/IMG_2787.jpg | https://go.occupancypartners.io/opt-in | assisted living | 20 booked, confirmed private-pay tours… 'money down the drain' (video subtitle) · Fill Your Assisted Living Units | yes — 21 ads, longest 22d, Ad Library (name search) |
 | Occupancy Partners | creatives/feed/IMG_2806.jpg | https://go.occupancypartners.io/opt-in | assisted living / senior living | EVERY EMPTY UNIT is $4,000 to $6,000 a month GONE. We fill them for you by giving you exclusive leads generated and booked onto your calenda | yes — 21 ads, longest 22d, Ad Library (name search) |
-| Plena: PatientsPipeline | creatives/feed/IMG_2794.jpg | https://get.patientspipeline.com/ | home care agency | Home care agency owners above $70k/month: we'll book you 60 qualified in-home assessments in 90 days. Guaranteed. | yes — 1 ads, longest 14d, Ad Library (phrase search) |
+| Plena: PatientsPipeline | creatives/feed/IMG_2794.jpg | https://patientspipeline.com/assessment-booking | home care agency | Home care agency owners above $70k/month: we'll book you 60 qualified in-home assessments in 90 days. Guaranteed. | yes — 1 ads, longest 14d, Ad Library (phrase search) |
 | Georgia Behavior Associates | creatives/feed/IMG_2802.jpg | — | in-home ABA (operator's own consumer ad) | In-home ABA therapy is available for… Ages 18 months to 21 years · No Waitlist · Insurance Covered · Katie Beckett Waiver Accepted · Persona | yes — 2 ads, longest 184d, Ad Library (phrase search) |
 | Advanced Agent Marketing (Instagram) | creatives/feed/IMG_2800.jpg | — | annuity / IUL agents — NOT senior care; format reference only | Can You Handle 15-20 Qualified… 'Take the consultation' (talking head over a Zoom-grid B-roll) | FEED ONLY — not findable by keyword or by advertiser name in the Library (2026-09-08) |
 | BAS Renovations (roofing) | creatives/feed/IMG_2796.jpg | — | off-topic | Which roof fails? | FEED ONLY — not findable by keyword or by advertiser name in the Library (2026-09-08) |
@@ -1060,19 +1060,19 @@ For the established owner, caregiver retention is not an HR nicety — it is the
 | The RAL Room: Assisted Living Mastermind | https://offers.theralroom.com/webinar | 2 | 208d | would-be owners | Assisted living / RAL |  |
 | LaKeysha Cobbs Hayes - Coach Key | https://practicereadyaba.com/free-resources | 2 | 141d | operators | In-home ABA, Multi-location medical |  |
 | ABA Business Coach | https://ababusinesscoach.com/start-up-blueprint | 2 | 138d | operators | Multi-location medical, In-home ABA |  |
-| Zach Pevnick, PT, DPT - Home Health Leaders | https://www.facebook.com/ZachPevnickPT/ | 2 | 105d | operators | Home health |  |
-| Group Home Masterminds | https://www.facebook.com/grouphomemasterminds/ | 2 | 104d | both | Assisted living / RAL, Placement / referral agency |  |
+| Zach Pevnick, PT, DPT - Home Health Leaders | https://homehealthleaders.com/direct-video | 2 | 105d | operators | Home health |  |
+| Group Home Masterminds | https://info.grouphomemasterminds.com/ | 2 | 104d | both | Assisted living / RAL, Placement / referral agency |  |
 | Home Care Pipeline | https://www.homecarepipeline.com/b | 2 | 72d | operators | Home care | yes |
 | Florida Assisted Living Consulting LLC with alfcaregivercon | https://www.floridaassistedlivingconsulting.com/assisted-living-and-caregivers-conference | 2 | 68d | both | Assisted living / RAL, Senior living / CCRC / SNF, Home health, Placement / referral agency |  |
-| WholesaleTablets.com | https://www.facebook.com/wholesaletablets/ | 2 | 61d | operators | In-home ABA, Multi-location medical |  |
+| WholesaleTablets.com | http://wholesale-tablets.vercel.app/ | 2 | 61d | operators | In-home ABA, Multi-location medical |  |
 | Caring Senior Service Franchise | https://www.facebook.com/CaringFranchise/ | 2 | 41d | would-be owners | Home care, Cross-vertical |  |
 | Hospice Care Owners Network | https://moonsethealth.com | 2 | 36d | operators | Hospice |  |
 | Hospice Care Marketing | https://www.hospicecaremarketing.com/schedule | 2 | 35d | operators | Hospice |  |
-| Kiro Farid | https://grow.caregenius.co | 2 | 22d | operators | Multi-location medical, In-home ABA |  |
+| Kiro Farid | https://grow.caregenius.co/learn-more-2nd | 2 | 22d | operators | Multi-location medical, In-home ABA |  |
 | Patheown | https://www.facebook.com/61584957968788/ | 2 | 18d | operators | Home health, Hospice |  |
-| Alora Home Health Software | https://alorahealth.com | 2 | 15d | operators | Home health, Home care |  |
+| Alora Home Health Software | https://www.alorahealth.com/medicare-home-health-emr/ | 2 | 15d | operators | Home health, Home care |  |
 | HCPA | https://www.facebook.com/hcpa.official/ | 2 | 14d | would-be owners | Home care, Home health |  |
-| Optic Growth | https://www.facebook.com/61553310292857/ | 2 | 14d | operators | Home care, Cross-vertical |  |
+| Optic Growth | https://opticgrowth.live/ | 2 | 14d | operators | Home care, Cross-vertical |  |
 | JT Media | https://info.carestaffpro.com/p/veteran-generation | 2 | 9d | operators | Home care |  |
 | Home Care Evolution | http://homecareevolution.com/bootcamp | 2 | 9d | operators | Home care |  |
 | Searchlift AI | https://liftsearch.ai/booking-wf | 2 | 8d | operators | Assisted living / RAL, Senior living / CCRC / SNF, Cross-vertical | yes |
@@ -1086,13 +1086,13 @@ For the established owner, caregiver retention is not an HR nicety — it is the
 | ABA Leaders Network | https://www.facebook.com/61581814976219/ | 1 | 322d | operators | Multi-location medical, In-home ABA |  |
 | Certified Homecare Consulting | https://www.certifiedhomecareconsulting.com/ | 1 | 245d | would-be owners | Home care |  |
 | Empowerment Consulting Agency | https://www.facebook.com/61579789084469/ | 1 | 184d | would-be owners | Assisted living / RAL |  |
-| stevetryethemortgageguy | https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F_u%2Fstevetryethemortgageguy%3Ffbclid%3DIwcGRvZgFleHRuA2FlbQIxMABicmlkETEySndmOU9GYkhtWGdNdk54c3J0YwZhcHBfaWQPNTQxNjM5NDkzODg5MDI1AAEeOV2fNfCSqFSTbHNoY6Q8E-r-IM8VyrG-B0e7WQQcQAzMisu3m9MSyhXEjLs_aem_QaTFGMcbyEGgKRfspEOm1A&h=AUALDaskhGUvf0BHf8Z6KQmpkLVuHBPXEYtgQTfHbcfcWNvgT2Kxtki0e_XNPFuk9betlQW32DkCSTbkh6fuORIJCTSTCqWsyaypj-EUC_ItK4Z-9k-pse3RZGRZToMuHcpobP1UAUE5PdQPtbk4YvOnD4E | 1 | 152d | operators | Assisted living / RAL, Senior living / CCRC / SNF |  |
+| stevetryethemortgageguy | https://link.thetryegroup.com/quotes | 1 | 152d | operators | Assisted living / RAL, Senior living / CCRC / SNF |  |
 | Scale My Niche | https://go.scalemyniche.com/learn-more-senior | 1 | 135d | operators | Independent referral agents |  |
 | First Day Homecare | https://www.facebook.com/firstdayhomecare/ | 1 | 133d | would-be owners | Home care |  |
 | Cory Boldroff- The Real Estate Planner | https://forms.gle/9qMRW43RqhaK8CxBA | 1 | 125d | operators | Independent referral agents |  |
 | Avida Personal Home Care | https://www.facebook.com/avida.wi/ | 1 | 107d | would-be owners | Home care, Multi-location medical |  |
-| Home Care Sales | https://www.facebook.com/homecaresales/ | 1 | 107d | operators | Home care, Home health, Hospice, Multi-location medical |  |
-| VERVE Care Partners | https://www.facebook.com/61589396376519/ | 1 | 106d | operators | Assisted living / RAL, Home care | yes |
+| Home Care Sales | https://go.homecaresales.com/access | 1 | 107d | operators | Home care, Home health, Hospice, Multi-location medical |  |
+| VERVE Care Partners | https://vervecarepartners.online/opt-in-page | 1 | 106d | operators | Assisted living / RAL, Home care | yes |
 | Accushield | https://accushield.com/take-a-tour/ | 1 | 103d | operators | Senior living / CCRC / SNF |  |
 | Phillip Vincent | http://www.momshouse.com/start | 1 | 99d | would-be owners | Independent referral agents, Senior living / CCRC / SNF |  |
 | ClearDesk | https://usa.cleardesk.com/book-discovery-call | 1 | 92d | operators | Home care | yes |
@@ -1176,6 +1176,9 @@ Eye reviews of the pages that matter (full-page screenshots are in `creatives/lp
 | Cory Boldroff- The Real Estate Planner | https://docs.google.com/forms/d/e/1FAIpQLSd2BNOw7Zwi2e0NhYLza1_LEnWigdSVaq2ZoaYcBwqTsZDYsw |  | Sign in to Google, Learn more | 1 |
 | RN Pad | https://www.rnpad.com/ | RN Pad is the solution to fast and efficient nursing assessments | Free Tools, Contact Us, Schedule a demo | 0 |
 | Griffin Mallas | https://www.grouppracticebuilders.com/growth-levers/get-free-gp-growth-levers-long |  | Contact | 0 |
+| Home Care Sales | https://go.homecaresales.com/access | We Help You Build a High-Performing Sales Team for Your Home Care, Home Health or Hospice Agency That Produces Consisten | Learn more, Claim Your FREE 1:1 Consultation, 2 Why is the consultation free? + | 0 |
+| Zach Pevnick, PT, DPT - Home Health Leaders | https://homehealthleaders.com/video-training | Physical Therapists, Occupational Therapists, and Assistants: | Fill Out Survey To See If You Qualify, WATCH NOW | 0 |
+| Group Home Masterminds | https://info.grouphomemasterminds.com/ | FREE Masterclass This Thursday | September 10th @ 6PM EST |  | 0 |
 | Accushield | https://accushield.com/take-a-tour/ | Your Personalized Tour Awaits | LEARN MORE, Get Started, Sign-in Options | 1 |
 | MTCS Business Finance | https://tools.mtcsbusinessfinance.com/ | Grow Your Mental Health Practice's Impact And Income. | Get My Free Access, Use the Free Calculator | 1 |
 | OBB - Home Care Growth | https://go.onlinebizbuilders.com/home-care-hero-wp | We'll Implement Our 'Home Care Hero' Program & Guarantee You $150,000 in New Revenue in 90 Days or We Work For Free Unti | See if your agency qualifies →, See If You Qualify | 0 |
@@ -1188,10 +1191,7 @@ Eye reviews of the pages that matter (full-page screenshots are in `creatives/lp
 | Bigageenergy | https://caregivingmasterclass.com/ | You don't have to figure caregiving out alone | JOIN NOW, Join the Masterclass now, SIGN UP TODAY | 0 |
 | Nurse Next Door | https://www.facebook.com/nursenextdoor/ | Nurse Next Door | See all photos | 2 |
 | Wisdom First Marketing | https://go.wisdomfirstmarketing.com/assisted/ |  | See how it works | 0 |
-| Home Care Pipeline | https://www.homecarepipeline.com/b | 3–5 New Private-Pay Clients | SEE IF I QUALIFY →, SEE IF I QUALIFY | 0 |
-| Nomia HQ | https://nomiahq.com/contact-us/ | Get in touch | Contact, Contact Us | 0 |
-| Florida Assisted Living Consulting LLC with alfcaregivercon | https://www.floridaassistedlivingconsulting.com/assisted-living-and-caregivers-conference | The #1 Conference for Caregivers, Assisted Living Operators & Senior Housing Professionals in Florida! | Get Your Ticket Now, Get Your Access Ticket Now, See More Reviews | 1 |
-| TruBlue Franchise Opportunities | https://www.trubluefranchise.com/first-time-business-owner-segment | Why Franchising is the Best Choice for First-Time Business Owners | Schedule Now, Schedule a brief 10-minute call, Download Now | 4 |
+| Adult Care Network | https://go.adultcarenetwork.com/ | Exclusive leads • No contracts • Flat per-lead fee | Get Exclusive Leads →, Let's Get Started →, Can you target by geography? | 0 |
 
 
 ---

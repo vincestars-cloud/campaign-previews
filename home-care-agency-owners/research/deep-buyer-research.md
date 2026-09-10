@@ -1118,31 +1118,31 @@ Rendered on the page. Hooks are verbatim buyer sentences from the theme voices; 
 
 | Feed advertiser | Screenshot | Site | Vertical addressed | Hook (OCR) | Found in the Library? |
 |---|---|---|---|---|---|
-| Phoebe | creatives/feed/IMG_2782.jpg | https://www.phoebe.work/ | home care agency | Scheduling headaches holding you back? Home Care Agencies: Don't Hire Another Scheduler. We built you a better option. | yes — 9 ads, longest 210d, Ad Library (name search) |
+| Phoebe | creatives/feed/IMG_2782.jpg | https://jobs.phoebe.org | home care agency | Scheduling headaches holding you back? Home Care Agencies: Don't Hire Another Scheduler. We built you a better option. | yes — 9 ads, longest 210d, Ad Library (name search) |
 | Dr. Mark Stevens | creatives/feed/IMG_2786.jpg | — | assisted living | Assisted living owners — quick question… Assisted Living Owners with 30+ Residents | FEED ONLY — not findable by keyword or by advertiser name in the Library (2026-09-08) |
-| Wisdom First Marketing | creatives/feed/IMG_2784.jpg | https://wisdomfirstmarketing.com/ | assisted living / senior living | For assisted living community operators… 6 MONTH WAIT LIST. We help you build a six month waitlist. Need more booked tours? | yes — 7 ads, longest 77d, Ad Library (name search) |
+| Wisdom First Marketing | creatives/feed/IMG_2784.jpg | https://go.wisdomfirstmarketing.com/assisted/ | assisted living / senior living | For assisted living community operators… 6 MONTH WAIT LIST. We help you build a six month waitlist. Need more booked tours? | yes — 7 ads, longest 77d, Ad Library (name search) |
 | Whatsnap.ai | creatives/feed/IMG_2784.jpg | — | marketers / operators | $40 Leads Became $9 Leads When I Deleted The Landing Page | yes — 2 ads, longest 12d, Ad Library (name search) |
-| Occupancy Partners | creatives/feed/IMG_2788.jpg | https://occupancypartners.io/ | assisted living / independent living | (video) "you know every empty unit…"; comment "What about independent living?" — "yes!" | yes — 21 ads, longest 22d, Ad Library (name search) |
+| Occupancy Partners | creatives/feed/IMG_2788.jpg | https://go.occupancypartners.io/opt-in | assisted living / independent living | (video) "you know every empty unit…"; comment "What about independent living?" — "yes!" | yes — 21 ads, longest 22d, Ad Library (name search) |
 | Nathan Mummert | creatives/feed/IMG_2789.jpg | — | hospice | "Some months, 90 Hospice admissions, some months, 45." Hospice Owners & Administrators trying to grow. | FEED ONLY — not findable by keyword or by advertiser name in the Library (2026-09-08) |
 | ureDocs | creatives/feed/IMG_2790.jpg | https://www.7figuredocs.co/guaranteed-patients | medical practices (adjacent) | Hey Doctors! I'm Sophie, an AI… 30 Patients in 30 Days with AI | yes — 6 ads, longest 8d, Ad Library (name search) |
-| Home Care Breakthrough Solutions | creatives/feed/IMG_2795.jpg | https://homecarebreakthrough.com/ | home care agency | Home care owners — are you paying a sales rep under $10K/week in revenue results? Our system guarantees ROI or we work for free | yes — 15 ads, longest 464d, Ad Library (name search) |
+| Home Care Breakthrough Solutions | creatives/feed/IMG_2795.jpg | https://go.homecarebreakthrough.com/register | home care agency | Home care owners — are you paying a sales rep under $10K/week in revenue results? Our system guarantees ROI or we work for free | yes — 15 ads, longest 464d, Ad Library (name search) |
 | Lukrah | creatives/feed/IMG_2791.jpg | https://start.lukrah.com/book-call-page-2 | multi-location medical care agencies | Multi-Location Medical Care Agencies… (talking head, "consultation") | yes — 4 ads, longest 23d, Ad Library (name search) |
 | Home Care Pipeline | creatives/feed/IMG_2793.jpg | https://www.homecarepipeline.com/b | home care agency | Home care agency owners — if you've… Take the HomeCare Assessment | yes — 3 ads, longest 72d, Ad Library (name search) |
-| Mint CRO | creatives/feed/IMG_2793.jpg | — | marketers (adjacent) | Mint CRO Conversion Rate | yes — 11 ads, longest 65d, Ad Library (name search) |
+| Mint CRO | creatives/feed/IMG_2793.jpg | https://get.mintcro.com | marketers (adjacent) | Mint CRO Conversion Rate | yes — 11 ads, longest 65d, Ad Library (name search) |
 | Searchlift AI | creatives/feed/IMG_2792.jpg | https://liftsearch.ai/booking-wf | assisted living | 15 more family inquiries a month… Assisted Living Owners Get More Move-Ins From Google & AI WITHOUT ADS For $297/mo. No retainers, no ad spe | yes — 6 ads, longest 8d, Ad Library (name search) |
 | Premiere Destiny Home Care Success | creatives/feed/IMG_2798.jpg | https://premierehomecaresuccess.com/referral-guidev2 | home care agency | If your referrals are inconsistent… Your Referrals Aren't Random, They're Broken | yes — 3 ads, longest 135d, Ad Library (name search) |
-| Talroo | creatives/feed/IMG_2799.jpg | https://www.talroo.com/ | home care / staffing (50+ caregivers) | If you hire 50+ caregivers, CNAs, or h… How Finish'd Filled Caregiver Roles Faster | yes — 29 ads, longest 13d, Ad Library (name search) |
+| Talroo | creatives/feed/IMG_2799.jpg | https://www.talroo.com/start | home care / staffing (50+ caregivers) | If you hire 50+ caregivers, CNAs, or h… How Finish'd Filled Caregiver Roles Faster | yes — 29 ads, longest 13d, Ad Library (name search) |
 | Nextdoor (Advertise on Nextdoor) | creatives/feed/IMG_2799.jpg | — | local business | Most of my new clients now come straight from Nextdoor. | FEED ONLY — not findable by keyword or by advertiser name in the Library (2026-09-08) |
 | Elias Benedith – Senior Care Growth Consultant (CareIntake AI) | creatives/feed/IMG_2743.jpg | — | senior living directors + home care | Senior Living Directors & Home C… How CareIntake AI Works: family calls → booked appointment → reminder call/text → logs conversation & noti | FEED ONLY — not findable by keyword or by advertiser name in the Library (2026-09-08) |
 | Michael Porche | creatives/feed/IMG_2746.jpg | — | residential assisted living investing | I almost didn't do this because I thought I wasn't ready. No cash. No plan B. Still closed two senior care homes. I got my plan here — THE O | FEED ONLY — not findable by keyword or by advertiser name in the Library (2026-09-08) |
 | ClearDesk | creatives/feed/IMG_2742.jpg | https://usa.cleardesk.com/book-discovery-call | home care owners | FOR HOME CARE OWNERS: Schedulers, recruiters, built for Home Care. HIPAA-trained, WellSky-fluent placements at $2,250–$2,500/mo all-in, abou | yes — 4 ads, longest 92d, Ad Library (name search) |
-| HomecareGrow.io | creatives/feed/IMG_2722.jpg | https://homecaregrow.io/ | home care agency ($1M+/yr) | Home care owners doing $1M+/yr… We Pay For Ads. You Get Home Care Clients | yes — 23 ads, longest 86d, Ad Library (name search) |
+| HomecareGrow.io | creatives/feed/IMG_2722.jpg | https://homecaregrow.io/150k-guarantee | home care agency ($1M+/yr) | Home care owners doing $1M+/yr… We Pay For Ads. You Get Home Care Clients | yes — 23 ads, longest 86d, Ad Library (name search) |
 | Age Safe America | creatives/feed/IMG_2722.jpg | — | home safety training (adjacent) | Professional training in home safety, made simple. Equip yourself with the skills to create safer homes and support independent living. | yes — 3 ads, longest 35d, Ad Library (name search) |
-| VERVE Care Partners | creatives/feed/IMG_2741.jpg | https://vervecarepartners.com/ | in-home senior care agencies | PAY PER LEAD = GET 5+ IN HOME ELDER CARE LEADS IN 7 DAYS. No ad spend. No setup fee. High-intent leads. | yes — 19 ads, longest 106d, Ad Library (name search) |
+| VERVE Care Partners | creatives/feed/IMG_2741.jpg | https://vervecarepartners.online/opt-in-page | in-home senior care agencies | PAY PER LEAD = GET 5+ IN HOME ELDER CARE LEADS IN 7 DAYS. No ad spend. No setup fee. High-intent leads. | yes — 19 ads, longest 106d, Ad Library (name search) |
 | (YouTube search: "home care leads") | creatives/feed/IMG_2780.jpg | — | coaches | Justin Currie — Secrets for Home Care Agencies; Aaron Bogle — How To Get 22 Private Pay Home Care Leads FAST (Case Study) | yes — 1 ads, longest 15d, Ad Library (phrase search) |
-| Occupancy Partners | creatives/feed/IMG_2787.jpg | https://occupancypartners.io/ | assisted living | 20 booked, confirmed private-pay tours… 'money down the drain' (video subtitle) · Fill Your Assisted Living Units | yes — 21 ads, longest 22d, Ad Library (name search) |
-| Occupancy Partners | creatives/feed/IMG_2806.jpg | https://occupancypartners.io/ | assisted living / senior living | EVERY EMPTY UNIT is $4,000 to $6,000 a month GONE. We fill them for you by giving you exclusive leads generated and booked onto your calenda | yes — 21 ads, longest 22d, Ad Library (name search) |
-| Plena: PatientsPipeline | creatives/feed/IMG_2794.jpg | https://get.patientspipeline.com/ | home care agency | Home care agency owners above $70k/month: we'll book you 60 qualified in-home assessments in 90 days. Guaranteed. | yes — 1 ads, longest 14d, Ad Library (phrase search) |
+| Occupancy Partners | creatives/feed/IMG_2787.jpg | https://go.occupancypartners.io/opt-in | assisted living | 20 booked, confirmed private-pay tours… 'money down the drain' (video subtitle) · Fill Your Assisted Living Units | yes — 21 ads, longest 22d, Ad Library (name search) |
+| Occupancy Partners | creatives/feed/IMG_2806.jpg | https://go.occupancypartners.io/opt-in | assisted living / senior living | EVERY EMPTY UNIT is $4,000 to $6,000 a month GONE. We fill them for you by giving you exclusive leads generated and booked onto your calenda | yes — 21 ads, longest 22d, Ad Library (name search) |
+| Plena: PatientsPipeline | creatives/feed/IMG_2794.jpg | https://patientspipeline.com/assessment-booking | home care agency | Home care agency owners above $70k/month: we'll book you 60 qualified in-home assessments in 90 days. Guaranteed. | yes — 1 ads, longest 14d, Ad Library (phrase search) |
 | Georgia Behavior Associates | creatives/feed/IMG_2802.jpg | — | in-home ABA (operator's own consumer ad) | In-home ABA therapy is available for… Ages 18 months to 21 years · No Waitlist · Insurance Covered · Katie Beckett Waiver Accepted · Persona | yes — 2 ads, longest 184d, Ad Library (phrase search) |
 | Advanced Agent Marketing (Instagram) | creatives/feed/IMG_2800.jpg | — | annuity / IUL agents — NOT senior care; format reference only | Can You Handle 15-20 Qualified… 'Take the consultation' (talking head over a Zoom-grid B-roll) | FEED ONLY — not findable by keyword or by advertiser name in the Library (2026-09-08) |
 | BAS Renovations (roofing) | creatives/feed/IMG_2796.jpg | — | off-topic | Which roof fails? | FEED ONLY — not findable by keyword or by advertiser name in the Library (2026-09-08) |
@@ -1173,19 +1173,19 @@ Rendered on the page. Hooks are verbatim buyer sentences from the theme voices; 
 | The RAL Room: Assisted Living Mastermind | https://offers.theralroom.com/webinar | 2 | 208d | would-be owners | Assisted living / RAL |  |
 | LaKeysha Cobbs Hayes - Coach Key | https://practicereadyaba.com/free-resources | 2 | 141d | operators | In-home ABA, Multi-location medical |  |
 | ABA Business Coach | https://ababusinesscoach.com/start-up-blueprint | 2 | 138d | operators | Multi-location medical, In-home ABA |  |
-| Zach Pevnick, PT, DPT - Home Health Leaders | https://www.facebook.com/ZachPevnickPT/ | 2 | 105d | operators | Home health |  |
-| Group Home Masterminds | https://www.facebook.com/grouphomemasterminds/ | 2 | 104d | both | Assisted living / RAL, Placement / referral agency |  |
+| Zach Pevnick, PT, DPT - Home Health Leaders | https://homehealthleaders.com/direct-video | 2 | 105d | operators | Home health |  |
+| Group Home Masterminds | https://info.grouphomemasterminds.com/ | 2 | 104d | both | Assisted living / RAL, Placement / referral agency |  |
 | Home Care Pipeline | https://www.homecarepipeline.com/b | 2 | 72d | operators | Home care | yes |
 | Florida Assisted Living Consulting LLC with alfcaregivercon | https://www.floridaassistedlivingconsulting.com/assisted-living-and-caregivers-conference | 2 | 68d | both | Assisted living / RAL, Senior living / CCRC / SNF, Home health, Placement / referral agency |  |
-| WholesaleTablets.com | https://www.facebook.com/wholesaletablets/ | 2 | 61d | operators | In-home ABA, Multi-location medical |  |
+| WholesaleTablets.com | http://wholesale-tablets.vercel.app/ | 2 | 61d | operators | In-home ABA, Multi-location medical |  |
 | Caring Senior Service Franchise | https://www.facebook.com/CaringFranchise/ | 2 | 41d | would-be owners | Home care, Cross-vertical |  |
-| Hospice Care Owners Network | https://www.facebook.com/61592304660174/ | 2 | 36d | operators | Hospice |  |
+| Hospice Care Owners Network | https://moonsethealth.com | 2 | 36d | operators | Hospice |  |
 | Hospice Care Marketing | https://www.hospicecaremarketing.com/schedule | 2 | 35d | operators | Hospice |  |
-| Kiro Farid | https://www.facebook.com/61567543605077/ | 2 | 22d | operators | Multi-location medical, In-home ABA |  |
+| Kiro Farid | https://grow.caregenius.co/learn-more-2nd | 2 | 22d | operators | Multi-location medical, In-home ABA |  |
 | Patheown | https://www.facebook.com/61584957968788/ | 2 | 18d | operators | Home health, Hospice |  |
-| Alora Home Health Software | https://www.facebook.com/HomeHealthCareSoftware/ | 2 | 15d | operators | Home health, Home care |  |
+| Alora Home Health Software | https://www.alorahealth.com/medicare-home-health-emr/ | 2 | 15d | operators | Home health, Home care |  |
 | HCPA | https://www.facebook.com/hcpa.official/ | 2 | 14d | would-be owners | Home care, Home health |  |
-| Optic Growth | https://www.facebook.com/61553310292857/ | 2 | 14d | operators | Home care, Cross-vertical |  |
+| Optic Growth | https://opticgrowth.live/ | 2 | 14d | operators | Home care, Cross-vertical |  |
 | JT Media | https://info.carestaffpro.com/p/veteran-generation | 2 | 9d | operators | Home care |  |
 | Home Care Evolution | http://homecareevolution.com/bootcamp | 2 | 9d | operators | Home care |  |
 | Searchlift AI | https://liftsearch.ai/booking-wf | 2 | 8d | operators | Assisted living / RAL, Senior living / CCRC / SNF, Cross-vertical | yes |
@@ -1199,13 +1199,13 @@ Rendered on the page. Hooks are verbatim buyer sentences from the theme voices; 
 | ABA Leaders Network | https://www.facebook.com/61581814976219/ | 1 | 322d | operators | Multi-location medical, In-home ABA |  |
 | Certified Homecare Consulting | https://www.certifiedhomecareconsulting.com/ | 1 | 245d | would-be owners | Home care |  |
 | Empowerment Consulting Agency | https://www.facebook.com/61579789084469/ | 1 | 184d | would-be owners | Assisted living / RAL |  |
-| stevetryethemortgageguy | https://l.facebook.com/l.php?u=https%3A%2F%2Fwww.instagram.com%2F_u%2Fstevetryethemortgageguy%3Ffbclid%3DIwcGRvZgFleHRuA2FlbQIxMABicmlkETEySndmOU9GYkhtWGdNdk54c3J0YwZhcHBfaWQPNTQxNjM5NDkzODg5MDI1AAEeOV2fNfCSqFSTbHNoY6Q8E-r-IM8VyrG-B0e7WQQcQAzMisu3m9MSyhXEjLs_aem_QaTFGMcbyEGgKRfspEOm1A&h=AUALDaskhGUvf0BHf8Z6KQmpkLVuHBPXEYtgQTfHbcfcWNvgT2Kxtki0e_XNPFuk9betlQW32DkCSTbkh6fuORIJCTSTCqWsyaypj-EUC_ItK4Z-9k-pse3RZGRZToMuHcpobP1UAUE5PdQPtbk4YvOnD4E | 1 | 152d | operators | Assisted living / RAL, Senior living / CCRC / SNF |  |
+| stevetryethemortgageguy | https://link.thetryegroup.com/quotes | 1 | 152d | operators | Assisted living / RAL, Senior living / CCRC / SNF |  |
 | Scale My Niche | https://go.scalemyniche.com/learn-more-senior | 1 | 135d | operators | Independent referral agents |  |
 | First Day Homecare | https://www.facebook.com/firstdayhomecare/ | 1 | 133d | would-be owners | Home care |  |
 | Cory Boldroff- The Real Estate Planner | https://forms.gle/9qMRW43RqhaK8CxBA | 1 | 125d | operators | Independent referral agents |  |
 | Avida Personal Home Care | https://www.facebook.com/avida.wi/ | 1 | 107d | would-be owners | Home care, Multi-location medical |  |
-| Home Care Sales | https://www.facebook.com/homecaresales/ | 1 | 107d | operators | Home care, Home health, Hospice, Multi-location medical |  |
-| VERVE Care Partners | https://www.facebook.com/61589396376519/ | 1 | 106d | operators | Assisted living / RAL, Home care | yes |
+| Home Care Sales | https://go.homecaresales.com/access | 1 | 107d | operators | Home care, Home health, Hospice, Multi-location medical |  |
+| VERVE Care Partners | https://vervecarepartners.online/opt-in-page | 1 | 106d | operators | Assisted living / RAL, Home care | yes |
 | Accushield | https://accushield.com/take-a-tour/ | 1 | 103d | operators | Senior living / CCRC / SNF |  |
 | Phillip Vincent | http://www.momshouse.com/start | 1 | 99d | would-be owners | Independent referral agents, Senior living / CCRC / SNF |  |
 | ClearDesk | https://usa.cleardesk.com/book-discovery-call | 1 | 92d | operators | Home care | yes |
