@@ -1,0 +1,509 @@
+{
+ "source": "https://homecaregrow.io/before-your-call",
+ "title": "Important: Watch the video below to get the most out of your call.",
+ "captured": "2026-09-11",
+ "screenshots": [
+  "desktop-fold",
+  "desktop-full",
+  "mobile-fold",
+  "mobile-full"
+ ],
+ "videos": [
+  {
+   "name": "vidalytics-WTvAGvtpZZxGIhRR",
+   "title": "Main page video",
+   "host": "Vidalytics",
+   "id": "WTvAGvtpZZxGIhRR",
+   "source": "https://fast.vidalytics.com/video/P7NcbzMi/WTvAGvtpZZxGIhRR/301195/274831__FFMPEG/stream.m3u8",
+   "original_bytes": 14800723,
+   "poster": "videos/vidalytics-WTvAGvtpZZxGIhRR.jpg",
+   "w": 1280,
+   "h": 720,
+   "duration": 149,
+   "audio": true,
+   "site_file": "videos/vidalytics-WTvAGvtpZZxGIhRR.mp4",
+   "site_bytes": 6081269,
+   "site_note": "web copy 540p \u00b7 full quality in Downloads"
+  },
+  {
+   "name": "vimeo-1220930679",
+   "title": "Araceli Raw Social Proof",
+   "host": "Vimeo",
+   "id": "1220930679",
+   "source": "https://vimeo.com/1220930679",
+   "original_bytes": 8535200,
+   "poster": "videos/vimeo-1220930679.jpg",
+   "w": 720,
+   "h": 900,
+   "duration": 32,
+   "audio": true,
+   "site_file": "videos/vimeo-1220930679.mp4",
+   "site_bytes": 4993353,
+   "site_note": "web copy 900p \u00b7 full quality in Downloads"
+  },
+  {
+   "name": "vimeo-1224657671",
+   "title": "Patrick Raw Social Proof",
+   "host": "Vimeo",
+   "id": "1224657671",
+   "source": "https://vimeo.com/1224657671",
+   "original_bytes": 2276987,
+   "poster": "videos/vimeo-1224657671.jpg",
+   "w": 720,
+   "h": 900,
+   "duration": 13,
+   "audio": true,
+   "site_file": "videos/vimeo-1224657671.mp4",
+   "site_bytes": 2276987,
+   "site_note": "as downloaded"
+  },
+  {
+   "name": "vimeo-1224711218",
+   "title": "Medicaid Walkthrough",
+   "host": "Vimeo",
+   "id": "1224711218",
+   "source": "https://vimeo.com/1224711218",
+   "original_bytes": 84787569,
+   "poster": "videos/vimeo-1224711218.jpg",
+   "w": 1280,
+   "h": 720,
+   "duration": 470,
+   "audio": true,
+   "site_file": "../../picks-video/2015894449122683-1.mp4",
+   "site_bytes": 0,
+   "site_note": "Same video as ad 2015894449122683 (frame-identical, same 7:50) \u2014 stored once on the site and played from that ad's web copy. The page's own copy is in Downloads."
+  },
+  {
+   "name": "vimeo-1225064245",
+   "title": "Veterans Walkthrough",
+   "host": "Vimeo",
+   "id": "1225064245",
+   "source": "https://vimeo.com/1225064245",
+   "original_bytes": 86132365,
+   "poster": "videos/vimeo-1225064245.jpg",
+   "w": 1280,
+   "h": 720,
+   "duration": 527,
+   "audio": true,
+   "site_file": "../../picks-video/1334349101926370-1.mp4",
+   "site_bytes": 0,
+   "site_note": "Same walkthrough as ad 1334349101926370 (same 8:47 and frames; the page's copy is slightly darker throughout) \u2014 played from the ad's web copy on the site. The page's own copy is in Downloads."
+  },
+  {
+   "name": "vimeo-1225657385",
+   "title": "Private Pay Walkthrough",
+   "host": "Vimeo",
+   "id": "1225657385",
+   "source": "https://vimeo.com/1225657385",
+   "original_bytes": 91894144,
+   "poster": "videos/vimeo-1225657385.jpg",
+   "w": 1280,
+   "h": 720,
+   "duration": 495,
+   "audio": true,
+   "site_file": "videos/vimeo-1225657385.mp4",
+   "site_bytes": 26101912,
+   "site_note": "web copy 540p \u00b7 full quality in Downloads"
+  },
+  {
+   "name": "vimeo-1225657641",
+   "title": "Why will this work when other marketers failed me?",
+   "host": "Vimeo",
+   "id": "1225657641",
+   "source": "https://vimeo.com/1225657641",
+   "original_bytes": 25314041,
+   "poster": "videos/vimeo-1225657641.jpg",
+   "w": 1280,
+   "h": 720,
+   "duration": 143,
+   "audio": true,
+   "site_file": "videos/vimeo-1225657641.mp4",
+   "site_bytes": 5670375,
+   "site_note": "web copy 540p \u00b7 full quality in Downloads"
+  },
+  {
+   "name": "vimeo-1225657932",
+   "title": "What if we do our part and this doesn't work?",
+   "host": "Vimeo",
+   "id": "1225657932",
+   "source": "https://vimeo.com/1225657932",
+   "original_bytes": 18962746,
+   "poster": "videos/vimeo-1225657932.jpg",
+   "w": 1280,
+   "h": 720,
+   "duration": 108,
+   "audio": true,
+   "site_file": "videos/vimeo-1225657932.mp4",
+   "site_bytes": 4211571,
+   "site_note": "web copy 540p \u00b7 full quality in Downloads"
+  },
+  {
+   "name": "vimeo-1225685621",
+   "title": "Koby Spears - Social Proof",
+   "host": "Vimeo",
+   "id": "1225685621",
+   "source": "https://vimeo.com/1225685621",
+   "original_bytes": 10160226,
+   "poster": "videos/vimeo-1225685621.jpg",
+   "w": 720,
+   "h": 1280,
+   "duration": 33,
+   "audio": true,
+   "site_file": "videos/vimeo-1225685621.mp4",
+   "site_bytes": 10160226,
+   "site_note": "as downloaded"
+  }
+ ],
+ "images": [
+  {
+   "file": "images/01-699f18f89a0c185d3e83cd10.png",
+   "source": "https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/699f18f89a0c185d3e83cd10.png",
+   "bytes": 19370
+  },
+  {
+   "file": "images/02-6aa303458f6a930b7d1eb9ea.png",
+   "source": "https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6aa303458f6a930b7d1eb9ea.png",
+   "bytes": 1401118
+  },
+  {
+   "file": "images/03-preview-5_0.jpg",
+   "source": "https://fast.vidalytics.com/video/P7NcbzMi/WTvAGvtpZZxGIhRR/301195/274831__FFMPEG/thumb/preview-5_0.jpg",
+   "bytes": 1735
+  },
+  {
+   "file": "images/04-thumbnail-5_0.jpg",
+   "source": "https://fast.vidalytics.com/video/P7NcbzMi/WTvAGvtpZZxGIhRR/301195/274831__FFMPEG/thumb/thumbnail-5_0.jpg",
+   "bytes": 11231
+  },
+  {
+   "file": "images/05-2193498203-9cbf31732895ae9a69a1ddc357ff3e027bbc5b9553afed3d9f59647f6e401687-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2193498203-9cbf31732895ae9a69a1ddc357ff3e027bbc5b9553afed3d9f59647f6e401687-d?mw=1100&mh=1377&q=70",
+   "bytes": 74374
+  },
+  {
+   "file": "images/06-2193498203-9cbf31732895ae9a69a1ddc357ff3e027bbc5b9553afed3d9f59647f6e401687-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2193498203-9cbf31732895ae9a69a1ddc357ff3e027bbc5b9553afed3d9f59647f6e401687-d?mw=400&mh=500",
+   "bytes": 27493
+  },
+  {
+   "file": "images/07-2193498203-9cbf31732895ae9a69a1ddc357ff3e027bbc5b9553afed3d9f59647f6e401687-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2193498203-9cbf31732895ae9a69a1ddc357ff3e027bbc5b9553afed3d9f59647f6e401687-d?mw=80&q=85",
+   "bytes": 2669
+  },
+  {
+   "file": "images/08-2198172161-df4214c59a619b472935db211ac3d8141462230a92722ee2247e83e628026f59-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2198172161-df4214c59a619b472935db211ac3d8141462230a92722ee2247e83e628026f59-d?mw=1100&mh=1377&q=70",
+   "bytes": 38194
+  },
+  {
+   "file": "images/09-2198172161-df4214c59a619b472935db211ac3d8141462230a92722ee2247e83e628026f59-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2198172161-df4214c59a619b472935db211ac3d8141462230a92722ee2247e83e628026f59-d?mw=400&mh=500",
+   "bytes": 15915
+  },
+  {
+   "file": "images/10-2198172161-df4214c59a619b472935db211ac3d8141462230a92722ee2247e83e628026f59-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2198172161-df4214c59a619b472935db211ac3d8141462230a92722ee2247e83e628026f59-d?mw=80&q=85",
+   "bytes": 1923
+  },
+  {
+   "file": "images/11-2199446184-9624bb094b7567f67664c71668c1e69a51c101a53c61bcb674d3ca67610e1f8d-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199446184-9624bb094b7567f67664c71668c1e69a51c101a53c61bcb674d3ca67610e1f8d-d?mw=1000&mh=564&q=70",
+   "bytes": 52490
+  },
+  {
+   "file": "images/12-2199446184-9624bb094b7567f67664c71668c1e69a51c101a53c61bcb674d3ca67610e1f8d-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199446184-9624bb094b7567f67664c71668c1e69a51c101a53c61bcb674d3ca67610e1f8d-d?mw=400&mh=224",
+   "bytes": 18688
+  },
+  {
+   "file": "images/13-2199446184-9624bb094b7567f67664c71668c1e69a51c101a53c61bcb674d3ca67610e1f8d-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199446184-9624bb094b7567f67664c71668c1e69a51c101a53c61bcb674d3ca67610e1f8d-d?mw=80&q=85",
+   "bytes": 1799
+  },
+  {
+   "file": "images/14-2199448481-135ae8808262afc9ea91b63edbb6d8e47cf6064772717e7dea30c6fff390e54c-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199448481-135ae8808262afc9ea91b63edbb6d8e47cf6064772717e7dea30c6fff390e54c-d?mw=1000&mh=564&q=70",
+   "bytes": 50925
+  },
+  {
+   "file": "images/15-2199448481-135ae8808262afc9ea91b63edbb6d8e47cf6064772717e7dea30c6fff390e54c-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199448481-135ae8808262afc9ea91b63edbb6d8e47cf6064772717e7dea30c6fff390e54c-d?mw=400&mh=224",
+   "bytes": 19529
+  },
+  {
+   "file": "images/16-2199448481-135ae8808262afc9ea91b63edbb6d8e47cf6064772717e7dea30c6fff390e54c-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199448481-135ae8808262afc9ea91b63edbb6d8e47cf6064772717e7dea30c6fff390e54c-d?mw=80&q=85",
+   "bytes": 1736
+  },
+  {
+   "file": "images/17-2199448695-152ff2493c773550df3c5d8a8d5e7df985cd6947ca65f37af14fcf426f534aac-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199448695-152ff2493c773550df3c5d8a8d5e7df985cd6947ca65f37af14fcf426f534aac-d?mw=1000&mh=564&q=70",
+   "bytes": 51110
+  },
+  {
+   "file": "images/18-2199448695-152ff2493c773550df3c5d8a8d5e7df985cd6947ca65f37af14fcf426f534aac-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199448695-152ff2493c773550df3c5d8a8d5e7df985cd6947ca65f37af14fcf426f534aac-d?mw=400&mh=224",
+   "bytes": 18615
+  },
+  {
+   "file": "images/19-2199448695-152ff2493c773550df3c5d8a8d5e7df985cd6947ca65f37af14fcf426f534aac-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199448695-152ff2493c773550df3c5d8a8d5e7df985cd6947ca65f37af14fcf426f534aac-d?mw=80&q=85",
+   "bytes": 1715
+  },
+  {
+   "file": "images/20-2199449964-71ccc7051e2f49990fe88d26db41677efbbd108d463162277037e6c0479f7dbd-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199449964-71ccc7051e2f49990fe88d26db41677efbbd108d463162277037e6c0479f7dbd-d?mw=1000&mh=564&q=70",
+   "bytes": 32297
+  },
+  {
+   "file": "images/21-2199449964-71ccc7051e2f49990fe88d26db41677efbbd108d463162277037e6c0479f7dbd-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199449964-71ccc7051e2f49990fe88d26db41677efbbd108d463162277037e6c0479f7dbd-d?mw=400&mh=225",
+   "bytes": 13404
+  },
+  {
+   "file": "images/22-2199449964-71ccc7051e2f49990fe88d26db41677efbbd108d463162277037e6c0479f7dbd-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199449964-71ccc7051e2f49990fe88d26db41677efbbd108d463162277037e6c0479f7dbd-d?mw=80&q=85",
+   "bytes": 1544
+  },
+  {
+   "file": "images/23-2199450436-a376b8e787667881136c26b1bf98dcd303f445f43d153895a3e3e48f84323311-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199450436-a376b8e787667881136c26b1bf98dcd303f445f43d153895a3e3e48f84323311-d?mw=1000&mh=564&q=70",
+   "bytes": 33440
+  },
+  {
+   "file": "images/24-2199450436-a376b8e787667881136c26b1bf98dcd303f445f43d153895a3e3e48f84323311-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199450436-a376b8e787667881136c26b1bf98dcd303f445f43d153895a3e3e48f84323311-d?mw=400&mh=225",
+   "bytes": 14027
+  },
+  {
+   "file": "images/25-2199450436-a376b8e787667881136c26b1bf98dcd303f445f43d153895a3e3e48f84323311-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199450436-a376b8e787667881136c26b1bf98dcd303f445f43d153895a3e3e48f84323311-d?mw=80&q=85",
+   "bytes": 1546
+  },
+  {
+   "file": "images/26-2199465256-2041eda89d0665a7234df4dc09b30a81bc7cf9790c0b4319d11de6c8ddb11ee0-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199465256-2041eda89d0665a7234df4dc09b30a81bc7cf9790c0b4319d11de6c8ddb11ee0-d?mw=1100&mh=1956&q=70",
+   "bytes": 68988
+  },
+  {
+   "file": "images/27-2199465256-2041eda89d0665a7234df4dc09b30a81bc7cf9790c0b4319d11de6c8ddb11ee0-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199465256-2041eda89d0665a7234df4dc09b30a81bc7cf9790c0b4319d11de6c8ddb11ee0-d?mw=400&mh=710",
+   "bytes": 27528
+  },
+  {
+   "file": "images/28-2199465256-2041eda89d0665a7234df4dc09b30a81bc7cf9790c0b4319d11de6c8ddb11ee0-d.jpg",
+   "source": "https://i.vimeocdn.com/video/2199465256-2041eda89d0665a7234df4dc09b30a81bc7cf9790c0b4319d11de6c8ddb11ee0-d?mw=80&q=85",
+   "bytes": 3042
+  },
+  {
+   "file": "images/29-69ca892a73e98291b43183ba.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/69ca892a73e98291b43183ba.png",
+   "bytes": 8228
+  },
+  {
+   "file": "images/30-6a79e49e5c7fc4f61fb34f56.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a79e49e5c7fc4f61fb34f56.png",
+   "bytes": 29586
+  },
+  {
+   "file": "images/31-6a8c90694ee4e7911dadecbf.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a8c90694ee4e7911dadecbf.png",
+   "bytes": 70052
+  },
+  {
+   "file": "images/32-6a8c94fabbd5ecc97fd2cbd6.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a8c94fabbd5ecc97fd2cbd6.png",
+   "bytes": 88682
+  },
+  {
+   "file": "images/33-6a9ee321355bf4eb55dbba83.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a9ee321355bf4eb55dbba83.png",
+   "bytes": 60960
+  },
+  {
+   "file": "images/34-6aa2fce83424fa01832cf74d.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6aa2fce83424fa01832cf74d.png",
+   "bytes": 28086
+  },
+  {
+   "file": "images/35-6aa2fce8f88eb22e7255755f.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6aa2fce8f88eb22e7255755f.png",
+   "bytes": 18760
+  },
+  {
+   "file": "images/36-6aa2fce9d1b3cd745b9b92b3.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6aa2fce9d1b3cd745b9b92b3.png",
+   "bytes": 8742
+  },
+  {
+   "file": "images/37-9f68268d-b692-4309-bfe1-e674a0f7be13.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/9f68268d-b692-4309-bfe1-e674a0f7be13.png",
+   "bytes": 57246
+  },
+  {
+   "file": "images/38-69ca892a73e98291b43183ba.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/69ca892a73e98291b43183ba.png",
+   "bytes": 2488
+  },
+  {
+   "file": "images/39-6a79e49e5c7fc4f61fb34f56.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a79e49e5c7fc4f61fb34f56.png",
+   "bytes": 4382
+  },
+  {
+   "file": "images/40-6a8c90694ee4e7911dadecbf.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a8c90694ee4e7911dadecbf.png",
+   "bytes": 13836
+  },
+  {
+   "file": "images/41-6a8c94fabbd5ecc97fd2cbd6.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a8c94fabbd5ecc97fd2cbd6.png",
+   "bytes": 12574
+  },
+  {
+   "file": "images/42-6a9ee321355bf4eb55dbba83.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a9ee321355bf4eb55dbba83.png",
+   "bytes": 10456
+  },
+  {
+   "file": "images/43-6aa2fce83424fa01832cf74d.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6aa2fce83424fa01832cf74d.png",
+   "bytes": 7412
+  },
+  {
+   "file": "images/44-6aa2fce8f88eb22e7255755f.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6aa2fce8f88eb22e7255755f.png",
+   "bytes": 4778
+  },
+  {
+   "file": "images/45-6aa2fce9d1b3cd745b9b92b3.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6aa2fce9d1b3cd745b9b92b3.png",
+   "bytes": 2946
+  },
+  {
+   "file": "images/46-9f68268d-b692-4309-bfe1-e674a0f7be13.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_320/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/9f68268d-b692-4309-bfe1-e674a0f7be13.png",
+   "bytes": 14122
+  },
+  {
+   "file": "images/47-69ca892a73e98291b43183ba.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_640/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/69ca892a73e98291b43183ba.png",
+   "bytes": 4586
+  },
+  {
+   "file": "images/48-6a79e49e5c7fc4f61fb34f56.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_640/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a79e49e5c7fc4f61fb34f56.png",
+   "bytes": 11932
+  },
+  {
+   "file": "images/49-6a8c90694ee4e7911dadecbf.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_640/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a8c90694ee4e7911dadecbf.png",
+   "bytes": 31314
+  },
+  {
+   "file": "images/50-6a8c94fabbd5ecc97fd2cbd6.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_640/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a8c94fabbd5ecc97fd2cbd6.png",
+   "bytes": 34432
+  },
+  {
+   "file": "images/51-6a9ee321355bf4eb55dbba83.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_640/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a9ee321355bf4eb55dbba83.png",
+   "bytes": 28442
+  },
+  {
+   "file": "images/52-6aa2fce83424fa01832cf74d.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_640/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6aa2fce83424fa01832cf74d.png",
+   "bytes": 18036
+  },
+  {
+   "file": "images/53-6aa2fce8f88eb22e7255755f.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_640/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6aa2fce8f88eb22e7255755f.png",
+   "bytes": 11852
+  },
+  {
+   "file": "images/54-6aa2fce9d1b3cd745b9b92b3.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_640/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6aa2fce9d1b3cd745b9b92b3.png",
+   "bytes": 6760
+  },
+  {
+   "file": "images/55-9f68268d-b692-4309-bfe1-e674a0f7be13.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_640/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/9f68268d-b692-4309-bfe1-e674a0f7be13.png",
+   "bytes": 51748
+  },
+  {
+   "file": "images/56-69ca892a73e98291b43183ba.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_768/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/69ca892a73e98291b43183ba.png",
+   "bytes": 5520
+  },
+  {
+   "file": "images/57-6a79e49e5c7fc4f61fb34f56.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_768/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a79e49e5c7fc4f61fb34f56.png",
+   "bytes": 15362
+  },
+  {
+   "file": "images/58-6a8c90694ee4e7911dadecbf.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_768/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a8c90694ee4e7911dadecbf.png",
+   "bytes": 38828
+  },
+  {
+   "file": "images/59-6a8c94fabbd5ecc97fd2cbd6.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_768/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a8c94fabbd5ecc97fd2cbd6.png",
+   "bytes": 43376
+  },
+  {
+   "file": "images/60-6a9ee321355bf4eb55dbba83.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_768/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a9ee321355bf4eb55dbba83.png",
+   "bytes": 37436
+  },
+  {
+   "file": "images/61-6aa2fce83424fa01832cf74d.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_768/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6aa2fce83424fa01832cf74d.png",
+   "bytes": 21818
+  },
+  {
+   "file": "images/62-6aa2fce8f88eb22e7255755f.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_768/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6aa2fce8f88eb22e7255755f.png",
+   "bytes": 14670
+  },
+  {
+   "file": "images/63-9f68268d-b692-4309-bfe1-e674a0f7be13.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_768/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/9f68268d-b692-4309-bfe1-e674a0f7be13.png",
+   "bytes": 72690
+  },
+  {
+   "file": "images/64-69ca892a73e98291b43183ba.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/69ca892a73e98291b43183ba.png",
+   "bytes": 6276
+  },
+  {
+   "file": "images/65-6a79e49e5c7fc4f61fb34f56.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a79e49e5c7fc4f61fb34f56.png",
+   "bytes": 19238
+  },
+  {
+   "file": "images/66-6a8c90694ee4e7911dadecbf.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a8c90694ee4e7911dadecbf.png",
+   "bytes": 48026
+  },
+  {
+   "file": "images/67-6a8c94fabbd5ecc97fd2cbd6.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a8c94fabbd5ecc97fd2cbd6.png",
+   "bytes": 54230
+  },
+  {
+   "file": "images/68-6a9ee321355bf4eb55dbba83.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6a9ee321355bf4eb55dbba83.png",
+   "bytes": 46944
+  },
+  {
+   "file": "images/69-6aa2fce83424fa01832cf74d.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6aa2fce83424fa01832cf74d.png",
+   "bytes": 25378
+  },
+  {
+   "file": "images/70-6aa2fce8f88eb22e7255755f.png",
+   "source": "https://images.leadconnectorhq.com/image/f_webp/q_80/r_900/u_https://assets.cdn.filesafe.space/q1OdYcBlb3gmsgIEsFxg/media/6aa2fce8f88eb22e7255755f.png",
+   "bytes": 17144
+  }
+ ]
+}
