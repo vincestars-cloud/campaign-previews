@@ -1,5 +1,5 @@
 # Home Care Industry — Deep Buyer Research: the Voices
-**Appendix to *Home-Care-Buyer-Research*. For every measured theme in Tabs 1–9, the twenty most engaged comments in full, with their replies.** Exported 2026-09-08. Live page: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/
+**Appendix to *Home-Care-Buyer-Research*. For every measured theme in Tabs 1–9, the twenty most engaged comments in full, with their replies.** Exported 2026-09-11. Live page: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/
 
 The tabs in the main document carry a curated set of quotes. This file is the layer under them: each theme is one pattern matched over the whole corpus, the count is how many documents match, and the voices are the most engaged of those documents, complete and untruncated, with the replies they drew. Sources are Reddit (r/AgingParents, r/CaregiverSupport, r/dementia, r/Alzheimers, r/eldercare), YouTube comment threads under caregiving videos, AgingCare.com, Google, Caring.com and TrustPilot reviews, and TikTok. Every entry links to its source.
 

@@ -1,7 +1,7 @@
 # Home Care Industry — Deep Buyer Research
 **A Promise to Mom · the adult daughter arranging in-home care for an aging parent · national + Atlanta, Houston, Phoenix, Chicago, Tampa**
 
-Researched 2026-09-06, refreshed 2026-09-07, exported 2026-09-08. Corpus 15,867 entries · 230 sourced quotes in the tabs · 18,392 Meta ads analyzed. Live page with clickable themes, competitor ads and reviews by star: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/
+Researched 2026-09-06, refreshed 2026-09-07, exported 2026-09-11. Corpus 15,867 entries · 230 sourced quotes in the tabs · 18,392 Meta ads analyzed. Live page with clickable themes, competitor ads and reviews by star: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/
 
 This document is the Sabri Suby 10-tab buyer research (Tabs 1–10) plus the depth layer (threads, vocabulary, profile pivot, competitor map, self-audit), the dislikes and complaints ledger, and Vince's ad brief checked against the corpus. Every quote is verbatim and carries its source URL. Every count was computed by a script over the corpus, not estimated. The companion file *Home-Care-Buyer-Research-Voices* holds, for every measured theme, the twenty most engaged comments in full with their replies.
 
@@ -28,8 +28,9 @@ This document is the Sabri Suby 10-tab buyer research (Tabs 1–10) plus the dep
 9. Tab 9 — Typical Day
 10. Tab 10 — Buyer Summary
 11. Threads & Competitors (Depth Standard D0–D6)
-12. Dislikes & Complaints Ledger
-13. Ad Brief
+12. Video Ad Transcripts (top 3 per competitor + hand-picked)
+13. Dislikes & Complaints Ledger
+14. Ad Brief
 
 ## Tab 1 — Fears
 
@@ -1425,6 +1426,2696 @@ Sources: Google Maps (5 metros, 400 places), organic rank (Tavily, 9 queries), C
 | O | Profile Pivot ≥10 authors, aggregate signals only | Pass |
 | P | Tool status logged with date (D0) | Pass |
 | Q | Refresh date set (D6) | Pass (researched 2026-09-06, refresh due 2027-03-06) |
+
+## Video Ad Transcripts (top 3 per competitor + hand-picked)
+
+What the competition actually says out loud. The top 3 video ads per top-performing competitor, drawn from the full Ad Library pull (not only the ad cards), transcribed with faster-whisper small.en over the first 120 seconds. A competitor counts as top-performing when it is a home care agency or a facility, placement or referral advertiser and has a video ad running 60+ days, a place in the Library's impressions top 120 for a pulled keyword, or 5+ concurrent video ads; inside a competitor the three ads are ranked by impressions rank, then days running, then versions.
+
+**210 competitors · 440 family-facing video ads · 323 with speech · 92 silent or music only · 25 not retrievable.** 29 further ads that sell to agency owners or recruit caregivers are set aside at the end of this chapter.
+
+**How the transcripts were made trustworthy.** (1) A video link captured at scrape time is sometimes a video-only stream with no audio track, so every video was re-read from the ad's own Ad Library record and checked for an audio stream before transcription. (2) An ad page also embeds the advertiser's other ads; an earlier pass that took the first video on the page attached other ads' audio to many Library IDs, and every affected transcript was re-matched to its own ad. (3) The transcription model returns “Thank you.” on music-only audio; that is reported as no speech. (4) The English model renders other languages as nonsense; every transcript was language-checked, and 12 were re-transcribed with the multilingual model (tl 3, es 3, hi 2, de 1, ta 1, te 1, ar 1, fr 1).
+
+### The same script under many advertiser pages
+
+Franchise networks upload one national creative separately to each local page, so identical transcripts appear under different advertisers. The largest groups:
+
+| Pages running it | Example pages |
+|---|---|
+| 33 | Homecarebyseniors, Mystic Valley Seniors Helping Seniors, Seniors Helping Seniors - North Texas, Seniors Helping Seniors - Southwest Broward County FL … |
+| 30 | Mystic Valley Seniors Helping Seniors, Seniors Helping Seniors - North Texas, Seniors Helping Seniors - Southwest Broward County FL, Seniors Helping Seniors - Southwestern PA … |
+| 7 | Comfort Keepers Home Care - Columbia, SC, Comfort Keepers Home Care of Johns Island, Comfort Keepers In Home Care - Henderson, NV, Comfort Keepers of Charleston and Summerville, SC … |
+| 5 | Comfort Keepers Home Care - Columbia, SC, Comfort Keepers Home Care of Johns Island, Comfort Keepers of Charleston and Summerville, SC, Comfort Keepers, Florence, SC … |
+| 5 | Senior Helpers North Metro, Senior Helpers of Baltimore and Central MD, Senior Helpers of Central Dallas, Senior Helpers of Greater Chicago, IL … |
+| 4 | Senior Helpers North Metro, Senior Helpers of Central Dallas, Senior Helpers of Greater Chicago, IL, Senior Helpers of Greater Grand Rapids |
+| 4 | Serene Gardens of Clarkston, Serene Gardens of Grand Blanc, Serene Gardens of Imlay City, Serene Meadows of Grand Blanc |
+| 4 | Serene Gardens of Clarkston, Serene Gardens of Grand Blanc, Serene Gardens of Imlay City, Serene Meadows of Grand Blanc |
+
+### Hand-picked by Vince
+
+13 video ads named by Library ID, transcribed and playable on the page whether or not they made the top-3 cut. Where an ad was not in the original pull, its advertiser, copy and dates were read off its own Ad Library page. Links go to the hosted videos (web copies for long videos).
+
+#### A Place for Mom — Library ID 908535694990197
+
+started 2026-07-24 · 45 days running · https://www.facebook.com/ads/library/?id=908535694990197
+
+> "It's something that I think a lot of us are in denial about because we want to believe that our parents are just going to be fine forever."
+> — Library ID 908535694990197 · 10 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=908535694990197
+
+- Video 1 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/908535694990197-1.mp4 (10 s)
+- Video 2 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/908535694990197-2.mp4 (10 s)
+
+#### A Place for Mom with Silver Liberation — Library ID 2118237546239983
+
+started Jul 21, 2026 · 51 days running · https://www.facebook.com/ads/library/?id=2118237546239983
+
+> "We tried everything to keep my mom at home, but it became very clear that her care needs were well beyond what our family could provide. If you're facing a similar moment right now, guidance is one conversation away, and you deserve help while you're making these decisions. Visit aplaceformom.com to learn more."
+> — Library ID 2118237546239983 · 19 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2118237546239983
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/2118237546239983-1.mp4 (19 s)
+
+#### A Place for Mom — Library ID 2250588425721143
+
+started 2026-08-03 · 35 days running · https://www.facebook.com/ads/library/?id=2250588425721143
+
+> "I had placed a call to your service and I had a gentleman call me and he stayed on the phone with me for 30 minutes and the support I found and I received from that gentleman, I felt that he was able to answer so many questions for me and I just think it's an amazing service."
+> — Library ID 2250588425721143 · 19 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2250588425721143
+
+- Video 1 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/2250588425721143-1.mp4 (19 s)
+- Video 2 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/2250588425721143-2.mp4 (19 s)
+
+#### A Place for Mom — Library ID 27312563371772697
+
+started 2026-07-21 · 48 days running · https://www.facebook.com/ads/library/?id=27312563371772697
+
+> "This is my mom, and we are ready to discuss senior care. Living alone is not easy, so I've come to terms with that. The expert advisors and free resources provided by Place for Mom make it easy to find senior care options right here in our community."
+> — Library ID 27312563371772697 · 17 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=27312563371772697
+
+- Video 1 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/27312563371772697-1.mp4 (17 s)
+- Video 2 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/27312563371772697-2.mp4 (17 s)
+
+#### Magnolia Place of Roswell — Library ID 1544823832866878
+
+started Mar 12, 2025 · 547 days running · https://www.facebook.com/ads/library/?id=1544823832866878
+
+> "The Connections program is our special activity program in our memory care communities at Pegasus Senior Living and they're really designed around the three-concept cycle of Connect Move Learn. It was created by Dr. P. What I love about it as an executive director is through this activity cycle we are able to help residents engage in a way where they are connecting socially, spiritually, and also physically and that is a huge piece when you are working through your day as someone living with dementia."
+> — Library ID 1544823832866878 · 48 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1544823832866878
+
+- Video 1 of 4: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/1544823832866878-1.mp4 (48 s)
+- Video 2 of 4: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/1544823832866878-2.mp4 (48 s)
+- Video 3 of 4: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/1544823832866878-3.mp4 (48 s)
+- Video 4 of 4: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/1544823832866878-4.mp4 (48 s)
+
+#### Navigating Dementia Care — Library ID 1535432121932740
+
+started 2026-08-31 · 7 days running · https://www.facebook.com/ads/library/?id=1535432121932740
+
+> "Memory care can cost $8,000 or more every single month, depending on where you live. And when families look at that number, they assume that is far out of reach. They assume you need savings. They assume you need long-term care insurance. They assume there has to be just some other family member who's going to figure this out. But here's what a lot of families don't know until it's almost too late. There is a government program designed specifically to cover long-term care, nursing homes, memory care, skilled nursing, for people who need it. It's called Medicaid Long-Term Care, and this is not the same as regular Medicaid or Medicare. Families who get their parent into memory care without draining their retirement aren't the wealthiest ones. They're the ones who learned how the system works before they were in crisis. And that's what I teach. Comment, write enough, and I'll send you where to start."
+> — Library ID 1535432121932740 · 35 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1535432121932740
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/1535432121932740-1.mp4 (35 s)
+
+#### Navigating Dementia Care — Library ID 2443438536179582
+
+started 2026-08-31 · 7 days running · https://www.facebook.com/ads/library/?id=2443438536179582
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/2443438536179582-1.mp4 (12 s)
+
+#### Ennoble Care — Library ID 1567567397635443
+
+started Mar 17, 2026 · 177 days running · https://www.facebook.com/ads/library/?id=1567567397635443
+
+> "Do you live in New Jersey and hate going to the doctor's office? Then you have to look into Ennoble Care. They make house calls for no additional costs compared to an office visit. So if you're looking to get primary care, prescriptions, labs, care coordination, or most other things you go see a doctor for, Ennoble Care handles it all on your schedule from the comfort of your home. And they accept most major insurance plans like Aetna, Humana, and most Medicare plans. If it's hard to get out of the house, check out Ennoble Care. No more sitting in waiting rooms, dealing with hospitals, or finding transportation. Just quality, compassionate, affordable medical care in your home. Click sign up below to get started."
+> — Library ID 1567567397635443 · 51 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1567567397635443
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/1567567397635443-1.mp4 (51 s)
+
+#### Ennoble Care — Library ID 1291007066283524
+
+started Mar 12, 2026 · 182 days running · https://www.facebook.com/ads/library/?id=1291007066283524
+
+> "Do you live in the Atlanta area and hate going to the doctor's office? Then you have to look into Innoble Care. They make house calls for no additional costs compared to an office visit. So if you're looking to get primary care, scripts, labs, care coordination, remote patient monitoring, behavioral health, or most other things that you go to see a doctor for, Innoble Care handles it all on your schedule from the comfort of your own home. And they accept most major insurances like Aetna, Humana, and most Medicare plans. They've helped tens of thousands of patients over the last decade across 10 states and just opened enrollment for new patients. If you get enrolled today, you'll have your first appointment in seven to 10 business days. No more sitting in waiting rooms, dealing with hospitals, or finding transportation. Just quality, compassionate, affordable medical care in your home. Enroll now."
+> — Library ID 1291007066283524 · 69 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1291007066283524
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/1291007066283524-1.mp4 (69 s)
+
+#### Ennoble Care — Library ID 753558114279292
+
+started Mar 2, 2026 · 192 days running · https://www.facebook.com/ads/library/?id=753558114279292
+
+> "Do you live in Pennsylvania and hate going to the doctor's office? Then you have to look into Inoble Care. They make house calls for no additional cost compared to an office visit. So if you're looking to get primary care, prescriptions, labs, care coordination, or most other things you go see a doctor for, Inoble Care handles it all on your schedule from the comfort of your home. And they accept most major insurance plans like Aetna, Humana, and most Medicare plans. If it's hard to get out of the house, check out Inoble Care. No more sitting in waiting rooms, dealing with hospitals or finding transportation. Just quality, compassionate, affordable medical care in your home. Click sign up below to get started."
+> — Library ID 753558114279292 · 35 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=753558114279292
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/753558114279292-1.mp4 (35 s)
+
+#### Care.com — Library ID 1357553849305001
+
+started 2026-08-05 · 33 days running · https://www.facebook.com/ads/library/?id=1357553849305001
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+- Video 1 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/1357553849305001-1.mp4 (9 s)
+- Video 2 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/1357553849305001-2.mp4 (9 s)
+
+#### Care.com — Library ID 27779344945059020
+
+started 2026-08-05 · 33 days running · https://www.facebook.com/ads/library/?id=27779344945059020
+
+> "Hey caregivers, one thing I hear again and again is how often you're left carrying the weight alone. That's why I have to tell you about Care.com. You can find care options that meet your needs, whether in-home, like companion care, respite care, or hospice support, or out of home, like senior living communities. The platform lets you search for exactly what you need, whether it's a one-time break, daily support, or 11-care partner. I love that you can read honest reviews from other families and see each caregiver's special skills and training right on their bio. If you've been waiting for a sign to ask for help, this is it."
+> — Library ID 27779344945059020 · 35 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=27779344945059020
+
+- Video 1 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/27779344945059020-1.mp4 (35 s)
+- Video 2 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/27779344945059020-2.mp4 (34 s)
+
+#### Care.com — Library ID 1719272026060860
+
+started 2026-08-05 · 33 days running · https://www.facebook.com/ads/library/?id=1719272026060860
+
+> "Have I ever told you about the story of when I realized that my mom needed some companion care? You all know that my mom was diagnosed with early onset Alzheimer's disease in 2014. She would often walk out the front door, go over to the neighbor's house, and sit in their garage waiting for them to talk to her. But she would really just scare them half to death. My mom also called me every four minutes. I worked a full-time job, and I was a long distance caregiver, and so there were often times when I had received 24 different calls per day. My mom needed a human. My cameras, my routines, my systems were not going to be enough for me to solely rely on to keep her safe and in the home. And that is when I realized I needed some companion care here with her, even if it was for a few hours a day, a few days a week. Because when it's not you, it's care.com."
+> — Library ID 1719272026060860 · 44 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1719272026060860
+
+- Video 1 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/1719272026060860-1.mp4 (44 s)
+- Video 2 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/creatives/picks-video/1719272026060860-2.mp4 (44 s)
+
+### Transcripts by competitor
+
+#### Visiting Angels — 3 video ads · home care agency
+
+**Library ID 501275156262596** · 643 days running · impressions rank #1 for “companion care”
+
+> "Visiting Angels offers live-in and 24-hour home care, which can ensure a professional caregiver is available to address your loved one's needs and provide companion care day and night. Caregivers can also help with personal care, including grooming, bathing, dressing, toileting, meal preparation, and light housekeeping."
+> — Library ID 501275156262596 · 20 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=501275156262596
+
+**Library ID 1103349861513417** · 643 days running · impressions rank #3 for “companion care”
+
+> "One of the most important aspects of companion care is providing your senior loved one with a friendly and familiar face to depend upon when you're not available. Our caregivers can help them overcome social isolation and find enjoyment through meaningful interaction and engagement via favorite hobbies, exercise, pleasant conversation, mealtimes, and more."
+> — Library ID 1103349861513417 · 21 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1103349861513417
+
+**Library ID 1608611140330430** · 202 days running · impressions rank #55 for “nursing home”
+
+> "Personal care, sometimes referred to as private-duty care, provides specialized assistance with activities of dealing living, such as bathing, personal hygiene, and grooming, dressing, feeding, light housekeeping, meal preparation, medication reminders, toileting."
+> — Library ID 1608611140330430 · 18 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1608611140330430
+
+#### Action Over Words Group R.A.L — 1 video ad · facility, placement or referral
+
+**Library ID 887800636945704** · 242 days running · impressions rank #1 for “adult day care”
+
+> "We want to make sure that we capture everything with us. This is going to be a..."
+> — Library ID 887800636945704 · 16 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=887800636945704
+
+#### SYNERGY HomeCare — 3 video ads · home care agency
+
+**Library ID 2918462545025755** · 153 days running · impressions rank #1 for “in home care”
+
+> "You don't know what to do. You don't know if you're coming or going or what do you do next. So I contacted Synergy and they sent somebody out in two days. Synergy allowed me to release that caregiver role and just be the daughter."
+> — Library ID 2918462545025755 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2918462545025755
+
+**Library ID 1706364970515655** · 153 days running · impressions rank #1 for “dementia care”
+
+> "We exist to enrich people's lives. We don't just care for people, we care about people. We understand that everybody's needs are different and we'll take that time to get to know you and your family to make sure that you get the care that you need on an individual basis."
+> — Library ID 1706364970515655 · 18 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1706364970515655
+
+**Library ID 990755550383517** · 94 days running · impressions rank #30 for “aging parents”
+
+> "What CERGY has allowed me to do is spend time with my mom and create more memories. It's really been life-saving."
+> — Library ID 990755550383517 · 16 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=990755550383517
+
+#### A Place for Mom — 3 video ads · facility, placement or referral
+
+**Library ID 908535694990197** · 45 days running · impressions rank #1 for “senior care”
+
+> "It's something that I think a lot of us are in denial about because we want to believe that our parents are just going to be fine forever."
+> — Library ID 908535694990197 · 10 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=908535694990197
+
+**Library ID 1732676131203585** · 48 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1565913321909813** · 48 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+#### Passion to Care - Home Care Services — 3 video ads · home care agency
+
+**Library ID 1041106391887612** · 10 days running · impressions rank #1 for “caregiver for my mom”
+
+> "I am a caregiver for my mom and she decided two years ago that she didn't want to drive anymore. So that kind of just put me into a position to where I'm caring for her more. It definitely became a strain on just family and finances. When I found out about Passion to Care, I'm like, oh my gosh, what? I'm doing what I was doing anyway, but now I get actually compensated to care for my mom. Like trying not to get emotional, but it is definitely a blessing. We have our life back."
+> — Library ID 1041106391887612 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1041106391887612
+
+**Library ID 1430133515628950** · 10 days running · impressions rank #2 for “caregiver for my mom”
+
+> "I am a caregiver for my mom and she decided two years ago that she didn't want to drive anymore. So that kind of just put me into a position to where I'm caring for her more. It definitely became a strain on just family and finances. When I found out about Passion to Care, I'm like, oh my gosh, what? I'm doing what I was doing anyway, but now I get actually compensated to care for my mom. Like trying not to get emotional, but it is definitely a blessing. We have our life back."
+> — Library ID 1430133515628950 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1430133515628950
+
+**Library ID 1726075905301287** · 32 days running
+
+> "For me, it really, really hits home because this is my mom. This is a woman that gave me life, and now she's not able to do everything for herself because she is getting older. And for me to be able to offer that to her and be able to be on a payroll and get paid to be there for my mom, it is a blessing to keep her out of nursing home, to keep my grandmother out of a nursing home. And I believe it's keeping them ear longer, giving them longevity, and it's a blessing."
+> — Library ID 1726075905301287 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1726075905301287
+
+#### Ohioans Home Health & Hospice — 3 video ads · home care agency
+
+**Library ID 1690249572196006** · 40 days running · impressions rank #4 for “home health care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1026867996907347** · 40 days running · impressions rank #29 for “home health care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1392726799381221** · 40 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### The Oasis at Dodge Park — 3 video ads · facility, placement or referral
+
+**Library ID 1512940723315455** · 299 days running · impressions rank #5 for “dementia care”
+
+> "When your loved one is no longer capable of living at home, trust the Oasis at Dodge Park, Wooster's premier residential care facility. Our compassionate staff offers a higher level of care than assisted living, and the Oasis is more affordable than a nursing home. Your loved one will feel right at home, and you'll have peace of mind knowing they are safe and secure. The Oasis offers full medication management, activities to strengthen the mind and body, and 24-hour nursing care. Call now to schedule a tour and learn about our new Resident Move-In Special. Call now to schedule a tour and learn about our new Resident Move-In Special."
+> — Library ID 1512940723315455 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1512940723315455
+
+**Library ID 793107223431129** · 335 days running · impressions rank #34 for “dementia care”
+
+> "When your loved one is no longer capable of living at home, trust the Oasis at Dodge Park, Wooster's premier residential care facility. Our compassionate staff offers a higher level of care than assisted living, and the Oasis is more affordable than a nursing home. Your loved one will feel right at home, and you'll have peace of mind knowing they are safe and secure. The Oasis offers full medication management, activities to strengthen the mind and body, and 24-hour nursing care. Call now to schedule a tour and learn about our new Resident Move-In Special. Call now to schedule a tour and learn about our new Resident Move-In Special."
+> — Library ID 793107223431129 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=793107223431129
+
+**Library ID 2015851512614443** · 133 days running
+
+> "When your loved one is no longer capable of living at home, trust the Oasis at Dodge Park, Worcester's premier residential care facility. Our compassionate staff offers a higher level of care than assisted living, and the Oasis is more affordable than a nursing home. Your loved one will feel right at home and you'll have peace of mind knowing they are safe and secure. The Oasis offers full medication management, activities to strengthen the mind and body, and 24-hour nursing care. Call now to schedule a tour and learn about our new resident move-in special."
+> — Library ID 2015851512614443 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2015851512614443
+
+#### Homecare Alternatives — 1 video ad · home care agency
+
+**Library ID 1262363429032341** · 275 days running · impressions rank #8 for “home care agency”
+
+> "Caring for our elderly loved ones can often be a journey filled with both love and challenges. Every family embarking on this journey encounters unique obstacles. One of the most common difficulties is the emotional and physical strain. It's like balancing on a tightrope, juggling our own lives while ensuring our loved ones receive the care they deserve. Now, let's talk about time. Providing elderly care requires a significant time commitment. It's a full-time job and sometimes even a 24-hour one. As our loved ones age, their needs increase and so does the demand on our time. And then there's the need for specialized knowledge. Understanding medical conditions, managing medications, knowing the right exercises and diet for them. It's not something that comes naturally to everyone. Throughout all these challenges, compassion and understanding remain our guiding light. They remind us why we're doing this. For love. For family. But remember, it's okay to ask for help. After all, we all want the best for our loved ones. Enter home care alternatives, your partner in providing the best care for your loved ones. We understand that every individual is unique, each with their own set of needs and preferences. That's why we offer a range of services that can be tailored to suit your loved ones requirements. Our skilled caregivers are more than just helpers. They're companions who bring warmth and friendship into your loved one's life. They assist in daily living activities, from meal preparation and personal hygiene to running errands, ensuring that your loved ones can maintain their independence while enjoying the comforts of home. Medication management is another crucial aspect of our services. Our caregivers are trained to help ensure that your loved ones take their prescribed medications on time, every time, alleviating any concerns you might have about missed doses or incorrect usage."
+> — Library ID 1262363429032341 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1262363429032341
+
+#### BeyondWell Home Care — 3 video ads · home care agency
+
+**Library ID 4021244304850966** · 48 days running · impressions rank #8 for “24 hour care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1081488811216896** · 48 days running · impressions rank #15 for “24 hour care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1395357799079067** · 48 days running · impressions rank #28 for “24 hour care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Mira Vie at Brookfield — 1 video ad · facility, placement or referral
+
+**Library ID 2276847156100562** · 342 days running · impressions rank #12 for “respite care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Forest Hill Heights: Assisted Living & Memory Care In Bel Air — 1 video ad · facility, placement or referral
+
+**Library ID 783137351407976** · 293 days running · impressions rank #12 for “senior care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Mira Vie at Forsgate  — 1 video ad · facility, placement or referral
+
+**Library ID 1330186368787859** · 242 days running · impressions rank #13 for “respite care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Jagriti Dham — 1 video ad · facility, placement or referral
+
+**Library ID 1335794308412018** · 125 days running · impressions rank #13 for “dementia care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Orchard Heights Located In Orchard Park — 1 video ad · facility, placement or referral
+
+**Library ID 1755075125168753** · 293 days running · impressions rank #14 for “senior care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Mira Vie at West Milford — 1 video ad · facility, placement or referral
+
+**Library ID 2020658068669669** · 242 days running · impressions rank #14 for “respite care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Miracle Makers Home Care — 3 video ads · home care agency
+
+**Library ID 27588599890818165** · 16 days running · impressions rank #14 for “24 hour care”
+
+> "I've lived here in Newtown Square, Pennsylvania, for years, and after my wife, Edna, passed, I knew one thing. I wanted to stay in my home. I make too much to qualify for Medicaid, so I decided to pay privately for a live-in caregiver through Miracle Makers Home Care. And I can tell you, it's the best money I've ever spent. I have someone here every day who helps me with the things that have gotten harder, keeps me company, and gives my family peace of mind, knowing I'm not here alone. I'm still working in my garden. I'm still watching my eagles every Sunday. Go birds! And most importantly, I'm still living in the home where Edna and I built our life together. I'm not planning on going anywhere. I hope to stay right here for another 20 years. So maybe give Miracle Makers a call. If your mom or dad could use their services, they'll talk with you, explain your options, and help you figure out what kind of care might work for your family. It certainly made a difference for me."
+> — Library ID 27588599890818165 · 90 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=27588599890818165
+
+**Library ID 1620447869651715** · 11 days running · impressions rank #48 for “home care agency”
+
+> "I'm a family caregiver here in Philadelphia. Home care is hard enough. I shouldn't have to spend every payday figuring out why my check is wrong. That's one of the biggest reasons I transferred to Miracle Makers. My pay is accurate, my clock-ins work, and if there ever is an issue, they actually fix it. I got a pay raise, incentives, benefits, and most importantly, they stay out of my hair and let me focus on taking care of my client. When I do need something, I call, they handle it, and I move on. No chasing people around, no constant headaches. The people are great, they're easygoing, and the whole experience just feels different. It's like VIP, white glove treatment for caregivers. There's a reason Miracle Makers is growing beyond Pennsylvania and expanding nationally. They know how to take care of the people who take care of everyone else. If you're tired of payroll problems and fighting with your home care agency, transfer to Miracle Makers. I did, and I'm not going back. Check them out if you're interested in a better experience."
+> — Library ID 1620447869651715 · 74 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1620447869651715
+
+**Library ID 1827530108410529** · 14 days running · impressions rank #112 for “home care agency”
+
+> "Attention, family caregivers! Are you having issues or troubles with your current home care agency? Are they screwing up your paycheck, skipping payrolls, not paying overtime pay, and not answering their phones? Well, enough is enough. You need to transfer to Miracle Makers today and see the difference that being treated fairly and paid accurately can make as a valued caregiver and member of their team. The best part? My money is on point every week now. You need to stop letting your agency play games with your pay and just join Miracle Makers."
+> — Library ID 1827530108410529 · 32 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1827530108410529
+
+#### Buckingham Heights Memory Care in Glastonbury — 1 video ad · facility, placement or referral
+
+**Library ID 1354737552962527** · 293 days running · impressions rank #16 for “senior care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Heritage HomeCare Services — 1 video ad · home care agency
+
+**Library ID 1390251022649399** · 219 days running · impressions rank #18 for “respite care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Northland Heights: Assisted Living & Memory Care in North Hills — 2 video ads · facility, placement or referral
+
+**Library ID 1908927906668547** · 293 days running · impressions rank #19 for “senior care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1434728065125501** · 110 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Giving Home Health Care — 3 video ads · home care agency
+
+**Library ID 1538460127272930** · 243 days running · impressions rank #20 for “home health care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1576075490833688** · 28 days running · impressions rank #85 for “home health care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1388912019773229** · 54 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### SYNERGY HomeCare of Rochester — 3 video ads · home care agency
+
+**Library ID 1290710343232502** · 94 days running · impressions rank #20 for “aging parents”
+
+> "What CERGY has allowed me to do is spend time with my mom and create more memories. It's really been life-saving."
+> — Library ID 1290710343232502 · 16 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1290710343232502
+
+**Library ID 1390260666485432** · 98 days running
+
+> "You don't know what to do. You don't know if you're coming or going or what do you do next. So I contacted Synergy and they sent somebody out in two days. Synergy allowed me to release that caregiver role and just be the daughter."
+> — Library ID 1390260666485432 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1390260666485432
+
+**Library ID 27000486472947481** · 94 days running
+
+> "You don't know what to do. You don't know if you're coming or going or what do you do next. So I contacted Synergy and they sent somebody out in two days. Synergy allowed me to release that caregiver role and just be the daughter."
+> — Library ID 27000486472947481 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=27000486472947481
+
+#### HomeWell Care Services - Natick, MA — 1 video ad · home care agency
+
+**Library ID 1033106919053157** · 69 days running · impressions rank #20 for “in home care”
+
+*No usable speech (the audio is music only).*
+
+#### FirstLight Home Care of Greenville — 2 video ads · home care agency
+
+**Library ID 2430847170659830** · 11 days running · impressions rank #21 for “24 hour care”
+
+> "Hi, I'm Craig Randall, and my father and Don and I own 17 locations in First Light throughout the Southeast. What I'd want to make sure that the communities that we serve know about our business is that we care in a way that we want everyone that we work with, particularly our employees, to treat our clients like their own family members. That's why I got involved in this business was an experience, finding care for my grandmother 17 years ago."
+> — Library ID 2430847170659830 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2430847170659830
+
+**Library ID 965848749878914** · 11 days running · impressions rank #99 for “companion care”
+
+> "Hi, I'm Craig Randall, and my father and Don and I own 17 locations in First Light throughout the Southeast. What I'd want to make sure that the communities that we serve know about our business is that we care in a way that we want everyone that we work with, particularly our employees, to treat our clients like their own family members. That's why I got involved in this business was an experience, finding care for my grandmother 17 years ago."
+> — Library ID 965848749878914 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=965848749878914
+
+#### BeeHive Homes of Lakeville — 2 video ads · facility, placement or referral
+
+**Library ID 1294040218721744** · 139 days running · impressions rank #22 for “respite care”
+
+> "At Beehive Homes of Lakeville, we offer a warm, home-like atmosphere with personalized care. Discover the Beehive difference at beehivehomes.com slash location slash lakeville."
+> — Library ID 1294040218721744 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1294040218721744
+
+**Library ID 2143618753125510** · 139 days running
+
+> "At Beehive Homes of Lakeville, we offer a warm, home-like atmosphere with personalized care. Discover the Beehive difference at beehivehomes.com slash location slash lakeville."
+> — Library ID 2143618753125510 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2143618753125510
+
+#### Symphony Park Living — 1 video ad · facility, placement or referral
+
+**Library ID 1571910251178942** · 101 days running · impressions rank #23 for “aging parents”
+
+> "You want peace of mind. Knowing your parents are supported every step of the way. At Symphony Park Independent Living, on-site wellness partners provide support as needs change. From in-home care and therapy to access to an on-site nurse practitioner. Here, you don't have to manage everything alone. Symphony Park helps with the care and support so you can focus on what matters most. Enjoying time with your parents. Because the right community supports the whole family. For more information, visit www.cst.edu"
+> — Library ID 1571910251178942 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1571910251178942
+
+#### Lansdowne Heights: Assisted Living Specializing in Memory Care — 1 video ad · facility, placement or referral
+
+**Library ID 828142439945797** · 293 days running · impressions rank #25 for “senior care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### SYNERGY HomeCare of the Main Line — 3 video ads · home care agency
+
+**Library ID 1542842187352071** · 84 days running · impressions rank #25 for “aging parents”
+
+> "What CERGY has allowed me to do is spend time with my mom and create more memories. It's really been life-saving."
+> — Library ID 1542842187352071 · 16 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1542842187352071
+
+**Library ID 1032400319370496** · 84 days running
+
+> "What CERGY has allowed me to do is spend time with my mom and create more memories. It's really been life-saving."
+> — Library ID 1032400319370496 · 16 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1032400319370496
+
+**Library ID 1656322405468869** · 81 days running
+
+> "You don't know what to do. You don't know if you're coming or going or what do you do next. So I contacted Synergy and they sent somebody out in two days. Synergy allowed me to release that caregiver role and just be the daughter."
+> — Library ID 1656322405468869 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1656322405468869
+
+#### Calumet Trace Senior Living — 1 video ad · facility, placement or referral
+
+**Library ID 1049149027202105** · 398 days running · impressions rank #27 for “respite care”
+
+> "Lost it to the nut but now I'm trophy'd up, I'm saying like Boom bop, boom boom boom, bop bam"
+> — Library ID 1049149027202105 · 5 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1049149027202105
+
+#### Comfort Keepers, Sumter SC — 2 video ads · home care agency
+
+**Library ID 3968322303464329** · 101 days running · impressions rank #28 for “aging parents”
+
+> "We were made for moments like these. We help seniors live safely and independently at home. We elevate quality of life by infusing joy, hope, and purpose into everyday moments. Our caregivers handle errands and provide clean home environments, fresh cooked meals, and personal assistance. Today and every day you can trust us to help your loved one be safe at home. To see how we can help visit comfortkeepers.com"
+> — Library ID 3968322303464329 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=3968322303464329
+
+**Library ID 1641188310314327** · 101 days running
+
+> "I knew we made the right choice when I didn't have to worry anymore about mom driving safely to watch the sunset from my parents' favorite spot. Now we have comfort keepers for that. Our friendly professional caregivers add joy and meaning to life's everyday moments. Learn how we help seniors live happy and independent lives at home at comfortkeepers.com today."
+> — Library ID 1641188310314327 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1641188310314327
+
+#### Comfort Keepers, Florence, SC — 3 video ads · home care agency
+
+**Library ID 1688745679038316** · 101 days running · impressions rank #29 for “aging parents”
+
+> "We were made for moments like these. We help seniors live safely and independently at home. We elevate quality of life by infusing joy, hope, and purpose into everyday moments. Our caregivers handle errands and provide clean home environments, fresh cooked meals, and personal assistance. Today and every day you can trust us to help your loved one be safe at home. To see how we can help visit comfortkeepers.com"
+> — Library ID 1688745679038316 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1688745679038316
+
+**Library ID 976430524993292** · 101 days running
+
+> "We were made for moments like these. We help seniors live safely and independently at home. We elevate quality of life by infusing joy, hope, and purpose into everyday moments. Our caregivers handle errands and provide clean home environments, fresh cooked meals, and personal assistance. Today and every day you can trust us to help your loved one be safe at home. To see how we can help visit comfortkeepers.com"
+> — Library ID 976430524993292 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=976430524993292
+
+**Library ID 2105355933744239** · 101 days running
+
+> "I knew we made the right choice when I didn't have to worry anymore about mom driving safely to watch the sunset from my parents' favorite spot. Now we have comfort keepers for that. Our friendly professional caregivers add joy and meaning to life's everyday moments. Learn how we help seniors live happy and independent lives at home at comfortkeepers.com today."
+> — Library ID 2105355933744239 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2105355933744239
+
+#### Mira Vie at Manalapan — 1 video ad · facility, placement or referral
+
+**Library ID 872391215194458** · 101 days running · impressions rank #31 for “respite care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Seniors Helping Seniors -Jacksonville, FL — 3 video ads · home care agency
+
+**Library ID 1330632339188030** · 53 days running · impressions rank #31 for “companion care”
+
+> "Hello Jacksonville, this is Brian Sanders with Singers Helping Singers, a home health care agency here on the First Coast. If you, a loved one or a parent or anybody you know, is getting to a point in their life because of aging in place that being alone might be a little scary or might be a little dangerous and their safety might be in jeopardy, or they just are at a point where they need some help around the house or some companionship. I think that maybe an assisted living facility is the only other option. I implore you to reach out to us. We will come into the home and be able to assist you with anything you need to make sure that you live safely first and as independently as possible in line with safety. So if that's something that interests you, please reach out."
+> — Library ID 1330632339188030 · 40 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1330632339188030
+
+**Library ID 1567760455001788** · 53 days running · impressions rank #66 for “companion care”
+
+> "Hey Jacksonville, Brian Sanders from Singers Helping Singers. As a 41 year veteran in social service, we began our delve into home health care about five years ago after realizing that the home health care industry had an extreme turnover rate upwards of 80% statewide. At Singers Helping Singers, we specialize and have refined a hiring practice that has allowed us to have a turnover rate under 10% which lets us boast the best continuity of care and consistency of care in the industry. Click the links below and reach out for a free consultation and a free evaluation or just have a discussion on what all it is we can do for you or a loved one."
+> — Library ID 1567760455001788 · 35 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1567760455001788
+
+**Library ID 1524114188672243** · 53 days running
+
+> "Hello Jacksonville, this is Brian Sanders with Seniors Helping Seniors, a home healthcare agency here on the first coast. Are you trying to take care of an aging parent while still managing your own life or a loved one? You're not supposed to carry everything on your own. Whether your loved one needs help around the house, companionship, dementia support, Alzheimer's care, or someone just to check in to ensure their safety. We're here to help give families peace of mind and seniors compassionate care at home. If this sounds good, please give us a call. Thank you."
+> — Library ID 1524114188672243 · 26 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1524114188672243
+
+#### Brookdale Senior Living — 3 video ads · facility, placement or referral
+
+**Library ID 2386922328505434** · 20 days running · impressions rank #31 for “dementia care”
+
+> "My name is Diane Hanson and my husband is Bert Hanson. We'll be married 60 years in August. We came in together and he was designated to go to memory care. He's the same person he was. He wants to do more than I actually do with him because they have so many activities here, but I feel very comfortable with the care he's getting there. He smiles all the time. He's just, he's quite happy with them. We choose memory care. We choose Brookdale."
+> — Library ID 2386922328505434 · 31 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2386922328505434
+
+**Library ID 2444084712737612** · 19 days running
+
+> "He's the same person he was. He smiles all the time. The people here are amazing. I am at home. We choose memory care. I choose assisted living."
+> — Library ID 2444084712737612 · 11 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2444084712737612
+
+**Library ID 2933371136997258** · 19 days running
+
+> "My name is Diane Hanson and my husband is Bert Hanson. We'll be married 60 years in August. We came in together and he was designated to go to memory care. He's the same person he was. He wants to do more than I actually do with him because they have so many activities here, but I feel very comfortable with the care he's getting there. He smiles all the time. He's just, he's quite happy with them. We choose memory care. We choose Brookdale."
+> — Library ID 2933371136997258 · 31 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2933371136997258
+
+#### Mira Vie at Montville  — 1 video ad · facility, placement or referral
+
+**Library ID 3135149876678727** · 101 days running · impressions rank #32 for “respite care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Nandhavanam Old Age Living — 1 video ad · facility, placement or referral
+
+**Library ID 1602229855028828** · 20 days running · impressions rank #32 for “elder care”
+
+> "என் பெர்bahல்லாம்பிற்றை நான் அந்த வணக்கும் சொல்லilar hellbill manager ஓழ்க்கலால் ஒருமைம்பரரிக் கிடந்தார்결 இ நின்னின் немножко 1140 மீண்பல் சிட்டிராட்டு நான் குப்பந்ப மீண்டுபடைத்தorph்போது ஒருமைம்பர் கிட்டும் போது. நீங்கள் போக்கல் loading' செல்லும் நான் வேசிலதி சொ</ Ilsாவன், உūர்களெரினத Baptist நிருங்கள் ஆமா, எல்லாமே இருந்துவிட்டது அண்ணாமக் கோதக பார்த்தின் அண்ணாட் எழுது பாருங்கள் இச்சம் தலூி, பாருங்களே ஆன் ஆமாப்படைத் தாராம் இரண்டு வாழ்ப்ப்பutoக்கு மாத்தனை annualservice செய்வினை இருக்கும். நம்மல் இருக்கறுபடித்து மேீண்ணpperணி, உவருடன் கூட்டுக்fend உன்னொன்ன, பற்றுக்கு ஒپ்புள்ளை மா இருக்குuri், பற்றுக்குச்சு வந்துருப்பு வருடன் இருப்போக், இன்னும் அரைதி வரையைக் காஜிச்ள நான், நக்காய் அம்மா அடுத்ததா frying எல்லைக்குப்மாகத் தயவு உட்கிப்பாக இந்தே ராஇன் ரத்திப்பட்டே செய்தில்லை. நம்மே எடுக்க வைத்தும் போது உண்கமை மரிட்டும் பண்டுகிப்போம். நண்தாவனம் வஞ மேடு"
+> — Library ID 1602229855028828 · 57 s · faster-whisper small.en, first 120 s · spoken ta, re-transcribed with the multilingual model · https://www.facebook.com/ads/library/?id=1602229855028828
+
+#### Assisting Hands - Serving Frederick and Surrounding Areas — 3 video ads · home care agency
+
+**Library ID 1292405389564336** · 4 days running · impressions rank #32 for “24 hour care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1378427091030870** · 4 days running · impressions rank #39 for “24 hour care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1468677571738316** · 4 days running · impressions rank #48 for “24 hour care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Sun City West Assisted Living — 1 video ad · facility, placement or referral
+
+**Library ID 524359767349809** · 544 days running · impressions rank #36 for “dementia care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Heather Heights: Assisted Living & Memory Care Pittsford — 1 video ad · facility, placement or referral
+
+**Library ID 1361424682279056** · 293 days running · impressions rank #36 for “senior care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Northshore Heights: Assisted Living & Memory Care Facility Knoxville, TN — 1 video ad · facility, placement or referral
+
+**Library ID 887858790448593** · 293 days running · impressions rank #37 for “senior care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Mira Vie at Fanwood — 1 video ad · facility, placement or referral
+
+**Library ID 975044512007531** · 101 days running · impressions rank #37 for “respite care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Mira Vie at Brick  — 1 video ad · facility, placement or referral
+
+**Library ID 990012577294260** · 101 days running · impressions rank #38 for “respite care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Right at Home — 3 video ads · home care agency
+
+**Library ID 4495024450785734** · 26 days running · impressions rank #38 for “24 hour care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 4209128529378856** · 26 days running · impressions rank #44 for “24 hour care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1580167490333603** · 73 days running
+
+> "Stay home longer with a little help from right at home. Let's start talking about living."
+> — Library ID 1580167490333603 · 9 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1580167490333603
+
+#### Comfort Keepers of Mt. Pleasant — 1 video ad · home care agency
+
+**Library ID 2036154966937181** · 101 days running · impressions rank #39 for “aging parents”
+
+> "I knew we made the right choice when I didn't have to worry anymore about mom driving safely to watch the sunset from my parents' favorite spot. Now we have comfort keepers for that. Our friendly professional caregivers add joy and meaning to life's everyday moments. Learn how we help seniors live happy and independent lives at home at comfortkeepers.com today."
+> — Library ID 2036154966937181 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2036154966937181
+
+#### Freedom Home Care for Veterans — 3 video ads · home care agency
+
+**Library ID 1899294704039179** · 98 days running · impressions rank #40 for “in home care”
+
+> "If you're near Cincinnati, Ohio and are struggling to care for a veteran family member, you could be getting paid to do what you're already doing. The VA pays family members to provide in-home care so your loved one gets the help they need without the stress of hiring outside care. With Freedom Home Care, you can get help with daily tasks like bathing, dressing, and meal prep, be there for your loved ones while receiving compensation, and ensure that they stay comfortable at home without any out-of-pocket costs. Click the link below or visit FreedomHomeCare.Vet to check your eligibility today."
+> — Library ID 1899294704039179 · 29 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1899294704039179
+
+**Library ID 1659446185135571** · 96 days running · impressions rank #43 for “in home care”
+
+> "Did you know that the VA can cover in-home care for veterans at no cost to you or that you can even get paid to care for your loved ones? Whether you want to get paid to provide care yourself or prefer a professional caregiver to assist them for free, this VA benefit ensures your loved ones get the support they deserve. Here's how it works. Option one, get paid to care for your loved one. Provide daily care like meal prep, dressing and companionship while receiving financial support. Option two, have a professional caregiver help for free. A trained caregiver can assist with daily tasks, personal care and mobility, and ensuring that your veteran stays safe and comfortable at home. Don't miss out on this opportunity. Thousands of veterans and their families qualify for this 100% VA covered benefit, but many don't even know that it exists. Click the link below or visit freedomhomecare.vet to check your eligibility today."
+> — Library ID 1659446185135571 · 48 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1659446185135571
+
+**Library ID 2160147991567210** · 97 days running
+
+> "Attention veterans and family caregivers. If you're struggling to care for your veteran family members, the VA may pay for you to be their caregiver or provide a professional one at no cost to you. That's right. Whether you prefer a professional caregiver or want to get paid to care for your loved one, Freedom Home Care makes it possible. At Freedom Home Care, we provide compassionate VA-covered in-home care that helps veterans live safely and comfortably in their own homes by assisting with daily living activities, companionship, medication reminders, and so much more. Many veterans miss out simply because they don't know the benefits exist. Our team helps you navigate the VA process so you can receive the care you deserve without the hassle. Whether you're a family member caring for your loved one or need professional assistance, Freedom Home Care makes it possible at no cost to you. Click the link below or visit freedomhomecare.vet to check your eligibility today."
+> — Library ID 2160147991567210 · 51 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2160147991567210
+
+#### The Informed Caregiver — 1 video ad · home care agency
+
+**Library ID 864879066216492** · 76 days running · impressions rank #40 for “elder care”
+
+> "There's a crisis in caregiving for an aging parent or a loved one. It goes like this. Yesterday, you were a daughter, a son, or a spouse. Today, you're a wound care specialist, a medication manager, and a 24-hour security guard for someone with dementia with zero training. I'm going to show you how to make this challenge more manageable by yourself, how to carve out time for yourself, so you can begin to move away from putting out fires to managing with confidence. I've got a download showing you how to break away from the constant anxiety that uninformed caregiving brings. You need that because I know you didn't apply for this job. You didn't get an orientation, and you certainly aren't getting a paycheck. I'm the informed caregiver, and I want you to know that when it comes to elder care, figuring out as you go along is a recipe for burnout and medical mistakes. We can change that. I'm a professional caregiver and a family caregiver. I've got important information that will make a lot of difference for you because if you're trying to take care of mom or dad alone without training, you're setting yourself up for burnout. But first, let's talk about the medical gap in healthcare. Hospitals take care of people, yes. But once that discharge paper is signed, the burden shifts to..."
+> — Library ID 864879066216492 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=864879066216492
+
+#### HomecareGrow.io — 3 video ads · home care agency
+
+**Library ID 1776942143297471** · 25 days running · impressions rank #40 for “home care agency”
+
+> "Last week, we got 19 new clients with Home Care Grow. How'd she do it? We started by finding out who would pay her the most and stay the longest, starting with private pay, looking at Medicaid, and then veterans. For her, she couldn't accept veterans. Medicaid was most profitable, specifically family caregivers. Then we built and turned on our Medicaid specific meta ads campaign to attract them. As leads come in, we qualify them. If they're qualified, we send them directly to our team. If they're not, we don't. These are her rounded numbers over a 16 week campaign. She gets about 900 qualified leads, with her team responding within 60 seconds, seven days a week, 12 hours a day. About 50% get connected with via voice or text. 50% of those make it to a physician letter and actually need care. And 90% get approved over a 16 week period once they make it through their pipeline. With $95,000 average lifetime value per client and 23% gross margins, she's adding about $19.3 million in projected revenue and about $4.4 million in new projected gross profit from a 16 week campaign. So if you're a home care agency doing a million a year or more and looking to attract Medicaid, veteran, or private pay clients to grow your agency, click learn more and enter your info. If you qualify, book your agency growth call with a member of my team to see if we can help you grow your agency."
+> — Library ID 1776942143297471 · 74 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1776942143297471
+
+**Library ID 1046755337759801** · 41 days running · impressions rank #78 for “home care agency”
+
+> "Araceli adds 50 new Medicaid family caregivers per month using our home care grow system. This is Araceli from Loving Care. Last week we got 19 new clients with home care grow. How she do it? We started by finding out who would pay her the most and stay the longest, starting with private pay, looking at Medicaid, and then veterans. For her, she couldn't accept veterans. Medicaid was most profitable, specifically family caregivers. Then we built and turned on our Medicaid specific meta ads campaign to attract them. As leads come in, we qualify them. If they're qualified, we send them directly to our team. If they're not, we don't. These are her rounded numbers over a 16 week campaign. She gets about 900 qualified leads with her team responding within 60 seconds, seven days a week, 12 hours a day. About 50% get connected with via voice or text. 50% of those make it to a physician letter and actually need care. And 90% get approved over a 16 week period once they make it through their pipeline. With $95,000 average lifetime value per client and 23% gross margins, she's adding about $19.3 million in projected revenue and about $4.4 million in new projected gross profit from a 16 week campaign. So if you're a home care agency doing a million a year or more and looking to attract Medicaid, veteran, or private pay clients to grow your agency, click learn more and enter your info. If you qualify, book your agency growth call with a member of my team to see if we can help you grow your agency."
+> — Library ID 1046755337759801 · 81 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1046755337759801
+
+**Library ID 4540501932901389** · 52 days running
+
+> "Home care owners one million plus a year. We've helped 55 agencies in 23 states turn ad spend into new starts, not shared leads. I started selling from loving care last week. We got 19 new clients with home care growth. How she do it? We started by finding out who would pay her the most and stay the longest, starting with private pay, looking at Medicaid, and then veterans. For her, she couldn't accept veterans. Medicaid was most profitable, specifically family caregivers. Then we built and turned on our Medicaid specific meta ads campaign to attract them. As leads come in, we qualify them. If they're qualified, we send them directly to our team. If they're not, we don't. These are her rounded numbers over a 16-week campaign. She gets about 900 qualified leads with her team responding within 60 seconds, seven days a week, 12 hours a day. About 50% get connected with via voice or text. 50% of those make it to a physician letter and actually need care, and 90% get approved over a 16-week period once they make it through their pipeline. With $95,000 average lifetime value per client and 23% gross margins, she's adding about $19.3 million in projected revenue and about $4.4 million in new projected gross profit from a 16-week campaign. So if you're a home care agency doing a million a year or more and looking to attract Medicaid, veteran, or private pay clients to grow your agency, click learn more and enter your info. If you qualify, book your agency growth call with a member of my team to see if we can help you grow your agency."
+> — Library ID 4540501932901389 · 84 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=4540501932901389
+
+#### SweetBriar Assisted Living — 1 video ad · facility, placement or referral
+
+**Library ID 1200027302192886** · 280 days running · impressions rank #42 for “senior care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Samarth Eldercare — 2 video ads · home care agency
+
+**Library ID 1957446788992521** · 2 days running · impressions rank #43 for “elder care”
+
+> "پہ پہ میں نے سے کیا کیا؟ پر دیکھو گلٹھتு تھوڑا رہے تھا پر اب مجھ پہتہ لہے سمٹھ کر تھا سمٹھ کر تھا میں دیادر میں ہاتھتے تھا پہ پہ لوگوں کو کبھی اگر باغوان دیکھ جائنا TVP پھر یہ ریموٹ پھل جاتے فادر مجھے دیکھ رہوٹیں کہ بیٹھا ہمارے تھا تھا سمٹھ کر اور میں سو سے ہونوں گی پہ پہ میں نے سے کیا کیا؟ مجھے شہرچھا ہرچھا پڑا پھر دیکھو گلٹھتا تھوڑا رہے تھا پر دیکھو گلٹھتا تھوڑا رہے تھا پر اب مجھ پہتہ لہے سمٹھ کر تھا سمٹھ کر تھا جن کے چھے سو سے ذاڑا کیا گیوٹھ سمٹھیس کا دھا دکھرے ہیں پھر اس میں چاہروںز کیا ہے جائے کمپانینشپ ہے جائے داکھٹر بیزٹسے ہیں یا 24x7 امرجنسی کیا ہے سپر بایڈ ہوتا ہے پھر آپ بھی دورے کر رہے"
+> — Library ID 1957446788992521 · 55 s · faster-whisper small.en, first 120 s · spoken hi, re-transcribed with the multilingual model · https://www.facebook.com/ads/library/?id=1957446788992521
+
+**Library ID 28522359957376397** · 2 days running · impressions rank #58 for “elder care”
+
+> "پہ پہ میں نے سے کیا کیا؟ پر دیکھو گلٹھتு تھوڑا رہے تھا پر اب مجھ پہتہ لہے سمٹھ کر تھا سمٹھ کر تھا میں دیادر میں ہاتھتے تھا پہ پہ لوگوں کو کبھی اگر باغوان دیکھ جائنا TVP پھر یہ ریموٹ پھل جاتے فادر مجھے دیکھ رہوٹیں کہ بیٹھا ہمارے تھا تھا سمٹھ کر اور میں سو سے ہونوں گی پہ پہ میں نے سے کیا کیا؟ مجھے شہرچھا ہرچھا پڑا پھر دیکھو گلٹھتا تھوڑا رہے تھا پر دیکھو گلٹھتا تھوڑا رہے تھا پر اب مجھ پہتہ لہے سمٹھ کر تھا سمٹھ کر تھا جن کے چھے سو سے ذاڑا کیا گیوٹھ سمٹھیس کا دھا دکھرے ہیں پھر اس میں چاہروںز کیا ہے جائے کمپانینشپ ہے جائے داکھٹر بیزٹسے ہیں یا 24x7 امرجنسی کیا ہے سپر بایڈ ہوتا ہے پھر آپ بھی دورے کر رہے پھر آپ بھی دورے کر رہے تھا پھر آپ بھی دورے کر رہے تھا اوہو ہوتا ہے جائے داکھا"
+> — Library ID 28522359957376397 · 55 s · faster-whisper small.en, first 120 s · spoken hi, re-transcribed with the multilingual model · https://www.facebook.com/ads/library/?id=28522359957376397
+
+#### Veteran Caregivers of America — 1 video ad · home care agency
+
+**Library ID 878819951553367** · 47 days running · impressions rank #44 for “in home care”
+
+> "Are you a veteran? Did you know you may qualify for up to $2,795 per month for VA's Aid and Attendance Pension? Most veterans and their spouses have no idea. This money is available to help cover in-home care. If your loved one needs assistance with daily activities, this benefit could be life-changing. The best part? You don't have to figure it out alone. We handle the paperwork and make sure you get every dollar entitled to you. Do not wait. Click below to find out if you qualify today."
+> — Library ID 878819951553367 · 29 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=878819951553367
+
+#### United Energy Workers Healthcare - Idaho — 1 video ad · home care agency
+
+**Library ID 2526617404418012** · 87 days running · impressions rank #46 for “in home care”
+
+> "Hi, I'm Annette Hunt with United Energy Workers Health Care, your local outreach benefit advisor for Idaho. History isn't just stored in books. It lives in the experience of the men and the women who powered America's Cold War mission. If you worked at Idaho National Laboratories or any Department of Energy facility in the United States, this message is for you. Many workers may not realize they could qualify for benefits, medical coverage, or compensation they haven't fully explored yet. And if you already have a Department of Energy white card, I want to help you make sure you understand all the benefits available to you and your family. You spent years helping build history. Now it's important to make sure you receive the support you earned. Let's talk. I'm here to help you answer questions and guide you through the process. At United Energy Workers Health Care, we elevate the lives of energy workers through purposeful, whole-person in-home care built on compassion, dignity, and trust. Fill out the form below and we'll reach out to you personally."
+> — Library ID 2526617404418012 · 57 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2526617404418012
+
+#### Comfort Keepers of the Mid-Ohio Valley — 1 video ad · home care agency
+
+**Library ID 1244510397829542** · 216 days running · impressions rank #47 for “dementia care”
+
+> "Many people ask this question. Can someone with dementia stay at home safely? With comfort keepers? Yes, it is possible. Familiar spaces and daily routines bring comfort. Someone is there to guide and reassure. Home care creates safer, calmer days. So home can still feel like home."
+> — Library ID 1244510397829542 · 31 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1244510397829542
+
+#### Comfort Keepers Home Office — 3 video ads · home care agency
+
+**Library ID 3465282163638169** · 123 days running · impressions rank #47 for “senior care”
+
+> "It's very important for seniors to have people around, whether it's loved ones, maybe it's a friend. As caregivers, we are friends. I love the time that I get to spend with them. I like hearing about their lives. It's real fulfilling."
+> — Library ID 3465282163638169 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=3465282163638169
+
+**Library ID 4267494330167324** · 101 days running · impressions rank #47 for “in home care”
+
+*No usable speech (the audio is music only).*
+
+**Library ID 1528812682123744** · 101 days running · impressions rank #50 for “senior care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Atomic Family Home Care Agency — 3 video ads · home care agency
+
+**Library ID 1370460734481161** · 33 days running · impressions rank #50 for “home care agency”
+
+> "Did you work at the Portsmouth gaseous diffusion plant? Then this message is for you. A lot of former workers don't realize they may qualify for a white card and the benefits that come with it. If you're eligible, that could include free in-home care, skilled nursing, and help with everyday tasks. Atomic Family Home Care Agency helps former plant workers understand their benefits and guides them through the entire process. They've already helped dozens of workers get the care they deserved. The consultation is free and it only takes a few minutes to find out if you qualify. Click learn more below and see what benefits may be available to you."
+> — Library ID 1370460734481161 · 40 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1370460734481161
+
+**Library ID 1805729660597506** · 52 days running
+
+> "Did you work at the Portsmouth gaseous diffusion plant? Then you need to know about the white card. I'm a nurse with Atomic Family Home Care Agency, and many former plant workers are surprised to learn they may qualify for benefits they've never claimed. A white card may provide free in-home care, skilled nursing, and support with everyday activities, all at no cost if you're eligible. Our team helps you understand your benefits and guides you through the process from start to finish. It only takes a quick consultation to see if you qualify. If you worked at the Portsmouth plant, don't miss out on benefits you've earned. Click learn more below and see if you're eligible for a white card."
+> — Library ID 1805729660597506 · 39 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1805729660597506
+
+**Library ID 1359109886437221** · 33 days running
+
+> "Did you work at the Portsmouth gaseous diffusion plant? You could be missing out on benefits you've already earned. If no one has ever talked to you about the white card, you could be missing out on valuable benefits. A white card may provide free in-home care, skilled nursing, and extra support to help you stay safe and comfortable in your own home. At Atomic Family Home Care Agency, we make the process simple and help former plant workers understand exactly what benefits they may qualify for. We've already helped dozens of former workers receive their white card and access the care they deserved. The consultation is free and you'll quickly find out whether you qualify. Click learn more below and let us help you get the benefits you've earned."
+> — Library ID 1359109886437221 · 45 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1359109886437221
+
+#### Interim HealthCare of Upper Macomb County — 1 video ad · home care agency
+
+**Library ID 971509339042456** · 82 days running · impressions rank #51 for “dementia care”
+
+> "So visiting a loved one with dementia, it can be emotional sometimes, and maybe even overwhelming, but with the right approach, it can also be beautifully meaningful. So I'm going to give you five things that I want you to remember each time you walk through that door on a visit, right? So number one, introduce yourself. Yep, this might sound strange, but it actually helps them feel safe and grounded. Number two, smile and hold eye contact with them. For calm, positive presence, that matters more than your words. Number three, I want you to keep it simple, short sentences, and give them time to respond. Silence doesn't have to be awkward. It can actually be a space for you to connect. Remember that. Number four, lead with love. What does that look like? That means hold their hand or give them a hug or just sit beside them. Just touch can say a lot more than talk. And number five, be kind to yourself. You know, the harder it gets, the more that you may have to step away of expectations and just be present in that moment because they're not always going to remember the visit, but they are definitely going to remember the way that you made them feel."
+> — Library ID 971509339042456 · 84 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=971509339042456
+
+#### Wright & Brunell, LLC d/b/a Home Instead Senior Care — 1 video ad · home care agency
+
+**Library ID 889970324145870** · 77 days running · impressions rank #54 for “home care agency”
+
+> "Hi, I'm Sandy, and I do training and quality. It's our mission to provide a care plan personalized to your family's needs, bringing comfort, connection, and quality of life at home. Home Instead, Lee Summons Caring Star Award winner. Call 816-554-6166 today for compassionate care you can trust."
+> — Library ID 889970324145870 · 28 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=889970324145870
+
+#### Athulya Assisted Living — 1 video ad · facility, placement or referral
+
+**Library ID 1643653977770165** · 45 days running · impressions rank #54 for “senior care”
+
+> "😇 😇 😇 😇 ▇ 🇧 😇 😇 😇 மிமல் பாக چுஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞஞ� sé்력ே"
+> — Library ID 1643653977770165 · 60 s · faster-whisper small.en, first 120 s · spoken te, re-transcribed with the multilingual model · https://www.facebook.com/ads/library/?id=1643653977770165
+
+#### New Century Home Care — 3 video ads · home care agency
+
+**Library ID 4522001424714420** · 4 days running · impressions rank #54 for “24 hour care”
+
+> "You don't have to move your parent into a nursing facility to get them nursing-level care. This program supports independent living for seniors, while providing access to 24-hour care services when needed, ensuring safety, comfort, and quality of life outside of institutional settings. Support is available in English and Spanish. Find out if your parent qualifies."
+> — Library ID 4522001424714420 · 24 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=4522001424714420
+
+**Library ID 1552178212861983** · 4 days running · impressions rank #59 for “24 hour care”
+
+> "If your parent had a stroke, recovery doesn't have to happen in a facility. New Century Home Care is an approved provider for the Traumatic Brain Injury Waiver Program, serving individuals recovering from a stroke or brain injury who require a nursing home level of care. Covered by Medicaid, serving all five boroughs of NYC. Learn if your parent qualifies."
+> — Library ID 1552178212861983 · 21 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1552178212861983
+
+**Library ID 1797167641629630** · 4 days running · impressions rank #60 for “24 hour care”
+
+> "One call, one nurse visit, one plan built entirely around your parent. Our team guides you through enrollment, then a registered nurse visits your parents' home to assess their needs and build a personalized care plan with their physician, with Medicaid, Medicare, and most insurances accepted. Start with one call."
+> — Library ID 1797167641629630 · 21 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1797167641629630
+
+#### Home Helpers Home Care — 3 video ads · home care agency
+
+**Library ID 629298616738329** · 536 days running · impressions rank #55 for “in home care”
+
+*No usable speech (the audio is music only).*
+
+**Library ID 1020550477484231** · 18 days running
+
+> "Home Helpers Home Care provides top quality in-home care. Our caring and compassionate caregivers provide professional, attentive in-home care. We are the extended family when family can't be there. Home Helpers Home Care."
+> — Library ID 1020550477484231 · 16 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1020550477484231
+
+**Library ID 1083863743990879** · 10 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+#### Baltimore Home Care Finder — 2 video ads · home care agency
+
+**Library ID 895080056482850** · 47 days running · impressions rank #57 for “home care agency”
+
+> "So apparently there's a tool for Baltimore County families with aging parents that tells you what home care might cost before you start calling a bunch of agencies. I wish I knew about this sooner because it literally takes like a minute to check. Just answer a few questions and see your options instantly."
+> — Library ID 895080056482850 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=895080056482850
+
+**Library ID 2372291733587822** · 47 days running
+
+> "A friend showed me this and it saved us a ton of time. If you're in Baltimore County and need home care for a parent, this free online tool helps match you with the right agency and even includes a free in-home care assessment. Definitely check it out."
+> — Library ID 2372291733587822 · 14 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2372291733587822
+
+#### Option Companion Care, LLC — 3 video ads · home care agency
+
+**Library ID 1428457909138031** · 22 days running · impressions rank #57 for “companion care”
+
+> "لو بتساعد حد من علتك في البيت سواء من كبار السن أو من دويل احتياجات الخاصة فإنتبت أون بدور مهم كل يوم ومشلازم تكون لواحدة في بعض الحالات قد يكون في دعم متاحاً حسب الحالة والأهلية ولو فهت يجل مساعدة في الحياة اليومية ممكن نساعد في ترتيب رعاية منزلية من شخص تثقبي لو حاب بتفهم خيراتك احنا هنا نسمعلك ونساعدك توصل معاند الوقت على 6 واحد صفر 8 8 5 صفر 4 صفر صفر احنا موجودين عشانك وعشان علتك"
+> — Library ID 1428457909138031 · 41 s · faster-whisper small.en, first 120 s · spoken ar, re-transcribed with the multilingual model · https://www.facebook.com/ads/library/?id=1428457909138031
+
+**Library ID 2552288488550403** · 23 days running · impressions rank #64 for “companion care”
+
+> "Si vous vous occupiez d'un membre de votre famille, d'un proche ou d'un ami en Pennsylvania, vous faites quelque chose de très important chaque jour. Parfois, cela peut être difficile de tout gérer seul. Dans certains cas, il peut exister des programmes de soutien selon la situation et l'éligibilité de chacun. Si vous avez besoin d'aide au quotidien, nous pouvons vous accompagner pour trouver un soutien à domicile adapté à vos besoins avec une personne de confiance. Si vous souhaitez en savoir plus sur vos options, nous sommes là pour vous écouter et vous aider avec respect. Option Companion Care. A plénue au CIS 10, 8, 5, 0, 4, 0, 0."
+> — Library ID 2552288488550403 · 39 s · faster-whisper small.en, first 120 s · spoken fr, re-transcribed with the multilingual model · https://www.facebook.com/ads/library/?id=2552288488550403
+
+**Library ID 1734794417815914** · 15 days running · impressions rank #119 for “companion care”
+
+> "If you are caring for a family member, relative, or friend in Pennsylvania, you are doing an important job every day. It's a journey filled with love, but we know it can also be challenging. You don't have to do it all by yourself. In some cases, there may be support programs available to help ease the burden, depending on eligibility and program guidelines. If help is needed with daily life at home, we may be able to help arrange care from someone you know and trust. Our goal is to ensure comfort and peace of mind for both you and your loved ones. If you have questions or would like to learn more about your options, we are here to help every step of the way. Contact Option Companion Care today at 610-885-0400. That's 610-885-0400. We are here for you."
+> — Library ID 1734794417815914 · 50 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1734794417815914
+
+#### Davida — 1 video ad · home care agency
+
+**Library ID 871751911703701** · 613 days running · impressions rank #58 for “senior care”
+
+> "Are you concerned about yourself or a loved one living alone? Introducing DaVita, your trusted partner in senior care. Our dedicated team offers a range of services, from medication management and personal care, to companionship and light housekeeping. With DaVita, you're not just ensuring safety, you're enhancing the quality of life. The dangers of elderly living alone are real, from accidents to loneliness. DaVita Home Care provides round-the-clock support, giving you a peace of mind. Choose DaVita where compassion meets comprehensive care, where we are dedicated to keeping care at home, where it belongs."
+> — Library ID 871751911703701 · 58 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=871751911703701
+
+#### Safe Nursing Home Advocates — 2 video ads · facility, placement or referral
+
+**Library ID 3825500844274079** · 31 days running · impressions rank #59 for “nursing home”
+
+> "Hi, my name is Barry Doyle and I'm a lawyer handling nursing home abuse and neglect cases throughout the state of Illinois. Why say we handle cases throughout the state of Illinois? I mean it. Over the last year, we've handled cases in several counties outside the Chicago area, including Winnebago County, Carroll County, Grundy County, Iroquois County, Champaign County, Tazewell County, Peoria County, McLean County, Sangamon County, Skyler County, Macon County, Effingham County, Logan County, Mecoupin County, Madison County, Purry County, White County, Richland County. If you have worries about hiring a Chicago lawyer for your loved one's nursing home abuse and neglect case, you can rest assured that we made it work for those clients and we can make it work for you too. In having handled cases all over the state, you can also be sure that we bring a great deal of background and experience to these kinds of cases. How do we make it work? Initially, we meet with clients by Zoom and after our initial review, if we decide to proceed with the case, the case is usually filed in the county where the nursing home is. That's why we've handled cases in so many counties throughout the state of Illinois. And once the case is filed, almost all of the work gets done by email or by Zoom. If the case has to go to trial, it will be held in the county where the case is filed. There's not going to be any need to come to Chicago. Getting quality legal help from lawyers who handle cases all over the state of Illinois has never been easier. To get started, click the link below."
+> — Library ID 3825500844274079 · 101 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=3825500844274079
+
+**Library ID 1066962365755160** · 31 days running
+
+> "Hi, my name is Barry Doyle and I'm a lawyer handling nursing home abuse and neglect cases throughout the state of Illinois. Why say we handle cases throughout the state of Illinois? I mean it. Over the last year, we've handled cases in several counties outside the Chicago area, including Winnebago County, Carroll County, Grundy County, Iroquois County, Champaign County, Tazewell County, Peoria County, McLean County, Sangamon County, Skyler County, Macon County, Effingham County, Logan County, Mecoupin County, Madison County, Purry County, White County, Richland County. If you have worries about hiring a Chicago lawyer for your loved one's nursing home abuse and neglect case, you can rest assured that we made it work for those clients and we can make it work for you too. In having handled cases all over the state, you can also be sure that we bring a great deal of background and experience to these kinds of cases. How do we make it work? Initially, we meet with clients by Zoom and after our initial review, if we decide to proceed with the case, the case is usually filed in the county where the nursing home is. That's why we've handled cases in so many counties throughout the state of Illinois. And once the case is filed, almost all of the work gets done by email or by Zoom. If the case has to go to trial, it will be held in the county where the case is filed. There's not going to be any need to come to Chicago. Getting quality legal help from lawyers who handle cases all over the state of Illinois has never been easier. To get started, click the link below."
+> — Library ID 1066962365755160 · 101 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1066962365755160
+
+#### FirstLight Home Care Canada — 1 video ad · home care agency
+
+**Library ID 3799490193523807** · 25 days running · impressions rank #61 for “companion care”
+
+> "I am totally fed up watching mom do everything. She takes care of the whole family and her parents. First Light Home Care can help her. I saw an ad. They provide great companion care. Let's call them right now."
+> — Library ID 3799490193523807 · 24 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=3799490193523807
+
+#### Gracepoint Home Care — 1 video ad · home care agency
+
+**Library ID 1569779731385399** · 80 days running · impressions rank #67 for “in home care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Senior Helpers North Metro — 2 video ads · home care agency
+
+**Library ID 4365088173753232** · 14 days running · impressions rank #67 for “companion care”
+
+> "If you're looking for trusted in-home care for a loved one, Senior Helpers is here to help. Compassionate in-home care solutions for seniors and families in your area. Whether your loved one needs a little extra help or full-time support, we're here for your family. We help with everyday care needs, from meal prep, housekeeping, and errands, to mobility assistance and specialized memory care. We support seniors and families through every stage of care, including Alzheimer's and dementia care, Parkinson's care, chronic disease care, surgery assistance, and more. Schedule an assessment call today at seniorhelpers.com."
+> — Library ID 4365088173753232 · 39 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=4365088173753232
+
+**Library ID 4371005933155437** · 14 days running
+
+> "Let's go make you some lunch senior helpers is the help you need to keep your independence your spark and keep you you This is home care. This is senior helpers"
+> — Library ID 4371005933155437 · 11 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=4371005933155437
+
+#### Fort Bend County Home Care Finder — 3 video ads · home care agency
+
+**Library ID 2127233431509555** · 20 days running · impressions rank #68 for “home care agency”
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+**Library ID 3104671789730091** · 20 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+**Library ID 2630664130669720** · 20 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+#### Senior Helpers of Greater Chicago, IL — 3 video ads · home care agency
+
+**Library ID 1103851502169035** · 12 days running · impressions rank #70 for “companion care”
+
+> "Hi, I'm the executive director of Senior Helpers of Greater Chicago. One of the biggest misconceptions I hear is that families think they need medical care to call us. The truth is, most of our clients just need a little extra help. Things like rides to appointments, help around the house, meal prep, or just someone stopping by to check in. It's not about taking away independence, it's about helping your loved one keep it. If you've been thinking about getting help but aren't sure it's time yet, that's exactly when we can step in."
+> — Library ID 1103851502169035 · 39 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1103851502169035
+
+**Library ID 4584995808442042** · 12 days running · impressions rank #108 for “companion care”
+
+> "If you're looking for trusted in-home care for a loved one, Senior Helpers is here to help. Compassionate in-home care solutions for seniors and families in your area. Whether your loved one needs a little extra help or full-time support, we're here for your family. We help with everyday care needs, from meal prep, housekeeping, and errands, to mobility assistance and specialized memory care. We support seniors and families through every stage of care, including Alzheimer's and dementia care, Parkinson's care, chronic disease care, surgery assistance, and more. Schedule an assessment call today at seniorhelpers.com."
+> — Library ID 4584995808442042 · 39 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=4584995808442042
+
+**Library ID 1400003692092233** · 12 days running
+
+> "Let's go make you some lunch senior helpers is the help you need to keep your independence your spark and keep you you This is home care. This is senior helpers"
+> — Library ID 1400003692092233 · 11 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1400003692092233
+
+#### Senior Helpers of Baltimore and Central MD — 3 video ads · home care agency
+
+**Library ID 1414754430532464** · 12 days running · impressions rank #71 for “companion care”
+
+> "If you're looking for trusted in-home care for a loved one, Senior Helpers is here to help. Compassionate in-home care solutions for seniors and families in your area. Whether your loved one needs a little extra help or full-time support, we're here for your family. We help with everyday care needs, from meal prep, housekeeping, and errands, to mobility assistance and specialized memory care. We support seniors and families through every stage of care, including Alzheimer's and dementia care, Parkinson's care, chronic disease care, surgery assistance, and more. Schedule an assessment call today at seniorhelpers.com."
+> — Library ID 1414754430532464 · 39 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1414754430532464
+
+**Library ID 1378517434393920** · 12 days running · impressions rank #87 for “companion care”
+
+> "Hi, I'm Amanda Sullivan, owner of Senior Helpers of Baltimore and Central Maryland. For most families, you're learning it all for the first time. And every individual's experience is different, whether you're dealing with Parkinson's, dementia, Alzheimer's, natural aging. There is a loss in independence, but also a real desire to maintain it. And I think that's what we do really well, is focus on what an individual can do."
+> — Library ID 1378517434393920 · 36 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1378517434393920
+
+**Library ID 1087488343726805** · 12 days running
+
+> "Hi, I'm the owner of Senior Helpers of Baltimore and Central Maryland, and I talk to families every day who are overwhelmed trying to care for an aging parent. Most people wait too long because they don't know where to start or they feel guilty asking for help. That's exactly why we're here. If you're even starting to think about help, just reach out. We'll guide it through step by step."
+> — Library ID 1087488343726805 · 27 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1087488343726805
+
+#### Home Instead — 3 video ads · home care agency
+
+**Library ID 1944862353575689** · 202 days running · impressions rank #72 for “companion care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1007023635448609** · 74 days running
+
+> "If you would have told me that I would have to care for myself, my daughter, and my mother all at the same time, I would have done things a little differently. Here's what I wish I knew sooner. You are not a bad daughter by getting some help with in-home care. I was burnt out trying to care for my mom who lives alone in Kentucky while raising my own family in Seattle. The distance was killing me. I finally learned about respite care and home instead. Their care pros not only helped my mom with doctor's appointments, they gave her real companionship that she needed when I couldn't be there myself. So if you're struggling, please know you don't have to do this alone. Learn more at homestead.com."
+> — Library ID 1007023635448609 · 40 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1007023635448609
+
+**Library ID 2122458535010445** · 74 days running
+
+> "If you would have told me that I would have to care for myself, my daughter, and my mother all at the same time, I would have done things a little differently. Here's what I wish I knew sooner. You are not a bad daughter by getting some help with in-home care. I was burnt out trying to care for my mom who lives alone in Kentucky while raising my own family in Seattle. The distance was killing me. I finally learned about respite care and home instead. Their care pros not only helped my mom with doctor's appointments, they gave her real companionship that she needed when I couldn't be there myself. So if you're struggling, please know you don't have to do this alone. Learn more at homestead.com."
+> — Library ID 2122458535010445 · 40 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2122458535010445
+
+#### Senior Helpers of Redlands CA — 3 video ads · home care agency
+
+**Library ID 1767724201043290** · 12 days running · impressions rank #73 for “companion care”
+
+> "If you're looking for trusted in-home care for a loved one, Senior Helpers is here to help. Compassionate in-home care solutions for seniors and families in your area. Whether your loved one needs a little extra help or full-time support, we're here for your family. We help with everyday care needs, from meal prep, housekeeping, and errands, to mobility assistance and specialized memory care. We support seniors and families through every stage of care, including Alzheimer's and dementia care, Parkinson's care, chronic disease care, surgery assistance, and more. Schedule an assessment call today at seniorhelpers.com."
+> — Library ID 1767724201043290 · 39 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1767724201043290
+
+**Library ID 1066795559082286** · 12 days running · impressions rank #111 for “companion care”
+
+> "Hi, I'm Stephanie Muckey, owner of Senior Helpers of Redlands, and I talk to families every day who are overwhelmed trying to care for an aging parent. Most people wait too long because they don't know where to start or they feel guilty asking for help. That's exactly why we're here. We provide in-home care that's flexible, compassionate, and tailored to your family, whether it's a few hours a week or full-time support. Most of our clients just need a little extra help, rides to appointments, help around the house, someone to check in. It's not about taking away independence. It's about helping your loved one keep it."
+> — Library ID 1066795559082286 · 42 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1066795559082286
+
+**Library ID 2176303686602474** · 12 days running
+
+> "Hi, I'm Stephanie Muckey, owner of Senior Helpers of Redlands, and I talk to families every day who are overwhelmed trying to care for an aging parent. Most people wait too long because they don't know where to start or they feel guilty asking for help. That's exactly why we're here. We provide in-home care that's flexible, compassionate, and tailored to your family, whether it's a few hours a week or full-time support. Most of our clients just need a little extra help. Rides to appointments, help around the house, someone to check in. It's not about taking away independence. It's about helping your loved one keep it."
+> — Library ID 2176303686602474 · 42 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2176303686602474
+
+#### Take My Hand Home Care — 3 video ads · home care agency
+
+**Library ID 2399096667185567** · 192 days running · impressions rank #74 for “home care agency”
+
+> "Shusing the wrong home care agency can put the person you love most at risk. Before you hire, ask yourself this. Are they certified? Are the caregivers trained? Do they supervise the service? Do they communicate with you every day? If they can answer this clearly, they are not the right agency. Your loved ones deserve to be safe and you deserve peace of mind. Getting informed, ask questions you are not overreacting."
+> — Library ID 2399096667185567 · 29 s · faster-whisper small.en, first 120 s · spoken tl, re-transcribed with the multilingual model · https://www.facebook.com/ads/library/?id=2399096667185567
+
+**Library ID 2416232598854402** · 192 days running · impressions rank #97 for “home care agency”
+
+> "Shusing the wrong home care agency can put the person you love most at risk. Before you hire, ask yourself this. Are they certified? Are the caregivers trained? Do they supervise the service? Do they communicate with you every day? If they can answer this clearly, they are not the right agency. Your loved ones deserve to be safe and you deserve peace of mind. Getting informed, ask questions you are not overreacting."
+> — Library ID 2416232598854402 · 29 s · faster-whisper small.en, first 120 s · spoken tl, re-transcribed with the multilingual model · https://www.facebook.com/ads/library/?id=2416232598854402
+
+**Library ID 2803962176617368** · 192 days running
+
+> "Shusing the wrong home care agency can put the person you love most at risk. Before you hire, ask yourself this. Are they certified? Are the caregivers trained? Do they supervise the service? Do they communicate with you every day? If they can answer this clearly, they are not the right agency. Your loved ones deserve to be safe and you deserve peace of mind. Getting informed, ask questions you are not overreacting."
+> — Library ID 2803962176617368 · 29 s · faster-whisper small.en, first 120 s · spoken tl, re-transcribed with the multilingual model · https://www.facebook.com/ads/library/?id=2803962176617368
+
+#### Senior Helpers of West Orange — 1 video ad · home care agency
+
+**Library ID 1544910477363080** · 94 days running · impressions rank #74 for “dementia care”
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+#### HouseCalls Home Care — 3 video ads · home care agency
+
+**Library ID 3379625815553448** · 10 days running · impressions rank #74 for “companion care”
+
+> "I've been getting care from House Calls Home Care for three years. It's given me a wonderful outlook on life. I know that I'm loved. I know there is nothing I can encounter that they won't handle it with me. Hi, my name is Sharon and I've been getting care from House Calls Home Care for three years now. And they're not just people taking care of me. They're like family. And every need that I have, they see to it if it's something that they can take care of or if it's something that they can help me take care of. I don't know where I would be today without this organization. It's given me a wonderful outlook on life. And I'm so much better now that I have House Calls Home Care and these people taking care of me. And I know that I'm loved and there is nothing I can encounter that they won't handle it with me. Thank you so much."
+> — Library ID 3379625815553448 · 64 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=3379625815553448
+
+**Library ID 2087506921856876** · 10 days running
+
+> "They're not just people taking care of me, they're like family. Every need that I have, they see to it. I don't know where I would be today without House Calls Home Care. Hi, my name is Sharon, and I've been getting care from House Calls Home Care for three years now. And they're not just people taking care of me, they're like family. And every need that I have, they see to it if it's something that they can take care of, or if it's something that they can help me take care of. I don't know where I would be today without this organization. It's given me a wonderful outlook on life, and I'm so much better now that I have House Calls Home Care and these people taking care of me. And I know that I'm loved, and there is nothing I can encounter that they won't handle it with me. Thank you so much."
+> — Library ID 2087506921856876 · 58 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2087506921856876
+
+**Library ID 4514125505491091** · 9 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+#### IPH Home Health Care — 3 video ads · home care agency
+
+**Library ID 915332994596204** · 158 days running · impressions rank #80 for “home health care”
+
+> "Si acaban de dar de alta a tu mamá o papá y no sabes qué hacer ahora, nosotros te ayudamos. El hospital los envía a casa con una herida, instrucciones y mucha incertidumbre. Y si algo sale mal, es tu responsabilidad. En IPH Home Health Care, llevamos enfermeras capacitadas directamente a tu hogar. Tratamos la herida, seguimos el plan del médico y te guiamos paso a paso. Lo mejor es que generalmente está cubierto por el seguro. Así que si necesitas ayuda médica profesional en casa, después de una cirugía, haz clic en el botón de este anuncio y contacta no soy."
+> — Library ID 915332994596204 · 31 s · faster-whisper small.en, first 120 s · spoken es, re-transcribed with the multilingual model · https://www.facebook.com/ads/library/?id=915332994596204
+
+**Library ID 2166061654129629** · 166 days running
+
+> "Hace sentido que te han dejado solo para cuidar de tu padre o madre que dispone de una serucia, sale de la hospital y ahora todo cae sobre ti. El cuidado de la herida a los medicamentos, las preguntas en IPH on Healthcare no está solo, uno de nuestro equipo va directamente a tu casa a cuidar de tu ser querido y te guía en todo momento. La mejor parte es que generalmente está completamente cubierto por tu seguro, recibes apoyo profesional y orientación constante para que te sientas apoyado, así que si tú o tus padres necesitan ayuda médica profesional, después de una seruía, toca el botón debajo y contactan os voy."
+> — Library ID 2166061654129629 · 33 s · faster-whisper small.en, first 120 s · spoken es, re-transcribed with the multilingual model · https://www.facebook.com/ads/library/?id=2166061654129629
+
+**Library ID 965222939238580** · 166 days running
+
+> "Hace sentido que te han dejado solo para cuidar de tu padre o madre que dispone de una serucia, sale de la hospital y ahora todo cae sobre ti. El cuidado de la herida a los medicamentos, las preguntas en IPH on Healthcare no está solo, uno de nuestro equipo va directamente a tu casa a cuidar de tu ser querido y te guía en todo momento. La mejor parte es que generalmente está completamente cubierto por tu seguro, recibes apoyo profesional y orientación constante para que te sientas apoyado, así que si tú o tus padres necesitan ayuda médica profesional, después de una seruía, toca el botón debajo y contactan os voy."
+> — Library ID 965222939238580 · 33 s · faster-whisper small.en, first 120 s · spoken es, re-transcribed with the multilingual model · https://www.facebook.com/ads/library/?id=965222939238580
+
+#### Southern Caregivers, LTD — 2 video ads · home care agency
+
+**Library ID 2122083248433555** · 46 days running · impressions rank #81 for “in home care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1585402309655210** · 4 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Executive Home Care of San Antonio North, TX — 3 video ads · home care agency
+
+**Library ID 2117580958791823** · 31 days running · impressions rank #83 for “respite care”
+
+> "I love my husband and I needed to get away from him for a day. That is a terrible thing to say out loud. Medicare covers someone coming to stay with him up to $2,500 a year. The guide program, Original Medicare Only, nobody tells you."
+> — Library ID 2117580958791823 · 18 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2117580958791823
+
+**Library ID 1750245475971145** · 33 days running
+
+> "Nobody told us this, not the doctors, not the hospital. My mom has original Medicare and a dementia diagnosis. So Medicare pays for someone to come stay with her while I leave the house. Up to $2,500 a year. The guide program."
+> — Library ID 1750245475971145 · 19 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1750245475971145
+
+**Library ID 1596893162100422** · 33 days running
+
+> "My husband had not left this house in 11 months. Not for a haircut, not for anything. I'm on original Medicare, and it pays for someone to sit with me so he can go. Up to $2,500 a year. The guide program. He went fishing Tuesday."
+> — Library ID 1596893162100422 · 19 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1596893162100422
+
+#### Anchor Health Homecare — 3 video ads · home care agency
+
+**Library ID 2118091835440824** · 59 days running · impressions rank #90 for “home care agency”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1350020023968865** · 35 days running · impressions rank #94 for “home care agency”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 983014114501352** · 73 days running · impressions rank #104 for “home care agency”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Just Care Home Care Services — 2 video ads · home care agency
+
+**Library ID 1702451340753377** · 113 days running · impressions rank #93 for “home care agency”
+
+> "Hello Albany, my name is Nicki Walker-Massie, a health coach here with Just Care Home Care Services, a boutique home care agency that is now providing services in the Albany, Georgia area. If you would like to get paid to see about a loved one in the comfort of your own home, please give us a call today at 470-547-0872. We're looking forward to hearing from you."
+> — Library ID 1702451340753377 · 27 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1702451340753377
+
+**Library ID 958523196781621** · 114 days running
+
+> "Hello Augusta, my name is Nikki Walker Massey, a health coach here with Just Care Home Care Services. Just Care Home Care Services is a boutique home care agency here in Georgia that offers structured family care giving services. Would you or a loved one like to get paid to take care of a loved one in the comfort of their own home? If so, please give us a call today at 470-547-0872. Again, that number is 470-547-0872. We look forward to hearing from you soon."
+> — Library ID 958523196781621 · 34 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=958523196781621
+
+#### TLC Home Health, Inc. — 1 video ad · home care agency
+
+**Library ID 1609036767463890** · 26 days running · impressions rank #95 for “home health care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Senior Helpers of Greater Grand Rapids — 3 video ads · home care agency
+
+**Library ID 1735241170898403** · 11 days running · impressions rank #95 for “companion care”
+
+> "Let's go make you some lunch senior helpers is the help you need to keep your independence your spark and keep you you This is home care. This is senior helpers"
+> — Library ID 1735241170898403 · 11 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1735241170898403
+
+**Library ID 1380184686939501** · 12 days running · impressions rank #102 for “companion care”
+
+> "Hi, I'm John, owner of Senior Helpers of Greater Grand Rapids, and I talk to families every day who are overwhelmed trying to care for an aging parent. Most people wait too long because they don't know where to start or they feel guilty asking for help. That's exactly why we're here. We provide in-home care that's flexible, compassionate, and tailored to your family, whether it's a few hours a week or full-time support. If you're even starting to think about help, just reach out. We're here to guide you through it step by step."
+> — Library ID 1380184686939501 · 35 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1380184686939501
+
+**Library ID 1403485725210181** · 12 days running
+
+> "Hi, I'm John, owner of Senior Helpers of Greater Grand Rapids, and I talk to families every day who are overwhelmed trying to care for an aging parent. Most people wait too long because they don't know where to start or they feel guilty asking for help. That's exactly why we're here. We provide in-home care that's flexible, compassionate, and tailored to your family, whether it's a few hours a week or full-time support. If you're even starting to think about help, just reach out. We're here to guide you through it step by step."
+> — Library ID 1403485725210181 · 35 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1403485725210181
+
+#### AllMed Staffing of New England — 1 video ad · home care agency
+
+**Library ID 967636239436618** · 96 days running · impressions rank #96 for “in home care”
+
+> "This house has been home for a lifetime where she raised her children and built so many memories But now living alone isn't as safe as it once was That's where all med comes in providing compassionate caregivers so she can keep living right where she belongs and When the medical world gets confusing diamond care advocates helps her understand every step all med services that feel like family"
+> — Library ID 967636239436618 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=967636239436618
+
+#### Senior Helpers of Central Dallas — 3 video ads · home care agency
+
+**Library ID 1791236288824017** · 12 days running · impressions rank #96 for “companion care”
+
+> "If you're looking for trusted in-home care for a loved one, Senior Helpers is here to help. Compassionate in-home care solutions for seniors and families in your area. Whether your loved one needs a little extra help or full-time support, we're here for your family. We help with everyday care needs, from meal prep, housekeeping, and errands, to mobility assistance and specialized memory care. We support seniors and families through every stage of care, including Alzheimer's and dementia care, Parkinson's care, chronic disease care, surgery assistance, and more. Schedule an assessment call today at seniorhelpers.com."
+> — Library ID 1791236288824017 · 39 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1791236288824017
+
+**Library ID 1383558033185070** · 12 days running
+
+> "Let's go make you some lunch senior helpers is the help you need to keep your independence your spark and keep you you This is home care. This is senior helpers"
+> — Library ID 1383558033185070 · 11 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1383558033185070
+
+**Library ID 2125047934890326** · 12 days running
+
+> "Hi, I'm Kristin Brown, the owner of Senior Helpers Central Dallas. Most families don't realize they can call us before things get serious. By the time most reach out, they've already been struggling for months, managing everything from a distance, trying to hold it all together. There's a better way to do this. We help families every day find safe, compassionate, in-home care without the stress. If you're not sure where to start, just give us a call. We'll walk you right through it."
+> — Library ID 2125047934890326 · 32 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2125047934890326
+
+#### Prostar Home Care Services — 2 video ads · home care agency
+
+**Library ID 832933279658227** · 262 days running · impressions rank #104 for “in home care”
+
+> "At ProStar Home Care Services, we are committed to providing caring and trustworthy support for your loved one. Whether it's companionship or help with daily activities, our caregivers are always here for you. Call now at 210-504-4848 for a free consultation. We accept both private and state insurances."
+> — Library ID 832933279658227 · 27 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=832933279658227
+
+**Library ID 1836599390838681** · 7 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+#### GentleStream Companion Care — 1 video ad · home care agency
+
+**Library ID 1045723004942171** · 4 days running · impressions rank #110 for “companion care”
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+#### Comfort Keepers In Home Care - Henderson, NV — 3 video ads · home care agency
+
+**Library ID 1780930429766492** · 104 days running · impressions rank #113 for “in home care”
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1730426471249580** · 209 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 937695272268888** · 209 days running
+
+> "I knew we made the right choice when I didn't have to worry anymore about mom driving safely to watch the sunset from my parents favorite spot. Now we have comfort keepers for that. Our friendly professional caregivers add joy and meaning to life's everyday moments. Learn how we help seniors live happy and independent lives at home at comfort keepers.com today."
+> — Library ID 937695272268888 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=937695272268888
+
+#### Veterans-First — 1 video ad · home care agency
+
+**Library ID 568957487162017** · 2362 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### ACME Home Care, LLC — 1 video ad · home care agency
+
+**Library ID 1027789858291807** · 980 days running
+
+> "At ACME, we are committed to delivering these in-home care services in the most compassionate, professional, and dignified manner, always striving to enrich the client and family experience. Our mission is to provide the highest standard of care to individuals and their families. If you or a loved one is in need of at-home health care, please give us a call today at 480-217-0071 or visit our website at acmehomecare.org. Thank you, and we look forward to taking care of you."
+> — Library ID 1027789858291807 · 40 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1027789858291807
+
+#### The Havens at Antelope Valley — 1 video ad · facility, placement or referral
+
+**Library ID 1178060167141691** · 544 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Endeavor In Home Care - Mesa, AZ — 3 video ads · home care agency
+
+**Library ID 697613682608479** · 510 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1207645100948359** · 510 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 2387088031647894** · 510 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Serene Gardens of Clarkston — 2 video ads · facility, placement or referral
+
+**Library ID 3082628341888276** · 472 days running
+
+> "Before you make any decisions about senior care arrangements, make sure you understand all six approaches that informed families consider. Our educational guide explains options that are often overlooked. Some families have found significant resources within days using just one of the six approaches. Others have learned about the benefits available to veterans and their spouses. Don't limit your options by making decisions without complete information. Download your free resource guide today. Simply click the link below."
+> — Library ID 3082628341888276 · 36 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=3082628341888276
+
+**Library ID 1249724206515378** · 468 days running
+
+> "If you are moving a parent to memory care soon, you need to watch this. There are six approaches that senior care advisors use with their own families. These aren't advertised anywhere. They're insider strategies. One turns existing policies into immediate care resources. Another helps protect assets while accessing care support. Most families never hear about these until it's too late. Get the insider information now. Simply click the link below, take 30 seconds to fill out the form and get your free guide today."
+> — Library ID 1249724206515378 · 36 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1249724206515378
+
+#### Serene Gardens of Grand Blanc — 2 video ads · facility, placement or referral
+
+**Library ID 659259940458674** · 468 days running
+
+> "If you are moving a parent to memory care soon, you need to watch this. There are six approaches that senior care advisors use with their own families. These aren't advertised anywhere. They're insider strategies. One turns existing policies into immediate care resources. Another helps protect assets while accessing care support. Most families never hear about these until it's too late. Get the insider information now. Simply click the link below, take 30 seconds to fill out the form and get your free guide today."
+> — Library ID 659259940458674 · 36 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=659259940458674
+
+**Library ID 1383149702770617** · 468 days running
+
+> "Before you make any decisions about senior care arrangements, make sure you understand all six approaches that informed families consider. Our educational guide explains options that are often overlooked. Some families have found significant resources within days using just one of the six approaches. Others have learned about the benefits available to veterans and their spouses. Don't limit your options by making decisions without complete information. Download your free resource guide today. Simply click the link below."
+> — Library ID 1383149702770617 · 36 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1383149702770617
+
+#### Serene Meadows of Grand Blanc — 2 video ads · facility, placement or referral
+
+**Library ID 726288956567793** · 468 days running
+
+> "Before you make any decisions about senior care arrangements, make sure you understand all six approaches that informed families consider. Our educational guide explains options that are often overlooked. Some families have found significant resources within days using just one of the six approaches. Others have learned about the benefits available to veterans and their spouses. Don't limit your options by making decisions without complete information. Download your free resource guide today. Simply click the link below."
+> — Library ID 726288956567793 · 36 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=726288956567793
+
+**Library ID 1099236405564788** · 468 days running
+
+> "If you are moving a parent to memory care soon, you need to watch this. There are six approaches that senior care advisors use with their own families. These aren't advertised anywhere. They're insider strategies. One turns existing policies into immediate care resources. Another helps protect assets while accessing care support. Most families never hear about these until it's too late. Get the insider information now. Simply click the link below, take 30 seconds to fill out the form and get your free guide today."
+> — Library ID 1099236405564788 · 36 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1099236405564788
+
+#### Whispering Winds of Apple Valley — 1 video ad · facility, placement or referral
+
+**Library ID 3058748017636522** · 451 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Serene Gardens of Imlay City — 2 video ads · facility, placement or referral
+
+**Library ID 1409025636915658** · 439 days running
+
+> "Before you make any decisions about senior care arrangements, make sure you understand all six approaches that informed families consider. Our educational guide explains options that are often overlooked. Some families have found significant resources within days using just one of the six approaches. Others have learned about the benefits available to veterans and their spouses. Don't limit your options by making decisions without complete information. Download your free resource guide today. Simply click the link below."
+> — Library ID 1409025636915658 · 36 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1409025636915658
+
+**Library ID 554772824233055** · 439 days running
+
+> "If you are moving a parent to memory care soon, you need to watch this. There are six approaches that senior care advisors use with their own families. These aren't advertised anywhere. They're insider strategies. One turns existing policies into immediate care resources. Another helps protect assets while accessing care support. Most families never hear about these until it's too late. Get the insider information now. Simply click the link below, take 30 seconds to fill out the form and get your free guide today."
+> — Library ID 554772824233055 · 36 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=554772824233055
+
+#### Silver Age Senior Living Advisors — 1 video ad · facility, placement or referral
+
+**Library ID 2554492184908677** · 389 days running
+
+> "Are you planning care for your loved one in the greater Seattle area? Start with real answers and trusted local guidance. If you're exploring care options for a parent or a loved one, don't start with a list of websites that could send you in loops. Start with clarity. We've created a free guide to help you understand what families in our region need to know, what care options exist, with what services are included, how families move forward with support, and what to ask before making a decision. At Silver Age Advisors, there's no cost to our support. We partner with over 1,500 care communities across the greater Seattle area. In most cases, those providers cover the cost of our services. If your situation calls for something different, we'll walk you through that upfront clearly without pressure. We've built close relationships with trusted providers. We screen each one carefully through our own qualification process and only suggest settings that we would feel confident recommending for our own loved ones. Our team brings decades of experience in dementia care, occupational therapy, family caregiving, and senior advocacy. We stay involved through every step of the process to make sure that nothing gets missed. This is not a search engine. It's personalized local support from people who have helped hundreds of families through the same process, including our own loved ones. Start with the guide. It gives you clarity with direction and no pressure. Tap below to get your free cost of care guide."
+> — Library ID 2554492184908677 · 100 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2554492184908677
+
+#### Prema at Suwanee Creek — 1 video ad · facility, placement or referral
+
+**Library ID 1316393413555452** · 357 days running
+
+> "being at home it was like you alone and you're just doing what you have to and all that while here even though you are alone there are friends, people who take care of you it makes a difference"
+> — Library ID 1316393413555452 · 17 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1316393413555452
+
+#### Neighborhood Healthcare PACE — 2 video ads · facility, placement or referral
+
+**Library ID 1422250995960933** · 310 days running
+
+> "So NH PACE is different from other healthcare centers because you get this, I like to call it the all-in-one special where you not only get your medical services, you get transportation, you get home care, and that's really the big dynamic of PACE program itself."
+> — Library ID 1422250995960933 · 21 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1422250995960933
+
+**Library ID 1901955407200614** · 299 days running
+
+> "I want to stand on the corner and tell everybody about PACE. It literally saved my life. PACE has allowed me to stay here and look forward to the future. It's been PACE that has brought me to where I am now, looking forward and looking up and knowing, and having people around to say complimentary things to me. I didn't have the energy. I can put the brows where they used to be and increase the lips a bit and pile the makeup on. But I don't have the energy to chop the food and prepare the meals. It's difficult accepting my limitations. But since my brain is not any different than it was, I can do my project, and that makes me happy. Tuesdays and Thursdays I come here, and I have help three times a week. And I feel like I'm learning now to engage and let them help me do what is needed, because I feel like I'm imposing, you know, getting help. But since I'm not going to be 80 or 70 or 60 anymore, I have to accept the help and be grateful that I have it. I was in a state of emergency. I needed help. They took care of me for a few months, and then they said, you need to have PACE there downstairs. And I said, wonderful. And PACE saved my life because at 93, I don't have the energy to do what I've been accustomed to doing. And I knew it. The Neighborhood Center introduced me to PACE, and PACE has literally saved my life."
+> — Library ID 1901955407200614 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1901955407200614
+
+#### SMP Health — 2 video ads · facility, placement or referral
+
+**Library ID 1509967733475670** · 305 days running
+
+> "I can't believe people say, oh, I'm never going in a nursing home. Boy, they haven't tried this one out. I love it here. I think the food is good. They have a good cook, the activity director. She makes sure that I get to the things I want to go to. They take good care of me here, you know, like I'm one of their families."
+> — Library ID 1509967733475670 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1509967733475670
+
+**Library ID 1630333858179481** · 132 days running
+
+> "I can't believe people say, oh, I'm never going in a nursing home. Boy, they haven't tried this one out. I love it here. I think the food is good. They have a good cook, the activity director. She makes sure that I get to the things I want to go to. They take good care of me here, you know, like I'm one of their families."
+> — Library ID 1630333858179481 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1630333858179481
+
+#### Brompton Heights of Williamsville — 2 video ads · facility, placement or referral
+
+**Library ID 1499924094629585** · 293 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1856049025356096** · 96 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### FirstLight Home Care — 3 video ads · home care agency
+
+**Library ID 910283678138886** · 249 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1191385185953950** · 249 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 862809020058238** · 249 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Abundant Life Assisted Services Home Care — 1 video ad · home care agency
+
+**Library ID 1642797200404764** · 220 days running
+
+> "Worried about your loved one being home alone? We've got you! Abundant life-assisted services brings reliable, kind-hearted care right to your doorstep. Follow us for resources, tips, and true stories of care."
+> — Library ID 1642797200404764 · 13 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1642797200404764
+
+#### Table Rock Senior Living at Paramount — 3 video ads · facility, placement or referral
+
+**Library ID 909766578082772** · 213 days running
+
+> "So Table Rock is a great community. We're here for mom, dad, grandma, grandpa. We're here providing assisted living and also a memory care unit. We have amazing caregivers here, amazing MedTechs, an awesome AD. We have Rebecca, our coordinator of all the activities. She has these residents doing such fun things, field trips, exercise classes. We really wanna make this a home environment for them and make them and their families as comfortable as possible. So our memory care unit offers the same services as our assisted living side. We just bring it to them so that they're in more of a smaller unit, more comfortable with their surroundings and familiarity. But we bring exercise classes, we bring crafts to them. We have a hair salon here and our AL side, it actually comes to them in memory care so they get those same benefits. Not really much different between the two sides, which is nice. So there is nothing to be worried about. You don't have to worry about mom, dad, grandma, grandpa getting lost. I personally have a history of that. My grandpa had Parkinson's and dementia and there were times at home he would open the door and go outside and be found wandering the streets. So you don't have to worry about that here, but then you're not also worried that they're just stuck inside all day. It's totally understandable to be nervous about the whole aging process in general. And when you do see changes in your loved one, it can be taxing. Just to know that there are facilities and caregivers out there that want to help you and have the experience in helping people in your situation. I would say just come on down, come to us, take a tour of the facility. Bring your loved one. We do have times when people come in and they have lunch. So come down for lunch, come for dinner and let's help you as a family and an individual feel comfortable in the facility and really make the right choice, whether it's with us or with somebody else, we just want what's best."
+> — Library ID 909766578082772 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=909766578082772
+
+**Library ID 2404946129973328** · 213 days running
+
+> "So Table Rock is a great community. We're here for mom, dad, grandma, grandpa. We're here providing assisted living and also a memory care unit. We have amazing caregivers here, amazing MedTechs, an awesome AD. We have Rebecca, our coordinator of all the activities. She has these residents doing such fun things, field trips, exercise classes. We really wanna make this a home environment for them and make them and their families as comfortable as possible. So our memory care unit offers the same services as our assisted living side. We just bring it to them so that they're in more of a smaller unit, more comfortable with their surroundings and familiarity. But we bring exercise classes, we bring crafts to them. We have a hair salon here and our AL side, it actually comes to them in memory care so they get those same benefits. Not really much different between the two sides, which is nice. So there is nothing to be worried about. You don't have to worry about mom, dad, grandma, grandpa getting lost. I personally have a history of that. My grandpa had Parkinson's and dementia and there were times at home he would open the door and go outside and be found wandering the streets. So you don't have to worry about that here, but then you're not also worried that they're just stuck inside all day. It's totally understandable to be nervous about the whole aging process in general. And when you do see changes in your loved one, it can be taxing. Just to know that there are facilities and caregivers out there that want to help you and have the experience in helping people in your situation. I would say just come on down, come to us, take a tour of the facility. Bring your loved one. We do have times when people come in and they have lunch. So come down for lunch, come for dinner and let's help you as a family and an individual feel comfortable in the facility and really make the right choice, whether it's with us or with somebody else, we just want what's best."
+> — Library ID 2404946129973328 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2404946129973328
+
+**Library ID 942694948330954** · 213 days running
+
+> "To any families or residential, potential residents that are watching this, it can be intimidating, it can be scary to consider taking this next step in their life to live and assist living with other seniors. I truly believe that once you visit our community, you will feel like you're at home. That is our purpose. That is our goal, is to make our residents feel as comfortable as they would in their own home. And that has to do with our friendly staff, our food quality, the environment in general. And I would highly encourage anyone to just come in, do a tour, you don't even have to schedule it, you can go online if you'd like to do that as well. So we can give you our best and all of our time that we need for you to understand how it works, what it looks like, and really get comfortable with that concept before you make a decision. We'd love to see anyone come in and interested in joining our community."
+> — Library ID 942694948330954 · 54 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=942694948330954
+
+#### Senior Care Inn AFH — 1 video ad · facility, placement or referral
+
+**Library ID 1218374410455680** · 207 days running
+
+> "When it comes to your parents' care, only love and dignity matter. Large care homes often miss the personal touch your parent deserves. At Senior Care In Af, we care like family, not like a facility. From memory care to 24 sevenths long-term support, we're here at every stage. Trusted senior care homes serving Kent, Pyle Up, and Bonnie Lake. Comfortable private rooms designed for dignity and peace. Fill the form now and speak with our care team today. you"
+> — Library ID 1218374410455680 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1218374410455680
+
+#### Assured Home Nursing — 1 video ad · facility, placement or referral
+
+**Library ID 1399762082166094** · 201 days running
+
+> "Why is Assured Home Nursing the best choice for home care in Michigan? For over 20 years, Assured Home Nursing has served families in and around Birmingham. Founded with a vision to improve the lives of seniors aging in place, Assured provides caregivers to assist with diverse care needs. We screen and vet caregivers thoroughly to provide your loved ones with dependable and compassionate expertise. Trust Assured Home Nursing for quality in-home care in Birmingham, Michigan."
+> — Library ID 1399762082166094 · 40 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1399762082166094
+
+#### Cerenity Senior Care-Humboldt — 3 video ads · facility, placement or referral
+
+**Library ID 926955986898418** · 166 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+**Library ID 917337767883683** · 165 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+**Library ID 1320801949576263** · 82 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+#### Avalon Senior Living — 1 video ad · facility, placement or referral
+
+**Library ID 1847410285951441** · 154 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Regal Care — 3 video ads · facility, placement or referral
+
+**Library ID 1690541608611975** · 153 days running
+
+> "Struggling to find assisted living where you feel seen and heard? We offer around-the-clock care, an in-house chef that makes healthy meals, and a home nestled in these orchards. I've been to a lot of places for my husband. He has dementia, and it's progressing quickly. He's a lovely, sweet guy, and I wanted some place that could be comfortable for him. So after visiting many places, actually physically taking him there and spending a lot of money, I found this place through a mutual acquaintance, and she said, I think you'd like this. Can you expand your horizons beyond Thousand Oaks? And I said, well, I love that area, but I said, it seems like it's so far away, but it isn't. I'm 12 minutes and I'm here, and I think it's heaven on earth. It's just beautiful. The owners are wonderful. They listen. I couldn't be happier, really. Who could visit with Regal today?"
+> — Library ID 1690541608611975 · 55 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1690541608611975
+
+**Library ID 934251925982537** · 153 days running
+
+> "Thinking about assisted living for someone you love, discover a home with around the clock support, an in-house shelf, and beautiful orchard views. I took my mom to various places in Ventura County. We were looking to transition her out of her long-term family home into an assisted living and after visiting several corporate assisted living facilities, we felt that they weren't personalized. There was a corporate feel, the dining situation was not tailored to her needs and this would give her an opportunity to have some one-on-one care 24 hours a day in a homey environment and it felt like a family. We committed to the orchard within the first 15 minutes of coming here. Book a visit with Regal today."
+> — Library ID 934251925982537 · 46 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=934251925982537
+
+**Library ID 2883017875380731** · 153 days running
+
+> "Frustrated by assisted living options that feel impersonal and understaffed? Here at the Orchard, we provide awake staff around the clock. That's 24-hour care for your loved one. We also have chef-prepared meals and intimate, thoughtfully-designed homes with personal care plans. Choosing senior care is about peace of mind. Discover Regal Senior Living today."
+> — Library ID 2883017875380731 · 24 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2883017875380731
+
+#### Griswold Care Pairing for Tampa — 3 video ads · home care agency
+
+**Library ID 1898634707449243** · 150 days running
+
+> "Hi, Silas and Judah here from Griswold Care Pairing to talk a little about Walkers. Muma and Poopal are starting to get up there. Pretty soon they're going to need a little extra help. We thought we'd get ahead of the game by checking out a few test models. Judah thought Poopal might like this one. I thought Muma might like something like this. Yeah, she spends more time on the computer with Amazon now. But this should bring back some fond memories. And then there's this bad boy. With all the activities, it should be great for waiting at the doctor's office. Because heaven knows they're going to spend a lot of time there. Speaking of needing a little extra help, that's what we do at Griswold Care Pairing. We recruit, screen, and refer caregivers that provide homemaking, companionship, and personal care services wherever your home may be. So if you want to test some of these Walkers, or if you need help with some of your home care needs, please give us a call at 813-343-0272. We are available 24-7. Naptime, Judah. Time to hide."
+> — Library ID 1898634707449243 · 65 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1898634707449243
+
+**Library ID 874929768939655** · 150 days running
+
+> "Based upon a recent survey, our hourly cost of care for the caregivers we refer is about $4 less per hour than many of our competitors. That's about $160 less per week or over $8,000 a year on 40 hours of care per week. If you need 24-7 care, that could be over $35,000 a year. And what is even better news? You don't have to skim on quality to get those rates. Our 5-star rating for the last 16 years has consistently exceeded 4.9 stars. So, if you have homemaking, companionship, or personal care needs, check out our website, read our reviews, read about our team, review our blog articles, and give us a call for a free consult. Griswold Care Pairing. You can live assured you are getting the best possible care at the most competitive price."
+> — Library ID 874929768939655 · 57 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=874929768939655
+
+**Library ID 967773598956740** · 147 days running
+
+> "Let's be honest we got this and I got you I got you"
+> — Library ID 967773598956740 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=967773598956740
+
+#### Friends Life Care — 3 video ads · facility, placement or referral
+
+**Library ID 2015332005861307** · 132 days running
+
+> "In Pennsylvania, in-home care can average over $85,000 a year and nursing care can reach six figures. Retirement planning can feel so confusing. I kept asking myself, where do I even start? One option people often aren't aware of is friend's life care. They focus on helping people plan in advance so they can age at home, stay independent, and understand the care side of planning. Knowing I can stay independent and keep my purpose in retirement, it brought me so much relief."
+> — Library ID 2015332005861307 · 36 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2015332005861307
+
+**Library ID 1012672384535749** · 101 days running
+
+> "I talk to a lot of people who are pretty confident about their savings, but long-term care often doesn't enter the conversation until it feels urgent. Long-term care is more common than people think, and it can be expensive. In Pennsylvania, in-home care can average over $85,000 a year, and nursing care can reach six figures. Planning ahead gives people options. It creates clarity, flexibility, and peace of mind, and helps avoid making major decisions during a crisis. That's why I like introducing people to friends like care. There are resources focused on aging at home, independence, and care planning, helping people think through the care side of the future before it feels urgent."
+> — Library ID 1012672384535749 · 45 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1012672384535749
+
+**Library ID 1022175753914893** · 20 days running
+
+> "In Pennsylvania, in-home care can average over $85,000 a year and nursing care can reach six figures. I kept asking myself, where do I even start? Or what questions should I ask? One option people often aren't aware of is friend's life care. There are resourced focused on aging at home, independence and care planning, helping people think through the care side of the future before it feels urgent. Knowing I can stay independent and keep my purpose in retirement, it brought me so much relief."
+> — Library ID 1022175753914893 · 37 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1022175753914893
+
+#### A Caring Heart Nursing Services — 1 video ad · home care agency
+
+**Library ID 992143059977831** · 121 days running
+
+> "Being a caregiver has no days off. It's compassion, commitment, and love and action every single day. And if you're receiving care, you deserve dignity, respect, and real support at home. At A Caring Heart Nursing Services, we offer a state-funded caregiver program that allows family members and friends to care for their loved ones who are receiving monthly tax-free compensation, along with professional nursing oversight and ongoing care support. If you or someone you love needs assistance with daily living activities such as bathing, dressing, transferring, mobility, or toileting, you may qualify. Whether you're providing care or receiving it, A Caring Heart Nursing Services is here to support your journey every step of the way. Call 413-561-3436 today to learn more. A Caring Heart Nursing Services, compassionate care right at home."
+> — Library ID 992143059977831 · 75 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=992143059977831
+
+#### Mary Ann Morse — 1 video ad · facility, placement or referral
+
+**Library ID 1176242371258027** · 119 days running
+
+> "After a hospital stay, the next steps can feel overwhelming. We're here to help make the transition easier. The right care, at the right time, can make all the difference. Such as short-term inpatient rehab, focused on getting you home safely. And outpatient rehab, including PT, OT, and speech therapy, helping build strength and confidence. And for those who need ongoing, long-term care, a safe, supportive place to call home. Plus, advanced clinical care, all under one roof. The right care, right when it matters most. Call us today for more information. 508-433-4404"
+> — Library ID 1176242371258027 · 53 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1176242371258027
+
+#### The Restoracy — 3 video ads · facility, placement or referral
+
+**Library ID 1749290516481053** · 118 days running
+
+> "Four questions to ask there in the Senior Care Facility Tour. Question number one, what is the staff to patient ratio? Question number two, what are the options for covering costs? Question number three, how do you ensure safety? Question number four, what are the meals are like at your facility?"
+> — Library ID 1749290516481053 · 22 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1749290516481053
+
+**Library ID 1370652178214032** · 98 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1525681862620741** · 98 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Chantilly Heights Memory Care — 1 video ad · facility, placement or referral
+
+**Library ID 1434393635123483** · 110 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Award Homecare — 2 video ads · home care agency
+
+**Library ID 2193526208079505** · 104 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+**Library ID 921443340913590** · 97 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+#### Optimized Senior Living — 2 video ads · facility, placement or referral
+
+**Library ID 1010919578160754** · 104 days running
+
+> "I'm in the Kettering, Ohio area, and I waited too long. My mom kept telling me she was fine on her own, but I knew it was time that she needed extra care. Problem is, I didn't know where to start. Every place I toured didn't feel right. A coworker told me about optimized senior living. I scheduled a free visit and brought my mom along. She made friends her first day there. The staff treated her like a person, not a room number. She's been there four months, and she's a different woman. And I'm finally sleeping through the night again. Click Learn More to schedule a visit at one of our homes."
+> — Library ID 1010919578160754 · 41 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1010919578160754
+
+**Library ID 870552248708730** · 103 days running
+
+> "I'm in the Cincinnati Dayton area and I was struggling. My mom needed more care than I could give her. I cry on the drive home from her house most weeks. Every facility I toured felt cold and didn't feel right for her. A friend mentioned optimized senior living. I scheduled a free visit. I immediately knew this was the place for her. It really felt like a home, not a hospital. The staff was so friendly and I was surprised by the level of care. She settled in faster than any of us expected. I finally feel like I got my mom back. Without dealing with the worry day to day, click learn more to schedule a visit at one of our homes."
+> — Library ID 870552248708730 · 42 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=870552248708730
+
+#### Alpenglow Homecare of Montana — 1 video ad · home care agency
+
+**Library ID 1714498679558341** · 103 days running
+
+> "You can actually get paid to take care of the people you love. This is a state benefit available for everyone. This state has found it's more cost effective to pay family members to take care of their own loved ones. The only thing is, is that there is an administrative process, but that's where Alpin Glow Home Care comes in. We take care of everything so that you can focus on your loved ones. Click the button below to contact us and get started today."
+> — Library ID 1714498679558341 · 23 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1714498679558341
+
+#### Comfort Keepers Home Care - Columbia, SC — 2 video ads · home care agency
+
+**Library ID 27678230931774758** · 101 days running
+
+> "We were made for moments like these. We help seniors live safely and independently at home. We elevate quality of life by infusing joy, hope, and purpose into everyday moments. Our caregivers handle errands and provide clean home environments, fresh cooked meals, and personal assistance. Today and every day you can trust us to help your loved one be safe at home. To see how we can help visit comfortkeepers.com"
+> — Library ID 27678230931774758 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=27678230931774758
+
+**Library ID 1333367345392458** · 100 days running
+
+> "I knew we made the right choice when I didn't have to worry anymore about mom driving safely to watch the sunset from my parents' favorite spot. Now we have comfort keepers for that. Our friendly professional caregivers add joy and meaning to life's everyday moments. Learn how we help seniors live happy and independent lives at home at comfortkeepers.com today."
+> — Library ID 1333367345392458 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1333367345392458
+
+#### Comfort Keepers Home Care of Johns Island — 2 video ads · home care agency
+
+**Library ID 1743800553273501** · 101 days running
+
+> "We were made for moments like these. We help seniors live safely and independently at home. We elevate quality of life by infusing joy, hope, and purpose into everyday moments. Our caregivers handle errands and provide clean home environments, fresh cooked meals, and personal assistance. Today and every day you can trust us to help your loved one be safe at home. To see how we can help visit comfortkeepers.com"
+> — Library ID 1743800553273501 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1743800553273501
+
+**Library ID 2401540487004662** · 101 days running
+
+> "I knew we made the right choice when I didn't have to worry anymore about mom driving safely to watch the sunset from my parents' favorite spot. Now we have comfort keepers for that. Our friendly professional caregivers add joy and meaning to life's everyday moments. Learn how we help seniors live happy and independent lives at home at comfortkeepers.com today."
+> — Library ID 2401540487004662 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2401540487004662
+
+#### Comfort Keepers of Charleston and Summerville, SC — 2 video ads · home care agency
+
+**Library ID 1536025478086847** · 101 days running
+
+> "I knew we made the right choice when I didn't have to worry anymore about mom driving safely to watch the sunset from my parents' favorite spot. Now we have comfort keepers for that. Our friendly professional caregivers add joy and meaning to life's everyday moments. Learn how we help seniors live happy and independent lives at home at comfortkeepers.com today."
+> — Library ID 1536025478086847 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1536025478086847
+
+**Library ID 1673915677177859** · 101 days running
+
+> "We were made for moments like these. We help seniors live safely and independently at home. We elevate quality of life by infusing joy, hope, and purpose into everyday moments. Our caregivers handle errands and provide clean home environments, fresh cooked meals, and personal assistance. Today and every day you can trust us to help your loved one be safe at home. To see how we can help visit comfortkeepers.com"
+> — Library ID 1673915677177859 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1673915677177859
+
+#### Comfort Keepers Oviedo (East Orlando) — 1 video ad · home care agency
+
+**Library ID 857632474050446** · 101 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Indian River Home Care — 1 video ad · home care agency
+
+**Library ID 868221296326201** · 101 days running
+
+> "I was on this beloved dock out here and the wood was slick and so consequently I fell. Home health care makes it more convenient for me and it makes recovery much easier."
+> — Library ID 868221296326201 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=868221296326201
+
+#### Vienna at Santianna — 2 video ads · facility, placement or referral
+
+**Library ID 1516931706588018** · 101 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1534287501658371** · 90 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Help In Home Care — 3 video ads · home care agency
+
+**Library ID 978879587882639** · 97 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1535052767965766** · 97 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 4497967300447935** · 97 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Tennyson Court Senior Care Community — 3 video ads · facility, placement or referral
+
+**Library ID 1013081564746459** · 97 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1529884998850431** · 97 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 909484298773972** · 96 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Silversage Assisted Living & Memory Care — 1 video ad · facility, placement or referral
+
+**Library ID 2106038810294261** · 96 days running
+
+> "Looking for assisted living in Brenham you can trust? At Silver Sage, we provide compassionate care in a place that truly feels like home. Schedule a tour today and see the difference. Call us 979-353-2090."
+> — Library ID 2106038810294261 · 16 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2106038810294261
+
+#### Senior Helpers National — 3 video ads · home care agency
+
+**Library ID 2384310595396439** · 94 days running
+
+> "When I called Senior Helpers, I knew I needed a little help around the house. You really brought that plant back to life. But I didn't know how much I needed Vivian. I just need a little attention, just like some people I know. This is home care. This is Senior Helpers."
+> — Library ID 2384310595396439 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2384310595396439
+
+**Library ID 1218131930321553** · 94 days running
+
+> "Here goes nothing senior helpers is the help you need to keep your independence and keep you you This is home care. This is senior helpers"
+> — Library ID 1218131930321553 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1218131930321553
+
+**Library ID 1006773078500659** · 94 days running
+
+> "Why do seagulls fly over the sea? Oh no, Dad, why? If they flew over the main, they would be bagels. That is a keeper, Mr. Thompson. These moments matter, and thanks to Senior Helpers, Dad gets to enjoy them right where he belongs, living fully and independently at home. Senior Helpers is the help you need to keep your independence, your spark, and keep you, you. This is Home Care. This is Senior Helpers."
+> — Library ID 1006773078500659 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1006773078500659
+
+#### BURD Home Health — 3 video ads · home care agency
+
+**Library ID 2249512942516314** · 91 days running
+
+> "If I had to summarize Bird Home Health in one sentence, or our mission in one sentence, it would be, we want to help as many families as we can. It has made things so much easier for me. We're one big family. We genuinely care about everybody that we speak to, take care of, try to help. It allows the individual to actually stay in their home, and that's what most people want. Bird Home Health is a program where if you are elderly or have a disability and you are living at home, we can pay your family, your friends, to be a caregiver in your house. Instead of moving into a nursing home or a type of facility, we allow you to have the ability to choose who you want to care for you in your own home. They're only here to help. They want to help. If you have questions, they can answer it. If you need something done, they're not going to stop until they figure out how they can help you. That's their job. They want to help you get what you need. The family members are so grateful for this program, and that's why we believe so much in this program. That's why it's really been our vision since we started this company, is to focus on family caregivers. And that's also why we've established our company with a lot of our own family members. We're a family helping other families. I'm proud to work here because not only did my family start the company, but everybody's honest here. We're people over profit. I think that it just helps to allow them to have a longer and better life living in their own home rather than somewhere else. At the end of the day, we are helping other people. They can trust us. That would be the main thing I would say. Bird has made it very easy, so I'm happy."
+> — Library ID 2249512942516314 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2249512942516314
+
+**Library ID 1297204029164096** · 91 days running
+
+> "If I had to summarize Bird Home Health in one sentence, or our mission in one sentence, it would be, we want to help as many families as we can. It has made things so much easier for me. We're one big family. We genuinely care about everybody that we speak to, take care of, try to help. It allows the individual to actually stay in their home, and that's what most people want. Bird Home Health is a program where if you are elderly or have a disability and you are living at home, we can pay your family, your friends, to be a caregiver in your house. Instead of moving into a nursing home or a type of facility, we allow you to have the ability to choose who you want to care for you in your own home. They're only here to help. They want to help. If you have questions, they can answer it. If you need something done, they're not going to stop until they figure out how they can help you. That's their job. They want to help you get what you need. The family members are so grateful for this program, and that's why we believe so much in this program. That's why it's really been our vision since we started this company, is to focus on family caregivers. And that's also why we've established our company with a lot of our own family members. We're a family helping other families. I'm proud to work here because not only did my family start the company, but everybody's honest here. We're people over profit. I think that it just helps to allow them to have a longer and better life living in their own home rather than somewhere else. At the end of the day, we are helping other people. They can trust us. That would be the main thing I would say. Bird has made it very easy, so I'm happy."
+> — Library ID 1297204029164096 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1297204029164096
+
+**Library ID 1042067238395254** · 91 days running
+
+> "If I had to summarize Bird Home Health in one sentence, or our mission in one sentence, it would be, we want to help as many families as we can. It has made things so much easier for me. We're one big family. We genuinely care about everybody that we speak to, take care of, try to help. It allows the individual to actually stay in their home, and that's what most people want. Bird Home Health is a program where if you are elderly or have a disability and you are living at home, we can pay your family, your friends, to be a caregiver in your house. Instead of moving into a nursing home or a type of facility, we allow you to have the ability to choose who you want to care for you in your own home. They're only here to help. They want to help. If you have questions, they can answer it. If you need something done, they're not going to stop until they figure out how they can help you. That's their job. They want to help you get what you need. The family members are so grateful for this program, and that's why we believe so much in this program. That's why it's really been our vision since we started this company, is to focus on family caregivers. And that's also why we've established our company with a lot of our own family members. We're a family helping other families. I'm proud to work here because not only did my family start the company, but everybody's honest here. We're people over profit. I think that it just helps to allow them to have a longer and better life living in their own home rather than somewhere else. At the end of the day, we are helping other people. They can trust us. That would be the main thing I would say. Bird has made it very easy, so I'm happy."
+> — Library ID 1042067238395254 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1042067238395254
+
+#### Roaring Fork Senior Living  — 1 video ad · facility, placement or referral
+
+**Library ID 982062377975139** · 91 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Aqua Home Care — 1 video ad · home care agency
+
+**Library ID 1976825622957377** · 88 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Amada Senior Care Simpsonville  — 1 video ad · home care agency
+
+**Library ID 26970496332572328** · 84 days running
+
+> "If daily tasks are becoming daily struggles, it's time for help. Amada Senior Care provides personalized, non-medical, in-home senior care and companionship safely at home. Your loved one deserves dignity and you deserve peace of mind."
+> — Library ID 26970496332572328 · 20 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=26970496332572328
+
+#### Silverwell Living — 3 video ads · facility, placement or referral
+
+**Library ID 862732850237486** · 83 days running
+
+> "I spent the last few weeks calling senior living communities around here so you don't have to. National websites give you averages that are useless for our city. I've put together the 2026 Senior Living Cost Guide with the real ranges for independent, assisted living, memory care, and even home care options right here in our city. It's localized, it's accurate, and it's free. Click below and I'll send the PDF to your inbox."
+> — Library ID 862732850237486 · 32 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=862732850237486
+
+**Library ID 851078724743212** · 82 days running
+
+> "Let's talk about the real cost of care today. And it's not what the big national websites tell you. We did a deep dive into the 2026 local market to find the true price ranges for the area so you have accurate information. Local information about care right here. No more guessing or looking at the watered down national numbers. Just the facts you need to plan for your family's future. Tap learn more and get your free copy of our senior care cost guide."
+> — Library ID 851078724743212 · 31 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=851078724743212
+
+**Library ID 1339418901032403** · 58 days running
+
+> "Before you walk in to one more senior living tour for your mom or dad, you need to see this. The starting at price they quote you is almost never what your family ends up paying once care needs get assessed. So I put together the 2026 Senior Care Cost Guide with the real ranges, independent living, assisted living, memory care, home care for where your parents actually live. It's localized, it's accurate, and it's free. Click below and I'll send a PDF to your inbox."
+> — Library ID 1339418901032403 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1339418901032403
+
+#### Comfort Keepers Philadelphia — 1 video ad · home care agency
+
+**Library ID 1673549943905978** · 81 days running
+
+> "Comfort keepers and home caregivers know that every senior has a story like Linda, who loves art and finds inspiration outside. So her comfort keeper makes sure Alzheimer's doesn't stand in her way. Visit comfortkeepers.com to learn how we can help your loved one's story continue."
+> — Library ID 1673549943905978 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1673549943905978
+
+#### FirstLight Home Care of Fort Myers — 1 video ad · home care agency
+
+**Library ID 983934597580509** · 81 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### A Partner In Caring — 1 video ad · home care agency
+
+**Library ID 816793121364271** · 80 days running
+
+> "Care isn't only about support, it's about connection. Meaningful daily engagement can turn simple routines into moments of joy. It's found in the quiet, shared moments that make someone feel seen and valued. Joy in everyday moments, because engagement is part of care."
+> — Library ID 816793121364271 · 27 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=816793121364271
+
+#### Executive Home Care of Conway, AR — 1 video ad · home care agency
+
+**Library ID 991670950396110** · 80 days running
+
+> "At Executive Home Care, we believe home is where the heart is. That's why our compassionate caregivers provide personalized support right in the comfort of your home. From companionship to skilled care, we're here to help your loved ones live safely and independently. Because every family deserves the best care, delivered with a personal touch. Executive Home Care, trusted, local and always here for you. Find in Home Care today at executivehomecare.com"
+> — Library ID 991670950396110 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=991670950396110
+
+#### Senior Care Authority — 3 video ads · facility, placement or referral
+
+**Library ID 1038206512110738** · 80 days running
+
+> "Purpose-driven business. Booming senior care industry. Award-winning franchise. Click the link to access the full guide."
+> — Library ID 1038206512110738 · 14 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1038206512110738
+
+**Library ID 949965884734523** · 80 days running
+
+> "exclusive protected territories, proven business model, built for growth in any economy. Click the link to access the full guide."
+> — Library ID 949965884734523 · 14 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=949965884734523
+
+**Library ID 1667240844392269** · 61 days running
+
+> "Proven business model, recession resistant industry, crime markets available, click the link to access the full guide."
+> — Library ID 1667240844392269 · 14 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1667240844392269
+
+#### FirstLight Home Care Charlotte County — 1 video ad · home care agency
+
+**Library ID 1320592933618350** · 79 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Amada Senior Care — 3 video ads · home care agency
+
+**Library ID 1488255456109249** · 77 days running
+
+> "Amada Senior Care offers non-medical home care to help seniors safely age in place. We're looking for kind, compassionate caregivers that want to help make a difference in the lives of others. We have a very high standard of quality care and expect our caregivers to follow these standards and ensure that our clients are getting the most loving and compassionate care in their homes. If you're interested in a position with Amada, then please call or text the number below or apply online. We hope to hear from you today."
+> — Library ID 1488255456109249 · 34 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1488255456109249
+
+**Library ID 1045714427906138** · 45 days running
+
+*No usable speech (the audio is music only).*
+
+**Library ID 2782439765475399** · 40 days running
+
+> "The best time to get help isn't after a crisis, it's before one happens. I'm Mina Gerges with Amada Senior Care, helping seniors stay safe, independent and relaxed at home."
+> — Library ID 2782439765475399 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2782439765475399
+
+#### BrightStar Care — 2 video ads · home care agency
+
+**Library ID 1325480859099304** · 77 days running
+
+> "Our nurse-led care anticipates needs before they're voiced, from skilled nursing to companion care that renews the soul."
+> — Library ID 1325480859099304 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1325480859099304
+
+**Library ID 1081665060979366** · 10 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Country Meadows Senior Care — 3 video ads · facility, placement or referral
+
+**Library ID 1697505104589472** · 77 days running
+
+> "At Country Meadows, residents don't lose their independence. We can help them feel even more independent. Here they can enjoy their best life, free from the stress of maintaining a home and with support anytime they need it from our team who cares. Let's talk. We're here to help."
+> — Library ID 1697505104589472 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1697505104589472
+
+**Library ID 2150989862137161** · 77 days running
+
+> "At Country Meadows, residents don't lose their independence. We can help them feel even more independent. Here they can enjoy their best life, free from the stress of maintaining a home and with support anytime they need it from our team who cares. Let's talk. We're here to help."
+> — Library ID 2150989862137161 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2150989862137161
+
+**Library ID 1346293014313011** · 77 days running
+
+> "At Country Meadows, residents don't lose their independence. We can help them feel even more independent. Here they can enjoy their best life, free from the stress of maintaining a home and with support anytime they need it from our team who cares. Let's talk. We're here to help."
+> — Library ID 1346293014313011 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1346293014313011
+
+#### Sarasota Bay Club — 1 video ad · facility, placement or referral
+
+**Library ID 1496086525049588** · 77 days running
+
+> "My name is Linda Albert. I am a mother of four. I'm a writer, a published writer, and published poet. We actually, my husband and I never really thought we'd end up in Florida, but we had very good friends who lived on Longbokie, and we stopped to see them years ago, maybe 25 years ago or more. We loved freighter trips. That's what we loved, and Longbokie was as close to the sea as you could get and still be on land. And so I decided it would be great if we could come back the following year and rent a place on Longbokie for a month, just for the fun of it, and we did. My husband had Parkinson's disease, but he really came back to life while we were down here. And that winter, and that changed, that really changed everything in our lives. And the couple who had, and we had gone to visit, eventually moved here to Sarasota Bay Club. Eventually, that's what we did, too. By that time, my mother and husband had died, and I had a significant other, and the two of us moved here. We had been together for eight years, and I came up with the idea. He thought it was crazy at the time, but we thought it was just being practical. And we weren't in a hurry, and I think it was 18 months later that we decided it was time. And there was not a day that went by after we moved in that we didn't congratulate ourselves on having made one of the best decisions we'd ever made in our lives. I've also been here for a hurricane, and we were very lucky for that hurricane in terms of not having any damage. But it was astonishing what they managed to do for us in terms of providing..."
+> — Library ID 1496086525049588 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1496086525049588
+
+#### Table Rock Memory Care — 1 video ad · facility, placement or referral
+
+**Library ID 1006360368655769** · 77 days running
+
+> "When memory fades, love and care matter more than ever. At Table Rock Memory Care in Medford, Oregon, your loved one is supported with compassion, dignity, and a true sense of home. Call 541-779-3368 to learn how we can care for the ones who mean everything to you."
+> — Library ID 1006360368655769 · 24 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1006360368655769
+
+#### Era Living — 1 video ad · facility, placement or referral
+
+**Library ID 2103396610241681** · 75 days running
+
+> "My name is David Troxell and I'm the co-author of the Best Friends Approach to Dementia Care. The Best Friends Approach is a life-affirming model of care that is based on a very simple idea. What the person with cognitive loss, memory loss, needs is a friend, is a best friend. And the model is based on a couple of ideas. Number one is to know and use the person's life story. You want to celebrate their past, the awards they've won, their career, their lives. You want to always incorporate life story work into your care. You want to foster good communication because we know that the language centers of the brain are damaged by Alzheimer's disease. So best friends communicate and so learn some of the do's and don'ts of communication. Learn not to argue or correct and learn to fill in those gaps and be supportive. Friends do things together so you want to try your best to create a rich day of activities and engagement with music, exercise, and time outdoors. And finally, I would say friends are very forgiving and supportive of each other and we know that there are a lot of tough times with dementia care. When things get tough, I want you to remember that it's the disease, not the person, and do your best to be supportive because hopefully as you develop a best friend's philosophy, you're going to learn strategies and techniques that will make everything much better with the Best Friends Approach. For additional family resources and information from Era Living Memory Care, click the button below."
+> — Library ID 2103396610241681 · 94 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2103396610241681
+
+#### Homecarebyseniors — 2 video ads · home care agency
+
+**Library ID 1981022615951821** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1981022615951821 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1981022615951821
+
+**Library ID 1032210732714220** · 74 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1032210732714220 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1032210732714220
+
+#### Mystic Valley Seniors Helping Seniors — 2 video ads · home care agency
+
+**Library ID 2129312784467654** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 2129312784467654 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2129312784467654
+
+**Library ID 1336745687790522** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1336745687790522 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1336745687790522
+
+#### Seniors Helping Seniors - North Texas — 2 video ads · home care agency
+
+**Library ID 2051353369588102** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 2051353369588102 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2051353369588102
+
+**Library ID 1703846361035527** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1703846361035527 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1703846361035527
+
+#### Seniors Helping Seniors - Southwest Broward County FL — 2 video ads · home care agency
+
+**Library ID 1553254316323112** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1553254316323112 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1553254316323112
+
+**Library ID 1399615745560488** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1399615745560488 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1399615745560488
+
+#### Seniors Helping Seniors - Southwestern PA — 3 video ads · home care agency
+
+**Library ID 1682671213022518** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1682671213022518 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1682671213022518
+
+**Library ID 1044437154910850** · 74 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1044437154910850 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1044437154910850
+
+**Library ID 27293484173652476** · 74 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 27293484173652476 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=27293484173652476
+
+#### Seniors Helping Seniors Canton Akron, OH — 3 video ads · home care agency
+
+**Library ID 927319429767518** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 927319429767518 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=927319429767518
+
+**Library ID 977680775137151** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 977680775137151 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=977680775137151
+
+**Library ID 2059775381614447** · 74 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 2059775381614447 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2059775381614447
+
+#### Seniors Helping Seniors Central East Florida — 3 video ads · home care agency
+
+**Library ID 2094204274492070** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 2094204274492070 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2094204274492070
+
+**Library ID 1387464959950207** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1387464959950207 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1387464959950207
+
+**Library ID 27159440653684948** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 27159440653684948 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=27159440653684948
+
+#### Seniors Helping Seniors Central Florida — 2 video ads · home care agency
+
+**Library ID 4421340484776989** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 4421340484776989 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=4421340484776989
+
+**Library ID 3131961793654447** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 3131961793654447 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=3131961793654447
+
+#### Seniors Helping Seniors Central, East and West Dallas, TX — 3 video ads · home care agency
+
+**Library ID 1556081092729759** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1556081092729759 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1556081092729759
+
+**Library ID 1183870497216804** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1183870497216804 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1183870497216804
+
+**Library ID 1558793169203327** · 73 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1558793169203327 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1558793169203327
+
+#### Seniors Helping Seniors Charleston — 3 video ads · home care agency
+
+**Library ID 2905439309814877** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 2905439309814877 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2905439309814877
+
+**Library ID 2858864657814420** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 2858864657814420 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2858864657814420
+
+**Library ID 1543987197225871** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1543987197225871 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1543987197225871
+
+#### Seniors Helping Seniors Flagler, St. Johns, and Volusia Counties — 3 video ads · home care agency
+
+**Library ID 1799230361855560** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1799230361855560 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1799230361855560
+
+**Library ID 1585701493166724** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1585701493166724 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1585701493166724
+
+**Library ID 4466287510317889** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 4466287510317889 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=4466287510317889
+
+#### Seniors Helping Seniors Greater Fort Lauderdale — 2 video ads · home care agency
+
+**Library ID 1516692579905311** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1516692579905311 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1516692579905311
+
+**Library ID 1978555042866277** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1978555042866277 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1978555042866277
+
+#### Seniors Helping Seniors Greater Madison — 3 video ads · home care agency
+
+**Library ID 1494997595760977** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1494997595760977 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1494997595760977
+
+**Library ID 1630311238034601** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1630311238034601 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1630311238034601
+
+**Library ID 992964693534022** · 74 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 992964693534022 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=992964693534022
+
+#### Seniors Helping Seniors Greater Naperville — 2 video ads · home care agency
+
+**Library ID 863229146412655** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 863229146412655 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=863229146412655
+
+**Library ID 2109894502904426** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 2109894502904426 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2109894502904426
+
+#### Seniors Helping Seniors Greater Palm Springs — 3 video ads · home care agency
+
+**Library ID 1547850830055390** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1547850830055390 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1547850830055390
+
+**Library ID 811635965236983** · 75 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+**Library ID 1910502256292323** · 75 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+#### Seniors Helping Seniors Greater Woodlands — 3 video ads · home care agency
+
+**Library ID 1332012638906233** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1332012638906233 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1332012638906233
+
+**Library ID 26597453386600289** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 26597453386600289 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=26597453386600289
+
+**Library ID 1725396385265902** · 72 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1725396385265902 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1725396385265902
+
+#### Seniors Helping Seniors Hampton Roads — 2 video ads · home care agency
+
+**Library ID 1500615334480219** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1500615334480219 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1500615334480219
+
+**Library ID 1033991852392629** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1033991852392629 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1033991852392629
+
+#### Seniors Helping Seniors Mid-Ohio — 2 video ads · home care agency
+
+**Library ID 1544933960490632** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1544933960490632 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1544933960490632
+
+**Library ID 3416536248528839** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 3416536248528839 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=3416536248528839
+
+#### Seniors Helping Seniors Northeast FL — 1 video ad · home care agency
+
+**Library ID 1340921201373942** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1340921201373942 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1340921201373942
+
+#### Seniors Helping Seniors Northern Indiana — 3 video ads · home care agency
+
+**Library ID 1007035245042891** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1007035245042891 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1007035245042891
+
+**Library ID 1366942821999284** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1366942821999284 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1366942821999284
+
+**Library ID 1332639852170794** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1332639852170794 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1332639852170794
+
+#### Seniors Helping Seniors Northern Ohio — 2 video ads · home care agency
+
+**Library ID 2957838801229470** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 2957838801229470 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2957838801229470
+
+**Library ID 2118047845757597** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 2118047845757597 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2118047845757597
+
+#### Seniors Helping Seniors Northern Waukesha County — 2 video ads · home care agency
+
+**Library ID 1632431851191313** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1632431851191313 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1632431851191313
+
+**Library ID 998159529625857** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 998159529625857 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=998159529625857
+
+#### Seniors Helping Seniors of Brevard County — 2 video ads · home care agency
+
+**Library ID 989824463946808** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 989824463946808 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=989824463946808
+
+**Library ID 1023296060649969** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1023296060649969 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1023296060649969
+
+#### Seniors Helping Seniors of Northern Colorado — 2 video ads · home care agency
+
+**Library ID 4857563587804318** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 4857563587804318 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=4857563587804318
+
+**Library ID 1354188213275688** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1354188213275688 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1354188213275688
+
+#### Seniors Helping Seniors Provo Sandy — 2 video ads · home care agency
+
+**Library ID 1540539681076757** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1540539681076757 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1540539681076757
+
+**Library ID 1657325308893447** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1657325308893447 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1657325308893447
+
+#### Seniors Helping Seniors Raleigh — 2 video ads · home care agency
+
+**Library ID 1032459226395741** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1032459226395741 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1032459226395741
+
+**Library ID 1036967988729679** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1036967988729679 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1036967988729679
+
+#### Seniors Helping Seniors Santa Cruz Gilroy — 2 video ads · home care agency
+
+**Library ID 1323588539366762** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1323588539366762 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1323588539366762
+
+**Library ID 784199788038216** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 784199788038216 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=784199788038216
+
+#### Seniors Helping Seniors Southern Idaho — 3 video ads · home care agency
+
+**Library ID 2560825917696387** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 2560825917696387 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2560825917696387
+
+**Library ID 1439234991560008** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1439234991560008 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1439234991560008
+
+**Library ID 2056560785739131** · 74 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 2056560785739131 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2056560785739131
+
+#### Seniors Helping Seniors Washington and Ozaukee — 3 video ads · home care agency
+
+**Library ID 1913112646034197** · 75 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1913112646034197 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1913112646034197
+
+**Library ID 2136891966888762** · 74 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 2136891966888762 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2136891966888762
+
+**Library ID 1690226915594323** · 74 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1690226915594323 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1690226915594323
+
+#### Seniors Helping Seniors East King — 3 video ads · home care agency
+
+**Library ID 1306238028389162** · 74 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1306238028389162 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1306238028389162
+
+**Library ID 2095754184693070** · 74 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 2095754184693070 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2095754184693070
+
+**Library ID 1580501053754183** · 73 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1580501053754183 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1580501053754183
+
+#### Seniors Helping Seniors Tampa Bay Area — 3 video ads · home care agency
+
+**Library ID 2203784473732305** · 74 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 2203784473732305 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2203784473732305
+
+**Library ID 1009838008670690** · 74 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1009838008670690 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1009838008670690
+
+**Library ID 1029798379731774** · 74 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1029798379731774 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1029798379731774
+
+#### Merry Heart Senior Care Center — 2 video ads · facility, placement or referral
+
+**Library ID 1051708753949780** · 73 days running
+
+> "Not ready for a nursing home yet? Try this first. The Cottage now offers a senior day program for seniors with Alzheimer's or dementia. Your loved one can come during the day in Campbell, New Jersey. Enjoy activities, meals and professional care and return home in the evening. It's a great way to see how they do in a safe environment before making any big decisions. We also offer a free trial day for new families. No commitments, just come and see. Click below to schedule your free trial."
+> — Library ID 1051708753949780 · 37 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1051708753949780
+
+**Library ID 1997992371603752** · 73 days running
+
+> "Taking care of a loved one with dementia can be overwhelming. At The Cottage, we now offer a senior day program designed for seniors with memory loss, Alzheimer's or dementia. Your loved one can spend the day in a safe, caring, home-like environment with trained staff, activities, meals and supervision. This program is perfect if you need help during the day by your not ready to full-time care. We even offer a free trial day so you can see if it's the right fit. Click below to schedule your free trial."
+> — Library ID 1997992371603752 · 39 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1997992371603752
+
+#### Adultcare Assistance Homecare — 2 video ads · home care agency
+
+**Library ID 1344779050935229** · 70 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 2113058225907666** · 67 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Assisted Living Locators of Greater Essex County and Northwest New Jersey — 1 video ad · facility, placement or referral
+
+**Library ID 993923480117508** · 70 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### BrightStar Care of Norman — 2 video ads · home care agency
+
+**Library ID 1488751229209688** · 70 days running
+
+> "At Bright Star Care, we believe home care should be about more than just clinical needs. It should be about living life to the fullest. Our private pay concierge care goes beyond the basics. We help with grocery shopping, meal preparation, and running errands that keep life moving. Want to attend a grandchild's recital or visit the park? Our caregivers provide safe transportation and accompaniment, so no milestone is missed. It's personalized support tailored to your passions, interests, and daily routines. Experience a higher standard of living with Bright Star Care, because home care should be as unique as you are."
+> — Library ID 1488751229209688 · 42 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1488751229209688
+
+**Library ID 1947666275939113** · 69 days running
+
+> "People hear 24-7 care and think it's only for extreme situations, but often it's about safety and consistency. You might need it after a hospital stay, when falls are a risk, when someone wanders, or when overnight assistance becomes necessary. Bright Star Care can provide around-the-clock support like mobility help, toileting assistance, medication routines, meals and supervision day and night. Call today to schedule an in-home assessment with Bright Star Care."
+> — Library ID 1947666275939113 · 36 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1947666275939113
+
+#### GriefShare — 3 video ads · home care agency
+
+**Library ID 1035272149068328** · 70 days running
+
+> "We are resources. We hear the term human resources in workplaces, but the reality is all of us are resources. We have gifts, we have talents, we have places where we are naturally able to do things well, but if we don't keep those areas of ourselves refreshed and poured into, then what ends up happening is we end up giving from a place of depletion. We're able to continue to work, but and do the activities of caregiving, and we're able to stay in the place of service to our family. However, we're doing it from a place of emptiness. When we learn to give from a place of restoration, we can gain a new perspective, like the one Janet holds on to. I have differences where I'm really frustrated, and then there are times when I just have so much joy because I'm there for my mom's end of her chapter. I want an honor that is to be there for her. I'm there for the long haul. I'm there, and that gives me joy knowing that I'm there for her, and I'm proud to be a part of that process, and I'm honored to be a part of that process. The honor Janet feels is not an accident. It is the proof of a simple, powerful truth. When we pour back into ourselves, we find the strength to pour out for others."
+> — Library ID 1035272149068328 · 105 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1035272149068328
+
+**Library ID 1310498887919392** · 70 days running
+
+> "We are resources. We hear the term human resources in workplaces, but the reality is all of us are resources. We have gifts, we have talents, we have places where we are naturally able to do things well, but if we don't keep those areas of ourselves refreshed and poured into, then what ends up happening is we end up giving from a place of depletion. We're able to continue to work, but and do the activities of caregiving, and we're able to stay in the place of service to our family. However, we're doing it from a place of emptiness. When we learn to give from a place of restoration, we can gain a new perspective, like the one Janet holds on to. I have differences where I'm really frustrated, and then there are times when I just have so much joy because I'm there for my mom's end of her chapter. I want an honor that is to be there for her. I'm there for the long haul. I'm there, and that gives me joy knowing that I'm there for her, and I'm proud to be a part of that process, and I'm honored to be a part of that process. The honor Janet feels is not an accident. It is the proof of a simple, powerful truth. When we pour back into ourselves, we find the strength to pour out for others."
+> — Library ID 1310498887919392 · 105 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1310498887919392
+
+**Library ID 1397908465731494** · 70 days running
+
+> "We are resources. We hear the term human resources in workplaces, but the reality is all of us are resources. We have gifts, we have talents, we have places where we are naturally able to do things well, but if we don't keep those areas of ourselves refreshed and poured into, then what ends up happening is we end up giving from a place of depletion. We're able to continue to work, but and do the activities of caregiving, and we're able to stay in the place of service to our family. However, we're doing it from a place of emptiness. When we learn to give from a place of restoration, we can gain a new perspective, like the one Janet holds on to. I have differences where I'm really frustrated, and then there are times when I just have so much joy because I'm there for my mom's end of her chapter. I want an honor that is to be there for her. I'm there for the long haul. I'm there, and that gives me joy knowing that I'm there for her, and I'm proud to be a part of that process, and I'm honored to be a part of that process. The honor Janet feels is not an accident. It is the proof of a simple, powerful truth. When we pour back into ourselves, we find the strength to pour out for others."
+> — Library ID 1397908465731494 · 105 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1397908465731494
+
+#### German Centre — 3 video ads · facility, placement or referral
+
+**Library ID 1538886227886424** · 69 days running
+
+> "They're very good here, they give, there's always something to do, so I make it a point to try and do something of everything that Gabby, who's the activities director, does because, I mean, why not, you're here anyway. I'm very happy here. I can't think of any reason why I would leave."
+> — Library ID 1538886227886424 · 33 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1538886227886424
+
+**Library ID 4504383469842855** · 52 days running
+
+> "They're very good here, they give, there's always something to do, so I make it a point to try and do something of everything that Gabby, who's the activities director, does because, I mean, why not, you're here anyway. I'm very happy here. I can't think of any reason why I would leave."
+> — Library ID 4504383469842855 · 33 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=4504383469842855
+
+**Library ID 865574416318513** · 52 days running
+
+> "My name is Florence Sluppian. I'm 95 years old. The best thing about this place are the residents, and I've gotten to know a lot of them. My companion at dinner is a hundred and six years old, and she and I have a wonderful relationship. But there's also a respect for privacy. I respect it when the people who bring my breakfast knock on the door. And I live in our corridor where there are only three units and so it's very private. Another thing that is just fabulous for me is that this is in the middle of a forest. I see dogs, I see squirrels, I see brown rabbits, and I see this wonderful forest. Very important to me."
+> — Library ID 865574416318513 · 58 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=865574416318513
+
+#### Right at Home Middlesex and Northern Monmouth Counties — 2 video ads · home care agency
+
+**Library ID 2154135848482531** · 68 days running
+
+> "At Right At Home, we believe in more than just care. We believe in connection. Our trained caregivers are matched to your needs, routines, and personality to support you with skill and heart. Find your match today."
+> — Library ID 2154135848482531 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2154135848482531
+
+**Library ID 1546311103360266** · 4 days running
+
+> "Caring for your parents shouldn't mean losing yourself in the process. I know you love them and you want to be there, but the weight of caregiving on top of everything else can feel overwhelming. At Ride at Home, we're here to lift that weight. As a daughter of aging parents myself, I completely understand what you're going through. We offer trusted, compassionate home support that feels like family. Whether it's to help with meals, medication, or overnight care, our caregivers step in so you can breathe again without guilt. Start with a free and home assessment today."
+> — Library ID 1546311103360266 · 33 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1546311103360266
+
+#### Always Best Care Senior Services Corporate — 1 video ad · home care agency
+
+**Library ID 924255847365143** · 67 days running
+
+> "Hi, this is Sanjay Das with Always Best Care in Raleigh, North Carolina. My background isn't in home care, so it's in software management and things like that. So when I started off, I didn't know what to focus on or where I could play, if you will. I knew what the Always Best Care model was, which was non-medical home care and placement, I wanted to create something that was a niche for us, that we are recognized for. And so dementia comes in, and that's our specialty. Does that mean we know everything? No, it just means that we specialize in that. It's still within our Always Best Care model, which is home care. And it's non-medical, and the idea is how do we create our own, kind of like a mini-brand within the overall big brand. So that's what we're doing. So anything you put your heart in, you're going to be successful at. Well that's where we are. You know, we put our heart in, and we feel good about it."
+> — Library ID 924255847365143 · 69 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=924255847365143
+
+#### Caring.com — 3 video ads · facility, placement or referral
+
+**Library ID 1007482618657325** · 63 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+**Library ID 2141378370053466** · 63 days running
+
+> "I knew it was time to talk to dad about senior living, but I didn't know how. My dad has always been my rock. Now I want to be his. When I found Caring.com, they gave me guidance, clarity and confidence to start a difficult conversation. Now I know we'll make the right choice, together."
+> — Library ID 2141378370053466 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2141378370053466
+
+**Library ID 2010164133195902** · 63 days running
+
+> "I knew it was time to talk to dad about senior living, but I didn't know how. My dad has always been my rock. Now I want to be his. When I found Caring.com, they gave me guidance, clarity and confidence to start a difficult conversation. Now I know we'll make the right choice, together."
+> — Library ID 2010164133195902 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2010164133195902
+
+#### Seniors Helping Seniors Minneapolis, MN — 3 video ads · home care agency
+
+**Library ID 1568318854868236** · 62 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1568318854868236 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1568318854868236
+
+**Library ID 1009875938622423** · 62 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1009875938622423 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1009875938622423
+
+**Library ID 1590732386420634** · 62 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1590732386420634 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1590732386420634
+
+#### BrightStar Care Springfield / Bloomington — 2 video ads · home care agency
+
+**Library ID 28375396775395427** · 60 days running
+
+> "No one wants to talk about paying for home care, but it's something you need to think about sooner than later. And the good news is you have options. You can pay out of pocket. Maybe your loved one has income, savings, or assets. Option number two, private health insurance. A home care agency like Bright Star Care just might be a network. Number three, long-term care insurance. If your loved one has it, it may help with things like bathing or meal prep. If your loved one or their spouse served in the military, Veterans Affairs might be able to help. And then there's Medicaid and Medicare. Medicaid is state-provided and helps those with limited income. Medicare is federal insurance for those over 65. It has a few different parts that may offer some coverage. I get it. This stuff is complicated, and there's a lot of information out there about it, good and bad. So you've got to be careful. It might take a little work, like making a few phone calls or reading through our helpful Bright Star Care home care guide. If you want your loved one to experience this kind of home care, it's definitely worth it. Right, Linda?"
+> — Library ID 28375396775395427 · 76 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=28375396775395427
+
+**Library ID 1024134900521332** · 24 days running
+
+> "Spring is blooming across Springfield and Bloomington, and while Easter brings joy and renewal, the holidays can sometimes feel lonely for our older loved ones. At Bright Star Care, we believe no one should celebrate alone. Our compassionate caregivers bring the warmth of the holidays right to your front door. From sharing festive treats and creating new traditions to providing a safe, steady hand for a spring walk, we make every moment matter. Give your family true peace of mind this season. Contact Bright Star Care today to learn about our companion care services."
+> — Library ID 1024134900521332 · 39 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1024134900521332
+
+#### Lavender Home Care Solutions — 3 video ads · home care agency
+
+**Library ID 927789856388077** · 60 days running
+
+> "I've seen so many families choose home care, and I've seen how much it changes everything. If you're managing meals, meds, laundry and appointments every day, it's easy to forget what your role used to feel like. You love them. That's never in question. But somewhere along the way, being their son or daughter started to feel more like being their caregiver. That's what Lavender Home Care Solutions is here for. We take care of the daily task. Meals, mobility, medication, reminders, so that you can get back to what really matters, your relationship. When you're not managing every detail, you get to laugh more, breathe easier, and just be a family again. Lavender has supported over 1,000 families with care that's flexible, personal, and built around love, so you can reconnect as a family. If you're ready for that shift, schedule your free care assessment today. There's no pressure, just real support for you and your loved one."
+> — Library ID 927789856388077 · 52 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=927789856388077
+
+**Library ID 1101796032792608** · 59 days running
+
+> "Stop doing chores for your mom, seriously. Let us do it instead. You weren't meant to spend every visit doing laundry, med reminders, and cleaning their house. You're their daughter or their son, not their full-time caregiver. At Lavender Home Care Solutions, we handle the day to day so you can focus on what's important, being a family, sharing coffee instead of to-do lists, laughing instead of rushing, focusing less on a to-do list and more on your family. Trusted by more than a thousand families, Lavender provides care that is a lot less clinical and a lot more personal because family time should feel like family again. Schedule your free in-home care assessment today. No pressure, just a simple way to bring the joy back to your time together."
+> — Library ID 1101796032792608 · 38 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1101796032792608
+
+**Library ID 1523895738638701** · 57 days running
+
+> "Here are three powerful reasons why staying at home is still the best option for most seniors. And here's how Lavender Home Care Solutions can make that a reality. Comfort. Home is where the heart is, and it always has been. It's where your loved one feels relaxed and always at peace. Independence. With the right support, they can keep control of their daily routines and stay active on their term. And finally, whole person wellness. At Lavender Home Care Solutions, we care for the mind, body, and the spirit, helping people stay connected, uplifted, and well at home. From meals and medication reminders, to mobility and companionship, our caregivers bring warmth, dignity, and safety to every visit. Want to see if home care is the right fit for you and your family? Schedule your free and home care assessment today. No pressure, just peace applied."
+> — Library ID 1523895738638701 · 43 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1523895738638701
+
+#### Comfort Keepers Franchise Development — 1 video ad · home care agency
+
+**Library ID 27092123310471554** · 49 days running
+
+> "As a franchise brand, one of the things that I like about Comfort Keepers is the mentorship and the education that they provide to every owner."
+> — Library ID 27092123310471554 · 17 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=27092123310471554
+
+#### Seniors Helping Seniors Greater Dubuque — 3 video ads · home care agency
+
+**Library ID 1052369323913204** · 47 days running
+
+> "Noticing changes in Mom or Dad? Our experienced team can help you understand what you're seeing and what support may help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1052369323913204 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1052369323913204
+
+**Library ID 1057304830081937** · 47 days running
+
+> "Noticing changes in Mom or Dad? Our experience team can help you understand what you're seeing and what support might help. Seniors helping seniors. A way to give and to receive."
+> — Library ID 1057304830081937 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1057304830081937
+
+**Library ID 2784511888574317** · 46 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+#### Panda Care Homecare — 3 video ads · home care agency
+
+**Library ID 1794517091917676** · 39 days running
+
+> "I've been caring for my mom for a few years now. I love her, of course, but it's been a lot. I stepped back from my job, I stopped seeing friends. I was doing everything for her, but only getting paid for a few hours a day. It felt like no one really saw how much I was doing or what it was costing me. Then I found PandaCare. They helped me get approved for more hours, but more importantly, they helped me. Through PandaCare, I found a support group. They helped me access respite care, and I started looking after myself again, just a little. Caring for mom will always be a part of my life, but now I don't feel like I'm doing it all alone."
+> — Library ID 1794517091917676 · 41 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1794517091917676
+
+**Library ID 1097120743005081** · 6 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1752230912760529** · 6 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### My Senior Navigator — 3 video ads · facility, placement or referral
+
+**Library ID 1014613304805654** · 35 days running
+
+> "Does your parent have dementia and is it keeping you up at night thinking about them, you know, in their house, maybe making some bad decisions, not trying to scare you, but kind of the reality of dementia is that, you know, it affects the brain in a way that can be very dangerous to folks. So if your parent is still driving, if your parent is falling or making some bad mistakes financially, things like that, then those are all big, big giant warning signs that you need to get them help. So what I've been doing for the last 10 years or so is I've been helping people find placement here in the North County and Paso Robles and Templeton and Tascadero. And I know all the right questions to ask, and like I said, I've specialized in this, and I think I can really help you kind of make a really good decision."
+> — Library ID 1014613304805654 · 55 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1014613304805654
+
+**Library ID 4443620745902423** · 13 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+**Library ID 27462523760093838** · 13 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+#### Hanson Services, Inc. — 3 video ads · home care agency
+
+**Library ID 2166752683935627** · 33 days running
+
+> "Are you helping care for an aging parent in Ohio? If so, please don't wait until you're running on empty to ask for help. Because if you're managing medications, appointments, meals, and unexpected emergencies, all while running your own life, at some point, it can start feeling like too much. Not because you don't care, because no one was meant to do this alone. That's why we're offering a free in-home care assessment. Plus, when you sign up for a 4-hour minimum care service, you will pay for only 3 hours and receive 1 hour free. It's a simple way to get trusted support for your loved one and finally give yourself room to breathe. Click below to schedule your free care assessment."
+> — Library ID 2166752683935627 · 44 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2166752683935627
+
+**Library ID 1580781833695537** · 33 days running
+
+> "Can I say something that a lot of family caregivers need to hear? You don't get extra points for doing everything yourself. Most family caregivers wait too long to ask for help and end up exhausted. If you're caring for an aging parent in Ohio, we're offering a free in-home care assessment. Plus, when you sign up for a four-hour minimum care service, you will pay for only three hours and receive one hour free. It's a simple way to explore what the right support could look like for your family."
+> — Library ID 1580781833695537 · 24 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1580781833695537
+
+**Library ID 1421031999843449** · 33 days running
+
+> "Most family caregivers hit a wall before they ever ask for help. Not because they don't need it, but because somewhere along the way they convince themselves they were supposed to handle all of it alone. The work, the medications, the appointments, the emergencies, all of it. But the strongest caregivers are the ones who know when to bring someone in. If you're in Ohio and caring for an aging parent, there's a free in-home care assessment. Plus, when you sign up for a four-hour minimum care service, you will pay for only three hours and receive one hour free. It's a simple way to get trusted support for your loved one and finally give yourself room to breathe."
+> — Library ID 1421031999843449 · 43 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1421031999843449
+
+#### Homewatch CareGivers — 3 video ads · home care agency
+
+**Library ID 1510512247497783** · 28 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 2637557243341668** · 28 days running
+
+> "There's no place like home. With Homewatch Caregivers Total Care Solutions, you or your loved one can stay at home for as long as possible. Our range of in-home care levels are designed to evolve with changing needs over time. When paired with our trained caregiving team and Homewatch Connect technology, our services ensure you or your family member is safe, well and comfortable. Homewatch Caregivers, care you can count on for today and tomorrow."
+> — Library ID 2637557243341668 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2637557243341668
+
+**Library ID 1721016575616599** · 28 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Griswold Home Care for the Poconos — 3 video ads · home care agency
+
+**Library ID 3987585954876636** · 27 days running
+
+> "Let's be honest we got this and I got you, I got you"
+> — Library ID 3987585954876636 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=3987585954876636
+
+**Library ID 1370286231237375** · 27 days running
+
+> "Let's be honest we got this and I got you, I got you"
+> — Library ID 1370286231237375 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1370286231237375
+
+**Library ID 2410312729491591** · 27 days running
+
+> "Let's be honest we got this and I got you, I got you"
+> — Library ID 2410312729491591 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2410312729491591
+
+#### Silver Lining Home Healthcare — 3 video ads · home care agency
+
+**Library ID 1022729777256628** · 26 days running
+
+> "Home is more than a place. It's where life happens. Silver Lining brings professional, compassionate care right to your door, so the people you love can stay exactly where they belong. Reach out to us today."
+> — Library ID 1022729777256628 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1022729777256628
+
+**Library ID 1420027086714979** · 26 days running
+
+> "Home is more than a place. It's where life happens. Silver Lining brings professional, compassionate care right to your door, so the people you love can stay exactly where they belong. Reach out to us today."
+> — Library ID 1420027086714979 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1420027086714979
+
+**Library ID 1571752558019076** · 26 days running
+
+> "If you've been worried about a parent living alone, we can help. Silver Lining provides trusted professional home care, so you can stop worrying and start knowing they're okay. We're here. Reach out to us today."
+> — Library ID 1571752558019076 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1571752558019076
+
+#### California Mission Inn — 3 video ads · facility, placement or referral
+
+**Library ID 1017026951204137** · 25 days running
+
+> "Nestled in L.A. County, we welcome anyone from any background to California Mission Inn. CMI is a community of affordable luxury and the best thing you can do is talk to us about your specific situation, whether from across the ocean or right down the street. We are happy to provide you a home where you feel comfortable and can find people like you. We know you want the best community possible for your loved one."
+> — Library ID 1017026951204137 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1017026951204137
+
+**Library ID 2071888480158002** · 25 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 2450630599012735** · 25 days running
+
+> "Nestled in L.A. County, we welcome anyone from any background to California Mission Inn. CMI is a community of affordable luxury and the best thing you can do is talk to us about your specific situation, whether from across the ocean or right down the street. We are happy to provide you a home where you feel comfortable and can find people like you. We know you want the best community possible for your loved one."
+> — Library ID 2450630599012735 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2450630599012735
+
+#### Mountain View Retirement Village — 3 video ads · facility, placement or referral
+
+**Library ID 1377822107816853** · 25 days running
+
+> "So, my name is Nicole Grajalva. I am one of the two family advisors, and I also do the marketing for the community and event planning. Oh my gosh, there's many hats that we wear. Family advisor, anything from admissions to hospital visits for our patients that are out in the hospitals. So, while care visits, we do the move-ins. We have a resident services coordinator now. For each area of the community, whether it's independent, memory care, assisted living, there's a secret physician's packet that's needed. And obtaining that information may be simple to a family member, right? Where you just go get the packet and get it done. But working with those providers and getting that information is kind of that ticket. Which is kind of where we play in, so we take away that overwhelming feeling of having to get that paperwork done. And we do it on the back end, and we communicate with the providers to be able to get all that documentation and just ease their movement. We transition as family advisors for when the family leaves them with us. Now we get to be that family for them. Helping them learn the activities, calendar, and events. Introducing them to our welcoming committee. Introducing them to their families here, right? And their new friends here. We also partner with like realtors to help them sell their homes, because that's part of that transition that they can be overwhelmed with also. We partner with a moving company, and so the movers will go and set up and help them move their items over and just be there for them in that transition. I come from a big family with lots of people around me all the time is what I'm used to. Being in a community like this, when I can adopt a grandma or a grandpa or a family. At the end of the day to say, I made one more connection or one more."
+> — Library ID 1377822107816853 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1377822107816853
+
+**Library ID 1364714651879641** · 25 days running
+
+> "My name is Jeff Creek. I work at Mountain View Retirement Village. I was actually lucky enough to get this position via my handyman business that I had years ago. I had a couple of customers who worked in our sister facility, and so I had kind of built a relationship with a few of their employees, and then I got to meet their executive director, and when the time came for them to look for a maintenance director, they called me. But what I didn't have before was the long-term connection, where you're seeing the people every day and all day long, and I didn't ever imagine that it would impact my personal life the way that it has. But the biggest thing is the learning part. Some of the people in this building have been some of the most influential business owners this town has ever seen. I mean, they've had successful businesses that their families have taken over, and they're still successful, and it's afforded them the opportunity to live like they live here, and I'm intrigued. I want to learn as much as I can from them. And just being interested has brought on a lot of personal relationships with a lot of people that I wouldn't normally cross paths with. I appreciate that more than anything, and I learn everything that I can from them. That's what I appreciate about this building, more so than any other building that I visited being in this role. Yeah, we've got a really, really good culture here, more than any job I've ever had, so super grateful. Yeah, super happy about it."
+> — Library ID 1364714651879641 · 90 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1364714651879641
+
+**Library ID 2300457337390131** · 25 days running
+
+> "My name is Jeff Creek. I work at Mountain View Retirement Village. I was actually lucky enough to get this position via my handyman business that I had years ago. I had a couple of customers who worked in our sister facility, and so I had kind of built a relationship with a few of their employees, and then I got to meet their executive director, and when the time came for them to look for a maintenance director, they called me. But what I didn't have before was the long-term connection, where you're seeing the people every day and all day long, and I didn't ever imagine that it would impact my personal life the way that it has. But the biggest thing is the learning part. Some of the people in this building have been some of the most influential business owners this town has ever seen. I mean, they've had successful businesses that their families have taken over, and they're still successful, and it's afforded them the opportunity to live like they live here, and I'm intrigued. I want to learn as much as I can from them. And just being interested has brought on a lot of personal relationships with a lot of people that I wouldn't normally cross paths with. I appreciate that more than anything, and I learn everything that I can from them. That's what I appreciate about this building, more so than any other building that I visited being in this role. Yeah, we've got a really, really good culture here, more than any job I've ever had, so super grateful. Yeah, super happy about it."
+> — Library ID 2300457337390131 · 90 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2300457337390131
+
+#### Santa Maria Terrace — 3 video ads · facility, placement or referral
+
+**Library ID 1184553457209559** · 25 days running
+
+> "Lost my husband in 2005, but we've been making it through all my friends here This is a really nice place to live I started out in San Luis Obispo and I drove to all the places between here and San Diego and the garden just hit it perfectly right here. We couldn't have Directors who are any nicer. It's just a welcoming place to be"
+> — Library ID 1184553457209559 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1184553457209559
+
+**Library ID 910585668761683** · 25 days running
+
+> "Lost my husband in 2005, but we've been making it through we couldn't have Directors who are any nicer. It's just a welcoming place to be"
+> — Library ID 910585668761683 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=910585668761683
+
+**Library ID 3159394364250513** · 25 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+#### The Lexington Assisted Living — 3 video ads · facility, placement or referral
+
+**Library ID 2020651625305322** · 25 days running
+
+> "My name is Jill Morris Chapman and I am the executive director here at the Lexington. The Inmentura, we're very close to beaches and a lot of really good restaurants. There's a lot of entertainment around here. Our facility offers a really good home environment experience. We have a lot of long-term staff here who are dedicated to the well-being of our residents. We feel personally responsible for everybody here and we show our love to each and every one of our residents. The care we offer at the Lexington Assisted Living is memory care, assisted living, and independent living. As you walk in through the far door of the Lexington Assisted Living, we have our front lobby. Up to the right we have our parlor and business office. Down that hallway we have our memory care. And straight across from our lobby is the courtyard with our pool and a very nice sunbathing area. Through the courtyard we have our dining room to our left. If you go straight into your right we have our salon. And we also have our PT department, PALS PT, that provides physical and occupational therapy for our residents here. There is our main elevator over there to get to our second and third-story apartments. Lexington offers small studios, large studios, deluxe studios, one bed,"
+> — Library ID 2020651625305322 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2020651625305322
+
+**Library ID 1529275578948200** · 25 days running
+
+> "The caregivers are unbelievable. They work hard. Everybody here, smile, say thank you, and I love it."
+> — Library ID 1529275578948200 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1529275578948200
+
+**Library ID 4579764705572412** · 25 days running
+
+> "I started cooking since I was little. My mouth was a great cook. You will open the fridge door and say, well, there's nothing here, and then the mango cup and make a beautiful meal out of that. I think I find my purpose."
+> — Library ID 4579764705572412 · 15 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=4579764705572412
+
+#### Franchise with Always Best Care — 1 video ad · home care agency
+
+**Library ID 4485961095056044** · 19 days running
+
+> "Hi, this is Sanjay Das with Always Best Care in Raleigh, North Carolina. My background isn't in home care, so it's in software management and things like that. So when I started off, I didn't know what to focus on or where I could play, if you will. I knew what the Always Best Care model was, which was non-medical home care and placement, I wanted to create something that was a niche for us, that we are recognized for. And so dementia comes in, and that's our specialty. Does that mean we know everything? No, it just means that we specialize in that. It's still within our Always Best Care model, which is home care. And it's non-medical, and the idea is how do we create our own, kind of like a mini-brand within the overall big brand. So that's what we're doing. So anything you put your heart in, you're going to be successful at. Well that's where we are. You know, we put our heart in, and we feel good about it."
+> — Library ID 4485961095056044 · 69 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=4485961095056044
+
+#### Southgate Senior Living — 3 video ads · facility, placement or referral
+
+**Library ID 1603377978160679** · 19 days running
+
+> "When you get to Southgate, you'll see the palm trees and there's a beautiful pond and as you walk in it's really welcoming and inviting and it's bright and a receptionist always has a great big smile on her face ready to welcome everybody here and If you want to learn more Call us come in for a tour schedule a tour on our website. Feel free to just stop by Or put in an inquiry online. We'd love to see you"
+> — Library ID 1603377978160679 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1603377978160679
+
+**Library ID 1003078332775409** · 19 days running
+
+> "I've lived here not even six months yet, I don't think, about six months or less. But it feels like I've been here at home for a long time. We don't have to cook, we don't have to bake, we don't have to sweep any floors. We don't even have to change the sheets on our bed if we don't want to. It's like we're on vacation. Love it here. Love it here."
+> — Library ID 1003078332775409 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1003078332775409
+
+**Library ID 1087570130376906** · 19 days running
+
+> "I think there are a lot of very kind people here. My name is Donna Baker. It is a beautiful building. It's a beautiful area. I have a number of friends here. I'd like to have more. I'd like to be friendly with everyone."
+> — Library ID 1087570130376906 · 30 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1087570130376906
+
+#### Visiting Angels Edgewater, MD — 3 video ads · home care agency
+
+**Library ID 28311704921789038** · 19 days running
+
+> "One of the most common and obvious signs occurs when an older adult suddenly becomes disoriented or lost when going to the grocery store, the doctor's office, a relative's house, or another familiar location. Getting lost or disoriented is a serious safety concern that should be addressed with a doctor."
+> — Library ID 28311704921789038 · 18 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=28311704921789038
+
+**Library ID 4059173257551805** · 19 days running
+
+> "One of the most common and obvious signs occurs when an older adult suddenly becomes disoriented or lost when going to the grocery store, the doctor's office, a relative's house, or another familiar location. Getting lost or disoriented is a serious safety concern that should be addressed with a doctor."
+> — Library ID 4059173257551805 · 18 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=4059173257551805
+
+**Library ID 1386294230140210** · 19 days running
+
+> "One of the most common and obvious signs occurs when an older adult suddenly becomes disoriented or lost when going to the grocery store, the doctor's office, a relative's house, or another familiar location. Getting lost or disoriented is a serious safety concern that should be addressed with a doctor."
+> — Library ID 1386294230140210 · 18 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1386294230140210
+
+#### Evergreen Daytime Senior Care — 3 video ads · facility, placement or referral
+
+**Library ID 1573155004091273** · 18 days running
+
+> "Looking for senior care that actually brings joy to your parents' day? Memberships are available at Evergreen Daytime Senior Care in Stanford. We'll help your loved one rediscover joy, connection, and a sense of purpose in a vibrant, welcoming environment. Our compassionate team makes sure every senior receives the personalized attention they need to feel truly at home each day. Click the link below and fill out the form to learn more today."
+> — Library ID 1573155004091273 · 29 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1573155004091273
+
+**Library ID 2097935311147633** · 18 days running
+
+> "Looking for senior care that actually brings joy to your parents' day? Memberships are available at Evergreen Daytime Senior Care in Stanford. We'll help your loved one rediscover joy, connection, and a sense of purpose in a vibrant, welcoming environment. Our compassionate team makes sure every senior receives the personalized attention they need to feel truly at home each day. Click the link below and fill out the form to learn more today."
+> — Library ID 2097935311147633 · 29 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2097935311147633
+
+**Library ID 1052845431043307** · 18 days running
+
+> "Looking for senior care that actually brings joy to your parents' day? Most senior daycares feel like a waiting room. Evergreen feels like a club. At Evergreen Daytime Senior Care in Stanford, your loved one will step into a space that's warm, lively, and built around one thing, making every day something worth looking forward to. Click the link below and fill out the form to learn more today. Isolation is one of the biggest threats to a senior's health. When your parent or loved one spends most of their days alone at home, their mental sharpness, physical health, and overall sense of purpose can all quietly decline without anyone noticing. At Evergreen, that changes. Here, members spend their days doing things they actually enjoy. Baking classes, art projects, puzzles, and creative activities keep the mind sharp and the days full. Chair exercise programs give the body a reason to move. Meals are nutritious and shared together in a way that feels social, not institutional. And throughout the day, our caring and trained staff takes the time to make sure every member feels genuinely known and cared for. When the day is done, your parent or loved one will come home happy and fulfilled. Plus, we offer door-to-door transportation. So getting your loved one here and home safely is one less thing on your plate. Find out what Art Club is all about. Click the link below, fill out the form, and book a tour today."
+> — Library ID 1052845431043307 · 99 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1052845431043307
+
+#### CarDon Senior Living — 3 video ads · facility, placement or referral
+
+**Library ID 1447887920847328** · 17 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1059019786892034** · 17 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1461336785803493** · 17 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Liberty Home Care — 3 video ads · home care agency
+
+**Library ID 1012027588547612** · 14 days running
+
+> "If you worked at K-25, ORNL Y-12, or another Department of Energy facility around Oak Ridge, this message could be important for you. Thousands of former workers developed illnesses after years of supporting our country's nuclear weapons program. Because of that, many workers now qualify for benefits through the Department of Labor's EEOICPA program. Most people know it simply as the white card. If you're approved, those benefits may include skilled nursing care, caregivers in your home, medical equipment, medications, travel to medical appointments, payments totaling up to $400,000. But here's what surprises people. Many eligible workers either don't know they qualify or they already have benefits and don't realize they have the right to choose a different home care provider. At Liberty Home Care, we specialize in helping Department of Energy workers understand their benefits and receive the care they've earned. If you worked at K-25, Portsmouth, Paducah, Y-12, ORNL, or another covered Department of Energy facility, take just a minute and see if you qualify. Fill out the short form below or give us a call at 865-350-6312. You spent your career serving our country. Now let us help make sure you receive the benefits you've earned."
+> — Library ID 1012027588547612 · 87 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1012027588547612
+
+**Library ID 1695510831539928** · 14 days running
+
+> "If you worked at Y-12, K-25, Oak Ridge National Laboratory, or another Department of Energy atomic facility in the Oak Ridge area before 1996, this message is for you. Former atomic workers may qualify for benefits through a federal Department of Labor program called EEOICPA, often referred to as the White Card Program. If your health was affected by radiation, toxic chemicals, asbestos, beryllium, or other hazardous materials, you may qualify for compensation up to $400,000 in medical benefits. And if you have a Department of Labor White Card, you may qualify for in-home health care with no out-of-pocket cost to you, including nursing care and help with daily activities. Liberty Home Care specializes in helping atomic workers and their families understand and use these benefits. If you worked at an Oak Ridge atomic facility before 1996, click below and fill out the short form. Tell us where you worked and when and we'll help you understand what benefits may be available to you."
+> — Library ID 1695510831539928 · 68 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1695510831539928
+
+**Library ID 1708923423519924** · 9 days running
+
+> "Did you work at Y-12, K-25, ORNL, or another Department of Energy facility? Many former DOE workers don't realize they may qualify for valuable federal benefits. Let me ask you something. Does your spouse help you around the house? Maybe they cook your meals, pick up your prescriptions, drive you to doctor's appointments, or help you with everyday tasks. If you qualify for the federal benefits available to DOE workers, commonly referred to as white card benefits, your spouse or another eligible family member may be able to serve as your caregiver and, if they meet the program's requirements, may be paid for the care they're already providing. To find out whether you may qualify, fill out the form below with your name, phone number, the DOE facility where you worked, and the years you worked there. We'll review your information and contact you to discuss your potential eligibility."
+> — Library ID 1708923423519924 · 62 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1708923423519924
+
+#### Seniors Helping Seniors Nashville — 3 video ads · home care agency
+
+**Library ID 1823861125721398** · 10 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+**Library ID 1603034711379928** · 10 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+**Library ID 1623230325889719** · 10 days running
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+#### Bunny Home Care — 3 video ads · home care agency
+
+**Library ID 1035685716011629** · 8 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+**Library ID 961382290313110** · 6 days running
+
+> "Hi, having troubles with your current home care agency? Say not answer your phone calls or help when needed. Switching is very easy and you can get paid up to $1,700 per week for taking care of your loved ones. At Pony Home Care, we offer clear communication, five-star reviews, and excellent customer support. Contact us today to switch."
+> — Library ID 961382290313110 · 24 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=961382290313110
+
+**Library ID 3197587730450078** · 6 days running
+
+> "Hi, having troubles with your current home care agency? Say not answer your phone calls or help when needed. Switching is very easy and you can get paid up to $1,700 per week for taking care of your loved ones. At Pony Home Care, we offer clear communication, five-star reviews, and excellent customer support. Contact us today to switch."
+> — Library ID 3197587730450078 · 24 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=3197587730450078
+
+#### Always Best Care at Wake Forest, N. Raleigh, Wilmington, & Johnston County — 3 video ads · home care agency
+
+**Library ID 4007585666050922** · 7 days running
+
+> "Always Best Care helps families in Wake Forest and Johnson County get trusted senior care at home. Always Best Care, I am able to live independently again and don't have to rely on anyone checking up on me or making sure everything's okay. If I needed Always Best Care tomorrow, I'd give them a call today to get over there."
+> — Library ID 4007585666050922 · 27 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=4007585666050922
+
+**Library ID 1842281940478832** · 7 days running
+
+> "Always Best Care helps families in Wake Forest and Johnson County get trusted senior care at home. Always Best Care, I am able to live independently again and don't have to rely on anyone checking up on me or making sure everything's okay. If I needed Always Best Care tomorrow, I'd give them a call today to get over there."
+> — Library ID 1842281940478832 · 27 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1842281940478832
+
+**Library ID 1085357400670045** · 6 days running
+
+> "Always Best Care helps families in Wake Forest and Johnson County get trusted senior care at home. Always Best Care, I am able to live independently again and don't have to rely on anyone checking up on me or making sure everything's okay. If I needed Always Best Care tomorrow, I'd give them a call today to get over there."
+> — Library ID 1085357400670045 · 27 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1085357400670045
+
+#### Always Best Care Marketing — 3 video ads · home care agency
+
+**Library ID 1059942970156769** · 6 days running
+
+> "At Always Best Care, we believe safety extends beyond basic care. Our caregivers provide an added layer of protection, serving as trusted eyes and ears in the home to help identify concerns early and protect those we serve. Let's work together to keep seniors safe. Click Learn more to speak with a care professional."
+> — Library ID 1059942970156769 · 20 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1059942970156769
+
+**Library ID 1388165692865388** · 6 days running
+
+> "At Always Best Care, we believe safety extends beyond basic care. Our caregivers provide an added layer of protection, serving as trusted eyes and ears in the home to help identify concerns early and protect those we serve. Let's work together to keep seniors safe. Click Learn more to speak with a care professional."
+> — Library ID 1388165692865388 · 20 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1388165692865388
+
+**Library ID 3958090927659286** · 6 days running
+
+> "At Always Best Care, we believe safety extends beyond basic care. Our caregivers provide an added layer of protection, serving as trusted eyes and ears in the home to help identify concerns early and protect those we serve. Let's work together to keep seniors safe. Click Learn more to speak with a care professional."
+> — Library ID 3958090927659286 · 20 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=3958090927659286
+
+#### Chase Memorial Nursing Home & Rehab — 1 video ad · facility, placement or referral
+
+**Library ID 1610029260465420** · 6 days running
+
+> "So when our patients come here for short-term rehab, the discharge planning process starts on day one. We want to make sure that our patients get home in a timely fashion and making sure that all of their goals are met so that they can be safe and successful."
+> — Library ID 1610029260465420 · 19 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1610029260465420
+
+#### Comfort Keepers Home Care - Secaucus, North Bergen - Bloomfield, NJ — 3 video ads · home care agency
+
+**Library ID 1003998005991344** · 5 days running
+
+*No usable speech (the audio is music only).*
+
+**Library ID 996755483371826** · 5 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+**Library ID 948428831654945** · 5 days running
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+### Set aside: ads that do not address the family
+
+| Advertiser | Library ID | Addresses | Matched phrase |
+|---|---|---|---|
+| Supreme Homecare | 807969130678262 | recruits caregivers | sign-on bonus |
+| Home Care Breakthrough Solutions | 1390544851997778 | sells to agency owners | home care agency owners |
+| Care To Stay Home | 2257221164768822 | recruits caregivers | Apply now |
+| Home Care Breakthrough Solutions | 3805532869655623 | sells to agency owners | agency owners |
+| Digital Champions | 1111475078108612 | sells to agency owners | home care agency owner |
+| Home Care Pipeline | 2211476392958921 | sells to agency owners | Home care agency owners |
+| Home Care Breakthrough Solutions | 1736123977736011 | sells to agency owners | Home care agency owners |
+| Home Care Pipeline | 1843423676621593 | sells to agency owners | Home care agency owners |
+| Sutton In-Home Senior Care | 1399910885614886 | recruits caregivers | competitive pay |
+| Nurse Next Door | 1049636074667932 | sells to agency owners | franchise owner |
+| Almost Kin | 1533409354981779 | recruits caregivers | hiring caregivers |
+| Care To Stay Home | 756130090252626 | recruits caregivers | Apply now |
+| Care To Stay Home | 1686342492371786 | recruits caregivers | Apply now |
+| Franchise with Always Best Care | 2111397356455083 | sells to agency owners | franchise owner |
+| Franchise with Always Best Care | 1176941211206119 | sells to agency owners | franchise owner |
+| Comfort Keepers Franchise Development | 831789136420663 | sells to agency owners | franchise owner |
+| ParaMed Home Health Care Services | 1540595760946895 | recruits caregivers | career with |
+| ParaMed Home Health Care Services | 1005245148912256 | recruits caregivers | career with |
+| ParaMed Home Health Care Services | 27903691249238715 | recruits caregivers | career with |
+| Home Care Pipeline | 1255139586685877 | sells to agency owners | Home care agency owners |
+| Sutton In-Home Senior Care | 1386385050193653 | recruits caregivers | competitive pay |
+| Sutton In-Home Senior Care | 2261879011267181 | recruits caregivers | competitive pay |
+| American Senior Communities | 1364120469209421 | recruits caregivers | Apply today |
+| American Senior Communities | 1000032039714831 | recruits caregivers | Apply today |
+| American Senior Communities | 1073944888456338 | recruits caregivers | Apply today |
+| Chase Memorial Nursing Home & Rehab | 1394569159522812 | recruits caregivers | join our team |
+| Chase Memorial Nursing Home & Rehab | 1380053323654443 | recruits caregivers | Career with |
+| Digital Champions | 2663228337463534 | sells to agency owners | home care agency owner |
+| Digital Champions | 1094595366556174 | sells to agency owners | your agency |
 
 ## Dislikes & Complaints Ledger
 

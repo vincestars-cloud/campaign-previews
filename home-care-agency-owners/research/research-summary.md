@@ -1,13 +1,14 @@
 # Senior-Care Operators — Buyer Research (summary of the live page)
 
-Generated 2026-09-10 from the same files that build https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/ . Every quote carries its source link. Numbers come from measured counts, never estimates; hypotheses are labeled.
+Generated 2026-09-11 from the same files that build https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/ . Every quote carries its source link. Numbers come from measured counts, never estimates; hypotheses are labeled.
 
 ## TLDR
 
 - **Who the buyer is:** the owner or administrator of a senior-care business across the whole ladder — home care, home health, hospice, assisted living / residential care homes, memory care, senior living, adult day, placement agencies, in-home ABA. Corpus: 14,451 documents read, **1,868 in the buyer's own voice (1,525 spoken by operating owners)**; sources are owner Facebook groups first, then owner subreddits, YouTube, provider reviews and trade press (chapter "Who the buyer is").
 - **What they are trying to buy:** the phone ringing without renting families from a directory. A Place for Mom is the most-discussed paid source (42 buyer documents): $50–68 a lead, the same family sold to several agencies, billed whether or not it converts; the second job is hiring and keeping caregivers (chapters "Lead Sources", "Frustrations", "Previous Solutions").
 - **What they have already tried:** hospital and discharge-planner relationships (trusted, slow), the directories (shared), Facebook ads that brought caregivers instead of clients, coaches and licensing consultants. Nobody in buyer voice describes an inbound system they own (chapter "Previous Solutions").
-- **Who sells to them today:** 95 advertisers with 233 live ads (203 to running businesses, 30 to would-be owners). The lane leaders sell *exclusive booked tours or assessments under your own brand, called back in minutes, guaranteed in 90 days* — Occupancy Partners, HomecareGrow, OBB, PatientsPipeline, Wisdom First, Census Home. Cleaned 2026-09-10: consumer and recruiting ads are out of the B2B set, adjacent-practice vendors are set aside (chapter "Competitor Ads").
+- **Who sells to them today:** 95 advertisers with 233 live ads (203 to running businesses, 30 to would-be owners). The lane leaders sell *exclusive booked tours or assessments under your own brand, called back in minutes, guaranteed in 90 days* — Occupancy Partners, HomecareGrow, OBB, PatientsPipeline, Wisdom First, Census Home. Cleaned 2026-09-11: consumer and recruiting ads are out of the B2B set, adjacent-practice vendors are set aside (chapter "Competitor Ads").
+- **What their ads say out loud:** 65 top video ads from 41 operator-facing advertisers transcribed (57 with speech, 7 silent, 1 not retrievable), plus 22 ads Vince hand-picked by Library ID with playable videos, and a capture of HomecareGrow's "before your call" page (chapters "Video ad transcripts", "Hand-picked video ads", "HomecareGrow").
 - **The lane for inLeap:** families finding *you* instead of the directory — owned inbound plus intake, exclusive, priced on the result, with the caregiver-applicant by-product the same campaigns produce (chapters "Why They Buy", "Awareness → Offer Map").
 - **Decision:** treat the "Why They Buy" chapter as the ad brief and build the offer + landing page from it next; the cost of waiting is that the six vendors above are already teaching this buyer what to expect.
 
@@ -27,19 +28,22 @@ Generated 2026-09-10 from the same files that build https://vincestars-cloud.git
 12. [Why They Buy — the five answers an ad needs (Ad Brief)](#why-they-buy-the-five-answers-an-ad-needs-ad-brief)
 13. [Economics, Valuation & Exit — what the established buyer scores by](#economics-valuation-exit-what-the-established-buyer-scores-b)
 14. [Retention at Scale — the growth ceiling and the valuation lever](#retention-at-scale-the-growth-ceiling-and-the-valuation-leve)
-15. [Competitor Ads across the operator ladder (cleaned 2026-09-10)](#competitor-ads-across-the-operator-ladder-cleaned-2026-09-10)
-16. [Landing pages (B2B only)](#landing-pages-b2b-only)
-17. [Reviews by Star — buyer-side voice](#reviews-by-star-buyer-side-voice)
-18. [Trade press & owner surveys (numbers with URLs)](#trade-press-owner-surveys-numbers-with-urls)
-19. [Competitor marketing agencies — inLeap's direct set](#competitor-marketing-agencies-inleap-s-direct-set)
-20. [Vendor / competitor map](#vendor-competitor-map)
-21. [Go-deeper thread cards](#go-deeper-thread-cards)
-22. [Headline candidates (Tab 11)](#headline-candidates-tab-11)
-23. [Frequency ranking (buyer-voice complaint patterns)](#frequency-ranking-buyer-voice-complaint-patterns)
-24. [Vocabulary ledger](#vocabulary-ledger)
-25. [Awareness → Offer Map](#awareness-offer-map)
-26. [Operator ladder, speaker gate and sources](#operator-ladder-speaker-gate-and-sources)
-27. [Self-audit and backfill](#self-audit-and-backfill)
+15. [Competitor Ads across the operator ladder (cleaned 2026-09-11)](#competitor-ads-across-the-operator-ladder-cleaned-2026-09-11)
+16. [Video ad transcripts — top 3 per operator-facing competitor](#video-ad-transcripts-top-3-per-operator-facing-competitor)
+17. [Hand-picked video ads (Vince) — transcripts and playable videos](#hand-picked-video-ads-vince-transcripts-and-playable-videos)
+18. [HomecareGrow “before your call” page — captured 2026-09-11](#homecaregrow-before-your-call-page-captured-2026-09-11)
+19. [Landing pages (B2B only)](#landing-pages-b2b-only)
+20. [Reviews by Star — buyer-side voice](#reviews-by-star-buyer-side-voice)
+21. [Trade press & owner surveys (numbers with URLs)](#trade-press-owner-surveys-numbers-with-urls)
+22. [Competitor marketing agencies — inLeap's direct set](#competitor-marketing-agencies-inleap-s-direct-set)
+23. [Vendor / competitor map](#vendor-competitor-map)
+24. [Go-deeper thread cards](#go-deeper-thread-cards)
+25. [Headline candidates (Tab 11)](#headline-candidates-tab-11)
+26. [Frequency ranking (buyer-voice complaint patterns)](#frequency-ranking-buyer-voice-complaint-patterns)
+27. [Vocabulary ledger](#vocabulary-ledger)
+28. [Awareness → Offer Map](#awareness-offer-map)
+29. [Operator ladder, speaker gate and sources](#operator-ladder-speaker-gate-and-sources)
+30. [Self-audit and backfill](#self-audit-and-backfill)
 
 
 
@@ -990,7 +994,7 @@ For the established owner, caregiver retention is not an HR nicety — it is the
 
 ---
 
-## Competitor Ads across the operator ladder (cleaned 2026-09-10)
+## Competitor Ads across the operator ladder (cleaned 2026-09-11)
 
 
 **Cleanup 2026-09-10 (Vince's review: "some of the ads aren't B2B — ads looking for caregivers, nurses, employees, and ads looking for clients").** Every card is now classified by WHO it talks to before any product word counts: an ad that names the operator as its audience sells to operators; an ad that recruits workers ("now hiring", "$21–23/hr", "join our team") or talks to the family ("is it the right time for memory care?", "no waitlist", "your loved one") is the operator's own ad whatever else it says; a B2B ad that names no senior-care vertical (doctors, vets, therapists, PT clinics, generic hourly hiring) is an adjacent-practice ad kept aside as a format reference; a lead-gen vendor's own family-facing ad is its ghost funnel. Thirteen residual cards are hand-read overrides (`raw/ads_overrides.json`, each with its reason). Before the cleanup the "sells to operators" set was 264 and contained ~30 consumer or recruiting ads and ~25 adjacent-practice ads; three real B2B ads (Census Home ×2, Wisdom First) were hiding in the own-ads bucket. Precision after the cleanup, random 30 read one by one: 30 of 30 B2B-to-senior-care-operators on a fresh random 30 (seed 911) read one by one after the 2026-09-10 audience-first cleanup; the 09-08 rules had scored 28 of 30 on their own sample while still admitting ~30 consumer/recruiting ads and ~25 adjacent-practice ads, which is why the sample number alone was not enough (Vince caught it by reading the tab).
@@ -1099,6 +1103,704 @@ For the established owner, caregiver retention is not an HR nicety — it is the
 | Treasured Hearts ABA, LLC | https://www.facebook.com/treasuredheartsaba/ | 1 | 78d | operators | Multi-location medical, In-home ABA |  |
 
 **Read of the field across the ladder (from the ads, hypotheses labeled):** Across the ladder the vendors sell four things: (a) occupancy / move-ins / booked tours to assisted living and senior living operators — Wisdom First ('6 MONTH WAIT LIST', '50+ facilities trust us', 30-second quiz), Occupancy Partners ('How much of your census depends on referral sources you don't own? One discharge planner moves on...'), Searchlift ('15 more family inquiries a month'), Grow Your Occupancy (sales-leader training), Rilla (mystery-shop AI for sales counselors); (b) caregiver / CNA recruiting to home care, home health and senior living — Talroo ('If you hire 50+ caregivers, CNAs, or home health aides a month, the big job boards can't keep your pipeline full'), JT Media, Hireline, ClearDesk (offshore schedulers and recruiters 'built for Home Care', HIPAA); (c) AI intake / scheduling / referral processing — Phoebe ('Don't Hire Another Scheduler'), CareIntake (feed only), Homerun Health ('intake in minutes, not days... AI agents that process referrals'), Integrated Hire ('you don't need another $90K RN'); (d) the pay-per-lead / we-pay-for-ads guarantee lane — VERVE ('5+ in-home elder care leads in 7 days, no ad spend'), HomecareGrow ('We Pay For Ads. You Get Home Care Clients', owners doing $1M+/yr), Home Care Pipeline, Premiere Destiny ('Your Referrals Aren't Random'). The starter lane is its own market: RAL Academy, Assisted Living Investing, The RAL Room, Adult Day Care Academy, hospice-license consultants, Florida ALF consulting — courses and licensing, not growth. **Gap for inLeap (hypothesis):** nobody in the 267 operator-facing ads sells one engine that fills census AND the caregiver pipeline across more than one rung; the occupancy vendors stop at AL/senior living, the recruiting vendors stop at job ads, and the pay-per-lead vendors stop at home care. The words that recur in the winners: 'empty', 'wait list', 'booked tours', 'referral sources you don't own', 'we pay for ads', 'don't hire another scheduler'.
+
+
+---
+
+## Video ad transcripts — top 3 per operator-facing competitor
+
+**What the competition says out loud.** The top 3 video ads per advertiser in the audited *sells to operators* class, ranked the way the Competitor Ads tab orders its cards (days running, then versions, then impressions position), transcribed with faster-whisper small.en over the first 120 seconds. **41 advertisers · 65 ads · 57 with speech · 7 silent · 1 not retrievable.** Every video was read from the ad's own Ad Library record and checked for an audio track before transcription, and every transcript is tied to its own Library ID (an ad page also embeds the advertiser's other ads; an earlier pass that took the first video on the page was re-matched ad by ad). On the page each transcript sits in a collapsed *What it says out loud* block inside the ad's card.
+
+**Substitutions:** HomecareGrow.io 1320177719636183 could not be retrieved (not retrievable (login-shell ad page; scraped link no response x3)) and was replaced by its next-ranked video ad 4540501932901389; Occupancy Partners 2812448492457593 could not be retrieved (not retrievable (ad page never hydrates; per-card link connection timeout x2)) and was replaced by its next-ranked video ad 1780086836521315.
+
+### Certified Homecare Consulting — 1 video ad
+
+**Library ID 800022916388270** · 245 days running · started Jan 7, 2026 · aimed at would-be owners
+
+> "There's no better time than right now to start your own home care or home health care business. The experts at Certified Home Care Consulting have years of professional, hands-on experience in helping eager entrepreneurs like yourselves get their business off the ground. From top to bottom, they take you through everything step-by-step, guaranteed licensure, accreditation, policies, procedures, marketing, plus continued support with lifetime consulting. Best of all, there's absolutely no franchise fees. Come join a trusted team with a proven track record. Certified Home Care Consulting."
+> — Library ID 800022916388270 · 41 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=800022916388270
+
+### The RAL Room: Assisted Living Mastermind — 1 video ad
+
+**Library ID 937085615665865** · 208 days running · started Feb 13, 2026 · aimed at would-be owners
+
+> "Look, these are the exact reasons why residential assisted living is an opportunity that investors need to pay attention to right now. First, the aging population is accelerating faster than the new housing supply. There just simply is not enough beds for the upcoming population who will need them. Second, large facilities cannot meet the demand for smaller, home-like care environments. And third, families are actively seeking alternatives to traditional institutional senior housing. These trends are structural, they are not cyclical, and that is why residential assisted living continues to grow quietly without making major headlines. And investors, well, they're making both cashflow and finding purpose. So understanding these trends matters before you decide if this is the right model for you. We will walk through the data, the realities, and what it means for operators and investors in the live webinar. So make sure you have it on your calendar, and we'll see you live."
+> — Library ID 937085615665865 · 63 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=937085615665865
+
+### Home Care Breakthrough Solutions — 3 video ads
+
+**Library ID 935345255552178** · 184 days running · started Mar 9, 2026
+
+> "Home care owners, I'm sure you've heard this, home care demand is rising. Yet there's many agencies that stay stuck at a revenue ceiling. It's almost like a revenue roller coaster. Revenue goes up, you hit a ceiling, and then you drop back down. It's not because of competition, although it feels like that's what the problem is. It's not because people can't afford care, even though every social worker and their mother are leading you to believe that's what the problem is. The real problem is because there is no repeatable referral system in your business driving growth, or because the sales system that you have now just lacks strategy and tactics that are actually working. Most owners throw effort at the wall hoping that something's going to stick. See, what we do is we replace that with a proven system that includes timeless strategies, proven tactics, and the best part is that we've been doing this long enough that we can guarantee you a return on investment or a work for free. We'll install the full sales framework, we'll implement the KPI formula that actually predicts results, and we will systematize sales management so growth doesn't depend just on you. Now, this is the same blueprint that's helped agencies move past the $1 million, $5 million, even $20 million plus in revenue with lots and lots and lots of documented results that we can share. Clear strategy, clear metrics, clear accountability. If you're ready for predictable referral growth, schedule a strategy call with us, click the button or click the learn more button, complete that quick questionnaire, and then let's jump on a call."
+> — Library ID 935345255552178 · 84 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=935345255552178
+
+**Library ID 745374488077094** · 163 days running · started Mar 30, 2026
+
+> "Hey there, home care agency owners. Why is it that some agencies consistently land their ideal clients while many are still stuck dealing with inconsistent referrals and slow growth and then hitting their revenue ceiling again and again? Trust me, I've been there. I was doing everything when I had my business. I was networking. I was doing code calls to all the facilities in town. I ran health fairs and paid internet leads and running ads and hiring sales reps but it never actually led to predictable growth. It didn't happen for me until I finally installed an actual sales system inside of my home care business. That's when my company scaled and we quadrupled profits in just one year. Now I can tell you the key to consistent high value referrals is not random drop-ins and networking events that yield little to no results. It's not hiring a salesperson and then hoping that they're magically going to bring in all these clients or posting online and paying for internet leads and then getting frustrated when the results are lackluster at best or just sitting back hoping that organic growth is going to get you there and that your your clients are going to refer enough people and then blaming the lack of results on too much competition. The truth is most home care owners don't actually have a real system in place. They don't, right? They are throwing a whole bunch of stuff against the wall and then hoping that some of it sticks. They're doing a little bit of everything, right? But not getting the lasting results. It's like up down, up down in their revenue. Are you familiar with the revenue roller coaster? I knew it all too well. That's why I built the rapid referral sales system specific for home care business owners. It's a proven step-by-step process that guarantees you at least 10 net new ideal clients from industry referral sources in the next seven months or sooner or we work with you for free until you get the result. Now, here's how it works. Step one, we install a"
+> — Library ID 745374488077094 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=745374488077094
+
+**Library ID 1736123977736011** · 103 days running · started May 29, 2026
+
+> "If you run a home care agency doing between four and five million a year, you've probably experienced this. A hospital or a former partner sends you a couple new clients. You won't accept the case, but you don't have enough caregivers to staff it. So you delay or you turn the case away. Not because demand's not there, but because caregiver recruiting and retention, it's not predictable enough. It's one of the biggest reasons home care agencies stall at the four to five million dollar revenue level. The growth opportunity exists, but the infrastructure underneath to support it doesn't. Hi, I'm Greg Mazza. After building my agency and overcoming these same challenges, I discovered the systems successful agencies use to recruit caregivers and retain caregivers consistently to support growth. Inside my home care revenue breakthrough webinar, I'll show you how agencies doing five, ten million dollars plus a year are installing recruiting, referral, and leadership systems that support scaling to that level. Now, if staffing shortages have been slowing your agency's growth down, this training is going to show you what you need to change. Save your free seat now. Look forward to seeing you on the session. Talk soon. Bye-bye."
+> — Library ID 1736123977736011 · 66 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1736123977736011
+
+### stevetryethemortgageguy — 1 video ad
+
+**Library ID 2071752726719914** · 152 days running · started Apr 10, 2026
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+### ABA Business Coach — 2 video ads
+
+**Library ID 823550360301517** · 138 days running · started Apr 24, 2026
+
+> "Most ABA owners open their doors, then try to figure it out. That's expensive. When one pillar is weak, cash flow gets stressful, your schedule owns you, hiring feels chaotic, and referrals feel inconsistent. Structure prevents survival mode. The ABA Startup Blueprint helps you clarify your numbers, design your weekly build time, define your dream team, and create an outreach plan before launch. It turns scattered ideas into a clear plan. If you're building an ABA clinic or planning to, start with structure. Download the ABA Startup Blueprint links in the bio."
+> — Library ID 823550360301517 · 37 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=823550360301517
+
+**Library ID 2095612561014350** · 137 days running · started Apr 25, 2026
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+### Premiere Destiny Home Care Success — 3 video ads
+
+**Library ID 1488020286303477** · 135 days running · started Apr 27, 2026
+
+> "Nihu-kisadu-wetumau. Yorbaiz-liza-o-rhe-i-in-your-seku. Tell your friends. Tell your family. Tell your church. Tell your neighbor. Something like, I help seniors stay where they feel supported. The way they want to age in place. I'm currently taking my first clients. We've seen this simple message lead to first clients all the time. You may also want to reach out to your local hospital. And talk to the social workers there. Introduce yourself. Let them know you are starting small. You are flexible. And you are focused on quality. Case managers are always looking for reliable agencies that actually follow through. Especially with patrain and add to staff cases. So be ready to run off your sleeves and take the first one that they give you."
+> — Library ID 1488020286303477 · 50 s · faster-whisper small.en, first 120 s · spoken yo, re-transcribed with the multilingual model · https://www.facebook.com/ads/library/?id=1488020286303477
+
+**Library ID 3334663966698378** · 72 days running · started Jun 29, 2026
+
+> "We used to know a home-clear agency owner who was working really hard. In fact, 60 hours a week seemed normal to her, visiting every facility she could find and still couldn't figure out why her phone wasn't ringing. She wasn't lazy, she wasn't inexperienced. She just had holes in her referral system she couldn't see. And those invisible holes were quietly costing her clients every single month. We put together a free guide that diagnoses exactly where that breakdown happens. It's called Seven Referrer Breakdowns Costing Your Home Care Agency Clients. Seven specific gaps, seven quick fixes, plus a referral stability score so you know which ones to tackle first. After two decades running our own award-winning agency, we've lived every one of these and helped owners across the country fix them. It's completely free. Click the link below and download it right now. Your referrals shouldn't be random. Let us help you make them reliable."
+> — Library ID 3334663966698378 · 59 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=3334663966698378
+
+**Library ID 1227182826234365** · 9 days running · started Aug 31, 2026
+
+> "you know, errors and challenges of things that could be done better for efficiency. That's right. That's right. So besides changing the diapers late at night and taking care of the other two, what was one significant challenge you faced? You know, we talked about not having the staff, the first agency, but when you got going, what was one significant challenge that you faced? I would say, as I think about that great question, Joan, by the way, would be around caregiver recruitment and retention, you know, early on. It's one thing to find qualified caregivers, right? It's another to find people who truly care. So I think early on, I had to really learn how to build a culture that attracts and keeps the right people. I was very engaged in my team early on, in my first office, some of the caregivers who've been around. So I've been in business now seven years and the ones who we started with, I'm still very close to them. I know about their families, their kids, you know, and that's what really matters for our staff, right? When they know that you care, they go above and beyond for you. And so I would say that is, you know, one of the challenges early on. And the other that I can think of is really establishing, you know, trust with referral partners. And I would say I overcame that kind of by being, you know, consistent, being responsive, and then following through. We're not perfect by any means. We make mistakes, communication, acknowledging gap when you make a mistake. I find that, you know, that goes a long way and making sure you don't make, you know, repetitive mistakes. Right. But people are..."
+> — Library ID 1227182826234365 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1227182826234365
+
+### Cory Boldroff- The Real Estate Planner — 1 video ad
+
+**Library ID 2115621349285706** · 125 days running · started May 7, 2026
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+### Zach Pevnick, PT, DPT - Home Health Leaders — 2 video ads
+
+**Library ID 836667782421602** · 105 days running · started May 27, 2026
+
+> "Physical therapists in home health, listen up. If you want to build real income without adding more patients or drive time, this is for you. Follow my page where I show home health therapists how to grow their income, build a business beyond their solo schedule, and earn financial freedom without grinding themselves into the ground. I know what it feels like to be good at home health and still feel completely stuck. I left outpatient in 2013 after making $16.53 a patient, seeing 20 patients a day. I got into home health, figured it out mostly on my own, and made over $100,000 my first year. But I hit a wall fast. Every dollar I made required me to get in my car and drive to another patient. My schedule was full and my income had a ceiling I couldn't break through, no matter how efficient I got. So I built a system that changed that. That system turned into a home health therapy company that has now collected over $13 million, contracted over 300 home health agencies, and hired over 650 therapists. And I've spent the last several years teaching other home health PTs how to do the same. Like Kyle, a home health PT working for multiple staffing companies and only had gotten one contract himself. Within just 90 days, he had hired multiple therapists, was making over $20,000 a month, and even had a single week where he contracted three agencies. So follow my page and scroll through the content to see how you can start building towards financial freedom in home health."
+> — Library ID 836667782421602 · 79 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=836667782421602
+
+**Library ID 3161748694214321** · 68 days running · started Jul 3, 2026
+
+> "I'm capped at eight patients a day. I have 20 therapists doing 100 visits a day. I make a hundred to $250,000 a year, depending on my location and negotiation skills. I make over $300,000 without driving patient to patient throughout the day. When I go on vacation, I don't make any money. When I went on vacation, my therapist saw 300 patients and I received this check for $69,000. I negotiate my rate with one agency and I hope they don't drop me. I have contracts with 12 home health agencies. If one drops me, I barely notice. I do my own notes and documentation. My therapist do the notes. I review the numbers. Follow my account if you wanna go from trading hours for dollars to building a home health therapy business that works when you don't."
+> — Library ID 3161748694214321 · 39 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=3161748694214321
+
+### Group Home Masterminds — 2 video ads
+
+**Library ID 1533171651487309** · 104 days running · started May 28, 2026 · aimed at would-be owners
+
+> "Let me guess, you thought about opening a children's group home. You even got 5 to 10 thousand dollars saved, but you keep getting stuck. You may not know how to find the right house. You may not know how to start the licensing process. The paperwork seems overwhelming, and it seems impossible to find the right team. What makes it even harder is that you probably already work with children. I know you're probably a foster parent, a nurse, a teacher, a social worker, or maybe even a youth worker, and being in any one of those industries, you know that the need is real. You see, most people don't fail because they can't be successful in this lane. They usually fail because they never have a mentor hold them by the hand. And that's exactly what we're here to do at Group Home Masterminds. We have a free workshop coming up that breaks down on a three step formula to open and operating a children residential group home. The first thing that we'll show you how to do is how to structure your business for success. The next thing we do is tell you why licensing matters. And lastly, we show you how to fill your beds and generate income. Now, this workshop is free, but we only want to focus on people who are serious about taking a step forward and making a change in their community. You also do need to have at least $5,000 to $10,000 that you're willing to invest in yourself during this process. You already have the heart, now it's time to get the roadmap. Just click the link down below, we'll sign you up and send you the Zoom link for this free workshop happening this week. Thanks again, and I'll see you inside the workshop."
+> — Library ID 1533171651487309 · 87 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1533171651487309
+
+**Library ID 2105610047035550** · 62 days running · started Jul 9, 2026
+
+> "What if this was the year that you actually opened the Children's Residential Group Home? Not just thought about it, but you actually went through the licensing process, found you a home, got kids into your possession, and actually made a difference in your community. I'm here to tell you that people are doing this right now, and they have zero background in the social services industry. There are people that are running group homes right now that had no secret advantage. All they did was found somebody who can lay out the path for them clearly. Somebody who can show them how to market their group home, how to go through the licensing process, and ultimately how to fill beds and make income while doing it. You see, that's the part that most people never get. They have a heart for the work, but they never have a system to actually create the business. Without the system, the idea never becomes a reality, it just stays an idea. Our upcoming Group Home Mastermind Workshop cover this all in one session. We're going to show you how to set up your entity correctly, how to move through the licensing process without wasting six months on incorrect steps, and how to fill your beds and generate income without having to wait months for one single placement. And we do this all in one session, free of charge. So if you've been sitting around with this on your mind, this is the clearest next step that you can find. Just register now using the link below."
+> — Library ID 2105610047035550 · 71 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2105610047035550
+
+### Medbridge — 1 video ad
+
+**Library ID 2212564192918539** · 103 days running · started May 29, 2026
+
+> "2,500-plus accredited clinician, continued education courses for over 15 disciplines. Customizable Patient Home Exercise Program, delivered via print, online, or in-app. Stay in compliance with over 150-plus courses on HIPAA, bloodborne pathogens, and more. Small and large orgs, sign up today."
+> — Library ID 2212564192918539 · 22 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2212564192918539
+
+### OBB - Home Care Growth — 2 video ads
+
+**Library ID 1914945806036250** · 100 days running · started Jun 1, 2026
+
+> "Home care agency owners if you recognize this logo below or you've worked with other services similar to a place for mom Here's why you're not getting the results that you should be getting and why you only deal with leads who never answer and when they do They either don't want to start service. They're looking for the cheapest care possible They might be out of your service area and they have no idea who you are So what actually happens when one of these leads comes from a shared lead service like a place for mom someone looking for care visits The website and they fill out a form that doesn't have any of your branding or your qualifications and that immediately becomes a lead That lead is sent to five different home care agencies in the same exact service area that you service So at the end of the day, they've spoken to five different agencies that all offer the same exact thing And they only make a decision based on who is the cheapest Here's what we do differently so you don't run into this problem over and over again. We aren't a lead vendor We don't sell shared inquiries and you don't even have to call the lead yourself We set up ads and we run them under your page and under your brand We get lead costs that look like this $32 and we put them into appointments like this and yes I know you've heard about the 900% decrease in contact rate if you don't reach out immediately That's why we have an in-house sales team and that calls the leads for you and make sure the lead is within your service area They're aligned within your pay rates They meet your minimum hours and they're actually ready to start care now or within the next couple weeks If they don't meet those filters, then they don't get booked That means you and your scheduler only see booked assessments that have already spoken to our sales team and your caregivers schedules stay full"
+> — Library ID 1914945806036250 · 92 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1914945806036250
+
+**Library ID 1372025971653768** · 70 days running · started Jul 1, 2026
+
+> "I remember my first client that I had received, my ad was present, I think a little less than two hours, which was very phenomenal."
+> — Library ID 1372025971653768 · 18 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1372025971653768
+
+### HomecareGrow.io — 3 video ads
+
+**Library ID 1221626879970029** · 86 days running · started Jun 15, 2026
+
+> "Home care owners one million plus a year. RSL-E added 19 clients last week without referral partners. This is RSL-E from Loving Care. Today is May 19, 2026. Last week we got 19 new clients with Home Care Grow. I am so thankful for them. Thank you so much for all you do. These 19 clients will bring in a projected $1.5 million for her over the next six years. So if you've been stuck at the same revenue and want a guaranteed way to smash through it, tap learn more to check if your city is still open and book your agency growth goal."
+> — Library ID 1221626879970029 · 32 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1221626879970029
+
+**Library ID 889283777521179** · 86 days running · started Jun 15, 2026
+
+> "Home care owners one million plus a year. Same caregivers, same market, extra 150K in 16 weeks from one system. This is Araceli from Loving Care. Today is May 19, 2026. Last week, we got 19 new clients with home care grow. I am so thankful for them. Thank you so much for all you do. These 19 clients will bring in a projected $1.5 million for her over the next six years. So if you've been stuck at the same revenue and want a guaranteed way to smash through it, click I'm ready to grow my agency and see if you qualify to book your agency growth call with me below. We'll meet, learn about your agency and see if we can help you grow it. We now only bring on three new home care agencies per week to ensure every agency hits the 150K goal from the leads generated in the first 16 weeks."
+> — Library ID 889283777521179 · 45 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=889283777521179
+
+**Library ID 4540501932901389** · 54 days running · started Jul 17, 2026
+
+> "Home care owners one million plus a year. We've helped 55 agencies in 23 states turn ad spend into new starts, not shared leads. I started selling from loving care last week. We got 19 new clients with home care growth. How'd she do it? We started by finding out who would pay her the most and stay the longest, starting with private pay, looking at Medicaid, and then veterans. For her, she couldn't accept veterans. Medicaid was most profitable, specifically family caregivers. Then we built and turned on our Medicaid specific meta ads campaign to attract them. As leads come in, we qualify them. If they're qualified, we send them directly to our team. If they're not, we don't. These are her rounded numbers over a 16 week campaign. She gets about 900 qualified leads with her team responding within 60 seconds, seven days a week, 12 hours a day. About 50% get connected with via voice or text. 50% of those make it to a physician letter and actually need care and 90% get approved over a 16 week period once they make it through their pipeline. With $95,000 average lifetime value per client and 23% gross margins, she's adding about $19.3 million in projected revenue and about $4.4 million in new projected gross profit from a 16 week campaign. So if you're a home care agency doing a million a year or more and looking to attract Medicaid, veteran, or private pay clients to grow your agency, click learn more and enter your info. If you qualify, book your agency growth call with a member of my team to see if we can help you grow your agency."
+> — Library ID 4540501932901389 · 84 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=4540501932901389
+
+### Treasured Hearts ABA, LLC — 1 video ad
+
+**Library ID 1522983939461383** · 78 days running · started Jun 23, 2026
+
+> "Oh, there'll be treasure here. Sorry, Captain. That's the wrong type of treasure. At Treasured Hearts ABA, the real treasures are the children we serve. That's why we focus on quality service above profits using our unique multi-layer approach that attracts, trains, and retains the best talent in the industry. The results, highly refined services for the children and families whom we serve, and steady business growth. Are you ready to build your ABA business? Go to abacentric.com or click the link below."
+> — Library ID 1522983939461383 · 31 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1522983939461383
+
+### Nurse Next Door — 1 video ad
+
+**Library ID 1693666185188555** · 77 days running · started Jun 24, 2026 · aimed at would-be owners
+
+> "My name is Arif Abdulla and I'm the VP of Global Franchise Development here at Nurse Next Door. In a world of clinical, beige and sterile home care options, our brand is one that people notice from a mile away. At Nurse Next Door, our bold pink brand is more than just a color, it's become synonymous with the premium service we provide. Our brand doesn't just stand out, it drives results. Our cars are impossible to miss on the road, in neighborhoods and outside clients' homes. Every visit becomes a moving billboard, building instant brand recognition and trust in your community. This bold pink brand shows up everywhere. It's not just on our cars, it's our teams in the community, our caregivers and care designers arriving at clients' homes branded, and our franchise partners presenting, connecting and building trust locally. It's a brand that lives and breathes in the neighborhoods you serve. For franchisees, that means stronger awareness, warmer leads and a brand that gets remembered. For you as a franchisee, this is a powerful competitive advantage. We believe it's about caring, not just health care, while others may focus on limitations we focus on possibilities through happier aging. If you're looking for a business that combines a world-class system with a heart-centered mission, you've found it. Join us in making lives better and let's bring happier aging to your neighborhood. I can't wait to see your pink car on the road."
+> — Library ID 1693666185188555 · 83 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1693666185188555
+
+### Home Care Pipeline — 2 video ads
+
+**Library ID 2211476392958921** · 72 days running · started Jun 29, 2026
+
+> "If you're buying leads from agencies like A Place for Mom, you're not the only home care agency calling that family. That same lead is sold to four others in your county. You're racing on phone call speed, and the family books with whoever answers first. We replace that with a recommendation system. Exclusive private pay families, pre-qualified by your zip and your hourly rates, booked directly to your calendar, three to five every month, guaranteed in 90 days, or we work for free. We only work with one agency per county. Take the free 60-second assessment, seven questions, no email required, and find out if your county is still available and whether your agency qualifies."
+> — Library ID 2211476392958921 · 35 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2211476392958921
+
+**Library ID 1255139586685877** · 17 days running · started Aug 23, 2026
+
+> "Three companies decide whether your home care agency grows this year. A place for mom, caring.com, and Care Patrol. They set the lead price. They share each lead across multiple agencies. They change the rules whenever it suits them. Home care agencies that grow predictably stopped renting from aggregators and built recommendation funnels they own. Three to five exclusive private pay clients booked to your calendar every month. Guaranteed in 90 days or we work for free. We only work with one agency per county. Take the 60 second assessment, seven questions, no email, no call, and see if your county is still open."
+> — Library ID 1255139586685877 · 31 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1255139586685877
+
+### Florida Assisted Living Consulting LLC with alfcaregivercon — 2 video ads
+
+**Library ID 1402420581943372** · 68 days running · started Jul 3, 2026 · aimed at would-be owners
+
+> "Travel as an ER nurse, I've been doing that for several years now and I am looking into starting my own ALF which is why I'm here now at this conference. I think it's extremely beneficial to attend conferences like this and it's extremely beneficial because you're able to network, you're able to meet different people from different avenues that can help with developing your ALF and also help with you know just helping you understand how to start, where to begin and what types of issues you may run into that you want to avoid. It just helps streamline everything for you to make the process much more easy."
+> — Library ID 1402420581943372 · 38 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1402420581943372
+
+**Library ID 1005835298715389** · 68 days running · started Jul 3, 2026
+
+> "What brought me here today was Carlene. She's an amazing consultant and we worked with her for many years and she's always referred to as many different clients. And my experience was really amazing. I've got to meet so many people, learn about different avenues of business that I didn't even know were important and super prevalent in this area. So I feel like I've gained a lot of knowledge. So for someone who is going into assisted living, I would say just meet with someone, connect with someone, definitely look for maybe a consultant or somebody who already has their own business because there is so much knowledge out there that you wouldn't even think to ever discover on your own. So definitely looking for a mentor or someone who can help guide you."
+> — Library ID 1005835298715389 · 49 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1005835298715389
+
+### TruBlue Franchise Opportunities — 1 video ad
+
+**Library ID 2171342006761061** · 61 days running · started Jul 10, 2026 · aimed at would-be owners
+
+> "If you are seriously looking at the senior industry as a business opportunity, you need to take a look at True Blue. We're a fall preventative measure providing not only maintenance but to do list chores and repairs that are are constantly happening with homes. It allows the seniors to be able to stay in their homes longer but none of that but safer. There's so many reasons why taking care of a home is so important to aging. One in four seniors over the age of 65 is going to have a fall this year and that is a huge number and home safety starts before that first fall and as a medical provider you know I was seeing that burden. And we can really complement the senior care industry and it's really exciting where this industry is going and where we fit in because of the uniqueness that that our model provides and the demand the underserved industry."
+> — Library ID 2171342006761061 · 53 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2171342006761061
+
+### WholesaleTablets.com — 2 video ads
+
+**Library ID 1820274676001763** · 61 days running · started Jul 10, 2026
+
+> "Attention, ABA clinic owners, your BCBA's do not need $600 consumer tablets to run catalysts or central reach. Here's the truth, you're buying consumer tech for a clinical environment and it is costing you thousands. Your RBTs don't need cinema quality cameras or the newest microchips. They need two things, a battery that will actually survive an eight hour shift without dying mid session and hardware that won't shatter the second a client throws it across earth. But big tech companies market to teenagers and graphic designers, not ABA clinics. So you end up overpaying for features your staff doesn't need while sacrificing the durability you actually do. At Wholesale tablets, we supply B2B hardware. We got sick of seeing clinical directors blow their operational budgets on the wrong devices just to replace them four months later. So my team put together a completely free resource for ABA clinics called the clinic directors guide to choosing the right tablets. It takes three minutes to read, it gives you the exact minimum specs you need to run heavy softwares without crashing the devices with true all day battery life and a blueprint to stop paying retail markup forever. Click the learn more button below this video, drop your info on the page and I'll send you the guide to your inbox. Stop paying retail for therapy devices. Click the button and I'll see you on the inside."
+> — Library ID 1820274676001763 · 61 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1820274676001763
+
+**Library ID 1830349497934107** · 61 days running · started Jul 10, 2026
+
+> "Most ABA clinic owners are lighting their profit margins on fire by paying retail prices for their business. Here's the truth. You're buying consumer tech for a clinical environment and it is costing you thousands. Your RBTs don't need cinema quality cameras or the newest microchips. They need two things. A battery that will actually survive an eight hour shift without dying mid session and hardware that won't shatter the second a client throws it across her. But big tech companies market to teenagers and graphic designers, not ABA clinics. So you end up overpaying for features your staff doesn't need while sacrificing the durability you actually do. Wholesale tablets we supply B to B hardware. We got sick of seeing clinical directors blow their operational budgets on the wrong devices just to replace them in formless later. So my team put together a completely free resource for ABA clinics called the clinic director's guide to choosing the right tablets. It takes three minutes to read. It gives you the exact minimum specs you need to run heavy softwares without crashing the devices with true all day battery life and a blueprint to stop paying retail markup forever. Click the learn more button below this video, drop your info on the page and I'll send you the guide to your inbox. Stop paying retail for therapy devices. Click the button and I'll see you on the inside."
+> — Library ID 1830349497934107 · 59 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1830349497934107
+
+### Caring Transitions Franchise Opportunities — 1 video ad
+
+**Library ID 1011645708145689** · 56 days running · started Jul 15, 2026 · aimed at would-be owners
+
+> "I want to do something meaningful, and I want to decide what that means. So this was a good solution for me. I didn't want to go back to work, get on a commuter rail every day, go into downtown Boston. It wasn't for me, even a good money. And part of it, frankly, was I just couldn't find a job that I would be happy with. It would have required some sacrifice, and this just was a better fit for someone in my situation. And with carrying transitions, the barrier to entry is less than most franchises. You know, it's a very tolerable level, probably for most people that want to go in the business. And the support network makes the risk a lot less. Since it's something I want to do, it doesn't really feel like work. Probably won't feel like work, you know, especially when it's, you know, my own business. And I think that's a big part of it. Even if I liked when I liked my jobs before, you know, it still felt like, oh, this is work. I don't necessarily want to be here today. I want to do things differently. There were lots of different things where I didn't get my way on certain kinds of things, but that's that's what happens in corporate America. You don't get your way all the time, even though you're 100 percent right about certain things. In this situation, I'm going to get my way, you know, I'm going to get my way with who I hire, the jobs I take, I'll have complete control over everything. And I can be successful. I can do those things. They're not things that are beyond my capabilities. They're things that I can do, the things I want to do. I could have retired. I don't necessarily have to do this. I did it because I want to. And I did it because I saw an opportunity there that was or is, I think, a very good one, at least for me."
+> — Library ID 1011645708145689 · 104 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1011645708145689
+
+### Wisdom First Marketing — 2 video ads
+
+**Library ID 1046925518073187** · 48 days running · started Jul 23, 2026
+
+> "Here's what we help assisted living facilities do. We help you build a six month wait list. We help you reach over 95% occupancy or higher, and we help you fill your tour calendar with families who are ready to make a decision. We don't want you to have tire kickers. We don't want people who are comparing 10 different communities and have no urgency. We have families who've done their research, understand what your community offers and are ready to have a real conversation. We've helped over 50 facilities get there, not with gimmicks or generic ads that attract the wrong families. We've actually built a system specifically for how people actually choose senior care. The system that we've developed, we call it trust-based marketing, and essentially it works like this. Your families are not impulse buyers. They're researching for weeks, sometimes months before they ever pick up the phone. So instead of running ads that try to rush them through that process, we built a marketing system that earns their trust at every stage of their decision. By the time a family books a tour, they've already known who you are, what makes your community different, why they want to visit, and your team isn't convincing strangers, the welcoming people who already want to be there. So our call, we're going to do a couple of things. First, we're going to figure out whether this is actually fit for your business. While it works for most, this isn't a one size fits all system. We have to adjust this slightly based on your market and your competition and things like that. And if it is a fit, we'll show you exactly what this would look like for your community or your business, your market, your families, your capacity goals. There's no pressure, no pitch, just a straight forward conversation to see if our marketing system for assisted living is a good fit for your business. Now, just make sure you confirm your call and we'll talk to you soon."
+> — Library ID 1046925518073187 · 108 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1046925518073187
+
+**Library ID 2124183724801473** · 2 days running · started Sep 7, 2026
+
+> "Here's what we help assisted living facilities do. We help you build a six month wait list. We help you reach over 95% occupancy or higher, and we help you fill your tour calendar with families who are ready to make a decision. We don't want you to have tire kickers. We don't want people who are comparing 10 different communities and have no urgency. We have families who've done their research, understand what your community offers and are ready to have a real conversation. We've helped over 50 facilities get there, not with gimmicks or generic ads that attract the wrong families. We've actually built a system specifically for how people actually choose senior care. The system that we've developed, we call it trust-based marketing, and essentially it works like this. Your families are not impulse buyers. They're researching for weeks, sometimes months before they ever pick up the phone. So instead of running ads that try to rush them through that process, we built a marketing system that earns their trust at every stage of their decision. By the time a family books a tour, they've already known who you are, what makes your community different, why they want to visit, and your team isn't convincing strangers, the welcoming people who already want to be there. So our call, we're going to do a couple of things. First, we're going to figure out whether this is actually fit for your business. While it works for most, this isn't a one size fits all system. We have to adjust this slightly based on your market and your competition and things like that. And if it is a fit, we'll show you exactly what this would look like for your community or your business, your market, your families, your capacity goals. There's no pressure, no pitch, just a straight forward conversation to see if our marketing system for assisted living is a good fit for your business. Now, just make sure you confirm your call and we'll talk to you soon."
+> — Library ID 2124183724801473 · 108 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2124183724801473
+
+### AutomationEdge — 1 video ad
+
+**Library ID 1363339455176693** · 42 days running · started Jul 29, 2026
+
+> "Hello, my name is Shiva Jituri. I am one of the co-founders and chief customer officer at Automation Edge. Are you one of the home health or hospice agencies who are struggling for referral intake in terms of velocity or coverage for half hours or weekends or ability to collaborate across all the personas for referral intake like intake team, eligibility team, branch team and your marketers. Are you losing your executive leadership which is not having visibility of your referrals? Are you losing referrals on a daily basis to your competition? Are you also having a lot of time for burnout of your staff to process these referrals going through tons of documentation from your referral sources like portals and fax referrals like facilities as well as clinics based referrals, physician based referrals. From chaos to clarity, reinventing referral intake for home health agencies powered by AI. Don't miss out."
+> — Library ID 1363339455176693 · 72 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1363339455176693
+
+### Sensi.AI — 2 video ads
+
+**Library ID 1760240552064362** · 40 days running · started Jul 31, 2026
+
+> "Are you familiar with the term hypoxia? Yes, I'm familiar with hypoxia. It refers to a deficiency in the amount of oxygen reaching the tissues, which can certainly impact brain health and overall well-being. You are right on your game because that's the best explanation I've ever heard from anyone. And you've been very empathetic to me to listen."
+> — Library ID 1760240552064362 · 21 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1760240552064362
+
+**Library ID 1716924032761889** · 36 days running · started Aug 4, 2026
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+### Response Technologies — 1 video ad
+
+**Library ID 934837876300097** · 36 days running · started Aug 4, 2026
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+### Hospice Care Marketing — 2 video ads
+
+**Library ID 2136545506903089** · 35 days running · started Aug 5, 2026
+
+> "Most hospice websites have one job, to tell people you exist, but what if your website could do so much more? What if a grieving daughter could visit your site at 11 p.m. and find answers to the questions she's too afraid to ask anyone? What if a primary care physician could read an article you wrote and understand exactly when to refer a patient to hospice? That's what we build. Every month, we create educational content for your website. Log posts, guides, and articles that answer the real questions families and doctors are asking. What does hospice actually cover? How do I know when it's time? What happens when a patient stabilizes? When you educate, you build trust, and in hospice, trust is everything. Your website shouldn't just be a digital brochure. It should be the most valuable resource in your community. DM me, and let's turn your website into something that actually works for you."
+> — Library ID 2136545506903089 · 67 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2136545506903089
+
+**Library ID 867711089628267** · 6 days running · started Sep 3, 2026
+
+> "Here's a hard truth most hospice owners don't want to hear. You can have the most compassionate team, the best clinical outcomes, the most caring staff in your region, and still be struggling to fill your census. Why? Because families in crisis don't have time to search. They go with whoever they find first. And that's a marketing problem. And it's fixable. At Hospice Care Marketing, we build you a custom website optimized to rank on Google so when families search for hospice in your area, they find you first. Because your community deserves to know you exist. Click the link in the bio to learn how we can help."
+> — Library ID 867711089628267 · 52 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=867711089628267
+
+### Phoebe — 2 video ads
+
+**Library ID 1062356572932814** · 31 days running · started Aug 9, 2026
+
+> "If you're running a home care agency, you're probably stuck between two options. You hire another scheduler or you can drag back down into scheduling yourself. So we built you a third option, and here's how it works. Simply tell Phoebe to cover an open shift, and Phoebe will automatically reach out to all eligible caregivers via call and text at once to get the shift filled in minutes. Let's have a quick chat with Phoebe. Hey, this is Phoebe. We have an open shift at 2 p.m. today, just a few miles from you. Want to hear more? Yeah, sure. I'll hear more. Who's the client? Great. We have medical support for an older adult with dementia. You would provide support with daily living activities like meal prep, medication reminders, and standby assist for bathing and dressing. Does that sound like a good fit? Yeah, as long as they don't have any cats. No worries. There's just a small dog in the home, very friendly, and no cats at all. Would you like to take this shift? Yeah, sure. I'll take it. Awesome. You're all set for today's shift from two to eight in Bed-Stuy. You're on the schedule. Have a great day. If you need anything, just give us a call. Yeah, thanks, Phoebe. All right. Well, that's Phoebe. So if you're running a home care agency and you're getting dragged back down in the day-to-day scheduling, don't hire another scheduler just yet. Book a quick demo, see Phoebe in action for yourself. Hope to talk soon."
+> — Library ID 1062356572932814 · 73 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1062356572932814
+
+**Library ID 891235843829613** · 23 days running · started Aug 17, 2026
+
+> "Your caregivers will talk to each other sometimes. The issue of sometimes them feeling as though favoritism is happening. You're having a hard day. You've got somebody who's just called out and you think in your head like, well, I know if I just like offer this one person a bonus, I can get them to take it for me. But then what does that do to the other 49 people who actually have not been offered any supplementary work in the last two to three weeks. And you've also got the aspect of caregiver retention because you're more, I like to say, democratically spreading the opportunities to the right people at the right time. Phoebe does like directly remove that as a problem, which can be so beneficial, not just for getting more shifts filled, but also pertaining caregivers and doing more work with less overhead. My interactions with the team at Phoebe gives me good confidence. Phoebe builds AI teammates for home care agencies. Book a call, we would love to chat with you."
+> — Library ID 891235843829613 · 51 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=891235843829613
+
+### Census Home — 1 video ad
+
+**Library ID 1012082071863521** · 23 days running · started Aug 17, 2026
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+### HH Assist — 2 video ads
+
+**Library ID 2120167368712701** · 22 days running · started Aug 18, 2026
+
+> "Since the CMS moratorium began back in May, we've talked with dozens of Home Health Agency owners, and the story is almost always the same. We're fine today, but genuinely worried about what's coming next. HH Assist AI reviews your documentation, tracks your referral pipeline, and flags compliance risks. You truly don't have to navigate this crackdown completely alone. Request a 2-minute video."
+> — Library ID 2120167368712701 · 27 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2120167368712701
+
+**Library ID 2933404850335071** · 22 days running · started Aug 18, 2026
+
+> "Home health agency owners? The CMS crackdown is ruthless. If you still rely on manual chart reviews, you're basically begging for targeted audits and massive Medicare clawbacks. Top agencies use our AI SAS to audit charts and guarantee PDGM compliance. Our home health AI acts as an invisible shield catching compliance errors before you submit claims, keeping your cash flow completely safe. Click below to request a two-minute video."
+> — Library ID 2933404850335071 · 24 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2933404850335071
+
+### KRIBA.co — 3 video ads
+
+**Library ID 1051950717426458** · 22 days running · started Aug 18, 2026
+
+> "Most care homes don't have an occupancy problem. They have a visibility problem because if families can't find you, they can't tour you. If you're wondering how we're so confident, it's simple. Families are searching differently than ever before. They're no longer just scrolling directories. They're asking what's the best memory care near me? Which assisted living community has the best reviews? And increasingly they're asking AI assistants directly. The problem is that most care homes aren't showing up in those conversations. That's exactly why we built the AI search visibility system. Unlike traditional RSCO that only really focuses on rankings or referral websites that charge commissions forever, we help care homes become visible where families are actively researching. Our system optimizes your community for Google, Google maps, chat GPT, perplexity, and AI search engine. Every page is designed to do two things. One, rank in search engine and two, convert visitors into inquiries because visibility without conversion is useless and conversion without visibility never gets seen. The result is a digital asset that compounds over time. Unlike ads that disappear when you stop paying, the visibility continues building month, year after year, which means more inquiries, more tours, more move-ins, lower dependency on referral websites and higher margin. And because you're building an owned asset, you stop paying commissions forever just to generate occupancy. So if you'd like to predictable source of resident inquiries without relying on aggregators or paid advertising, click the little more button below and schedule in a call. Oh, and remember, if we don't generate the inquiries, you don't pay."
+> — Library ID 1051950717426458 · 79 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1051950717426458
+
+**Library ID 2094574324479989** · 22 days running · started Aug 18, 2026
+
+> "If you own or operate a care home, we'll install our AI visibility system and generate you 5 to 10 new resident inquiries within 180 days or less, or you don't bet. If you're wondering how we're so confident, it's simple. Families are searching differently than ever before. They're no longer just scrolling directories. They're asking, what's the best memory care near me? Which assisted living community has the best reviews? And increasingly, they're asking AI assistants directly. The problem is that most care homes aren't showing up in those conversations. That's exactly why we built the AI search visibility system. Unlike traditional RSCO that only really focuses on rankings or referral websites that charge commissions forever, we help care homes become visible where families are actively researching. Our system optimizes your community for Google, Google Maps, Chat GPT, Perplexity, and AI search engines. Every page is designed to do two things. One, rank in search engines. And two, convert visitors into inquiries. Because visibility without conversion is useless. And conversion without visibility never gets seen. The result is a digital asset that compounds over time. Unlike ads that disappear when you stop paying, the visibility continues building month, year after year. Which means more inquiries, more tours, more move-ins, lower dependency on referral websites, and higher margin. And because you're building an owned asset, you stop paying commissions forever just to generate occupancy. So if you'd like a predictable source of resident inquiries without relying on aggregators or paid advertising, click the little more button below and schedule in a call. Oh, and remember, if we don't generate the inquiries, you don't pay."
+> — Library ID 2094574324479989 · 81 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2094574324479989
+
+**Library ID 27738874895781555** · 21 days running · started Aug 19, 2026
+
+> "There's a new system helping care homes get found on Google, chat, GPT, Proplexity, and AI search engines where families are increasingly starting to do their research. It's called the AI search visibility system. If you're wondering how we're so confident, it's simple. Families are searching differently than ever before. They're no longer just scrolling directories. They're asking, what's the best memory care near me? Which assisted living community has the best reviews? And increasingly, they're asking AI assistants directly. The problem is that most care homes aren't showing up in those conversations. That's exactly why we built the AI search visibility system. Unlike traditional RACIO that only really focuses on rankings or referral websites that charge commissions forever, we help care homes become visible where families are actively researching. Our system optimizes your community for Google, Google Maps, chat GPT, Proplexity, and AI search engines. Every page is designed to do two things. One, rank in search engines, and two, convert visitors into inquiries because visibility without conversion is useless and conversion without visibility never gets seen. The result is a digital asset that compounds over time. Unlike ads that disappear when you stop paying, the visibility continues building month, year after year, which means more inquiries, more tours, more move-ins, lower dependency on referral websites, and higher margin. And because you're building an owned asset, you stop paying commissions forever just to generate occupancy. So if you'd like a predictable source of resident inquiries without relying on aggregators or paid advertising, click the little more button below and schedule in a call. Oh, and remember, if we don't generate the inquiries, you don't bet."
+> — Library ID 27738874895781555 · 84 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=27738874895781555
+
+### Integrated Hire — 1 video ad
+
+**Library ID 27859524650325512** · 22 days running · started Aug 18, 2026
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+### HomeCare Agency Academy — 1 video ad
+
+**Library ID 1277417054434613** · 16 days running · started Aug 24, 2026 · aimed at would-be owners
+
+> "Hi, I'm Edna, and I've spent years as a live-in caregiver, traveling, working hard, building other people's companies, and I loved caring for people. But one day I asked myself, why am I building someone else's dream instead of my own? I wanted to start my own home care agency, not just for me, but to create real opportunities for other Filipino caregivers like me. But I had no idea where to start. The licensing process felt overwhelming. I didn't know the paperwork. I didn't know the state requirements. I didn't even know if I could do it. Then I found Home Care Academy and Jesse's Done For You program. They handled my entire licensing process in Maryland. And now, my non-medical home care license is approved. I officially own my own home care agency. If you're a caregiver thinking about starting your own agency, Jesse is doing a free training where he breaks down everything. How to get licensed, how to get clients, how to hire caregivers, how to run it without doing the care yourself. This industry changed my life, and it can change yours too. Register for the free training below."
+> — Library ID 1277417054434613 · 84 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1277417054434613
+
+### PatientsPipeline — 1 video ad
+
+**Library ID 1028415663345330** · 14 days running · started Aug 26, 2026
+
+> "Home care agency owners above $70,000 a month don't hire another marketer, don't buy shared low quality leads from another directory. Instead, we'll book you 60 qualified in-home assessments in the next 90 days or you don't pay. So if that sounds like something you want, click below and book a call where we can walk you through it. Now, if you're wondering how we can guarantee a number like that, it helps to look at where your assessments are actually coming from today. Most agencies survive on two channels, referral sources and paid directory leads, both of which have the same root problem. Somebody else gets to dictate your growth and pipeline. And that's fine when you're starting out, but not when you're looking to predictably grow your census month over month. Think about the last directory lead you paid for. A family filled out one form. That form was sold to three other agencies the same second it hit your inbox. And by the time your team even got a chance to reach out between office work, that family was already on the phone with a competitor. And here's the half that nobody warned you about. Plenty of those families were never able to pay for private care in the first place. And by the time you find out, you've already spent 40 minutes on the phone, which sends you back to referral sources because at least those convert. You've likely built those relationships over years. Discharge planners, case managers, the SNF that sends you two or three a month, but that channel stops growing the day you run out of hours to be in somebody's face five days a week. And every one of those relationships has to be maintained personally by you forever. Or it quietly goes to the agency that showed up last week when you didn't. Both channels share the same constraint. Somebody in the middle who owns your demand and rations it out to you. We build you a channel that you actually own, then we run the whole thing for you. The same channel that booked 29 qualified in-home assessments for senior helpers, 34 for right at home, and 28 for Central Florida, all in just 30 days. We run targeted meta campaigns straight to families in your service area who are looking for care right now, not the coordinator who refers to them. The daughter reading reviews at 11 p.m. because her father fell again on Tuesday. Those families come to you and only you. There's no queue, no other agency."
+> — Library ID 1028415663345330 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1028415663345330
+
+### Kerry Wolff — 1 video ad
+
+**Library ID 2807422826324266** · 14 days running · started Aug 26, 2026
+
+*Not retrievable: the Ad Library no longer serves a video file for this ad.*
+
+### Occupancy Partners — 3 video ads
+
+**Library ID 1725596455341248** · 13 days running · started Aug 27, 2026
+
+> "Assisted living owners are tired of paying a place for mom a full month's rent for one family that they already shared with like 20 other communities. But here's the bigger problem with renting families from a lead vendor is that none of it is ever yours. It never came in under your name. And so the day you stop paying them, it all banishes. We build the exact opposite of that. We run the whole acquisition system under your own brand and we only work with assisted living facilities. We generate the families ourselves as yours. Call every single one of them the same day. Screen them for private pay. And our in-house sales team books them directly onto your and only your calendar. We're not a lead vendor that rents you families. We generate the whole thing on your pipeline under your brand and for you exclusively. In fact, we guarantee 20 to 25 confirmed private pay tours in 90 days where you don't pay until we do. Exclusive to you and never shared with anyone. So that sounds good to you. Click learn more down below."
+> — Library ID 1725596455341248 · 59 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1725596455341248
+
+**Library ID 1944348689583189** · 13 days running · started Aug 27, 2026
+
+> "If you're in an assisted living community, how many of your move-ins come from referrals you don't control? Like a discharge planner, a hospital contact, or word of mouth? The day one of those dries up, your census takes the hit and you've got no pipeline of your own to fall back on. We generate private pay families under your own brand, call every one of them the same day and book your tour exclusively into your calendar. 20 to 25 booked, confirmed private pay tours in under 90 days where you don't pay until we do. Tap, learn more."
+> — Library ID 1944348689583189 · 36 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1944348689583189
+
+**Library ID 1780086836521315** · 12 days running · started Aug 28, 2026
+
+> "Assisted living owners, referral sites sell that same lead to 20 competitors. We generate private pay families under your brand, exclusively yours, and book them on your calendar. You just host the tour. We guarantee tours or you don't pay."
+> — Library ID 1780086836521315 · 12 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1780086836521315
+
+### Talroo — 1 video ad
+
+**Library ID 1370700087974420** · 13 days running · started Aug 27, 2026
+
+> "Hey, my name is Brandon Peterkin, and I'm the founder of Finished. I've been able to place my trust within Talru. It's cool because they are an organization, and I'm at least focused on providing high quality workers on the platform, but they're always looking at how they can optimize. There is no way we'd be where we are without Talru. Once we got started, I was floored. I genuinely was floored. The number of people who hopped on and joined the platform and were able to record like Stark instantly. It was amazing. Man, I can't imagine partnering with another company that's even half as good as Talru, and it's good to have somebody dedicated that's focused on the success of your business as well. I could be any happier with Talru."
+> — Library ID 1370700087974420 · 59 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1370700087974420
+
+### Residential Assisted Living Academy — 3 video ads
+
+**Library ID 1591008565896499** · 13 days running · started Aug 27, 2026 · aimed at would-be owners
+
+> "You can make more with one R.A.L. home than you could with 50 apartments. Tenants, toilets, unpaid rent, and drama for 200 bucks a month? No thanks. How about $40,000 a month on one single family home being used as a care home? It's what I do and what I show others just like you how to do. Click the link below if you want to learn more."
+> — Library ID 1591008565896499 · 21 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1591008565896499
+
+**Library ID 1070835888974400** · 13 days running · started Aug 27, 2026
+
+> "I love it. I didn't think it was going to be as, it's not what I expected. So I didn't expect, you know, to learn as much as I've learned so far. So it's been great. Just getting to talk to everybody and seeing, learning about their experience and knowing that they're actually doing this for real and also the bus tour that we did, just seeing the houses, that was really fun. A lot, a lot. You know, I would say taxes. That's one thing that you don't really think about it so much, but it's just like your business, it's very important for the business to be set the proper way and all that kind of stuff. And also, I've always been interested in doing real estate, but for me it was just getting a house and renting it for the 15 or whatever. And it's just, it's been great learning that there's so much more you can do with just, you know, the house. Instead of renting it for 1500, you could just do the, you know, residential assisted living and make a lot more. So it's just, you know, you get to help and make a lot more money. So I'm actually a travel nurse. I've always wanted to open my own business. I was looking into opening like a post-surgical recovery home and ended up calling the state of Florida and found out that it needed to be set as an assisted living facility. So that's when I started looking into that and found out about, you know, this program. Decided to come here and just learn all the, you know, background ins and outs and stuff like that. And then, yeah, it's been really fun. I've learned a lot. Definitely, I would. I think it's worth it."
+> — Library ID 1070835888974400 · 109 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1070835888974400
+
+**Library ID 1073326095061061** · 13 days running · started Aug 27, 2026
+
+> "As a real estate agent, you don't need more deals. You need better ones. Right now, most agents are stuck chasing volume. More listings. More buyers. More chaos. Competing in a sea of other agents all going after the same low commission deals. Cold calls that go nowhere. Outreach that gets ignored. Negotiations that fall apart right before the finish line. But no one's ever told you this. There are deals in real estate that don't look anything like the ones that you've been taught to chase. One transaction can out-earn your last five. It's called residential assisted living, where deals are three to five times larger than traditional homes. And we've built a course to teach you exactly how to do it. It's called RAL Riches for Real Estate Agents. This is a step-by-step online training course that shows you exactly how to find assisted living deals and work with investors to position yourself as the go-to RAL agent in your market. And the best part? The course is self-paced, so consume it when you want, where you want. You can keep chasing volume, or you can position yourself for the kind of deals that are actually going to change your business. The opportunity is already here. Are you ready to step into it? Click the link below to learn more."
+> — Library ID 1073326095061061 · 79 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1073326095061061
+
+### Digital Champions — 1 video ad
+
+**Library ID 1111475078108612** · 12 days running · started Aug 28, 2026
+
+> "If you're a home care agency owner who's already doing well, but you know that there's another level, the Home Care Champions Experience was built for you. This isn't your typical conference. This is a high performance room designed to help you grow and thrive in business and in life. I think it was the energy. A lot of the energy that, the frequency that came when I came into here, a lot of people had that high frequency and they really wanted to grow. Here's the truth. Most home care conferences do the same thing. You get a fire hose of information, you take notes, you feel fired up and then you go home and not much changes. Not because the content wasn't good, but because there was no space to actually do something with it. No time to digest it, pressure test it, and turn it into a real plan. And there's something else that most people don't talk enough about. Entrepreneurship can be lonely. You can be running a great agency and still feel like you're building in a vacuum. The connectivity and networking aspects is just unprecedented compared to any other style of event. That's exactly why we created the Home Care Champions Experience. This event is built around three things. First, powerful speakers and practical content you can actually use. Second, interactive mastermind sessions, smaller groups where you can work through real challenges, share what's working and walk away with strategies ready to implement. And third, time and space for the kind of real connection that makes everything stick. He sets up plenty of time to make sure that people are connecting and the way that he wants to bring people together and makes a lot of space for that. Because you don't just need more information, you need the right environment. An environment that raises your standards, that surrounds you with growth-minded people, people who are generous with ideas, people willing to have honest, real conversations about what it takes to build something exceptional. The quality."
+> — Library ID 1111475078108612 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1111475078108612
+
+### Compare Commercial Insurance Quotes — 1 video ad
+
+**Library ID 1601888278195449** · 9 days running · started Aug 31, 2026
+
+> "Home care agency owners get general liability insurance for as low as $26 a month instead of as much as $55. Most owners think their price is fixed, so they never compare multiple quotes. Meanwhile, rates as low as $26 sit right there, unseen, month after month. Seeing them takes one look. General liability rates from multiple carriers side by side. Your coverage priced across the market, the low end finally visible. Agencies that looked found rates they didn't know existed. Same protection, way less every month. Tap below, answer a few quick questions, and see how low yours goes."
+> — Library ID 1601888278195449 · 44 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1601888278195449
+
+### Homecare 101 — 1 video ad
+
+**Library ID 1347055774083398** · 8 days running · started Sep 1, 2026 · aimed at would-be owners
+
+> "If you are an RN with at least $15,000 in savings and you've been seriously researching owning a home care agency for the better part of the year, but you're still nowhere near actually launching, it's not because you lack discipline or intelligence. The sad truth is that most people just teach you bits and pieces, but after selling four home care agencies for over $20 million myself, I put together the complete step-by-step blueprint to get started in just 90 days. Every RN trying to start a home care agency has access to the same articles, the same videos and the same state PDFs. But the reason most of them struggle to launch their agency isn't because they don't know enough. It's because no one ever showed them which steps come first, second and third. So they can launch in 90 days and not 12 months. If you have watched YouTube videos, read a bunch of articles and joined Facebook groups on home care and you're still in the same place you started, meanwhile every shift you worked, you're building equity for someone who didn't earn it. I want to tell you now, I've been there and it's not your fault. Truth is, there's a bunch of content out there on starting a Medicaid billing home care agency, but none of them walk you through the exact process it takes to get one up and running in as little as 90 days. I walk my clients through a five-phase proven system that ensures their applications never get thrown to the back of the pile. It's entity, license, caregiver, referrals and exit. And by using this system I call the five-phase home care blueprint, I've been able to build themselves four home care agencies for over $20 million in the last few years. It's the exact system I teach nurses to deploy their capital in their specific state and make sure that they have a checklist along the way. Imagine signing your first Medicaid client and knowing that the work you're putting in isn't just for somebody else anymore. You're building your very own sellable asset that can set you up for generations. Just like my client Morgan, who jumped into the home care industry with no prior experience and within 24 months is at a multi six-figure year run rate. So if you're tired of being somebody else's employee and you're ready to deploy upwards of $15,000 to get started in the home care industry, I want you to click the button below to reserve your seat for free live training. I'll be hosting this Sunday at 8 p.m. Eastern. I'll walk you through all five phases of my home care blueprint that's generated over $20 million in revenue and exactly how to deploy your capital."
+> — Library ID 1347055774083398 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1347055774083398
+
+### Allen Chaney Home Care Business Coaching — 1 video ad
+
+**Library ID 1401455958757867** · 5 days running · started Sep 4, 2026 · aimed at would-be owners
+
+> "Good morning, my name is Ebony from Decatur, Georgia, coming to you to give a review on the Allen Chaney Done For You package. I began services with them in July of 2018. The policy and procedures started in August of 2018 and they were completed by October of 2018. We submitted to the state in October. The state didn't even review our paperwork until five months later, which was February. Once they reviewed our paperwork, whatever they found that had an issue was corrected through the Allen Chaney Done For You, they do go back in and correct whatever issue the state has with your paperwork and resubmit. I received my license within a week after them going over my paperwork. One thing I will say while you're waiting on your paperwork or the state to view your paperwork policy and procedures, go ahead and get your website going. Go ahead and start getting out in the community, communicating with people. Go ahead and start building rapport with different people because once you get your licenses to go, go ahead and build your website, get your business cards, get your brochures going. Start brand building. That's the main thing. Get on social media, all sites, and start making a foundation for what's about to go on. I did go ahead and hire two CNAs before I even got my licensure back. Once I got my licensure back, I got it back on Valentine's Day. I started my first patient March the 1st, which was last Friday. You want to have your CNAs already on hand in order for you to go ahead and move forward once you get the license. I will say..."
+> — Library ID 1401455958757867 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1401455958757867
+
+### Hireline for Business — 1 video ad
+
+**Library ID 1401799368625177** · 3 days running · started Sep 6, 2026
+
+> "Can't hire enough caregivers? This social media ad got 126 caregiver applications in 10 days. The same job on job boards only got 21 applicants. Give me 47 seconds and I'll show you how to copy it. Instead of posting your job to Indeed where you'll be buried under 20 other job posts, show ads to qualified candidates on social media. Make sure to target the ads so only qualified candidates see them. When candidates click on the ad, rather than bringing them to your crappy careers page, show them the native form within the app so that they can submit their info without having to leave to ever app they're using. Once again, do not use your careers page. If you bring your candidates to your careers page from your ads, it will not work. Instead, use an AI chatbot to click their resume and additional information to see if they're qualified. If you like the candidate, reach out to them with both email and texts, inviting them for an interview because texts have a three times higher response rate compared to email. And don't just send one text. People are busy. Send three, four, or even up to five messages. Also, send three interviewer minus to the candidate to make sure that they actually show up for the interview. One 24 hours before, one one hour before, and one 15 minutes before. You should be able to achieve at least a 70 to 90% show rate. If you want all of this set up for you automatically, sign up for higherland.com using the link in bio."
+> — Library ID 1401799368625177 · 64 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1401799368625177
+
+### Vestera Digital — 1 video ad
+
+**Library ID 1692975335135565** · 3 days running · started Sep 6, 2026
+
+> "Adult family homeowners in Washington. Are you waiting for placement agents, case managers, or even social workers to fill your empty room? Families looking for care often search on Google, compare reviews, view photos, visit websites, before deciding which home to contact. If your home is difficult to find online, you may lose that inquiry not even knowing it existed. I grew up in my family's adult family home, so I understand how important consistent occupancy is. We help adult family homes improve their online presence, their website, reviews, and inquiry follow-up so families can find you and contact you directly. One adult family home we've worked with got two tours within the first week with us. Click learn more, fill out the short form below and see how we can help your adult family home get more direct inquiries."
+> — Library ID 1692975335135565 · 44 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1692975335135565
+
+
+---
+
+## Hand-picked video ads (Vince) — transcripts and playable videos
+
+**22 ads Vince named by Library ID.** 8 already have a card on the Competitor Ads tab (the transcript and player sit inside the card); 14 sit in the collapsed *Hand-picked video ads* block at the end of that tab. Every video in each ad's own record is playable on the page; the links below go to the hosted copies (long videos are 540p web copies, and full quality was saved to Downloads). Ads with more than one video are one creative rendered for different placements (square or 4:5 feed and 9:16 Stories/Reels), or the same ad uploaded twice.
+
+### Advanced Agent Marketing — Library ID 1571656731350483
+
+started Aug 16, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=1571656731350483
+
+**Ad copy:** Annuity Producers – Start Paying for Appointments That SHOW (With $250K-$1M+ Ready to Move) That's exactly what annuity producers are getting with our Pay-Per-Show Appointment System. [HERE'S WHY PRODUCERS LOVE IT:] • You only pay for appointments that SHOW UP with $250K-$1M+ in verified assets • 98…
+
+> "If you own a wealth management firm that sells fixed-index annuities, then I have a serious question for you. Well, we have hundreds of retirees that reach out to us every single week wanting to buy an annuity. So how many can you handle? Our company generates the leads, calls them, qualifies them, and books them directly onto your team's calendar. And you only pay us if they show up on Zoom and have over $250K in investable assets. The average appointment has over a million dollars, so you do the math in terms of how much that could generate, in terms of annuity commissions, as well as AUM money. So if you're ready to scale your firm predictably and profitably, and your team can handle more than 10 appointments a week, then click learn more down below to grab one of the few remaining spots available."
+> — Library ID 1571656731350483 · 46 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1571656731350483
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1571656731350483-1.mp4 (46 s)
+
+### Advanced Agent Marketing — Library ID 1541089547820288
+
+started Aug 18, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=1541089547820288
+
+**Ad copy:** Annuity Producers – Start Paying for Appointments That SHOW (With $250K-$1M+ Ready to Move) That's exactly what annuity producers are getting with our Pay-Per-Show Appointment System. [HERE'S WHY PRODUCERS LOVE IT:] • You only pay for appointments that SHOW UP with $250K-$1M+ in verified assets • 98…
+
+*Silent creative: the Ad Library file has no audio track, so the message is carried on screen.*
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1541089547820288-1.mp4 (17 s, no audio track)
+
+### Advanced Agent Marketing — Library ID 1385366867020590
+
+started Aug 6, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=1385366867020590
+
+**Ad copy:** Annuity Producers – Start Paying for Appointments That SHOW (With $250K-$1M+ Ready to Move) That's exactly what annuity producers are getting with our Pay-Per-Show Appointment System. [HERE'S WHY PRODUCERS LOVE IT:] • You only pay for appointments that SHOW UP with $250K-$1M+ in verified assets • 98…
+
+> "If you sell over $3 million a year in fixed index annuities, then I'll book you appointments with wealthy retirees that have over $250,000 in assets, and if they don't show up, you don't pay. So here's how it works. We own online retirement-focused brands, and we basically run ads to simple educational videos that give value, and from there, we then allow people to request more information. Then our US-based call center calls and qualifies the leads for assets, age, et cetera, and we also edify you as the expert so that when they show up, they already know, like, and trust you. And all you have to do is literally just show up on Zoom and take the consultation. So if you're tired of wasting your time on no-shows and unqualified leads, and you wanna speak with wealthy retirees who are actually interested in annuities, then just click the button down below and book a demo call on the following page. On that call, we'll go over exactly how the offer works, the pricing, and everything. So if you just click the link down below, you go to book a call, and we'll talk to you then. Take care."
+> — Library ID 1385366867020590 · 62 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1385366867020590
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1385366867020590-1.mp4 (62 s)
+
+### Advanced Agent Marketing — Library ID 1352829953717940
+
+started Aug 6, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=1352829953717940
+
+**Ad copy:** Can Your Firm Handle an Additional 30-50 Qualified FIA Appointments Next Month? (You Only Pay for Showed Appointments with Verified Assets) [THE OLD WAY VS. THE NEW WAY OF SCALING A FIRM:] •OLD: Spend $50K on a marketing campaign → Hope for a positive ROI → Get a mix of qualified and unqualified lea…
+
+> "If you own a wealth management firm that sells fixed index annuities, then I have a serious question for you. We have hundreds of retirees that reach out to us every single week wanting to buy an annuity. So how many can you handle? Our company generates leads, calls them, qualifies them and books them directly onto your team's calendar. And you only pay us if they show up on Zoom and have over 250K in investable assets. The average appointment has over a million dollars. So you do the math in terms of how much that could generate in terms of annuity commission, as well as AUM money. So if you're ready to scale your firm predictably and profitably, and your team can handle more than 10 appointments a week, then click learn more down below to grab one of the few remaining spots available."
+> — Library ID 1352829953717940 · 39 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1352829953717940
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1352829953717940-1.mp4 (39 s)
+
+### Premiere Destiny Home Care Success — Library ID 3334663966698378
+
+started Jun 29, 2026 · has a card on the tab · https://www.facebook.com/ads/library/?id=3334663966698378
+
+**Ad copy:** If your referrals are inconsistent, you don't need to visit more facilities. You need to fix your system. Most home care owners we talk to are putting in real effort — outreach, follow-ups, facility visits — and still watching their census go up and down like a rollercoaster. The problem isn't how h…
+
+> "We used to know a home-clear agency owner who was working really hard. In fact, 60 hours a week seemed normal to her, visiting every facility she could find and still couldn't figure out why her phone wasn't ringing. She wasn't lazy, she wasn't inexperienced. She just had holes in her referral system she couldn't see. And those invisible holes were quietly costing her clients every single month. We put together a free guide that diagnoses exactly where that breakdown happens. It's called Seven Referrer Breakdowns Costing Your Home Care Agency Clients. Seven specific gaps, seven quick fixes, plus a referral stability score so you know which ones to tackle first. After two decades running our own award-winning agency, we've lived every one of these and helped owners across the country fix them. It's completely free. Click the link below and download it right now. Your referrals shouldn't be random. Let us help you make them reliable."
+> — Library ID 3334663966698378 · 59 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=3334663966698378
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/3334663966698378-1.mp4 (59 s)
+
+### Premiere Destiny Home Care Success — Library ID 1488020286303477
+
+started Apr 27, 2026 · has a card on the tab · https://www.facebook.com/ads/library/?id=1488020286303477
+
+**Ad copy:** Paul & Joan | Home Care Business Coaches Thinking about starting a home care agency? Already own one but feeling stuck? We've been exactly where you are. Started our first agency with just a $12K credit card cash advance and zero formal business training. Over 20+ years, we built multiple successful…
+
+> "Nihu-kisadu-wetumau. Yorbaiz-liza-o-rhe-i-in-your-seku. Tell your friends. Tell your family. Tell your church. Tell your neighbor. Something like, I help seniors stay where they feel supported. The way they want to age in place. I'm currently taking my first clients. We've seen this simple message lead to first clients all the time. You may also want to reach out to your local hospital. And talk to the social workers there. Introduce yourself. Let them know you are starting small. You are flexible. And you are focused on quality. Case managers are always looking for reliable agencies that actually follow through. Especially with patrain and add to staff cases. So be ready to run off your sleeves and take the first one that they give you."
+> — Library ID 1488020286303477 · 50 s · faster-whisper small.en, first 120 s · spoken yo, re-transcribed with the multilingual model · https://www.facebook.com/ads/library/?id=1488020286303477
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1488020286303477-1.mp4 (50 s)
+
+### Premiere Destiny Home Care Success — Library ID 925810583606316
+
+started May 4, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=925810583606316
+
+**Ad copy:** Paul & Joan | Home Care Business Coaches Thinking about starting a home care agency? Already own one but feeling stuck? We've been exactly where you are. Started our first agency with just a $12K credit card cash advance and zero formal business training. Over 20+ years, we built multiple successful…
+
+> "To get to the next level, you need more than motivation. You need a mindset shift. You need a strategy and a community to work with you. So if you're ready to turn your passion into a profitable, sustainable business, don't let emotions alone drive your decisions. Go to askjoneandpaul.com and schedule a free 30 minute strategy call. We'll help you identify what's holding you back and show you how to build a business that aligns with both your heart and your goals. Let's build something great together."
+> — Library ID 925810583606316 · 33 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=925810583606316
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/925810583606316-1.mp4 (33 s)
+
+### Home Care Breakthrough Solutions — Library ID 1390544851997778
+
+started Jun 2, 2025 · in the hand-picked block · https://www.facebook.com/ads/library/?id=1390544851997778
+
+*On this page's classifier this ad is “unparsed”, a class the tab does not render as a card; shown here because it was hand-picked.*
+
+> "Hey there, home care agency owners, why is it that some agencies consistently land their ideal clients while many are still stuck dealing with inconsistent referrals and slow growth and then hitting their revenue ceiling again and again? Trust me, I've been there. I was doing everything when I had my business. I was networking. I was doing cold calls to all the facilities in town. I ran health fairs and paid internet leads and running ads and hiring sales reps, but it never actually led to predictable growth. It didn't happen for me until I finally installed an actual sale system inside of my home care business. That's when my company scaled and we quadrupled profits in just one year. Now I can tell you the key to consistent high value referrals, it is not random drop-ins and networking events that yield little to no results. It's not hiring a salesperson and then hoping that they're magically going to bring in all these clients or posting online and paying for internet leads and then getting frustrated when the results are lackluster at best. Or just sitting back, hoping that organic growth is going to get you there and that your clients are going to refer enough people and then blaming the lack of results on too much competition. The truth is most home care owners don't actually have a real system in place. They don't, right? They are throwing a whole bunch of stuff against the wall and then hoping that some of it sticks. They're doing a little bit of everything, right? But not getting the lasting results. It's like up, down, up, down in their revenue. Are you familiar with the revenue rollercoaster? I knew it all too well. That's why I built the rapid referral sales system specific for home care business owners. It's a proven step-by-step process that guarantees you at least 10 net new ideal clients from industry referral sources in the next seven months or sooner, or we work with you for free until you get the result. Now, here's how it works. Step one, we install a..."
+> — Library ID 1390544851997778 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1390544851997778
+
+- Video 1 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1390544851997778-1.mp4 (237 s)
+- Video 2 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1390544851997778-2.mp4 (237 s)
+
+> "Hey there, home care agency owners. Why is it that some agencies consistently land their ideal clients while many are still stuck dealing with inconsistent referrals and slow growth and then hitting their revenue ceiling again and again? Trust me, I've been there. I was doing everything when I had my business. I was networking. I was doing code calls to all the facilities in town. I ran health fairs and paid internet leads and running ads and hiring sales reps but it never actually led to predictable growth. It didn't happen for me until I finally installed an actual sales system inside of my home care business. That's when my company scaled and we quadrupled profits in just one year. Now I can tell you the key to consistent high value referrals is not random drop-ins and networking events that yield little to no results. It's not hiring a salesperson and then hoping that they're magically going to bring in all these clients or posting online and paying for internet leads and then getting frustrated when the results are lackluster at best or just sitting back hoping that organic growth is going to get you there and that your your clients are going to refer enough people and then blaming the lack of results on too much competition. The truth is most home care owners don't actually have a real system in place. They don't, right? They are throwing a whole bunch of stuff against the wall and then hoping that some of it sticks. They're doing a little bit of everything, right? But not getting the lasting results. It's like up down, up down in their revenue. Are you familiar with the revenue roller coaster? I knew it all too well. That's why I built the rapid referral sales system specific for home care business owners. It's a proven step-by-step process that guarantees you at least 10 net new ideal clients from industry referral sources in the next seven months or sooner or we work with you for free until you get the result. Now, here's how it works. Step one, we install a"
+> — video 2 of 2 · its own transcript (differs from the first video) · https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1390544851997778-2.mp4
+
+### Home Care Breakthrough Solutions — Library ID 3805532869655623
+
+started May 29, 2026 · has a card on the tab · https://www.facebook.com/ads/library/?id=3805532869655623
+
+**Ad copy:** Home care owners—are you paying a salesperson who's not even bringing in $10K a week? If you're like most agency owners, you’ve either hired a rep full of excitement, but they’re struggling… or you’re stuck hoping this is the month they finally deliver. But hope isn't a strategy. That’s why we insta…
+
+> "Hey there, home care agency owners. Why is it that some agencies consistently land their ideal clients while many are still stuck dealing with inconsistent referrals and slow growth and then hitting their revenue ceiling again and again? Trust me, I've been there. I was doing everything when I had my business. I was networking. I was doing code calls to all the facilities in town. I ran health fairs and paid internet leads and running ads and hiring sales reps but it never actually led to predictable growth. It didn't happen for me until I finally installed an actual sales system inside of my home care business. That's when my company scaled and we quadrupled profits in just one year. Now I can tell you the key to consistent high value referrals is not random drop-ins and networking events that yield little to no results. It's not hiring a salesperson and then hoping that they're magically going to bring in all these clients or posting online and paying for internet leads and then getting frustrated when the results are lackluster at best or just sitting back hoping that organic growth is going to get you there and that your your clients are going to refer enough people and then blaming the lack of results on too much competition. The truth is most home care owners don't actually have a real system in place. They don't, right? They are throwing a whole bunch of stuff against the wall and then hoping that some of it sticks. They're doing a little bit of everything, right? But not getting the lasting results. It's like up down, up down in their revenue. Are you familiar with the revenue roller coaster? I knew it all too well. That's why I built the rapid referral sales system specific for home care business owners. It's a proven step-by-step process that guarantees you at least 10 net new ideal clients from industry referral sources in the next seven months or sooner or we work with you for free until you get the result. Now, here's how it works. Step one, we install a"
+> — Library ID 3805532869655623 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=3805532869655623
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/3805532869655623-1.mp4 (235 s)
+
+### Home Care Breakthrough Solutions — Library ID 935345255552178
+
+started Mar 9, 2026 · has a card on the tab · https://www.facebook.com/ads/library/?id=935345255552178
+
+**Ad copy:** Here’s the truth most home care owners that are seeking referral consistency in their agency eventually discover: 👇 Working harder doesn’t scale a home care business. Systems do. 💯 The agencies that grow from $1M to $5M to $20M+ don’t rely on random marketing activity. They operate with a structured…
+
+> "Home care owners, I'm sure you've heard this, home care demand is rising. Yet there's many agencies that stay stuck at a revenue ceiling. It's almost like a revenue roller coaster. Revenue goes up, you hit a ceiling, and then you drop back down. It's not because of competition, although it feels like that's what the problem is. It's not because people can't afford care, even though every social worker and their mother are leading you to believe that's what the problem is. The real problem is because there is no repeatable referral system in your business driving growth, or because the sales system that you have now just lacks strategy and tactics that are actually working. Most owners throw effort at the wall hoping that something's going to stick. See, what we do is we replace that with a proven system that includes timeless strategies, proven tactics, and the best part is that we've been doing this long enough that we can guarantee you a return on investment or a work for free. We'll install the full sales framework, we'll implement the KPI formula that actually predicts results, and we will systematize sales management so growth doesn't depend just on you. Now, this is the same blueprint that's helped agencies move past the $1 million, $5 million, even $20 million plus in revenue with lots and lots and lots of documented results that we can share. Clear strategy, clear metrics, clear accountability. If you're ready for predictable referral growth, schedule a strategy call with us, click the button or click the learn more button, complete that quick questionnaire, and then let's jump on a call."
+> — Library ID 935345255552178 · 84 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=935345255552178
+
+- Video 1 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/935345255552178-1.mp4 (84 s)
+- Video 2 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/935345255552178-2.mp4 (84 s)
+
+### PatientsPipeline — Library ID 1028415663345330
+
+started Aug 26, 2026 · has a card on the tab · https://www.facebook.com/ads/library/?id=1028415663345330
+
+**Ad copy:** Home care agency owners above $70k/month: we'll book you 60 qualified in-home assessments in the next 90 days or you don't pay. No PlaceForMom. No referral channel maintenance. No calls your team has to chase.
+
+> "Home care agency owners above $70,000 a month don't hire another marketer, don't buy shared low quality leads from another directory. Instead, we'll book you 60 qualified in-home assessments in the next 90 days or you don't pay. So if that sounds like something you want, click below and book a call where we can walk you through it. Now, if you're wondering how we can guarantee a number like that, it helps to look at where your assessments are actually coming from today. Most agencies survive on two channels, referral sources and paid directory leads, both of which have the same root problem. Somebody else gets to dictate your growth and pipeline. And that's fine when you're starting out, but not when you're looking to predictably grow your census month over month. Think about the last directory lead you paid for. A family filled out one form. That form was sold to three other agencies the same second it hit your inbox. And by the time your team even got a chance to reach out between office work, that family was already on the phone with a competitor. And here's the half that nobody warned you about. Plenty of those families were never able to pay for private care in the first place. And by the time you find out, you've already spent 40 minutes on the phone, which sends you back to referral sources because at least those convert. You've likely built those relationships over years. Discharge planners, case managers, the SNF that sends you two or three a month, but that channel stops growing the day you run out of hours to be in somebody's face five days a week. And every one of those relationships has to be maintained personally by you forever. Or it quietly goes to the agency that showed up last week when you didn't. Both channels share the same constraint. Somebody in the middle who owns your demand and rations it out to you. We build you a channel that you actually own, then we run the whole thing for you. The same channel that booked 29 qualified in-home assessments for senior helpers, 34 for right at home, and 28 for Central Florida, all in just 30 days. We run targeted meta campaigns straight to families in your service area who are looking for care right now, not the coordinator who refers to them. The daughter reading reviews at 11 p.m. because her father fell again on Tuesday. Those families come to you and only you. There's no queue, no other agency."
+> — Library ID 1028415663345330 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1028415663345330
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1028415663345330-1.mp4 (158 s)
+
+### Home Care Pipeline — Library ID 2211476392958921
+
+started Jun 29, 2026 · has a card on the tab · https://www.facebook.com/ads/library/?id=2211476392958921
+
+**Ad copy:** Home care agency owners — if you've tried ads before and got nothing but clicks and form fills from people who never answered the phone, this isn't that. The problem wasn't that ads don't work for home care. The problem was the agency running them didn't understand home care. They sent you volume. W…
+
+> "If you're buying leads from agencies like A Place for Mom, you're not the only home care agency calling that family. That same lead is sold to four others in your county. You're racing on phone call speed, and the family books with whoever answers first. We replace that with a recommendation system. Exclusive private pay families, pre-qualified by your zip and your hourly rates, booked directly to your calendar, three to five every month, guaranteed in 90 days, or we work for free. We only work with one agency per county. Take the free 60-second assessment, seven questions, no email required, and find out if your county is still available and whether your agency qualifies."
+> — Library ID 2211476392958921 · 35 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2211476392958921
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/2211476392958921-1.mp4 (35 s)
+
+### Home Care Pipeline — Library ID 1843423676621593
+
+started Aug 7, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=1843423676621593
+
+**Ad copy:** Home care agency owners — if you've tried ads before and got nothing but clicks and form fills from people who never answered the phone, this isn't that. The problem wasn't that ads don't work for home care. The problem was the agency running them didn't understand home care. They sent you volume. W…
+
+> "Hey, speak English? No, no, no. Yes, yes, we speak English. Of course we do. But more importantly, we speak home care. If your agency is still relying on referrals or buying shared leads, we've got a much better solution. Home care pipeline helps agencies attract qualified private pay families and books them directly onto your calendar. No shared leads. No competing with five other agencies. Just exclusive opportunities right in your service area. And here's the best part. We guarantee three to five new private pay clients every month or you don't pay. Click below to see if your agency qualifies."
+> — Library ID 1843423676621593 · 35 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1843423676621593
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1843423676621593-1.mp4 (35 s)
+
+### 7FigureDocs — Library ID 1437591444956273
+
+started Sep 1, 2026 · has a card on the tab · https://www.facebook.com/ads/library/?id=1437591444956273
+
+**Ad copy:** Hey Doctors! I’m Sophie, an AI Advertising Specialist here at 7FigureDocs. ⁣ ⁣ Yep — I’m not real, but this video sure looks it. ⁣ ⁣ And yes, we can make video edits just like this for your practice too... 🤖 ⁣⁣ ⁣⁣⁣ Our AI-powered digital marketing systems are so predictable, we guarantee 30 New Pati…
+
+> "If you're struggling to get more patients through the door, listen up. At seven figure docs, we guarantee 30 new patient appointments booked directly into your calendar in the next 30 days or you don't pay us a dime. And we know that's a bold claim, but it's one we can back up. Morris Alexander collected 100,000 in just two months. Dr. Rebecca Lee went from zero to 30,090 days. Dr. Jeffrey Hawkins hit 30,000 in his first month with us and scaled to 300,000 a month within a year. And they didn't do that by running ads themselves or chasing leads. Instead, they let us handle everything, including the lead generation, the follow-up, the appointment setting, and the sales training for their staff to actually close and collect. Just click the link below to book a free strategy call."
+> — Library ID 1437591444956273 · 47 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1437591444956273
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1437591444956273-1.mp4 (47 s)
+
+### Wisdom First Marketing — Library ID 1046925518073187
+
+started Jul 23, 2026 · has a card on the tab · https://www.facebook.com/ads/library/?id=1046925518073187
+
+**Ad copy:** For assisted living community operators: we help you get more booked tours for each of your facilities.
+
+> "Here's what we help assisted living facilities do. We help you build a six month wait list. We help you reach over 95% occupancy or higher, and we help you fill your tour calendar with families who are ready to make a decision. We don't want you to have tire kickers. We don't want people who are comparing 10 different communities and have no urgency. We have families who've done their research, understand what your community offers and are ready to have a real conversation. We've helped over 50 facilities get there, not with gimmicks or generic ads that attract the wrong families. We've actually built a system specifically for how people actually choose senior care. The system that we've developed, we call it trust-based marketing, and essentially it works like this. Your families are not impulse buyers. They're researching for weeks, sometimes months before they ever pick up the phone. So instead of running ads that try to rush them through that process, we built a marketing system that earns their trust at every stage of their decision. By the time a family books a tour, they've already known who you are, what makes your community different, why they want to visit, and your team isn't convincing strangers, the welcoming people who already want to be there. So our call, we're going to do a couple of things. First, we're going to figure out whether this is actually fit for your business. While it works for most, this isn't a one size fits all system. We have to adjust this slightly based on your market and your competition and things like that. And if it is a fit, we'll show you exactly what this would look like for your community or your business, your market, your families, your capacity goals. There's no pressure, no pitch, just a straight forward conversation to see if our marketing system for assisted living is a good fit for your business. Now, just make sure you confirm your call and we'll talk to you soon."
+> — Library ID 1046925518073187 · 108 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1046925518073187
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1046925518073187-1.mp4 (108 s)
+
+### Phoebe — Library ID 1839836530725847
+
+started Aug 4, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=1839836530725847
+
+*On this page's classifier this ad is “operator's own ad (to families or job seekers)”, a class the tab does not render as a card; shown here because it was hand-picked.*
+
+**Ad copy:** If you’re a home care agency providing 1,000+ weekly hours of care, you’re probably are constantly chasing clock ins/outs. We built you a better option - an AI teammate that can manager your clock in/out calls and texts at once while only handing off the most important tasks to your staff.
+
+> "If they don't clock out at the end of their shift, they automatically get a text two minutes after the end of their shift telling them to do that. One in three missed clock ins, clock outs is now being handled by Phoebe. So the number of WellSky notifications that we get in Slack for a missed clock in or clock out have gone down by a third. If I got rid of Phoebe, I think some of my schedulers would try to go find an agency that had Phoebe because that's how powerful it's been for them."
+> — Library ID 1839836530725847 · 25 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1839836530725847
+
+- Video 1 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1839836530725847-1.mp4 (25 s)
+- Video 2 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1839836530725847-2.mp4 (25 s)
+
+### Phoebe — Library ID 1846339940077808
+
+started Aug 6, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=1846339940077808
+
+**Ad copy:** If you’re a home care agency providing 1,000+ weekly hours of care, you’re probably are constantly chasing clock ins/outs. We built you a better option - an AI teammate that can manager your clock in/out calls and texts at once while only handing off the most important tasks to your staff. 0:00 / 0:…
+
+> "If the caregiver did not clock in or clock out, we would get a well sky notification. At that point, we're counting the phones. It's trying to get the caregiver on the phone to make sure that they are there. As everybody in this industry knows, most of the time they show up and it's crisis mode and they set their phone down and they're in the middle of working and you're blowing their phone up and then you start panicking. That's how it was before. Very manual. The way it works now with Phoebe is if somebody doesn't clock in to work on time, three minutes after the start of their shift, Phoebe will send them a text. Same thing on the clock out. If they don't clock out at the end of their shift, they automatically get a text, two minutes after the end of their shift, telling them to do that. If I got rid of Phoebe, I think some of my schedulers would try to go find an agency that had Phoebe because that's how powerful it's been for them."
+> — Library ID 1846339940077808 · 42 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1846339940077808
+
+- Video 1 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1846339940077808-1.mp4 (42 s)
+- Video 2 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1846339940077808-2.mp4 (42 s)
+
+### VERVE Care Partners — Library ID 1752695749188288
+
+started Jul 21, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=1752695749188288
+
+*On this page's classifier this ad is “operator's own ad (to families or job seekers)”, a class the tab does not render as a card; shown here because it was hand-picked.*
+
+**Ad copy:** You noticed it on your last visit. The mail piling up. The same story told twice. A stumble she waved off. Mom doesn't want to leave her home — and the truth is, she probably doesn't have to. In the greater Seattle area you can start with just a few hours of help a week and adjust as things change. …
+
+> "I spent the last few weeks calling senior living communities around here so you don't have to. National websites give you averages that are useless for our city. I've put together the 2026 Senior Living Cost Guide with the real ranges for independent, assisted living, memory care, and even home care options right here in our city. It's localized, it's accurate, and it's free. Click below and I'll send the PDF to your inbox."
+> — Library ID 1752695749188288 · 32 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1752695749188288
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1752695749188288-1.mp4 (32 s)
+
+### VERVE Care Partners — Library ID 1505036190936300
+
+started Jul 10, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=1505036190936300
+
+**Ad copy:** If you're googling "senior care costs in Long Island" at 11pm, you already know how overwhelming this feels. "Starting at" prices that balloon. Communities that won't give a straight number. And a parent who just wants to stay in their own home. Here's what many families don't find out until after t…
+
+> "I spent the last few weeks calling senior living communities around here so you don't have to. National websites give you averages that are useless for our city. I've put together the 2026 Senior Living Cost Guide with the real ranges for independent, assisted living, memory care, and even home care options right here in our city. It's localized, it's accurate, and it's free. Click below and I'll send the PDF to your inbox."
+> — Library ID 1505036190936300 · 32 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1505036190936300
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1505036190936300-1.mp4 (32 s)
+
+### HomecareGrow.io — Library ID 2015894449122683
+
+started Sep 10, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=2015894449122683
+
+*New HomecareGrow ad (started Sep 10, 2026); not in the original Ad Library pull — added by Library ID on 2026-09-11.*
+
+**Ad copy:** Inside Our Medicaid Ad Campaign
+
+> "What you're going to notice immediately is this ad is speaking specifically to find a family caregiver that's qualified for Medicaid. I'm sure you've seen home care ads where they're speaking to everybody. They can serve veterans, private pay, and Medicaid, but because they're talking to everybody, nobody resonates with it, and the ad flops. If you want to have a highly successful campaign, the first thing you need to do is start on the ad level and speak to exactly who you want to target. In this case, Medicaid family caregiver. So example of an ad here, you can see the agency we're working with. This ad combines two key things. Number one, targeting and speaking to someone very specific. Number two, the offer is very good, an offer to get paid for what they're already doing in many cases. Another reason this ad does so well or this type of ad is because it reaches a large amount of people. If you're familiar with the Eugene Schwartz and the five levels of awareness when it comes to ads and marketing, what I find is the majority of agencies that I talk to are all competing for the same three to five percent of people, usually referrals. People that are ready to buy or that already know about the product, maybe they're getting referred from Medicaid in this case. If you want to break through the ceiling of three to ten million that you're at, the way to break through is to create a second source of a larger pool. If everyone's competing for the same pond, eventually the fish are going to get swallowed up in your market, which is what you're experiencing. Where instead, if we can go after a whole ocean of people, there's going to be a lot more for you. People that we're hitting in this ad are often unaware that they could even be compensated as a caregiver. So you look at that, you go, well, hold on a sec, I've only been operating in eight percent of the total market. There's a whole market that doesn't even know that this exists. So because of that, we get leads for cheaper, qualified leads for cheaper. So you get more of them so that you can make this campaign profitable. Once the lead clicks, what we want to do is only ask the necessary amount of questions that maximize lead quality while maximizing lead volume. The mistake I see a lot of agency owners make with ads is they try to over-qualify in the ad because they only want to talk to people that are..."
+> — Library ID 2015894449122683 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2015894449122683
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/2015894449122683-1.mp4 (470 s)
+
+### HomecareGrow.io — Library ID 1334349101926370
+
+started Sep 10, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=1334349101926370
+
+*New HomecareGrow ad (started Sep 10, 2026); not in the original Ad Library pull — added by Library ID on 2026-09-11.*
+
+**Ad copy:** Inside Our Veteran Ad Campaign
+
+> "So this is an example of an ad, who it's gonna target is the veteran. If you wanna make your ads better, if you want to get lower CAC, higher conversion, one of the easiest ways to do it is being extremely specific with who you're targeting in the ad, who you want to respond. And that goes for the ad copy, which is this, this goes for the images, the call outs, veterans, veterans, veterans. If you can serve veterans, private pay and Medicaid, and your ads speak to everyone, they will speak to no one. If you want a campaign to be successful, has to speak to one type of person, with one type of problem, and there needs to be an offer so good that it creates little friction for somebody to take the next step. So in this case, we're hitting veterans, and you can see the offer is, you could get home care at no cost to you. That is a very good offer that increases the click-through rate that gets more people for lower cost of ad spend. Part of why this is so profitable. So this is an example, you can read that if you want. Now, if you're familiar with Eugene Schwartz Awareness Framework, there are five levels. So the majority of home care agencies are focused on just competing for the same three to 8% of the people that are ready to buy now or that already know who you are, and that just need a little bit of help getting over the line. The majority of agencies that we work with, they're getting the same amount of clients from referrals per month as they're losing every month, so they're stuck somewhere around the three to 10 million a year mark, and those are the agencies we work with. We help them move through with this second funnel of leads. So what we do is we hit the people that are maybe only solution aware, or not even yet. They're problem aware, or not even yet. They're unaware, they don't even know they have a problem. So as we look at this ad, you can see how it speaks to people that potentially are unaware, but more people that are just problem aware. They don't know who you are yet. They don't even know if home care is the right solution, but when you combine specific targeting of an individual with an offer that's very good, hey, you could potentially get free in home care. That leads to people taking the next step, clicking and entering their information, which is the whole point of an ad. The point of an ad is not to sell your service. That's why you have phone teams. That's why you do in-home assessments. The point of an ad is to get information."
+> — Library ID 1334349101926370 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1334349101926370
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1334349101926370-1.mp4 (527 s)
+
+### HomecareGrow.io — Library ID 1443395297670036
+
+started Sep 10, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=1443395297670036
+
+*New HomecareGrow ad (started Sep 10, 2026); not in the original Ad Library pull — added by Library ID on 2026-09-11.*
+
+**Ad copy:** 11 Reasons Your Home Care Ads Aren’t Working (And How To Fix Each One)
+
+> "Here's 11 reasons home care agencies can't make paid ads work after personally speaking with over 200 in the last four months. I'm going to share the reason then exactly what you can do to fix it so you can grow your home care agency faster. And if we haven't met before, I'm Ryan Clark. I'm the co-owner of homecaregrow.io where we help 70 plus agencies across the US scale their home care agencies using our home care grow paid ads and sales system. So reason number one is ads are not specific to the client avatar. I spoke with many agency owners that ran paid ads and when I asked them what did your ads look like a lot of the time it's oh well I don't know because I paid someone to do it it just I know it didn't work or if they have an idea of what it was and I look at it it's typically like hey we do home care. It's not calling out a specific avatar meaning like elders daughter who's starting to experience a parent that is at the very beginnings of Alzheimer's dementia right it's not calling out specifically a veteran or Medicaid family caregivers right that's an example. If we are doing awareness ads for brick and mortar typically it's a waste brick and mortar you can make direct direct marketing work meaning you don't need to be doing all this crazy awareness campaigns that you would do for a nationwide campaign for a very big company when you're going brick and mortar local area 30 to 50 mile radius it's really about getting people's information a very specific person so that you can then lead them to the next step which is usually a call right. So that's number one the fix for that is you need to decide who your avatar is so something we do with all the agencies that we talk to as we find out who's the client that pays them the most and stays the longest we do this using our NC growth calculator where we essentially spit in."
+> — Library ID 1443395297670036 · 120 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1443395297670036
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1443395297670036-1.mp4 (1897 s)
+
+
+---
+
+## HomecareGrow “before your call” page — captured 2026-09-11
+
+**Captured 2026-09-11 from https://homecaregrow.io/before-your-call** — page title “Important: Watch the video below to get the most out of your call.”. HomecareGrow sends a booked owner here before the call. The research page's layout is unchanged; the capture is its own gallery: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/
+
+**Screenshots:** desktop fold: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/screenshots/desktop-fold.png · desktop full: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/screenshots/desktop-full.png · mobile fold: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/screenshots/mobile-fold.png · mobile full: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/screenshots/mobile-full.png
+
+**Images:** 70 unique images saved (sources listed in the gallery's manifest.json). **Saved page HTML** (as text): https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/page-snapshot.html.txt
+
+| Video | Host | Length | Original | Where it plays |
+|---|---|---|---|---|
+| Main page video | Vidalytics WTvAGvtpZZxGIhRR | 2:29 | 1280×720, 14.1 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vidalytics-WTvAGvtpZZxGIhRR.mp4 — web copy 540p · full quality in Downloads |
+| Araceli Raw Social Proof | Vimeo 1220930679 | 0:32 | 720×900, 8.1 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1220930679.mp4 — web copy 900p · full quality in Downloads |
+| Patrick Raw Social Proof | Vimeo 1224657671 | 0:13 | 720×900, 2.2 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1224657671.mp4 — as downloaded |
+| Medicaid Walkthrough | Vimeo 1224711218 | 7:50 | 1280×720, 80.9 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/../../picks-video/2015894449122683-1.mp4 — Same video as ad 2015894449122683 (frame-identical, same 7:50) — stored once on the site and played from that ad's web copy. The page's own copy is in Downloads. |
+| Veterans Walkthrough | Vimeo 1225064245 | 8:47 | 1280×720, 82.1 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/../../picks-video/1334349101926370-1.mp4 — Same walkthrough as ad 1334349101926370 (same 8:47 and frames; the page's copy is slightly darker throughout) — played from the ad's web copy on the site. The page's own copy is in Downloads. |
+| Private Pay Walkthrough | Vimeo 1225657385 | 8:15 | 1280×720, 87.6 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1225657385.mp4 — web copy 540p · full quality in Downloads |
+| Why will this work when other marketers failed me? | Vimeo 1225657641 | 2:23 | 1280×720, 24.1 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1225657641.mp4 — web copy 540p · full quality in Downloads |
+| What if we do our part and this doesn't work? | Vimeo 1225657932 | 1:48 | 1280×720, 18.1 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1225657932.mp4 — web copy 540p · full quality in Downloads |
+| Koby Spears - Social Proof | Vimeo 1225685621 | 0:33 | 720×1280, 9.7 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1225685621.mp4 — as downloaded |
+
+**Read:** the page carries a main video, three client testimonials, two objection answers and three program walkthroughs (Medicaid, Veterans, Private Pay); booking runs through an embedded iClosed widget. The Medicaid and Veterans walkthroughs are the same videos as HomecareGrow's Meta ads 2015894449122683 and 1334349101926370 (see the hand-picked chapter), so the ads show the prospect the same walkthrough the booked call uses.
 
 
 ---
