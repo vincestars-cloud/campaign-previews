@@ -8,7 +8,7 @@ Generated 2026-09-11 from the same files that build https://vincestars-cloud.git
 - **What they are trying to buy:** the phone ringing without renting families from a directory. A Place for Mom is the most-discussed paid source (42 buyer documents): $50–68 a lead, the same family sold to several agencies, billed whether or not it converts; the second job is hiring and keeping caregivers (chapters "Lead Sources", "Frustrations", "Previous Solutions").
 - **What they have already tried:** hospital and discharge-planner relationships (trusted, slow), the directories (shared), Facebook ads that brought caregivers instead of clients, coaches and licensing consultants. Nobody in buyer voice describes an inbound system they own (chapter "Previous Solutions").
 - **Who sells to them today:** 95 advertisers with 233 live ads (203 to running businesses, 30 to would-be owners). The lane leaders sell *exclusive booked tours or assessments under your own brand, called back in minutes, guaranteed in 90 days* — Occupancy Partners, HomecareGrow, OBB, PatientsPipeline, Wisdom First, Census Home. Cleaned 2026-09-11: consumer and recruiting ads are out of the B2B set, adjacent-practice vendors are set aside (chapter "Competitor Ads").
-- **What their ads say out loud:** 65 top video ads from 41 operator-facing advertisers transcribed (57 with speech, 7 silent, 1 not retrievable), plus 27 ads Vince hand-picked (by Library ID, or as a screen recording) with playable videos, and a capture of HomecareGrow's "before your call" page (chapters "Video ad transcripts", "Hand-picked video ads", "HomecareGrow").
+- **What their ads say out loud:** 65 top video ads from 41 operator-facing advertisers transcribed (57 with speech, 7 silent, 1 not retrievable), plus 30 ads Vince hand-picked (by Library ID, or as a screen recording) with playable videos, a capture of HomecareGrow's "before your call" page, and captures of the annuity advertisers' own landing pages (chapters "Video ad transcripts", "Hand-picked video ads", "HomecareGrow").
 - **The lane for inLeap:** families finding *you* instead of the directory — owned inbound plus intake, exclusive, priced on the result, with the caregiver-applicant by-product the same campaigns produce (chapters "Why They Buy", "Awareness → Offer Map").
 - **Decision:** treat the "Why They Buy" chapter as the ad brief and build the offer + landing page from it next; the cost of waiting is that the six vendors above are already teaching this buyer what to expect.
 
@@ -32,18 +32,19 @@ Generated 2026-09-11 from the same files that build https://vincestars-cloud.git
 16. [Video ad transcripts — top 3 per operator-facing competitor](#video-ad-transcripts-top-3-per-operator-facing-competitor)
 17. [Hand-picked video ads (Vince) — transcripts and playable videos](#hand-picked-video-ads-vince-transcripts-and-playable-videos)
 18. [HomecareGrow “before your call” page — captured 2026-09-11](#homecaregrow-before-your-call-page-captured-2026-09-11)
-19. [Landing pages (B2B only)](#landing-pages-b2b-only)
-20. [Reviews by Star — buyer-side voice](#reviews-by-star-buyer-side-voice)
-21. [Trade press & owner surveys (numbers with URLs)](#trade-press-owner-surveys-numbers-with-urls)
-22. [Competitor marketing agencies — inLeap's direct set](#competitor-marketing-agencies-inleap-s-direct-set)
-23. [Vendor / competitor map](#vendor-competitor-map)
-24. [Go-deeper thread cards](#go-deeper-thread-cards)
-25. [Headline candidates (Tab 11)](#headline-candidates-tab-11)
-26. [Frequency ranking (buyer-voice complaint patterns)](#frequency-ranking-buyer-voice-complaint-patterns)
-27. [Vocabulary ledger](#vocabulary-ledger)
-28. [Awareness → Offer Map](#awareness-offer-map)
-29. [Operator ladder, speaker gate and sources](#operator-ladder-speaker-gate-and-sources)
-30. [Self-audit and backfill](#self-audit-and-backfill)
+19. [Annuity landing pages captured — format references](#annuity-landing-pages-captured-format-references)
+20. [Landing pages (B2B only)](#landing-pages-b2b-only)
+21. [Reviews by Star — buyer-side voice](#reviews-by-star-buyer-side-voice)
+22. [Trade press & owner surveys (numbers with URLs)](#trade-press-owner-surveys-numbers-with-urls)
+23. [Competitor marketing agencies — inLeap's direct set](#competitor-marketing-agencies-inleap-s-direct-set)
+24. [Vendor / competitor map](#vendor-competitor-map)
+25. [Go-deeper thread cards](#go-deeper-thread-cards)
+26. [Headline candidates (Tab 11)](#headline-candidates-tab-11)
+27. [Frequency ranking (buyer-voice complaint patterns)](#frequency-ranking-buyer-voice-complaint-patterns)
+28. [Vocabulary ledger](#vocabulary-ledger)
+29. [Awareness → Offer Map](#awareness-offer-map)
+30. [Operator ladder, speaker gate and sources](#operator-ladder-speaker-gate-and-sources)
+31. [Self-audit and backfill](#self-audit-and-backfill)
 
 
 
@@ -1517,7 +1518,7 @@ For the established owner, caregiver retention is not an HR nicety — it is the
 
 ## Hand-picked video ads (Vince) — transcripts and playable videos
 
-**27 ads Vince hand-picked (26 by Library ID, 1 as a screen recording).** 9 already have a card on the Competitor Ads tab (the transcript and player sit inside the card); 18 sit in the collapsed *Hand-picked video ads* block at the end of that tab. Every video in each ad's own record is playable on the page; the links below go to the hosted copies (downscaled 480p research copies; full quality was saved to Downloads). Ads with more than one video are one creative rendered for different placements (square or 4:5 feed and 9:16 Stories/Reels), or the same ad uploaded twice.
+**30 ads Vince hand-picked (29 by Library ID, 1 as a screen recording).** 9 already have a card on the Competitor Ads tab (the transcript and player sit inside the card); 21 sit in the collapsed *Hand-picked video ads* block at the end of that tab. Every video in each ad's own record is playable on the page; the links below go to the hosted copies (downscaled 480p research copies; full quality was saved to Downloads). Ads with more than one video are one creative rendered for different placements (square or 4:5 feed and 9:16 Stories/Reels), or the same ad uploaded twice.
 
 ### Advanced Agent Marketing — Library ID 1571656731350483
 
@@ -1838,6 +1839,46 @@ started Aug 23, 2026 · has a card on the tab · https://www.facebook.com/ads/li
 
 - Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1255139586685877-1.mp4 (31 s)
 
+### ScaleRev — Library ID 28362087696756816
+
+started Sep 10, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=28362087696756816
+
+*ScaleRev — annuity lead-gen for advisors. Added as a format reference (Vince: annuity ads whose formatting we can reuse). Advisor-testimonial interview format; 2 videos in its own record (placement renders). Added by Library ID on 2026-09-11.*
+
+**Ad copy:** "There's no loyalty to anything that I'm saying." That's a producing advisor describing what it's like to work a purchased lead. He finally gets them on the phone, and by then they've talked to him, and to this one, and to that one. So he spends the call trying to spin a conversation that makes him …
+
+> "So, Tim, I know you've tried other Facebook marketing before. How has this experience been different for you? Very different. You know, a lot of the other Facebook stuff that I've been involved in, and I know a lot of advisors are buying all kinds of different things on Facebook. I feel like the lead that you get in another system is generic. You know, I'm calling that client. I'm chasing them. Finally, I get them on the phone. They've talked to me. They've talked to this one, that one. There's no loyalty to anything that I'm saying. We're trying to, you know, spin a conversation to make me unique. It's very frustrating, and it's expensive. People are spending a lot of money on this. Your system is different. They're watching me on my ad. You've custom made a video that's talking me talking. They're watching me. Then they're watching my webinar, and the compelling things that I'm saying in the webinar are making the people want to talk to me. And that's what I'm finding. When I call them on the phone, they're loyal to me now. They have some interest in what I'm saying. They've had four or five other advisors call them, but because they've seen me and some of the things that you've done on my videos to make it specific to me, my strategies, they want to talk to me. Now I've got a regular bond before I even get into my selling process. There's already that initial bond, which is fantastic."
+> — Library ID 28362087696756816 · 88 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=28362087696756816
+
+- Video 1 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/28362087696756816-1.mp4 (88 s)
+- Video 2 of 2: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/28362087696756816-2.mp4 (88 s)
+
+### Annuity Gator — Library ID 2064119254197273
+
+started Aug 4, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=2064119254197273
+
+*Annuity Gator — retiree-facing annuity evaluation offer. Format reference (Vince). First-person testimonial read straight to camera. Added by Library ID on 2026-09-11.*
+
+**Ad copy:** You saved for retirement. But turning that number into monthly income is a different challenge. Annuity Gator's free evaluation connects you with a licensed annuity specialist for real answers… no pitch, no pressure. …
+
+> "Thirty years I saved for retirement and nobody told me about the hard part, turning it into a monthly paycheck. I had this big number staring back at me, but I had no idea how to make it cover the bills every month. So I took the Annuity Gator free evaluation. A licensed annuity specialist looked at my actual numbers. There was no pitch, just straight answers. Now I have a plan that turns what I saved into predictable monthly income. The bills are covered and I can stop guessing. I can't speak for anyone else's situation, but this was a game changer for my retirement plan and I honestly wish I had done it sooner. If you're still watching this, you can take the free annuity evaluation like I did at the link below."
+> — Library ID 2064119254197273 · 38 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2064119254197273
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/2064119254197273-1.mp4 (38 s)
+
+### Annuity Gator — Library ID 1132145766029872
+
+started Sep 4, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=1132145766029872
+
+*Annuity Gator — “what the gurus won't tell you about annuities” angle. Format reference (Vince). Added by Library ID on 2026-09-11.*
+
+**Ad copy:** What are financial “gurus” trying to hide when they say “I hate annuities”? Many people have been led to believe that annuities are too complex and have high fees. Oftentimes they hear this from financial gurus or advisors that are trying to sell them something else. While annuities aren’t for every…
+
+> "If you've been told by an advisor to avoid annuities or hear financial gurus say they hate annuities, listen up. The truth is, many of the annuities they talk about are not the ones most retired or close to retirement age Americans should buy in the first place. The other reason is because they want to sell you something else. If you want the straightforward answer of whether an annuity is right for your retirement goals, here's how to get it. Over the past decade, annuity gator has single-handedly reinvented the way that retirees and pre-retirees find out if an annuity is right to help them secure their dream retire. Which is why we're offering a complimentary annuity evaluation to see if an annuity is right for you by asking a few simple questions. So here's what to do next. Once you finish watching this video, simply click on the button below to learn more about how we help you identify which annuity type may help you achieve your retirement goals. So if you're skeptical about the traditional financial advice being pushed by the Wall Street big banks and pushy financial salespeople, then go ahead and click on the link here on this page."
+> — Library ID 1132145766029872 · 66 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1132145766029872
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1132145766029872-1.mp4 (66 s)
+
 
 ---
 
@@ -1862,6 +1903,40 @@ started Aug 23, 2026 · has a card on the tab · https://www.facebook.com/ads/li
 | Koby Spears - Social Proof | Vimeo 1225685621 | 0:33 | 720×1280, 9.7 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1225685621.mp4 — research copy 480p · full quality in Downloads |
 
 **Read:** the page carries a main video, three client testimonials, two objection answers and three program walkthroughs (Medicaid, Veterans, Private Pay); booking runs through an embedded iClosed widget. The Medicaid and Veterans walkthroughs are the same videos as HomecareGrow's Meta ads 2015894449122683 and 1334349101926370 (see the hand-picked chapter), so the ads show the prospect the same walkthrough the booked call uses.
+
+
+---
+
+## Annuity landing pages captured — format references
+
+**The pages behind the annuity ads Vince flagged as format references.** Each capture is its own gallery on the research page: screenshots, every video the page plays (downscaled 480p research copies; full quality in Downloads) and the saved page HTML as text so none of its scripts can run.
+
+### See Which Annuities Can Maximize Your Retirement Income And Securely Grow Your Money Regardless of Market Conditions — https://ag2.annuitygator.com/annuity-evaluation/
+
+Captured 2026-09-11 · gallery: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/annuitygator-annuity-evaluation/
+
+**Screenshots:** desktop fold: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/annuitygator-annuity-evaluation/screenshots/desktop-fold.png · desktop full: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/annuitygator-annuity-evaluation/screenshots/desktop-full.png · mobile fold: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/annuitygator-annuity-evaluation/screenshots/mobile-fold.png · mobile full: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/annuitygator-annuity-evaluation/screenshots/mobile-full.png
+
+| Video | Host | Length | Original | Where it plays |
+|---|---|---|---|---|
+| Testimonials - Lead capture page-1x4s6tbo38 | Vimeo | 3:02 | 1920×1080, 43.0 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/annuitygator-annuity-evaluation/videos/vimeo-1187894163.mp4 — research copy 480p · full quality in Downloads |
+
+**Images:** 23 saved (sources in the gallery's manifest.json).
+
+### Financial Advisor Lead Generation, Installed — ScaleRev — https://scalerev.io/advisors
+
+Captured 2026-09-11 · gallery: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/scalerev-advisors/
+
+**Screenshots:** desktop fold: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/scalerev-advisors/screenshots/desktop-fold.png · desktop full: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/scalerev-advisors/screenshots/desktop-full.png · mobile fold: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/scalerev-advisors/screenshots/mobile-fold.png · mobile full: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/scalerev-advisors/screenshots/mobile-full.png
+
+| Video | Host | Length | Original | Where it plays |
+|---|---|---|---|---|
+| Cost comparison | Hosted on the page itself | 3:02 | 1280×720, 137.1 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/scalerev-advisors/videos/page-cost-comparison.mp4 — research copy 480p · full quality in Downloads |
+| How appointments differ | Hosted on the page itself | 1:34 | 1280×720, 89.9 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/scalerev-advisors/videos/page-how-appointments-differ.mp4 — research copy 480p · full quality in Downloads |
+| Out of state clients | Hosted on the page itself | 1:25 | 1280×720, 81.6 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/scalerev-advisors/videos/page-out-of-state-clients.mp4 — research copy 480p · full quality in Downloads |
+| Were you skeptical | Hosted on the page itself | 1:07 | 1280×720, 63.7 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/scalerev-advisors/videos/page-were-you-skeptical.mp4 — research copy 480p · full quality in Downloads |
+
+**Images:** 4 saved (sources in the gallery's manifest.json).
 
 
 ---

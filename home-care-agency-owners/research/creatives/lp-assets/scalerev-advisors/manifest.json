@@ -1,0 +1,99 @@
+{
+ "source": "https://scalerev.io/advisors",
+ "title": "Financial Advisor Lead Generation, Installed \u2014 ScaleRev",
+ "captured": "2026-09-11",
+ "screenshots": [
+  "desktop-fold",
+  "desktop-full",
+  "mobile-fold",
+  "mobile-full"
+ ],
+ "videos": [
+  {
+   "name": "page-cost-comparison",
+   "title": "Cost comparison",
+   "host": "Hosted on the page itself",
+   "id": "cost-comparison",
+   "source": "https://scalerev.io/__l5e/assets-v1/25b88b88-97a9-4728-ab57-1d1afd3dcee6/cost-comparison.mp4",
+   "original_bytes": 143727191,
+   "poster": "videos/page-cost-comparison.jpg",
+   "w": 1280,
+   "h": 720,
+   "duration": 182,
+   "audio": true,
+   "site_file": "videos/page-cost-comparison.mp4",
+   "site_bytes": 4452363,
+   "site_note": "research copy 480p \u00b7 full quality in Downloads"
+  },
+  {
+   "name": "page-how-appointments-differ",
+   "title": "How appointments differ",
+   "host": "Hosted on the page itself",
+   "id": "how-appointments-differ",
+   "source": "https://scalerev.io/__l5e/assets-v1/1497beec-3b25-467d-868d-28ebfd6dea4b/how-appointments-differ.mp4",
+   "original_bytes": 94237078,
+   "poster": "videos/page-how-appointments-differ.jpg",
+   "w": 1280,
+   "h": 720,
+   "duration": 94,
+   "audio": true,
+   "site_file": "videos/page-how-appointments-differ.mp4",
+   "site_bytes": 4100981,
+   "site_note": "research copy 480p \u00b7 full quality in Downloads"
+  },
+  {
+   "name": "page-out-of-state-clients",
+   "title": "Out of state clients",
+   "host": "Hosted on the page itself",
+   "id": "out-of-state-clients",
+   "source": "https://scalerev.io/__l5e/assets-v1/ca92f1d3-de91-487a-861b-139b19c1ed50/out-of-state-clients.mp4",
+   "original_bytes": 85530476,
+   "poster": "videos/page-out-of-state-clients.jpg",
+   "w": 1280,
+   "h": 720,
+   "duration": 85,
+   "audio": true,
+   "site_file": "videos/page-out-of-state-clients.mp4",
+   "site_bytes": 3721234,
+   "site_note": "research copy 480p \u00b7 full quality in Downloads"
+  },
+  {
+   "name": "page-were-you-skeptical",
+   "title": "Were you skeptical",
+   "host": "Hosted on the page itself",
+   "id": "were-you-skeptical",
+   "source": "https://scalerev.io/__l5e/assets-v1/0367cf0d-2949-4ea8-9236-8609773ac4ae/were-you-skeptical.mp4",
+   "original_bytes": 66774837,
+   "poster": "videos/page-were-you-skeptical.jpg",
+   "w": 1280,
+   "h": 720,
+   "duration": 67,
+   "audio": true,
+   "site_file": "videos/page-were-you-skeptical.mp4",
+   "site_bytes": 2612169,
+   "site_note": "research copy 480p \u00b7 full quality in Downloads"
+  }
+ ],
+ "images": [
+  {
+   "file": "images/were-you-skeptical-poster-jpg.jpg",
+   "source": "https://scalerev.io/__l5e/assets-v1/fa953324-20e4-44b7-bd34-f02ccd128114/were-you-skeptical-poster.jpg",
+   "bytes": 75029
+  },
+  {
+   "file": "images/how-appointments-differ-poster-jpg.jpg",
+   "source": "https://scalerev.io/__l5e/assets-v1/abae1671-9374-4f05-8572-dc21e1bee0da/how-appointments-differ-poster.jpg",
+   "bytes": 78284
+  },
+  {
+   "file": "images/cost-comparison-poster-jpg.jpg",
+   "source": "https://scalerev.io/__l5e/assets-v1/ea4a64ab-d672-450d-b6dc-7b16a90157d8/cost-comparison-poster.jpg",
+   "bytes": 47804
+  },
+  {
+   "file": "images/out-of-state-clients-poster-jpg.jpg",
+   "source": "https://scalerev.io/__l5e/assets-v1/48b12df5-7847-4cf1-b0b5-03d5624470b2/out-of-state-clients-poster.jpg",
+   "bytes": 87576
+  }
+ ]
+}

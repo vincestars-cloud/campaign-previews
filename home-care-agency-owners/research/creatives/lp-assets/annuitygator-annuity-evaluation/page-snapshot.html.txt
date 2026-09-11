@@ -1,0 +1,1915 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta name="robots" content="noindex, nofollow">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>See Which Annuities Can Maximize Your Retirement Income And Securely Grow Your Money Regardless of Market Conditions</title>
+
+    <!-- Google Tag Manager -->
+    <script async="" src="https://www.clarity.ms/tag/uet/56042278?conversions=1"></script><script type="text/javascript" async="" src="https://capi-automation.s3.us-east-2.amazonaws.com/public/client_js/capiParamBuilder/clientParamBuilder.bundle.js"></script><script async="" src="https://scripts.clarity.ms/0.8.69-beta/clarity.js"></script><script src="https://connect.facebook.net/signals/config/2342555126553709?v=2.9.398&amp;r=stable&amp;domain=ag2.annuitygator.com&amp;optin_meta_enabled_capi=true&amp;hme=457e068698591ac437afb4b2e5fbe0266b08712615b8792436a91385ebda0da3&amp;ex_m=115%2C227%2C166%2C26%2C80%2C81%2C158%2C76%2C75%2C11%2C176%2C100%2C20%2C150%2C138%2C45%2C83%2C88%2C146%2C171%2C178%2C31%2C17%2C30%2C18%2C32%2C33%2C34%2C36%2C54%2C159%2C85%2C123%2C22%2C24%2C50%2C46%2C48%2C47%2C93%2C102%2C106%2C121%2C157%2C160%2C52%2C122%2C28%2C25%2C130%2C77%2C42%2C162%2C161%2C163%2C154%2C152%2C29%2C41%2C65%2C120%2C173%2C78%2C21%2C125%2C91%2C74%2C23%2C95%2C96%2C127%2C94%2C148%2C147%2C151%2C107%2C172%2C175%2C40%2C55%2C124%2C53%2C8%2C4%2C5%2C7%2C6%2C3%2C101%2C112%2C180%2C179%2C194%2C241%2C82%2C255%2C254%2C253%2C14%2C27%2C39%2C61%2C114%2C67%2C10%2C71%2C108%2C109%2C110%2C116%2C141%2C37%2C35%2C143%2C144%2C145%2C140%2C139%2C167%2C84%2C170%2C168%2C169%2C56%2C66%2C134%2C19%2C174%2C51%2C305%2C306%2C307%2C304%2C320%2C344%2C234%2C223%2C68%2C224%2C222%2C347%2C338%2C58%2C235%2C118%2C142%2C90%2C132%2C60%2C131%2C137%2C136%2C64%2C72%2C70%2C164%2C86%2C87%2C126%2C43%2C38%2C59%2C62%2C111%2C177%2C1%2C135%2C16%2C133%2C12%2C2%2C63%2C103%2C15%2C73%2C69%2C129%2C99%2C98%2C182%2C183%2C104%2C105%2C9%2C113%2C181%2C57%2C155%2C97%2C89%2C79%2C128%2C117%2C49%2C156%2C0%2C92%2C149%2C153%2C165%2C44%2C119%2C13%2C184" async=""></script><script type="text/javascript" async="" src="https://connect.facebook.net/en_US/fbevents.js"></script><script async="" src="https://widgetbe.com/agent"></script><script type="text/javascript" async="" src="//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js"></script><script type="text/javascript" async="" src="https://www.clarity.ms/tag/vg1pl04q3z?ref=gtm"></script><script type="text/javascript" async="" src="https://bat.bing.com/bat.js"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=G-9HGP30R8QD&amp;cx=c&amp;gtm=4e6992"></script><script type="text/javascript" async="" src="https://www.googletagmanager.com/gtag/js?id=AW-944434441&amp;cx=c&amp;gtm=4e6992"></script><script async="" src="https://www.googletagmanager.com/gtm.js?id=GTM-K3NHQ3"></script><script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+        })(window,document,'script','dataLayer','GTM-K3NHQ3');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="stylesheet" href="assets/css/style.css?v=1789165621">
+    <link rel="icon" href="assets/images/favicon.ico">
+    
+        <style>
+        #submit-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.55);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+        }
+        #submit-overlay.active { display: flex; }
+        #submit-overlay .submit-overlay-box {
+            background: #fff;
+            border-radius: 16px;
+            padding: 40px 32px;
+            text-align: center;
+            width: 88%;
+            max-width: 320px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        }
+        #submit-overlay .submit-overlay-box p {
+            margin: 20px 0 0;
+            font-size: 18px;
+            font-weight: 700;
+            color: #2c3e50;
+            font-family: Lato, sans-serif;
+        }
+        #submit-overlay .submit-overlay-sub {
+            font-size: 13px;
+            font-weight: 400;
+            color: #6c757d;
+            margin-top: 8px;
+        }
+        #submit-overlay .submit-overlay-spinner {
+            width: 52px;
+            height: 52px;
+            border: 5px solid #e0e0e0;
+            border-top-color: #1a56db;
+            border-radius: 50%;
+            animation: submit-spin 0.75s linear infinite;
+            margin: 0 auto;
+        }
+        @keyframes submit-spin { to { transform: rotate(360deg); } }
+        @media (min-width: 768px) {
+            #submit-overlay .submit-overlay-box {
+                max-width: 480px;
+                padding: 52px 56px;
+                border-radius: 20px;
+            }
+            #submit-overlay .submit-overlay-box p {
+                font-size: 22px;
+                margin-top: 24px;
+            }
+            #submit-overlay .submit-overlay-sub {
+                font-size: 15px;
+                margin-top: 10px;
+            }
+            #submit-overlay .submit-overlay-spinner {
+                width: 68px;
+                height: 68px;
+                border-width: 6px;
+            }
+        }
+    </style>
+<script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/944434441/?random=1789165623347&amp;cv=11&amp;fst=1789165623347&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be6992v9214864792z871508598za20gzb71508598zd71508598xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153&amp;u_w=1440&amp;u_h=900&amp;url=https%3A%2F%2Fag2.annuitygator.com%2Fannuity-evaluation%2F&amp;rcb=5&amp;frm=0&amp;tiba=See%20Which%20Annuities%20Can%20Maximize%20Your%20Retirement%20Income%20And%20Securely%20Grow%20Your%20Money%20Regardless%20of%20Market%20Conditions&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1810877777.1789165623&amp;uaa=x86&amp;uab=64&amp;uafvl=Not%253DA%253FBrand%3B99.0.0.0%7CHeadlessChrome%3B151.0.7922.34%7CChromium%3B151.0.7922.34&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=10_15_7&amp;uaw=0&amp;data=event%3Dgtag.config&amp;ept=9&amp;rfmt=3&amp;fmt=4"></script><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/944434441/?random=1789165623588&amp;cv=11&amp;fst=1789165623588&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;gtm=45be6992v9214864792z871508598za20gzb71508598zd71508598xea&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153~120721993&amp;u_w=1440&amp;u_h=900&amp;url=https%3A%2F%2Fag2.annuitygator.com%2Fannuity-evaluation%2F&amp;rcb=5&amp;frm=0&amp;tiba=See%20Which%20Annuities%20Can%20Maximize%20Your%20Retirement%20Income%20And%20Securely%20Grow%20Your%20Money%20Regardless%20of%20Market%20Conditions&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1810877777.1789165623&amp;uaa=x86&amp;uab=64&amp;uafvl=Not%253DA%253FBrand%3B99.0.0.0%7CHeadlessChrome%3B151.0.7922.34%7CChromium%3B151.0.7922.34&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=10_15_7&amp;uaw=0&amp;_tu=CA&amp;ept=9&amp;rfmt=3&amp;fmt=4"></script><script type="text/javascript" async="" src="https://googleads.g.doubleclick.net/pagead/viewthroughconversion/944434441/?random=1789165623706&amp;cv=11&amp;fst=1789165623706&amp;bg=ffffff&amp;guid=ON&amp;async=1&amp;en=gtag.config&amp;gtm=45be6992v9214864792za20gzb71508598zd71508598xec&amp;gcd=13l3l3l3l1l1&amp;dma=0&amp;tag_exp=115938466~115938468~118897920~118897930~120213116~120385422~120469145~120469153&amp;u_w=1440&amp;u_h=900&amp;url=https%3A%2F%2Fag2.annuitygator.com%2Fannuity-evaluation%2F&amp;rcb=5&amp;frm=0&amp;tiba=See%20Which%20Annuities%20Can%20Maximize%20Your%20Retirement%20Income%20And%20Securely%20Grow%20Your%20Money%20Regardless%20of%20Market%20Conditions&amp;hn=www.googleadservices.com&amp;npa=0&amp;pscdl=noapi&amp;auid=1810877777.1789165623&amp;uaa=x86&amp;uab=64&amp;uafvl=Not%253DA%253FBrand%3B99.0.0.0%7CHeadlessChrome%3B151.0.7922.34%7CChromium%3B151.0.7922.34&amp;uamb=0&amp;uam=&amp;uap=macOS&amp;uapv=10_15_7&amp;uaw=0&amp;data=event%3Dgtag.config&amp;ept=9&amp;rfmt=3&amp;fmt=4"></script><script src="https://bat.bing.com/p/action/56042278.js" type="text/javascript" async="" data-ueto="ueto_6a6fdbba9a"></script></head>
+
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K3NHQ3"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <section id="navbar">
+    <div class="container">
+        <div class="nav-item">
+            <img class="img logo" src="./assets/images/annuitygator.png" alt="Annuity Gator Logo">
+        </div>
+        <div class="nav-item notes">
+            <img src="./assets/images/hundreds.png" alt="Serving Clients With $100k+ in Retirement Savings">
+            <img src="./assets/images/rated.png" alt="Serving Clients With $100k+ in Retirement Savings">
+            <img src="./assets/images/serving.png" alt="Serving Clients With $100k+ in Retirement Savings">
+        </div>
+        <div class="nav-item">
+            <a class="btn green-btn" href="tel:8884402468">
+                <p>Questions?</p>
+                <div>
+                    <img width="20" src="./assets/images/phone.svg" alt="">
+                    <p class="number">Call us 888-440-2468</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+    <div class="container" id="steps" style="display: block;">
+        <div class="progress-container" style="display: none">
+            <div class="progress" id="progress"></div>
+            <div data-content="content_1" class="circle active">1</div>
+            <div data-content="content_2" class="circle">2</div>
+            <div data-content="content_3" class="circle">3</div>
+            <div data-content="content_4" class="circle">4</div>
+            <div data-content="content_5" class="circle">5</div>
+            <div data-content="content_6" class="circle">6</div>
+        </div>
+
+        <form id="myForm" autocomplete="off">
+            <main class="contents">
+                <div id="content_1" data-step="1" class="open">
+                    <p>An exclusive opportunity for investors with $100,000 or more in their retirement portfolio</p>
+
+                    <h1 class="green-title">See Which Annuities Can Maximize Your Retirement Income And Securely Grow
+                        Your Money Regardless of Market Conditions</h1>
+                    <p class="firstq2">Find out if you qualify for a personalized annuity evaluation in under 30
+                        seconds...</p>
+                    <h1 class="main-q">Are You a Man or Woman?</h1>
+                    <p>(The reason for asking, is because men and women have different payout
+                        factors based on their living expectancy)</p>
+
+                    <div class="radio-group">
+                        <input type="radio" id="male" name="Q1" value="man" style="">
+                        <label for="male">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 304 512">
+                                <path d="M160,96a48,48,0,1,0-48-48A48,48,0,0,0,160,96Zm-13.7,80h27.5a17.7,17.7,0,0,1,2.3.1V304H144V176.1C144.7,176.1,145.5,176,146.3,176ZM144,488V352h32V488a24,24,0,0,0,48,0V223.6l43.1,76.2a24,24,0,0,0,41.8-23.6L250.3,172.7A88,88,0,0,0,173.7,128H146.3a88,88,0,0,0-76.6,44.7L11.1,276.2a24,24,0,1,0,41.8,23.6L96,223.6V488a24,24,0,0,0,48,0Z">
+                                </path>
+                            </svg>
+                            Man
+                        </label>
+
+                        <input type="radio" id="female" name="Q1" value="woman" style="">
+                        <label for="female">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path data-v-d1151bc8="" d="M208 48a48 48 0 1 0 -96 0 48 48 0 1 0 96 0zm21.7 185.7l37.4 66.1c6.5 11.5 21.2 15.6 32.7 9.1s15.6-21.2 9.1-32.7l-51.8-91.5c-19.8-35-56.9-56.6-97.1-56.6s-77.3 21.6-97.1 56.6L11.1 276.2c-6.5 11.5-2.5 26.2 9.1 32.7s26.2 2.5 32.7-9.1l37.4-66.1L53.7 363.7C50.8 373.9 58.5 384 69.1 384H96V488c0 13.3 10.7 24 24 24s24-10.7 24-24V384h32V488c0 13.3 10.7 24 24 24s24-10.7 24-24V384h26.9c10.6 0 18.3-10.1 15.4-20.3L229.7 233.7zM160 176c2.2 0 4 1.4 4.6 3.5l44 156.5H111.4l44-156.5c.6-2.1 2.5-3.5 4.6-3.5z">
+                                </path>
+                            </svg>
+                            Woman
+                        </label>
+                    </div>
+                </div>
+                <div id="content_2" data-step="2">
+                    <h1 class="main-q">Which best describes your situation:</h1>
+                    <div class="radio-group">
+                        <input type="radio" id="married" name="Q2" value="married" style="">
+                        <label for="married">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                                <path data-v-d1151bc8="" d="M119.9 105.1C50.2 128.6 0 194.4 0 272c0 97.2 78.8 176 176 176c7.8 0 15.5-.5 23-1.5c32.3 39.9 81.6 65.5 137 65.5c97.2 0 176-78.8 176-176c0-91.9-70.4-167.3-160.3-175.3c10.4 16.5 18.6 34.5 24.2 53.6C427.1 231.1 464 279.2 464 336c0 70.7-57.3 128-128 128c-32.8 0-62.7-12.3-85.3-32.6l0 0c-12.3-11-22.5-24.4-29.8-39.5l0 0C212.6 375 208 356.1 208 336c0-54.9 34.6-101.8 83.2-119.9C299.4 233 304 251.9 304 272c0 43.5-21.7 81.9-54.8 105c7 14.8 17.7 27.5 30.8 37c43.7-32 72-83.7 72-142c0-77.6-50.2-143.4-119.9-166.9l22.5-50.6c1.9-4.4 1.8-9.4-.3-13.7l-16-32C235.6 3.4 230.1 0 224 0H128c-6.1 0-11.6 3.4-14.3 8.8l-16 32c-2.1 4.3-2.3 9.3-.3 13.7l22.5 50.6zM147.8 48h56.4l.4 .8L187.2 88H164.8L147.4 48.8l.4-.8zM160 336c0 22.6 4.2 44.1 12 63.9C103.1 397.8 48 341.3 48 272c0-70.7 57.3-128 128-128c32.8 0 62.7 12.3 85.3 32.6C201.5 204.7 160 265.5 160 336z" style="fill: currentcolor;"></path>
+                            </svg>
+                            Married
+                        </label>
+
+                        <input type="radio" id="single" name="Q2" value="single" style="">
+                        <label for="single">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 304 512">
+                                <path d="M160,96a48,48,0,1,0-48-48A48,48,0,0,0,160,96Zm-13.7,80h27.5a17.7,17.7,0,0,1,2.3.1V304H144V176.1C144.7,176.1,145.5,176,146.3,176ZM144,488V352h32V488a24,24,0,0,0,48,0V223.6l43.1,76.2a24,24,0,0,0,41.8-23.6L250.3,172.7A88,88,0,0,0,173.7,128H146.3a88,88,0,0,0-76.6,44.7L11.1,276.2a24,24,0,1,0,41.8,23.6L96,223.6V488a24,24,0,0,0,48,0Z" style="fill: currentcolor;"></path>
+                            </svg>
+                            Single
+                        </label>
+                    </div>
+                </div>
+                <div id="content_3" data-step="3">
+                    <h1 class="main-q">What Is Your Age Range?</h1>
+                    <div class="options">
+                        <div class="radio-group">
+                            <input type="radio" id="under50" name="Q3" value="under 50" style="">
+                            <label for="under50">
+                                I'm Under
+                                <span>50</span>
+                            </label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="50-54" name="Q3" value="between 50 and 54" style="">
+                            <label for="50-54">
+                                I'm Between
+                                <span>50 and 54</span>
+                            </label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="55-60" name="Q3" value="between 55 and 60" style="">
+                            <label for="55-60">
+                                I'm Between
+                                <span>55 and 60</span>
+                            </label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="60-64" name="Q3" value="between 60 and 64" style="">
+                            <label for="60-64">
+                                I'm Between
+                                <span>60 and 64</span>
+                            </label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="65-70" name="Q3" value="between 65 and 70" style="">
+                            <label for="65-70">
+                                I'm Between
+                                <span>65 and 70</span>
+                            </label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="over70" name="Q3" value="over 70" style="">
+                            <label for="over70">
+                                I'm Over
+                                <span>70</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="content_4" data-step="4">
+                    <h1 class="main-q">Are you retired?</h1>
+                    <div class="radio-group">
+                        <input type="radio" id="retired-yes" name="Q4" value="retired" style="">
+                        <label for="retired-yes">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 448 512">
+                                <path data-v-d1151bc8="" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" style="fill: currentcolor;"></path>
+                            </svg>
+                            Yes
+                        </label>
+
+                        <input type="radio" id="retired-no" name="Q4" value="not retired" style="">
+                        <label for="retired-no">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 384 512">
+                                <path data-v-d1151bc8="" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" style="fill: currentcolor;"></path>
+                            </svg>
+                            No
+                        </label>
+                    </div>
+                </div>
+                <div id="content_5" data-step="5">
+                    <p id="step5title"></p>
+                    <p>They Tend To Fall Into 1 of 3 Categories.</p>
+                    <h1 class="main-q">Which of the Following Categories Best Describes Why You Would Consider An Annuity The Most (if you had to pick one)?</h1>
+                    
+                    <div class="options">
+                        <div class="radio-group">
+                            <input type="radio" id="income-now" name="Q5" value="income now" style="">
+                            <label for="income-now">
+                            <svg data-v-d1151bc8="" xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 576 450"><path data-v-d1151bc8="" d="M512,96a32,32,0,0,1,32,32v32a64.06,64.06,0,0,1-64-64ZM128,96H448a96,96,0,0,0,96,96V320a96,96,0,0,0-96,96H128a96,96,0,0,0-96-96V192A96,96,0,0,0,128,96ZM32,352a64.06,64.06,0,0,1,64,64H64a32,32,0,0,1-32-32Zm448,64a64.06,64.06,0,0,1,64-64v32a32,32,0,0,1-32,32ZM96,96a64.06,64.06,0,0,1-64,64V128A32,32,0,0,1,64,96ZM64,64A64.06,64.06,0,0,0,0,128V384a64.06,64.06,0,0,0,64,64H512a64.06,64.06,0,0,0,64-64V128a64.06,64.06,0,0,0-64-64ZM192,256a96,96,0,1,1,96,96A96,96,0,0,1,192,256Zm224,0A128,128,0,1,0,288,384,128,128,0,0,0,416,256Z" style="fill: currentcolor;"></path></svg>
+                                I Want Income Now
+                            </label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="income-later" name="Q5" value="income later" style="">
+                            <label for="income-later">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 576 512"><path d="M64 32C46.3 32 32 46.3 32 64V416c0 17.7 14.3 32 32 32H512c17.7 0 32-14.3 32-32V64c0-17.7-14.3-32-32-32H64zM0 64C0 28.7 28.7 0 64 0H512c35.3 0 64 28.7 64 64V416c0 35.3-28.7 64-64 64v16c0 8.8-7.2 16-16 16s-16-7.2-16-16V480H96v16c0 8.8-7.2 16-16 16s-16-7.2-16-16l0-16c-35.3 0-64-28.7-64-64V64zM352 240A128 128 0 1 0 96 240a128 128 0 1 0 256 0zM64 240a160 160 0 1 1 320 0A160 160 0 1 1 64 240zm160 32a32 32 0 1 0 0-64 32 32 0 1 0 0 64zm0-96a64 64 0 1 1 0 128 64 64 0 1 1 0-128zm256 0a16 16 0 1 0 -32 0 16 16 0 1 0 32 0zm32 0c0 20.9-13.4 38.7-32 45.3V336c0 8.8-7.2 16-16 16s-16-7.2-16-16V221.3c-18.6-6.6-32-24.4-32-45.3c0-26.5 21.5-48 48-48s48 21.5 48 48z" style="fill: currentcolor;"></path></svg>
+                                I Want Income Later
+                            </label>
+                        </div>
+                        <div class="radio-group">
+                            <input type="radio" id="grow-my-money" name="Q5" value="safe growth" style="">
+                            <label for="grow-my-money">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 512 512"><path d="M480 32c0 95.3-69.4 174.4-160.5 189.4c2.7 10.2 4.7 20.7 6.1 31.4C431.4 234.9 512 142.9 512 32c0-17.7-14.3-32-32-32H448C367 0 296 43 256.6 107.5c7.8 8.3 15.1 17.2 21.8 26.4C310.7 73.3 374.5 32 448 32h32zM64 96c106 0 192 86 192 192H224C118 288 32 202 32 96H64zM32 64C14.3 64 0 78.3 0 96C0 219.7 100.3 320 224 320h32V496c0 8.8 7.2 16 16 16s16-7.2 16-16V320 304 288C288 164.3 187.7 64 64 64H32z" style="fill: currentcolor;"></path></svg>
+                                I Want To Safely Grow My Money
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div id="content_6" data-step="6">
+                    <h1 class="main-q">Do you have at least $100,000 or more in your retirement portfolio?</h1>
+                    <p>(The reason for asking, is because this annuity evaluation is specifically designed for investors that have at least $100K in their retirement savings portfolio).</p>
+                    <div class="radio-group">
+                        <input type="radio" id="100k-yes" name="Q6" value="100k" style="">
+                        <label for="100k-yes">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 448 512">
+                                <path data-v-d1151bc8="" d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" style="fill: currentcolor;"></path>
+                            </svg>
+                            Yes
+                        </label>
+
+                        <input type="radio" id="100k-no" name="Q6" value="not 100k" style="">
+                        <label for="100k-no">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 384 512">
+                                <path data-v-d1151bc8="" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" style="fill: currentcolor;"></path>
+                            </svg>
+                            No
+                        </label>
+                    </div>
+                </div>
+            </main>
+        </form>
+        <button style="display: none" class="btn" id="prev" disabled="">Prev</button>
+        <button style="display: none" class="btn" id="next">Next</button>
+    </div>
+
+    <div id="landingContent" style="display: none;">
+    <section id="landingPage" class="bg-cover">
+        <div class="form-container container">
+            <div class="row">
+                
+                <div class="text-section top-content">
+                    <h1 class="title">You Qualify For A Free <span id="annuity_type"></span> Annuity Evaluation</h1>
+                </div>
+                
+                <div class="text-section text-content">
+                    <h2 class="affirmation"><span id="annuity_type_text"></span></h2>
+                    <ul class="checks">
+                        <li>
+                            <img class="check" width="25" height="25" src="./assets/svg/circle-check-regular.svg" alt="">
+                            <p>Calculate precisely how much you really need to comfortably retire.</p>
+                        </li>
+                        <li>
+                            <img class="check" width="25" height="25" src="./assets/svg/circle-check-regular.svg" alt="">
+                            <p>Get customized annuity quotes and side- by-side comparisons from top-rated companies prepared
+                                by licensed annuity specialists.</p>
+                        </li>
+                        <li>
+                            <img class="check" width="25" height="25" src="./assets/svg/circle-check-regular.svg" alt="">
+                            <p id="bullet_annuity_type"></p>
+                        </li>
+                        <li>
+                            <img class="check" width="25" height="25" src="./assets/svg/circle-check-regular.svg" alt="">
+                            <p>Purchase an annuity confidently from the comfort and convenience of your own home.</p>
+                        </li>
+                    </ul>
+                    <div class="complete-form">
+                        <p class="complete hide-mobile">Complete the form and get your free Annuity Evaluation by a licensed
+                            Annuity Gator Professional…</p>
+                        <img class="ifDesktop arrow" src="./assets/images/arrow-short.png" alt="">
+                    </div>
+                </div>
+                
+                <div class="form-section form-content">
+                    <div class="form-cont">
+                                <form id="form-section" class="" novalidate="novalidate">
+            <p>Final Step: Fill out the form below to get your
+                <b class="free">Free "<span id="annuity_type_form"></span>" Annuity Evaluation</b>
+            </p>
+            <div class="row">
+                <div class="form-input">
+                    <label for="first_name">First Name *</label>
+                    <input type="text" name="first_name" id="first_name" style="">
+                </div>
+                <div class="form-input">
+                    <label for="last_name">Last Name *</label>
+                    <input type="text" name="last_name" id="last_name" style="">
+                </div>
+                <div class="form-input w100">
+                    <label for="email">Email Address *</label>
+                    <input type="email" name="email" id="email" style="">
+                </div>
+                <div class="form-input w100">
+                    <label for="phone">Phone Number *</label>
+                    <input type="tel" name="phone" id="phone" style="">
+                </div>
+                <div class="form-input w100">
+                    <label for="Concernedoutlivingsavings">How concerned are you about outliving your
+                        retirement savings? *</label>
+                    <div class="custom-select-wrapper"><select name="Concernedoutlivingsavings" id="Concernedoutlivingsavings" class="form-control" tabindex="-1" style="position: absolute; width: 0px; height: 0px; opacity: 0; pointer-events: none; overflow: hidden;">
+                        <option value="" selected="">Select an option</option>
+                        <option value="Very concerned">Very concerned</option>
+                        <option value="Somewhat concerned">Somewhat concerned</option>
+                        <option value="Not concerned">Not concerned</option>
+                    </select><div class="custom-select-trigger" tabindex="0"><span class="custom-select-value">Select an option</span><span class="custom-select-arrow"></span></div><ul class="custom-select-dropdown"><li data-value="Very concerned">Very concerned</li><li data-value="Somewhat concerned">Somewhat concerned</li><li data-value="Not concerned">Not concerned</li></ul></div>
+                </div>
+                <div class="form-input w100">
+                    <label for="Moneysavedforretirement">How much money have you saved for retirement? *</label>
+                    <div class="custom-select-wrapper"><select name="Moneysavedforretirement" id="Moneysavedforretirement" class="form-control" tabindex="-1" style="position: absolute; width: 0px; height: 0px; opacity: 0; pointer-events: none; overflow: hidden;">
+                        <option value="" selected="">Select an option</option>
+                        <option value="$100-$250K">$100,000 - $250,000</option>
+                        <option value="$250-$500K">$250,000 - $500,000</option>
+                        <option value="$500-$1M">$500,000 - $1,000,000</option>
+                        <option value="$1M-$2M">$1,000,000 - $2,000,000</option>
+                        <option value="$2M+">Over $2,000,000</option>
+                    </select><div class="custom-select-trigger" tabindex="0"><span class="custom-select-value">Select an option</span><span class="custom-select-arrow"></span></div><ul class="custom-select-dropdown"><li data-value="$100-$250K">$100,000 - $250,000</li><li data-value="$250-$500K">$250,000 - $500,000</li><li data-value="$500-$1M">$500,000 - $1,000,000</li><li data-value="$1M-$2M">$1,000,000 - $2,000,000</li><li data-value="$2M+">Over $2,000,000</li></ul></div>
+                </div>
+                <div class="form-input w100">
+                    <label for="Mostimportanttoyou">When preparing for your retirement finances, what's most
+                        important to you? *</label>
+                    <textarea name="Mostimportanttoyou" id="Mostimportanttoyou" maxlength="500" rows="2" style=""></textarea>
+                </div>
+                <input type="hidden" value="" name="utm_source" style="">
+                <input type="hidden" value="" name="utm_medium" style="">
+                <input type="hidden" value="" name="utm_campaign" style="">
+                <input type="hidden" value="" name="gclid" style="">
+                <input type="hidden" value="" name="fbclid" style="">
+                <input type="hidden" value="" name="wbraid" style="">
+                <input type="hidden" value="" name="gbraid" style="">
+                <input type="hidden" value="" name="utm_term" style="">
+                <input type="hidden" value="" name="utm_content" style="">
+                <div class="form-input w100">
+                    <button type="submit" id="submitButton">Get Free Evaluation <div class="loader none"></div></button>
+                    <p class="subtext">
+                        **No cost and no obligation beyond completing a short request form and you are not
+                        committed to buying anything. We respect your privacy.
+                    </p>
+                </div>
+            </div>
+        </form>
+                        </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="companies">
+        <div class="container">
+            <h2 id="annuity_type_income">
+                </h2>
+
+                <div class="img-section">
+                    <div class="img">
+                        <img width="160px" height="69px" src="./assets/images/athene-new.webp" alttext="Athene Logo">
+                    </div>
+                    <div class="img">
+                        <img width="160px" height="69px" src="./assets/images/american-equity.webp" alttext="American Equity Logo">
+                    </div>
+                    <div class="img">
+                        <img width="160px" height="69px" src="./assets/images/delaware-life.webp" alttext="American Equity Logo">
+                    </div>
+                    <div class="img">
+                        <img width="160px" height="69px" src="./assets/images/fidelity-guaranty-life.webp" alttext="American Equity Logo">
+                    </div>
+                    <div class="img">
+                        <img width="160px" height="69px" src="./assets/images/security-benefit.webp" alttext="American Equity Logo">
+                    </div>
+                </div>
+        </div>
+    </section>
+
+    <section id="stepsModule">
+        <h2 id="steps_title"></h2>
+        <div class="steps-container container">
+            <div class="card">
+                <img src="./assets/images/review.png" alttext="Review Image">
+                <p>We will gather some basic information from you to understand your retirement and financial goals over the
+                    phone.</p>
+            </div>
+            <div class="card">
+                <img src="./assets/images/research.png" alttext="Research Image">
+                <p id="research_text"></p>
+            </div>
+            <div class="card">
+                <img src="./assets/images/recommend_img.png" alttext="Recommend Image">
+                <p id="recommend_text"></p>
+            </div>
+            <div class="card">
+                <img src="./assets/images/retirement.png" alttext="Retirement Image">
+                <p id="retirement_text"></p>
+            </div>
+        </div>
+    </section>
+
+    <div id="CTAS"></div>
+
+    <div class="vid-tes-section">
+        <section id="video">
+            <div class="video-container container">
+                <div class="row">
+                    <div class="video-section" style="padding: 0; margin: 0; width: 100%; height: 100%; position: relative;">
+                        <iframe src="" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; clipboard-write" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" id="swatchImageUrl">
+                        </iframe>
+                        <script src="https://player.vimeo.com/api/player.js"></script>
+                        <!-- <div class="wistia_responsive_padding" style="padding:56.25% 0 0 0;position:relative;"><div class="wistia_responsive_wrapper" style="height:100%;left:0;position:absolute;top:0;width:100%;"><iframe id="swatchImageUrl" src="" title="Testimonials - Lead capture page Video" allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no" class="wistia_embed" name="wistia_embed" msallowfullscreen width="100%" height="100%"></iframe></div></div>
+                        <script src="https://fast.wistia.net/assets/external/E-v1.js" async></script> -->
+                    </div>
+
+                    <div class="text-section">
+                        <h2 class="title">Why Do Clients Throughout The Country Work With Annuity Gator And Why Should You?
+                        </h2>
+                        <p class="text">We reinvented how annuities are sold, and we put the power in your hands. Our
+                            licensed annuity professionals are independent and not captive or beholden to any one particular
+                            insurance company.</p>
+                        <p class="text">We hate high-pressure sales tactics as much as you do. We’ll provide you with honest
+                            annuity guidance and personalized annuity recommendations right over the phone.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="testimonial">
+            <div class="container">
+                <h2 id="testimonials_title"></h2>
+                <div class="testimonial-section">
+                    <div class="row">
+                        <div class="col-test">
+                            <div class="testimonial-item">
+                                <img class="img" src="./assets/images/Testimonial_1.png" alttext="Testimonial 1">
+                            </div>
+                        </div>
+                        <div class="col-test">
+                            <div class="testimonial-item">
+                                <img class="img" src="./assets/images/Testimonial_2.png" alttext="Testimonial 2">
+                            </div>
+                        </div>
+                        <div class="col-test">
+                            <div class="testimonial-item">
+                                <img class="img" src="./assets/images/Testimonial_3.png" alttext="Testimonial 3">
+                            </div>
+                        </div>
+                        <div class="col-test">
+                            <div class="testimonial-item">
+                                <img class="img" src="./assets/images/Testimonial_4.png" alttext="Testimonial 4">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="accordion">
+            <div class="accordion-container container">
+                <div class="text-section">
+                    <h2 class="title">Frequently Asked Questions <img class="icon" src="./assets/images/question-icon.png" alt="Question Mark Icon"></h2>
+
+                </div>
+                <div class="accordion-section">
+
+                    <div class="custom-accordion">
+                                                        <div class="accordion-item ">
+                                    <div class="accordion-header">
+                                        <div class="row">
+                                            <p>Who is Annuity Gator?</p>
+                                            <div class="accordion-arrow">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#646464" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-content">Launched in 2012, Annuity Gator is the original annuity “investigator”. We have a long history of helping clients achieve their retirement goals with the proper use of annuities. No overwhelming annuity whitepapers or slick company brochures. No high-pressure sales tactics. Annuity Gator provides clients with honest annuity guidance and personalized annuity recommendations from the comfort and convenience of their home.</div>
+                                </div>
+                                                            <div class="accordion-item ">
+                                    <div class="accordion-header">
+                                        <div class="row">
+                                            <p>What’s included in an Annuity Evaluation phone call?</p>
+                                            <div class="accordion-arrow">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#646464" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-content">An Annuity Evaluation is a 30-minute confidential phone conversation with one of our licensed annuity specialists that will show you how to reach your retirement goals, protect your assets, and do so with the lowest cost and least amount of risk. We'll answer any questions that you may have, and you won't be pressured to buy anything. Everything is done 100% over the phone. No one will be coming to your house, and you will not need to drive to a financial advisor's office.</div>
+                                </div>
+                                                            <div class="accordion-item ">
+                                    <div class="accordion-header">
+                                        <div class="row">
+                                            <p>What makes Annuity Gator different?</p>
+                                            <div class="accordion-arrow">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#646464" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-content">Our team of licensed financial professionals are annuity specialists. We are not like many other financial advisors that are classified as “generalists.” A generalist financial advisor typically offers traditional financial planning services and may not have the expertise to help clients who are retired or approaching retirement. We focus specifically on developing “safe money” annuity strategies to ensure that our clients NEVER run out of money during retirement while helping to protect our client’s nest egg.</div>
+                                </div>
+                                                            <div class="accordion-item ">
+                                    <div class="accordion-header">
+                                        <div class="row">
+                                            <p>Will I be pressured to buy anything during my phone call?</p>
+                                            <div class="accordion-arrow">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#646464" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-content">No, that's the worst! We do not like to be pressured to buy anything — and neither should you. We help you identify the top annuities that are best for you based on your age and several other factors. Many of the folks that we have helped end up becoming happy clients; however, you are under no obligation to work with us — and you will not be pressured to buy anything. The choice is entirely up to you.</div>
+                                </div>
+                                                            <div class="accordion-item ">
+                                    <div class="accordion-header">
+                                        <div class="row">
+                                            <p>Does this service have a cost?</p>
+                                            <div class="accordion-arrow">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#646464" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-content">We provide Annuity Evaluations for free. Our licensed financial specialists can help you compare several annuities against each other so that you can decide if an annuity is right for you. If you would like to purchase an annuity through us, the insurance company that provides that annuity compensates us for helping you find the best annuity. In the spirit of full transparency, we offer our Annuity Evaluation phone consultations for free because we know that if we educate and help enough people — many of them will choose to work with us and become happy clients.</div>
+                                </div>
+                                                            <div class="accordion-item ">
+                                    <div class="accordion-header">
+                                        <div class="row">
+                                            <p>How does Annuity Gator get compensated?</p>
+                                            <div class="accordion-arrow">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#646464" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-content">Our proprietary process can help you ensure a comfortable and financially secure retirement. If we can add value to you and put more money in your pocket — you may then consider purchasing an annuity through us. The insurance company that offers the annuity that you select will then compensate us for helping you find the right annuity. Annuity Gator exclusively works with a select group of vetted, independent advisors that specialize in delivering sound retirement planning strategies and unbiased annuity recommendations; we are not beholden to any particular insurance company.</div>
+                                </div>
+                                                            <div class="accordion-item ">
+                                    <div class="accordion-header">
+                                        <div class="row">
+                                            <p>What if I already have a financial advisor?</p>
+                                            <div class="accordion-arrow">
+                                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path fill="#646464" d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"></path></svg>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-content">Many of the clients we have helped have been working with a financial advisor for many years and want a second opinion regarding their retirement and financial plan. Since we’re talking about something as important as your retirement finances, we advise clients to get an objective, independent second opinion before making an irreversible decision — that may have devastating consequences during their retirement years. </div>
+                                </div>
+                                                </div>
+
+                </div>
+                <div class="btn-section">
+                    <a href="#landingPage" class="accordion-btn">GET FREE EVALUATION</a>
+                </div>
+            </div>
+        </section>
+    </div>
+</div><script type="text/javascript" id="" charset="">(function(e,a){if(!a.__SV){var k,f;window.mixpanel=a;a._i=[];a.init=function(d,e,c){function h(a,g){var b=g.split(".");2==b.length&&(a=a[b[0]],g=b[1]);a[g]=function(){a.push([g].concat(Array.prototype.slice.call(arguments,0)))}}var b=a;"undefined"!==typeof c?b=a[c]=[]:c="mixpanel";b.people=b.people||[];b.toString=function(a){var b="mixpanel";"mixpanel"!==c&&(b+="."+c);a||(b+=" (stub)");return b};b.people.toString=function(){return b.toString(1)+".people (stub)"};k="disable time_event track track_pageview track_links track_forms register register_once alias unregister identify name_tag set_config people.set people.set_once people.increment people.append people.union people.track_charge people.clear_charges people.delete_user".split(" ");
+for(f=0;f<k.length;f++)h(b,k[f]);a._i.push([d,e,c])};a.__SV=1.2;var d=e.createElement("script");d.type="text/javascript";d.async=!0;d.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?MIXPANEL_CUSTOM_LIB_URL:"file:"===e.location.protocol&&"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn.mxpnl.com/libs/mixpanel-2-latest.min.js";var h=e.getElementsByTagName("script")[0];h.parentNode.insertBefore(d,h)}})(document,window.mixpanel||
+[]);mixpanel.init("16af4f14075e6a4ee06082a56f9ddad0");</script>
+<script id="" text="" charset="" type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=AW-944434441"></script>
+<script type="text/javascript" id="" charset="">(function(a,f,e,b,c,d){a.WidgetTrackerObject=b;a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};a[b].ds=1*new Date;c="script";d=e.createElement(c);c=e.getElementsByTagName(c)[0];d.async=1;d.src=f;c.parentNode.insertBefore(d,c)})(window,"https://widgetbe.com/agent",document,"widgetTracker");window.widgetTracker("create","WT-DBGUPPSM");window.widgetTracker("send","pageview");</script>
+
+
+<template id="cta-template">
+    <section id="cta" class="cta">
+        <div class="container">
+            <div class="row">
+                <div class="text-section">
+                    <h2 class="question">What Makes Annuity Gator Different?
+
+                </h2></div>
+                <div class="img-section"></div>
+            </div>
+        </div>
+    </section>
+</template>
+    <footer>
+    <div class="container">
+        <!-- <ul>
+            <li>
+                <a href="https://www.annuitygator.com/about">ABOUT</a>
+            </li>
+            <li>
+                <a href="https://www.annuitygator.com/contact">CONTACT US</a>
+            </li>
+            <li>
+                <a href="https://www.annuitygator.com/annuity-reviews/">ANNUITY REVIEWS</a>
+                </li>
+            <li>
+                <a href="https://www.annuitygator.com/privacy-policy/">TERMS &amp; CONDITIONS</a>
+            </li>
+        </ul> -->
+        <hr class="divider">
+        <div class="copy">
+            <p> This information will remain private and confidential. It will only be used by Annuity Gator to determine if an annuity is right for you. </p>
+            <p> All content is for educational purposes only. Before purchasing any investment product be sure to do your own due diligence and consult a properly licensed professional should you have specific questions as they relate to your individual circumstances. Annuity product guarantees rely on the financial strength and claims-paying ability of the issuing insurer. Annuity riders may be available for an additional annual premium that can provide additional benefits and income guarantees. By contacting us you may speak with an insurance licensed agent in your state, and you may be offered insurance products for sale. </p>
+        </div>
+    </div>
+</footer>
+    <script src="assets/js/just-validate.production.min.js"></script>
+    <script src="assets/js/stepper.js?v=1789165621"></script>
+    <script>
+        window.AIM_META_FB_DEFAULT_ROUTE = "ag2";
+    </script>
+    <script src="../shared/aim-attribution-meta.js?v=1789165621"></script>
+    <script src="assets/js/mixpnl.js?v=1789165621"></script>
+    <script>
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const hasGenderParam = urlParams.has('s');
+        let initialStep = 1;
+        let source = 'Annuity Evaluation 3.0 E';
+        const steps_data = getWithExpiry('steps_data');
+
+        const setDid = (value) => {
+            if (!value) {
+                return;
+            }
+
+            try {
+                sessionStorage.setItem('did', value);
+            } catch (error) {}
+
+            try {
+                localStorage.setItem('did', value);
+            } catch (error) {}
+        };
+
+        const getDid = () => {
+            try {
+                const sessionDid = sessionStorage.getItem('did');
+                if (sessionDid) {
+                    return sessionDid;
+                }
+            } catch (error) {}
+
+            try {
+                return localStorage.getItem('did') || '';
+            } catch (error) {
+                return '';
+            }
+        };
+
+        if(steps_data?.did) {
+            setDid(steps_data?.did)
+        } else if (getDid()) {
+            setDid(getDid());
+        } else {
+            generateDistinctId();
+        }
+
+        setClarityDidIdentity(sessionStorage.getItem('did'));
+
+        if(hasGenderParam) {
+            const sValue = urlParams.get('s');
+            const escapedValue = sValue.replace(/([\\^$*+?.()|[\]{}])/g, '\\$1');
+            if(['woman', 'man'].includes(escapedValue)){
+                document.querySelector(`input[value="${escapedValue}"]`).checked = true;
+                document.getElementById('content_1').click();
+                initialStep = 2;
+                update(2);
+            }
+        }
+
+        let Q1 = '';
+        let Q2 = '';
+        let Q3 = '';
+        let Q4 = '';
+        let Q5 = '';
+        let Q6 = '';
+
+        const verificationState = {
+            email: {
+                status: 'idle',
+                value: '',
+                message: '',
+                requestPromise: null
+            },
+            phone: {
+                status: 'idle',
+                value: '',
+                message: '',
+                requestPromise: null
+            }
+        };
+        const leadMetaDedup = {};
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.AIMMeta && typeof window.AIMMeta.pushPageView === 'function') {
+                window.AIMMeta.pushPageView();
+            }
+
+            //obtiene los datos si esta dentro del tiempo de expiracion, si no, regresa null
+            const steps_data = getWithExpiry('steps_data');
+            
+            const url = new URL(window.location.href);
+            const isFormView = url.searchParams.get('form') === 'true';
+
+            if (!isFormView) {
+                trackQuizProgress(initialStep);
+            }
+            
+            if(!steps_data) {
+                // Si el parámetro 'form' es 'true', eliminarlo y recargar la página sin ese parámetro
+                if (url.searchParams.get('form') === 'true') {
+                    url.searchParams.delete('form');
+                    window.location.href = url.toString();
+                }
+            }
+            if(url.searchParams.get('form') !== 'true') {
+                localStorage.removeItem('steps_data');
+            } else {
+                Q1 = steps_data?.Q1;
+                Q2 = steps_data?.Q2;
+                Q3 = steps_data?.Q3;
+                Q4 = steps_data?.Q4;
+                Q5 = steps_data?.Q5;
+                Q6 = steps_data?.Q6;
+
+                annuity_type();
+                annuity_type_form();
+                annuity_type_text();
+
+                renderVideo();
+            }
+
+            document.querySelector('[name="phone"]').addEventListener('input', (event) => {
+                const formattedNumber = formatPhoneNumber(event.target.value);
+                event.target.value = formattedNumber;
+            });
+
+            document.querySelector('[name="email"]').addEventListener('blur', () => {
+                verifyEmailField(validator);
+            });
+
+            document.querySelector('[name="phone"]').addEventListener('blur', () => {
+                verifyPhoneField(validator);
+            });
+
+            const headers = document.querySelectorAll('.accordion-header');
+            headers.forEach(header => {
+                header.addEventListener('click', function () {
+
+                    const item = this.closest('.accordion-item');
+
+                    // Cierra otros acordeones abiertos
+                    document.querySelectorAll('.accordion-item.open').forEach(openItem => {
+                        if (openItem !== item) {
+                            openItem.classList.remove('open');
+                        }
+                    });
+
+                    // Alterna la clase 'open' en el acordeón clicado
+                    item.classList.toggle('open');
+                });
+            });
+
+            initCustomSelects();
+
+            const validator = new JustValidate('#form-section', {
+                errorFieldStyle: {
+                    border: '1px solid #d93025'
+                }
+            });
+            validator
+            .addField("[name='first_name']", [
+                { rule: 'required', errorMessage: 'First name is required' },
+                {
+                    rule: 'customRegexp',
+                    value:  /^[A-Za-z\s]+$/,
+                    errorMessage: 'Name can only contain letter and spaces'
+                }
+            ])
+            .addField("[name='last_name']", [
+                { rule: 'required', errorMessage: 'Last name is required' },
+                {
+                    rule: 'customRegexp',
+                    value:  /^[A-Za-z\s]+$/,
+                    errorMessage: 'Last name can only contain letter and spaces'
+                }
+            ])
+            .addField("[name='email']", [
+                { rule: 'required', errorMessage: 'Email is required' },
+                { rule: 'email', errorMessage: 'Enter a valid email address' },
+            ])
+            .addField("[name='phone']", [
+                { rule: 'required', errorMessage: 'Phone is required' },
+                {
+                    rule: 'customRegexp',
+                    // value: /^\(\d{3}\) \d{3}-\d{4}$/,
+                    value: /^\+?1?\s*\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4}$/,
+                    errorMessage: 'Phone number must be in the format (123) 456-7890'
+                }
+            ])
+            .addField("[name='Concernedoutlivingsavings']", [
+                { rule: 'required', errorMessage: 'Choose a valid option' }
+            ])
+            .addField("[name='Moneysavedforretirement']", [
+                { rule: 'required', errorMessage: 'Choose a valid option' }
+            ])
+            .addField("[name='Mostimportanttoyou']", [
+                { rule: 'required', errorMessage: 'Please type your answer' },
+                { rule: 'maxLength', value: 500 }
+            ])
+            .onSuccess((event) => {
+                showSubmitOverlay();
+                submitForm(validator);
+            })
+            .onFail((fields) => {
+                console.log("Error on validation:", fields);
+                const firstInvalidField = Object.keys(fields)
+                    .map((selector) => document.querySelector(selector))
+                    .find((field) => field);
+
+                if (firstInvalidField) {
+                    const firstInvalidContainer = firstInvalidField.closest('.form-input') || firstInvalidField;
+                    window.scrollTo({ top: firstInvalidContainer.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
+                    const customTrigger = firstInvalidField.closest('.custom-select-wrapper')?.querySelector('.custom-select-trigger');
+                    const focusTarget = customTrigger || firstInvalidField;
+                    const isTouchDevice = navigator.maxTouchPoints > 0;
+                    const triggersKeyboard = ['INPUT', 'TEXTAREA'].includes(focusTarget.tagName);
+                    if (!isTouchDevice || !triggersKeyboard) {
+                        focusTarget.focus({ preventScroll: true });
+                    }
+                }
+
+                submitForm(validator, { recordOnly: true });
+            });
+        })
+
+        function initCustomSelects() {
+            document.querySelectorAll('#form-section select.form-control').forEach(select => {
+                const wrapper = document.createElement('div');
+                wrapper.className = 'custom-select-wrapper';
+                select.parentNode.insertBefore(wrapper, select);
+                wrapper.appendChild(select);
+
+                select.style.cssText = 'position:absolute;width:0;height:0;opacity:0;pointer-events:none;overflow:hidden;';
+                select.setAttribute('tabindex', '-1');
+                select.addEventListener('focus', () => {
+                    select.blur();
+                    trigger.focus({ preventScroll: true });
+                });
+
+                const trigger = document.createElement('div');
+                trigger.className = 'custom-select-trigger';
+                trigger.setAttribute('tabindex', '0');
+                trigger.innerHTML = `<span class="custom-select-value">${select.options[0]?.text || 'Select an option'}</span><span class="custom-select-arrow"></span>`;
+                wrapper.appendChild(trigger);
+
+                const dropdown = document.createElement('ul');
+                dropdown.className = 'custom-select-dropdown';
+                Array.from(select.options).forEach(option => {
+                    if (!option.value) return;
+                    const li = document.createElement('li');
+                    li.textContent = option.text;
+                    li.dataset.value = option.value;
+                    dropdown.appendChild(li);
+                });
+                wrapper.appendChild(dropdown);
+
+                trigger.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const isOpen = wrapper.classList.contains('open');
+                    document.querySelectorAll('.custom-select-wrapper.open').forEach(w => w.classList.remove('open'));
+                    if (!isOpen) wrapper.classList.add('open');
+                });
+
+                dropdown.addEventListener('click', (e) => {
+                    const li = e.target.closest('li[data-value]');
+                    if (!li) return;
+
+                    select.value = li.dataset.value;
+                    select.dispatchEvent(new Event('change', { bubbles: true }));
+
+                    trigger.querySelector('.custom-select-value').textContent = li.textContent;
+                    trigger.classList.add('has-value');
+
+                    dropdown.querySelectorAll('li').forEach(item => item.classList.remove('active'));
+                    li.classList.add('active');
+
+                    wrapper.classList.remove('open');
+
+                    select.style.border = '';
+                    clearValidationError(`[name='${select.name}']`);
+                });
+
+                select.addEventListener('change', () => {
+                    const selected = Array.from(select.options).find(o => o.value === select.value);
+                    if (selected && selected.value) {
+                        trigger.querySelector('.custom-select-value').textContent = selected.text;
+                        trigger.classList.add('has-value');
+                        dropdown.querySelectorAll('li').forEach(li => {
+                            li.classList.toggle('active', li.dataset.value === select.value);
+                        });
+                    }
+                });
+
+                new MutationObserver(() => {
+                    wrapper.classList.toggle('has-error', !!select.style.border);
+                }).observe(select, { attributes: true, attributeFilter: ['style'] });
+            });
+
+            document.addEventListener('click', () => {
+                document.querySelectorAll('.custom-select-wrapper.open').forEach(w => w.classList.remove('open'));
+            });
+        }
+
+        function showSubmitOverlay() {
+            document.getElementById('submit-overlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function hideSubmitOverlay() {
+            document.getElementById('submit-overlay').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function normalizeUsPhoneDigits(value) {
+            return value.replace(/\D/g, '').slice(0, 11);
+        }
+
+        function formatPhoneNumber(value) {
+            const digits = normalizeUsPhoneDigits(value);
+
+            if (!digits.length) return '';
+
+            let country = '';
+            let phone = digits;
+
+            // Detect US country code
+            if (digits.length === 11 && digits.startsWith('1')) {
+                country = '1 ';
+                phone = digits.slice(1);
+            }
+
+            const area = phone.slice(0, 3);
+            const prefix = phone.slice(3, 6);
+            const line = phone.slice(6, 10);
+
+            let formatted = '';
+
+            if (phone.length <= 3) {
+                formatted = `(${area}`;
+            } else if (phone.length <= 6) {
+                formatted = `(${area}) ${prefix}`;
+            } else {
+                formatted = `(${area}) ${prefix}-${line}`;
+            }
+
+            return country + formatted;
+        }
+
+        function clearValidationError(selector) {
+            const field = document.querySelector(selector);
+            const errorLabel = field?.parentElement?.querySelector('.just-validate-error-label');
+            if (errorLabel) {
+                errorLabel.remove();
+            }
+            field?.classList.remove('just-validate-error-field');
+        }
+
+        function buildLeadContextPayload() {
+            const steps_data = getWithExpiry('steps_data') ? getWithExpiry('steps_data') : {};
+            const utms_data = getWithExpiry('utms_data') ? getWithExpiry('utms_data') : {};
+            const attributionPayload = window.AIMMeta && typeof window.AIMMeta.getAttributionPayload === 'function'
+                ? window.AIMMeta.getAttributionPayload()
+                : {};
+            const annuitySelection = steps_data?.Q5 || Q5 || '';
+            const payload = {
+                first_name: document.querySelector("[name='first_name']")?.value || '',
+                last_name: document.querySelector("[name='last_name']")?.value || '',
+                phone: document.querySelector("[name='phone']")?.value || '',
+                email: document.querySelector("[name='email']")?.value || '',
+                Concernedoutlivingsavings: document.querySelector("[name='Concernedoutlivingsavings']")?.value || '',
+                Moneysavedforretirement: document.querySelector("[name='Moneysavedforretirement']")?.value || '',
+                Mostimportanttoyou: document.querySelector("[name='Mostimportanttoyou']")?.value || '',
+                utm_source: attributionPayload.utm_source || utms_data?.utm_source || '',
+                utm_medium: attributionPayload.utm_medium || utms_data?.utm_medium || '',
+                utm_campaign: attributionPayload.utm_campaign || utms_data?.utm_campaign || '',
+                utm_term: attributionPayload.utm_term || utms_data?.utm_term || '',
+                utm_content: attributionPayload.utm_content || utms_data?.utm_content || '',
+                utm_source_raw: attributionPayload.utm_source_raw || '',
+                utm_medium_raw: attributionPayload.utm_medium_raw || '',
+                utm_campaign_raw: attributionPayload.utm_campaign_raw || '',
+                utm_term_raw: attributionPayload.utm_term_raw || '',
+                utm_content_raw: attributionPayload.utm_content_raw || '',
+                gclid: utms_data?.gclid || '',
+                fbclid: utms_data?.fbclid || '',
+                wbraid: utms_data?.wbraid || '',
+                gbraid: utms_data?.gbraid || '',
+                Q1: steps_data?.Q1 || '',
+                Q2: steps_data?.Q2 || '',
+                Q3: steps_data?.Q3 || '',
+                Q4: steps_data?.Q4 || '',
+                Q5: steps_data?.Q5 || '',
+                Q6: steps_data?.Q6 || '',
+                tag: 'Annuity Evaluation Requested',
+                source: source,
+                AnnuityType: '',
+                Challenge: null,
+                ProfileSalesPage: '',
+                tags_add: [1439],
+                did: sessionStorage.getItem('did')
+            };
+
+            switch (annuitySelection) {
+                case 'income now':
+                    payload.tags_add.push(268);
+                    payload.ProfileSalesPage = 'https://quiz.annuitygator.com/in-results-ss';
+                    payload.AnnuityType = '#1';
+                break;
+                case 'income later':
+                    payload.tags_add.push(270);
+                    payload.ProfileSalesPage = 'https://quiz.annuitygator.com/il-results-ss';
+                    payload.AnnuityType = '#2';
+                break;
+                case 'safe growth':
+                    payload.tags_add.push(272);
+                    payload.ProfileSalesPage = 'https://quiz.annuitygator.com/sg-results-ss';
+                    payload.AnnuityType = '#3';
+                break;
+            }
+
+            return payload;
+        }
+
+        function normalizeMetaPhone(value) {
+            return String(value || '').replace(/\D/g, '');
+        }
+
+        function normalizeMetaName(value) {
+            return String(value || '').trim().toLowerCase();
+        }
+
+        function hasAdMeasurementConsent() {
+            if (window.AIMMeta && typeof window.AIMMeta.hasAdMeasurementConsent === 'function') {
+                return window.AIMMeta.hasAdMeasurementConsent() === true;
+            }
+
+            return false;
+        }
+
+        function buildMetaUserData(formData, leadId) {
+            const attributionPayload = window.AIMMeta && typeof window.AIMMeta.getAttributionPayload === 'function'
+                ? window.AIMMeta.getAttributionPayload()
+                : {};
+            const did = sessionStorage.getItem('did') || '';
+            const resolvedExternalId = String(leadId || '').trim() || did;
+
+            return {
+                em: String(formData?.email || '').trim().toLowerCase(),
+                ph: normalizeMetaPhone(formData?.phone || ''),
+                fn: normalizeMetaName(formData?.first_name || ''),
+                ln: normalizeMetaName(formData?.last_name || ''),
+                external_id: resolvedExternalId,
+                fbp: attributionPayload.fbp || '',
+                fbc: attributionPayload.fbc || ''
+            };
+        }
+
+        function buildLeadMetaContext(leadEventId, formData) {
+            const attributionPayload = window.AIMMeta && typeof window.AIMMeta.getAttributionPayload === 'function'
+                ? window.AIMMeta.getAttributionPayload()
+                : {};
+            const did = sessionStorage.getItem('did') || '';
+            const consentGranted = hasAdMeasurementConsent();
+
+            return {
+                meta_event_id: leadEventId,
+                meta_event_source_url: window.location.href,
+                meta_fbp: attributionPayload.fbp || '',
+                meta_fbc: attributionPayload.fbc || '',
+                meta_external_id: did,
+                meta_em: consentGranted ? String(formData?.email || '').trim().toLowerCase() : '',
+                meta_ph: consentGranted ? normalizeMetaPhone(formData?.phone || '') : '',
+                meta_route: attributionPayload.meta_route || '',
+                meta_debug: attributionPayload.meta_debug || '0',
+                meta_ad_measurement_consent: consentGranted ? '1' : '0'
+            };
+        }
+
+        async function verifyField(type, value) {
+            const task = type === 'email' ? 'verify_email' : 'verify_phone';
+            const verifyPayload = {
+                ...buildLeadContextPayload(),
+                task,
+                [type]: value
+            };
+
+            const response = await sendToEndpoint('/lds.php', verifyPayload, {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            });
+
+            const payload = response?.responseData?.data ?? response?.responseData ?? {};
+            const result = payload?.[type] ?? payload?.status;
+
+            return result === 'valid';
+        }
+
+        async function verifyEmailField(validator, options = {}) {
+            const { force = false } = options;
+            const email = document.querySelector("[name='email']").value.trim();
+
+            if (!email) {
+                verificationState.email = { status: 'idle', value: '', message: '', requestPromise: null };
+                return false;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                verificationState.email = { status: 'invalid', value: email, message: 'Enter a valid email address', requestPromise: null };
+                return false;
+            }
+
+            let requestPromise = null;
+
+            if (!force && verificationState.email.value === email) {
+                if (verificationState.email.status === 'valid') {
+                    return true;
+                }
+                if (verificationState.email.status === 'invalid') {
+                    return false;
+                }
+                if (verificationState.email.status === 'pending' && verificationState.email.requestPromise) {
+                    requestPromise = verificationState.email.requestPromise;
+                }
+            }
+
+            if (!requestPromise) {
+                requestPromise = verifyField('email', email);
+                verificationState.email = { status: 'pending', value: email, message: '', requestPromise };
+            }
+
+            try {
+                const isValid = await requestPromise;
+
+                if (verificationState.email.value !== email) {
+                    return false;
+                }
+
+                if (isValid) {
+                    verificationState.email = { status: 'valid', value: email, message: '', requestPromise: null };
+                    clearValidationError("[name='email']");
+                    return true;
+                }
+
+                verificationState.email = { status: 'invalid', value: email, message: 'Email is invalid', requestPromise: null };
+                validator.showErrors({
+                    "[name='email']": 'Email is invalid'
+                });
+                return false;
+            } catch (error) {
+                if (error.name === 'AbortError') {
+                    verificationState.email = { status: 'idle', value: '', message: '', requestPromise: null };
+                    return true;
+                }
+                console.error('Email verification failed:', error);
+                verificationState.email = { status: 'error', value: email, message: 'Could not validate email right now. Please try again.', requestPromise: null };
+                validator.showErrors({
+                    "[name='email']": verificationState.email.message
+                });
+                return false;
+            }
+        }
+
+        async function verifyPhoneField(validator, options = {}) {
+            const { force = false } = options;
+            const phoneRaw = document.querySelector("[name='phone']").value;
+            const phoneDigits = phoneRaw.replace(/\D/g, '');
+
+            // Normalizar: quitar country code si tiene 11 dígitos y empieza con 1
+            const normalizedDigits = phoneDigits.length === 11 && phoneDigits.startsWith('1')
+                ? phoneDigits.slice(1)
+                : phoneDigits;
+
+            if (!normalizedDigits) {
+                verificationState.phone = { status: 'idle', value: '', message: '', requestPromise: null };
+                return false;
+            }
+
+            if (normalizedDigits.length !== 10) {
+                verificationState.phone = { status: 'invalid', value: normalizedDigits, message: 'Phone number must be in the format (123) 456-7890', requestPromise: null };
+                return false;
+            }
+
+            let requestPromise = null;
+
+            if (!force && verificationState.phone.value === normalizedDigits) {
+                if (verificationState.phone.status === 'valid') {
+                    return true;
+                }
+                if (verificationState.phone.status === 'invalid') {
+                    return false;
+                }
+                if (verificationState.phone.status === 'pending' && verificationState.phone.requestPromise) {
+                    requestPromise = verificationState.phone.requestPromise;
+                }
+            }
+
+            if (!requestPromise) {
+                requestPromise = verifyField('phone', normalizedDigits);
+                verificationState.phone = { status: 'pending', value: normalizedDigits, message: '', requestPromise };
+            }
+
+            try {
+                const isValid = await requestPromise;
+
+                if (verificationState.phone.value !== normalizedDigits) {
+                    return false;
+                }
+
+                if (isValid) {
+                    verificationState.phone = { status: 'valid', value: normalizedDigits, message: '', requestPromise: null };
+                    clearValidationError("[name='phone']");
+                    return true;
+                }
+
+                verificationState.phone = { status: 'invalid', value: normalizedDigits, message: 'Phone number is invalid', requestPromise: null };
+                validator.showErrors({
+                    "[name='phone']": 'Phone number is invalid'
+                });
+                return false;
+            } catch (error) {
+                if (error.name === 'AbortError') {
+                    verificationState.phone = { status: 'idle', value: '', message: '', requestPromise: null };
+                    return true;
+                }
+                console.error('Phone verification failed:', error);
+                verificationState.phone = { status: 'error', value: normalizedDigits, message: 'Could not validate phone right now. Please try again.', requestPromise: null };
+                validator.showErrors({
+                    "[name='phone']": verificationState.phone.message
+                });
+                return false;
+            }
+
+            const area = phone.slice(0, 3);
+            const prefix = phone.slice(3, 6);
+            const line = phone.slice(6, 10);
+
+            let formatted = '';
+
+            if (phone.length <= 3) {
+                formatted = `(${area}`;
+            } else if (phone.length <= 6) {
+                formatted = `(${area}) ${prefix}`;
+            } else {
+                formatted = `(${area}) ${prefix}-${line}`;
+            }
+
+            return country + formatted;
+        }
+
+        const form = document.getElementById('myForm');
+        form.addEventListener('change', handleFormChange);
+
+        let lastTrackedStep = initialStep;
+
+        function getOpenStep() {
+            const openStepContainer = document.querySelector('.contents .open[data-step]');
+            return openStepContainer ? parseInt(openStepContainer.getAttribute('data-step'), 10) : 1;
+        }
+
+        function handleFormChange(event) {
+            const previousStep = getOpenStep();
+            const stepContainer = event.target.closest('[data-step]');
+
+            if (!stepContainer || parseInt(stepContainer.getAttribute('data-step'), 10) !== previousStep) {
+                return;
+            }
+
+            if (previousStep < circles.length) {
+                currentActive = previousStep + 1;
+                update();
+            }
+
+            printFormValues();
+        }
+
+        function setWithExpiry(key, value, ttlMinutes) {
+            const now = new Date();
+
+            const item = {
+                value: value,
+                expiry: now.getTime() + ttlMinutes * 60 * 1000
+            };
+
+            localStorage.setItem(key, JSON.stringify(item));
+        }
+
+        function getWithExpiry(key) {
+            const itemStr = localStorage.getItem(key);
+
+            if (!itemStr) return null;
+
+            const item = JSON.parse(itemStr);
+            const now = new Date();
+
+            if (now.getTime() > item.expiry) {
+                localStorage.removeItem(key);
+                return null;
+            }
+
+            return item.value;
+        }
+        
+        function printFormValues() {
+            const allFilledInputs = {};
+            const checkedRadios = document.querySelectorAll('#myForm input[type="radio"]:checked');
+
+            checkedRadios.forEach((input) => {
+                allFilledInputs[input.name] = input.value;
+            });
+
+            const openStep = getOpenStep();
+            const hasFinalStepAnswer = Boolean(allFilledInputs['Q6']);
+            const currentStep = openStep === circles.length && hasFinalStepAnswer ? circles.length + 1 : openStep;
+
+            window.scroll({ top: 0 });
+
+            if (currentStep > lastTrackedStep) {
+                trackQuizProgress(currentStep, 7);
+                lastTrackedStep = currentStep;
+            }
+
+            if(currentStep === 5){
+                const step5title =document.getElementById('step5title');
+                Q1 = allFilledInputs['Q1'];
+                Q2 = allFilledInputs['Q2'];
+                Q3 = allFilledInputs['Q3'];
+                Q4 = allFilledInputs['Q4'];
+                let gender = '';
+                switch (Q1) {
+                case 'woman':
+                    gender = 'Women';
+                    break;
+                case 'man':
+                    gender = 'Men';
+                    break;
+                default:
+                    gender = '';
+                    break;
+                }
+                const marital_status = Q2 == 'married' ? 'Married' : 'Single';
+                let ages = ''
+                if(Q3 === 'under 50') {
+                    ages = `Under The Age of 50,`
+                } else if(Q3 === 'over 70') {
+                    ages = `Over The Age of 70,`
+                } else {
+                    ages = `Between The Ages of ${Q3.replace("between ", "")},`
+                }
+                let retired = ''
+                if(Q4 === 'retired') {
+                    retired = 'Who Are Retired.'
+                } else if(Q4 === 'not retired') {
+                    retired = 'Who Are Not Retired.'
+                }
+                step5title.innerHTML = `When it comes to <span>${gender},</span> Who Are <span>${marital_status},</span><span>${ages}</span><br><span>${retired}</span>`;
+            }
+            if(currentStep === 7) {
+                if(allFilledInputs['Q6'] === "100k"){
+                    Q1 = allFilledInputs['Q1'];
+                    Q2 = allFilledInputs['Q2'];
+                    Q3 = allFilledInputs['Q3'];
+                    Q4 = allFilledInputs['Q4'];
+                    Q5 = allFilledInputs['Q5'];
+                    Q6 = allFilledInputs['Q6'];
+
+                    annuity_type();
+                    annuity_type_form();
+                    annuity_type_text();
+
+                    const landing = document.getElementById('landingContent');
+                    document.getElementById('steps').style.display = 'none';
+                    landing.style.display = 'block';
+                    /**
+                     * This part is crucial for maintaining a smooth user experience and 
+                     * ensuring that the user sees the relevant content without unnecessary page reloads. 
+                     * By updating the URL with a query parameter, we can indicate that the form has been completed and the user is now on the landing page. 
+                     */
+                    setWithExpiry('steps_data', {
+                        ...allFilledInputs,
+                        did: sessionStorage.getItem('did'),
+                    }, 60*24);
+                    const attributionPayload = window.AIMMeta && typeof window.AIMMeta.getAttributionPayload === 'function'
+                        ? window.AIMMeta.getAttributionPayload()
+                        : {};
+                    setWithExpiry('utms_data', {
+                        utm_source: attributionPayload.utm_source || document.querySelector("[name='utm_source']").value,
+                        utm_medium: attributionPayload.utm_medium || document.querySelector("[name='utm_medium']").value,
+                        utm_campaign: attributionPayload.utm_campaign || document.querySelector("[name='utm_campaign']").value,
+                        utm_term: attributionPayload.utm_term || document.querySelector("[name='utm_term']").value,
+                        utm_content: attributionPayload.utm_content || document.querySelector("[name='utm_content']").value,
+                        utm_source_raw: attributionPayload.utm_source_raw || document.querySelector("[name='utm_source']").value,
+                        utm_medium_raw: attributionPayload.utm_medium_raw || document.querySelector("[name='utm_medium']").value,
+                        utm_campaign_raw: attributionPayload.utm_campaign_raw || document.querySelector("[name='utm_campaign']").value,
+                        utm_term_raw: attributionPayload.utm_term_raw || document.querySelector("[name='utm_term']").value,
+                        utm_content_raw: attributionPayload.utm_content_raw || document.querySelector("[name='utm_content']").value,
+                        meta_route: attributionPayload.meta_route || '',
+                        gclid: document.querySelector("[name='gclid']").value,
+                        fbclid: document.querySelector("[name='fbclid']").value,
+                        wbraid: document.querySelector("[name='wbraid']")?.value || '',
+                        gbraid: document.querySelector("[name='gbraid']")?.value || '',
+                    }, 60*24);
+                    const url = new URL(window.location.href);
+                    const baseUrl = url.origin + url.pathname;
+                    document.getElementById('navbar').style.display="none";
+                    window.location.href = baseUrl + '?form=true';
+                    renderVideo();
+
+                } else {
+                    window.location.href = 'https://quiz.annuitygator.com/not-qualified'
+                }
+            }
+        }
+
+        function renderVideo() {
+            document.getElementById('swatchImageUrl').setAttribute('src', 'https://player.vimeo.com/video/1187894163?h=5497bfe76d&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479');
+        }
+
+        async function submitForm(validator, options = {}) {
+            const { recordOnly = false } = options;
+            const formData = buildLeadContextPayload();
+            const leadEventId = generateEventId();
+
+            formData.phone = formatPhoneNumber(formData.phone);
+            document.getElementById('submitButton').setAttribute('disabled', true);
+            document.querySelector('.loader').classList.remove('none');
+
+            const url = '/lds.php';
+            const headers = {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            };
+
+            try {
+                const [emailIsValid, phoneIsValid] = await Promise.all([
+                    verifyEmailField(validator),
+                    verifyPhoneField(validator),
+                ]);
+
+                const errors = {};
+                if(!emailIsValid) {
+                    errors["[name='email']"] = 'Enter a valid email address';
+                }
+
+                if(!phoneIsValid) {
+                    errors["[name='phone']"] = 'Enter a valid phone number';
+                }
+
+                if (!emailIsValid || !phoneIsValid) {
+                    if (!recordOnly) {
+                        validator.showErrors(errors);
+
+                        const firstErrorField = !emailIsValid ? "[name='email']" : "[name='phone']";
+                        const firstErrorInput = document.querySelector(firstErrorField);
+                        const firstErrorContainer = firstErrorInput?.closest('.form-input') || firstErrorInput;
+                        window.scrollTo({ top: firstErrorContainer.getBoundingClientRect().top + window.scrollY, behavior: 'smooth' });
+                    }
+
+                    hideSubmitOverlay();
+                    document.getElementById('submitButton').removeAttribute('disabled');
+                    document.querySelector('.loader').classList.add('none');
+                    return;
+                }
+
+                const payload = {
+                    ...formData,
+                    ...buildLeadMetaContext(leadEventId, formData),
+                    csrf_token: "cca85d0ce00dfd098e6ba4acbeefd65ce42b095920f08d9b828149e92a89c97b",
+                    task: recordOnly ? 'log' : 'nleads',
+                };
+
+                const res = await sendToEndpoint(url, payload, headers);
+
+                if (recordOnly) {
+                    document.getElementById('submitButton').removeAttribute('disabled');
+                    document.querySelector('.loader').classList.add('none');
+                    return;
+                }
+
+                const leadResponse = res.responseData.success === true ? res.responseData : {};
+                if(res.responseData.success === true){
+                    const id = leadResponse.id;
+                    const encodedId = btoa(id);
+                    const did = sessionStorage.getItem('did');
+                    // LDS returns the canonical destination URL (already includes any path variant
+                    // chosen by SplitTestService). $book_url is only used when LDS omits booking_page;
+                    // PHP already bakes the suffix into $book_url, so it must not be appended again.
+                    // const bookingPage = leadResponse?.booking_page || "https://ag2.annuitygator.com/book-annuity-evaluation";
+                    const bookingPage = "https://ag2.annuitygator.com/book-annuity-evaluation";
+                    const leadId = String(id || '');
+
+                    // Funnel event equivalence in this form submission block:
+                    // - Mixpanel: annuity_evaluation_form_completed | GA4: annuity_evaluation_form_completed | Clarity: annuity_evaluation_form_completed
+                    // - Mixpanel: step_completed_form_completed | GA4: step_completed (step_name=Form Completed) | Clarity: step_completed_form_completed
+                    if (!leadMetaDedup[leadId] && window.AIMMeta && typeof window.AIMMeta.pushLeadCreated === 'function') {
+                        const leadPayload = {
+                            event_id: leadEventId,
+                            did,
+                            lead_id: leadId
+                        };
+                        const metaUserData = buildMetaUserData(formData, leadId);
+                        leadPayload.external_id = metaUserData.external_id;
+                        leadPayload.fbp = metaUserData.fbp;
+                        leadPayload.fbc = metaUserData.fbc;
+                        if (hasAdMeasurementConsent()) {
+                            leadPayload.em = metaUserData.em;
+                            leadPayload.ph = metaUserData.ph;
+                            leadPayload.fn = metaUserData.fn;
+                            leadPayload.ln = metaUserData.ln;
+                        }
+                        // Surface raw email/phone (consent-gated) + funnel_slug to GTM so Google Ads
+                        // Enhanced Conversions can match the lead and GA4 can attribute it to this
+                        // funnel. The meta_lead_created event built by AIMMeta does not carry these;
+                        // this naked push (no `event` key) only updates the GTM data model and is not
+                        // relayed elsewhere. Read by {{dlv - email}} / {{dlv - phone}} /
+                        // {{DLV - funnel_slug}} when meta_lead_created fires the Google Ads/GA4 tags.
+                        window.dataLayer = window.dataLayer || [];
+                        window.dataLayer.push({
+                            email: hasAdMeasurementConsent() ? (formData.email || '') : '',
+                            phone: hasAdMeasurementConsent() ? (formData.phone || '') : '',
+                            funnel_slug: 'annuity_evaluation'
+                        });
+                        window.AIMMeta.pushLeadCreated(leadPayload);
+                        leadMetaDedup[leadId] = true;
+                    }
+
+                    trackSynchronizedFunnelEvent({
+                        mixpanelEvent: 'annuity_evaluation_form_completed',
+                        gaEvent: 'annuity_evaluation_form_completed',
+                        clarityEvent: 'annuity_evaluation_form_completed',
+                        eventId: leadEventId || undefined,
+                        currentStep: 8,
+                        totalSteps: 8,
+                        urlParams: getUrlParams(window.location.href),
+                        gaProperties: {
+                            email: formData.email,
+                            phone: formData.phone,
+                            did
+                        },
+                        mixpanelProperties: {
+                            email: formData.email,
+                            phone: formData.phone
+                        }
+                    });
+                    trackSynchronizedFunnelEvent({
+                        mixpanelEvent: 'step_completed_form_completed',
+                        gaEvent: 'step_completed',
+                        clarityEvent: 'step_completed_form_completed',
+                        eventId: leadEventId || undefined,
+                        currentStep: 8,
+                        totalSteps: 8,
+                        urlParams: getUrlParams(window.location.href),
+                        gaProperties: {
+                            step_name: 'Form Completed',
+                            funnel: 'annuity_evaluation',
+                            progress: '90%',
+                            did
+                        },
+                        mixpanelProperties: {
+                            step_name: 'Form Completed',
+                            funnel: 'annuity_evaluation',
+                            progress: '90%'
+                        }
+                    });
+                    setWithExpiry('steps_data', {}, 0);
+                    setWithExpiry('utms_data', {}, 0);
+                    // Limpiar mensaje de error si existía
+                    const existingError = document.getElementById('submit-error-msg');
+                    if (existingError) existingError.remove();
+
+                    await new Promise(resolve => setTimeout(resolve, 180));
+                    const _fbclid = new URLSearchParams(window.location.search).get('fbclid') || '';
+                    window.location.href = `${bookingPage}/?i=${encodedId}&did=${did}${_fbclid ? '&fbclid=' + encodeURIComponent(_fbclid) : ''}`;
+                    document.getElementById('submitButton').removeAttribute('disabled');
+                    document.querySelector('.loader').classList.add('none');
+                } else {
+                    throw new Error('Lead creation failed');
+                }
+            } catch (error) {
+                console.error('Error making POST request:', error);
+                trackClarityCustomEvent('double-click-error');
+                fetch('./log-error.php', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        did: sessionStorage.getItem('did') || 'unknown',
+                        error: error.message || String(error),
+                        data: formData
+                    })
+                }).catch(() => {});
+                hideSubmitOverlay();
+                document.getElementById('submitButton').removeAttribute('disabled');
+                document.querySelector('.loader').classList.add('none');
+                
+                const submitBtn = document.getElementById('submitButton');
+                // Primero remover si ya existe
+                const existing = document.getElementById('submit-error-msg');
+                if (existing) existing.remove();
+
+                // Luego crear e insertar
+                const errorMsg = document.createElement('p');
+                errorMsg.id = 'submit-error-msg';
+                errorMsg.style.cssText = 'color:#d93025;font-size:14px;margin-top:8px;text-align:center;';
+                errorMsg.textContent = 'Something went wrong. Please try again.';
+                submitBtn.parentNode.insertBefore(errorMsg, submitBtn.nextSibling);
+            }
+        }
+
+        async function sendToEndpoint(url, data, headers) {
+            const controller = new AbortController();
+            const timeoutId = setTimeout(() => controller.abort(), 45000);
+            try {
+                const response = await fetch(url, {
+                    method: 'POST',
+                    signal: controller.signal,
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json',
+                        ...headers
+                    },
+                    body: JSON.stringify(data)
+                });
+                clearTimeout(timeoutId);
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+
+                const responseData = await response.json();
+                return { success: true, responseData };
+
+            } catch (error) {
+                clearTimeout(timeoutId);
+                console.log('Error al realizar la solicitud:', error, url, data, headers);
+                throw error;
+            }
+        }
+
+        function annuity_type() {
+            let type = '';
+            if(Q5 === 'income now') {
+                type = 'Income Now'
+            } else if(Q5 === 'income later') {
+                type = 'Income Later'
+            } else if(Q5 === 'safe growth') {
+                type = 'Safe Growth'
+            }
+            document.getElementById('annuity_type').textContent = type;
+
+            const bullet_safe_growth = 'See how to safely grow and protect a portion of your money based on your unique situation.';
+            const bullet_general_text = 'See how to get ever-increasing retirement income that you cannot outlive during retirement based on your unique situation.';
+            document.getElementById('bullet_annuity_type').textContent = type === 'Safe Growth' ? bullet_safe_growth : bullet_general_text;
+
+            document.getElementById("annuity_type_income").innerHTML = ['Income Now', 'Income Later'].includes(type) ? 'Review The Top Paying Income Annuities From The Strongest Top-Rated Insurance Companies' : 'Review The Top Paying Protected<br class="desktop"> Growth Annuities From Strongest<br class="desktop"> Top-Rated Insurance Companies';
+
+            stespsToShow(Q5);
+
+            renderContent(Q5);
+
+            testimonialTitle(Q5);
+        }
+
+        function annuity_type_form() {
+            let type = '';
+            if(Q5 === 'income now') {
+                type = 'Retirement Income'
+            } else if(Q5 === 'safe growth') {
+                type = 'Safe Growth'
+            } else {
+                type = 'Retirement Income'
+            }
+            document.getElementById('annuity_type_form').textContent = type;
+        }
+
+        function annuity_type_text() {
+            let gender_text = ''
+            if(Q1 === 'woman') {
+                gender_text = 'women'
+            } else if(Q1 === 'man') {
+                gender_text = 'men'
+            }
+            let marital_text = ''
+            if(Q2 === 'married') {
+                marital_text = 'married'
+            } else if(Q2 === 'single') {
+                marital_text = 'single'
+            }
+            let age_text = ''
+            if(Q3 === 'under 50') {
+                age_text = `under the age of 50`
+            } else if(Q3 === 'over 70') {
+                age_text = `over the age of 70`
+            } else {
+                age_text = `between the ages of ${Q3.replace("between ", "")}`
+            }
+            let age = age_text
+            let type = '';
+            if(Q5 === 'income now') {
+                type = 'receive income now'
+            } else if(Q5 === 'income later') {
+                type = 'receive income later'
+            } else if(Q5 === 'safe growth') {
+                type = 'safely grow their money'
+            }
+            //let retired = Q4
+            let gender = gender_text;
+            let marital_status = marital_text;
+            let categories = type;
+            const affirmation =  `We help <b style="font-weight: 800;">${gender}</b> who are <b style="font-weight: 800;">${marital_status}</b> and <b style="font-weight: 800;">${age}</b> <b style="font-weight: 800;">${categories}</b> with annuities.`;
+            document.getElementById('annuity_type_text').innerHTML = affirmation;
+        }
+    
+        function stespsToShow(question) {
+            const annuity_type =isGrowth(question);
+
+            const steps_title = annuity_type !== 'Growth' 
+                ? 'Here’s How Annuity Gator Can Help You Achieve Your Retirement Income Goals' 
+                : 'Here’s How Annuity Gator Can Help You Securely Grow Your Money In Retirement';
+
+            document.getElementById('steps_title').textContent = steps_title;
+
+            const research_text = annuity_type === 'Income' ? 'Our annuity research team will calculate exactly how much guaranteed lifetime income will the top insurance companies pay you.' : 'Our annuity research team will scour the internet to find the best protected growth annuities offered by top-rated insurance companies.';
+            document.getElementById('research_text').textContent = research_text;
+
+            const recommend_text = annuity_type === 'Income' ? 'We will identify the top three income annuities that you can compare side-by-side.' : 'We will identify the top three protected growth annuities that you can compare side-by-side.';
+            document.getElementById('recommend_text').textContent = recommend_text;
+
+            const retirement_text =annuity_type === 'Income' ? 'We will guide you through the process of purchasing an annuity. Gain peace of mind knowing that you will have a predictable paycheck throughout your retirement.' : 'We will guide you through the process of purchasing an annuity. Gain peace of mind knowing that your assets are protected from market losses while being able to earn an annual return on your money at the same time.';
+            document.getElementById('retirement_text').textContent = retirement_text;
+        }
+
+        function renderContent(q5) {
+            // let annuity_type = '';
+
+            // if (['I Want Income Now', 'I Want Income Later'].includes(q5)) {
+            //     annuity_type = 'Income';
+            // } else if (['I Want To Safely Grow My Money'].includes(q5)) {
+            //     annuity_type = 'Growth';
+            // }
+            const annuity_type =isGrowth(q5);
+
+            const ctas_growth = [
+                {
+                    'question': 'What Makes Annuity Gator Different?',
+                    'answer': [
+                        'We simplify the way you research “protected growth” annuities so you can protect your money from market losses while still being able to earn a reasonable rate of return.',
+                        'During your Annuity Evaluation, you’ll be able to easily review personalized annuity recommendations from the comfort and convenience of your own home - right over the phone.',
+                        'We take your retirement happiness and security very seriously, and we will provide you with independent annuity guidance and honest recommendations so you can retire with confidence.'
+                    ],
+                    'image': '3-images.png',
+                    'image_title': ''
+                },
+                {
+                    'question': 'About Annuity Gator',
+                    'answer': [
+                        'Launched in 2012, Annuity Gator is the original annuity “investigator”. Annuity Gator has a long history of helping clients financially prepare for retirement with the proper use of annuities. Our research team evaluates the top annuities that offer the highest secure growth rates and benefits.',
+                        'Using virtual phone consultations, we help clients evaluate hundreds of annuities from top-rated insurance carriers - without ever having to leave their home. Our technology-driven approach can help you find the best annuity that pays top dollar.'
+                    ],
+                    'image': 'rates.png',
+                    'image_title': 'Annuity Gator Is Highly Rated By Our Clients'
+                }
+            ];
+
+            const ctas_else = [
+                {
+                    'question': 'What Makes Annuity Gator Different?',
+                    'answer': [
+                        'We simplify the way you research income annuities so you can make an informed decision to secure your dream retirement with income that lasts as long as you do.',
+                        'During your Annuity Evaluation, you’ll be able to easily review personalized annuity recommendations from the comfort and convenience of your own home - right over the phone.',
+                        'We take your retirement happiness and security very seriously, and we will provide you with independent annuity guidance and honest recommendations so you can retire with confidence.'
+                    ],
+                    'image': '3-images.png',
+                    'image_title': ''
+                },
+                {
+                    'question': 'About Annuity Gator',
+                    'answer': [
+                        'Launched in 2012, Annuity Gator is the original annuity “investigator”. Annuity Gator has a long history of helping clients financially prepare for retirement with the proper use of annuities. Our research team evaluates the top annuities that offer the highest guaranteed income and benefits.',
+                        'Using virtual phone consultations, we help clients evaluate hundreds of annuities from top-rated insurance carriers - without ever having to leave their home. Our technology-driven approach can help you find the best annuity that pays top dollar.',
+                    ],
+                    'image': 'rates.png',
+                    'image_title': 'Annuity Gator Is Highly Rated By Our Clients'
+                }
+            ];
+
+            const items =annuity_type === 'Growth' ? ctas_growth : ctas_else;
+
+            const template = document.getElementById('cta-template');
+
+            items.forEach(e => {
+                const clone = document.importNode(template.content, true);
+
+                // Configurar el contenido del clone
+                clone.querySelector('h2').textContent = e.question;
+                const answers = clone.querySelector('.text-section');
+
+                e.answer.forEach(a => {
+                    const paragraph = document.createElement('p');
+                    paragraph.textContent = a;
+                    answers.appendChild(paragraph);
+                });
+
+                const image_container = clone.querySelector('.img-section');
+                if(e.image_title){
+                    const title = document.createElement('h1');
+                    title.setAttribute('class', 'title');
+                    title.textContent = e.image_title;
+                    image_container.appendChild(title);
+                }
+                if(e.image) {
+                    const img =document.createElement('img');
+                    img.setAttribute('class', 'cta-img');
+                    img.src = './assets/images/' + e.image;
+                    image_container.appendChild(img);
+                }
+
+                const container = document.getElementById('CTAS');
+                container.appendChild(clone);
+            });
+        }
+
+        function testimonialTitle(q5) {
+            const annuity_type = isGrowth(q5);
+            document.getElementById('testimonials_title').textContent =annuity_type === 'Growth' ? "We Have A Long History Of Helping Clients Throughout The Country Safely Grow And Protect Their Money" : "We Have A Long History Of Helping Clients Throughout The Country Get Income-For-Life That You'll Never Outlive";
+        }
+
+        function isGrowth(q5){
+            let annuity_type = '';
+
+            if (['income now', 'income later'].includes(q5)) {
+                annuity_type = 'Income';
+            } else if (['safe growth'].includes(q5)) {
+                annuity_type = 'Growth';
+            }
+
+            return annuity_type;
+        }
+
+    </script>
+
+    <div id="submit-overlay">
+        <div class="submit-overlay-box">
+            <div class="submit-overlay-spinner"></div>
+            <p>Finding the advisor who best fits your situation...</p>
+            <p class="submit-overlay-sub">Don’t close this window — we’re matching your profile right now</p>
+        </div>
+    </div>
+
+
+
+
+
+<script type="text/javascript" id="" charset="">window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date);gtag("config","AW-944434441");</script><div id="batBeacon855002809098" style="width: 0px; height: 0px; display: none; visibility: hidden;"><img id="batBeacon523852579771" width="0" height="0" alt="" src="https://bat.bing.com/action/0?ti=56042278&amp;tm=gtm002&amp;Ver=2&amp;mid=177a39dc-c975-42a8-a3e6-f82f72872d64&amp;bo=1&amp;sid=ead73dc0ae2f11f1b9eacbe0687645f5&amp;vid=ead75d00ae2f11f1aaef237563685a9f&amp;vids=1&amp;msclkid=N&amp;pi=0&amp;lg=en-US&amp;sw=1440&amp;sh=900&amp;sc=24&amp;nwd=1&amp;tl=See%20Which%20Annuities%20Can%20Maximize%20Your%20Retirement%20Income%20And%20Securely%20Grow%20Your%20Money%20Regardless%20of%20Market%20Conditions&amp;p=https%3A%2F%2Fag2.annuitygator.com%2Fannuity-evaluation%2F&amp;r=&amp;lt=1602&amp;evt=pageLoad&amp;sv=2&amp;cdb=AQAQ&amp;rn=978848" style="width: 0px; height: 0px; display: none; visibility: hidden;"></div><iframe name="widgetCta" scrolling="no" sandbox="allow-scripts allow-same-origin allow-top-navigation" style="display: none; width: 0px; height: 0px; overflow: hidden;"></iframe></body></html>
