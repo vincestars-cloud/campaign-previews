@@ -8,7 +8,7 @@ Generated 2026-09-11 from the same files that build https://vincestars-cloud.git
 - **What they are trying to buy:** the phone ringing without renting families from a directory. A Place for Mom is the most-discussed paid source (42 buyer documents): $50–68 a lead, the same family sold to several agencies, billed whether or not it converts; the second job is hiring and keeping caregivers (chapters "Lead Sources", "Frustrations", "Previous Solutions").
 - **What they have already tried:** hospital and discharge-planner relationships (trusted, slow), the directories (shared), Facebook ads that brought caregivers instead of clients, coaches and licensing consultants. Nobody in buyer voice describes an inbound system they own (chapter "Previous Solutions").
 - **Who sells to them today:** 95 advertisers with 233 live ads (203 to running businesses, 30 to would-be owners). The lane leaders sell *exclusive booked tours or assessments under your own brand, called back in minutes, guaranteed in 90 days* — Occupancy Partners, HomecareGrow, OBB, PatientsPipeline, Wisdom First, Census Home. Cleaned 2026-09-11: consumer and recruiting ads are out of the B2B set, adjacent-practice vendors are set aside (chapter "Competitor Ads").
-- **What their ads say out loud:** 65 top video ads from 41 operator-facing advertisers transcribed (57 with speech, 7 silent, 1 not retrievable), plus 22 ads Vince hand-picked by Library ID with playable videos, and a capture of HomecareGrow's "before your call" page (chapters "Video ad transcripts", "Hand-picked video ads", "HomecareGrow").
+- **What their ads say out loud:** 65 top video ads from 41 operator-facing advertisers transcribed (57 with speech, 7 silent, 1 not retrievable), plus 27 ads Vince hand-picked (by Library ID, or as a screen recording) with playable videos, and a capture of HomecareGrow's "before your call" page (chapters "Video ad transcripts", "Hand-picked video ads", "HomecareGrow").
 - **The lane for inLeap:** families finding *you* instead of the directory — owned inbound plus intake, exclusive, priced on the result, with the caregiver-applicant by-product the same campaigns produce (chapters "Why They Buy", "Awareness → Offer Map").
 - **Decision:** treat the "Why They Buy" chapter as the ad brief and build the offer + landing page from it next; the cost of waiting is that the six vendors above are already teaching this buyer what to expect.
 
@@ -1517,7 +1517,7 @@ For the established owner, caregiver retention is not an HR nicety — it is the
 
 ## Hand-picked video ads (Vince) — transcripts and playable videos
 
-**22 ads Vince named by Library ID.** 8 already have a card on the Competitor Ads tab (the transcript and player sit inside the card); 14 sit in the collapsed *Hand-picked video ads* block at the end of that tab. Every video in each ad's own record is playable on the page; the links below go to the hosted copies (long videos are 540p web copies, and full quality was saved to Downloads). Ads with more than one video are one creative rendered for different placements (square or 4:5 feed and 9:16 Stories/Reels), or the same ad uploaded twice.
+**27 ads Vince hand-picked (26 by Library ID, 1 as a screen recording).** 9 already have a card on the Competitor Ads tab (the transcript and player sit inside the card); 18 sit in the collapsed *Hand-picked video ads* block at the end of that tab. Every video in each ad's own record is playable on the page; the links below go to the hosted copies (downscaled 480p research copies; full quality was saved to Downloads). Ads with more than one video are one creative rendered for different placements (square or 4:5 feed and 9:16 Stories/Reels), or the same ad uploaded twice.
 
 ### Advanced Agent Marketing — Library ID 1571656731350483
 
@@ -1777,6 +1777,67 @@ started Sep 10, 2026 · in the hand-picked block · https://www.facebook.com/ads
 
 - Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1443395297670036-1.mp4 (1897 s)
 
+### Brett And Ethan — Library ID 1345716870736013
+
+started May 29, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=1345716870736013
+
+*Annuity marketer, not a home-care competitor — added as a format reference (Vince: their ads are good; reuse the formatting for our use case). Added by Library ID on 2026-09-11.*
+
+**Ad copy:** Attention Annuity Advisors Tired of Empty Chairs at Your Steak Dinners? While you're struggling to fill rooms with qualified prospects, top advisors are packing theaters with 40+ serious retirees per event. The difference? They stopped doing what everyone else does. Instead of another forgettable di…
+
+> "Annuity Advisors, if you're not doing dinner in a movie, let me show you what that looks like. This is the dinner in a movie concept. It's absolutely crushing right now. We had 71 people in here. You can see there's not an empty seat in sight because we had to turn away 39 people and Brent did this event and then closed a $1.2 million case five days later with another 15 appointments that he set from here. It came to watch Retirement Everest, which is the best movie that there is on the topic right now to help people change their retirement. So if you wanna learn how to do it, get the profit package. We're giving it away for free. Grab your copy of it. You can see the film. You can see how we use it. And you can fill your events and your pipeline with amazing prospects just like this who are ready to buy Annuities."
+> — Library ID 1345716870736013 · 45 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1345716870736013
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1345716870736013-1.mp4 (45 s)
+
+### Brett And Ethan — Library ID 2115213409032687
+
+started Aug 6, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=2115213409032687
+
+*Annuity marketer, not a home-care competitor — added as a format reference (Vince: their ads are good; reuse the formatting for our use case). Added by Library ID on 2026-09-11.*
+
+**Ad copy:** Most annuity advisors are still relying on the same tired marketing: Generic leads. Dinner seminars. PowerPoint presentations that prospects have already seen a dozen times. Dinner and a Movie gives you a completely different way to get in front of pre-retirees. Instead of asking prospects to sit th…
+
+> "Hey, if you're not doing dinner in a movie, you got to see this. Let me show you what I'm talking about right here. See, these are our events and we've got 71 people in this event. We had to turn, literally turn 30 people away. We have over 30 here. We've got a stack of response sheets that turn into appointments here. And what this is actually doing is turning into tons of additional commission for our advisors. So take a look at Cornfield. He's got a 280% increase over $555,000 in increase this year. To FOIA, $455,000 in increase this year. Pazillos, $271,000 of increase. Radford, $332. Shavo, $387. Karan, $434,000. And we're talking dollars in the bank here using dinner in a movie. So go ahead, if you're interested in these kinds of numbers, these are real people doing events, Chuck full. In fact, one of our guys just recently said, I, people were clapping at the end of it, and I've never had that happen before in my life. So it's time for you to take advantage of this opportunity. Go ahead, click the link below, book a time to talk to us and we will explain how the program works. We'll let you watch the films. We have five different films that we are the creators of this whole industry here. And so we're always on the cutting edge, always putting out new stuff. It's going to be better and more entertaining than anything else your prospects have ever seen. So go ahead and click the link, book a time to talk to us today."
+> — Library ID 2115213409032687 · 97 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=2115213409032687
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/2115213409032687-1.mp4 (97 s)
+
+### Brett And Ethan — Library ID 1536791818193076
+
+started Aug 4, 2026 · in the hand-picked block · https://www.facebook.com/ads/library/?id=1536791818193076
+
+*Static image ad (its own record has no video). Annuity marketer, not a home-care competitor — added as a format reference (Vince: their ads are good; reuse the formatting for our use case). Added by Library ID on 2026-09-11.*
+
+**Static image ad:** https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1536791818193076-image-1.jpg
+
+**Ad copy:** Attention Annuity Advisors: The gap between a $3M producer and a $12M producer isn't talent. It's not work ethic. And it's definitely not another closing script. It's the pipeline. You can't out-close leads that were sold to five other agents. You can't out-present a dinner seminar when three other …
+
+*Static image ad: its own Ad Library record has no video, so there is nothing to transcribe.*
+
+
+### Advanced Agent Marketing — screen recording (no Library ID)
+
+in the hand-picked block
+
+*Screen recording Vince supplied (RPReplay_Final1788919449.MP4, no Library ID). Same script as Advanced Agent Marketing ad 1385366867020590, but a separately recorded take: 71 s against 62 s, reworded throughout (for example “answer any questions that you might have” and “we'll see you there”).*
+
+> "If you sell over $3 million a year in fixed index annuities, then I'll book you appointments with wealthy retirees who have over $250,000 in assets, and they don't show up. You don't pay. So here's how it works. We own online retirement-focused brands, and we run ads to simple educational videos that give value. Now from there, we allow people to request more information. And then our call center calls and qualifies the lead for assets, age, and so on. We also edify you as the expert so that when they show up, they already know, like, and trust you. All you have to do is literally just show up on a Zoom call and take the consultation. So if you're tired of wasting your time on no-shows and unqualified leads, and you want to speak directly with wealthy retirees who are actually interested in annuities, then click the button below and book a demo call on the following page. Now on that call, we'll go over exactly how the offer works, the pricing, and answer any questions that you might have. So click the link below, and we'll see you there."
+> — screen recording supplied by Vince (no Library ID) · 71 s · faster-whisper small.en, first 120 s
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/rec-RPReplay_Final1788919449-1.mp4 (71 s)
+
+### Home Care Pipeline — Library ID 1255139586685877
+
+started Aug 23, 2026 · has a card on the tab · https://www.facebook.com/ads/library/?id=1255139586685877
+
+**Ad copy:** Home care agency owners: two numbers decide how fast you grow — how well you bring in private-pay clients, and how well you recruit caregivers. Most owners are guessing at both. We fix both pipelines with one system. But we only work with one home care agency per county — once your area is taken, it…
+
+> "Three companies decide whether your home care agency grows this year. A place for mom, caring.com, and Care Patrol. They set the lead price. They share each lead across multiple agencies. They change the rules whenever it suits them. Home care agencies that grow predictably stopped renting from aggregators and built recommendation funnels they own. Three to five exclusive private pay clients booked to your calendar every month. Guaranteed in 90 days or we work for free. We only work with one agency per county. Take the 60 second assessment, seven questions, no email, no call, and see if your county is still open."
+> — Library ID 1255139586685877 · 31 s · faster-whisper small.en, first 120 s · https://www.facebook.com/ads/library/?id=1255139586685877
+
+- Video 1 of 1: https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/picks-video/1255139586685877-1.mp4 (31 s)
+
 
 ---
 
@@ -1790,15 +1851,15 @@ started Sep 10, 2026 · in the hand-picked block · https://www.facebook.com/ads
 
 | Video | Host | Length | Original | Where it plays |
 |---|---|---|---|---|
-| Main page video | Vidalytics WTvAGvtpZZxGIhRR | 2:29 | 1280×720, 14.1 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vidalytics-WTvAGvtpZZxGIhRR.mp4 — web copy 540p · full quality in Downloads |
-| Araceli Raw Social Proof | Vimeo 1220930679 | 0:32 | 720×900, 8.1 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1220930679.mp4 — web copy 900p · full quality in Downloads |
-| Patrick Raw Social Proof | Vimeo 1224657671 | 0:13 | 720×900, 2.2 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1224657671.mp4 — as downloaded |
+| Main page video | Vidalytics WTvAGvtpZZxGIhRR | 2:29 | 1280×720, 14.1 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vidalytics-WTvAGvtpZZxGIhRR.mp4 — research copy 480p · full quality in Downloads |
+| Araceli Raw Social Proof | Vimeo 1220930679 | 0:32 | 720×900, 8.1 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1220930679.mp4 — research copy 480p · full quality in Downloads |
+| Patrick Raw Social Proof | Vimeo 1224657671 | 0:13 | 720×900, 2.2 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1224657671.mp4 — research copy 480p · full quality in Downloads |
 | Medicaid Walkthrough | Vimeo 1224711218 | 7:50 | 1280×720, 80.9 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/../../picks-video/2015894449122683-1.mp4 — Same video as ad 2015894449122683 (frame-identical, same 7:50) — stored once on the site and played from that ad's web copy. The page's own copy is in Downloads. |
 | Veterans Walkthrough | Vimeo 1225064245 | 8:47 | 1280×720, 82.1 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/../../picks-video/1334349101926370-1.mp4 — Same walkthrough as ad 1334349101926370 (same 8:47 and frames; the page's copy is slightly darker throughout) — played from the ad's web copy on the site. The page's own copy is in Downloads. |
-| Private Pay Walkthrough | Vimeo 1225657385 | 8:15 | 1280×720, 87.6 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1225657385.mp4 — web copy 540p · full quality in Downloads |
-| Why will this work when other marketers failed me? | Vimeo 1225657641 | 2:23 | 1280×720, 24.1 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1225657641.mp4 — web copy 540p · full quality in Downloads |
-| What if we do our part and this doesn't work? | Vimeo 1225657932 | 1:48 | 1280×720, 18.1 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1225657932.mp4 — web copy 540p · full quality in Downloads |
-| Koby Spears - Social Proof | Vimeo 1225685621 | 0:33 | 720×1280, 9.7 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1225685621.mp4 — as downloaded |
+| Private Pay Walkthrough | Vimeo 1225657385 | 8:15 | 1280×720, 87.6 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1225657385.mp4 — research copy 480p · full quality in Downloads |
+| Why will this work when other marketers failed me? | Vimeo 1225657641 | 2:23 | 1280×720, 24.1 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1225657641.mp4 — research copy 480p · full quality in Downloads |
+| What if we do our part and this doesn't work? | Vimeo 1225657932 | 1:48 | 1280×720, 18.1 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1225657932.mp4 — research copy 480p · full quality in Downloads |
+| Koby Spears - Social Proof | Vimeo 1225685621 | 0:33 | 720×1280, 9.7 MB | https://vincestars-cloud.github.io/campaign-previews/home-care-agency-owners/research/creatives/lp-assets/homecaregrow-before-your-call/videos/vimeo-1225685621.mp4 — research copy 480p · full quality in Downloads |
 
 **Read:** the page carries a main video, three client testimonials, two objection answers and three program walkthroughs (Medicaid, Veterans, Private Pay); booking runs through an embedded iClosed widget. The Medicaid and Veterans walkthroughs are the same videos as HomecareGrow's Meta ads 2015894449122683 and 1334349101926370 (see the hand-picked chapter), so the ads show the prospect the same walkthrough the booked call uses.
 

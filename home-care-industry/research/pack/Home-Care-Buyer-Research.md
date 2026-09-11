@@ -1452,7 +1452,7 @@ Franchise networks upload one national creative separately to each local page, s
 
 ### Hand-picked by Vince
 
-13 video ads named by Library ID, transcribed and playable on the page whether or not they made the top-3 cut. Where an ad was not in the original pull, its advertiser, copy and dates were read off its own Ad Library page. Links go to the hosted videos (web copies for long videos).
+13 video ads named by Library ID, transcribed and playable on the page whether or not they made the top-3 cut. Where an ad was not in the original pull, its advertiser, copy and dates were read off its own Ad Library page. Links go to the hosted videos (downscaled 480p research copies; full quality was saved to Downloads).
 
 #### A Place for Mom — Library ID 908535694990197
 
