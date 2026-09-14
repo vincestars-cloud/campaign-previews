@@ -1,13 +1,13 @@
 # Assisted Living: the Family Choosing — Research Summary
 
-Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers/research/ · Researched 2026-09-14 · refresh due 2027-03-14 · 5,348 buyer documents in this voice of 28,918 read
+Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers/research/ · Researched 2026-09-14 · refresh due 2027-03-14 · 6,635 buyer documents in this voice of 34,651 read
 
 ## TLDR
 
-- Who: the adult child (and in-laws, spouses, siblings) choosing a place for a parent; 5,348 documents in that voice. Older adults choosing for themselves are a small minority of this voice (see Voice gate on each tab).
-- Why they move now: a parent who cannot be safe alone (wandering, driving, the stove, falls), a parent frightened or angry about moving (56 documents), and money that will not last (46 documents).
-- What they already tried: A Place for Mom and referral services (142 documents), touring communities (147 documents), in-home caregivers first (34 documents), elder-law and Medicaid planning (35 documents).
-- What burns them: costs, hidden fees and level-of-care increases (29 documents) and unwanted calls from facilities once their number is shared (10 documents). A Place for Mom's TrustPilot pull holds 120 one-star and 80 five-star reviews; the one-star column is mostly the calls, the five-star column is one named advisor in a crisis.
+- Who: the adult child (and in-laws, spouses, siblings) choosing a place for a parent; 6,635 documents in that voice. Older adults choosing for themselves are a small minority of this voice (see Voice gate on each tab).
+- Why they move now: a parent who cannot be safe alone (wandering, driving, the stove, falls), a parent frightened or angry about moving (67 documents), and money that will not last (53 documents).
+- What they already tried: A Place for Mom and referral services (155 documents), touring communities (157 documents), in-home caregivers first (43 documents), elder-law and Medicaid planning (39 documents).
+- What burns them: costs, hidden fees and level-of-care increases (39 documents) and unwanted calls from facilities once their number is shared (11 documents). A Place for Mom's TrustPilot pull holds 120 one-star and 80 five-star reviews; the one-star column is mostly the calls, the five-star column is one named advisor in a crisis.
 - Who sells to them: 1,573 ads from 690 advertisers address the family; the lead sellers' consumer funnels (123 ads) and search-arbitrage pages (137) sit between the family and the community.
 - The lane (hypothesis): help that does not hand her number to every facility, prices explained before the tour, and a person who stays with the family after the move.
 
@@ -36,7 +36,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 
 - Measured voice, not persona: every counted document is written by a family member choosing (adult child, in-law, spouse, sibling or grandchild), stamped by the voice router; the source-by-voice table is at the end of this tab.
 - They write while it is happening: the most engaged voices are posts mid-decision ('My mom is finally moving into assisted living in Tampa, and the monthly cost is terrifying.').
-- Their own lives carry the strain: marriage and their own children (61 documents) and siblings who won't help or who blame (60 documents) are the two largest Relationship Fears.
+- Their own lives carry the strain: marriage and their own children (66 documents) and siblings who won't help or who blame (62 documents) are the two largest Relationship Fears.
 
 ### What they believe
 
@@ -46,13 +46,13 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 
 ### The moment it changes
 
-- Measured on Tab 1 and Tab 9: a parent unsafe alone (wandering, driving, the stove: 12 documents), falls and ER trips (23 documents), nights and 2am calls (47 documents).
+- Measured on Tab 1 and Tab 9: a parent unsafe alone (wandering, driving, the stove: 15 documents), falls and ER trips (24 documents), nights and 2am calls (61 documents).
 
 ### What stops them
 
-- The parent refusing (16 documents on Frustrations; 56 on Fears)
-- Money and Medicaid rules (11 documents)
-- Fear of neglect inside the facility (15 documents; watched in 29 title-relevant videos)
+- The parent refusing (19 documents on Frustrations; 67 on Fears)
+- Money and Medicaid rules (13 documents)
+- Fear of neglect inside the facility (23 documents; watched in 29 title-relevant videos)
 
 ### Where they are
 
@@ -76,7 +76,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 
 ## Tab 1 — Fears
 
-### Mom or Dad terrified, angry, or refusing to move — 56 documents
+### Mom or Dad terrified, angry, or refusing to move — 67 documents
 
 > "We have been carrying around constant anxiety and worry ever since he moved."  
 > — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1sm1mog/so_my_dad_fell_in_love_in_memory_care/
@@ -87,18 +87,18 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "My mother is early stage but she is so afraid of having to leave her home and be put in a facility."  
 > — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1jf2bcr/i_hate_that_there_is_such_a_stigma_in_putting_a/
 
-### The money running out, losing the house to Medicaid — 46 documents
+### The money running out, losing the house to Medicaid — 53 documents
 
 > "I'm scared it'll be like this every month and she won't be able to afford to stay there."  
 > — reddit_post · r/CaregiverSupport · https://www.reddit.com/r/CaregiverSupport/comments/1ulswvj/my_mom_is_spending_a_ton_of_money_in_her_assisted/
 
-> "Memory loss accelerated, anxiety became intense, and she often shadowed me around the house."  
-> — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1tg6eak/my_watch_has_ended_a_timeline_if_helpful/
-
 > "Tell them im looking for Assisted living and they agree that yes, they dont want to live in this house anymore."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1r4kd2s/it_was_ok/
 
-### Neglect, falls or abuse inside the facility — 15 documents
+> "Told her I was worried about the money."  
+> — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1plxnr6/i_make_140k_and_still_cant_afford_my_moms_care/
+
+### Neglect, falls or abuse inside the facility — 23 documents
 
 > "Bathing, cleaning, watching for falls, handling crises, money, doctors, nursing home decisions, guilt, fear, paperwork, emergencies."  
 > — reddit_post · r/CaregiverSupport · https://www.reddit.com/r/CaregiverSupport/comments/1uk1rrr/my_watch_has_ended_i_feel_like_being_deactivated/
@@ -109,16 +109,16 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "He is less anxious and has only had one fall - on the first night as he was a little unsettled."  
 > — youtube · How to get your loved one with dementia to go to a nursing home EVEN when they d · https://www.youtube.com/watch?v=gfjARly-TsY&lc=UgyUS1gBt-uFVtfKPB14AaABAg
 
-### Wandering, driving, the stove: danger before the move — 12 documents
+### Wandering, driving, the stove: danger before the move — 15 documents
 
 > "I'm most worried about the driving because that could kill other people, but if I can figure out a way to prevent that from happening, is it so wrong to let them fail if they're refusing help?"  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1un8h0l/at_what_point_do_you_let_them_fail/
 
+> "She was so miserable in the hospital and terrified to be left alone each night."  
+> — reddit_post · r/Parkinsons · https://www.reddit.com/r/Parkinsons/comments/1b70esf/mom_is_dying_from_parkinsons_feeling_lost_alone/
+
 > "She's starting to leave the stove on so now I'm constantly worried about that when I'm at work."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1q7yozb/ive_reached_my_breaking_point/
-
-> "Specifically, my MIL who is likely to outlive us all, but no longer drives, and has lived almost as a shut-in except for my husband and I taking her out, because she's terrified of her husband's driving and has no friends."  
-> — reddit_comment · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1idgs60/the_dreaded_we_should_all_live_together_talk_has/ma357o1/
 
 ### Ending up the same way myself — 7 documents
 
@@ -133,7 +133,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 
 ## Tab 2 — Hopes & Dreams
 
-### That she settles in and is happy there — 16 documents
+### That she settles in and is happy there — 24 documents
 
 > "That was all settled with his family earlier this year and I was vocal I want nothing to do with this."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1ugwxtv/i_cant_do_this_anymore_and_i_never_agreed_to_be_a/
@@ -144,7 +144,18 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "She's an introvert and hates the activities there so I don't have much hope she'll settle in and make friends."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1vs017t/home_or_assisted_living/
 
-### A good place close enough to visit — 8 documents
+### A peaceful, dignified end — 12 documents
+
+> "I know we are all doing our best to navigate this, but I want to offer a different perspective—one that might be uncomfortable, but feels necessary to voice."  
+> — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1s2o3xu/how_would_you_feel_if_you_had_two_parents_who/
+
+> "I hope they're making her as comfortable as possible."  
+> — reddit_post · r/eldercare · https://www.reddit.com/r/eldercare/comments/1l7tidr/sitting_in_emergency_waiting_room/
+
+> "I hope her placement in memory care is peaceful and y'all can enjoy being kids again."  
+> — reddit_comment · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1uwtqzo/party_poopers/oxm8n90/
+
+### A good place close enough to visit — 9 documents
 
 > "I would love to find an attorney who can help us plan for your needs and who can help you find an assisted living center close by."  
 > — reddit_comment · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1emgwx5/my_80_year_old_mother_just_told_me_she_wants_to/lgywjl6/
@@ -155,18 +166,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "Wish I had kids now that I am getting close to their age because these institutions are horrendous and it was a full time job just trying to "protect" my parents from this kind of stuff the last 3 years of their lives."  
 > — youtube · THE BIG MEDICAID SECRET NURSING HOMES WON'T TELL YOU · https://www.youtube.com/watch?v=O0VOq4Zqg9Q&lc=UgweTyWvefiJM2ElCqJ4AaABAg.9f_LQOvXpVE9fcZPdWk8Z_
 
-### A peaceful, dignified end — 8 documents
-
-> "I know we are all doing our best to navigate this, but I want to offer a different perspective—one that might be uncomfortable, but feels necessary to voice."  
-> — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1s2o3xu/how_would_you_feel_if_you_had_two_parents_who/
-
-> "I hope her placement in memory care is peaceful and y'all can enjoy being kids again."  
-> — reddit_comment · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1uwtqzo/party_poopers/oxm8n90/
-
-> "I hope your wife is comfortable and stable."  
-> — reddit_comment · r/CaregiverSupport · https://www.reddit.com/r/CaregiverSupport/comments/1r9s73t/assisted_living_spot_opened_but_i_am_crying_and/o6ewq2e/
-
-### That the money lasts or Medicaid comes through — 6 documents
+### That the money lasts or Medicaid comes through — 9 documents
 
 > "If only we could've afforded that (or convinced mom to allow it)."  
 > — reddit_comment · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1s2o3xu/how_would_you_feel_if_you_had_two_parents_who/ocbrn9e/
@@ -174,12 +174,12 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "We could afford the one-bedroom unit, but no way do we want to live that close together after having 2,600 sqft house (and he has half for his shop)."  
 > — reddit_comment · r/retirement · https://www.reddit.com/r/retirement/comments/1qpgzc1/anyone_planning_for_a_future_move_to_a_ccrc/o2pme38/
 
-> "They are expensive but they will be your only hope in getting help with the care she is going to need whether it's at home through a long-term in-home waiver program or if her medical needs are bad enough (ADL's, activities of daily living) then she may have to get into a nursing home."  
-> — reddit_comment · r/eldercare · https://www.reddit.com/r/eldercare/comments/1kvn2c8/caring_for_elderly_parents_has_completely_changed/ncfimhq/
+> "Since we cannot afford a lawyer, we want to try all we can before going that far."  
+> — reddit_post · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/1c1vstw/can_my_mil_nursing_home_refuse_to_sign_standard/
 
 ## Tab 3 — Relationship Fears
 
-### My marriage and my own kids taking the strain — 61 documents
+### My marriage and my own kids taking the strain — 66 documents
 
 > "After several months of a trial separation, my wife yesterday informed me that she wants a divorce."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1hvl7z2/dont_let_an_aging_parent_ruin_your_relationship/
@@ -190,7 +190,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "They divorced when I was a teen, I lived w/ mom, and I favored her more."  
 > — reddit_post · r/over60 · https://www.reddit.com/r/over60/comments/1ko3vzn/it_took_me_way_too_long_to_realize_this/
 
-### Siblings who won't help, or who blame — 60 documents
+### Siblings who won't help, or who blame — 62 documents
 
 > "I am often guilt tripped about how much her sister's grandkids do, but she lives in Maryland, not on a farm in the Midwest."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1iz4i4p/aging_in_place_is_screwing_our_generation_over/
@@ -200,6 +200,17 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 
 > "She wobbles between blaming my brother for everything wrong with her life, and blaming me."  
 > — reddit_comment · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1idgs60/the_dreaded_we_should_all_live_together_talk_has/m9z1l5b/
+
+### POA, guardianship and inheritance fights — 13 documents
+
+> "He stopped realizing he was in his own home (the most important thing to him.) He refused to go to an ACL/MC facility and would “show time” which made the facility not want to take him “against his will” even though I have durable POA."  
+> — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1hkhusp/he_is_safe_tonight_because_of_this_place/
+
+> "Under German law, and according to my father's advance directive and healthcare power of attorney, we had every right to refuse further life-prolonging treatment in his situation and choose palliative care instead."  
+> — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1v4mxye/i_think_this_will_be_my_last_update_for_now_my/
+
+> "We believed (or at least hoped) she would settle and stay once she was admitted, but our guardianship status didn't matter if she refused to be there from the get-go."  
+> — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1ukr2i1/how_i_got_my_independent_and_helprejecting_mother/
 
 ### Mom or Dad angry at me for 'putting them away' — 12 documents
 
@@ -212,18 +223,18 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "I haven't gone to see him, as he is abusive toward me and will definitely blame me for all of this, making it worse for staff."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1w36qf4/romance_scam_dad_on_psych_hold_cars_gone_etc/
 
-### POA, guardianship and inheritance fights — 12 documents
-
-> "He stopped realizing he was in his own home (the most important thing to him.) He refused to go to an ACL/MC facility and would “show time” which made the facility not want to take him “against his will” even though I have durable POA."  
-> — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1hkhusp/he_is_safe_tonight_because_of_this_place/
-
-> "Under German law, and according to my father's advance directive and healthcare power of attorney, we had every right to refuse further life-prolonging treatment in his situation and choose palliative care instead."  
-> — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1v4mxye/i_think_this_will_be_my_last_update_for_now_my/
-
-> "We believed (or at least hoped) she would settle and stay once she was admitted, but our guardianship status didn't matter if she refused to be there from the get-go."  
-> — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1ukr2i1/how_i_got_my_independent_and_helprejecting_mother/
-
 ## Tab 4 — Relationship Soundbites
+
+### 'We can't afford it' — 9 documents
+
+> "Her current assisted living told me if she wants to go back, we'd have to pay an additional $2000 a month which we can't afford."  
+> — reddit_post · r/CaregiverSupport · https://www.reddit.com/r/CaregiverSupport/comments/1vll32w/mom_being_discharged_from_hospital_back_to/
+
+> "Hi Natali I have spoken to my husband about that we can't afford to pay for carers to come in to wash and dress and shave him anymore, there isn't enough money to pay for that and our home, he said cancel them and he will wash and dress and shave himself, I told that he wasn't doing it properly and that I struggle doing his catheter with my back, I have been told that he has to agree to going into care home, as he is in early stages and can make decisions, if it was just his dementia that is challenging he has prostate cancer and can't see very well.i spend my time in my bedroom as he doesn't want me to sit with him in the lounge my health is getting worse and I can't look after him like I should"  
+> — youtube · How to get your loved one with dementia to go to a nursing home EVEN when they d · https://www.youtube.com/watch?v=gfjARly-TsY&lc=Ugz1Zyb_MPn6Lvavw-R4AaABAg
+
+> "I tell him I feel that they will auto draft his account ( $3,300 per month) until he cannot pay and then either expect me to pay or evict him when he doesn't qualify for medicaid.He gives me his word that this will not happen."  
+> — reddit_post · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/6jr4td/medicaid_qualifying_nightmare/
 
 ### 'I want to go home' — 6 documents
 
@@ -235,6 +246,17 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 
 > "She said she wanted to go home after rehab, so I stepped away and told her that if she thinks she is capable of going back to living alone, SHE will need to make all arrangements: transportation, dr appointments, shopping, etc.....It was at that point she FINALLY came to the conclusion she needs to be in an Assisted Living facility."  
 > — reddit_comment · r/eldercare · https://www.reddit.com/r/eldercare/comments/1vx4b11/i_told_my_grandfather_he_needs_to_go_into/p5tjnzm/
+
+### 'I'm fine, I don't need help' — 6 documents
+
+> "How many doctor's offices have you sat in with her while she tells them that except for some arthritis in her knee, she's fine?"  
+> — reddit_comment · r/dementia · https://www.reddit.com/r/dementia/comments/1r23wtb/she_should_be_at_home_with_a_caregiver_and_not_in/o4uoelo/
+
+> "I tell her that she doesn't need to worry about money and that she's fine and we are fine, but she won't let it go and always ends in tears for both of us."  
+> — reddit_comment ·  · https://www.reddit.com/r/dementia/comments/1t7yzfc/i_am_a_dementia_nurse_and_former_caregiver_back/okx36e9/
+
+> "About a day ago, my mom said she talked to the director over memory care about how she would like to have someone come and check on her throughout the night to make sure she's okay or is dressed for bed or maybe put her to bed if she hasn't been (unless she refuses)."  
+> — reddit_post · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/14xqthw/need_some_infoadvice_for_grandmother_in_assisted/
 
 ### 'Just put her in a home' — 5 documents
 
@@ -260,7 +282,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 
 ## Tab 5 — Frustrations
 
-### Costs, hidden fees and level-of-care increases — 29 documents
+### Costs, hidden fees and level-of-care increases — 39 documents
 
 > "Home medical equipment is outrageously priced."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1j6yu55/my_husband_was_floored_when_i_told_him_how_much/
@@ -271,7 +293,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "Quick catch up: After 15 months and 8 romance or romance-adjacent scams (today I learned about 2 more, making it 10), loss of $100k, with me unable to stop him despite trying absolutely EVERYTHING, he finally got picked up by police for reckless driving and was taken to the ER by his consent when he didn't know what year it was."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1w36qf4/romance_scam_dad_on_psych_hold_cars_gone_etc/
 
-### The parent's refusal and denial — 16 documents
+### The parent's refusal and denial — 19 documents
 
 > "After 10 scams and $100k lost over 15 months, as his behavior became increasingly erratic and he refused all help, he finally ended up being picked up by police for erratic driving and taken to the ER because he thought it was 2006."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1w7tup7/door_dashing_to_romance_scam_dad_in_extended_care/
@@ -282,7 +304,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "She gets desperate and angry.I try to explain to her what happened in the last 10 years but most of the times she refuses to believe and becomes even more agressive and paranoid"  
 > — reddit_post · r/Alzheimers · https://www.reddit.com/r/Alzheimers/comments/1uo3uuo/how_do_i_deal_with_trans_father_with_alzheimer/
 
-### Medicaid, Medicare and insurance rules — 11 documents
+### Medicaid, Medicare and insurance rules — 13 documents
 
 > "I read all your venting posts here - so much frustration when - as least for US Medicare patients - hospice is 100% covered."  
 > — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1198ylh/lets_talk_about_hospice_all_should_read/
@@ -293,18 +315,18 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "I hate how this state and insurance companies can be so heartless."  
 > — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1cwq34a/humana_refusing_to_pay_for_mothers_pt_medicade/
 
-### Unwanted calls from facilities and referral sites — 10 documents
+### Unwanted calls from facilities and referral sites — 11 documents
 
 > "We currently have 2 shifts of helpers coming into her assisted living to help her while we juggle the constant calls from the helpers about her melt downs due to dementia, coming to the end of her finances and deciding what to do next?"  
 > — youtube · The Brutal Reality about Caring for Elderly Parents No one Talks About · https://www.youtube.com/watch?v=a4etJo2_x7Y&lc=UgyzizoiFnmlYmmkebh4AaABAg.AGVGxI3ck8hAGgyCx8dxBo
 
+> "My grandma (who has an iPhone and can use it) would like to be able to have constant video/audio feed of my grandpa overnight while he is at the long term care facility."  
+> — reddit_post · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/18q8264/videoaudio_with_grandpa_in_long_term_care/
+
 > "They get kickbacks from nursing care facilities that's why they keep calling."  
 > — reddit_comment · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1kocgug/never_use_a_place_for_mom/msucxxm/
 
-> "They keep giving out my phone number to different facilities, so I am constantly getting unwanted calls."  
-> — trustpilot · A Place for Mom · https://www.trustpilot.com/reviews/67a2651c08df0863425c8217
-
-### Understaffing and neglect — 6 documents
+### Understaffing and neglect — 7 documents
 
 > "Even despite all of that he shouldn't be living there since it's too big to maintain, there's the risk of falling down the stairs and he very worryingly will not fully give up the keys since he threw an epic temper tantrum when I tried to take them when he back his 26 year old car out of the garage and seemed to want to take it for a spin around the neighborhood to “run the engine.” He been honestly a stubborn and insanely difficult person all of his life but dealing with him through all this has been an insane nightmare to the point of burning me out and exhausted dealing with him (sister-in-law said my mother should have divorced him decades ago since he has not changed his toxic ways as he got older) I don't think it's dementia - it's just him being a jerk and not thinking/ caring about the consequences of his actions which is a lifelong pattern of his as well as being too proud to face reality or adapt to his age."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1w1wvws/stubborn_father_refuses_to_downsize_despite_being/
@@ -315,20 +337,42 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "If they move into facilities, even cost prohibitive ones are often neglectful, & then all the resources are gone (btw, she used resources that had actually been inherited by my husband & he just let her, bc she was his mother, even though she was an absolutely terrible mother & awful person)."  
 > — reddit_comment · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1iz4i4p/aging_in_place_is_screwing_our_generation_over/mf1brwf/
 
+### Staff who don't answer or communicate — 6 documents
+
+> "I hate calling them (they never call me) because I just have to listen to all of their recent injuries and health problems."  
+> — reddit_comment · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1i6stm4/is_it_ok_to_allow_them_to_fail/m8fmbuk/
+
+> "Don't respond to the tears (there will be some), don't respond to the manipulation (she'll try) and the anger."  
+> — reddit_comment · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1q7yozb/ive_reached_my_breaking_point/nyld8h1/
+
+> "Still, I get upset when it takes a CNA or LPN more than ten minutes to answer my mom's call button while I'm there, and it's disconcerting when I call into the facility to check in mom and no one is manning the front desk photos (I've also observed during visits that the front desk is frequently empty and outside calls just keep ringing.) It's also pretty awful to see how curb some of these workers are with my mom when changing her and putting her to bed and such."  
+> — reddit_post · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/1bnwa32/is_there_a_private_consultantadvocate_i_can_hire/
+
+### A Place for Mom and referral sites — 5 documents
+
+> "I will not be using A Place For Mom; their service is terrible."  
+> — reddit_comment · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/17qs1wk/soliciting_senior_placement_agents/k8ker57/
+
+> "This did give us the time to visit the three other spots recommended by a Place for Mom, but that one awful week cost us > $10k and was not a good experience for the family at all."  
+> — trustpilot · A Place for Mom · https://www.trustpilot.com/reviews/69f4e4959d0e6a15bf241479
+
+> "A Place for Mom is a predatory nightmare."  
+> — trustpilot · A Place for Mom · https://www.trustpilot.com/reviews/69cc1fc0669f351846bab127
+
 ## Tab 6 — Previous Solutions
 
-### Touring communities — 147 documents
+### Touring communities — 157 documents
 
 > "We toured the activity room and had lunch with him."  
 > — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1sbsh34/i_left_my_dad_at_his_memory_care_today/
 
+> "I told them I would look at other places (and I did tour one of their recommended places, which had the exact same level of care), but in the meanwhile, asked to let us change one variable at a time, starting with neurology."  
+> — reddit_post · r/Parkinsons · https://www.reddit.com/r/Parkinsons/comments/1hh5op3/followup_to_parent_being_kicked_out_of_long_term/
+
 > "We toured facilities for them and they refused to even think about it."  
 > — reddit_comment · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1hvl7z2/dont_let_an_aging_parent_ruin_your_relationship/m5vv14t/
 
-> "When my Mom's dementia made her living on her own no longer an option, we toured the "chandelier" facilities along with small "board & care" homes."  
-> — reddit_comment · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1kd0hed/in_the_guardian_in_the_us_not_even_11000_a_month/mq8v1fn/
-
-### A Place for Mom and referral services — 142 documents
+### A Place for Mom and referral services — 155 documents
 
 > "I may be paranoid, but I suspect APFM has employees monitoring this sub because everytime anything negative about them comes up, a bunch of people rush in to defend them."  
 > — reddit_comment · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1kocgug/never_use_a_place_for_mom/mspjt8o/
@@ -339,18 +383,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "30 days to find a place for Mom and Dad."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1jmmomg/30_days_to_find_a_place_for_mom_and_dad/
 
-### Medicaid planning, elder law, VA benefits — 35 documents
-
-> "I got him in front of an elder care attorney in the middle of the crisis."  
-> — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1vf1z4k/its_time_for_the_talk/
-
-> "I contacted the hospital's ethics committee, spoke to a lawyer, and spent days researching the legal situation."  
-> — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1v4mxye/i_think_this_will_be_my_last_update_for_now_my/
-
-> "We could not afford memory care p,aces so we applied for Medicaid for him."  
-> — reddit_comment · r/dementia · https://www.reddit.com/r/dementia/comments/1p0vmfa/the_united_states_is_a_bad_place_for_folks_with/npnscsj/
-
-### In-home caregivers and agencies first — 34 documents
+### In-home caregivers and agencies first — 43 documents
 
 > "I hired part-time caregivers - she fired all three of them within 2 months."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1plxnr6/i_make_140k_and_still_cant_afford_my_moms_care/
@@ -361,7 +394,18 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "I used an Echo Show and the caregivers could not tell it was a camera."  
 > — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1qnu02i/put_a_camera_in_their_room_if_they_are_in_a/
 
-### Moving Mom or Dad in with us first — 8 documents
+### Medicaid planning, elder law, VA benefits — 39 documents
+
+> "I got him in front of an elder care attorney in the middle of the crisis."  
+> — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1vf1z4k/its_time_for_the_talk/
+
+> "I contacted the hospital's ethics committee, spoke to a lawyer, and spent days researching the legal situation."  
+> — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1v4mxye/i_think_this_will_be_my_last_update_for_now_my/
+
+> "We could not afford memory care p,aces so we applied for Medicaid for him."  
+> — reddit_comment · r/dementia · https://www.reddit.com/r/dementia/comments/1p0vmfa/the_united_states_is_a_bad_place_for_folks_with/npnscsj/
+
+### Moving Mom or Dad in with us first — 11 documents
 
 > "Our home would not work due to stairs and she needed more attention and socialization than we could provide so we moved her into self-pay assisted living 7 years ago."  
 > — youtube · How to Avoid Paying for an Elderly Parent's Nursing Home Bill · https://www.youtube.com/watch?v=SJNQOLKIMMM&lc=UgxhcNNBWjFcd1OqUpZ4AaABAg
@@ -396,7 +440,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 
 ## Tab 7 — Solution Soundbites
 
-### Someone to guide us through the options — 22 documents
+### Someone to guide us through the options — 28 documents
 
 > "Anyway, the issue is that we have begun to hire caregivers to check in on my mother so that there is someone to help if she falls in the shower (she doesn't need assistance, just wants the support), check that she takes her meds, and can get food (we're not sure that my mother can make her way back from the cafe consistently)."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/185221p/elderly_mother_is_being_obnoxious_about_obese/
@@ -407,7 +451,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "He also wouldn't follow directions for someone to help him."  
 > — reddit_comment · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1uclw0n/i_actually_want_help_understanding_why_adult/ot4xs5e/
 
-### Affordable, or one that takes Medicaid — 9 documents
+### Affordable, or one that takes Medicaid — 17 documents
 
 > "I can afford what I need."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1v3spn7/i_just_refused_a_lump_sum_cash_gift_from_my_mom/
@@ -420,7 +464,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 
 ## Tab 8 — Desired Outcomes
 
-### The best decision, should have done it sooner — 34 documents
+### The best decision, should have done it sooner — 36 documents
 
 > "We moved for dad, but it might really be the best thing for mom!"  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1meu2u0/rant_the_120k_ahole/
@@ -431,7 +475,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "Just keep your own peace, cut out the noise and bullshit, and work with professionals to do the best thing, not amateurs who are just running their mouths."  
 > — reddit_comment · r/dementia · https://www.reddit.com/r/dementia/comments/1r23wtb/she_should_be_at_home_with_a_caregiver_and_not_in/o4uas2b/
 
-### She's thriving, happier than at home — 33 documents
+### She's thriving, happier than at home — 35 documents
 
 > "Of course, Mom resisted for a bit, but she finally relented and still isn't very social, but she is happy."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1w3g2fn/i_have_to_brag_because_im_so_freaking_happy/
@@ -442,7 +486,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "I just hope she is happy in her own little world."  
 > — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1hllj93/i_would_like_to_tell_you_about_my_mother/
 
-### Peace of mind: she's safe and someone is there — 27 documents
+### Peace of mind: she's safe and someone is there — 34 documents
 
 > "The doctors narrowed down her meds to a select few and being on hospice allowed all of us the peace of mind that a sudden medical event wouldn't put her in a hospital or facility where she'd be w strangers, disoriented and afraid."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1nygdpy/mom_passed_away/
@@ -450,10 +494,10 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "But I will say, he is safe and not scared and paranoid so I'm grateful!"  
 > — reddit_post · r/Alzheimers · https://www.reddit.com/r/Alzheimers/comments/1n3l47b/memory_care_center/
 
-> "You deserve peace of mind, healing and happiness."  
-> — reddit_comment · r/CaregiverSupport · https://www.reddit.com/r/CaregiverSupport/comments/1fvizgb/i_dont_want_to_do_this_anymore_and_im_so_angry/lq8eu30/
+> "Also keep in mind, if your LO is unable to stand/walk, a 2 people transfer please consider looking into a nursing home for your LO's peace of mind, to avoid the negative nasty comments aids will make."  
+> — reddit_post · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/1kyorry/years_of_working_in_a_assisted_living_facility/
 
-### Staff who feel like family — 12 documents
+### Staff who feel like family — 14 documents
 
 > "The caregivers are amazing."  
 > — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1rh9xu9/fil_moved_to_memory_care_mil_on_the_warpath_this/
@@ -464,7 +508,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "The routines surprisingly did her well, she enjoys the programs, and the staff are kind and take good care of her."  
 > — reddit_comment · r/dementia · https://www.reddit.com/r/dementia/comments/1sbsh34/i_left_my_dad_at_his_memory_care_today/oe62b3i/
 
-### I got my life and our relationship back — 5 documents
+### I got my life and our relationship back — 8 documents
 
 > "I want my life back!"  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1p5trpx/i_despise_my_dad_for_making_me_his_caregiver/
@@ -477,29 +521,18 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 
 ## Tab 9 — Typical Day
 
-### Visiting every day — 52 documents
+### Visiting every day — 63 documents
 
 > "You need to visit every day at different times when you're responsible for someone's care."  
 > — youtube · If You Can’t Live Alone, Don’t Go to Nursing Homes—Do This Instead From a Nurse · https://www.youtube.com/watch?v=8eDkUESXZbI&lc=UgxW_eWk-uCaydPaE5p4AaABAg
 
-> "Or, if he is put into a facility, I can be close by to visit him daily or weekly."  
-> — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1tmtl7j/my_39yearold_identical_twin_has_dementia_ftd/
+> "Since then I've been visiting him with my wife weekly, my mom coming in to see him twice a week."  
+> — reddit_post · r/Parkinsons · https://www.reddit.com/r/Parkinsons/comments/vvsxhi/fuck_parkinsons/
 
 > "He has a home health aide there daily, is supposed to have a visiting nurse but the service stopped coming to his home bc it was too dangerous."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1pf1dgu/my_dads_caseworker_called_me_says_hes_using_drugs/
 
-### The phone calls — 49 documents
-
-> "She called me and said she'd fallen and bumped her knee."  
-> — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1usalwu/i_wanted_my_freedom_then_my_mom_was_gone/
-
-> "She moved in on Monday and just called me in tears to say how much the loves it, how pleasant the staff and residents have been, and how much she appreciates everything I did for her."  
-> — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1m7kjkv/moved_mom_into_assisted_living/
-
-> "When I got to my car to drive home, she called me."  
-> — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1sylh1m/it_was_me_mom_it_was_me/
-
-### Nights, sundowning and 2am calls — 47 documents
+### Nights, sundowning and 2am calls — 61 documents
 
 > "My wife woke me up to ask if I was her husband"  
 > — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1q0bdaw/my_wife_woke_me_up_to_ask_if_i_was_her_husband/
@@ -510,18 +543,18 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "She would go walking in the middle of the night and get lost."  
 > — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1hllj93/i_would_like_to_tell_you_about_my_mother/
 
-### Laundry, meds, appointments, groceries — 36 documents
+### The phone calls — 56 documents
 
-> "There, she continued to take care of him, going there for about 5 hours every day, doing his laundry, choosing his favorite foods, and even giving him pt after Medicare said that he didn't need it because he had improved as much as he could and denied coverage."  
-> — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1w3g2fn/i_have_to_brag_because_im_so_freaking_happy/
+> "She called me and said she'd fallen and bumped her knee."  
+> — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1usalwu/i_wanted_my_freedom_then_my_mom_was_gone/
 
-> "I took over managing her multiple medical problems, cooked healthy meals every day (she lost ~75 pounds, cut her insulin use to ~10% of what she had been taking, and got off oxygen and CPAP!), took her to all Dr.'s appointments, filed for VA Aid and Attendance benefits, had POA/Advance Directives/a Will drawn up, and sold her house (for a song, but it had to happen)."  
+> "She moved in on Monday and just called me in tears to say how much the loves it, how pleasant the staff and residents have been, and how much she appreciates everything I did for her."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1m7kjkv/moved_mom_into_assisted_living/
 
-> "She could still manage basic daily tasks, but I had taken over finances, medications, driving, and appointments."  
-> — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1tg6eak/my_watch_has_ended_a_timeline_if_helpful/
+> "When I got to my car to drive home, she called me."  
+> — reddit_post · r/dementia · https://www.reddit.com/r/dementia/comments/1sylh1m/it_was_me_mom_it_was_me/
 
-### Managing her care around a full-time job — 32 documents
+### Managing her care around a full-time job — 49 documents
 
 > "I missed a week of work, working nonstop all day to help orchestrate, pack, move, etc."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1meu2u0/rant_the_120k_ahole/
@@ -532,7 +565,18 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 > "Woke up this morning realizing that will never work, and they do not get a choice."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1w0y12z/assisted_living_now_i_am_done_looking_for/
 
-### Falls, ER trips and hospital runs — 23 documents
+### Laundry, meds, appointments, groceries — 47 documents
+
+> "There, she continued to take care of him, going there for about 5 hours every day, doing his laundry, choosing his favorite foods, and even giving him pt after Medicare said that he didn't need it because he had improved as much as he could and denied coverage."  
+> — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1w3g2fn/i_have_to_brag_because_im_so_freaking_happy/
+
+> "I took over managing her multiple medical problems, cooked healthy meals every day (she lost ~75 pounds, cut her insulin use to ~10% of what she had been taking, and got off oxygen and CPAP!), took her to all Dr.'s appointments, filed for VA Aid and Attendance benefits, had POA/Advance Directives/a Will drawn up, and sold her house (for a song, but it had to happen)."  
+> — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1m7kjkv/moved_mom_into_assisted_living/
+
+> "Stove left on, meds forgotten, wandering at night looking for my dad (he died 4 years ago)."  
+> — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1plxnr6/i_make_140k_and_still_cant_afford_my_moms_care/
+
+### Falls, ER trips and hospital runs — 24 documents
 
 > "My dad is in the hospital again as of last night, and I just got home from there."  
 > — reddit_post · r/AgingParents · https://www.reddit.com/r/AgingParents/comments/1mhhoqi/mourning_who_my_parents_used_to_be/
@@ -547,14 +591,14 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-family-buyers
 
 | Worry | Typed | Watched videos | Views | Spoke | Ads |
 |---|---|---|---|---|---|
-| Money running out, selling the house, Medicaid spend-down | 60 | 33 | 856,149 | 138 | 123 |
+| Money running out, selling the house, Medicaid spend-down | 60 | 33 | 856,149 | 184 | 123 |
 | Guilt, the broken promise, 'putting her in a home' | 3 | 14 | 46,137 | 14 | 0 |
-| Relief or resentment they would not say out loud | 0 | 1 | 264 | 63 | 18 |
+| Relief or resentment they would not say out loud | 0 | 1 | 264 | 66 | 18 |
 | Siblings fighting over placement and money | 0 | 19 | 1,342,058 | 0 | 0 |
-| Lying to the parent about the move | 1 | 0 | 0 | 6 | 2 |
-| Parent begs to come home, hates it | 2 | 4 | 89,048 | 13 | 0 |
-| Fear of neglect, falls, abuse inside the facility | 2 | 29 | 458,046 | 147 | 114 |
-| Hidden fees, level-of-care increases, being asked to leave | 1 | 14 | 1,574,519 | 96 | 162 |
+| Lying to the parent about the move | 1 | 0 | 0 | 7 | 2 |
+| Parent begs to come home, hates it | 2 | 4 | 89,048 | 15 | 0 |
+| Fear of neglect, falls, abuse inside the facility | 2 | 29 | 458,046 | 194 | 114 |
+| Hidden fees, level-of-care increases, being asked to leave | 1 | 14 | 1,574,519 | 151 | 162 |
 
 - **Money running out, selling the house, Medicaid spend-down** typed: can i afford assisted living · can i afford independent living · can i afford senior living · can most people afford assisted living · can t afford assisted living · can t afford assisted living reddit · can't afford assisted living · can't afford assisted living reddit · cost of assisted living · does medicaid pay for assisted living · elderly parent can t afford assisted living · elderly who can t afford assisted living
 - **Guilt, the broken promise, 'putting her in a home'** typed: guilt over putting mom in assisted living · how to deal with guilt of putting parent in nursing home · why do i feel guilty about putting my mom in assisted living
@@ -737,10 +781,10 @@ Please remember:
 ## Why They Buy (Ad Brief)
 
 ### 1. Why they buy
-The parent can no longer be safe alone, the family is worn down by nights, calls and ER runs, and the money has a deadline. Evidence: Fears tab (56 / 46 / 12); Typical Day (47 / 23).
+The parent can no longer be safe alone, the family is worn down by nights, calls and ER runs, and the money has a deadline. Evidence: Fears tab (67 / 53 / 15); Typical Day (61 / 24).
 
 ### 2. Recurring problems and frustrations
-Costs, hidden fees and level-of-care increases (29); the parent's refusal (16); Medicaid rules (11); unwanted calls after one inquiry (10). Reviews by Star shows the same two complaints at one star.
+Costs, hidden fees and level-of-care increases (39); the parent's refusal (19); Medicaid rules (13); unwanted calls after one inquiry (11). Reviews by Star shows the same two complaints at one star.
 
 ### 3. Questions and objections that stop them
 How do we pay for this (autocomplete: 'can't afford assisted living', 'how to pay for assisted living'); will they neglect her ('assisted living red flags'); what happens when she needs more care ('can someone be kicked out of assisted living'); how do I tell mom ('how to tell your mom she is moving to assisted living'). Each is on Silent Searches with its phrases.

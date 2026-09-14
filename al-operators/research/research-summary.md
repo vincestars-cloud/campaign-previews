@@ -1,12 +1,12 @@
 # Assisted Living: Owners & Operators (6+ beds) — Research Summary
 
-Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/research/ · Researched 2026-09-14 · refresh due 2027-03-14 · 138 buyer documents in this voice of 30,045 read
+Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/research/ · Researched 2026-09-14 · refresh due 2027-03-14 · 145 buyer documents in this voice of 37,793 read
 
 ## TLDR
 
-- Who: 138 documents from running operators of residential care homes, RCFEs, adult family homes and assisted living communities (six or more beds, or bed count not stated). Would-be owners, placement agents, vendors, home-care-agency owners and disability group homes are counted separately or excluded.
-- Their problem in their words: empty beds and no residents coming (29 documents), placement agents who charge most or all of the first month (18 documents) and Medicaid waiver and MCO contracts that do not send residents (26 documents).
-- How they fill beds today (Lead Sources): Medicaid waiver and MCO programs (27 operator documents), placement agents (11), hospitals, discharge planners and case managers (14), hospice and home health partners (9), flyers and networking; paid directories barely appear in their own voice (1).
+- Who: 145 documents from running operators of residential care homes, RCFEs, adult family homes and assisted living communities (six or more beds, or bed count not stated). Would-be owners, placement agents, vendors, home-care-agency owners and disability group homes are counted separately or excluded.
+- Their problem in their words: empty beds and no residents coming (28 documents), placement agents who charge most or all of the first month (20 documents) and Medicaid waiver and MCO contracts that do not send residents (26 documents).
+- How they fill beds today (Lead Sources): Medicaid waiver and MCO programs (27 operator documents), placement agents (11), hospitals, discharge planners and case managers (15), hospice and home health partners (9), flyers and networking; paid directories barely appear in their own voice (1).
 - Who sells to them: 100 ads from 10 vendors sell move-ins, booked tours and inquiries to running communities; 63 ads sell operations (compliance, scheduling, pharmacy, falls, funding); 92 ads sell a placement business to would-be advisors; 49 ads sell start-up programs to would-be owners.
 - What the vendors promise (verbatim, landing pages): 'You don't need more leads. You need more move-ins.' (Occupancy Partners) · '20 Booked, Confirmed Private-Pay Tours On Your Calendar In Your First 90 Days. Or You Don't Pay Until We Do.' · 'Fill Your Beds Without Depending On Referral Agencies.' (Talexyus) · 'WE'LL GUARANTEE YOU 90 BOOKED TOURS IN 90 DAYS' (TroutLeads).
 - The lane (hypothesis): an owned referral channel that replaces the placement agent's cut, sized for small homes, with the operator keeping the family relationship.
@@ -50,9 +50,9 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 
 ### What stops them
 
-- Placement fees (18)
+- Placement fees (20)
 - Contracting with MCOs and waiver programs (26)
-- Marketing to hospitals and doctors that brings nothing (10)
+- Marketing to hospitals and doctors that brings nothing (11)
 
 ### Where they are
 
@@ -76,10 +76,10 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 
 ## Tab 1 — Fears
 
-### Empty beds and no residents coming — 29 documents
+### Empty beds and no residents coming — 28 documents
 
-> "Ideas to increase clients I recently purchased an RCFE in California but I am truly struggling to fill my beds."  
-> — reddit_post · r/assistedliving · https://www.reddit.com/r/AssistedLiving/comments/18tntqh/ideas_to_increase_clients/
+> "I recently purchased an RCFE in California but I am truly struggling to fill my beds."  
+> — reddit_post · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/18tntqh/ideas_to_increase_clients/
 
 > "Most vacancy problems are a leaky pipeline, not a demand problem, and you can't fix what you don't measure."  
 > — fb_comment · ADULT FAMILY HOME GROUP OF WASHINGTON · https://www.facebook.com/groups/448686879807645/posts/1789746662368320
@@ -93,10 +93,10 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 
 ## Tab 2 — Hopes & Dreams
 
-### A full house with a waiting list — 18 documents
+### A full house with a waiting list — 17 documents
 
 > "When you ask, she says the bag isn't full, but it clearly needs to go outside."  
-> — reddit_post · r/assistedliving · https://www.reddit.com/r/AssistedLiving/comments/e2498u/signs_your_loved_one_may_be_ready_for_assisted/
+> — reddit_post · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/e2498u/signs_your_loved_one_may_be_ready_for_assisted/
 
 > "Here's some answers and content for the community: Since nothing here requires a Zoom to explain — here's what actually fills beds and builds a waitlist: 1."  
 > — fb_comment · ADULT FAMILY HOME GROUP OF WASHINGTON · https://www.facebook.com/groups/448686879807645/posts/1789746662368320
@@ -107,12 +107,12 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 #### Would-be owners (not counted above)
 
 - A full house with a waiting list — 9
-- Private-pay residents — 4
+- Private-pay residents — 5
 - More homes, more beds — 3
 
 ## Tab 3 — Relationship Fears
 
-### MCOs, case managers and social workers who don't send anyone — 28 documents
+### MCOs, case managers and social workers who don't send anyone — 27 documents
 
 > "that's what I did I ain't wait on no MCO I WENT TO FIND THEM YOUR SELF"  
 > — fb_comment · Wisconsin Adult Family Home Networking Group · https://www.facebook.com/groups/201561673732649/posts/1779521662603301
@@ -123,7 +123,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 > "The MCOs are expecting newly licensed homes to wait a year of being licensed to even contract with new homes as well as they aren't accepting contracts in certain areas because they've reached their limit of providers they need in that area."  
 > — fb_comment · Wisconsin Adult Family Home Networking Group · https://www.facebook.com/groups/201561673732649/posts/1766011150621019
 
-### Caregivers and staff — 12 documents
+### Caregivers and staff — 11 documents
 
 > "We bought two residential homes turned them into senior/mental health facilities and we have living caregivers aids there as well."  
 > — youtube · The 2-Bedroom Rental That Makes $30,000/Month! (Assisted Living) · https://www.youtube.com/watch?v=e_hF_qArFXI&lc=UgwlpUMEBaQL8VKEI414AaABAg
@@ -147,8 +147,9 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 
 #### Would-be owners (not counted above)
 
-- MCOs, case managers and social workers who don't send anyone — 9
-- Caregivers and staff — 4
+- MCOs, case managers and social workers who don't send anyone — 10
+- Caregivers and staff — 8
+- Residents' families: payment and expectations — 3
 
 ## Tab 4 — Relationship Soundbites
 
@@ -163,16 +164,16 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 > "Only people I know with new locations that are doing good had group homes already and existing relationships with case managers and MCOs!"  
 > — fb_comment · Wisconsin Adult Family Home Networking Group · https://www.facebook.com/groups/201561673732649/posts/1958531208035678
 
-### 'Placement agents charge the whole first month' — 14 documents
+### 'Placement agents charge the whole first month' — 15 documents
+
+> "I am a senior placement consultant who works with families throughout the Bay Area, and I completely understand how overwhelming this process can feel when you're just starting out."  
+> — reddit_comment · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/1ver0yj/where_to_begin/p2ofi67/
 
 > "Here is the challenge and where I think it is important for the referral agent to do their homework and let me know the budget that the client can afford."  
 > — fb_comment · AFH Group home providers & Care givers · https://www.facebook.com/groups/111741582223702/posts/2032922873438887
 
 > "I personally do not like placement agencies, unless it's necessary."  
 > — youtube · Placement Agents | Assisted Living Business Tips · https://www.youtube.com/watch?v=dl-1G3f5a0E&lc=UgyTwGWpeR14pRiowVl4AaABAg
-
-> "I don't really advertise my homes but I do let my network of people (placement agents, hospices, case managers, etc) who help me fill my beds when I have a vacancy."  
-> — youtube · Starting an Assisted Living Home for beginners | Residential Assisted Living · https://www.youtube.com/watch?v=JUTV80jUHSI&lc=UgyfJq5_lHuDRSzRTdd4AaABAg.95hwtZgnfqe95kM7PWpJrs
 
 ### 'Word of mouth is still the best' — 6 documents
 
@@ -198,7 +199,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 > "The MCOs are expecting newly licensed homes to wait a year of being licensed to even contract with new homes as well as they aren't accepting contracts in certain areas because they've reached their limit of providers they need in that area."  
 > — fb_comment · Wisconsin Adult Family Home Networking Group · https://www.facebook.com/groups/201561673732649/posts/1766011150621019
 
-### Placement fees: 50 to 100 percent of the first month — 18 documents
+### Placement fees: 50 to 100 percent of the first month — 20 documents
 
 > "Hospital discharge planners, SNF social workers, hospice, home health, and AAA case managers are where real placements originate — but most operators build that list once and never revisit it."  
 > — fb_comment · ADULT FAMILY HOME GROUP OF WASHINGTON · https://www.facebook.com/groups/448686879807645/posts/1789746662368320
@@ -206,10 +207,10 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 > "Funding has also been changing with MCOs preferring a CBRF placement over AFH to save money with the new State driven minimum rate requirements."  
 > — fb_comment · Wisconsin Adult Family Home Networking Group · https://www.facebook.com/groups/201561673732649/posts/1766011150621019
 
-> "As a licensee and administrator you have to manage family expectations, be a consular, be able to provide honest tours to families, reach out to placement agencies and keep a positive reputation."  
-> — fb_comment · Rcfe Owners Network Group · https://www.facebook.com/groups/352285274494478/posts/893908616998805
+> "I am a senior placement consultant who works with families throughout the Bay Area, and I completely understand how overwhelming this process can feel when you're just starting out."  
+> — reddit_comment · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/1ver0yj/where_to_begin/p2ofi67/
 
-### Marketing to hospitals and doctors that brings nothing — 10 documents
+### Marketing to hospitals and doctors that brings nothing — 11 documents
 
 > "U have to go out in get them yourself go pass out flyer like all the time .."  
 > — fb_comment · Wisconsin Adult Family Home Networking Group · https://www.facebook.com/groups/201561673732649/posts/1779521662603301
@@ -217,30 +218,30 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 > "Hospital discharge planners, SNF social workers, hospice, home health, and AAA case managers are where real placements originate — but most operators build that list once and never revisit it."  
 > — fb_comment · ADULT FAMILY HOME GROUP OF WASHINGTON · https://www.facebook.com/groups/448686879807645/posts/1789746662368320
 
-> "I have fecal incontinence - have word diapers for six months - the pain of anal cancer is sometimes agonising - I was assessed while in hospital two weeks ago (inpatient for a week) that I am a serious fall risk and I can only stand with th ehelp of a walker for 1.5 minutes at a time."  
-> — reddit_comment · r/assistedliving · https://www.reddit.com/r/AssistedLiving/comments/1dc5o7x/i_am_male_64_and_have_stage_4_cancer_with_a/l87oqf2/
+> "Medicare does pay for limited SNF stays, if going there straight from a hospital stay."  
+> — reddit_comment · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/16debo7/i_need_advice_for_my_dad/jzoy8m3/
 
-### Vendors, scams and lead sellers — 4 documents
+### Vendors, scams and lead sellers — 3 documents
 
 > "Any ideas or vendors I can reach out to...."  
-> — reddit_post · r/assistedliving · https://www.reddit.com/r/AssistedLiving/comments/18tntqh/ideas_to_increase_clients/
+> — reddit_post · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/18tntqh/ideas_to_increase_clients/
 
 > "I personally choose not to use “A Place for Mom”."  
 > — youtube · Placement Agents | Assisted Living Business Tips · https://www.youtube.com/watch?v=dl-1G3f5a0E&lc=UgyTwGWpeR14pRiowVl4AaABAg
 
-> "Building a Residential Assisted Living Facility – Looking for Vendor Recommendations!"  
-> — fb_group · Residential Care Homes Owners/Operators · https://www.facebook.com/groups/732719531430807/posts/1574642110571874
+> "I am an Iris vendor, but no leads after marketing"  
+> — fb_comment · Wisconsin Adult Family Home Networking Group · https://www.facebook.com/groups/201561673732649/posts/1891645311390935
 
 #### Would-be owners (not counted above)
 
-- Medicaid waiver and MCO contracts: getting on them, getting paid — 10
-- Marketing to hospitals and doctors that brings nothing — 5
+- Medicaid waiver and MCO contracts: getting on them, getting paid — 12
+- Marketing to hospitals and doctors that brings nothing — 7
+- Licensing delays and red tape — 4
 - Placement fees: 50 to 100 percent of the first month — 3
-- Licensing delays and red tape — 3
 
 ## Tab 6 — Previous Solutions
 
-### MCO, waiver and Medicaid contracts — 22 documents
+### MCO, waiver and Medicaid contracts — 21 documents
 
 > "that's what I did I ain't wait on no MCO I WENT TO FIND THEM YOUR SELF"  
 > — fb_comment · Wisconsin Adult Family Home Networking Group · https://www.facebook.com/groups/201561673732649/posts/1779521662603301
@@ -251,7 +252,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 > "The MCOs are expecting newly licensed homes to wait a year of being licensed to even contract with new homes as well as they aren't accepting contracts in certain areas because they've reached their limit of providers they need in that area."  
 > — fb_comment · Wisconsin Adult Family Home Networking Group · https://www.facebook.com/groups/201561673732649/posts/1766011150621019
 
-### Hospitals, discharge planners, case managers, social workers — 17 documents
+### Hospitals, discharge planners, case managers, social workers — 18 documents
 
 > "To help with feeding, bathing, incontinence care, medication management, physical and social well-being and at the end of life provide hospice care."  
 > — fb_comment · Redwood City Residents Say: "What?" · https://www.facebook.com/groups/709200909129615/posts/4376491562400513
@@ -259,19 +260,19 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 > "Just know if you put her in a SNF she ABSOLUTELY will be neglected and abused."  
 > — fb_comment · Orange Buzz II · https://www.facebook.com/groups/Orangebuzzll/posts/1744823959709149
 
-> "In addition to clinical care, we offer outpatient rehabilitation services through our partnership with [Genesis Rehab]( to help our residents regain or retain their optimal level of independence."  
-> — reddit_post · r/assistedliving · https://www.reddit.com/r/AssistedLiving/comments/e2498u/signs_your_loved_one_may_be_ready_for_assisted/
+> "In addition to clinical care, we offer outpatient rehabilitation services through our partnership with [Genesis Rehab](https://kensingtonparkseniorliving.com/rehabilitation-services/), to help our residents regain or retain their optimal level of independence."  
+> — reddit_post · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/e2498u/signs_your_loved_one_may_be_ready_for_assisted/
 
 ### Google, a website and Facebook — 11 documents
 
 > "My suggestion put an ad out looking for a private home for her to live in."  
 > — fb_comment · Orange Buzz II · https://www.facebook.com/groups/Orangebuzzll/posts/1744823959709149
 
-> "My top factors were a well-optimized website, strategic social/SEO campaigns, and targeted ads to ensure that when potential customers find you, they're guided smoothly toward becoming loyal clients."  
-> — reddit_post · r/seniorlivingmarketing · https://www.reddit.com/r/SeniorLivingMarketing/comments/1jan007/how_ive_gotten_more_leads_at_my_assisted_living/
-
 > "Google reviews and your Business Profile are now a direct family-search channel, not just a nice-to-have."  
 > — fb_comment · ADULT FAMILY HOME GROUP OF WASHINGTON · https://www.facebook.com/groups/448686879807645/posts/1789746662368320
+
+> "My top factors were a well-optimized website, strategic social/SEO campaigns, and targeted ads to ensure that when potential customers find you, they're guided smoothly toward becoming loyal clients."  
+> — reddit_post · r/SeniorLivingMarketing · https://www.reddit.com/r/SeniorLivingMarketing/comments/1jan007/how_ive_gotten_more_leads_at_my_assisted_living/
 
 ### Placement agencies and referral services — 9 documents
 
@@ -284,21 +285,23 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 > "I don't really advertise my homes but I do let my network of people (placement agents, hospices, case managers, etc) who help me fill my beds when I have a vacancy."  
 > — youtube · Starting an Assisted Living Home for beginners | Residential Assisted Living · https://www.youtube.com/watch?v=JUTV80jUHSI&lc=UgyfJq5_lHuDRSzRTdd4AaABAg.95hwtZgnfqe95kM7PWpJrs
 
-### Flyers, open houses and visits to doctors — 7 documents
+### Flyers, open houses and visits to doctors — 6 documents
 
 > "U have to go out in get them yourself go pass out flyer like all the time .."  
 > — fb_comment · Wisconsin Adult Family Home Networking Group · https://www.facebook.com/groups/201561673732649/posts/1779521662603301
 
-> "#AssistedLiving #ResidentialCare #SeniorLiving #SmallBusiness #Networking"  
-> — fb_group · Residential Care Homes Owners/Operators · https://www.facebook.com/groups/732719531430807/posts/1574642110571874
-
 > "ASHA primarily focuses on legislative and regulatory advocacy, research, and educational opportunities and networking for paid member senior living executives so they can better understand the needs of older adults across the country and promote senior living."  
 > — forum ·  · https://www.whereyoulivematters.org/resources/senior-placement-services-how-do-they-work
 
+> "Work on networking with other RAL owner/operators in your area."  
+> — youtube · How To Start Your Own RESIDENTIAL Assisted Living Business And Get Licensed In J · https://www.youtube.com/watch?v=7JdBofvLbMQ&lc=Ugym8IZBICY_nifuuWl4AaABAg.A1NXxEl7MDUA1NwhKKzJkB
+
 #### Would-be owners (not counted above)
 
-- Hospitals, discharge planners, case managers, social workers — 10
-- MCO, waiver and Medicaid contracts — 7
+- Hospitals, discharge planners, case managers, social workers — 12
+- MCO, waiver and Medicaid contracts — 8
+- Flyers, open houses and visits to doctors — 3
+- Google, a website and Facebook — 3
 
 ## Tab 7 — Solution Soundbites
 
@@ -315,27 +318,27 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 
 ### Asking for marketing help or a mentor — 4 documents
 
+> "I am a senior placement consultant who works with families throughout the Bay Area, and I completely understand how overwhelming this process can feel when you're just starting out."  
+> — reddit_comment · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/1ver0yj/where_to_begin/p2ofi67/
+
 > "I have noticed that many members are responding here, stating that they had to hire a consultant to assist with the ALW application."  
 > — fb_comment · Rcfe Owners Network Group · https://www.facebook.com/groups/352285274494478/posts/946350475087952
 
 > "Before opening my home, I spent 15 years as a parent educator and coach, building a successful coaching business, authoring best-selling books, and speaking on international stages."  
 > — fb_group · ADULT FAMILY HOME GROUP OF WASHINGTON · https://www.facebook.com/groups/448686879807645/posts/1594322331910755
 
-> "He thinks an Adult Family Home Providers Business Association should be formed to protect the business interests of the providers against exploitation by consultants, referral agents and others that are angling to partake in the festivities."  
-> — fb_group · Spokane Area Adult Family Homes · https://www.facebook.com/groups/spokaneadultfamilyhomes/posts/6211134818953292
-
 #### Would-be owners (not counted above)
 
-- Asking for marketing help or a mentor — 11
-- A referral source that doesn't take the first month — 6
-- Private-pay families who find us directly — 4
+- Asking for marketing help or a mentor — 12
+- A referral source that doesn't take the first month — 7
+- Private-pay families who find us directly — 5
 
 ## Tab 8 — Desired Outcomes
 
-### Beds full, a waitlist — 15 documents
+### Beds full, a waitlist — 14 documents
 
 > "When you ask, she says the bag isn't full, but it clearly needs to go outside."  
-> — reddit_post · r/assistedliving · https://www.reddit.com/r/AssistedLiving/comments/e2498u/signs_your_loved_one_may_be_ready_for_assisted/
+> — reddit_post · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/e2498u/signs_your_loved_one_may_be_ready_for_assisted/
 
 > "Here's some answers and content for the community: Since nothing here requires a Zoom to explain — here's what actually fills beds and builds a waitlist: 1."  
 > — fb_comment · ADULT FAMILY HOME GROUP OF WASHINGTON · https://www.facebook.com/groups/448686879807645/posts/1789746662368320
@@ -343,31 +346,31 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 > "Our team was stressed, I was stressed and we just couldn't figure out how to keep the beds full."  
 > — fb_group · # Home Health Care Agency Owners & Entrepreneurs | 5 years ago almost to the day · https://www.facebook.com/groups/1154838852454654/posts/1713772809894586
 
-### Profitable, paying the bills — 8 documents
+### Profitable, paying the bills — 11 documents
 
-> "We were cashflow positive, starting to better understand the business and get things down."  
-> — fb_group · # Home Health Care Agency Owners & Entrepreneurs | 5 years ago almost to the day · https://www.facebook.com/groups/1154838852454654/posts/1713772809894586
+> "Independent living can sometimes be found around $3,000–$4,000 per month, depending on the community and location."  
+> — reddit_comment · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/1ver0yj/where_to_begin/p2ofi67/
 
-> "We were cashflow positive, starting to better understand the business and get things down."  
-> — fb_group · Rcfe Owners Network Group · https://www.facebook.com/groups/352285274494478/posts/976832502039749
+> "Where I live, AL is about $6K a month, but regular retirement apartment with no assistance is about $4K a month."  
+> — reddit_comment · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/16debo7/i_need_advice_for_my_dad/jzoy8m3/
 
-> "We were cashflow positive, starting to better understand the business and get things down."  
-> — fb_group · Senior Living & Healthcare · https://www.facebook.com/groups/472347756462115/posts/2640348512995351
+> "After running the numbers, the model still pencils out as very profitable."  
+> — reddit_comment · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/1wayy1t/i_have_20_homes_in_socal_i_want_to_convert_to/p8mk5bw/
 
 #### Would-be owners (not counted above)
 
 - Beds full, a waitlist — 8
-- Profitable, paying the bills — 5
+- Profitable, paying the bills — 6
 
 ## Tab 9 — Typical Day
 
 ### Running the home day to day — 6 documents
 
+> "✅ 24/7 Care."  
+> — reddit_post · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/1bv37bs/i_own_an_assisted_living_facility/
+
 > "Thank you for the incredible work you do every day for your residents, families, and teams."  
 > — fb_group · ADULT FAMILY HOME GROUP OF WASHINGTON · https://www.facebook.com/groups/448686879807645/posts/1594322331910755
-
-> "We hear these concerns every day."  
-> — fb_group · Senior Placement Network · https://www.facebook.com/groups/2447813518868667/posts/4056900671293269
 
 > "We're a licensed Adult Family Home with current openings for seniors needing 24/7 care."  
 > — fb_group · ADULT FAMILY HOME GROUP OF WASHINGTON · https://www.facebook.com/groups/448686879807645/posts/1706141074062213
@@ -376,13 +379,13 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-operators/res
 
 | Worry | Typed | Watched videos | Views | Spoke | Ads |
 |---|---|---|---|---|---|
-| Empty beds, low census, private pay drying up | 1 | 7 | 6,088 | 4 | 80 |
+| Empty beds, low census, private pay drying up | 1 | 7 | 6,088 | 3 | 80 |
 | Paying placement agents 50-100% of first month | 12 | 11 | 10,519 | 0 | 14 |
-| Can't make payroll, losing money | 0 | 7 | 62,834 | 6 | 14 |
+| Can't make payroll, losing money | 0 | 7 | 62,834 | 5 | 14 |
 | Caregivers no-show, overtime, turnover | 0 | 20 | 10,179 | 0 | 4 |
 | State survey, citations, license at risk, lawsuits | 1 | 29 | 120,546 | 1 | 1 |
-| Selling or closing the facility, burnout | 0 | 2 | 882 | 2 | 1 |
-| Difficult residents and families, discharge, non-payment | 0 | 1 | 136 | 1 | 0 |
+| Selling or closing the facility, burnout | 0 | 2 | 882 | 3 | 1 |
+| Difficult residents and families, discharge, non-payment | 0 | 1 | 136 | 2 | 0 |
 
 - **Empty beds, low census, private pay drying up** typed: how to get residents for assisted living
 - **Paying placement agents 50-100% of first month** typed: agency placement fee · assisted living placement services near me · how to start a placement agency · how to start a senior placement agency · new life opportunities placement agency · placement agency · placement agency assisted living · placement agency business plan · placement agency registration · placement agency registration process · placement agent assisted living jobs · placement in aged care
@@ -394,13 +397,13 @@ Measured hiding: 0 first-person sentences keep something from their spouse, inve
 
 | Source | Operator docs | Would-be owners | Worked | Burned | Asking |
 |---|---|---|---|---|---|
-| Medicaid waiver / MCO / state programs (CADI, IRIS, ALW, DDS) | 27 | 12 | 0 | 1 | 5 |
-| Hospitals, discharge planners, case managers, social workers | 14 | 9 | 2 | 0 | 1 |
+| Medicaid waiver / MCO / state programs (CADI, IRIS, ALW, DDS) | 27 | 14 | 0 | 1 | 4 |
+| Hospitals, discharge planners, case managers, social workers | 15 | 11 | 2 | 0 | 1 |
 | Placement agents and referral agencies | 11 | 2 | 2 | 1 | 3 |
-| Hospice and home health partners | 9 | 7 | 1 | 0 | 0 |
-| Google / website / Google Business Profile | 7 | 2 | 0 | 0 | 0 |
-| Doctors' offices, churches, senior centers, networking | 5 | 3 | 2 | 0 | 2 |
+| Hospice and home health partners | 9 | 8 | 1 | 0 | 0 |
+| Google / website / Google Business Profile | 7 | 3 | 0 | 0 | 0 |
 | Facebook / social media / paid ads | 5 | 1 | 1 | 0 | 1 |
+| Doctors' offices, churches, senior centers, networking | 4 | 4 | 2 | 0 | 2 |
 | Posting their own vacancies in owner and community groups | 3 | 0 | 0 | 0 | 0 |
 | Flyers, brochures, drop-offs | 2 | 0 | 0 | 0 | 0 |
 | A Place for Mom / Caring.com / Seniorly (directories) | 1 | 0 | 0 | 0 | 0 |
@@ -425,8 +428,8 @@ Measured hiding: 0 first-person sentences keep something from their spouse, inve
 > "Just know if you put her in a SNF she ABSOLUTELY will be neglected and abused."  
 > — fb_comment · Orange Buzz II · https://www.facebook.com/groups/Orangebuzzll/posts/1744823959709149
 
-> "In addition to clinical care, we offer outpatient rehabilitation services through our partnership with [Genesis Rehab]( to help our residents regain or retain their optimal level of independence."  
-> — reddit_post · assistedliving · https://www.reddit.com/r/AssistedLiving/comments/e2498u/signs_your_loved_one_may_be_ready_for_assisted/
+> "In addition to clinical care, we offer outpatient rehabilitation services through our partnership with [Genesis Rehab](https://kensingtonparkseniorliving.com/rehabilitation-services/), to help our residents regain or retain their optimal level of independence."  
+> — reddit_post · AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/e2498u/signs_your_loved_one_may_be_ready_for_assisted/
 
 > "Hospital discharge planners, SNF social workers, hospice, home health, and AAA case managers are where real placements originate — but most operators build that list once and never revisit it."  
 > — fb_comment · ADULT FAMILY HOME GROUP OF WASHINGTON · https://www.facebook.com/groups/448686879807645/posts/1789746662368320
@@ -455,33 +458,34 @@ Measured hiding: 0 first-person sentences keep something from their spouse, inve
 
 ### Google / website / Google Business Profile
 
-> "My top factors were a well-optimized website, strategic social/SEO campaigns, and targeted ads to ensure that when potential customers find you, they're guided smoothly toward becoming loyal clients."  
-> — reddit_post · seniorlivingmarketing · https://www.reddit.com/r/SeniorLivingMarketing/comments/1jan007/how_ive_gotten_more_leads_at_my_assisted_living/
-
 > "Google reviews and your Business Profile are now a direct family-search channel, not just a nice-to-have."  
 > — fb_comment · ADULT FAMILY HOME GROUP OF WASHINGTON · https://www.facebook.com/groups/448686879807645/posts/1789746662368320
 
-> "Website: []"  
-> — fb_group · ADULT FAMILY HOME GROUP OF WASHINGTON · https://www.facebook.com/groups/448686879807645/posts/1043347640341563
+> "My top factors were a well-optimized website, strategic social/SEO campaigns, and targeted ads to ensure that when potential customers find you, they're guided smoothly toward becoming loyal clients."  
+> — reddit_post · SeniorLivingMarketing · https://www.reddit.com/r/SeniorLivingMarketing/comments/1jan007/how_ive_gotten_more_leads_at_my_assisted_living/
 
-### Doctors' offices, churches, senior centers, networking
+> "Check out the OHCQ website for a list of ALFs in Maryland."  
+> — reddit_comment · AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/1m99cup/need_affordable_assisted_living_for_both_parents/n55gxe0/
 
-> "#AssistedLiving #ResidentialCare #SeniorLiving #SmallBusiness #Networking"  
-> — fb_group · Residential Care Homes Owners/Operators · https://www.facebook.com/groups/732719531430807/posts/1574642110571874
+### Facebook / social media / paid ads
 
-> "ASHA primarily focuses on legislative and regulatory advocacy, research, and educational opportunities and networking for paid member senior living executives so they can better understand the needs of older adults across the country and promote senior living."  
-> — forum ·  · https://www.whereyoulivematters.org/resources/senior-placement-services-how-do-they-work
+> "My suggestion put an ad out looking for a private home for her to live in."  
+> — fb_comment · Orange Buzz II · https://www.facebook.com/groups/Orangebuzzll/posts/1744823959709149
 
-> "Work on networking with other RAL owner/operators in your area."  
-> — youtube · How To Start Your Own RESIDENTIAL Assisted Living Business And Get Licensed In J · https://www.youtube.com/watch?v=7JdBofvLbMQ&lc=Ugym8IZBICY_nifuuWl4AaABAg.A1NXxEl7MDUA1NwhKKzJkB
+> "My top factors were a well-optimized website, strategic social/SEO campaigns, and targeted ads to ensure that when potential customers find you, they're guided smoothly toward becoming loyal clients."  
+> — reddit_post · SeniorLivingMarketing · https://www.reddit.com/r/SeniorLivingMarketing/comments/1jan007/how_ive_gotten_more_leads_at_my_assisted_living/
+
+> "Facebook sometimes sends messages from people you aren't connected with to your Message Requests folder."  
+> — fb_group · # Home Health Care Agency Owners & Entrepreneurs | 5 years ago almost to the day · https://www.facebook.com/groups/1154838852454654/posts/1713772809894586
 
 ### Dollar figures, in their sentence
 
 - **$2** — "This “increase of about $2” it's slap in the face of all providers who work day and night to provide outstanding care to the most vulnerable population!" https://www.facebook.com/groups/133533807399390/posts/1542714716481285
+- **$6K a month** — "Where I live, AL is about $6K a month, but regular retirement apartment with no assistance is about $4K a month." https://www.reddit.com/r/AssistedLiving/comments/16debo7/i_need_advice_for_my_dad/jzoy8m3/
+- **$4K a month** — "Where I live, AL is about $6K a month, but regular retirement apartment with no assistance is about $4K a month." https://www.reddit.com/r/AssistedLiving/comments/16debo7/i_need_advice_for_my_dad/jzoy8m3/
 - **7K** — "which was 7K to the agent." https://www.facebook.com/groups/2447813518868667/posts/4030658493917487
 - **60% ** — "maybe 60% or less." https://www.facebook.com/groups/spokaneadultfamilyhomes/posts/6211134818953292
 - **120% ** — "Something also tells me that 120% Commission fees are not far off." https://www.facebook.com/groups/spokaneadultfamilyhomes/posts/6211134818953292
-- **92%** — "https://th3healthcarefairy.myshopify.com/.../%F0%9F%92%B0..." https://www.facebook.com/groups/732719531430807/posts/1650341406335277
 
 ## Competitor Ads
 
@@ -578,10 +582,10 @@ Operators' view of each referral source (A Place for Mom, placement agents, case
 ## Why They Buy (Ad Brief)
 
 ### 1. Why they buy
-Empty beds and no residents coming (29); dependence on placement agents and slow MCO or case-manager referrals (28 / 10).
+Empty beds and no residents coming (28); dependence on placement agents and slow MCO or case-manager referrals (27 / 10).
 
 ### 2. Recurring problems and frustrations
-Placement fees (18); Medicaid waiver and MCO contracts (26); marketing to hospitals and doctors that brings nothing (10); vendors and lead sellers (4).
+Placement fees (20); Medicaid waiver and MCO contracts (26); marketing to hospitals and doctors that brings nothing (11); vendors and lead sellers (3).
 
 ### 3. Questions and objections
 'The MCOs aren't sending referrals' (16); 'Word of mouth is still the best' (6); typed: 'placement agent fees', 'is rcfe profitable' (Silent Searches). Vendor pages answer with written guarantees, 'no obligation', and a free audit or strategy call.

@@ -1,13 +1,13 @@
 # Assisted Living: the Resident — Research Summary
 
-Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/research/ · Researched 2026-09-14 · refresh due 2027-03-14 · 246 buyer documents in this voice of 41,956 read
+Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/research/ · Researched 2026-09-14 · refresh due 2027-03-14 · 251 buyer documents in this voice of 45,827 read
 
 ## TLDR
 
-- Who: 246 documents written by people who live in assisted living, independent living or a retirement community. Most write about the independent-living end of the continuum; assisted-living residents speak mainly through Caring.com reviews they label themselves. Active-adult 55+ neighborhoods without care are excluded.
-- What they value once in: friendly people and new friends (12 documents), things to do (25 documents), good food (27), feeling safe and looked after (13).
-- What wears on them: the price ('It's too expensive', 3 documents), new management and price increases (10), the food (13); cliques and gossip appear mostly among older adults who have not moved (section under Tab 3).
-- How they got there: independent living first, then more care (32 documents), touring many places (16), selling the house and downsizing (7).
+- Who: 251 documents written by people who live in assisted living, independent living or a retirement community. Most write about the independent-living end of the continuum; assisted-living residents speak mainly through Caring.com reviews they label themselves. Active-adult 55+ neighborhoods without care are excluded.
+- What they value once in: friendly people and new friends (12 documents), things to do (24 documents), good food (27), feeling safe and looked after (12).
+- What wears on them: the price ('It's too expensive', 3 documents), new management and price increases (9), the food (13); cliques and gossip appear mostly among older adults who have not moved (section under Tab 3).
+- How they got there: independent living first, then more care (31 documents), touring many places (15), selling the house and downsizing (7).
 - What older adults who have not moved are afraid of (section under Tabs 1 and 4): the money, being moved to a nursing home, losing independence; typed as 'fear of nursing homes' and 'nursing homes terrify me'.
 - Who sells to them: 424 ads from 280 advertisers address the older adult directly (maintenance-free living, your next chapter, VA benefits, 62+ apartments).
 
@@ -48,7 +48,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 
 ### What stops them
 
-- Price and rent increases (10 resident documents)
+- Price and rent increases (9 resident documents)
 - Fear of losing independence and of the nursing home (older-adult section, Tab 1)
 
 ### Where they are
@@ -86,10 +86,10 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 
 #### Older adults who do not live there (not counted above)
 
-- Being moved to memory care or a nursing home next — 9
-- The money running out — 7
+- Being moved to memory care or a nursing home next — 8
+- The money running out — 8
+- Watching neighbours decline and die — 5
 - Losing my independence — 4
-- Falling, and no one coming — 3
 
 ## Tab 2 — Hopes & Dreams
 
@@ -117,8 +117,8 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 
 #### Older adults who do not live there (not counted above)
 
-- To keep my health and stay active — 11
-- Friends and company my own age — 6
+- To keep my health and stay active — 12
+- Friends and company my own age — 9
 - To keep my independence — 6
 
 ## Tab 3 — Relationship Fears
@@ -136,8 +136,8 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 
 #### Older adults who do not live there (not counted above)
 
-- Cliques, bullies and not getting along — 9
-- Making real friends here — 9
+- Cliques, bullies and not getting along — 12
+- Making real friends here — 12
 
 ## Tab 4 — Relationship Soundbites
 
@@ -157,11 +157,11 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 > "Some days I feel like I live in a graveyard..so isolating.i hate it…"  
 > — youtube · I Deeply Regret Moving to a 55+ Retirement Community – And I’m Only 62 · https://www.youtube.com/watch?v=yzcxM9YcVYI&lc=UgxeAb1tn87CPxrtfpB4AaABAg
 
+> "It is granny prison camp but gets a whole lot worse when you graduate to Memory Care or SNF god forbid."  
+> — reddit_comment · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/16myi70/moving_from_assisted_living_to_longterm_care/k1d8cq4/
+
 > "I hate it."  
 > — youtube · How Many People Move Back Home From Assisted Living | Hal Cranmer · https://www.youtube.com/watch?v=lWHBYZN6d0A&lc=UgxNXr6r6fJrSE_V0mR4AaABAg
-
-> "It's depressing, and I already struggle with depression and anxiety."  
-> — youtube · I Moved to a Retirement Community and Now I Regret It! · https://www.youtube.com/watch?v=Eqdvs0TPrIA&lc=UgyBDtH6JunX1R2jg014AaABAg
 
 ### 'It's too expensive' — 3 documents
 
@@ -176,9 +176,9 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 
 #### Older adults who do not live there (not counted above)
 
-- 'Granny prison' / 'I hate it here' — 13
-- 'I love it here' / 'best decision' — 10
-- 'It's too expensive' — 3
+- 'Granny prison' / 'I hate it here' — 29
+- 'I love it here' / 'best decision' — 13
+- 'It's too expensive' — 4
 
 ## Tab 5 — Frustrations
 
@@ -193,10 +193,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 > "The chefs and dining room director often come around to see how everyone is enjoying their meal and are open to feedback both good and bad."  
 > — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/texas/houston/the-forum-at-memorial-woods-77024#review-15c7afee-8835-46a8-a467-087f5b937c08
 
-### New management and price increases — 10 documents
-
-> "I do miss kids and families around as well, but the cost of my rent is a lot cheaper than a regular apartment so I can't really complain."  
-> — youtube · Is Affordable Senior Housing Worth the Trade-offs? My 55+ Community Tour · https://www.youtube.com/watch?v=g6dfJVuQsfY&lc=Ugw8Vk732t1WKtyYVvt4AaABAg
+### New management and price increases — 9 documents
 
 > "To me paying a very affordable rent is not worth my peace of mind however I am on social security only so my lifestyle choice is dictated by my income."  
 > — youtube · Is Affordable Senior Housing Worth the Trade-offs? My 55+ Community Tour · https://www.youtube.com/watch?v=g6dfJVuQsfY&lc=Ugy6TIwc-xeLxd9ecmx4AaABAg
@@ -204,18 +201,13 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 > "The rent is all inclusive except if you take a trip to an outing that has a fee."  
 > — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/texas/houston/the-forum-at-memorial-woods-77024#review-15c7afee-8835-46a8-a467-087f5b937c08
 
-### Too few staff, waiting for help — 5 documents
+> "The other issue was the cost that seemed high but I had since heard that others were able to obtain a lower fee."  
+> — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/arizona/phoenix/brookdale-place-of-paradise-valley-85032#review-cd18adb1-573d-4a50-a93a-e2f60d174928
 
-> "Too many people who try to live here waited too long and, then, they are too sick or the spouse dies and then they do not get the full benefit of living here."  
-> — reddit_comment · r/retirement · https://www.reddit.com/r/retirement/comments/1qpgzc1/anyone_planning_for_a_future_move_to_a_ccrc/o2pnud8/
+### Activities, and people much older than me — 5 documents
 
-> "(We have fallen in love all over again.) The nursing staff is incredible and attentive the only thing he complains of is the amount of activities that they are always inviting him to participate in (but he welcomes the attention.)"  
-> — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/georgia/atlanta/canterbury-court-30319#review-b885daad-ad2b-491b-9f5e-1fc54e1df6ed
-
-> "It's not because of them; it's just the problem of getting staff today."  
-> — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/florida/tampa/aston-gardens-at-tampa-bay-33626#review-712807a6-0f1c-40d3-8b96-3d170f1e77c0
-
-### Activities, and people much older than me — 4 documents
+> "Many outings per month and many many various fun activities every day except Saturdays and Sundays where you create your own activities."  
+> — reddit_comment · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/1dhgvs0/positive_experience_at_an_assisted_living/mnfqim2/
 
 > "(We have fallen in love all over again.) The nursing staff is incredible and attentive the only thing he complains of is the amount of activities that they are always inviting him to participate in (but he welcomes the attention.)"  
 > — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/georgia/atlanta/canterbury-court-30319#review-b885daad-ad2b-491b-9f5e-1fc54e1df6ed
@@ -223,18 +215,27 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 > "I was very happy while living there for 9 months during the COVID 19 precautions and did not feel confined or bored!"  
 > — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/arizona/phoenix/brookdale-place-of-paradise-valley-85032#review-cd18adb1-573d-4a50-a93a-e2f60d174928
 
-> "Overall, suitable for advanced dementia or late Alzheimer cases, but seniors still in possession of most of their wits would likely be bored with the inactivity and the restricted quarters, and could find the monthly fee excessive for what is provided,"  
-> — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/california/los-angeles/rayas-paradise-inc-90046#review-1330f63b-45b8-4401-a408-29bfdad402b3
+### Too few staff, waiting for help — 4 documents
+
+> "(We have fallen in love all over again.) The nursing staff is incredible and attentive the only thing he complains of is the amount of activities that they are always inviting him to participate in (but he welcomes the attention.)"  
+> — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/georgia/atlanta/canterbury-court-30319#review-b885daad-ad2b-491b-9f5e-1fc54e1df6ed
+
+> "It's not because of them; it's just the problem of getting staff today."  
+> — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/florida/tampa/aston-gardens-at-tampa-bay-33626#review-712807a6-0f1c-40d3-8b96-3d170f1e77c0
+
+> "The staff is attentive, but as most places, a few are rude and abrupt when information is needed."  
+> — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/florida/tampa/renaissance-north-tampa#review-8752a222-e13f-49fe-bf4a-393f5987e909
 
 #### Older adults who do not live there (not counted above)
 
-- New management and price increases — 13
-- Activities, and people much older than me — 6
-- The food — 4
+- New management and price increases — 21
+- Activities, and people much older than me — 12
+- The food — 5
+- Too few staff, waiting for help — 3
 
 ## Tab 6 — Previous Solutions
 
-### Independent living first, then more care — 32 documents
+### Independent living first, then more care — 31 documents
 
 > "I've been in an Independent Living Community for 2 years."  
 > — reddit_comment · r/AskOldPeople · https://www.reddit.com/r/AskOldPeople/comments/1l9rmc0/anyone_whos_downsized_and_moved_into_a_retirement/mxfkren/
@@ -245,16 +246,16 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 > "I've said this on your channel before but my husband and I moved to the independent living section of a CCRC community in coastal South Carolina almost two years ago."  
 > — youtube · 4 Smart Senior Living Options for Your 70s · https://www.youtube.com/watch?v=zptuiv08QUE&lc=UgwogUsJA9OFa0CKWgp4AaABAg
 
-### Toured many places before choosing — 16 documents
-
-> "My husband and I occasionally help with marketing presentation events and tours."  
-> — reddit_comment · r/retirement · https://www.reddit.com/r/retirement/comments/1qpgzc1/anyone_planning_for_a_future_move_to_a_ccrc/o2pnud8/
+### Toured many places before choosing — 15 documents
 
 > "**Staffing.** This is where I'd press hardest if I were touring."  
 > — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/texas/houston/the-village-of-meyerland-77025#review-fd89f07e-4720-437d-aade-b2cff0a0a6f7
 
 > "Sometimes I have to choose whether I want to attend the symphony, see a play at the Fox, take tours of the city, attend church services in the beautiful chapel, do an assortment of workout classes and on and on."  
 > — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/georgia/atlanta/canterbury-court-30319#review-b885daad-ad2b-491b-9f5e-1fc54e1df6ed
+
+> "Have you looked at other options?"  
+> — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/texas/houston/the-forum-at-memorial-woods-77024#review-15c7afee-8835-46a8-a467-087f5b937c08
 
 ### Sold the house and downsized — 7 documents
 
@@ -267,7 +268,10 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 > "We are downsized and moved."  
 > — reddit_comment · r/retirement · https://www.reddit.com/r/retirement/comments/1fd8ew1/what_my_dad_is_teaching_me_about_retirement/lmhvaf5/
 
-### Help at home before moving — 6 documents
+### Help at home before moving — 7 documents
+
+> "Many residents here augment with private caregivers."  
+> — reddit_comment · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/179y5yy/response_time/k5h9dh8/
 
 > "I don't fault the aides or nurses."  
 > — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/texas/houston/the-village-of-meyerland-77025#review-fd89f07e-4720-437d-aade-b2cff0a0a6f7
@@ -275,15 +279,12 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 > "I have physical therapy, a home health nurse, and a doctor coming in, and there have been no problems."  
 > — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/arizona/phoenix/comfort-living-senior-care-phoenix#review-3d2f03c1-3fc7-414c-b09e-816cc81b40ee
 
-> "When my wife and I moved at caring hearts assisted care home with nothing but the clothes on our backs, the owner who is also the caregiver went above and beyond to help us get settled."  
-> — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/arizona/phoenix/caring-hearts-assisted-care-home#review-8cc7fef2-70b8-420e-8fb9-a4686352977e
-
 #### Older adults who do not live there (not counted above)
 
-- Independent living first, then more care — 28
-- Help at home before moving — 24
-- Sold the house and downsized — 13
-- Lived with, or near, the kids first — 10
+- Independent living first, then more care — 37
+- Help at home before moving — 25
+- Sold the house and downsized — 24
+- Toured many places before choosing — 15
 
 ## Tab 7 — Solution Soundbites
 
@@ -322,7 +323,8 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 
 #### Older adults who do not live there (not counted above)
 
-- Fairer prices — 12
+- Fairer prices — 14
+- Better food — 3
 
 ## Tab 8 — Desired Outcomes
 
@@ -337,7 +339,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 > "Dining is ordinary at best, which I'd weigh more heavily than I once would have, since meals are one of the few things a resident still looks forward to."  
 > — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/texas/houston/the-village-of-meyerland-77025#review-fd89f07e-4720-437d-aade-b2cff0a0a6f7
 
-### Things to do — 25 documents
+### Things to do — 24 documents
 
 > "We're active and healthy and younger than many of the people here but we're able to participate in and enjoy the wonderful activities (and people) here."  
 > — youtube · 4 Smart Senior Living Options for Your 70s · https://www.youtube.com/watch?v=zptuiv08QUE&lc=UgwogUsJA9OFa0CKWgp4AaABAg
@@ -347,17 +349,6 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 
 > "We're enjoying maintenance-free living, an indoor pool, well-equipped fitness center, nice dining room, library, manicured grounds, pond, walking trails, transportation, planned trips, clubs, and lectures."  
 > — reddit_comment · r/AskOldPeople · https://www.reddit.com/r/AskOldPeople/comments/1fv81mm/when_and_why_did_you_consider_moving_to_senior/lq7uh8p/
-
-### Feeling safe and looked after — 13 documents
-
-> "Anyway here I'm safe and can take care of myself."  
-> — reddit_comment · r/AskOldPeople · https://www.reddit.com/r/AskOldPeople/comments/1l80zkp/lifespans_and_caregiving/mx1s8sm/
-
-> "What I like about it is that it is safe, the residents are marvelous, and the staff is extremely helpful."  
-> — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/florida/tampa/renaissance-north-tampa#review-03fccdce-edb4-4436-b8ed-44760e34d27f
-
-> "Overall, I would recommend Brookdale CPV at 13240 N Tatum Blvd, Phoenix, AZ to anyone."  
-> — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/arizona/phoenix/brookdale-place-of-paradise-valley-85032#review-cd18adb1-573d-4a50-a93a-e2f60d174928
 
 ### Friendly people and new friends — 12 documents
 
@@ -369,6 +360,17 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 
 > "We have friendly residents who greet you with a hello and a smile and others who will show your around and introduce you to your neighbors."  
 > — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/texas/houston/the-forum-at-memorial-woods-77024#review-15c7afee-8835-46a8-a467-087f5b937c08
+
+### Feeling safe and looked after — 12 documents
+
+> "Anyway here I'm safe and can take care of myself."  
+> — reddit_comment · r/AskOldPeople · https://www.reddit.com/r/AskOldPeople/comments/1l80zkp/lifespans_and_caregiving/mx1s8sm/
+
+> "What I like about it is that it is safe, the residents are marvelous, and the staff is extremely helpful."  
+> — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/florida/tampa/renaissance-north-tampa#review-03fccdce-edb4-4436-b8ed-44760e34d27f
+
+> "Overall, I would recommend Brookdale CPV at 13240 N Tatum Blvd, Phoenix, AZ to anyone."  
+> — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/arizona/phoenix/brookdale-place-of-paradise-valley-85032#review-cd18adb1-573d-4a50-a93a-e2f60d174928
 
 ### The best decision I made — 5 documents
 
@@ -383,10 +385,10 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 
 #### Older adults who do not live there (not counted above)
 
-- Feeling safe and looked after — 18
-- Things to do — 15
-- Friendly people and new friends — 7
-- Good food — 5
+- Feeling safe and looked after — 27
+- Things to do — 23
+- Friendly people and new friends — 8
+- Good food — 6
 
 ## Tab 9 — Typical Day
 
@@ -398,13 +400,13 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 > "It's pretty much come and go, just like a regular apartment building - but with a cafeteria for meals, a maintenance staff for home repairs, and a housekeeping staff for home cleaning."  
 > — reddit_comment · r/retirement · https://www.reddit.com/r/retirement/comments/194w810/deliberately_shrinking_the_footprint_our_personal/khiupsu/
 
-> "House maintenance, utilities with the exception of our cell phones, housekeeping, some meals, activities, and honestly many,many purposeful things to do are all included with our monthly fee."  
-> — reddit_comment · r/retirement · https://www.reddit.com/r/retirement/comments/1qpgzc1/anyone_planning_for_a_future_move_to_a_ccrc/o2pnud8/
+> "I chose some of the optional services: one meal a day in the dining room, weekly apartment cleaning, garage space for my car."  
+> — reddit_comment · r/AskOldPeople · https://www.reddit.com/r/AskOldPeople/comments/1ixux50/do_you_live_in_assisted_living_what_is_it_like/mepqkqu/
 
 ### Activities and outings — 13 documents
 
-> "House maintenance, utilities with the exception of our cell phones, housekeeping, some meals, activities, and honestly many,many purposeful things to do are all included with our monthly fee."  
-> — reddit_comment · r/retirement · https://www.reddit.com/r/retirement/comments/1qpgzc1/anyone_planning_for_a_future_move_to_a_ccrc/o2pnud8/
+> "Many outings per month and many many various fun activities every day except Saturdays and Sundays where you create your own activities."  
+> — reddit_comment · r/AssistedLiving · https://www.reddit.com/r/AssistedLiving/comments/1dhgvs0/positive_experience_at_an_assisted_living/mnfqim2/
 
 > "There is also exercise (Enhanced fitness, yoga, healing harmony, water aerobics, brain games, qi gong) available for all levels on every day, except maybe Sunday."  
 > — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/washington/seattle/aljoya-thornton-place-northgate-98125#review-e7b5651b-48a3-4c64-99b8-fa8bbf2e582e
@@ -423,23 +425,23 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 > "There is also exercise (Enhanced fitness, yoga, healing harmony, water aerobics, brain games, qi gong) available for all levels on every day, except maybe Sunday."  
 > — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/washington/seattle/aljoya-thornton-place-northgate-98125#review-e7b5651b-48a3-4c64-99b8-fa8bbf2e582e
 
-### Staff help: meds, bathing, housekeeping — 8 documents
+### Staff help: meds, bathing, housekeeping — 7 documents
 
 > "It's pretty much come and go, just like a regular apartment building - but with a cafeteria for meals, a maintenance staff for home repairs, and a housekeeping staff for home cleaning."  
 > — reddit_comment · r/retirement · https://www.reddit.com/r/retirement/comments/194w810/deliberately_shrinking_the_footprint_our_personal/khiupsu/
 
-> "House maintenance, utilities with the exception of our cell phones, housekeeping, some meals, activities, and honestly many,many purposeful things to do are all included with our monthly fee."  
-> — reddit_comment · r/retirement · https://www.reddit.com/r/retirement/comments/1qpgzc1/anyone_planning_for_a_future_move_to_a_ccrc/o2pnud8/
-
 > "They also did our laundry every day, so everything was perfect in that way."  
 > — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/arizona/phoenix/grace-assisted-living-ea48de38-6d2e-4148-acd4-44d53d7fcbbe#review-a0593a48-1b5e-4d9a-b906-9c5076101b6a
 
+> "I received excellent assistance for my daily care until I fully recovered and then staff continued to provide me the care I needed as I deemed necessary."  
+> — caring_com · I am/was a resident of this facility · https://www.caring.com/senior-living/arizona/phoenix/brookdale-place-of-paradise-valley-85032#review-cd18adb1-573d-4a50-a93a-e2f60d174928
+
 #### Older adults who do not live there (not counted above)
 
-- Meals in the dining room — 37
-- Classes, exercise and walks — 18
-- Activities and outings — 10
-- Staff help: meds, bathing, housekeeping — 5
+- Meals in the dining room — 45
+- Classes, exercise and walks — 20
+- Activities and outings — 11
+- Staff help: meds, bathing, housekeeping — 7
 
 ## Silent Searches and Private Worries
 
@@ -448,7 +450,7 @@ Live page: https://vincestars-cloud.github.io/campaign-previews/al-residents/res
 | Lonely, no one visits, no friends there | 3 | 7 | 205,486 | 3 | 1 |
 | Treated like a child, losing control of my own life | 0 | 13 | 2,354 | 0 | 0 |
 | Waiting for staff, call button, falls | 0 | 1 | 12,416 | 2 | 1 |
-| The food | 95 | 15 | 16,867 | 57 | 131 |
+| The food | 95 | 15 | 16,867 | 58 | 131 |
 | Money running out, moved to a Medicaid bed | 0 | 4 | 382,112 | 3 | 57 |
 | Fear of being moved to memory care or a nursing home | 8 | 17 | 4,634,396 | 0 | 0 |
 | Regret selling the house and moving in | 0 | 26 | 459,342 | 3 | 0 |
@@ -538,10 +540,10 @@ Please remember:
 ## Why They Buy (Ad Brief)
 
 ### 1. Why they move (in their words)
-Health or a spouse's needs, the house becoming too much, and wanting people around (32 / 7).
+Health or a spouse's needs, the house becoming too much, and wanting people around (31 / 7).
 
 ### 2. Recurring problems
-Price and increases (3), management changes (10), food (13); cliques and gossip in the older-adult section.
+Price and increases (3), management changes (9), food (13); cliques and gossip in the older-adult section.
 
 ### 3. Questions they type
 'can i leave assisted living', 'can assisted living kick you out', 'how much does it cost to live in assisted living' (Silent Searches).
