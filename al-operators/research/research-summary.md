@@ -611,9 +611,9 @@ Hypothesis: lead with who owns the family relationship and the callback time.
 
 ### Precision reads
 
-- Voice router regression suite: 71/71 labeled cases pass (al-ecosystem-shared/voice_tests_operators.json), most of them operator-page leaks found by reading: coaches, vendors, placement agents, would-be owners, disability group homes (DDS/APD/DBHDS), former staff, a homeowner renting to an operator.
-- Operator voice random 20 after the full Facebook read (seed 5151): about 15 of 20 were running operators; misses were a would-be owner before her RCFE exam, a consultant 'helping my client get residents' and one post of unclear speaker (rules added after the read for the first two).
-- Operators' own vacancy posts ('Our 6-bed RCFE is now open and have vacant beds ready. Placement referrals are welcome.') are counted as a lead source, not as operator voice.
+- Voice router regression suite: 83/83 labeled cases pass (al-ecosystem-shared/voice_tests_operators.json), nearly all of them operator-page leaks found by reading: coaches and consultants, vendors, placement agents, would-be owners, disability group homes (DDS/APD/DBHDS), staff, landlords and brokers, non-senior business owners in r/Entrepreneur and r/smallbusiness.
+- Operator voice random 20 after the full Facebook and Reddit pulls (seed 8383): 14 of 20 were running operators; the misses were staff ('the company I work for'), would-be owners ('in the process of setting up') and advice with no stated role. Rules were added for the first two after the read.
+- Operators' own vacancy posts are counted as a lead source, not as operator voice.
 
 ### Gaps
 
@@ -621,6 +621,7 @@ Hypothesis: lead with who owns the family relationship and the callback time.
 - Provider-side TrustPilot reviews of A Place for Mom, Caring.com, Seniorly and CarePatrol: 0 found in this pull.
 - Discovery engines blocked (Google, DuckDuckGo); Tavily 52 credits, SerpAPI 0, Apify capped; YouTube search quota exhausted midday (headless search used).
 - Two feed advertisers (Dr. Mark Stevens, Michael Porche) did not appear in the Ad Library pull and are listed from the screenshots.
+- Two family subreddit searches (r/Alzheimers and r/eldercare memory care) returned server errors and were not re-pulled.
 
 ### Tool status
 
