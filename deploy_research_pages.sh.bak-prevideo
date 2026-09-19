@@ -1,0 +1,31 @@
+#!/bin/bash
+# Deploy one or both research pages to GitHub Pages and prove the live copy is the local copy.
+# Usage: deploy_research_pages.sh hci|ao|both "<commit message first line>"
+# hci = home-care-industry (index.html + creatives/vidposters/)   ao = home-care-agency-owners (index.html)
+# The Pages legacy build does NOT auto-trigger for this repo — it is POSTed, then each live page is polled until its
+# md5 equals the local file (or 10 minutes pass, which is reported as a failure, not a success).
+set -u
+WHICH=${1:?hci|ao|both}; MSG=${2:?commit message}
+REPO=/Users/vincentohasiligwo/campaign-previews; V="/Users/vincentohasiligwo/Documents/Obsidian Vault/Clients"
+declare -a PATHS=() CHECK=()
+copy_hci(){ local D="$REPO/home-care-industry/research"; cp "$V/home-care-industry/research/index.html" "$D/index.html"; mkdir -p "$D/creatives/vidposters"; rsync -a --delete "$V/home-care-industry/research/creatives/vidposters/" "$D/creatives/vidposters/"; PATHS+=("home-care-industry/research/index.html" "home-care-industry/research/creatives/vidposters"); CHECK+=("home-care-industry"); }
+copy_ao(){ cp "$V/home-care-agency-owners/research/index.html" "$REPO/home-care-agency-owners/research/index.html"; PATHS+=("home-care-agency-owners/research/index.html"); CHECK+=("home-care-agency-owners"); }
+case "$WHICH" in hci) copy_hci;; ao) copy_ao;; both) copy_hci; copy_ao;; *) echo "bad target"; exit 2;; esac
+cd "$REPO" || exit 9
+git add -A -- "${PATHS[@]}"
+if git diff --cached --quiet; then echo "nothing to commit"; else
+  git commit -q -m "$MSG" -m "Co-Authored-By: Claude Opus 5 (1M context) <noreply@anthropic.com>" || exit 3
+  git push -q origin main || { echo "PUSH FAILED"; exit 4; }
+  echo "pushed $(git log --oneline -1)"
+fi
+gh api -X POST repos/vincestars-cloud/campaign-previews/pages/builds --jq .status 2>&1 | sed 's/^/pages build: /'
+fail=0
+for slug in "${CHECK[@]}"; do
+  local_md5=$(md5 -q "$V/$slug/research/index.html"); ok=0
+  for t in $(seq 1 40); do
+    live=$(curl -s -m 30 "https://vincestars-cloud.github.io/campaign-previews/$slug/research/?cb=$RANDOM" | md5 -q)
+    [ "$live" = "$local_md5" ] && { ok=1; break; }; sleep 15
+  done
+  [ $ok = 1 ] && echo "LIVE_OK $slug md5 $local_md5" || { echo "LIVE_MISMATCH $slug local $local_md5 live $live"; fail=1; }
+done
+exit $fail
