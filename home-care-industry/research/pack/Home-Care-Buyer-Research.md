@@ -1,7 +1,7 @@
 # Home Care Industry — Deep Buyer Research
 **A Promise to Mom · the adult daughter arranging in-home care for an aging parent · national + Atlanta, Houston, Phoenix, Chicago, Tampa**
 
-Researched 2026-09-06, refreshed 2026-09-07, exported 2026-09-11. Corpus 15,867 entries · 230 sourced quotes in the tabs · 18,392 Meta ads analyzed. Live page with clickable themes, competitor ads and reviews by star: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/
+Researched 2026-09-06, refreshed 2026-09-23, exported 2026-09-23. Corpus 15,867 entries · 230 sourced quotes in the tabs · 18,392 Meta ads analyzed. Live page with clickable themes, competitor ads, reviews by star and acquisition metrics: https://vincestars-cloud.github.io/campaign-previews/home-care-industry/research/
 
 This document is the Sabri Suby 10-tab buyer research (Tabs 1–10) plus the depth layer (threads, vocabulary, profile pivot, competitor map, self-audit), the dislikes and complaints ledger, and Vince's ad brief checked against the corpus. Every quote is verbatim and carries its source URL. Every count was computed by a script over the corpus, not estimated. The companion file *Home-Care-Buyer-Research-Voices* holds, for every measured theme, the twenty most engaged comments in full with their replies.
 
@@ -31,6 +31,7 @@ This document is the Sabri Suby 10-tab buyer research (Tabs 1–10) plus the dep
 12. Video Ad Transcripts (top 3 per competitor + hand-picked)
 13. Dislikes & Complaints Ledger
 14. Ad Brief
+15. Acquisition Economics & APFM Benchmark
 
 ## Tab 1 — Fears
 
@@ -4302,5 +4303,44 @@ Vince's approach after reviewing the research, every line checked against the co
 - **Every vivid line exists verbatim:** "I took the phone out of the wall yesterday because I just couldn't take another call just 'checking on us' only to be unavailable when I ask for help" (95); "drowning in butt cream, doctors appointments and diapers, we don't have time for empty words when we should be catching up on sleep" (95); "I can finally breathe" (387); "You're on a waiting list!" (479).
 - **The villain is documented:** 188 first-person documents carry the empty words, and 19 name them as the problem ("In three decades I've learned to translate caregiver platitudes", 427; "Dear toxic positivity society: shove your fake words and fix the respite care system", 406; "unhelpful platitudes from people who seem to have conveniently forgot that dementia doesn't get better", 479).
 - **The excluded segments are small in this corpus** (5, 10, 1, 5 documents): the corpus was pulled around the caregiving verbs, so early-awareness voices are under-sampled here; that supports leaving them out of these ads without saying they do not exist.
+
+## Acquisition Economics & APFM Benchmark
+
+The campaign planning model uses two cost views. **Raw cost to produce** is based on $5,000 of media spend only. **Fully loaded cost** includes the same $5,000 of media plus a $5,000 service fee, for $10,000 total marketing cost. The campaign figures below are optimistic modeled ranges, not guaranteed results.
+
+### Raw cost to produce — $5,000 ad spend only
+
+| Funnel stage | Optimistic Medicaid | Optimistic Veterans | Optimistic Private Pay |
+|---|---:|---:|---:|
+| Raw lead (CPL) | $9.90–$10.29 | $25.40–$25.72 | $27.38–$51.44 |
+| Qualified lead (CPQL) | $29.66–$30.81 | $50.80–$51.44 | $81.96–$155.87 |
+| Connected call | $59.67–$62.12 | $101.60–$102.87 | $165.06–$302.56 |
+| In-home assessment | $170.79–$177.84 | $282.22–$285.75 | $471.17–$857.25 |
+| Acquired client (CAC) | $190.50–$343.00 | $317.50–$571.50 | $1,143.00–$1,714.50 |
+
+### Fully loaded stage cost — $5,000 ad spend + $5,000 service fee
+
+| Funnel stage | Optimistic Medicaid | Optimistic Veterans | Optimistic Private Pay | APFM benchmark |
+|---|---:|---:|---:|---:|
+| Raw lead | $19.81–$20.58 | $50.80–$51.44 | $54.75–$102.87 | $55–$58 |
+| Qualified lead | $59.32–$61.62 | $101.60–$102.87 | $163.92–$311.73 | Not separately reported |
+| Connected call | $119.35–$124.23 | $203.20–$205.74 | $330.13–$605.12 | $157.14–$165.71 |
+| In-home assessment | $341.59–$355.67 | $564.44–$571.50 | $942.34–$1,714.50 | $423.08–$446.15 |
+| Acquired client (CAC) | $381–$686 | $635–$1,143 | $2,286–$3,429 | $825–$1,740 practical |
+
+### Funnel assumptions and one-client workload
+
+| Model | Key assumptions | Approximate raw leads per client |
+|---|---|---:|
+| Medicaid | 33.4% qualify; 49.7% of qualified leads connect; 34.9% of calls assess; 50–89.7% of assessments close | 19–34 |
+| Veterans | 50% qualify; 49.7% connect; 34.9% assess; 50–77.3% of assessments close; 8% lead-to-close target | 12.5–22 |
+| Private pay | 33.4% qualify; 49.7% connect; 34.9% assess; 41.3% of assessments close | 22–33 modeled |
+| A Place for Mom | About 35% connect; 13% assess; 3–7% become clients; 6–9 call attempts per aggregator lead | 15–30 practical |
+
+At APFM's reported $55–$58 raw lead cost, 15–30 leads imply a practical **$825–$1,740 CAC**. The exact endpoints of a 3–7% close rate are 14.3–33.3 leads and approximately $786–$1,933 CAC. At 6–9 attempts per lead, acquiring one client can require roughly **90–270 call attempts**, before texts and emails. APFM referrals may also be shared with several competing agencies, making speed-to-contact operationally important.
+
+**APFM lead profile fields:** primary contact name, phone, email and relationship to the senior; care-recipient name and location; target city/state/ZIP; urgency and expected start date; ADL assistance and medical context; companionship, meal, medication, housekeeping and transportation needs; hours and schedule preferences; estimated budget; and likely funding source.
+
+**Benchmark sources:** A Place for Mom partner program (https://homecare.aplaceformom.com/); historical $55 CPL reference (https://www.careswitch.com/faq/online-lead-site-tips-for-home-care-agencies?category=request-contribute); recent provider report of $580 prepaid for 10 referrals (https://www.bbb.org/us/ny/new-york/profile/senior-care/a-place-for-mom-inc-0121-87176893/customer-reviews?page=13). The 35% connected, 13% assessed, 3–7% client and 6–9 attempt assumptions are planning benchmarks supplied for this model and should be validated against an agency's own CRM.
 
 **Next in the sequence (not started):** offer → copy → landing page → ads, each built from this brief and the 10-tab, per the standing order.
