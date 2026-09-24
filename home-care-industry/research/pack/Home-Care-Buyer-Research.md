@@ -4310,13 +4310,15 @@ The campaign planning model uses two cost views. **Raw cost to produce** is base
 
 ### Raw cost to produce — $5,000 ad spend only
 
-| Funnel stage | Optimistic Medicaid | Optimistic Veterans | Optimistic Private Pay |
-|---|---:|---:|---:|
-| Raw lead (CPL) | $9.90–$10.29 | $25.40–$25.72 | $27.38–$51.44 |
-| Qualified lead (CPQL) | $29.66–$30.81 | $50.80–$51.44 | $81.96–$155.87 |
-| Connected call | $59.67–$62.12 | $101.60–$102.87 | $165.06–$302.56 |
-| In-home assessment | $170.79–$177.84 | $282.22–$285.75 | $471.17–$857.25 |
-| Acquired client (CAC) | $190.50–$343.00 | $317.50–$571.50 | $1,143.00–$1,714.50 |
+Editable calculator defaults used on the live page: 33.4% of leads qualify; 49.7% of qualified leads connect; 35% of connected calls proceed to an in-home assessment; 50% of assessments become clients. With those inputs, the model requires about **34.4 raw leads** for one acquired client. Changing the inputs on the page recalculates the "Needed for 1 acquired client" column.
+
+| Funnel stage | Needed for 1 acquired client | Optimistic Medicaid | Optimistic Veterans | Optimistic Private Pay |
+|---|---:|---:|---:|---:|
+| Raw lead (CPL) | 34.4 raw leads | $9.90–$10.29 | $25.40–$25.72 | $27.38–$51.44 |
+| Qualified lead (CPQL) | 11.5 qualified leads | $29.66–$30.81 | $50.80–$51.44 | $81.96–$155.87 |
+| Connected call | 5.8 connected calls | $59.67–$62.12 | $101.60–$102.87 | $165.06–$302.56 |
+| In-home assessment | 2.0 assessments | $170.79–$177.84 | $282.22–$285.75 | $471.17–$857.25 |
+| Acquired client (CAC) | 1.0 client | $190.50–$343.00 | $317.50–$571.50 | $1,143.00–$1,714.50 |
 
 ### Fully loaded stage cost — $5,000 ad spend + $5,000 service fee
 
