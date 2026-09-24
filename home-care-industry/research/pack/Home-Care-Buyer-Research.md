@@ -4310,15 +4310,24 @@ The campaign planning model uses two cost views. **Raw cost to produce** is base
 
 ### Raw cost to produce — $5,000 ad spend only
 
-Editable calculator defaults used on the live page: 33.4% of leads qualify; 49.7% of qualified leads connect; 35% of connected calls proceed to an in-home assessment; 50% of assessments become clients. With those inputs, the model requires about **34.4 raw leads** for one acquired client. Changing the inputs on the page recalculates the "Needed for 1 acquired client" column.
+Editable calculator defaults used on the live page: target 5 acquired clients; 33.4% of leads qualify; 49.7% of qualified leads connect; 35% of connected calls proceed to an in-home assessment; 50% of assessments become clients. With those inputs, the model requires about **172.1 raw leads** for 5 acquired clients. Changing the target-client input or conversion inputs on the page recalculates the event-count column and target acquisition budget.
 
-| Funnel stage | Needed for 1 acquired client | Optimistic Medicaid | Optimistic Veterans | Optimistic Private Pay |
+| Funnel stage | Needed for 5 acquired clients | Optimistic Medicaid | Optimistic Veterans | Optimistic Private Pay |
 |---|---:|---:|---:|---:|
-| Raw lead (CPL) | 34.4 raw leads | $9.90–$10.29 | $25.40–$25.72 | $27.38–$51.44 |
-| Qualified lead (CPQL) | 11.5 qualified leads | $29.66–$30.81 | $50.80–$51.44 | $81.96–$155.87 |
-| Connected call | 5.8 connected calls | $59.67–$62.12 | $101.60–$102.87 | $165.06–$302.56 |
-| In-home assessment | 2.0 assessments | $170.79–$177.84 | $282.22–$285.75 | $471.17–$857.25 |
-| Acquired client (CAC) | 1.0 client | $190.50–$343.00 | $317.50–$571.50 | $1,143.00–$1,714.50 |
+| Raw lead (CPL) | 172.1 raw leads | $9.90–$10.29 | $25.40–$25.72 | $27.38–$51.44 |
+| Qualified lead (CPQL) | 57.5 qualified leads | $29.66–$30.81 | $50.80–$51.44 | $81.96–$155.87 |
+| Connected call | 28.6 connected calls | $59.67–$62.12 | $101.60–$102.87 | $165.06–$302.56 |
+| In-home assessment | 10.0 assessments | $170.79–$177.84 | $282.22–$285.75 | $471.17–$857.25 |
+| Acquired client (CAC) | 5.0 clients | $190.50–$343.00 | $317.50–$571.50 | $1,143.00–$1,714.50 |
+
+### Target-client acquisition budget
+
+| Model | Raw media-only CAC budget for 5 clients | Fully loaded CAC budget for 5 clients |
+|---|---:|---:|
+| Optimistic Medicaid | $953–$1,715 | $1,905–$3,430 |
+| Optimistic Veterans | $1,588–$2,858 | $3,175–$5,715 |
+| Optimistic Private Pay | $5,715–$8,573 | $11,430–$17,145 |
+| APFM benchmark | N/A | $4,125–$8,700 |
 
 ### Fully loaded stage cost — $5,000 ad spend + $5,000 service fee
 
@@ -4341,8 +4350,18 @@ Editable calculator defaults used on the live page: 33.4% of leads qualify; 49.7
 
 At APFM's reported $55–$58 raw lead cost, 15–30 leads imply a practical **$825–$1,740 CAC**. The exact endpoints of a 3–7% close rate are 14.3–33.3 leads and approximately $786–$1,933 CAC. At 6–9 attempts per lead, acquiring one client can require roughly **90–270 call attempts**, before texts and emails. APFM referrals may also be shared with several competing agencies, making speed-to-contact operationally important.
 
+### Home care revenue and profit context
+
+Home Care Boost's 2026 home care profitability benchmark says typical non-medical private-duty billing runs **$22–$40/hr**, well-run independent agencies at $1–5M annual revenue often land at **15–25% EBITDA**, and the economics scale with billable hours more than client count. At **$70,000/month** and **$30/hr**, the agency needs about **2,333 billable hours/month**. A 15–25% EBITDA range implies roughly **$10,500–$17,500/month** of EBITDA before owner-specific adjustments.
+
+| Weekly hours per client | Exact clients for $70k/mo at $30/hr | Planning roster target | Roster gross revenue at $30/hr |
+|---|---:|---:|---:|
+| 40 hr/week | 13.5 clients | 15 clients | ~$78,000/month |
+| 20 hr/week | 26.9 clients | 29 clients | ~$75,400/month |
+| 12 hr/week | 44.9 clients | 49 clients | ~$76,400/month |
+
 **APFM lead profile fields:** primary contact name, phone, email and relationship to the senior; care-recipient name and location; target city/state/ZIP; urgency and expected start date; ADL assistance and medical context; companionship, meal, medication, housekeeping and transportation needs; hours and schedule preferences; estimated budget; and likely funding source.
 
-**Benchmark sources:** A Place for Mom partner program (https://homecare.aplaceformom.com/); historical $55 CPL reference (https://www.careswitch.com/faq/online-lead-site-tips-for-home-care-agencies?category=request-contribute); recent provider report of $580 prepaid for 10 referrals (https://www.bbb.org/us/ny/new-york/profile/senior-care/a-place-for-mom-inc-0121-87176893/customer-reviews?page=13). The 35% connected, 13% assessed, 3–7% client and 6–9 attempt assumptions are planning benchmarks supplied for this model and should be validated against an agency's own CRM.
+**Benchmark sources:** A Place for Mom partner program (https://homecare.aplaceformom.com/); historical $55 CPL reference (https://www.careswitch.com/faq/online-lead-site-tips-for-home-care-agencies?category=request-contribute); recent provider report of $580 prepaid for 10 referrals (https://www.bbb.org/us/ny/new-york/profile/senior-care/a-place-for-mom-inc-0121-87176893/customer-reviews?page=13); Home Care Boost profitability benchmark (https://www.homecareboost.com/posts/how-profitable-is-a-home-care-agency). The 35% connected, 13% assessed, 3–7% client and 6–9 attempt assumptions are planning benchmarks supplied for this model and should be validated against an agency's own CRM.
 
 **Next in the sequence (not started):** offer → copy → landing page → ads, each built from this brief and the 10-tab, per the standing order.
