@@ -2,13 +2,13 @@
 
 Health Insurance Ecosystem · the person turning 65 or already on Medicare choosing a plan (and the family helping) · Researched 2026-09-25 · refresh due 2027-03-25 · Live page: https://vincestars-cloud.github.io/campaign-previews/medicare-shoppers/research/
 
-49,777 documents in the shared corpus · 5,828 buyer documents in this page's voice · 693 ads to this audience of 2,890 read.
+60,249 documents in the shared corpus · 5,855 buyer documents in this page's voice · 693 ads to this audience of 2,890 read.
 
 ## TLDR
 
-- Who: 5,828 first-person Medicare shoppers (5,691 turning 65 or on Medicare, 137 family members helping), mostly commenters on Medicare explainer channels and r/medicare. Agents, SHIP counselors and former brokers are excluded.
-- What they fear: cost on a fixed income (69 documents), networks and prior authorization (44), a big illness and its bills (25). The whole decision is Original Medicare + Medigap versus Medicare Advantage.
-- What they tried: Plan G or N (82), agents and brokers (34), switching from Advantage back to Medigap (15); the most-liked outcome is relief at NOT choosing Advantage (156 peace-of-mind documents vs 119 happy on Advantage).
+- Who: 5,855 first-person Medicare shoppers (5,711 turning 65 or on Medicare, 144 family members helping), mostly commenters on Medicare explainer channels and r/medicare. Agents, SHIP counselors and former brokers are excluded.
+- What they fear: cost on a fixed income (68 documents), networks and prior authorization (44), a big illness and its bills (25). The whole decision is Original Medicare + Medigap versus Medicare Advantage.
+- What they tried: Plan G or N (82), agents and brokers (36), switching from Advantage back to Medigap (15); the most-liked outcome is relief at NOT choosing Advantage (155 peace-of-mind documents vs 119 happy on Advantage).
 - Who sells to them: 693 active Meta ads to Medicare shoppers, 243 from lead funnels and third-party marketers; benefit bait (giveback, flex card, grocery money, $0) is the most common hook after the 'Turning 65?' qualifier.
 - The silent layer: 'how to block Medicare calls' and its variants are typed 84 ways and watched 1,381,158 times, yet only 5 shoppers mention the calls in their own posts. They put up with the calls quietly; those calls are what the lead industry sells.
 - The read for Vince (hypothesis): the Medicare lead an agent will pay for is a shopper who asked for help, chose one agent and was told the truth about Medigap underwriting; the market around them is bait ads and cold calls they are trying to block.
@@ -42,14 +42,14 @@ Health Insurance Ecosystem · the person turning 65 or already on Medicare choos
 
 | Theme | Documents |
 |---|---|
-| Not being able to afford it on a fixed income | 69 |
+| Not being able to afford it on a fixed income | 68 |
 | Networks, prior authorization and being denied care | 44 |
 | A big illness and the bills that follow | 25 |
 | Choosing wrong, missing a deadline, the penalty | 11 |
 | Travel and care out of state | 9 |
 | Stuck: failing underwriting, no way back to a Medigap | 7 |
 
-### Not being able to afford it on a fixed income · 69 documents
+### Not being able to afford it on a fixed income · 68 documents
 
 > "Reality check. I'm embarrassed. I've done a bad job preparing for retirement Hi all, My husband (66) is planning to leave this fall from his job of 30 years with a pension. I (65) have a small business and work PT which I plan to keep doing to some extent. We both plan on taking SS when we are 70. We don't have a lot in the retirement fund but our financial advisor says we will be ok. I have been fussing over the numbers to make sure we have a budget and can account for the type of living we want to have. Our house is not paid off. I'll provide some of the numbers below for context. The plan is draw the investment down and it will get scary low for a while. But then after SS kicks in we probably will not need to pull much if any, as long as we both survive a bit longer (we are in pretty good shape) and we don't go crazy spending. The thing is we both have things we want to do other than watch Netflix all day. He wants to do more screenwriting and filmmaking, and I want to continue doing my work (I self-publish books), and we both want to travel. Sidenote: I have a sister and BIL who did not save a dime for retirement, sold their home and took the 500K proceeds put a good portion in an annunity and took their SS at 65 ($4440 monthly) and high-tailed it to Madrid. And I have family in Italy and Switzerland so we plan to spend some time in Europe. Not worried too much about the emotions of not knowing what to do. It's all about money for me. Anywazzzz... I kinda want to know from all of you what to expect if you have been in this situation and any tips to ease my mind. My family thinks I am over-reacting and over-thinking all of this, as in just do it, relax, you have enough to live your life, and IDK. Obviously my math and financial skills are lacking, and I know I can't make up for lost time now, but I want to try to do better. And now I feel even more unsure. Then when read this sub and see people who have millions in their account are fussing over whether they have enough $$ to stop trading time for money. I feel-- bleh. So here goes.... Our monthly spend is between $3900-5500 (depending on unexpected things) AND I have heard that some retirees spend more cuz they have the time to time to travel and do other things. Pension is about $2900, and my income is about $1500 per month (total $3400) after tax. But I hope to NOT be working after 2026. His SS will be $3300, mine $2100 Our net worth number is $650k Our investments are $322k. 250K in mutual fund/65k in EFT (Mainly Trad IRA some Roth), 6k Robinhood (planning to move this somewhere else) Mainly Trad IRA some Roth. Our HYSA emergency fund is $9k We have only our mortgage as debt. $127k. Current Zillow price for selling our 1500 sf townhome is at $333K We both have long-term care policies. With 100K cash payouts - I don't really know how this will work in reality. We have 2 old cars (2008 Lexus and 2009 Caddy). Plan to wait until one of them really dies and deal with one car, then when the other dies, hit the investment account for another budget car, I don't know the amount, guessing no more than 20K? HVAC and under home plumbing to pex is complete. Our roof has been replaced, and the house just got painted. The interior is in need of a paint job, some rooms more than others, I think we can handle painting, and our appliances are over 10 yrs old. I know the stove needs replacing, but everything else seems ok. Ideally I love to have new kitchen cabinets, or some update there. So I think I will need 20-40K to fix this part. None of this is urgent really and could probably wait- unless the fridge or washing machine goes down, then those I really need. My plan would be to take more from the investments to cover said large home emergency. One of my biggest fears is healthcare. Those unexpected costs could add up to $5000 every year, since I am new to Medicare I don't know if I really trust that my supplement plan will really pick up the 20% that Medicare does not. And my husband's employee plan is projected to be an advantage plan that I trust even less. These insurance questions are probably better in a different sub? I think this may be enough detail, but let me know what I missed. Is this scenario as bad as I think? Would you relax into it? I appreciate you reading and this generous community. EDIT: You peeps rock! Thanks. I am still reading all your comments intensely. Net worth is really $526 as someone pointed out, AND I can't add apparently lol, you can see why I am worried :) The pension is 100% survivorship to me so that stays level. Not sure about COLA on this, I think so tho. Don't know what to do about life insurance after he retires, maybe the company will offer us a decent plan?, we already pay soooo much for insurances. The expenses noted does include mortgage and premiums. The pension and SS income is after tax. So many good ideas!"
 > — r/retirement · 191 upvotes · None
@@ -159,12 +159,25 @@ Health Insurance Ecosystem · the person turning 65 or already on Medicare choos
 
 | Theme | Documents |
 |---|---|
-| Paying less for the same care | 16 |
 | Any doctor, any hospital, no approvals | 15 |
+| Paying less for the same care | 15 |
 | Dental, vision and hearing covered | 9 |
 | Getting it right the first time | 6 |
 
-### Paying less for the same care · 16 documents
+### Any doctor, any hospital, no approvals · 15 documents
+
+> "Why does John Oliver hate Medicare Advantage so much? I'm huge fan of Last Week Tonight with John Oliver ([his show on MA.)](https://www.youtube.com/watch?v=Ejoi9yfLVCc) He is amazing at taking a topic, going in depth, and if need be, skewering it. But I think he was way off base on his Medicare Advantage rant. So, it costs the government--when has that ever bothered him (or me)? And yes, it's not the same as Original Medicare, but more like regular insurance. I know, I have it. Like all insurance are there instances of denial? Sure (although he was really reaching for it on some of his examples). But here's the thing. For me to switch to Part D and a Medigap plan it would cost me about $3000 a year. I've had MA for 8 years, and I've never spent more than $200 or $300 in a given year on copays and coinsurance. And that's not counting the thousands I get in dental, eyewear, hearing, and OTC benefits (although granted some of those are being reduced or cut this year). And with my PPO plan, I can see any doctor or specialist I want without a referral, in or out of network (nearly every provider in my medium-size midwest city is in network). So, sure I could just go back to Original Medicare and pay the 20% it doesn't cover myself. Or I could get the drug and gap insurance (which you have to buy from private companies, by the way). But I can't afford either of those options. But I can afford my MA plan. And I wish rich people would stop telling me what to do with money I don't have."
+> — r/medicare · 88 upvotes · None
+
+> "My experience with UHC was that they initially gave me $3000 for dental the first year, which basically covers cleanings, and filling cavities, then they dropped it by $500 dollars for the next 2 years. I needed a bridge, which costs a lot more than $2000, never mind that I would still need my routine care. I finally went back to regular Medicare last fall. My secondary insurance covers my routine dental care. Still no bridge, but at least I do not have to be manipulated by a for-profit advantage care corp. Oh! And I can see any doctor I want and go to any facility that takes Medicare."
+> — YouTube · Medicare Advantage: Last Week Tonight with John Oliver (HBO) · 37 likes · https://www.youtube.com/watch?v=Ejoi9yfLVCc&lc=UgwjTPfIbhOs9e-qKml4AaABAg
+>
+> ↳ @elizabethconnolly3260 (0): "Exactly! Their “additional benefits” are subpar and have very limited providers."
+
+> "Erin, I went on Medicare at 65 and got a medigap Plan N for $91.00 a month. Now 4 years later in 2026 my medigap plan N is $131.00 a month. Very importantly with Plan N which is way cheaper than Plan G, the only difference is a $20.00 copay but none of my doctors have charged me the co-pay. I am very adamant about choosing any Doctor I want and flexibility to go anywhere to see a specialist out of state if nessary. I LOVE my Plan N!!!"
+> — YouTube · Choose Wrong at 65 and You May NOT Be Able to Undo It: Medicare Advantage vs Medigap · 7 likes · https://www.youtube.com/watch?v=KZJptHP78wg&lc=UgwcrxukaLOJTehg6qV4AaABAg
+
+### Paying less for the same care · 15 documents
 
 > "Excellent information. My suggestion, respectfully, when comparing prices, you did not clearly explain that Supplements “Do Not” include prescriptions and will require an additional PD plan. Which is not a big premium but it is additional monthly dollars. Supplemental plans are Superior if the Senior can handle the monthly premiums. I’ve worked with some seniors who live social security “paycheck to paycheck” and while there are government programs that help assist, they have to decide premiums or food/medication. I love Medicare. I love our country. I love our Seniors. I pray for affordable, excellent medical care plans for ALL. In the meantime, explaining the Medicare plans as you do, is exemplar!!!! You are my hero 👏👏👏"
 > — YouTube · Medicare Advantage vs Medicare Supplement Plans · 24 likes · https://www.youtube.com/watch?v=xw7EiH-5iik&lc=UgyNdbQBZ9WoEBX6e5V4AaABAg
@@ -186,19 +199,6 @@ Health Insurance Ecosystem · the person turning 65 or already on Medicare choos
 > — YouTube · The REAL Difference Between Medicare Plan G, Plan N, and Advantage · 1 likes · https://www.youtube.com/watch?v=SDD903qXaHg&lc=Ugz0A5Y179J8GVLPxKp4AaABAg
 >
 > ↳ @medicare365 (0): "I appreciate the long question and comment. I can say this with certainty. There is no way for me or anyone else to predict 5 or 10 years from now when it comes to price increases. The truth is attained age, issue age etc is a scam. They all go up in price. The only way to keep the price down is to stay healthy and change your plan every 2 years. Unfortunately, many people believe there is a silver bullet to beat the Medigap increases, but I have been in this space for 20 years and it doesn’t happen. The HDG increases have been way less than Plan G and Plan N … but many people don’t like high deductible plans. Hope this helps."
-
-### Any doctor, any hospital, no approvals · 15 documents
-
-> "Why does John Oliver hate Medicare Advantage so much? I'm huge fan of Last Week Tonight with John Oliver ([his show on MA.)](https://www.youtube.com/watch?v=Ejoi9yfLVCc) He is amazing at taking a topic, going in depth, and if need be, skewering it. But I think he was way off base on his Medicare Advantage rant. So, it costs the government--when has that ever bothered him (or me)? And yes, it's not the same as Original Medicare, but more like regular insurance. I know, I have it. Like all insurance are there instances of denial? Sure (although he was really reaching for it on some of his examples). But here's the thing. For me to switch to Part D and a Medigap plan it would cost me about $3000 a year. I've had MA for 8 years, and I've never spent more than $200 or $300 in a given year on copays and coinsurance. And that's not counting the thousands I get in dental, eyewear, hearing, and OTC benefits (although granted some of those are being reduced or cut this year). And with my PPO plan, I can see any doctor or specialist I want without a referral, in or out of network (nearly every provider in my medium-size midwest city is in network). So, sure I could just go back to Original Medicare and pay the 20% it doesn't cover myself. Or I could get the drug and gap insurance (which you have to buy from private companies, by the way). But I can't afford either of those options. But I can afford my MA plan. And I wish rich people would stop telling me what to do with money I don't have."
-> — r/medicare · 88 upvotes · None
-
-> "My experience with UHC was that they initially gave me $3000 for dental the first year, which basically covers cleanings, and filling cavities, then they dropped it by $500 dollars for the next 2 years. I needed a bridge, which costs a lot more than $2000, never mind that I would still need my routine care. I finally went back to regular Medicare last fall. My secondary insurance covers my routine dental care. Still no bridge, but at least I do not have to be manipulated by a for-profit advantage care corp. Oh! And I can see any doctor I want and go to any facility that takes Medicare."
-> — YouTube · Medicare Advantage: Last Week Tonight with John Oliver (HBO) · 37 likes · https://www.youtube.com/watch?v=Ejoi9yfLVCc&lc=UgwjTPfIbhOs9e-qKml4AaABAg
->
-> ↳ @elizabethconnolly3260 (0): "Exactly! Their “additional benefits” are subpar and have very limited providers."
-
-> "Erin, I went on Medicare at 65 and got a medigap Plan N for $91.00 a month. Now 4 years later in 2026 my medigap plan N is $131.00 a month. Very importantly with Plan N which is way cheaper than Plan G, the only difference is a $20.00 copay but none of my doctors have charged me the co-pay. I am very adamant about choosing any Doctor I want and flexibility to go anywhere to see a specialist out of state if nessary. I LOVE my Plan N!!!"
-> — YouTube · Choose Wrong at 65 and You May NOT Be Able to Undo It: Medicare Advantage vs Medigap · 7 likes · https://www.youtube.com/watch?v=KZJptHP78wg&lc=UgwcrxukaLOJTehg6qV4AaABAg
 
 ### Dental, vision and hearing covered · 9 documents
 
@@ -366,22 +366,13 @@ Thin by nature: Medicare shoppers write about spouses and parents mostly in pass
 
 | Theme | Documents |
 |---|---|
-| Too confusing to compare | 238 |
-| 'Free' benefits that are a rip-off | 134 |
+| Too confusing to compare | 237 |
+| 'Free' benefits that are a rip-off | 130 |
 | Premiums that keep going up | 96 |
 | Agents and callers who push or mislead | 24 |
 | Prior authorization and insurers second-guessing doctors | 13 |
 
-### Too confusing to compare · 238 documents
-
-> "It's all gotten too complicated. All US politicians need to be put in Social Security and Medicare the same as the rest of us."
-> — YouTube · After 15 Years in Medicare, Here’s the Plan I’d Pick Now · 566 likes · https://www.youtube.com/watch?v=Dca1_SFCZkg&lc=UgxANrjVAIZWL8eLs_x4AaABAg
->
-> ↳ @DehydratedWaterSale (25): "​@karenkoe7096 What I mean by that is a lot of older adults will look at it and it will seem like a bunch of convoluted spaghetti. Lots of them aren't even on the Internet. My dad retired from the accounting profession because they were converting to computers. He died at 103, and as he aged, his mind wasn't working as it should. He hadn't even applied for his VA benefits. I had to do it for him. I think people forget how vulnerable some people are."
->
-> ↳ @marblox9300 (22): "@karenkoe7096 No, she is right - the entire medicare system is stupidly complicated. Supplements are GREAT IF you win the lottery."
->
-> ↳ @karenkoe7096 (12): "Its not that complicated. If you don't understand it, call a insurance broker. They can explain it to you. And no, don't call an advantage broker."
+### Too confusing to compare · 237 documents
 
 > "Glad I did my homework and chose traditional Medicare over Medicare Advantage. I read too many horror stories about people who became catastrophically ill, and had problems seeing specialists, or obtaining certain treatments. I would rather pay for the “peace of mind,” and the CHOICE to go where I want, and see the doctor or specialist I need/want."
 > — YouTube · I Tried to Switch from Medicare Advantage to Medicare Supplement — Here's What Happened · 264 likes · https://www.youtube.com/watch?v=uscI75VAZWc&lc=UgxefqUbJQyLYRyCYv54AaABAg
@@ -401,7 +392,16 @@ Thin by nature: Medicare shoppers write about spouses and parents mostly in pass
 >
 > ↳ @trackguy4038 (9): "I agree!!! Best video ever!!!"
 
-### 'Free' benefits that are a rip-off · 134 documents
+> "The reason so many people default to Medicare Advantage is not just the marketing, it’s the fact that it so much resembles the health insurance that people are accustomed to—with co-pays, but basically all-inclusive (except maybe vision and dental). Regular Medicare is a 1960s Major Medical plan with add-ons to bring it up to date, and even with part B and D you still need private insurance (the alphabet soup of Medigap plans) to make up the gaps. What we really need is an all-inclusive, up to date version of Medicare rather than people having to assemble all these disparate parts, which are especially confusing for people with less education."
+> — YouTube · Choose Wrong at 65 and You May NOT Be Able to Undo It: Medicare Advantage vs Medigap · 176 likes · https://www.youtube.com/watch?v=KZJptHP78wg&lc=Ugw7uVI2hc5qZkKoSBx4AaABAg
+>
+> ↳ @EightyDeuce-x1d (7): "Yes, most definitely. If medigap plans would include the part D prescription and maybe some dental allowance, I for one, would have definitely started on OM."
+>
+> ↳ @franklopeziilmtmti603 (7): "@EightyDeuce-x1d The sad thing is many of us once we get to 80-85, more hospital and meds, income does not match inflation and now we're not able to make any kind of deductible but those that always made less get Medicaid. Totally unfair for us that hustled and tried to plan for inflation as well."
+>
+> ↳ @alansach8437 (4): "​@franklopeziilmtmti603 You need to be rich or dirt poor. In the middle you are screwed. Of course, don't fool yourself in thinking the care is in any way equal. I've known folks on Medicaid. Everytime I have walked into a doctor's office with Original Medicare and my G Supplement I have been treated like royalty. Can't say the same for them."
+
+### 'Free' benefits that are a rip-off · 130 documents
 
 > "What pisses me off is… Idid not sign up for prescription drug plan when I signed up for Medicare at age 65 because I wasn’t taking any drugs. Later Iwas convinced to take the part D coverage. Then I find out I will have to pay a monthly penalty amount of $18.00 for the rest of my life to the drug companies because I did not enroll in part D when I signed up for Medicare. (I am now 82 years old, in good health, and still do not take prescription drugs). It’s a rip-off."
 > — YouTube · Working past 65? Avoid these HUGE Medicare mistakes. · 312 likes · https://www.youtube.com/watch?v=evYI75xJnKg&lc=UgwYnNkAm7dPfm_ViEZ4AaABAg
@@ -488,7 +488,7 @@ Thin by nature: Medicare shoppers write about spouses and parents mostly in pass
 | Theme | Documents |
 |---|---|
 | Chose Plan G or Plan N | 82 |
-| Agents and brokers (and the commission question) | 34 |
+| Agents and brokers (and the commission question) | 36 |
 | Switched from Advantage back to Original Medicare + Medigap | 15 |
 | Seminars, YouTube channels and doing it themselves | 11 |
 | Medicare.gov, SHIP counselors and Social Security | 8 |
@@ -514,7 +514,7 @@ Thin by nature: Medicare shoppers write about spouses and parents mostly in pass
 > "Retirement and Dealing with Cancer Costs It is not a pleasant subject, but it is important to talk about it. According to WebMD, 30% of seniors aged 65-74, 19% of 75-84, and 8% over 85 get cancer. Within the last 2.5 years, I’ve had three different cancers, and I retired at the same time. It can be expensive. I thought I would share my experience dealing with the costs. The three cancers I’ve had to contend with are Mantle Cell Lymphoma (blood cancer), Squamous Cell Carcinoma (skin cancer), and prostate cancer. Mantle Cell Lymphoma is incurable. In my case, my oncologist advised me to delay treatment as long as possible since it always comes back and is harder to treat each subsequent relapse. I was on a “Wait and Watch” monitoring program for over two years with blood tests every 3-months and a scan every 6-months. The monitoring showed it had progressed and required treatment, which I started earlier this month. I’ll have 6-months of chemotherapy / immunotherapy followed by 2-years of less intensive “maintenance” therapy. Over the last couple of years, in addition to the chemo treatment, I’ve had numerous blood tests, PET scans, CT scans, biopsies, and doctor appointments. For the skin cancer, I had a blob of Squamous Cell Carcinoma cut off my face using the “Mohs” procedure, and another much smaller spot shaved off the tip of my nose. I’ve had multiple visits with the surgeon and other specialists, and I will require skin checks every 6-months because of all of the per-cancerous lesions that keep popping up. The prostate cancer was detected during a PET scan for the lymphoma. However, after a follow-up MRI and biopsy (lot of fun), it was determined that I have the least aggressive form of prostate cancer which does not need immediate treatment and can be managed with “Active Surveillance”. I am told it is slow growing and I have about a 50% chance of needing treatment in the next 10 years. I will be monitored with blood tests, MRI scans, and possibly additional biopsies in the years to come. As you can imagine, all of these tests, procedures, and treatments are very expensive. I had always planned on retiring the day I turned 65. However, I was diagnosed with the lymphoma when I was 64 and I decided to work an extra 10 months after I turned 65 (until the end of the year) because: 1) I had already met the out-of-pocket maximum for the year for my work health insurance; 2) my job was very supportive and allowed me to take time off as needed; and 3) my wife would be in a better position financially if things didn’t go well for me. I had plenty of time to learn about Medicare, which I started in January 2024 when I officially retired. There are two ways to get Medicare: Original Medicare or a Part C Advantage Plan. With Original Medicare, you really need to also have a Medigap Supplemental Plan and a Part D prescription drug plan. There are several options for a Supplemental Plan. I chose Plan G, which covers everything except an annual deductible. For 2025, the annual deductible was only $257, which I probably hit within the first 15-minutes of my first appointment in January. Everything else is free for the rest of the year. I should point out that, if I had been on my work group health insurance plan, I would have incurred several thousands of dollars of costs each year until I hit my out-of-pocket maximum. Compared to an Advantage Plan. the premiums are higher with Original Medicare and a Supplemental Plan G, but you don’t have any restrictions of which doctors are in your network, and you don’t have to worry about insurance company per-approval. In addition to lower premiums, Advantage plans also include perks such as dental, vision, and maybe even a gym membership. Many people are very happy with their Advantage plan, and may save money with the lower premiums. However, based on my experience, I think Original Medicare with a Supplemental Plan G is preferred if you have a serious illness such as cancer, and you can afford the higher premiums. I pay $185 for Medicare Part B, $209 for my Supplemental Plan G, and $17.50 for my Part D prescription plan. Dental and vision I pay out of pocket. The main benefit of Original Medicare with a Supplemental plan is I’ve never had to worry about insurance company pre-approvals, or whether my doctor accepted it. In general, I think it is wise to get the best insurance that you can afford."
 > — r/retirement · 161 upvotes · None
 
-### Agents and brokers (and the commission question) · 34 documents
+### Agents and brokers (and the commission question) · 36 documents
 
 > "Do I really need an agent to buy a medigap plan? Im a little confused. I will be moving to Original Medicare during open enrollment. Using the Medicare website it was easy to create a list of plans available to me. Then I contacted each company to get a quote for both Part G and Part N, which i am considering. Now my phone is blowing up with agents who leave me messages all day long. I guess I just dont understand. Why do I need agent? The process seems very straightforward. I was on the ACA for a couple of years before I went on Medicare and I managed to navigate the ACA without a "navigator". And when i sighed up for a MAP,i picked the plan and signed up on my own.Why would I suddenly need to turn to an agent for a medigap plan? What am I missing? ETA: I think it need to clarify the question, because im getting a bit of snark. My question is an i REQUIRED to use an agent to purchase a medigap policy, because the messages im getting in my voicemail are quite pushy about me needing one. I use an agent for my homeowners and car insurance, not even sure if i could buy without. Just wondering if its the same way. ETA: Well this has been interesting. I asked a question about medigap without an agent and while I got many helpful responses, I also got people thinking I advocate for practicing law without a license to replacing a car engine by watching YouTube videos. And being told that because I have decided to move off MA because my late husband got cancer and we were faced with max out of pocket abd high co-pays and I didnt want to deal with that in my life ever again, that I must have huge financial problems caused by not adequately funding my retirement. OK then. Its the internet, hopefully others have found some of the responses useful. I really dont understand the hostility. Whatever."
 > — r/medicare · 60 upvotes · None
@@ -609,7 +609,7 @@ Thin by nature: Medicare shoppers write about spouses and parents mostly in pass
 | Theme | Documents |
 |---|---|
 | Should have enrolled or planned differently | 38 |
-| Wishing someone had warned them about underwriting and deadlines | 14 |
+| Wishing someone had warned them about underwriting and deadlines | 15 |
 | Wishing the rules or the plans were honest | 10 |
 | Wishing for one simple Medicare that covers everything | 6 |
 
@@ -636,7 +636,7 @@ Thin by nature: Medicare shoppers write about spouses and parents mostly in pass
 > "Thanks Erin. This is a much-needed video for millions. I did my homework for a full 6 months before joining Medicare and learned what I needed to learn. I had to go to many resources in addition to Medicare site itself. I wish I had this video to simplify my life but I am going to forward to those reaching 65 soon. You, undoubtedly, did an outstanding job for the entire senior/Medicare community. On behalf of millions, thank you."
 > — YouTube · Choose Wrong at 65 and You May NOT Be Able to Undo It: Medicare Advantage vs Medigap · 17 likes · https://www.youtube.com/watch?v=KZJptHP78wg&lc=UgzrY6wrecXKKs-U6oF4AaABAg
 
-### Wishing someone had warned them about underwriting and deadlines · 14 documents
+### Wishing someone had warned them about underwriting and deadlines · 15 documents
 
 > "Universal coverage is simple, but the facts are unpalatable to many **Background premises:** I'll start with the premise that, in the USA, a citizen who gets a curable cancer should not die for want of care. (You may agree with that premise or not, but I'm doing a thought experiment about universal coverage and this premise is the basic justification for universal coverage.) (I'm leaving out non-citizens not because I don't care about them, but because I want to avoid side issues and make clear how brutally limited our choices are to meet the goal of "curable cancer shouldn't kill you.") I have an opinion about the best way to solve the problem, but I won't express it now. I will just list the logical possibilities. There aren't many. **Option 1:** If you get cancer, go to the ED. This is pretty much the system now. You will probably get care, although it will likely be delayed and suboptimal. Guess who pays for this? Ultimately the government/populace. Doctors and hospitals cannot provide free care for everyone who has no insurance, without ultimately going bankrupt. So ultimately the government/populace pays for this. The mechanisms are weird and varied - various subsidies, overcharging private insurers, "safety net" hospitals which are subsidized by the government, etc. But let's not kid ourselves. Someone pays for it - and that someone is us. And if the mechanisms of payment are weird and varied, they are probably inefficient and wasteful. And of course, if people actually could get preventive care, maybe fewer people would get cancer and maybe that would be better for all of us in the long run (ya think?). Option 2: The government covers everyone. The easiest way to do this is by making people over 60 eligible for Medicare, then next year adding people under 18 and people over 55. In a few years, we have Medicare for all. To cushion the economic change for insurance companies, you can drag this out over 10 years or so if you wish. Government-run systems in other countries have lots of problems, and people in those countries are often unhappy with them, but they do cover everyone, and developed nations with universal health care - without exception - spend much less and get better global outcomes than we do. Yes, you may have to wait a year or longer for your hip replacement in Canada. But overall, you will live longer and healthier. Which are you gonna choose? And yes, it's really a choice: If a country devotes all its resources to making sure the fraction of the population who need a hip replacement get it within 3 weeks, a lot of resources have to be diverted from preventative and primary care. You have to decide at the beginning if immediate availability of elective care is more important, or if overall health and longevity of the population is more important. \[As an aside, if the government covered everyone we would collect something like $600M more in taxes annually, because employers wouldn't provide health insurance plans, and the money previously used for employer-provided plans would be taxable (either on the company side or the employee side).\] Option 3: A market based plan. Here the choices are much starker than most people realize. It basically means everyone gets some kind of private insurance so that when you get a curable cancer you don't die. Almost all Americans, in polls, agree that you should be able to get insurance even if you have a pre-existing condition. If you are guaranteed coverage for pre-existing conditions, most people will be better off not getting insurance until they get cancer. The people who will buy insurance right away are those with expensive chronic conditions. Someone who has an autoimmune disorder and needs $30K worth of biological meds annually will buy insurance. Someone who is healthy will not buy insurance and pay for basic care out of pocket. If the healthy person gets cancer, they'll just buy insurance at that point. I hope it's clear to all that under this system no insurance company will stay in business for more than a year or two. Nobody will buy insurance until the insurance payouts they get are larger than their premium. Meaning the insurance companies will lose money on every policy they sell. So, if you are going to have a market based plan that meets the goal of "people don't die of a curable cancer," you have to persuade or require healthy people to join now. Health insurance (whether provided by Medicare, Medicaid or private companies) is a mechanism of spreading risk. We can afford to care for a child with cancer ONLY because a lot of people are paying insurance premiums (or taxes) when they don't need expensive services. Hence the Affordable Care Act. There are many things to like or dislike about the ACA, but it's shocking how many don't seem to grasp the basic premise. **You cannot provide coverage for pre-existing conditions unless healthy people pay premiums.** This is not an opinion. It's mathematics. I am not a huge fan of insurance companies, but if they spend more than they take in on every policy they will fail - and thus a system that relies on insurance companies will fail. **Conclusions** I submit that there is basically no way to meet the goal of "A US citizen with a curable cancer shouldn't die for want of care" except the 3 I have outlined. If anyone can propose another, I'd love to hear about it. Any plan that doesn't adopt one of these three premises fails to meet the basic goal of "A US citizen with a curable cancer shouldn't die for want of care." Health savings plans, tax breaks, malpractice reforms, etc, nibble around the edges of the problem, and may make some significant improvements here or there. But to meet the really important goal, you need a comprehensive approach, and the only mathematical possibilities are (1) The government/ populace pays for it indirectly, (2) The government/ populace pays for it directly, or (3) Healthy people have to be required to buy insurance so that sick people can get care that would otherwise be beyond their means. My two cents. I welcome all of your opinions about this."
 > — r/HealthInsurance · 404 upvotes · None
@@ -701,11 +701,11 @@ Thin by nature: Medicare shoppers write about spouses and parents mostly in pass
 
 | Theme | Documents |
 |---|---|
-| Peace of mind with a Medigap plan | 156 |
+| Peace of mind with a Medigap plan | 155 |
 | Happy with an Advantage plan | 119 |
-| Money saved | 39 |
+| Money saved | 38 |
 
-### Peace of mind with a Medigap plan · 156 documents
+### Peace of mind with a Medigap plan · 155 documents
 
 > "You explain the options very well in this video. I'm glad I picked the supplemental plan instead of advantage. I'm 69 and not a spring chicken anymore. Your priority has to be medical benefits as you get older. Go to the doctors and hospitals that you want. No referrals. Pay the supplemental premium, skip the new car payments and hang on to that older car."
 > — YouTube · After 15 Years in Medicare, Here’s the Plan I’d Pick Now · 290 likes · https://www.youtube.com/watch?v=Dca1_SFCZkg&lc=Ugw1n1YjSCR0VLlkwUd4AaABAg
@@ -755,7 +755,7 @@ Thin by nature: Medicare shoppers write about spouses and parents mostly in pass
 >
 > ↳ @FollowScripture (0): "He was very informative...I agree with what you say here"
 
-### Money saved · 39 documents
+### Money saved · 38 documents
 
 > "Retirement and Dealing with Cancer Costs It is not a pleasant subject, but it is important to talk about it. According to WebMD, 30% of seniors aged 65-74, 19% of 75-84, and 8% over 85 get cancer. Within the last 2.5 years, I’ve had three different cancers, and I retired at the same time. It can be expensive. I thought I would share my experience dealing with the costs. The three cancers I’ve had to contend with are Mantle Cell Lymphoma (blood cancer), Squamous Cell Carcinoma (skin cancer), and prostate cancer. Mantle Cell Lymphoma is incurable. In my case, my oncologist advised me to delay treatment as long as possible since it always comes back and is harder to treat each subsequent relapse. I was on a “Wait and Watch” monitoring program for over two years with blood tests every 3-months and a scan every 6-months. The monitoring showed it had progressed and required treatment, which I started earlier this month. I’ll have 6-months of chemotherapy / immunotherapy followed by 2-years of less intensive “maintenance” therapy. Over the last couple of years, in addition to the chemo treatment, I’ve had numerous blood tests, PET scans, CT scans, biopsies, and doctor appointments. For the skin cancer, I had a blob of Squamous Cell Carcinoma cut off my face using the “Mohs” procedure, and another much smaller spot shaved off the tip of my nose. I’ve had multiple visits with the surgeon and other specialists, and I will require skin checks every 6-months because of all of the per-cancerous lesions that keep popping up. The prostate cancer was detected during a PET scan for the lymphoma. However, after a follow-up MRI and biopsy (lot of fun), it was determined that I have the least aggressive form of prostate cancer which does not need immediate treatment and can be managed with “Active Surveillance”. I am told it is slow growing and I have about a 50% chance of needing treatment in the next 10 years. I will be monitored with blood tests, MRI scans, and possibly additional biopsies in the years to come. As you can imagine, all of these tests, procedures, and treatments are very expensive. I had always planned on retiring the day I turned 65. However, I was diagnosed with the lymphoma when I was 64 and I decided to work an extra 10 months after I turned 65 (until the end of the year) because: 1) I had already met the out-of-pocket maximum for the year for my work health insurance; 2) my job was very supportive and allowed me to take time off as needed; and 3) my wife would be in a better position financially if things didn’t go well for me. I had plenty of time to learn about Medicare, which I started in January 2024 when I officially retired. There are two ways to get Medicare: Original Medicare or a Part C Advantage Plan. With Original Medicare, you really need to also have a Medigap Supplemental Plan and a Part D prescription drug plan. There are several options for a Supplemental Plan. I chose Plan G, which covers everything except an annual deductible. For 2025, the annual deductible was only $257, which I probably hit within the first 15-minutes of my first appointment in January. Everything else is free for the rest of the year. I should point out that, if I had been on my work group health insurance plan, I would have incurred several thousands of dollars of costs each year until I hit my out-of-pocket maximum. Compared to an Advantage Plan. the premiums are higher with Original Medicare and a Supplemental Plan G, but you don’t have any restrictions of which doctors are in your network, and you don’t have to worry about insurance company per-approval. In addition to lower premiums, Advantage plans also include perks such as dental, vision, and maybe even a gym membership. Many people are very happy with their Advantage plan, and may save money with the lower premiums. However, based on my experience, I think Original Medicare with a Supplemental Plan G is preferred if you have a serious illness such as cancer, and you can afford the higher premiums. I pay $185 for Medicare Part B, $209 for my Supplemental Plan G, and $17.50 for my Part D prescription plan. Dental and vision I pay out of pocket. The main benefit of Original Medicare with a Supplemental plan is I’ve never had to worry about insurance company pre-approvals, or whether my doctor accepted it. In general, I think it is wise to get the best insurance that you can afford."
 > — r/retirement · 161 upvotes · None
@@ -772,11 +772,11 @@ Thin by nature: Medicare shoppers write about spouses and parents mostly in pass
 
 | Theme | Documents |
 |---|---|
-| Calls, mail and ads every day | 169 |
-| Still working past 65 | 41 |
-| Appointments, prescriptions and pharmacy runs | 37 |
+| Calls, mail and ads every day | 170 |
+| Still working past 65 | 42 |
+| Appointments, prescriptions and pharmacy runs | 36 |
 
-### Calls, mail and ads every day · 169 documents
+### Calls, mail and ads every day · 170 documents
 
 > "Being a Utilization management RN for a Florida based hospital for over 15 years, I totally agree with you. So often patients experience medical emergencies while on vacation and are limited to choices for care while away from home and “out of network.” I advise my friends and family to always invest in supplements and keep Medicare, steering them away from advantage or replacement plans. I think it’s a crime when I have to argue with advantage plans to authorize physician directed care after the acute health emergency has been addressed. Most folks don’t realize that once a patient is determined to be stable, their care is limited to what their advantage plan will allow, even while they remain hospitalized. Often their choices decrease significantly when they are discharged. Those who require home health or rehabilitation services post-hospitalization can be severely restricted and are usually required to return home to their local area for coverage. You are providing a great service with your videos. Keep it up!"
 > — YouTube · Medicare Advantage: What They Don't Tell You · 513 likes · https://www.youtube.com/watch?v=hrkbOjBtBsw&lc=UgyQPwewvEHaPlLi_Qd4AaABAg
@@ -803,7 +803,7 @@ Thin by nature: Medicare shoppers write about spouses and parents mostly in pass
 >
 > ↳ @KristýnaKalová-t8q (0): "Appreciate that. I just looked her up and she seems highly regarded. I’ve been meaning to fine-tune my drawdown strategy, so this might be the right time. Thanks for pointing me in a solid direction!"
 
-### Still working past 65 · 41 documents
+### Still working past 65 · 42 documents
 
 > "Being a Utilization management RN for a Florida based hospital for over 15 years, I totally agree with you. So often patients experience medical emergencies while on vacation and are limited to choices for care while away from home and “out of network.” I advise my friends and family to always invest in supplements and keep Medicare, steering them away from advantage or replacement plans. I think it’s a crime when I have to argue with advantage plans to authorize physician directed care after the acute health emergency has been addressed. Most folks don’t realize that once a patient is determined to be stable, their care is limited to what their advantage plan will allow, even while they remain hospitalized. Often their choices decrease significantly when they are discharged. Those who require home health or rehabilitation services post-hospitalization can be severely restricted and are usually required to return home to their local area for coverage. You are providing a great service with your videos. Keep it up!"
 > — YouTube · Medicare Advantage: What They Don't Tell You · 513 likes · https://www.youtube.com/watch?v=hrkbOjBtBsw&lc=UgyQPwewvEHaPlLi_Qd4AaABAg
@@ -826,7 +826,7 @@ Thin by nature: Medicare shoppers write about spouses and parents mostly in pass
 >
 > ↳ @ClintFletcher-eu8tn (4): "Medicare is no paradise either. My Mom fell at age 95 and needed physical therapy. The hospital discharged her because they did not want deal with the low Medicare payments. My mother was unable to walk, but they discharged her anyway. I had to carry her about the house until she was able to start walking some by herself."
 
-### Appointments, prescriptions and pharmacy runs · 37 documents
+### Appointments, prescriptions and pharmacy runs · 36 documents
 
 > "Wellcare wanted $110 for one generic prescription — Cost Plus Drugs was $16.85 delivered I wanted to share this because Medicare drug pricing has gotten ridiculous enough that it really pays to check cash prices instead of automatically using your Part D insurance. I have Wellcare for my Medicare prescription coverage. My PCP recently sent in a 90-day prescription for generic aripiprazole (Abilify), 2 mg tablets. My copay through Wellcare was going to be **$110**. I checked Mark Cuban Cost Plus Drug Company instead. Their price for the same 90-day prescription was: * Medication: **$10.90** * Shipping: **$5.95** * Total: **$16.85** So I saved about **$93** by simply not using my Medicare drug insurance. This isn't the first time I've run into this. Wellcare also recently dropped the main pharmacy in my town as a **preferred pharmacy**, which makes things even more inconvenient. I had another experience at Safeway where I was picking up **two generic medications**. Using my Wellcare insurance, Safeway wanted about **$75**. The pharmacy employee checked another option, bypassed my insurance, and used a prescription discount code instead. The price dropped to **$23**. That really opened my eyes. We're told Medicare Part D is supposed to help lower prescription costs, but in some cases I'm finding that the cash price or a discount program is dramatically cheaper than using the insurance I'm already paying for. My takeaway is simple: **Before paying your Medicare prescription copay, ask the pharmacy what the cash price is and check places like Cost Plus Drugs or prescription discount programs.** Especially with generics, the difference can apparently be huge. I'm not saying Wellcare is always more expensive, and obviously everyone's plan and medications are different. But after seeing $110 become $16.85, and $75 become $23, I'm going to compare prices every time from now on. Hopefully this saves somebody else a few bucks — or in my case, nearly a hundred."
 > — r/medicare · 129 upvotes · None
@@ -847,28 +847,28 @@ Thin by nature: Medicare shoppers write about spouses and parents mostly in pass
 
 ### Who they are (measured)
 
-- 5,691 first-person shoppers and 137 family helpers in this voice (Tab 10 table has every source). Self-stated ages cluster at 64–72 in the comments read; disability-Medicare (under 65, SSDI) voices appear on the Medigap-underwriting themes.
+- 5,711 first-person shoppers and 144 family helpers in this voice (Tab 10 table has every source). Self-stated ages cluster at 64–72 in the comments read; disability-Medicare (under 65, SSDI) voices appear on the Medigap-underwriting themes.
 - Most document the decision rather than a complaint: YouTube comment threads under Medicare explainer channels (The Retirement Nerds, Medicare Specialist – Abt Insurance, Medicare School, Neal K. Shah, Erin Talks Money) and r/medicare threads.
 
 ### What they believe
 
 - Read of Tabs 5, 6 and 8: Advantage is cheaper until you are sick; Medigap is expensive but buys the right to see any doctor without approvals.
-- Read of Tab 5 and the Dislikes ledger: 'free' benefits (giveback, flex cards, grocery money) are a sign of a catch, and agents are paid more to sell Advantage (the commission question recurs in 34 Previous Solutions documents).
+- Read of Tab 5 and the Dislikes ledger: 'free' benefits (giveback, flex cards, grocery money) are a sign of a catch, and agents are paid more to sell Advantage (the commission question recurs in 36 Previous Solutions documents).
 
 ### The moment it changes
 
-- Measured moments: turning 65 or retiring off an employer plan (41 documents on Typical Day), the Annual Notice of Change and AEP mail (169), a denial or a hospital dropping their Advantage plan (Dislikes: 31 documents), and plans being eliminated for 2027 (the most-watched Medicare videos of September 2026).
+- Measured moments: turning 65 or retiring off an employer plan (42 documents on Typical Day), the Annual Notice of Change and AEP mail (170), a denial or a hospital dropping their Advantage plan (Dislikes: 31 documents), and plans being eliminated for 2027 (the most-watched Medicare videos of September 2026).
 
 ### What stops them
 
-- Too confusing to compare (238 documents).
+- Too confusing to compare (237 documents).
 - Fear of choosing wrong and being locked out of Medigap by underwriting (7 fear documents; 108 complaint documents).
 - Distrust of callers and agents who push Advantage (24 documents).
 
 ### Where they are and how to reach them
 
 - YouTube Medicare explainers (the pull's 30 most-commented Medicare videos are all independent broker or advisor channels plus Last Week Tonight).
-- r/medicare and r/retirement; AARP-branded plans (205 documents name UnitedHealthcare / AARP); employer HR at retirement.
+- r/medicare and r/retirement; AARP-branded plans (209 documents name UnitedHealthcare / AARP); employer HR at retirement.
 - Meta cannot target them by age: since January 2025 insurance ads sit in the Financial Products and Services special ad category, so the creative must make them self-select ('Turning 65?').
 
 ### Segments to write to
@@ -886,70 +886,70 @@ Thin by nature: Medicare shoppers write about spouses and parents mostly in pass
 
 - Hypothesis from Tabs 4, 7 and 8: 'Check your doctors and drugs first, and know the Medigap underwriting rule before you pick' — the advice they give each other (30 and 31 say-it-to-others documents) — is the opposite of the benefit-bait ads they are shown.
 
-Buyer voices: medicare self 5,691 · medicare family 137
+Buyer voices: medicare self 5,711 · medicare family 144
 
 ## Headlines
 
-1. "Net worth is really $526 as someone pointed out, AND I can't add apparently lol, you can see why I am worried :) The pension is 100% survivorship to me so that stays level." — Not being able to afford it on a fixed income (69) · None
+1. "Net worth is really $526 as someone pointed out, AND I can't add apparently lol, you can see why I am worried :) The pension is 100% survivorship to me so that stays level." — Not being able to afford it on a fixed income (68) · None
 2. "the premiums are higher with Original Medicare and a Supplemental Plan G, but you don't have any restrictions of which doctors are in your network, and you don't have to worry about insurance company per-approval." — Networks, prior authorization and being denied care (44) · None
-3. "I pray for affordable, excellent medical care plans for ALL." — Paying less for the same care (16) · https://www.youtube.com/watch?v=xw7EiH-5iik&lc=UgyNdbQBZ9WoEBX6e5V4AaABAg
-4. "And with my PPO plan, I can see any doctor or specialist I want without a referral, in or out of network (nearly every provider in my medium-size midwest city is in network)." — Any doctor, any hospital, no approvals (15) · None
+3. "And with my PPO plan, I can see any doctor or specialist I want without a referral, in or out of network (nearly every provider in my medium-size midwest city is in network)." — Any doctor, any hospital, no approvals (15) · None
+4. "I pray for affordable, excellent medical care plans for ALL." — Paying less for the same care (15) · https://www.youtube.com/watch?v=xw7EiH-5iik&lc=UgyNdbQBZ9WoEBX6e5V4AaABAg
 5. "My wife was 71 when I had to retire to take care of her." — A spouse on a different plan or losing coverage together (28) · https://www.youtube.com/watch?v=4GtRppYTHho&lc=UgzLz7IjSVYL8z78XYJ4AaABAg
 6. "After my father passed away a few years I can see the the true rhino's advantage for him." — Watching a parent get denied or billed (7) · https://www.youtube.com/watch?v=eOP76hMPiDs&lc=UgyIrD8QlO779A8NufB4AaABAg
 7. "So often patients experience medical emergencies while on vacation and are limited to choices for care while away from home and “out of network.” I advise my friends and family to always invest in supplements and keep Medicare, steering them away from advantage or replacement plans." — 'Advantage plans are a scam' (48) · https://www.youtube.com/watch?v=hrkbOjBtBsw&lc=UgyQPwewvEHaPlLi_Qd4AaABAg
 8. "So often patients experience medical emergencies while on vacation and are limited to choices for care while away from home and “out of network.” I advise my friends and family to always invest in supplements and keep Medicare, steering them away from advantage or replacement plans." — 'Get a supplement while you can' (31) · https://www.youtube.com/watch?v=hrkbOjBtBsw&lc=UgyQPwewvEHaPlLi_Qd4AaABAg
-9. "It's all gotten too complicated." — Too confusing to compare (238) · https://www.youtube.com/watch?v=Dca1_SFCZkg&lc=UgxANrjVAIZWL8eLs_x4AaABAg
+9. "I read too many horror stories about people who became catastrophically ill, and had problems seeing specialists, or obtaining certain treatments." — Too confusing to compare (237) · https://www.youtube.com/watch?v=uscI75VAZWc&lc=UgxefqUbJQyLYRyCYv54AaABAg
 10. "I had switched from Advantage to Plan G because I'm totally risk-averse." — Chose Plan G or Plan N (82) · https://www.youtube.com/watch?v=eOP76hMPiDs&lc=UgxCXf6P2_bAdYu1Q_l4AaABAg
-11. "And when i sighed up for a MAP,i picked the plan and signed up on my own.Why would I suddenly need to turn to an agent for a medigap plan?" — Agents and brokers (and the commission question) (34) · None
+11. "And when i sighed up for a MAP,i picked the plan and signed up on my own.Why would I suddenly need to turn to an agent for a medigap plan?" — Agents and brokers (and the commission question) (36) · None
 12. "I wish I had heard this video before." — Should have enrolled or planned differently (38) · https://www.youtube.com/watch?v=hrkbOjBtBsw&lc=UgwGNIGpqxvVGJJqZDZ4AaABAg
-13. "Almost all Americans, in polls, agree that you should be able to get insurance even if you have a pre-existing condition." — Wishing someone had warned them about underwriting and deadlines (14) · None
-14. "I'm glad I picked the supplemental plan instead of advantage." — Peace of mind with a Medigap plan (156) · https://www.youtube.com/watch?v=Dca1_SFCZkg&lc=Ugw1n1YjSCR0VLlkwUd4AaABAg
+13. "Almost all Americans, in polls, agree that you should be able to get insurance even if you have a pre-existing condition." — Wishing someone had warned them about underwriting and deadlines (15) · None
+14. "I'm glad I picked the supplemental plan instead of advantage." — Peace of mind with a Medigap plan (155) · https://www.youtube.com/watch?v=Dca1_SFCZkg&lc=Ugw1n1YjSCR0VLlkwUd4AaABAg
 15. "I was led to believe I had to enroll in a Medicare Advantage plan and I'm soooo glad I didn't." — Happy with an Advantage plan (119) · https://www.youtube.com/watch?v=Ejoi9yfLVCc&lc=UgzhQ6cK4tHUxOcEFjt4AaABAg
-16. "So often patients experience medical emergencies while on vacation and are limited to choices for care while away from home and “out of network.” I advise my friends and family to always invest in supplements and keep Medicare, steering them away from advantage or replacement plans." — Calls, mail and ads every day (169) · https://www.youtube.com/watch?v=hrkbOjBtBsw&lc=UgyQPwewvEHaPlLi_Qd4AaABAg
-17. "So often patients experience medical emergencies while on vacation and are limited to choices for care while away from home and “out of network.” I advise my friends and family to always invest in supplements and keep Medicare, steering them away from advantage or replacement plans." — Still working past 65 (41) · https://www.youtube.com/watch?v=hrkbOjBtBsw&lc=UgyQPwewvEHaPlLi_Qd4AaABAg
+16. "So often patients experience medical emergencies while on vacation and are limited to choices for care while away from home and “out of network.” I advise my friends and family to always invest in supplements and keep Medicare, steering them away from advantage or replacement plans." — Calls, mail and ads every day (170) · https://www.youtube.com/watch?v=hrkbOjBtBsw&lc=UgyQPwewvEHaPlLi_Qd4AaABAg
+17. "So often patients experience medical emergencies while on vacation and are limited to choices for care while away from home and “out of network.” I advise my friends and family to always invest in supplements and keep Medicare, steering them away from advantage or replacement plans." — Still working past 65 (42) · https://www.youtube.com/watch?v=hrkbOjBtBsw&lc=UgyQPwewvEHaPlLi_Qd4AaABAg
 
 ## Frequency Ranking
 
 | # | Theme | Documents | Where |
 |---|---|---|---|
-| 1 | Denied care, prior authorization, rehab cut short | 279 | Dislike |
-| 2 | Confused, afraid of choosing wrong or missing a deadline | 277 | Private worry |
-| 3 | Too confusing to compare | 238 | Tab 5 |
+| 1 | Denied care, prior authorization, rehab cut short | 281 | Dislike |
+| 2 | Confused, afraid of choosing wrong or missing a deadline | 275 | Private worry |
+| 3 | Too confusing to compare | 237 | Tab 5 |
 | 4 | 'Extra benefits' ads: flex cards, giveback, grocery money | 197 | Private worry |
-| 5 | Calls, mail and ads every day | 169 | Tab 9 |
-| 6 | Peace of mind with a Medigap plan | 156 | Tab 8 |
-| 7 | Denied care, prior authorization, narrow networks | 156 | Private worry |
-| 8 | Can't afford premiums, Part B, drugs or dental | 151 | Private worry |
-| 9 | 'Free' benefits that are a rip-off | 134 | Tab 5 |
+| 5 | Calls, mail and ads every day | 170 | Tab 9 |
+| 6 | Denied care, prior authorization, narrow networks | 161 | Private worry |
+| 7 | Peace of mind with a Medigap plan | 155 | Tab 8 |
+| 8 | Can't afford premiums, Part B, drugs or dental | 153 | Private worry |
+| 9 | 'Free' benefits that are a rip-off | 130 | Tab 5 |
 | 10 | Stuck in Advantage: can't get a Medigap later | 128 | Private worry |
 | 11 | Happy with an Advantage plan | 119 | Tab 8 |
 | 12 | Stuck: can't switch back to a Medigap | 108 | Dislike |
 | 13 | Premiums that keep going up | 96 | Tab 5 |
 | 14 | Chose Plan G or Plan N | 82 | Tab 6 |
-| 15 | Not being able to afford it on a fixed income | 69 | Tab 1 |
+| 15 | Not being able to afford it on a fixed income | 68 | Tab 1 |
 | 16 | Can I trust the agent? Commissions and bias | 60 | Private worry |
 | 17 | Premium increases | 58 | Dislike |
-| 18 | An independent agent or broker | 54 | Lead source |
+| 18 | An independent agent or broker | 56 | Lead source |
 | 19 | 'Advantage plans are a scam' | 48 | Tab 4 |
 | 20 | Networks, prior authorization and being denied care | 44 | Tab 1 |
-| 21 | YouTube channels and seminars | 42 | Lead source |
-| 22 | Still working past 65 | 41 | Tab 9 |
-| 23 | Money saved | 39 | Tab 8 |
-| 24 | Should have enrolled or planned differently | 38 | Tab 7 |
-| 25 | Appointments, prescriptions and pharmacy runs | 37 | Tab 9 |
-| 26 | Agents and brokers (and the commission question) | 34 | Tab 6 |
+| 21 | Still working past 65 | 42 | Tab 9 |
+| 22 | YouTube channels and seminars | 42 | Lead source |
+| 23 | Should have enrolled or planned differently | 38 | Tab 7 |
+| 24 | Money saved | 38 | Tab 8 |
+| 25 | Agents and brokers (and the commission question) | 36 | Tab 6 |
+| 26 | Appointments, prescriptions and pharmacy runs | 36 | Tab 9 |
 | 27 | 'Get a supplement while you can' | 31 | Tab 4 |
-| 28 | Doctors and hospitals that drop the plan | 31 | Dislike |
-| 29 | 'Check your doctors and drugs first' | 30 | Tab 4 |
-| 30 | Employer or retiree plan / HR | 30 | Lead source |
+| 28 | Employer or retiree plan / HR | 31 | Lead source |
+| 29 | Doctors and hospitals that drop the plan | 31 | Dislike |
+| 30 | 'Check your doctors and drugs first' | 30 | Tab 4 |
 | 31 | A spouse on a different plan or losing coverage together | 28 | Tab 3 |
 | 32 | A big illness and the bills that follow | 25 | Tab 1 |
 | 33 | Agents and callers who push or mislead | 24 | Tab 5 |
-| 34 | Paying less for the same care | 16 | Tab 2 |
-| 35 | AARP | 16 | Lead source |
-| 36 | Any doctor, any hospital, no approvals | 15 | Tab 2 |
+| 34 | AARP | 16 | Lead source |
+| 35 | Any doctor, any hospital, no approvals | 15 | Tab 2 |
+| 36 | Paying less for the same care | 15 | Tab 2 |
 | 37 | Switched from Advantage back to Original Medicare + Medigap | 15 | Tab 6 |
-| 38 | Wishing someone had warned them about underwriting and deadlines | 14 | Tab 7 |
+| 38 | Wishing someone had warned them about underwriting and deadlines | 15 | Tab 7 |
 | 39 | Prior authorization and insurers second-guessing doctors | 13 | Tab 5 |
 | 40 | 'Use an independent broker' | 13 | Tab 4 |
 | 41 | Choosing wrong, missing a deadline, the penalty | 11 | Tab 1 |
@@ -994,13 +994,13 @@ What the Medicare shopper (turning 65 or already on Medicare) types, watches and
 
 | Worry | Typed | Videos | Views | Spoke | Ads |
 |---|---|---|---|---|---|
-| Can't afford premiums, Part B, drugs or dental | 28 | 49 | 996,502 | 151 | 81 |
+| Can't afford premiums, Part B, drugs or dental | 28 | 49 | 996,502 | 153 | 81 |
 | Stuck in Advantage: can't get a Medigap later | 26 | 56 | 1,545,787 | 128 | 72 |
-| Denied care, prior authorization, narrow networks | 28 | 60 | 340,555 | 156 | 165 |
+| Denied care, prior authorization, narrow networks | 28 | 60 | 340,555 | 161 | 165 |
 | Flooded with Medicare calls and texts | 84 | 73 | 1,381,158 | 5 | 154 |
 | Can I trust the agent? Commissions and bias | 18 | 61 | 956,616 | 60 | 55 |
 | 'Extra benefits' ads: flex cards, giveback, grocery money | 13 | 68 | 411,942 | 197 | 131 |
-| Confused, afraid of choosing wrong or missing a deadline | 15 | 48 | 3,033,807 | 277 | 116 |
+| Confused, afraid of choosing wrong or missing a deadline | 15 | 48 | 3,033,807 | 275 | 116 |
 
 ### Can't afford premiums, Part B, drugs or dental
 
@@ -1048,7 +1048,7 @@ Watched: Working Past 65? Medicare Mistakes You Can't Afford To Make! 🙅‍♂
 
 Measured absence: 0 first-person sentences say they keep something from their spouse, children or doctor.
 
-### Can't afford premiums, Part B, drugs or dental · 151 documents
+### Can't afford premiums, Part B, drugs or dental · 153 documents
 
 > "My wife and I signed up for Medicare plus the G supplement plus Medicare D. At First it was fine, but after 3- 4 years it was costing us 700 dollars a MONTH. We kept it when we were traveling. It did pay claims, but we did have to pay some stuff. It just became too expensive to keep. So, we changed to the Advantage type after moving to a higher population area. Referrals are not a problem most of the time. Now our max out-of-pocket is 700 dollars a YEAR. My drug copays were 25 bucks for the YEAR, no deductible. True, we have to stay within the provider groups, but we have quite a few to pick from. Original Medicare is great, if you're rich or can go to wherever you have the money to afford to seek out expensive care. Not so much if you live in a backward state or a medical wasteland. Either way you go, you're screwed. Insurance companies, PBMs, hospitals, medical groups, drug companies, crooks who cheat Medicare at every turn are what we Americans are stuck with at this point. The ruling rich overlords will never change it. Congress and the courts have been bought, and YOU AND I have been stuck with the bill."
 > — YouTube · Medicare Advantage: What They Don't Tell You · 722 likes · https://www.youtube.com/watch?v=hrkbOjBtBsw&lc=UgxAXzFMBaU_-X7O2GZ4AaABAg
@@ -1070,7 +1070,7 @@ Measured absence: 0 first-person sentences say they keep something from their sp
 > "GREAT job, Erin! I'm a retired physician and I think you hit this out of the park. My wife and I started with an MC Advantage Plan but the unpredictability of out-of-network coverage, rapidly increasing max. out of pocket limits, increasing daily hospital copays, and pretty inadequate rehab coverage really began to make me rethink our decision. When our MC Advantage plan wasn't available in our area for 2026 we were so happy to be able to switch to a Medigap plan with guaranteed issue during a Special Enrollment Period (SEP). It's one of the few ways to be able to switch in that direction without underwriting. Yes the premiums are significant but the predictability of healthcare expenses, portability, and freedom of choice where to receive care made it worth it to us - priceless, in fact. I'm 67 and my wife is 72. Thank you for helping so many future decision-makers have such clarity."
 > — YouTube · Choose Wrong at 65 and You May NOT Be Able to Undo It: Medicare Advantage vs Medigap · 156 likes · https://www.youtube.com/watch?v=KZJptHP78wg&lc=Ugwn9ICoa-Qw7KmDdUp4AaABAg
 
-### Denied care, prior authorization, narrow networks · 156 documents
+### Denied care, prior authorization, narrow networks · 161 documents
 
 > "Physical Therapist here. Absolutely keep your traditional Medicare with Plan N/G while you can. Medicare with a plan G is a Golden plan. Dr.’s and hospital love traditional Medicare. They won’t be denied and you won’t be denied care. Plus you can choose any specialist/provider you want and also go to the top notch hospitals in the whole country including Mayo, Johns Hopkins, Cleveland Clinic etc, etc, etc. In the end if you get really sick it’s well worth it. I pay around $450 a month including Part A and B premium. I worked all my life in healthcare to afford to access the best healthcare in our country."
 > — YouTube · The REAL Difference Between Medicare Plan G, Plan N, and Advantage · 595 likes · https://www.youtube.com/watch?v=SDD903qXaHg&lc=UgxcFFuqvyczX0JtB0J4AaABAg
@@ -1114,7 +1114,7 @@ Measured absence: 0 first-person sentences say they keep something from their sp
 > "I live in Ohio . I am on plan N with the wife . I pay $91 a month at 69. I had stage 3 cancer last year and paid very little out of my pocket .Very happy as I could pick my doctors and hospitals I wanted ! Every bill was paid fast !! No denying services too !! Original medicare works like a charm !!!! Dont fall into the Medicare Advange trap !!"
 > — YouTube · After 15 Years in Medicare, Here’s the Plan I’d Pick Now · 194 likes · https://www.youtube.com/watch?v=Dca1_SFCZkg&lc=UgwvfURn5XXCLWCAGlp4AaABAg
 
-### Confused, afraid of choosing wrong or missing a deadline · 277 documents
+### Confused, afraid of choosing wrong or missing a deadline · 275 documents
 
 > "Erin, this is your best video ever! I’m coming up on age 65 and until now, I was feeling overwhelmed. Thank you, thank you, thank you🙏"
 > — YouTube · Choose Wrong at 65 and You May NOT Be Able to Undo It: Medicare Advantage vs Medigap · 234 likes · https://www.youtube.com/watch?v=KZJptHP78wg&lc=Ugz25KzjRIqEu63hwvh4AaABAg
@@ -1129,9 +1129,9 @@ Measured absence: 0 first-person sentences say they keep something from their sp
 
 | Source | Documents | Worked | Burned |
 |---|---|---|---|
-| An independent agent or broker | 54 | 8 | 1 |
+| An independent agent or broker | 56 | 9 | 1 |
 | YouTube channels and seminars | 42 | 5 | 0 |
-| Employer or retiree plan / HR | 30 | 1 | 1 |
+| Employer or retiree plan / HR | 31 | 1 | 1 |
 | AARP | 16 | 3 | 0 |
 | TV ads and people who called them | 8 | 1 | 1 |
 | Friends, family, neighbors | 8 | 2 | 2 |
@@ -1144,12 +1144,12 @@ Measured absence: 0 first-person sentences say they keep something from their sp
 
 | Group | Name | Documents | Positive | Negative |
 |---|---|---|---|---|
-| carriers | UnitedHealthcare / AARP | 205 | 13 | 7 |
-| carriers | Blue Cross Blue Shield | 123 | 6 | 1 |
+| carriers | UnitedHealthcare / AARP | 209 | 14 | 7 |
+| carriers | Blue Cross Blue Shield | 126 | 6 | 1 |
 | carriers | Humana | 122 | 9 | 3 |
-| carriers | Aetna / CVS | 72 | 2 | 1 |
+| carriers | Aetna / CVS | 77 | 2 | 1 |
 | carriers | Kaiser | 68 | 9 | 1 |
-| carriers | Anthem / Elevance / Wellpoint | 25 | 4 | 0 |
+| carriers | Anthem / Elevance / Wellpoint | 24 | 4 | 0 |
 | platforms & tools | SHIP counselors | 24 | 1 | 0 |
 | carriers | Wellcare / Centene / Ambetter | 22 | 0 | 0 |
 | carriers | Cigna | 14 | 1 | 0 |
@@ -1158,6 +1158,7 @@ Measured absence: 0 first-person sentences say they keep something from their sp
 | carriers | Devoted | 12 | 1 | 0 |
 | brokers & call centers | Boomer Benefits | 7 | 1 | 0 |
 | brokers & call centers | Chapter | 3 | 0 | 0 |
+| platforms & tools | HealthCare.gov | 3 | 1 | 0 |
 
 ## Competitor Ads
 
@@ -1316,7 +1317,7 @@ Measured absence: 0 first-person sentences say they keep something from their sp
 
 | Complaint | Documents | 1–2★ reviews |
 |---|---|---|
-| Denied care, prior authorization, rehab cut short | 279 | 64 |
+| Denied care, prior authorization, rehab cut short | 281 | 64 |
 | Stuck: can't switch back to a Medigap | 108 | 1 |
 | Premium increases | 58 | 2 |
 | Doctors and hospitals that drop the plan | 31 | 2 |
@@ -1437,22 +1438,22 @@ Measured absence: 0 first-person sentences say they keep something from their sp
 ### 1. Why they buy
 Turning 65 or leaving an employer plan, a denial or a hospital dropping their plan, and this year's plan changes for 2027. Underneath: cost certainty on a fixed income and the freedom to see any doctor.
 
-- Tab 1 · Not being able to afford it on a fixed income · 69 documents None
+- Tab 1 · Not being able to afford it on a fixed income · 68 documents None
 - “the premiums are higher with Original Medicare and a Supplemental Plan G, but you don't have any restrictions of which doctors are in your network, and you don'” None
 - Tab 1 · Networks, prior authorization and being denied care · 44 documents None
 - “Fighting for care, and still being denied is a nightmare as you mentioned.” https://www.youtube.com/watch?v=SDD903qXaHg&lc=Ugw3YwX-OW2erk9tJPN4AaABAg
-- Tab 8 · Peace of mind with a Medigap plan · 156 documents https://www.youtube.com/watch?v=Dca1_SFCZkg&lc=Ugw1n1YjSCR0VLlkwUd4AaABAg
+- Tab 8 · Peace of mind with a Medigap plan · 155 documents https://www.youtube.com/watch?v=Dca1_SFCZkg&lc=Ugw1n1YjSCR0VLlkwUd4AaABAg
 
 ### 2. Recurring problems and frustrations
 Confusion, 'free' benefits that feel like a catch, premium increases, and agents or callers who push Advantage.
 
-- Tab 5 · Too confusing to compare · 238 documents https://www.youtube.com/watch?v=Dca1_SFCZkg&lc=UgxANrjVAIZWL8eLs_x4AaABAg
-- “I read too many horror stories about people who became catastrophically ill, and had problems seeing specialists, or obtaining certain treatments.” https://www.youtube.com/watch?v=uscI75VAZWc&lc=UgxefqUbJQyLYRyCYv54AaABAg
-- Tab 5 · 'Free' benefits that are a rip-off · 134 documents https://www.youtube.com/watch?v=evYI75xJnKg&lc=UgwYnNkAm7dPfm_ViEZ4AaABAg
+- Tab 5 · Too confusing to compare · 237 documents https://www.youtube.com/watch?v=uscI75VAZWc&lc=UgxefqUbJQyLYRyCYv54AaABAg
+- “I'm coming up on age 65 and until now, I was feeling overwhelmed.” https://www.youtube.com/watch?v=KZJptHP78wg&lc=Ugz25KzjRIqEu63hwvh4AaABAg
+- Tab 5 · 'Free' benefits that are a rip-off · 130 documents https://www.youtube.com/watch?v=evYI75xJnKg&lc=UgwYnNkAm7dPfm_ViEZ4AaABAg
 - “I retired from health insurance processing about 50% because of this scam.” https://www.youtube.com/watch?v=Ejoi9yfLVCc&lc=Ugz5qyDllBnU7-nFzc14AaABAg
 - Tab 5 · Premiums that keep going up · 96 documents https://www.youtube.com/watch?v=Dca1_SFCZkg&lc=UgxHdldWf7qxfUU5hD94AaABAg
 - “Medigap plan premiums increase every year, some people pay $800 a month for them.” https://www.youtube.com/watch?v=Ejoi9yfLVCc&lc=Ugxmqe1MtXC6NQ_2EUN4AaABAg
-- Dislikes · Denied care, prior authorization, rehab cut short · 279 documents https://www.youtube.com/watch?v=SDD903qXaHg&lc=UgxcFFuqvyczX0JtB0J4AaABAg
+- Dislikes · Denied care, prior authorization, rehab cut short · 281 documents https://www.youtube.com/watch?v=SDD903qXaHg&lc=UgxcFFuqvyczX0JtB0J4AaABAg
 
 ### 3. Questions and objections that stop them
 'Can I switch back to a supplement later?', 'Are these Medicare calls legit?', 'How do Medicare agents get paid?', 'What if I miss the deadline?' — each typed into Google in dozens of variants.
@@ -1460,7 +1461,7 @@ Confusion, 'free' benefits that feel like a catch, premium increases, and agents
 - Silent layer · Stuck in Advantage: can't get a Medigap later: 26 autocomplete phrases, 56 title-relevant videos, 1,545,787 views, 128 own-voice documents https://www.youtube.com/watch?v=KZJptHP78wg
 - Silent layer · Flooded with Medicare calls and texts: 84 autocomplete phrases, 73 title-relevant videos, 1,381,158 views, 5 own-voice documents https://www.youtube.com/watch?v=6nojRzHj0CE
 - Silent layer · Can I trust the agent? Commissions and bias: 18 autocomplete phrases, 61 title-relevant videos, 956,616 views, 60 own-voice documents https://www.youtube.com/watch?v=e6-PoFAPgTk
-- Silent layer · Confused, afraid of choosing wrong or missing a deadline: 15 autocomplete phrases, 48 title-relevant videos, 3,033,807 views, 277 own-voice documents https://www.youtube.com/watch?v=4GtRppYTHho
+- Silent layer · Confused, afraid of choosing wrong or missing a deadline: 15 autocomplete phrases, 48 title-relevant videos, 3,033,807 views, 275 own-voice documents https://www.youtube.com/watch?v=4GtRppYTHho
 
 ### 4. Hooks and formats in the market
 Measured over 693 ads to Medicare shoppers (277 video, 416 static): the 'Turning 65?' qualifier, benefit bait, question hooks, quizzes, deadline urgency and 'call a licensed agent'.
@@ -1479,7 +1480,7 @@ Doctor-and-drug check before any recommendation — demonstrate it: a screen sho
 - “If my doctor says go I go I can go to any doctor.” https://www.youtube.com/watch?v=_4xXIJZes9o&lc=Ugxfb9YPgrZZhd4mdaR4AaABAg
 - Tab 4 · 'Get a supplement while you can' · 31 documents https://www.youtube.com/watch?v=hrkbOjBtBsw&lc=UgyQPwewvEHaPlLi_Qd4AaABAg
 - “You told us in this video very much what our agent told us when we enrolled in A+B+Supplement, we pay a monthly fee for the supplement but beyond that the only ” https://www.youtube.com/watch?v=_4xXIJZes9o&lc=UgyOgJSaunBlQfkQN1l4AaABAg
-- Tab 7 · Wishing someone had warned them about underwriting and deadlines · 14 documents None
+- Tab 7 · Wishing someone had warned them about underwriting and deadlines · 15 documents None
 - “what a mess I wish somebody at my work had told me about IRMAA when I applied for Medicare.” None
 
 ## Sources, Method & Gaps
