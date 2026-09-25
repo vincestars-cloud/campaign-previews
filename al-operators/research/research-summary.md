@@ -632,10 +632,10 @@ Calculator on the live page; tables use its defaults: target 1 move-in, 29% inqu
 
 | Funnel stage | Needed for 1 move-in | Independent Living | Assisted Living | Memory Care |
 |---|---|---|---|---|
-| Inquiry (CPL) | 12.9 inquiries | $515–$1,545 ($40–$120) per inquiry | $773–$1,545 ($60–$120) per inquiry | $1,030–$2,576 ($80–$200) per inquiry |
-| Tour booked | 3.7 booked tours | $515–$1,545 ($138–$414) per booked tour | $773–$1,545 ($207–$414) per booked tour | $1,030–$2,576 ($276–$690) per booked tour |
-| Tour held | 3.2 held tours | $515–$1,545 ($162–$487) per held tour | $773–$1,545 ($243–$487) per held tour | $1,030–$2,576 ($325–$811) per held tour |
-| Move-in | 1.0 move-in | $515–$1,545 ($515–$1,545) per move-in | $773–$1,545 ($773–$1,545) per move-in | $1,030–$2,576 ($1,030–$2,576) per move-in |
+| Inquiry (CPL) | 12.9 inquiries | $515–$1,545 ($40–$120 per inquiry) | $773–$1,545 ($60–$120 per inquiry) | $1,030–$2,576 ($80–$200 per inquiry) |
+| Tour booked | 3.7 booked tours | $515–$1,545 ($138–$414 per booked tour) | $773–$1,545 ($207–$414 per booked tour) | $1,030–$2,576 ($276–$690 per booked tour) |
+| Tour held | 3.2 held tours | $515–$1,545 ($162–$487 per held tour) | $773–$1,545 ($243–$487 per held tour) | $1,030–$2,576 ($325–$811 per held tour) |
+| Move-in | 1.0 move-in | $515–$1,545 ($515–$1,545 per move-in) | $773–$1,545 ($773–$1,545 per move-in) | $1,030–$2,576 ($1,030–$2,576 per move-in) |
 
 ### Target move-in acquisition budget
 
