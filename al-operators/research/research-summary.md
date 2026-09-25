@@ -619,30 +619,31 @@ Modeled cost to produce a move-in for independent living, assisted living and me
 - **Memory care:** 1,600 — Stand-alone communities
 - **Campuses:** 1,900 — Multi-level senior living campuses
 
-- **AL fully-loaded cost per move-in:** $1,314–$2,627 — Your modeled range
+- **AL fully-loaded cost per move-in:** $1,545–$3,091 — Your modeled range
 - **Industry AL cost per move-in:** $2,600–$4,500 — USR benchmark
 - **Placement agent per AL move-in:** $2,250–$7,000 — 50–100% of the first month
 - **AL resident lifetime revenue:** ≈$121,000 — $5,500/mo × 22-month stay
 
 ### Raw cost to produce — $5,000 ad spend only
 
-Change the target and the two conversion rates. The needed counts, every stage cost and the budgets below recalculate.
+Change the target and the three conversion rates, or pick a preset. Your 29% is applied to booked tours; the 85% show rate is the midpoint of the 10–20% no-show benchmark (https://usrengage.com/senior-living-sales-funnel-metrics/). In the stage table the bold figure is the total for the needed count and the line under it is the cost per event.
 
-Calculator on the live page; tables use its defaults: target 1 move-in, 29% inquiry → tour, 31.5% tour → move-in (10.9 inquiries per move-in).
+Calculator on the live page; tables use its defaults: target 1 move-in, 29% inquiry → tour booked, 85% show rate, 31.5% held → move-in (12.9 inquiries per move-in). Presets (booked / show / move-in %): Your numbers 29/85/31.5; Your 22% example 29/85/22; Industry 2026 27.5/85/31.5; Industry 2024 29.5/85/33.5; Referral-agency leads 22.5/85/27.5.
 
 | Funnel stage | Needed for 1 move-in | Independent Living | Assisted Living | Memory Care |
 |---|---|---|---|---|
-| Inquiry (CPL) | 10.9 inquiries | $40–$120 | $60–$120 | $80–$200 |
-| Tour | 3.2 tours | $138–$414 | $207–$414 | $276–$690 |
-| Move-in | 1.0 move-in | $438–$1,314 | $657–$1,314 | $876–$2,189 |
+| Inquiry (CPL) | 12.9 inquiries | $515–$1,545 ($40–$120) per inquiry | $773–$1,545 ($60–$120) per inquiry | $1,030–$2,576 ($80–$200) per inquiry |
+| Tour booked | 3.7 booked tours | $515–$1,545 ($138–$414) per booked tour | $773–$1,545 ($207–$414) per booked tour | $1,030–$2,576 ($276–$690) per booked tour |
+| Tour held | 3.2 held tours | $515–$1,545 ($162–$487) per held tour | $773–$1,545 ($243–$487) per held tour | $1,030–$2,576 ($325–$811) per held tour |
+| Move-in | 1.0 move-in | $515–$1,545 ($515–$1,545) per move-in | $773–$1,545 ($773–$1,545) per move-in | $1,030–$2,576 ($1,030–$2,576) per move-in |
 
 ### Target move-in acquisition budget
 
 | Model | Raw media-only budget | Fully-loaded budget | Read |
 |---|---|---|---|
-| Independent Living | $438–$1,314 | $876–$2,627 | Cheapest per move-in; longest sales cycle (90–120 days). |
-| Assisted Living | $657–$1,314 | $1,314–$2,627 | Your core offer; compare with the three benchmark rows below. |
-| Memory Care | $876–$2,189 | $1,752–$4,379 | Highest cost, highest rent ($6,000–$10,000/mo). |
+| Independent Living | $515–$1,545 | $1,030–$3,091 | Cheapest per move-in; longest sales cycle (90–120 days). |
+| Assisted Living | $773–$1,545 | $1,545–$3,091 | Your core offer; compare with the three benchmark rows below. |
+| Memory Care | $1,030–$2,576 | $2,061–$5,151 | Highest cost, highest rent ($6,000–$10,000/mo). |
 | Industry benchmark (AL) | N/A | $2,600–$4,500 | Staff, tech and ads; excludes referral fees. |
 | Referral agency (APFM-style) | N/A | $2,667–$12,000 | 13.3–20 referral inquiries per move-in; USR quotes $3,500–$12,000 per move-in. |
 | Placement agent (small homes) | N/A | $2,250–$7,000 | 50–100% of the first month; the family is shared. |
@@ -652,34 +653,37 @@ Calculator on the live page; tables use its defaults: target 1 move-in, 29% inqu
 | Funnel stage | Independent Living | Assisted Living | Memory Care | Referral agency (APFM-style) |
 |---|---|---|---|---|
 | Inquiry | $80–$240 | $120–$240 | $160–$400 | $200–$600+ (Per referral lead · the family is sent to several communities) |
-| Tour | $276–$828 | $414–$828 (Your qualified tour: $350–$520) | $552–$1,379 | $800–$3,000 (20–25% of referral inquiries tour) |
-| Move-in | $876–$2,627 | $1,314–$2,627 | $1,752–$4,379 | $2,667–$12,000 (25–30% of tours move in · 13.3–20 inquiries per move-in) |
+| Tour booked | $276–$828 | $414–$828 (Your qualified tour: $350–$520) | $552–$1,379 | Not reported |
+| Tour held | $325–$974 | $487–$974 | $649–$1,623 | $800–$3,000 (20–25% of referral inquiries tour) |
+| Move-in | $1,030–$3,091 | $1,545–$3,091 | $2,061–$5,151 | $2,667–$12,000 (25–30% of tours move in · 13.3–20 inquiries per move-in) |
 
 ### Assisted living revenue context
 
 | Metric | Benchmark / calculation | Implication |
 |---|---|---|
 | Monthly revenue per resident | $4,500–$7,000 | Every empty bed costs this much each month. |
-| Lifetime revenue per move-in | ≈$121,000 ($5,500/mo × 22-month stay) | A fully-loaded move-in at $1,314–$2,627 is 1.1–2.2% of it. |
+| Lifetime revenue per move-in | ≈$121,000 ($5,500/mo × 22-month stay) | A fully-loaded move-in at $1,545–$3,091 is 1.3–2.6% of it. |
 | Placement agent fee | $2,250–$7,000 (50–100% of the first month) | Your price room is the gap between your cost and this fee. |
 | Marketing budget | 3–7% of revenue ($3,000–$15,000/mo for 50–150 units) | A 10-bed home at $5,000/bed has about $2,000–$3,500/mo in total. |
 
 ### How to price your service
 
-| Segment | Price | Why |
-|---|---|---|
-| Small homes (6–16 beds) | **$1,500–$2,500 per move-in** + $500–$1,000/mo floor | Below the agent's 50–100% of the first month; operators here ask for "60% or less". |
-| Communities (50–150 units) | **$5,000/mo + $5,000 media**, guarantee 20 qualified tours in 90 days | $5,000/mo buys about 29–43 qualified tours in 90 days at $350–$520 each; matches Occupancy Partners. |
-| Multi-site (5+ communities) | **$3,000–$5,000 per community/mo** + media | Include 5-minute speed to lead; the industry average response is 24–48 hours. |
+Prices below move with the inputs above.
+
+| Segment | Price | At your inputs | Why |
+|---|---|---|---|
+| Small homes (6–16 beds) | **$1,750–$3,000 per move-in** + $500–$1,000/mo floor | Your media cost $773–$1,545 per move-in · you keep $977–$1,455 At the high CPL your cost passes 60% of the first month. | Price = your fully-loaded cost per move-in, rounded up to $250 and kept between 30% and 60% of a $5,000 first month (operators ask for "60% or less"). |
+| Communities (50–150 units) | **$5,000/mo + $5,000 media**, guarantee 35 booked tours in 90 days | 90 days models 36–73 booked tours and 9.7–19.4 move-ins · their cost per move-in $1,545–$3,091 | Guarantee = the low end of modeled booked tours (high CPL), rounded down to 5. A referral agency costs $2,667–$12,000 per move-in. |
+| Multi-site (5+ communities) | **$3,000–$5,000 per community/mo** + media | Each $5,000 of media ≈ 3.2–6.5 move-ins a month | Include 5-minute speed to lead; the industry average response is 24–48 hours. |
 
 ### Decision read
 
-- **Assisted living is your strongest offer:** $1,314–$2,627 fully loaded per move-in, at or below the industry's $2,600–$4,500, a referral agency's $2,667–$12,000 and the placement agent's $2,250–$7,000.
+- **Assisted living is your strongest offer:** $1,545–$3,091 fully loaded per move-in at your inputs, against the industry's $2,600–$4,500, a referral agency's $2,667–$12,000 and the placement agent's $2,250–$7,000.
 - **Price against the placement agent, not your media cost:** the gap between your cost and the agent's fee is your margin, and exclusivity plus owning the family relationship justify it.
 - **Guarantee tours, never move-ins:** an AL sale takes 70–100 days, and every competitor already guarantees tours (Occupancy Partners 20 in 90 days, TroutLeads 90 in 90 days).
 - **Small homes need a different price:** USR benchmarks describe 50+ unit communities. For 6–16 bed homes, anchor on the placement fee, not a retainer.
 
-**Sources:** your figures (CPL, qualified tour, 29% inquiry → tour, 29–34% tour → move-in with the 31.5% midpoint used, market counts) · USR Engage, Senior Living Marketing Benchmarks 2026 (https://usrengage.com/senior-living-marketing-benchmarks-2026/) (compiled from Aline, ActiveDEMAND, NIC MAP, Conversion Logix, Creating Results) · placement-fee share and competitor offers from this page's operator documents and Competitor Ads tab. Pricing is a recommendation, not a measured market price.
+**Sources:** your figures (CPL, qualified tour, 29% inquiry → tour applied to booked tours, 29–34% tour → move-in with the 31.5% midpoint used, market counts) · USR Engage, sales funnel metrics (https://usrengage.com/senior-living-sales-funnel-metrics/) (10–20% tour no-show, 85% show midpoint) · USR Engage, Senior Living Marketing Benchmarks 2026 (https://usrengage.com/senior-living-marketing-benchmarks-2026/) (compiled from Aline, ActiveDEMAND, NIC MAP, Conversion Logix, Creating Results) · placement-fee share and competitor offers from this page's operator documents and Competitor Ads tab. Pricing is a recommendation, not a measured market price.
 
 ## Sources, Method and Gaps
 
