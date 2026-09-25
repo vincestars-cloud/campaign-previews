@@ -38,6 +38,10 @@
   .tab-nav { background: white; border-bottom: 2px solid var(--border); position: sticky; top: 0; z-index: 100; box-shadow: 0 2px 10px rgba(0,0,0,0.07); }
   .tab-nav-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; padding: 0 8px; }
   .tab-btn { padding: 11px 14px; font-size: 0.78rem; font-weight: 600; color: var(--mid); cursor: pointer; border: none; background: none; border-bottom: 3px solid transparent; white-space: nowrap; transition: all 0.18s; }
+  @media (max-width: 640px) {
+    .tab-nav { max-height: 42vh; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+    .tab-btn { padding: 8px 10px; font-size: 0.72rem; }
+  }
   .tab-btn:hover { color: var(--accent); }
   .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); background: var(--accent-light); }
 
@@ -2660,7 +2664,7 @@ function showTab(id, btn) {
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
   if (btn) btn.classList.add('active');
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+  var _nav=document.querySelector('.tab-nav'); if(_nav){_nav.scrollIntoView({behavior:'smooth',block:'start'});} else{window.scrollTo({top:0,behavior:'smooth'});}
 }
 </script>
 </body>
