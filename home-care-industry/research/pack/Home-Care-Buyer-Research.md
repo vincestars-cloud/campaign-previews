@@ -4308,6 +4308,11 @@ Vince's approach after reviewing the research, every line checked against the co
 
 The campaign planning model uses two cost views. **Raw cost to produce** is based on $5,000 of media spend only. **Fully loaded cost** includes the same $5,000 of media plus a $5,000 service fee, for $10,000 total marketing cost. The campaign figures below are optimistic modeled ranges, not guaranteed results.
 
+### Market size — agencies in the U.S.
+
+- **11,500–12,500** Medicare-certified home health agencies (skilled, clinical)
+- **33,000+** non-medical home care agencies (private-duty and companion care)
+
 ### Raw cost to produce — $5,000 ad spend only
 
 Editable calculator defaults used on the live page: target 5 acquired clients; 33.4% of leads qualify; 49.7% of qualified leads connect; 35% of connected calls proceed to an in-home assessment; 50% of assessments become clients. With those inputs, the model requires about **172.1 raw leads** for 5 acquired clients. Changing the target-client input or conversion inputs on the page recalculates the event-count column and target acquisition budget.
