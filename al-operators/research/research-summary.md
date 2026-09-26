@@ -626,9 +626,9 @@ Modeled cost to produce a move-in for independent living, assisted living and me
 
 ### Raw cost to produce — $5,000 ad spend only
 
-Change the target and the three conversion rates, or pick a preset. Your 29% is applied to booked tours; the 85% show rate is the midpoint of the 10–20% no-show benchmark (https://usrengage.com/senior-living-sales-funnel-metrics/). In the stage table the bold figure is the total for the needed count and the line under it is the cost per event.
+Change the target and the three conversion rates, or pick a preset: each preset loads its own cost per inquiry with its rates (channel presets use USR's channel cost per lead, which USR does not split by care type). Your 29% is applied to booked tours; the 85% show rate is the midpoint of the 10–20% no-show benchmark (https://usrengage.com/senior-living-sales-funnel-metrics/), which USR does not split by lead source. In the stage table the bold figure is the total for the needed count and the line under it is the cost per event.
 
-Calculator on the live page; tables use its defaults: target 1 move-in, 29% inquiry → tour booked, 85% show rate, 31.5% held → move-in (12.9 inquiries per move-in). Presets (booked / show / move-in %): Your numbers 29/85/31.5; Your 22% example 29/85/22; Industry 2026 27.5/85/31.5; Industry 2024 29.5/85/33.5; Referral-agency leads 22.5/85/27.5.
+Calculator on the live page; tables use its defaults: target 1 move-in, 29% inquiry → tour booked, 85% show rate, 31.5% held → move-in (12.9 inquiries per move-in). Presets (booked / show / move-in %): Your numbers 29/85/31.5 (AL cost per inquiry $60–$120); Your 22% example 29/85/22 (AL cost per inquiry $60–$120); Industry 2026 (owned channels) 27.5/85/31.5 (AL cost per inquiry $60–$150); Industry 2024 29.5/85/33.5 (AL cost per inquiry $60–$150); Meta / Facebook ads 18.5/85/25 (AL cost per inquiry $45–$120); Google Ads 25/85/30.5 (AL cost per inquiry $80–$200); Organic search 31.5/85/35 (AL cost per inquiry $25–$60); Referral agency 22.5/85/27.5 (AL cost per inquiry $200–$600).
 
 | Funnel stage | Needed for 1 move-in | Independent Living | Assisted Living | Memory Care |
 |---|---|---|---|---|
@@ -683,7 +683,7 @@ Prices below move with the inputs above.
 - **Guarantee tours, never move-ins:** an AL sale takes 70–100 days, and every competitor already guarantees tours (Occupancy Partners 20 in 90 days, TroutLeads 90 in 90 days).
 - **Small homes need a different price:** USR benchmarks describe 50+ unit communities. For 6–16 bed homes, anchor on the placement fee, not a retainer.
 
-**Sources:** your figures (CPL, qualified tour, 29% inquiry → tour applied to booked tours, 29–34% tour → move-in with the 31.5% midpoint used, market counts) · USR Engage, sales funnel metrics (https://usrengage.com/senior-living-sales-funnel-metrics/) (10–20% tour no-show, 85% show midpoint) · USR Engage, Senior Living Marketing Benchmarks 2026 (https://usrengage.com/senior-living-marketing-benchmarks-2026/) (compiled from Aline, ActiveDEMAND, NIC MAP, Conversion Logix, Creating Results) · placement-fee share and competitor offers from this page's operator documents and Competitor Ads tab. Pricing is a recommendation, not a measured market price.
+**Sources:** your figures (CPL, qualified tour, 29% inquiry → tour applied to booked tours, 29–34% tour → move-in with the 31.5% midpoint used, market counts) · USR Engage, sales funnel metrics (https://usrengage.com/senior-living-sales-funnel-metrics/) (10–20% tour no-show, 85% show midpoint) · USR Engage, Senior Living Marketing Benchmarks 2026 (https://usrengage.com/senior-living-marketing-benchmarks-2026/) (cost per lead by care type and by channel, conversion by lead source; compiled from Aline, ActiveDEMAND, NIC MAP, Conversion Logix, Creating Results) · placement-fee share and competitor offers from this page's operator documents and Competitor Ads tab. Pricing is a recommendation, not a measured market price.
 
 ## Sources, Method and Gaps
 
