@@ -8,10 +8,10 @@ Health Insurance Ecosystem · the independent Medicare, ACA and health insurance
 
 - Who: 3,137 first-person agent documents (3,020 health / general agents, 77 life or final-expense agents talking about buying leads, 40 new or aspiring agents) from r/InsuranceAgent, agent Facebook groups, Insurance-Forums.com and agent YouTube. Property & casualty agents, call-center staff, vendors and recruiters are excluded.
 - The lead is the whole job: Previous Solutions is the largest tab (320 documents bought leads from vendors, 86 aged leads, 104 transfers and inbound calls, 68 self-generated), and the top frustration after MLM recruiting is leads that are old, fake, shared or never answer (125 documents).
-- What they pay (their own words and the sellers' own ads): aged data $0.40–$7, shared leads $25–$50 split 3–5 ways, exclusive Medicare leads $35–$75 (more in AEP), Medicare inbound calls from $15.99 to $120+, final-expense transfers about $41–$43 in packs; the Lead Sources tab lists every priced sentence with its link.
-- What an enrollment is worth to them: $725 for a new Medicare Advantage enrollment in 2027 (CMS maximum), $363 a year after; ACA pays roughly $20–$30 per member per month. At exclusive-lead conversion that caps a Medicare lead at about $40 on first-year commission (Metrics tab).
+- What they pay (published prices, median of the vendors' ranges, Medicare Advantage): aged records $0.88–$5.00, shared $15–$31, exclusive $35–$75, T65 $45–$90, live transfers / inbound calls $45–$120 per call. The Lead Sources tab lists every price agents wrote themselves, with its link.
+- What an enrollment is worth, and what each lead type costs to get one: $725 for a new Medicare Advantage enrollment in 2027 (CMS maximum), $363 a year after; Medicare Supplement about $502 in year one; ACA $20–$30 per member per month. At published rates one MA enrollment costs the agent $39–$222 from aged data, $188–$500 from transfers, $516–$1,106 from exclusive leads, $1,820–$3,059 from Meta lead-form leads and $1,958–$3,982 from shared leads (Metrics tab).
 - Who sells to them: 356 agent-facing Meta ads — 180 from lead, transfer and call sellers and 89 from agencies and FMOs recruiting agents with leads included. The most-used hooks: name the audience, 'exclusive / verified / compliant', and 'inbound calls, no dialing'.
-- The read for Vince (hypothesis): agents don't need more lead sellers; they need leads they trust. Consented, exclusive, verified-phone Medicare or ACA events (a transfer or a held appointment) priced inside the market band, with a stated replacement policy for bad leads, answer the top complaint directly.
+- The read for Vince (hypothesis): agents don't need more lead sellers; they need leads they trust. At published rates the event that clears the market is a held appointment or transfer produced by calling low-cost data, not a raw Meta form fill; a Meta lead is worth an exclusive price only if its contact and set rates match exclusive leads, so measure the first leads before pricing. Consent to one agent, a verified phone and a written replacement policy answer the top complaint directly.
 
 ## Contents
 
@@ -1283,7 +1283,7 @@ Consent to one agent — demonstrate it: the consent record with the agent's nam
 
 ## Metrics & Pricing
 
-What an independent agent pays for each event on the way to an enrollment, what that event costs you to produce, and where to price it. Raw production uses $5,000 of Meta media; fully loaded adds $5,000 for the calling, qualification and compliance work that turns a form fill into a contact, a transfer or a booked appointment (a stated assumption, not a measured cost). Raw cost per lead is a Meta lead-form benchmark, not your own data. Conversion presets and market prices come from lead-vendor benchmark pages (OneLife (https://onelifemarketingsolutions.com/medicare-lead-generation-statistics), SixtyFiveLeads (https://sixtyfiveleads.com/post/real-cost-medicare-lead)) and are vendor-sourced.
+What an independent agent pays for each event on the way to an enrollment, what that event costs you to produce, and where to price it. Pick a lead type: its cost per lead and its four rates load together. Every rate is the median of the published figures listed under "Where every figure comes from"; nearly all of them come from companies that sell leads, calls or dialing software, and the few agents who posted their own numbers are listed beside them. Raw = the lead price or media only. With labor = plus the calling it takes to reach, qualify and book (BLS wage, dialer speed, attempts per lead).
 
 ### Market size
 
@@ -1294,39 +1294,132 @@ What an independent agent pays for each event on the way to an enrollment, what 
 
 No sourced count of independent agents selling Medicare or ACA was found; the page does not estimate one.
 
-### Raw cost to produce — $5,000 Meta media only
+### Raw cost per event — by lead type
 
-Pick a lead type or type your own rates. The needed counts, every stage cost, the budgets and the prices below recalculate. Bold = total for the needed count; the line under it = cost per event.
+Bold = total for the needed count; the line under it = cost per event. Change any rate to use your own numbers; the lead type's cost per lead stays.
 
-Calculator on the live page; tables use its defaults: target 1 enrollment, 75% contact, 30% appointment set, 75% show, 33% close. Presets (contact / appointment / show / close %): Exclusive web lead 75/30/75/33; Your Meta lead form 47.5/17/75/15; Shared web lead 12.5/22/75/15; Aged lead (30-90 days) 25/13/75/13; T65 exclusive 78/35/75/35.
+Calculator on the live page; the tables use the default lead type (Your own Meta lead form). Lead types (contact / appointment set / show / close of held %, cost per lead MA): Your own Meta lead form 47.5/17/75/20, $22–$37; Exclusive web lead (bought) 70/31.5/75/41, $35–$75; T65 exclusive (bought) 70/35/75/46.5, $45–$90; Shared web lead (bought) 25/19/75/21.5, $15–$31; Aged lead, 30–90 days (bought) 20/40/75/37.5, $0.88–$5.00; Live transfer / inbound call (bought) 100/100/100/24, $45–$120.
 
 | Funnel stage | Needed for 1 enrollment | Medicare Advantage | Medicare Supplement | ACA |
 |---|---|---|---|---|
-| Lead | 18.0 leads | $269–$808 ($15–$45 per lead) | $269–$808 ($15–$45 per lead) | $144–$539 ($8–$30 per lead) |
-| Contacted | 13.5 contacts | $269–$808 ($20–$60 per contact) | $269–$808 ($20–$60 per contact) | $144–$539 ($11–$40 per contact) |
-| Appointment booked | 4.0 booked | $269–$808 ($67–$200 per booked appointment) | $269–$808 ($67–$200 per booked appointment) | $144–$539 ($36–$133 per booked appointment) |
-| Appointment held | 3.0 held | $269–$808 ($89–$267 per held appointment) | $269–$808 ($89–$267 per held appointment) | $144–$539 ($47–$178 per held appointment) |
-| Enrollment | 1.0 enrollment | $269–$808 ($269–$808 per enrollment) | $269–$808 ($269–$808 per enrollment) | $144–$539 ($144–$539 per enrollment) |
+| Lead | 82.6 leads | $1,820–$3,059 ($22–$37 per lead) | $1,820–$3,059 ($22–$37 per lead) | $1,738–$2,646 ($21–$32 per lead) |
+| Contacted | 39.2 contacts | $1,820–$3,059 ($46–$78 per contact) | $1,820–$3,059 ($46–$78 per contact) | $1,738–$2,646 ($44–$67 per contact) |
+| Appointment booked | 6.7 booked | $1,820–$3,059 ($273–$459 per booked appointment) | $1,820–$3,059 ($273–$459 per booked appointment) | $1,738–$2,646 ($261–$397 per booked appointment) |
+| Appointment held | 5.0 held | $1,820–$3,059 ($364–$612 per held appointment) | $1,820–$3,059 ($364–$612 per held appointment) | $1,738–$2,646 ($348–$529 per held appointment) |
+| Enrollment | 1.0 enrollment | $1,820–$3,059 ($1,820–$3,059 per enrollment) | $1,820–$3,059 ($1,820–$3,059 per enrollment) | $1,738–$2,646 ($1,738–$2,646 per enrollment) |
 
 ### Target enrollment budget
 
-| Model | Raw media-only | Fully loaded | Read |
+| Model | Raw | With calling labor | Read |
 |---|---|---|---|
-| Medicare Advantage | $269–$808 | $539–$1,616 | Pays the agent up to $725 now, $363 a year after. |
-| Medicare Supplement | $269–$808 | $539–$1,616 | ≈20–22% of first-year premium; not CMS-capped. |
-| ACA | $144–$539 | $287–$1,077 | ≈$20–30 per member per month while enrolled. |
-| Agent buying live transfers (MA) | N/A | $141–$375 | $45–$120 per call at a 32% close. |
-| Agent buying exclusive leads (MA) | N/A | $629–$1,347 | $35–$75 per lead at exclusive-lead rates. |
+| Medicare Advantage | $1,820–$3,059 | $2,203–$3,442 | Pays the agent up to $725 now, $363 a year after. |
+| Medicare Supplement | $1,820–$3,059 | $2,203–$3,442 | ≈$502 first year (22% of a $190/month Plan G); not CMS-capped. |
+| ACA | $1,738–$2,646 | $2,121–$3,029 | $20–$30 per member per month while enrolled (BenaVest). |
+| Agent buying live transfers (MA) | N/A | $188–$500 | $45–$120 per call at the published median 24% close. |
+| Agent buying exclusive leads (MA) | N/A | $516–$1,106 | $35–$75 per lead at the published exclusive rates. |
 
-### Fully-loaded stage cost — $5,000 media + $5,000 operations
+### Cost per event with calling labor, and what agents pay
 
 | Funnel stage | Medicare Advantage | Medicare Supplement | ACA | What agents pay (market) |
 |---|---|---|---|---|
-| Lead | $30–$90 | $30–$90 | $16–$60 | $1–$75 (aged $1–$5 · shared MA $12–$26 · exclusive MA $35–$75 ($50–$95 in AEP) · exclusive ACA $22–$48) |
-| Contacted | $40–$120 | $40–$120 | $21–$80 | $45–$120 (MA live transfer / inbound call (AEP up to $150); ACA $32–$85) |
-| Appointment booked | $133–$400 | $133–$400 | $71–$267 | ≈$159 (SixtyFiveLeads worked example; pre-set appointments sold at $400 confirmed / $500 kept) |
-| Appointment held | $178–$533 | $178–$533 | $95–$356 | $212–$500 (per shown appointment (SixtyFiveLeads, exclusive vs shared)) |
-| Enrollment | $539–$1,616 | $539–$1,616 | $287–$1,077 | $141–$600 ($45–$120 transfers ÷ 32% close; aged-lead programs $15–$75 per policy) |
+| Lead | $2,203–$3,442 ($27–$42 per lead) | $2,203–$3,442 ($27–$42 per lead) | $2,121–$3,029 ($26–$37 per lead) | MA $35–$75 · Med Supp $40–$80 · ACA $30–$48 (the published price of this lead type (your Meta lead sells as exclusive)) |
+| Contacted | $2,203–$3,442 ($56–$88 per contact) | $2,203–$3,442 ($56–$88 per contact) | $2,121–$3,029 ($54–$77 per contact) | $45–$120 (MA live transfer / inbound call; Med Supp $55–$125; ACA $32–$90) |
+| Appointment booked | $2,203–$3,442 ($330–$516 per booked appointment) | $2,203–$3,442 ($330–$516 per booked appointment) | $2,121–$3,029 ($318–$454 per booked appointment) | (No published vendor price for a Medicare or ACA appointment was found. One agency owner charges its own agents $25 per presentation (r/InsuranceAgent (https://www.reddit.com/r/InsuranceAgent/comments/1q6lb33/when_integrity_collides_with_the_insurance/ny9dvtm/)) — an internal, at-cost price.) |
+| Appointment held | $2,203–$3,442 ($441–$688 per held appointment) | $2,203–$3,442 ($441–$688 per held appointment) | $2,121–$3,029 ($424–$606 per held appointment) | $212–$454 (not a price: what a held MA appointment costs the agent now, buying exclusive leads at published rates (ACA $181–$290)) |
+| Enrollment | $2,203–$3,442 ($2,203–$3,442 per enrollment) | $2,203–$3,442 ($2,203–$3,442 per enrollment) | $2,121–$3,029 ($2,121–$3,029 per enrollment) | $188–$500 (MA via transfers ($45–$120 ÷ 24% close); via exclusive leads $516–$1,106) |
+
+### Lead types side by side (Medicare Advantage, published rates)
+
+| Lead type | Cost per lead (MA) | Contact | Appointment set | Show | Close (of held) | Lead → enrollment, these rates | Lead → enrollment, published | Cost per held appointment | Cost per enrollment |
+|---|---|---|---|---|---|---|---|---|---|
+| Your own Meta lead form (you produce) | $22–$37 | **47.5%** (median of 3 sources (20–60%)) | **17%** (median of 1 source (12–22%)) | **75%** (median of 3 sources (60–80%) — all lead types) | **20%** (median of 1 source (13.3–26.7%) — booked-basis figures ÷ show) | **1.2%** | 4–10% (2 published figures, median 5.8%) | $364–$612 | $1,820–$3,059 ($2,203–$3,442 with calling labor) |
+| Exclusive web lead (bought) (agents buy) | $35–$75 | **70%** (median of 3 sources (40–85%)) | **31.5%** (median of 3 sources (22–50%)) | **75%** (median of 3 sources (60–80%) — all lead types) | **41%** (median of 2 sources (25–50.7%) — booked-basis figures ÷ show) | **6.8%** | 7.7–25% (4 published figures, median 12.0%) | $212–$454 | $516–$1,106 ($602–$1,192 with calling labor) |
+| T65 exclusive (bought) (agents buy) | $45–$90 | **70%** (median of 3 sources (40–85%) — exclusive figures) | **35%** (median of 1 source (30–40%)) | **75%** (median of 3 sources (60–80%) — all lead types) | **46.5%** (median of 1 source (40–53.3%) — booked-basis figures ÷ show) | **8.5%** | (none published) | $245–$490 | $527–$1,053 ($595–$1,121 with calling labor) |
+| Shared web lead (bought) (agents buy) | $15–$31 | **25%** (median of 5 sources (10–55%)) | **19%** (median of 2 sources (10–22%)) | **75%** (median of 3 sources (60–80%) — all lead types) | **21.5%** (median of 1 source (13.3–29.3%) — booked-basis figures ÷ show) | **0.8%** | 1–12% (4 published figures, median 2.8%) | $421–$856 | $1,958–$3,982 ($2,289–$4,313 with calling labor) |
+| Aged lead, 30–90 days (bought) (agents buy) | $0.88–$5.00 | **20%** (median of 3 sources (6–30%)) | **40%** (median of 1 source (30–50%) — all lead types) | **75%** (median of 3 sources (60–80%) — all lead types) | **37.5%** (median of 1 source (25–50%) — all lead types) | **2.2%** | 0.2–8% (6 published figures, median 2.8%) | $15–$83 | $39–$222 ($148–$331 with calling labor) |
+| Live transfer / inbound call (bought) (agents buy) | $45–$120 | **100%** (median of 3 sources (95–100%)) | 100% (live call) | 100% (live call) | **24%** (median of 12 sources (1–70%)) | **24.0%** | 1–70% (12 published figures, median 23.8%) | $45–$120 | $188–$500 ($188–$500 with calling labor) |
+
+Read the two lead → enrollment columns together: for every lead type the published stage rates multiply to less than the published end-to-end figures. They come from different vendors, and the end-to-end figures often count applications or "closes" rather than effective enrollments. The truth for your leads sits between them until you measure it.
+
+**Your own Meta lead form**
+
+- **Cost per lead, Medicare Advantage:** $8.00–$30 OneLife, channel benchmarks (https://onelifemarketingsolutions.com/insurance-marketing-benchmarks) · $10–$40 SeniorCenterAgents, Med Supp leads (https://seniorcenteragents.com/blog/how-to-generate-medicare-supplement-leads-for-agents) · $34 AdsUploader, Facebook CPL (WordStream / LocaliQ data) (https://adsuploader.com/blog/facebook-lead-ads-cost-per-lead) · $88 ResultCalls, Medicare on Facebook (WordStream healthcare average) (https://resultcalls.com/blog/how-to-get-medicare-leads-in-2026-using-facebook-ads) → used $22–$37 (median low – median high)
+- **Cost per lead, Medicare Supplement:** $8.00–$30 OneLife, channel benchmarks (https://onelifemarketingsolutions.com/insurance-marketing-benchmarks) · $10–$40 SeniorCenterAgents, Med Supp leads (https://seniorcenteragents.com/blog/how-to-generate-medicare-supplement-leads-for-agents) · $34 AdsUploader, Facebook CPL (WordStream / LocaliQ data) (https://adsuploader.com/blog/facebook-lead-ads-cost-per-lead) · $88 ResultCalls, Medicare on Facebook (WordStream healthcare average) (https://resultcalls.com/blog/how-to-get-medicare-leads-in-2026-using-facebook-ads) → used $22–$37 (median low – median high)
+- **Cost per lead, ACA:** $8.00–$30 OneLife, channel benchmarks (https://onelifemarketingsolutions.com/insurance-marketing-benchmarks) · $34 AdsUploader, Facebook CPL (WordStream / LocaliQ data) (https://adsuploader.com/blog/facebook-lead-ads-cost-per-lead) → used $21–$32 (median low – median high)
+- **Contact:** 35–60% OneLife, channel benchmarks (https://onelifemarketingsolutions.com/insurance-marketing-benchmarks) · 60% Agent, r/InsuranceAgent: FB setup 'gets you to 60% contact eventually' (https://www.reddit.com/r/InsuranceAgent/comments/1qcyrm6/inbound_call_leads_for_struggling_life_insurance/nzsah6f/) · 20% Agent, r/InsuranceAgent: Caboom (Facebook-generated final expense leads) '20% answer rate when called 10-15 times' (https://www.reddit.com/r/InsuranceAgent/comments/1ibqa54/caboom_leads_review/mkvaioj/)
+- **Appointment set (of contacted):** 12–22% OneLife, channel benchmarks (https://onelifemarketingsolutions.com/insurance-marketing-benchmarks)
+- **Close:** 10–20% OneLife, channel benchmarks (https://onelifemarketingsolutions.com/insurance-marketing-benchmarks) (of booked appointments; ÷ show rate to get of held)
+- **Show:** 75% SixtyFiveLeads, real cost of a lead (https://sixtyfiveleads.com/post/real-cost-medicare-lead) · 60–72% Touchstone, appointment-setting benchmarks (https://touchstonebpo.com/blog/appointment-setting-conversion-rates-2026/) · 70–80% Aexus, sales show rates (https://aexus.com/what-is-a-good-show-rate-for-sales-appointments/) (no source splits show rate by lead type)
+- **Lead → enrollment, published:** 4% SeniorCenterAgents, Med Supp leads (https://seniorcenteragents.com/blog/how-to-generate-medicare-supplement-leads-for-agents) · 5–10% Agent, r/InsuranceAgent: 'Facebook leads - 5% to 10%' (good agents) (https://www.reddit.com/r/InsuranceAgent/comments/1jtu5mt/5_reasons_why_selling_insurance_may_not_be_for_you/mm0dceb/)
+- Meta sources are not Medicare-only: OneLife's range covers all insurance lead ads, AdsUploader all industries, ResultCalls all healthcare advertisers.
+
+**Exclusive web lead (bought)**
+
+- **Cost per lead, Medicare Advantage:** $35–$75 OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026) · $70 InsureLeads, Medicare leads (https://www.getinsureleads.com/medicare-leads) · $35–$75 InsureLeads, Medicare lead companies (https://www.getinsureleads.com/blog/best-medicare-lead-companies) · $25–$80 SeniorCenterAgents, Med Supp leads (https://seniorcenteragents.com/blog/how-to-generate-medicare-supplement-leads-for-agents) → used $35–$75 (median low – median high)
+- **Cost per lead, Medicare Supplement:** $40–$80 OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026) → used $40–$80 (median low – median high)
+- **Cost per lead, ACA:** $22–$48 OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026) · $45 InsureLeads, cost per lead (https://www.getinsureleads.com/blog/insurance-leads-cost-per-lead) · $30–$80 Aged Lead Store, health lead prices (https://agedleadstore.com/health-insurance-leads-cost/) → used $30–$48 (median low – median high)
+- **Contact:** 70–85% OneLife, channel benchmarks (https://onelifemarketingsolutions.com/insurance-marketing-benchmarks) · 60–80% SixtyFiveLeads, real cost of a lead (https://sixtyfiveleads.com/post/real-cost-medicare-lead) · 40–70% InsureLeads, cost per lead (https://www.getinsureleads.com/blog/insurance-leads-cost-per-lead)
+- **Appointment set (of contacted):** 25–38% OneLife, channel benchmarks (https://onelifemarketingsolutions.com/insurance-marketing-benchmarks) · 22% SixtyFiveLeads, real cost of a lead (https://sixtyfiveleads.com/post/real-cost-medicare-lead) · 30–50% InsureLeads, cost per lead (https://www.getinsureleads.com/blog/insurance-leads-cost-per-lead)
+- **Close:** 28–38% OneLife, channel benchmarks (https://onelifemarketingsolutions.com/insurance-marketing-benchmarks) (of booked appointments; ÷ show rate to get of held) · 25–50% InsureLeads, cost per lead (https://www.getinsureleads.com/blog/insurance-leads-cost-per-lead)
+- **Show:** 75% SixtyFiveLeads, real cost of a lead (https://sixtyfiveleads.com/post/real-cost-medicare-lead) · 60–72% Touchstone, appointment-setting benchmarks (https://touchstonebpo.com/blog/appointment-setting-conversion-rates-2026/) · 70–80% Aexus, sales show rates (https://aexus.com/what-is-a-good-show-rate-for-sales-appointments/) (no source splits show rate by lead type)
+- **Lead → enrollment, published:** 8–15% InsureLeads, conversion benchmarks (https://www.getinsureleads.com/blog/insurance-lead-conversion-rate-benchmarks) · 10–15% InsureLeads, Medicare leads (https://www.getinsureleads.com/medicare-leads) · 10–25% SeniorCenterAgents, lead costs (https://seniorcenteragents.com/blog/how-much-do-insurance-leads-cost-for-independent-agents) · 7.7% OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026)
+
+**T65 exclusive (bought)**
+
+- **Cost per lead, Medicare Advantage:** $45–$90 OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026) → used $45–$90 (median low – median high)
+- **Cost per lead, Medicare Supplement:** $45–$90 OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026) → used $45–$90 (median low – median high)
+- **Cost per lead, ACA:** no published price
+- **Contact:** 70–85% OneLife, channel benchmarks (https://onelifemarketingsolutions.com/insurance-marketing-benchmarks) · 60–80% SixtyFiveLeads, real cost of a lead (https://sixtyfiveleads.com/post/real-cost-medicare-lead) · 40–70% InsureLeads, cost per lead (https://www.getinsureleads.com/blog/insurance-leads-cost-per-lead) (no figure for this lead type; all-lead-type figure used)
+- **Appointment set (of contacted):** 30–40% OneLife, Medicare benchmarks (https://onelifemarketingsolutions.com/medicare-lead-generation-statistics)
+- **Close:** 30–40% OneLife, Medicare benchmarks (https://onelifemarketingsolutions.com/medicare-lead-generation-statistics) (of booked appointments; ÷ show rate to get of held)
+- **Show:** 75% SixtyFiveLeads, real cost of a lead (https://sixtyfiveleads.com/post/real-cost-medicare-lead) · 60–72% Touchstone, appointment-setting benchmarks (https://touchstonebpo.com/blog/appointment-setting-conversion-rates-2026/) · 70–80% Aexus, sales show rates (https://aexus.com/what-is-a-good-show-rate-for-sales-appointments/) (no source splits show rate by lead type)
+- No T65-specific contact rate is published; the exclusive web-lead contact figures are used.
+
+**Shared web lead (bought)**
+
+- **Cost per lead, Medicare Advantage:** $12–$26 OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026) · $18–$35 InsureLeads, Medicare lead companies (https://www.getinsureleads.com/blog/best-medicare-lead-companies) → used $15–$31 (median low – median high)
+- **Cost per lead, Medicare Supplement:** $14–$30 OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026) → used $14–$30 (median low – median high)
+- **Cost per lead, ACA:** $7.00–$18 OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026) · $10–$30 Aged Lead Store, health lead prices (https://agedleadstore.com/health-insurance-leads-cost/) → used $8.50–$24 (median low – median high)
+- **Contact:** 30–55% OneLife, channel benchmarks (https://onelifemarketingsolutions.com/insurance-marketing-benchmarks) · 10–15% SixtyFiveLeads, real cost of a lead (https://sixtyfiveleads.com/post/real-cost-medicare-lead) · 25% InsureLeads, cost per lead (https://www.getinsureleads.com/blog/insurance-leads-cost-per-lead) · 10% Agent, Insurance-Forums: '20 shared leads and 10% pick up' (https://www.insurance-forums.com/community/threads/vimo-live-transfers.3746/#post-41297) · 30% Agent, Insurance-Forums: '70% of all your shared leads won't answer' (https://www.insurance-forums.com/community/threads/looking-for-a-telemarketer-im-offering-2-000-a-week.2033/#post-27366)
+- **Appointment set (of contacted):** 10–22% OneLife, channel benchmarks (https://onelifemarketingsolutions.com/insurance-marketing-benchmarks) · 22% SixtyFiveLeads, real cost of a lead (https://sixtyfiveleads.com/post/real-cost-medicare-lead)
+- **Close:** 10–22% OneLife, channel benchmarks (https://onelifemarketingsolutions.com/insurance-marketing-benchmarks) (of booked appointments; ÷ show rate to get of held)
+- **Show:** 75% SixtyFiveLeads, real cost of a lead (https://sixtyfiveleads.com/post/real-cost-medicare-lead) · 60–72% Touchstone, appointment-setting benchmarks (https://touchstonebpo.com/blog/appointment-setting-conversion-rates-2026/) · 70–80% Aexus, sales show rates (https://aexus.com/what-is-a-good-show-rate-for-sales-appointments/) (no source splits show rate by lead type)
+- **Lead → enrollment, published:** 2–5% InsureLeads, Medicare lead companies (https://www.getinsureleads.com/blog/best-medicare-lead-companies) · 5–12% SeniorCenterAgents, lead costs (https://seniorcenteragents.com/blog/how-much-do-insurance-leads-cost-for-independent-agents) · 1% OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026) · 2% InsureLeads, cost per lead (https://www.getinsureleads.com/blog/insurance-leads-cost-per-lead)
+
+**Aged lead, 30–90 days (bought)**
+
+- **Cost per lead, Medicare Advantage:** $0.50–$3.00 Aged Lead Store, health lead prices (https://agedleadstore.com/health-insurance-leads-cost/) · $0.75–$5.00 InsureLeads, cost per lead (https://www.getinsureleads.com/blog/insurance-leads-cost-per-lead) · $1.00–$10 OneLife, Medicare benchmarks (https://onelifemarketingsolutions.com/medicare-lead-generation-statistics) · $1.00–$8.00 Plura, live-transfer pricing (https://www.plura.ai/articles/live-transfer-pricing-2026) · $0.01–$0.50 The Leads Warehouse, Medicare & ACA prices (https://theleadswarehouse.com/how-much-do-medicare-and-aca-leads-cost-in-2026/) · $1.00–$5.00 SeniorCenterAgents, Med Supp leads (https://seniorcenteragents.com/blog/how-to-generate-medicare-supplement-leads-for-agents) → used $0.88–$5.00 (median low – median high)
+- **Cost per lead, Medicare Supplement:** $0.50–$3.00 Aged Lead Store, health lead prices (https://agedleadstore.com/health-insurance-leads-cost/) · $0.75–$5.00 InsureLeads, cost per lead (https://www.getinsureleads.com/blog/insurance-leads-cost-per-lead) · $1.00–$10 OneLife, Medicare benchmarks (https://onelifemarketingsolutions.com/medicare-lead-generation-statistics) · $1.00–$8.00 Plura, live-transfer pricing (https://www.plura.ai/articles/live-transfer-pricing-2026) · $0.01–$0.50 The Leads Warehouse, Medicare & ACA prices (https://theleadswarehouse.com/how-much-do-medicare-and-aca-leads-cost-in-2026/) · $1.00–$5.00 SeniorCenterAgents, Med Supp leads (https://seniorcenteragents.com/blog/how-to-generate-medicare-supplement-leads-for-agents) → used $0.88–$5.00 (median low – median high)
+- **Cost per lead, ACA:** $0.50–$3.00 Aged Lead Store, health lead prices (https://agedleadstore.com/health-insurance-leads-cost/) · $0.50–$3.50 InsureLeads, cost per lead (https://www.getinsureleads.com/blog/insurance-leads-cost-per-lead) · $0.01–$0.50 The Leads Warehouse, Medicare & ACA prices (https://theleadswarehouse.com/how-much-do-medicare-and-aca-leads-cost-in-2026/) · $0.35–$4.00 OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026) → used $0.43–$3.25 (median low – median high)
+- **Contact:** 15–25% OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026) · 6–12% OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026) · 15–30% InsureLeads, cost per lead (https://www.getinsureleads.com/blog/insurance-leads-cost-per-lead)
+- **Appointment set (of contacted):** 30–50% InsureLeads, cost per lead (https://www.getinsureleads.com/blog/insurance-leads-cost-per-lead) (no figure for this lead type; all-lead-type figure used)
+- **Close:** 25–50% InsureLeads, cost per lead (https://www.getinsureleads.com/blog/insurance-leads-cost-per-lead) (no figure for this lead type; all-lead-type figure used)
+- **Show:** 75% SixtyFiveLeads, real cost of a lead (https://sixtyfiveleads.com/post/real-cost-medicare-lead) · 60–72% Touchstone, appointment-setting benchmarks (https://touchstonebpo.com/blog/appointment-setting-conversion-rates-2026/) · 70–80% Aexus, sales show rates (https://aexus.com/what-is-a-good-show-rate-for-sales-appointments/) (no source splits show rate by lead type)
+- **Lead → enrollment, published:** 1–3% AllCalls, inbound Medicare calls (https://allcalls.io/blog/is-real-time-medicare-inbound-calls-worth-it-2026-cost-benefits-and-verdict/) · 2–5% InsureLeads, conversion benchmarks (https://www.getinsureleads.com/blog/insurance-lead-conversion-rate-benchmarks) · 2–8% SeniorCenterAgents, lead costs (https://seniorcenteragents.com/blog/how-much-do-insurance-leads-cost-for-independent-agents) · 0.2% The Leads Warehouse, Medicare & ACA prices (https://theleadswarehouse.com/how-much-do-medicare-and-aca-leads-cost-in-2026/) · 3–7% Aged Lead Store, health lead prices (https://agedleadstore.com/health-insurance-leads-cost/) · 0.8% Agent, r/InsuranceAgent: '0.8% conversion rate on 30 day+ leads' (https://www.reddit.com/r/InsuranceAgent/comments/1pmr7pi/how_are_we_generating_leads_going_into_2026/nu3qz9h/)
+- OneLife publishes contact by age band (7–30 days 15–25%, 60–120 days 6–12%); both bands are used for 30–90 days. No aged-specific appointment or close rate is published, so the all-lead-type figures are used.
+
+**Live transfer / inbound call (bought)**
+
+- **Cost per lead, Medicare Advantage:** $45–$120 OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026) · $125 InsureLeads, Medicare leads (https://www.getinsureleads.com/medicare-leads) · $40–$120 The Leads Warehouse, Medicare & ACA prices (https://theleadswarehouse.com/how-much-do-medicare-and-aca-leads-cost-in-2026/) · $45–$85 InsureLeads, Medicare lead companies (https://www.getinsureleads.com/blog/best-medicare-lead-companies) · $90 AllCalls, inbound Medicare calls (https://allcalls.io/blog/is-real-time-medicare-inbound-calls-worth-it-2026-cost-benefits-and-verdict/) → used $45–$120 (median low – median high)
+- **Cost per lead, Medicare Supplement:** $55–$125 OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026) → used $55–$125 (median low – median high)
+- **Cost per lead, ACA:** $32–$85 OneLife, 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026) · $30–$90 The Leads Warehouse, Medicare & ACA prices (https://theleadswarehouse.com/how-much-do-medicare-and-aca-leads-cost-in-2026/) · $100 InsureLeads, cost per lead (https://www.getinsureleads.com/blog/insurance-leads-cost-per-lead) → used $32–$90 (median low – median high)
+- **Contact:** 95–100% Plura, live-transfer pricing (https://www.plura.ai/articles/live-transfer-pricing-2026) · 100% InsureLeads, conversion benchmarks (https://www.getinsureleads.com/blog/insurance-lead-conversion-rate-benchmarks) · 100% OneLife, Medicare benchmarks (https://onelifemarketingsolutions.com/medicare-lead-generation-statistics)
+- **Appointment set (of contacted):** 100% — the transfer is already a live conversation.
+- **Close:** 15–25% AllCalls, inbound Medicare calls (https://allcalls.io/blog/is-real-time-medicare-inbound-calls-worth-it-2026-cost-benefits-and-verdict/) · 15–25% InsureLeads, conversion benchmarks (https://www.getinsureleads.com/blog/insurance-lead-conversion-rate-benchmarks) · 15–30% InsureLeads, Medicare leads (https://www.getinsureleads.com/medicare-leads) · 20–30% The Leads Warehouse, Medicare & ACA prices (https://theleadswarehouse.com/how-much-do-medicare-and-aca-leads-cost-in-2026/) · 25–40% OneLife, Medicare benchmarks (https://onelifemarketingsolutions.com/medicare-lead-generation-statistics) · 20–40% SeniorCenterAgents, lead costs (https://seniorcenteragents.com/blog/how-much-do-insurance-leads-cost-for-independent-agents) · 25% Agent, Insurance-Forums: 'brokers are closing 25% of the live calls' (https://www.insurance-forums.com/community/threads/vemo-leads.3125/#post-19367) · 20% Agent, Insurance-Forums: 'closing 1 in 5' live calls (https://www.insurance-forums.com/community/threads/vimo-live-transfers.3746/#post-41307) · 40% Agent, r/InsuranceAgent: 'I close 40% of the inbound calls' (https://www.reddit.com/r/InsuranceAgent/comments/15nmmk7/how_to_start_an_insurance_agency_imo/jvpu80t/) · 60–70% Agent (ACA), r/InsuranceAgent: 'I close 60-70% of my calls' (https://www.reddit.com/r/InsuranceAgent/comments/1okykm4/ama_never_selling_insurance_to_85k_monthly/nmfoj8t/) · 1–2% Health-agency marketer, r/InsuranceAgent: paid inbound calls at a 'consistent 1-2% close rate' (https://www.reddit.com/r/InsuranceAgent/comments/1ge3mjw/if_you_use_paid_marketing_can_you_share_your_stats/) · 15–20% Agent reply, same thread: telesales 'if inbound they should convert at 15-20%'; outbound 5-10% of total leads (https://www.reddit.com/r/InsuranceAgent/comments/1ge3mjw/if_you_use_paid_marketing_can_you_share_your_stats/lu6vxjq/)
+- A transfer is already a live conversation, so the appointment and show steps are 100%; 'cost per lead' is the price per call.
+
+**Agent-reported, lead type not stated (context only, not used in any median)**
+
+- Agent reply, same thread: telesales 'if inbound they should convert at 15-20%'; outbound 5-10% of total leads (https://www.reddit.com/r/InsuranceAgent/comments/1ge3mjw/if_you_use_paid_marketing_can_you_share_your_stats/lu6vxjq/): outbound telesales 5–10% of total leads; face to face 25–35%.
+- ACA agent, r/InsuranceAgent: 'burned through about 10–15k with maybe a 5% close rate' (https://www.reddit.com/r/InsuranceAgent/comments/1okb93m/how_a_bad_aca_enrollment_hit_my_family_and_why_i/).
+- Agent posts with numbers on health lines were scarce: 2,428 r/InsuranceAgent and r/InsuranceProfessional records pulled on 2026-09-26 for rate threads; most figures posted were for auto / home or life.
+
+**Calling labor**
+
+- $17 median hourly wage, telemarketers ( BLS OEWS May 2025, telemarketers (https://www.bls.gov/news.release/ocwage.t01.htm)) ÷ 70% wages share of employer cost ( BLS Employer Costs for Employee Compensation, June 2026 (https://www.bls.gov/news.release/ecec.nr0.htm)) = $24 per hour.
+- 80 dials per hour on a power dialer ( Call Logic, power dialer (https://www.calllogic.com/power-dialer/): 60–100); 7 attempts per lead ( Kadence, contact-rate benchmarks (Astoria Company research) (https://www.startkadence.com/glossary/what-is-contact-rate-insurance-leads): 6–8).
+- Talk time per reached lead: 13 minutes exclusive / T65 / your Meta form, 4 minutes shared / aged (OneLife: 8–18 minutes exclusive, 2–6 shared). Bought transfers carry no dialing.
+- Not included: dialer / CRM / SMS software ($150–$400 a month, InsureLeads), consent certificates, management.
 
 ### What an enrollment is worth to the agent
 
@@ -1334,31 +1427,33 @@ Calculator on the live page; tables use its defaults: target 1 enrollment, 75% c
 |---|---|---|
 | Medicare Advantage | $725 new · $363 renewal (CMS CY2027 FMV, national; CA/NJ $902, CT/PA/DC $816) | The ceiling on what any MA lead is worth; renewals roughly double it over three years. |
 | Part D (PDP) | $130 new · $65 renewal | Too small to carry a paid lead on its own. |
-| Medicare Supplement | ≈20–22% of first-year premium ($480 on a $2,400 Plan G example) | Carrier-set, not CMS-capped. |
-| ACA | ≈$20–$30 PMPM (per member, per month enrolled) | A household of three for a year ≈ $720–$1,080; lapses stop it. |
+| Medicare Supplement | ≈$502 first year (22% average commission (Pinnacle; 14–27% range, Essential Care) × Plan G at 65, median of $165 / $190 / $220 a month) | Carrier-set, not CMS-capped. |
+| ACA | $20–$30 PMPM (per member, per month enrolled (BenaVest; Ritter example $20)) | A household of three for a year ≈ $720–$1,080; lapses stop it. |
 | Chargebacks | Full within 3 months (any plan change in the first three months; pro-rated after) | A lead that enrolls and switches costs the agent the whole commission — buyers will ask how you screen. |
 
 ### How to price each event
 
-Prices move with the inputs. Price = the middle of your fully-loaded cost × 1.3, rounded up to $5, kept inside the market band and at or below the agent's three-year break-even (first-year commission plus two renewal years at half).
+Uses the lead type and rates above. Price = the middle of your cost with calling labor × 1.3, rounded up to $5, kept inside what agents pay and at or below the agent's three-year break-even (first-year commission plus two renewal years at half). The appointment "market" is the agent's current cost per held appointment, because no appointment price is published.
 
-| Product | Your fully-loaded cost | Agent first-year break-even | Market price | Your price | Your margin per event |
+| Product | Your cost with labor | Agent first-year break-even | What agents pay | Your price | Your margin per event |
 |---|---|---|---|---|---|
-| Medicare Advantage · Exclusive lead | $30–$90 | $40 (3-yr with renewals: $81) | $35–$75 | $75 (Loses money at the high CPL) | −$15 to $45 |
-| Medicare Advantage · Live transfer (from your own form leads) | $133–$400 | $232 (3-yr with renewals: $464) | $45–$120 | $120 (Loses money even at the low CPL) | −$280 to −$13 |
-| Medicare Advantage · Booked appointment (held) | $178–$533 | $239 (3-yr with renewals: $479) | $159–$500 | $465 (Loses money at the high CPL) | −$68 to $287 |
-| ACA · Exclusive lead | $16–$60 | $17 (3-yr with renewals: $33) | $22–$48 | $35 (Loses money at the high CPL) | −$25 to $19 |
-| ACA · Live transfer (from your own form leads) | $71–$267 | $96 (3-yr with renewals: $192) | $32–$85 | $85 (Loses money at the high CPL) | −$182 to $14 |
-| ACA · Booked appointment (held) | $95–$356 | $99 (3-yr with renewals: $198) | $100–$300 | $200 (Loses money at the high CPL) | −$156 to $105 |
+| Medicare Advantage · Lead (sold exclusive, or at this lead type's price) | $27–$42 | $8.78 (3-yr with renewals: $18) | $35–$75 | $20 (Loses money even at the low cost) | −$22 to −$6.69 |
+| Medicare Advantage · Live transfer (a reached lead who agrees to talk now) | $330–$516 | $174 (3-yr with renewals: $348) | $45–$120 | $120 (Loses money even at the low cost) | −$396 to −$210 |
+| Medicare Advantage · Held appointment | $441–$688 | $145 (3-yr with renewals: $290) | $212–$454 | $290 (Loses money even at the low cost) | −$398 to −$151 |
+| ACA · Lead (sold exclusive, or at this lead type's price) | $26–$37 | $3.63 (3-yr with renewals: $7.27) | $30–$48 | $10 (Loses money even at the low cost) | −$27 to −$16 |
+| ACA · Live transfer (a reached lead who agrees to talk now) | $318–$454 | $72 (3-yr with renewals: $144) | $32–$90 | $90 (Loses money even at the low cost) | −$364 to −$228 |
+| ACA · Held appointment | $424–$606 | $60 (3-yr with renewals: $120) | $181–$290 | $120 (Loses money even at the low cost) | −$486 to −$304 |
 
 ### Decision read
 
-- **Agents price leads off the first-year commission:** an exclusive MA lead is worth about $40 to an agent at exclusive-lead rates ($725 × a 5.6% lead-to-enrollment rate), which is why the market sits at $35–$75. Renewals are the agent's margin, not yours.
-- **Sell the held appointment, not the form fill:** Meta lead forms contact at 35–60%, well under the 70–85% agents expect from exclusive leads. A held appointment ($159–$500 in the market) clears your cost at the middle of the CPL range; a live transfer built by calling your own form leads does not ($133–$400 to produce against $45–$120 paid). Transfers are an inbound-call business: click-to-call ads, not forms.
-- **AEP moves price, not value:** transfers run $45–$75 outside AEP and $65–$115+ inside it; Meta CPMs for 65+ audiences rise 40–80% in the same window, and since January 2025 insurance ads cannot target by age (Meta financial special ad category).
-- **ACA needs volume and trust:** $300 first-year per member, 23.1M selections after the subsidy lapse, and CMS removing ~1.5M improper enrollments: agents will pay for verified, consented consumers, not raw data.
+- **Cost per MA enrollment by lead type (published rates, before labor):** aged $39–$222, transfers $188–$500, exclusive $516–$1,106, T65 $527–$1,053, your Meta form $1,820–$3,059, shared $1,958–$3,982. The agent earns $725 in year one; your Meta form and shared cost more than that even at the low price.
+- **A Meta-form lead is worth an exclusive price only if it converts like one:** at the published Meta rates (47.5% contact, 17% set, 20% close) it produces 1.2% enrollments, worth $8.78 to an agent in first-year commission, against the $35–$75 exclusive price, which assumes 6.8%. Measure your first leads' contact and set rates before quoting a price; the published end-to-end figures for Meta leads (4–10%) are higher than the published stage rates multiply to.
+- **Aged records worked into held appointments is the one production route that clears the market at published rates:** $55–$124 per held MA appointment with calling labor, against $212–$454 an agent pays for one through exclusive leads; priced at $215 the margin is $91 to $160. As transfers: $42–$93 against $45–$120 paid per call. Caveat: no aged-specific appointment or close rate is published; the all-lead-type figures are used, so test it.
+- **Transfers are the agents' cheapest purchased route after aged data:** $188–$500 per enrollment at the published median 24% close. Producing them from Meta forms costs $330–$516 each at published rates, so a transfer business runs on inbound call ads or aged data, not on forms.
+- **AEP moves price, not value:** OneLife reports 20–45% price inflation on Medicare leads during AEP; since January 2025 insurance ads on Meta cannot target by age (financial special ad category).
+- **Treat every rate as a vendor claim until you measure your own:** almost all published figures come from companies selling the leads; the agents who posted numbers report lower contact on shared and aged leads and transfer close rates from 20% to 70%.
 
-**Sources:** CMS CY2027 agent & broker compensation memo (June 1, 2026) (https://www.psmbrokerage.com/hubfs/Agent%20Broker%20Compensation%20Memo%20CY2027.pdf) · 42 CFR 422.2274 (chargebacks) (https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-B/part-422/subpart-V/section-422.2274) · KFF, Medicare Advantage in 2026 (https://www.kff.org/medicare/medicare-advantage-in-2026-enrollment-update-and-key-trends/) · CMS, 2026 open enrollment (https://www.cms.gov/newsroom/press-releases/exchange-coverage-remains-near-record-high-23-1-million-enroll-2026-reflecting-continued-strength) · BenaVest ACA commissions (https://www.benavest.com/aca-commissions-for-agents/) (FMO) · OneLife Medicare benchmarks (https://onelifemarketingsolutions.com/medicare-lead-generation-statistics), OneLife 2026 lead prices (https://onelifemarketingsolutions.com/blog/insurance-lead-costs-2026), OneLife channel benchmarks (https://onelifemarketingsolutions.com/insurance-marketing-benchmarks), SixtyFiveLeads (https://sixtyfiveleads.com/post/real-cost-medicare-lead), AllCalls (https://allcalls.io/blog/is-real-time-medicare-inbound-calls-worth-it-2026-cost-benefits-and-verdict/) (all vendors: they sell what they price) · Meta financial special ad category (PSM Brokerage) (https://www.psmbrokerage.com/blog/navigating-meta-ads-restrictions-for-insurance-agents). Pricing is a recommendation built on these inputs, not a measured market price.
+**Market and commission sources:** CMS CY2027 agent & broker compensation memo (https://www.psmbrokerage.com/hubfs/Agent%20Broker%20Compensation%20Memo%20CY2027.pdf) · 42 CFR 422.2274 (chargebacks) (https://www.ecfr.gov/current/title-42/chapter-IV/subchapter-B/part-422/subpart-V/section-422.2274) · KFF, Medicare Advantage in 2026 (https://www.kff.org/medicare/medicare-advantage-in-2026-enrollment-update-and-key-trends/) · CMS, 2026 open enrollment (https://www.cms.gov/newsroom/press-releases/exchange-coverage-remains-near-record-high-23-1-million-enroll-2026-reflecting-continued-strength) · BenaVest, ACA commissions (https://www.benavest.com/aca-commissions-for-agents/) · Ritter, ACA agent earnings (https://ritterim.com/blog/how-much-can-agents-make-selling-under-65-insurance/) · Pinnacle, Med Supp commissions (https://pfsinsurance.com/blog/medicare-supplement-commissions) · Essential Care, commission structures (https://essentialcareagents.com/blog/medicare-broker-commission-structures-ma-pdp-med-supp/) · MoneyGeek, Medigap cost 2026 (https://www.moneygeek.com/insurance/health/medicare-supplement-plans-cost/) · MedicareSupplement.com, cost by age (https://www.medicaresupplement.com/articles/average-cost-of-medicare-supplement-by-age/) · The Senior List, Medigap cost (https://www.theseniorlist.com/medigap/cost/) · PSM Brokerage, Meta special ad category (https://www.psmbrokerage.com/blog/navigating-meta-ads-restrictions-for-insurance-agents). Pricing is a recommendation built on these inputs, not a measured market price.
 
 ## Sources, Method & Gaps
 
